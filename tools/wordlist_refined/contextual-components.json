@@ -1,0 +1,274 @@
+{
+  "厘米": {
+    "definition": "长度单位，一厘米等于一米的百分之一，也就是十毫米。",
+    "characters": {
+      "厘": "长度单位前缀，表示百分之一 | centi-, one hundredth",
+      "米": "长度单位米 | meter, a unit of length"
+    }
+  },
+  "厘定": {
+    "definition": "明确订定，经过整理确定下来。",
+    "characters": {
+      "厘": "整理、订正 | to arrange or regulate",
+      "定": "确定、制定 | to establish or settle"
+    }
+  },
+  "民族": {
+    "definition": "有共同文化、历史传统等特征的人群，例如汉族、蒙古族等。",
+    "characters": {
+      "民": "人群、人民 | people",
+      "族": "民族或具有共同文化传统的人群 | ethnic group or people"
+    }
+  },
+  "山谷": {
+    "definition": "山与山之间较低、较狭长的地方，常有溪流经过。",
+    "characters": {
+      "山": "山地 | mountain",
+      "谷": "山间低地 | valley"
+    }
+  },
+  "企业": {
+    "definition": "从事生产、经营或服务等经济活动的组织，例如工厂、公司。",
+    "characters": {
+      "企": "与业组成企业，表示经营组织 | bound element in enterprise",
+      "业": "经营、事业 | business or enterprise"
+    }
+  },
+  "治愈": {
+    "definition": "经过治疗使疾病或伤病得到恢复。",
+    "characters": {
+      "治": "治疗 | to treat an illness",
+      "愈": "病好、恢复健康 | to heal or recover"
+    }
+  },
+  "治疗": {
+    "characters": {
+      "治": "诊治疾病或伤病 | to treat an illness",
+      "疗": "医治 | to treat or cure"
+    }
+  },
+  "医治": {
+    "characters": {
+      "医": "用医学方法治疗 | to treat medically",
+      "治": "治疗 | to treat"
+    }
+  },
+  "救治": {
+    "characters": {
+      "救": "救助，帮助脱离危险 | to save or provide aid",
+      "治": "治疗伤病 | to treat an injury or illness"
+    }
+  },
+  "治病": {
+    "characters": {
+      "治": "采取医疗措施 | to treat medically",
+      "病": "疾病 | illness"
+    }
+  },
+  "神采奕奕": {
+    "definition": "精神饱满，面部和眼神显得很有活力。",
+    "characters": {
+      "神": "精神、神情 | spirit or expression",
+      "采": "神态、光彩 | appearance or vitality",
+      "奕": "奕奕整体表示精神焕发 | radiant, in 奕奕"
+    }
+  },
+  "炯炯有神": {
+    "definition": "眼睛明亮，显得很有精神。",
+    "characters": {
+      "炯": "炯炯整体表示明亮 | bright, in 炯炯",
+      "有": "具有 | to have",
+      "神": "神采、精神 | vitality or spirit"
+    }
+  },
+  "神圣": {
+    "definition": "庄严、崇高，令人尊敬，常用于具有宗教或重大精神意义的人或事物。",
+    "characters": {
+      "神": "与圣组成神圣，表示崇高庄严 | sacred, in 神圣",
+      "圣": "崇高、受尊敬的 | sacred or revered"
+    }
+  },
+  "狼狈": {
+    "definition": "处境困难，或者样子凌乱、窘迫。",
+    "whole": true
+  },
+  "蛊惑": {
+    "definition": "用言语或手段迷惑、诱导别人，使其作出不当判断。",
+    "characters": {
+      "蛊": "迷惑、诱导 | to bewitch or mislead",
+      "惑": "使人糊涂 | to confuse"
+    }
+  },
+  "聿皇": {
+    "definition": "古代书面语，形容行动迅速、轻捷。",
+    "whole": true
+  },
+  "效率": {
+    "characters": {
+      "效": "起作用、取得的效果 | effectiveness",
+      "率": "比率、程度 | rate"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "效果": {
+    "characters": {
+      "效": "作用、结果 | effect",
+      "果": "事情产生的结果 | result"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact.",
+    "definition": "某种方法、行动或因素产生的结果、作用。"
+  },
+  "赞成": {
+    "characters": {
+      "赞": "同意、认可 | to approve",
+      "成": "与赞组成赞成，表示同意 | bound element in approval"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "结构": {
+    "characters": {
+      "结": "联结、组合 | to join",
+      "构": "构成、建构 | to construct"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "地球": {
+    "characters": {
+      "地": "与球组成地球，指人类居住的星球 | earth",
+      "球": "球状的天体 | globe or spherical body"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact.",
+    "definition": "人类居住的星球；太阳系中离太阳第三近的行星。"
+  },
+  "麻痹": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "麻雀": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "窈窕": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "盎然": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "鼎盛": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "蓖麻": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "爰书": {
+    "whole": true,
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "借鉴": {
+    "characters": {
+      "借": "借用、采用 | to borrow or draw on",
+      "鉴": "考察、作为参照 | to examine or take as a reference"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "鉴别": {
+    "characters": {
+      "鉴": "审察、辨认 | to examine",
+      "别": "分辨、区别 | to distinguish"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "碉堡": {
+    "characters": {
+      "碉": "石筑防御建筑 | stone defensive structure",
+      "堡": "防守用的坚固建筑 | fortification"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "轶事": {
+    "characters": {
+      "轶": "正史未记载的、逸闻中的 | unrecorded in formal history",
+      "事": "事情、故事 | event or story"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "腊月": {
+    "characters": {
+      "腊": "在腊月中表示农历十二月 | twelfth lunar month",
+      "月": "月份 | month"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "笾豆": {
+    "characters": {
+      "豆": "古代盛食物的高脚器具 | ancient stemmed ritual food vessel"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "抟风": {
+    "characters": {
+      "抟": "回旋、盘旋而上 | to wheel or spiral upward",
+      "风": "空气的流动 | wind"
+    },
+    "evidence": "AI scoped contextual correction against the retained English sense, same-reading dictionary reference and both examples; historical senses and proper names outside this word remain intact."
+  },
+  "成绩": {
+    "characters": {
+      "成": "取得、完成 | to achieve",
+      "绩": "成绩、业绩 | achievement"
+    },
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "新颖": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "罂粟": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "熨斗": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "斗笠": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "踊跃": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "社稷": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "戬谷": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "饩羊": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "苴杖": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "髀骨": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "菰米": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  },
+  "仿佛": {
+    "whole": true,
+    "evidence": "AI contextual review of retained reading, short English sense, both supplied examples and pinned same-reading Mapull reference where available; retain the whole lexical unit where a separate contextual character sense is uncertain."
+  }
+}

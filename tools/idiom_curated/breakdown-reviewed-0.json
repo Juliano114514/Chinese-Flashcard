@@ -1,0 +1,4073 @@
+{
+  "cy_00001": [
+    {
+      "hanzi": "难以",
+      "pinyin": "nán yǐ",
+      "gloss": "不容易做到 | difficult to"
+    },
+    {
+      "hanzi": "置信",
+      "pinyin": "zhì xìn",
+      "gloss": "相信、接受为真 | to believe"
+    }
+  ],
+  "cy_00002": [
+    {
+      "hanzi": "不可",
+      "pinyin": "bù kě",
+      "gloss": "不能、无法 | cannot"
+    },
+    {
+      "hanzi": "思议",
+      "pinyin": "sī yì",
+      "gloss": "想象或理解 | to imagine or comprehend"
+    }
+  ],
+  "cy_00003": [
+    {
+      "hanzi": "无论",
+      "pinyin": "wú lùn",
+      "gloss": "不管、不受条件限制 | regardless of"
+    },
+    {
+      "hanzi": "如何",
+      "pinyin": "rú hé",
+      "gloss": "怎样、什么情况 | how or in what circumstances"
+    }
+  ],
+  "cy_00004": [
+    {
+      "hanzi": "谢天",
+      "pinyin": "xiè tiān",
+      "gloss": "感谢上天，表达庆幸 | to thank heaven in relief"
+    },
+    {
+      "hanzi": "谢地",
+      "pinyin": "xiè dì",
+      "gloss": "感谢大地，与谢天连用加强庆幸 | paired thanks expressing relief"
+    }
+  ],
+  "cy_00005": [
+    {
+      "hanzi": "一无",
+      "pinyin": "yī wú",
+      "gloss": "一点也没有 | not any"
+    },
+    {
+      "hanzi": "所知",
+      "pinyin": "suǒ zhī",
+      "gloss": "知道的事情或知识 | what one knows"
+    }
+  ],
+  "cy_00006": [
+    {
+      "hanzi": "与众",
+      "pinyin": "yǔ zhòng",
+      "gloss": "与大家相比 | compared with others"
+    },
+    {
+      "hanzi": "不同",
+      "pinyin": "bù tóng",
+      "gloss": "不一样 | different"
+    }
+  ],
+  "cy_00007": [
+    {
+      "hanzi": "无能",
+      "pinyin": "wú néng",
+      "gloss": "没有能力 | unable"
+    },
+    {
+      "hanzi": "为力",
+      "pinyin": "wéi lì",
+      "gloss": "施展力量、发挥作用 | to exert effort or provide help"
+    }
+  ],
+  "cy_00008": [
+    {
+      "hanzi": "一模",
+      "pinyin": "yī mú",
+      "gloss": "同一个模样，模读mú | the same pattern or form"
+    },
+    {
+      "hanzi": "一样",
+      "pinyin": "yī yàng",
+      "gloss": "相同的样子 | exactly alike"
+    }
+  ],
+  "cy_00009": [
+    {
+      "hanzi": "以防",
+      "pinyin": "yǐ fáng",
+      "gloss": "用来防备 | in order to guard against"
+    },
+    {
+      "hanzi": "万一",
+      "pinyin": "wàn yī",
+      "gloss": "意外出现的情况 | an unexpected contingency"
+    }
+  ],
+  "cy_00010": [
+    {
+      "hanzi": "乱七八糟",
+      "pinyin": "luàn qī bā zāo",
+      "gloss": "杂乱、没有条理 | completely disorganized"
+    }
+  ],
+  "cy_00011": [
+    {
+      "hanzi": "一无",
+      "pinyin": "yī wú",
+      "gloss": "一点也没有 | not any"
+    },
+    {
+      "hanzi": "所有",
+      "pinyin": "suǒ yǒu",
+      "gloss": "拥有的东西 | what one possesses"
+    }
+  ],
+  "cy_00012": [
+    {
+      "hanzi": "迫",
+      "pinyin": "pò",
+      "gloss": "急迫、紧急 | urgent"
+    },
+    {
+      "hanzi": "不及",
+      "pinyin": "bù jí",
+      "gloss": "来不及、不能等到 | unable to wait for"
+    },
+    {
+      "hanzi": "待",
+      "pinyin": "dài",
+      "gloss": "等待 | to wait"
+    }
+  ],
+  "cy_00013": [
+    {
+      "hanzi": "独一",
+      "pinyin": "dú yī",
+      "gloss": "只有这一个 | the only one"
+    },
+    {
+      "hanzi": "无二",
+      "pinyin": "wú èr",
+      "gloss": "没有第二个可相比 | without an equal"
+    }
+  ],
+  "cy_00014": [
+    {
+      "hanzi": "成千",
+      "pinyin": "chéng qiān",
+      "gloss": "数量达到千的程度 | by the thousands"
+    },
+    {
+      "hanzi": "上万",
+      "pinyin": "shàng wàn",
+      "gloss": "数量多到万的程度 | by the tens of thousands"
+    }
+  ],
+  "cy_00015": [
+    {
+      "hanzi": "说来",
+      "pinyin": "shuō lái",
+      "gloss": "说起这件事 | when telling the story"
+    },
+    {
+      "hanzi": "话长",
+      "pinyin": "huà cháng",
+      "gloss": "需要说很多话才能交代清楚 | a long story to explain"
+    }
+  ],
+  "cy_00016": [
+    {
+      "hanzi": "无家",
+      "pinyin": "wú jiā",
+      "gloss": "没有家 | without a home"
+    },
+    {
+      "hanzi": "可归",
+      "pinyin": "kě guī",
+      "gloss": "可以回去 | to return to"
+    }
+  ],
+  "cy_00017": [
+    {
+      "hanzi": "逍遥",
+      "pinyin": "xiāo yáo",
+      "gloss": "自由自在，没有受到约束 | free and unrestrained"
+    },
+    {
+      "hanzi": "法外",
+      "pinyin": "fǎ wài",
+      "gloss": "在法律制裁之外 | beyond legal punishment"
+    }
+  ],
+  "cy_00018": [
+    {
+      "hanzi": "大",
+      "pinyin": "dà",
+      "gloss": "程度很强 | greatly"
+    },
+    {
+      "hanzi": "吃一惊",
+      "pinyin": "chī yī jīng",
+      "gloss": "受到惊吓、感到意外 | to receive a shock"
+    }
+  ],
+  "cy_00019": [
+    {
+      "hanzi": "大喊",
+      "pinyin": "dà hǎn",
+      "gloss": "高声呼喊 | to shout loudly"
+    },
+    {
+      "hanzi": "大叫",
+      "pinyin": "dà jiào",
+      "gloss": "高声叫嚷 | to cry out loudly"
+    }
+  ],
+  "cy_00020": [
+    {
+      "hanzi": "显",
+      "pinyin": "xiǎn",
+      "gloss": "明显、显露 | evident"
+    },
+    {
+      "hanzi": "而",
+      "pinyin": "ér",
+      "gloss": "连接前后两种描述 | and"
+    },
+    {
+      "hanzi": "易见",
+      "pinyin": "yì jiàn",
+      "gloss": "容易看出来 | easy to see"
+    }
+  ],
+  "cy_00021": [
+    {
+      "hanzi": "自",
+      "pinyin": "zì",
+      "gloss": "自己 | oneself"
+    },
+    {
+      "hanzi": "以为",
+      "pinyin": "yǐ wéi",
+      "gloss": "认为 | to consider"
+    },
+    {
+      "hanzi": "是",
+      "pinyin": "shì",
+      "gloss": "正确、对 | right or correct"
+    }
+  ],
+  "cy_00022": [
+    {
+      "hanzi": "竭尽",
+      "pinyin": "jié jìn",
+      "gloss": "全部用尽 | to exhaust"
+    },
+    {
+      "hanzi": "全力",
+      "pinyin": "quán lì",
+      "gloss": "全部力量 | all one's strength"
+    }
+  ],
+  "cy_00023": [
+    {
+      "hanzi": "全力",
+      "pinyin": "quán lì",
+      "gloss": "全部力量 | all one's effort"
+    },
+    {
+      "hanzi": "以赴",
+      "pinyin": "yǐ fù",
+      "gloss": "投入、用来应对 | to devote to the task"
+    }
+  ],
+  "cy_00024": [
+    {
+      "hanzi": "一塌糊涂",
+      "pinyin": "yī tā hú tu",
+      "gloss": "极度混乱或糟糕 | an utter mess"
+    }
+  ],
+  "cy_00025": [
+    {
+      "hanzi": "各",
+      "pinyin": "gè",
+      "gloss": "各自、每一个 | each"
+    },
+    {
+      "hanzi": "就",
+      "pinyin": "jiù",
+      "gloss": "到达、进入 | to take up"
+    },
+    {
+      "hanzi": "各位",
+      "pinyin": "gè wèi",
+      "gloss": "各自的位置或岗位 | one's assigned place"
+    }
+  ],
+  "cy_00026": [
+    {
+      "hanzi": "大惊",
+      "pinyin": "dà jīng",
+      "gloss": "过分惊讶 | excessive surprise"
+    },
+    {
+      "hanzi": "小怪",
+      "pinyin": "xiǎo guài",
+      "gloss": "把小事也当作怪事 | treating a small matter as extraordinary"
+    }
+  ],
+  "cy_00027": [
+    {
+      "hanzi": "一无",
+      "pinyin": "yī wú",
+      "gloss": "一点也没有 | not any"
+    },
+    {
+      "hanzi": "是处",
+      "pinyin": "shì chù",
+      "gloss": "正确或好的地方 | a redeeming quality"
+    }
+  ],
+  "cy_00028": [
+    {
+      "hanzi": "袖手",
+      "pinyin": "xiù shǒu",
+      "gloss": "把手放在袖子里，不出手相助 | to keep one's hands tucked away"
+    },
+    {
+      "hanzi": "旁观",
+      "pinyin": "páng guān",
+      "gloss": "站在一旁观看 | to look on"
+    }
+  ],
+  "cy_00029": [
+    {
+      "hanzi": "莫名",
+      "pinyin": "mò míng",
+      "gloss": "不能说出、说明 | unable to explain"
+    },
+    {
+      "hanzi": "其妙",
+      "pinyin": "qí miào",
+      "gloss": "其中的奥妙或道理 | the reason or mystery within"
+    }
+  ],
+  "cy_00030": [
+    {
+      "hanzi": "随心",
+      "pinyin": "suí xīn",
+      "gloss": "随着自己的心意 | according to one's wishes"
+    },
+    {
+      "hanzi": "所欲",
+      "pinyin": "suǒ yù",
+      "gloss": "想要做的事 | what one desires"
+    }
+  ],
+  "cy_00031": [
+    {
+      "hanzi": "不知",
+      "pinyin": "bù zhī",
+      "gloss": "不知道 | not knowing"
+    },
+    {
+      "hanzi": "所措",
+      "pinyin": "suǒ cuò",
+      "gloss": "应当怎样处置、应对 | what action to take"
+    }
+  ],
+  "cy_00032": [
+    {
+      "hanzi": "长话",
+      "pinyin": "cháng huà",
+      "gloss": "需要很多话交代的事 | a long story"
+    },
+    {
+      "hanzi": "短说",
+      "pinyin": "duǎn shuō",
+      "gloss": "简短地讲述 | to tell briefly"
+    }
+  ],
+  "cy_00033": [
+    {
+      "hanzi": "诸",
+      "pinyin": "zhū",
+      "gloss": "各种、众多 | various"
+    },
+    {
+      "hanzi": "如此",
+      "pinyin": "rú cǐ",
+      "gloss": "像这样 | such as this"
+    },
+    {
+      "hanzi": "类",
+      "pinyin": "lèi",
+      "gloss": "类别、同类事物 | kind or category"
+    }
+  ],
+  "cy_00034": [
+    {
+      "hanzi": "无缘",
+      "pinyin": "wú yuán",
+      "gloss": "没有缘由 | without a reason"
+    },
+    {
+      "hanzi": "无故",
+      "pinyin": "wú gù",
+      "gloss": "没有原因 | without a cause"
+    }
+  ],
+  "cy_00035": [
+    {
+      "hanzi": "千真",
+      "pinyin": "qiān zhēn",
+      "gloss": "强调真实 | emphatically true"
+    },
+    {
+      "hanzi": "万确",
+      "pinyin": "wàn què",
+      "gloss": "强调确实可靠 | absolutely certain"
+    }
+  ],
+  "cy_00036": [
+    {
+      "hanzi": "理",
+      "pinyin": "lǐ",
+      "gloss": "道理 | reason"
+    },
+    {
+      "hanzi": "所当然",
+      "pinyin": "suǒ dāng rán",
+      "gloss": "应当如此 | what ought to be so"
+    }
+  ],
+  "cy_00037": [
+    {
+      "hanzi": "偷偷",
+      "pinyin": "tōu tōu",
+      "gloss": "暗中进行、不让人知道 | secretly"
+    },
+    {
+      "hanzi": "摸摸",
+      "pinyin": "mō mō",
+      "gloss": "在此与偷偷组成AABB式，强调隐秘行动 | paired reduplication for furtive behavior"
+    }
+  ],
+  "cy_00038": [
+    {
+      "hanzi": "精疲",
+      "pinyin": "jīng pí",
+      "gloss": "精神疲倦 | mentally exhausted"
+    },
+    {
+      "hanzi": "力尽",
+      "pinyin": "lì jìn",
+      "gloss": "力量用完 | out of strength"
+    }
+  ],
+  "cy_00039": [
+    {
+      "hanzi": "前",
+      "pinyin": "qián",
+      "gloss": "过去、此前 | previously"
+    },
+    {
+      "hanzi": "所未有",
+      "pinyin": "suǒ wèi yǒu",
+      "gloss": "从来没有发生或出现过 | never existing before"
+    }
+  ],
+  "cy_00040": [
+    {
+      "hanzi": "无所",
+      "pinyin": "wú suǒ",
+      "gloss": "没有可做的事 | with nothing to"
+    },
+    {
+      "hanzi": "事事",
+      "pinyin": "shì shì",
+      "gloss": "做事情；前事为动词，后事为名词 | to do things"
+    }
+  ],
+  "cy_00041": [
+    {
+      "hanzi": "胡言",
+      "pinyin": "hú yán",
+      "gloss": "没有根据地说话 | baseless talk"
+    },
+    {
+      "hanzi": "乱语",
+      "pinyin": "luàn yǔ",
+      "gloss": "胡乱说的话 | nonsense"
+    }
+  ],
+  "cy_00042": [
+    {
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "gloss": "做、采取行动 | to do"
+    },
+    {
+      "hanzi": "所欲为",
+      "pinyin": "suǒ yù wéi",
+      "gloss": "自己想要做的事 | whatever one wishes to do"
+    }
+  ],
+  "cy_00043": [
+    {
+      "hanzi": "感激",
+      "pinyin": "gǎn jī",
+      "gloss": "感谢、心怀感恩 | gratitude"
+    },
+    {
+      "hanzi": "不尽",
+      "pinyin": "bù jìn",
+      "gloss": "没有尽头 | without end"
+    }
+  ],
+  "cy_00044": [
+    {
+      "hanzi": "彻头",
+      "pinyin": "chè tóu",
+      "gloss": "一直贯通到开始处 | through to the beginning"
+    },
+    {
+      "hanzi": "彻尾",
+      "pinyin": "chè wěi",
+      "gloss": "一直贯通到结束处 | through to the end"
+    }
+  ],
+  "cy_00045": [
+    {
+      "hanzi": "一",
+      "pinyin": "yī",
+      "gloss": "与二形成强调结构，不表示具体数量 | paired intensifier"
+    },
+    {
+      "hanzi": "清",
+      "pinyin": "qīng",
+      "gloss": "清楚、明白 | clear"
+    },
+    {
+      "hanzi": "二",
+      "pinyin": "èr",
+      "gloss": "与一形成强调结构，不表示具体数量 | paired intensifier"
+    },
+    {
+      "hanzi": "楚",
+      "pinyin": "chǔ",
+      "gloss": "清楚、明白 | distinct and clear"
+    }
+  ],
+  "cy_00046": [
+    {
+      "hanzi": "了",
+      "pinyin": "liǎo",
+      "gloss": "明白、了解 | to understand"
+    },
+    {
+      "hanzi": "如",
+      "pinyin": "rú",
+      "gloss": "像、如同 | like"
+    },
+    {
+      "hanzi": "指掌",
+      "pinyin": "zhǐ zhǎng",
+      "gloss": "指着自己的手掌，表示看得清楚 | pointing to one's palm"
+    }
+  ],
+  "cy_00047": [
+    {
+      "hanzi": "一如",
+      "pinyin": "yī rú",
+      "gloss": "完全像 | just as"
+    },
+    {
+      "hanzi": "既往",
+      "pinyin": "jì wǎng",
+      "gloss": "从前、过去 | in the past"
+    }
+  ],
+  "cy_00048": [
+    {
+      "hanzi": "无可",
+      "pinyin": "wú kě",
+      "gloss": "没有可以提供的内容 | nothing available to"
+    },
+    {
+      "hanzi": "奉告",
+      "pinyin": "fèng gào",
+      "gloss": "敬辞，告诉对方 | to inform respectfully"
+    }
+  ],
+  "cy_00049": [
+    {
+      "hanzi": "不可",
+      "pinyin": "bù kě",
+      "gloss": "不能、无法 | cannot"
+    },
+    {
+      "hanzi": "避免",
+      "pinyin": "bì miǎn",
+      "gloss": "防止发生、避开 | to avoid"
+    }
+  ],
+  "cy_00050": [
+    {
+      "hanzi": "不可",
+      "pinyin": "bù kě",
+      "gloss": "不能、无法 | impossible to"
+    },
+    {
+      "hanzi": "理喻",
+      "pinyin": "lǐ yù",
+      "gloss": "用道理使人明白 | to reason with"
+    }
+  ],
+  "cy_00051": [
+    {
+      "hanzi": "情",
+      "pinyin": "qíng",
+      "gloss": "感情、情绪 | emotion"
+    },
+    {
+      "hanzi": "不自禁",
+      "pinyin": "bù zì jīn",
+      "gloss": "自己不能抑制 | unable to restrain oneself"
+    }
+  ],
+  "cy_00052": [
+    {
+      "hanzi": "出乎",
+      "pinyin": "chū hū",
+      "gloss": "超出、在预期之外 | beyond"
+    },
+    {
+      "hanzi": "意料",
+      "pinyin": "yì liào",
+      "gloss": "预先的猜想、预期 | expectation"
+    }
+  ],
+  "cy_00053": [
+    {
+      "hanzi": "想方",
+      "pinyin": "xiǎng fāng",
+      "gloss": "想出方法 | to think of ways"
+    },
+    {
+      "hanzi": "设法",
+      "pinyin": "shè fǎ",
+      "gloss": "设法找办法、安排办法 | to devise means"
+    }
+  ],
+  "cy_00054": [
+    {
+      "hanzi": "视而",
+      "pinyin": "shì ér",
+      "gloss": "虽然看着 | looking yet"
+    },
+    {
+      "hanzi": "不见",
+      "pinyin": "bù jiàn",
+      "gloss": "没有看到，或装作没看到 | failing or refusing to see"
+    }
+  ],
+  "cy_00055": [
+    {
+      "hanzi": "一举",
+      "pinyin": "yī jǔ",
+      "gloss": "每一个举止 | every gesture"
+    },
+    {
+      "hanzi": "一动",
+      "pinyin": "yī dòng",
+      "gloss": "每一个动作 | every movement"
+    }
+  ],
+  "cy_00056": [
+    {
+      "hanzi": "一路",
+      "pinyin": "yī lù",
+      "gloss": "整个旅途 | throughout the journey"
+    },
+    {
+      "hanzi": "顺风",
+      "pinyin": "shùn fēng",
+      "gloss": "风向有利，祝旅途顺利 | favorable winds and a smooth journey"
+    }
+  ],
+  "cy_00057": [
+    {
+      "hanzi": "指手",
+      "pinyin": "zhǐ shǒu",
+      "gloss": "用手指点 | to point with one's hands"
+    },
+    {
+      "hanzi": "画脚",
+      "pinyin": "huà jiǎo",
+      "gloss": "用脚示意动作；与指手合说比划 | to gesture with one's feet"
+    }
+  ],
+  "cy_00058": [
+    {
+      "hanzi": "平安",
+      "pinyin": "píng ān",
+      "gloss": "安全、安稳 | safe"
+    },
+    {
+      "hanzi": "无事",
+      "pinyin": "wú shì",
+      "gloss": "没有事故或麻烦 | without mishap"
+    }
+  ],
+  "cy_00059": [
+    {
+      "hanzi": "鬼鬼",
+      "pinyin": "guǐ guǐ",
+      "gloss": "与祟祟组成重叠式，描写隐秘的行动 | paired reduplication for furtiveness"
+    },
+    {
+      "hanzi": "祟祟",
+      "pinyin": "suì suì",
+      "gloss": "源释中祟指鬼怪作祸；在此强调鬼祟的样子 | paired expression for stealthy behavior"
+    }
+  ],
+  "cy_00060": [
+    {
+      "hanzi": "开诚",
+      "pinyin": "kāi chéng",
+      "gloss": "敞开心意、表明诚意 | to show sincerity openly"
+    },
+    {
+      "hanzi": "布公",
+      "pinyin": "bù gōng",
+      "gloss": "公开坦白、不隐瞒私心 | to be open and frank"
+    }
+  ],
+  "cy_00061": [
+    {
+      "hanzi": "发号",
+      "pinyin": "fā hào",
+      "gloss": "发出号令 | to issue commands"
+    },
+    {
+      "hanzi": "施令",
+      "pinyin": "shī lìng",
+      "gloss": "发布命令 | to give orders"
+    }
+  ],
+  "cy_00062": [
+    {
+      "hanzi": "微",
+      "pinyin": "wēi",
+      "gloss": "细小、轻微 | tiny"
+    },
+    {
+      "hanzi": "不足",
+      "pinyin": "bù zú",
+      "gloss": "不值得 | not worth"
+    },
+    {
+      "hanzi": "道",
+      "pinyin": "dào",
+      "gloss": "说起、谈论 | mentioning"
+    }
+  ],
+  "cy_00063": [
+    {
+      "hanzi": "全心",
+      "pinyin": "quán xīn",
+      "gloss": "全部心思 | one's whole heart"
+    },
+    {
+      "hanzi": "全意",
+      "pinyin": "quán yì",
+      "gloss": "全部意愿和精力 | full commitment"
+    }
+  ],
+  "cy_00064": [
+    {
+      "hanzi": "一见",
+      "pinyin": "yī jiàn",
+      "gloss": "第一次见到 | at first sight"
+    },
+    {
+      "hanzi": "钟情",
+      "pinyin": "zhōng qíng",
+      "gloss": "感情集中、专注地爱 | to fall in love"
+    }
+  ],
+  "cy_00065": [
+    {
+      "hanzi": "众",
+      "pinyin": "zhòng",
+      "gloss": "大家 | everyone"
+    },
+    {
+      "hanzi": "所",
+      "pinyin": "suǒ",
+      "gloss": "组成所字结构，指后面的知这件事 | structural marker before the known matter"
+    },
+    {
+      "hanzi": "周知",
+      "pinyin": "zhōu zhī",
+      "gloss": "普遍知道 | widely known"
+    }
+  ],
+  "cy_00066": [
+    {
+      "hanzi": "不顾",
+      "pinyin": "bù gù",
+      "gloss": "不考虑、不顾及 | disregarding"
+    },
+    {
+      "hanzi": "一切",
+      "pinyin": "yī qiè",
+      "gloss": "所有事情或限制 | everything"
+    }
+  ],
+  "cy_00067": [
+    {
+      "hanzi": "出人",
+      "pinyin": "chū rén",
+      "gloss": "超出人们的 | beyond people's"
+    },
+    {
+      "hanzi": "意料",
+      "pinyin": "yì liào",
+      "gloss": "事前预期 | expectations"
+    }
+  ],
+  "cy_00068": [
+    {
+      "hanzi": "破门",
+      "pinyin": "pò mén",
+      "gloss": "打破或强行打开门 | to force a door open"
+    },
+    {
+      "hanzi": "而入",
+      "pinyin": "ér rù",
+      "gloss": "然后进入 | and enter"
+    }
+  ],
+  "cy_00069": [
+    {
+      "hanzi": "改过",
+      "pinyin": "gǎi guò",
+      "gloss": "改正错误 | to correct one's faults"
+    },
+    {
+      "hanzi": "自新",
+      "pinyin": "zì xīn",
+      "gloss": "重新做人、重新开始 | to reform oneself"
+    }
+  ],
+  "cy_00070": [
+    {
+      "hanzi": "虚张",
+      "pinyin": "xū zhāng",
+      "gloss": "夸大、假装扩大 | to exaggerate a show of"
+    },
+    {
+      "hanzi": "声势",
+      "pinyin": "shēng shì",
+      "gloss": "声威和气势 | power and momentum"
+    }
+  ],
+  "cy_00071": [
+    {
+      "hanzi": "自言",
+      "pinyin": "zì yán",
+      "gloss": "自己说话 | to speak to oneself"
+    },
+    {
+      "hanzi": "自语",
+      "pinyin": "zì yǔ",
+      "gloss": "自己低声说话 | to talk to oneself"
+    }
+  ],
+  "cy_00072": [
+    {
+      "hanzi": "无时",
+      "pinyin": "wú shí",
+      "gloss": "没有一个时候；通常后接不构成双重否定 | at no time, usually followed by another negative"
+    },
+    {
+      "hanzi": "无刻",
+      "pinyin": "wú kè",
+      "gloss": "没有一刻；与无时并列强调时间连续 | not for a moment"
+    }
+  ],
+  "cy_00073": [
+    {
+      "hanzi": "身无",
+      "pinyin": "shēn wú",
+      "gloss": "身上没有 | having none on oneself"
+    },
+    {
+      "hanzi": "分文",
+      "pinyin": "fēn wén",
+      "gloss": "很少的钱财 | even a tiny amount of money"
+    }
+  ],
+  "cy_00074": [
+    {
+      "hanzi": "筋疲",
+      "pinyin": "jīn pí",
+      "gloss": "身体筋力疲乏 | physically exhausted"
+    },
+    {
+      "hanzi": "力尽",
+      "pinyin": "lì jìn",
+      "gloss": "力气用完 | out of strength"
+    }
+  ],
+  "cy_00075": [
+    {
+      "hanzi": "脱颖",
+      "pinyin": "tuō yǐng",
+      "gloss": "锥子的尖端从布囊中露出 | a sharp point emerging from a bag"
+    },
+    {
+      "hanzi": "而出",
+      "pinyin": "ér chū",
+      "gloss": "显露出来 | emerging into view"
+    }
+  ],
+  "cy_00076": [
+    {
+      "hanzi": "安然",
+      "pinyin": "ān rán",
+      "gloss": "平安、安稳的样子 | safe and sound"
+    },
+    {
+      "hanzi": "无恙",
+      "pinyin": "wú yàng",
+      "gloss": "没有疾病或损害 | unharmed"
+    }
+  ],
+  "cy_00077": [
+    {
+      "hanzi": "自然",
+      "pinyin": "zì rán",
+      "gloss": "不加人为干预 | naturally"
+    },
+    {
+      "hanzi": "而然",
+      "pinyin": "ér rán",
+      "gloss": "就这样形成或发生 | becoming so"
+    }
+  ],
+  "cy_00078": [
+    {
+      "hanzi": "惊慌",
+      "pinyin": "jīng huāng",
+      "gloss": "受到惊吓而慌乱 | panic"
+    },
+    {
+      "hanzi": "失措",
+      "pinyin": "shī cuò",
+      "gloss": "不知如何处理、失去常态 | losing composure"
+    }
+  ],
+  "cy_00079": [
+    {
+      "hanzi": "从天",
+      "pinyin": "cóng tiān",
+      "gloss": "从天空 | from the sky"
+    },
+    {
+      "hanzi": "而降",
+      "pinyin": "ér jiàng",
+      "gloss": "落下来 | descending"
+    }
+  ],
+  "cy_00080": [
+    {
+      "hanzi": "感情",
+      "pinyin": "gǎn qíng",
+      "gloss": "个人情绪和爱憎 | emotion"
+    },
+    {
+      "hanzi": "用事",
+      "pinyin": "yòng shì",
+      "gloss": "据此处理事情 | using it to decide or act"
+    }
+  ],
+  "cy_00081": [
+    {
+      "hanzi": "蒙",
+      "pinyin": "méng",
+      "gloss": "被包住、受到蒙蔽 | covered or kept unaware"
+    },
+    {
+      "hanzi": "在鼓里",
+      "pinyin": "zài gǔ lǐ",
+      "gloss": "处在鼓的里面，是受蒙蔽的字面形象 | inside a drum"
+    }
+  ],
+  "cy_00082": [
+    {
+      "hanzi": "说到",
+      "pinyin": "shuō dào",
+      "gloss": "口头说出、作出承诺 | to say or promise"
+    },
+    {
+      "hanzi": "做到",
+      "pinyin": "zuò dào",
+      "gloss": "用行动实现 | to carry it out"
+    }
+  ],
+  "cy_00083": [
+    {
+      "hanzi": "小题",
+      "pinyin": "xiǎo tí",
+      "gloss": "小题目或小事情 | a minor topic"
+    },
+    {
+      "hanzi": "大做",
+      "pinyin": "dà zuò",
+      "gloss": "大作文章、过度处理 | to make a big issue of"
+    }
+  ],
+  "cy_00084": [
+    {
+      "hanzi": "小心",
+      "pinyin": "xiǎo xīn",
+      "gloss": "谨慎、留心 | careful"
+    },
+    {
+      "hanzi": "翼翼",
+      "pinyin": "yì yì",
+      "gloss": "严肃谨慎的样子 | respectfully cautious"
+    }
+  ],
+  "cy_00085": [
+    {
+      "hanzi": "走投",
+      "pinyin": "zǒu tóu",
+      "gloss": "寻找可以投奔的地方 | to seek a place to turn to"
+    },
+    {
+      "hanzi": "无路",
+      "pinyin": "wú lù",
+      "gloss": "没有可走的路 | without a way out"
+    }
+  ],
+  "cy_00086": [
+    {
+      "hanzi": "守口",
+      "pinyin": "shǒu kǒu",
+      "gloss": "紧闭嘴巴、不透露消息 | to keep one's mouth shut"
+    },
+    {
+      "hanzi": "如瓶",
+      "pinyin": "rú píng",
+      "gloss": "像封住的瓶口一样 | like a sealed bottle"
+    }
+  ],
+  "cy_00087": [
+    {
+      "hanzi": "起死",
+      "pinyin": "qǐ sǐ",
+      "gloss": "使快要死的人起来、获救 | to revive someone near death"
+    },
+    {
+      "hanzi": "回生",
+      "pinyin": "huí shēng",
+      "gloss": "重新活过来 | to return to life"
+    }
+  ],
+  "cy_00088": [
+    {
+      "hanzi": "并肩",
+      "pinyin": "bìng jiān",
+      "gloss": "肩挨着肩，站在一起 | shoulder to shoulder"
+    },
+    {
+      "hanzi": "作战",
+      "pinyin": "zuò zhàn",
+      "gloss": "一起战斗 | to fight"
+    }
+  ],
+  "cy_00089": [
+    {
+      "hanzi": "货真",
+      "pinyin": "huò zhēn",
+      "gloss": "货物是真的、不是冒牌 | genuine goods"
+    },
+    {
+      "hanzi": "价实",
+      "pinyin": "jià shí",
+      "gloss": "价格实在、不虚高 | an honest price"
+    }
+  ],
+  "cy_00090": [
+    {
+      "hanzi": "束手",
+      "pinyin": "shù shǒu",
+      "gloss": "双手被捆住，不能行动 | hands tied"
+    },
+    {
+      "hanzi": "无策",
+      "pinyin": "wú cè",
+      "gloss": "没有办法 | without a plan"
+    }
+  ],
+  "cy_00091": [
+    {
+      "hanzi": "一事",
+      "pinyin": "yī shì",
+      "gloss": "一件事情 | even a single task"
+    },
+    {
+      "hanzi": "无成",
+      "pinyin": "wú chéng",
+      "gloss": "没有完成或取得成果 | not accomplished"
+    }
+  ],
+  "cy_00092": [
+    {
+      "hanzi": "不知",
+      "pinyin": "bù zhī",
+      "gloss": "没有意识到 | unaware"
+    },
+    {
+      "hanzi": "不觉",
+      "pinyin": "bù jué",
+      "gloss": "没有觉察到 | unnoticed"
+    }
+  ],
+  "cy_00093": [
+    {
+      "hanzi": "改头",
+      "pinyin": "gǎi tóu",
+      "gloss": "改变头部、外在形象 | to change the outward appearance"
+    },
+    {
+      "hanzi": "换面",
+      "pinyin": "huàn miàn",
+      "gloss": "换一副面貌 | to replace the outward face"
+    }
+  ],
+  "cy_00094": [
+    {
+      "hanzi": "开门",
+      "pinyin": "kāi mén",
+      "gloss": "打开门 | to open a door"
+    },
+    {
+      "hanzi": "见山",
+      "pinyin": "jiàn shān",
+      "gloss": "看见山 | to see a mountain"
+    }
+  ],
+  "cy_00095": [
+    {
+      "hanzi": "齐心",
+      "pinyin": "qí xīn",
+      "gloss": "心意一致 | of one mind"
+    },
+    {
+      "hanzi": "协力",
+      "pinyin": "xié lì",
+      "gloss": "共同用力 | to work together"
+    }
+  ],
+  "cy_00096": [
+    {
+      "hanzi": "万无",
+      "pinyin": "wàn wú",
+      "gloss": "强调绝对没有 | absolutely no"
+    },
+    {
+      "hanzi": "一失",
+      "pinyin": "yī shī",
+      "gloss": "一点差错 | even one error"
+    }
+  ],
+  "cy_00097": [
+    {
+      "hanzi": "无济",
+      "pinyin": "wú jì",
+      "gloss": "没有帮助或益处 | of no help"
+    },
+    {
+      "hanzi": "于事",
+      "pinyin": "yú shì",
+      "gloss": "对于事情 | to the matter"
+    }
+  ],
+  "cy_00098": [
+    {
+      "hanzi": "置之",
+      "pinyin": "zhì zhī",
+      "gloss": "把它放在一边；之指这件事 | to set it aside"
+    },
+    {
+      "hanzi": "不理",
+      "pinyin": "bù lǐ",
+      "gloss": "不予理睬 | to ignore"
+    }
+  ],
+  "cy_00099": [
+    {
+      "hanzi": "自相",
+      "pinyin": "zì xiāng",
+      "gloss": "自己人互相 | among one's own group"
+    },
+    {
+      "hanzi": "残杀",
+      "pinyin": "cán shā",
+      "gloss": "伤害、杀害 | to harm or kill"
+    }
+  ],
+  "cy_00100": [
+    {
+      "hanzi": "耿耿",
+      "pinyin": "gěng gěng",
+      "gloss": "有心事、一直惦念的样子 | troubled and unable to forget"
+    },
+    {
+      "hanzi": "于怀",
+      "pinyin": "yú huái",
+      "gloss": "在心中 | in one's mind"
+    }
+  ],
+  "cy_00101": [
+    {
+      "hanzi": "轻举",
+      "pinyin": "qīng jǔ",
+      "gloss": "轻率地采取行动 | to act rashly"
+    },
+    {
+      "hanzi": "妄动",
+      "pinyin": "wàng dòng",
+      "gloss": "不经考虑地行动 | to move recklessly"
+    }
+  ],
+  "cy_00102": [
+    {
+      "hanzi": "焕然",
+      "pinyin": "huàn rán",
+      "gloss": "鲜明光亮、面貌改变的样子 | bright and renewed"
+    },
+    {
+      "hanzi": "一新",
+      "pinyin": "yī xīn",
+      "gloss": "完全变新 | entirely new"
+    }
+  ],
+  "cy_00103": [
+    {
+      "hanzi": "甜言",
+      "pinyin": "tián yán",
+      "gloss": "像甜食一样好听的话 | sweet-sounding words"
+    },
+    {
+      "hanzi": "蜜语",
+      "pinyin": "mì yǔ",
+      "gloss": "像蜜一样动听的话 | honeyed words"
+    }
+  ],
+  "cy_00104": [
+    {
+      "hanzi": "相提",
+      "pinyin": "xiāng tí",
+      "gloss": "相对照、放在一起提及 | to mention together"
+    },
+    {
+      "hanzi": "并论",
+      "pinyin": "bìng lùn",
+      "gloss": "一起谈论或比较 | to discuss on a par"
+    }
+  ],
+  "cy_00105": [
+    {
+      "hanzi": "光天",
+      "pinyin": "guāng tiān",
+      "gloss": "大白天，源释中指明亮的天空 | broad daylight"
+    },
+    {
+      "hanzi": "化日",
+      "pinyin": "huà rì",
+      "gloss": "源释中指生长万物的太阳 | the sun that nurtures life"
+    }
+  ],
+  "cy_00106": [
+    {
+      "hanzi": "远走",
+      "pinyin": "yuǎn zǒu",
+      "gloss": "到远处去 | to go far away"
+    },
+    {
+      "hanzi": "高飞",
+      "pinyin": "gāo fēi",
+      "gloss": "飞到高处、远处 | to fly high and away"
+    }
+  ],
+  "cy_00107": [
+    {
+      "hanzi": "无懈",
+      "pinyin": "wú xiè",
+      "gloss": "没有松懈处，引申为没有破绽 | without a weak spot"
+    },
+    {
+      "hanzi": "可击",
+      "pinyin": "kě jī",
+      "gloss": "可以攻击 | open to attack"
+    }
+  ],
+  "cy_00108": [
+    {
+      "hanzi": "难以",
+      "pinyin": "nán yǐ",
+      "gloss": "不容易、很难 | difficult to"
+    },
+    {
+      "hanzi": "启齿",
+      "pinyin": "qǐ chǐ",
+      "gloss": "开口说话 | to open one's mouth to speak"
+    }
+  ],
+  "cy_00109": [
+    {
+      "hanzi": "危",
+      "pinyin": "wēi",
+      "gloss": "危险 | danger"
+    },
+    {
+      "hanzi": "在",
+      "pinyin": "zài",
+      "gloss": "处于、就在 | at"
+    },
+    {
+      "hanzi": "旦夕",
+      "pinyin": "dàn xī",
+      "gloss": "早晚，形容很短的时间 | morning and evening, a very short time"
+    }
+  ],
+  "cy_00110": [
+    {
+      "hanzi": "罪魁",
+      "pinyin": "zuì kuí",
+      "gloss": "犯罪作恶的头目 | chief culprit"
+    },
+    {
+      "hanzi": "祸首",
+      "pinyin": "huò shǒu",
+      "gloss": "造成祸患的首要人物 | principal cause of trouble"
+    }
+  ],
+  "cy_00111": [
+    {
+      "hanzi": "不可",
+      "pinyin": "bù kě",
+      "gloss": "不能、无法 | cannot"
+    },
+    {
+      "hanzi": "收拾",
+      "pinyin": "shōu shi",
+      "gloss": "整顿、整理、挽回 | to put in order or repair"
+    }
+  ],
+  "cy_00112": [
+    {
+      "hanzi": "一窍",
+      "pinyin": "yī qiào",
+      "gloss": "连一个心窍、理解的入口 | even one opening of understanding"
+    },
+    {
+      "hanzi": "不通",
+      "pinyin": "bù tōng",
+      "gloss": "不贯通、没有理解 | not open or understood"
+    }
+  ],
+  "cy_00113": [
+    {
+      "hanzi": "自作",
+      "pinyin": "zì zuò",
+      "gloss": "自以为、擅自表现为 | presuming oneself"
+    },
+    {
+      "hanzi": "聪明",
+      "pinyin": "cōng míng",
+      "gloss": "有判断力、有智慧 | clever"
+    }
+  ],
+  "cy_00114": [
+    {
+      "hanzi": "无影",
+      "pinyin": "wú yǐng",
+      "gloss": "没有影子 | without a shadow"
+    },
+    {
+      "hanzi": "无踪",
+      "pinyin": "wú zōng",
+      "gloss": "没有踪迹 | without a trace"
+    }
+  ],
+  "cy_00115": [
+    {
+      "hanzi": "水落",
+      "pinyin": "shuǐ luò",
+      "gloss": "水位下降 | the water recedes"
+    },
+    {
+      "hanzi": "石出",
+      "pinyin": "shí chū",
+      "gloss": "水底石头露出 | rocks emerge"
+    }
+  ],
+  "cy_00116": [
+    {
+      "hanzi": "有生",
+      "pinyin": "yǒu shēng",
+      "gloss": "从出生、开始有生命 | from birth"
+    },
+    {
+      "hanzi": "以来",
+      "pinyin": "yǐ lái",
+      "gloss": "直到现在 | up to now"
+    }
+  ],
+  "cy_00117": [
+    {
+      "hanzi": "言",
+      "pinyin": "yán",
+      "gloss": "话题、言语 | the discussion"
+    },
+    {
+      "hanzi": "归",
+      "pinyin": "guī",
+      "gloss": "回到 | to return to"
+    },
+    {
+      "hanzi": "正传",
+      "pinyin": "zhèng zhuàn",
+      "gloss": "正题、本题 | the main subject"
+    }
+  ],
+  "cy_00118": [
+    {
+      "hanzi": "千载",
+      "pinyin": "qiān zǎi",
+      "gloss": "千年，载读zǎi表示年 | a thousand years"
+    },
+    {
+      "hanzi": "难逢",
+      "pinyin": "nán féng",
+      "gloss": "很难遇到 | rarely encountered"
+    }
+  ],
+  "cy_00119": [
+    {
+      "hanzi": "合情",
+      "pinyin": "hé qíng",
+      "gloss": "符合人情和实际情况 | fitting human circumstances"
+    },
+    {
+      "hanzi": "合理",
+      "pinyin": "hé lǐ",
+      "gloss": "符合道理 | reasonable"
+    }
+  ],
+  "cy_00120": [
+    {
+      "hanzi": "重蹈",
+      "pinyin": "chóng dǎo",
+      "gloss": "再一次踏上 | to tread again"
+    },
+    {
+      "hanzi": "覆辙",
+      "pinyin": "fù zhé",
+      "gloss": "曾导致翻车的车辙、老路 | the track of an overturned cart"
+    }
+  ],
+  "cy_00121": [
+    {
+      "hanzi": "高高",
+      "pinyin": "gāo gāo",
+      "gloss": "处在很高的地位 | in an elevated position"
+    },
+    {
+      "hanzi": "在上",
+      "pinyin": "zài shàng",
+      "gloss": "处于上面 | above others"
+    }
+  ],
+  "cy_00122": [
+    {
+      "hanzi": "死路",
+      "pinyin": "sǐ lù",
+      "gloss": "没有出路的道路 | a dead end"
+    },
+    {
+      "hanzi": "一条",
+      "pinyin": "yī tiáo",
+      "gloss": "只剩这样一条路 | the only route left"
+    }
+  ],
+  "cy_00123": [
+    {
+      "hanzi": "天衣",
+      "pinyin": "tiān yī",
+      "gloss": "传说中仙女的衣服 | a celestial garment in the source image"
+    },
+    {
+      "hanzi": "无缝",
+      "pinyin": "wú fèng",
+      "gloss": "没有接缝 | without seams"
+    }
+  ],
+  "cy_00124": [
+    {
+      "hanzi": "一",
+      "pinyin": "yī",
+      "gloss": "与二相配强调程度，不表示数量 | paired intensifier"
+    },
+    {
+      "hanzi": "干",
+      "pinyin": "gān",
+      "gloss": "干净、彻底 | clean and complete"
+    },
+    {
+      "hanzi": "二",
+      "pinyin": "èr",
+      "gloss": "与一相配强调程度，不表示数量 | paired intensifier"
+    },
+    {
+      "hanzi": "净",
+      "pinyin": "jìng",
+      "gloss": "干净、没有剩余 | clean with nothing left"
+    }
+  ],
+  "cy_00125": [
+    {
+      "hanzi": "直截",
+      "pinyin": "zhí jié",
+      "gloss": "直接、爽快 | direct"
+    },
+    {
+      "hanzi": "了当",
+      "pinyin": "liǎo dàng",
+      "gloss": "明白、干脆 | clear and decisive"
+    }
+  ],
+  "cy_00126": [
+    {
+      "hanzi": "忘恩",
+      "pinyin": "wàng ēn",
+      "gloss": "忘记别人给予的恩惠 | to forget kindness received"
+    },
+    {
+      "hanzi": "负义",
+      "pinyin": "fù yì",
+      "gloss": "违背情谊 | to betray an obligation"
+    }
+  ],
+  "cy_00127": [
+    {
+      "hanzi": "坐以",
+      "pinyin": "zuò yǐ",
+      "gloss": "坐着、不主动行动 | sitting without taking action"
+    },
+    {
+      "hanzi": "待毙",
+      "pinyin": "dài bì",
+      "gloss": "等待死亡 | to await death"
+    }
+  ],
+  "cy_00128": [
+    {
+      "hanzi": "自作",
+      "pinyin": "zì zuò",
+      "gloss": "自己擅自作出 | on one's own authority"
+    },
+    {
+      "hanzi": "主张",
+      "pinyin": "zhǔ zhāng",
+      "gloss": "决定或安排 | a decision"
+    }
+  ],
+  "cy_00129": [
+    {
+      "hanzi": "全神",
+      "pinyin": "quán shén",
+      "gloss": "全部精神、注意力 | all one's attention"
+    },
+    {
+      "hanzi": "贯注",
+      "pinyin": "guàn zhù",
+      "gloss": "集中于一点 | concentrated focus"
+    }
+  ],
+  "cy_00130": [
+    {
+      "hanzi": "大开",
+      "pinyin": "dà kāi",
+      "gloss": "极大地打开、扩展 | greatly widening"
+    },
+    {
+      "hanzi": "眼界",
+      "pinyin": "yǎn jiè",
+      "gloss": "见识、视野 | one's outlook"
+    }
+  ],
+  "cy_00131": [
+    {
+      "hanzi": "精疲",
+      "pinyin": "jīng pí",
+      "gloss": "精神疲惫 | mentally exhausted"
+    },
+    {
+      "hanzi": "力竭",
+      "pinyin": "lì jié",
+      "gloss": "力量耗尽 | out of strength"
+    }
+  ],
+  "cy_00132": [
+    {
+      "hanzi": "非同",
+      "pinyin": "fēi tóng",
+      "gloss": "不同于 | unlike"
+    },
+    {
+      "hanzi": "寻常",
+      "pinyin": "xún cháng",
+      "gloss": "平常、一般 | the ordinary"
+    }
+  ],
+  "cy_00133": [
+    {
+      "hanzi": "史",
+      "pinyin": "shǐ",
+      "gloss": "历史 | history"
+    },
+    {
+      "hanzi": "无前例",
+      "pinyin": "wú qián lì",
+      "gloss": "没有以往的例子 | without precedent"
+    }
+  ],
+  "cy_00134": [
+    {
+      "hanzi": "应有",
+      "pinyin": "yīng yǒu",
+      "gloss": "应当有的东西 | everything that should be available"
+    },
+    {
+      "hanzi": "尽有",
+      "pinyin": "jìn yǒu",
+      "gloss": "全部都有 | all present"
+    }
+  ],
+  "cy_00135": [
+    {
+      "hanzi": "出类",
+      "pinyin": "chū lèi",
+      "gloss": "超出同类 | to surpass one's peers"
+    },
+    {
+      "hanzi": "拔萃",
+      "pinyin": "bá cuì",
+      "gloss": "超出聚集的一群；拔在此指超出 | to stand above the group"
+    }
+  ],
+  "cy_00136": [
+    {
+      "hanzi": "真相",
+      "pinyin": "zhēn xiàng",
+      "gloss": "真实的情况 | the truth"
+    },
+    {
+      "hanzi": "大白",
+      "pinyin": "dà bái",
+      "gloss": "彻底弄清楚 | fully revealed"
+    }
+  ],
+  "cy_00137": [
+    {
+      "hanzi": "出人头地",
+      "pinyin": "chū rén tóu dì",
+      "gloss": "德才或成就高于同类 | standing out above one's peers"
+    }
+  ],
+  "cy_00138": [
+    {
+      "hanzi": "半途",
+      "pinyin": "bàn tú",
+      "gloss": "事情进行到中途 | halfway through"
+    },
+    {
+      "hanzi": "而废",
+      "pinyin": "ér fèi",
+      "gloss": "就停止、放弃 | then abandoned"
+    }
+  ],
+  "cy_00139": [
+    {
+      "hanzi": "无名",
+      "pinyin": "wú míng",
+      "gloss": "没有名望 | unknown"
+    },
+    {
+      "hanzi": "小卒",
+      "pinyin": "xiǎo zú",
+      "gloss": "地位低的小兵 | a low-ranking soldier"
+    }
+  ],
+  "cy_00140": [
+    {
+      "hanzi": "与世",
+      "pinyin": "yǔ shì",
+      "gloss": "与外面的社会 | from the outside world"
+    },
+    {
+      "hanzi": "隔绝",
+      "pinyin": "gé jué",
+      "gloss": "隔开、断绝来往 | cut off"
+    }
+  ],
+  "cy_00141": [
+    {
+      "hanzi": "支离",
+      "pinyin": "zhī lí",
+      "gloss": "零散、残缺 | fragmented"
+    },
+    {
+      "hanzi": "破碎",
+      "pinyin": "pò suì",
+      "gloss": "破裂、不完整 | broken"
+    }
+  ],
+  "cy_00142": [
+    {
+      "hanzi": "小心",
+      "pinyin": "xiǎo xīn",
+      "gloss": "谨慎、留心 | careful"
+    },
+    {
+      "hanzi": "谨慎",
+      "pinyin": "jǐn shèn",
+      "gloss": "慎重、不疏忽 | cautious"
+    }
+  ],
+  "cy_00143": [
+    {
+      "hanzi": "名",
+      "pinyin": "míng",
+      "gloss": "名声、名称 | reputation or name"
+    },
+    {
+      "hanzi": "副",
+      "pinyin": "fù",
+      "gloss": "符合、相称 | to match"
+    },
+    {
+      "hanzi": "其实",
+      "pinyin": "qí shí",
+      "gloss": "它实际的情况 | the reality behind it"
+    }
+  ],
+  "cy_00144": [
+    {
+      "hanzi": "循规",
+      "pinyin": "xún guī",
+      "gloss": "遵循圆规等所代表的准则 | to follow rules"
+    },
+    {
+      "hanzi": "蹈矩",
+      "pinyin": "dǎo jǔ",
+      "gloss": "依照矩尺等所代表的规范 | to keep to established standards"
+    }
+  ],
+  "cy_00145": [
+    {
+      "hanzi": "深信",
+      "pinyin": "shēn xìn",
+      "gloss": "十分相信 | to believe firmly"
+    },
+    {
+      "hanzi": "不疑",
+      "pinyin": "bù yí",
+      "gloss": "没有怀疑 | without doubt"
+    }
+  ],
+  "cy_00146": [
+    {
+      "hanzi": "装模",
+      "pinyin": "zhuāng mó",
+      "gloss": "装出某种模样 | to put on a pose"
+    },
+    {
+      "hanzi": "作样",
+      "pinyin": "zuò yàng",
+      "gloss": "故意做出姿态 | to act affectedly"
+    }
+  ],
+  "cy_00147": [
+    {
+      "hanzi": "力",
+      "pinyin": "lì",
+      "gloss": "自己的体力或能力 | one's ability"
+    },
+    {
+      "hanzi": "所能及",
+      "pinyin": "suǒ néng jí",
+      "gloss": "能够达到、能够做到的范围 | within one's reach"
+    }
+  ],
+  "cy_00148": [
+    {
+      "hanzi": "措手",
+      "pinyin": "cuò shǒu",
+      "gloss": "着手处理、采取应对行动 | to begin dealing with it"
+    },
+    {
+      "hanzi": "不及",
+      "pinyin": "bù jí",
+      "gloss": "来不及 | too late to respond"
+    }
+  ],
+  "cy_00149": [
+    {
+      "hanzi": "置身",
+      "pinyin": "zhì shēn",
+      "gloss": "把自己放在 | to place oneself"
+    },
+    {
+      "hanzi": "事外",
+      "pinyin": "shì wài",
+      "gloss": "事情之外 | outside the affair"
+    }
+  ],
+  "cy_00150": [
+    {
+      "hanzi": "大庭",
+      "pinyin": "dà tíng",
+      "gloss": "宽大的场地 | a large public space"
+    },
+    {
+      "hanzi": "广众",
+      "pinyin": "guǎng zhòng",
+      "gloss": "很多人在场的人群 | a large crowd"
+    }
+  ],
+  "cy_00151": [
+    {
+      "hanzi": "井井",
+      "pinyin": "jǐng jǐng",
+      "gloss": "条理分明的样子 | orderly"
+    },
+    {
+      "hanzi": "有条",
+      "pinyin": "yǒu tiáo",
+      "gloss": "有条理、有秩序 | well organized"
+    }
+  ],
+  "cy_00152": [
+    {
+      "hanzi": "求之",
+      "pinyin": "qiú zhī",
+      "gloss": "寻求它、希望得到它 | to seek it"
+    },
+    {
+      "hanzi": "不得",
+      "pinyin": "bù dé",
+      "gloss": "不能得到；保留字面否定，整词现代义见讲解 | unable to obtain it in the literal wording"
+    }
+  ],
+  "cy_00153": [
+    {
+      "hanzi": "自生",
+      "pinyin": "zì shēng",
+      "gloss": "自然发生、生长 | to arise naturally"
+    },
+    {
+      "hanzi": "自灭",
+      "pinyin": "zì miè",
+      "gloss": "自然消失、灭亡 | to die out naturally"
+    }
+  ],
+  "cy_00154": [
+    {
+      "hanzi": "流言",
+      "pinyin": "liú yán",
+      "gloss": "流传的、没有根据的说法 | circulating rumors"
+    },
+    {
+      "hanzi": "蜚语",
+      "pinyin": "fēi yǔ",
+      "gloss": "传播的闲言坏话；蜚在此与传播有关 | malicious gossip"
+    }
+  ],
+  "cy_00155": [
+    {
+      "hanzi": "若无",
+      "pinyin": "ruò wú",
+      "gloss": "好像没有 | as if there were no"
+    },
+    {
+      "hanzi": "其事",
+      "pinyin": "qí shì",
+      "gloss": "这件事情 | such an event"
+    }
+  ],
+  "cy_00156": [
+    {
+      "hanzi": "进退",
+      "pinyin": "jìn tuì",
+      "gloss": "前进和后退 | advance and retreat"
+    },
+    {
+      "hanzi": "两难",
+      "pinyin": "liǎng nán",
+      "gloss": "两个选择都困难 | both difficult"
+    }
+  ],
+  "cy_00157": [
+    {
+      "hanzi": "忍",
+      "pinyin": "rěn",
+      "gloss": "忍受 | to endure"
+    },
+    {
+      "hanzi": "无可忍",
+      "pinyin": "wú kě rěn",
+      "gloss": "已不能继续忍受 | no longer bearable"
+    }
+  ],
+  "cy_00158": [
+    {
+      "hanzi": "一帆",
+      "pinyin": "yī fān",
+      "gloss": "船的一面帆，构成行船形象 | a sail"
+    },
+    {
+      "hanzi": "风顺",
+      "pinyin": "fēng shùn",
+      "gloss": "风向有利于前进 | favorable wind"
+    }
+  ],
+  "cy_00159": [
+    {
+      "hanzi": "取而",
+      "pinyin": "qǔ ér",
+      "gloss": "取得位置、接着 | taking over and"
+    },
+    {
+      "hanzi": "代之",
+      "pinyin": "dài zhī",
+      "gloss": "替代原来的它 | replacing it"
+    }
+  ],
+  "cy_00160": [
+    {
+      "hanzi": "尽心",
+      "pinyin": "jìn xīn",
+      "gloss": "用尽心思 | to give full attention"
+    },
+    {
+      "hanzi": "尽力",
+      "pinyin": "jìn lì",
+      "gloss": "用尽力量 | to exert every effort"
+    }
+  ],
+  "cy_00161": [
+    {
+      "hanzi": "自始",
+      "pinyin": "zì shǐ",
+      "gloss": "从开始 | from the beginning"
+    },
+    {
+      "hanzi": "至终",
+      "pinyin": "zhì zhōng",
+      "gloss": "到最后 | to the end"
+    }
+  ],
+  "cy_00162": [
+    {
+      "hanzi": "来龙",
+      "pinyin": "lái lóng",
+      "gloss": "源释中指山脉的来势 | the approach of a mountain ridge"
+    },
+    {
+      "hanzi": "去脉",
+      "pinyin": "qù mài",
+      "gloss": "源释中指山脉的去向 | the course of the ridge onward"
+    }
+  ],
+  "cy_00163": [
+    {
+      "hanzi": "容光",
+      "pinyin": "róng guāng",
+      "gloss": "脸上的光彩、气色 | facial radiance"
+    },
+    {
+      "hanzi": "焕发",
+      "pinyin": "huàn fā",
+      "gloss": "显得明亮、有活力 | glowing with vitality"
+    }
+  ],
+  "cy_00164": [
+    {
+      "hanzi": "欣喜",
+      "pinyin": "xīn xǐ",
+      "gloss": "高兴、喜悦 | joy"
+    },
+    {
+      "hanzi": "若狂",
+      "pinyin": "ruò kuáng",
+      "gloss": "好像兴奋得失去控制 | as if beside oneself"
+    }
+  ],
+  "cy_00165": [
+    {
+      "hanzi": "无忧",
+      "pinyin": "wú yōu",
+      "gloss": "没有忧愁 | without worries"
+    },
+    {
+      "hanzi": "无虑",
+      "pinyin": "wú lǜ",
+      "gloss": "没有顾虑 | without concerns"
+    }
+  ],
+  "cy_00166": [
+    {
+      "hanzi": "适可",
+      "pinyin": "shì kě",
+      "gloss": "到了恰当、合适的程度 | at the proper point"
+    },
+    {
+      "hanzi": "而止",
+      "pinyin": "ér zhǐ",
+      "gloss": "就停止 | then stop"
+    }
+  ],
+  "cy_00167": [
+    {
+      "hanzi": "念念",
+      "pinyin": "niàn niàn",
+      "gloss": "时刻想着 | thinking of it constantly"
+    },
+    {
+      "hanzi": "不忘",
+      "pinyin": "bù wàng",
+      "gloss": "没有忘记 | never forgetting"
+    }
+  ],
+  "cy_00168": [
+    {
+      "hanzi": "无理",
+      "pinyin": "wú lǐ",
+      "gloss": "没有合理的理由 | without reason"
+    },
+    {
+      "hanzi": "取闹",
+      "pinyin": "qǔ nào",
+      "gloss": "故意吵闹、惹出事端 | to make trouble"
+    }
+  ],
+  "cy_00169": [
+    {
+      "hanzi": "拐弯",
+      "pinyin": "guǎi wān",
+      "gloss": "转弯、绕弯 | to turn a corner"
+    },
+    {
+      "hanzi": "抹角",
+      "pinyin": "mò jiǎo",
+      "gloss": "挨着墙角绕过去；抹读mò | to go around a corner"
+    }
+  ],
+  "cy_00170": [
+    {
+      "hanzi": "一言",
+      "pinyin": "yī yán",
+      "gloss": "一句话 | even one word"
+    },
+    {
+      "hanzi": "不发",
+      "pinyin": "bù fā",
+      "gloss": "没有说出 | not uttered"
+    }
+  ],
+  "cy_00171": [
+    {
+      "hanzi": "烟消",
+      "pinyin": "yān xiāo",
+      "gloss": "烟消失 | smoke vanishing"
+    },
+    {
+      "hanzi": "云散",
+      "pinyin": "yún sàn",
+      "gloss": "云散开 | clouds dispersing"
+    }
+  ],
+  "cy_00172": [
+    {
+      "hanzi": "单枪",
+      "pinyin": "dān qiāng",
+      "gloss": "只有一杆枪，强调独自上阵 | a single spear"
+    },
+    {
+      "hanzi": "匹马",
+      "pinyin": "pǐ mǎ",
+      "gloss": "只有一匹马 | a lone horse"
+    }
+  ],
+  "cy_00173": [
+    {
+      "hanzi": "滔滔",
+      "pinyin": "tāo tāo",
+      "gloss": "流水连续不断的样子 | flowing continuously"
+    },
+    {
+      "hanzi": "不绝",
+      "pinyin": "bù jué",
+      "gloss": "没有停止 | without interruption"
+    }
+  ],
+  "cy_00174": [
+    {
+      "hanzi": "按部",
+      "pinyin": "àn bù",
+      "gloss": "依照门类、步骤 | according to prescribed stages"
+    },
+    {
+      "hanzi": "就班",
+      "pinyin": "jiù bān",
+      "gloss": "归于次序、依次进行 | following the sequence"
+    }
+  ],
+  "cy_00175": [
+    {
+      "hanzi": "不可",
+      "pinyin": "bù kě",
+      "gloss": "不能 | cannot"
+    },
+    {
+      "hanzi": "告人",
+      "pinyin": "gào rén",
+      "gloss": "告诉别人 | tell others"
+    }
+  ],
+  "cy_00176": [
+    {
+      "hanzi": "不由",
+      "pinyin": "bù yóu",
+      "gloss": "不听由、不受自己控制 | beyond one's control"
+    },
+    {
+      "hanzi": "自主",
+      "pinyin": "zì zhǔ",
+      "gloss": "自己作决定、控制自己 | self-control"
+    }
+  ],
+  "cy_00177": [
+    {
+      "hanzi": "出其",
+      "pinyin": "chū qí",
+      "gloss": "针对对方采取行动；其指对方 | acting upon the other side"
+    },
+    {
+      "hanzi": "不意",
+      "pinyin": "bù yì",
+      "gloss": "没有预料到的时机 | when least expected"
+    }
+  ],
+  "cy_00178": [
+    {
+      "hanzi": "迫",
+      "pinyin": "pò",
+      "gloss": "被逼迫 | forced"
+    },
+    {
+      "hanzi": "不得已",
+      "pinyin": "bù dé yǐ",
+      "gloss": "没有其他办法、不能停止这样做 | having no alternative"
+    }
+  ],
+  "cy_00179": [
+    {
+      "hanzi": "有生",
+      "pinyin": "yǒu shēng",
+      "gloss": "活着的、一生中 | within one's lifetime"
+    },
+    {
+      "hanzi": "之年",
+      "pinyin": "zhī nián",
+      "gloss": "这段岁月 | the years"
+    }
+  ],
+  "cy_00180": [
+    {
+      "hanzi": "善解",
+      "pinyin": "shàn jiě",
+      "gloss": "善于理解 | good at understanding"
+    },
+    {
+      "hanzi": "人意",
+      "pinyin": "rén yì",
+      "gloss": "别人的心意、意图 | others' feelings or intentions"
+    }
+  ],
+  "cy_00181": [
+    {
+      "hanzi": "得寸",
+      "pinyin": "dé cùn",
+      "gloss": "得到一寸 | to gain an inch"
+    },
+    {
+      "hanzi": "进尺",
+      "pinyin": "jìn chǐ",
+      "gloss": "还要进到一尺 | to seek a foot more"
+    }
+  ],
+  "cy_00182": [
+    {
+      "hanzi": "一成",
+      "pinyin": "yī chéng",
+      "gloss": "一经形成 | once established"
+    },
+    {
+      "hanzi": "不变",
+      "pinyin": "bù biàn",
+      "gloss": "不再改变 | unchanged"
+    }
+  ],
+  "cy_00183": [
+    {
+      "hanzi": "一败",
+      "pinyin": "yī bài",
+      "gloss": "一旦失败 | once defeated"
+    },
+    {
+      "hanzi": "涂地",
+      "pinyin": "tú dì",
+      "gloss": "源释中肝脑涂地的败亡形象 | the source image of utter ruin"
+    }
+  ],
+  "cy_00184": [
+    {
+      "hanzi": "天翻",
+      "pinyin": "tiān fān",
+      "gloss": "天翻转 | the sky overturned"
+    },
+    {
+      "hanzi": "地覆",
+      "pinyin": "dì fù",
+      "gloss": "地倒转 | the earth upturned"
+    }
+  ],
+  "cy_00185": [
+    {
+      "hanzi": "东山",
+      "pinyin": "dōng shān",
+      "gloss": "源记录中的会稽东山，是谢安隐居的地名 | Dongshan, the place named in the source"
+    },
+    {
+      "hanzi": "再起",
+      "pinyin": "zài qǐ",
+      "gloss": "重新出来任职或恢复地位 | to rise again"
+    }
+  ],
+  "cy_00186": [
+    {
+      "hanzi": "幸灾",
+      "pinyin": "xìng zāi",
+      "gloss": "因别人的灾难而高兴 | delighting in others' calamity"
+    },
+    {
+      "hanzi": "乐祸",
+      "pinyin": "lè huò",
+      "gloss": "把别人的祸患当作乐事 | enjoying others' misfortune"
+    }
+  ],
+  "cy_00187": [
+    {
+      "hanzi": "自由",
+      "pinyin": "zì yóu",
+      "gloss": "不受拘束 | free"
+    },
+    {
+      "hanzi": "自在",
+      "pinyin": "zì zài",
+      "gloss": "轻松随意、不受约束 | at ease"
+    }
+  ],
+  "cy_00188": [
+    {
+      "hanzi": "易如",
+      "pinyin": "yì rú",
+      "gloss": "容易得像 | as easy as"
+    },
+    {
+      "hanzi": "反掌",
+      "pinyin": "fǎn zhǎng",
+      "gloss": "翻转一下手掌 | turning one's palm"
+    }
+  ],
+  "cy_00189": [
+    {
+      "hanzi": "卷土",
+      "pinyin": "juǎn tǔ",
+      "gloss": "人马奔跑扬起尘土的形象 | dust stirred by advancing forces"
+    },
+    {
+      "hanzi": "重来",
+      "pinyin": "chóng lái",
+      "gloss": "再次回来 | to return again"
+    }
+  ],
+  "cy_00190": [
+    {
+      "hanzi": "说三",
+      "pinyin": "shuō sān",
+      "gloss": "与道四并列，表示胡乱议论而非计数 | a paired phrase for irresponsible talk"
+    },
+    {
+      "hanzi": "道四",
+      "pinyin": "dào sì",
+      "gloss": "与说三并列，表示胡乱评论 | the matching phrase for careless criticism"
+    }
+  ],
+  "cy_00191": [
+    {
+      "hanzi": "脱胎",
+      "pinyin": "tuō tāi",
+      "gloss": "改变原有的凡胎；源释属道教意象 | transformation of the mortal body in the source image"
+    },
+    {
+      "hanzi": "换骨",
+      "pinyin": "huàn gǔ",
+      "gloss": "更换凡骨；源释属道教意象 | transformation of the bones in that image"
+    }
+  ],
+  "cy_00192": [
+    {
+      "hanzi": "当务",
+      "pinyin": "dāng wù",
+      "gloss": "当前应当办理的事情 | the task at hand"
+    },
+    {
+      "hanzi": "之急",
+      "pinyin": "zhī jí",
+      "gloss": "其中最紧急的部分 | its most urgent part"
+    }
+  ],
+  "cy_00193": [
+    {
+      "hanzi": "担惊",
+      "pinyin": "dān jīng",
+      "gloss": "担心受到惊吓 | worried and startled"
+    },
+    {
+      "hanzi": "受怕",
+      "pinyin": "shòu pà",
+      "gloss": "感到害怕 | afraid"
+    }
+  ],
+  "cy_00194": [
+    {
+      "hanzi": "不速",
+      "pinyin": "bù sù",
+      "gloss": "没有邀请；速在此指邀请 | uninvited"
+    },
+    {
+      "hanzi": "之客",
+      "pinyin": "zhī kè",
+      "gloss": "这样的客人 | such a guest"
+    }
+  ],
+  "cy_00195": [
+    {
+      "hanzi": "脱口",
+      "pinyin": "tuō kǒu",
+      "gloss": "不经考虑地说出口 | slipping from one's mouth"
+    },
+    {
+      "hanzi": "而出",
+      "pinyin": "ér chū",
+      "gloss": "随即说出 | coming out"
+    }
+  ],
+  "cy_00196": [
+    {
+      "hanzi": "同心",
+      "pinyin": "tóng xīn",
+      "gloss": "思想、心意一致 | of one mind"
+    },
+    {
+      "hanzi": "协力",
+      "pinyin": "xié lì",
+      "gloss": "合力、共同努力 | cooperating"
+    }
+  ],
+  "cy_00197": [
+    {
+      "hanzi": "独来",
+      "pinyin": "dú lái",
+      "gloss": "独自前来 | coming alone"
+    },
+    {
+      "hanzi": "独往",
+      "pinyin": "dú wǎng",
+      "gloss": "独自离去、行动 | going alone"
+    }
+  ],
+  "cy_00198": [
+    {
+      "hanzi": "惨",
+      "pinyin": "cǎn",
+      "gloss": "凄惨、悲惨 | tragic"
+    },
+    {
+      "hanzi": "不忍",
+      "pinyin": "bù rěn",
+      "gloss": "不忍心 | unable to bear"
+    },
+    {
+      "hanzi": "睹",
+      "pinyin": "dǔ",
+      "gloss": "观看 | to look at"
+    }
+  ],
+  "cy_00199": [
+    {
+      "hanzi": "一网",
+      "pinyin": "yī wǎng",
+      "gloss": "用同一张网全部收住的形象 | one net"
+    },
+    {
+      "hanzi": "打尽",
+      "pinyin": "dǎ jìn",
+      "gloss": "一个不漏地抓住 | to catch them all"
+    }
+  ],
+  "cy_00200": [
+    {
+      "hanzi": "逃之",
+      "pinyin": "táo zhī",
+      "gloss": "逃走；之在此组成固定表达 | to escape"
+    },
+    {
+      "hanzi": "夭夭",
+      "pinyin": "yāo yāo",
+      "gloss": "源释借桃之夭夭谐音，构成诙谐说法 | sound-play echoing 桃之夭夭"
+    }
+  ],
+  "cy_00201": [
+    {
+      "hanzi": "无计",
+      "pinyin": "wú jì",
+      "gloss": "没有办法 | without a plan"
+    },
+    {
+      "hanzi": "可施",
+      "pinyin": "kě shī",
+      "gloss": "可以施行、使用 | available to carry out"
+    }
+  ],
+  "cy_00202": [
+    {
+      "hanzi": "有所",
+      "pinyin": "yǒu suǒ",
+      "gloss": "有可做的事情、有所取得 | having something to"
+    },
+    {
+      "hanzi": "作为",
+      "pinyin": "zuò wéi",
+      "gloss": "做出成绩、采取行动 | achieve or accomplish"
+    }
+  ],
+  "cy_00203": [
+    {
+      "hanzi": "格格",
+      "pinyin": "gé gé",
+      "gloss": "有阻碍、隔阂的样子 | incompatible"
+    },
+    {
+      "hanzi": "不入",
+      "pinyin": "bù rù",
+      "gloss": "无法融入 | not fitting in"
+    }
+  ],
+  "cy_00204": [
+    {
+      "hanzi": "白手",
+      "pinyin": "bái shǒu",
+      "gloss": "空手，没有现成的基础 | empty-handed"
+    },
+    {
+      "hanzi": "起家",
+      "pinyin": "qǐ jiā",
+      "gloss": "创建家业、开始创业 | to build an undertaking"
+    }
+  ],
+  "cy_00205": [
+    {
+      "hanzi": "亲密",
+      "pinyin": "qīn mì",
+      "gloss": "关系紧密、亲近 | close and intimate"
+    },
+    {
+      "hanzi": "无间",
+      "pinyin": "wú jiàn",
+      "gloss": "没有间隙或隔阂；间读jiàn | without a gap"
+    }
+  ],
+  "cy_00206": [
+    {
+      "hanzi": "提心",
+      "pinyin": "tí xīn",
+      "gloss": "心悬起来的担忧形象 | one's heart held in suspense"
+    },
+    {
+      "hanzi": "吊胆",
+      "pinyin": "diào dǎn",
+      "gloss": "胆悬起来的害怕形象 | one's courage hanging in fear"
+    }
+  ],
+  "cy_00207": [
+    {
+      "hanzi": "雪上",
+      "pinyin": "xuě shàng",
+      "gloss": "已有积雪之上 | on existing snow"
+    },
+    {
+      "hanzi": "加霜",
+      "pinyin": "jiā shuāng",
+      "gloss": "再增加一层霜 | adding frost"
+    }
+  ],
+  "cy_00208": [
+    {
+      "hanzi": "混为",
+      "pinyin": "hùn wéi",
+      "gloss": "混在一起当作 | to mix up as"
+    },
+    {
+      "hanzi": "一谈",
+      "pinyin": "yī tán",
+      "gloss": "同一种说法或同一回事 | one and the same matter"
+    }
+  ],
+  "cy_00209": [
+    {
+      "hanzi": "异想",
+      "pinyin": "yì xiǎng",
+      "gloss": "奇异、脱离实际的想法 | a fanciful idea"
+    },
+    {
+      "hanzi": "天开",
+      "pinyin": "tiān kāi",
+      "gloss": "源释中的凭空想象、并非现实的事情 | an imagined impossibility in the source sense"
+    }
+  ],
+  "cy_00210": [
+    {
+      "hanzi": "死里",
+      "pinyin": "sǐ lǐ",
+      "gloss": "极危险、可能死亡的处境 | a deadly situation"
+    },
+    {
+      "hanzi": "逃生",
+      "pinyin": "táo shēng",
+      "gloss": "逃脱而活下来 | to escape alive"
+    }
+  ],
+  "cy_00211": [
+    {
+      "hanzi": "尽如",
+      "pinyin": "jìn rú",
+      "gloss": "完全符合 | entirely in accord with"
+    },
+    {
+      "hanzi": "人意",
+      "pinyin": "rén yì",
+      "gloss": "人的心意、期望 | one's wishes"
+    }
+  ],
+  "cy_00212": [
+    {
+      "hanzi": "焦头",
+      "pinyin": "jiāo tóu",
+      "gloss": "头被烧焦 | a scorched head"
+    },
+    {
+      "hanzi": "烂额",
+      "pinyin": "làn é",
+      "gloss": "额头被灼伤 | a burned forehead"
+    }
+  ],
+  "cy_00213": [
+    {
+      "hanzi": "大海",
+      "pinyin": "dà hǎi",
+      "gloss": "浩大的海洋 | the vast sea"
+    },
+    {
+      "hanzi": "捞针",
+      "pinyin": "lāo zhēn",
+      "gloss": "寻找、捞取一根细针 | to retrieve a needle"
+    }
+  ],
+  "cy_00214": [
+    {
+      "hanzi": "年",
+      "pinyin": "nián",
+      "gloss": "一年、一段年份 | a year"
+    },
+    {
+      "hanzi": "复",
+      "pinyin": "fù",
+      "gloss": "又、再 | again"
+    },
+    {
+      "hanzi": "一年",
+      "pinyin": "yī nián",
+      "gloss": "又一个年头 | another year"
+    }
+  ],
+  "cy_00215": [
+    {
+      "hanzi": "无价",
+      "pinyin": "wú jià",
+      "gloss": "无法用价格衡量 | beyond pricing"
+    },
+    {
+      "hanzi": "之宝",
+      "pinyin": "zhī bǎo",
+      "gloss": "这样的珍宝 | such a treasure"
+    }
+  ],
+  "cy_00216": [
+    {
+      "hanzi": "手足",
+      "pinyin": "shǒu zú",
+      "gloss": "双手和双脚 | hands and feet"
+    },
+    {
+      "hanzi": "无措",
+      "pinyin": "wú cuò",
+      "gloss": "不知放在哪里、不知如何应对 | not knowing where to place them"
+    }
+  ],
+  "cy_00217": [
+    {
+      "hanzi": "坐立",
+      "pinyin": "zuò lì",
+      "gloss": "坐着或站着 | sitting or standing"
+    },
+    {
+      "hanzi": "不安",
+      "pinyin": "bù ān",
+      "gloss": "不得安稳、心情紧张 | restless"
+    }
+  ],
+  "cy_00218": [
+    {
+      "hanzi": "遮遮",
+      "pinyin": "zhē zhē",
+      "gloss": "遮盖、不让人看清 | concealing"
+    },
+    {
+      "hanzi": "掩掩",
+      "pinyin": "yǎn yǎn",
+      "gloss": "隐瞒、不充分透露 | hiding"
+    }
+  ],
+  "cy_00219": [
+    {
+      "hanzi": "坚持",
+      "pinyin": "jiān chí",
+      "gloss": "持之以恒、继续做 | to persist"
+    },
+    {
+      "hanzi": "不懈",
+      "pinyin": "bù xiè",
+      "gloss": "不松懈 | without slackening"
+    }
+  ],
+  "cy_00220": [
+    {
+      "hanzi": "赴汤",
+      "pinyin": "fù tāng",
+      "gloss": "走进沸水；汤在此指热水 | to enter boiling water"
+    },
+    {
+      "hanzi": "蹈火",
+      "pinyin": "dǎo huǒ",
+      "gloss": "踏入烈火 | to tread into fire"
+    }
+  ],
+  "cy_00221": [
+    {
+      "hanzi": "大吵",
+      "pinyin": "dà chǎo",
+      "gloss": "激烈争吵 | loud arguing"
+    },
+    {
+      "hanzi": "大闹",
+      "pinyin": "dà nào",
+      "gloss": "大声吵闹、骚动 | noisy uproar"
+    }
+  ],
+  "cy_00222": [
+    {
+      "hanzi": "战",
+      "pinyin": "zhàn",
+      "gloss": "作战、交战 | to fight"
+    },
+    {
+      "hanzi": "无不胜",
+      "pinyin": "wú bù shèng",
+      "gloss": "没有不获胜的情况 | always victorious"
+    }
+  ],
+  "cy_00223": [
+    {
+      "hanzi": "华",
+      "pinyin": "huá",
+      "gloss": "开花、花开得好看 | to bloom"
+    },
+    {
+      "hanzi": "而",
+      "pinyin": "ér",
+      "gloss": "转折连接，表示但是 | yet"
+    },
+    {
+      "hanzi": "不实",
+      "pinyin": "bù shí",
+      "gloss": "不结出果实 | bearing no fruit"
+    }
+  ],
+  "cy_00224": [
+    {
+      "hanzi": "自食",
+      "pinyin": "zì shí",
+      "gloss": "自己吃下、承受 | to consume or suffer oneself"
+    },
+    {
+      "hanzi": "其果",
+      "pinyin": "qí guǒ",
+      "gloss": "自己行为造成的后果 | the fruit of one's actions"
+    }
+  ],
+  "cy_00225": [
+    {
+      "hanzi": "活蹦",
+      "pinyin": "huó bèng",
+      "gloss": "活泼地蹦跳 | lively bouncing"
+    },
+    {
+      "hanzi": "乱跳",
+      "pinyin": "luàn tiào",
+      "gloss": "不断跳动的活跃样子 | energetic jumping"
+    }
+  ],
+  "cy_00226": [
+    {
+      "hanzi": "无法",
+      "pinyin": "wú fǎ",
+      "gloss": "不顾法纪 | disregarding the law"
+    },
+    {
+      "hanzi": "无天",
+      "pinyin": "wú tiān",
+      "gloss": "不顾天理或规范 | disregarding moral order"
+    }
+  ],
+  "cy_00227": [
+    {
+      "hanzi": "通情",
+      "pinyin": "tōng qíng",
+      "gloss": "懂得人之常情 | to understand human feelings"
+    },
+    {
+      "hanzi": "达理",
+      "pinyin": "dá lǐ",
+      "gloss": "懂得并尊重道理 | to be reasonable"
+    }
+  ],
+  "cy_00228": [
+    {
+      "hanzi": "打草",
+      "pinyin": "dǎ cǎo",
+      "gloss": "击打、拨动草丛 | to strike the grass"
+    },
+    {
+      "hanzi": "惊蛇",
+      "pinyin": "jīng shé",
+      "gloss": "使蛇受到惊动 | to startle a snake"
+    }
+  ],
+  "cy_00229": [
+    {
+      "hanzi": "寻欢",
+      "pinyin": "xún huān",
+      "gloss": "寻找欢乐 | to seek pleasure"
+    },
+    {
+      "hanzi": "作乐",
+      "pinyin": "zuò lè",
+      "gloss": "设法取乐 | to amuse oneself"
+    }
+  ],
+  "cy_00230": [
+    {
+      "hanzi": "如释",
+      "pinyin": "rú shì",
+      "gloss": "好像放下、释放 | as if relieved of"
+    },
+    {
+      "hanzi": "重负",
+      "pinyin": "zhòng fù",
+      "gloss": "沉重的负担 | a heavy burden"
+    }
+  ],
+  "cy_00231": [
+    {
+      "hanzi": "后会",
+      "pinyin": "hòu huì",
+      "gloss": "以后再见面 | to meet again later"
+    },
+    {
+      "hanzi": "有期",
+      "pinyin": "yǒu qī",
+      "gloss": "有约定或可期待的时间 | at a future time"
+    }
+  ],
+  "cy_00232": [
+    {
+      "hanzi": "身",
+      "pinyin": "shēn",
+      "gloss": "自己、身体 | oneself"
+    },
+    {
+      "hanzi": "不由己",
+      "pinyin": "bù yóu jǐ",
+      "gloss": "不能由自己作主 | beyond one's own control"
+    }
+  ],
+  "cy_00233": [
+    {
+      "hanzi": "心满",
+      "pinyin": "xīn mǎn",
+      "gloss": "心中得到满足 | satisfied at heart"
+    },
+    {
+      "hanzi": "意足",
+      "pinyin": "yì zú",
+      "gloss": "愿望充分满足；足在此指满足 | one's wishes fulfilled"
+    }
+  ],
+  "cy_00234": [
+    {
+      "hanzi": "心平",
+      "pinyin": "xīn píng",
+      "gloss": "心情平静 | a calm mind"
+    },
+    {
+      "hanzi": "气和",
+      "pinyin": "qì hé",
+      "gloss": "态度温和、气息平和 | a gentle manner"
+    }
+  ],
+  "cy_00235": [
+    {
+      "hanzi": "融为",
+      "pinyin": "róng wéi",
+      "gloss": "融合成为 | to merge into"
+    },
+    {
+      "hanzi": "一体",
+      "pinyin": "yī tǐ",
+      "gloss": "一个整体 | a single whole"
+    }
+  ],
+  "cy_00236": [
+    {
+      "hanzi": "孤军",
+      "pinyin": "gū jūn",
+      "gloss": "孤立、没有支援的军队 | an unsupported force"
+    },
+    {
+      "hanzi": "奋战",
+      "pinyin": "fèn zhàn",
+      "gloss": "尽力战斗 | to fight with all one's strength"
+    }
+  ],
+  "cy_00237": [
+    {
+      "hanzi": "蠢蠢",
+      "pinyin": "chǔn chǔn",
+      "gloss": "源释中爬虫蠕动的样子 | the source image of creatures stirring"
+    },
+    {
+      "hanzi": "欲动",
+      "pinyin": "yù dòng",
+      "gloss": "准备、想要采取行动 | ready to move"
+    }
+  ],
+  "cy_00238": [
+    {
+      "hanzi": "针锋",
+      "pinyin": "zhēn fēng",
+      "gloss": "针的尖端 | a needle point"
+    },
+    {
+      "hanzi": "相对",
+      "pinyin": "xiāng duì",
+      "gloss": "彼此对着、对立 | opposing each other"
+    }
+  ],
+  "cy_00239": [
+    {
+      "hanzi": "改邪",
+      "pinyin": "gǎi xié",
+      "gloss": "改掉不正当行为 | to abandon wrongdoing"
+    },
+    {
+      "hanzi": "归正",
+      "pinyin": "guī zhèng",
+      "gloss": "回到正当的道路 | to return to the right path"
+    }
+  ],
+  "cy_00240": [
+    {
+      "hanzi": "长生",
+      "pinyin": "cháng shēng",
+      "gloss": "永远活着的愿望 | enduring life"
+    },
+    {
+      "hanzi": "不老",
+      "pinyin": "bù lǎo",
+      "gloss": "不衰老 | never aging"
+    }
+  ],
+  "cy_00241": [
+    {
+      "hanzi": "赏心",
+      "pinyin": "shǎng xīn",
+      "gloss": "使心情愉悦 | pleasing to the heart"
+    },
+    {
+      "hanzi": "悦目",
+      "pinyin": "yuè mù",
+      "gloss": "使眼睛看着舒服 | pleasing to the eye"
+    }
+  ],
+  "cy_00242": [
+    {
+      "hanzi": "近在",
+      "pinyin": "jìn zài",
+      "gloss": "就在很近的地方 | close at hand"
+    },
+    {
+      "hanzi": "咫尺",
+      "pinyin": "zhǐ chǐ",
+      "gloss": "很短的距离 | a very short distance"
+    }
+  ],
+  "cy_00243": [
+    {
+      "hanzi": "紧要",
+      "pinyin": "jǐn yào",
+      "gloss": "紧急而重要 | critical"
+    },
+    {
+      "hanzi": "关头",
+      "pinyin": "guān tóu",
+      "gloss": "关键时刻、决定成败的时机 | a decisive moment"
+    }
+  ],
+  "cy_00244": [
+    {
+      "hanzi": "销声",
+      "pinyin": "xiāo shēng",
+      "gloss": "声音消失、不再公开发声 | to fall silent"
+    },
+    {
+      "hanzi": "匿迹",
+      "pinyin": "nì jì",
+      "gloss": "隐藏踪迹、不再露面 | to disappear from view"
+    }
+  ],
+  "cy_00245": [
+    {
+      "hanzi": "鸡毛",
+      "pinyin": "jī máo",
+      "gloss": "鸡的羽毛，琐小事物的形象 | chicken feathers"
+    },
+    {
+      "hanzi": "蒜皮",
+      "pinyin": "suàn pí",
+      "gloss": "蒜的薄皮，琐小事物的形象 | garlic skins"
+    }
+  ],
+  "cy_00246": [
+    {
+      "hanzi": "昏昏",
+      "pinyin": "hūn hūn",
+      "gloss": "昏沉、精神不振的样子 | drowsy"
+    },
+    {
+      "hanzi": "欲睡",
+      "pinyin": "yù shuì",
+      "gloss": "想要睡觉 | wanting to sleep"
+    }
+  ],
+  "cy_00247": [
+    {
+      "hanzi": "当之",
+      "pinyin": "dāng zhī",
+      "gloss": "承担、配得上这个称号或荣誉 | to merit it"
+    },
+    {
+      "hanzi": "无愧",
+      "pinyin": "wú kuì",
+      "gloss": "无须惭愧 | without shame"
+    }
+  ],
+  "cy_00248": [
+    {
+      "hanzi": "刀枪",
+      "pinyin": "dāo qiāng",
+      "gloss": "刀和枪等武器 | blades and spears"
+    },
+    {
+      "hanzi": "不入",
+      "pinyin": "bù rù",
+      "gloss": "不能穿入、刺入 | unable to penetrate"
+    }
+  ],
+  "cy_00249": [
+    {
+      "hanzi": "重操",
+      "pinyin": "chóng cāo",
+      "gloss": "再次从事 | to resume"
+    },
+    {
+      "hanzi": "旧业",
+      "pinyin": "jiù yè",
+      "gloss": "原来的职业或活动 | one's former work"
+    }
+  ],
+  "cy_00250": [
+    {
+      "hanzi": "土生",
+      "pinyin": "tǔ shēng",
+      "gloss": "在当地出生或形成 | born locally"
+    },
+    {
+      "hanzi": "土长",
+      "pinyin": "tǔ zhǎng",
+      "gloss": "在当地长大 | raised locally"
+    }
+  ],
+  "cy_00251": [
+    {
+      "hanzi": "前功",
+      "pinyin": "qián gōng",
+      "gloss": "以前的功劳、努力 | earlier achievement or effort"
+    },
+    {
+      "hanzi": "尽弃",
+      "pinyin": "jìn qì",
+      "gloss": "全部丢弃、白费 | all lost"
+    }
+  ],
+  "cy_00252": [
+    {
+      "hanzi": "水深",
+      "pinyin": "shuǐ shēn",
+      "gloss": "水越来越深的困境形象 | deep water"
+    },
+    {
+      "hanzi": "火热",
+      "pinyin": "huǒ rè",
+      "gloss": "火越来越热的困境形象 | scorching fire"
+    }
+  ],
+  "cy_00253": [
+    {
+      "hanzi": "翻天",
+      "pinyin": "fān tiān",
+      "gloss": "把天翻转过来的形象 | overturning the sky"
+    },
+    {
+      "hanzi": "覆地",
+      "pinyin": "fù dì",
+      "gloss": "把地倒转的形象 | upturning the earth"
+    }
+  ],
+  "cy_00254": [
+    {
+      "hanzi": "事",
+      "pinyin": "shì",
+      "gloss": "实际发生的情况 | actual events"
+    },
+    {
+      "hanzi": "与",
+      "pinyin": "yǔ",
+      "gloss": "与、相对于 | against"
+    },
+    {
+      "hanzi": "愿违",
+      "pinyin": "yuàn wéi",
+      "gloss": "与原来的愿望相反 | contrary to one's wishes"
+    }
+  ],
+  "cy_00255": [
+    {
+      "hanzi": "打成",
+      "pinyin": "dǎ chéng",
+      "gloss": "形成、结合成 | to form"
+    },
+    {
+      "hanzi": "一片",
+      "pinyin": "yī piàn",
+      "gloss": "一个相连的整体 | one united whole"
+    }
+  ],
+  "cy_00256": [
+    {
+      "hanzi": "如鱼",
+      "pinyin": "rú yú",
+      "gloss": "好像鱼 | like a fish"
+    },
+    {
+      "hanzi": "得水",
+      "pinyin": "dé shuǐ",
+      "gloss": "得到赖以活动的水 | gaining water to live in"
+    }
+  ],
+  "cy_00257": [
+    {
+      "hanzi": "千里",
+      "pinyin": "qiān lǐ",
+      "gloss": "很长的距离 | a thousand li, a long distance"
+    },
+    {
+      "hanzi": "迢迢",
+      "pinyin": "tiáo tiáo",
+      "gloss": "遥远的样子 | far away"
+    }
+  ],
+  "cy_00258": [
+    {
+      "hanzi": "乳臭",
+      "pinyin": "rǔ xiù",
+      "gloss": "奶的气味；臭在此读xiù | the smell of milk"
+    },
+    {
+      "hanzi": "未干",
+      "pinyin": "wèi gān",
+      "gloss": "尚未消退的字面形象 | not yet faded"
+    }
+  ],
+  "cy_00259": [
+    {
+      "hanzi": "无拘",
+      "pinyin": "wú jū",
+      "gloss": "没有限制 | unrestricted"
+    },
+    {
+      "hanzi": "无束",
+      "pinyin": "wú shù",
+      "gloss": "没有约束 | unbound"
+    }
+  ],
+  "cy_00260": [
+    {
+      "hanzi": "据为",
+      "pinyin": "jù wéi",
+      "gloss": "占有并当作 | to take possession as"
+    },
+    {
+      "hanzi": "己有",
+      "pinyin": "jǐ yǒu",
+      "gloss": "自己的财物 | one's own possession"
+    }
+  ],
+  "cy_00261": [
+    {
+      "hanzi": "面目",
+      "pinyin": "miàn mù",
+      "gloss": "外表、样子 | appearance"
+    },
+    {
+      "hanzi": "全非",
+      "pinyin": "quán fēi",
+      "gloss": "完全不同、不再相似 | completely altered"
+    }
+  ],
+  "cy_00262": [
+    {
+      "hanzi": "背道",
+      "pinyin": "bèi dào",
+      "gloss": "背向原来的道路 | contrary to the path"
+    },
+    {
+      "hanzi": "而驰",
+      "pinyin": "ér chí",
+      "gloss": "奔跑而去 | running away"
+    }
+  ],
+  "cy_00263": [
+    {
+      "hanzi": "无精打采",
+      "pinyin": "wú jīng dǎ cǎi",
+      "gloss": "精神不振、提不起兴致；本条按整体词义理解 | listless and lacking energy"
+    }
+  ],
+  "cy_00264": [
+    {
+      "hanzi": "新陈",
+      "pinyin": "xīn chén",
+      "gloss": "新的和陈旧的物质或事物 | the new and the old"
+    },
+    {
+      "hanzi": "代谢",
+      "pinyin": "dài xiè",
+      "gloss": "新者替换旧者，旧者衰退 | renewal and removal"
+    }
+  ],
+  "cy_00265": [
+    {
+      "hanzi": "不计",
+      "pinyin": "bù jì",
+      "gloss": "不能计算清楚 | beyond counting"
+    },
+    {
+      "hanzi": "其数",
+      "pinyin": "qí shù",
+      "gloss": "它们的数量 | their number"
+    }
+  ],
+  "cy_00266": [
+    {
+      "hanzi": "两手",
+      "pinyin": "liǎng shǒu",
+      "gloss": "双手，指手头所持有的东西 | both hands"
+    },
+    {
+      "hanzi": "空空",
+      "pinyin": "kōng kōng",
+      "gloss": "什么也没有 | completely empty"
+    }
+  ],
+  "cy_00267": [
+    {
+      "hanzi": "坚",
+      "pinyin": "jiān",
+      "gloss": "非常坚固 | strong"
+    },
+    {
+      "hanzi": "不可摧",
+      "pinyin": "bù kě cuī",
+      "gloss": "不能摧毁 | indestructible"
+    }
+  ],
+  "cy_00268": [
+    {
+      "hanzi": "毁于",
+      "pinyin": "huǐ yú",
+      "gloss": "在某个时间被毁掉 | destroyed in"
+    },
+    {
+      "hanzi": "一旦",
+      "pinyin": "yī dàn",
+      "gloss": "很短的时间，源释为一天 | a single day or moment"
+    }
+  ],
+  "cy_00269": [
+    {
+      "hanzi": "默默",
+      "pinyin": "mò mò",
+      "gloss": "不声张、没有声音 | quietly"
+    },
+    {
+      "hanzi": "无闻",
+      "pinyin": "wú wén",
+      "gloss": "没有名声、不为人所知 | unknown"
+    }
+  ],
+  "cy_00270": [
+    {
+      "hanzi": "公事",
+      "pinyin": "gōng shì",
+      "gloss": "公共事务 | official business"
+    },
+    {
+      "hanzi": "公办",
+      "pinyin": "gōng bàn",
+      "gloss": "按公共原则办理 | handled impartially"
+    }
+  ],
+  "cy_00271": [
+    {
+      "hanzi": "不闻",
+      "pinyin": "bù wén",
+      "gloss": "不听取消息；闻在此指听 | not listening"
+    },
+    {
+      "hanzi": "不问",
+      "pinyin": "bù wèn",
+      "gloss": "不主动询问 | not asking"
+    }
+  ],
+  "cy_00272": [
+    {
+      "hanzi": "倾家",
+      "pinyin": "qīng jiā",
+      "gloss": "把家中财物倒空 | to empty one's household wealth"
+    },
+    {
+      "hanzi": "荡产",
+      "pinyin": "dàng chǎn",
+      "gloss": "把财产用尽、弄光 | to exhaust one's property"
+    }
+  ],
+  "cy_00273": [
+    {
+      "hanzi": "听天",
+      "pinyin": "tīng tiān",
+      "gloss": "听任自然发展 | to leave matters to nature"
+    },
+    {
+      "hanzi": "由命",
+      "pinyin": "yóu mìng",
+      "gloss": "任由命运决定 | to leave them to fate"
+    }
+  ],
+  "cy_00274": [
+    {
+      "hanzi": "破镜",
+      "pinyin": "pò jìng",
+      "gloss": "破裂的镜子 | a broken mirror"
+    },
+    {
+      "hanzi": "重圆",
+      "pinyin": "chóng yuán",
+      "gloss": "重新完整、重新团圆 | made whole again"
+    }
+  ],
+  "cy_00275": [
+    {
+      "hanzi": "人之",
+      "pinyin": "rén zhī",
+      "gloss": "人们所具有的 | people's"
+    },
+    {
+      "hanzi": "常情",
+      "pinyin": "cháng qíng",
+      "gloss": "通常的感情和反应 | ordinary human feelings"
+    }
+  ],
+  "cy_00276": [
+    {
+      "hanzi": "出生",
+      "pinyin": "chū shēng",
+      "gloss": "源释旧义指来到世上；整词现代用法说经历危险 | coming into life in the older recorded sense"
+    },
+    {
+      "hanzi": "入死",
+      "pinyin": "rù sǐ",
+      "gloss": "进入死亡或可能死亡的处境 | entering mortal danger"
+    }
+  ],
+  "cy_00277": [
+    {
+      "hanzi": "大相",
+      "pinyin": "dà xiāng",
+      "gloss": "相差很大 | greatly different"
+    },
+    {
+      "hanzi": "径庭",
+      "pinyin": "jìng tíng",
+      "gloss": "源释中以小路和庭院表示悬殊 | wide divergence in the source sense"
+    }
+  ],
+  "cy_00278": [
+    {
+      "hanzi": "操之",
+      "pinyin": "cāo zhī",
+      "gloss": "处理、办理这件事 | to handle it"
+    },
+    {
+      "hanzi": "过急",
+      "pinyin": "guò jí",
+      "gloss": "过分急躁 | too hastily"
+    }
+  ],
+  "cy_00279": [
+    {
+      "hanzi": "机",
+      "pinyin": "jī",
+      "gloss": "机会、时机 | an opportunity"
+    },
+    {
+      "hanzi": "不可失",
+      "pinyin": "bù kě shī",
+      "gloss": "不能错过 | not to be missed"
+    }
+  ],
+  "cy_00280": [
+    {
+      "hanzi": "冷嘲",
+      "pinyin": "lěng cháo",
+      "gloss": "严峻、冷淡的讥笑 | cold mockery"
+    },
+    {
+      "hanzi": "热讽",
+      "pinyin": "rè fěng",
+      "gloss": "辛辣的讽刺 | biting sarcasm"
+    }
+  ],
+  "cy_00281": [
+    {
+      "hanzi": "吹毛",
+      "pinyin": "chuī máo",
+      "gloss": "吹开皮上的毛 | to blow aside fur"
+    },
+    {
+      "hanzi": "求疵",
+      "pinyin": "qiú cī",
+      "gloss": "找寻疤痕、毛病 | to seek flaws"
+    }
+  ],
+  "cy_00282": [
+    {
+      "hanzi": "火上",
+      "pinyin": "huǒ shàng",
+      "gloss": "在已有的火势之上 | onto a fire"
+    },
+    {
+      "hanzi": "浇油",
+      "pinyin": "jiāo yóu",
+      "gloss": "倒上油 | to pour oil"
+    }
+  ],
+  "cy_00283": [
+    {
+      "hanzi": "一丝",
+      "pinyin": "yī sī",
+      "gloss": "一点点、极小的程度 | even the slightest amount"
+    },
+    {
+      "hanzi": "不苟",
+      "pinyin": "bù gǒu",
+      "gloss": "不马虎、不草率 | not careless"
+    }
+  ],
+  "cy_00284": [
+    {
+      "hanzi": "一年",
+      "pinyin": "yī nián",
+      "gloss": "每一年 | each year"
+    },
+    {
+      "hanzi": "一度",
+      "pinyin": "yī dù",
+      "gloss": "一次；度在此指次数 | once"
+    }
+  ],
+  "cy_00285": [
+    {
+      "hanzi": "忠心",
+      "pinyin": "zhōng xīn",
+      "gloss": "忠诚的心意 | loyalty"
+    },
+    {
+      "hanzi": "耿耿",
+      "pinyin": "gěng gěng",
+      "gloss": "忠诚坚定的样子 | steadfastly devoted"
+    }
+  ],
+  "cy_00286": [
+    {
+      "hanzi": "恨之",
+      "pinyin": "hèn zhī",
+      "gloss": "痛恨它或他 | to hate it or them"
+    },
+    {
+      "hanzi": "入骨",
+      "pinyin": "rù gǔ",
+      "gloss": "深到骨头里的夸张形象 | to the bones"
+    }
+  ],
+  "cy_00287": [
+    {
+      "hanzi": "悲痛",
+      "pinyin": "bēi tòng",
+      "gloss": "悲伤、痛苦 | grief"
+    },
+    {
+      "hanzi": "欲绝",
+      "pinyin": "yù jué",
+      "gloss": "悲痛几乎到了尽头的夸张说法 | almost overwhelmed"
+    }
+  ],
+  "cy_00288": [
+    {
+      "hanzi": "关门",
+      "pinyin": "guān mén",
+      "gloss": "商店或企业停止营业 | to close down"
+    },
+    {
+      "hanzi": "大吉",
+      "pinyin": "dà jí",
+      "gloss": "字面为非常吉利，整词借反话说停业 | great good fortune, used ironically here"
+    }
+  ],
+  "cy_00289": [
+    {
+      "hanzi": "有条",
+      "pinyin": "yǒu tiáo",
+      "gloss": "有条理 | orderly"
+    },
+    {
+      "hanzi": "不紊",
+      "pinyin": "bù wěn",
+      "gloss": "没有混乱 | not disordered"
+    }
+  ],
+  "cy_00290": [
+    {
+      "hanzi": "误入",
+      "pinyin": "wù rù",
+      "gloss": "受迷惑、错误地进入 | to enter mistakenly"
+    },
+    {
+      "hanzi": "歧途",
+      "pinyin": "qí tú",
+      "gloss": "错误的道路 | a wrong path"
+    }
+  ],
+  "cy_00291": [
+    {
+      "hanzi": "灰飞",
+      "pinyin": "huī fēi",
+      "gloss": "灰尘飞散 | ashes scattered"
+    },
+    {
+      "hanzi": "烟灭",
+      "pinyin": "yān miè",
+      "gloss": "烟消失 | smoke vanishing"
+    }
+  ],
+  "cy_00292": [
+    {
+      "hanzi": "遥遥",
+      "pinyin": "yáo yáo",
+      "gloss": "远远地 | far ahead"
+    },
+    {
+      "hanzi": "领先",
+      "pinyin": "lǐng xiān",
+      "gloss": "走在前面 | to lead"
+    }
+  ],
+  "cy_00293": [
+    {
+      "hanzi": "一刀",
+      "pinyin": "yī dāo",
+      "gloss": "用一刀 | one cut"
+    },
+    {
+      "hanzi": "两断",
+      "pinyin": "liǎng duàn",
+      "gloss": "切成两段 | into two separate pieces"
+    }
+  ],
+  "cy_00294": [
+    {
+      "hanzi": "叹为",
+      "pinyin": "tàn wéi",
+      "gloss": "赞赏、认为 | to acclaim as"
+    },
+    {
+      "hanzi": "观止",
+      "pinyin": "guān zhǐ",
+      "gloss": "看到这里已到极好、无须再看 | the finest sight one needs to see"
+    }
+  ],
+  "cy_00295": [
+    {
+      "hanzi": "众矢",
+      "pinyin": "zhòng shǐ",
+      "gloss": "众多箭矢 | many arrows"
+    },
+    {
+      "hanzi": "之的",
+      "pinyin": "zhī dì",
+      "gloss": "它们射向的靶心；的读dì | the target they aim at"
+    }
+  ],
+  "cy_00296": [
+    {
+      "hanzi": "一言",
+      "pinyin": "yī yán",
+      "gloss": "一句话 | a single sentence"
+    },
+    {
+      "hanzi": "难尽",
+      "pinyin": "nán jìn",
+      "gloss": "难以全部说清 | unable to explain fully"
+    }
+  ],
+  "cy_00297": [
+    {
+      "hanzi": "家喻",
+      "pinyin": "jiā yù",
+      "gloss": "家家都明白 | known to every family"
+    },
+    {
+      "hanzi": "户晓",
+      "pinyin": "hù xiǎo",
+      "gloss": "户户都知道 | known in every household"
+    }
+  ],
+  "cy_00298": [
+    {
+      "hanzi": "微乎",
+      "pinyin": "wēi hū",
+      "gloss": "非常微小；乎连接加强描述 | tiny, with an expressive connective"
+    },
+    {
+      "hanzi": "其微",
+      "pinyin": "qí wēi",
+      "gloss": "微小到极点 | exceedingly small"
+    }
+  ],
+  "cy_00299": [
+    {
+      "hanzi": "无地",
+      "pinyin": "wú dì",
+      "gloss": "没有地方 | nowhere"
+    },
+    {
+      "hanzi": "自容",
+      "pinyin": "zì róng",
+      "gloss": "让自己容身 | to place oneself"
+    }
+  ],
+  "cy_00300": [
+    {
+      "hanzi": "所向",
+      "pinyin": "suǒ xiàng",
+      "gloss": "力量所到的方向 | wherever the force goes"
+    },
+    {
+      "hanzi": "披靡",
+      "pinyin": "pī mǐ",
+      "gloss": "被击溃、溃散的样子 | collapsing in defeat"
+    }
+  ],
+  "cy_00301": [
+    {
+      "hanzi": "敲诈",
+      "pinyin": "qiāo zhà",
+      "gloss": "用恐吓、要挟骗取财物 | extortion"
+    },
+    {
+      "hanzi": "勒索",
+      "pinyin": "lè suǒ",
+      "gloss": "用威胁强行索取 | to demand through coercion"
+    }
+  ],
+  "cy_00302": [
+    {
+      "hanzi": "炙手可热",
+      "pinyin": "zhì shǒu kě rè",
+      "gloss": "字面形象为热得烫手 | so hot that it scorches the hand"
+    }
+  ],
+  "cy_00303": [
+    {
+      "hanzi": "记忆",
+      "pinyin": "jì yì",
+      "gloss": "保留在心中的印象 | memory"
+    },
+    {
+      "hanzi": "犹新",
+      "pinyin": "yóu xīn",
+      "gloss": "仍像新发生的事一样 | still fresh"
+    }
+  ],
+  "cy_00304": [
+    {
+      "hanzi": "随机",
+      "pinyin": "suí jī",
+      "gloss": "随着时机、形势 | according to the situation"
+    },
+    {
+      "hanzi": "应变",
+      "pinyin": "yìng biàn",
+      "gloss": "应付变化 | to adapt"
+    }
+  ],
+  "cy_00305": [
+    {
+      "hanzi": "不遗",
+      "pinyin": "bù yí",
+      "gloss": "不留下、不保留 | sparing none"
+    },
+    {
+      "hanzi": "余力",
+      "pinyin": "yú lì",
+      "gloss": "剩余的力量 | remaining effort"
+    }
+  ],
+  "cy_00306": [
+    {
+      "hanzi": "生吞",
+      "pinyin": "shēng tūn",
+      "gloss": "不加处理就吞下的形象 | swallowing raw"
+    },
+    {
+      "hanzi": "活剥",
+      "pinyin": "huó bō",
+      "gloss": "生硬剥取的形象 | stripping away without processing"
+    }
+  ],
+  "cy_00307": [
+    {
+      "hanzi": "赤手",
+      "pinyin": "chì shǒu",
+      "gloss": "空手、没有武器 | bare hands"
+    },
+    {
+      "hanzi": "空拳",
+      "pinyin": "kōng quán",
+      "gloss": "拳中没有东西 | empty fists"
+    }
+  ],
+  "cy_00308": [
+    {
+      "hanzi": "不足",
+      "pinyin": "bù zú",
+      "gloss": "不值得 | not worth"
+    },
+    {
+      "hanzi": "为奇",
+      "pinyin": "wéi qí",
+      "gloss": "当作奇怪的事情 | considering unusual"
+    }
+  ],
+  "cy_00309": [
+    {
+      "hanzi": "手忙",
+      "pinyin": "shǒu máng",
+      "gloss": "双手忙乱 | hands in a flurry"
+    },
+    {
+      "hanzi": "脚乱",
+      "pinyin": "jiǎo luàn",
+      "gloss": "双脚动作慌乱 | feet in disorder"
+    }
+  ],
+  "cy_00310": [
+    {
+      "hanzi": "相依",
+      "pinyin": "xiāng yī",
+      "gloss": "互相依靠 | depending on each other"
+    },
+    {
+      "hanzi": "为命",
+      "pinyin": "wéi mìng",
+      "gloss": "以此维持生活 | for survival"
+    }
+  ],
+  "cy_00311": [
+    {
+      "hanzi": "无中",
+      "pinyin": "wú zhōng",
+      "gloss": "在没有的情况下 | out of nothing"
+    },
+    {
+      "hanzi": "生有",
+      "pinyin": "shēng yǒu",
+      "gloss": "产生出有的东西 | to produce something"
+    }
+  ],
+  "cy_00312": [
+    {
+      "hanzi": "拿手",
+      "pinyin": "ná shǒu",
+      "gloss": "特别擅长 | one's specialty"
+    },
+    {
+      "hanzi": "好戏",
+      "pinyin": "hǎo xì",
+      "gloss": "擅长的剧目或本领 | a fine performance or skill"
+    }
+  ],
+  "cy_00313": [
+    {
+      "hanzi": "畅",
+      "pinyin": "chàng",
+      "gloss": "尽情、痛快 | freely"
+    },
+    {
+      "hanzi": "所欲言",
+      "pinyin": "suǒ yù yán",
+      "gloss": "自己想要说的话 | what one wants to say"
+    }
+  ],
+  "cy_00314": [
+    {
+      "hanzi": "先发",
+      "pinyin": "xiān fā",
+      "gloss": "先开始行动 | to act first"
+    },
+    {
+      "hanzi": "制人",
+      "pinyin": "zhì rén",
+      "gloss": "控制、制服对方 | to gain control over the other side"
+    }
+  ],
+  "cy_00315": [
+    {
+      "hanzi": "垂死",
+      "pinyin": "chuí sǐ",
+      "gloss": "接近死亡、灭亡 | near death"
+    },
+    {
+      "hanzi": "挣扎",
+      "pinyin": "zhēng zhá",
+      "gloss": "努力抵抗、企图延续 | to struggle"
+    }
+  ],
+  "cy_00316": [
+    {
+      "hanzi": "自力",
+      "pinyin": "zì lì",
+      "gloss": "自己的力量 | one's own effort"
+    },
+    {
+      "hanzi": "更生",
+      "pinyin": "gēng shēng",
+      "gloss": "重新获得生机、重新振作 | to revive"
+    }
+  ],
+  "cy_00317": [
+    {
+      "hanzi": "始",
+      "pinyin": "shǐ",
+      "gloss": "最先、开始 | the first"
+    },
+    {
+      "hanzi": "作俑",
+      "pinyin": "zuò yǒng",
+      "gloss": "制作殉葬人像 | to make burial figurines"
+    },
+    {
+      "hanzi": "者",
+      "pinyin": "zhě",
+      "gloss": "做这件事的人 | the person who does it"
+    }
+  ],
+  "cy_00318": [
+    {
+      "hanzi": "死于",
+      "pinyin": "sǐ yú",
+      "gloss": "因某种情况而死亡 | to die through"
+    },
+    {
+      "hanzi": "非命",
+      "pinyin": "fēi mìng",
+      "gloss": "意外灾祸、横死 | an unnatural death"
+    }
+  ],
+  "cy_00319": [
+    {
+      "hanzi": "我行",
+      "pinyin": "wǒ xíng",
+      "gloss": "我照自己的方式行动 | I act my way"
+    },
+    {
+      "hanzi": "我素",
+      "pinyin": "wǒ sù",
+      "gloss": "我平素的做法；素指向来 | my customary ways"
+    }
+  ],
+  "cy_00320": [
+    {
+      "hanzi": "在所",
+      "pinyin": "zài suǒ",
+      "gloss": "处于某种情况或限制之内 | under the circumstances"
+    },
+    {
+      "hanzi": "难免",
+      "pinyin": "nán miǎn",
+      "gloss": "难以避免 | hard to avoid"
+    }
+  ],
+  "cy_00321": [
+    {
+      "hanzi": "天造",
+      "pinyin": "tiān zào",
+      "gloss": "自然形成，字面为天所制作 | made by nature"
+    },
+    {
+      "hanzi": "地设",
+      "pinyin": "dì shè",
+      "gloss": "自然安排，字面为地所设置 | arranged by nature"
+    }
+  ],
+  "cy_00322": [
+    {
+      "hanzi": "一意",
+      "pinyin": "yī yì",
+      "gloss": "只认定自己的意思 | one's single-minded intention"
+    },
+    {
+      "hanzi": "孤行",
+      "pinyin": "gū xíng",
+      "gloss": "不听劝告，独自按自己的想法做 | to pursue one's own course"
+    }
+  ],
+  "cy_00323": [
+    {
+      "hanzi": "三思",
+      "pinyin": "sān sī",
+      "gloss": "反复考虑；三表示多次 | to think repeatedly"
+    },
+    {
+      "hanzi": "而后行",
+      "pinyin": "ér hòu xíng",
+      "gloss": "然后再行动 | only then to act"
+    }
+  ],
+  "cy_00324": [
+    {
+      "hanzi": "暴跳",
+      "pinyin": "bào tiào",
+      "gloss": "因急怒而叫跳 | to jump in rage"
+    },
+    {
+      "hanzi": "如雷",
+      "pinyin": "rú léi",
+      "gloss": "像雷声一样猛烈 | like thunder"
+    }
+  ],
+  "cy_00325": [
+    {
+      "hanzi": "相安",
+      "pinyin": "xiāng ān",
+      "gloss": "彼此相处安稳 | to live peacefully together"
+    },
+    {
+      "hanzi": "无事",
+      "pinyin": "wú shì",
+      "gloss": "没有争执、冲突 | without conflict"
+    }
+  ],
+  "cy_00326": [
+    {
+      "hanzi": "乌合",
+      "pinyin": "wū hé",
+      "gloss": "像乌鸦临时聚集的形象 | gathering like crows"
+    },
+    {
+      "hanzi": "之众",
+      "pinyin": "zhī zhòng",
+      "gloss": "这样的一群人 | such a crowd"
+    }
+  ],
+  "cy_00327": [
+    {
+      "hanzi": "你死",
+      "pinyin": "nǐ sǐ",
+      "gloss": "你这一方灭亡 | your side perishes"
+    },
+    {
+      "hanzi": "我活",
+      "pinyin": "wǒ huó",
+      "gloss": "我这一方生存 | my side survives"
+    }
+  ],
+  "cy_00328": [
+    {
+      "hanzi": "左右",
+      "pinyin": "zuǒ yòu",
+      "gloss": "左和右，指两种选择 | either side or choice"
+    },
+    {
+      "hanzi": "为难",
+      "pinyin": "wéi nán",
+      "gloss": "都有难处、难作决定 | facing difficulty"
+    }
+  ],
+  "cy_00329": [
+    {
+      "hanzi": "悬而",
+      "pinyin": "xuán ér",
+      "gloss": "一直搁在那里 | left pending"
+    },
+    {
+      "hanzi": "未决",
+      "pinyin": "wèi jué",
+      "gloss": "没有决定、没有解决 | undecided"
+    }
+  ],
+  "cy_00330": [
+    {
+      "hanzi": "一本",
+      "pinyin": "yī běn",
+      "gloss": "一部书，保留源释的字面量词结构 | one volume"
+    },
+    {
+      "hanzi": "正经",
+      "pinyin": "zhèng jīng",
+      "gloss": "源释指合乎道德规范的经典 | an orthodox classic in the source sense"
+    }
+  ],
+  "cy_00331": [
+    {
+      "hanzi": "子虚",
+      "pinyin": "zǐ xū",
+      "gloss": "并非真实 | fictitious"
+    },
+    {
+      "hanzi": "乌有",
+      "pinyin": "wū yǒu",
+      "gloss": "哪里有，即不存在 | nonexistent"
+    }
+  ],
+  "cy_00332": [
+    {
+      "hanzi": "横冲",
+      "pinyin": "héng chōng",
+      "gloss": "胡乱向一边冲去 | to charge recklessly"
+    },
+    {
+      "hanzi": "直撞",
+      "pinyin": "zhí zhuàng",
+      "gloss": "径直猛撞 | to crash ahead"
+    }
+  ],
+  "cy_00333": [
+    {
+      "hanzi": "病入",
+      "pinyin": "bìng rù",
+      "gloss": "病情进入、发展到 | illness reaching"
+    },
+    {
+      "hanzi": "膏肓",
+      "pinyin": "gāo huāng",
+      "gloss": "古代医学中的两处部位名称，词中指难治部位 | traditional anatomical terms for a hard-to-treat region"
+    }
+  ]
+}

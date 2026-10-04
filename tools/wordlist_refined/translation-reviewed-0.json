@@ -1,0 +1,1922 @@
+{
+  "wl_00301": {
+    "hanzi": "小巷",
+    "sourceEnglish": "small alley",
+    "definition": "狭窄的小街道或巷道。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01715": {
+    "hanzi": "骨头",
+    "sourceEnglish": "bone",
+    "definition": "人或动物身体中坚硬的骨组织；例句指供小狗啃咬的骨块。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02650": {
+    "hanzi": "坐下",
+    "sourceEnglish": "to sit down",
+    "definition": "使身体由站立等姿势变为坐着。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03030": {
+    "hanzi": "唱歌",
+    "sourceEnglish": "to sing a song",
+    "definition": "用声音按歌曲的旋律和歌词演唱。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03307": {
+    "hanzi": "一定",
+    "sourceEnglish": "definitely; certainly",
+    "definition": "表示十分肯定，意思是必定、肯定会如此。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03675": {
+    "hanzi": "蓝色",
+    "sourceEnglish": "blue (color)",
+    "definition": "蓝这一类颜色。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03951": {
+    "hanzi": "摔倒",
+    "sourceEnglish": "to fall down",
+    "definition": "因失去平衡等原因跌倒在地。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00092": {
+    "hanzi": "乱哄哄",
+    "sourceEnglish": "noisy and chaotic",
+    "definition": "声音嘈杂、场面混乱的样子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00409": {
+    "hanzi": "水池",
+    "sourceEnglish": "pond",
+    "definition": "蓄水的池子；例句指可在池边种植的水池。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00715": {
+    "hanzi": "亟需",
+    "sourceEnglish": "urgently need",
+    "definition": "迫切需要，表示需求很紧急。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01048": {
+    "hanzi": "抠门",
+    "sourceEnglish": "stingy",
+    "definition": "过于舍不得花钱，显得吝啬。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01256": {
+    "hanzi": "澎湃",
+    "sourceEnglish": "surge",
+    "definition": "水势等汹涌起伏；例句形容暴雨后的河水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01622": {
+    "hanzi": "溢出",
+    "sourceEnglish": "overflow; spill over",
+    "definition": "液体等超过容器边缘而流到外面。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01787": {
+    "hanzi": "请勿",
+    "sourceEnglish": "please do not",
+    "definition": "表示礼貌禁止的用语，意思是请不要。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01854": {
+    "hanzi": "鳗鱼",
+    "sourceEnglish": "eel",
+    "definition": "一种通常称为鳗的鱼；鳗鱼是鱼名。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01947": {
+    "hanzi": "掀开",
+    "sourceEnglish": "to lift open; to uncover",
+    "definition": "把遮盖的东西向上抬起或揭开。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02099": {
+    "hanzi": "穿衣",
+    "sourceEnglish": "get dressed",
+    "definition": "把衣服穿到身上。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02233": {
+    "hanzi": "眩晕",
+    "sourceEnglish": "dizziness or vertigo",
+    "definition": "头晕，或感到自身、周围物体旋转。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02443": {
+    "hanzi": "猎豹",
+    "sourceEnglish": "cheetah",
+    "definition": "一种称为猎豹的动物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02557": {
+    "hanzi": "鸟类",
+    "sourceEnglish": "birds",
+    "definition": "鸟的总称，也指鸟这一类动物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02636": {
+    "hanzi": "颇为",
+    "sourceEnglish": "quite; rather",
+    "definition": "表示程度，意思是相当、很。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02738": {
+    "hanzi": "瓦片",
+    "sourceEnglish": "tile",
+    "definition": "用于屋面等处的一片瓦；这里指古代建筑用瓦。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02962": {
+    "hanzi": "框架",
+    "sourceEnglish": "frame; framework",
+    "definition": "支撑或组织一个整体的结构；例句指木制框架。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03219": {
+    "hanzi": "摒弃",
+    "sourceEnglish": "to discard; to reject",
+    "definition": "舍弃、排除不需要或不认可的东西。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03388": {
+    "hanzi": "乘车",
+    "sourceEnglish": "to travel by vehicle",
+    "definition": "搭乘车辆出行。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03482": {
+    "hanzi": "肘部",
+    "sourceEnglish": "elbow region",
+    "definition": "手臂上臂与前臂之间的肘所在部位。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03649": {
+    "hanzi": "弹琴",
+    "sourceEnglish": "to play a keyboard or stringed instrument",
+    "definition": "演奏琴类乐器，具体乐器由语境确定。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03725": {
+    "hanzi": "掺杂",
+    "sourceEnglish": "be mixed with; mingle",
+    "definition": "把不同的东西混在一起，或其中夹有其他成分。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04075": {
+    "hanzi": "鸟窝",
+    "sourceEnglish": "bird's nest",
+    "definition": "鸟栖息或繁殖时使用的巢。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04148": {
+    "hanzi": "瘸腿",
+    "sourceEnglish": "to be lame in one leg",
+    "definition": "一条腿行动不便，走路时跛行。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04664": {
+    "hanzi": "蹊径",
+    "sourceEnglish": "path; alternative way",
+    "definition": "小路；也指处理问题的另一种途径或方法。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04815": {
+    "hanzi": "裤衩",
+    "sourceEnglish": "underpants",
+    "definition": "内裤，指贴身穿在下身的裤子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05127": {
+    "hanzi": "撂下",
+    "sourceEnglish": "to put down; to leave aside",
+    "definition": "把物品放下；也可表示把事情搁在一旁。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05679": {
+    "hanzi": "鳕鱼",
+    "sourceEnglish": "cod",
+    "definition": "一种称为鳕的鱼；例句把它作为食物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06495": {
+    "hanzi": "呒",
+    "sourceEnglish": "astonished; perplexed",
+    "definition": "本词条读fǔ，按保留义项形容惊讶或困惑的样子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00066": {
+    "hanzi": "姓冯",
+    "sourceEnglish": "have the surname Feng",
+    "definition": "以冯为姓，冯在这个姓氏中读féng。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00131": {
+    "hanzi": "孰是孰非",
+    "sourceEnglish": "who is right and who is wrong",
+    "definition": "谁对谁错，表示对双方是非的判断。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00193": {
+    "hanzi": "从兄弟",
+    "sourceEnglish": "male paternal cousins",
+    "definition": "古文中的亲属称呼；本例指父系同辈的堂兄弟。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00280": {
+    "hanzi": "幡幢",
+    "sourceEnglish": "ceremonial religious banners",
+    "definition": "宗教或礼仪活动中使用的幡和幢等旗帜。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00284": {
+    "hanzi": "长江",
+    "sourceEnglish": "Yangtze River",
+    "definition": "河流名称，指长江。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00374": {
+    "hanzi": "果实累累",
+    "sourceEnglish": "laden with fruit",
+    "definition": "枝头结满了果实，形容果实很多。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00493": {
+    "hanzi": "唯唯诺诺",
+    "sourceEnglish": "agree submissively with everything",
+    "definition": "一味顺从应和，不敢提出自己的意见。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00536": {
+    "hanzi": "肆拾",
+    "sourceEnglish": "forty, in formal financial numerals",
+    "definition": "数字四十的大写形式，常用于财务单据。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00613": {
+    "hanzi": "暨今",
+    "sourceEnglish": "up to the present",
+    "definition": "直到现在、到目前为止，属于古文用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00661": {
+    "hanzi": "淇水",
+    "sourceEnglish": "the Qi River",
+    "definition": "河流名称，指淇水；不能写成岐江。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00733": {
+    "hanzi": "衣锦还乡",
+    "sourceEnglish": "return home in honor after success",
+    "definition": "取得成就或荣誉后回到故乡。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00765": {
+    "hanzi": "魏晋",
+    "sourceEnglish": "Wei and Jin dynasties",
+    "definition": "魏与晋两个历史朝代的合称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00791": {
+    "hanzi": "沮水",
+    "sourceEnglish": "the Ju River",
+    "definition": "河流名称，指沮水；不能写成汝江。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00843": {
+    "hanzi": "大屿山",
+    "sourceEnglish": "Lantau Island",
+    "definition": "地名，指大屿山。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00866": {
+    "hanzi": "榉木",
+    "sourceEnglish": "zelkova wood",
+    "definition": "榉树的木材。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00918": {
+    "hanzi": "吴国",
+    "sourceEnglish": "ancient state of Wu",
+    "definition": "古代吴国的名称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01030": {
+    "hanzi": "娶妻",
+    "sourceEnglish": "marry a wife",
+    "definition": "男子与女子结婚，把对方迎为妻子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01099": {
+    "hanzi": "落雨",
+    "sourceEnglish": "rain; rain falls",
+    "definition": "下雨，雨从空中落下。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01106": {
+    "hanzi": "肉脯",
+    "sourceEnglish": "dried meat",
+    "definition": "制成干片或干块的肉类食品。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01163": {
+    "hanzi": "蔡国",
+    "sourceEnglish": "the ancient state of Cai",
+    "definition": "古代蔡国的名称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01233": {
+    "hanzi": "槐树",
+    "sourceEnglish": "Chinese pagoda tree",
+    "definition": "一种称为槐的树。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01280": {
+    "hanzi": "泄泄",
+    "sourceEnglish": "slack and inattentive",
+    "definition": "本词条读yì yì，形容懈怠、不专心的样子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01402": {
+    "hanzi": "小儿笑",
+    "sourceEnglish": "a little child smiles or laughs",
+    "definition": "小孩子微笑或发出笑声；这是短语组合。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01443": {
+    "hanzi": "镭射",
+    "sourceEnglish": "laser",
+    "definition": "激光的另一种说法，来自laser的音译。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01515": {
+    "hanzi": "秦朝",
+    "sourceEnglish": "Qin dynasty",
+    "definition": "历史上秦这一朝代的名称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01604": {
+    "hanzi": "七个",
+    "sourceEnglish": "seven items or people",
+    "definition": "数词七与量词个的组合，表示七个人或物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01674": {
+    "hanzi": "炖煮",
+    "sourceEnglish": "stew; simmer",
+    "definition": "用较缓的火候持续加热，使食材在汤汁中煮熟。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01744": {
+    "hanzi": "薰衣草",
+    "sourceEnglish": "lavender",
+    "definition": "一种称为薰衣草的植物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01802": {
+    "hanzi": "檀木",
+    "sourceEnglish": "sandalwood or related fine hardwood",
+    "definition": "檀类木材或相关的优质硬木；例句指家具用材。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01853": {
+    "hanzi": "蔓菁",
+    "sourceEnglish": "turnip",
+    "definition": "一种称为芜菁或蔓菁的植物；turnip不宜泛译为萝卜。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01913": {
+    "hanzi": "晏起",
+    "sourceEnglish": "get up late",
+    "definition": "起床较晚，属于较书面的说法。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01957": {
+    "hanzi": "大宛",
+    "sourceEnglish": "Dayuan, an ancient Central Asian state",
+    "definition": "古代中亚的一国名，指大宛。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02030": {
+    "hanzi": "木栅",
+    "sourceEnglish": "wooden fence",
+    "definition": "用木条、木杆等组成的栅栏。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02075": {
+    "hanzi": "八个",
+    "sourceEnglish": "eight items or people",
+    "definition": "数词八与量词个的组合，表示八个人或物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02092": {
+    "hanzi": "鲜有",
+    "sourceEnglish": "seldom have; rarely occur",
+    "definition": "很少有、很少出现。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02192": {
+    "hanzi": "碾压",
+    "sourceEnglish": "press or crush by rolling",
+    "definition": "通过滚动施压，将物体压平、压实或压碎。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02248": {
+    "hanzi": "腆着脸",
+    "sourceEnglish": "brazenly; without shame",
+    "definition": "厚着脸皮做某事，常含贬义。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02333": {
+    "hanzi": "敖游",
+    "sourceEnglish": "roam or travel at leisure",
+    "definition": "游逛或悠闲地出游；旧写法，意思接近遨游。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02382": {
+    "hanzi": "澳洲",
+    "sourceEnglish": "Australia",
+    "definition": "澳大利亚的另一种称呼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02479": {
+    "hanzi": "瞟一眼",
+    "sourceEnglish": "take a quick glance",
+    "definition": "很快地看一下，目光短暂扫过。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02517": {
+    "hanzi": "猫咪",
+    "sourceEnglish": "kitty or cat",
+    "definition": "猫的亲昵称呼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02529": {
+    "hanzi": "貂蝉",
+    "sourceEnglish": "Diaochan, a legendary beauty",
+    "definition": "人物名称，指传说中的美女貂蝉。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02532": {
+    "hanzi": "挑达",
+    "sourceEnglish": "wander or move about freely",
+    "definition": "本词条读tāo tà，按古文义项指自在游荡、来回走动。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02588": {
+    "hanzi": "竹箩",
+    "sourceEnglish": "bamboo basket",
+    "definition": "用竹子编成的箩筐。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02617": {
+    "hanzi": "俄罗斯",
+    "sourceEnglish": "Russia",
+    "definition": "国家名称，指俄罗斯。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02647": {
+    "hanzi": "安娜",
+    "sourceEnglish": "Anna, a personal name",
+    "definition": "人名Anna的中文译名。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02732": {
+    "hanzi": "舍生取义",
+    "sourceEnglish": "sacrifice one's life for righteousness",
+    "definition": "为了正义或道义而舍弃自己的生命。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02762": {
+    "hanzi": "乍看",
+    "sourceEnglish": "at first glance",
+    "definition": "刚开始看、第一眼看时。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02778": {
+    "hanzi": "仆射",
+    "sourceEnglish": "puye, an ancient senior official",
+    "definition": "古代的一种高级官职名称，写作仆射；不能把puye译成溥野。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02805": {
+    "hanzi": "桑树",
+    "sourceEnglish": "mulberry tree",
+    "definition": "一种称为桑的树。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02868": {
+    "hanzi": "杏仁酪",
+    "sourceEnglish": "almond pudding",
+    "definition": "用杏仁等制成的糊状或凝状甜食。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02959": {
+    "hanzi": "姜汤",
+    "sourceEnglish": "ginger soup or ginger tea",
+    "definition": "用姜煮出的汤或茶饮。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02980": {
+    "hanzi": "堤坊",
+    "sourceEnglish": "embankment or dike",
+    "definition": "堤坝，沿水边修筑以拦挡水的设施；本词采用堤坊这一写法。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03072": {
+    "hanzi": "庚子",
+    "sourceEnglish": "Gengzi, the thirty-seventh year of the sixty-year cycle",
+    "definition": "干支纪年名称，是六十干支中的第三十七位。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03084": {
+    "hanzi": "帐棚",
+    "sourceEnglish": "tent",
+    "definition": "可搭设的临时遮蔽设施，意思同帐篷。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03134": {
+    "hanzi": "春秋五伯",
+    "sourceEnglish": "the Five Hegemons of the Spring and Autumn period",
+    "definition": "春秋时期五位霸主的合称；伯在此读bà。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03189": {
+    "hanzi": "盛汤",
+    "sourceEnglish": "ladle out or serve soup",
+    "definition": "把汤从锅或容器中舀出，装到碗等器皿里；盛读chéng。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03223": {
+    "hanzi": "瘠薄",
+    "sourceEnglish": "infertile; poor in nutrients",
+    "definition": "土地贫瘠、养分较少；这里不指人的生育能力。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03282": {
+    "hanzi": "拎着",
+    "sourceEnglish": "carry by the hand",
+    "definition": "用手提着物品。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03320": {
+    "hanzi": "荻花",
+    "sourceEnglish": "silvergrass flowers",
+    "definition": "荻这一植物的花。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03331": {
+    "hanzi": "锡矿",
+    "sourceEnglish": "tin mine; tin deposit",
+    "definition": "含锡的矿藏或开采锡矿的矿区。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03416": {
+    "hanzi": "车轼",
+    "sourceEnglish": "front crossbar of an ancient carriage",
+    "definition": "古代车厢前供人倚靠的横木。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03492": {
+    "hanzi": "九个",
+    "sourceEnglish": "nine items or people",
+    "definition": "数词九与量词个的组合，表示九个人或物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03553": {
+    "hanzi": "北斗",
+    "sourceEnglish": "Big Dipper",
+    "definition": "星群名称，指北斗七星。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03608": {
+    "hanzi": "壬子",
+    "sourceEnglish": "Renzi, the forty-ninth year of the sixty-year cycle",
+    "definition": "干支纪年名称，是六十干支中的第四十九位。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03631": {
+    "hanzi": "湛江",
+    "sourceEnglish": "Zhanjiang, a city in Guangdong",
+    "definition": "地名，指广东的湛江市。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03644": {
+    "hanzi": "禁著",
+    "sourceEnglish": "hard-wearing, especially of clothing",
+    "definition": "地域用语，本例指衣物耐穿；拼音记录普通话字音。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03668": {
+    "hanzi": "担水",
+    "sourceEnglish": "carry water on a shoulder pole",
+    "definition": "用扁担等在肩上挑运水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03715": {
+    "hanzi": "牛槛",
+    "sourceEnglish": "cattle enclosure",
+    "definition": "关牛的栏圈；槛在此读jiàn。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03738": {
+    "hanzi": "掐住",
+    "sourceEnglish": "pinch and hold tightly",
+    "definition": "用手指等夹住并紧紧控制住。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03747": {
+    "hanzi": "碱性",
+    "sourceEnglish": "alkalinity; alkaline property",
+    "definition": "物质呈碱的性质，或这种性质的程度。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03777": {
+    "hanzi": "腌制",
+    "sourceEnglish": "to pickle; to preserve by salting or curing",
+    "definition": "用盐、调味液等处理食材，使其入味或便于保存。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03907": {
+    "hanzi": "揪住",
+    "sourceEnglish": "to grab firmly; to seize",
+    "definition": "用手抓住并抓牢。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03924": {
+    "hanzi": "碗筷",
+    "sourceEnglish": "bowls and chopsticks",
+    "definition": "碗和筷子的合称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03964": {
+    "hanzi": "嗨嗨",
+    "sourceEnglish": "hey, hey",
+    "definition": "招呼或引起注意时重复发出的嗨声；本词条读hāi hāi。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04001": {
+    "hanzi": "啃咬",
+    "sourceEnglish": "to gnaw or bite",
+    "definition": "用牙齿反复咬啃。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04017": {
+    "hanzi": "哼歌",
+    "sourceEnglish": "to hum a song",
+    "definition": "轻声哼唱歌曲的旋律。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04034": {
+    "hanzi": "觑视",
+    "sourceEnglish": "to peer at; to look furtively",
+    "definition": "仔细窥看或偷偷看。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04059": {
+    "hanzi": "咯咯笑",
+    "sourceEnglish": "to giggle; to chuckle",
+    "definition": "发出咯咯声地笑；本词条咯读gē。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04111": {
+    "hanzi": "垮掉",
+    "sourceEnglish": "to collapse or fall apart",
+    "definition": "倒塌或散架；也可表示状态崩溃。例句指棚子倒塌。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04130": {
+    "hanzi": "痘痘",
+    "sourceEnglish": "pimple; acne spot",
+    "definition": "皮肤上的小痤疮或粉刺，口语常称痘痘。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04143": {
+    "hanzi": "一摞",
+    "sourceEnglish": "a stack",
+    "definition": "叠放成一堆的物品，常用于纸张、书本等。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04206": {
+    "hanzi": "奎星",
+    "sourceEnglish": "Kui, an ancient lunar mansion",
+    "definition": "本例指古代二十八宿中的奎宿；不是月宫。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04310": {
+    "hanzi": "擀面",
+    "sourceEnglish": "to roll out dough",
+    "definition": "用擀面杖等把面团压展、擀薄。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04342": {
+    "hanzi": "楝树",
+    "sourceEnglish": "chinaberry tree",
+    "definition": "一种称为楝的树。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04358": {
+    "hanzi": "闩门",
+    "sourceEnglish": "to bolt a door",
+    "definition": "把门闩插好，使门关闭锁牢。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04423": {
+    "hanzi": "鲫鱼",
+    "sourceEnglish": "crucian carp",
+    "definition": "一种称为鲫的鱼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04466": {
+    "hanzi": "捻转",
+    "sourceEnglish": "to twist or rotate with the fingers",
+    "definition": "用手指搓捻，使物体转动或扭转。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04500": {
+    "hanzi": "啐一口",
+    "sourceEnglish": "to spit once",
+    "definition": "吐出一口唾沫等。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04526": {
+    "hanzi": "氟气",
+    "sourceEnglish": "fluorine gas",
+    "definition": "氟元素形成的气体。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04546": {
+    "hanzi": "掴耳光",
+    "sourceEnglish": "to slap someone in the face",
+    "definition": "打耳光，用手掌击打人的脸；本词条保留guāi读音。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04564": {
+    "hanzi": "玉璜",
+    "sourceEnglish": "semicircular jade ornament",
+    "definition": "半圆形的玉制饰物或礼器。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04595": {
+    "hanzi": "乖剌",
+    "sourceEnglish": "perverse or contrary to reason",
+    "definition": "不合常理或违背常情，常用于形容性情。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04606": {
+    "hanzi": "锂电池",
+    "sourceEnglish": "lithium battery",
+    "definition": "使用锂的电池这一类产品的名称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04622": {
+    "hanzi": "泸水",
+    "sourceEnglish": "Lushui, a city in Yunnan",
+    "definition": "地名，指云南的泸水市。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04637": {
+    "hanzi": "眯眼",
+    "sourceEnglish": "to narrow one's eyes; to squint",
+    "definition": "把眼睛微微闭合，使眼缝变窄。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04688": {
+    "hanzi": "弑君",
+    "sourceEnglish": "to kill one's sovereign; regicide",
+    "definition": "臣下杀死自己的君主；指行为，不是弑君者这一人称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04747": {
+    "hanzi": "甾醇",
+    "sourceEnglish": "sterol",
+    "definition": "一类称为甾醇的化合物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04774": {
+    "hanzi": "幺么",
+    "sourceEnglish": "tiny or insignificant, literary usage",
+    "definition": "古文用语，指微小或微不足道。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04802": {
+    "hanzi": "筚门",
+    "sourceEnglish": "bamboo door of a poor dwelling",
+    "definition": "用竹子编成的门，常指贫寒人家的门。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04828": {
+    "hanzi": "碜牙",
+    "sourceEnglish": "to feel grit between the teeth",
+    "definition": "食物中的沙粒等在牙齿间产生不舒服的硌磨感。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04862": {
+    "hanzi": "滑跶",
+    "sourceEnglish": "slippery and difficult to walk on",
+    "definition": "地域用语，形容表面滑溜、不易站稳或行走。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04903": {
+    "hanzi": "摁住",
+    "sourceEnglish": "to press down and hold",
+    "definition": "向下压住，使物体保持不动。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04929": {
+    "hanzi": "呷茶",
+    "sourceEnglish": "to sip tea",
+    "definition": "小口地喝茶。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04971": {
+    "hanzi": "蝈蝈",
+    "sourceEnglish": "katydid",
+    "definition": "一种称为蝈蝈的鸣虫，属于螽斯类。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04986": {
+    "hanzi": "一泓",
+    "sourceEnglish": "one pool of clear water",
+    "definition": "一处清水；泓用于表示清水的量。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05024": {
+    "hanzi": "倔犟",
+    "sourceEnglish": "stubborn",
+    "definition": "性情固执，不容易改变自己的想法。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05072": {
+    "hanzi": "胯下",
+    "sourceEnglish": "between the legs",
+    "definition": "两腿之间的部位；例句指骑手腿间的马所在位置。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05204": {
+    "hanzi": "唱喏",
+    "sourceEnglish": "to bow and offer a respectful greeting",
+    "definition": "旧时一边作揖或躬身，一边出声表示恭敬的问候。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05253": {
+    "hanzi": "氰化物",
+    "sourceEnglish": "cyanide",
+    "definition": "化合物类别名称，指氰化物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05291": {
+    "hanzi": "鳝鱼",
+    "sourceEnglish": "eel",
+    "definition": "一种称为鳝的鱼；不能把本词译作鳗鱼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05361": {
+    "hanzi": "崴脚",
+    "sourceEnglish": "to sprain one's ankle",
+    "definition": "脚踝因不当扭转而扭伤。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05422": {
+    "hanzi": "荨麻",
+    "sourceEnglish": "nettle",
+    "definition": "一种称为荨麻的植物；本词条读qián má。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05450": {
+    "hanzi": "铱金",
+    "sourceEnglish": "iridium alloy for pen tips",
+    "definition": "用于钢笔笔尖等处的含铱合金。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05500": {
+    "hanzi": "咋办",
+    "sourceEnglish": "what should we do?",
+    "definition": "口语说法，意思是怎么办、该如何处理。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05532": {
+    "hanzi": "龇牙",
+    "sourceEnglish": "to bare one's teeth",
+    "definition": "露出牙齿，常表现出威胁、疼痛等状态。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05542": {
+    "hanzi": "镓元素",
+    "sourceEnglish": "gallium",
+    "definition": "化学元素名称，指镓。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05551": {
+    "hanzi": "钚元素",
+    "sourceEnglish": "plutonium",
+    "definition": "化学元素名称，指钚。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05569": {
+    "hanzi": "熵值",
+    "sourceEnglish": "entropy value",
+    "definition": "熵这一物理量的数值。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05599": {
+    "hanzi": "咝声",
+    "sourceEnglish": "hissing sound",
+    "definition": "像气流摩擦时发出的咝咝声。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05612": {
+    "hanzi": "岘港",
+    "sourceEnglish": "Da Nang",
+    "definition": "地名，指岘港。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05655": {
+    "hanzi": "刀锷",
+    "sourceEnglish": "blade edge",
+    "definition": "刀锋、刀刃的边缘。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05677": {
+    "hanzi": "鲻鱼",
+    "sourceEnglish": "flathead grey mullet (Mugil cephalus)",
+    "definition": "鱼类名称，指鲻，英文义项为flathead grey mullet。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05722": {
+    "hanzi": "藏獒",
+    "sourceEnglish": "Tibetan mastiff",
+    "definition": "一种称为藏獒的犬。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05782": {
+    "hanzi": "妲己",
+    "sourceEnglish": "Daji",
+    "definition": "人物名称，写作妲己。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05967": {
+    "hanzi": "蜡祭",
+    "sourceEnglish": "ancient year-end harvest sacrifice",
+    "definition": "古代年末举行、与收获有关的祭祀；蜡在此读zhà。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06000": {
+    "hanzi": "泷濑",
+    "sourceEnglish": "river rapids",
+    "definition": "急流或河中水流湍急的地方。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06173": {
+    "hanzi": "莳花",
+    "sourceEnglish": "to plant and tend flowers",
+    "definition": "种植并照料花卉。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06196": {
+    "hanzi": "铊毒",
+    "sourceEnglish": "thallium poisoning",
+    "definition": "因铊或其化合物引起的中毒。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06212": {
+    "hanzi": "鳀鱼",
+    "sourceEnglish": "anchovy",
+    "definition": "鱼类名称，指鳀，英文义项为anchovy。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06383": {
+    "hanzi": "洙水",
+    "sourceEnglish": "the Zhu River",
+    "definition": "河流名称，指洙水；不能误译为珠江。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00010": {
+    "hanzi": "僮族",
+    "sourceEnglish": "former name for the Zhuang people",
+    "definition": "壮族过去使用的民族名称；本词条僮读zhuàng。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00206": {
+    "hanzi": "舂米",
+    "sourceEnglish": "to husk rice with a mortar and pestle",
+    "definition": "用臼和杵等舂捣稻米以脱去谷壳。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00416": {
+    "hanzi": "齐衰",
+    "sourceEnglish": "hemmed hemp mourning robe",
+    "definition": "古代一种用麻布制成、边缘经过缝制的丧服；读zī cuī。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00517": {
+    "hanzi": "揆度",
+    "sourceEnglish": "weigh up or estimate",
+    "definition": "揣测、估量或权衡。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00655": {
+    "hanzi": "台小子",
+    "sourceEnglish": "I, your humble young servant",
+    "definition": "古人自称的谦词，意思相当于我这个年轻人；台在此读yí。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00870": {
+    "hanzi": "不以语人",
+    "sourceEnglish": "tell nobody about it",
+    "definition": "不把这件事告诉别人；语在此读yù。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_00955": {
+    "hanzi": "橹棹",
+    "sourceEnglish": "oars and sculling oars",
+    "definition": "橹和桨的合称，用于推动船只。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01147": {
+    "hanzi": "婺源",
+    "sourceEnglish": "Wuyuan",
+    "definition": "地名，指婺源。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01300": {
+    "hanzi": "根柢",
+    "sourceEnglish": "roots",
+    "definition": "树木的根；例句采用本义。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_01722": {
+    "hanzi": "渤海",
+    "sourceEnglish": "Bohai Sea",
+    "definition": "海域名称，指渤海。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02070": {
+    "hanzi": "仓颉",
+    "sourceEnglish": "Cangjie, legendary inventor of Chinese writing",
+    "definition": "传说中创造汉字的人物仓颉；这里说明传说身份。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02268": {
+    "hanzi": "发见",
+    "sourceEnglish": "discover; find",
+    "definition": "旧文中的发现，指找到或察觉原先未知的事物。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02577": {
+    "hanzi": "华佗",
+    "sourceEnglish": "Hua Tuo, an ancient physician",
+    "definition": "古代医者的姓名，写作华佗；本条保留huà tuó读音。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02682": {
+    "hanzi": "木槎",
+    "sourceEnglish": "wooden raft",
+    "definition": "用木材组成的筏子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_02827": {
+    "hanzi": "行行",
+    "sourceEnglish": "strong and resolute",
+    "definition": "本词条读hàng hàng，古文中形容刚强、坚定的样子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03210": {
+    "hanzi": "颍水",
+    "sourceEnglish": "the Ying River",
+    "definition": "河流名称，指颍水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03593": {
+    "hanzi": "戊戌",
+    "sourceEnglish": "Wuxu, the thirty-fifth year of the sixty-year cycle",
+    "definition": "干支纪年名称，是六十干支中的第三十五位。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_03863": {
+    "hanzi": "深圳",
+    "sourceEnglish": "Shenzhen, a city in Guangdong",
+    "definition": "地名，指广东的深圳市。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04052": {
+    "hanzi": "木橛子",
+    "sourceEnglish": "wooden peg",
+    "definition": "可打入或固定到物体中的木制短杆、木钉。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04194": {
+    "hanzi": "刈草",
+    "sourceEnglish": "to cut grass",
+    "definition": "割草、砍除草木。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04231": {
+    "hanzi": "沂水",
+    "sourceEnglish": "Yishui, a county in Shandong",
+    "definition": "地名，指山东的沂水县。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04259": {
+    "hanzi": "耧车",
+    "sourceEnglish": "traditional seed drill",
+    "definition": "传统的条播工具；本例指古代播种用的耧车。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04308": {
+    "hanzi": "揿铃",
+    "sourceEnglish": "to press a doorbell",
+    "definition": "用手按下门铃等的按钮。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04334": {
+    "hanzi": "犍为",
+    "sourceEnglish": "Qianwei, a county in Sichuan",
+    "definition": "地名，指四川的犍为县。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04365": {
+    "hanzi": "兖州",
+    "sourceEnglish": "Yanzhou, a district in Shandong",
+    "definition": "地名，指山东的兖州区。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04407": {
+    "hanzi": "焯水",
+    "sourceEnglish": "to blanch; to parboil",
+    "definition": "把食材短时间放入热水或沸水中处理，再捞出；不指漂白。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04448": {
+    "hanzi": "荥阳",
+    "sourceEnglish": "Xingyang, a city in Henan",
+    "definition": "地名，指河南的荥阳市。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04483": {
+    "hanzi": "畀予",
+    "sourceEnglish": "to give or grant, classical usage",
+    "definition": "古文用语，意思是给予、授予。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04508": {
+    "hanzi": "睇见",
+    "sourceEnglish": "to see, in Cantonese",
+    "definition": "粤语用语，意思是看见；此处拼音只记录普通话字音。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04520": {
+    "hanzi": "鲂鱼",
+    "sourceEnglish": "bream",
+    "definition": "鱼类名称，指鲂，英文义项为bream。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04539": {
+    "hanzi": "莞草",
+    "sourceEnglish": "bulrush used for weaving",
+    "definition": "一种可用于编织席子等的草，称为莞草。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04569": {
+    "hanzi": "嵇康",
+    "sourceEnglish": "Ji Kang, a historical writer and musician",
+    "definition": "历史人物嵇康的姓名，保留英文义项所述文人与音乐家身份。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04585": {
+    "hanzi": "衣裾",
+    "sourceEnglish": "hem or skirt of a garment",
+    "definition": "衣服下摆的部分。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04642": {
+    "hanzi": "沔水",
+    "sourceEnglish": "Mian River, a historical river name",
+    "definition": "历史上的河流名称，指沔水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04683": {
+    "hanzi": "汕头",
+    "sourceEnglish": "Shantou, a city in Guangdong",
+    "definition": "地名，指广东的汕头市。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04696": {
+    "hanzi": "佟姓",
+    "sourceEnglish": "the surname Tong, written 佟",
+    "definition": "以佟为姓，佟读tóng。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04714": {
+    "hanzi": "浔阳",
+    "sourceEnglish": "Xunyang, a historical place name",
+    "definition": "历史地名，写作浔阳；不能误写为旬阳。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04737": {
+    "hanzi": "番禺",
+    "sourceEnglish": "Panyu, a district in Guangdong",
+    "definition": "地名，指广东的番禺区。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04753": {
+    "hanzi": "李钊",
+    "sourceEnglish": "Li Zhao, a personal name",
+    "definition": "人名，写作李钊。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04804": {
+    "hanzi": "鳊鱼",
+    "sourceEnglish": "bream",
+    "definition": "鱼类名称，指鳊，英文义项为bream。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04827": {
+    "hanzi": "谌姓",
+    "sourceEnglish": "the surname Chen, written 谌",
+    "definition": "以谌为姓；本词条谌读chén，不能改写为陈姓。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04846": {
+    "hanzi": "玉琮",
+    "sourceEnglish": "cong, an ancient ritual jade tube",
+    "definition": "古代的一种筒状玉礼器，称为琮。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04866": {
+    "hanzi": "迨至",
+    "sourceEnglish": "by the time of; until reaching",
+    "definition": "直到到达某个时间或阶段，意思接近到……时。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04873": {
+    "hanzi": "砀山",
+    "sourceEnglish": "Dangshan, a county in Anhui",
+    "definition": "地名，指安徽的砀山县。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04891": {
+    "hanzi": "树蔸",
+    "sourceEnglish": "tree stump or root base, regional usage",
+    "definition": "地域用语，指树桩或树的根部。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04894": {
+    "hanzi": "阇台",
+    "sourceEnglish": "platform above a city gate",
+    "definition": "城门上方的台子或平台。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04904": {
+    "hanzi": "鲕鱼",
+    "sourceEnglish": "small immature fish, older usage",
+    "definition": "旧用语，指尚未长成的小鱼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04911": {
+    "hanzi": "蘩蒿",
+    "sourceEnglish": "white mugwort",
+    "definition": "植物名称，称为蘩蒿；保留英文white mugwort这一义项。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04918": {
+    "hanzi": "汾河",
+    "sourceEnglish": "Fen River",
+    "definition": "河流名称，指汾河。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04925": {
+    "hanzi": "涪陵",
+    "sourceEnglish": "Fuling, a district of Chongqing",
+    "definition": "地名，指重庆的涪陵区。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04938": {
+    "hanzi": "戆直",
+    "sourceEnglish": "bluntly honest",
+    "definition": "为人直率、诚实，说话不绕弯子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04951": {
+    "hanzi": "龚姓",
+    "sourceEnglish": "the surname Gong, written 龚",
+    "definition": "以龚为姓，龚读gōng。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04990": {
+    "hanzi": "滹沱",
+    "sourceEnglish": "Hutuo, a river name",
+    "definition": "河流名称，指滹沱。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_04999": {
+    "hanzi": "湟水",
+    "sourceEnglish": "Huangshui River",
+    "definition": "河流名称，指湟水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05068": {
+    "hanzi": "倥偬",
+    "sourceEnglish": "busy; pressing",
+    "definition": "事情繁忙、时间紧迫，常见于军务等书面语境。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05119": {
+    "hanzi": "傈僳",
+    "sourceEnglish": "Lisu ethnic group",
+    "definition": "民族名称，指傈僳族。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05146": {
+    "hanzi": "轳",
+    "sourceEnglish": "windlass component, in 辘轳",
+    "definition": "构成辘轳这一词的字；辘轳是用于卷绳提物的装置。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05213": {
+    "hanzi": "耪地",
+    "sourceEnglish": "to hoe a field",
+    "definition": "用锄头锄田，松土或除草。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05305": {
+    "hanzi": "疋",
+    "sourceEnglish": "bolt, a classifier for cloth",
+    "definition": "本词条读pǐ，是旧时计量布帛的单位字，用法接近匹。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05330": {
+    "hanzi": "郯城",
+    "sourceEnglish": "Tancheng, a county in Shandong",
+    "definition": "地名，指山东的郯城县。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05447": {
+    "hanzi": "晔然",
+    "sourceEnglish": "bright and splendid",
+    "definition": "光彩鲜明、明亮灿烂的样子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05464": {
+    "hanzi": "鄞州",
+    "sourceEnglish": "Yinzhou, a district in Zhejiang",
+    "definition": "地名，指浙江的鄞州区。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05476": {
+    "hanzi": "鸿猷",
+    "sourceEnglish": "grand plan",
+    "definition": "宏大的谋划或计划，属于较古雅的书面用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05495": {
+    "hanzi": "姓恽",
+    "sourceEnglish": "to have the surname Yun",
+    "definition": "以恽为姓，恽读yùn；不能写成姓云。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05504": {
+    "hanzi": "瓦甑",
+    "sourceEnglish": "earthenware steamer",
+    "definition": "用陶土等制成的蒸食器具。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05531": {
+    "hanzi": "淄博",
+    "sourceEnglish": "Zibo, a city in Shandong",
+    "definition": "地名，指山东的淄博市。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05545": {
+    "hanzi": "铟元素",
+    "sourceEnglish": "indium",
+    "definition": "化学元素名称，指铟。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05549": {
+    "hanzi": "钫元素",
+    "sourceEnglish": "francium",
+    "definition": "化学元素名称，指钫。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05555": {
+    "hanzi": "蒽油",
+    "sourceEnglish": "anthracene oil",
+    "definition": "化工材料名称，称为蒽油。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05560": {
+    "hanzi": "焓值",
+    "sourceEnglish": "enthalpy value",
+    "definition": "焓这一物理量的数值。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05565": {
+    "hanzi": "脲醛",
+    "sourceEnglish": "urea formaldehyde",
+    "definition": "脲与甲醛相关的材料名称；本例用于脲醛树脂。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05581": {
+    "hanzi": "马谡",
+    "sourceEnglish": "Ma Su",
+    "definition": "人名，写作马谡；不能误写成马苏。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05594": {
+    "hanzi": "搠刺",
+    "sourceEnglish": "thrust or stab",
+    "definition": "用尖锐物向前刺、戳。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05613": {
+    "hanzi": "大岙",
+    "sourceEnglish": "Da'ao",
+    "definition": "地名，写作大岙；不能误写为大澳。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05617": {
+    "hanzi": "孟良崮",
+    "sourceEnglish": "Mount Menglianggu",
+    "definition": "山名，指孟良崮。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05628": {
+    "hanzi": "缦衣",
+    "sourceEnglish": "plain, unpatterned robe",
+    "definition": "没有花纹的素色衣袍。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05634": {
+    "hanzi": "樯橹",
+    "sourceEnglish": "masts and oars; warships",
+    "definition": "桅杆与橹的合称；在诗文中也可借指战船。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05646": {
+    "hanzi": "飑风",
+    "sourceEnglish": "squall",
+    "definition": "一种突然增强的风，称为飑风。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05656": {
+    "hanzi": "稃壳",
+    "sourceEnglish": "grain husk",
+    "definition": "谷粒外面的壳。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05678": {
+    "hanzi": "鳓鱼",
+    "sourceEnglish": "ilisha fish",
+    "definition": "鱼类名称，指鳓，保留英文ilisha fish这一义项。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05689": {
+    "hanzi": "钼矿",
+    "sourceEnglish": "molybdenum ore",
+    "definition": "含钼的矿石或矿藏。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05694": {
+    "hanzi": "氚水",
+    "sourceEnglish": "tritiated water",
+    "definition": "含有氚的水这一类样品的名称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05703": {
+    "hanzi": "鐾刀",
+    "sourceEnglish": "hone a knife",
+    "definition": "精细地磨刀、使刀刃更锋利。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05713": {
+    "hanzi": "水笕",
+    "sourceEnglish": "water conduit",
+    "definition": "引水的管槽或水道。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05721": {
+    "hanzi": "云璈",
+    "sourceEnglish": "yun'ao, an ancient gong instrument",
+    "definition": "古代一种锣类乐器的名称，写作云璈；不写成云敖。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05729": {
+    "hanzi": "邶风",
+    "sourceEnglish": "Bei Airs, a section of the Book of Songs",
+    "definition": "《诗经》中邶地诗歌的篇组名称，写作邶风。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05742": {
+    "hanzi": "邴邑",
+    "sourceEnglish": "ancient settlement of Bing",
+    "definition": "古代聚落或邑的名称，写作邴邑。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05746": {
+    "hanzi": "锸锹",
+    "sourceEnglish": "spade",
+    "definition": "铲、锹一类挖土工具。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05759": {
+    "hanzi": "门枨",
+    "sourceEnglish": "doorpost",
+    "definition": "门边的立柱。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05769": {
+    "hanzi": "楮纸",
+    "sourceEnglish": "paper made from paper-mulberry fiber",
+    "definition": "用构树等的纤维制成的纸，称为楮纸。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05772": {
+    "hanzi": "遄行",
+    "sourceEnglish": "travel swiftly",
+    "definition": "快速地前行或出行，属于古文用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05786": {
+    "hanzi": "老聃",
+    "sourceEnglish": "Lao Dan; another name for Laozi",
+    "definition": "人物名称老聃，也是老子的另一种称呼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05794": {
+    "hanzi": "氐族",
+    "sourceEnglish": "Di people, an ancient ethnic group",
+    "definition": "古代民族名称，指氐族。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05808": {
+    "hanzi": "石礅",
+    "sourceEnglish": "stone block",
+    "definition": "块状的石制物，例句指供人坐的石墩。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05812": {
+    "hanzi": "莪术",
+    "sourceEnglish": "zedoary",
+    "definition": "植物名称，称为莪术，英文义项为zedoary。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05817": {
+    "hanzi": "淝水",
+    "sourceEnglish": "Fei River",
+    "definition": "河流名称，指淝水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05824": {
+    "hanzi": "酆都",
+    "sourceEnglish": "Fengdu; an old place-name spelling",
+    "definition": "旧地名写法，写作酆都，与丰都相关。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05833": {
+    "hanzi": "黼黻",
+    "sourceEnglish": "ceremonial embroidered patterns",
+    "definition": "古代礼服等上的刺绣纹样。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05842": {
+    "hanzi": "姓郜",
+    "sourceEnglish": "have the surname Gao",
+    "definition": "以郜为姓，郜读gào；不能写成姓高。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05850": {
+    "hanzi": "觏见",
+    "sourceEnglish": "see or encounter",
+    "definition": "看见、遇见，属于较古雅的书面用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05862": {
+    "hanzi": "鲧禹",
+    "sourceEnglish": "Gun and Yu",
+    "definition": "人物鲧与禹的合称，例句采用治水传说；禹不能写成羽。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05870": {
+    "hanzi": "青盉",
+    "sourceEnglish": "green he wine-mixing vessel",
+    "definition": "绿色的盉，盉是一种古代盛酒或调酒器具。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05883": {
+    "hanzi": "鳇鱼",
+    "sourceEnglish": "kaluga sturgeon",
+    "definition": "鱼类名称，指鳇，保留英文kaluga sturgeon这一义项。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05887": {
+    "hanzi": "翚飞",
+    "sourceEnglish": "eaves rising like a pheasant in flight",
+    "definition": "像雉鸡展翅飞翔的样子；本例用于屋檐上翘的形象。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05900": {
+    "hanzi": "赍志",
+    "sourceEnglish": "to carry an unfulfilled ambition",
+    "definition": "怀抱尚未实现的志愿或抱负。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05911": {
+    "hanzi": "鲚鱼",
+    "sourceEnglish": "anchovy",
+    "definition": "鱼类名称，指鲚，保留英文anchovy这一义项。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05926": {
+    "hanzi": "圭玠",
+    "sourceEnglish": "ceremonial jade tablets",
+    "definition": "古代礼仪用的玉制板状器物的合称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05936": {
+    "hanzi": "椐木",
+    "sourceEnglish": "wood of the ju tree",
+    "definition": "椐这种树的木材；不能因英语音译ju而误译为枣树。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05947": {
+    "hanzi": "爝炬",
+    "sourceEnglish": "torch",
+    "definition": "火把、火炬，属于古文用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05954": {
+    "hanzi": "痼疴",
+    "sourceEnglish": "persistent chronic illness",
+    "definition": "长期不愈、顽固难除的疾病。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05972": {
+    "hanzi": "蒗蕖",
+    "sourceEnglish": "Langqu, a historical place name",
+    "definition": "历史地名，写作蒗蕖；不能误写成廊渠。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05984": {
+    "hanzi": "郦邑",
+    "sourceEnglish": "Li, an ancient settlement name",
+    "definition": "古代邑或聚落的名称，写作郦邑。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_05994": {
+    "hanzi": "等埒",
+    "sourceEnglish": "equal in standing or value",
+    "definition": "地位、等级或价值等相等。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06010": {
+    "hanzi": "漯河",
+    "sourceEnglish": "Luohe",
+    "definition": "地名，指漯河。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06014": {
+    "hanzi": "镘板",
+    "sourceEnglish": "plastering float",
+    "definition": "抹平灰泥等用的工具，称为镘板；float在此不是浮子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06019": {
+    "hanzi": "旄旗",
+    "sourceEnglish": "banner decorated with yak hair",
+    "definition": "用牦牛毛等装饰的旗帜。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06032": {
+    "hanzi": "宓妃",
+    "sourceEnglish": "Fufei, the legendary goddess of the Luo River",
+    "definition": "传说中的洛水女神的名称，写作宓妃；不能误写成芙妃。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06037": {
+    "hanzi": "眄视",
+    "sourceEnglish": "to glance sideways",
+    "definition": "斜着眼看或向旁边短暂看一眼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06044": {
+    "hanzi": "貊人",
+    "sourceEnglish": "the ancient Mo people",
+    "definition": "古代的一类人群名称，写作貊人。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06054": {
+    "hanzi": "齉鼻",
+    "sourceEnglish": "to speak with a blocked nose",
+    "definition": "因鼻塞等原因说话带有明显鼻音。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06071": {
+    "hanzi": "霈霖",
+    "sourceEnglish": "abundant rain",
+    "definition": "充足、丰沛的雨水，属于古文用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06083": {
+    "hanzi": "流殍",
+    "sourceEnglish": "famine victims dead while wandering",
+    "definition": "因饥荒流徙而死在路上的人。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06099": {
+    "hanzi": "鼎锜",
+    "sourceEnglish": "ancient cooking vessels",
+    "definition": "古代鼎、锜等炊煮器具的合称。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06108": {
+    "hanzi": "褰裳",
+    "sourceEnglish": "to lift the lower part of one's robe",
+    "definition": "提起衣服下摆，常用于涉水等场景。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06121": {
+    "hanzi": "溱水",
+    "sourceEnglish": "Zhen River in classical poetry",
+    "definition": "古典诗歌中的河流名称，写作溱水。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06134": {
+    "hanzi": "临朐",
+    "sourceEnglish": "Linqu",
+    "definition": "地名，指临朐。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06153": {
+    "hanzi": "稽颡",
+    "sourceEnglish": "to kowtow",
+    "definition": "旧时一种额头触地的叩拜礼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06162": {
+    "hanzi": "觞咏",
+    "sourceEnglish": "to drink wine and compose poetry",
+    "definition": "饮酒并吟诗、作诗。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06179": {
+    "hanzi": "摅陈",
+    "sourceEnglish": "to express one's thoughts",
+    "definition": "把想法、感受或心事表达出来。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06192": {
+    "hanzi": "猴狲",
+    "sourceEnglish": "monkey, an older or regional word",
+    "definition": "猴子的旧称或地域称呼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06204": {
+    "hanzi": "剑镡",
+    "sourceEnglish": "sword guard",
+    "definition": "剑柄与剑身之间用来护手的部件。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06226": {
+    "hanzi": "菀柳",
+    "sourceEnglish": "lush willow in classical poetry",
+    "definition": "古诗文中形容柳树茂盛的说法；菀在此读yù。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06241": {
+    "hanzi": "晞发",
+    "sourceEnglish": "to dry one's hair",
+    "definition": "让头发变干；例句指在阳光下晒干，不限定用吹风机。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06245": {
+    "hanzi": "隰地",
+    "sourceEnglish": "low damp land",
+    "definition": "地势较低、土壤潮湿的土地。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06254": {
+    "hanzi": "挦拔",
+    "sourceEnglish": "to pluck or pull out",
+    "definition": "扯出、拔出，常用于毛或其他可拔的东西。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06265": {
+    "hanzi": "渫除",
+    "sourceEnglish": "to clear away or remove",
+    "definition": "清除、移走，例句指清理泥沙。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06270": {
+    "hanzi": "荫庥",
+    "sourceEnglish": "protective shelter or patronage",
+    "definition": "庇护、保护或来自他人的扶助。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06283": {
+    "hanzi": "鄢陵",
+    "sourceEnglish": "Yanling",
+    "definition": "地名，指鄢陵。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06301": {
+    "hanzi": "乂安",
+    "sourceEnglish": "peace and order",
+    "definition": "安定、有秩序的状态，属于较古雅的用语。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06304": {
+    "hanzi": "八佾",
+    "sourceEnglish": "ritual dance of eight rows of eight dancers",
+    "definition": "古代礼仪中的八行八列舞队，共六十四名舞者。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06310": {
+    "hanzi": "劓刑",
+    "sourceEnglish": "ancient punishment of cutting off the nose",
+    "definition": "古代割去鼻子的刑罚。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06318": {
+    "hanzi": "城墉",
+    "sourceEnglish": "city wall",
+    "definition": "城市或城池的围墙。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06328": {
+    "hanzi": "颙颙",
+    "sourceEnglish": "looking eagerly and expectantly",
+    "definition": "急切、期待地望着的样子。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06341": {
+    "hanzi": "刖刑",
+    "sourceEnglish": "ancient punishment of cutting off feet",
+    "definition": "古代截去脚的刑罚。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06354": {
+    "hanzi": "玉璪",
+    "sourceEnglish": "jade bead strands on a ceremonial crown",
+    "definition": "古代礼冠上垂挂的玉珠串。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06368": {
+    "hanzi": "埴土",
+    "sourceEnglish": "clay",
+    "definition": "黏土；埴是较古雅的称呼。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06379": {
+    "hanzi": "觯杯",
+    "sourceEnglish": "an ancient drinking cup",
+    "definition": "古代的一种饮酒器具，称为觯杯。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06398": {
+    "hanzi": "赓缵",
+    "sourceEnglish": "carry on predecessors' work",
+    "definition": "承接前人的工作或事业，继续发展。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06415": {
+    "hanzi": "馇粥",
+    "sourceEnglish": "cook and stir porridge",
+    "definition": "一边煮一边搅动粥。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06453": {
+    "hanzi": "姓隗",
+    "sourceEnglish": "have the surname Wei (隗)",
+    "definition": "以隗为姓；本词条隗读wěi。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06458": {
+    "hanzi": "酃县",
+    "sourceEnglish": "Ling County, a former county name",
+    "definition": "旧县名，写作酃县；不能误写成陵县。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06476": {
+    "hanzi": "苦荬菜",
+    "sourceEnglish": "a kind of bitter wild herb",
+    "definition": "一种味苦的野生草本植物，称为苦荬菜。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06549": {
+    "hanzi": "漾濞",
+    "sourceEnglish": "Yangbi",
+    "definition": "地名，指漾濞。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  },
+  "wl_06691": {
+    "hanzi": "黟县",
+    "sourceEnglish": "Yi County in Anhui",
+    "definition": "地名，指安徽的黟县。",
+    "reviewEvidence": "AI proofreading against retained English sense, reading and supplied example; natural Chinese rewritten; not independent dictionary verification or human review."
+  }
+}

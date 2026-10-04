@@ -16,15 +16,19 @@ import json
 import re
 import unicodedata
 from pathlib import Path
+from wordlist_difficulty import apply_ratings, validate_difficulty
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / '.gradle/wordlist-implementation'
 CURATED = ROOT / 'tools/wordlist_curated'
 ORIGINAL = ROOT / 'wordlist.original.csv'
 OUTPUT = ROOT / 'wordlist.csv'
-HEADERS = ['罕度', '组词', '拼音', '简单例句', '例句拼音', '例句英语翻译',
+LEGACY_HEADERS = ['罕度', '组词', '拼音', '简单例句', '例句拼音', '例句英语翻译',
            '词条ID', '英文释义', '词性', '第二例句', '第二例句拼音', '第二例句英语翻译',
            '部件JSON', '使用提示', '干扰词ID', '来源说明']
+HEADERS = LEGACY_HEADERS + ['本义解释', '引申义解释']
+REFINED = ROOT / 'tools/wordlist_refined'
+IDIOMS = ROOT / 'tools/idiom_curated'
 STOP = set('a an the of to in on at by is are was were be been being and or for with this that it its his her their he she they i you we my our your from as into very more some one has have had not can will all'.split())
 TONES = {'a':'āáǎà', 'e':'ēéěè', 'i':'īíǐì', 'o':'ōóǒò', 'u':'ūúǔù', 'ü':'ǖǘǚǜ'}
 # This deletion decision belongs to the source CSV, not a regenerated asset report.
@@ -240,7 +244,119 @@ def note_for(row, english, pos, authored):
     pieces.append('Character glosses are memory aids, not a claim about the word\'s origin; learn its complete contextual meaning.')
     return ' '.join(pieces)
 
-def assemble():
+def assemble_refined(regrade=True):
+    """Keep the retained baseline's order and append persistent idiom content."""
+    words = list(csv.DictReader((REFINED/'baseline.csv').open(encoding='utf-8-sig', newline='')))
+    overrides = json.loads((REFINED/'overrides.json').read_text(encoding='utf-8'))
+    if set(overrides) != {word['词条ID'] for word in words}:
+        raise ValueError('Every retained stable ID requires a refinement production record.')
+    seen = {identity(word['组词'], word['拼音']) for word in words}
+    for word in words:
+        change = overrides[word['词条ID']]
+        if any(change.get(key, word[key]) != word[key] for key in ['词条ID', '组词', '拼音']):
+            raise ValueError('Refinement cannot silently change retained identity: '+word['词条ID'])
+        if set(change)-set(HEADERS):
+            raise ValueError('Unknown refinement field: '+word['词条ID'])
+        word.update(change)
+        for key in HEADERS:
+            word.setdefault(key, '')
+    additions = []
+    if IDIOMS.exists():
+        for path in sorted(IDIOMS.glob('rows_*.json')):
+            payload = json.loads(path.read_text(encoding='utf-8'))
+            if not isinstance(payload, list):
+                raise ValueError('Idiom content must be a list of CSV rows: '+path.name)
+            for word in payload:
+                if set(word) != set(HEADERS) or not re.fullmatch(r'cy_[0-9]{5}',word['词条ID']):
+                    raise ValueError('Invalid persistent idiom record: '+path.name)
+                ident = identity(word['组词'], word['拼音'])
+                if ident in seen:
+                    raise ValueError('New idiom duplicates a retained identity: '+word['组词'])
+                seen.add(ident)
+                additions.append(word)
+    words.extend(sorted(additions, key=lambda word: word['词条ID']))
+    if len(additions) != 1000 or {word['词条ID'] for word in additions} != {f'cy_{n:05}' for n in range(1, 1001)}:
+        raise ValueError('The frozen idiom appendix requires exactly cy_00001 through cy_01000.')
+    assign_idiom_distractors(words)
+    removed = list(csv.DictReader((ROOT/'wordlist-removals.csv').open(encoding='utf-8-sig', newline='')))
+    if regrade:
+        apply_ratings(words)
+    return words, removed
+
+
+def assign_idiom_distractors(words):
+    """Use equally formatted, semantically distinct idiom answers for idiom cards.
+
+    Mixing descriptive idiom answers with single-noun answers reveals the correct
+    answer through typography and grammar. These reviewed anchors cover distinct
+    domains; conservative English/Chinese exclusions avoid a target's near senses.
+    The application still grades the existing meaning IDs, not answer text.
+    """
+    idioms = [word for word in words if word['词性'] == 'idiom']
+    by_word = {word['组词']: word for word in idioms}
+    anchors = [
+        ('言简意赅', 'concise brief expression words speech writing complete clarity lucid clear', '简明|简洁|说话|言语|表达|言辞|清楚|清晰|明白'),
+        ('千钧一发', 'danger dangerous risk critical imminent emergency peril confrontation erupting tension inauspicious threat', '危急|危险|风险|险境|一触即发|紧张|凶险'),
+        ('彬彬有礼', 'courteous courtesy polite refined gentle manners behavior', '礼貌|礼仪|温雅|儒雅|斯文'),
+        ('无稽之谈', 'falsehood false factual fabricated baseless unfounded rumor lie deception', '无根据|虚构|凭空|捏造|谣言|欺骗'),
+        ('鞠躬尽瘁', 'dedication devoted diligent duty effort strength hardworking tireless conscientious responsible assiduous industrious enduring endurance determination patiently repeated trouble', '勤奋|勤恳|勤勉|认真|尽责|尽力|劳苦|努力|奉献|尽职|坚持|竭力|忍住|耐心|不嫌麻烦'),
+        ('深孚众望', 'trust confidence respected respect reputation popular approval', '信任|声望|威望|众望|信赖'),
+        ('潸然泪下', 'sadness sad grief tears crying emotion sorrow unhappy distressed touching moving moved poignant', '悲伤|悲哀|眼泪|流泪|伤心|悲痛|感动|感人|触动'),
+        ('穷兵黩武', 'military force war warfare battle fighting aggression', '战争|军队|用兵|武力|好战'),
+        ('绿草如茵', 'grass green dense soft vegetation plants scenery lush', '草地|青草|茂盛|草木|绿草'),
+        ('人才济济', 'talent talented skilled ability capable people excellence', '人才|才能|才华|能人'),
+        ('敝帚自珍', 'treasure attachment cherish possession own imperfect value love like fond', '珍爱|珍惜|珍视|喜爱|喜欢|爱好|自珍|敝帚'),
+        ('姗姗来迟', 'late arriving arrival delay delayed overdue', '来迟|迟到|晚到|延迟'),
+        ('釜底抽薪', 'root cause problem solve solving fundamental solution essential point key core', '根本|根源|根除|解决问题|要害|关键|实质|症结'),
+        ('良莠不齐', 'quality mixed good bad uneven variable inferior', '好坏|良莠|混杂|参差|质量'),
+        ('噤若寒蝉', 'silent silence quiet afraid fear scared hesitant', '害怕|恐惧|沉默|不敢说|不敢发声'),
+        ('一蹶不振', 'discouraged discouragement setback recover failure defeated hopeless spirits', '挫折|消沉|振作|失败|丧气'),
+        ('睚眦必报', 'revenge vindictive resentment slight retaliation grudge', '报复|报仇|怨恨|记仇'),
+        ('津津有味', 'enjoy enjoyment enjoyable interesting pleasure delicious appetite taste like love fond enthralled engrossed absorbed captivated fascination', '兴趣|兴味|喜欢|喜爱|爱好|滋味|津津|美味|入迷|沉迷|陶醉|如痴如醉'),
+        ('一望无垠', 'landscape horizon vast endless limitless distance extensive broad', '广阔|辽阔|边际|无垠|无际'),
+        ('大惊小怪', 'fuss exaggerated surprise reaction overreacting trivial', '惊怪|大惊|惊讶|小事|过分惊'),
+        ('小心翼翼', 'careful cautious caution meticulous attentive prudent', '小心|谨慎|仔细|慎重'),
+        ('井井有条', 'order orderly organization organized neat systematic tidy', '条理|整齐|有序|秩序'),
+        ('同舟共济', 'unity together cooperation cooperative mutual help joint difficulties common cause ideals aims', '团结|互助|合作|共同|齐心|同心|志趣|共同目标|意见一致'),
+        ('诚心诚意', 'sincere sincerity earnest genuine honest truthful integrity', '诚恳|诚心|真诚|诚意|真心'),
+        ('循序渐进', 'gradual step incremental steady progress sequence methodical improvement improving improve better practice', '逐步|循序|渐进|一步步|按步骤|逐渐|渐渐|进步|好转|练习|熟练'),
+    ]
+    generic = {'describe', 'describ', 'someone', 'something', 'person', 'people', 'thing', 'behavior', 'state', 'situation'}
+    available = [(by_word[name], tokens(domain)-generic, re.compile(chinese))
+                 for name, domain, chinese in anchors if name in by_word]
+    if len(available) < 20:
+        raise ValueError('Reviewed idiom distractor anchors are missing.')
+    for n, word in enumerate(idioms):
+        meaning = re.sub(r'^Describes:\s*', 'Describes ', word['英文释义'])
+        if not meaning.startswith('Describes '):
+            raise ValueError('Idiom answer must describe its modern sense: '+word['组词'])
+        word['英文释义'] = meaning
+        target = tokens(meaning)-generic
+        chinese = word.get('引申义解释', '').split('\n')[0]
+        candidates = [(anchor, domain) for anchor, domain, pattern in available
+                      if anchor['词条ID'] != word['词条ID'] and not target & domain and not pattern.search(chinese)]
+        offset = n % len(candidates) if candidates else 0
+        candidates = candidates[offset:] + candidates[:offset]
+        selected = []
+        labels = {meaning.strip().casefold()}
+        domains = set()
+        for anchor, domain in candidates:
+            label = re.sub(r'^Describes:\s*', 'Describes ', anchor['英文释义']).strip().casefold()
+            if label in labels or domains & domain:
+                continue
+            selected.append(anchor['词条ID'])
+            labels.add(label)
+            domains.update(domain)
+            if len(selected) == 3:
+                break
+        if len(selected) != 3:
+            raise ValueError('No three distinct idiom distractors for '+word['组词'])
+        word['干扰词ID'] = json.dumps(selected, separators=(',', ':'))
+
+
+def assemble(regrade=True):
+    if (REFINED/'baseline.csv').exists():
+        return assemble_refined(regrade)
     rows,index=read_inputs()
     drafts=json.loads((CACHE/'lexical-drafts.json').read_text(encoding='utf-8'))
     reviews=reviewed_content()
@@ -299,8 +415,9 @@ def assemble():
         source=review.get('source','CC-CEDICT (MDBG, CC BY-SA 4.0); selected contextual sense; original supplied example and translation.')
         if not review.get('second'):
             source+=' Second example: reused supplied sentence in a different context.'
-        record=dict(zip(HEADERS, [row['罕度'],row['组词'],reading,*first,f'wl_{line-1:05}',english,pos,*second,
+        record=dict(zip(LEGACY_HEADERS, [row['罕度'],row['组词'],reading,*first,f'wl_{line-1:05}',english,pos,*second,
           json.dumps(parts,ensure_ascii=False,separators=(',',':')),note_for(row,english,pos,review.get('note','')),'',source]))
+        record.update({'本义解释':'','引申义解释':''})
         output.append(record)
     if unfinished:
         (CACHE/'unfinished-content.json').write_text(json.dumps(unfinished,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -342,6 +459,8 @@ def assemble():
             if len(selected)==3: break
         if len(selected)!=3: raise ValueError('No three unambiguous distractor anchors for '+row['组词'])
         row['干扰词ID']=json.dumps(selected,separators=(',',':'))
+    if regrade: apply_ratings(output)
+    output.sort(key=lambda r:(int(r['罕度']),r['词条ID']))
     return output,removed
 
 def serialize_csv(rows,headers):
@@ -352,10 +471,10 @@ def serialize_csv(rows,headers):
 def validate_csv(path):
     return validate_csv_bytes(path.read_bytes())
 
-def validate_csv_bytes(content):
+def validate_csv_bytes(content, verify_difficulty=True):
     if len(content)>32*1024*1024: raise ValueError('CSV exceeds byte limit')
     table=list(csv.DictReader(io.StringIO(content.decode('utf-8-sig'),newline='')))
-    if not table or list(table[0])!=HEADERS or len(table)>10000: raise ValueError('CSV headers/count invalid')
+    if not table or list(table[0]) not in [HEADERS,LEGACY_HEADERS] or len(table)>10000: raise ValueError('CSV headers/count invalid')
     ids={r['词条ID']:r for r in table}
     if len(ids)!=len(table): raise ValueError('Duplicate word IDs')
     seen=set()
@@ -369,13 +488,27 @@ def validate_csv_bytes(content):
         normalized=unicodedata.normalize('NFC',value).lower()
         punctuation=sentence_punctuation if sentence else set("'-’")
         return any(c in pinyin_letters for c in normalized) and all(c in pinyin_letters or c.isspace() or c in punctuation for c in normalized)
-    if table!=sorted(table,key=lambda r:(int(r['罕度']),r['词条ID'])): raise ValueError('Rarity/original-order sort invalid')
+    if list(table[0])==HEADERS and (REFINED/'baseline.csv').exists():
+        baseline=list(csv.DictReader((REFINED/'baseline.csv').open(encoding='utf-8-sig',newline='')))
+        original_ids=[r['词条ID'] for r in baseline]
+        if [r['词条ID'] for r in table[:len(baseline)]]!=original_ids:
+            raise ValueError('Retained baseline order changed')
+        tail=[r['词条ID'] for r in table[len(baseline):]]
+        if tail!=sorted(tail) or any(not re.fullmatch(r'cy_[0-9]{5}',x) for x in tail):
+            raise ValueError('New idioms must follow all retained words in stable ID order')
+    elif table!=sorted(table,key=lambda r:(int(r['罕度']),r['词条ID'])):
+        raise ValueError('Rarity/original-order sort invalid')
     for r in table:
-        if any(not r[k].strip() for k in HEADERS): raise ValueError('Blank field: '+r['组词'])
+        if any('\x00' in value for value in r.values()):
+            raise ValueError('Null character in teaching content: '+r['词条ID'])
+        encoded_record = serialize_csv([r], list(r)).split(b'\r\n', 1)[1]
+        if len(encoded_record) > 32 * 1024:
+            raise ValueError('CSV record exceeds the app parser limit: '+r['词条ID'])
+        if any(not r[k].strip() for k in LEGACY_HEADERS): raise ValueError('Blank field: '+r['组词'])
         ident=identity(r['组词'],r['拼音'])
         if ident in seen: raise ValueError('Duplicate word and reading: '+r['组词'])
         seen.add(ident)
-        if r['罕度'] not in {'0','1','2'} or not re.fullmatch(r'wl_[0-9]{5}',r['词条ID']): raise ValueError('Invalid rarity/stable ID')
+        if r['罕度'] not in {'0','1','2','3'} or not re.fullmatch(r'(?:wl|cy)_[0-9]{5}',r['词条ID']): raise ValueError('Invalid rarity/stable ID')
         if r['组词'] not in r['简单例句'] or r['组词'] not in r['第二例句'] or r['简单例句']==r['第二例句']: raise ValueError('Invalid examples: '+r['组词'])
         for text_key,pinyin_key in [('组词','拼音'),('简单例句','例句拼音'),('第二例句','第二例句拼音')]:
             if not check_pinyin(r[pinyin_key],text_key!='组词'): raise ValueError('Invalid pinyin characters: '+r['词条ID']+' '+pinyin_key)
@@ -383,6 +516,7 @@ def validate_csv_bytes(content):
             syllables=len(re.findall(r'[a-züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜêńǹ]+',r[pinyin_key].lower()))
             if count!=syllables: raise ValueError(f'Hanzi/pinyin position mismatch: {r["词条ID"]} {r["组词"]} {pinyin_key}: {count}/{syllables}')
         if any(len(r[k])>limit for k,limit in [('组词',64),('拼音',128),('英文释义',300),('词性',80),('使用提示',2000),('来源说明',2000),('简单例句',1000),('例句拼音',2000),('例句英语翻译',2000),('第二例句',1000),('第二例句拼音',2000),('第二例句英语翻译',2000)]): raise ValueError('Field length exceeded: '+r['组词'])
+        if any(len(r.get(k,''))>2000 for k in ['本义解释','引申义解释']): raise ValueError('Explanation field length exceeded: '+r['组词'])
         parts=json.loads(r['部件JSON'])
         if not 1<=len(parts)<=32 or ''.join(p['hanzi'] for p in parts)!=r['组词'] or any(not all(isinstance(p.get(k),str) and p[k].strip() for k in ['hanzi','pinyin','gloss']) for p in parts): raise ValueError('Invalid parts: '+r['组词'])
         if len(r['部件JSON'])>16000 or any(len(p['hanzi'])>64 or len(p['pinyin'])>128 or len(p['gloss'])>300 or not check_pinyin(p['pinyin']) for p in parts): raise ValueError('Invalid part limits or pinyin: '+r['组词'])
@@ -390,21 +524,28 @@ def validate_csv_bytes(content):
         if len(distractors)!=3 or len(set(distractors))!=3 or r['词条ID'] in distractors or any(x not in ids for x in distractors): raise ValueError('Invalid distractor IDs: '+r['组词'])
         labels=[r['英文释义']]+[ids[x]['英文释义'] for x in distractors]
         if len({x.strip().casefold() for x in labels})!=4: raise ValueError('Repeated answer labels: '+r['组词'])
+        if list(table[0]) == HEADERS and r['词性'] == 'idiom':
+            if any(ids[x]['词性'] != 'idiom' for x in distractors) or any(not x.startswith('Describes ') for x in labels):
+                raise ValueError('Idiom options reveal the answer format: '+r['组词'])
+            if not all(r.get(key, '').strip() for key in ['本义解释', '引申义解释']):
+                raise ValueError('Idiom explanation is incomplete: '+r['组词'])
         canonical=[aliases[r['词条ID']]]+[aliases[x] for x in distractors]
         if len(set(canonical))!=4 or len({actual_english[x].strip().casefold() for x in canonical})!=4: raise ValueError('Invalid retained-demo options: '+r['组词'])
     overlap=sum(identity(r['组词'],r['拼音']) in demo_by_identity for r in table)
-    return {'words':len(table),'characters':len(set(''.join(r['组词'] for r in table))), 'rarity':dict(collections.Counter(r['罕度'] for r in table)), 'bytes':len(content),'demoDuplicates':overlap,'firstImportNewWords':len(table)-overlap,'resultingWordbookCount':len(table)-overlap+len(demo),'sha256':hashlib.sha256(content).hexdigest()}
+    grading = validate_difficulty(table) if verify_difficulty else {'status':'ungraded content assembly; review and regenerate the difficulty manifest before publishing'}
+    return {'words':len(table),'characters':len(set(''.join(r['组词'] for r in table))), 'rarity':dict(collections.Counter(r['罕度'] for r in table)), 'bytes':len(content),'demoDuplicates':overlap,'firstImportNewWords':len(table)-overlap,'resultingWordbookCount':len(table)-overlap+len(demo),'sha256':hashlib.sha256(content).hexdigest(),'difficulty':grading}
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--prepare',action='store_true')
     parser.add_argument('--check',action='store_true')
+    parser.add_argument('--assemble-ungraded',action='store_true',help='Write assembled content before refreshing difficulty evidence; all structural checks still apply.')
     args=parser.parse_args()
     if args.prepare: prepare()
     elif args.check: print(json.dumps(validate_csv(OUTPUT),ensure_ascii=False))
     else:
-        words,removed=assemble()
+        words,removed=assemble(regrade=not args.assemble_ungraded)
         content=serialize_csv(words,HEADERS)
-        result=validate_csv_bytes(content)
+        result=validate_csv_bytes(content,verify_difficulty=not args.assemble_ungraded)
         OUTPUT.write_bytes(content)
         (ROOT/'wordlist-removals.csv').write_bytes(serialize_csv(removed,['原始行','词条ID','组词','原拼音','原因']))
         print(json.dumps(result,ensure_ascii=False))

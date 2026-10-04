@@ -1,0 +1,47 @@
+{
+  "producedOn": "2026-10-04",
+  "baselineRows": 6648,
+  "baselineSha256": "9e1349796b62e8535ed1c33ac24d331d15594a1831a41fb9d91d354eefbf7ce9",
+  "records": 6648,
+  "counts": {
+    "review:automatic-source-assisted": 5295,
+    "chineseSource:word": 4670,
+    "partsPolicy:same-reading-dictionary-memory-aids": 4831,
+    "review:editorial-confirmed": 240,
+    "chineseSource:editorial-contextual-definition": 222,
+    "partsPolicy:editorial-context": 51,
+    "partsPolicy:lexical-unit-preserved": 1448,
+    "chineseSource:word-neutral-variant": 199,
+    "partsPolicy:editorial-risk-correction": 222,
+    "review:editorial-risk-correction": 157,
+    "review:ai-translation-context-proofread": 956,
+    "chineseSource:machine-translation-ai-context-proofread": 956,
+    "partsPolicy:editorial-lexical-unit": 79,
+    "chineseSource:character": 601,
+    "partsPolicy:bound-unit-preserved": 17
+  },
+  "source": {
+    "commit": "e804ada333b68afddfdccbe8dcc938a72da157a7",
+    "source": "https://github.com/mapull/chinese-dictionary",
+    "files": {
+      "word.json": {
+        "bytes": 63841250,
+        "sha256": "a85d96a3c6e55e831406b534b533ab4641176fdd80ac7dceaeb5af9bed333c58"
+      },
+      "char_detail.json": {
+        "bytes": 13032045,
+        "sha256": "055c8cd9375d2dcdb7b6a2f55f990315834d6af6b0c2c84d9b75190e991d8c7b"
+      },
+      "idiom.json": {
+        "bytes": 24487529,
+        "sha256": "54f0cefb5b7d3ea9a3b357bcd7d53877f5a4c11d1c68ff1790f831800c000ace"
+      },
+      "LICENSE": {
+        "bytes": 1063,
+        "sha256": "b8934cb55cd700b6817db15533fb57281ea2ef0682209fe113365d1e25e9b1c6"
+      }
+    }
+  },
+  "boundary": "All retained entries received source-assisted enrichment. Authored contextual definitions and AI translation proofreading are separately recorded. AI proofreading compares the retained English, reading and example; it is not independent dictionary verification or human review. Preserved examples received a full automated quality scan, not a full manual linguistic review.",
+  "provenanceCaveat": "Upstream advertises MIT but notes that the original provenance of some collected material cannot be established. This data is retained as an attributed reference, not certified authoritative lexicography."
+}

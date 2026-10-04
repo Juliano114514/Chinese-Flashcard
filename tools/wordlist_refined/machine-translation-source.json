@@ -1,0 +1,10 @@
+{
+  "producedOn": "2026-10-04",
+  "service": "Google Translate consumer text translation",
+  "endpoint": "https://translate.googleapis.com/translate_a/single",
+  "sourceLanguage": "en",
+  "targetLanguage": "zh-CN",
+  "records": 1056,
+  "payloadSha256": "6bdde46e70d2be40950a6715e3b8d672face3b29166136c26cc853f872a3bcbb",
+  "boundary": "Machine translation of existing contextual English glosses, not independent dictionary verification; original English remains visible."
+}

@@ -1,0 +1,2212 @@
+{
+  "rows": 1000,
+  "modernExamples": 2000,
+  "reviewedBreakdowns": 1000,
+  "wholeExpressionGroups": 9,
+  "semanticGroups": 2024,
+  "exampleEnglishCorrectionFields": 342,
+  "sentenceParticleCorrectionCounts": {
+    "得": 121,
+    "地": 64,
+    "了": 18,
+    "的": 16
+  },
+  "sentenceParticleCorrections": [
+    {
+      "id": "cy_00019",
+      "example": 2,
+      "sentence": "孩子们在操场上大喊大叫，玩得很开心。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00024",
+      "example": 1,
+      "sentence": "雨水把纸箱弄得一塌糊涂。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00024",
+      "example": 2,
+      "sentence": "没有提前计划，活动办得一塌糊涂。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00029",
+      "example": 1,
+      "sentence": "她突然生气，弄得我莫名其妙。",
+      "character": "得",
+      "position": 7,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00030",
+      "example": 2,
+      "sentence": "集体生活中不能随心所欲地制造噪声。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00031",
+      "example": 2,
+      "sentence": "第一次上台演讲，她紧张得不知所措。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00034",
+      "example": 1,
+      "sentence": "机器不会无缘无故地停下来。",
+      "character": "地",
+      "position": 8,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00034",
+      "example": 2,
+      "sentence": "他无缘无故地责怪别人，让大家很不高兴。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00037",
+      "example": 1,
+      "sentence": "别偷偷摸摸地拿东西，需要什么就告诉我。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00037",
+      "example": 2,
+      "sentence": "他偷偷摸摸地走到门口，怕把孩子吵醒。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00045",
+      "example": 1,
+      "sentence": "费用明细写得一清二楚。",
+      "character": "得",
+      "position": 5,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00045",
+      "example": 2,
+      "sentence": "她把事情经过说得一清二楚。",
+      "character": "得",
+      "position": 7,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00047",
+      "example": 1,
+      "sentence": "搬家后，我们一如既往地保持联系。",
+      "character": "地",
+      "position": 10,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00058",
+      "example": 1,
+      "sentence": "孩子们平安无事地回到了学校。",
+      "character": "地",
+      "position": 7,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00059",
+      "example": 1,
+      "sentence": "那个人在车旁鬼鬼祟祟地转来转去。",
+      "character": "地",
+      "position": 10,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00060",
+      "example": 1,
+      "sentence": "有不同意见，我们可以开诚布公地谈。",
+      "character": "地",
+      "position": 14,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00060",
+      "example": 2,
+      "sentence": "经理开诚布公地说明了当前的困难。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00060",
+      "example": 2,
+      "sentence": "经理开诚布公地说明了当前的困难。",
+      "character": "了",
+      "position": 9,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00063",
+      "example": 1,
+      "sentence": "她全心全意地照顾年迈的父亲。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00063",
+      "example": 2,
+      "sentence": "志愿者全心全意地帮助有需要的人。",
+      "character": "地",
+      "position": 7,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00077",
+      "example": 1,
+      "sentence": "相处久了，我们自然而然地成了朋友。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00077",
+      "example": 2,
+      "sentence": "练习多了，动作就会自然而然地熟练起来。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00094",
+      "example": 1,
+      "sentence": "她开门见山地说明了来意。",
+      "character": "了",
+      "position": 8,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00107",
+      "example": 2,
+      "sentence": "她的论证有事实支持，令人觉得无懈可击。",
+      "character": "的",
+      "position": 1,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00107",
+      "example": 2,
+      "sentence": "她的论证有事实支持，令人觉得无懈可击。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00111",
+      "example": 2,
+      "sentence": "火势越来越大，已经到了不可收拾的地步。",
+      "character": "了",
+      "position": 10,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00111",
+      "example": 2,
+      "sentence": "火势越来越大，已经到了不可收拾的地步。",
+      "character": "的",
+      "position": 15,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00114",
+      "example": 1,
+      "sentence": "小猫钻进草丛，很快跑得无影无踪。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00114",
+      "example": 2,
+      "sentence": "等我转身时，那个人已消失得无影无踪。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00120",
+      "example": 2,
+      "sentence": "这次出门提前查路线，免得重蹈覆辙。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00123",
+      "example": 1,
+      "sentence": "两块材料拼接得天衣无缝。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00123",
+      "example": 2,
+      "sentence": "他们配合得天衣无缝，顺利完成了演出。",
+      "character": "得",
+      "position": 4,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00124",
+      "example": 1,
+      "sentence": "他把桌上的面包吃得一干二净。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00124",
+      "example": 2,
+      "sentence": "一场大雨把地上的灰尘冲得一干二净。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00141",
+      "example": 1,
+      "sentence": "玻璃被砸得支离破碎。",
+      "character": "得",
+      "position": 4,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00151",
+      "example": 2,
+      "sentence": "她把每天的工作安排得井井有条。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00155",
+      "example": 1,
+      "sentence": "打碎杯子后，他若无其事地走开了。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00170",
+      "example": 2,
+      "sentence": "听完批评，她一言不发地离开了。",
+      "character": "地",
+      "position": 10,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00171",
+      "example": 2,
+      "sentence": "听到孩子平安的消息，她的担忧烟消云散。",
+      "character": "的",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00173",
+      "example": 2,
+      "sentence": "他滔滔不绝地讲了一个小时，还没有停下。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00176",
+      "example": 1,
+      "sentence": "听到突然的巨响，我不由自主地回头。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00176",
+      "example": 2,
+      "sentence": "看到那张照片，她不由自主地笑了。",
+      "character": "地",
+      "position": 12,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00177",
+      "example": 1,
+      "sentence": "她出其不意地改变了比赛策略。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00177",
+      "example": 2,
+      "sentence": "对手出其不意地进攻，让队员们来不及防守。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00184",
+      "example": 2,
+      "sentence": "孩子把客厅翻得天翻地覆，只为找一块积木。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00187",
+      "example": 1,
+      "sentence": "小鸟在树林里自由自在地飞翔。",
+      "character": "地",
+      "position": 10,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00187",
+      "example": 2,
+      "sentence": "周末没有安排，我想自由自在地过一天。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00192",
+      "example": 2,
+      "sentence": "找到丢失的孩子，是大家的当务之急。",
+      "character": "的",
+      "position": 11,
+      "from": "dí",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00203",
+      "example": 2,
+      "sentence": "他不愿沟通，总觉得自己与团队格格不入。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00204",
+      "example": 2,
+      "sentence": "她白手起家，把工作室办得越来越好。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00212",
+      "example": 1,
+      "sentence": "接连几个紧急任务，让她忙得焦头烂额。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00212",
+      "example": 2,
+      "sentence": "店里的账目出了问题，老板弄得焦头烂额。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00216",
+      "example": 1,
+      "sentence": "电脑突然坏了，他急得手足无措。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00217",
+      "example": 2,
+      "sentence": "明天就要考试，他紧张得坐立不安。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00223",
+      "example": 2,
+      "sentence": "报告写得华而不实，缺少实际数据。",
+      "character": "得",
+      "position": 3,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00226",
+      "example": 2,
+      "sentence": "不能让孩子觉得自己可以无法无天地欺负别人。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00228",
+      "example": 2,
+      "sentence": "调查人员低调行动，免得打草惊蛇。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00232",
+      "example": 2,
+      "sentence": "公司突然安排出差，他身不由己地取消了旅行。",
+      "character": "地",
+      "position": 14,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00234",
+      "example": 2,
+      "sentence": "他心平气和地听完了对方的解释。",
+      "character": "了",
+      "position": 8,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00240",
+      "example": 2,
+      "sentence": "所谓能让人长生不老的药，并不可信。",
+      "character": "的",
+      "position": 9,
+      "from": "di",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00254",
+      "example": 2,
+      "sentence": "他们希望省钱，结果事与愿违，花得更多。",
+      "character": "得",
+      "position": 15,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00259",
+      "example": 2,
+      "sentence": "画画时，她喜欢无拘无束地表达自己的想法。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00263",
+      "example": 2,
+      "sentence": "比赛输了，队员们无精打采地坐着。",
+      "character": "地",
+      "position": 12,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00265",
+      "example": 1,
+      "sentence": "广场上聚集了不计其数的人。",
+      "character": "了",
+      "position": 5,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00266",
+      "example": 1,
+      "sentence": "逛了一下午，他还是两手空空地回家。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00272",
+      "example": 2,
+      "sentence": "不要冒险投入全部积蓄，免得倾家荡产。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00273",
+      "example": 1,
+      "sentence": "设备坏了不能只听天由命，应该找人修理。",
+      "character": "了",
+      "position": 3,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00273",
+      "example": 2,
+      "sentence": "考试结束后，她觉得只能听天由命，等待结果。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00279",
+      "example": 2,
+      "sentence": "这次实习很难得，大家都觉得机不可失。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00299",
+      "example": 1,
+      "sentence": "发现自己错怪了朋友，他羞得无地自容。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00303",
+      "example": 1,
+      "sentence": "多年前的那次旅行，我仍然记忆犹新。",
+      "character": "的",
+      "position": 3,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00309",
+      "example": 1,
+      "sentence": "客人突然到访，她忙得手忙脚乱。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00309",
+      "example": 2,
+      "sentence": "第一次独自做饭，他弄得手忙脚乱。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00324",
+      "example": 1,
+      "sentence": "听说文件被误删，他气得暴跳如雷。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00327",
+      "example": 1,
+      "sentence": "不能为一点利益就争得你死我活。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00330",
+      "example": 1,
+      "sentence": "他一本正经地讲了一个笑话。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00330",
+      "example": 2,
+      "sentence": "孩子一本正经地宣布自己要当厨师。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00338",
+      "example": 1,
+      "sentence": "孩子们兴高采烈地出发去郊游。",
+      "character": "地",
+      "position": 7,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00338",
+      "example": 2,
+      "sentence": "她兴高采烈地向朋友展示自己的作品。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00339",
+      "example": 2,
+      "sentence": "他总想把工作做得十全十美。",
+      "character": "得",
+      "position": 7,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00341",
+      "example": 1,
+      "sentence": "那只流浪猫饿得骨瘦如柴。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00341",
+      "example": 2,
+      "sentence": "病了很久，他瘦得骨瘦如柴。",
+      "character": "得",
+      "position": 7,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00345",
+      "example": 1,
+      "sentence": "她脚踏实地地学习，不急于求成。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00348",
+      "example": 1,
+      "sentence": "表格做得清楚，费用一目了然。",
+      "character": "得",
+      "position": 3,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00351",
+      "example": 1,
+      "sentence": "已经得到了不少好处，他却仍然贪得无厌。",
+      "character": "了",
+      "position": 4,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00352",
+      "example": 1,
+      "sentence": "新产品的广告铺天盖地地出现在街头。",
+      "character": "地",
+      "position": 10,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00361",
+      "example": 1,
+      "sentence": "他牙疼得死去活来，只好赶紧求医。",
+      "character": "得",
+      "position": 3,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00361",
+      "example": 2,
+      "sentence": "失去亲人后，她哭得死去活来。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00366",
+      "example": 1,
+      "sentence": "文件已有备份，再复制一次显得多此一举。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00375",
+      "example": 2,
+      "sentence": "她把平淡无奇的日子过得很有趣。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00385",
+      "example": 1,
+      "sentence": "他把严重的错误轻描淡写地带过了。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00387",
+      "example": 2,
+      "sentence": "他背信弃义地出卖朋友，失去了大家的信任。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00391",
+      "example": 1,
+      "sentence": "看到满屋子的鲜花，她惊得目瞪口呆。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00394",
+      "example": 1,
+      "sentence": "这幅画把山村的宁静表现得淋漓尽致。",
+      "character": "的",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00394",
+      "example": 1,
+      "sentence": "这幅画把山村的宁静表现得淋漓尽致。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00394",
+      "example": 2,
+      "sentence": "演员把人物的矛盾心理演得淋漓尽致。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00398",
+      "example": 2,
+      "sentence": "初到陌生城市，她一度觉得无依无靠。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00399",
+      "example": 1,
+      "sentence": "小猫无声无息地走进了房间。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00399",
+      "example": 2,
+      "sentence": "他无声无息地离开，没有惊动任何人。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00417",
+      "example": 1,
+      "sentence": "他怒气冲冲地走进办公室。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00417",
+      "example": 2,
+      "sentence": "她看到东西被弄坏，怒气冲冲地问是谁做的。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00423",
+      "example": 1,
+      "sentence": "听说要去游乐园，孩子高兴得手舞足蹈。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00423",
+      "example": 2,
+      "sentence": "球队进球后，他兴奋得手舞足蹈。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00427",
+      "example": 1,
+      "sentence": "她在这群初学者中显得鹤立鸡群。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00432",
+      "example": 1,
+      "sentence": "她真心实意地向朋友道歉。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00432",
+      "example": 2,
+      "sentence": "我们真心实意地欢迎大家提出建议。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00442",
+      "example": 1,
+      "sentence": "领先很多分后，他们觉得已经稳操胜券。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00449",
+      "example": 1,
+      "sentence": "屋里有人吸烟，弄得乌烟瘴气。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00449",
+      "example": 2,
+      "sentence": "那些争吵和谣言把团队搞得乌烟瘴气。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00466",
+      "example": 1,
+      "sentence": "要解决这个老问题，就得查清原因，斩草除根。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "děi",
+      "rule": "modal meaning must"
+    },
+    {
+      "id": "cy_00467",
+      "example": 2,
+      "sentence": "他累得半死不活，回家就睡着了。",
+      "character": "得",
+      "position": 2,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00475",
+      "example": 1,
+      "sentence": "广告说得天花乱坠，实际效果却很普通。",
+      "character": "得",
+      "position": 3,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00475",
+      "example": 2,
+      "sentence": "他把计划吹得天花乱坠，却拿不出数据。",
+      "character": "得",
+      "position": 5,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00479",
+      "example": 2,
+      "sentence": "她只想安分守己地生活，不愿参与那些争斗。",
+      "character": "地",
+      "position": 7,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00481",
+      "example": 2,
+      "sentence": "他刨根问底地调查，终于找到了故障原因。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00482",
+      "example": 1,
+      "sentence": "这封信原封不动地退了回来。",
+      "character": "地",
+      "position": 7,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00492",
+      "example": 2,
+      "sentence": "她觉得他们整天卿卿我我，有些影响工作。",
+      "character": "得",
+      "position": 2,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00494",
+      "example": 2,
+      "sentence": "这份礼物价格不高，却送得恰如其分。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00505",
+      "example": 2,
+      "sentence": "他气愤地把那份敷衍的方案说得一钱不值。",
+      "character": "地",
+      "position": 3,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00505",
+      "example": 2,
+      "sentence": "他气愤地把那份敷衍的方案说得一钱不值。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00508",
+      "example": 2,
+      "sentence": "老城区的地下管线错综复杂，施工须谨慎。",
+      "character": "的",
+      "position": 3,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00509",
+      "example": 2,
+      "sentence": "开门营业前，店员把玻璃柜擦得一尘不染。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00513",
+      "example": 1,
+      "sentence": "他得奖后变得目中无人，不肯听同事的建议。",
+      "character": "得",
+      "position": 5,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00516",
+      "example": 1,
+      "sentence": "等待面试结果时，他紧张得如坐针毡。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00517",
+      "example": 1,
+      "sentence": "我们站在山顶，居高临下地看见整座村庄。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00526",
+      "example": 2,
+      "sentence": "看到食品被故意浪费，他气得怒不可遏。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00529",
+      "example": 1,
+      "sentence": "电影里的海上救援场面让人惊心动魄。",
+      "character": "的",
+      "position": 3,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00535",
+      "example": 1,
+      "sentence": "这份草率的报告被专家批得体无完肤。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00535",
+      "example": 2,
+      "sentence": "他的论证漏洞太多，被对手驳得体无完肤。",
+      "character": "的",
+      "position": 1,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00535",
+      "example": 2,
+      "sentence": "他的论证漏洞太多，被对手驳得体无完肤。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00539",
+      "example": 1,
+      "sentence": "等家人手术结束时，他觉得度日如年。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00572",
+      "example": 1,
+      "sentence": "春雨过后，整个果园显得生机勃勃。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00573",
+      "example": 1,
+      "sentence": "假期里，他在湖边钓鱼，过得逍遥自在。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00575",
+      "example": 2,
+      "sentence": "我先入为主地以为她很冷淡，后来发现错了。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00587",
+      "example": 1,
+      "sentence": "这位导游能说会道，把旅程讲得十分有趣。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00590",
+      "example": 2,
+      "sentence": "严重污染把附近的土地变成了不毛之地。",
+      "character": "了",
+      "position": 12,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00592",
+      "example": 2,
+      "sentence": "项目经理事无巨细地说明了交接事项。",
+      "character": "了",
+      "position": 11,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00602",
+      "example": 2,
+      "sentence": "她对新来的小猫照顾得无微不至。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00605",
+      "example": 1,
+      "sentence": "见到走失多年的亲人，她激动得泪流满面。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00606",
+      "example": 2,
+      "sentence": "她不愿浑浑噩噩地生活，开始规划每天的安排。",
+      "character": "地",
+      "position": 7,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00607",
+      "example": 1,
+      "sentence": "明星突然退赛，传闻顿时闹得满城风雨。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00607",
+      "example": 2,
+      "sentence": "那桩纠纷被到处议论，弄得满城风雨。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00615",
+      "example": 1,
+      "sentence": "学校大张旗鼓地开展校园节水宣传。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00616",
+      "example": 2,
+      "sentence": "等待检查结果的那几天，他忐忑不安。",
+      "character": "的",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00621",
+      "example": 1,
+      "sentence": "两支球队旗鼓相当，比分始终咬得很紧。",
+      "character": "得",
+      "position": 14,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00628",
+      "example": 2,
+      "sentence": "送货员东奔西跑，终于按时送完了订单。",
+      "character": "了",
+      "position": 14,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00630",
+      "example": 1,
+      "sentence": "早高峰的地铁站人来人往，十分繁忙。",
+      "character": "的",
+      "position": 3,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00634",
+      "example": 2,
+      "sentence": "她吞吞吐吐地提出请求，显得有些不好意思。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00638",
+      "example": 1,
+      "sentence": "听到孩子平安的消息，母亲热泪盈眶。",
+      "character": "的",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00638",
+      "example": 2,
+      "sentence": "老教师收到学生的来信，感动得热泪盈眶。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00651",
+      "example": 2,
+      "sentence": "兄弟为遗产争执多年，闹得两败俱伤。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00654",
+      "example": 2,
+      "sentence": "傍晚，一群候鸟成群结队地飞过湖面。",
+      "character": "地",
+      "position": 11,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00656",
+      "example": 1,
+      "sentence": "这幅猫的画把神态画得活灵活现。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00656",
+      "example": 2,
+      "sentence": "孩子把小狗偷吃饼干的样子讲得活灵活现。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00659",
+      "example": 2,
+      "sentence": "面对同事的追问，她装疯卖傻地转移话题。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00663",
+      "example": 1,
+      "sentence": "骗子处心积虑地设计骗局，专骗老人。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00666",
+      "example": 1,
+      "sentence": "他嘴上说赞成，表情却显得言不由衷。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00673",
+      "example": 1,
+      "sentence": "他诚心诚意地道歉，希望获得原谅。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00673",
+      "example": 2,
+      "sentence": "我们诚心诚意地邀请你参加社区活动。",
+      "character": "地",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00683",
+      "example": 1,
+      "sentence": "孩子们在操场上奔跑，显得生气勃勃。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00683",
+      "example": 2,
+      "sentence": "新开的花园生气勃勃，吸引了不少游客。",
+      "character": "了",
+      "position": 12,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00691",
+      "example": 1,
+      "sentence": "他在嘈杂的广场喊得声嘶力竭。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00708",
+      "example": 1,
+      "sentence": "看到她精湛的演奏，我佩服得五体投地。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00708",
+      "example": 2,
+      "sentence": "他修好了旧机器，大家佩服得五体投地。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00712",
+      "example": 1,
+      "sentence": "优美的琴声让观众听得如痴如醉。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00717",
+      "example": 2,
+      "sentence": "那位顾客胡搅蛮缠，提出了不合理的要求。",
+      "character": "了",
+      "position": 11,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00719",
+      "example": 1,
+      "sentence": "听到这个建议，他不以为然地摇了摇头。",
+      "character": "地",
+      "position": 12,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00720",
+      "example": 1,
+      "sentence": "听到突来的消息，他不动声色地继续开会。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00720",
+      "example": 2,
+      "sentence": "她不动声色地记下线索，等待进一步核实。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00723",
+      "example": 2,
+      "sentence": "春天一到，园里的花争先恐后地开放。",
+      "character": "地",
+      "position": 13,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00733",
+      "example": 2,
+      "sentence": "他一生气就张牙舞爪，显得十分凶狠。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00741",
+      "example": 1,
+      "sentence": "新入职的她如饥似渴地学习业务知识。",
+      "character": "地",
+      "position": 9,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00748",
+      "example": 1,
+      "sentence": "这项发现被誉为该领域开天辟地的突破。",
+      "character": "的",
+      "position": 14,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00753",
+      "example": 1,
+      "sentence": "这项规定完全不顾特殊情况，显得不近人情。",
+      "character": "得",
+      "position": 14,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00763",
+      "example": 1,
+      "sentence": "看到邻居有困难，他却觉得事不关己。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00768",
+      "example": 1,
+      "sentence": "他得了奖后忘乎所以，竟迟到也不解释。",
+      "character": "了",
+      "position": 2,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00768",
+      "example": 2,
+      "sentence": "她玩游戏玩得忘乎所以，错过了吃饭时间。",
+      "character": "得",
+      "position": 5,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00769",
+      "example": 1,
+      "sentence": "小说情节太精彩，让她读得欲罢不能。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00770",
+      "example": 2,
+      "sentence": "她洋洋得意地展示新作品，希望得到称赞。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00771",
+      "example": 1,
+      "sentence": "为了参加晚宴，她打扮得浓妆艳抹。",
+      "character": "得",
+      "position": 10,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00773",
+      "example": 1,
+      "sentence": "广告把产品说得神奇无比，明显言过其实。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00776",
+      "example": 1,
+      "sentence": "她不厌其烦地向新同事说明操作步骤。",
+      "character": "地",
+      "position": 5,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00781",
+      "example": 1,
+      "sentence": "想到自己被骗，他恨得咬牙切齿。",
+      "character": "得",
+      "position": 9,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00796",
+      "example": 1,
+      "sentence": "房间被弄得乌七八糟，连门口也堆满杂物。",
+      "character": "得",
+      "position": 4,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00798",
+      "example": 1,
+      "sentence": "这张仿古画做得精细，几乎可以以假乱真。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00802",
+      "example": 2,
+      "sentence": "临近截稿日期，她分秒必争地校对文章。",
+      "character": "地",
+      "position": 12,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00809",
+      "example": 1,
+      "sentence": "报告写得拖泥带水，应该删去重复内容。",
+      "character": "得",
+      "position": 3,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00811",
+      "example": 2,
+      "sentence": "围观者的起哄推波助澜，使双方吵得更凶。",
+      "character": "得",
+      "position": 15,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00816",
+      "example": 1,
+      "sentence": "她打扮得花枝招展，高兴地去参加聚会。",
+      "character": "得",
+      "position": 3,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00816",
+      "example": 2,
+      "sentence": "节日里，姑娘们穿得花枝招展，拍照留念。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00820",
+      "example": 1,
+      "sentence": "急功近利的开发方式破坏了当地环境。",
+      "character": "了",
+      "position": 11,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00820",
+      "example": 1,
+      "sentence": "急功近利的开发方式破坏了当地环境。",
+      "character": "地",
+      "position": 13,
+      "from": "de",
+      "to": "dì",
+      "rule": "noun meaning ground/place"
+    },
+    {
+      "id": "cy_00824",
+      "example": 2,
+      "sentence": "这家公司坚持独立自主地研发核心技术。",
+      "character": "地",
+      "position": 10,
+      "from": "dì",
+      "to": "de",
+      "rule": "adverbial structural de"
+    },
+    {
+      "id": "cy_00826",
+      "example": 2,
+      "sentence": "孩子把面具画得凶神恶煞，想吓唬朋友。",
+      "character": "得",
+      "position": 6,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00834",
+      "example": 2,
+      "sentence": "这份说明不必继续增加注释，免得画蛇添足。",
+      "character": "得",
+      "position": 14,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00860",
+      "example": 2,
+      "sentence": "远处的灯光被树枝遮挡，显得若隐若现。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00867",
+      "example": 1,
+      "sentence": "门外突然传来巨响，把孩子吓得魂飞魄散。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00872",
+      "example": 1,
+      "sentence": "队长一马当先，率先跑完了山路。",
+      "character": "了",
+      "position": 11,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00874",
+      "example": 2,
+      "sentence": "他平时练得很熟，对这场比赛十拿九稳。",
+      "character": "得",
+      "position": 4,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00880",
+      "example": 1,
+      "sentence": "他在镜头前搔首弄姿，让旁人觉得很尴尬。",
+      "character": "得",
+      "position": 14,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00887",
+      "example": 1,
+      "sentence": "听到家人平安的消息，她的担忧一扫而空。",
+      "character": "的",
+      "position": 6,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00891",
+      "example": 2,
+      "sentence": "看到了期待已久的景色，我们觉得不虚此行。",
+      "character": "得",
+      "position": 14,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00896",
+      "example": 2,
+      "sentence": "暴风雪突然加剧，救援队觉得前路凶多吉少。",
+      "character": "得",
+      "position": 12,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00898",
+      "example": 2,
+      "sentence": "她一整天没好好吃饭，饿得头晕眼花。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00904",
+      "example": 1,
+      "sentence": "那名骗子巧舌如簧，让不少人上了当。",
+      "character": "了",
+      "position": 14,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00915",
+      "example": 1,
+      "sentence": "他做决定总是畏首畏尾，错过了不少机会。",
+      "character": "了",
+      "position": 13,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00922",
+      "example": 2,
+      "sentence": "这篇散文写得行云流水，让人一气读完。",
+      "character": "得",
+      "position": 5,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00926",
+      "example": 1,
+      "sentence": "第一次见到崇敬的作家，他显得诚惶诚恐。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00946",
+      "example": 2,
+      "sentence": "他见到了仰慕多年的画家，觉得三生有幸。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00948",
+      "example": 1,
+      "sentence": "演员通过举手投足展现人物的性格。",
+      "character": "的",
+      "position": 12,
+      "from": "dì",
+      "to": "de",
+      "rule": "structural or possessive de"
+    },
+    {
+      "id": "cy_00948",
+      "example": 2,
+      "sentence": "她举手投足间都显得从容有礼。",
+      "character": "得",
+      "position": 8,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00951",
+      "example": 1,
+      "sentence": "这孩子伶牙俐齿，常把爷爷逗得哈哈大笑。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00954",
+      "example": 1,
+      "sentence": "海底的生物千奇百怪，让孩子们看得入迷。",
+      "character": "得",
+      "position": 15,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00956",
+      "example": 1,
+      "sentence": "孩子把洗手液当颜料，弄得妈妈哭笑不得。",
+      "character": "得",
+      "position": 11,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00960",
+      "example": 1,
+      "sentence": "经历事业的大起大落后，他变得更加稳重。",
+      "character": "得",
+      "position": 13,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00968",
+      "example": 2,
+      "sentence": "她一度觉得山穷水尽，朋友的帮助带来了转机。",
+      "character": "得",
+      "position": 4,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    },
+    {
+      "id": "cy_00973",
+      "example": 1,
+      "sentence": "她用事实证明了方案的价值，让大家心服口服。",
+      "character": "了",
+      "position": 6,
+      "from": "liǎo",
+      "to": "le",
+      "rule": "aspect or sentence-final le"
+    },
+    {
+      "id": "cy_00973",
+      "example": 2,
+      "sentence": "这次比赛输得心服口服，他决定加强训练。",
+      "character": "得",
+      "position": 5,
+      "from": "dé",
+      "to": "de",
+      "rule": "structural complement de"
+    },
+    {
+      "id": "cy_00995",
+      "example": 2,
+      "sentence": "他身经百战，懂得怎样应对比赛中的变化。",
+      "character": "得",
+      "position": 7,
+      "from": "dé",
+      "to": "de",
+      "rule": "fixed expression or structural complement de"
+    }
+  ],
+  "issues": [],
+  "boundary": "AI dictionary/context review and structural checks; machine-assisted English and sentence pinyin; no human sign-off or device/runtime proof",
+  "sha256": {
+    "catalog.json": "413257d19596da2c64f1272d941ba3c2bf22fc85e23c78b0865248214cba096f",
+    "rows_001_1000.json": "8981434dfe1107fd9bb10b14a4a0864458e53ae8a3eae9a90e6782a5934d8011"
+  }
+}
