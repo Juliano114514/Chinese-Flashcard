@@ -2,11 +2,16 @@ package com.example.chinese_flashcard.feature.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.chinese_flashcard.core.domain.CsvImportPreview
+import com.example.chinese_flashcard.core.domain.CsvImportReport
+import com.example.chinese_flashcard.core.domain.CsvImportRepository
+import com.example.chinese_flashcard.core.domain.CsvSource
 import com.example.chinese_flashcard.core.domain.SettingsRepository
 import com.example.chinese_flashcard.core.domain.StudyRepository
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.TodaySummary
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -59,15 +64,59 @@ object ProfileReducer {
   }
 }
 
+enum class CsvImportStage { IDLE, READING, IMPORTING, DISCARDING }
+data class CsvImportUiState(
+  val open: Boolean = false,
+  val stage: CsvImportStage = CsvImportStage.IDLE,
+  val preview: CsvImportPreview? = null,
+  val report: CsvImportReport? = null,
+  val error: String? = null,
+) {
+  val busy: Boolean get() = stage != CsvImportStage.IDLE
+  val canDismiss: Boolean get() = stage != CsvImportStage.IMPORTING && stage != CsvImportStage.DISCARDING
+}
+sealed interface CsvImportAction {
+  data class Read(val source: CsvSource) : CsvImportAction
+  data object Confirm : CsvImportAction
+  data object Dismiss : CsvImportAction
+}
+sealed interface CsvImportMutation {
+  data object Reading : CsvImportMutation
+  data class Previewed(val preview: CsvImportPreview) : CsvImportMutation
+  data object Importing : CsvImportMutation
+  data class Imported(val report: CsvImportReport) : CsvImportMutation
+  data class Failed(val message: String) : CsvImportMutation
+  data object Discarding : CsvImportMutation
+  data object Closed : CsvImportMutation
+  data class Idle(val stage: CsvImportStage) : CsvImportMutation
+}
+object CsvImportReducer {
+  fun reduce(state: CsvImportUiState, mutation: CsvImportMutation): CsvImportUiState = when (mutation) {
+    CsvImportMutation.Reading -> CsvImportUiState(open = true, stage = CsvImportStage.READING)
+    is CsvImportMutation.Previewed -> state.copy(preview = mutation.preview)
+    CsvImportMutation.Importing -> state.copy(stage = CsvImportStage.IMPORTING, error = null)
+    is CsvImportMutation.Imported -> state.copy(preview = null, report = mutation.report)
+    is CsvImportMutation.Failed -> state.copy(preview = null, error = mutation.message)
+    CsvImportMutation.Discarding -> state.copy(stage = CsvImportStage.DISCARDING)
+    CsvImportMutation.Closed -> CsvImportUiState()
+    is CsvImportMutation.Idle -> if (state.stage == mutation.stage) state.copy(stage = CsvImportStage.IDLE) else state
+  }
+}
+
 class ProfileViewModel(
   private val settings: SettingsRepository,
   private val study: StudyRepository,
+  private val csvImport: CsvImportRepository,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(ProfileUiState())
   val state = mutableState.asStateFlow()
   private val operationLock = Mutex()
   private var observation: Job? = null
   private var failedSave = false
+  private val mutableImportState = MutableStateFlow(CsvImportUiState())
+  val importState = mutableImportState.asStateFlow()
+  private var importOperation: Job? = null
+  private var previewId: String? = null
   init { observe() }
 
   fun onAction(action: ProfileAction) {
@@ -101,6 +150,85 @@ class ProfileViewModel(
     }
   }
   fun retry() = onAction(ProfileAction.Retry)
+
+  fun onImportAction(action: CsvImportAction) {
+    when (action) {
+      is CsvImportAction.Read -> readCsv(action.source)
+      CsvImportAction.Confirm -> confirmCsvImport()
+      CsvImportAction.Dismiss -> dismissCsvImport()
+    }
+  }
+  fun readCsv(source: CsvSource) {
+    if (importState.value.open || importState.value.busy) return
+    mutateImport(CsvImportMutation.Reading)
+    importOperation = viewModelScope.launch {
+      try {
+        // The repository owns the IO dispatch and cancellation-safe preview delivery.
+        val preview = csvImport.preview(source)
+        previewId = preview.previewId
+        mutateImport(CsvImportMutation.Previewed(preview))
+      } catch (error: CancellationException) {
+        throw error
+      } catch (_: Exception) {
+        mutateImport(CsvImportMutation.Failed("The CSV couldn't be read. Check that it uses UTF-8, then choose the file again."))
+      } finally {
+        mutateImport(CsvImportMutation.Idle(CsvImportStage.READING))
+      }
+    }
+  }
+  fun confirmCsvImport() {
+    val current = importState.value
+    val preview = current.preview ?: return
+    val id = previewId ?: return
+    if (current.busy || !preview.canImport || preview.newWords == 0) return
+    mutateImport(CsvImportMutation.Importing)
+    importOperation = viewModelScope.launch {
+      try {
+        val report = csvImport.commit(id)
+        discardPreview(id)
+        previewId = null
+        mutateImport(CsvImportMutation.Imported(report))
+        observe()
+      } catch (error: CancellationException) {
+        throw error
+      } catch (_: Exception) {
+        discardPreview(id)
+        previewId = null
+        mutateImport(CsvImportMutation.Failed("The CSV couldn't be imported. Choose the file again to retry."))
+      } finally {
+        mutateImport(CsvImportMutation.Idle(CsvImportStage.IMPORTING))
+      }
+    }
+  }
+  fun dismissCsvImport() {
+    if (!importState.value.open || !importState.value.canDismiss) return
+    val pending = importOperation
+    mutateImport(CsvImportMutation.Discarding)
+    pending?.cancel()
+    importOperation = viewModelScope.launch {
+      try {
+        pending?.join()
+        previewId?.let { id -> discardPreview(id) }
+        previewId = null
+        mutateImport(CsvImportMutation.Closed)
+      } catch (error: CancellationException) {
+        throw error
+      }
+    }
+  }
+  private suspend fun discardPreview(id: String) {
+    try { csvImport.discard(id) }
+    catch (error: CancellationException) { throw error }
+    catch (_: Exception) { /* Temporary previews are also removed on app startup. */ }
+  }
+  private fun mutateImport(mutation: CsvImportMutation) {
+    mutableImportState.update { CsvImportReducer.reduce(it, mutation) }
+  }
+  override fun onCleared() {
+    importOperation?.cancel()
+    previewId?.let { id -> CoroutineScope(Dispatchers.IO).launch { discardPreview(id) } }
+    super.onCleared()
+  }
 
   private fun mutate(mutation: ProfileMutation) {
     mutableState.update { ProfileReducer.reduce(it, mutation) }

@@ -1,6 +1,8 @@
 package com.example.chinese_flashcard
 
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -24,6 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.*
 import com.example.chinese_flashcard.core.data.FlashcardRepositories
 import com.example.chinese_flashcard.core.domain.CardPhase
+import com.example.chinese_flashcard.core.domain.CsvSource
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.flashcardMessage
@@ -101,8 +104,14 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val nav = rememberNavController()
   val navigationScope = rememberCoroutineScope()
   val study: StudyViewModel = viewModel(factory = factory { StudyViewModel(repositories.study, repositories.settings) })
-  val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study) })
+  val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
   val context = LocalContext.current
+  val resolver = context.applicationContext.contentResolver
+  val csvPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+    uri?.let { selected -> profile.readCsv(CsvSource {
+      requireNotNull(resolver.openInputStream(selected)) { "The selected CSV couldn't be opened." }
+    }) }
+  }
   val speech = remember { OfflineSpeech(context) }
   val owner = LocalLifecycleOwner.current
   DisposableEffect(owner, speech) {
@@ -140,7 +149,10 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
         TodayScreen(study, onStart = { kind -> study.start(kind); nav.navigate("study") { launchSingleTop = true } },
           onResume = { study.refresh(); nav.navigate("study") { launchSingleTop = true } }, onWriting = openWriting)
       }
-      composable("profile") { ProfileScreen(profile) { nav.navigate("licenses") } }
+      composable("profile") { ProfileScreen(profile,
+        onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
+          "application/octet-stream", "application/vnd.ms-excel")) },
+        onLicenses = { nav.navigate("licenses") }) }
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
@@ -175,8 +187,9 @@ private fun LicenseScreen(onBack: () -> Unit) {
   val licenses by produceState("Loading…") {
     value = withContext(Dispatchers.IO) {
       try {
-        listOf("COPYING", "ARPHICPL.TXT").joinToString("\n\n") { name ->
-          context.assets.open("demo/$name").bufferedReader().use { it.readText() }
+        listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
+          "wordlist-strokes/LEXICON_LICENSES.txt").joinToString("\n\n") { name ->
+          context.assets.open(name).bufferedReader().use { it.readText() }
         }
       } catch (error: CancellationException) { throw error }
       catch (_: Exception) { "Source licenses could not be read. Please reopen this page." }
@@ -187,7 +200,8 @@ private fun LicenseScreen(onBack: () -> Unit) {
     TextButton(onClick = onBack) { Text("Back") }
     Text("Sources & licenses", style = MaterialTheme.typography.headlineMedium)
     Text("Demo vocabulary and examples: original teaching material for Chinese Flashcard.")
-    Text("Stroke outlines and medians: Make Me a Hanzi, revision bddc96d41bef78427ed0e034e9f7e31d71fd1b92. Only the 35 required glyphs are included. Arphic Public License. No dictionary data is distributed.")
+    Text("Imported vocabulary: local CSV wordlists. Dictionary attribution and content sources are listed below.")
+    Text("Stroke outlines and medians: Make Me a Hanzi, supplemented by AnimCJK. Selected glyphs are bundled for offline writing under the Arphic Public License.")
     Text(licenses, style = MaterialTheme.typography.bodySmall)
   }
 }

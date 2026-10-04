@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
@@ -38,8 +39,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun ProfileScreen(vm: ProfileViewModel, onLicenses: () -> Unit) {
+fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () -> Unit) {
   val state by vm.state.collectAsStateWithLifecycle()
+  val csv by vm.importState.collectAsStateWithLifecycle()
   var dailyText by remember(state.draft.dailyWords) { mutableStateOf(state.draft.dailyWords.toString()) }
   var showReviewDays by remember { mutableStateOf(false) }
   val dailyWords = dailyText.toIntOrNull()
@@ -62,6 +64,8 @@ fun ProfileScreen(vm: ProfileViewModel, onLicenses: () -> Unit) {
         }
         Text("Today: ${today.completed} of ${today.planned} words completed", color = MaterialTheme.colorScheme.onSurfaceVariant)
       }
+      OutlinedButton(onClick = onImportCsv, enabled = !state.saving && !csv.open,
+        modifier = Modifier.fillMaxWidth()) { Text("Import CSV") }
       HorizontalDivider()
       Text("Daily plan", style = MaterialTheme.typography.titleLarge)
       OutlinedTextField(value = dailyText, onValueChange = { value ->
@@ -114,6 +118,7 @@ fun ProfileScreen(vm: ProfileViewModel, onLicenses: () -> Unit) {
       TextButton(onClick = vm::retry, enabled = !state.saving && validDaily) { Text("Try again") }
     }
   }
+  if (csv.open) CsvImportDialog(csv, vm::confirmCsvImport, vm::dismissCsvImport)
   if (showReviewDays) {
     var selected by remember(state.draft.reviewDays) { mutableStateOf(state.draft.reviewDays.toSet()) }
     AlertDialog(onDismissRequest = { showReviewDays = false }, title = { Text("Review days") }, text = {
@@ -135,6 +140,60 @@ fun ProfileScreen(vm: ProfileViewModel, onLicenses: () -> Unit) {
       }, enabled = selected.isNotEmpty()) { Text("Done") }
     }, dismissButton = { TextButton(onClick = { showReviewDays = false }) { Text("Cancel") } })
   }
+}
+
+@Composable
+private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDismiss: () -> Unit) {
+  val preview = state.preview
+  val report = state.report
+  val issues = preview?.issues?.take(100).orEmpty()
+  AlertDialog(onDismissRequest = { if (state.canDismiss) onDismiss() },
+    title = { Text("CSV import") }, text = {
+      Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        if (state.busy) {
+          Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            CircularProgressIndicator(Modifier.size(24.dp))
+            Text(when (state.stage) {
+              CsvImportStage.READING -> "Reading CSV…"
+              CsvImportStage.IMPORTING -> "Importing words…"
+              else -> "Closing preview…"
+            })
+          }
+        }
+        preview?.let {
+          Text("${it.totalRows} rows · ${it.newWords} new words · ${it.duplicateWords} duplicates")
+          when {
+            it.errorCount > 0 -> {
+              Text("${it.errorCount} errors. Fix the CSV and choose it again. No words have been imported.",
+                color = MaterialTheme.colorScheme.error)
+              issues.forEach { issue ->
+                val location = if (issue.line > 0) "Line ${issue.line}" else "File"
+                Text("$location · ${issue.field}: ${issue.message}",
+                  style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error)
+              }
+              if (it.errorCount > issues.size) {
+                Text("Showing the first ${issues.size} errors.", style = MaterialTheme.typography.bodySmall)
+              }
+            }
+            it.newWords == 0 -> Text("All words in this CSV are already in your wordbook.")
+            else -> Text("Import these words? Existing words and study progress will be kept.")
+          }
+        }
+        report?.let { Text("Added ${it.addedWords} words. Skipped ${it.skippedWords} duplicates.") }
+        state.error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+      }
+    }, confirmButton = {
+      if (preview?.canImport == true && preview.newWords > 0) {
+        TextButton(onClick = onImport, enabled = !state.busy) { Text("Import ${preview.newWords} words") }
+      } else if (!state.busy) {
+        TextButton(onClick = onDismiss) { Text("Done") }
+      }
+    }, dismissButton = {
+      if (report == null && state.error == null && (preview == null || preview.newWords > 0 && preview.errorCount == 0)) {
+        TextButton(onClick = onDismiss, enabled = state.canDismiss) { Text("Cancel") }
+      }
+    })
 }
 
 @Composable
