@@ -2,19 +2,21 @@
 
 面向中文初学者的离线 Android 词卡应用。围绕「理解词语 → 写一写 → 四选一回忆 → 当日通过 → 到期复习」重新组织学习。参考不背单词的情境学习和简洁布局，界面与教学文案独立实现。
 
-界面与辅助讲解使用英文，学习内容使用简体汉字、声调拼音和英文释义。保留 **20 个原创演示词**，并支持从 Profile 直接导入本项目的 [wordlist.csv](wordlist.csv)。交付词库包含两个同义项例句、三个干扰词引用、部件讲解和使用说明；所需真实笔顺随 App 独立分包提供。
+界面和答题选项使用英文，词语与成语的完整讲解使用中英双语，学习内容保留简体汉字和声调拼音。默认词库扩充为 **7,648 个词条**，包含新增的 1,000 条常用成语；成语选项仅展示现代通行义，讲解页分开说明本义与引申义。预设升级刷新受管理的教学内容和难度，保留稳定 ID 与学习记录；自定义词的教学内容保持原值。旧 20 个演示词安装升级后共 7,653 词，其中 15 个重复词保留实际旧 ID。Profile 仍可追加导入其他 CSV。每词包含两条例句、三个干扰词引用、拆分和用法；所需真实笔顺随 App 分包提供。
 
 ## 使用链路
 
 - **Welcome**：名字／头像、每日词量、复习日期三个居中页面。每天新词默认 10，可选 5–50、每档 5 个；复习日期可从 1 / 3 / 5 / 7 / 14 / 30 天中多选。Profile 可修改连续正确轮次，默认 4，可选 2–8。
-- **Today**：新学、到期复习、跨天未完成任务分别显示进度；可恢复词卡与写字草稿，显示词库总量、已通过和未开始数量。
-- **Study**：一个词、四个英文释义选项。每组最多五词交错学习，前两轮显示不同的中文例句、拼音和英文翻译，后续隐藏例句。答错或选择不知道，当前词的连续正确轮次归零。
-- **Explanation**：义项、例句、词语部件与使用提示。拆解作为记忆线索，不把词语联想当成字源。
+- **Today**：新学、到期复习、跨天未完成任务分别显示进度；Words today 下方显示 Total progress、累计进度条和已学／总词数。可恢复词卡与写字草稿，显示词库总量、已通过和未开始数量。
+- **Study**：一个词、四个英文释义选项。每组最多五词交错学习，前两轮显示不同的中文例句、拼音和英文翻译，后续隐藏例句。答对显示中文并朗读，朗读完成后自动进入解析；语音失败时可点 Next。答错或选择不知道，当前词的连续正确轮次归零，反馈朗读后仍由 Next 进入解析。
+- **Explanation**：义项、例句、词语部件与使用提示，进入后再自动朗读一次词语。拆解作为记忆线索，不把词语联想当成字源。
 - **Review**：到期词先做一次无例句回忆；答对完成本次复习，答错进入完整重学。重学通过后重新安排复习。
 - **Profile**：修改学习设置、查看学习量、Import CSV 预览并确认追加词库、打开来源与许可。
-- **Wordlist**：查看已导入词库的整体进度，按 All / Unlearned / Learning / Learned 和 Difficulty 0 / 1 / 2 筛选，搜索汉字、拼音或英文释义。点击词条可听音、查看讲解或手动书写，返回列表时保留筛选和位置。
+- **Wordlist**：查看已导入词库的整体进度，按 All / Unlearned / Learning / Learned 和 Difficulty 0 / 1 / 2 / 3 筛选，搜索汉字、拼音或英文释义。点击词条可听音、查看讲解或手动书写，返回列表时保留筛选和位置。
 
 当日目标和已有学习周期的设置固定；修改日词量用于下一份日计划，新学习／重学周期采用最新轮次和复习日期。第 N 天指通过日之后的 N 个日历日。错过多次到期节点的同一词，当天只出现一次复习；未完成的学习跨天轮次归零，以独立任务继续，不占新词额度。
+
+下一份新词计划、跨天续学和 Learn more 按难度由低到高选词；当天已有计划和当前卡片保持原序，到期复习仍按到期顺序。罕度按学习期望划分，不设每档配额：0 必须掌握和记忆；1 需要了解和记住大致含义；2 需要见过、至少有印象；3 不要求掌握，不设任何期望。最终分布为 0=1,581、1=2,025、2=1,922、3=2,120。词频仅作辅助，结合具体义项、读音和使用场景判断；不是 HSK 等级。 CSV 保留原词物理顺序，成语追加在末尾。分级方法与数据来源见 CSV 说明。
 
 底部导航为 Home / Profile / Wordlist。词库中的 Learned 表示曾完成学习轮次，复习答错不会减少累计已学数；Learning 表示已进入首次学习但尚未通过。浏览讲解和书写都不会增加学习轮次或标记掌握。旧日词量在重新确认设置前保留，新选择统一使用 5–50 的五词档位。
 
@@ -34,7 +36,7 @@
 | --- | --- |
 | `app` | 启动、导航、手动依赖装配、离线语音与许可入口 |
 | `core:domain` | 纯 Kotlin 模型、Repository 契约、轨迹匹配 |
-| `core:data` | Room、演示内容初始化、CSV 校验／追加、笔顺分包、事务化学习与写字状态 |
+| `core:data` | Room、默认 CSV 初始化与升级追加、CSV 校验、笔顺分包、事务化学习与写字状态 |
 | `core:ui` | 浅／深色 Compose 主题、统一错误文案 |
 | `core:media` | 系统离线普通话 TTS 与音频焦点 |
 | `feature:study` | 欢迎、今日、词卡、讲解、完成页，MVI |
@@ -48,11 +50,13 @@ Gradle 项目名为 `Chinese_Flashcard`，应用名为 `Chinese Flashcard`，app
 
 ## 词库、演示数据与来源
 
-[CSV 格式与导入说明](docs/CSV_IMPORT.md) 记录全部字段、限制、追加规则、迁移和取消语义。原文件保存在 [wordlist.original.csv](wordlist.original.csv)，删除理由见 [wordlist-removals.csv](wordlist-removals.csv)。CSV 不随启动自动写入数据库；在 Profile 中自行选择并确认导入。
+[CSV 格式与导入说明](docs/CSV_IMPORT.md) 记录全部字段、限制、追加规则、迁移和取消语义。原文件保存在 [wordlist.original.csv](wordlist.original.csv)，删除理由见 [wordlist-removals.csv](wordlist-removals.csv)。根目录 wordlist.csv 是打包默认库的来源；根目录 `wordlist.csv` 是最终校订的权威产物。作者记录、冻结选表和旧分级映射保存最后直接校订前的生产快照；运行旧生成器或 `--apply` 会覆盖最终校订，不能据此重建当前 CSV。Room v6 中的预设归属、教学内容、罕度和 SHA-256 版本一起事务提交；版本匹配时不重复处理。新装失败显示 Retry；升级失败保留原库可用，Profile 提供独立重试入口。更新造成未完成卡片的选项冲突时，完成旧卡后再重试。
 
-词库释义优先采用 [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict)，保留 CC BY-SA 4.0 来源和许可。笔顺沿用 Make Me a Hanzi，并采用 [AnimCJK 简体中文固定版本](https://github.com/parsimonhi/animCJK/tree/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6) 补充其缺字。完整来源、版本、修改说明、资源哈希和许可位于 `core/data/src/main/assets/wordlist-strokes/`，可在 App 的 Data & licenses 查看。
+加载用横向进度、已处理／总词条数与当前字目显示，进度组件最多每 100 ms 刷新一次。笔顺分包最多两个并发解码，数据库写入串行，进程内复用完整校验结果；完成事务后才显示加载完成。
 
-`tools/build_demo.py` 保存原创词语、例句、拆解和干扰义项，只从已缓存的固定版本笔顺数据提取所需字形：
+词库释义采用 [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict) 与固定版 [mapull/chinese-dictionary](https://github.com/mapull/chinese-dictionary) 参考，保留 CC BY-SA 4.0 与上游 MIT 许可。新成语每条有两句原创现代例句；旧词全量补充释义与拆分，具体编辑和机器辅助内容的覆盖边界见 [内容与验证记录](docs/WORDLIST_REFINEMENT.md)。笔顺沿用 Make Me a Hanzi，并采用 [AnimCJK 简体中文固定版本](https://github.com/parsimonhi/animCJK/tree/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6) 补充其缺字。完整来源、版本、修改说明、资源哈希和许可位于 `core/data/src/main/assets/wordlist-strokes/`，可在 App 的 Data & licenses 查看。
+
+`tools/build_demo.py` 保存历史演示词语、例句、拆解和干扰义项，供旧记录与静态核对使用；新装不初始化演示词。脚本只从已缓存的固定版本笔顺数据提取所需字形：
 
 ```powershell
 python tools/build_demo.py --check
@@ -66,9 +70,11 @@ python tools/build_demo.py --check
 
 ## 交付与验证
 
-2026-10-04 的 Wordlist、五词档位和字典图标改动已通过 `lintDebug assembleDebug`，八个 Android 模块共 0 错误、22 项依赖／SDK／已有头像资源告警；APK 的 v2 签名验证通过。没有新增测试代码或执行设备验收，离线语音、触摸书写与页面返回的真机表现仍需运行验证。构建日志位于 `.gradle/wordlist-build-final.log`。
+当前最终 CSV 已执行全表结构、引用、选项、拆分、拼音位置和字形覆盖静态校验。最终校订之后未重新构建 APK，也未执行设备运行验证。加载耗时、实际朗读时序、迁移、取消回滚与重试仍需设备验收。
 
-早期 CSV 词库与直接导入改动**仅做数据和源码静态检查**，详见 [CSV 静态交付记录](docs/CSV_STATIC_REVIEW.md)。该记录保留当时的验证边界，本轮构建已覆盖当前导入代码；文件选择器、迁移和取消回滚的设备行为尚未验收。
+2026-10-04 最终 CSV 校订前的实现曾通过 `lintDebug assembleDebug`，8 个报告共 0 错误、22 项告警，Debug APK 已发送到微信。该结果属于之前的 CSV 快照，不能证明当前最终 CSV 和新增两项读音升级登记已完成构建或设备验收。Git 提交、推送以仓库实际状态为准。
+
+早期 CSV 词库与直接导入改动**仅做数据和源码静态检查**，详见 [CSV 静态交付记录](docs/CSV_STATIC_REVIEW.md)。该记录保留当时的验证边界；此前构建覆盖当时版本的导入代码，文件选择器、迁移和取消回滚的设备行为尚未验收。
 
 [此前实施与验证记录](docs/IMPLEMENTATION.md) 中的 `lintDebug` 属于导入功能加入之前的历史验证，不能证明本次改动通过编译或运行。
 

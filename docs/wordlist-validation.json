@@ -1,90 +1,411 @@
 {
   "checkedOn": "2026-10-04",
-  "evidence": "Static artifact validation and source inspection only; no app compilation, tests or runtime.",
-  "original": {
-    "rows": 6698,
-    "bytes": 1142667,
-    "sha256": "f2d70fd87f82fd3ef9542715b87905639376a67d830ebf68e8237633fa8160a3"
-  },
+  "evidence": "Final CSV static structure, limits, examples, pinyin positions, component structure, references and distinct answer labels validated. No final APK build or device runtime. Historical generation checks below refer to a different CSV hash.",
   "csv": {
-    "words": 6648,
+    "words": 7648,
     "characters": 6323,
-    "characterPositions": 13078,
     "rarity": {
-      "0": 2665,
-      "1": 996,
-      "2": 2987
+      "0": 1581,
+      "1": 2025,
+      "3": 2120,
+      "2": 1922
     },
-    "bytes": 5268363,
-    "sha256": "8cc63533b692ad99e580bd74cf4b8ee9bcf52ded2bb35981ccfeccdb572349af",
+    "bytes": 11722801,
     "demoDuplicates": 15,
-    "firstImportNewWords": 6633,
-    "resultingWordbookCount": 6653
+    "firstImportNewWords": 7633,
+    "resultingWordbookCount": 7653,
+    "sha256": "a63a58398ca3f815b19e625603d7e1c69d49ad7b5c4b6e633131939bd45ce658",
+    "columns": 18,
+    "idioms": 1131,
+    "newIdioms": 1000,
+    "newInstallWordbookCount": 7648
   },
-  "removals": {
-    "rows": 50,
-    "sha256": "271724a8a80a35855341b33e28868728bbf9c9adb92b21bc55a1fbb7a2b186ff",
-    "unavailableGlyphRows": 27,
-    "placeholderRows": 22,
-    "overlap": 1,
-    "otherInvalidRows": [
-      4087,
-      5693
-    ]
+  "rarityPolicy": {
+    "quota": null,
+    "0": "必须掌握和记忆",
+    "1": "需要了解和记住大致含义",
+    "2": "需要见过，至少有印象",
+    "3": "不要求掌握，不设任何期望"
   },
-  "placeholders": {
-    "audited": 25,
-    "kept": 3,
-    "removed": 22
+  "readingCorrections": [
+    {
+      "sourceId": "cy_00347",
+      "hanzi": "口口声声",
+      "fromPinyin": "kǒu kou shēng shēng",
+      "toPinyin": "kǒu kǒu shēng shēng",
+      "reference": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=77121&la=0&powerMode=0"
+    },
+    {
+      "sourceId": "cy_00871",
+      "hanzi": "星星之火",
+      "fromPinyin": "xīng xing zhī huǒ",
+      "toPinyin": "xīng xīng zhī huǒ",
+      "reference": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=110437&la=0&powerMode=0"
+    }
+  ],
+  "reproduction": "Final wordlist.csv is authoritative. Historical generators and equal-quota grading do not reproduce its last direct editorial pass.",
+  "preFinalCsvSnapshot": {
+    "checkedOn": "2026-10-04",
+    "evidence": "Static artifact validation, Android lint and its Kotlin/KSP compilation dependencies. No APK assembly, automated tests or app/device runtime.",
+    "original": {
+      "rows": 6698,
+      "bytes": 1142667,
+      "sha256": "f2d70fd87f82fd3ef9542715b87905639376a67d830ebf68e8237633fa8160a3"
+    },
+    "csv": {
+      "words": 7648,
+      "characters": 6323,
+      "rarity": {
+        "0": 1912,
+        "2": 1912,
+        "1": 1912,
+        "3": 1912
+      },
+      "bytes": 10606882,
+      "demoDuplicates": 15,
+      "firstImportNewWords": 7633,
+      "resultingWordbookCount": 7653,
+      "sha256": "c4d73add8dcefc35aedb97749e240da516b32770cfd5bd9a1e58f541c8c522cb",
+      "characterPositions": 17091,
+      "columns": 18,
+      "newInstallWordbookCount": 7648,
+      "legacyDemoUpgradeWordbookCount": 7653,
+      "physicalOrder": "6648 retained rows in their frozen baseline order, then cy_00001 through cy_01000."
+    },
+    "removals": {
+      "rows": 50,
+      "sha256": "271724a8a80a35855341b33e28868728bbf9c9adb92b21bc55a1fbb7a2b186ff",
+      "unavailableGlyphRows": 27,
+      "placeholderRows": 22,
+      "overlap": 1,
+      "otherInvalidRows": [
+        4087,
+        5693
+      ]
+    },
+    "placeholders": {
+      "audited": 25,
+      "kept": 3,
+      "removed": 22
+    },
+    "strokes": {
+      "resources": 6324,
+      "csvCoverage": "100%",
+      "missingCharacters": 0,
+      "extraRetainedCharacter": "琫",
+      "makeMeAHanzi": 6254,
+      "animCjk": 70,
+      "shards": 50,
+      "maximumShardBytes": 638903,
+      "maximumShardGlyphs": 128,
+      "pathCount": 67023,
+      "medianPointCount": 381716,
+      "generatedBundleBytes": 23744507,
+      "sourcesMatchPinnedGeometry": true,
+      "demoTracingUnchanged": true,
+      "allPackagedAssetBytes": 23792887
+    },
+    "historicalCsvImportScope": {
+      "baselineFiles": 43,
+      "changedBaselineFiles": [
+        "README.md",
+        "wordlist.csv",
+        "feature/profile/src/main/kotlin/com/example/chinese_flashcard/feature/profile/ProfileScreen.kt",
+        "feature/profile/src/main/kotlin/com/example/chinese_flashcard/feature/profile/ProfileViewModel.kt",
+        "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/FlashcardDatabase.kt",
+        "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/FlashcardRepositories.kt",
+        "app/src/main/kotlin/com/example/chinese_flashcard/FlashcardApp.kt"
+      ],
+      "newKotlinFiles": [
+        "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvDecoder.kt",
+        "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvImporter.kt",
+        "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvParser.kt",
+        "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvStrokeResources.kt",
+        "core/domain/src/main/kotlin/com/example/chinese_flashcard/core/domain/CsvImport.kt"
+      ],
+      "deletedBaselineFiles": 0
+    },
+    "checks": {
+      "csvStaticValidation": "passed",
+      "strokeStaticValidation": "passed; full pinned source geometry and generated files compared",
+      "retainedIdsReadingsAndPhysicalOrder": "passed; all 6648 retained rows",
+      "appendixIds": "passed; cy_00001 through cy_01000",
+      "originalAndRemovalsUnchanged": "passed; original and existing 50 removal records retain baseline hashes",
+      "fourIdiomOptions": "passed; 1104 idioms, four distinct English labels beginning Describes, three idiom IDs",
+      "demoAliasDistractors": "passed",
+      "hashesAndLicenses": "passed",
+      "pythonAst": "passed; 10 production and audit scripts",
+      "diffWhitespace": "passed; ordinary scoped source/doc check, plus CSV CRLF-aware check (intentional UTF-8 BOM / CRLF records).",
+      "androidLint": {
+        "task": "lintDebug",
+        "result": "BUILD SUCCESSFUL",
+        "reports": 8,
+        "errorsOrFatal": 0,
+        "warnings": 22,
+        "lastRunSeconds": 37
+      },
+      "kotlinCompilation": "passed as required dependencies of lintDebug; no assemble task",
+      "roomSchema": "passed; generated v6 fields and identity checked",
+      "defaultAssetGeneration": "passed; bundleDefaultWordlist only, root/generated CSV byte-identical and rows/version checked",
+      "roomMigrationExecution": "not_run",
+      "tests": "not_run",
+      "device": "not_run",
+      "apkAssembly": "not_run",
+      "reproducibleCsvRegeneration": "passed; in-memory generator output equals final CSV byte-for-byte"
+    },
+    "difficulty": {
+      "sourceSha256": "cced9cb382914b93956a24fd06c10de709d351ff4501ac94c9ab136004421f07",
+      "sourceVerification": "pinned ZIP hash and derived features verified",
+      "wordFrequencyMatched": 5159,
+      "wordFrequencyMissing": 2489,
+      "nonRarityContentSha256": "fa797c339f700e7a39d2553d046238cbc83730c835f31ed3baa0cf9056e3215e",
+      "reviewedOverrides": 41,
+      "rarity": {
+        "0": 1912,
+        "1": 1912,
+        "2": 1912,
+        "3": 1912
+      },
+      "algorithm": "Pinned SUBTLEX word contextual diversity; missing-word/sense/proper-noun floors, 41 stable-ID overrides and ranked groups of 1912.",
+      "levels": "Relative difficulty within this wordlist, not HSK or an objective overall popularity ranking.",
+      "physicalOrderPreserved": true,
+      "runtime": "not_run"
+    },
+    "historicalBaselineEvidence": {
+      "evidence": "Static artifact validation and source inspection only; no app compilation, tests or runtime.",
+      "csv": {
+        "words": 6648,
+        "characters": 6323,
+        "characterPositions": 13078,
+        "rarity": {
+          "0": 1662,
+          "1": 1662,
+          "2": 1662,
+          "3": 1662
+        },
+        "bytes": 5268363,
+        "sha256": "9e1349796b62e8535ed1c33ac24d331d15594a1831a41fb9d91d354eefbf7ce9",
+        "demoDuplicates": 15,
+        "firstImportNewWords": 6633,
+        "resultingWordbookCount": 6653
+      },
+      "checks": {
+        "csvStaticValidation": "passed",
+        "strokeStaticValidation": "passed",
+        "originalIdRarityAndOrder": "Historical pre-grading check; rarity intentionally reassigned, original stable IDs preserved.",
+        "demoAliasDistractors": "passed",
+        "hashesAndLicenses": "passed",
+        "pythonAst": "passed",
+        "xmlParsedFiles": 10,
+        "kotlinCompilation": "not_run",
+        "roomMigrationExecution": "not_run",
+        "tests": "not_run",
+        "device": "not_run",
+        "nonRarityContentUnchanged": "passed",
+        "difficultyStaticValidation": "passed",
+        "reproducibleCsvRegeneration": "passed; in-memory generator output equals current CSV byte-for-byte"
+      },
+      "loadingAndFeedback": {
+        "checkedOn": "2026-10-04",
+        "evidence": "Current source inspection and static artifact checks only; no compilation or runtime proof.",
+        "progress": {
+          "maximumPublishFrequencyMs": 100,
+          "refreshScope": "Only the loading progress composable collects the progress flow.",
+          "weights": {
+            "checking": 0.2,
+            "strokes": 0.65,
+            "saving": 0.14,
+            "committing": 0.99
+          },
+          "complete": "100% after the import transaction returns; preview 100% means validation ready.",
+          "count": "Processed CSV records including duplicates; count does not mean persisted new words.",
+          "parallelStrokeShards": 2,
+          "databaseWrites": "Serial in the owning Room transaction coroutine."
+        },
+        "sourceReview": {
+          "correctAnswer": "Feedback reveals Chinese, waits for successful reading, then requests explanation once.",
+          "wrongAnswer": "Feedback reading finishes before enabling manual Next.",
+          "explanation": "Independent automatic reading; not marked spoken by feedback.",
+          "audioFailure": "Manual Next remains available; background cancellation does not submit another answer.",
+          "defaultUpgrade": "Canonical preset words update only rarity, atomically with additions and version marker.",
+          "futureLearningOrder": "Difficulty, stored order, stable ID; existing daily plans and due-review order stay intact."
+        },
+        "checks": {
+          "csvValidation": "passed",
+          "difficultyValidation": "passed",
+          "strokeValidation": "passed; 50 shards unchanged, only source manifest CSV hash refreshed",
+          "stableIdsAndOtherColumns": "passed; 6648 stable IDs and 15 non-rarity columns unchanged",
+          "pythonAst": "passed",
+          "diffWhitespace": "passed with CRLF awareness",
+          "kotlinCompilation": "not_run",
+          "composePreviewRendering": "not_run",
+          "deviceAudioAndLoadingTime": "not_run",
+          "migrationRetryAndRollbackRuntime": "not_run",
+          "tests": "not_run"
+        }
+      },
+      "difficulty": {
+        "sourceSha256": "cced9cb382914b93956a24fd06c10de709d351ff4501ac94c9ab136004421f07",
+        "sourceVerification": "pinned ZIP hash and derived features verified",
+        "wordFrequencyMatched": 4159,
+        "wordFrequencyMissing": 2489,
+        "nonRarityContentSha256": "91ff66df5c64996b785d2b87c39b09af4c8c46f30bcf27eff7cbd03cbfedce79",
+        "reviewedOverrides": 41,
+        "rarity": {
+          "0": 1662,
+          "1": 1662,
+          "2": 1662,
+          "3": 1662
+        },
+        "algorithm": "Pinned SUBTLEX word contextual diversity; conservative missing-word/sense floors; stable-ID reviewed overrides; per-level target 1662.",
+        "levels": "Relative learning difficulty inside this wordlist; not HSK and not a precise linguistic standard.",
+        "runtime": "not_run",
+        "previousRarity": {
+          "0": 2665,
+          "1": 996,
+          "2": 2987
+        },
+        "reassignedRows": 3775,
+        "transitionCounts": {
+          "0": {
+            "0": 1466,
+            "1": 815,
+            "2": 361,
+            "3": 23
+          },
+          "1": {
+            "0": 154,
+            "1": 457,
+            "2": 351,
+            "3": 34
+          },
+          "2": {
+            "0": 42,
+            "1": 390,
+            "2": 950,
+            "3": 1605
+          }
+        }
+      }
+    },
+    "refinement": {
+      "oldEntries": 6648,
+      "retainedIdioms": 104,
+      "totalIdioms": 1104,
+      "oldEntryProductionCounts": {
+        "review:automatic-source-assisted": 5295,
+        "chineseSource:word": 4670,
+        "partsPolicy:same-reading-dictionary-memory-aids": 4831,
+        "review:editorial-confirmed": 240,
+        "chineseSource:editorial-contextual-definition": 222,
+        "partsPolicy:editorial-context": 51,
+        "partsPolicy:lexical-unit-preserved": 1448,
+        "chineseSource:word-neutral-variant": 199,
+        "partsPolicy:editorial-risk-correction": 222,
+        "review:editorial-risk-correction": 157,
+        "review:ai-translation-context-proofread": 956,
+        "chineseSource:machine-translation-ai-context-proofread": 956,
+        "partsPolicy:editorial-lexical-unit": 79,
+        "chineseSource:character": 601,
+        "partsPolicy:bound-unit-preserved": 17
+      },
+      "oldExamples": {
+        "checkedOn": "2026-10-04",
+        "entriesScanned": 6648,
+        "sentencesScanned": 13296,
+        "sentenceIdentityAndAlignmentErrors": [],
+        "reviewCandidates": 2081,
+        "flags": {
+          "example-1:no-lexical-overlap": 1467,
+          "example-2:no-lexical-overlap": 808,
+          "example-2:metalinguistic-frame": 73,
+          "example-2:short-context": 76,
+          "example-1:metalinguistic-frame": 210,
+          "example-1:short-context": 58
+        },
+        "editorialExampleEntries": 47,
+        "retainedExampleEntries": 6601,
+        "overlaySha256": "55a448e292c8bbcd7578c583947f309c27012b492b48b90d22a252595e2c6ff6",
+        "boundary": "Every sentence was scanned for the listed structural and lexical heuristics. Lack of English token overlap may be a synonym, grammar, or paraphrase issue; flags do not prove mistranslation. This is not a claim of full manual linguistic review."
+      },
+      "oldMachineDefinitionsProofread": 958,
+      "oldMachineDefinitionsAdopted": 956,
+      "otherTwo": "Superseded by specific idiom definitions.",
+      "reviewBoundary": "All retained entries received source-assisted enrichment. All 1000 new short modern senses, Chinese sentence pairs, English translations and semantic groups received AI contextual authoring/review. Preserved old examples received structural/lexical heuristic scans and targeted fixes, not full individual linguistic review. AI review is not human sign-off, independent authority verification or a complete polyphonic pronunciation audit.",
+      "sourceCommit": "e804ada333b68afddfdccbe8dcc938a72da157a7",
+      "sourceProvenanceCaveat": "Upstream advertises MIT but notes that the original provenance of some collected material cannot be established. This data is retained as an attributed reference, not certified authoritative lexicography.",
+      "newIdiomContentQa": {
+        "rows": 1000,
+        "modernExamples": 2000,
+        "reviewedBreakdowns": 1000,
+        "wholeExpressionGroups": 9,
+        "semanticGroups": 2024,
+        "exampleEnglishCorrectionFields": 342,
+        "sentenceParticleCorrectionCounts": {
+          "得": 121,
+          "地": 64,
+          "了": 18,
+          "的": 16
+        },
+        "issues": [],
+        "boundary": "AI dictionary/context review and structural checks; machine-assisted English and sentence pinyin; no human sign-off or device/runtime proof",
+        "sha256": {
+          "catalog.json": "413257d19596da2c64f1272d941ba3c2bf22fc85e23c78b0865248214cba096f",
+          "rows_001_1000.json": "8981434dfe1107fd9bb10b14a4a0864458e53ae8a3eae9a90e6782a5934d8011"
+        }
+      },
+      "newIdioms": 1000,
+      "newIdiomSemanticCorrections": 232,
+      "idiomDistractorReview": {
+        "idioms": 1104,
+        "references": 3312,
+        "reviewMethod": "AI anchor-based source/context review with structural validation; no claim of complete semantic equivalence proof.",
+        "conservativeNearDomainExclusions": {
+          "如痴如醉": "津津有味",
+          "渐入佳境": "循序渐进",
+          "熟能生巧": "循序渐进",
+          "剑拔弩张": "千钧一发",
+          "凶多吉少": "千钧一发",
+          "咬紧牙关": "鞠躬尽瘁",
+          "不厌其烦": "鞠躬尽瘁",
+          "感人肺腑": "潸然泪下",
+          "一针见血": "釜底抽薪",
+          "一清二楚": "言简意赅",
+          "志同道合": "同舟共济"
+        },
+        "lateChanges": {
+          "distractorRows": 92,
+          "explanationRows": 1
+        },
+        "explanationCorrection": "如痴如醉: modern Chinese and English aligned to the enthralled sense used in both examples."
+      },
+      "sourceWhitespaceCleanup": "One trailing space before an embedded newline in 幅度 figurative explanation removed; raw source excerpt preserved."
+    },
+    "presetRefresh": {
+      "ownership": "Internal presetSourceId, or fixed historical teaching-content fingerprint; identity alone does not grant overwrite permission.",
+      "historyEntries": 6663,
+      "historySha256": "93665fdba9ae997c556da8d17d3415c8685b93fbaea30c5ad87354b1f446f89c",
+      "customDuplicatePolicy": "Keep unowned custom content and rarity; manual CSV imports append only.",
+      "readingCorrectionPolicy": "Explicit source ID / Hanzi / old reading / new reading allowlist; currently empty, retained readings preserved.",
+      "progress": "Preserve actual word/meaning IDs and all learning records; upsert within existing mutex and transaction.",
+      "pendingCardConflict": "Validate frozen meaning IDs against projected labels; conflict rolls back, keeps old saved library usable and requests retry after completion.",
+      "runtime": "not_run"
+    },
+    "securitySelfReview": "Compose plain text, bounded optional CSV fields and records, internal ownership unavailable to manual CSV, existing mutex/transaction and cancellation reused. No new app network endpoint, permission or credential.",
+    "defaultAssets": {
+      "task": "core:data:bundleDefaultWordlist",
+      "rows": 7648,
+      "versionSha256": "c4d73add8dcefc35aedb97749e240da516b32770cfd5bd9a1e58f541c8c522cb",
+      "byteIdenticalToRootCsv": true
+    }
   },
   "strokes": {
+    "status": "build_wordlist_strokes.py --check passed against final CSV",
     "resources": 6324,
-    "csvCoverage": "100%",
+    "csvCharacters": 6323,
     "missingCharacters": 0,
-    "extraRetainedCharacter": "琫",
-    "makeMeAHanzi": 6254,
-    "animCjk": 70,
     "shards": 50,
-    "maximumShardBytes": 638903,
-    "maximumShardGlyphs": 128,
-    "pathCount": 67023,
-    "medianPointCount": 381716,
-    "generatedBundleBytes": 23744507,
-    "sourcesMatchPinnedGeometry": true,
-    "demoTracingUnchanged": true,
-    "allPackagedAssetBytes": 23789486
-  },
-  "scope": {
-    "baselineFiles": 43,
-    "changedBaselineFiles": [
-      "README.md",
-      "wordlist.csv",
-      "feature/profile/src/main/kotlin/com/example/chinese_flashcard/feature/profile/ProfileScreen.kt",
-      "feature/profile/src/main/kotlin/com/example/chinese_flashcard/feature/profile/ProfileViewModel.kt",
-      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/FlashcardDatabase.kt",
-      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/FlashcardRepositories.kt",
-      "app/src/main/kotlin/com/example/chinese_flashcard/FlashcardApp.kt"
-    ],
-    "newKotlinFiles": [
-      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvDecoder.kt",
-      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvImporter.kt",
-      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvParser.kt",
-      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvStrokeResources.kt",
-      "core/domain/src/main/kotlin/com/example/chinese_flashcard/core/domain/CsvImport.kt"
-    ],
-    "deletedBaselineFiles": 0
-  },
-  "checks": {
-    "csvStaticValidation": "passed",
-    "strokeStaticValidation": "passed",
-    "originalIdRarityAndOrder": "passed",
-    "demoAliasDistractors": "passed",
-    "hashesAndLicenses": "passed",
-    "pythonAst": "passed",
-    "xmlParsedFiles": 10,
-    "kotlinCompilation": "not_run",
-    "roomMigrationExecution": "not_run",
-    "tests": "not_run",
-    "device": "not_run"
+    "makeMeAHanzi": 6254,
+    "animCjk": 70
   }
 }
