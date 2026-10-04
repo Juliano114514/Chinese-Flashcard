@@ -3,4 +3,6 @@
 # Preserve exact CSV backups and packaged resource hashes across platforms.
 *.csv -text
 core/data/src/main/assets/** -text
+# Frozen rebuild inputs are verified by their exact-byte SHA-256 manifests.
+tools/wordlist_rebuild/** -text
 *.jar binary

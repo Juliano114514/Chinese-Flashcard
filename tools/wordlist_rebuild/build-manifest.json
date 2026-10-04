@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "words": 7723,
+  "retainedWords": 7648,
+  "newRarity0Idioms": 75,
+  "editorialCorrections": {
+    "glossOverrides": 228,
+    "sentenceReadings": 18,
+    "sentenceChunks": 16
+  },
+  "inputSha256": {
+    "baseline.csv": "a63a58398ca3f815b19e625603d7e1c69d49ad7b5c4b6e633131939bd45ce658",
+    "definitions.json": "a5bf30022afb53dd60b819e09b415524fdaa05f594b0830cf2744312214f2b40",
+    "examples.json": "87004785516f5a48dff0112815507ea5b22fc2f7e5183ca58b474cde510fdb30",
+    "additional-idioms.json": "ed18082bf9f7e3d82c503a75f0d5486306f8f973a3ebcf16cac60a37f9f8e586",
+    "id-map.json": "1c0255f7b6c2ae8163006646b727ce146a151756f3844ef2149591877926d005",
+    "gloss-overrides.json": "b0593405c86487526d6566f3a0d8843dbff97e6164e2769c5b4d43dde54b1464",
+    "sentence-corrections.json": "15a90439bdf9c4fef5ddb1bc1e16ada6941f226b9950219f64e5c320def2e35a",
+    "draft-audit.json": "97e266479fd4abf5422d025c3fc357d1e0dff2f3232790e83612db52f69b3e2b"
+  },
+  "rarity": {
+    "0": 1656,
+    "1": 2025,
+    "3": 2120,
+    "2": 1922
+  },
+  "examples": 15446,
+  "bytes": 17881368,
+  "sha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix",
+  "learningOrder": "rarity, syllable letters then tone 1/2/3/4/5, next syllable, stable ID",
+  "firstLearningWords": [
+    {
+      "词条ID": "wl_00188",
+      "组词": "阿姨",
+      "拼音": "ā yí"
+    },
+    {
+      "词条ID": "wl_07698",
+      "组词": "唉声叹气",
+      "拼音": "āi shēng tàn qì"
+    },
+    {
+      "词条ID": "wl_01062",
+      "组词": "哎呀",
+      "拼音": "āi yā"
+    },
+    {
+      "词条ID": "wl_01566",
+      "组词": "哎哟",
+      "拼音": "āi yō"
+    },
+    {
+      "词条ID": "wl_00599",
+      "组词": "爱情",
+      "拼音": "ài qíng"
+    },
+    {
+      "词条ID": "wl_00708",
+      "组词": "安顿",
+      "拼音": "ān dùn"
+    },
+    {
+      "词条ID": "wl_01269",
+      "组词": "安静",
+      "拼音": "ān jìng"
+    },
+    {
+      "词条ID": "wl_01292",
+      "组词": "安宁",
+      "拼音": "ān níng"
+    },
+    {
+      "词条ID": "wl_00758",
+      "组词": "安全",
+      "拼音": "ān quán"
+    },
+    {
+      "词条ID": "wl_00314",
+      "组词": "安慰",
+      "拼音": "ān wèi"
+    },
+    {
+      "词条ID": "wl_00783",
+      "组词": "按钮",
+      "拼音": "àn niǔ"
+    },
+    {
+      "词条ID": "wl_01121",
+      "组词": "肮脏",
+      "拼音": "āng zāng"
+    },
+    {
+      "词条ID": "wl_01113",
+      "组词": "昂贵",
+      "拼音": "áng guì"
+    },
+    {
+      "词条ID": "wl_02443",
+      "组词": "熬夜",
+      "拼音": "áo yè"
+    },
+    {
+      "词条ID": "wl_03762",
+      "组词": "八个",
+      "拼音": "bā gè"
+    },
+    {
+      "词条ID": "wl_00511",
+      "组词": "八卦",
+      "拼音": "bā guà"
+    },
+    {
+      "词条ID": "wl_01065",
+      "组词": "巴士",
+      "拼音": "bā shì"
+    },
+    {
+      "词条ID": "wl_01085",
+      "组词": "把握",
+      "拼音": "bǎ wò"
+    },
+    {
+      "词条ID": "wl_01043",
+      "组词": "爸爸",
+      "拼音": "bà ba"
+    },
+    {
+      "词条ID": "wl_01243",
+      "组词": "白色",
+      "拼音": "bái sè"
+    }
+  ],
+  "verification": "Complete structural/content-shape/reference/stroke-coverage checks. AI-assisted lexical gloss selection is not human linguistic sign-off."
+}

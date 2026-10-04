@@ -89,6 +89,22 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="Check generated assets without rewriting")
     args = parser.parse_args()
+    current = json.loads((OUTPUT / 'catalog.json').read_text(encoding='utf-8'))
+    if current['words'] and 'literalExplanations' in current['words'][0]:
+        if not args.check:
+            raise SystemExit('The historical demo producer is retired. The v2 catalog is authored source; do not replace its chunks with legacy templates.')
+        strokes = json.loads((OUTPUT / 'strokes.json').read_text(encoding='utf-8'))
+        glyphs = {item['id']:item['glyph'] for item in strokes['items']}
+        for word in current['words']:
+            if 'note' in word or not word['literalExplanations'] or len(word['examples']) != 2:
+                raise ValueError('Invalid v2 demo contract: ' + word['id'])
+            if ''.join(glyphs[key] for key in word['tracingItemIds']) != word['hanzi']:
+                raise ValueError('Demo stroke positions differ: ' + word['id'])
+            for example in word['examples']:
+                if ''.join(chunk['hanzi'] for chunk in example['chunks']) != example['hanzi'] or any(not chunk['gloss'] for chunk in example['chunks']):
+                    raise ValueError('Invalid demo chunks: ' + word['id'])
+        print(f"V2 authored demo: {len(current['words'])} words; {len(strokes['items'])} genuine glyphs; all positions and chunks covered.")
+        return
     catalog, strokes = build()
     OUTPUT.mkdir(parents=True, exist_ok=True)
     for name, value in (("catalog.json",catalog),("strokes.json",strokes)):

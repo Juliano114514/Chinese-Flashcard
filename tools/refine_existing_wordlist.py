@@ -205,6 +205,8 @@ def retained_note(row):
 
 
 def main():
+    if '例句JSON' in (ROOT/'wordlist.csv').read_text(encoding='utf-8-sig').splitlines()[0]:
+        raise SystemExit('Historical v1 refinement is retired. Use tools/rebuild_wordlist.py with its frozen v2 content inputs.')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()

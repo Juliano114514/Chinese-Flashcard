@@ -228,6 +228,12 @@ def main():
     parser.add_argument('--check', action='store_true', help='Validate current assignments without rewriting the CSV.')
     args = parser.parse_args()
     payload = CSV_PATH.read_bytes()
+    if '例句JSON' in payload.decode('utf-8-sig').splitlines()[0]:
+        if args.check:
+            from rebuild_wordlist import main as check_rebuild
+            check_rebuild()
+            return
+        raise SystemExit('The historical equal-quota grader is retired for v2; preserve current learning-expectation rarities.')
     rows = list(csv.DictReader(io.StringIO(payload.decode('utf-8-sig'), newline='')))
     if args.check:
         print(json.dumps(validate_difficulty(rows), ensure_ascii=False))

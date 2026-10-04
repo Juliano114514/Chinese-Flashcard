@@ -1,0 +1,240 @@
+{
+  "0db2d12cde9c7a0dfdb28e7cf379cd60f4f86b07e5ec410029af1d5197ef3a54": {
+    "pinyin": "gù shi zhōng de wū shī zǔ zhòu le chéng bǎo."
+  },
+  "14ce0dbbabbd3acaf90b0a98c12952c432447f896de62ed6a939c6a1408cf459": {
+    "pinyin": "nóng shū jì lù le qiāo zhū zhè yī shù yǔ."
+  },
+  "f6d7da1c7d167c64c531848b2deeb85b0bff7444db1232412d819dc7c2bd2853": {
+    "pinyin": "dà xuě fēng lù hòu, zhè ge cūn zǐ zàn shí yǔ shì gé jué."
+  },
+  "ed08c53f2a54ff261bb6d664203a0012d4ae89fde07d11698d7973ac47373822": {
+    "pinyin": "xiǎo qū zhǔn bèi gǎi jiàn, jū mín duì cǐ yì lùn fēn fēn."
+  },
+  "ca7ea2a3e17b2b1c1d41684fd983e123e6442b81d23b1e2f4d4efc7f585fb64f": {
+    "pinyin": "gù shi zhōng de qiú zhǎng huān yíng lái kè."
+  },
+  "ffbfdfd371c23e82c107c5226abd25a2cfea4b3bf5418e4122413fe2a666e4bc": {
+    "pinyin": "nà xiē zàn shí de róng yù, duì tā lái shuō zhǐ shì guò yǎn yún yān."
+  },
+  "6cd62cc73af10ffc708ffafec22754d732d3818af771e62882bb797049d78f8d": {
+    "pinyin": "tā zàn shí àn bīng bù dòng, děng dài gèng hé shì de jī huì."
+  },
+  "cb75e8ba370482a636eb1d8c36c1d9e5808d44257a097ca17943c0a916e17134": {
+    "pinyin": "tā tí xǐng zì jǐ bù yào ràng zàn shí de chéng gōng chōng hūn tóu nǎo."
+  },
+  "f9e706693309acae295237cc73836d952ec1710e22325a36e6fb19c335a6b8e2": {
+    "pinyin": "jū mín duì luàn dào lè sè wū rǎn hé liú de xíng wéi shēn wù tòng jué."
+  },
+  "d5e2d8a53c3f73cd4d580ff1305fe4f7e472ee73d5c6c9eba4da277ea33b94c9": {
+    "pinyin": "tā xiāng xìn chē dào shān qián bì yǒu lù, méi yǒu bèi zàn shí de kùn nán xià dào."
+  },
+  "691cab9bf365f0b5888cbe7e23616901d2f7dc71af6ebfe46c3153fcb0bb70f9": {
+    "pinyin": "huà shī yòng zhě shí tiáo chū nuǎn sè."
+  },
+  "c381975171aa76a25b6b3ddc7f194b204f8ce0137cdc1f6e9bef45e1b5ffc537": {
+    "pinyin": "tā zǒng chéng nuò huán qián, què yī cì cì kāi kōng tóu zhī piào.",
+    "chunks": [
+      {"hanzi":"他","pinyin":"tā","gloss":"he"},
+      {"hanzi":"总","pinyin":"zǒng","gloss":"always"},
+      {"hanzi":"承诺","pinyin":"chéng nuò","gloss":"promise"},
+      {"hanzi":"还钱，","pinyin":"huán qián,","gloss":"repay the money"},
+      {"hanzi":"却","pinyin":"què","gloss":"but"},
+      {"hanzi":"一次次","pinyin":"yī cì cì","gloss":"again and again"},
+      {"hanzi":"开","pinyin":"kāi","gloss":"issue"},
+      {"hanzi":"空头支票。","pinyin":"kōng tóu zhī piào.","gloss":"empty promises"}
+    ]
+  },
+  "dfc9f471477a6d1fbfc697e857417e5de2ceb0e247d34d56bc901b715e6eeae0": {
+    "pinyin": "nà wèi shè yǐng shī bèi tóng háng chēng wéi hòu qǐ zhī xiù."
+  },
+  "3aad5190fe745cd6a92561e223d2deb7bf5a8e89f953a2a56c2533a516877b64": {
+    "pinyin": "jiāo bái qiē hǎo yǐ hòu, mā ma zhǔn bèi chǎo cài."
+  },
+  "1b6c7cdc76e1ef7b0b285452ca8a5c4a744896463720c1f628e7c872b2986906": {
+    "pinyin": "yào cái guì lǐ fàng zhe qiē hǎo de huáng qí."
+  },
+  "cfe32e0dbf47d3a02b16d8078ab4a83b25653eb3bdbdbe0ab0a6b4ff47fa3d19": {
+    "pinyin": "mā ma bǎ jī zhēn qiē hǎo, zhǔn bèi zuò wǎn fàn."
+  },
+  "cbc8c66cc82c4ebef2a73fd53d1dd42d3b4c8145a55c7bf29df474b7826399d2": {
+    "pinyin": "jìn bié rén jiā zuò kè, jué bù néng shùn shǒu qiān yáng ná zǒu dōng xi.",
+    "chunks": [
+      {"hanzi":"进","pinyin":"jìn","gloss":"enter"},
+      {"hanzi":"别人","pinyin":"bié rén","gloss":"other people"},
+      {"hanzi":"家","pinyin":"jiā","gloss":"home"},
+      {"hanzi":"做客，","pinyin":"zuò kè,","gloss":"visit as a guest"},
+      {"hanzi":"绝","pinyin":"jué","gloss":"absolutely"},
+      {"hanzi":"不能","pinyin":"bù néng","gloss":"must not"},
+      {"hanzi":"顺手牵羊","pinyin":"shùn shǒu qiān yáng","gloss":"steal something within easy reach"},
+      {"hanzi":"拿走","pinyin":"ná zǒu","gloss":"take away"},
+      {"hanzi":"东西。","pinyin":"dōng xi.","gloss":"belongings"}
+    ]
+  },
+  "af6e301c5e1399a4e04c52dcd80c814b5593e68dfcf83b1bbdd5fbf47d4a8793": {
+    "chunks": [
+      {"hanzi":"古时，","pinyin":"gǔ shí,","gloss":"in ancient times"},
+      {"hanzi":"商人","pinyin":"shāng rén","gloss":"merchants"},
+      {"hanzi":"可以","pinyin":"kě yǐ","gloss":"can"},
+      {"hanzi":"用","pinyin":"yòng","gloss":"use"},
+      {"hanzi":"疋","pinyin":"pǐ","gloss":"PI (historical measure word for bolts of cloth)"},
+      {"hanzi":"来","pinyin":"lái","gloss":"in order to"},
+      {"hanzi":"计量","pinyin":"jì liàng","gloss":"measure"},
+      {"hanzi":"布。","pinyin":"bù.","gloss":"cloth"}
+    ]
+  },
+  "201b1d45cbe779c385355028cebe291d1e754ab8c41fe993e97d0eb5030cf9cb": {
+    "chunks": [
+      {"hanzi":"公司","pinyin":"gōng sī","gloss":"a company"},
+      {"hanzi":"若","pinyin":"ruò","gloss":"if"},
+      {"hanzi":"安于现状，","pinyin":"ān yú xiàn zhuàng,","gloss":"remains content with the status quo"},
+      {"hanzi":"很快","pinyin":"hěn kuài","gloss":"very quickly"},
+      {"hanzi":"就","pinyin":"jiù","gloss":"then"},
+      {"hanzi":"会","pinyin":"huì","gloss":"will"},
+      {"hanzi":"落后于","pinyin":"luò hòu yú","gloss":"fall behind"},
+      {"hanzi":"市场。","pinyin":"shì chǎng.","gloss":"the market"}
+    ]
+  },
+  "7058d0d869fed9eb2651720e70fc1aa1d0766123aa3e5231b396606fb478f7f7": {
+    "chunks": [
+      {"hanzi":"刚","pinyin":"gāng","gloss":"just"},
+      {"hanzi":"入门时，","pinyin":"rù mén shí,","gloss":"when beginning to learn"},
+      {"hanzi":"她","pinyin":"tā","gloss":"she"},
+      {"hanzi":"对","pinyin":"duì","gloss":"with regard to"},
+      {"hanzi":"这","pinyin":"zhè","gloss":"this"},
+      {"hanzi":"门","pinyin":"mén","gloss":"MEN (measure word for fields of study or skills)"},
+      {"hanzi":"技术","pinyin":"jì shù","gloss":"technology"},
+      {"hanzi":"一窍不通。","pinyin":"yī qiào bù tōng.","gloss":"knew nothing about it"}
+    ]
+  },
+  "308525ed89580ada7805a6fd308582fb85e453ebd45885ad95593c286e4098b1": {
+    "pinyin": "zhè wèi xiū lǐ shī fu shén tōng guǎng dà, lián lǎo shè bèi yě néng xiū hǎo.",
+    "chunks": [
+      {"hanzi":"这位","pinyin":"zhè wèi","gloss":"this person"},
+      {"hanzi":"修理师傅","pinyin":"xiū lǐ shī fu","gloss":"repairman"},
+      {"hanzi":"神通广大，","pinyin":"shén tōng guǎng dà,","gloss":"has remarkable skills"},
+      {"hanzi":"连","pinyin":"lián","gloss":"even"},
+      {"hanzi":"老","pinyin":"lǎo","gloss":"old"},
+      {"hanzi":"设备","pinyin":"shè bèi","gloss":"equipment"},
+      {"hanzi":"也","pinyin":"yě","gloss":"also"},
+      {"hanzi":"能","pinyin":"néng","gloss":"can"},
+      {"hanzi":"修好。","pinyin":"xiū hǎo.","gloss":"repair completely"}
+    ]
+  },
+  "5cc10ae8687e62fe4f49cd02bb5466f4e5f659c5b6e79c6c20d75941076fbfdf": {
+    "chunks": [
+      {"hanzi":"工匠","pinyin":"gōng jiàng","gloss":"craftsperson"},
+      {"hanzi":"修好","pinyin":"xiū hǎo","gloss":"repair completely"},
+      {"hanzi":"屋顶","pinyin":"wū dǐng","gloss":"roof"},
+      {"hanzi":"的","pinyin":"de","gloss":"DE (modifier marker)"},
+      {"hanzi":"桷，","pinyin":"jué,","gloss":"rafter"},
+      {"hanzi":"房子","pinyin":"fáng zi","gloss":"the house"},
+      {"hanzi":"更","pinyin":"gèng","gloss":"more"},
+      {"hanzi":"牢固","pinyin":"láo gù","gloss":"sturdy"},
+      {"hanzi":"了。","pinyin":"le.","gloss":"LE (change of state)"}
+    ]
+  },
+  "fe547cb76fd9b9b4aaa614f0eec9c6d167a3d13143369af8c91431b64275e8c3": {
+    "chunks": [
+      {"hanzi":"修好","pinyin":"Xiū hǎo","gloss":"repairing completely"},
+      {"hanzi":"这座","pinyin":"zhè zuò","gloss":"this (ZUO measure word)"},
+      {"hanzi":"老","pinyin":"lǎo","gloss":"old"},
+      {"hanzi":"桥","pinyin":"qiáo","gloss":"bridge"},
+      {"hanzi":"恐怕","pinyin":"kǒng pà","gloss":"probably"},
+      {"hanzi":"需要","pinyin":"xū yào","gloss":"requires"},
+      {"hanzi":"一年半载。","pinyin":"yī nián bàn zǎi.","gloss":"a year or so"}
+    ]
+  },
+  "774ff7dc444679944f3ec3f411551436e9abe2df33aaadb4f784e9828c57efd1": {
+    "chunks": [
+      {"hanzi":"几个","pinyin":"jǐ gè","gloss":"a few"},
+      {"hanzi":"人","pinyin":"rén","gloss":"people"},
+      {"hanzi":"的","pinyin":"de","gloss":"DE (modifier marker)"},
+      {"hanzi":"善举","pinyin":"shàn jǔ","gloss":"kind deeds"},
+      {"hanzi":"像","pinyin":"xiàng","gloss":"are like"},
+      {"hanzi":"星星之火，","pinyin":"xīng xīng zhī huǒ,","gloss":"small sparks with the potential to spread"},
+      {"hanzi":"带动","pinyin":"dài dòng","gloss":"spur into action"},
+      {"hanzi":"了","pinyin":"le","gloss":"LE (completed action)"},
+      {"hanzi":"整个","pinyin":"zhěng gè","gloss":"the entire"},
+      {"hanzi":"社区。","pinyin":"shè qū.","gloss":"community"}
+    ]
+  },
+  "eb9c03cc2224f69fef74d520db66827302f17776f36167aecb2bdbed086c0555": {
+    "chunks": [
+      {"hanzi":"他","pinyin":"tā","gloss":"he"},
+      {"hanzi":"在","pinyin":"zài","gloss":"in"},
+      {"hanzi":"植物书","pinyin":"zhí wù shū","gloss":"a botanical book"},
+      {"hanzi":"里","pinyin":"lǐ","gloss":"inside"},
+      {"hanzi":"读到","pinyin":"dú dào","gloss":"read about"},
+      {"hanzi":"栝楼","pinyin":"guā lóu","gloss":"snake gourd"},
+      {"hanzi":"的","pinyin":"de","gloss":"DE (modifier marker)"},
+      {"hanzi":"名称。","pinyin":"míng chēng.","gloss":"name"}
+    ]
+  },
+  "ab09e9aeaaabf5955f7e35e1cc855d6ce46af1a904fe250cea63c51363b26c04": {
+    "chunks": [
+      {"hanzi":"历史书","pinyin":"lì shǐ shū","gloss":"the history book"},
+      {"hanzi":"讲述","pinyin":"jiǎng shù","gloss":"recounts"},
+      {"hanzi":"了","pinyin":"le","gloss":"LE (completed action)"},
+      {"hanzi":"古人","pinyin":"gǔ rén","gloss":"people of ancient times"},
+      {"hanzi":"戡乱","pinyin":"kān luàn","gloss":"suppressing a rebellion"},
+      {"hanzi":"的","pinyin":"de","gloss":"DE (modifier marker)"},
+      {"hanzi":"经过。","pinyin":"jīng guò.","gloss":"course of events"}
+    ]
+  },
+  "a780379c96d148bf3a6312609cca9fbb87f9279dfee5f7e24a12df5959cd8c7f": {
+    "chunks": [
+      {"hanzi":"蒋","pinyin":"jiǎng","gloss":"Jiang (surname)"},
+      {"hanzi":"奶奶","pinyin":"nǎi nai","gloss":"grandmother"},
+      {"hanzi":"给","pinyin":"gěi","gloss":"for"},
+      {"hanzi":"客人","pinyin":"kè rén","gloss":"the guests"},
+      {"hanzi":"端来","pinyin":"duān lái","gloss":"bring"},
+      {"hanzi":"热","pinyin":"rè","gloss":"warm"},
+      {"hanzi":"杏仁酪。","pinyin":"xìng rén lào.","gloss":"almond pudding"}
+    ]
+  },
+  "5c3a35882ecee1bf373251664ba59ff6c8b6c6cc4d36deb6b837e09b23ce6674": {
+    "chunks": [
+      {"hanzi":"她","pinyin":"tā","gloss":"she"},
+      {"hanzi":"举手投足","pinyin":"jǔ shǒu tóu zú","gloss":"every gesture and movement"},
+      {"hanzi":"间","pinyin":"jiān","gloss":"during"},
+      {"hanzi":"都","pinyin":"dōu","gloss":"all"},
+      {"hanzi":"显得","pinyin":"xiǎn de","gloss":"seem"},
+      {"hanzi":"从容","pinyin":"cóng róng","gloss":"calm and unhurried"},
+      {"hanzi":"有礼。","pinyin":"yǒu lǐ.","gloss":"polite"}
+    ]
+  },
+  "267cdf3bffdb3c998b9012f915f544a1398b7f628e8a9bd880afb63e31438bf7": {
+    "chunks": [
+      {"hanzi":"画","pinyin":"huà","gloss":"the painting"},
+      {"hanzi":"中","pinyin":"zhōng","gloss":"in"},
+      {"hanzi":"的","pinyin":"de","gloss":"DE (modifier marker)"},
+      {"hanzi":"礼冠","pinyin":"lǐ guān","gloss":"ceremonial crown"},
+      {"hanzi":"挂","pinyin":"guà","gloss":"hang"},
+      {"hanzi":"着","pinyin":"zhe","gloss":"ZHE (ongoing state)"},
+      {"hanzi":"玉璪。","pinyin":"yù zǎo.","gloss":"hanging jade bead strands"}
+    ]
+  },
+  "39c93a2d2408c982580fa88433ff025f85afad0f23a5a79148107a1bb8d32f9f": {
+    "chunks": [
+      {"hanzi":"这张","pinyin":"zhè zhāng","gloss":"this (ZHANG measure word)"},
+      {"hanzi":"资格证","pinyin":"zī gé zhèng","gloss":"qualification certificate"},
+      {"hanzi":"成了","pinyin":"chéng le","gloss":"became LE"},
+      {"hanzi":"她","pinyin":"tā","gloss":"her"},
+      {"hanzi":"进入","pinyin":"jìn rù","gloss":"entering"},
+      {"hanzi":"行业","pinyin":"háng yè","gloss":"the industry"},
+      {"hanzi":"的","pinyin":"de","gloss":"DE (modifier marker)"},
+      {"hanzi":"敲门砖。","pinyin":"qiāo mén zhuān.","gloss":"a stepping stone for entry"}
+    ]
+  },
+  "b99c120971970134c1a6d56ca8a107b6d274f84b58f5bf12aee15e570a6e6adc": {
+    "chunks": [
+      {"hanzi":"这个","pinyin":"Zhè ge","gloss":"this"},
+      {"hanzi":"木盒","pinyin":"mù hé","gloss":"wooden box"},
+      {"hanzi":"做","pinyin":"zuò","gloss":"made"},
+      {"hanzi":"得","pinyin":"de","gloss":"DE (complement marker)"},
+      {"hanzi":"很","pinyin":"hěn","gloss":"very"},
+      {"hanzi":"精致。","pinyin":"jīng zhì.","gloss":"finely crafted"}
+    ]
+  }
+}

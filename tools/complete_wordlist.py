@@ -536,6 +536,12 @@ def validate_csv_bytes(content, verify_difficulty=True):
     return {'words':len(table),'characters':len(set(''.join(r['组词'] for r in table))), 'rarity':dict(collections.Counter(r['罕度'] for r in table)), 'bytes':len(content),'demoDuplicates':overlap,'firstImportNewWords':len(table)-overlap,'resultingWordbookCount':len(table)-overlap+len(demo),'sha256':hashlib.sha256(content).hexdigest(),'difficulty':grading}
 
 def main():
+    if '例句JSON' in OUTPUT.read_text(encoding='utf-8-sig').splitlines()[0]:
+        if '--check' in __import__('sys').argv:
+            from rebuild_wordlist import main as check_rebuild
+            check_rebuild()
+            return
+        raise SystemExit('This historical producer is retired for v2. Use tools/rebuild_wordlist.py --apply; its ID mapping is frozen.')
     parser=argparse.ArgumentParser();parser.add_argument('--prepare',action='store_true')
     parser.add_argument('--check',action='store_true')
     parser.add_argument('--assemble-ungraded',action='store_true',help='Write assembled content before refreshing difficulty evidence; all structural checks still apply.')
