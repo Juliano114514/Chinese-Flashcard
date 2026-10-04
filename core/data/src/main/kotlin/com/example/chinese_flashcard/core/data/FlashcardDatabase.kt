@@ -1,6 +1,7 @@
 package com.example.chinese_flashcard.core.data
 
 import androidx.room.Dao
+import androidx.room.ColumnInfo
 import androidx.room.Database
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -9,12 +10,17 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.RoomDatabase
 import androidx.room.Upsert
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.flow.Flow
 
 @Entity(tableName = "words", indices = [Index("sortOrder")])
 internal data class WordEntity(@PrimaryKey val id: String, val hanzi: String, val pinyin: String,
   val examplesJson: String, val partsJson: String, val note: String,
-  val distractorsJson: String, val sortOrder: Int)
+  val distractorsJson: String, val sortOrder: Int,
+  @ColumnInfo(defaultValue = "0") val rarity: Int = 0)
+
+internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: String)
 
 @Entity(tableName = "meanings", indices = [Index("wordId")])
 internal data class MeaningEntity(@PrimaryKey val id: String, val wordId: String,
@@ -85,7 +91,11 @@ internal data class WritingCompletionEntity(@PrimaryKey val id: String, val sess
 
 @Dao
 internal interface FlashcardDao {
-  @Query("SELECT * FROM words ORDER BY sortOrder") suspend fun words(): List<WordEntity>
+  @Query("SELECT * FROM words ORDER BY rarity, sortOrder, id") suspend fun words(): List<WordEntity>
+  @Query("SELECT id, hanzi, pinyin FROM words ORDER BY id") suspend fun wordIdentities(): List<WordIdentity>
+  @Query("SELECT MAX(sortOrder) FROM words") suspend fun maximumWordOrder(): Int?
+  @Query("SELECT * FROM meanings ORDER BY wordId, position") suspend fun allMeanings(): List<MeaningEntity>
+  @Query("SELECT id FROM tracing_items") suspend fun tracingIds(): List<String>
   @Query("SELECT * FROM words WHERE id = :id") suspend fun word(id: String): WordEntity?
   @Query("SELECT COUNT(*) FROM words") suspend fun wordCount(): Int
   @Query("SELECT * FROM meanings WHERE wordId = :wordId ORDER BY position") suspend fun meanings(wordId: String): List<MeaningEntity>
@@ -139,7 +149,13 @@ internal interface FlashcardDao {
   WordTracingEntity::class, SettingsEntity::class, AppStateEntity::class, DailyPlanEntity::class,
   WordProgressEntity::class, CycleEntity::class, DailyItemEntity::class, ReviewNodeEntity::class,
   CardEntity::class, WritingSessionEntity::class, WritingCompletionEntity::class],
-  version = 1, exportSchema = true)
+  version = 2, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
+}
+
+internal val FLASHCARD_MIGRATION_1_2 = object : Migration(1, 2) {
+  override fun migrate(db: SupportSQLiteDatabase) {
+    db.execSQL("ALTER TABLE words ADD COLUMN rarity INTEGER NOT NULL DEFAULT 0")
+  }
 }

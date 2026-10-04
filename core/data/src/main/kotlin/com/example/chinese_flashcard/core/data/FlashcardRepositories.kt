@@ -21,7 +21,8 @@ import java.util.UUID
 /** One application-scoped owner. No destructive migration or read-error reset is installed. */
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
-  private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v1.db").build()
+  private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v1.db")
+    .addMigrations(FLASHCARD_MIGRATION_1_2).build()
   private val dao = database.flashcards()
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
@@ -29,9 +30,12 @@ class FlashcardRepositories(context: Context) {
   val study: StudyRepository = LocalStudy()
   val settings: SettingsRepository = LocalSettings()
   val writing: WritingRepository = LocalWriting()
+  private val csvImporter = CsvImporter(app, database, dao, operationMutex, ::prepare, ::touch)
+  val csvImport: CsvImportRepository = csvImporter
 
   suspend fun prepare() {
     seedMutex.withLock {
+      csvImporter.cleanStaleSnapshots()
       if (dao.appState()?.seeded == true) return
       val content = withContext(Dispatchers.IO) { DemoDecoder.read(app) }
       database.withTransaction {
