@@ -22,6 +22,11 @@ internal data class WordEntity(@PrimaryKey val id: String, val hanzi: String, va
 
 internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: String)
 
+internal data class WordlistRow(val id: String, val hanzi: String, val pinyin: String,
+  val english: String, val searchMeanings: String, val difficulty: Int,
+  val firstEncounterShown: Boolean, val firstPassedDay: Long?,
+  val correctRounds: Int, val targetRounds: Int)
+
 @Entity(tableName = "meanings", indices = [Index("wordId")])
 internal data class MeaningEntity(@PrimaryKey val id: String, val wordId: String,
   val english: String, val partOfSpeech: String, val position: Int)
@@ -93,6 +98,20 @@ internal data class WritingCompletionEntity(@PrimaryKey val id: String, val sess
 
 @Dao
 internal interface FlashcardDao {
+  @Query("""
+    SELECT w.id, w.hanzi, w.pinyin, w.rarity AS difficulty,
+      COALESCE((SELECT english FROM meanings WHERE wordId = w.id ORDER BY position, id LIMIT 1), '') AS english,
+      COALESCE(GROUP_CONCAT(m.english, ' '), '') AS searchMeanings,
+      COALESCE(p.firstEncounterShown, 0) AS firstEncounterShown, p.firstPassedDay,
+      COALESCE(c.correctRounds, 0) AS correctRounds, COALESCE(c.targetRounds, 0) AS targetRounds
+    FROM words w
+    LEFT JOIN word_progress p ON p.wordId = w.id
+    LEFT JOIN learning_cycles c ON c.id = p.activeCycleId AND c.status = 'ACTIVE'
+    LEFT JOIN meanings m ON m.wordId = w.id
+    GROUP BY w.id
+    ORDER BY w.rarity, w.sortOrder, w.id
+  """)
+  fun observeWordlist(): Flow<List<WordlistRow>>
   @Query("SELECT * FROM words ORDER BY rarity, sortOrder, id") suspend fun words(): List<WordEntity>
   @Query("SELECT id, hanzi, pinyin FROM words ORDER BY id") suspend fun wordIdentities(): List<WordIdentity>
   @Query("SELECT MAX(sortOrder) FROM words") suspend fun maximumWordOrder(): Int?

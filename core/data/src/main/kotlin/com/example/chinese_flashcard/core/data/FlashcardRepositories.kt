@@ -30,6 +30,7 @@ class FlashcardRepositories(context: Context) {
   val study: StudyRepository = LocalStudy()
   val settings: SettingsRepository = LocalSettings()
   val writing: WritingRepository = LocalWriting()
+  val wordlist: WordlistRepository = LocalWordlist()
   private val csvImporter = CsvImporter(app, database, dao, operationMutex, ::prepare, ::touch)
   val csvImport: CsvImportRepository = csvImporter
 
@@ -78,6 +79,27 @@ class FlashcardRepositories(context: Context) {
           displayName = value.displayName.trim(), avatarId = value.avatarId))
         touch()
       }
+    }
+  }
+
+  private inner class LocalWordlist : WordlistRepository {
+    override val entries: Flow<List<WordlistItem>> = flow {
+      prepare()
+      emitAll(dao.observeWordlist().map { rows ->
+        rows.map { row ->
+          val status = when {
+            row.firstPassedDay != null -> WordlistStatus.LEARNED
+            row.firstEncounterShown -> WordlistStatus.LEARNING
+            else -> WordlistStatus.UNLEARNED
+          }
+          WordlistItem(row.id, row.hanzi, row.pinyin, row.english, row.searchMeanings,
+            row.difficulty, status, row.correctRounds, row.targetRounds)
+        }
+      }.distinctUntilChanged())
+    }
+
+    override suspend fun word(id: String): WordEntry? = transaction {
+      dao.word(id)?.let { this@FlashcardRepositories.word(it) }
     }
   }
 
@@ -409,9 +431,10 @@ class FlashcardRepositories(context: Context) {
       card.correct, card.writingSessionId)
   }
 
-  private suspend fun word(id: String): WordEntry {
-    val value = checkNotNull(dao.word(id))
-    return WordEntry(value.id, value.hanzi, value.pinyin, dao.meanings(id).map(MeaningEntity::toDomain),
+  private suspend fun word(id: String): WordEntry = word(checkNotNull(dao.word(id)))
+
+  private suspend fun word(value: WordEntity): WordEntry {
+    return WordEntry(value.id, value.hanzi, value.pinyin, dao.meanings(value.id).map(MeaningEntity::toDomain),
       decodeExamples(JSONArray(value.examplesJson)), decodeParts(JSONArray(value.partsJson)),
       value.note, strings(JSONArray(value.distractorsJson)))
   }

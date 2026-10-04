@@ -43,6 +43,7 @@ dependencies {
   implementation(project(":feature:study"))
   implementation(project(":feature:profile"))
   implementation(project(":feature:writing"))
+  implementation(project(":feature:wordlist"))
   implementation(platform(libs.compose.bom))
   implementation(libs.compose.material3)
   implementation(libs.compose.icons)

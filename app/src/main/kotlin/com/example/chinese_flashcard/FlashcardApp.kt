@@ -8,6 +8,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -29,6 +30,7 @@ import androidx.navigation.compose.*
 import com.example.chinese_flashcard.core.data.FlashcardRepositories
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.CsvSource
+import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.media.OfflineSpeech
@@ -36,6 +38,7 @@ import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
 import com.example.chinese_flashcard.feature.profile.ProfileViewModel
 import com.example.chinese_flashcard.feature.study.*
+import com.example.chinese_flashcard.feature.wordlist.*
 import com.example.chinese_flashcard.feature.writing.WritingScreen
 import com.example.chinese_flashcard.feature.writing.WritingViewModel
 import kotlinx.coroutines.CancellationException
@@ -63,6 +66,7 @@ class StartupViewModel(private val repositories: FlashcardRepositories) : ViewMo
   }
   fun welcome(value: StudySettings) = run {
     val saved = value.copy(welcomed = true)
+    require(DailyWordChoices.isAllowed(saved.dailyWords))
     saved.validate()
     repositories.settings.save(saved)
     saved
@@ -108,6 +112,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val navigationScope = rememberCoroutineScope()
   val study: StudyViewModel = viewModel(factory = factory { StudyViewModel(repositories.study, repositories.settings) })
   val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
+  val wordlist: WordlistViewModel = viewModel(factory = factory { WordlistViewModel(repositories.wordlist) })
   val context = LocalContext.current
   val resolver = context.applicationContext.contentResolver
   val csvPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
@@ -155,13 +160,17 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
   Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
-    if (route == "today" || route == "profile") Column {
+    if (route in listOf("today", "profile", "wordlist")) Column {
       HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
       NavigationBar(containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
-        listOf("today" to "Home", "profile" to "Profile").forEach { (destination, label) ->
+        listOf("today" to "Home", "profile" to "Profile", "wordlist" to "Wordlist").forEach { (destination, label) ->
           NavigationBarItem(selected = route == destination, onClick = {
             nav.navigate(destination) { popUpTo("today") { saveState = true }; launchSingleTop = true; restoreState = true }
-          }, icon = { Icon(if (destination == "today") Icons.Default.Home else Icons.Default.Person, label) },
+          }, icon = { Icon(when (destination) {
+            "today" -> Icons.Default.Home
+            "profile" -> Icons.Default.Person
+            else -> Icons.AutoMirrored.Filled.List
+          }, label) },
             colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent), label = { Text(label) })
         }
       }
@@ -183,6 +192,28 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
           "application/octet-stream", "application/vnd.ms-excel")) },
         onLicenses = { nav.navigate("licenses") }) }
+      composable("wordlist") {
+        WordlistScreen(wordlist, onWord = { id -> nav.navigate("word/$id") { launchSingleTop = true } })
+      }
+      composable("word/{wordId}") { detailEntry ->
+        val wordId = requireNotNull(detailEntry.arguments?.getString("wordId"))
+        val vm: WordDetailViewModel = viewModel(detailEntry, key = wordId,
+          factory = factory { WordDetailViewModel(wordId, repositories.wordlist, repositories.study) })
+        WordDetailScreen(vm, onBack = { speech.stop(); nav.popBackStack() }, onWriting = { sessionId ->
+          if (nav.currentBackStackEntry == detailEntry) {
+            nav.navigate("word-writing/$sessionId") { launchSingleTop = true }
+          }
+        }, onSpeak = speech::speak)
+      }
+      composable("word-writing/{id}") { writingEntry ->
+        val id = requireNotNull(writingEntry.arguments?.getString("id"))
+        val vm: WritingViewModel = viewModel(writingEntry, key = id,
+          factory = factory { WritingViewModel(id, repositories.writing) })
+        val returnToWord: () -> Unit = {
+          if (nav.currentBackStackEntry == writingEntry) { speech.stop(); nav.popBackStack() }
+        }
+        WritingScreen(vm, onBack = returnToWord, onFinished = returnToWord, onSpeak = speech::speak)
+      }
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }

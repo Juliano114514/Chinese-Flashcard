@@ -24,5 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Chinese_Flashcard"
 include(":app", ":core:domain", ":core:data", ":core:ui", ":core:media")
-include(":feature:study", ":feature:profile", ":feature:writing")
+include(":feature:study", ":feature:profile", ":feature:writing", ":feature:wordlist")
  
