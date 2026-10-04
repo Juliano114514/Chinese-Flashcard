@@ -111,7 +111,7 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
             Text("Difficulty", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
               FilterChip(selected = state.difficulties.isEmpty(), onClick = { onDifficulty(null) }, label = { Text("All") })
-              (0..2).forEach { level ->
+              (0..3).forEach { level ->
                 FilterChip(selected = level in state.difficulties, onClick = { onDifficulty(level) }, label = { Text(level.toString()) })
               }
             }

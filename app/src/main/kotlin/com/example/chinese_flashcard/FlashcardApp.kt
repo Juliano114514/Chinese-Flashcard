@@ -34,6 +34,7 @@ import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.media.OfflineSpeech
+import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
 import com.example.chinese_flashcard.feature.profile.ProfileViewModel
@@ -43,6 +44,7 @@ import com.example.chinese_flashcard.feature.writing.WritingScreen
 import com.example.chinese_flashcard.feature.writing.WritingViewModel
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
@@ -79,7 +81,11 @@ class StartupViewModel(private val repositories: FlashcardRepositories) : ViewMo
         val value = withContext(Dispatchers.IO) { operation() }
         mutable.value = StartupState(ready = true, settings = value)
       } catch (error: CancellationException) { throw error }
-      catch (error: Exception) { mutable.value = mutable.value.copy(busy = false, error = error.flashcardMessage()) }
+      catch (error: Exception) {
+        val message = if (!mutable.value.ready) repositories.defaultWordlistState.value.error
+          ?: error.flashcardMessage() else error.flashcardMessage()
+        mutable.value = mutable.value.copy(busy = false, error = message)
+      }
     }
   }
 }
@@ -96,7 +102,9 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
         Spacer(Modifier.height(24.dp))
         if (boot.error != null) {
           Text(boot.error!!); Button(onClick = startup::prepare, enabled = !boot.busy) { Text("Retry") }
-        } else CircularProgressIndicator()
+        } else {
+          WordlistLoadingProgress(repositories.defaultWordlistProgress)
+        }
       }
       !boot.settings.welcomed -> Box(Modifier.safeDrawingPadding()) {
         WelcomeScreen(boot.settings, boot.busy, boot.error, startup::welcome)
@@ -110,6 +118,8 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
 private fun AppNavigation(repositories: FlashcardRepositories) {
   val nav = rememberNavController()
   val navigationScope = rememberCoroutineScope()
+  val defaultWordlist by repositories.defaultWordlistState.collectAsStateWithLifecycle()
+  var defaultWordlistRetry by remember { mutableStateOf<Job?>(null) }
   val study: StudyViewModel = viewModel(factory = factory { StudyViewModel(repositories.study, repositories.settings) })
   val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
   val wordlist: WordlistViewModel = viewModel(factory = factory { WordlistViewModel(repositories.wordlist) })
@@ -191,7 +201,20 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       composable("profile") { ProfileScreen(profile,
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
           "application/octet-stream", "application/vnd.ms-excel")) },
-        onLicenses = { nav.navigate("licenses") }) }
+        onLicenses = { nav.navigate("licenses") },
+        defaultWordlistProgress = repositories.defaultWordlistProgress,
+        csvImportProgress = repositories.csvImport.progress,
+        defaultWordlistLoading = defaultWordlist.loading,
+        defaultWordlistError = defaultWordlist.error,
+        onRetryDefaultWordlist = {
+          if (defaultWordlistRetry?.isActive != true) {
+            defaultWordlistRetry = navigationScope.launch {
+              try { repositories.retryDefaultWordlist() }
+              catch (error: CancellationException) { throw error }
+              catch (_: Exception) { /* The repository exposes this failure in defaultWordlistState. */ }
+            }
+          }
+        }) }
       composable("wordlist") {
         WordlistScreen(wordlist, onWord = { id -> nav.navigate("word/$id") { launchSingleTop = true } })
       }
@@ -217,7 +240,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
-        }, onWriting = openWriting, onSpeak = speech::speak)
+        }, onWriting = openWriting, onSpeak = speech::speak, onSpeakAndWait = speech::speakAndWait)
       }
       composable("writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -259,8 +282,9 @@ private fun LicenseScreen(onBack: () -> Unit) {
     verticalArrangement = Arrangement.spacedBy(14.dp)) {
     TextButton(onClick = onBack) { Text("Back") }
     Text("Sources & licenses", style = MaterialTheme.typography.headlineMedium)
-    Text("Demo vocabulary and examples: original teaching material for Chinese Flashcard.")
-    Text("Imported vocabulary: local CSV wordlists. Dictionary attribution and content sources are listed below.")
+    Text("Default vocabulary: bundled wordlist.csv. Dictionary attribution and content sources are listed below.")
+    Text("Legacy demo vocabulary and examples: original teaching material retained when upgrading.")
+    Text("Additional vocabulary: local CSV wordlists imported in Profile.")
     Text("Stroke outlines and medians: Make Me a Hanzi, supplemented by AnimCJK. Selected glyphs are bundled for offline writing under the Arphic Public License.")
     Text(licenses, style = MaterialTheme.typography.bodySmall)
   }

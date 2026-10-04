@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.room.Room
 import androidx.room.withTransaction
 import com.example.chinese_flashcard.core.domain.*
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
@@ -14,39 +17,70 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
+import org.json.JSONException
+import java.io.IOException
 import java.time.LocalDate
 import java.time.ZoneId
 import java.util.UUID
+
+data class DefaultWordlistState(val loading: Boolean = false, val error: String? = null)
 
 /** One application-scoped owner. No destructive migration or read-error reset is installed. */
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v1.db")
-    .addMigrations(FLASHCARD_MIGRATION_1_2, FLASHCARD_MIGRATION_2_3, FLASHCARD_MIGRATION_3_4).build()
+    .addMigrations(FLASHCARD_MIGRATION_1_2, FLASHCARD_MIGRATION_2_3,
+      FLASHCARD_MIGRATION_3_4, FLASHCARD_MIGRATION_4_5, FLASHCARD_MIGRATION_5_6).build()
   private val dao = database.flashcards()
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
+  private var prepared = false
+  private val writingBreakdowns: Map<Pair<String, String>, List<WordPart>> by lazy {
+    try { DemoDecoder.readWritingBreakdowns(app) }
+    catch (_: IOException) { emptyMap() }
+    catch (_: JSONException) { emptyMap() }
+    catch (_: IllegalArgumentException) { emptyMap() }
+  }
+  private val mutableDefaultWordlistState = MutableStateFlow(DefaultWordlistState())
+  val defaultWordlistState = mutableDefaultWordlistState.asStateFlow()
+  private val mutableDefaultWordlistProgress = MutableStateFlow<WordlistLoadProgress?>(null)
+  val defaultWordlistProgress = mutableDefaultWordlistProgress.asStateFlow()
 
   val study: StudyRepository = LocalStudy()
   val settings: SettingsRepository = LocalSettings()
   val writing: WritingRepository = LocalWriting()
   val wordlist: WordlistRepository = LocalWordlist()
-  private val csvImporter = CsvImporter(app, database, dao, operationMutex, ::prepare, ::touch)
+  private val csvImporter: CsvImporter = CsvImporter(app, database, dao, operationMutex, ::prepare, ::touch)
   val csvImport: CsvImportRepository = csvImporter
 
-  suspend fun prepare() {
+  suspend fun prepare() = prepareDefaultWordlist(forceRetry = false)
+
+  suspend fun retryDefaultWordlist() = prepareDefaultWordlist(forceRetry = true)
+
+  private suspend fun prepareDefaultWordlist(forceRetry: Boolean) = withContext(Dispatchers.IO) {
     seedMutex.withLock {
-      csvImporter.cleanStaleSnapshots()
-      if (dao.appState()?.seeded == true) return
-      val content = withContext(Dispatchers.IO) { DemoDecoder.read(app) }
-      database.withTransaction {
-        if (dao.appState()?.seeded != true) {
-          dao.putWords(content.words)
-          dao.putMeanings(content.meanings)
-          dao.putTracing(content.tracing)
-          dao.putWordTracing(content.links)
-          if (dao.settings() == null) dao.putSettings(SettingsEntity())
-          dao.putAppState((dao.appState() ?: AppStateEntity()).copy(seeded = true, revision = 1))
+      if (prepared && !forceRetry) return@withLock
+      val previousStatus = mutableDefaultWordlistState.value
+      mutableDefaultWordlistProgress.value = WordlistLoadProgress()
+      mutableDefaultWordlistState.value = DefaultWordlistState(loading = true)
+      var hasSavedWordlist = false
+      try {
+        hasSavedWordlist = dao.appState()?.seeded == true
+        csvImporter.cleanStaleSnapshots()
+        csvImporter.bootstrapDefaultWordlist { mutableDefaultWordlistProgress.value = it }
+        prepared = true
+        mutableDefaultWordlistState.value = DefaultWordlistState()
+      } catch (error: CancellationException) {
+        mutableDefaultWordlistState.value = previousStatus.copy(loading = false)
+        throw error
+      } catch (error: Exception) {
+        mutableDefaultWordlistState.value = DefaultWordlistState(error =
+          if (error is PresetCardConflictException) error.message else "Default wordlist couldn't be loaded.")
+        if (hasSavedWordlist) {
+          // Preserve the usable library and avoid retrying on every snapshot in this process.
+          prepared = true
+        } else {
+          throw IllegalStateException("Default wordlist couldn't be loaded.", error)
         }
       }
     }
@@ -174,7 +208,8 @@ class FlashcardRepositories(context: Context) {
       val correct = optionId != null && dao.meanings(card.wordId).any { it.id == optionId }
       val item = checkNotNull(dao.dailyItem(day, card.wordId))
       val cycle = checkNotNull(dao.cycle(item.cycleId))
-      var answered = card.copy(phase = CardPhase.EXPLANATION.name, selectedOptionId = optionId, correct = correct)
+      var answered = card.copy(phase = CardPhase.FEEDBACK.name,
+        selectedOptionId = optionId, correct = correct)
       if (card.reviewRecall) {
         if (correct) {
           // One blind recall consumes every already-due node for this word, never future nodes.
@@ -211,8 +246,7 @@ class FlashcardRepositories(context: Context) {
           dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
         }
         CardPhase.FEEDBACK -> {
-          if (card.correct == false) dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
-          else finishAndSelect(card, day)
+          dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
         }
         CardPhase.EXPLANATION -> {
           val cycle = checkNotNull(dao.cycle(card.cycleId))
@@ -301,7 +335,7 @@ class FlashcardRepositories(context: Context) {
       val value = savedSettings()
       dao.putPlan(DailyPlanEntity(day, value.dailyWords))
       val words = dao.words()
-      val order = words.associate { it.id to it.sortOrder }
+      val order = words.mapIndexed { rank, word -> word.id to rank }.toMap()
       val active = dao.activeCycles().sortedBy { order[it.wordId] ?: Int.MAX_VALUE }
       active.forEachIndexed { index, cycle ->
         val reset = cycle.copy(correctRounds = 0)
@@ -424,7 +458,8 @@ class FlashcardRepositories(context: Context) {
   private suspend fun cardDomain(card: CardEntity): StudyCard {
     val options = strings(JSONArray(card.optionsJson)).map { id ->
       val meaning = checkNotNull(dao.meaning(id))
-      AnswerOption(meaning.id, meaning.english)
+      val optionWord = checkNotNull(dao.word(meaning.wordId))
+      AnswerOption(meaning.id, meaning.english, optionWord.hanzi, optionWord.pinyin)
     }
     return StudyCard(card.id, word(card.wordId), StudyKind.valueOf(card.kind), CardPhase.valueOf(card.phase),
       card.round, card.targetRounds, card.reviewRecall, options, card.selectedOptionId,
@@ -436,7 +471,7 @@ class FlashcardRepositories(context: Context) {
   private suspend fun word(value: WordEntity): WordEntry {
     return WordEntry(value.id, value.hanzi, value.pinyin, dao.meanings(value.id).map(MeaningEntity::toDomain),
       decodeExamples(JSONArray(value.examplesJson)), decodeParts(JSONArray(value.partsJson)),
-      value.note, strings(JSONArray(value.distractorsJson)))
+      value.note, strings(JSONArray(value.distractorsJson)), value.literalExplanation, value.figurativeExplanation)
   }
 
   private suspend fun createWriting(wordIds: List<String>, reason: WritingReason, returnCardId: String?, day: Long): String {
@@ -536,8 +571,14 @@ class FlashcardRepositories(context: Context) {
     val wordIds = strings(JSONArray(session.wordIdsJson))
     require(wordIds.isNotEmpty() && session.wordIndex in wordIds.indices)
     val entry = word(wordIds[session.wordIndex])
+    val needsBreakdown = entry.hanzi.codePointCount(0, entry.hanzi.length) > 1 &&
+      (entry.parts.isEmpty() || (entry.parts.size == 1 && entry.parts.single().hanzi == entry.hanzi))
+    val displayEntry = if (needsBreakdown) {
+      val parts = withContext(Dispatchers.IO) { writingBreakdowns[writingBreakdownKey(entry.hanzi, entry.pinyin)] }
+      if (parts != null) entry.copy(parts = parts) else entry
+    } else entry
     val link = dao.wordTracing(entry.id).getOrNull(session.characterIndex)
-    return WritingSnapshot(session.id, entry, session.wordIndex, wordIds.size, session.characterIndex,
+    return WritingSnapshot(session.id, displayEntry, session.wordIndex, wordIds.size, session.characterIndex,
       link?.let { dao.tracing(it.itemId)?.toDomain() }, decodePoints(JSONArray(session.acceptedJson)),
       session.mistakes, WritingStatus.valueOf(session.status), WritingReason.valueOf(session.reason),
       session.feedback, session.returnCardId)

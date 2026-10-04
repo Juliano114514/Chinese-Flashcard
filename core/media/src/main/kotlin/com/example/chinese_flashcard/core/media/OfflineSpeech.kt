@@ -8,8 +8,12 @@ import android.os.Handler
 import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
+import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.suspendCancellableCoroutine
+import kotlinx.coroutines.withTimeoutOrNull
+import kotlin.coroutines.resume
 
 /** Device-provided, offline Chinese speech only; no recording or network fallback. */
 class OfflineSpeech(context: Context) : AutoCloseable {
@@ -20,8 +24,11 @@ class OfflineSpeech(context: Context) : AutoCloseable {
   private var closed = false
   private var ready = false
   private var initialized = false
-  private var pendingText: String? = null
-  private var currentUtterance: String? = null
+  private class SpeechRequest(val text: String, val waiter: CancellableContinuation<Boolean>? = null) {
+    val id = "flashcard-${System.nanoTime()}"
+  }
+  private var pendingRequest: SpeechRequest? = null
+  private var currentRequest: SpeechRequest? = null
   private var tts: TextToSpeech? = null
   private val attributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA)
     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
@@ -34,18 +41,14 @@ class OfflineSpeech(context: Context) : AutoCloseable {
       tts?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
         override fun onStart(utteranceId: String?) = Unit
         override fun onDone(utteranceId: String?) { main.post {
-          if (!closed && utteranceId != null && utteranceId == currentUtterance) {
-            currentUtterance = null
-            releaseFocus()
-          }
+          finish(utteranceId, completed = true)
         } }
         @Deprecated("Android callback")
         override fun onError(utteranceId: String?) { main.post {
-          if (!closed && utteranceId != null && utteranceId == currentUtterance) {
-            currentUtterance = null
-            mutable.value = "Speech could not be played. You can continue studying."
-            releaseFocus()
-          }
+          finish(utteranceId, completed = false, failed = true)
+        } }
+        override fun onStop(utteranceId: String?, interrupted: Boolean) { main.post {
+          finish(utteranceId, completed = false)
         } }
       })
     } catch (_: RuntimeException) {
@@ -65,49 +68,100 @@ class OfflineSpeech(context: Context) : AutoCloseable {
           it.locale.country in listOf("CN", "", "SG")
       }?.sortedBy { if (it.locale.country == "CN") 0 else 1 }?.firstOrNull() else null
       ready = voice != null && tts?.setVoice(voice) == TextToSpeech.SUCCESS
-      if (ready) tts?.setAudioAttributes(attributes)
+      if (ready) {
+        tts?.setAudioAttributes(attributes)
+        tts?.setSpeechRate(0.8f)
+      }
     } catch (_: RuntimeException) { ready = false }
-    val pending = pendingText; pendingText = null
-    if (pending != null) speak(pending)
+    val pending = pendingRequest; pendingRequest = null
+    if (pending != null) startSpeech(pending)
   }
   fun speak(text: String) {
-    if (closed || text.isBlank()) return
-    if (!initialized) { pendingText = text.take(2000); mutable.value = "Preparing offline speech…"; return }
+    onMain { requestSpeech(SpeechRequest(text.take(2000))) }
+  }
+  /** True only after playback finishes; unavailable/interrupted speech returns false.
+   * Caller cancellation propagates and stops only its own request. A missing callback is bounded to 30 seconds.
+   */
+  suspend fun speakAndWait(text: String): Boolean = withTimeoutOrNull(30_000L) {
+    suspendCancellableCoroutine { waiter ->
+      val request = SpeechRequest(text.take(2000), waiter)
+      waiter.invokeOnCancellation { onMain { cancelRequest(request) } }
+      onMain { if (waiter.isActive) requestSpeech(request) }
+    }
+  } ?: false
+  private fun requestSpeech(request: SpeechRequest) {
+    if (closed || request.text.isBlank()) { complete(request, false); return }
+    stopOnMain()
+    if (!initialized) {
+      pendingRequest = request
+      mutable.value = "Preparing offline speech…"
+      return
+    }
+    startSpeech(request)
+  }
+  private fun startSpeech(request: SpeechRequest) {
+    if (closed || request.waiter?.isActive == false) { complete(request, false); return }
     if (!ready) {
       mutable.value = "No offline Mandarin voice is available on this device. You can continue studying."
+      complete(request, false)
       return
     }
     try {
       if (manager.requestAudioFocus(focus) != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-        mutable.value = "Audio is currently unavailable. You can continue studying."; return
+        mutable.value = "Audio is currently unavailable. You can continue studying."
+        complete(request, false)
+        return
       }
       mutable.value = null
-      val id = "flashcard-${System.nanoTime()}"
-      currentUtterance = id
-      if (tts?.speak(text.take(2000), TextToSpeech.QUEUE_FLUSH, null, id) == TextToSpeech.SUCCESS) return
+      currentRequest = request
+      if (tts?.speak(request.text, TextToSpeech.QUEUE_FLUSH, null, request.id) == TextToSpeech.SUCCESS) return
     } catch (_: RuntimeException) {
       ready = false
     }
-    currentUtterance = null
+    currentRequest = null
     mutable.value = "Speech could not be played. You can continue studying."
     releaseFocus()
+    complete(request, false)
+  }
+  private fun finish(utteranceId: String?, completed: Boolean, failed: Boolean = false) {
+    val request = currentRequest ?: return
+    if (utteranceId != request.id) return
+    currentRequest = null
+    if (failed) mutable.value = "Speech could not be played. You can continue studying."
+    releaseFocus()
+    complete(request, completed)
+  }
+  private fun complete(request: SpeechRequest, completed: Boolean) {
+    val waiter = request.waiter ?: return
+    // Finish state/focus changes before the waiting coroutine can start another utterance.
+    main.post { if (waiter.isActive) waiter.resume(completed) }
+  }
+  private fun cancelRequest(request: SpeechRequest) {
+    if (pendingRequest === request) pendingRequest = null
+    if (currentRequest === request) stopOnMain()
+  }
+  private fun onMain(action: () -> Unit) {
+    if (Looper.myLooper() == main.looper) action() else main.post { action() }
   }
   private fun releaseFocus() {
     try { manager.abandonAudioFocusRequest(focus) } catch (_: RuntimeException) { }
   }
   fun dismissMessage() { mutable.value = null }
-  fun stop() {
-    pendingText = null
-    currentUtterance = null
+  fun stop() { onMain { stopOnMain() } }
+  private fun stopOnMain() {
+    val pending = pendingRequest; pendingRequest = null
+    val current = currentRequest; currentRequest = null
     try { tts?.stop() } catch (_: RuntimeException) { }
     releaseFocus()
+    if (pending != null) complete(pending, false)
+    if (current != null) complete(current, false)
   }
-  override fun close() {
+  override fun close() { onMain {
     if (!closed) {
       closed = true
-      stop()
+      stopOnMain()
       try { tts?.shutdown() } catch (_: RuntimeException) { }
       tts = null
     }
-  }
+  } }
 }

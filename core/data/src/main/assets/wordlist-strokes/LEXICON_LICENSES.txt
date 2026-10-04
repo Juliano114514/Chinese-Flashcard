@@ -484,3 +484,40 @@ public licenses.
 
 Creative Commons may be contacted at creativecommons.org.
 
+
+
+Mapull Chinese Dictionary — added teaching references (2026-10-04)
+https://github.com/mapull/chinese-dictionary
+Pinned revision: e804ada333b68afddfdccbe8dcc938a72da157a7
+Word, character and idiom definitions were selected by reading and teaching context,
+with 1,000 idioms appended to the retained catalog. Both modern teaching examples
+for each new idiom were independently authored. Dictionary references were not used
+as authority for invented character etymologies. Machine-assisted translations and
+sentence pinyin have explicit review boundaries in the authoring records.
+
+The upstream repository advertises MIT and notes that the original provenance of
+some collected material cannot be established. It is an attributed reference, not
+certified authoritative lexicography. No publisher endorses these adaptations.
+The complete upstream license follows and is also in licenses/MAPULL-MIT.txt.
+
+MIT License
+
+Copyright (c) 2021 码谱
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

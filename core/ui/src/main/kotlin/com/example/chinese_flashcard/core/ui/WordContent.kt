@@ -29,11 +29,15 @@ import com.example.chinese_flashcard.core.domain.WordEntry
 
 /** Presentation only: callers own playback, writing, and any long-press menu. */
 @Composable
-fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongClick: (() -> Unit)? = null) {
+fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongClick: (() -> Unit)? = null,
+  trailing: (@Composable () -> Unit)? = null) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Text(word.hanzi, fontSize = 48.sp, lineHeight = 58.sp, fontWeight = FontWeight.SemiBold,
-      modifier = Modifier.combinedClickable(enabled = enabled, onClick = onSpeak, onLongClick = onLongClick,
-        onLongClickLabel = if (onLongClick != null) "Word actions" else null))
+    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+      Text(word.hanzi, fontSize = 48.sp, lineHeight = 58.sp, fontWeight = FontWeight.SemiBold,
+        modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = enabled, onClick = onSpeak,
+          onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) "Word actions" else null))
+      trailing?.invoke()
+    }
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(word.pinyin, fontSize = 18.sp, lineHeight = 26.sp, color = FlashcardStyle.colors.gradientSecondaryInk)
       IconButton(onClick = onSpeak, enabled = enabled, modifier = Modifier.size(40.dp)) {
@@ -55,6 +59,19 @@ fun WordMeanings(word: WordEntry) {
 
 @Composable
 fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
+  if (word.literalExplanation.isNotBlank() || word.figurativeExplanation.isNotBlank()) {
+    WordPanel {
+      if (word.literalExplanation.isNotBlank()) {
+        PanelLabel("本义 · Literal meaning")
+        Text(word.literalExplanation, style = MaterialTheme.typography.bodyMedium)
+      }
+      if (word.figurativeExplanation.isNotBlank()) {
+        if (word.literalExplanation.isNotBlank()) PanelDivider()
+        PanelLabel("引申义 · Figurative meaning")
+        Text(word.figurativeExplanation, style = MaterialTheme.typography.bodyMedium)
+      }
+    }
+  }
   if (word.examples.isNotEmpty()) {
     WordPanel {
       word.examples.forEachIndexed { index, example ->
@@ -88,8 +105,8 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
 }
 
 @Composable
-fun WordExamplePanel(example: ExampleSentence, onSpeak: (String) -> Unit) {
-  WordPanel { ExampleContent(example, onSpeak) }
+fun WordExamplePanel(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
+  WordPanel { ExampleContent(example, onSpeak, enabled) }
 }
 
 @Composable
@@ -102,14 +119,14 @@ private fun WordPanel(content: @Composable ColumnScope.() -> Unit) {
 }
 
 @Composable
-private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit) {
+private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
   Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
       Text(example.hanzi, fontSize = 18.sp, lineHeight = 27.sp)
       Text(example.pinyin, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
       Text(example.english, style = MaterialTheme.typography.bodyMedium)
     }
-    IconButton(onClick = { onSpeak(example.hanzi) }, modifier = Modifier.size(40.dp)) {
+    IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(40.dp)) {
       Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
     }
   }

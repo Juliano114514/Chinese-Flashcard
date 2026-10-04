@@ -9,6 +9,8 @@ import com.example.chinese_flashcard.core.domain.WordPart
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
+import java.text.Normalizer
+import java.util.Locale
 
 internal data class DemoContent(val words: List<WordEntity>, val meanings: List<MeaningEntity>,
   val tracing: List<TracingEntity>, val links: List<WordTracingEntity>)
@@ -58,7 +60,9 @@ internal object DemoDecoder {
         links += WordTracingEntity(wordId, position, tracingId)
       }
       words += WordEntity(wordId, hanzi, pinyin, examplesJson(examples), partsJson(parts),
-        text(json, "note", 2000), stringsJson(distractors), order)
+        text(json, "note", 2000), stringsJson(distractors), order,
+        literalExplanation = optionalText(json, "literalExplanation", 2000),
+        figurativeExplanation = optionalText(json, "figurativeExplanation", 2000))
       meanings += wordMeanings
     }
     require(words.isNotEmpty() && words.map { it.id }.distinct().size == words.size)
@@ -73,14 +77,29 @@ internal object DemoDecoder {
     return DemoContent(words, meanings, tracing, links)
   }
 
-  private fun readAsset(context: Context, path: String): JSONObject {
+  /** Optional writing display content; this does not load strokes or publish database rows. */
+  fun readWritingBreakdowns(context: Context): Map<Pair<String, String>, List<WordPart>> {
+    val root = readAsset(context, "demo/catalog.json", maxBytes = 256 * 1024)
+    require(root.getInt("version") == 1)
+    val entries = root.getJSONArray("words").objects(200).mapNotNull { json ->
+      val hanzi = text(json, "hanzi", 64)
+      val pinyin = text(json, "pinyin", 128)
+      val parts = decodeParts(json.getJSONArray("parts"))
+      if (hanzi.codePointCount(0, hanzi.length) > 1 && parts.size > 1 &&
+        parts.joinToString("") { it.hanzi } == hanzi) writingBreakdownKey(hanzi, pinyin) to parts else null
+    }
+    require(entries.map { it.first }.distinct().size == entries.size)
+    return entries.toMap()
+  }
+
+  private fun readAsset(context: Context, path: String, maxBytes: Int = 4 * 1024 * 1024): JSONObject {
     val buffer = ByteArrayOutputStream()
     context.assets.open(path).use { input ->
       val block = ByteArray(8192)
       while (true) {
         val count = input.read(block)
         if (count < 0) break
-        require(buffer.size() + count <= 4 * 1024 * 1024)
+        require(buffer.size() + count <= maxBytes)
         buffer.write(block, 0, count)
       }
     }
@@ -89,6 +108,11 @@ internal object DemoDecoder {
 
   private fun id(value: String): String = value.also { require(it.matches(Regex("[A-Za-z0-9_]{1,100}"))) }
   private fun text(json: JSONObject, key: String, max: Int): String = json.getString(key).also { require(it.isNotBlank() && it.length <= max) }
+  private fun optionalText(json: JSONObject, key: String, max: Int): String {
+    if (!json.has(key)) return ""
+    require(json.opt(key) is String) { "An optional explanation must be a string." }
+    return json.getString(key).trim().also { require(it.length <= max && '\u0000' !in it) }
+  }
   private fun validatePath(path: String) {
     require(path.length in 1..16384 && path.startsWith("M"))
     val token = Regex("[MLQCZ]|[-+]?(?:[0-9]*\\.)?[0-9]+(?:[eE][-+]?[0-9]+)?")
@@ -108,6 +132,11 @@ internal object DemoDecoder {
     }
   }
 }
+
+/** Ignore presentation separators while keeping tone distinctions and polyphonic readings. */
+internal fun writingBreakdownKey(hanzi: String, pinyin: String): Pair<String, String> = hanzi to
+  Normalizer.normalize(pinyin, Normalizer.Form.NFC)
+    .filterNot { it.isWhitespace() || it == '\'' || it == '’' }.lowercase(Locale.ROOT)
 
 internal fun JSONArray.objects(limit: Int): List<JSONObject> {
   require(length() <= limit)

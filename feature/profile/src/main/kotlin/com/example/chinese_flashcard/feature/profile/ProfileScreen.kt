@@ -46,22 +46,28 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
+import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
+import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.roundToInt
 
 private enum class ProfileEditor { NAME, AVATAR, DAILY_WORDS, ROUNDS, REVIEW_DAYS }
 
 @Composable
-fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () -> Unit) {
+fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () -> Unit,
+  defaultWordlistProgress: StateFlow<WordlistLoadProgress?>, csvImportProgress: StateFlow<WordlistLoadProgress?>,
+  defaultWordlistLoading: Boolean = false, defaultWordlistError: String? = null,
+  onRetryDefaultWordlist: () -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
   var editor by rememberSaveable { mutableStateOf<ProfileEditor?>(null) }
   var appliedSaveRevision by rememberSaveable { mutableLongStateOf(state.savedRevision) }
   val value = state.stored
-  val enabled = !state.loading && !state.saving && !csv.open
+  val enabled = !state.loading && !state.saving && !csv.open && !defaultWordlistLoading
   fun openEditor(next: ProfileEditor) { vm.beginEdit(); editor = next }
   fun closeEditor() { if (!state.saving) { editor = null; vm.beginEdit() } }
   LaunchedEffect(state.savedRevision) {
@@ -117,13 +123,25 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
           SettingsRow("Data & licenses", enabled = enabled, onClick = onLicenses)
         }
       }
+      if (defaultWordlistLoading || defaultWordlistError != null) {
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+          Text("Default wordlist", style = MaterialTheme.typography.titleSmall)
+          if (defaultWordlistLoading) {
+            WordlistLoadingProgress(defaultWordlistProgress)
+          } else {
+            Text(defaultWordlistError.orEmpty(), color = MaterialTheme.colorScheme.error,
+              style = MaterialTheme.typography.bodySmall)
+            TextButton(onClick = onRetryDefaultWordlist, enabled = enabled && editor == null) { Text("Retry") }
+          }
+        }
+      }
       if (state.error != null && editor == null) {
         Text(state.error.orEmpty(), color = MaterialTheme.colorScheme.error)
         TextButton(onClick = vm::retry, enabled = enabled) { Text("Try again") }
       }
     }
   }
-  if (csv.open) CsvImportDialog(csv, vm::confirmCsvImport, vm::dismissCsvImport)
+  if (csv.open) CsvImportDialog(csv, csvImportProgress, vm::confirmCsvImport, vm::dismissCsvImport)
   when (editor) {
     ProfileEditor.NAME -> NameDialog(value.displayName, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(displayName = it)) })
@@ -238,7 +256,8 @@ private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: String?
 }
 
 @Composable
-private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDismiss: () -> Unit) {
+private fun CsvImportDialog(state: CsvImportUiState, progress: StateFlow<WordlistLoadProgress?>,
+  onImport: () -> Unit, onDismiss: () -> Unit) {
   val preview = state.preview
   val report = state.report
   val issues = preview?.issues?.take(100).orEmpty()
@@ -247,14 +266,9 @@ private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDis
       Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (state.busy) {
-          Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            CircularProgressIndicator(Modifier.size(24.dp))
-            Text(when (state.stage) {
-              CsvImportStage.READING -> "Reading CSV…"
-              CsvImportStage.IMPORTING -> "Importing words…"
-              else -> "Closing preview…"
-            })
-          }
+          if (state.stage == CsvImportStage.READING || state.stage == CsvImportStage.IMPORTING)
+            WordlistLoadingProgress(progress)
+          else Text("Closing preview…", style = MaterialTheme.typography.bodySmall)
         }
         preview?.let {
           Text("${it.totalRows} rows · ${it.newWords} new · ${it.duplicateWords} duplicates")

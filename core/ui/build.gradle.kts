@@ -16,6 +16,7 @@ android {
 
 dependencies {
   implementation(project(":core:domain"))
+  implementation(libs.kotlinx.coroutines.core)
   api(platform(libs.compose.bom))
   api(libs.compose.ui)
   api(libs.compose.foundation)

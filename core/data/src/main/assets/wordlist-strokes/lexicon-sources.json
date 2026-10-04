@@ -25,8 +25,18 @@
     {
       "id": "wordlist-authoring",
       "description": "New contextual explanations, corrected readings and translations, second examples and usage notes authored for this project on 2026-10-04. Per-entry references are in the CSV 来源说明 field and curated source files."
+    },
+    {
+      "id": "mapull-chinese-dictionary",
+      "title": "Mapull Chinese Dictionary",
+      "page": "https://github.com/mapull/chinese-dictionary",
+      "revision": "e804ada333b68afddfdccbe8dcc938a72da157a7",
+      "license": "MIT (upstream declaration)",
+      "licenseAsset": "wordlist-strokes/licenses/MAPULL-MIT.txt",
+      "modifications": "Same-reading Chinese definitions and contextual memory aids; frozen 1000-idiom selection; literal/modern explanations; independently authored modern examples; machine-assisted translations with review boundaries.",
+      "provenanceCaveat": "Upstream notes that original provenance of some collected content cannot be established. An attributed reference, not certified authoritative lexicography."
     }
   ],
-  "referencePolicy": "HanDian, MOE dictionaries and other cited references were used to verify facts. No third-party example corpus or dictionary pages are redistributed; new examples are independently authored.",
+  "referencePolicy": "Definitions from CC-CEDICT and Mapull are selected and attributed. Other cited references verify individual facts. Modern idiom examples are independently authored; translation and pinyin drafts are explicitly labeled. See tools/wordlist_refined/audit.json and tools/idiom_curated/catalog.json for production evidence.",
   "separation": "Lexicon content derived from CC-CEDICT retains CC BY-SA 4.0. Stroke geometry retains the separate Arphic Public License. Independent app source code is not relicensed by these data notices."
 }

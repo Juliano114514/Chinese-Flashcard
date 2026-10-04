@@ -56,15 +56,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.text.KeyboardActions
@@ -77,7 +82,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.awaitCancellation
+import kotlinx.coroutines.currentCoroutineContext
+import kotlinx.coroutines.ensureActive
 import com.example.chinese_flashcard.core.domain.CardPhase
+import com.example.chinese_flashcard.core.domain.AnswerOption
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.Meaning
@@ -268,6 +276,7 @@ fun TodayScreen(
           Text("Daily goal · ${today.dailyGoal} new words",
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
+        TotalProgress(learned = today.learnedWords, total = today.totalWords)
         state.card?.takeIf { it.phase != CardPhase.FINISHED }?.let { card ->
           ActionTile("Resume", "${card.word.hanzi}  ${card.word.pinyin}", "${card.round} / ${card.targetRounds}",
             !state.busy, onResume)
@@ -337,11 +346,16 @@ fun TodayScreen(
 }
 
 @Composable
-fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> Unit, onSpeak: (String) -> Unit) {
+fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> Unit, onSpeak: (String) -> Unit,
+  onSpeakAndWait: suspend (String) -> Boolean) {
   val state by vm.state.collectAsStateWithLifecycle()
   val card = state.card
   var selectedOption by rememberSaveable(card?.id) { mutableStateOf<String?>(null) }
   var answerChosen by rememberSaveable(card?.id) { mutableStateOf(false) }
+  var correctAnswerRevealed by rememberSaveable(card?.id) { mutableStateOf(false) }
+  var feedbackFinished by rememberSaveable(card?.id) { mutableStateOf(false) }
+  var feedbackPlaybackSucceeded by rememberSaveable(card?.id) { mutableStateOf(false) }
+  var feedbackAdvanceRequested by rememberSaveable(card?.id) { mutableStateOf(false) }
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
   val lifecycle = LocalLifecycleOwner.current.lifecycle
   val speechPage = card?.takeIf { it.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.EXPLANATION) }
@@ -358,17 +372,57 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     }
   }
   WritingNavigation(state, vm, onWriting)
+  LaunchedEffect(card?.id, card?.phase, state.loading, lifecycle) {
+    if (card?.phase == CardPhase.FEEDBACK && !state.loading) {
+      lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+        if (!feedbackFinished) {
+          if (!correctAnswerRevealed) {
+            if (card.correct == false) {
+              withFrameNanos { }; withFrameNanos { }
+              card.options.firstOrNull { it.id == card.selectedOptionId }?.hanzi
+                ?.takeIf(String::isNotBlank)?.let { onSpeakAndWait(it) }
+              currentCoroutineContext().ensureActive()
+            }
+            correctAnswerRevealed = true
+          }
+          withFrameNanos { }; withFrameNanos { }
+          val active = vm.state.value.card
+          if (active == null || active.id != card.id || active.phase != CardPhase.FEEDBACK) return@repeatOnLifecycle
+          val played = onSpeakAndWait(card.word.hanzi)
+          currentCoroutineContext().ensureActive()
+          val current = vm.state.value.card
+          if (current != null && current.id == card.id && current.phase == CardPhase.FEEDBACK) {
+            feedbackPlaybackSucceeded = played
+            feedbackFinished = true
+          }
+        }
+        awaitCancellation()
+      }
+    }
+  }
   LaunchedEffect(card?.id, card?.writingSessionId, card?.phase, state.busy) {
     val id = card?.writingSessionId
     if (!state.busy && card != null && card.phase == CardPhase.WRITING && id != null &&
       vm.claimCardWriting(card.id, id)) onWriting(id)
   }
-  // Complete a saved feedback page from earlier app versions without submitting it twice.
-  LaunchedEffect(card?.id, card?.phase, state.busy, state.error) {
-    if (card?.phase == CardPhase.FEEDBACK && !state.busy && state.error == null) vm.explain()
+  // Audio failure leaves Next available; a saved feedback page never submits the answer again.
+  LaunchedEffect(card?.id, card?.phase, state.loading, state.busy, state.error,
+    feedbackFinished, feedbackPlaybackSucceeded, feedbackAdvanceRequested, lifecycle) {
+    if (card?.phase == CardPhase.FEEDBACK && card.correct == true && feedbackFinished &&
+      feedbackPlaybackSucceeded && !feedbackAdvanceRequested && !state.loading && !state.busy && state.error == null) {
+      lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+        val current = vm.state.value
+        if (current.card?.id == card.id && current.card?.phase == CardPhase.FEEDBACK && !current.busy && current.error == null) {
+          feedbackAdvanceRequested = true
+          vm.onAction(StudyAction.Explain(card.id))
+        }
+        awaitCancellation()
+      }
+    }
   }
   Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
   Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
+    Column {
     Row(Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 12.dp, vertical = 4.dp),
       verticalAlignment = Alignment.CenterVertically) {
       IconButton(onClick = onBack, enabled = !state.busy) {
@@ -381,13 +435,15 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
         null -> "Study"
       }, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
       if (card != null && card.phase != CardPhase.FINISHED) {
-        Column(Modifier.padding(end = 12.dp), horizontalAlignment = Alignment.End,
-          verticalArrangement = Arrangement.spacedBy(6.dp)) {
-          Text(if (card.reviewRecall) "Recall" else "Round ${card.round} / ${card.targetRounds}",
+        state.today?.let { today ->
+          Text("Progress ${today.completed} / ${today.planned}", modifier = Modifier.padding(end = 12.dp),
             style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
-          if (!card.reviewRecall) RoundProgress(card)
         }
       }
+    }
+    if (card != null && card.phase != CardPhase.FINISHED) state.today?.let { today ->
+      DailyProgress(today.completed, today.planned, Modifier.padding(horizontal = 24.dp).padding(bottom = 12.dp))
+    }
     }
   }, bottomBar = {
     if (card != null && card.phase != CardPhase.FINISHED) {
@@ -397,7 +453,10 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
         when (card.phase) {
           CardPhase.QUESTION -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-              OutlinedButton(onClick = { selectedOption = null; answerChosen = true }, enabled = !state.busy,
+              OutlinedButton(onClick = {
+                selectedOption = null; answerChosen = true
+                vm.onAction(StudyAction.Submit(card.id, null))
+              }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp,
                   if (answerChosen && selectedOption == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
@@ -406,7 +465,15 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
                 shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Next") }
             }
           }
-          CardPhase.INTRO, CardPhase.EXPLANATION, CardPhase.FEEDBACK -> {
+          CardPhase.FEEDBACK -> {
+            if (card.correct == true && feedbackFinished && !feedbackPlaybackSucceeded) {
+              Text("Audio unavailable. Tap Next.", style = MaterialTheme.typography.bodySmall,
+                color = FlashcardStyle.colors.gradientSecondaryInk)
+            }
+            Button(onClick = { vm.onAction(StudyAction.Explain(card.id)) }, enabled = !state.busy && feedbackFinished,
+              shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Next") }
+          }
+          CardPhase.INTRO, CardPhase.EXPLANATION -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
               OutlinedButton(onClick = { vm.startManualWriting(card.word.id) }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
@@ -448,11 +515,12 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
             modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Done") }
         }
         else -> {
-          StudyWordHeading(card.word, enabled = !state.busy, onSpeak = { onSpeak(card.word.hanzi) },
-            onWrite = if (card.phase in listOf(CardPhase.INTRO, CardPhase.EXPLANATION, CardPhase.FEEDBACK))
-              ({ vm.startManualWriting(card.word.id) }) else null)
+          StudyWordHeading(card.word, enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
+            onSpeak = { onSpeak(card.word.hanzi) },
+            onWrite = if (card.phase in listOf(CardPhase.INTRO, CardPhase.EXPLANATION))
+              ({ vm.startManualWriting(card.word.id) }) else null, card = card)
           when (card.phase) {
-            CardPhase.INTRO, CardPhase.EXPLANATION, CardPhase.FEEDBACK -> {
+            CardPhase.INTRO, CardPhase.EXPLANATION -> {
               WordMeanings(card.word)
               if (card.correct != null) {
                 AnswerFeedback(card.correct == true,
@@ -460,18 +528,33 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
               }
               WordExplanation(card.word, onSpeak)
             }
-            CardPhase.QUESTION -> {
+            CardPhase.QUESTION, CardPhase.FEEDBACK -> {
+              val feedback = card.phase == CardPhase.FEEDBACK
               if (card.showContext && card.word.examples.isNotEmpty()) {
                 val index = (card.round - 1).coerceAtLeast(0) % card.word.examples.size
-                WordExamplePanel(card.word.examples[index], onSpeak)
+                WordExamplePanel(card.word.examples[index], onSpeak, enabled = !feedback && !state.busy)
               }
               Text("Choose the meaning", style = MaterialTheme.typography.bodyMedium,
                 color = FlashcardStyle.colors.gradientSecondaryInk)
               card.options.forEachIndexed { index, option ->
-                val selected = answerChosen && selectedOption == option.id
-                MeaningOption(index, option.english, selected, enabled = !state.busy,
-                  onClick = { selectedOption = option.id; answerChosen = true })
+                val selected = if (feedback) card.selectedOptionId == option.id else answerChosen && selectedOption == option.id
+                val correct = card.word.meanings.any { it.id == option.id }
+                val revealed = feedback && (selected || (card.correct == false && correct && correctAnswerRevealed))
+                MeaningOption(index, option.english, selected, enabled = !state.busy && !feedback,
+                  onClick = {
+                    selectedOption = option.id; answerChosen = true
+                    vm.onAction(StudyAction.Submit(card.id, option.id))
+                  },
+                  result = when {
+                    feedback && selected && !correct -> false
+                    feedback && correct && revealed -> true
+                    else -> null
+                  }, hanzi = if (revealed) option.hanzi else "",
+                  pinyin = if (revealed) option.pinyin else "",
+                  dimmed = feedback && !revealed)
               }
+              if (feedback) AnswerFeedback(card.correct == true,
+                card.options.firstOrNull { it.id == card.selectedOptionId }?.english ?: "I don't know")
             }
             CardPhase.WRITING -> {
               Text("Writing", style = MaterialTheme.typography.titleLarge)
@@ -504,18 +587,40 @@ private fun AnswerFeedback(correct: Boolean, selectedMeaning: String) {
 }
 
 @Composable
-private fun MeaningOption(index: Int, meaning: String, selected: Boolean, enabled: Boolean, onClick: () -> Unit) {
-  Surface(modifier = Modifier.fillMaxWidth().semantics { this.selected = selected }, shape = RoundedCornerShape(8.dp),
-    color = if (selected) MaterialTheme.colorScheme.primaryContainer
-      else MaterialTheme.colorScheme.surface.copy(alpha = FlashcardStyle.opacity.choicePanel),
-    contentColor = if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface,
-    border = BorderStroke(1.dp, if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
+private fun MeaningOption(index: Int, meaning: String, selected: Boolean, enabled: Boolean, onClick: () -> Unit,
+  result: Boolean? = null, hanzi: String = "", pinyin: String = "", dimmed: Boolean = false) {
+  val colors = FlashcardStyle.colors
+  val contentColor = when (result) {
+    true -> colors.onSuccessContainer
+    false -> MaterialTheme.colorScheme.onErrorContainer
+    null -> if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
+  }
+  Surface(modifier = Modifier.fillMaxWidth().alpha(if (dimmed) .45f else 1f).semantics { this.selected = selected },
+    shape = RoundedCornerShape(8.dp),
+    color = when (result) {
+      true -> colors.successContainer
+      false -> MaterialTheme.colorScheme.errorContainer
+      null -> if (selected) MaterialTheme.colorScheme.primaryContainer
+        else MaterialTheme.colorScheme.surface.copy(alpha = FlashcardStyle.opacity.choicePanel)
+    }, contentColor = contentColor,
+    border = BorderStroke(1.dp, when (result) {
+      true -> colors.success
+      false -> MaterialTheme.colorScheme.error
+      null -> if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant
+    }),
     onClick = onClick, enabled = enabled) {
     Row(Modifier.heightIn(min = 56.dp).padding(horizontal = 16.dp, vertical = 12.dp),
       horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
       Text(('A' + index).toString(), style = MaterialTheme.typography.labelLarge,
-        color = if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant)
-      Text(meaning, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
+        color = if (result != null || selected) contentColor else MaterialTheme.colorScheme.onSurfaceVariant)
+      Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        if (hanzi.isNotBlank()) Text(buildAnnotatedString {
+          withStyle(SpanStyle(fontSize = 20.sp, fontWeight = FontWeight.Medium)) { append(hanzi) }
+          if (pinyin.isNotBlank()) withStyle(SpanStyle(fontSize = 13.sp)) { append("  $pinyin") }
+        }, style = MaterialTheme.typography.titleMedium)
+        Text(meaning, style = if (hanzi.isBlank()) MaterialTheme.typography.bodyLarge else MaterialTheme.typography.bodyMedium)
+      }
+      if (result == true) Icon(Icons.Default.Check, contentDescription = "Correct answer", modifier = Modifier.size(20.dp))
     }
   }
 }
@@ -542,8 +647,15 @@ private fun DailyWritingInvitation(state: StudyUiState, vm: StudyViewModel) {
 }
 
 @Composable
+private fun DailyProgress(completed: Int, planned: Int, modifier: Modifier = Modifier) {
+  LinearProgressIndicator(progress = {
+    if (planned <= 0) 0f else (completed.toFloat() / planned).coerceIn(0f, 1f)
+  }, modifier = modifier.fillMaxWidth().height(4.dp))
+}
+
+@Composable
 private fun RoundProgress(card: StudyCard) {
-  Row(horizontalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
+  Column(verticalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
     contentDescription = "Round ${card.round} of ${card.targetRounds}"
   }) {
     repeat(card.targetRounds) { index ->
@@ -554,9 +666,12 @@ private fun RoundProgress(card: StudyCard) {
 }
 
 @Composable
-private fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?) {
+private fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?,
+  card: StudyCard? = null) {
   var showActions by remember(word.id) { mutableStateOf(false) }
-  WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true })
+  WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailing = {
+    if (card != null && !card.reviewRecall) RoundProgress(card)
+  })
   if (showActions) AlertDialog(onDismissRequest = { showActions = false }, shape = RoundedCornerShape(12.dp),
     title = { Text(word.hanzi) }, text = {
       Column {
@@ -628,6 +743,18 @@ private fun ActionTile(title: String, subtitle: String, progress: String, enable
 }
 
 @Composable
+private fun TotalProgress(learned: Int, total: Int) {
+  Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Text("Total progress", style = MaterialTheme.typography.titleSmall)
+    LinearProgressIndicator(progress = {
+      if (total <= 0) 0f else (learned.toFloat() / total).coerceIn(0f, 1f)
+    }, modifier = Modifier.fillMaxWidth())
+    Text("$learned learned / $total in total", style = MaterialTheme.typography.bodySmall,
+      color = MaterialTheme.colorScheme.onSurfaceVariant)
+  }
+}
+
+@Composable
 private fun LoadingNotice(studyPage: Boolean = false) {
   CircularProgressIndicator(Modifier.size(28.dp))
   Text("Loading…", color = if (studyPage) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurfaceVariant)
@@ -647,6 +774,28 @@ private val PreviewWord = WordEntry(
   examples = listOf(ExampleSentence("谢谢你的帮助。", "Xièxie nǐ de bāngzhù.", "Thank you for your help.")),
   parts = emptyList(), note = "Use to express thanks.", distractorMeaningIds = emptyList(),
 )
+
+private val PreviewCard = StudyCard("preview", PreviewWord, StudyKind.NEW, CardPhase.QUESTION, 3, 4, false,
+  listOf(AnswerOption("thank-you", "thank you", "谢谢", "xièxie"),
+    AnswerOption("morning", "good morning", "早上好", "zǎoshang hǎo"),
+    AnswerOption("welcome", "you're welcome", "不客气", "bú kèqi"),
+    AnswerOption("tomorrow", "see you tomorrow", "明天见", "míngtiān jiàn")))
+
+@Preview(name = "Total progress · light", widthDp = 360, heightDp = 144)
+@Preview(name = "Total progress · dark", widthDp = 360, heightDp = 144, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Total progress · compact", widthDp = 320, heightDp = 144, fontScale = 1.3f)
+@Preview(name = "Total progress · compact dark", widthDp = 320, heightDp = 144, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun TotalProgressPreview() {
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
+      contentColor = MaterialTheme.colorScheme.onBackground) {
+      Column(Modifier.padding(horizontal = 24.dp, vertical = 20.dp)) {
+        TotalProgress(learned = 240, total = 6648)
+      }
+    }
+  }
+}
 
 @Preview(name = "Welcome · light", widthDp = 360, heightDp = 760)
 @Preview(name = "Welcome · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
@@ -676,7 +825,10 @@ private fun QuestionPreview() {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
       Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
         PageColumn(studyPage = true) {
-          StudyWordHeading(PreviewWord, enabled = true, onSpeak = {}, onWrite = null)
+          Text("Progress 6 / 10", modifier = Modifier.align(Alignment.End),
+            style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
+          DailyProgress(6, 10)
+          StudyWordHeading(PreviewWord, enabled = true, onSpeak = {}, onWrite = null, card = PreviewCard)
           WordExamplePanel(PreviewWord.examples.first(), onSpeak = {})
           Text("Choose the meaning", color = FlashcardStyle.colors.gradientSecondaryInk)
           listOf("thank you", "good morning", "you're welcome", "see you tomorrow").forEachIndexed { index, meaning ->
@@ -687,6 +839,49 @@ private fun QuestionPreview() {
               colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) { Text("I don't know") }
             Button(onClick = {}, modifier = Modifier.weight(1f)) { Text("Next") }
           }
+        }
+      }
+    }
+  }
+}
+
+@Preview(name = "Wrong answer · Chinese revealed", widthDp = 360, heightDp = 640)
+@Composable
+private fun WrongAnswerPreview() = AnswerSequencePreview(revealCorrect = false)
+
+@Preview(name = "Wrong answer · correct revealed", widthDp = 360, heightDp = 640)
+@Preview(name = "Wrong answer · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f,
+  uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun CorrectAnswerRevealedPreview() = AnswerSequencePreview(revealCorrect = true)
+
+@Preview(name = "Correct answer · Chinese revealed", widthDp = 360, heightDp = 640)
+@Preview(name = "Correct answer · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f,
+  uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun CorrectAnswerFeedbackPreview() = AnswerSequencePreview(revealCorrect = true, selectedCorrect = true)
+
+@Composable
+private fun AnswerSequencePreview(revealCorrect: Boolean, selectedCorrect: Boolean = false) {
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+      Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
+        PageColumn(studyPage = true) {
+          Text("Progress 6 / 10", modifier = Modifier.align(Alignment.End),
+            style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
+          DailyProgress(6, 10)
+          StudyWordHeading(PreviewWord, enabled = false, onSpeak = {}, onWrite = null, card = PreviewCard)
+          Text("Choose the meaning", color = FlashcardStyle.colors.gradientSecondaryInk)
+          PreviewCard.options.forEachIndexed { index, option ->
+            val wrong = index == 1 && !selectedCorrect
+            val correct = index == 0 && (selectedCorrect || revealCorrect)
+            MeaningOption(index, option.english, selected = if (selectedCorrect) correct else wrong, enabled = false, onClick = {},
+              result = if (wrong) false else if (correct) true else null,
+              hanzi = if (wrong || correct) option.hanzi else "",
+              pinyin = if (wrong || correct) option.pinyin else "", dimmed = !wrong && !correct)
+          }
+          AnswerFeedback(selectedCorrect, if (selectedCorrect) "thank you" else "good morning")
+          Button(onClick = {}, enabled = revealCorrect, modifier = Modifier.fillMaxWidth()) { Text("Next") }
         }
       }
     }

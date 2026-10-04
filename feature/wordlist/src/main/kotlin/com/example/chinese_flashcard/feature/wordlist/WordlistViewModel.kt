@@ -63,7 +63,7 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
 
   /** An empty set is All. Selecting All clears the numbered choices. */
   fun toggleDifficulty(value: Int?) {
-    if (value != null && value !in 0..2) return
+    if (value != null && value !in 0..3) return
     val current = state.value.difficulties
     val next = if (value == null) emptySet() else if (value in current) current - value else current + value
     if (next == current) return

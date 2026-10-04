@@ -6,28 +6,123 @@ import com.example.chinese_flashcard.core.domain.CsvImportPreview
 import com.example.chinese_flashcard.core.domain.CsvImportReport
 import com.example.chinese_flashcard.core.domain.CsvImportRepository
 import com.example.chinese_flashcard.core.domain.CsvSource
+import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
+import com.example.chinese_flashcard.core.domain.WordlistLoadStage
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import org.json.JSONArray
 import java.io.File
+import java.security.MessageDigest
 import java.util.UUID
 
-/** Append-only import. A preview owns an immutable private snapshot, never the provider's URI. */
+/** User imports append only; only the bundled preset can refresh owned teaching content. */
 internal class CsvImporter(private val context: Context, private val database: FlashcardDatabase,
   private val dao: FlashcardDao, private val operationMutex: Mutex,
   private val prepare: suspend () -> Unit, private val touch: suspend () -> Unit) : CsvImportRepository {
   private val strokes = CsvStrokeResources(context)
+  private val presetWords = PresetWordlist(context)
   private val pendingMutex = Mutex()
-  private val pending = mutableMapOf<String, File>()
+  private data class PendingCsv(val file: File, val totalRows: Int)
+  private val pending = mutableMapOf<String, PendingCsv>()
   private val directory = File(context.cacheDir, "csv-import")
   private var cleaned = false
+  private val mutableProgress = MutableStateFlow<WordlistLoadProgress?>(null)
+  override val progress = mutableProgress.asStateFlow()
+
+  /** Called under the repository's seed lock; never calls back into prepare(). */
+  internal suspend fun bootstrapDefaultWordlist(onProgress: (WordlistLoadProgress) -> Unit): Unit = withContext(Dispatchers.IO) {
+    val reporter = WordlistProgressReporter(onProgress)
+    val version = defaultWordlistVersion()
+    operationMutex.withLock {
+      val saved = dao.appState()
+      if (saved?.seeded == true && saved.presetCsvVersion == version) return@withLock
+      val expectedRows = defaultWordlistRows()
+      reporter.totalWords(expectedRows)
+      val file = createSnapshot()
+      try {
+        copySource(CsvSource { context.assets.open("default-wordlist/wordlist.csv") }, file)
+        check(snapshotHash(file) == version) { "The bundled default wordlist version does not match its content." }
+        val issues = CsvIssues()
+        val index = strokes.index()
+        val plan = validate(file, readExisting(), index, issues, reporter, expectedRows, preset = true)
+        check(issues.count == 0) {
+          "The default wordlist could not be added. " +
+            (issues.displayed.firstOrNull()?.message ?: "The bundled CSV is invalid.")
+        }
+        check(plan.totalRows == expectedRows) { "The bundled wordlist count does not match its content." }
+        validatePendingCards(plan)
+        currentCoroutineContext().ensureActive()
+        database.withTransaction {
+          if (dao.settings() == null) dao.putSettings(SettingsEntity())
+          if (dao.appState() == null) dao.putAppState(AppStateEntity())
+          val report = append(file, plan, index, reporter)
+          var updated = 0
+          for ((rarity, rows) in plan.rarities.entries.groupBy { it.value }) {
+            for (ids in rows.map { it.key }.chunked(100)) {
+              currentCoroutineContext().ensureActive()
+              updated += dao.updateDefaultRarity(ids, rarity)
+            }
+          }
+          if (updated > 0 || report.addedWords > 0 || plan.refreshes.isNotEmpty()) touch()
+          currentCoroutineContext().ensureActive()
+          reporter.update(WordlistLoadStage.COMMITTING)
+          val latest = checkNotNull(dao.appState())
+          dao.putAppState(latest.copy(seeded = true, presetCsvVersion = version))
+        }
+        reporter.finish()
+      } finally {
+        file.delete()
+      }
+    }
+  }
+
+  private fun defaultWordlistRows(): Int = context.assets.open("default-wordlist/rows.txt")
+    .bufferedReader(Charsets.US_ASCII).use { reader ->
+      val buffer = CharArray(32)
+      val count = reader.read(buffer)
+      check(count in 1..31 && reader.read() == -1) { "The bundled wordlist count is invalid." }
+      String(buffer, 0, count).trim().toIntOrNull()?.takeIf { it in 1..CSV_MAX_ROWS }
+        ?: error("The bundled wordlist count is invalid.")
+    }
+
+  private fun defaultWordlistVersion(): String = context.assets.open("default-wordlist/version.txt")
+    .bufferedReader(Charsets.US_ASCII).use { reader ->
+      val text = StringBuilder()
+      while (true) {
+        val character = reader.read()
+        if (character < 0) break
+        check(text.length < 128) { "The bundled default wordlist version is invalid." }
+        text.append(character.toChar())
+      }
+      text.toString().trim().also {
+        check(it.matches(Regex("[0-9a-f]{64}"))) { "The bundled default wordlist version is invalid." }
+      }
+    }
+
+  private suspend fun snapshotHash(file: File): String {
+    val digest = MessageDigest.getInstance("SHA-256")
+    file.inputStream().use { input ->
+      val block = ByteArray(8192)
+      while (true) {
+        currentCoroutineContext().ensureActive()
+        val count = input.read(block)
+        if (count < 0) break
+        digest.update(block, 0, count)
+      }
+    }
+    return digest.digest().joinToString("") { (it.toInt() and 0xff).toString(16).padStart(2, '0') }
+  }
 
   override suspend fun preview(source: CsvSource): CsvImportPreview {
+    val reporter = WordlistProgressReporter({ mutableProgress.value = it }, previewOnly = true)
     var deliveredToken: String? = null
     try {
       return withContext(Dispatchers.IO) {
@@ -37,6 +132,10 @@ internal class CsvImporter(private val context: Context, private val database: F
         try {
           copySource(source, file)
           val issues = CsvIssues()
+          val totalRows = CsvDecoder.countRows(file, issues)
+          if (issues.count > 0)
+            return@withContext CsvImportPreview(null, totalRows, 0, 0, issues.count, issues.displayed.toList())
+          reporter.totalWords(totalRows)
           val index = try { strokes.index() }
           catch (error: CancellationException) { throw error }
           catch (_: Exception) {
@@ -44,21 +143,32 @@ internal class CsvImporter(private val context: Context, private val database: F
             return@withContext CsvImportPreview(null, 0, 0, 0, issues.count, issues.displayed.toList())
           }
           val existing = operationMutex.withLock { readExisting() }
-          val plan = validate(file, existing, index, issues)
+          val plan = validate(file, existing, index, issues, reporter, totalRows)
           if (issues.count > 0)
             return@withContext CsvImportPreview(null, plan.totalRows, plan.newIds.size,
               plan.skipped, issues.count, issues.displayed.toList())
+          try {
+            strokes.verify(index) { completed, total, glyph ->
+              reporter.update(WordlistLoadStage.STROKES, completed, total, glyph)
+            }
+          } catch (error: CancellationException) { throw error }
+          catch (_: Exception) {
+            issues.add(0, "笔顺资源", "The installed stroke resources are invalid or incomplete.")
+            return@withContext CsvImportPreview(null, plan.totalRows, plan.newIds.size,
+              plan.skipped, issues.count, issues.displayed.toList())
+          }
           currentCoroutineContext().ensureActive()
           val token = UUID.randomUUID().toString()
           pendingMutex.withLock {
             // Only one uncommitted preview is retained; commits remove their file before reading it.
-            pending.values.forEach { it.delete() }
+            pending.values.forEach { it.file.delete() }
             pending.clear()
-            pending[token] = file
+            pending[token] = PendingCsv(file, plan.totalRows)
           }
           deliveredToken = token
           retained = true
           currentCoroutineContext().ensureActive()
+          reporter.finish()
           CsvImportPreview(token, plan.totalRows, plan.newIds.size, plan.skipped, 0, emptyList())
         } catch (error: CancellationException) { throw error }
         catch (_: Exception) {
@@ -75,27 +185,39 @@ internal class CsvImporter(private val context: Context, private val database: F
     }
   }
 
-  override suspend fun commit(previewId: String): CsvImportReport = withContext(Dispatchers.IO) {
-    val file = pendingMutex.withLock { pending.remove(previewId) }
-      ?: throw IllegalStateException("This preview has expired. Choose the CSV again.")
-    try {
-      prepare()
-      operationMutex.withLock {
-        val issues = CsvIssues()
-        val index = strokes.index()
-        val plan = validate(file, readExisting(), index, issues)
-        check(issues.count == 0) { "The wordbook changed or the CSV is invalid. Choose the file again." }
-        currentCoroutineContext().ensureActive()
-        database.withTransaction { append(file, plan, index) }
+  override suspend fun commit(previewId: String): CsvImportReport {
+    val reporter = WordlistProgressReporter({ mutableProgress.value = it })
+    return withContext(Dispatchers.IO) {
+      val snapshot = pendingMutex.withLock { pending.remove(previewId) }
+        ?: throw IllegalStateException("This preview has expired. Choose the CSV again.")
+      val file = snapshot.file
+      reporter.totalWords(snapshot.totalRows)
+      try {
+        prepare()
+        operationMutex.withLock {
+          val issues = CsvIssues()
+          val index = strokes.index()
+          val plan = validate(file, readExisting(), index, issues, reporter, snapshot.totalRows)
+          check(issues.count == 0) { "The wordbook changed or the CSV is invalid. Choose the file again." }
+          check(plan.totalRows == snapshot.totalRows) { "The CSV snapshot changed." }
+          currentCoroutineContext().ensureActive()
+          val report = database.withTransaction {
+            append(file, plan, index, reporter).also {
+              reporter.update(WordlistLoadStage.COMMITTING)
+            }
+          }
+          reporter.finish()
+          report
+        }
+      } finally {
+        // discard is idempotent and cannot delete a file already owned by a running commit.
+        file.delete()
       }
-    } finally {
-      // discard is idempotent and cannot delete a file already owned by a running commit.
-      file.delete()
     }
   }
 
   override suspend fun discard(previewId: String) = withContext(NonCancellable + Dispatchers.IO) {
-    pendingMutex.withLock { pending.remove(previewId)?.delete() }
+    pendingMutex.withLock { pending.remove(previewId)?.file?.delete() }
     Unit
   }
 
@@ -145,7 +267,7 @@ internal class CsvImporter(private val context: Context, private val database: F
   }
 
   private suspend fun readExisting(): ExistingWords {
-    val words = dao.wordIdentities()
+    val words = dao.words()
     val meanings = dao.allMeanings()
     val primary = meanings.groupBy { it.wordId }.mapValues { it.value.first() }
     check(words.all { it.id in primary }) { "The saved wordbook is incomplete." }
@@ -153,36 +275,49 @@ internal class CsvImporter(private val context: Context, private val database: F
       primary, meanings.associateBy { it.id })
   }
 
-  private suspend fun validate(file: File, existing: ExistingWords, index: StrokeIndex, issues: CsvIssues): ImportPlan {
+  private suspend fun validate(file: File, existing: ExistingWords, index: StrokeIndex, issues: CsvIssues,
+    reporter: WordlistProgressReporter, totalRows: Int, preset: Boolean = false): ImportPlan {
     val rows = mutableListOf<WordMetadata>()
     val seenIds = mutableSetOf<String>()
     val batchIdentities = mutableMapOf<String, String>()
     val aliases = existing.byId.keys.associateWith { it }.toMutableMap()
     val newIds = mutableSetOf<String>()
+    val owners = if (preset) presetWords.owners(existing.byId, existing.allMeanings) else emptyMap()
+    val bySourceId = owners.entries.associate { (wordId, sourceId) -> sourceId to existing.byId.getValue(wordId) }
+    val refreshes = mutableMapOf<String, PresetRefresh>()
     var skipped = 0
-    val total = CsvDecoder.scan(file, issues) { word ->
+    reporter.update(WordlistLoadStage.CHECKING, 0, totalRows)
+    val total = CsvDecoder.scan(file, issues, onRecord = { count, word ->
+      reporter.update(WordlistLoadStage.CHECKING, count, totalRows, word, processedWords = count)
+    }) { word ->
       var valid = true
       if (!seenIds.add(word.id)) {
         issues.add(word.line, "词条ID", "Word IDs must be unique within the CSV.")
         valid = false
       }
       val sameId = existing.byId[word.id]
-      if (sameId != null && wordIdentity(sameId.hanzi, sameId.pinyin) != word.identity) {
+      val owned = bySourceId[word.id]
+      if (owned != null && (sameId != null && sameId.id != owned.id ||
+          !presetWords.allowsReading(word.id, owned, word))) {
+        issues.add(word.line, "词条ID", "The owned preset word needs an explicitly reviewed pronunciation correction.")
+        valid = false
+      } else if (owned == null && sameId != null && wordIdentity(sameId.hanzi, sameId.pinyin) != word.identity) {
         issues.add(word.line, "词条ID", "This ID already belongs to a different word or pronunciation.")
         valid = false
       }
       if (valid) {
-        val canonicalId = sameId?.id ?: existing.byIdentity[word.identity]?.firstOrNull()?.id
+        val canonicalId = owned?.id ?: sameId?.id ?: existing.byIdentity[word.identity]?.firstOrNull()?.id
           ?: batchIdentities[word.identity] ?: word.id
         aliases[word.id] = canonicalId
         batchIdentities[word.identity] = canonicalId
         if (canonicalId in existing.byId || canonicalId != word.id) skipped++ else newIds += word.id
+        if (owned != null) refreshes[word.id] = PresetRefresh(owned, existing.primary.getValue(owned.id))
         val ids = word.glyphs.map { glyph ->
           val indexed = index.byGlyph[glyph]
           if (indexed == null) issues.add(word.line, "组词", "True stroke data is unavailable for character $glyph.")
           indexed?.id ?: glyphId(glyph)
         }
-        rows += WordMetadata(word.line, word.id, canonicalId, word.english, word.distractorWordIds, ids)
+        rows += WordMetadata(word.line, word.id, canonicalId, word.english, word.distractorWordIds, ids, word.rarity)
       }
     }
     if (existing.byId.size + newIds.size > CSV_MAX_ROWS)
@@ -196,6 +331,7 @@ internal class CsvImporter(private val context: Context, private val database: F
       meanings[row.canonicalId] = meaningId
       english[row.canonicalId] = row.english
     }
+    for (row in rows.filter { it.id in refreshes }) english[row.canonicalId] = row.english
     for (row in rows) {
       val targets = row.distractorIds.map { aliases[it] }
       if (targets.any { it == null || it !in meanings }) {
@@ -209,20 +345,47 @@ internal class CsvImporter(private val context: Context, private val database: F
           issues.add(row.line, "干扰词ID", "The correct meaning and three distractor meanings must differ.")
       }
     }
+    val projectedMeanings = existing.allMeanings.toMutableMap()
+    for (row in rows.filter { it.id in refreshes }) {
+      val original = refreshes.getValue(row.id).meaning
+      projectedMeanings[original.id] = original.copy(english = row.english)
+    }
     return ImportPlan(total, skipped, newIds, aliases, meanings,
-      rows.filter { it.id in newIds }.flatMap { it.glyphIds }.toSet())
+      rows.filter { it.id in newIds }.flatMap { it.glyphIds }.toSet(),
+      rows.filter { !preset || it.id in newIds || it.id in refreshes }
+        .groupBy { it.canonicalId }.mapValues { (_, matches) -> matches.minOf { it.rarity } },
+      preset, refreshes, projectedMeanings)
   }
 
-  private suspend fun append(file: File, plan: ImportPlan, index: StrokeIndex): CsvImportReport {
-    if (plan.newIds.isEmpty()) return CsvImportReport(0, plan.skipped)
+  /** Cards freeze IDs and order, while labels are resolved live. Never rewrite a chosen answer. */
+  private suspend fun validatePendingCards(plan: ImportPlan) {
+    for (card in dao.unfinishedCards()) {
+      currentCoroutineContext().ensureActive()
+      val optionIds = strings(JSONArray(card.optionsJson))
+      val options = optionIds.map { plan.projectedMeanings[it] ?: throw PresetCardConflictException() }
+      if (optionIds.size != 4 || optionIds.distinct().size != 4 ||
+          options.count { it.wordId == card.wordId } != 1 ||
+          options.map { normalizedEnglish(it.english) }.distinct().size != 4 ||
+          card.selectedOptionId?.let { it !in optionIds } == true)
+        throw PresetCardConflictException()
+    }
+  }
+
+  private suspend fun append(file: File, plan: ImportPlan, index: StrokeIndex,
+    reporter: WordlistProgressReporter): CsvImportReport {
     val maximumOrder = dao.maximumWordOrder() ?: -1
-    check(maximumOrder.toLong() + plan.totalRows < Int.MAX_VALUE) { "The saved wordbook order is invalid." }
+    check(plan.newIds.isEmpty() || maximumOrder.toLong() + plan.totalRows < Int.MAX_VALUE) {
+      "The saved wordbook order is invalid."
+    }
     val missingTracing = plan.glyphIds - dao.tracingIds().toSet()
-    strokes.forEachBatch(index, missingTracing) { batch -> dao.putTracing(batch) }
+    strokes.forEachBatch(index, missingTracing, { completed, total, glyph ->
+      reporter.update(WordlistLoadStage.STROKES, completed, total, glyph)
+    }) { batch -> dao.putTracing(batch) }
     val words = mutableListOf<WordEntity>()
     val meanings = mutableListOf<MeaningEntity>()
     val links = mutableListOf<WordTracingEntity>()
     var added = 0
+    var refreshed = 0
     suspend fun flush() {
       if (words.isEmpty()) return
       dao.putWords(words.toList())
@@ -231,29 +394,49 @@ internal class CsvImporter(private val context: Context, private val database: F
       words.clear(); meanings.clear(); links.clear()
     }
     val issues = CsvIssues()
-    val total = CsvDecoder.scan(file, issues) { word ->
+    reporter.update(WordlistLoadStage.SAVING, 0, plan.totalRows)
+    val total = CsvDecoder.scan(file, issues, onRecord = { completed, word ->
+      reporter.update(WordlistLoadStage.SAVING, completed, plan.totalRows, word)
+    }) { word ->
       if (word.id in plan.newIds) {
         val distractors = word.distractorWordIds.map { plan.meaningIds.getValue(plan.aliases.getValue(it)) }
         words += WordEntity(word.id, word.hanzi, word.pinyin, examplesJson(word.examples), partsJson(word.parts),
-          word.note, stringsJson(distractors), maximumOrder + word.order + 1, word.rarity)
+          word.note, stringsJson(distractors), maximumOrder + word.order + 1, word.rarity,
+          word.literalExplanation, word.figurativeExplanation, if (plan.preset) word.id else "")
         meanings += MeaningEntity(csvMeaningId(word.id), word.id, word.english, word.partOfSpeech, 0)
         links += word.glyphs.mapIndexed { position, glyph -> WordTracingEntity(word.id, position, glyphId(glyph)) }
         added++
-        if (words.size >= 100) flush()
+      } else {
+        val refresh = plan.refreshes[word.id]
+        if (refresh != null) {
+          val distractors = word.distractorWordIds.map { plan.meaningIds.getValue(plan.aliases.getValue(it)) }
+          words += refresh.word.copy(pinyin = word.pinyin, examplesJson = examplesJson(word.examples),
+            partsJson = partsJson(word.parts), note = word.note, distractorsJson = stringsJson(distractors),
+            rarity = word.rarity, literalExplanation = word.literalExplanation,
+            figurativeExplanation = word.figurativeExplanation, presetSourceId = word.id)
+          meanings += refresh.meaning.copy(english = word.english, partOfSpeech = word.partOfSpeech)
+          refreshed++
+        }
       }
+      if (words.size >= 100) flush()
     }
-    check(issues.count == 0 && total == plan.totalRows && added == plan.newIds.size) { "The CSV snapshot changed." }
+    check(issues.count == 0 && total == plan.totalRows && added == plan.newIds.size && refreshed == plan.refreshes.size) {
+      "The CSV snapshot changed."
+    }
     flush()
     currentCoroutineContext().ensureActive()
-    touch()
+    if (added > 0 && !plan.preset) touch()
     return CsvImportReport(added, plan.skipped)
   }
 }
 
-private data class ExistingWords(val byId: Map<String, WordIdentity>,
-  val byIdentity: Map<String, List<WordIdentity>>, val primary: Map<String, MeaningEntity>,
+private data class ExistingWords(val byId: Map<String, WordEntity>,
+  val byIdentity: Map<String, List<WordEntity>>, val primary: Map<String, MeaningEntity>,
   val allMeanings: Map<String, MeaningEntity>)
 private data class WordMetadata(val line: Int, val id: String, val canonicalId: String,
-  val english: String, val distractorIds: List<String>, val glyphIds: List<String>)
+  val english: String, val distractorIds: List<String>, val glyphIds: List<String>, val rarity: Int)
 private data class ImportPlan(val totalRows: Int, val skipped: Int, val newIds: Set<String>,
-  val aliases: Map<String, String>, val meaningIds: Map<String, String>, val glyphIds: Set<String>)
+  val aliases: Map<String, String>, val meaningIds: Map<String, String>, val glyphIds: Set<String>,
+  val rarities: Map<String, Int>, val preset: Boolean, val refreshes: Map<String, PresetRefresh>,
+  val projectedMeanings: Map<String, MeaningEntity>)
+private data class PresetRefresh(val word: WordEntity, val meaning: MeaningEntity)

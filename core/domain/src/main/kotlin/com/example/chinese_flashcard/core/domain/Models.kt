@@ -5,7 +5,8 @@ data class ExampleSentence(val hanzi: String, val pinyin: String, val english: S
 data class WordPart(val hanzi: String, val pinyin: String, val gloss: String)
 data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
   val meanings: List<Meaning>, val examples: List<ExampleSentence>, val parts: List<WordPart>,
-  val note: String, val distractorMeaningIds: List<String>)
+  val note: String, val distractorMeaningIds: List<String>,
+  val literalExplanation: String = "", val figurativeExplanation: String = "")
 
 data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
   val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
@@ -21,7 +22,7 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
 
 enum class StudyKind { NEW, REVIEW, CARRYOVER }
 enum class CardPhase { INTRO, QUESTION, FEEDBACK, EXPLANATION, WRITING, FINISHED }
-data class AnswerOption(val id: String, val english: String)
+data class AnswerOption(val id: String, val english: String, val hanzi: String = "", val pinyin: String = "")
 data class StudyCard(val id: String, val word: WordEntry, val kind: StudyKind,
   val phase: CardPhase, val round: Int, val targetRounds: Int, val reviewRecall: Boolean,
   val options: List<AnswerOption>, val selectedOptionId: String? = null,

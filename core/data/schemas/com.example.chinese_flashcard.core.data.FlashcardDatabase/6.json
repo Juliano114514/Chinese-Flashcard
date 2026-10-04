@@ -1,0 +1,1003 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 6,
+    "identityHash": "ccce11f00a46260ac0ad32a12a022920",
+    "entities": [
+      {
+        "tableName": "words",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `hanzi` TEXT NOT NULL, `pinyin` TEXT NOT NULL, `examplesJson` TEXT NOT NULL, `partsJson` TEXT NOT NULL, `note` TEXT NOT NULL, `distractorsJson` TEXT NOT NULL, `sortOrder` INTEGER NOT NULL, `rarity` INTEGER NOT NULL DEFAULT 0, `literalExplanation` TEXT NOT NULL DEFAULT '', `figurativeExplanation` TEXT NOT NULL DEFAULT '', `presetSourceId` TEXT NOT NULL DEFAULT '', PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hanzi",
+            "columnName": "hanzi",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pinyin",
+            "columnName": "pinyin",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "examplesJson",
+            "columnName": "examplesJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "partsJson",
+            "columnName": "partsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "distractorsJson",
+            "columnName": "distractorsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sortOrder",
+            "columnName": "sortOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rarity",
+            "columnName": "rarity",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "literalExplanation",
+            "columnName": "literalExplanation",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "figurativeExplanation",
+            "columnName": "figurativeExplanation",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "presetSourceId",
+            "columnName": "presetSourceId",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_words_sortOrder",
+            "unique": false,
+            "columnNames": [
+              "sortOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_words_sortOrder` ON `${TABLE_NAME}` (`sortOrder`)"
+          }
+        ]
+      },
+      {
+        "tableName": "meanings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `wordId` TEXT NOT NULL, `english` TEXT NOT NULL, `partOfSpeech` TEXT NOT NULL, `position` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "english",
+            "columnName": "english",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "partOfSpeech",
+            "columnName": "partOfSpeech",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_meanings_wordId",
+            "unique": false,
+            "columnNames": [
+              "wordId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_meanings_wordId` ON `${TABLE_NAME}` (`wordId`)"
+          }
+        ]
+      },
+      {
+        "tableName": "tracing_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `glyph` TEXT NOT NULL, `pathsJson` TEXT NOT NULL, `mediansJson` TEXT NOT NULL, `revision` TEXT NOT NULL, `attribution` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "glyph",
+            "columnName": "glyph",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pathsJson",
+            "columnName": "pathsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mediansJson",
+            "columnName": "mediansJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revision",
+            "columnName": "revision",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "attribution",
+            "columnName": "attribution",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_tracing_items_glyph",
+            "unique": true,
+            "columnNames": [
+              "glyph"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_tracing_items_glyph` ON `${TABLE_NAME}` (`glyph`)"
+          }
+        ]
+      },
+      {
+        "tableName": "word_tracing",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`wordId` TEXT NOT NULL, `position` INTEGER NOT NULL, `itemId` TEXT NOT NULL, PRIMARY KEY(`wordId`, `position`), FOREIGN KEY(`wordId`) REFERENCES `words`(`id`) ON UPDATE NO ACTION ON DELETE RESTRICT , FOREIGN KEY(`itemId`) REFERENCES `tracing_items`(`id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "fields": [
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "position",
+            "columnName": "position",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "wordId",
+            "position"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_word_tracing_itemId",
+            "unique": false,
+            "columnNames": [
+              "itemId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_word_tracing_itemId` ON `${TABLE_NAME}` (`itemId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "words",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "wordId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "tracing_items",
+            "onDelete": "RESTRICT",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "itemId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "settings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `dailyWords` INTEGER NOT NULL, `rounds` INTEGER NOT NULL, `reviewDaysJson` TEXT NOT NULL, `welcomed` INTEGER NOT NULL, `displayName` TEXT NOT NULL DEFAULT '', `avatarId` TEXT NOT NULL DEFAULT '1', PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyWords",
+            "columnName": "dailyWords",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rounds",
+            "columnName": "rounds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reviewDaysJson",
+            "columnName": "reviewDaysJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "welcomed",
+            "columnName": "welcomed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "displayName",
+            "columnName": "displayName",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "avatarId",
+            "columnName": "avatarId",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "'1'"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "app_state",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `seeded` INTEGER NOT NULL, `day` INTEGER, `selectedKind` TEXT, `currentCardId` TEXT, `revision` INTEGER NOT NULL, `presetCsvVersion` TEXT NOT NULL DEFAULT '', PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seeded",
+            "columnName": "seeded",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "selectedKind",
+            "columnName": "selectedKind",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "currentCardId",
+            "columnName": "currentCardId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "revision",
+            "columnName": "revision",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "presetCsvVersion",
+            "columnName": "presetCsvVersion",
+            "affinity": "TEXT",
+            "notNull": true,
+            "defaultValue": "''"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "daily_plans",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`day` INTEGER NOT NULL, `dailyGoal` INTEGER NOT NULL, `invitationClaimed` INTEGER NOT NULL, PRIMARY KEY(`day`))",
+        "fields": [
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyGoal",
+            "columnName": "dailyGoal",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "invitationClaimed",
+            "columnName": "invitationClaimed",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "day"
+          ]
+        }
+      },
+      {
+        "tableName": "word_progress",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`wordId` TEXT NOT NULL, `firstEncounterShown` INTEGER NOT NULL, `firstPassedDay` INTEGER, `activeCycleId` TEXT, PRIMARY KEY(`wordId`))",
+        "fields": [
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstEncounterShown",
+            "columnName": "firstEncounterShown",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstPassedDay",
+            "columnName": "firstPassedDay",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "activeCycleId",
+            "columnName": "activeCycleId",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "wordId"
+          ]
+        }
+      },
+      {
+        "tableName": "learning_cycles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `wordId` TEXT NOT NULL, `targetRounds` INTEGER NOT NULL, `reviewDaysJson` TEXT NOT NULL, `correctRounds` INTEGER NOT NULL, `status` TEXT NOT NULL, `startedDay` INTEGER NOT NULL, `passedDay` INTEGER, `reviewErrorWritingOffered` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetRounds",
+            "columnName": "targetRounds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reviewDaysJson",
+            "columnName": "reviewDaysJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctRounds",
+            "columnName": "correctRounds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startedDay",
+            "columnName": "startedDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "passedDay",
+            "columnName": "passedDay",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "reviewErrorWritingOffered",
+            "columnName": "reviewErrorWritingOffered",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_learning_cycles_wordId",
+            "unique": false,
+            "columnNames": [
+              "wordId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_learning_cycles_wordId` ON `${TABLE_NAME}` (`wordId`)"
+          },
+          {
+            "name": "index_learning_cycles_status",
+            "unique": false,
+            "columnNames": [
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_learning_cycles_status` ON `${TABLE_NAME}` (`status`)"
+          }
+        ]
+      },
+      {
+        "tableName": "daily_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`day` INTEGER NOT NULL, `wordId` TEXT NOT NULL, `kind` TEXT NOT NULL, `cycleId` TEXT NOT NULL, `batch` INTEGER NOT NULL, `queueOrder` INTEGER NOT NULL, `completed` INTEGER NOT NULL, `reviewRecall` INTEGER NOT NULL, PRIMARY KEY(`day`, `wordId`))",
+        "fields": [
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cycleId",
+            "columnName": "cycleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "batch",
+            "columnName": "batch",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "queueOrder",
+            "columnName": "queueOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completed",
+            "columnName": "completed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reviewRecall",
+            "columnName": "reviewRecall",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "day",
+            "wordId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_daily_items_day_kind",
+            "unique": false,
+            "columnNames": [
+              "day",
+              "kind"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_daily_items_day_kind` ON `${TABLE_NAME}` (`day`, `kind`)"
+          },
+          {
+            "name": "index_daily_items_cycleId",
+            "unique": false,
+            "columnNames": [
+              "cycleId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_daily_items_cycleId` ON `${TABLE_NAME}` (`cycleId`)"
+          }
+        ]
+      },
+      {
+        "tableName": "review_nodes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `wordId` TEXT NOT NULL, `cycleId` TEXT NOT NULL, `dueDay` INTEGER NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cycleId",
+            "columnName": "cycleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dueDay",
+            "columnName": "dueDay",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_review_nodes_status_dueDay",
+            "unique": false,
+            "columnNames": [
+              "status",
+              "dueDay"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_review_nodes_status_dueDay` ON `${TABLE_NAME}` (`status`, `dueDay`)"
+          },
+          {
+            "name": "index_review_nodes_cycleId",
+            "unique": false,
+            "columnNames": [
+              "cycleId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_review_nodes_cycleId` ON `${TABLE_NAME}` (`cycleId`)"
+          },
+          {
+            "name": "index_review_nodes_wordId",
+            "unique": false,
+            "columnNames": [
+              "wordId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_review_nodes_wordId` ON `${TABLE_NAME}` (`wordId`)"
+          }
+        ]
+      },
+      {
+        "tableName": "study_cards",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `day` INTEGER NOT NULL, `wordId` TEXT NOT NULL, `cycleId` TEXT NOT NULL, `kind` TEXT NOT NULL, `phase` TEXT NOT NULL, `round` INTEGER NOT NULL, `targetRounds` INTEGER NOT NULL, `reviewRecall` INTEGER NOT NULL, `optionsJson` TEXT NOT NULL, `selectedOptionId` TEXT, `correct` INTEGER, `writingSessionId` TEXT, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cycleId",
+            "columnName": "cycleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phase",
+            "columnName": "phase",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "round",
+            "columnName": "round",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "targetRounds",
+            "columnName": "targetRounds",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reviewRecall",
+            "columnName": "reviewRecall",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "optionsJson",
+            "columnName": "optionsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedOptionId",
+            "columnName": "selectedOptionId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "correct",
+            "columnName": "correct",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "writingSessionId",
+            "columnName": "writingSessionId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_study_cards_day_kind_phase",
+            "unique": false,
+            "columnNames": [
+              "day",
+              "kind",
+              "phase"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_study_cards_day_kind_phase` ON `${TABLE_NAME}` (`day`, `kind`, `phase`)"
+          },
+          {
+            "name": "index_study_cards_wordId",
+            "unique": false,
+            "columnNames": [
+              "wordId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_study_cards_wordId` ON `${TABLE_NAME}` (`wordId`)"
+          }
+        ]
+      },
+      {
+        "tableName": "writing_sessions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `wordIdsJson` TEXT NOT NULL, `wordIndex` INTEGER NOT NULL, `characterIndex` INTEGER NOT NULL, `acceptedJson` TEXT NOT NULL, `mistakes` INTEGER NOT NULL, `status` TEXT NOT NULL, `reason` TEXT NOT NULL, `returnCardId` TEXT, `feedback` TEXT, `createdAt` INTEGER NOT NULL, `day` INTEGER NOT NULL, `completedAt` INTEGER, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordIdsJson",
+            "columnName": "wordIdsJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordIndex",
+            "columnName": "wordIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characterIndex",
+            "columnName": "characterIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "acceptedJson",
+            "columnName": "acceptedJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mistakes",
+            "columnName": "mistakes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reason",
+            "columnName": "reason",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "returnCardId",
+            "columnName": "returnCardId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "feedback",
+            "columnName": "feedback",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "INTEGER"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_writing_sessions_status",
+            "unique": false,
+            "columnNames": [
+              "status"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_writing_sessions_status` ON `${TABLE_NAME}` (`status`)"
+          },
+          {
+            "name": "index_writing_sessions_returnCardId",
+            "unique": false,
+            "columnNames": [
+              "returnCardId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_writing_sessions_returnCardId` ON `${TABLE_NAME}` (`returnCardId`)"
+          }
+        ]
+      },
+      {
+        "tableName": "writing_completions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `sessionId` TEXT NOT NULL, `wordId` TEXT NOT NULL, `characterPosition` INTEGER NOT NULL, `tracingItemId` TEXT NOT NULL, `revision` TEXT NOT NULL, `mistakes` INTEGER NOT NULL, `completedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sessionId",
+            "columnName": "sessionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "characterPosition",
+            "columnName": "characterPosition",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tracingItemId",
+            "columnName": "tracingItemId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "revision",
+            "columnName": "revision",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mistakes",
+            "columnName": "mistakes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_writing_completions_sessionId",
+            "unique": false,
+            "columnNames": [
+              "sessionId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_writing_completions_sessionId` ON `${TABLE_NAME}` (`sessionId`)"
+          },
+          {
+            "name": "index_writing_completions_wordId",
+            "unique": false,
+            "columnNames": [
+              "wordId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_writing_completions_wordId` ON `${TABLE_NAME}` (`wordId`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ccce11f00a46260ac0ad32a12a022920')"
+    ]
+  }
+}

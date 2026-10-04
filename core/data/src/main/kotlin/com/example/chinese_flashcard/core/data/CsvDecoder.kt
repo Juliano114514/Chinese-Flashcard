@@ -24,7 +24,8 @@ internal class CsvIssues {
 internal data class CsvWord(val line: Int, val order: Int, val id: String, val hanzi: String,
   val pinyin: String, val rarity: Int, val english: String, val partOfSpeech: String,
   val examples: List<ExampleSentence>, val parts: List<WordPart>, val note: String,
-  val distractorWordIds: List<String>) {
+  val distractorWordIds: List<String>,
+  val literalExplanation: String = "", val figurativeExplanation: String = "") {
   val identity: String get() = wordIdentity(hanzi, pinyin)
   val glyphs: List<String> get() = hanzi.codePoints().toArray().map { String(Character.toChars(it)) }
 }
@@ -42,13 +43,42 @@ internal fun glyphId(glyph: String): String =
 internal fun csvMeaningId(wordId: String): String = wordId + "_meaning"
 
 internal object CsvDecoder {
+  private val wordIdPattern = Regex("[A-Za-z0-9_]{1,92}")
   private val pinyinLetter = Regex("[a-züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜêńǹňḿ]", RegexOption.IGNORE_CASE)
   private const val SENTENCE_PUNCTUATION = ".,!?;:，。！？；：、…—–-\"'“”‘’()（）[]"
   private val columns = listOf("罕度", "组词", "拼音", "简单例句", "例句拼音", "例句英语翻译",
     "词条ID", "英文释义", "词性", "第二例句", "第二例句拼音", "第二例句英语翻译",
     "部件JSON", "使用提示", "干扰词ID", "来源说明")
 
-  suspend fun scan(file: File, issues: CsvIssues, onWord: suspend (CsvWord) -> Unit): Int {
+  /** A quick record-only pass for external files; quoted newlines do not increase the count. */
+  suspend fun countRows(file: File, issues: CsvIssues): Int {
+    var total = 0
+    var names: List<String> = emptyList()
+    try {
+      CsvParser(file.inputStream()).use { parser ->
+        names = parser.next()?.fields?.map(String::trim) ?: emptyList()
+        while (true) {
+          currentCoroutineContext().ensureActive()
+          val record = parser.next() ?: break
+          if (record.fields.size == 1 && record.fields[0].isBlank()) continue
+          total++
+          if (total > CSV_MAX_ROWS) {
+            issues.add(record.line, "CSV", "A CSV may contain at most 10,000 words.")
+            break
+          }
+        }
+      }
+    } catch (error: CsvFormatException) {
+      issues.add(error.line, names.getOrNull(error.fieldIndex) ?: "Column ${error.fieldIndex + 1}",
+        error.message ?: "The CSV format is invalid.")
+    } catch (_: java.nio.charset.CharacterCodingException) {
+      issues.add(0, "CSV", "The file must use valid UTF-8 encoding.")
+    }
+    return total
+  }
+
+  suspend fun scan(file: File, issues: CsvIssues,
+    onRecord: (Int, String?) -> Unit = { _, _ -> }, onWord: suspend (CsvWord) -> Unit): Int {
     var total = 0
     var headerNames: List<String> = emptyList()
     try {
@@ -75,6 +105,7 @@ internal object CsvDecoder {
           val record = parser.next() ?: break
           if (record.fields.size == 1 && record.fields[0].isBlank()) continue
           total++
+          onRecord(total, record.fields.getOrNull(positions.getValue("组词")))
           if (total > CSV_MAX_ROWS) {
             issues.add(record.line, "CSV", "A CSV may contain at most 10,000 words.")
             break
@@ -108,13 +139,20 @@ internal object CsvDecoder {
         invalid(name, "This field is required and must fit its length limit.")
       return value
     }
+    fun optionalField(name: String, max: Int): String {
+      val position = positions[name] ?: return ""
+      val value = record.fields[position].trim()
+      if (value.length > max || value.any { it == '\u0000' })
+        invalid(name, "This optional field must fit its length limit and cannot contain null characters.")
+      return value
+    }
     fun id(value: String, fieldName: String): String {
-      if (!value.matches(Regex("[A-Za-z0-9_]{1,92}")))
+      if (!value.matches(wordIdPattern))
         invalid(fieldName, "IDs must contain 1–92 ASCII letters, digits or underscores.")
       return value
     }
-    val rarity = field("罕度", 1).toIntOrNull()?.takeIf { it in 0..2 }
-      ?: invalid("罕度", "Rarity must be 0, 1 or 2.")
+    val rarity = field("罕度", 1).toIntOrNull()?.takeIf { it in 0..3 }
+      ?: invalid("罕度", "Difficulty must be 0, 1, 2 or 3.")
     val wordId = id(field("词条ID", 92), "词条ID")
     val hanzi = Normalizer.normalize(field("组词", 64), Normalizer.Form.NFC)
     val codePoints = hanzi.codePoints().toArray()
@@ -155,7 +193,8 @@ internal object CsvDecoder {
     if (distractors.distinct().size != 3 || wordId in distractors)
       invalid("干扰词ID", "Distractor IDs must be distinct and cannot include this word.")
     return CsvWord(record.line, order, wordId, hanzi, pinyin, rarity, english, partOfSpeech,
-      examples, parts, note, distractors)
+      examples, parts, note, distractors,
+      optionalField("本义解释", 2000), optionalField("引申义解释", 2000))
   }
 
   private fun isHanzi(codePoint: Int): Boolean = codePoint in 0x3400..0x4DBF ||

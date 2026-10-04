@@ -104,6 +104,7 @@ private class StrictUtf8Reader(input: InputStream) : Reader() {
   private val decoder = Charsets.UTF_8.newDecoder()
     .onMalformedInput(CodingErrorAction.REPORT).onUnmappableCharacter(CodingErrorAction.REPORT)
   private val bytes = ByteArray(4)
+  private val byteBuffer = ByteBuffer.wrap(bytes)
   private val characters = CharBuffer.allocate(2)
   private var pending = -1
 
@@ -133,7 +134,9 @@ private class StrictUtf8Reader(input: InputStream) : Reader() {
     }
     decoder.reset()
     characters.clear()
-    val result = decoder.decode(ByteBuffer.wrap(bytes, 0, length), characters, true)
+    byteBuffer.clear()
+    byteBuffer.limit(length)
+    val result = decoder.decode(byteBuffer, characters, true)
     if (result.isError) result.throwException()
     characters.flip()
     val character = characters.get().code

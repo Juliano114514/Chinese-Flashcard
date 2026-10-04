@@ -18,7 +18,10 @@ import kotlinx.coroutines.flow.Flow
 internal data class WordEntity(@PrimaryKey val id: String, val hanzi: String, val pinyin: String,
   val examplesJson: String, val partsJson: String, val note: String,
   val distractorsJson: String, val sortOrder: Int,
-  @ColumnInfo(defaultValue = "0") val rarity: Int = 0)
+  @ColumnInfo(defaultValue = "0") val rarity: Int = 0,
+  @ColumnInfo(defaultValue = "''") val literalExplanation: String = "",
+  @ColumnInfo(defaultValue = "''") val figurativeExplanation: String = "",
+  @ColumnInfo(defaultValue = "''") val presetSourceId: String = "")
 
 internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: String)
 
@@ -50,7 +53,8 @@ internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
   val day: Long? = null, val selectedKind: String? = null, val currentCardId: String? = null,
-  val revision: Long = 0)
+  val revision: Long = 0,
+  @ColumnInfo(defaultValue = "''") val presetCsvVersion: String = "")
 
 @Entity(tableName = "daily_plans")
 internal data class DailyPlanEntity(@PrimaryKey val day: Long, val dailyGoal: Int,
@@ -115,6 +119,8 @@ internal interface FlashcardDao {
   @Query("SELECT * FROM words ORDER BY rarity, sortOrder, id") suspend fun words(): List<WordEntity>
   @Query("SELECT id, hanzi, pinyin FROM words ORDER BY id") suspend fun wordIdentities(): List<WordIdentity>
   @Query("SELECT MAX(sortOrder) FROM words") suspend fun maximumWordOrder(): Int?
+  @Query("UPDATE words SET rarity = :rarity WHERE id IN (:ids) AND rarity != :rarity")
+  suspend fun updateDefaultRarity(ids: List<String>, rarity: Int): Int
   @Query("SELECT * FROM meanings ORDER BY wordId, position") suspend fun allMeanings(): List<MeaningEntity>
   @Query("SELECT id FROM tracing_items") suspend fun tracingIds(): List<String>
   @Query("SELECT * FROM words WHERE id = :id") suspend fun word(id: String): WordEntity?
@@ -157,6 +163,7 @@ internal interface FlashcardDao {
   @Query("SELECT * FROM study_cards WHERE day = :day AND kind = :kind AND phase != 'FINISHED' ORDER BY createdAt LIMIT 1") suspend fun pendingCard(day: Long, kind: String): CardEntity?
   @Query("SELECT * FROM study_cards WHERE day = :day AND kind = :kind AND phase = 'FINISHED' ORDER BY createdAt DESC LIMIT 1") suspend fun finishedCard(day: Long, kind: String): CardEntity?
   @Query("SELECT * FROM study_cards WHERE day != :day AND phase != 'FINISHED'") suspend fun oldCards(day: Long): List<CardEntity>
+  @Query("SELECT * FROM study_cards WHERE phase != 'FINISHED'") suspend fun unfinishedCards(): List<CardEntity>
   @Upsert suspend fun putCard(value: CardEntity)
 
   @Query("SELECT * FROM writing_sessions WHERE id = :id") suspend fun writing(id: String): WritingSessionEntity?
@@ -170,7 +177,7 @@ internal interface FlashcardDao {
   WordTracingEntity::class, SettingsEntity::class, AppStateEntity::class, DailyPlanEntity::class,
   WordProgressEntity::class, CycleEntity::class, DailyItemEntity::class, ReviewNodeEntity::class,
   CardEntity::class, WritingSessionEntity::class, WritingCompletionEntity::class],
-  version = 4, exportSchema = true)
+  version = 6, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }
@@ -190,5 +197,19 @@ internal val FLASHCARD_MIGRATION_2_3 = object : Migration(2, 3) {
 internal val FLASHCARD_MIGRATION_3_4 = object : Migration(3, 4) {
   override fun migrate(db: SupportSQLiteDatabase) {
     db.execSQL("ALTER TABLE settings ADD COLUMN avatarId TEXT NOT NULL DEFAULT '1'")
+  }
+}
+
+internal val FLASHCARD_MIGRATION_4_5 = object : Migration(4, 5) {
+  override fun migrate(db: SupportSQLiteDatabase) {
+    db.execSQL("ALTER TABLE app_state ADD COLUMN presetCsvVersion TEXT NOT NULL DEFAULT ''")
+  }
+}
+
+internal val FLASHCARD_MIGRATION_5_6 = object : Migration(5, 6) {
+  override fun migrate(db: SupportSQLiteDatabase) {
+    db.execSQL("ALTER TABLE words ADD COLUMN literalExplanation TEXT NOT NULL DEFAULT ''")
+    db.execSQL("ALTER TABLE words ADD COLUMN figurativeExplanation TEXT NOT NULL DEFAULT ''")
+    db.execSQL("ALTER TABLE words ADD COLUMN presetSourceId TEXT NOT NULL DEFAULT ''")
   }
 }

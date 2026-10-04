@@ -4,8 +4,10 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -17,6 +19,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -56,10 +60,12 @@ import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.graphics.vector.PathParser
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
@@ -76,6 +82,7 @@ import com.example.chinese_flashcard.core.domain.StrokePoint
 import com.example.chinese_flashcard.core.domain.TracingItem
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
+import com.example.chinese_flashcard.core.domain.WordPart
 import com.example.chinese_flashcard.core.domain.WritingReason
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
@@ -83,6 +90,7 @@ import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import kotlinx.coroutines.delay
+import java.text.Normalizer
 import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.hypot
@@ -184,7 +192,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   }
   Text("Word ${snapshot.wordIndex + 1} / ${snapshot.totalWords}  ·  Character ${snapshot.characterIndex + 1} / ${glyphs.size}",
     style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
-  WritingPaper(snapshot, glyphs, key, guideShown, frame,
+  WritingPaper(snapshot, key, guideShown, frame,
     listenEnabled = !state.busy && currentGlyph != null,
     strokeEnabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < (item?.paths?.size ?: 0),
     onListen = { currentGlyph?.let(onSpeak) }, onStroke = { onAction(WritingAction.Stroke(it)) })
@@ -214,7 +222,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
 }
 
 @Composable
-private fun WritingPaper(snapshot: WritingSnapshot, glyphs: List<String>, drawingKey: String,
+private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
   guideShown: Boolean, frame: Float, listenEnabled: Boolean, strokeEnabled: Boolean,
   onListen: () -> Unit, onStroke: (List<StrokePoint>) -> Unit) {
   val colors = FlashcardStyle.colors
@@ -223,12 +231,7 @@ private fun WritingPaper(snapshot: WritingSnapshot, glyphs: List<String>, drawin
     shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
     Column(Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
-      Text(buildAnnotatedString {
-        glyphs.forEachIndexed { index, glyph ->
-          withStyle(SpanStyle(color = if (index == snapshot.characterIndex) colors.writingActive else colors.writingInk)) { append(glyph) }
-        }
-      }, fontSize = 36.sp, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
-      Text(snapshot.word.pinyin, color = colors.writingSecondaryInk, textAlign = TextAlign.Center)
+      WritingWordHeader(snapshot.word, snapshot.characterIndex)
       TextButton(onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
         contentColor = colors.writingActive,
         disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) { Text("Listen") }
@@ -244,6 +247,85 @@ private fun WritingPaper(snapshot: WritingSnapshot, glyphs: List<String>, drawin
         }
       }
     }
+  }
+}
+
+@Composable
+private fun WritingWordHeader(word: WordEntry, characterIndex: Int) {
+  val parts = remember(word) { writingDisplayParts(word) }
+  val hasBreakdown = parts.size > 1 && parts.joinToString("") { it.hanzi } == word.hanzi
+  val fontScale = LocalDensity.current.fontScale
+  BoxWithConstraints(Modifier.fillMaxWidth()) {
+    Row(Modifier.horizontalScroll(rememberScrollState()).widthIn(min = maxWidth),
+      horizontalArrangement = Arrangement.spacedBy(6.dp, Alignment.CenterHorizontally),
+      verticalAlignment = Alignment.Top) {
+      if (hasBreakdown) {
+        var start = 0
+        parts.forEachIndexed { index, part ->
+          val end = start + part.hanzi.codePointCount(0, part.hanzi.length)
+          WritingWordItem(part.hanzi, part.pinyin, part.gloss, fontScale,
+            activeCharacterIndex = (characterIndex - start).takeIf { characterIndex in start until end })
+          start = end
+          WritingWordOperator(if (index == parts.lastIndex) "=" else "+", fontScale)
+        }
+      }
+      WritingWordItem(word.hanzi, word.pinyin, word.meanings.firstOrNull()?.english.orEmpty(), fontScale,
+        activeCharacterIndex = if (hasBreakdown) null else characterIndex)
+    }
+  }
+}
+
+@Composable
+private fun WritingWordItem(hanzi: String, pinyin: String, meaning: String, fontScale: Float,
+  activeCharacterIndex: Int?) {
+  val colors = FlashcardStyle.colors
+  val glyphCount = hanzi.codePointCount(0, hanzi.length)
+  val secondaryInk = if (glyphCount == 1 && activeCharacterIndex == 0) colors.writingActive else colors.writingSecondaryInk
+  val itemWidth = maxOf(62f, glyphCount * 32f + 12f, pinyin.length * 7.5f + 8f) * fontScale
+  Column(Modifier.width(itemWidth.dp), horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Text(pinyin, color = secondaryInk, fontSize = 14.sp, lineHeight = 20.sp, maxLines = 1,
+      textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().height((22f * fontScale).dp)
+        .wrapContentHeight(Alignment.CenterVertically))
+    Text(buildAnnotatedString {
+      hanzi.codePoints().toArray().forEachIndexed { index, codePoint ->
+        withStyle(SpanStyle(color = if (index == activeCharacterIndex) colors.writingActive else colors.writingInk)) {
+          append(String(Character.toChars(codePoint)))
+        }
+      }
+    }, fontSize = 32.sp, lineHeight = 40.sp, fontWeight = FontWeight.Medium,
+      maxLines = 1, textAlign = TextAlign.Center,
+      modifier = Modifier.fillMaxWidth().height((44f * fontScale).dp).wrapContentHeight(Alignment.CenterVertically))
+    Text(meaning, color = secondaryInk, fontSize = 11.sp, lineHeight = 14.sp,
+      textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+  }
+}
+
+@Composable
+private fun WritingWordOperator(operator: String, fontScale: Float) {
+  Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Spacer(Modifier.height((22f * fontScale).dp + 4.dp))
+    Text(operator, color = FlashcardStyle.colors.writingSecondaryInk, fontSize = 24.sp, lineHeight = 40.sp,
+      textAlign = TextAlign.Center, modifier = Modifier.width((16f * fontScale).dp)
+        .height((44f * fontScale).dp).wrapContentHeight(Alignment.CenterVertically))
+  }
+}
+
+/** Keep neutral tones from the word reading when its syllables align with the stored parts. */
+private fun writingDisplayParts(word: WordEntry): List<WordPart> {
+  fun compact(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFC)
+    .filterNot { it.isWhitespace() || it == '\'' || it == '’' }
+  fun unaccented(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFD)
+    .replace(Regex("\\p{M}+"), "")
+  val pinyin = compact(word.pinyin)
+  val readings = word.parts.map { compact(it.pinyin) }
+  val combined = readings.joinToString("")
+  if (readings.any(String::isBlank) || combined.length != pinyin.length ||
+    !unaccented(combined).equals(unaccented(pinyin), ignoreCase = true)) return word.parts
+  var offset = 0
+  return word.parts.mapIndexed { index, part ->
+    val end = offset + readings[index].length
+    part.copy(pinyin = pinyin.substring(offset, end)).also { offset = end }
   }
 }
 
@@ -296,7 +378,7 @@ private fun WritingPreview() {
         Text("Writing", style = MaterialTheme.typography.titleMedium)
         Text("Word 1 / 1 · Character 1 / 1", color = FlashcardStyle.colors.gradientSecondaryInk,
           style = MaterialTheme.typography.labelLarge)
-        WritingPaper(snapshot, listOf("十"), "preview", guideShown = false, frame = 0f,
+        WritingPaper(snapshot, "preview", guideShown = false, frame = 0f,
           listenEnabled = true, strokeEnabled = false, onListen = {}, onStroke = {})
         WritingToolbar(playing = false, canGuide = true, canUndo = false,
           onPlay = {}, onNext = {}, onReplay = {}, onUndo = {}, onRestart = {})
@@ -306,6 +388,44 @@ private fun WritingPreview() {
           Text("Continue later")
         }
       }
+    }
+  }
+}
+
+@Preview(name = "Word breakdown · friend", widthDp = 360)
+@Preview(name = "Word breakdown · friend dark", widthDp = 360, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Word breakdown · compact", widthDp = 320, fontScale = 1.3f)
+@Composable
+private fun WritingWordHeaderPreview() {
+  val word = WordEntry("preview-friend", "朋友", "péngyou", listOf(Meaning("friend", "friend")),
+    emptyList(), listOf(WordPart("朋", "péng", "companion"), WordPart("友", "yǒu", "friend")), "", emptyList())
+  FlashcardTheme {
+    Surface(color = FlashcardStyle.colors.writingPaper) {
+      Box(Modifier.padding(horizontal = 40.dp, vertical = 16.dp)) { WritingWordHeader(word, characterIndex = 0) }
+    }
+  }
+}
+
+@Preview(name = "Word breakdown · repeated character", widthDp = 360)
+@Composable
+private fun WritingRepeatedWordPreview() {
+  val word = WordEntry("preview-thanks", "谢谢", "xièxie", listOf(Meaning("thanks", "thank you")),
+    emptyList(), listOf(WordPart("谢", "xiè", "thank"), WordPart("谢", "xiè", "repeated for this expression")), "", emptyList())
+  FlashcardTheme {
+    Surface(color = FlashcardStyle.colors.writingPaper) {
+      Box(Modifier.padding(horizontal = 40.dp, vertical = 16.dp)) { WritingWordHeader(word, characterIndex = 1) }
+    }
+  }
+}
+
+@Preview(name = "Word breakdown · grouped part", widthDp = 360)
+@Composable
+private fun WritingGroupedWordPreview() {
+  val word = WordEntry("preview-grouped-friend", "朋友", "péng you", listOf(Meaning("friend", "friend")),
+    emptyList(), listOf(WordPart("朋友", "péng you", "friend")), "", emptyList())
+  FlashcardTheme {
+    Surface(color = FlashcardStyle.colors.writingPaper) {
+      Box(Modifier.padding(horizontal = 40.dp, vertical = 16.dp)) { WritingWordHeader(word, characterIndex = 1) }
     }
   }
 }
