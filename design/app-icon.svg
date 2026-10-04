@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="108" height="108" viewBox="0 0 108 108">
   <title>Chinese Flashcard dictionary icon</title>
   <rect width="108" height="108" fill="#FFF8F2"/>
-  <g fill="none" stroke="#9C4C16" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(54 54) scale(0.75) translate(-54 -54)"
+    fill="none" stroke="#9C4C16" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M37 26H72C75.9 26 79 29.1 79 33V75C79 78.9 75.9 82 72 82H37C32.6 82 29 78.4 29 74V34C29 29.6 32.6 26 37 26Z"/>
     <path d="M39 27V73M30 74H78"/>
     <path d="M50 45H68M50 54H62"/>
