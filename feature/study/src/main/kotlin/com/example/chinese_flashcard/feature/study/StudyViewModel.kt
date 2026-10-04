@@ -42,6 +42,7 @@ sealed interface StudyAction {
   data object Refresh : StudyAction
   data object Retry : StudyAction
   data class Start(val kind: StudyKind) : StudyAction
+  data class LearnMore(val expectedDate: String, val expectedNewPlanned: Int) : StudyAction
   data class Submit(val cardId: String, val optionId: String?) : StudyAction
   data class Advance(val cardId: String) : StudyAction
   data class Explain(val cardId: String) : StudyAction
@@ -67,7 +68,8 @@ object StudyReducer {
     StudyMutation.Idle -> state.copy(busy = false)
     is StudyMutation.Loaded -> state.copy(loading = false, snapshot = mutation.snapshot,
       settings = mutation.settings ?: state.settings, error = null,
-      dailyInvitation = state.dailyInvitation && state.snapshot?.today?.date == mutation.snapshot.today.date)
+      dailyInvitation = state.dailyInvitation && state.snapshot?.today?.date == mutation.snapshot.today.date &&
+        mutation.snapshot.today.allComplete)
     is StudyMutation.Failed -> state.copy(loading = false, error = mutation.message)
     is StudyMutation.Invitation -> state.copy(dailyInvitation = mutation.visible)
     is StudyMutation.WritingReady -> state.copy(writingRequest = mutation.request, dailyInvitation = false)
@@ -104,6 +106,7 @@ class StudyViewModel(
   }
 
   fun start(kind: StudyKind) = onAction(StudyAction.Start(kind))
+  fun learnMore() { state.value.today?.let { onAction(StudyAction.LearnMore(it.date, it.newPlanned)) } }
   fun refresh() = onAction(StudyAction.Refresh)
   fun retry() = onAction(StudyAction.Retry)
   fun advance() { state.value.card?.let { onAction(StudyAction.Advance(it.id)) } }
@@ -158,6 +161,7 @@ class StudyViewModel(
           val snapshot = withContext(Dispatchers.IO) {
             when (action) {
               is StudyAction.Start -> study.start(action.kind)
+              is StudyAction.LearnMore -> study.learnMore(action.expectedDate, action.expectedNewPlanned)
               is StudyAction.Submit -> study.submit(action.cardId, action.optionId)
               is StudyAction.Advance -> study.advance(action.cardId)
               is StudyAction.Explain -> study.explain(action.cardId)

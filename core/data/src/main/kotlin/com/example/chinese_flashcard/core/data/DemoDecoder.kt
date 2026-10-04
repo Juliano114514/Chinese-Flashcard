@@ -121,7 +121,7 @@ internal fun strings(json: JSONArray): List<String> = json.strings(2000)
 internal fun stringsJson(values: List<String>): String = JSONArray(values).toString()
 internal fun daysJson(values: List<Int>): String = JSONArray(values).toString()
 internal fun days(json: String): List<Int> = JSONArray(json).let { array ->
-  require(array.length() in 1..5)
+  require(array.length() in 1..6)
   List(array.length()) { array.getInt(it) }
 }
 internal fun decodeExamples(array: JSONArray): List<ExampleSentence> = array.objects(16).map {

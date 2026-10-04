@@ -22,7 +22,7 @@ import java.util.UUID
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v1.db")
-    .addMigrations(FLASHCARD_MIGRATION_1_2).build()
+    .addMigrations(FLASHCARD_MIGRATION_1_2, FLASHCARD_MIGRATION_2_3, FLASHCARD_MIGRATION_3_4).build()
   private val dao = database.flashcards()
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
@@ -74,7 +74,8 @@ class FlashcardRepositories(context: Context) {
       value.validate()
       transaction {
         dao.putSettings(SettingsEntity(dailyWords = value.dailyWords, rounds = value.rounds,
-          reviewDaysJson = daysJson(value.reviewDays), welcomed = value.welcomed))
+          reviewDaysJson = daysJson(value.reviewDays), welcomed = value.welcomed,
+          displayName = value.displayName.trim(), avatarId = value.avatarId))
         touch()
       }
     }
@@ -110,6 +111,40 @@ class FlashcardRepositories(context: Context) {
       snapshotAt(day)
     }
 
+    override suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int): StudySnapshot {
+      var changedDay = false
+      val result = transaction {
+        val day = ensureToday()
+        val current = snapshotAt(day)
+        if (current.today.date != expectedDate) {
+          changedDay = true
+          return@transaction current
+        }
+        if (current.today.newPlanned != expectedNewPlanned || !current.today.canLearnMore)
+          return@transaction current
+
+        val items = dao.dailyItems(day)
+        val candidates = newWordCandidates(dao.words(), dao.progress().associateBy { it.wordId },
+          dao.activeCycles().map { it.wordId }.toSet(), items).take(5)
+        if (candidates.isEmpty()) return@transaction current
+        val value = savedSettings()
+        val batch = (items.filter { it.kind == StudyKind.NEW.name }.maxOfOrNull { it.batch } ?: -1) + 1
+        candidates.forEachIndexed { index, word ->
+          val cycle = CycleEntity(newId(), word.id, value.rounds, daysJson(value.reviewDays), startedDay = day)
+          dao.putCycle(cycle)
+          dao.putProgress((dao.progress(word.id) ?: WordProgressEntity(word.id)).copy(activeCycleId = cycle.id))
+          dao.putDailyItem(DailyItemEntity(day, word.id, StudyKind.NEW.name, cycle.id, batch, index.toLong()))
+        }
+        val card = checkNotNull(createNext(day, StudyKind.NEW))
+        dao.putAppState(appState().copy(selectedKind = StudyKind.NEW.name, currentCardId = card.id))
+        touch()
+        snapshotAt(day)
+      }
+      // Refreshing the date must commit even when the initiating screen is stale.
+      if (changedDay) throw NewStudyDayException()
+      return result
+    }
+
     override suspend fun submit(cardId: String, optionId: String?): StudySnapshot = cardTransaction(cardId) { day, card ->
       if (card.phase != CardPhase.QUESTION.name) return@cardTransaction snapshotAt(day)
       val optionIds = strings(JSONArray(card.optionsJson))
@@ -117,7 +152,7 @@ class FlashcardRepositories(context: Context) {
       val correct = optionId != null && dao.meanings(card.wordId).any { it.id == optionId }
       val item = checkNotNull(dao.dailyItem(day, card.wordId))
       val cycle = checkNotNull(dao.cycle(item.cycleId))
-      var answered = card.copy(phase = CardPhase.FEEDBACK.name, selectedOptionId = optionId, correct = correct)
+      var answered = card.copy(phase = CardPhase.EXPLANATION.name, selectedOptionId = optionId, correct = correct)
       if (card.reviewRecall) {
         if (correct) {
           // One blind recall consumes every already-due node for this word, never future nodes.
@@ -332,14 +367,36 @@ class FlashcardRepositories(context: Context) {
     }
     val learned = dao.learnedCount()
     val total = dao.wordCount()
-    val newWordIds = dao.progress().filter { it.firstPassedDay == day }.map { it.wordId }.toSet()
-    val newWords = dao.words().filter { it.id in newWordIds }.map { word(it.id) }
+    val progress = dao.progress().associateBy { it.wordId }
+    val words = dao.words()
+    val newWordIds = progress.values.filter { it.firstPassedDay == day }.map { it.wordId }.toSet()
+    val newWords = words.filter { it.id in newWordIds }.map { word(it.id) }
+    val available = newWordCandidates(words, progress, dao.activeCycles().map { it.wordId }.toSet(), items).size
+    val blocker = learnMoreBlocker(day, items)
     return TodaySummary(LocalDate.ofEpochDay(day).toString(), plan.dailyGoal, total,
       total - dao.startedCount(), learned, count(StudyKind.NEW), count(StudyKind.NEW, true),
       count(StudyKind.REVIEW), count(StudyKind.REVIEW, true),
       count(StudyKind.CARRYOVER), count(StudyKind.CARRYOVER, true), newWords,
       dao.resumableWriting()?.id,
-      dao.nextReviewDay(day)?.let { LocalDate.ofEpochDay(it).toString() })
+      dao.nextReviewDay(day)?.let { LocalDate.ofEpochDay(it).toString() }, available, blocker)
+  }
+
+  private fun newWordCandidates(words: List<WordEntity>, progress: Map<String, WordProgressEntity>,
+    activeWordIds: Set<String>, items: List<DailyItemEntity>): List<WordEntity> {
+    val excluded = activeWordIds + items.map { it.wordId }
+    return words.filter { word ->
+      val saved = progress[word.id]
+      saved?.firstPassedDay == null && saved?.activeCycleId == null && word.id !in excluded
+    }
+  }
+
+  private suspend fun learnMoreBlocker(day: Long, items: List<DailyItemEntity>): StudyKind? {
+    // Include final explanations: completing a word does not finish its current card.
+    for (kind in listOf(StudyKind.REVIEW, StudyKind.CARRYOVER, StudyKind.NEW)) {
+      if (items.any { it.kind == kind.name && !it.completed } || dao.pendingCard(day, kind.name) != null)
+        return kind
+    }
+    return null
   }
 
   private suspend fun cardDomain(card: CardEntity): StudyCard {
@@ -463,5 +520,5 @@ class FlashcardRepositories(context: Context) {
       session.feedback, session.returnCardId)
   }
 
-  private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed)
+  private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed, displayName, avatarId)
 }

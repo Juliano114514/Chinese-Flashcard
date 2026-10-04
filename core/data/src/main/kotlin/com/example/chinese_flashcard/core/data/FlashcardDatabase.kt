@@ -38,7 +38,9 @@ internal data class WordTracingEntity(val wordId: String, val position: Int, val
 
 @Entity(tableName = "settings")
 internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: Int = 10,
-  val rounds: Int = 4, val reviewDaysJson: String = "[1,3,7]", val welcomed: Boolean = false)
+  val rounds: Int = 4, val reviewDaysJson: String = "[1,3,7]", val welcomed: Boolean = false,
+  @ColumnInfo(defaultValue = "''") val displayName: String = "",
+  @ColumnInfo(defaultValue = "'1'") val avatarId: String = "1")
 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
@@ -149,7 +151,7 @@ internal interface FlashcardDao {
   WordTracingEntity::class, SettingsEntity::class, AppStateEntity::class, DailyPlanEntity::class,
   WordProgressEntity::class, CycleEntity::class, DailyItemEntity::class, ReviewNodeEntity::class,
   CardEntity::class, WritingSessionEntity::class, WritingCompletionEntity::class],
-  version = 2, exportSchema = true)
+  version = 4, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }
@@ -157,5 +159,17 @@ internal abstract class FlashcardDatabase : RoomDatabase() {
 internal val FLASHCARD_MIGRATION_1_2 = object : Migration(1, 2) {
   override fun migrate(db: SupportSQLiteDatabase) {
     db.execSQL("ALTER TABLE words ADD COLUMN rarity INTEGER NOT NULL DEFAULT 0")
+  }
+}
+
+internal val FLASHCARD_MIGRATION_2_3 = object : Migration(2, 3) {
+  override fun migrate(db: SupportSQLiteDatabase) {
+    db.execSQL("ALTER TABLE settings ADD COLUMN displayName TEXT NOT NULL DEFAULT ''")
+  }
+}
+
+internal val FLASHCARD_MIGRATION_3_4 = object : Migration(3, 4) {
+  override fun migrate(db: SupportSQLiteDatabase) {
+    db.execSQL("ALTER TABLE settings ADD COLUMN avatarId TEXT NOT NULL DEFAULT '1'")
   }
 }

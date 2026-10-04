@@ -8,11 +8,14 @@ data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
   val note: String, val distractorMeaningIds: List<String>)
 
 data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
-  val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false) {
+  val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
+  val displayName: String = "", val avatarId: String = "1") {
   fun validate() {
     require(dailyWords in 1..100 && rounds in 2..8)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())
-    require(reviewDays.all { it in listOf(1, 3, 7, 14, 30) })
+    require(reviewDays.all { it in listOf(1, 3, 5, 7, 14, 30) })
+    require(displayName.length <= 40 && displayName.none { it.isISOControl() })
+    require(avatarId.length <= 40 && avatarId.none { it.isISOControl() })
   }
 }
 
@@ -30,10 +33,14 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val remainingWords: Int, val learnedWords: Int, val newPlanned: Int, val newCompleted: Int,
   val reviewPlanned: Int, val reviewCompleted: Int, val carryoverPlanned: Int,
   val carryoverCompleted: Int, val todayNewWords: List<WordEntry> = emptyList(),
-  val resumableWritingId: String? = null, val nextReviewDate: String? = null) {
+  val resumableWritingId: String? = null, val nextReviewDate: String? = null,
+  val availableNewWords: Int = 0, val learnMoreBlocker: StudyKind? = null) {
   val planned: Int get() = newPlanned + reviewPlanned + carryoverPlanned
   val completed: Int get() = newCompleted + reviewCompleted + carryoverCompleted
   val allComplete: Boolean get() = planned > 0 && completed == planned
+  val showLearnMore: Boolean get() = newCompleted == newPlanned
+  val canLearnMore: Boolean get() = showLearnMore && completed == planned &&
+    learnMoreBlocker == null && availableNewWords > 0
 }
 data class StudySnapshot(val today: TodaySummary, val card: StudyCard?)
 
@@ -58,6 +65,7 @@ interface StudyRepository {
   val changes: kotlinx.coroutines.flow.Flow<Long>
   suspend fun snapshot(): StudySnapshot
   suspend fun start(kind: StudyKind): StudySnapshot
+  suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int): StudySnapshot
   suspend fun submit(cardId: String, optionId: String?): StudySnapshot
   suspend fun advance(cardId: String): StudySnapshot
   suspend fun explain(cardId: String): StudySnapshot
