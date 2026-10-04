@@ -7,14 +7,14 @@ import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
@@ -24,7 +24,10 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -44,17 +47,20 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipPath
 import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.graphics.vector.PathParser
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -68,6 +74,7 @@ import com.example.chinese_flashcard.core.domain.TracingItem
 import com.example.chinese_flashcard.core.domain.WritingReason
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
+import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
 import kotlinx.coroutines.delay
 import kotlin.math.ceil
 import kotlin.math.floor
@@ -85,14 +92,14 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
     if (snapshot?.status == WritingStatus.SKIPPED) latestFinished()
   }
   BackHandler(enabled = state.busy) { /* Finish the Room write before leaving. */ }
-  Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
-    .verticalScroll(rememberScrollState()).padding(horizontal = 22.dp, vertical = 16.dp),
-    verticalArrangement = Arrangement.spacedBy(16.dp)) {
+  Column(Modifier.fillMaxSize().background(studyBackgroundBrush())
+    .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 12.dp),
+    verticalArrangement = Arrangement.spacedBy(12.dp)) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-      TextButton(onClick = onBack, enabled = !state.busy) { Text("Back") }
-      Text("Write it out", modifier = Modifier.weight(1f), textAlign = TextAlign.Center,
+      IconButton(onClick = onBack, enabled = !state.busy) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back") }
+      Text("Writing", modifier = Modifier.weight(1f), textAlign = TextAlign.Center,
         style = MaterialTheme.typography.titleMedium)
-      Spacer(Modifier.width(60.dp))
+      Spacer(Modifier.width(48.dp))
     }
     when {
       state.loading -> Box(Modifier.fillMaxWidth().height(180.dp), contentAlignment = Alignment.Center) {
@@ -104,9 +111,8 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         Text("Writing complete", style = MaterialTheme.typography.headlineMedium)
         Text("${snapshot.totalWords} ${if (snapshot.totalWords == 1) "word" else "words"} practised.",
           color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Text("Tracing is guided practice. Your vocabulary progress is saved separately.",
-          style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Button(onClick = onFinished, modifier = Modifier.fillMaxWidth()) { Text("Done") }
+        Button(onClick = onFinished, shape = RoundedCornerShape(8.dp),
+          modifier = Modifier.fillMaxWidth()) { Text("Done") }
       }
       snapshot != null && snapshot.status == WritingStatus.ACTIVE -> {
         ActiveWriting(snapshot, state, vm::onAction, onSpeak)
@@ -115,7 +121,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         if (snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
           TextButton(onClick = { vm.onAction(WritingAction.Skip) },
             enabled = !state.busy && state.saveError == null, modifier = Modifier.fillMaxWidth()) {
-            Text("Skip for now")
+            Text("Skip writing")
           }
         } else {
           TextButton(onClick = onBack, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) {
@@ -127,7 +133,6 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
   }
 }
 
-@OptIn(ExperimentalLayoutApi::class)
 @Composable
 private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   onAction: (WritingAction) -> Unit, onSpeak: (String) -> Unit) {
@@ -135,15 +140,32 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   val glyphs = remember(snapshot.word.hanzi) {
     snapshot.word.hanzi.codePoints().toArray().map { String(Character.toChars(it)) }
   }
+  val currentGlyph = glyphs.getOrNull(snapshot.characterIndex)
+  // Position, rather than glyph text, distinguishes repeated characters such as 谢谢.
+  val positionKey = "${snapshot.id}/${snapshot.wordIndex}/${snapshot.characterIndex}"
   val key = "${snapshot.id}/${snapshot.wordIndex}/${snapshot.characterIndex}/${item?.revision}"
+  val latestSpeak by rememberUpdatedState(onSpeak)
+  var spokenPosition by rememberSaveable(snapshot.id) { mutableStateOf<String?>(null) }
   var playing by rememberSaveable(key) { mutableStateOf(false) }
   var frame by rememberSaveable(key) { mutableFloatStateOf(0f) }
   var guideShown by rememberSaveable(key) { mutableStateOf(false) }
   val owner = LocalLifecycleOwner.current
+  var resumed by remember(owner) {
+    mutableStateOf(owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED))
+  }
   DisposableEffect(owner, key) {
-    val observer = LifecycleEventObserver { _, event -> if (event == Lifecycle.Event.ON_STOP) playing = false }
+    val observer = LifecycleEventObserver { _, event ->
+      resumed = owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
+      if (event == Lifecycle.Event.ON_STOP) playing = false
+    }
     owner.lifecycle.addObserver(observer)
     onDispose { owner.lifecycle.removeObserver(observer); playing = false }
+  }
+  LaunchedEffect(positionKey, resumed, state.busy) {
+    if (resumed && !state.busy && currentGlyph != null && spokenPosition != positionKey) {
+      spokenPosition = positionKey
+      latestSpeak(currentGlyph)
+    }
   }
   LaunchedEffect(playing, key) {
     if (playing && item != null) {
@@ -156,7 +178,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   }
   Text("Word ${snapshot.wordIndex + 1} / ${snapshot.totalWords}  ·  Character ${snapshot.characterIndex + 1} / ${glyphs.size}",
     style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-  Surface(color = Paper, shape = RoundedCornerShape(18.dp), modifier = Modifier.fillMaxWidth()) {
+  Surface(color = Paper, shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
     Column(Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(buildAnnotatedString {
@@ -165,7 +187,8 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
         }
       }, fontSize = 36.sp, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
       Text(snapshot.word.pinyin, color = Color.Black.copy(alpha = .65f), textAlign = TextAlign.Center)
-      TextButton(onClick = { onSpeak(snapshot.word.hanzi) }, enabled = !state.busy) { Text("Listen to the word", color = ActiveRed) }
+      TextButton(onClick = { currentGlyph?.let(onSpeak) },
+        enabled = !state.busy && currentGlyph != null) { Text("Listen", color = ActiveRed) }
       if (item != null && item.paths.isNotEmpty()) {
         StrokeCanvas(item, snapshot.accepted, key, guideShown, frame,
           enabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < item.paths.size,
@@ -174,42 +197,69 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
           color = Color.Black.copy(alpha = .65f), style = MaterialTheme.typography.bodySmall)
       } else {
         Box(Modifier.fillMaxWidth().aspectRatio(1f), contentAlignment = Alignment.Center) {
-          Text("Stroke data is unavailable for this character.", color = Color.Black,
+          Text("No stroke data for this character.", color = Color.Black,
             textAlign = TextAlign.Center, modifier = Modifier.padding(24.dp))
         }
       }
     }
   }
   if (item != null && item.paths.isNotEmpty()) {
-    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-      OutlinedButton(onClick = {
+    Row(Modifier.fillMaxWidth()) {
+      WritingTool(if (playing) "Pause" else "Play", if (playing) WritingIcons.Pause else WritingIcons.Play,
+        enabled = !state.busy && state.saveError == null, modifier = Modifier.weight(1f), onClick = {
         guideShown = true
         if (frame >= item.paths.size) frame = 0f
         playing = !playing
-      }, enabled = !state.busy && state.saveError == null) { Text(if (playing) "Pause" else "Play strokes") }
-      OutlinedButton(onClick = {
+      })
+      WritingTool("Next", WritingIcons.Next, enabled = !state.busy && state.saveError == null,
+        modifier = Modifier.weight(1f), onClick = {
         guideShown = true
         playing = false
         frame = (floor(frame) + 1f).coerceAtMost(item.paths.size.toFloat())
-      }, enabled = !state.busy && state.saveError == null) { Text("Next stroke") }
-      OutlinedButton(onClick = { guideShown = true; frame = 0f; playing = true },
-        enabled = !state.busy && state.saveError == null) { Text("Replay") }
+      })
+      WritingTool("Replay", WritingIcons.Replay, modifier = Modifier.weight(1f),
+        enabled = !state.busy && state.saveError == null,
+        onClick = { guideShown = true; frame = 0f; playing = true })
+      WritingTool("Undo", WritingIcons.Undo, modifier = Modifier.weight(1f),
+        enabled = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty(),
+        onClick = { playing = false; onAction(WritingAction.Undo) })
+      WritingTool("Restart", WritingIcons.Restart, modifier = Modifier.weight(1f),
+        enabled = !state.busy && state.saveError == null, onClick = {
+        playing = false; guideShown = false; frame = 0f; onAction(WritingAction.Restart)
+      })
     }
     if (guideShown) Text("${ceil(frame).toInt()} / ${item.paths.size} strokes shown",
       style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-      OutlinedButton(onClick = { playing = false; onAction(WritingAction.Undo) },
-        enabled = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty()) { Text("Undo") }
-      OutlinedButton(onClick = {
-        playing = false; guideShown = false; frame = 0f; onAction(WritingAction.Restart)
-      }, enabled = !state.busy && state.saveError == null) { Text("Start again") }
-    }
   }
   snapshot.feedback?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
-  Text("Follow the highlighted stroke. Each character continues automatically when all strokes are saved.",
+  Text("Follow the highlighted stroke.",
     style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   item?.let { Text(it.attribution, style = MaterialTheme.typography.bodySmall,
     color = MaterialTheme.colorScheme.onSurfaceVariant) }
+}
+
+@Composable
+private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
+  modifier: Modifier = Modifier, onClick: () -> Unit) {
+  TextButton(onClick = onClick, enabled = enabled, modifier = modifier.heightIn(min = 64.dp),
+    contentPadding = PaddingValues(horizontal = 0.dp, vertical = 8.dp), shape = RoundedCornerShape(6.dp)) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+      Icon(icon, contentDescription = if (label == "Next") "Next stroke" else label)
+      Text(label, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+    }
+  }
+}
+
+private object WritingIcons {
+  private fun vector(name: String, path: String): ImageVector = ImageVector.Builder(
+    name = name, defaultWidth = 24.dp, defaultHeight = 24.dp, viewportWidth = 24f, viewportHeight = 24f
+  ).addPath(PathParser().parsePathString(path).toNodes(), fill = SolidColor(Color.Black)).build()
+  val Play = vector("Play", "M8 5v14l11-7z")
+  val Pause = vector("Pause", "M6 5h4v14H6zM14 5h4v14h-4z")
+  val Next = vector("Next stroke", "M7 5v14l10-7zM18 5h2v14h-2z")
+  val Replay = vector("Replay", "M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z")
+  val Undo = vector("Undo", "M12.5 8c-2.6 0-4.97.99-6.76 2.61L2 7v9h9l-3.84-3.84C8.55 11 10.43 10.3 12.5 10.3c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.16 17.15 8 12.5 8z")
+  val Restart = vector("Restart", "M13 3a9 9 0 0 0-9 9H1l4 4 4-4H6a7 7 0 1 1 2.05 4.95l-1.42 1.42A9 9 0 1 0 13 3z")
 }
 
 @Composable
