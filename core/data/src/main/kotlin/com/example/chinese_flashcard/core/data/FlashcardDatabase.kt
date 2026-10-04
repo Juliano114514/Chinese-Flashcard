@@ -10,17 +10,15 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.RoomDatabase
 import androidx.room.Upsert
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.flow.Flow
 
 @Entity(tableName = "words", indices = [Index("sortOrder")])
 internal data class WordEntity(@PrimaryKey val id: String, val hanzi: String, val pinyin: String,
-  val examplesJson: String, val partsJson: String, val note: String,
+  val examplesJson: String, val partsJson: String,
   val distractorsJson: String, val sortOrder: Int,
   @ColumnInfo(defaultValue = "0") val rarity: Int = 0,
-  @ColumnInfo(defaultValue = "''") val literalExplanation: String = "",
-  @ColumnInfo(defaultValue = "''") val figurativeExplanation: String = "",
+  @ColumnInfo(defaultValue = "'[]'") val literalExplanationsJson: String = "[]",
+  @ColumnInfo(defaultValue = "'[]'") val figurativeExplanationsJson: String = "[]",
   @ColumnInfo(defaultValue = "''") val presetSourceId: String = "")
 
 internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: String)
@@ -118,7 +116,8 @@ internal interface FlashcardDao {
   fun observeWordlist(): Flow<List<WordlistRow>>
   @Query("SELECT * FROM words ORDER BY rarity, sortOrder, id") suspend fun words(): List<WordEntity>
   @Query("SELECT id, hanzi, pinyin FROM words ORDER BY id") suspend fun wordIdentities(): List<WordIdentity>
-  @Query("SELECT MAX(sortOrder) FROM words") suspend fun maximumWordOrder(): Int?
+  @Query("UPDATE words SET sortOrder = :rank WHERE id = :id AND sortOrder != :rank")
+  suspend fun updateWordOrder(id: String, rank: Int)
   @Query("UPDATE words SET rarity = :rarity WHERE id IN (:ids) AND rarity != :rarity")
   suspend fun updateDefaultRarity(ids: List<String>, rarity: Int): Int
   @Query("SELECT * FROM meanings ORDER BY wordId, position") suspend fun allMeanings(): List<MeaningEntity>
@@ -177,39 +176,7 @@ internal interface FlashcardDao {
   WordTracingEntity::class, SettingsEntity::class, AppStateEntity::class, DailyPlanEntity::class,
   WordProgressEntity::class, CycleEntity::class, DailyItemEntity::class, ReviewNodeEntity::class,
   CardEntity::class, WritingSessionEntity::class, WritingCompletionEntity::class],
-  version = 6, exportSchema = true)
+  version = 7, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
-}
-
-internal val FLASHCARD_MIGRATION_1_2 = object : Migration(1, 2) {
-  override fun migrate(db: SupportSQLiteDatabase) {
-    db.execSQL("ALTER TABLE words ADD COLUMN rarity INTEGER NOT NULL DEFAULT 0")
-  }
-}
-
-internal val FLASHCARD_MIGRATION_2_3 = object : Migration(2, 3) {
-  override fun migrate(db: SupportSQLiteDatabase) {
-    db.execSQL("ALTER TABLE settings ADD COLUMN displayName TEXT NOT NULL DEFAULT ''")
-  }
-}
-
-internal val FLASHCARD_MIGRATION_3_4 = object : Migration(3, 4) {
-  override fun migrate(db: SupportSQLiteDatabase) {
-    db.execSQL("ALTER TABLE settings ADD COLUMN avatarId TEXT NOT NULL DEFAULT '1'")
-  }
-}
-
-internal val FLASHCARD_MIGRATION_4_5 = object : Migration(4, 5) {
-  override fun migrate(db: SupportSQLiteDatabase) {
-    db.execSQL("ALTER TABLE app_state ADD COLUMN presetCsvVersion TEXT NOT NULL DEFAULT ''")
-  }
-}
-
-internal val FLASHCARD_MIGRATION_5_6 = object : Migration(5, 6) {
-  override fun migrate(db: SupportSQLiteDatabase) {
-    db.execSQL("ALTER TABLE words ADD COLUMN literalExplanation TEXT NOT NULL DEFAULT ''")
-    db.execSQL("ALTER TABLE words ADD COLUMN figurativeExplanation TEXT NOT NULL DEFAULT ''")
-    db.execSQL("ALTER TABLE words ADD COLUMN presetSourceId TEXT NOT NULL DEFAULT ''")
-  }
 }

@@ -25,12 +25,10 @@ import java.util.UUID
 
 data class DefaultWordlistState(val loading: Boolean = false, val error: String? = null)
 
-/** One application-scoped owner. No destructive migration or read-error reset is installed. */
+/** One application-scoped owner. The rebuilt library starts in its own database. */
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
-  private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v1.db")
-    .addMigrations(FLASHCARD_MIGRATION_1_2, FLASHCARD_MIGRATION_2_3,
-      FLASHCARD_MIGRATION_3_4, FLASHCARD_MIGRATION_4_5, FLASHCARD_MIGRATION_5_6).build()
+  private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db").build()
   private val dao = database.flashcards()
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
@@ -471,7 +469,8 @@ class FlashcardRepositories(context: Context) {
   private suspend fun word(value: WordEntity): WordEntry {
     return WordEntry(value.id, value.hanzi, value.pinyin, dao.meanings(value.id).map(MeaningEntity::toDomain),
       decodeExamples(JSONArray(value.examplesJson)), decodeParts(JSONArray(value.partsJson)),
-      value.note, strings(JSONArray(value.distractorsJson)), value.literalExplanation, value.figurativeExplanation)
+      strings(JSONArray(value.distractorsJson)), decodeExplanations(JSONArray(value.literalExplanationsJson), required = true),
+      decodeExplanations(JSONArray(value.figurativeExplanationsJson), required = false))
   }
 
   private suspend fun createWriting(wordIds: List<String>, reason: WritingReason, returnCardId: String?, day: Long): String {

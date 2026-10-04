@@ -87,6 +87,7 @@ import kotlinx.coroutines.ensureActive
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.AnswerOption
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
+import com.example.chinese_flashcard.core.domain.ExampleChunk
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.StudyCard
@@ -756,23 +757,33 @@ private fun TotalProgress(learned: Int, total: Int) {
 
 @Composable
 private fun LoadingNotice(studyPage: Boolean = false) {
-  CircularProgressIndicator(Modifier.size(28.dp))
-  Text("Loading…", color = if (studyPage) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurfaceVariant)
+  Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    CircularProgressIndicator(Modifier.size(28.dp))
+    Text("Loading…", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+      color = if (studyPage) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurfaceVariant)
+  }
 }
 
 @Composable
 private fun ErrorNotice(message: String, enabled: Boolean, onRetry: () -> Unit, studyPage: Boolean = false) {
-  Text(message, color = if (studyPage) FlashcardStyle.colors.gradientError else MaterialTheme.colorScheme.error,
-    style = MaterialTheme.typography.bodyMedium)
-  TextButton(onClick = onRetry, enabled = enabled, colors = ButtonDefaults.textButtonColors(
-    contentColor = if (studyPage) FlashcardStyle.colors.gradientAction else MaterialTheme.colorScheme.primary)) { Text("Try again") }
+  Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+      color = if (studyPage) FlashcardStyle.colors.gradientError else MaterialTheme.colorScheme.error,
+      style = MaterialTheme.typography.bodyMedium)
+    TextButton(onClick = onRetry, enabled = enabled, colors = ButtonDefaults.textButtonColors(
+      contentColor = if (studyPage) FlashcardStyle.colors.gradientAction else MaterialTheme.colorScheme.primary)) { Text("Try again") }
+  }
 }
 
 private val PreviewWord = WordEntry(
   id = "preview-thank-you", hanzi = "谢谢", pinyin = "xièxie",
   meanings = listOf(Meaning("thank-you", "thank you", "expression")),
-  examples = listOf(ExampleSentence("谢谢你的帮助。", "Xièxie nǐ de bāngzhù.", "Thank you for your help.")),
-  parts = emptyList(), note = "Use to express thanks.", distractorMeaningIds = emptyList(),
+  examples = listOf(ExampleSentence("谢谢你的帮助。", "Xièxie nǐ de bāngzhù.", "Thank you for your help.",
+    listOf(ExampleChunk("谢谢", "xièxie", "thank"), ExampleChunk("你", "nǐ", "you"),
+      ExampleChunk("的", "de", "DE"), ExampleChunk("帮助。", "bāngzhù.", "help")))),
+  parts = emptyList(), distractorMeaningIds = emptyList(), literalExplanations = listOf("Express thanks."),
 )
 
 private val PreviewCard = StudyCard("preview", PreviewWord, StudyKind.NEW, CardPhase.QUESTION, 3, 4, false,

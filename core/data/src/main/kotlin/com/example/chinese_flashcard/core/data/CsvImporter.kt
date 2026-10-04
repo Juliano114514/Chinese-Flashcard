@@ -21,6 +21,7 @@ import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import java.io.File
 import java.security.MessageDigest
+import java.text.Normalizer
 import java.util.UUID
 
 /** User imports append only; only the bundled preset can refresh owned teaching content. */
@@ -28,7 +29,6 @@ internal class CsvImporter(private val context: Context, private val database: F
   private val dao: FlashcardDao, private val operationMutex: Mutex,
   private val prepare: suspend () -> Unit, private val touch: suspend () -> Unit) : CsvImportRepository {
   private val strokes = CsvStrokeResources(context)
-  private val presetWords = PresetWordlist(context)
   private val pendingMutex = Mutex()
   private data class PendingCsv(val file: File, val totalRows: Int)
   private val pending = mutableMapOf<String, PendingCsv>()
@@ -71,6 +71,7 @@ internal class CsvImporter(private val context: Context, private val database: F
               updated += dao.updateDefaultRarity(ids, rarity)
             }
           }
+          reorderWords()
           if (updated > 0 || report.addedWords > 0 || plan.refreshes.isNotEmpty()) touch()
           currentCoroutineContext().ensureActive()
           reporter.update(WordlistLoadStage.COMMITTING)
@@ -282,8 +283,11 @@ internal class CsvImporter(private val context: Context, private val database: F
     val batchIdentities = mutableMapOf<String, String>()
     val aliases = existing.byId.keys.associateWith { it }.toMutableMap()
     val newIds = mutableSetOf<String>()
-    val owners = if (preset) presetWords.owners(existing.byId, existing.allMeanings) else emptyMap()
-    val bySourceId = owners.entries.associate { (wordId, sourceId) -> sourceId to existing.byId.getValue(wordId) }
+    val ownedWords = if (preset) existing.byId.values.filter { it.presetSourceId.isNotEmpty() } else emptyList()
+    check(ownedWords.map { it.presetSourceId }.distinct().size == ownedWords.size) {
+      "The preset ownership mapping is ambiguous."
+    }
+    val bySourceId = ownedWords.associateBy { it.presetSourceId }
     val refreshes = mutableMapOf<String, PresetRefresh>()
     var skipped = 0
     reporter.update(WordlistLoadStage.CHECKING, 0, totalRows)
@@ -298,8 +302,8 @@ internal class CsvImporter(private val context: Context, private val database: F
       val sameId = existing.byId[word.id]
       val owned = bySourceId[word.id]
       if (owned != null && (sameId != null && sameId.id != owned.id ||
-          !presetWords.allowsReading(word.id, owned, word))) {
-        issues.add(word.line, "词条ID", "The owned preset word needs an explicitly reviewed pronunciation correction.")
+          Normalizer.normalize(owned.hanzi, Normalizer.Form.NFC) != word.hanzi)) {
+        issues.add(word.line, "词条ID", "An owned preset ID cannot be reassigned to a different word.")
         valid = false
       } else if (owned == null && sameId != null && wordIdentity(sameId.hanzi, sameId.pinyin) != word.identity) {
         issues.add(word.line, "词条ID", "This ID already belongs to a different word or pronunciation.")
@@ -373,10 +377,6 @@ internal class CsvImporter(private val context: Context, private val database: F
 
   private suspend fun append(file: File, plan: ImportPlan, index: StrokeIndex,
     reporter: WordlistProgressReporter): CsvImportReport {
-    val maximumOrder = dao.maximumWordOrder() ?: -1
-    check(plan.newIds.isEmpty() || maximumOrder.toLong() + plan.totalRows < Int.MAX_VALUE) {
-      "The saved wordbook order is invalid."
-    }
     val missingTracing = plan.glyphIds - dao.tracingIds().toSet()
     strokes.forEachBatch(index, missingTracing, { completed, total, glyph ->
       reporter.update(WordlistLoadStage.STROKES, completed, total, glyph)
@@ -401,8 +401,8 @@ internal class CsvImporter(private val context: Context, private val database: F
       if (word.id in plan.newIds) {
         val distractors = word.distractorWordIds.map { plan.meaningIds.getValue(plan.aliases.getValue(it)) }
         words += WordEntity(word.id, word.hanzi, word.pinyin, examplesJson(word.examples), partsJson(word.parts),
-          word.note, stringsJson(distractors), maximumOrder + word.order + 1, word.rarity,
-          word.literalExplanation, word.figurativeExplanation, if (plan.preset) word.id else "")
+          stringsJson(distractors), word.order, word.rarity,
+          stringsJson(word.literalExplanations), stringsJson(word.figurativeExplanations), if (plan.preset) word.id else "")
         meanings += MeaningEntity(csvMeaningId(word.id), word.id, word.english, word.partOfSpeech, 0)
         links += word.glyphs.mapIndexed { position, glyph -> WordTracingEntity(word.id, position, glyphId(glyph)) }
         added++
@@ -411,9 +411,9 @@ internal class CsvImporter(private val context: Context, private val database: F
         if (refresh != null) {
           val distractors = word.distractorWordIds.map { plan.meaningIds.getValue(plan.aliases.getValue(it)) }
           words += refresh.word.copy(pinyin = word.pinyin, examplesJson = examplesJson(word.examples),
-            partsJson = partsJson(word.parts), note = word.note, distractorsJson = stringsJson(distractors),
-            rarity = word.rarity, literalExplanation = word.literalExplanation,
-            figurativeExplanation = word.figurativeExplanation, presetSourceId = word.id)
+            partsJson = partsJson(word.parts), distractorsJson = stringsJson(distractors),
+            rarity = word.rarity, literalExplanationsJson = stringsJson(word.literalExplanations),
+            figurativeExplanationsJson = stringsJson(word.figurativeExplanations), presetSourceId = word.id)
           meanings += refresh.meaning.copy(english = word.english, partOfSpeech = word.partOfSpeech)
           refreshed++
         }
@@ -425,8 +425,17 @@ internal class CsvImporter(private val context: Context, private val database: F
     }
     flush()
     currentCoroutineContext().ensureActive()
+    if (!plan.preset) reorderWords()
     if (added > 0 && !plan.preset) touch()
     return CsvImportReport(added, plan.skipped)
+  }
+
+  /** Called inside the same transaction that publishes imported or refreshed words. */
+  private suspend fun reorderWords() {
+    for ((rank, word) in PinyinOrdering.sorted(dao.words()).withIndex()) {
+      currentCoroutineContext().ensureActive()
+      if (word.sortOrder != rank) dao.updateWordOrder(word.id, rank)
+    }
   }
 }
 
@@ -440,3 +449,6 @@ private data class ImportPlan(val totalRows: Int, val skipped: Int, val newIds: 
   val rarities: Map<String, Int>, val preset: Boolean, val refreshes: Map<String, PresetRefresh>,
   val projectedMeanings: Map<String, MeaningEntity>)
 private data class PresetRefresh(val word: WordEntity, val meaning: MeaningEntity)
+
+internal class PresetCardConflictException : IllegalStateException(
+  "Finish the saved study card, then retry the default wordlist update.")

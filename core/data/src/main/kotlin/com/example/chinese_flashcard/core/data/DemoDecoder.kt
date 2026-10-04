@@ -1,6 +1,7 @@
 package com.example.chinese_flashcard.core.data
 
 import android.content.Context
+import com.example.chinese_flashcard.core.domain.ExampleChunk
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.StrokePoint
@@ -60,9 +61,9 @@ internal object DemoDecoder {
         links += WordTracingEntity(wordId, position, tracingId)
       }
       words += WordEntity(wordId, hanzi, pinyin, examplesJson(examples), partsJson(parts),
-        text(json, "note", 2000), stringsJson(distractors), order,
-        literalExplanation = optionalText(json, "literalExplanation", 2000),
-        figurativeExplanation = optionalText(json, "figurativeExplanation", 2000))
+        stringsJson(distractors), order,
+        literalExplanationsJson = stringsJson(decodeExplanations(json.getJSONArray("literalExplanations"), required = true)),
+        figurativeExplanationsJson = stringsJson(decodeExplanations(json.getJSONArray("figurativeExplanations"), required = false)))
       meanings += wordMeanings
     }
     require(words.isNotEmpty() && words.map { it.id }.distinct().size == words.size)
@@ -108,11 +109,6 @@ internal object DemoDecoder {
 
   private fun id(value: String): String = value.also { require(it.matches(Regex("[A-Za-z0-9_]{1,100}"))) }
   private fun text(json: JSONObject, key: String, max: Int): String = json.getString(key).also { require(it.isNotBlank() && it.length <= max) }
-  private fun optionalText(json: JSONObject, key: String, max: Int): String {
-    if (!json.has(key)) return ""
-    require(json.opt(key) is String) { "An optional explanation must be a string." }
-    return json.getString(key).trim().also { require(it.length <= max && '\u0000' !in it) }
-  }
   private fun validatePath(path: String) {
     require(path.length in 1..16384 && path.startsWith("M"))
     val token = Regex("[MLQCZ]|[-+]?(?:[0-9]*\\.)?[0-9]+(?:[eE][-+]?[0-9]+)?")
@@ -144,7 +140,10 @@ internal fun JSONArray.objects(limit: Int): List<JSONObject> {
 }
 internal fun JSONArray.strings(limit: Int): List<String> {
   require(length() <= limit)
-  return List(length()) { getString(it) }
+  return List(length()) { index ->
+    require(get(index) is String) { "JSON string arrays cannot contain other value types." }
+    getString(index)
+  }
 }
 internal fun strings(json: JSONArray): List<String> = json.strings(2000)
 internal fun stringsJson(values: List<String>): String = JSONArray(values).toString()
@@ -153,18 +152,55 @@ internal fun days(json: String): List<Int> = JSONArray(json).let { array ->
   require(array.length() in 1..6)
   List(array.length()) { array.getInt(it) }
 }
-internal fun decodeExamples(array: JSONArray): List<ExampleSentence> = array.objects(16).map {
-  ExampleSentence(it.getString("hanzi").also { value -> require(value.isNotBlank() && value.length <= 1000) },
-    it.getString("pinyin").also { value -> require(value.isNotBlank() && value.length <= 2000) },
-    it.getString("english").also { value -> require(value.isNotBlank() && value.length <= 2000) })
+internal fun decodeExamples(array: JSONArray): List<ExampleSentence> = array.objects(2).also {
+  require(it.size == 2) { "Provide exactly two example sentences." }
+}.map { example ->
+  example.requireKeys("hanzi", "pinyin", "english", "chunks")
+  val chunks = example.getJSONArray("chunks").objects(64).also { require(it.isNotEmpty()) }.map { chunk ->
+    chunk.requireKeys("hanzi", "pinyin", "gloss")
+    ExampleChunk(chunk.teachingText("hanzi", 1000), chunk.teachingText("pinyin", 2000),
+      englishTeachingText(chunk.teachingText("gloss", 2000)))
+  }
+  ExampleSentence(example.teachingText("hanzi", 1000), example.teachingText("pinyin", 2000),
+    englishTeachingText(example.teachingText("english", 2000)), chunks).also {
+    require(chunks.joinToString("") { chunk -> chunk.hanzi } == it.hanzi) {
+      "The ordered chunks must reconstruct the complete example sentence."
+    }
+    require(normalizedExamplePinyin(chunks.joinToString(" ") { chunk -> chunk.pinyin }) ==
+      normalizedExamplePinyin(it.pinyin)) { "Chunk readings must match the complete sentence pinyin." }
+  }
 }
-internal fun decodeParts(array: JSONArray): List<WordPart> = array.objects(32).map {
-  WordPart(it.getString("hanzi").also { value -> require(value.isNotBlank() && value.length <= 64) },
-    it.getString("pinyin").also { value -> require(value.isNotBlank() && value.length <= 128) },
-    it.getString("gloss").also { value -> require(value.isNotBlank() && value.length <= 300) })
+internal fun decodeParts(array: JSONArray): List<WordPart> = array.objects(32).map { part ->
+  part.requireKeys("hanzi", "pinyin", "gloss")
+  WordPart(part.teachingText("hanzi", 64), part.teachingText("pinyin", 128), part.teachingText("gloss", 300))
 }
+internal fun decodeExplanations(array: JSONArray, required: Boolean): List<String> {
+  require(array.length() in (if (required) 1 else 0)..16) { "Provide up to sixteen English senses." }
+  return array.strings(16).map { value ->
+    require(value.isNotBlank() && value.length <= 2000 && '\u0000' !in value)
+    englishTeachingText(value.trim())
+  }
+}
+private fun JSONObject.requireKeys(vararg names: String) {
+  require(keys().asSequence().toSet() == names.toSet()) { "Unexpected or missing teaching JSON fields." }
+}
+private fun JSONObject.teachingText(name: String, maximum: Int): String {
+  require(opt(name) is String) { "Teaching JSON text fields must be strings." }
+  return getString(name).also { require(it.isNotBlank() && it.length <= maximum && '\u0000' !in it) }
+}
+private fun englishTeachingText(value: String): String = value.also {
+  require(it.any { character -> character in 'A'..'Z' || character in 'a'..'z' } &&
+    it.codePoints().toArray().none { point -> Character.UnicodeScript.of(point) == Character.UnicodeScript.HAN }) {
+    "Teaching translations and explanations must use English."
+  }
+}
+internal fun normalizedExamplePinyin(value: String): String = Normalizer.normalize(value, Normalizer.Form.NFC)
+  .filterNot { it.isWhitespace() || it == '\'' || it == '’' }.lowercase(Locale.ROOT)
 internal fun examplesJson(values: List<ExampleSentence>): String = JSONArray(values.map {
   JSONObject().put("hanzi", it.hanzi).put("pinyin", it.pinyin).put("english", it.english)
+    .put("chunks", JSONArray(it.chunks.map { chunk ->
+      JSONObject().put("hanzi", chunk.hanzi).put("pinyin", chunk.pinyin).put("gloss", chunk.gloss)
+    }))
 }).toString()
 internal fun partsJson(values: List<WordPart>): String = JSONArray(values.map {
   JSONObject().put("hanzi", it.hanzi).put("pinyin", it.pinyin).put("gloss", it.gloss)

@@ -46,6 +46,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.chinese_flashcard.core.domain.ExampleChunk
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
@@ -107,17 +108,25 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
       Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())
         .padding(horizontal = 24.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.loading) {
-          CircularProgressIndicator()
-          Text("Loading…", color = FlashcardStyle.colors.gradientSecondaryInk)
+          Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            CircularProgressIndicator()
+            Text("Loading…", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+              color = FlashcardStyle.colors.gradientSecondaryInk)
+          }
         } else if (word != null) {
           WordHeading(word, enabled, onSpeak = { onSpeak(word.hanzi) })
           WordMeanings(word)
           WordExplanation(word, onSpeak)
         }
         state.error?.let { message ->
-          Text(message, color = FlashcardStyle.colors.gradientError)
-          TextButton(onClick = onRetry, enabled = !state.busy,
-            colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) { Text("Try again") }
+          Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+              color = FlashcardStyle.colors.gradientError)
+            TextButton(onClick = onRetry, enabled = !state.busy,
+              colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) { Text("Try again") }
+          }
         }
       }
     }
@@ -131,9 +140,11 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
 @Composable
 private fun WordDetailPreview() {
   val word = WordEntry("preview-study", "学习", "xuéxí", listOf(Meaning("study", "to study; to learn", "verb")),
-    examples = listOf(ExampleSentence("我每天学习中文。", "Wǒ měitiān xuéxí Zhōngwén.", "I study Chinese every day.")),
+    examples = listOf(ExampleSentence("我每天学习中文。", "Wǒ měitiān xuéxí Zhōngwén.", "I study Chinese every day.",
+      listOf(ExampleChunk("我", "wǒ", "I"), ExampleChunk("每天", "měitiān", "every day"),
+        ExampleChunk("学习", "xuéxí", "study"), ExampleChunk("中文。", "Zhōngwén.", "Chinese")))),
     parts = listOf(WordPart("学", "xué", "learn"), WordPart("习", "xí", "practise")),
-    note = "Use with the subject you are learning.", distractorMeaningIds = emptyList())
+    distractorMeaningIds = emptyList(), literalExplanations = listOf("Gain knowledge or skills by studying.", "Learn from another person."))
   FlashcardTheme {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
       WordDetailContent(WordDetailUiState(loading = false, word = word), onBack = {}, onWrite = {}, onRetry = {}, onSpeak = {})

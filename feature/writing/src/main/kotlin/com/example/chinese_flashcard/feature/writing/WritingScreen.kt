@@ -66,6 +66,10 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.intl.LocaleList
+import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.text.style.Hyphens
+import androidx.compose.ui.text.style.LineBreak
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
@@ -279,10 +283,20 @@ private fun WritingWordHeader(word: WordEntry, characterIndex: Int) {
 private fun WritingWordItem(hanzi: String, pinyin: String, meaning: String, fontScale: Float,
   activeCharacterIndex: Int?) {
   val colors = FlashcardStyle.colors
+  val density = LocalDensity.current
+  val textMeasurer = rememberTextMeasurer()
+  val meaningStyle = MaterialTheme.typography.bodySmall.copy(fontSize = 11.sp, lineHeight = 14.sp,
+    localeList = LocaleList("en"), hyphens = Hyphens.None, lineBreak = LineBreak.Simple)
+  val longestWordPixels = remember(meaning, meaningStyle, textMeasurer) {
+    meaning.split(Regex("\\s+")).maxOfOrNull { token ->
+      textMeasurer.measure(token, style = meaningStyle, softWrap = false, maxLines = 1).size.width
+    } ?: 0
+  }
   val glyphCount = hanzi.codePointCount(0, hanzi.length)
   val secondaryInk = if (glyphCount == 1 && activeCharacterIndex == 0) colors.writingActive else colors.writingSecondaryInk
-  val itemWidth = maxOf(62f, glyphCount * 32f + 12f, pinyin.length * 7.5f + 8f) * fontScale
-  Column(Modifier.width(itemWidth.dp), horizontalAlignment = Alignment.CenterHorizontally,
+  val itemWidth = maxOf((maxOf(62f, glyphCount * 32f + 12f, pinyin.length * 7.5f + 8f) * fontScale).dp,
+    with(density) { longestWordPixels.toDp() } + 4.dp)
+  Column(Modifier.width(itemWidth), horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.spacedBy(4.dp)) {
     Text(pinyin, color = secondaryInk, fontSize = 14.sp, lineHeight = 20.sp, maxLines = 1,
       textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth().height((22f * fontScale).dp)
@@ -296,7 +310,7 @@ private fun WritingWordItem(hanzi: String, pinyin: String, meaning: String, font
     }, fontSize = 32.sp, lineHeight = 40.sp, fontWeight = FontWeight.Medium,
       maxLines = 1, textAlign = TextAlign.Center,
       modifier = Modifier.fillMaxWidth().height((44f * fontScale).dp).wrapContentHeight(Alignment.CenterVertically))
-    Text(meaning, color = secondaryInk, fontSize = 11.sp, lineHeight = 14.sp,
+    Text(meaning, color = secondaryInk, style = meaningStyle,
       textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
   }
 }
@@ -362,7 +376,7 @@ private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
 @Composable
 private fun WritingPreview() {
   val word = WordEntry("preview-ten", "十", "shí", listOf(Meaning("ten", "ten")),
-    emptyList(), emptyList(), "", emptyList())
+    emptyList(), emptyList(), emptyList())
   val item = TracingItem("preview-ten", "十",
     paths = listOf("M240 500H784V580H240Z", "M472 760H552V160H472Z"),
     medians = listOf(listOf(StrokePoint(260f, 540f), StrokePoint(764f, 540f)),
@@ -398,7 +412,7 @@ private fun WritingPreview() {
 @Composable
 private fun WritingWordHeaderPreview() {
   val word = WordEntry("preview-friend", "朋友", "péngyou", listOf(Meaning("friend", "friend")),
-    emptyList(), listOf(WordPart("朋", "péng", "companion"), WordPart("友", "yǒu", "friend")), "", emptyList())
+    emptyList(), listOf(WordPart("朋", "péng", "companion"), WordPart("友", "yǒu", "friend")), emptyList())
   FlashcardTheme {
     Surface(color = FlashcardStyle.colors.writingPaper) {
       Box(Modifier.padding(horizontal = 40.dp, vertical = 16.dp)) { WritingWordHeader(word, characterIndex = 0) }
@@ -410,7 +424,7 @@ private fun WritingWordHeaderPreview() {
 @Composable
 private fun WritingRepeatedWordPreview() {
   val word = WordEntry("preview-thanks", "谢谢", "xièxie", listOf(Meaning("thanks", "thank you")),
-    emptyList(), listOf(WordPart("谢", "xiè", "thank"), WordPart("谢", "xiè", "repeated for this expression")), "", emptyList())
+    emptyList(), listOf(WordPart("谢", "xiè", "thank"), WordPart("谢", "xiè", "repeated for this expression")), emptyList())
   FlashcardTheme {
     Surface(color = FlashcardStyle.colors.writingPaper) {
       Box(Modifier.padding(horizontal = 40.dp, vertical = 16.dp)) { WritingWordHeader(word, characterIndex = 1) }
@@ -422,7 +436,7 @@ private fun WritingRepeatedWordPreview() {
 @Composable
 private fun WritingGroupedWordPreview() {
   val word = WordEntry("preview-grouped-friend", "朋友", "péng you", listOf(Meaning("friend", "friend")),
-    emptyList(), listOf(WordPart("朋友", "péng you", "friend")), "", emptyList())
+    emptyList(), listOf(WordPart("朋友", "péng you", "friend")), emptyList())
   FlashcardTheme {
     Surface(color = FlashcardStyle.colors.writingPaper) {
       Box(Modifier.padding(horizontal = 40.dp, vertical = 16.dp)) { WritingWordHeader(word, characterIndex = 1) }
@@ -445,8 +459,10 @@ private object WritingIcons {
 @Composable
 private fun WritingError(message: String, button: String, onRetry: () -> Unit) {
   Surface(color = MaterialTheme.colorScheme.errorContainer, shape = RoundedCornerShape(12.dp)) {
-    Column(Modifier.fillMaxWidth().padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-      Text(message, color = MaterialTheme.colorScheme.onErrorContainer)
+    Column(Modifier.fillMaxWidth().padding(14.dp), horizontalAlignment = Alignment.CenterHorizontally,
+      verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+        color = MaterialTheme.colorScheme.onErrorContainer)
       TextButton(onClick = onRetry) { Text(button) }
     }
   }

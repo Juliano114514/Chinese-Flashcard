@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -98,10 +99,12 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
     when {
       !boot.ready -> Column(Modifier.fillMaxSize().safeDrawingPadding().padding(28.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-        Text("Chinese Flashcard", style = MaterialTheme.typography.headlineLarge)
+        Text("Chinese Flashcard", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+          style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.height(24.dp))
         if (boot.error != null) {
-          Text(boot.error!!); Button(onClick = startup::prepare, enabled = !boot.busy) { Text("Retry") }
+          Text(boot.error!!, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
+          Button(onClick = startup::prepare, enabled = !boot.busy) { Text("Retry") }
         } else {
           WordlistLoadingProgress(repositories.defaultWordlistProgress)
         }

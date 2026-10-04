@@ -81,7 +81,9 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
     verticalArrangement = Arrangement.spacedBy(24.dp)) {
     Text("Profile", style = MaterialTheme.typography.headlineLarge)
     if (state.loading) {
-      CircularProgressIndicator(Modifier.size(28.dp))
+      Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+        CircularProgressIndicator(Modifier.size(28.dp))
+      }
     } else {
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(20.dp)) {
@@ -124,12 +126,15 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
         }
       }
       if (defaultWordlistLoading || defaultWordlistError != null) {
-        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-          Text("Default wordlist", style = MaterialTheme.typography.titleSmall)
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+          verticalArrangement = Arrangement.spacedBy(8.dp)) {
+          Text("Default wordlist", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.titleSmall)
           if (defaultWordlistLoading) {
             WordlistLoadingProgress(defaultWordlistProgress)
           } else {
-            Text(defaultWordlistError.orEmpty(), color = MaterialTheme.colorScheme.error,
+            Text(defaultWordlistError.orEmpty(), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+              color = MaterialTheme.colorScheme.error,
               style = MaterialTheme.typography.bodySmall)
             TextButton(onClick = onRetryDefaultWordlist, enabled = enabled && editor == null) { Text("Retry") }
           }
@@ -262,13 +267,14 @@ private fun CsvImportDialog(state: CsvImportUiState, progress: StateFlow<Wordlis
   val report = state.report
   val issues = preview?.issues?.take(100).orEmpty()
   AlertDialog(onDismissRequest = { if (state.canDismiss) onDismiss() }, shape = MaterialTheme.shapes.large,
-    title = { Text("CSV import") }, text = {
+    title = { Text("CSV import", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) }, text = {
       Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (state.busy) {
           if (state.stage == CsvImportStage.READING || state.stage == CsvImportStage.IMPORTING)
             WordlistLoadingProgress(progress)
-          else Text("Closing preview…", style = MaterialTheme.typography.bodySmall)
+          else Text("Closing preview…", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.bodySmall)
         }
         preview?.let {
           Text("${it.totalRows} rows · ${it.newWords} new · ${it.duplicateWords} duplicates")

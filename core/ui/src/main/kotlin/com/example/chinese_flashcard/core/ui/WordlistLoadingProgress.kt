@@ -26,6 +26,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
 import com.example.chinese_flashcard.core.domain.WordlistLoadStage
 import kotlinx.coroutines.flow.StateFlow
+import kotlin.math.floor
 
 /** Collect progress here so word-by-word updates do not recompose the parent screen. */
 @Composable
@@ -36,9 +37,9 @@ fun WordlistLoadingProgress(progress: StateFlow<WordlistLoadProgress?>, modifier
 
 @Composable
 private fun WordlistLoadingProgress(progress: WordlistLoadProgress?, modifier: Modifier = Modifier) {
-  val total = progress?.totalWords?.coerceAtLeast(0)
-  val processed = (progress?.processedWords ?: 0).coerceIn(0, total ?: Int.MAX_VALUE)
-  val fraction = progress?.fraction?.takeIf { it.isFinite() }?.coerceIn(0f, 1f) ?: 0f
+  val fraction = if (progress?.stage == WordlistLoadStage.COMPLETE) 1f else
+    progress?.fraction?.takeIf { it.isFinite() }?.coerceIn(0f, .99f) ?: 0f
+  val percent = floor(fraction * 100).toInt()
   val entry = progress?.currentEntry?.takeIf { it.isNotBlank() }
   val stageLabel = when (progress?.stage) {
     WordlistLoadStage.CHECKING -> "Checking"
@@ -48,30 +49,34 @@ private fun WordlistLoadingProgress(progress: WordlistLoadProgress?, modifier: M
     WordlistLoadStage.COMPLETE -> "Ready"
     WordlistLoadStage.PREPARING, null -> "Preparing"
   }
-  val message = if (entry != null) "$stageLabel · Now loading $entry…" else when (progress?.stage) {
-    WordlistLoadStage.CHECKING -> "Checking words…"
-    WordlistLoadStage.STROKES -> "Loading stroke data…"
-    WordlistLoadStage.SAVING -> "Saving words…"
-    WordlistLoadStage.COMMITTING -> "Finishing…"
-    WordlistLoadStage.COMPLETE -> "Wordlist ready"
-    WordlistLoadStage.PREPARING, null -> "Preparing wordlist…"
+  val message = when {
+    progress?.stage == WordlistLoadStage.COMPLETE -> "Wordlist ready"
+    progress?.stage == WordlistLoadStage.COMMITTING -> "Finishing…"
+    entry != null -> "$stageLabel · Now loading $entry…"
+    else -> when (progress?.stage) {
+      WordlistLoadStage.CHECKING -> "Checking words…"
+      WordlistLoadStage.STROKES -> "Loading stroke data…"
+      WordlistLoadStage.SAVING -> "Saving words…"
+      WordlistLoadStage.COMMITTING -> "Finishing…"
+      WordlistLoadStage.COMPLETE -> "Wordlist ready"
+      WordlistLoadStage.PREPARING, null -> "Preparing wordlist…"
+    }
   }
   val density = LocalDensity.current
-  val countWidth = with(density) { 96.sp.toDp() }
-  val messageHeight = with(density) { 24.sp.toDp() }
-  Column(modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+  val percentWidth = with(density) { 48.sp.toDp() }
+  Column(modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(Modifier.fillMaxWidth(.75f), verticalAlignment = Alignment.CenterVertically,
       horizontalArrangement = Arrangement.spacedBy(12.dp)) {
       LinearProgressIndicator(progress = { fraction }, modifier = Modifier.weight(1f).height(4.dp),
         color = MaterialTheme.colorScheme.primary, trackColor = MaterialTheme.colorScheme.surfaceContainerHighest)
-      Text("$processed / ${total ?: "—"}", modifier = Modifier.width(countWidth),
+      Text("$percent%", modifier = Modifier.width(percentWidth),
         style = MaterialTheme.typography.bodySmall.copy(fontFeatureSettings = "tnum"),
         color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.End,
         maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
-    Text(message, modifier = Modifier.fillMaxWidth().height(messageHeight),
-      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant,
-      maxLines = 1, overflow = TextOverflow.Ellipsis)
+    Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
 

@@ -4,10 +4,15 @@ import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
@@ -22,6 +27,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.intl.LocaleList
+import androidx.compose.ui.text.style.Hyphens
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.domain.ExampleSentence
@@ -59,16 +67,16 @@ fun WordMeanings(word: WordEntry) {
 
 @Composable
 fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
-  if (word.literalExplanation.isNotBlank() || word.figurativeExplanation.isNotBlank()) {
+  if (word.literalExplanations.isNotEmpty() || word.figurativeExplanations.isNotEmpty()) {
     WordPanel {
-      if (word.literalExplanation.isNotBlank()) {
-        PanelLabel("本义 · Literal meaning")
-        Text(word.literalExplanation, style = MaterialTheme.typography.bodyMedium)
+      if (word.literalExplanations.isNotEmpty()) {
+        PanelLabel("Literal meaning")
+        ExplanationMeanings(word.literalExplanations)
       }
-      if (word.figurativeExplanation.isNotBlank()) {
-        if (word.literalExplanation.isNotBlank()) PanelDivider()
-        PanelLabel("引申义 · Figurative meaning")
-        Text(word.figurativeExplanation, style = MaterialTheme.typography.bodyMedium)
+      if (word.figurativeExplanations.isNotEmpty()) {
+        if (word.literalExplanations.isNotEmpty()) PanelDivider()
+        PanelLabel("Figurative meaning")
+        ExplanationMeanings(word.figurativeExplanations)
       }
     }
   }
@@ -80,26 +88,30 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
       }
     }
   }
-  if (word.parts.isNotEmpty() || word.note.isNotBlank()) {
+  if (word.parts.isNotEmpty()) {
     WordPanel {
-      if (word.parts.isNotEmpty()) {
-        PanelLabel("Word breakdown")
-        word.parts.forEach { part ->
-          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text(part.hanzi, style = MaterialTheme.typography.titleLarge)
-            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
-              Text(part.pinyin, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-              Text(part.gloss, style = MaterialTheme.typography.bodyMedium)
-            }
+      PanelLabel("Word breakdown")
+      word.parts.forEach { part ->
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+          Text(part.hanzi, style = MaterialTheme.typography.titleLarge)
+          Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Text(part.pinyin, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(part.gloss, style = MaterialTheme.typography.bodyMedium)
           }
         }
-        word.meanings.firstOrNull()?.let { Text("Together: ${it.english}", style = MaterialTheme.typography.bodyMedium) }
       }
-      if (word.note.isNotBlank()) {
-        if (word.parts.isNotEmpty()) PanelDivider()
-        PanelLabel("Usage note")
-        Text(word.note, style = MaterialTheme.typography.bodyMedium)
-      }
+      word.meanings.firstOrNull()?.let { Text("Together: ${it.english}", style = MaterialTheme.typography.bodyMedium) }
+    }
+  }
+}
+
+@Composable
+private fun ExplanationMeanings(meanings: List<String>) {
+  Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    meanings.forEachIndexed { index, meaning ->
+      val number = if (index < 20) ('①'.code + index).toChar().toString() else "(${index + 1})"
+      Text(if (meanings.size > 1) "$number $meaning" else meaning,
+        style = MaterialTheme.typography.bodyMedium)
     }
   }
 }
@@ -119,16 +131,34 @@ private fun WordPanel(content: @Composable ColumnScope.() -> Unit) {
 }
 
 @Composable
+@OptIn(ExperimentalLayoutApi::class)
 private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
-  Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-      Text(example.hanzi, fontSize = 18.sp, lineHeight = 27.sp)
-      Text(example.pinyin, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Text(example.english, style = MaterialTheme.typography.bodyMedium)
+  Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+      PanelLabel("Example")
+      Spacer(Modifier.weight(1f))
+      IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(40.dp)) {
+        Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
+      }
     }
-    IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(40.dp)) {
-      Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
+    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp),
+      verticalArrangement = Arrangement.spacedBy(12.dp)) {
+      example.chunks.forEach { chunk ->
+        Column(Modifier.width(IntrinsicSize.Max),
+          horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+          Text(chunk.pinyin, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+          Text(chunk.hanzi, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+            fontSize = 18.sp, lineHeight = 27.sp, fontWeight = FontWeight.Medium)
+          Text(chunk.gloss, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.bodySmall.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+      }
     }
+    PanelDivider()
+    Text(example.english, style = MaterialTheme.typography.bodyMedium.copy(
+      localeList = LocaleList("en"), hyphens = Hyphens.None))
   }
 }
 

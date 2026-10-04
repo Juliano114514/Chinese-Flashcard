@@ -23,16 +23,16 @@ internal class CsvIssues {
 
 internal data class CsvWord(val line: Int, val order: Int, val id: String, val hanzi: String,
   val pinyin: String, val rarity: Int, val english: String, val partOfSpeech: String,
-  val examples: List<ExampleSentence>, val parts: List<WordPart>, val note: String,
+  val examples: List<ExampleSentence>, val parts: List<WordPart>,
   val distractorWordIds: List<String>,
-  val literalExplanation: String = "", val figurativeExplanation: String = "") {
+  val literalExplanations: List<String> = emptyList(), val figurativeExplanations: List<String> = emptyList()) {
   val identity: String get() = wordIdentity(hanzi, pinyin)
   val glyphs: List<String> get() = hanzi.codePoints().toArray().map { String(Character.toChars(it)) }
 }
 
 internal fun wordIdentity(hanzi: String, pinyin: String): String =
   Normalizer.normalize(hanzi.trim(), Normalizer.Form.NFC) + "\u0000" +
-    Normalizer.normalize(pinyin, Normalizer.Form.NFC).filterNot(Char::isWhitespace).lowercase(Locale.ROOT)
+    pinyinSyllables(Normalizer.normalize(pinyin, Normalizer.Form.NFC)).joinToString("").lowercase(Locale.ROOT)
 
 internal fun normalizedEnglish(value: String): String =
   Normalizer.normalize(value.trim(), Normalizer.Form.NFC).lowercase(Locale.ROOT)
@@ -46,9 +46,8 @@ internal object CsvDecoder {
   private val wordIdPattern = Regex("[A-Za-z0-9_]{1,92}")
   private val pinyinLetter = Regex("[a-züāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜêńǹňḿ]", RegexOption.IGNORE_CASE)
   private const val SENTENCE_PUNCTUATION = ".,!?;:，。！？；：、…—–-\"'“”‘’()（）[]"
-  private val columns = listOf("罕度", "组词", "拼音", "简单例句", "例句拼音", "例句英语翻译",
-    "词条ID", "英文释义", "词性", "第二例句", "第二例句拼音", "第二例句英语翻译",
-    "部件JSON", "使用提示", "干扰词ID", "来源说明")
+  private val columns = listOf("罕度", "组词", "拼音", "词条ID", "英文释义", "词性",
+    "例句JSON", "部件JSON", "干扰词ID", "来源说明", "本义解释JSON", "引申义解释JSON")
 
   /** A quick record-only pass for external files; quoted newlines do not increase the count. */
   suspend fun countRows(file: File, issues: CsvIssues): Int {
@@ -99,6 +98,10 @@ internal object CsvDecoder {
           missing.forEach { issues.add(header.line, it, "A required column is missing.") }
           return 0
         }
+        if (names.size != columns.size) {
+          issues.add(header.line, "表头", "Use exactly the twelve current CSV columns.")
+          return 0
+        }
         val positions = names.withIndex().associate { it.value to it.index }
         while (true) {
           currentCoroutineContext().ensureActive()
@@ -139,13 +142,6 @@ internal object CsvDecoder {
         invalid(name, "This field is required and must fit its length limit.")
       return value
     }
-    fun optionalField(name: String, max: Int): String {
-      val position = positions[name] ?: return ""
-      val value = record.fields[position].trim()
-      if (value.length > max || value.any { it == '\u0000' })
-        invalid(name, "This optional field must fit its length limit and cannot contain null characters.")
-      return value
-    }
     fun id(value: String, fieldName: String): String {
       if (!value.matches(wordIdPattern))
         invalid(fieldName, "IDs must contain 1–92 ASCII letters, digits or underscores.")
@@ -159,30 +155,36 @@ internal object CsvDecoder {
     if (codePoints.size !in 1..32 || codePoints.any { !isHanzi(it) })
       invalid("组词", "A word must contain 1–32 Han characters.")
     val pinyin = checkedPinyin(field("拼音", 128), "拼音")
+    if (pinyinSyllables(pinyin).size != codePoints.size)
+      invalid("拼音", "Separate each character's pinyin syllable with a space or an apostrophe.")
     val english = field("英文释义", 300)
     val partOfSpeech = field("词性", 80)
-    val examples = listOf(
-      ExampleSentence(field("简单例句", 1000), checkedPinyin(field("例句拼音", 2000), "例句拼音", true), field("例句英语翻译", 2000)),
-      ExampleSentence(field("第二例句", 1000), checkedPinyin(field("第二例句拼音", 2000), "第二例句拼音", true), field("第二例句英语翻译", 2000)))
-    if (examples[0].hanzi == examples[1].hanzi) invalid("第二例句", "Provide two different example sentences.")
-    examples.forEachIndexed { position, example ->
-      if (!example.hanzi.contains(hanzi)) invalid(if (position == 0) "简单例句" else "第二例句",
-        "Each example sentence must contain the complete word.")
+    val examples = try {
+      decodeExamples(boundedArray(field("例句JSON", 16000), "例句JSON")).map { example ->
+        example.copy(pinyin = checkedPinyin(example.pinyin, "例句JSON", true),
+          chunks = example.chunks.map { chunk -> chunk.copy(pinyin = checkedPinyin(chunk.pinyin, "例句JSON", true)) })
+      }
+    } catch (error: CsvFieldException) { throw error }
+    catch (_: Exception) { invalid("例句JSON", "Provide two valid examples with hanzi, pinyin, english and aligned English-glossed chunks.") }
+    if (examples[0].hanzi == examples[1].hanzi) invalid("例句JSON", "Provide two different example sentences.")
+    examples.forEach { example ->
+      if (!example.hanzi.contains(hanzi)) invalid("例句JSON", "Each example sentence must contain the complete word.")
     }
     val parts = try {
       val array = boundedArray(field("部件JSON", 16000), "部件JSON")
       if (array.length() !in 1..32) invalid("部件JSON", "Provide 1–32 word parts.")
-      array.objects(32).forEach { item ->
-        if (listOf("hanzi", "pinyin", "gloss").any { item.opt(it) !is String })
-          invalid("部件JSON", "Each part needs string hanzi, pinyin and gloss fields.")
-      }
       decodeParts(array).map { it.copy(pinyin = checkedPinyin(it.pinyin, "部件JSON")) }
     } catch (error: CsvFieldException) { throw error }
     catch (_: Exception) { invalid("部件JSON", "Word parts must be a valid JSON array with hanzi, pinyin and gloss.") }
     if (parts.joinToString("") { it.hanzi } != hanzi)
       invalid("部件JSON", "The ordered word parts must reconstruct the complete word.")
-    val note = field("使用提示", 2000)
     field("来源说明", 2000) // Provenance stays in the user's CSV; no source field is added to the teaching model.
+    fun explanations(name: String, required: Boolean): List<String> = try {
+      decodeExplanations(boundedArray(field(name, 16000), name), required)
+    } catch (error: CsvFieldException) { throw error }
+    catch (_: Exception) { invalid(name, "Provide an English string array with up to sixteen senses; literal meanings cannot be empty.") }
+    val literalExplanations = explanations("本义解释JSON", required = true)
+    val figurativeExplanations = explanations("引申义解释JSON", required = false)
     val distractors = try {
       val array = boundedArray(field("干扰词ID", 400), "干扰词ID")
       if (array.length() != 3 || (0 until array.length()).any { array.get(it) !is String })
@@ -193,8 +195,7 @@ internal object CsvDecoder {
     if (distractors.distinct().size != 3 || wordId in distractors)
       invalid("干扰词ID", "Distractor IDs must be distinct and cannot include this word.")
     return CsvWord(record.line, order, wordId, hanzi, pinyin, rarity, english, partOfSpeech,
-      examples, parts, note, distractors,
-      optionalField("本义解释", 2000), optionalField("引申义解释", 2000))
+      examples, parts, distractors, literalExplanations, figurativeExplanations)
   }
 
   private fun isHanzi(codePoint: Int): Boolean = codePoint in 0x3400..0x4DBF ||

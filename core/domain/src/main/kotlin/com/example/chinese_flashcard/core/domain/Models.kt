@@ -1,12 +1,14 @@
 package com.example.chinese_flashcard.core.domain
 
 data class Meaning(val id: String, val english: String, val partOfSpeech: String = "")
-data class ExampleSentence(val hanzi: String, val pinyin: String, val english: String)
+data class ExampleChunk(val hanzi: String, val pinyin: String, val gloss: String)
+data class ExampleSentence(val hanzi: String, val pinyin: String, val english: String,
+  val chunks: List<ExampleChunk>)
 data class WordPart(val hanzi: String, val pinyin: String, val gloss: String)
 data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
   val meanings: List<Meaning>, val examples: List<ExampleSentence>, val parts: List<WordPart>,
-  val note: String, val distractorMeaningIds: List<String>,
-  val literalExplanation: String = "", val figurativeExplanation: String = "")
+  val distractorMeaningIds: List<String>,
+  val literalExplanations: List<String> = emptyList(), val figurativeExplanations: List<String> = emptyList())
 
 data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
   val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
