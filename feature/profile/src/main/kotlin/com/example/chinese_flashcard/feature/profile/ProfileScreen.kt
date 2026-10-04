@@ -39,16 +39,16 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.semantics.contentDescription
-import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
-import com.example.chinese_flashcard.core.ui.PresetAvatar
+import com.example.chinese_flashcard.core.ui.EditableAvatar
+import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import kotlin.math.roundToInt
 
 private enum class ProfileEditor { NAME, AVATAR, DAILY_WORDS, ROUNDS, REVIEW_DAYS }
@@ -78,11 +78,8 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
     } else {
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-        Box(Modifier.size(72.dp).clip(MaterialTheme.shapes.small)
-          .clickable(enabled = enabled, role = Role.Button) { openEditor(ProfileEditor.AVATAR) }
-          .semantics { contentDescription = "Change avatar" }) {
-          PresetAvatar(value.avatarId, Modifier.fillMaxSize())
-        }
+        EditableAvatar(value.avatarId, size = 44.dp, enabled = enabled,
+          onClick = { openEditor(ProfileEditor.AVATAR) })
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
           Text(value.displayName.ifBlank { "Your name" }, style = MaterialTheme.typography.titleLarge,
             maxLines = 2, overflow = TextOverflow.Ellipsis)
@@ -143,12 +140,12 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
 
 @Composable
 private fun SettingsDivider() {
-  HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.65f))
+  HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
 }
 
 @Composable
 private fun SettingsRow(title: String, value: String? = null, enabled: Boolean = true, onClick: () -> Unit) {
-  val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
+  val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = FlashcardStyle.opacity.disabledContent)
   Row(Modifier.fillMaxWidth().heightIn(min = 56.dp)
     .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(vertical = 12.dp),
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -322,4 +319,41 @@ private fun SettingDialog(
     }, dismissButton = {
       TextButton(onClick = onDismiss, enabled = !saving) { Text("Cancel") }
     })
+}
+
+@Preview(name = "Settings - light", widthDp = 360)
+@Preview(name = "Settings - dark", widthDp = 360, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Settings - compact", widthDp = 320, fontScale = 1.3f)
+@Composable
+private fun SettingsPreview() {
+  FlashcardTheme {
+    Surface(color = MaterialTheme.colorScheme.background) {
+      Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(24.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(20.dp)) {
+          EditableAvatar("1", size = 44.dp, onClick = {})
+          Text("Profile", style = MaterialTheme.typography.titleLarge)
+        }
+        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
+            SettingsRow("Name", "Alexander", onClick = {})
+            SettingsDivider()
+            SettingsRow("Daily words", "10", onClick = {})
+            SettingsDivider()
+            SettingsRow("Review days", "1 / 3 / 7", onClick = {})
+            SettingsDivider()
+            SettingsRow("Import CSV", enabled = false, onClick = {})
+          }
+        }
+      }
+    }
+  }
+}
+
+@Preview(name = "Name form - light", widthDp = 360)
+@Preview(name = "Name form - dark", widthDp = 360, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun NameFormPreview() {
+  FlashcardTheme {
+    NameDialog("Alexander", saving = false, error = null, onDismiss = {}, onConfirm = {})
+  }
 }

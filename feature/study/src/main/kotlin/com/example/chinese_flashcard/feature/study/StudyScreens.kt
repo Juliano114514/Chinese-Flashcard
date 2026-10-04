@@ -30,6 +30,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -72,6 +73,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.tooling.preview.Preview
+import android.content.res.Configuration
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -79,13 +82,16 @@ import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.awaitCancellation
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.ExampleSentence
+import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.StudyCard
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
-import com.example.chinese_flashcard.core.ui.PresetAvatar
+import com.example.chinese_flashcard.core.ui.EditableAvatar
 import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
+import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import kotlin.math.roundToInt
 
 @Composable
@@ -122,24 +128,11 @@ fun WelcomeScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(24.dp)) {
         when (step) {
-          0 -> {
-            Box(Modifier.size(80.dp).clickable(enabled = !saving, role = Role.Button) {
-              focus.clearFocus(); choosingAvatar = true
-            }.semantics { contentDescription = "Choose avatar" }) {
-              PresetAvatar(avatarId, Modifier.fillMaxSize())
-            }
-            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-              Text("Your name", style = MaterialTheme.typography.titleLarge)
-              OutlinedTextField(value = name, onValueChange = { value ->
-                if (value.length <= 40 && value.none { it.isISOControl() }) name = value
-              }, modifier = Modifier.fillMaxWidth(), enabled = !saving, singleLine = true,
-                shape = RoundedCornerShape(8.dp),
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
-                keyboardActions = KeyboardActions(onNext = {
-                  if (!saving && validName) { focus.clearFocus(); step = 1 }
-                }))
-            }
-          }
+          0 -> WelcomeNameFields(name = name, avatarId = avatarId, enabled = !saving,
+            onNameChange = { value ->
+              if (value.length <= 40 && value.none { it.isISOControl() }) name = value
+            }, onAvatar = { focus.clearFocus(); choosingAvatar = true },
+            onNext = { if (!saving && validName) { focus.clearFocus(); step = 1 } })
           1 -> {
             Text("Words per day", style = MaterialTheme.typography.headlineMedium,
               textAlign = TextAlign.Center)
@@ -214,6 +207,29 @@ fun WelcomeScreen(
   }
   if (choosingAvatar) AvatarPickerDialog(selectedId = avatarId,
     onDismiss = { choosingAvatar = false }, onConfirm = { avatarId = it; choosingAvatar = false })
+}
+
+@Composable
+private fun WelcomeNameFields(
+  name: String,
+  avatarId: String,
+  enabled: Boolean,
+  onNameChange: (String) -> Unit,
+  onAvatar: () -> Unit,
+  onNext: () -> Unit,
+) {
+  Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(24.dp)) {
+    EditableAvatar(avatarId, size = 48.dp, enabled = enabled, onClick = onAvatar)
+    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+      Text("Your name", style = MaterialTheme.typography.titleLarge)
+      OutlinedTextField(value = name, onValueChange = onNameChange,
+        modifier = Modifier.fillMaxWidth(), enabled = enabled, singleLine = true,
+        shape = RoundedCornerShape(8.dp),
+        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
+        keyboardActions = KeyboardActions(onNext = { onNext() }))
+    }
+  }
 }
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -365,7 +381,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
         Column(Modifier.padding(end = 12.dp), horizontalAlignment = Alignment.End,
           verticalArrangement = Arrangement.spacedBy(6.dp)) {
           Text(if (card.reviewRecall) "Recall" else "Round ${card.round} / ${card.targetRounds}",
-            style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
           if (!card.reviewRecall) RoundProgress(card)
         }
       }
@@ -379,6 +395,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           CardPhase.QUESTION -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
               OutlinedButton(onClick = { selectedOption = null; answerChosen = true }, enabled = !state.busy,
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp,
                   if (answerChosen && selectedOption == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp).semantics { selected = answerChosen && selectedOption == null }) { Text("I don't know") }
@@ -389,6 +406,8 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           CardPhase.INTRO, CardPhase.EXPLANATION, CardPhase.FEEDBACK -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
               OutlinedButton(onClick = { vm.startManualWriting(card.word.id) }, enabled = !state.busy,
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
+                border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction),
                 shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Write") }
               Button(onClick = vm::advance, enabled = !state.busy && card.phase != CardPhase.FEEDBACK, shape = RoundedCornerShape(8.dp),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
@@ -403,10 +422,10 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   }) { padding ->
     PageColumn(scrollKey = "${card?.id}/${card?.phase}", modifier = Modifier.padding(padding), studyPage = true) {
       when {
-        state.loading || (state.busy && card == null) -> LoadingNotice()
+        state.loading || (state.busy && card == null) -> LoadingNotice(studyPage = true)
         card == null -> {
           Text("No active session", style = MaterialTheme.typography.headlineMedium)
-          Text("Choose Learn or Review from Home.", color = MaterialTheme.colorScheme.onSurfaceVariant)
+          Text("Choose Learn or Review from Home.", color = FlashcardStyle.colors.gradientSecondaryInk)
           Button(onClick = onBack, enabled = !state.busy, shape = RoundedCornerShape(8.dp)) { Text("Back to Home") }
         }
         card.phase == CardPhase.FINISHED -> {
@@ -419,7 +438,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
             if (today.carryoverPlanned > 0) CompletionCount("Continued", today.carryoverCompleted, today.carryoverPlanned)
             today.nextReviewDate?.let { date ->
               Text("Next review: $date", style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.primary)
+                color = FlashcardStyle.colors.gradientAction)
             }
           }
           Button(onClick = onBack, enabled = !state.busy, shape = RoundedCornerShape(8.dp),
@@ -438,16 +457,8 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
                 }
               }
               if (card.correct != null) {
-                Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-                  Text(if (card.correct == true) "Correct" else "Incorrect · Round resets to 1",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = if (card.correct == true) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error)
-                  if (card.correct == false) {
-                    val choice = card.options.firstOrNull { it.id == card.selectedOptionId }?.english ?: "I don't know"
-                    Text("Your answer: $choice", style = MaterialTheme.typography.bodySmall,
-                      color = MaterialTheme.colorScheme.onSurfaceVariant)
-                  }
-                }
+                AnswerFeedback(card.correct == true,
+                  card.options.firstOrNull { it.id == card.selectedOptionId }?.english ?: "I don't know")
               }
               WordExplanation(card.word, onSpeak)
             }
@@ -457,20 +468,11 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
                 ExampleCard(card.word.examples[index], onSpeak)
               }
               Text("Choose the meaning", style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant)
+                color = FlashcardStyle.colors.gradientSecondaryInk)
               card.options.forEachIndexed { index, option ->
                 val selected = answerChosen && selectedOption == option.id
-                Surface(modifier = Modifier.fillMaxWidth().semantics { this.selected = selected }, shape = RoundedCornerShape(8.dp),
-                  color = if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surface.copy(alpha = .78f),
-                  border = BorderStroke(1.dp, if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
-                  onClick = { selectedOption = option.id; answerChosen = true }, enabled = !state.busy) {
-                  Row(Modifier.heightIn(min = 56.dp).padding(horizontal = 16.dp, vertical = 12.dp), horizontalArrangement = Arrangement.spacedBy(12.dp),
-                    verticalAlignment = Alignment.CenterVertically) {
-                    Text(('A' + index).toString(), style = MaterialTheme.typography.labelLarge,
-                      color = MaterialTheme.colorScheme.onSurfaceVariant)
-                    Text(option.english, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
-                  }
-                }
+                MeaningOption(index, option.english, selected, enabled = !state.busy,
+                  onClick = { selectedOption = option.id; answerChosen = true })
               }
             }
             CardPhase.WRITING -> {
@@ -483,10 +485,40 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           }
         }
       }
-      state.error?.let { ErrorNotice(it, !state.busy, vm::retry) }
+      state.error?.let { ErrorNotice(it, !state.busy, vm::retry, studyPage = true) }
     }
   }
   DailyWritingInvitation(state, vm)
+  }
+}
+
+@Composable
+private fun AnswerFeedback(correct: Boolean, selectedMeaning: String) {
+  Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+    Text(if (correct) "Correct" else "Incorrect · Round resets to 1",
+      style = MaterialTheme.typography.bodySmall,
+      color = if (correct) FlashcardStyle.colors.gradientSuccess else FlashcardStyle.colors.gradientError)
+    if (!correct) {
+      Text("Your answer: $selectedMeaning", style = MaterialTheme.typography.bodySmall,
+        color = FlashcardStyle.colors.gradientSecondaryInk)
+    }
+  }
+}
+
+@Composable
+private fun MeaningOption(index: Int, meaning: String, selected: Boolean, enabled: Boolean, onClick: () -> Unit) {
+  Surface(modifier = Modifier.fillMaxWidth().semantics { this.selected = selected }, shape = RoundedCornerShape(8.dp),
+    color = if (selected) MaterialTheme.colorScheme.primaryContainer
+      else MaterialTheme.colorScheme.surface.copy(alpha = FlashcardStyle.opacity.choicePanel),
+    contentColor = if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface,
+    border = BorderStroke(1.dp, if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
+    onClick = onClick, enabled = enabled) {
+    Row(Modifier.heightIn(min = 56.dp).padding(horizontal = 16.dp, vertical = 12.dp),
+      horizontalArrangement = Arrangement.spacedBy(12.dp), verticalAlignment = Alignment.CenterVertically) {
+      Text(('A' + index).toString(), style = MaterialTheme.typography.labelLarge,
+        color = if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant)
+      Text(meaning, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
+    }
   }
 }
 
@@ -531,7 +563,7 @@ private fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, 
       modifier = Modifier.combinedClickable(enabled = enabled, onClick = onSpeak, onLongClick = { showActions = true },
         onLongClickLabel = "Word actions"))
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-      Text(word.pinyin, fontSize = 18.sp, lineHeight = 26.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text(word.pinyin, fontSize = 18.sp, lineHeight = 26.sp, color = FlashcardStyle.colors.gradientSecondaryInk)
       IconButton(onClick = onSpeak, enabled = enabled, modifier = Modifier.size(40.dp)) {
         Icon(Icons.Default.PlayArrow, contentDescription = "Listen to word", modifier = Modifier.size(20.dp))
       }
@@ -564,7 +596,7 @@ private fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
   if (word.examples.isNotEmpty()) {
     StudyPanel {
       word.examples.forEachIndexed { index, example ->
-        if (index > 0) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = .7f))
+        if (index > 0) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
         ExampleContent(example, onSpeak)
       }
     }
@@ -585,7 +617,7 @@ private fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
         word.meanings.firstOrNull()?.let { Text("Together: ${it.english}", style = MaterialTheme.typography.bodyMedium) }
       }
       if (word.note.isNotBlank()) {
-        if (word.parts.isNotEmpty()) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = .7f))
+        if (word.parts.isNotEmpty()) HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
         SectionLabel("Usage note")
         Text(word.note, style = MaterialTheme.typography.bodyMedium)
       }
@@ -600,7 +632,8 @@ private fun ExampleCard(example: ExampleSentence, onSpeak: (String) -> Unit) {
 
 @Composable
 private fun StudyPanel(content: @Composable androidx.compose.foundation.layout.ColumnScope.() -> Unit) {
-  Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = .72f)),
+  Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = FlashcardStyle.opacity.explanationPanel),
+    contentColor = MaterialTheme.colorScheme.onSurface),
     shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
     Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(12.dp), content = content)
   }
@@ -648,7 +681,7 @@ private fun CompletionCount(label: String, completed: Int, planned: Int) {
   Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
     horizontalArrangement = Arrangement.spacedBy(16.dp)) {
     Text(label, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge,
-      color = MaterialTheme.colorScheme.onSurfaceVariant)
+      color = FlashcardStyle.colors.gradientSecondaryInk)
     Text("$completed / $planned", style = MaterialTheme.typography.titleMedium)
   }
 }
@@ -669,13 +702,94 @@ private fun ActionTile(title: String, subtitle: String, progress: String, enable
 }
 
 @Composable
-private fun LoadingNotice() {
+private fun LoadingNotice(studyPage: Boolean = false) {
   CircularProgressIndicator(Modifier.size(28.dp))
-  Text("Loading…", color = MaterialTheme.colorScheme.onSurfaceVariant)
+  Text("Loading…", color = if (studyPage) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurfaceVariant)
 }
 
 @Composable
-private fun ErrorNotice(message: String, enabled: Boolean, onRetry: () -> Unit) {
-  Text(message, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
-  TextButton(onClick = onRetry, enabled = enabled) { Text("Try again") }
+private fun ErrorNotice(message: String, enabled: Boolean, onRetry: () -> Unit, studyPage: Boolean = false) {
+  Text(message, color = if (studyPage) FlashcardStyle.colors.gradientError else MaterialTheme.colorScheme.error,
+    style = MaterialTheme.typography.bodyMedium)
+  TextButton(onClick = onRetry, enabled = enabled, colors = ButtonDefaults.textButtonColors(
+    contentColor = if (studyPage) FlashcardStyle.colors.gradientAction else MaterialTheme.colorScheme.primary)) { Text("Try again") }
+}
+
+private val PreviewWord = WordEntry(
+  id = "preview-thank-you", hanzi = "谢谢", pinyin = "xièxie",
+  meanings = listOf(Meaning("thank-you", "thank you", "expression")),
+  examples = listOf(ExampleSentence("谢谢你的帮助。", "Xièxie nǐ de bāngzhù.", "Thank you for your help.")),
+  parts = emptyList(), note = "Use to express thanks.", distractorMeaningIds = emptyList(),
+)
+
+@Preview(name = "Welcome · light", widthDp = 360, heightDp = 760)
+@Preview(name = "Welcome · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Welcome · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
+@Preview(name = "Welcome · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun WelcomePreview() {
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
+      contentColor = MaterialTheme.colorScheme.onBackground) {
+      Box(Modifier.fillMaxSize().padding(horizontal = 24.dp, vertical = 44.dp),
+        contentAlignment = Alignment.Center) {
+        WelcomeNameFields(name = "Alex", avatarId = "1", enabled = true,
+          onNameChange = {}, onAvatar = {}, onNext = {})
+      }
+    }
+  }
+}
+
+@Preview(name = "Question · light", widthDp = 360, heightDp = 640)
+@Preview(name = "Question · dark", widthDp = 360, heightDp = 640, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Question · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
+@Preview(name = "Question · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun QuestionPreview() {
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+      Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
+        PageColumn(studyPage = true) {
+          WordHeading(PreviewWord, enabled = true, onSpeak = {}, onWrite = null)
+          ExampleCard(PreviewWord.examples.first(), onSpeak = {})
+          Text("Choose the meaning", color = FlashcardStyle.colors.gradientSecondaryInk)
+          listOf("thank you", "good morning", "you're welcome", "see you tomorrow").forEachIndexed { index, meaning ->
+            MeaningOption(index, meaning, selected = index == 0, enabled = true, onClick = {})
+          }
+          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            OutlinedButton(onClick = {}, modifier = Modifier.weight(1f),
+              colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) { Text("I don't know") }
+            Button(onClick = {}, modifier = Modifier.weight(1f)) { Text("Next") }
+          }
+        }
+      }
+    }
+  }
+}
+
+@Preview(name = "Explanation · light", widthDp = 360, heightDp = 640)
+@Preview(name = "Explanation · dark", widthDp = 360, heightDp = 640, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Explanation · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
+@Preview(name = "Explanation · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun ExplanationPreview() {
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+      Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
+        PageColumn(studyPage = true) {
+          WordHeading(PreviewWord, enabled = true, onSpeak = {}, onWrite = {})
+          Text("expression · thank you")
+          AnswerFeedback(correct = true, selectedMeaning = "thank you")
+          WordExplanation(PreviewWord, onSpeak = {})
+          AnswerFeedback(correct = false, selectedMeaning = "good morning")
+          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            OutlinedButton(onClick = {}, modifier = Modifier.weight(1f),
+              colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
+              border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction)) { Text("Write") }
+            Button(onClick = {}, modifier = Modifier.weight(1f)) { Text("Next word") }
+          }
+        }
+      }
+    }
+  }
 }

@@ -21,6 +21,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -64,6 +65,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.tooling.preview.Preview
+import android.content.res.Configuration
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -71,17 +74,18 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.StrokeMatcher
 import com.example.chinese_flashcard.core.domain.StrokePoint
 import com.example.chinese_flashcard.core.domain.TracingItem
+import com.example.chinese_flashcard.core.domain.Meaning
+import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WritingReason
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
 import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
+import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import kotlinx.coroutines.delay
 import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.hypot
-
-private val Paper = Color(0xFFFAF9F5)
-private val ActiveRed = Color(0xFFCF3737)
 
 @Composable
 fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Unit, onSpeak: (String) -> Unit) {
@@ -110,7 +114,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         Spacer(Modifier.height(24.dp))
         Text("Writing complete", style = MaterialTheme.typography.headlineMedium)
         Text("${snapshot.totalWords} ${if (snapshot.totalWords == 1) "word" else "words"} practised.",
-          color = MaterialTheme.colorScheme.onSurfaceVariant)
+          color = FlashcardStyle.colors.gradientSecondaryInk)
         Button(onClick = onFinished, shape = RoundedCornerShape(8.dp),
           modifier = Modifier.fillMaxWidth()) { Text("Done") }
       }
@@ -120,11 +124,13 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
           TextButton(onClick = { vm.onAction(WritingAction.Skip) },
+            colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             enabled = !state.busy && state.saveError == null, modifier = Modifier.fillMaxWidth()) {
             Text("Skip writing")
           }
         } else {
-          TextButton(onClick = onBack, enabled = !state.busy, modifier = Modifier.fillMaxWidth()) {
+          TextButton(onClick = onBack, enabled = !state.busy, modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
             Text("Continue later")
           }
         }
@@ -177,75 +183,129 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
     }
   }
   Text("Word ${snapshot.wordIndex + 1} / ${snapshot.totalWords}  ·  Character ${snapshot.characterIndex + 1} / ${glyphs.size}",
-    style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-  Surface(color = Paper, shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
+    style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
+  WritingPaper(snapshot, glyphs, key, guideShown, frame,
+    listenEnabled = !state.busy && currentGlyph != null,
+    strokeEnabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < (item?.paths?.size ?: 0),
+    onListen = { currentGlyph?.let(onSpeak) }, onStroke = { onAction(WritingAction.Stroke(it)) })
+  if (item != null && item.paths.isNotEmpty()) {
+    WritingToolbar(playing = playing, canGuide = !state.busy && state.saveError == null,
+      canUndo = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty(),
+      onPlay = {
+        guideShown = true
+        if (frame >= item.paths.size) frame = 0f
+        playing = !playing
+      }, onNext = {
+        guideShown = true
+        playing = false
+        frame = (floor(frame) + 1f).coerceAtMost(item.paths.size.toFloat())
+      }, onReplay = { guideShown = true; frame = 0f; playing = true },
+      onUndo = { playing = false; onAction(WritingAction.Undo) }, onRestart = {
+        playing = false; guideShown = false; frame = 0f; onAction(WritingAction.Restart)
+      })
+    if (guideShown) Text("${ceil(frame).toInt()} / ${item.paths.size} strokes shown",
+      style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
+  }
+  snapshot.feedback?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
+  Text("Follow the highlighted stroke.",
+    style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
+  item?.let { Text(it.attribution, style = MaterialTheme.typography.bodySmall,
+    color = FlashcardStyle.colors.gradientSecondaryInk) }
+}
+
+@Composable
+private fun WritingPaper(snapshot: WritingSnapshot, glyphs: List<String>, drawingKey: String,
+  guideShown: Boolean, frame: Float, listenEnabled: Boolean, strokeEnabled: Boolean,
+  onListen: () -> Unit, onStroke: (List<StrokePoint>) -> Unit) {
+  val colors = FlashcardStyle.colors
+  val item = snapshot.item
+  Surface(color = colors.writingPaper, contentColor = colors.writingInk,
+    shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
     Column(Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(buildAnnotatedString {
         glyphs.forEachIndexed { index, glyph ->
-          withStyle(SpanStyle(color = if (index == snapshot.characterIndex) ActiveRed else Color.Black)) { append(glyph) }
+          withStyle(SpanStyle(color = if (index == snapshot.characterIndex) colors.writingActive else colors.writingInk)) { append(glyph) }
         }
       }, fontSize = 36.sp, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
-      Text(snapshot.word.pinyin, color = Color.Black.copy(alpha = .65f), textAlign = TextAlign.Center)
-      TextButton(onClick = { currentGlyph?.let(onSpeak) },
-        enabled = !state.busy && currentGlyph != null) { Text("Listen", color = ActiveRed) }
+      Text(snapshot.word.pinyin, color = colors.writingSecondaryInk, textAlign = TextAlign.Center)
+      TextButton(onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
+        contentColor = colors.writingActive,
+        disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) { Text("Listen") }
       if (item != null && item.paths.isNotEmpty()) {
-        StrokeCanvas(item, snapshot.accepted, key, guideShown, frame,
-          enabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < item.paths.size,
-          onStroke = { onAction(WritingAction.Stroke(it)) })
+        StrokeCanvas(item, snapshot.accepted, drawingKey, guideShown, frame,
+          enabled = strokeEnabled, onStroke = onStroke)
         Text("${snapshot.accepted.size} / ${item.paths.size} strokes  ·  ${snapshot.mistakes} ${if (snapshot.mistakes == 1) "retry" else "retries"}",
-          color = Color.Black.copy(alpha = .65f), style = MaterialTheme.typography.bodySmall)
+          color = colors.writingSecondaryInk, style = MaterialTheme.typography.bodySmall)
       } else {
         Box(Modifier.fillMaxWidth().aspectRatio(1f), contentAlignment = Alignment.Center) {
-          Text("No stroke data for this character.", color = Color.Black,
+          Text("No stroke data for this character.", color = colors.writingInk,
             textAlign = TextAlign.Center, modifier = Modifier.padding(24.dp))
         }
       }
     }
   }
-  if (item != null && item.paths.isNotEmpty()) {
-    Row(Modifier.fillMaxWidth()) {
-      WritingTool(if (playing) "Pause" else "Play", if (playing) WritingIcons.Pause else WritingIcons.Play,
-        enabled = !state.busy && state.saveError == null, modifier = Modifier.weight(1f), onClick = {
-        guideShown = true
-        if (frame >= item.paths.size) frame = 0f
-        playing = !playing
-      })
-      WritingTool("Next", WritingIcons.Next, enabled = !state.busy && state.saveError == null,
-        modifier = Modifier.weight(1f), onClick = {
-        guideShown = true
-        playing = false
-        frame = (floor(frame) + 1f).coerceAtMost(item.paths.size.toFloat())
-      })
-      WritingTool("Replay", WritingIcons.Replay, modifier = Modifier.weight(1f),
-        enabled = !state.busy && state.saveError == null,
-        onClick = { guideShown = true; frame = 0f; playing = true })
-      WritingTool("Undo", WritingIcons.Undo, modifier = Modifier.weight(1f),
-        enabled = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty(),
-        onClick = { playing = false; onAction(WritingAction.Undo) })
-      WritingTool("Restart", WritingIcons.Restart, modifier = Modifier.weight(1f),
-        enabled = !state.busy && state.saveError == null, onClick = {
-        playing = false; guideShown = false; frame = 0f; onAction(WritingAction.Restart)
-      })
-    }
-    if (guideShown) Text("${ceil(frame).toInt()} / ${item.paths.size} strokes shown",
-      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+}
+
+@Composable
+private fun WritingToolbar(playing: Boolean, canGuide: Boolean, canUndo: Boolean,
+  onPlay: () -> Unit, onNext: () -> Unit, onReplay: () -> Unit, onUndo: () -> Unit, onRestart: () -> Unit) {
+  Row(Modifier.fillMaxWidth()) {
+    WritingTool(if (playing) "Pause" else "Play", if (playing) WritingIcons.Pause else WritingIcons.Play,
+      enabled = canGuide, modifier = Modifier.weight(1f), onClick = onPlay)
+    WritingTool("Next", WritingIcons.Next, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onNext)
+    WritingTool("Replay", WritingIcons.Replay, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onReplay)
+    WritingTool("Undo", WritingIcons.Undo, enabled = canUndo, modifier = Modifier.weight(1f), onClick = onUndo)
+    WritingTool("Restart", WritingIcons.Restart, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onRestart)
   }
-  snapshot.feedback?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
-  Text("Follow the highlighted stroke.",
-    style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-  item?.let { Text(it.attribution, style = MaterialTheme.typography.bodySmall,
-    color = MaterialTheme.colorScheme.onSurfaceVariant) }
 }
 
 @Composable
 private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
   modifier: Modifier = Modifier, onClick: () -> Unit) {
   TextButton(onClick = onClick, enabled = enabled, modifier = modifier.heightIn(min = 64.dp),
+    colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
     contentPadding = PaddingValues(horizontal = 0.dp, vertical = 8.dp), shape = RoundedCornerShape(6.dp)) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
       Icon(icon, contentDescription = if (label == "Next") "Next stroke" else label)
       Text(label, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+    }
+  }
+}
+
+@Preview(name = "Writing · light", widthDp = 360, heightDp = 760)
+@Preview(name = "Writing · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Writing · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
+@Preview(name = "Writing · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun WritingPreview() {
+  val word = WordEntry("preview-ten", "十", "shí", listOf(Meaning("ten", "ten")),
+    emptyList(), emptyList(), "", emptyList())
+  val item = TracingItem("preview-ten", "十",
+    paths = listOf("M240 500H784V580H240Z", "M472 760H552V160H472Z"),
+    medians = listOf(listOf(StrokePoint(260f, 540f), StrokePoint(764f, 540f)),
+      listOf(StrokePoint(512f, 740f), StrokePoint(512f, 180f))),
+    revision = "preview", attribution = "Preview stroke guide")
+  val snapshot = WritingSnapshot("preview", word, wordIndex = 0, totalWords = 1,
+    characterIndex = 0, item = item, accepted = emptyList(), mistakes = 0,
+    status = WritingStatus.ACTIVE, reason = WritingReason.MANUAL)
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+      Column(Modifier.fillMaxSize().background(studyBackgroundBrush()).verticalScroll(rememberScrollState())
+        .padding(horizontal = 24.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text("Writing", style = MaterialTheme.typography.titleMedium)
+        Text("Word 1 / 1 · Character 1 / 1", color = FlashcardStyle.colors.gradientSecondaryInk,
+          style = MaterialTheme.typography.labelLarge)
+        WritingPaper(snapshot, listOf("十"), "preview", guideShown = false, frame = 0f,
+          listenEnabled = true, strokeEnabled = false, onListen = {}, onStroke = {})
+        WritingToolbar(playing = false, canGuide = true, canUndo = false,
+          onPlay = {}, onNext = {}, onReplay = {}, onUndo = {}, onRestart = {})
+        Text("Follow the highlighted stroke.", style = MaterialTheme.typography.bodySmall,
+          color = FlashcardStyle.colors.gradientSecondaryInk)
+        TextButton(onClick = {}, colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
+          Text("Continue later")
+        }
+      }
     }
   }
 }
@@ -276,6 +336,7 @@ private fun WritingError(message: String, button: String, onRetry: () -> Unit) {
 @Composable
 private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, drawingKey: String,
   guideShown: Boolean, frame: Float, enabled: Boolean, onStroke: (List<StrokePoint>) -> Unit) {
+  val colors = FlashcardStyle.colors
   val paths = remember(item.id, item.revision) { item.paths.map { PathParser().parsePathString(it).toPath() } }
   val medians = remember(item.id, item.revision) { item.medians.map { StrokeMatcher.resample(it, 80) } }
   var drawing by remember(drawingKey) { mutableStateOf(emptyList<StrokePoint>()) }
@@ -300,33 +361,33 @@ private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, d
         onDragEnd = { val finished = drawing; drawing = emptyList(); latestStroke(finished) },
         onDragCancel = { drawing = emptyList() })
     }) {
-    drawRect(Paper)
+    drawRect(colors.writingPaper)
     val inset = size.width * .05f
     val side = size.width * .9f
-    val grid = Color.Black.copy(alpha = .16f)
+    val grid = colors.writingGrid
     drawRect(grid, topLeft = Offset(inset, inset), size = androidx.compose.ui.geometry.Size(side, side), style = Stroke(1.dp.toPx()))
     drawLine(grid, Offset(inset + side / 2, inset), Offset(inset + side / 2, inset + side), strokeWidth = 1.dp.toPx())
     drawLine(grid, Offset(inset, inset + side / 2), Offset(inset + side, inset + side / 2), strokeWidth = 1.dp.toPx())
     withTransform({ translate(inset, inset + 900f / 1024f * side); scale(side / 1024f, -side / 1024f, Offset.Zero) }) {
-      paths.forEach { drawPath(it, Color.Black.copy(alpha = .09f)) }
-      if (accepted.size < paths.size) drawPath(paths[accepted.size], ActiveRed.copy(alpha = .17f))
+      paths.forEach { drawPath(it, colors.writingGhost) }
+      if (accepted.size < paths.size) drawPath(paths[accepted.size], colors.writingHighlight)
       if (guideShown) paths.forEachIndexed { index, path ->
         when {
-          frame >= index + 1 -> drawPath(path, ActiveRed)
+          frame >= index + 1 -> drawPath(path, colors.writingActive)
           frame > index -> {
             val points = medians[index].take((medians[index].size * (frame - index)).toInt().coerceAtLeast(1))
             val medianPath = Path().apply {
               moveTo(points.first().x, points.first().y)
               points.drop(1).forEach { lineTo(it.x, it.y) }
             }
-            clipPath(path) { drawPath(medianPath, ActiveRed, style = Stroke(130f, cap = StrokeCap.Round)) }
+            clipPath(path) { drawPath(medianPath, colors.writingActive, style = Stroke(130f, cap = StrokeCap.Round)) }
           }
         }
       }
       if (accepted.size < medians.size && !guideShown) {
         val points = medians[accepted.size]
-        drawCircle(ActiveRed, 17f, Offset(points.first().x, points.first().y))
-        drawCircle(ActiveRed.copy(alpha = .5f), 10f, Offset(points.last().x, points.last().y))
+        drawCircle(colors.writingActive, 17f, Offset(points.first().x, points.first().y))
+        drawCircle(colors.writingGuide, 10f, Offset(points.last().x, points.last().y))
       }
     }
     (accepted + listOf(drawing)).filter { it.isNotEmpty() }.forEach { points ->
@@ -334,7 +395,7 @@ private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, d
         moveTo(inset + points.first().x * side, inset + points.first().y * side)
         points.drop(1).forEach { lineTo(inset + it.x * side, inset + it.y * side) }
       }
-      drawPath(path, ActiveRed, style = Stroke(side * .035f, cap = StrokeCap.Round))
+      drawPath(path, colors.writingActive, style = Stroke(side * .035f, cap = StrokeCap.Round))
     }
   }
 }
