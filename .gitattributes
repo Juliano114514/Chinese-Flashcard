@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+# Preserve exact CSV backups and packaged resource hashes across platforms.
+*.csv -text
+core/data/src/main/assets/** -text
+*.jar binary

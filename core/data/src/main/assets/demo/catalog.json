@@ -1,0 +1,925 @@
+{
+  "version": 1,
+  "words": [
+    {
+      "id": "demo_agriculture",
+      "hanzi": "农业",
+      "pinyin": "nóngyè",
+      "meanings": [
+        {
+          "id": "demo_agriculture_meaning",
+          "english": "agriculture",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "他学习农业。",
+          "pinyin": "Tā xuéxí nóngyè.",
+          "english": "He studies agriculture."
+        },
+        {
+          "hanzi": "农业需要水。",
+          "pinyin": "Nóngyè xūyào shuǐ.",
+          "english": "Agriculture needs water."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "农",
+          "pinyin": "nóng",
+          "gloss": "farming"
+        },
+        {
+          "hanzi": "业",
+          "pinyin": "yè",
+          "gloss": "industry"
+        }
+      ],
+      "note": "A word for farming as a field of work or study.",
+      "distractorMeaningIds": [
+        "demo_school_meaning",
+        "demo_work_meaning",
+        "demo_weather_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U519C",
+        "glyph_U4E1A"
+      ]
+    },
+    {
+      "id": "demo_study",
+      "hanzi": "学习",
+      "pinyin": "xuéxí",
+      "meanings": [
+        {
+          "id": "demo_study_meaning",
+          "english": "to study; to learn",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我学习中文。",
+          "pinyin": "Wǒ xuéxí Zhōngwén.",
+          "english": "I study Chinese."
+        },
+        {
+          "hanzi": "我们一起学习。",
+          "pinyin": "Wǒmen yìqǐ xuéxí.",
+          "english": "We study together."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "learn"
+        },
+        {
+          "hanzi": "习",
+          "pinyin": "xí",
+          "gloss": "practice"
+        }
+      ],
+      "note": "Use 学习 with a subject, or on its own when the subject is understood.",
+      "distractorMeaningIds": [
+        "demo_work_meaning",
+        "demo_like_meaning",
+        "demo_meal_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5B66",
+        "glyph_U4E60"
+      ]
+    },
+    {
+      "id": "demo_friend",
+      "hanzi": "朋友",
+      "pinyin": "péngyou",
+      "meanings": [
+        {
+          "id": "demo_friend_meaning",
+          "english": "friend",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "她是我的朋友。",
+          "pinyin": "Tā shì wǒ de péngyou.",
+          "english": "She is my friend."
+        },
+        {
+          "hanzi": "我和朋友吃饭。",
+          "pinyin": "Wǒ hé péngyou chī fàn.",
+          "english": "I eat with a friend."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "朋",
+          "pinyin": "péng",
+          "gloss": "companion"
+        },
+        {
+          "hanzi": "友",
+          "pinyin": "yǒu",
+          "gloss": "friend"
+        }
+      ],
+      "note": "The second syllable is usually neutral in everyday speech.",
+      "distractorMeaningIds": [
+        "demo_student_meaning",
+        "demo_teacher_meaning",
+        "demo_shop_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U670B",
+        "glyph_U53CB"
+      ]
+    },
+    {
+      "id": "demo_chinese",
+      "hanzi": "中文",
+      "pinyin": "Zhōngwén",
+      "meanings": [
+        {
+          "id": "demo_chinese_meaning",
+          "english": "Chinese (the language)",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我喜欢中文。",
+          "pinyin": "Wǒ xǐhuan Zhōngwén.",
+          "english": "I like Chinese."
+        },
+        {
+          "hanzi": "老师教中文。",
+          "pinyin": "Lǎoshī jiāo Zhōngwén.",
+          "english": "The teacher teaches Chinese."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "中",
+          "pinyin": "zhōng",
+          "gloss": "China, in this word"
+        },
+        {
+          "hanzi": "文",
+          "pinyin": "wén",
+          "gloss": "language; writing"
+        }
+      ],
+      "note": "中文 refers to the Chinese language, especially written language in some contexts.",
+      "distractorMeaningIds": [
+        "demo_agriculture_meaning",
+        "demo_weather_meaning",
+        "demo_time_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U4E2D",
+        "glyph_U6587"
+      ]
+    },
+    {
+      "id": "demo_telephone",
+      "hanzi": "电话",
+      "pinyin": "diànhuà",
+      "meanings": [
+        {
+          "id": "demo_telephone_meaning",
+          "english": "telephone; phone call",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我给朋友打电话。",
+          "pinyin": "Wǒ gěi péngyou dǎ diànhuà.",
+          "english": "I call my friend."
+        },
+        {
+          "hanzi": "这是老师的电话。",
+          "pinyin": "Zhè shì lǎoshī de diànhuà.",
+          "english": "This is the teacher's phone number."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "电",
+          "pinyin": "diàn",
+          "gloss": "electricity"
+        },
+        {
+          "hanzi": "话",
+          "pinyin": "huà",
+          "gloss": "speech"
+        }
+      ],
+      "note": "打电话 means to make a phone call. 电话 can also refer to a phone number in context.",
+      "distractorMeaningIds": [
+        "demo_subway_meaning",
+        "demo_shop_meaning",
+        "demo_school_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U7535",
+        "glyph_U8BDD"
+      ]
+    },
+    {
+      "id": "demo_thanks",
+      "hanzi": "谢谢",
+      "pinyin": "xièxie",
+      "meanings": [
+        {
+          "id": "demo_thanks_meaning",
+          "english": "thank you",
+          "partOfSpeech": "expression"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "谢谢你的帮助。",
+          "pinyin": "Xièxie nǐ de bāngzhù.",
+          "english": "Thank you for your help."
+        },
+        {
+          "hanzi": "谢谢老师。",
+          "pinyin": "Xièxie lǎoshī.",
+          "english": "Thank you, teacher."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "谢",
+          "pinyin": "xiè",
+          "gloss": "thank"
+        },
+        {
+          "hanzi": "谢",
+          "pinyin": "xiè",
+          "gloss": "repeated for this expression"
+        }
+      ],
+      "note": "A common expression of thanks. The second syllable is usually neutral.",
+      "distractorMeaningIds": [
+        "demo_goodbye_meaning",
+        "demo_like_meaning",
+        "demo_tomorrow_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U8C22",
+        "glyph_U8C22"
+      ]
+    },
+    {
+      "id": "demo_goodbye",
+      "hanzi": "再见",
+      "pinyin": "zàijiàn",
+      "meanings": [
+        {
+          "id": "demo_goodbye_meaning",
+          "english": "goodbye",
+          "partOfSpeech": "expression"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "老师，再见！",
+          "pinyin": "Lǎoshī, zàijiàn!",
+          "english": "Goodbye, teacher!"
+        },
+        {
+          "hanzi": "明天再见。",
+          "pinyin": "Míngtiān zàijiàn.",
+          "english": "See you tomorrow."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "再",
+          "pinyin": "zài",
+          "gloss": "again"
+        },
+        {
+          "hanzi": "见",
+          "pinyin": "jiàn",
+          "gloss": "see; meet"
+        }
+      ],
+      "note": "Literally a cue of seeing someone again; used as goodbye.",
+      "distractorMeaningIds": [
+        "demo_thanks_meaning",
+        "demo_today_meaning",
+        "demo_friend_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U518D",
+        "glyph_U89C1"
+      ]
+    },
+    {
+      "id": "demo_like",
+      "hanzi": "喜欢",
+      "pinyin": "xǐhuan",
+      "meanings": [
+        {
+          "id": "demo_like_meaning",
+          "english": "to like",
+          "partOfSpeech": "verb"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我喜欢喝水。",
+          "pinyin": "Wǒ xǐhuan hē shuǐ.",
+          "english": "I like drinking water."
+        },
+        {
+          "hanzi": "她喜欢这个商店。",
+          "pinyin": "Tā xǐhuan zhège shāngdiàn.",
+          "english": "She likes this shop."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "喜",
+          "pinyin": "xǐ",
+          "gloss": "joy"
+        },
+        {
+          "hanzi": "欢",
+          "pinyin": "huān",
+          "gloss": "delight"
+        }
+      ],
+      "note": "喜欢 can be followed by a thing or an activity. The second syllable is usually neutral.",
+      "distractorMeaningIds": [
+        "demo_study_meaning",
+        "demo_work_meaning",
+        "demo_meal_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U559C",
+        "glyph_U6B22"
+      ]
+    },
+    {
+      "id": "demo_school",
+      "hanzi": "学校",
+      "pinyin": "xuéxiào",
+      "meanings": [
+        {
+          "id": "demo_school_meaning",
+          "english": "school",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "学校很大。",
+          "pinyin": "Xuéxiào hěn dà.",
+          "english": "The school is big."
+        },
+        {
+          "hanzi": "我在学校学习。",
+          "pinyin": "Wǒ zài xuéxiào xuéxí.",
+          "english": "I study at school."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "learning"
+        },
+        {
+          "hanzi": "校",
+          "pinyin": "xiào",
+          "gloss": "school"
+        }
+      ],
+      "note": "A place where students learn; 学 and 校 reinforce this meaning.",
+      "distractorMeaningIds": [
+        "demo_student_meaning",
+        "demo_teacher_meaning",
+        "demo_shop_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5B66",
+        "glyph_U6821"
+      ]
+    },
+    {
+      "id": "demo_student",
+      "hanzi": "学生",
+      "pinyin": "xuésheng",
+      "meanings": [
+        {
+          "id": "demo_student_meaning",
+          "english": "student",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我是学生。",
+          "pinyin": "Wǒ shì xuésheng.",
+          "english": "I am a student."
+        },
+        {
+          "hanzi": "学生学习中文。",
+          "pinyin": "Xuésheng xuéxí Zhōngwén.",
+          "english": "The students study Chinese."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "learning"
+        },
+        {
+          "hanzi": "生",
+          "pinyin": "shēng",
+          "gloss": "person, in this word"
+        }
+      ],
+      "note": "The second syllable is often neutral. 学生 can refer to one or several students.",
+      "distractorMeaningIds": [
+        "demo_friend_meaning",
+        "demo_teacher_meaning",
+        "demo_school_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5B66",
+        "glyph_U751F"
+      ]
+    },
+    {
+      "id": "demo_teacher",
+      "hanzi": "老师",
+      "pinyin": "lǎoshī",
+      "meanings": [
+        {
+          "id": "demo_teacher_meaning",
+          "english": "teacher",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "老师在学校。",
+          "pinyin": "Lǎoshī zài xuéxiào.",
+          "english": "The teacher is at school."
+        },
+        {
+          "hanzi": "她是中文老师。",
+          "pinyin": "Tā shì Zhōngwén lǎoshī.",
+          "english": "She is a Chinese teacher."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "老",
+          "pinyin": "lǎo",
+          "gloss": "respect, in this title"
+        },
+        {
+          "hanzi": "师",
+          "pinyin": "shī",
+          "gloss": "teacher; expert"
+        }
+      ],
+      "note": "A respectful everyday title. 老 here does not mean that the teacher must be old.",
+      "distractorMeaningIds": [
+        "demo_student_meaning",
+        "demo_friend_meaning",
+        "demo_school_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U8001",
+        "glyph_U5E08"
+      ]
+    },
+    {
+      "id": "demo_today",
+      "hanzi": "今天",
+      "pinyin": "jīntiān",
+      "meanings": [
+        {
+          "id": "demo_today_meaning",
+          "english": "today",
+          "partOfSpeech": "time word"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "今天我学习。",
+          "pinyin": "Jīntiān wǒ xuéxí.",
+          "english": "I study today."
+        },
+        {
+          "hanzi": "今天天气很好。",
+          "pinyin": "Jīntiān tiānqì hěn hǎo.",
+          "english": "The weather is good today."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "今",
+          "pinyin": "jīn",
+          "gloss": "present"
+        },
+        {
+          "hanzi": "天",
+          "pinyin": "tiān",
+          "gloss": "day"
+        }
+      ],
+      "note": "A time word commonly placed before the subject or before the verb.",
+      "distractorMeaningIds": [
+        "demo_tomorrow_meaning",
+        "demo_time_meaning",
+        "demo_weather_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U4ECA",
+        "glyph_U5929"
+      ]
+    },
+    {
+      "id": "demo_tomorrow",
+      "hanzi": "明天",
+      "pinyin": "míngtiān",
+      "meanings": [
+        {
+          "id": "demo_tomorrow_meaning",
+          "english": "tomorrow",
+          "partOfSpeech": "time word"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "明天我去学校。",
+          "pinyin": "Míngtiān wǒ qù xuéxiào.",
+          "english": "I will go to school tomorrow."
+        },
+        {
+          "hanzi": "明天我们一起吃饭。",
+          "pinyin": "Míngtiān wǒmen yìqǐ chī fàn.",
+          "english": "We will eat together tomorrow."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "明",
+          "pinyin": "míng",
+          "gloss": "next, in this word"
+        },
+        {
+          "hanzi": "天",
+          "pinyin": "tiān",
+          "gloss": "day"
+        }
+      ],
+      "note": "明天 is a complete time word. Its meaning is more useful than a literal translation of 明.",
+      "distractorMeaningIds": [
+        "demo_today_meaning",
+        "demo_time_meaning",
+        "demo_weather_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U660E",
+        "glyph_U5929"
+      ]
+    },
+    {
+      "id": "demo_work",
+      "hanzi": "工作",
+      "pinyin": "gōngzuò",
+      "meanings": [
+        {
+          "id": "demo_work_meaning",
+          "english": "to work; work",
+          "partOfSpeech": "verb / noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我今天工作。",
+          "pinyin": "Wǒ jīntiān gōngzuò.",
+          "english": "I work today."
+        },
+        {
+          "hanzi": "她喜欢这个工作。",
+          "pinyin": "Tā xǐhuan zhège gōngzuò.",
+          "english": "She likes this job."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "工",
+          "pinyin": "gōng",
+          "gloss": "work"
+        },
+        {
+          "hanzi": "作",
+          "pinyin": "zuò",
+          "gloss": "do; make"
+        }
+      ],
+      "note": "工作 can describe the activity of working or a job. Let the sentence tell you which.",
+      "distractorMeaningIds": [
+        "demo_study_meaning",
+        "demo_meal_meaning",
+        "demo_like_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5DE5",
+        "glyph_U4F5C"
+      ]
+    },
+    {
+      "id": "demo_meal",
+      "hanzi": "吃饭",
+      "pinyin": "chī fàn",
+      "meanings": [
+        {
+          "id": "demo_meal_meaning",
+          "english": "to eat; to have a meal",
+          "partOfSpeech": "verb phrase"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我们一起吃饭。",
+          "pinyin": "Wǒmen yìqǐ chī fàn.",
+          "english": "We have a meal together."
+        },
+        {
+          "hanzi": "学生在学校吃饭。",
+          "pinyin": "Xuésheng zài xuéxiào chī fàn.",
+          "english": "The students eat at school."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "吃",
+          "pinyin": "chī",
+          "gloss": "eat"
+        },
+        {
+          "hanzi": "饭",
+          "pinyin": "fàn",
+          "gloss": "rice; meal"
+        }
+      ],
+      "note": "吃饭 usually means having a meal, not specifically eating rice.",
+      "distractorMeaningIds": [
+        "demo_water_meaning",
+        "demo_study_meaning",
+        "demo_work_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5403",
+        "glyph_U996D"
+      ]
+    },
+    {
+      "id": "demo_water",
+      "hanzi": "喝水",
+      "pinyin": "hē shuǐ",
+      "meanings": [
+        {
+          "id": "demo_water_meaning",
+          "english": "to drink water",
+          "partOfSpeech": "verb phrase"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我想喝水。",
+          "pinyin": "Wǒ xiǎng hē shuǐ.",
+          "english": "I want to drink water."
+        },
+        {
+          "hanzi": "天气热，多喝水。",
+          "pinyin": "Tiānqì rè, duō hē shuǐ.",
+          "english": "It is hot; drink more water."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "喝",
+          "pinyin": "hē",
+          "gloss": "drink"
+        },
+        {
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "gloss": "water"
+        }
+      ],
+      "note": "喝 takes the drink as its object. Here that drink is 水.",
+      "distractorMeaningIds": [
+        "demo_meal_meaning",
+        "demo_work_meaning",
+        "demo_like_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U559D",
+        "glyph_U6C34"
+      ]
+    },
+    {
+      "id": "demo_shop",
+      "hanzi": "商店",
+      "pinyin": "shāngdiàn",
+      "meanings": [
+        {
+          "id": "demo_shop_meaning",
+          "english": "shop; store",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "商店在学校旁边。",
+          "pinyin": "Shāngdiàn zài xuéxiào pángbiān.",
+          "english": "The shop is beside the school."
+        },
+        {
+          "hanzi": "我去商店。",
+          "pinyin": "Wǒ qù shāngdiàn.",
+          "english": "I am going to the shop."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "商",
+          "pinyin": "shāng",
+          "gloss": "commerce"
+        },
+        {
+          "hanzi": "店",
+          "pinyin": "diàn",
+          "gloss": "shop"
+        }
+      ],
+      "note": "A general word for a shop or store.",
+      "distractorMeaningIds": [
+        "demo_school_meaning",
+        "demo_subway_meaning",
+        "demo_telephone_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5546",
+        "glyph_U5E97"
+      ]
+    },
+    {
+      "id": "demo_subway",
+      "hanzi": "地铁",
+      "pinyin": "dìtiě",
+      "meanings": [
+        {
+          "id": "demo_subway_meaning",
+          "english": "subway; metro",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我坐地铁去学校。",
+          "pinyin": "Wǒ zuò dìtiě qù xuéxiào.",
+          "english": "I take the subway to school."
+        },
+        {
+          "hanzi": "地铁很快。",
+          "pinyin": "Dìtiě hěn kuài.",
+          "english": "The subway is fast."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "地",
+          "pinyin": "dì",
+          "gloss": "ground"
+        },
+        {
+          "hanzi": "铁",
+          "pinyin": "tiě",
+          "gloss": "iron; rail cue"
+        }
+      ],
+      "note": "Use 坐地铁 for taking the subway. The component cue helps recall an underground railway.",
+      "distractorMeaningIds": [
+        "demo_telephone_meaning",
+        "demo_shop_meaning",
+        "demo_school_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5730",
+        "glyph_U94C1"
+      ]
+    },
+    {
+      "id": "demo_weather",
+      "hanzi": "天气",
+      "pinyin": "tiānqì",
+      "meanings": [
+        {
+          "id": "demo_weather_meaning",
+          "english": "weather",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "今天天气很好。",
+          "pinyin": "Jīntiān tiānqì hěn hǎo.",
+          "english": "The weather is good today."
+        },
+        {
+          "hanzi": "明天天气冷。",
+          "pinyin": "Míngtiān tiānqì lěng.",
+          "english": "The weather will be cold tomorrow."
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "天",
+          "pinyin": "tiān",
+          "gloss": "sky"
+        },
+        {
+          "hanzi": "气",
+          "pinyin": "qì",
+          "gloss": "air"
+        }
+      ],
+      "note": "天气 describes weather conditions, not the sky as an object.",
+      "distractorMeaningIds": [
+        "demo_today_meaning",
+        "demo_tomorrow_meaning",
+        "demo_time_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U5929",
+        "glyph_U6C14"
+      ]
+    },
+    {
+      "id": "demo_time",
+      "hanzi": "时间",
+      "pinyin": "shíjiān",
+      "meanings": [
+        {
+          "id": "demo_time_meaning",
+          "english": "time",
+          "partOfSpeech": "noun"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我有时间学习。",
+          "pinyin": "Wǒ yǒu shíjiān xuéxí.",
+          "english": "I have time to study."
+        },
+        {
+          "hanzi": "你有时间吗？",
+          "pinyin": "Nǐ yǒu shíjiān ma?",
+          "english": "Do you have time?"
+        }
+      ],
+      "parts": [
+        {
+          "hanzi": "时",
+          "pinyin": "shí",
+          "gloss": "time"
+        },
+        {
+          "hanzi": "间",
+          "pinyin": "jiān",
+          "gloss": "interval"
+        }
+      ],
+      "note": "有时间 means having time available to do something.",
+      "distractorMeaningIds": [
+        "demo_today_meaning",
+        "demo_tomorrow_meaning",
+        "demo_weather_meaning"
+      ],
+      "tracingItemIds": [
+        "glyph_U65F6",
+        "glyph_U95F4"
+      ]
+    }
+  ]
+}
