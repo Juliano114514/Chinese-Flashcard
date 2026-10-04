@@ -30,22 +30,36 @@ data class ProfileUiState(
   val loading: Boolean = true,
   val saving: Boolean = false,
   val stored: StudySettings = StudySettings(),
-  val draft: StudySettings = StudySettings(),
   val today: TodaySummary? = null,
   val error: String? = null,
-  val saved: Boolean = false,
+  val savedRevision: Long = 0,
+)
+
+/** A single editor changes only its own field, using the latest stored settings. */
+data class ProfileUpdate(
+  val displayName: String? = null,
+  val avatarId: String? = null,
+  val dailyWords: Int? = null,
+  val rounds: Int? = null,
+  val reviewDays: List<Int>? = null,
 ) {
-  val dirty get() = draft != stored
+  fun applyTo(value: StudySettings): StudySettings = value.copy(
+    displayName = displayName?.trim() ?: value.displayName,
+    avatarId = avatarId ?: value.avatarId,
+    dailyWords = dailyWords ?: value.dailyWords,
+    rounds = rounds ?: value.rounds,
+    reviewDays = reviewDays ?: value.reviewDays,
+  )
 }
 
 sealed interface ProfileAction {
-  data class Edit(val settings: StudySettings) : ProfileAction
-  data object Save : ProfileAction
+  data object BeginEdit : ProfileAction
+  data class Save(val update: ProfileUpdate) : ProfileAction
   data object Retry : ProfileAction
 }
 sealed interface ProfileMutation {
-  data class Loaded(val settings: StudySettings, val today: TodaySummary) : ProfileMutation
-  data class Edited(val settings: StudySettings) : ProfileMutation
+  data class Loaded(val settings: StudySettings, val today: TodaySummary, val clearError: Boolean = true) : ProfileMutation
+  data object Editing : ProfileMutation
   data object Saving : ProfileMutation
   data class Saved(val settings: StudySettings) : ProfileMutation
   data class Failed(val message: String) : ProfileMutation
@@ -54,12 +68,12 @@ sealed interface ProfileMutation {
 object ProfileReducer {
   fun reduce(state: ProfileUiState, mutation: ProfileMutation): ProfileUiState = when (mutation) {
     is ProfileMutation.Loaded -> state.copy(loading = false, stored = mutation.settings,
-      draft = if (state.draft == state.stored) mutation.settings else state.draft,
-      today = mutation.today, error = null)
-    is ProfileMutation.Edited -> state.copy(draft = mutation.settings, saved = false, error = null)
-    ProfileMutation.Saving -> state.copy(saving = true, saved = false, error = null)
-    is ProfileMutation.Saved -> state.copy(stored = mutation.settings, draft = mutation.settings, saved = true)
-    is ProfileMutation.Failed -> state.copy(loading = false, error = mutation.message, saved = false)
+      today = mutation.today, error = if (mutation.clearError) null else state.error)
+    ProfileMutation.Editing -> state.copy(error = null)
+    ProfileMutation.Saving -> state.copy(saving = true, error = null)
+    is ProfileMutation.Saved -> state.copy(stored = mutation.settings, error = null,
+      savedRevision = state.savedRevision + 1)
+    is ProfileMutation.Failed -> state.copy(loading = false, error = mutation.message)
     ProfileMutation.Idle -> state.copy(saving = false)
   }
 }
@@ -112,7 +126,7 @@ class ProfileViewModel(
   val state = mutableState.asStateFlow()
   private val operationLock = Mutex()
   private var observation: Job? = null
-  private var failedSave = false
+  private var failedSave: ProfileUpdate? = null
   private val mutableImportState = MutableStateFlow(CsvImportUiState())
   val importState = mutableImportState.asStateFlow()
   private var importOperation: Job? = null
@@ -121,28 +135,35 @@ class ProfileViewModel(
 
   fun onAction(action: ProfileAction) {
     when (action) {
-      is ProfileAction.Edit -> if (!state.value.saving) mutate(ProfileMutation.Edited(action.settings))
-      ProfileAction.Save -> save()
-      ProfileAction.Retry -> if (failedSave) save() else observe()
+      ProfileAction.BeginEdit -> if (!state.value.saving) {
+        failedSave = null
+        mutate(ProfileMutation.Editing)
+      }
+      is ProfileAction.Save -> persist(action.update)
+      ProfileAction.Retry -> failedSave?.let(::save) ?: observe()
     }
   }
-  fun edit(value: StudySettings) = onAction(ProfileAction.Edit(value))
-  fun save() {
-    if (state.value.saving) return
-    val value = state.value.draft
+  fun beginEdit() = onAction(ProfileAction.BeginEdit)
+  fun save(update: ProfileUpdate) = onAction(ProfileAction.Save(update))
+  private fun persist(update: ProfileUpdate) {
+    if (state.value.loading || state.value.saving) return
     mutate(ProfileMutation.Saving)
     viewModelScope.launch {
       try {
         operationLock.withLock {
-          value.validate()
-          withContext(Dispatchers.IO) { settings.save(value) }
-          failedSave = false
+          val value = withContext(Dispatchers.IO) {
+            update.applyTo(settings.settings.first()).also {
+              it.validate()
+              settings.save(it)
+            }
+          }
+          failedSave = null
           mutate(ProfileMutation.Saved(value))
         }
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        failedSave = true
+        failedSave = update
         mutate(ProfileMutation.Failed("Your settings couldn't be saved. Try again."))
       } finally {
         mutate(ProfileMutation.Idle)
@@ -241,13 +262,12 @@ class ProfileViewModel(
           .collect {
             operationLock.withLock {
               val (today, value) = withContext(Dispatchers.IO) { study.snapshot().today to settings.settings.first() }
-              mutate(ProfileMutation.Loaded(value, today))
+              mutate(ProfileMutation.Loaded(value, today, clearError = failedSave == null))
             }
           }
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        failedSave = false
         mutate(ProfileMutation.Failed("Your saved settings couldn't be loaded. Try again."))
       }
     }

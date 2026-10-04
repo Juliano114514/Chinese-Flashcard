@@ -1,10 +1,11 @@
 package com.example.chinese_flashcard.feature.profile
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,132 +14,227 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.Button
-import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Slider
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
+import com.example.chinese_flashcard.core.ui.PresetAvatar
+import kotlin.math.roundToInt
 
-@OptIn(ExperimentalLayoutApi::class)
+private enum class ProfileEditor { NAME, AVATAR, DAILY_WORDS, ROUNDS, REVIEW_DAYS }
+
 @Composable
 fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () -> Unit) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
-  var dailyText by remember(state.draft.dailyWords) { mutableStateOf(state.draft.dailyWords.toString()) }
-  var showReviewDays by remember { mutableStateOf(false) }
-  val dailyWords = dailyText.toIntOrNull()
-  val validDaily = dailyWords != null && dailyWords in 1..100
+  var editor by rememberSaveable { mutableStateOf<ProfileEditor?>(null) }
+  var appliedSaveRevision by rememberSaveable { mutableLongStateOf(state.savedRevision) }
+  val value = state.stored
+  val enabled = !state.loading && !state.saving && !csv.open
+  fun openEditor(next: ProfileEditor) { vm.beginEdit(); editor = next }
+  fun closeEditor() { if (!state.saving) { editor = null; vm.beginEdit() } }
+  LaunchedEffect(state.savedRevision) {
+    if (state.savedRevision != appliedSaveRevision) {
+      editor = null
+      appliedSaveRevision = state.savedRevision
+    }
+  }
   Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
     .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 24.dp),
-    verticalArrangement = Arrangement.spacedBy(18.dp)) {
-    Text("YOUR STUDY", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
-    Text("Profile & settings", style = MaterialTheme.typography.headlineLarge)
+    verticalArrangement = Arrangement.spacedBy(24.dp)) {
+    Text("Profile", style = MaterialTheme.typography.headlineLarge)
     if (state.loading) {
       CircularProgressIndicator(Modifier.size(28.dp))
     } else {
-      state.today?.let { today ->
-        Text("Wordbook progress", style = MaterialTheme.typography.titleMedium)
-        FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(28.dp),
-          verticalArrangement = Arrangement.spacedBy(12.dp)) {
-          Metric(today.totalWords, "Total words")
-          Metric(today.learnedWords, "Learned")
-          Metric(today.remainingWords, "Not started")
-        }
-        Text("Today: ${today.completed} of ${today.planned} words completed", color = MaterialTheme.colorScheme.onSurfaceVariant)
-      }
-      OutlinedButton(onClick = onImportCsv, enabled = !state.saving && !csv.open,
-        modifier = Modifier.fillMaxWidth()) { Text("Import CSV") }
-      HorizontalDivider()
-      Text("Daily plan", style = MaterialTheme.typography.titleLarge)
-      OutlinedTextField(value = dailyText, onValueChange = { value ->
-        if (value.length <= 3 && value.all(Char::isDigit)) {
-          dailyText = value
-          value.toIntOrNull()?.takeIf { it in 1..100 }?.let { vm.edit(state.draft.copy(dailyWords = it)) }
-        }
-      }, modifier = Modifier.fillMaxWidth(), label = { Text("New words per day") },
-        supportingText = { Text("Choose 1–100. Reviews are added separately.") },
-        enabled = !state.saving, singleLine = true, isError = !validDaily,
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))
-      FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        OutlinedButton(onClick = { dailyText = "10"; vm.edit(state.draft.copy(dailyWords = 10)) }, enabled = !state.saving) { Text("10 words") }
-        OutlinedButton(onClick = { dailyText = "20"; vm.edit(state.draft.copy(dailyWords = 20)) }, enabled = !state.saving) { Text("20 words") }
-      }
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween) {
-        Column(Modifier.weight(1f)) {
-          Text("Correct rounds", style = MaterialTheme.typography.titleMedium)
-          Text("Consecutive correct answers to pass today", style = MaterialTheme.typography.bodySmall,
+        horizontalArrangement = Arrangement.spacedBy(20.dp)) {
+        Box(Modifier.size(72.dp).clip(MaterialTheme.shapes.small)
+          .clickable(enabled = enabled, role = Role.Button) { openEditor(ProfileEditor.AVATAR) }
+          .semantics { contentDescription = "Change avatar" }) {
+          PresetAvatar(value.avatarId, Modifier.fillMaxSize())
+        }
+        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+          Text(value.displayName.ifBlank { "Your name" }, style = MaterialTheme.typography.titleLarge,
+            maxLines = 2, overflow = TextOverflow.Ellipsis)
+          Text("Chinese Flashcard", style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        TextButton(onClick = { vm.edit(state.draft.copy(rounds = state.draft.rounds - 1)) },
-          enabled = !state.saving && state.draft.rounds > 2) { Text("−") }
-        Text(state.draft.rounds.toString(), style = MaterialTheme.typography.titleLarge)
-        TextButton(onClick = { vm.edit(state.draft.copy(rounds = state.draft.rounds + 1)) },
-          enabled = !state.saving && state.draft.rounds < 8) { Text("+") }
       }
-      Text("A wrong answer restarts the word from round 1. The first two rounds show a sentence, pinyin and translation.",
-        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      OutlinedButton(onClick = { showReviewDays = true }, enabled = !state.saving, modifier = Modifier.fillMaxWidth()) {
-        Text("Review after ${state.draft.reviewDays.joinToString(" / ")} days")
+      state.today?.let { today ->
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            Metric(today.totalWords, "Total", Modifier.weight(1f))
+            Metric(today.learnedWords, "Learned", Modifier.weight(1f))
+            Metric(today.remainingWords, "Not started", Modifier.weight(1f))
+          }
+          Text("Today · ${today.completed} / ${today.planned}", style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
       }
-      Text("Daily word goal applies tomorrow once today's plan has started. Rounds and review days apply to new learning or relearning cycles. Current cycles retain their settings.",
-        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Button(onClick = vm::save, enabled = !state.saving && validDaily && state.dirty, modifier = Modifier.fillMaxWidth()) {
-        Text(if (state.saving) "Saving…" else "Save settings")
+      Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+        Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
+          SettingsRow("Name", value.displayName.ifBlank { "Add" }, enabled) { openEditor(ProfileEditor.NAME) }
+          SettingsDivider()
+          SettingsRow("Daily words", value.dailyWords.toString(), enabled) { openEditor(ProfileEditor.DAILY_WORDS) }
+          SettingsDivider()
+          SettingsRow("Correct rounds", value.rounds.toString(), enabled) { openEditor(ProfileEditor.ROUNDS) }
+          SettingsDivider()
+          SettingsRow("Review days", value.reviewDays.joinToString(" / "), enabled) { openEditor(ProfileEditor.REVIEW_DAYS) }
+        }
       }
-      if (state.saved) Text("Settings saved", color = MaterialTheme.colorScheme.primary,
-        style = MaterialTheme.typography.bodyMedium)
-      HorizontalDivider()
-      Text("Chinese Flashcard", style = MaterialTheme.typography.titleLarge)
-      Text("Simplified Chinese · tone-marked pinyin · English explanations", color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Text("Offline study. Progress and handwriting are saved on this device.",
-        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      TextButton(onClick = onLicenses) { Text("Data & licenses") }
-    }
-    state.error?.let { error ->
-      Text(error, color = MaterialTheme.colorScheme.error)
-      TextButton(onClick = vm::retry, enabled = !state.saving && validDaily) { Text("Try again") }
+      Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+        Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
+          SettingsRow("Import CSV", enabled = enabled, onClick = onImportCsv)
+          SettingsDivider()
+          SettingsRow("Data & licenses", enabled = enabled, onClick = onLicenses)
+        }
+      }
+      if (state.error != null && editor == null) {
+        Text(state.error.orEmpty(), color = MaterialTheme.colorScheme.error)
+        TextButton(onClick = vm::retry, enabled = enabled) { Text("Try again") }
+      }
     }
   }
   if (csv.open) CsvImportDialog(csv, vm::confirmCsvImport, vm::dismissCsvImport)
-  if (showReviewDays) {
-    var selected by remember(state.draft.reviewDays) { mutableStateOf(state.draft.reviewDays.toSet()) }
-    AlertDialog(onDismissRequest = { showReviewDays = false }, title = { Text("Review days") }, text = {
-      Column(Modifier.verticalScroll(rememberScrollState())) {
-        Text("Review after learning a word. Choose at least one day.")
-        listOf(1, 3, 7, 14, 30).forEach { day ->
-          Row(Modifier.fillMaxWidth().toggleable(value = day in selected, role = Role.Checkbox,
-            onValueChange = { checked -> selected = if (checked) selected + day else selected - day }),
-            verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(checked = day in selected, onCheckedChange = null)
-            Text("Day $day")
+  when (editor) {
+    ProfileEditor.NAME -> NameDialog(value.displayName, state.saving, state.error,
+      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(displayName = it)) })
+    ProfileEditor.AVATAR -> AvatarPickerDialog(value.avatarId, onDismiss = ::closeEditor,
+      onConfirm = { vm.save(ProfileUpdate(avatarId = it)) }, saving = state.saving, error = state.error)
+    ProfileEditor.DAILY_WORDS -> DailyWordsDialog(value.dailyWords, state.saving, state.error,
+      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(dailyWords = it)) })
+    ProfileEditor.ROUNDS -> RoundsDialog(value.rounds, state.saving, state.error,
+      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(rounds = it)) })
+    ProfileEditor.REVIEW_DAYS -> ReviewDaysDialog(value.reviewDays, state.saving, state.error,
+      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(reviewDays = it)) })
+    null -> Unit
+  }
+}
+
+@Composable
+private fun SettingsDivider() {
+  HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.65f))
+}
+
+@Composable
+private fun SettingsRow(title: String, value: String? = null, enabled: Boolean = true, onClick: () -> Unit) {
+  val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = 0.38f)
+  Row(Modifier.fillMaxWidth().heightIn(min = 56.dp)
+    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(vertical = 12.dp),
+    verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+    Text(title, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = color)
+    value?.let {
+      Text(it, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
+        maxLines = 1, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End,
+        color = if (enabled) MaterialTheme.colorScheme.onSurfaceVariant else color)
+    }
+    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, Modifier.size(20.dp),
+      tint = if (enabled) MaterialTheme.colorScheme.onSurfaceVariant else color)
+  }
+}
+
+@Composable
+private fun NameDialog(initial: String, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (String) -> Unit) {
+  var text by rememberSaveable { mutableStateOf(initial) }
+  SettingDialog("Your name", saving, error, text.trim().isNotEmpty(), onDismiss, { onConfirm(text.trim()) }) {
+    OutlinedTextField(text, onValueChange = { if (it.length <= 40 && it.none(Char::isISOControl)) text = it },
+      Modifier.fillMaxWidth(), singleLine = true, enabled = !saving, shape = MaterialTheme.shapes.medium,
+      label = { Text("Name") })
+  }
+}
+
+@Composable
+private fun DailyWordsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
+  var count by rememberSaveable { mutableIntStateOf(initial) }
+  SettingDialog("Words per day", saving, error, true, onDismiss, { onConfirm(count) }) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
+      Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
+      Slider(count.coerceIn(5, 100).toFloat(), onValueChange = { count = it.roundToInt() },
+        modifier = Modifier.fillMaxWidth(), enabled = !saving, valueRange = 5f..100f, steps = 94)
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+        Text("5", style = MaterialTheme.typography.bodySmall)
+        Text("100", style = MaterialTheme.typography.bodySmall)
+      }
+      Text("Changes apply to the next daily plan.", style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+  }
+}
+
+@Composable
+private fun RoundsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
+  var count by rememberSaveable { mutableIntStateOf(initial) }
+  SettingDialog("Correct rounds", saving, error, true, onDismiss, { onConfirm(count) }) {
+    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.SpaceEvenly) {
+        TextButton(onClick = { count-- }, enabled = !saving && count > 2, modifier = Modifier.size(48.dp)) { Text("−") }
+        Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
+        TextButton(onClick = { count++ }, enabled = !saving && count < 8, modifier = Modifier.size(48.dp)) { Text("+") }
+      }
+      Text("Consecutive correct answers. A wrong answer resets the round.",
+        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Changes apply to new learning cycles.", style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+  }
+}
+
+@Composable
+private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (List<Int>) -> Unit) {
+  var selected by rememberSaveable { mutableStateOf(initial) }
+  SettingDialog("Review days", saving, error, selected.isNotEmpty(), onDismiss, { onConfirm(selected.sorted()) }) {
+    Column {
+      Text("Days after passing a word", style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
+      listOf(1, 3, 5, 7, 14, 30).forEach { day ->
+        val checked = day in selected
+        Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
+          .toggleable(value = checked, enabled = !saving, role = Role.Checkbox,
+            onValueChange = { selected = if (it) (selected + day).distinct().sorted() else selected - day }),
+          verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+          Box(Modifier.size(22.dp).background(if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
+            CircleShape).border(1.dp, if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline, CircleShape),
+            contentAlignment = Alignment.Center) {
+            if (checked) Icon(Icons.Default.Check, contentDescription = null, Modifier.size(16.dp),
+              tint = MaterialTheme.colorScheme.onPrimary)
           }
+          Text(if (day == 1) "1 day later" else "$day days later", style = MaterialTheme.typography.bodyLarge)
         }
       }
-    }, confirmButton = {
-      TextButton(onClick = {
-        vm.edit(state.draft.copy(reviewDays = selected.sorted()))
-        showReviewDays = false
-      }, enabled = selected.isNotEmpty()) { Text("Done") }
-    }, dismissButton = { TextButton(onClick = { showReviewDays = false }) { Text("Cancel") } })
+      Text("Changes apply to new learning cycles.", style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
   }
 }
 
@@ -147,7 +243,7 @@ private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDis
   val preview = state.preview
   val report = state.report
   val issues = preview?.issues?.take(100).orEmpty()
-  AlertDialog(onDismissRequest = { if (state.canDismiss) onDismiss() },
+  AlertDialog(onDismissRequest = { if (state.canDismiss) onDismiss() }, shape = MaterialTheme.shapes.large,
     title = { Text("CSV import") }, text = {
       Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -162,10 +258,10 @@ private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDis
           }
         }
         preview?.let {
-          Text("${it.totalRows} rows · ${it.newWords} new words · ${it.duplicateWords} duplicates")
+          Text("${it.totalRows} rows · ${it.newWords} new · ${it.duplicateWords} duplicates")
           when {
             it.errorCount > 0 -> {
-              Text("${it.errorCount} errors. Fix the CSV and choose it again. No words have been imported.",
+              Text("${it.errorCount} errors. Fix the CSV and choose it again. No words imported.",
                 color = MaterialTheme.colorScheme.error)
               issues.forEach { issue ->
                 val location = if (issue.line > 0) "Line ${issue.line}" else "File"
@@ -176,8 +272,8 @@ private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDis
                 Text("Showing the first ${issues.size} errors.", style = MaterialTheme.typography.bodySmall)
               }
             }
-            it.newWords == 0 -> Text("All words in this CSV are already in your wordbook.")
-            else -> Text("Import these words? Existing words and study progress will be kept.")
+            it.newWords == 0 -> Text("All words are already in your wordbook.")
+            else -> Text("Existing words and progress will be kept.")
           }
         }
         report?.let { Text("Added ${it.addedWords} words. Skipped ${it.skippedWords} duplicates.") }
@@ -197,9 +293,33 @@ private fun CsvImportDialog(state: CsvImportUiState, onImport: () -> Unit, onDis
 }
 
 @Composable
-private fun Metric(count: Int, label: String) {
-  Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Text(count.toString(), style = MaterialTheme.typography.headlineSmall)
+private fun Metric(count: Int, label: String, modifier: Modifier = Modifier) {
+  Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Text(count.toString(), style = MaterialTheme.typography.headlineSmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
     Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
+}
+
+@Composable
+private fun SettingDialog(
+  title: String,
+  saving: Boolean,
+  error: String?,
+  valid: Boolean,
+  onDismiss: () -> Unit,
+  onConfirm: () -> Unit,
+  content: @Composable () -> Unit,
+) {
+  AlertDialog(onDismissRequest = { if (!saving) onDismiss() }, shape = MaterialTheme.shapes.large,
+    title = { Text(title) }, text = {
+      Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        content()
+        error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
+      }
+    }, confirmButton = {
+      TextButton(onClick = onConfirm, enabled = !saving && valid) { Text(if (saving) "Saving…" else "Done") }
+    }, dismissButton = {
+      TextButton(onClick = onDismiss, enabled = !saving) { Text("Cancel") }
+    })
 }

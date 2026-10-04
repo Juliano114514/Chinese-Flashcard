@@ -1,0 +1,14 @@
+Avatar presets
+
+The 254 standard 40 x 40 PNG presets were extracted without resampling or
+modification from the large entries in the user's local
+D:\Codex-QQ-Skin\assets\qq-avatars.json on 2026-10-04.
+Original source ids are retained. The 16px small variants are not included.
+Decoded standard PNGs total 442,815 bytes.
+
+Included at the user's request. These assets do not imply affiliation with
+or endorsement by Tencent or QQ. The source project's NOTICE.md states that
+its software MIT license does not grant rights to Tencent, QQ, their trademarks,
+product names, logos or trade dress. It does not provide a separate license for
+this classic preset collection. The software license is not an image license.
+Asset rights remain with their respective owners.

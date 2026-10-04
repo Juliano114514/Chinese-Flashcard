@@ -11,8 +11,10 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
@@ -28,6 +30,7 @@ import com.example.chinese_flashcard.core.data.FlashcardRepositories
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.CsvSource
 import com.example.chinese_flashcard.core.domain.StudySettings
+import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
@@ -129,25 +132,52 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   }
   val entry by nav.currentBackStackEntryAsState()
   val route = entry?.destination?.route
+  DisposableEffect(entry, speech) { onDispose { speech.stop() } }
   val state by study.state.collectAsStateWithLifecycle()
+  var learnMoreRequest by rememberSaveable { mutableStateOf<Pair<String, Int>?>(null) }
+  LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
+    val request = learnMoreRequest ?: return@LaunchedEffect
+    if (route != "today" || state.today?.date != request.first) {
+      learnMoreRequest = null
+    } else if (!state.busy) {
+      if ((state.today?.newPlanned ?: 0) > request.second && state.card?.kind == StudyKind.NEW &&
+        state.card?.phase != CardPhase.FINISHED) {
+        learnMoreRequest = null
+        nav.navigate("study") { launchSingleTop = true }
+      } else if (state.error == null) {
+        learnMoreRequest = null
+      }
+      // A failed request stays on Home; its existing Retry can complete this same request.
+    }
+  }
   BackHandler(enabled = route == "study" && state.busy) { }
   val openWriting: (String) -> Unit = { id ->
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
   Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
-    if (route == "today" || route == "profile") NavigationBar {
-      listOf("today" to "Today", "profile" to "Profile").forEach { (destination, label) ->
-        NavigationBarItem(selected = route == destination, onClick = {
-          nav.navigate(destination) { popUpTo("today") { saveState = true }; launchSingleTop = true; restoreState = true }
-        }, icon = { Icon(if (destination == "today") Icons.Default.Home else Icons.Default.Person, label) },
-          label = { Text(label) })
+    if (route == "today" || route == "profile") Column {
+      HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+      NavigationBar(containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
+        listOf("today" to "Home", "profile" to "Profile").forEach { (destination, label) ->
+          NavigationBarItem(selected = route == destination, onClick = {
+            nav.navigate(destination) { popUpTo("today") { saveState = true }; launchSingleTop = true; restoreState = true }
+          }, icon = { Icon(if (destination == "today") Icons.Default.Home else Icons.Default.Person, label) },
+            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent), label = { Text(label) })
+        }
       }
     }
   }) { padding ->
-    NavHost(nav, startDestination = "today", modifier = Modifier.padding(padding)) {
+    NavHost(nav, startDestination = "today", modifier = Modifier.padding(padding).consumeWindowInsets(padding)) {
       composable("today") {
         TodayScreen(study, onStart = { kind -> study.start(kind); nav.navigate("study") { launchSingleTop = true } },
-          onResume = { study.refresh(); nav.navigate("study") { launchSingleTop = true } }, onWriting = openWriting)
+          onResume = { study.refresh(); nav.navigate("study") { launchSingleTop = true } }, onWriting = openWriting,
+          onLearnMore = {
+            val before = study.state.value.today
+            if (before != null && !study.state.value.busy) {
+              learnMoreRequest = before.date to before.newPlanned
+              study.learnMore()
+            }
+          })
       }
       composable("profile") { ProfileScreen(profile,
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
@@ -156,8 +186,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
-        },
-          onWriting = openWriting, onSpeak = speech::speak)
+        }, onWriting = openWriting, onSpeak = speech::speak)
       }
       composable("writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -188,7 +217,7 @@ private fun LicenseScreen(onBack: () -> Unit) {
     value = withContext(Dispatchers.IO) {
       try {
         listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
-          "wordlist-strokes/LEXICON_LICENSES.txt").joinToString("\n\n") { name ->
+          "wordlist-strokes/LEXICON_LICENSES.txt", "avatars/NOTICE.txt").joinToString("\n\n") { name ->
           context.assets.open(name).bufferedReader().use { it.readText() }
         }
       } catch (error: CancellationException) { throw error }
