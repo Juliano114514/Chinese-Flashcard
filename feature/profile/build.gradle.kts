@@ -9,5 +9,7 @@ android {
 dependencies {
   implementation(project(":core:domain"))
   implementation(project(":core:ui"))
+  implementation(libs.compose.ui.tooling.preview)
+  debugImplementation(libs.compose.ui.tooling)
   implementation(libs.kotlinx.coroutines.core)
 }
