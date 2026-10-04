@@ -1,0 +1,90 @@
+{
+  "checkedOn": "2026-10-04",
+  "evidence": "Static artifact validation and source inspection only; no app compilation, tests or runtime.",
+  "original": {
+    "rows": 6698,
+    "bytes": 1142667,
+    "sha256": "f2d70fd87f82fd3ef9542715b87905639376a67d830ebf68e8237633fa8160a3"
+  },
+  "csv": {
+    "words": 6648,
+    "characters": 6323,
+    "characterPositions": 13078,
+    "rarity": {
+      "0": 2665,
+      "1": 996,
+      "2": 2987
+    },
+    "bytes": 5268363,
+    "sha256": "8cc63533b692ad99e580bd74cf4b8ee9bcf52ded2bb35981ccfeccdb572349af",
+    "demoDuplicates": 15,
+    "firstImportNewWords": 6633,
+    "resultingWordbookCount": 6653
+  },
+  "removals": {
+    "rows": 50,
+    "sha256": "271724a8a80a35855341b33e28868728bbf9c9adb92b21bc55a1fbb7a2b186ff",
+    "unavailableGlyphRows": 27,
+    "placeholderRows": 22,
+    "overlap": 1,
+    "otherInvalidRows": [
+      4087,
+      5693
+    ]
+  },
+  "placeholders": {
+    "audited": 25,
+    "kept": 3,
+    "removed": 22
+  },
+  "strokes": {
+    "resources": 6324,
+    "csvCoverage": "100%",
+    "missingCharacters": 0,
+    "extraRetainedCharacter": "琫",
+    "makeMeAHanzi": 6254,
+    "animCjk": 70,
+    "shards": 50,
+    "maximumShardBytes": 638903,
+    "maximumShardGlyphs": 128,
+    "pathCount": 67023,
+    "medianPointCount": 381716,
+    "generatedBundleBytes": 23744507,
+    "sourcesMatchPinnedGeometry": true,
+    "demoTracingUnchanged": true,
+    "allPackagedAssetBytes": 23789486
+  },
+  "scope": {
+    "baselineFiles": 43,
+    "changedBaselineFiles": [
+      "README.md",
+      "wordlist.csv",
+      "feature/profile/src/main/kotlin/com/example/chinese_flashcard/feature/profile/ProfileScreen.kt",
+      "feature/profile/src/main/kotlin/com/example/chinese_flashcard/feature/profile/ProfileViewModel.kt",
+      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/FlashcardDatabase.kt",
+      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/FlashcardRepositories.kt",
+      "app/src/main/kotlin/com/example/chinese_flashcard/FlashcardApp.kt"
+    ],
+    "newKotlinFiles": [
+      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvDecoder.kt",
+      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvImporter.kt",
+      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvParser.kt",
+      "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvStrokeResources.kt",
+      "core/domain/src/main/kotlin/com/example/chinese_flashcard/core/domain/CsvImport.kt"
+    ],
+    "deletedBaselineFiles": 0
+  },
+  "checks": {
+    "csvStaticValidation": "passed",
+    "strokeStaticValidation": "passed",
+    "originalIdRarityAndOrder": "passed",
+    "demoAliasDistractors": "passed",
+    "hashesAndLicenses": "passed",
+    "pythonAst": "passed",
+    "xmlParsedFiles": 10,
+    "kotlinCompilation": "not_run",
+    "roomMigrationExecution": "not_run",
+    "tests": "not_run",
+    "device": "not_run"
+  }
+}

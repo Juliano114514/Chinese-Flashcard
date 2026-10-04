@@ -2,7 +2,7 @@
 
 面向中文初学者的离线 Android 词卡应用。围绕「理解词语 → 写一写 → 四选一回忆 → 当日通过 → 到期复习」重新组织学习。参考不背单词的情境学习和简洁布局，界面与教学文案独立实现。
 
-界面与辅助讲解使用英文，学习内容使用简体汉字、声调拼音和英文释义。当前只附 **20 个原创演示词、每词两条例句、35 个所需字形**，用于验证核心链路，不导入原课程或完整字库。
+界面与辅助讲解使用英文，学习内容使用简体汉字、声调拼音和英文释义。保留 **20 个原创演示词**，并支持从 Profile 直接导入本项目的 [wordlist.csv](wordlist.csv)。交付词库包含两个同义项例句、三个干扰词引用、部件讲解和使用说明；所需真实笔顺随 App 独立分包提供。
 
 ## 使用链路
 
@@ -11,7 +11,7 @@
 - **Study**：一个词、四个英文释义选项。每组最多五词交错学习，前两轮显示不同的中文例句、拼音和英文翻译，后续隐藏例句。答错或选择不知道，当前词的连续正确轮次归零。
 - **Explanation**：义项、例句、词语部件与使用提示。拆解作为记忆线索，不把词语联想当成字源。
 - **Review**：到期词先做一次无例句回忆；答对完成本次复习，答错进入完整重学。重学通过后重新安排复习。
-- **Profile**：修改学习设置、查看学习量、打开来源与许可。
+- **Profile**：修改学习设置、查看学习量、Import CSV 预览并确认追加词库、打开来源与许可。
 
 当日目标和已有学习周期的设置固定；修改日词量用于下一份日计划，新学习／重学周期采用最新轮次和复习日期。第 N 天指通过日之后的 N 个日历日。错过多次到期节点的同一词，当天只出现一次复习；未完成的学习跨天轮次归零，以独立任务继续，不占新词额度。
 
@@ -31,7 +31,7 @@
 | --- | --- |
 | `app` | 启动、导航、手动依赖装配、离线语音与许可入口 |
 | `core:domain` | 纯 Kotlin 模型、Repository 契约、轨迹匹配 |
-| `core:data` | Room、演示内容校验／初始化、事务化学习与写字状态 |
+| `core:data` | Room、演示内容初始化、CSV 校验／追加、笔顺分包、事务化学习与写字状态 |
 | `core:ui` | 浅／深色 Compose 主题、统一错误文案 |
 | `core:media` | 系统离线普通话 TTS 与音频焦点 |
 | `feature:study` | 欢迎、今日、词卡、讲解、完成页，MVI |
@@ -42,7 +42,11 @@
 
 Gradle 项目名为 `Chinese_Flashcard`，应用名为 `Chinese Flashcard`，applicationId / 包名为 `com.example.chinese_flashcard`。物理工程目录保留原路径。新应用有独立数据空间，不迁移旧课程或旧学习记录。
 
-## 演示数据与来源
+## 词库、演示数据与来源
+
+[CSV 格式与导入说明](docs/CSV_IMPORT.md) 记录全部字段、限制、追加规则、迁移和取消语义。原文件保存在 [wordlist.original.csv](wordlist.original.csv)，删除理由见 [wordlist-removals.csv](wordlist-removals.csv)。CSV 不随启动自动写入数据库；在 Profile 中自行选择并确认导入。
+
+词库释义优先采用 [CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict)，保留 CC BY-SA 4.0 来源和许可。笔顺沿用 Make Me a Hanzi，并采用 [AnimCJK 简体中文固定版本](https://github.com/parsimonhi/animCJK/tree/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6) 补充其缺字。完整来源、版本、修改说明、资源哈希和许可位于 `core/data/src/main/assets/wordlist-strokes/`，可在 App 的 Data & licenses 查看。
 
 `tools/build_demo.py` 保存原创词语、例句、拆解和干扰义项，只从已缓存的固定版本笔顺数据提取所需字形：
 
@@ -58,6 +62,8 @@ python tools/build_demo.py --check
 
 ## 交付与验证
 
-本轮执行静态核对和 `lintDebug`（含必要的 Room KSP / Kotlin 编译），详细结果见 [实施与验证记录](docs/IMPLEMENTATION.md)。未新增测试代码，未执行测试、assemble、APK 打包、安装或设备验收。旧 `build` 中的 APK 不代表本次实现。
+CSV 词库与直接导入这一轮**仅做数据和源码静态检查**；未新增测试代码，未执行测试、Gradle、lint、编译、打包、安装或设备验收。详见 [CSV 静态交付记录](docs/CSV_STATIC_REVIEW.md)。文件选择器、迁移、取消回滚及学习链路的运行行为尚未验收，旧 `build` 中的 APK 不包含本次保证。
+
+[此前实施与验证记录](docs/IMPLEMENTATION.md) 中的 `lintDebug` 属于导入功能加入之前的历史验证，不能证明本次改动通过编译或运行。
 
 实施前源码、资源和配置备份在同级 `Chinese_Self_Study_Tutor-backup-20261004-012404`，含 SHA-256 清单；退出使用的旧模块和模板资源保存在其中的 `retired-tree`。当前目录没有 Git 仓库，未提交、推送或发布。
