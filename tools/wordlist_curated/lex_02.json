@@ -1,0 +1,2752 @@
+{
+  "732": {
+    "english": "scarce; few",
+    "pos": "adjective",
+    "second": [
+      "冬天到这里来的游客很稀少。",
+      "Dōng tiān dào zhè lǐ lái de yóu kè hěn xī shǎo.",
+      "Few tourists come here in winter."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "733": {
+    "english": "rely on",
+    "pos": "verb",
+    "second": [
+      "孩子还需要依靠父母的帮助。",
+      "Hái zi hái xū yào yī kào fù mǔ de bāng zhù.",
+      "The child still needs to rely on the parents' help."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "734": {
+    "english": "return home in honor after success",
+    "pos": "phrase",
+    "second": [
+      "他获得大奖后衣锦还乡，受到乡亲欢迎。",
+      "Tā huò dé dà jiǎng hòu yì jǐn huán xiāng, shòu dào xiāng qīn huān yíng.",
+      "After winning a major award, he returned home in honor and was welcomed by the villagers."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "735": {
+    "english": "threat",
+    "pos": "noun",
+    "second": [
+      "这些威胁并没有让她改变决定。",
+      "Zhè xiē wēi xié bìng méi yǒu ràng tā gǎi biàn jué dìng.",
+      "These threats did not make her change her decision."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "737": {
+    "english": "violate",
+    "pos": "verb",
+    "second": [
+      "这样做会违反比赛规则。",
+      "Zhè yàng zuò huì wéi fǎn bǐ sài guī zé.",
+      "Doing this would violate the rules of the competition."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "738": {
+    "english": "study diligently and repeatedly",
+    "pos": "phrase",
+    "second": [
+      "老师用韦编三绝勉励学生勤读。",
+      "Lǎo shī yòng wéi biān sān jué miǎn lì xué sheng qín dú.",
+      "The teacher uses the allusion 韦编三绝 to encourage diligent reading."
+    ],
+    "note": "An allusion to the leather cords of repeatedly read bamboo books breaking three times.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "739": {
+    "english": "fly",
+    "pos": "verb",
+    "second": [
+      "燕子在屋顶上方飞行。",
+      "Yàn zi zài wū dǐng shàng fāng fēi xíng.",
+      "The swallow flies above the roof."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "740": {
+    "english": "very",
+    "pos": "adverb",
+    "second": [
+      "这次旅行非常愉快。",
+      "Zhè cì lǚ xíng fēi cháng yú kuài.",
+      "This trip was very enjoyable."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "742": {
+    "english": "obesity",
+    "pos": "noun",
+    "second": [
+      "这篇报告研究了儿童肥胖问题。",
+      "Zhè piān bào gào yán jiū le ér tóng féi pàng wèn tí.",
+      "This report studies childhood obesity."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "743": {
+    "english": "tiny",
+    "pos": "adjective",
+    "second": [
+      "显微镜让我们看见微小的颗粒。",
+      "Xiǎn wēi jìng ràng wǒ men kàn jiàn wēi xiǎo de kē lì.",
+      "The microscope lets us see tiny particles."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "744": {
+    "english": "royal consort",
+    "pos": "noun",
+    "second": [
+      "画中的妃子穿着华丽的礼服。",
+      "Huà zhōng de fēi zi chuān zhe huá lì de lǐ fú.",
+      "The royal consort in the painting wears splendid ceremonial clothing."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "746": {
+    "english": "belittle",
+    "pos": "verb",
+    "second": [
+      "不要因为暂时落后就妄自菲薄。",
+      "Bú yào yīn wèi zàn shí luò hòu jiù wàng zì fěi bó.",
+      "Do not belittle yourself because you are temporarily behind."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "750": {
+    "english": "devil",
+    "pos": "noun",
+    "second": [
+      "舞台上的魔鬼戴着一顶红色面具。",
+      "Wǔ tái shàng de mó guǐ dài zhe yì dǐng hóng sè miàn jù.",
+      "The devil on stage wears a red mask."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "752": {
+    "english": "flowering plants",
+    "pos": "noun",
+    "second": [
+      "温室里培育着各种花卉。",
+      "Wēn shì lǐ péi yù zhe gè zhǒng huā huì.",
+      "A variety of flowering plants are grown in the greenhouse."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "753": {
+    "english": "great",
+    "pos": "adjective",
+    "second": [
+      "这位伟大的科学家留下了许多发现。",
+      "Zhè wèi wěi dà de kē xué jiā liú xià le xǔ duō fā xiàn.",
+      "This great scientist left many discoveries."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "757": {
+    "english": "bandit",
+    "pos": "noun",
+    "second": [
+      "小说中的土匪躲在山里。",
+      "Xiǎo shuō zhōng de tǔ fěi duǒ zài shān lǐ.",
+      "The bandits in the novel hide in the mountains."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "758": {
+    "english": "tail",
+    "pos": "noun",
+    "second": [
+      "小狗摇着尾巴跑过来。",
+      "Xiǎo gǒu yáo zhe wěi ba pǎo guò lái.",
+      "The puppy runs over wagging its tail."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "761": {
+    "english": "remarkable; elegant",
+    "pos": "adjective",
+    "second": [
+      "她的文章文采斐然，读起来很生动。",
+      "Tā de wén zhāng wén cǎi fěi rán, dú qǐ lái hěn shēng dòng.",
+      "Her writing is remarkably elegant and vivid to read."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "762": {
+    "english": "irrigate",
+    "pos": "verb",
+    "second": [
+      "农民用河水灌溉这片农田。",
+      "Nóng mín yòng hé shuǐ guàn gài zhè piàn nóng tián.",
+      "The farmers irrigate this field with river water."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "763": {
+    "english": "since; given that",
+    "pos": "conjunction",
+    "second": [
+      "既然下雨了，我们就留在家里吧。",
+      "Jì rán xià yǔ le, wǒ men jiù liú zài jiā lǐ ba.",
+      "Since it is raining, let us stay home."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "766": {
+    "english": "Wei and Jin dynasties",
+    "pos": "proper noun",
+    "second": [
+      "这本书介绍魏晋时期的文学。",
+      "Zhè běn shū jiè shào Wèi Jìn shí qī de wén xué.",
+      "This book introduces literature from the Wei and Jin period."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "767": {
+    "english": "perseverance",
+    "pos": "noun",
+    "second": [
+      "完成这次长跑需要毅力。",
+      "Wán chéng zhè cì cháng pǎo xū yào yì lì.",
+      "Completing this long-distance run takes perseverance."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "768": {
+    "english": "unite in hatred of a common enemy",
+    "pos": "phrase",
+    "second": [
+      "故事中，各村同仇敌忾，抵抗侵略者。",
+      "Gù shi zhōng, gè cūn tóng chóu dí kài, dǐ kàng qīn lüè zhě.",
+      "In the story, the villages unite against the invaders."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "769": {
+    "english": "azure; sky blue",
+    "pos": "adjective",
+    "second": [
+      "今天的天空蔚蓝而清澈。",
+      "Jīn tiān de tiān kōng wèi lán ér qīng chè.",
+      "The sky today is clear and azure."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "771": {
+    "english": "clothes iron",
+    "pos": "noun",
+    "second": [
+      "她收好熨斗，把衬衫挂起来。",
+      "Tā shōu hǎo yùn dǒu, bǎ chèn shān guà qǐ lái.",
+      "She puts away the iron and hangs up the shirt."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "774": {
+    "english": "Yuchi, a surname",
+    "pos": "proper noun",
+    "second": [
+      "名单中有一位姓尉迟的同学。",
+      "Míng dān zhōng yǒu yí wèi xìng Yù chí de tóng xué.",
+      "One student on the list has the surname Yuchi."
+    ],
+    "note": "尉 is yù in this two-character surname.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "775": {
+    "english": "fear",
+    "pos": "verb",
+    "second": [
+      "他并不畏惧困难。",
+      "Tā bìng bù wèi jù kùn nan.",
+      "He does not fear difficulties."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "776": {
+    "english": "appetite",
+    "pos": "noun",
+    "second": [
+      "长途散步之后，她的胃口很好。",
+      "Cháng tú sàn bù zhī hòu, tā de wèi kǒu hěn hǎo.",
+      "She has a good appetite after the long walk."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "777": {
+    "english": "Wei River",
+    "pos": "proper noun",
+    "second": [
+      "渭水两岸有许多村庄。",
+      "Wèi Shuǐ liǎng àn yǒu xǔ duō cūn zhuāng.",
+      "There are many villages on both banks of the Wei River."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "778": {
+    "english": "what is called",
+    "pos": "phrase",
+    "second": [
+      "所谓坚持，就是遇到困难也不轻易放弃。",
+      "Suǒ wèi jiān chí, jiù shì yù dào kùn nan yě bù qīng yì fàng qì.",
+      "What we call perseverance means not giving up easily when difficulties arise."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "779": {
+    "english": "vocabulary",
+    "pos": "noun",
+    "second": [
+      "阅读能帮助我们扩大词汇量。",
+      "Yuè dú néng bāng zhù wǒ men kuò dà cí huì liàng.",
+      "Reading can help us expand our vocabulary."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "780": {
+    "english": "hedgehog",
+    "pos": "noun",
+    "second": [
+      "刺猬躲在一堆落叶下面。",
+      "Cì wei duǒ zài yì duī luò yè xià miàn.",
+      "The hedgehog hides under a pile of fallen leaves."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "781": {
+    "english": "latitude",
+    "pos": "noun",
+    "second": [
+      "地图上标着这个城市的纬度。",
+      "Dì tú shàng biāo zhe zhè ge chéng shì de wěi dù.",
+      "The city's latitude is marked on the map."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "782": {
+    "english": "small and leafy, of young growth",
+    "pos": "adjective",
+    "second": [
+      "诗里的蔽芾描绘幼树枝叶初盛的样子。",
+      "Shī lǐ de bì fèi miáo huì yòu shù zhī yè chū shèng de yàng zi.",
+      "The word 蔽芾 in the poem describes the young tree's small, leafy growth."
+    ],
+    "note": "",
+    "source": "Original example and context-based teaching gloss; Han Dian 蔽 quotes the small-growth interpretation of 蔽芾, also contrasted with the lush-growth tradition: https://www.zdic.net/hans/蔽"
+  },
+  "784": {
+    "english": "boil",
+    "pos": "verb",
+    "second": [
+      "锅里的汤开始沸腾了。",
+      "Guō lǐ de tāng kāi shǐ fèi téng le.",
+      "The soup in the pot has started to boil."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "787": {
+    "english": "thatched cottage",
+    "pos": "noun",
+    "second": [
+      "山脚下有一间小小的茅庐。",
+      "Shān jiǎo xià yǒu yì jiān xiǎo xiǎo de máo lú.",
+      "There is a small thatched cottage at the foot of the mountain."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "788": {
+    "english": "palm tree",
+    "pos": "noun",
+    "second": [
+      "海边的棕榈随着风轻轻摇动。",
+      "Hǎi biān de zōng lǘ suí zhe fēng qīng qīng yáo dòng.",
+      "The palms beside the sea sway gently in the wind."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "789": {
+    "english": "donkey",
+    "pos": "noun",
+    "second": [
+      "驴子在路边低头吃草。",
+      "Lǘ zi zài lù biān dī tóu chī cǎo.",
+      "The donkey lowers its head to graze beside the road."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "790": {
+    "english": "maggot",
+    "pos": "noun",
+    "second": [
+      "学生在图册中观察蛆虫的形态。",
+      "Xué sheng zài tú cè zhōng guān chá qū chóng de xíng tài.",
+      "The students observe the form of maggots in the illustrated guide."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "791": {
+    "english": "discouraged; dejected",
+    "pos": "adjective",
+    "second": [
+      "考试没通过，他感到很沮丧。",
+      "Kǎo shì méi tōng guò, tā gǎn dào hěn jǔ sàng.",
+      "He felt discouraged after failing the exam."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "794": {
+    "english": "slowly and gently",
+    "pos": "adverb",
+    "second": [
+      "小船徐徐驶离岸边。",
+      "Xiǎo chuán xú xú shǐ lí àn biān.",
+      "The small boat slowly moves away from the shore."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "795": {
+    "english": "pork",
+    "pos": "noun",
+    "second": [
+      "这道菜用了猪肉和白菜。",
+      "Zhè dào cài yòng le zhū ròu hé bái cài.",
+      "This dish contains pork and Chinese cabbage."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "796": {
+    "english": "graffiti",
+    "pos": "noun",
+    "second": [
+      "桥下的墙上有一幅彩色涂鸦。",
+      "Qiáo xià de qiáng shàng yǒu yì fú cǎi sè tú yā.",
+      "There is colorful graffiti on the wall under the bridge."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "797": {
+    "english": "hesitate",
+    "pos": "verb",
+    "second": [
+      "面对两个选择，他踌躇不决。",
+      "Miàn duì liǎng ge xuǎn zé, tā chóu chú bù jué.",
+      "Faced with two choices, he cannot make up his mind."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "798": {
+    "english": "clear away",
+    "pos": "verb",
+    "second": [
+      "大家一起清除路上的落叶。",
+      "Dà jiā yì qǐ qīng chú lù shàng de luò yè.",
+      "Everyone clears the fallen leaves from the road together."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "799": {
+    "english": "massacre",
+    "pos": "noun",
+    "second": [
+      "这本历史书记录了战争中的屠杀。",
+      "Zhè běn lì shǐ shū jì lù le zhàn zhēng zhōng de tú shā.",
+      "This history book records massacres during the war."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "800": {
+    "english": "noticeably",
+    "pos": "adverb",
+    "second": [
+      "练习一个月以后，她的成绩显著提高。",
+      "Liàn xí yí ge yuè yǐ hòu, tā de chéng jì xiǎn zhù tí gāo.",
+      "After a month of practice, her results improved noticeably."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "802": {
+    "english": "catch a chill",
+    "pos": "verb",
+    "second": [
+      "夜里盖好被子，免得着凉。",
+      "Yè lǐ gài hǎo bèi zi, miǎn de zháo liáng.",
+      "Cover yourself with the blanket at night so you do not catch a chill."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "803": {
+    "english": "be anxious or worried",
+    "pos": "verb",
+    "second": [
+      "他还没有回来，家人很着急。",
+      "Tā hái méi yǒu huí lái, jiā rén hěn zháo jí.",
+      "He has not returned yet, and the family is worried."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "806": {
+    "english": "unblock; clear a passage",
+    "pos": "verb",
+    "second": [
+      "工人正在疏通堵塞的管道。",
+      "Gōng rén zhèng zài shū tōng dǔ sè de guǎn dào.",
+      "The workers are clearing the blocked pipe."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "807": {
+    "english": "annotations and commentaries",
+    "pos": "noun",
+    "second": [
+      "这部古籍的注疏帮助读者理解难词。",
+      "Zhè bù gǔ jí de zhù shū bāng zhù dú zhě lǐ jiě nán cí.",
+      "The commentaries on this ancient text help readers understand difficult words."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "809": {
+    "english": "sort out",
+    "pos": "verb",
+    "second": [
+      "开会以前，她先梳理了几个关键问题。",
+      "Kāi huì yǐ qián, tā xiān shū lǐ le jǐ ge guān jiàn wèn tí.",
+      "Before the meeting, she sorted out several key issues."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "810": {
+    "english": "many; numerous",
+    "pos": "adjective",
+    "second": [
+      "这次活动吸引了诸多观众。",
+      "Zhè cì huó dòng xī yǐn le zhū duō guān zhòng.",
+      "This event attracted many spectators."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "811": {
+    "english": "comfortable",
+    "pos": "adjective",
+    "second": [
+      "这双鞋穿起来很舒适。",
+      "Zhè shuāng xié chuān qǐ lái hěn shū shì.",
+      "These shoes are comfortable to wear."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "812": {
+    "english": "relieve hardship",
+    "pos": "verb",
+    "second": [
+      "这项基金帮助小企业纾困。",
+      "Zhè xiàng jī jīn bāng zhù xiǎo qǐ yè shū kùn.",
+      "This fund helps small businesses through hardship."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "814": {
+    "english": "if",
+    "pos": "conjunction",
+    "second": [
+      "如果明天晴天，我们就去野餐。",
+      "Rú guǒ míng tiān qíng tiān, wǒ men jiù qù yě cān.",
+      "If it is sunny tomorrow, we will have a picnic."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "815": {
+    "english": "endure great hardship",
+    "pos": "phrase",
+    "second": [
+      "父母含辛茹苦地把孩子养大。",
+      "Fù mǔ hán xīn rú kǔ de bǎ hái zi yǎng dà.",
+      "The parents raised their child through great hardship."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "819": {
+    "english": "ruins",
+    "pos": "noun",
+    "second": [
+      "考古队正在废墟中寻找线索。",
+      "Kǎo gǔ duì zhèng zài fèi xū zhōng xún zhǎo xiàn suǒ.",
+      "The archaeologists are looking for clues in the ruins."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "820": {
+    "english": "fish, as a class of animals",
+    "pos": "noun",
+    "second": [
+      "这本图册介绍了湖里的鱼类。",
+      "Zhè běn tú cè jiè shào le hú lǐ de yú lèi.",
+      "This guide describes the fish found in the lake."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "823": {
+    "english": "empty; unfulfilled",
+    "pos": "adjective",
+    "second": [
+      "离开熟悉的朋友后，她感到内心空虚。",
+      "Lí kāi shú xī de péng you hòu, tā gǎn dào nèi xīn kōng xū.",
+      "After leaving her familiar friends, she felt empty inside."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "824": {
+    "english": "ask after someone's well-being",
+    "pos": "phrase",
+    "second": [
+      "邻居常来嘘寒问暖，让老人很感动。",
+      "Lín jū cháng lái xū hán wèn nuǎn, ràng lǎo rén hěn gǎn dòng.",
+      "The neighbors often ask after the elderly person's well-being, which touches them deeply."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "825": {
+    "english": "shh",
+    "pos": "interjection",
+    "second": [
+      "嘘，别把小猫吵醒。",
+      "Shī, bié bǎ xiǎo māo chǎo xǐng.",
+      "Shh, do not wake the kitten."
+    ],
+    "note": "The hush interjection is shī here; the blowing or booing reading is xū.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "826": {
+    "english": "about; concerning",
+    "pos": "preposition",
+    "second": [
+      "我有一个关于课程的问题。",
+      "Wǒ yǒu yí ge guān yú kè chéng de wèn tí.",
+      "I have a question about the course."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "827": {
+    "english": "I, in classical usage",
+    "pos": "pronoun",
+    "second": [
+      "予少时喜读书，长大后仍未改变。",
+      "Yú shào shí xǐ dú shū, zhǎng dà hòu réng wèi gǎi biàn.",
+      "I enjoyed reading when young and have not changed since growing up."
+    ],
+    "note": "予 is yú when it means I; yǔ is the giving sense.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "828": {
+    "english": "give; grant",
+    "pos": "verb",
+    "second": [
+      "老师给予学生充分的鼓励。",
+      "Lǎo shī jǐ yǔ xué sheng chōng fèn de gǔ lì.",
+      "The teacher gives the students plenty of encouragement."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "829": {
+    "english": "remaining",
+    "pos": "adjective",
+    "second": [
+      "把剩余的面包装进袋子吧。",
+      "Bǎ shèng yú de miàn bāo zhuāng jìn dài zi ba.",
+      "Put the remaining bread in the bag."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "830": {
+    "english": "public opinion",
+    "pos": "noun",
+    "second": [
+      "这项决定引起了舆论的关注。",
+      "Zhè xiàng jué dìng yǐn qǐ le yú lùn de guān zhù.",
+      "This decision attracted public attention."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "831": {
+    "english": "classical question particle",
+    "pos": "particle",
+    "second": [
+      "此言可信欤？",
+      "Cǐ yán kě xìn yú?",
+      "Can these words be trusted?"
+    ],
+    "note": "A literary particle at the end of a question; it has no direct standalone English equivalent.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "832": {
+    "english": "with",
+    "pos": "preposition",
+    "second": [
+      "她与同事一同完成了工作。",
+      "Tā yǔ tóng shì yì tóng wán chéng le gōng zuò.",
+      "She completed the work together with her colleagues."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "833": {
+    "english": "participate in",
+    "pos": "verb",
+    "second": [
+      "欢迎大家参与这次讨论。",
+      "Huān yíng dà jiā cān yù zhè cì tǎo lùn.",
+      "Everyone is welcome to participate in this discussion."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "834": {
+    "english": "reputation",
+    "pos": "noun",
+    "second": [
+      "诚实的服务为这家店赢得了名誉。",
+      "Chéng shí de fú wù wèi zhè jiā diàn yíng dé le míng yù.",
+      "Honest service earned this shop a good reputation."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "836": {
+    "english": "toad",
+    "pos": "noun",
+    "second": [
+      "蟾蜍停在池边的石头上。",
+      "Chán chú tíng zài chí biān de shí tou shàng.",
+      "The toad rests on a stone beside the pond."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "837": {
+    "english": "irrigation channel",
+    "pos": "noun",
+    "second": [
+      "农民清理了通向田里的渠道。",
+      "Nóng mín qīng lǐ le tōng xiàng tián lǐ de qú dào.",
+      "The farmers cleared the irrigation channel leading to the field."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "840": {
+    "english": "partner; companion",
+    "pos": "noun",
+    "second": [
+      "他和伴侣一起照顾家里的花园。",
+      "Tā hé bàn lǚ yì qǐ zhào gù jiā lǐ de huā yuán.",
+      "He and his partner tend their garden together."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "843": {
+    "english": "island",
+    "pos": "noun",
+    "second": [
+      "这座岛屿覆盖着绿色的树林。",
+      "Zhè zuò dǎo yǔ fù gài zhe lǜ sè de shù lín.",
+      "This island is covered in green woods."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "844": {
+    "english": "Lantau Island",
+    "pos": "proper noun",
+    "second": [
+      "我们坐船前往大屿山。",
+      "Wǒ men zuò chuán qián wǎng Dà yǔ Shān.",
+      "We take a boat to Lantau Island."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "846": {
+    "english": "narrate; describe",
+    "pos": "verb",
+    "second": [
+      "她向同学叙述了旅行的经过。",
+      "Tā xiàng tóng xué xù shù le lǚ xíng de jīng guò.",
+      "She described her journey to her classmates."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "847": {
+    "english": "emotion; mood",
+    "pos": "noun",
+    "second": [
+      "听到这个消息，大家的情绪都很激动。",
+      "Tīng dào zhè ge xiāo xi, dà jiā de qíng xù dōu hěn jī dòng.",
+      "Everyone felt excited on hearing the news."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "848": {
+    "english": "express one's feelings",
+    "pos": "verb",
+    "second": [
+      "她通过音乐抒发思乡之情。",
+      "Tā tōng guò yīn yuè shū fā sī xiāng zhī qíng.",
+      "She expresses her homesickness through music."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "849": {
+    "english": "store",
+    "pos": "verb",
+    "second": [
+      "仓库里贮藏着过冬的粮食。",
+      "Cāng kù lǐ zhù cáng zhe guò dōng de liáng shi.",
+      "Grain for the winter is stored in the warehouse."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "850": {
+    "english": "stand for a while",
+    "pos": "verb",
+    "second": [
+      "他在岸边伫立，望着远去的船。",
+      "Tā zài àn biān zhù lì, wàng zhe yuǎn qù de chuán.",
+      "He stands on the shore for a while, watching the departing boat."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "851": {
+    "english": "prevent; stop",
+    "pos": "verb",
+    "second": [
+      "大雨阻止了他们继续前进。",
+      "Dà yǔ zǔ zhǐ le tā men jì xù qián jìn.",
+      "The heavy rain prevented them from going further."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "852": {
+    "english": "take over someone else's duties",
+    "pos": "phrase",
+    "second": [
+      "这件事由他负责，你不要越俎代庖。",
+      "Zhè jiàn shì yóu tā fù zé, nǐ bú yào yuè zǔ dài páo.",
+      "He is responsible for this matter; do not take over his duties."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "854": {
+    "english": "foundation; basis",
+    "pos": "noun",
+    "second": [
+      "识字是阅读的基础。",
+      "Shí zì shì yuè dú de jī chǔ.",
+      "Knowing characters is the foundation of reading."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "855": {
+    "english": "so; therefore",
+    "pos": "conjunction",
+    "second": [
+      "今天下雨，所以比赛推迟了。",
+      "Jīn tiān xià yǔ, suǒ yǐ bǐ sài tuī chí le.",
+      "It is raining today, so the match was postponed."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "857": {
+    "english": "deal with; handle",
+    "pos": "verb",
+    "second": [
+      "经理正在处理顾客的投诉。",
+      "Jīng lǐ zhèng zài chǔ lǐ gù kè de tóu sù.",
+      "The manager is handling a customer's complaint."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "858": {
+    "english": "place to live",
+    "pos": "noun",
+    "second": [
+      "她在学校附近找到了新的住处。",
+      "Tā zài xué xiào fù jìn zhǎo dào le xīn de zhù chù.",
+      "She found a new place to live near the school."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "859": {
+    "english": "villa",
+    "pos": "noun",
+    "second": [
+      "这座别墅有一个很大的花园。",
+      "Zhè zuò bié shù yǒu yí ge hěn dà de huā yuán.",
+      "This villa has a large garden."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "860": {
+    "english": "outdoors; in the wild",
+    "pos": "noun",
+    "second": [
+      "他们计划到野外观察鸟类。",
+      "Tā men jì huà dào yě wài guān chá niǎo lèi.",
+      "They plan to observe birds in the wild."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "861": {
+    "english": "mouse; rat",
+    "pos": "noun",
+    "second": [
+      "一只老鼠从墙角跑过去。",
+      "Yì zhī lǎo shǔ cóng qiáng jiǎo pǎo guò qù.",
+      "A mouse ran past the corner."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "862": {
+    "english": "summer vacation",
+    "pos": "noun",
+    "second": [
+      "暑假里，我们参加了游泳班。",
+      "Shǔ jià lǐ, wǒ men cān jiā le yóu yǒng bān.",
+      "During the summer vacation, we joined a swimming class."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "865": {
+    "english": "ancient state of Ju",
+    "pos": "proper noun",
+    "second": [
+      "这件展品来自古代莒国所在的地区。",
+      "Zhè jiàn zhǎn pǐn lái zì gǔ dài Jǔ Guó suǒ zài de dì qū.",
+      "This exhibit comes from the region of the ancient state of Ju."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "867": {
+    "english": "zelkova wood",
+    "pos": "noun",
+    "second": [
+      "这张桌子用榉木制作。",
+      "Zhè zhāng zhuō zi yòng jǔ mù zhì zuò.",
+      "This table is made of zelkova wood."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "868": {
+    "english": "last year",
+    "pos": "noun",
+    "second": [
+      "去年我们住在另一座城市。",
+      "Qù nián wǒ men zhù zài lìng yí zuò chéng shì.",
+      "We lived in another city last year."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "869": {
+    "english": "defense",
+    "pos": "noun",
+    "second": [
+      "地图显示了城堡的防御结构。",
+      "Dì tú xiǎn shì le chéng bǎo de fáng yù jié gòu.",
+      "The map shows the castle's defensive structures."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "873": {
+    "english": "distance",
+    "pos": "noun",
+    "second": [
+      "从这里到车站的距离不远。",
+      "Cóng zhè lǐ dào chē zhàn de jù lí bù yuǎn.",
+      "The distance from here to the station is short."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "875": {
+    "english": "torch",
+    "pos": "noun",
+    "second": [
+      "演员举着火炬走上舞台。",
+      "Yǎn yuán jǔ zhe huǒ jù zǒu shàng wǔ tái.",
+      "The actor walks onto the stage holding a torch."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "876": {
+    "english": "large sum of money",
+    "pos": "noun",
+    "second": [
+      "修复这座古桥需要一笔巨款。",
+      "Xiū fù zhè zuò gǔ qiáo xū yào yì bǐ jù kuǎn.",
+      "Restoring this old bridge requires a large sum of money."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "878": {
+    "english": "consider",
+    "pos": "verb",
+    "second": [
+      "买车之前，他认真考虑了费用。",
+      "Mǎi chē zhī qián, tā rèn zhēn kǎo lǜ le fèi yòng.",
+      "Before buying a car, he carefully considered the cost."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "879": {
+    "english": "cotton wadding",
+    "pos": "noun",
+    "second": [
+      "她把旧被子里的棉絮取了出来。",
+      "Tā bǎ jiù bèi zi lǐ de mián xù qǔ le chū lái.",
+      "She took the cotton wadding out of the old quilt."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "881": {
+    "english": "sign one's name",
+    "pos": "verb",
+    "second": [
+      "请在表格最后一栏署名。",
+      "Qǐng zài biǎo gé zuì hòu yì lán shǔ míng.",
+      "Please sign your name in the last section of the form."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "882": {
+    "english": "first light of dawn",
+    "pos": "noun",
+    "second": [
+      "曙光出现时，渔船已经出发。",
+      "Shǔ guāng chū xiàn shí, yú chuán yǐ jīng chū fā.",
+      "The fishing boat had already departed when dawn's first light appeared."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "883": {
+    "english": "sweet potato",
+    "pos": "noun",
+    "second": [
+      "奶奶把番薯放进炉子里烤。",
+      "Nǎi nai bǎ fān shǔ fàng jìn lú zi lǐ kǎo.",
+      "Grandma puts the sweet potatoes into the oven to roast."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "884": {
+    "english": "forgive",
+    "pos": "verb",
+    "second": [
+      "她决定宽恕朋友的过失。",
+      "Tā jué dìng kuān shù péng you de guò shī.",
+      "She decides to forgive her friend's mistake."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "885": {
+    "english": "common people",
+    "pos": "noun",
+    "second": [
+      "这部历史书关注庶民的日常生活。",
+      "Zhè bù lì shǐ shū guān zhù shù mín de rì cháng shēng huó.",
+      "This history book focuses on the everyday lives of common people."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "886": {
+    "english": "occupy and hold a place",
+    "pos": "verb",
+    "second": [
+      "故事里的强盗盘踞在古堡中。",
+      "Gù shi lǐ de qiáng dào pán jù zài gǔ bǎo zhōng.",
+      "The bandits in the story occupy the old castle."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "887": {
+    "english": "saw",
+    "pos": "noun",
+    "second": [
+      "木匠用锯子切开这块木板。",
+      "Mù jiàng yòng jù zi qiē kāi zhè kuài mù bǎn.",
+      "The carpenter cuts the board with a saw."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "888": {
+    "english": "for the emperor's use",
+    "pos": "adjective",
+    "second": [
+      "这件御用瓷器上绘着龙纹。",
+      "Zhè jiàn yù yòng cí qì shàng huì zhe lóng wén.",
+      "A dragon pattern is painted on this porcelain object made for the emperor."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "889": {
+    "english": "drive; control an animal or vehicle",
+    "pos": "verb",
+    "second": [
+      "他已经学会驾驭这辆马车。",
+      "Tā yǐ jīng xué huì jià yù zhè liàng mǎ chē.",
+      "He has learned to drive this horse-drawn carriage."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "890": {
+    "english": "cigarette",
+    "pos": "noun",
+    "second": [
+      "门口的牌子要求熄灭香烟。",
+      "Mén kǒu de pái zi yāo qiú xī miè xiāng yān.",
+      "The sign at the entrance asks people to put out their cigarettes."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "891": {
+    "english": "hesitate",
+    "pos": "verb",
+    "second": [
+      "她犹豫了一会儿，才答应邀请。",
+      "Tā yóu yù le yí huì er, cái dā ying yāo qǐng.",
+      "She hesitated for a moment before accepting the invitation."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "892": {
+    "english": "expect; forecast",
+    "pos": "verb",
+    "second": [
+      "天气预报预计明天降温。",
+      "Tiān qì yù bào yù jì míng tiān jiàng wēn.",
+      "The weather forecast expects a drop in temperature tomorrow."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "893": {
+    "english": "rapidly and abruptly",
+    "pos": "adverb",
+    "second": [
+      "市场需求急遽下降。",
+      "Shì chǎng xū qiú jí jù xià jiàng.",
+      "Market demand fell abruptly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "894": {
+    "english": "city; metropolis",
+    "pos": "noun",
+    "second": [
+      "这幅画描绘了都市的夜景。",
+      "Zhè fú huà miáo huì le dū shì de yè jǐng.",
+      "This painting depicts a city's night scene."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "896": {
+    "english": "future prospects",
+    "pos": "noun",
+    "second": [
+      "她对自己的前途充满信心。",
+      "Tā duì zì jǐ de qián tú chōng mǎn xìn xīn.",
+      "She is confident about her future prospects."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "897": {
+    "english": "alter written text",
+    "pos": "verb",
+    "second": [
+      "答案有错，可以划掉再写，不要胡乱涂改。",
+      "Dá àn yǒu cuò, kě yǐ huà diào zài xiě, bú yào hú luàn tú gǎi.",
+      "If an answer is wrong, cross it out and rewrite it rather than altering it carelessly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "898": {
+    "english": "apprentice",
+    "pos": "noun",
+    "second": [
+      "徒弟跟着师傅学习木工。",
+      "Tú dì gēn zhe shī fu xué xí mù gōng.",
+      "The apprentice learns carpentry from the master."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "899": {
+    "english": "in full swing",
+    "pos": "phrase",
+    "second": [
+      "新桥建设正进行得如火如荼。",
+      "Xīn qiáo jiàn shè zhèng jìn xíng de rú huǒ rú tú.",
+      "Construction of the new bridge is in full swing."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "901": {
+    "english": "gold-plated; gilded",
+    "pos": "adjective",
+    "second": [
+      "这枚镀金徽章在灯光下闪亮。",
+      "Zhè méi dù jīn huī zhāng zài dēng guāng xià shǎn liàng.",
+      "This gold-plated badge shines under the light."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "902": {
+    "english": "dodder",
+    "pos": "noun",
+    "second": [
+      "图册显示菟丝子如何缠绕其他植物。",
+      "Tú cè xiǎn shì tù sī zǐ rú hé chán rào qí tā zhí wù.",
+      "The guide shows how dodder twines around other plants."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "903": {
+    "english": "slave",
+    "pos": "noun",
+    "second": [
+      "这篇文章讨论古代奴隶的地位。",
+      "Zhè piān wén zhāng tǎo lùn gǔ dài nú lì de dì wèi.",
+      "This article discusses the status of slaves in ancient times."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "904": {
+    "english": "Lugou Bridge",
+    "pos": "proper noun",
+    "second": [
+      "游客在卢沟桥上观察石狮。",
+      "Yóu kè zài Lú gōu Qiáo shàng guān chá shí shī.",
+      "Visitors examine the stone lions on Lugou Bridge."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "905": {
+    "english": "head",
+    "pos": "noun",
+    "second": [
+      "雕像的头颅略向左转。",
+      "Diāo xiàng de tóu lú lüè xiàng zuǒ zhuǎn.",
+      "The statue's head turns slightly to the left."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "907": {
+    "english": "rent out",
+    "pos": "verb",
+    "second": [
+      "他把闲置的房间出租给学生。",
+      "Tā bǎ xián zhì de fáng jiān chū zū gěi xué sheng.",
+      "He rents out the unused room to a student."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "908": {
+    "english": "wake; regain consciousness",
+    "pos": "verb",
+    "second": [
+      "听到窗外的鸟叫，她慢慢苏醒。",
+      "Tīng dào chuāng wài de niǎo jiào, tā màn màn sū xǐng.",
+      "Hearing the birds outside, she slowly wakes."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "910": {
+    "english": "Jesus",
+    "pos": "proper noun",
+    "second": [
+      "这幅画表现了耶稣与门徒。",
+      "Zhè fú huà biǎo xiàn le Yē sū yǔ mén tú.",
+      "This painting depicts Jesus and his disciples."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "911": {
+    "english": "let down; fail to live up to",
+    "pos": "verb",
+    "second": [
+      "他努力学习，不想辜负老师的期望。",
+      "Tā nǔ lì xué xí, bù xiǎng gū fù lǎo shī de qī wàng.",
+      "He studies hard because he does not want to disappoint his teacher."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "912": {
+    "english": "iron hoop or band",
+    "pos": "noun",
+    "second": [
+      "铁箍紧紧围住木桶。",
+      "Tiě gū jǐn jǐn wéi zhù mù tǒng.",
+      "The iron hoop holds the barrel tightly together."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "914": {
+    "english": "first-rate",
+    "pos": "adjective",
+    "second": [
+      "她做的面条顶呱呱。",
+      "Tā zuò de miàn tiáo dǐng guā guā.",
+      "The noodles she makes are first-rate."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "915": {
+    "english": "be born",
+    "pos": "phrase",
+    "second": [
+      "这对夫妇的女儿昨夜呱呱坠地。",
+      "Zhè duì fū fù de nǚ ér zuó yè gū gū zhuì dì.",
+      "The couple's daughter was born last night."
+    ],
+    "note": "呱呱 is gū gū in the newborn-crying idiom.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "916": {
+    "english": "seek empty fame",
+    "pos": "phrase",
+    "second": [
+      "他真正关心公益，并非沽名钓誉。",
+      "Tā zhēn zhèng guān xīn gōng yì, bìng fēi gū míng diào yù.",
+      "He truly cares about public welfare and is not seeking empty fame."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "917": {
+    "english": "aunt, one's father's sister",
+    "pos": "noun",
+    "second": [
+      "姑姑周末带我去参观博物馆。",
+      "Gū gu zhōu mò dài wǒ qù cān guān bó wù guǎn.",
+      "My father's sister takes me to visit the museum this weekend."
+    ],
+    "note": "Specifically one's father's sister.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "918": {
+    "english": "we; people like us",
+    "pos": "pronoun",
+    "second": [
+      "吾辈虽年轻，也当承担责任。",
+      "Wú bèi suī nián qīng, yě dāng chéng dān zé rèn.",
+      "Though we are young, we should also shoulder responsibility."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "919": {
+    "english": "ancient state of Wu",
+    "pos": "proper noun",
+    "second": [
+      "这张地图用不同颜色标出了吴国。",
+      "Zhè zhāng dì tú yòng bù tóng yán sè biāo chū le Wú Guó.",
+      "This map marks the ancient state of Wu in a different color."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "920": {
+    "english": "breathing",
+    "pos": "noun",
+    "second": [
+      "跑完以后，他慢慢调整呼吸。",
+      "Pǎo wán yǐ hòu, tā màn màn tiáo zhěng hū xī.",
+      "After the run, he slowly steadies his breathing."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "921": {
+    "english": "confused; muddleheaded",
+    "pos": "adjective",
+    "second": [
+      "我一时糊涂，把日期记错了。",
+      "Wǒ yì shí hú tu, bǎ rì qī jì cuò le.",
+      "I became confused for a moment and remembered the date incorrectly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "922": {
+    "english": "coral",
+    "pos": "noun",
+    "second": [
+      "展柜里的珊瑚标本呈粉红色。",
+      "Zhǎn guì lǐ de shān hú biāo běn chéng fěn hóng sè.",
+      "The coral specimen in the case is pink."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "923": {
+    "english": "carelessly; at random",
+    "pos": "adverb",
+    "second": [
+      "不要胡乱摆放这些资料。",
+      "Bú yào hú luàn bǎi fàng zhè xiē zī liào.",
+      "Do not put these documents down carelessly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "924": {
+    "english": "bottle gourd",
+    "pos": "noun",
+    "second": [
+      "菜园里的瓠瓜挂在藤上。",
+      "Cài yuán lǐ de hù guā guà zài téng shàng.",
+      "The bottle gourds in the vegetable garden hang from the vine."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "925": {
+    "english": "teapot",
+    "pos": "noun",
+    "second": [
+      "她把热水倒进茶壶。",
+      "Tā bǎ rè shuǐ dào jìn chá hú.",
+      "She pours hot water into the teapot."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "927": {
+    "english": "arc-shaped",
+    "pos": "adjective",
+    "second": [
+      "门上有一道弧形的装饰。",
+      "Mén shàng yǒu yí dào hú xíng de zhuāng shì.",
+      "There is an arc-shaped decoration on the door."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "928": {
+    "english": "gourd",
+    "pos": "noun",
+    "second": [
+      "他买了一个葫芦做成的摆件。",
+      "Tā mǎi le yí ge hú lu zuò chéng de bǎi jiàn.",
+      "He bought an ornament made from a gourd."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "929": {
+    "english": "care about",
+    "pos": "verb",
+    "second": [
+      "我很在乎朋友的感受。",
+      "Wǒ hěn zài hu péng you de gǎn shòu.",
+      "I care a lot about my friends' feelings."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "930": {
+    "english": "sob",
+    "pos": "verb",
+    "second": [
+      "她躲在角落里低声呜咽。",
+      "Tā duǒ zài jiǎo luò lǐ dī shēng wū yè.",
+      "She hides in the corner and sobs softly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "932": {
+    "english": "malicious",
+    "pos": "adjective",
+    "second": [
+      "那封恶毒的信让他很难过。",
+      "Nà fēng è dú de xìn ràng tā hěn nán guò.",
+      "That malicious letter upset him."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "933": {
+    "english": "detestable",
+    "pos": "adjective",
+    "second": [
+      "故意欺骗顾客的行为十分可恶。",
+      "Gù yì qī piàn gù kè de xíng wéi shí fēn kě wù.",
+      "Deliberately deceiving customers is detestable."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "936": {
+    "english": "bodhisattva",
+    "pos": "noun",
+    "second": [
+      "这尊菩萨像的面容十分安详。",
+      "Zhè zūn pú sà xiàng de miàn róng shí fēn ān xiáng.",
+      "This bodhisattva statue has a peaceful expression."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "938": {
+    "english": "blurry",
+    "pos": "adjective",
+    "second": [
+      "照片太模糊，看不清人脸。",
+      "Zhào piàn tài mó hu, kàn bu qīng rén liǎn.",
+      "The photograph is too blurry to make out the faces."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "939": {
+    "english": "touch",
+    "pos": "verb",
+    "second": [
+      "参观时，请不要触摸展品。",
+      "Cān guān shí, qǐng bú yào chù mō zhǎn pǐn.",
+      "Please do not touch the exhibits during your visit."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "940": {
+    "english": "thin film",
+    "pos": "noun",
+    "second": [
+      "包装上的薄膜已经破了。",
+      "Bāo zhuāng shàng de báo mó yǐ jīng pò le.",
+      "The thin film on the packaging has torn."
+    ],
+    "note": "",
+    "source": "Original example and gloss; Han Dian 薄膜 explicitly gives báo mó for a soft transparent film: https://www.zdic.net/hans/薄膜; CC-CEDICT also records bó mó."
+  },
+  "941": {
+    "english": "bow in worship",
+    "pos": "verb",
+    "second": [
+      "画中的信徒向神像膜拜。",
+      "Huà zhōng de xìn tú xiàng shén xiàng mó bài.",
+      "The worshippers in the painting bow before the deity's statue."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "942": {
+    "english": "witness with one's own eyes",
+    "pos": "verb",
+    "second": [
+      "许多游客目睹了日食。",
+      "Xǔ duō yóu kè mù dǔ le rì shí.",
+      "Many visitors witnessed the solar eclipse."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "943": {
+    "english": "be blocked",
+    "pos": "verb",
+    "second": [
+      "排水口被树叶堵塞了。",
+      "Pái shuǐ kǒu bèi shù yè dǔ sè le.",
+      "The drain was blocked by leaves."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "944": {
+    "english": "gamble",
+    "pos": "verb",
+    "second": [
+      "他决定停止赌博，重新安排生活。",
+      "Tā jué dìng tíng zhǐ dǔ bó, chóng xīn ān pái shēng huó.",
+      "He decided to stop gambling and reorganize his life."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "946": {
+    "english": "reveal; confide",
+    "pos": "verb",
+    "second": [
+      "她向朋友吐露了心里的担忧。",
+      "Tā xiàng péng you tǔ lù le xīn lǐ de dān yōu.",
+      "She confided her worries to a friend."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "947": {
+    "english": "belly; stomach",
+    "pos": "noun",
+    "second": [
+      "孩子肚子饿了，想吃点东西。",
+      "Hái zi dù zi è le, xiǎng chī diǎn dōng xi.",
+      "The child is hungry and wants something to eat."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "948": {
+    "english": "put an end to; prevent entirely",
+    "pos": "verb",
+    "second": [
+      "严格检查有助于杜绝此类错误。",
+      "Yán gé jiǎn chá yǒu zhù yú dù jué cǐ lèi cuò wù.",
+      "Strict checks help prevent this kind of error entirely."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "951": {
+    "english": "bow and crossbow",
+    "pos": "noun",
+    "second": [
+      "展览比较了弓弩的不同结构。",
+      "Zhǎn lǎn bǐ jiào le gōng nǔ de bù tóng jié gòu.",
+      "The exhibition compares the structures of bows and crossbows."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "952": {
+    "english": "plunder",
+    "pos": "verb",
+    "second": [
+      "小说描写了敌军掳掠村庄后的景象。",
+      "Xiǎo shuō miáo xiě le dí jūn lǔ lüè cūn zhuāng hòu de jǐng xiàng.",
+      "The novel describes the scene after the enemy plundered the village."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "953": {
+    "english": "captive; prisoner of war",
+    "pos": "noun",
+    "second": [
+      "故事中的俘虏后来回到了家乡。",
+      "Gù shi zhōng de fú lǔ hòu lái huí dào le jiā xiāng.",
+      "The captive in the story later returned home."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "954": {
+    "english": "food braised in seasoned stock",
+    "pos": "noun",
+    "second": [
+      "这家小店的卤味很受欢迎。",
+      "Zhè jiā xiǎo diàn de lǔ wèi hěn shòu huān yíng.",
+      "The braised snacks at this small shop are popular."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "955": {
+    "english": "rash; reckless",
+    "pos": "adjective",
+    "second": [
+      "不问清楚就行动太鲁莽了。",
+      "Bù wèn qīng chu jiù xíng dòng tài lǔ mǎng le.",
+      "Acting without first asking is too rash."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "957": {
+    "english": "organize",
+    "pos": "verb",
+    "second": [
+      "学校组织了一次参观活动。",
+      "Xué xiào zǔ zhī le yí cì cān guān huó dòng.",
+      "The school organized a visit."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "959": {
+    "english": "rough",
+    "pos": "adjective",
+    "second": [
+      "这块石头的表面很粗糙。",
+      "Zhè kuài shí tou de biǎo miàn hěn cū cāo.",
+      "The surface of this stone is rough."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "960": {
+    "english": "historical interpretation of words",
+    "pos": "noun",
+    "second": [
+      "这门课介绍训诂的基本方法。",
+      "Zhè mén kè jiè shào xùn gǔ de jī běn fāng fǎ.",
+      "This course introduces basic methods of historical word interpretation."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "961": {
+    "english": "applaud",
+    "pos": "verb",
+    "second": [
+      "观众为精彩的演出鼓掌。",
+      "Guān zhòng wèi jīng cǎi de yǎn chū gǔ zhǎng.",
+      "The audience applauds the excellent performance."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "962": {
+    "english": "estimate",
+    "pos": "verb",
+    "second": [
+      "我们估计半小时后可以到达。",
+      "Wǒ men gū jì bàn xiǎo shí hòu kě yǐ dào dá.",
+      "We estimate that we can arrive in half an hour."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "963": {
+    "english": "ready-made or secondhand clothing",
+    "pos": "noun",
+    "second": [
+      "古书中的估衣铺出售现成的衣服。",
+      "Gǔ shū zhōng de gù yi pù chū shòu xiàn chéng de yī fu.",
+      "The clothing shop in the old book sells ready-made garments."
+    ],
+    "note": "估 is gù in this clothing term, rather than gū as in 估计.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "965": {
+    "english": "stock; share",
+    "pos": "noun",
+    "second": [
+      "他在报纸上查看股票价格。",
+      "Tā zài bào zhǐ shàng chá kàn gǔ piào jià gé.",
+      "He checks stock prices in the newspaper."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "966": {
+    "english": "merchant",
+    "pos": "noun",
+    "second": [
+      "古城里聚集着来自各地的商贾。",
+      "Gǔ chéng lǐ jù jí zhe lái zì gè dì de shāng gǔ.",
+      "Merchants from many places gather in the old city."
+    ],
+    "note": "贾 is gǔ in the merchant sense.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "968": {
+    "english": "hard-working; laborious",
+    "pos": "adjective",
+    "second": [
+      "农民辛苦劳动了一整天。",
+      "Nóng mín xīn kǔ láo dòng le yì zhěng tiān.",
+      "The farmers worked hard all day."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "969": {
+    "english": "noon",
+    "pos": "noun",
+    "second": [
+      "我们约好中午在食堂见面。",
+      "Wǒ men yuē hǎo zhōng wǔ zài shí táng jiàn miàn.",
+      "We agreed to meet in the dining hall at noon."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "970": {
+    "english": "May",
+    "pos": "noun",
+    "second": [
+      "五月的校园开满了鲜花。",
+      "Wǔ yuè de xiào yuán kāi mǎn le xiān huā.",
+      "The campus is full of flowers in May."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "971": {
+    "english": "team; group",
+    "pos": "noun",
+    "second": [
+      "救援队伍已经到达村口。",
+      "Jiù yuán duì wǔ yǐ jīng dào dá cūn kǒu.",
+      "The rescue team has reached the village entrance."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "972": {
+    "english": "amber",
+    "pos": "noun",
+    "second": [
+      "这块琥珀里面有一只小昆虫。",
+      "Zhè kuài hǔ pò lǐ miàn yǒu yì zhī xiǎo kūn chóng.",
+      "There is a small insect inside this piece of amber."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "974": {
+    "english": "Water Margin",
+    "pos": "proper noun",
+    "second": [
+      "她正在读水浒传的第一章。",
+      "Tā zhèng zài dú Shuǐ hǔ Zhuàn de dì yī zhāng.",
+      "She is reading the first chapter of Water Margin."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "975": {
+    "english": "hire; employ",
+    "pos": "verb",
+    "second": [
+      "这家店新雇佣了两位员工。",
+      "Zhè jiā diàn xīn gù yōng le liǎng wèi yuán gōng.",
+      "This shop has hired two new employees."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "976": {
+    "english": "Shanghai opera",
+    "pos": "noun",
+    "second": [
+      "奶奶喜欢听沪剧。",
+      "Nǎi nai xǐ huan tīng Hù jù.",
+      "Grandma likes listening to Shanghai opera."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "977": {
+    "english": "domineering",
+    "pos": "adjective",
+    "second": [
+      "他态度跋扈，不肯听别人的意见。",
+      "Tā tài dù bá hù, bù kěn tīng bié rén de yì jiàn.",
+      "He is domineering and refuses to listen to others."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "979": {
+    "english": "mountain hollow",
+    "pos": "noun",
+    "second": [
+      "山坞里的村庄十分安静。",
+      "Shān wù lǐ de cūn zhuāng shí fēn ān jìng.",
+      "The village in the mountain hollow is very quiet."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "980": {
+    "english": "dock; dry dock",
+    "pos": "noun",
+    "second": [
+      "工人在船坞里检查船底。",
+      "Gōng rén zài chuán wù lǐ jiǎn chá chuán dǐ.",
+      "The workers inspect the bottom of the ship in the dry dock."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "981": {
+    "english": "flowerbed",
+    "pos": "noun",
+    "second": [
+      "她在花圃里种了几株月季。",
+      "Tā zài huā pǔ lǐ zhòng le jǐ zhū yuè jì.",
+      "She planted several roses in the flowerbed."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "982": {
+    "english": "opera face painting",
+    "pos": "noun",
+    "second": [
+      "这本画册展示了不同人物的脸谱。",
+      "Zhè běn huà cè zhǎn shì le bù tóng rén wù de liǎn pǔ.",
+      "This illustrated book shows the opera face paintings of different characters."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "983": {
+    "english": "supplement; add",
+    "pos": "verb",
+    "second": [
+      "请补充一下你刚才的说明。",
+      "Qǐng bǔ chōng yí xià nǐ gāng cái de shuō míng.",
+      "Please add to the explanation you just gave."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "985": {
+    "english": "part; portion",
+    "pos": "noun",
+    "second": [
+      "他只读了这本书的一部分。",
+      "Tā zhǐ dú le zhè běn shū de yí bù fèn.",
+      "He has read only part of this book."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "986": {
+    "english": "mom; mother",
+    "pos": "noun",
+    "second": [
+      "妈妈把午饭装进了饭盒。",
+      "Mā ma bǎ wǔ fàn zhuāng jìn le fàn hé.",
+      "Mom packed lunch into the lunch box."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "987": {
+    "english": "Pudong",
+    "pos": "proper noun",
+    "second": [
+      "他在浦东的一家公司工作。",
+      "Tā zài Pǔ dōng de yì jiā gōng sī gōng zuò.",
+      "He works for a company in Pudong."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "990": {
+    "english": "cross a body of water",
+    "pos": "verb",
+    "second": [
+      "他们坐船渡过了湖面。",
+      "Tā men zuò chuán dù guò le hú miàn.",
+      "They crossed the lake by boat."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "991": {
+    "english": "weights and measures",
+    "pos": "noun",
+    "second": [
+      "展览介绍了古代的度量衡。",
+      "Zhǎn lǎn jiè shào le gǔ dài de dù liàng héng.",
+      "The exhibition introduces ancient weights and measures."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "992": {
+    "english": "measure",
+    "pos": "verb",
+    "second": [
+      "工人量度了门框的宽度。",
+      "Gōng rén liáng dù le mén kuàng de kuān dù.",
+      "The worker measured the width of the doorframe."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "994": {
+    "english": "white egret",
+    "pos": "noun",
+    "second": [
+      "白鹭在浅水里寻找食物。",
+      "Bái lù zài qiǎn shuǐ lǐ xún zhǎo shí wù.",
+      "The white egret searches for food in the shallow water."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "995": {
+    "english": "be exposed; become apparent",
+    "pos": "verb",
+    "second": [
+      "检查使隐藏的问题暴露出来。",
+      "Jiǎn chá shǐ yǐn cáng de wèn tí bào lù chū lái.",
+      "The inspection exposed the hidden problems."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "996": {
+    "english": "bribe",
+    "pos": "noun",
+    "second": [
+      "官员拒绝收受贿赂。",
+      "Guān yuán jù jué shōu shòu huì lù.",
+      "The official refused to accept a bribe."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "998": {
+    "english": "measure; step taken",
+    "pos": "noun",
+    "second": [
+      "学校采取措施改善教室照明。",
+      "Xué xiào cǎi qǔ cuò shī gǎi shàn jiào shì zhào míng.",
+      "The school took steps to improve the classroom lighting."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "999": {
+    "english": "aged vinegar",
+    "pos": "noun",
+    "second": [
+      "她在饺子旁放了一碟陈醋。",
+      "Tā zài jiǎo zi páng fàng le yì dié chén cù.",
+      "She placed a small dish of aged vinegar beside the dumplings."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1000": {
+    "english": "create a hidden danger",
+    "pos": "phrase",
+    "second": [
+      "忽视这些隐患，无异于厝火积薪。",
+      "Hū shì zhè xiē yǐn huàn, wú yì yú cuò huǒ jī xīn.",
+      "Ignoring these hazards is like creating a hidden danger."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1001": {
+    "english": "incorrect",
+    "pos": "adjective",
+    "second": [
+      "他纠正了表格里错误的数据。",
+      "Tā jiū zhèng le biǎo gé lǐ cuò wù de shù jù.",
+      "He corrected the incorrect data in the table."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1003": {
+    "english": "arrange; handle",
+    "pos": "verb",
+    "second": [
+      "他把各项事务措置妥当后才离开。",
+      "Tā bǎ gè xiàng shì wù cuò zhì tuǒ dàng hòu cái lí kāi.",
+      "He left only after arranging all the matters properly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1004": {
+    "english": "tell",
+    "pos": "verb",
+    "second": [
+      "请告诉我车站在哪里。",
+      "Qǐng gào su wǒ chē zhàn zài nǎ lǐ.",
+      "Please tell me where the station is."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1005": {
+    "english": "plastic",
+    "pos": "noun",
+    "second": [
+      "这个盒子用塑料制成。",
+      "Zhè ge hé zi yòng sù liào zhì chéng.",
+      "This box is made of plastic."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1006": {
+    "english": "source material",
+    "pos": "noun",
+    "second": [
+      "这次旅行给作家提供了新的素材。",
+      "Zhè cì lǚ xíng gěi zuò jiā tí gōng le xīn de sù cái.",
+      "This journey gave the writer new material."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1009": {
+    "english": "story",
+    "pos": "noun",
+    "second": [
+      "奶奶给孩子讲了一个故事。",
+      "Nǎi nai gěi hái zi jiǎng le yí ge gù shi.",
+      "Grandma told the child a story."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1011": {
+    "english": "restrict; confine",
+    "pos": "verb",
+    "second": [
+      "旧观念禁锢了他的想象。",
+      "Jiù guān niàn jìn gù le tā de xiǎng xiàng.",
+      "Old ideas constrained his imagination."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1013": {
+    "english": "realization; awareness",
+    "pos": "noun",
+    "second": [
+      "这次经历使他有了新的觉悟。",
+      "Zhè cì jīng lì shǐ tā yǒu le xīn de jué wù.",
+      "This experience gave him a new realization."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1014": {
+    "english": "meet formally",
+    "pos": "verb",
+    "second": [
+      "两位代表将在明天会晤。",
+      "Liǎng wèi dài biǎo jiāng zài míng tiān huì wù.",
+      "The two representatives will meet formally tomorrow."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1016": {
+    "english": "protect",
+    "pos": "verb",
+    "second": [
+      "我们要保护河边的树林。",
+      "Wǒ men yào bǎo hù hé biān de shù lín.",
+      "We should protect the woods beside the river."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1017": {
+    "english": "be distributed",
+    "pos": "verb",
+    "second": [
+      "这些村庄分布在山谷两侧。",
+      "Zhè xiē cūn zhuāng fēn bù zài shān gǔ liǎng cè.",
+      "These villages are distributed along both sides of the valley."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1018": {
+    "english": "decorate; arrange",
+    "pos": "verb",
+    "second": [
+      "他们用鲜花布置会场。",
+      "Tā men yòng xiān huā bù zhì huì chǎng.",
+      "They decorate the venue with fresh flowers."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1020": {
+    "english": "nourish and raise",
+    "pos": "verb",
+    "second": [
+      "母鸟在巢里哺育幼鸟。",
+      "Mǔ niǎo zài cháo lǐ bǔ yù yòu niǎo.",
+      "The mother bird feeds and raises her young in the nest."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1021": {
+    "english": "grave",
+    "pos": "noun",
+    "second": [
+      "家人在坟墓旁种了一棵树。",
+      "Jiā rén zài fén mù páng zhòng le yì kē shù.",
+      "The family planted a tree beside the grave."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1022": {
+    "english": "dusk",
+    "pos": "noun",
+    "second": [
+      "暮色渐深，路灯亮了起来。",
+      "Mù sè jiàn shēn, lù dēng liàng le qǐ lái.",
+      "As dusk deepened, the streetlights came on."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1023": {
+    "english": "recruit",
+    "pos": "verb",
+    "second": [
+      "学校正在招募图书馆志愿者。",
+      "Xué xiào zhèng zài zhāo mù tú shū guǎn zhì yuàn zhě.",
+      "The school is recruiting library volunteers."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1024": {
+    "english": "fear; terror",
+    "pos": "noun",
+    "second": [
+      "听到脚步声，他心中充满恐怖。",
+      "Tīng dào jiǎo bù shēng, tā xīn zhōng chōng mǎn kǒng bù.",
+      "Hearing footsteps, his heart filled with terror."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1025": {
+    "english": "embrace; hold in one's arms",
+    "pos": "verb",
+    "second": [
+      "孩子跑来，紧紧搂抱妈妈。",
+      "Hái zi pǎo lái, jǐn jǐn lǒu bào mā ma.",
+      "The child runs over and hugs Mom tightly."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1026": {
+    "english": "openwork; hollowed-out",
+    "pos": "adjective",
+    "second": [
+      "这扇木窗有精细的镂空花纹。",
+      "Zhè shàn mù chuāng yǒu jīng xì de lòu kōng huā wén.",
+      "This wooden window has fine openwork patterns."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1027": {
+    "english": "trend",
+    "pos": "noun",
+    "second": [
+      "图表显示销售量有上升趋势。",
+      "Tú biǎo xiǎn shì xiāo shòu liàng yǒu shàng shēng qū shì.",
+      "The chart shows an upward trend in sales."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1031": {
+    "english": "marry a wife",
+    "pos": "verb",
+    "second": [
+      "故事里的青年娶妻后定居乡下。",
+      "Gù shi lǐ de qīng nián qǔ qī hòu dìng jū xiāng xià.",
+      "The young man in the story settles in the countryside after marrying."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1032": {
+    "english": "individual plant",
+    "pos": "noun",
+    "second": [
+      "她记录了每棵植株的高度。",
+      "Tā jì lù le měi kē zhí zhū de gāo dù.",
+      "She recorded the height of each plant."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1033": {
+    "english": "arrange in order",
+    "pos": "verb",
+    "second": [
+      "请把卡片按日期排列。",
+      "Qǐng bǎ kǎ piàn àn rì qī pái liè.",
+      "Please arrange the cards by date."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1036": {
+    "english": "vermilion",
+    "pos": "noun",
+    "second": [
+      "画家用朱红画出远处的屋顶。",
+      "Huà jiā yòng zhū hóng huà chū yuǎn chù de wū dǐng.",
+      "The painter uses vermilion for the distant roofs."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1037": {
+    "english": "pearl",
+    "pos": "noun",
+    "second": [
+      "这条项链上有几颗小珍珠。",
+      "Zhè tiáo xiàng liàn shàng yǒu jǐ kē xiǎo zhēn zhū.",
+      "There are several small pearls on this necklace."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1038": {
+    "english": "dwarfism, in 侏儒症",
+    "pos": "noun",
+    "second": [
+      "资料介绍了侏儒症这一医学名称。",
+      "Zī liào jiè shào le zhū rú zhèng zhè yì yī xué míng chēng.",
+      "The document explains this medical term for dwarfism."
+    ],
+    "note": "The examples use the compound 侏儒症 for a medical condition; 侏儒 alone can refer to a person with dwarfism.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1039": {
+    "english": "hub",
+    "pos": "noun",
+    "second": [
+      "这座车站是重要的交通枢纽。",
+      "Zhè zuò chē zhàn shì zhòng yào de jiāo tōng shū niǔ.",
+      "This station is an important transport hub."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1040": {
+    "english": "special; unusual",
+    "pos": "adjective",
+    "second": [
+      "这份礼物对她有特殊的意义。",
+      "Zhè fèn lǐ wù duì tā yǒu tè shū de yì yì.",
+      "This gift has a special meaning for her."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1042": {
+    "english": "mumble hesitantly",
+    "pos": "verb",
+    "second": [
+      "他嗫嚅着说出自己的请求。",
+      "Tā niè rú zhe shuō chū zì jǐ de qǐng qiú.",
+      "He hesitantly mumbles his request."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1043": {
+    "english": "Confucian scholarship",
+    "pos": "noun",
+    "second": [
+      "这门课讨论儒学的发展。",
+      "Zhè mén kè tǎo lùn rú xué de fā zhǎn.",
+      "This course discusses the development of Confucian scholarship."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1044": {
+    "english": "weak-willed; cowardly",
+    "pos": "adjective",
+    "second": [
+      "他不愿因为一次退缩就被说成懦弱。",
+      "Tā bù yuàn yīn wèi yí cì tuì suō jiù bèi shuō chéng nuò ruò.",
+      "He does not want to be called cowardly because he backed down once."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1045": {
+    "english": "have everything needed",
+    "pos": "phrase",
+    "second": [
+      "店里的旅行用品一应俱全。",
+      "Diàn lǐ de lǚ xíng yòng pǐn yī yīng jù quán.",
+      "The shop has every travel item needed."
+    ],
+    "note": "应 is yīng in this expression for having everything available.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1046": {
+    "english": "detain",
+    "pos": "verb",
+    "second": [
+      "警方拘留了涉嫌盗窃的人。",
+      "Jǐng fāng jū liú le shè xián dào qiè de rén.",
+      "The police detained the person suspected of theft."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1047": {
+    "english": "body; torso",
+    "pos": "noun",
+    "second": [
+      "雕像的身躯用青铜铸成。",
+      "Diāo xiàng de shēn qū yòng qīng tóng zhù chéng.",
+      "The statue's body is cast in bronze."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1048": {
+    "english": "drive away",
+    "pos": "verb",
+    "second": [
+      "他用扇子驱赶桌旁的苍蝇。",
+      "Tā yòng shàn zi qū gǎn zhuō páng de cāng ying.",
+      "He uses a fan to drive away flies beside the table."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1049": {
+    "english": "stingy",
+    "pos": "adjective",
+    "second": [
+      "他很抠门，连必要的修理费也不愿付。",
+      "Tā hěn kōu mén, lián bì yào de xiū lǐ fèi yě bù yuàn fù.",
+      "He is so stingy that he will not even pay for necessary repairs."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1051": {
+    "english": "mutual deception and intrigue",
+    "pos": "phrase",
+    "second": [
+      "他厌倦了尔虞我诈的争斗。",
+      "Tā yàn juàn le ěr yú wǒ zhà de zhēng dòu.",
+      "He is tired of struggles filled with mutual deception."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1052": {
+    "english": "foolish",
+    "pos": "adjective",
+    "second": [
+      "把密码告诉陌生人是愚蠢的做法。",
+      "Bǎ mì mǎ gào su mò shēng rén shì yú chǔn de zuò fǎ.",
+      "Telling a stranger your password is foolish."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1053": {
+    "english": "entertainment",
+    "pos": "noun",
+    "second": [
+      "这个节目为观众提供了轻松的娱乐。",
+      "Zhè ge jié mù wèi guān zhòng tí gōng le qīng sōng de yú lè.",
+      "This program offers the audience light entertainment."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1054": {
+    "english": "panting; out of breath",
+    "pos": "phrase",
+    "second": [
+      "登上山顶时，他已经气喘吁吁。",
+      "Dēng shàng shān dǐng shí, tā yǐ jīng qì chuǎn xū xū.",
+      "By the time he reached the summit, he was panting."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1056": {
+    "english": "pollution",
+    "pos": "noun",
+    "second": [
+      "河流污染使鱼类数量减少。",
+      "Hé liú wū rǎn shǐ yú lèi shù liàng jiǎn shǎo.",
+      "River pollution reduced the number of fish."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1057": {
+    "english": "rigidly old-fashioned",
+    "pos": "adjective",
+    "second": [
+      "这位老师并不迂腐，愿意接受新方法。",
+      "Zhè wèi lǎo shī bìng bù yū fǔ, yuàn yì jiē shòu xīn fāng fǎ.",
+      "This teacher is not rigidly old-fashioned and is willing to accept new methods."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1058": {
+    "english": "taro",
+    "pos": "noun",
+    "second": [
+      "蒸熟的芋头放在盘子里。",
+      "Zhēng shú de yù tou fàng zài pán zi lǐ.",
+      "The steamed taro is on the plate."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1059": {
+    "english": "spittoon",
+    "pos": "noun",
+    "second": [
+      "展柜里的痰盂是陶瓷制成的。",
+      "Zhǎn guì lǐ de tán yú shì táo cí zhì chéng de.",
+      "The spittoon in the display case is made of ceramic."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1060": {
+    "english": "overdue",
+    "pos": "adjective",
+    "second": [
+      "这本借来的书已经逾期。",
+      "Zhè běn jiè lái de shū yǐ jīng yú qī.",
+      "This borrowed book is overdue."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1061": {
+    "english": "flaws do not outweigh merits",
+    "pos": "phrase",
+    "second": [
+      "作品虽有小错，仍然瑕不掩瑜。",
+      "Zuò pǐn suī yǒu xiǎo cuò, réng rán xiá bù yǎn yú.",
+      "Although the work has small errors, its merits still outweigh its flaws."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1062": {
+    "english": "elm tree",
+    "pos": "noun",
+    "second": [
+      "榆树的枝叶为小路遮住了阳光。",
+      "Yú shù de zhī yè wèi xiǎo lù zhē zhù le yáng guāng.",
+      "The elm's branches shade the path from the sun."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1063": {
+    "english": "flatter obsequiously",
+    "pos": "verb",
+    "second": [
+      "他不愿阿谀上司来换取机会。",
+      "Tā bù yuàn ē yú shàng si lái huàn qǔ jī huì.",
+      "He will not flatter his superior to obtain an opportunity."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1065": {
+    "english": "remain unwavering",
+    "pos": "phrase",
+    "second": [
+      "她对朋友的信任始终不渝。",
+      "Tā duì péng you de xìn rèn shǐ zhōng bù yú.",
+      "Her trust in her friend remains unwavering."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1066": {
+    "english": "pleasant; happy",
+    "pos": "adjective",
+    "second": [
+      "我们度过了一个愉快的周末。",
+      "Wǒ men dù guò le yí ge yú kuài de zhōu mò.",
+      "We spent a pleasant weekend."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1067": {
+    "english": "farmer",
+    "pos": "noun",
+    "second": [
+      "农夫在田边检查麦子的生长情况。",
+      "Nóng fū zài tián biān jiǎn chá mài zi de shēng zhǎng qíng kuàng.",
+      "The farmer checks the wheat's growth beside the field."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1068": {
+    "english": "classical discourse-opening particle",
+    "pos": "particle",
+    "second": [
+      "夫学贵有恒，切勿半途而废。",
+      "Fú xué guì yǒu héng, qiè wù bàn tú ér fèi.",
+      "In learning, perseverance matters; do not give up halfway."
+    ],
+    "note": "夫 is fú as this discourse particle; fū is the husband/man reading.",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1070": {
+    "english": "Fu Jian",
+    "pos": "proper noun",
+    "second": [
+      "这篇传记介绍了苻坚的经历。",
+      "Zhè piān zhuàn jì jiè shào le Fú Jiān de jīng lì.",
+      "This biography describes Fu Jian's life."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  },
+  "1071": {
+    "english": "support; assist",
+    "pos": "verb",
+    "second": [
+      "社区扶持年轻人开办小店。",
+      "Shè qū fú chí nián qīng rén kāi bàn xiǎo diàn.",
+      "The community helps young people open small shops."
+    ],
+    "note": "",
+    "source": "Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset."
+  }
+}

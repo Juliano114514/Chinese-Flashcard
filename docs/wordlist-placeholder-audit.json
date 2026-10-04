@@ -1,0 +1,202 @@
+[
+  {
+    "originalLine": 754,
+    "hanzi": "玮玮",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索主要为昵称或人名；原行没有身份或使用语境，无法确定可答题的词义。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 2874,
+    "hanzi": "落低",
+    "cedictWholeWordFound": false,
+    "decision": "keep",
+    "reason": "词义和用法已查实，补写了拼音、两条例句与范围说明。",
+    "source": "Usage checked against iTaigi https://itaigi.tw/k/下落/ (entry 落低, citing 台文華文線頂辭典); English explanation and both examples newly authored."
+  },
+  {
+    "originalLine": 3917,
+    "hanzi": "唠噜",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "CC-CEDICT未收；检索不能确认完整词的读音及用法，不能由唠、噜字义拼造词义。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4073,
+    "hanzi": "账账",
+    "cedictWholeWordFound": false,
+    "decision": "keep",
+    "reason": "词义和用法已查实，补写了拼音、两条例句与范围说明。",
+    "source": "Usage checked against government accounting rules https://www.xjbl.gov.cn/__local/F/20/9D/4949AEDA5CF767CDB2D56A89408_659F4363_769B5B.pdf ; English explanation and examples newly authored."
+  },
+  {
+    "originalLine": 4095,
+    "hanzi": "吔吔",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "无完整的普通话义项与使用语境，且吔缺少已核实的简体笔顺资源。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4123,
+    "hanzi": "褪落来",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "没有确定的方言出处或实际例句，不能确定褪的多音字读法。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4247,
+    "hanzi": "飘飙",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "不能确认完整词的规范词义；不把飘、飙的字义直接拼成词义。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4395,
+    "hanzi": "莼莼",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索只有单字莼的资料，不能确认此重叠形式的词义和真实用法。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4562,
+    "hanzi": "圜宇",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索主要为公司名称；不能将它未经证实地等同寰宇。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4709,
+    "hanzi": "鑫旺",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索主要为商号、人名或谐音宣传语，原词没有指定身份与语境。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4732,
+    "hanzi": "滢洄",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索主要为笔名，未确认词义；不能直接改作已收词潆洄。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4823,
+    "hanzi": "昶畅",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索主要为人名，未确认完整词的词义；不能凭两个字都含舒畅义创造词条。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4848,
+    "hanzi": "辏辐",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "已收录词辐辏不能作为倒序辏辐的词义证据。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 4863,
+    "hanzi": "滑跶",
+    "cedictWholeWordFound": false,
+    "decision": "keep",
+    "reason": "词义和用法已查实，补写了拼音、两条例句与范围说明。",
+    "source": "Attestation checked in Ye Shisun, Xinmin Evening News, 2020-01-19 https://paper.xinmin.cn/html/xmwb/2020-01-19/19/55584.html ; English paraphrase and examples newly authored."
+  },
+  {
+    "originalLine": 4993,
+    "hanzi": "砉砉",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "检索得到客语精砉砉等更长形式，未确定本词的独立义项及普通话读法。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 5578,
+    "hanzi": "氽水",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "材料存在氽tǔn与汆cuān混用；原行无用法，不能确认是普通话烹饪词还是方言写法。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 5911,
+    "hanzi": "自洎",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "只查到自和洎的字形关系，未查实完整词的词义和用法。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 5920,
+    "hanzi": "牮石",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "未查实完整词的用法，不能把支撑义与石字直接拼造词义。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 5993,
+    "hanzi": "鹩鹩",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "只查到单字及其他鸟名，未查实该重叠形式的义项。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 6022,
+    "hanzi": "螫蝥",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "未查实提示词为独立词；已确认的是斑蝥、螌蝥或蛛蝥等不同形式。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 6023,
+    "hanzi": "虫蝥",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "未查实提示词为独立词；不能从虫部字表相邻字推导词义。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 6024,
+    "hanzi": "毒蝥",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "未查实提示词为独立词；蝥有毒的事实不能证明该组合是词条。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 6171,
+    "hanzi": "晟明",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "材料主要为人名或相互矛盾的读音，未查实完整词的词义。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 6298,
+    "hanzi": "手荑",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "已收录词荑手及短语手如柔荑不能作为手荑独立词的证据。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  },
+  {
+    "originalLine": 6332,
+    "hanzi": "铻铻",
+    "cedictWholeWordFound": false,
+    "decision": "remove",
+    "reason": "已查实锟铻，未查实铻铻重叠形式的义项。",
+    "source": "CC-CEDICT whole-word lookup and targeted exact-spelling web lookup on 2026-10-04; no adequate contextual evidence."
+  }
+]

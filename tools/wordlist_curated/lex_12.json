@@ -1,0 +1,2757 @@
+{
+  "4139": {
+    "english": "to cook a meal",
+    "pos": "verb",
+    "second": [
+      "今天我来煮饭。",
+      "jīn tiān wǒ lái zhǔ fàn.",
+      "I'll cook today."
+    ],
+    "note": "Usually refers to preparing a meal, not only boiling rice.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4140": {
+    "english": "steamed bun",
+    "pos": "noun",
+    "second": [
+      "馍馍还没蒸熟。",
+      "mó mo hái méi zhēng shú.",
+      "The steamed buns are not cooked yet."
+    ],
+    "note": "A northern regional word; the second syllable is neutral.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4141": {
+    "english": "to mince; to chop finely",
+    "pos": "verb",
+    "second": [
+      "把姜剁碎再放进去。",
+      "bǎ jiāng duò suì zài fàng jìn qù.",
+      "Mince the ginger before adding it."
+    ],
+    "note": "碎 gives the result of chopping.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4143": {
+    "english": "scrofula, an older medical term",
+    "pos": "noun",
+    "second": [
+      "这部医书有瘰疬一章。",
+      "zhè bù yī shū yǒu luǒ lì yī zhāng.",
+      "This medical book has a chapter on scrofula."
+    ],
+    "note": "A historical medical term; this example discusses terminology.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4145": {
+    "english": "file, a shaping tool",
+    "pos": "noun",
+    "second": [
+      "锉刀放在工具箱里。",
+      "cuò dāo fàng zài gōng jù xiāng lǐ.",
+      "The file is in the toolbox."
+    ],
+    "note": "Refers to a hand tool for shaping material.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4147": {
+    "english": "to incite; to instigate",
+    "pos": "verb",
+    "second": [
+      "不要教唆孩子说谎。",
+      "bù yào jiào suō hái zi shuō huǎng.",
+      "Do not encourage children to lie."
+    ],
+    "note": "Usually introduces harmful or improper conduct.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4148": {
+    "english": "stereotyped pattern; rut",
+    "pos": "noun",
+    "second": [
+      "他的小说不落窠臼。",
+      "tā de xiǎo shuō bù luò kē jiù.",
+      "His fiction avoids stale formulas."
+    ],
+    "note": "Often used in 不落窠臼, avoiding conventional patterns.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4149": {
+    "english": "to be lame in one leg",
+    "pos": "verb",
+    "second": [
+      "那条瘸腿的狗走得很慢。",
+      "nà tiáo qué tuǐ de gǒu zǒu de hěn màn.",
+      "That dog with a lame leg walks slowly."
+    ],
+    "note": "This example describes an animal's impaired walking.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4150": {
+    "english": "palladium",
+    "pos": "noun",
+    "second": [
+      "标签上写着钯。",
+      "biāo qiān shàng xiě zhe bǎ.",
+      "Palladium is written on the label."
+    ],
+    "note": "The chemical element has the symbol Pd.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4153": {
+    "english": "branch of a river",
+    "pos": "noun",
+    "second": [
+      "河汊边停着几条船。",
+      "hé chà biān tíng zhe jǐ tiáo chuán.",
+      "Several boats are moored by the river branch."
+    ],
+    "note": "Refers to a branching watercourse.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4154": {
+    "english": "to form a scab",
+    "pos": "verb",
+    "second": [
+      "擦伤处开始结痂。",
+      "cā shāng chù kāi shǐ jié jiā.",
+      "The scraped area begins to scab."
+    ],
+    "note": "结 describes formation; 痂 is a scab.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4156": {
+    "english": "child, dialect usage",
+    "pos": "noun",
+    "second": [
+      "这个伢子很机灵。",
+      "zhè ge yá zi hěn jī líng.",
+      "This child is very quick-witted."
+    ],
+    "note": "A regional word for a child; 子 is neutral.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4159": {
+    "english": "musk",
+    "pos": "noun",
+    "second": [
+      "香水瓶上标着麝香。",
+      "xiāng shuǐ píng shàng biāo zhe shè xiāng.",
+      "Musk is listed on the perfume bottle."
+    ],
+    "note": "Can describe the scent in fragrance products.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4160": {
+    "english": "buying on credit; an unpaid purchase",
+    "pos": "noun",
+    "second": [
+      "门口贴着不许赊欠。",
+      "mén kǒu tiē zhe bù xǔ shē qiàn.",
+      "A sign at the entrance says no buying on credit."
+    ],
+    "note": "Common on signs stating a shop's credit policy.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4161": {
+    "english": "She, a surname",
+    "pos": "proper noun",
+    "second": [
+      "佘老师今天请假了。",
+      "shé lǎo shī jīn tiān qǐng jià le.",
+      "Teacher She is on leave today."
+    ],
+    "note": "As a surname, 佘 is pronounced shé.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4163": {
+    "english": "plowshare",
+    "pos": "noun",
+    "second": [
+      "这块犁铧已经磨损了。",
+      "zhè kuài lí huá yǐ jīng mó sǔn le.",
+      "This plowshare is worn out."
+    ],
+    "note": "The cutting part of a plow.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4164": {
+    "english": "book-boring insect; bookworm",
+    "pos": "noun",
+    "second": [
+      "管理员检查书里的蠹虫。",
+      "guǎn lǐ yuán jiǎn chá shū lǐ de dù chóng.",
+      "The keeper checks the books for boring insects."
+    ],
+    "note": "Here it means an insect that damages books, not an avid reader.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4165": {
+    "english": "crop, an animal's food-storage pouch",
+    "pos": "noun",
+    "second": [
+      "图上标出了鸟的嗉囊。",
+      "tú shàng biāo chū le niǎo de sù náng.",
+      "The bird's crop is labeled in the diagram."
+    ],
+    "note": "An anatomical term for a food-storage pouch.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4167": {
+    "english": "to mislead; to lead astray",
+    "pos": "verb",
+    "second": [
+      "夸大的广告容易蛊惑人。",
+      "kuā dà de guǎng gào róng yì gǔ huò rén.",
+      "Exaggerated advertising can mislead people."
+    ],
+    "note": "Usually implies manipulation or deception.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4169": {
+    "english": "clerk in an old government office",
+    "pos": "noun",
+    "second": [
+      "胥吏把文书送到堂上。",
+      "xū lì bǎ wén shū sòng dào táng shàng.",
+      "The clerk delivers the documents to the hall."
+    ],
+    "note": "A historical administrative occupation.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4170": {
+    "english": "Chu, a surname",
+    "pos": "proper noun",
+    "second": [
+      "褚先生留下了电话号码。",
+      "chǔ xiān sheng liú xià le diàn huà hào mǎ.",
+      "Mr. Chu left his phone number."
+    ],
+    "note": "The surname uses chǔ.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4171": {
+    "english": "ramie",
+    "pos": "noun",
+    "second": [
+      "这块布由苎麻纤维织成。",
+      "zhè kuài bù yóu zhù má xiān wéi zhī chéng.",
+      "This cloth is woven from ramie fiber."
+    ],
+    "note": "Names a fiber-producing plant.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4172": {
+    "english": "chopsticks, literary usage",
+    "pos": "noun",
+    "second": [
+      "古画里的人手持一双箸。",
+      "gǔ huà lǐ de rén shǒu chí yī shuāng zhù.",
+      "The person in the old painting holds a pair of chopsticks."
+    ],
+    "note": "A literary word for 筷子.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4173": {
+    "english": "silt; sludge",
+    "pos": "noun",
+    "second": [
+      "雨后河道积满了淤泥。",
+      "yǔ hòu hé dào jī mǎn le yū ní.",
+      "After the rain, the channel is full of silt."
+    ],
+    "note": "Usually wet sediment deposited in water.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4175": {
+    "english": "internal organs",
+    "pos": "noun",
+    "second": [
+      "课文解释了脏腑的含义。",
+      "kè wén jiě shì le zàng fǔ de hán yì.",
+      "The text explains the meaning of internal organs."
+    ],
+    "note": "脏 is zàng here, not zāng meaning dirty.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4176": {
+    "english": "bran",
+    "pos": "noun",
+    "second": [
+      "这袋麸皮准备送到农场。",
+      "zhè dài fū pí zhǔn bèi sòng dào nóng chǎng.",
+      "This bag of bran is ready to be sent to the farm."
+    ],
+    "note": "The outer layer separated when grain is milled.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4177": {
+    "english": "obituary; death notice",
+    "pos": "noun",
+    "second": [
+      "家属在网站上发布讣告。",
+      "jiā shǔ zài wǎng zhàn shàng fā bù fù gào.",
+      "The family posts a death notice online."
+    ],
+    "note": "A formal notice announcing someone's death.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4178": {
+    "english": "to eliminate a problem at its source",
+    "pos": "idiom",
+    "second": [
+      "堵住漏洞才是釜底抽薪。",
+      "dǔ zhù lòu dòng cái shì fǔ dǐ chōu xīn.",
+      "Closing the loophole tackles the problem at its source."
+    ],
+    "note": "Literally removing the firewood from under a cauldron.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4179": {
+    "english": "tungsten",
+    "pos": "noun",
+    "second": [
+      "元素表中可以找到钨。",
+      "yuán sù biǎo zhōng kě yǐ zhǎo dào wū.",
+      "Tungsten can be found in the periodic table."
+    ],
+    "note": "The chemical symbol is W.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4180": {
+    "english": "to execute; to put to death",
+    "pos": "verb",
+    "second": [
+      "剧中的叛臣被诛杀了。",
+      "jù zhōng de pàn chén bèi zhū shā le.",
+      "The traitorous official in the play is executed."
+    ],
+    "note": "A formal or historical word for killing as punishment.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4181": {
+    "english": "humble observations; tentative opinion",
+    "pos": "noun",
+    "second": [
+      "文章标题是环保刍议。",
+      "wén zhāng biāo tí shì huán bǎo chú yì.",
+      "The article is titled Humble Thoughts on Environmental Protection."
+    ],
+    "note": "A modest expression often used in essay titles.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4182": {
+    "english": "cinnabar",
+    "pos": "noun",
+    "second": [
+      "朱砂的颜色很鲜艳。",
+      "zhū shā de yán sè hěn xiān yàn.",
+      "Cinnabar has a vivid color."
+    ],
+    "note": "A red mineral traditionally used as a pigment.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4183": {
+    "english": "to guard a frontier",
+    "pos": "verb",
+    "second": [
+      "他曾在北方戍守多年。",
+      "tā céng zài běi fāng shù shǒu duō nián.",
+      "He guarded the northern frontier for many years."
+    ],
+    "note": "Usually refers to military frontier duty.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4184": {
+    "english": "foal; young horse",
+    "pos": "noun",
+    "second": [
+      "马驹在草地上休息。",
+      "mǎ jū zài cǎo dì shàng xiū xi.",
+      "The foal rests on the grass."
+    ],
+    "note": "A young horse, male or female.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4185": {
+    "english": "just now",
+    "pos": "adverb",
+    "second": [
+      "方才那阵雨已经停了。",
+      "fāng cái nà zhèn yǔ yǐ jīng tíng le.",
+      "The rain from a moment ago has stopped."
+    ],
+    "note": "A somewhat literary alternative to 刚才.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4186": {
+    "english": "kind and easygoing",
+    "pos": "adjective",
+    "second": [
+      "乡亲们称赞他恺悌的性情。",
+      "xiāng qīn men chēng zàn tā kǎi tì de xìng qíng.",
+      "The villagers praise his kind, easygoing nature."
+    ],
+    "note": "A literary description of a gracious temperament.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4187": {
+    "english": "mist; haze",
+    "pos": "noun",
+    "second": [
+      "雾霭散去，山峰显现。",
+      "wù ǎi sàn qù, shān fēng xiǎn xiàn.",
+      "The mist clears and the peaks appear."
+    ],
+    "note": "Often used in descriptions of scenery.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4188": {
+    "english": "jackals and wolves",
+    "pos": "noun",
+    "second": [
+      "寓言中的豺狼总想捕食弱者。",
+      "yù yán zhōng de chái láng zǒng xiǎng bǔ shí ruò zhě.",
+      "The jackals and wolves in the fable always want to prey on the weak."
+    ],
+    "note": "Can also figuratively describe vicious people.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4189": {
+    "english": "scabies",
+    "pos": "noun",
+    "second": [
+      "教材列出了疥疮这个病名。",
+      "jiào cái liè chū le jiè chuāng zhè ge bìng míng.",
+      "The textbook lists the disease name scabies."
+    ],
+    "note": "A medical disease name; the example gives no treatment advice.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4190": {
+    "english": "to skim off benefits for oneself",
+    "pos": "verb",
+    "second": [
+      "有人借报销的机会揩油。",
+      "yǒu rén jiè bào xiāo de jī huì kāi yóu.",
+      "Someone takes advantage of reimbursements for personal gain."
+    ],
+    "note": "Here it refers to petty improper gain.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4191": {
+    "english": "unofficial historical accounts",
+    "pos": "noun",
+    "second": [
+      "他爱读稗官野史中的轶事。",
+      "tā ài dú bài guān yě shǐ zhōng de yì shì.",
+      "He enjoys anecdotes in unofficial histories."
+    ],
+    "note": "Such accounts are distinct from official historical records.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4193": {
+    "english": "narrow-minded; limited in outlook",
+    "pos": "adjective",
+    "second": [
+      "他的见解过于狭隘。",
+      "tā de jiàn jiě guò yú xiá ài.",
+      "His outlook is too narrow."
+    ],
+    "note": "Here it describes thinking, not the width of a path.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4194": {
+    "english": "sleep talk",
+    "pos": "noun",
+    "second": [
+      "夜里传来几句模糊的梦呓。",
+      "yè lǐ chuán lái jǐ jù mó hu de mèng yì.",
+      "A few indistinct words of sleep talk are heard at night."
+    ],
+    "note": "May also figuratively refer to nonsensical talk.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4196": {
+    "english": "castor-oil plant",
+    "pos": "noun",
+    "second": [
+      "植物园给蓖麻挂了标签。",
+      "zhí wù yuán gěi bì má guà le biāo qiān.",
+      "The botanical garden labels the castor-oil plant."
+    ],
+    "note": "Names the plant, not the oil extracted from it.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4197": {
+    "english": "shepherd's purse, a plant",
+    "pos": "noun",
+    "second": [
+      "篮子里装着新鲜荠菜。",
+      "lán zi lǐ zhuāng zhe xīn xiān jì cài.",
+      "The basket holds fresh shepherd's purse."
+    ],
+    "note": "荠 is jì in this plant name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4198": {
+    "english": "attainment; mastery",
+    "pos": "noun",
+    "second": [
+      "他的音乐造诣令人佩服。",
+      "tā de yīn yuè zào yì lìng rén pèi fú.",
+      "His musical mastery is admirable."
+    ],
+    "note": "Often follows a field of art or study.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4199": {
+    "english": "adobe brick",
+    "pos": "noun",
+    "second": [
+      "院墙上的土坯有些开裂。",
+      "yuàn qiáng shàng de tǔ pī yǒu xiē kāi liè.",
+      "Some adobe bricks in the courtyard wall are cracked."
+    ],
+    "note": "An unfired building brick made from earth.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4200": {
+    "english": "Pei, a surname",
+    "pos": "proper noun",
+    "second": [
+      "裴女士负责接待客人。",
+      "péi nǚ shì fù zé jiē dài kè rén.",
+      "Ms. Pei is responsible for welcoming guests."
+    ],
+    "note": "A Chinese family name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4202": {
+    "english": "humorous; witty",
+    "pos": "adjective",
+    "second": [
+      "他的开场白十分诙谐。",
+      "tā de kāi chǎng bái shí fēn huī xié.",
+      "His opening remarks are very witty."
+    ],
+    "note": "Usually describes amusing speech or writing.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4203": {
+    "english": "fennel",
+    "pos": "noun",
+    "second": [
+      "厨房里飘着茴香的香味。",
+      "chú fáng lǐ piāo zhe huí xiāng de xiāng wèi.",
+      "The scent of fennel drifts through the kitchen."
+    ],
+    "note": "Can refer to the plant used in cooking.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4205": {
+    "english": "executioner",
+    "pos": "noun",
+    "second": [
+      "小说中的刽子手放下了刀。",
+      "xiǎo shuō zhōng de guì zi shǒu fàng xià le dāo.",
+      "The executioner in the novel puts down his blade."
+    ],
+    "note": "An occupation in a historical setting.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4206": {
+    "english": "Rui, a surname",
+    "pos": "proper noun",
+    "second": [
+      "芮同学坐在第一排。",
+      "ruì tóng xué zuò zài dì yī pái.",
+      "Student Rui sits in the front row."
+    ],
+    "note": "A Chinese family name pronounced ruì.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4207": {
+    "english": "Kui, an ancient lunar mansion",
+    "pos": "proper noun",
+    "second": [
+      "天文图上标出了奎星。",
+      "tiān wén tú shàng biāo chū le kuí xīng.",
+      "Kui is labeled on the astronomical chart."
+    ],
+    "note": "Here it is 奎宿 of the twenty-eight lunar mansions.",
+    "source": "Original astronomy gloss and example; sense checked against MOE 奎: https://dict.concised.moe.edu.tw/dictView.jsp?ID=18732"
+  },
+  "4208": {
+    "english": "benefit; advantage",
+    "pos": "noun",
+    "second": [
+      "这次交流对双方都有裨益。",
+      "zhè cì jiāo liú duì shuāng fāng dōu yǒu bì yì.",
+      "This exchange benefits both sides."
+    ],
+    "note": "Formal; often follows 对 and takes 有.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4209": {
+    "english": "to cause; so as to bring about",
+    "pos": "verb",
+    "second": [
+      "应说明规则，俾使人人明白。",
+      "yīng shuō míng guī zé, bǐ shǐ rén rén míng bai.",
+      "The rules should be explained so that everyone understands."
+    ],
+    "note": "A literary connector introducing a desired result.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4210": {
+    "english": "lychee",
+    "pos": "noun",
+    "second": [
+      "这盘荔枝已经洗好了。",
+      "zhè pán lì zhī yǐ jīng xǐ hǎo le.",
+      "This plate of lychees has been washed."
+    ],
+    "note": "Names both the fruit and its tree.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4212": {
+    "english": "gardenia flower",
+    "pos": "noun",
+    "second": [
+      "她在花瓶里插了栀子花。",
+      "tā zài huā píng lǐ chā le zhī zi huā.",
+      "She puts gardenias in the vase."
+    ],
+    "note": "子 is neutral in this flower name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4213": {
+    "english": "pig; swine, literary usage",
+    "pos": "noun",
+    "second": [
+      "字典把豕解释为猪。",
+      "zì diǎn bǎ shǐ jiě shì wéi zhū.",
+      "The dictionary explains shi as pig."
+    ],
+    "note": "Commonly encountered as a character component or in classical text.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4214": {
+    "english": "constraint; fetter",
+    "pos": "noun",
+    "second": [
+      "这些顾虑成了他的羁绊。",
+      "zhè xiē gù lǜ chéng le tā de jī bàn.",
+      "These worries become constraints on him."
+    ],
+    "note": "Often used figuratively for something that holds a person back.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4215": {
+    "english": "Qishan, a county in Shaanxi",
+    "pos": "proper noun",
+    "second": [
+      "岐山的老街吸引了游客。",
+      "qí shān de lǎo jiē xī yǐn le yóu kè.",
+      "Qishan's old streets attract visitors."
+    ],
+    "note": "A place name; 山 is part of the name here.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4216": {
+    "english": "to become complacent; to let one's guard down",
+    "pos": "verb",
+    "second": [
+      "安全检查时不能麻痹。",
+      "ān quán jiǎn chá shí bù néng má bì.",
+      "One must not become complacent during safety checks."
+    ],
+    "note": "This is the figurative sense, distinct from physical numbness.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4217": {
+    "english": "chaff; empty husks",
+    "pos": "noun",
+    "second": [
+      "风把秕糠吹到一旁。",
+      "fēng bǎ bǐ kāng chuī dào yī páng.",
+      "The wind blows the chaff aside."
+    ],
+    "note": "Refers to unwanted grain husks or poorly filled grain.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4218": {
+    "english": "bridle",
+    "pos": "noun",
+    "second": [
+      "她给马套上辔头。",
+      "tā gěi mǎ tào shàng pèi tóu.",
+      "She puts the bridle on the horse."
+    ],
+    "note": "Names the headgear used to guide a horse.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4219": {
+    "english": "radical change",
+    "pos": "noun",
+    "second": [
+      "新制度使风气丕变。",
+      "xīn zhì dù shǐ fēng qì pī biàn.",
+      "The new system radically changes the prevailing atmosphere."
+    ],
+    "note": "A literary expression for a major transformation.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4220": {
+    "english": "fine-toothed comb",
+    "pos": "noun",
+    "second": [
+      "木篦子的齿很密。",
+      "mù bì zi de chǐ hěn mì.",
+      "The wooden fine-toothed comb has closely spaced teeth."
+    ],
+    "note": "Distinguished from an ordinary comb by its fine teeth.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4221": {
+    "english": "glutinous rice cake",
+    "pos": "noun",
+    "second": [
+      "我们把糍粑切成小块。",
+      "wǒ men bǎ cí bā qiē chéng xiǎo kuài.",
+      "We cut the glutinous rice cake into small pieces."
+    ],
+    "note": "A food made from pounded glutinous rice.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4222": {
+    "english": "pheasant",
+    "pos": "noun",
+    "second": [
+      "林边有两只雉鸡觅食。",
+      "lín biān yǒu liǎng zhī zhì jī mì shí.",
+      "Two pheasants forage at the woodland edge."
+    ],
+    "note": "A bird name; 只 counts individual birds.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4223": {
+    "english": "owl, literary usage",
+    "pos": "noun",
+    "second": [
+      "诗中的鸱鸮停在树枝上。",
+      "shī zhōng de chī xiāo tíng zài shù zhī shàng.",
+      "The owl in the poem perches on a branch."
+    ],
+    "note": "A literary or zoological name for an owl.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4224": {
+    "english": "Qi, a surname",
+    "pos": "proper noun",
+    "second": [
+      "祁医生下午出诊。",
+      "qí yī shēng xià wǔ chū zhěn.",
+      "Dr. Qi sees patients this afternoon."
+    ],
+    "note": "A Chinese family name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4226": {
+    "english": "to leave school without graduating",
+    "pos": "verb",
+    "second": [
+      "简历注明他大学肄业。",
+      "jiǎn lì zhù míng tā dà xué yì yè.",
+      "His résumé states that he left university without graduating."
+    ],
+    "note": "Describes study that did not lead to graduation.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4227": {
+    "english": "dementia",
+    "pos": "noun",
+    "second": [
+      "讲座介绍了痴呆研究的历史。",
+      "jiǎng zuò jiè shào le chī dāi yán jiū de lì shǐ.",
+      "The lecture introduces the history of dementia research."
+    ],
+    "note": "Here it is a medical noun, not an insult.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4228": {
+    "english": "hemorrhoids",
+    "pos": "noun",
+    "second": [
+      "这篇论文讨论痔疮的分类。",
+      "zhè piān lùn wén tǎo lùn zhì chuāng de fēn lèi.",
+      "This paper discusses the classification of hemorrhoids."
+    ],
+    "note": "A medical noun used in an academic context.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4229": {
+    "english": "military supplies and equipment",
+    "pos": "noun",
+    "second": [
+      "辎重车停在营地外。",
+      "zī zhòng chē tíng zài yíng dì wài.",
+      "The supply wagons stand outside the camp."
+    ],
+    "note": "Includes supplies carried by an army on the move.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4230": {
+    "english": "to wait, literary usage",
+    "pos": "verb",
+    "second": [
+      "请在门外俟候片刻。",
+      "qǐng zài mén wài sì hòu piàn kè.",
+      "Please wait outside the door for a moment."
+    ],
+    "note": "A formal or literary equivalent of 等候.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4231": {
+    "english": "mole, a skin mark",
+    "pos": "noun",
+    "second": [
+      "她手臂上有一颗小痣。",
+      "tā shǒu bì shàng yǒu yī kē xiǎo zhì.",
+      "She has a small mole on her arm."
+    ],
+    "note": "颗 counts small individual marks such as moles.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4232": {
+    "english": "Yishui, a county in Shandong",
+    "pos": "proper noun",
+    "second": [
+      "沂水的车站人很多。",
+      "yí shuǐ de chē zhàn rén hěn duō.",
+      "Yishui's station is crowded."
+    ],
+    "note": "A place name, pronounced yí shuǐ.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4233": {
+    "english": "under someone's command; subordinates",
+    "pos": "noun",
+    "second": [
+      "他麾下的士兵纪律严明。",
+      "tā huī xià de shì bīng jì lǜ yán míng.",
+      "The soldiers under his command are highly disciplined."
+    ],
+    "note": "Usually follows the name or pronoun of a commander.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4234": {
+    "english": "Kui, a mythical creature",
+    "pos": "proper noun",
+    "second": [
+      "石刻上的夔只有一只脚。",
+      "shí kè shàng de kuí zhǐ yǒu yī zhī jiǎo.",
+      "The Kui in the stone carving has only one leg."
+    ],
+    "note": "Here it names the one-legged creature of mythology.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4236": {
+    "english": "prickly heat; sweat rash",
+    "pos": "noun",
+    "second": [
+      "她在笔记里记下痱子这个词。",
+      "tā zài bǐ jì lǐ jì xià fèi zi zhè ge cí.",
+      "She writes the term prickly heat in her notes."
+    ],
+    "note": "子 is neutral; a common term for a skin rash.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4238": {
+    "english": "to feel bashful",
+    "pos": "verb",
+    "second": [
+      "当众唱歌让她有些害臊。",
+      "dāng zhòng chàng gē ràng tā yǒu xiē hài sào.",
+      "Singing in public makes her feel a little shy."
+    ],
+    "note": "Often describes embarrassment under others' attention.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4239": {
+    "english": "to reward with gifts or a feast",
+    "pos": "verb",
+    "second": [
+      "老板犒赏了忙碌的员工。",
+      "lǎo bǎn kào shǎng le máng lù de yuán gōng.",
+      "The boss rewards the hardworking staff."
+    ],
+    "note": "Can be used beyond its traditional military context.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4241": {
+    "english": "trench; ditch",
+    "pos": "noun",
+    "second": [
+      "雨水流进了壕沟。",
+      "yǔ shuǐ liú jìn le háo gōu.",
+      "Rainwater flows into the trench."
+    ],
+    "note": "An excavated ditch, often associated with defenses.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4244": {
+    "english": "hinge",
+    "pos": "noun",
+    "second": [
+      "修门时要检查铰链。",
+      "xiū mén shí yào jiǎn chá jiǎo liàn.",
+      "Check the hinges when repairing the door."
+    ],
+    "note": "The joint that lets a door or lid pivot.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4246": {
+    "english": "hard to pronounce",
+    "pos": "adjective",
+    "second": [
+      "这个名字念起来有点拗口。",
+      "zhè ge míng zi niàn qǐ lai yǒu diǎn ào kǒu.",
+      "This name is a little awkward to pronounce."
+    ],
+    "note": "Usually used with 读起来 or 念起来.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4248": {
+    "english": "to pay for a prostitute's services",
+    "pos": "verb",
+    "second": [
+      "报道提到了嫖妓行为。",
+      "bào dào tí dào le piáo jì xíng wéi.",
+      "The report mentions paying for prostitution."
+    ],
+    "note": "An adult term; this example describes reported conduct.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4249": {
+    "english": "swim bladder",
+    "pos": "noun",
+    "second": [
+      "图中能看到鱼鳔的位置。",
+      "tú zhōng néng kàn dào yú biào de wèi zhi.",
+      "The position of the swim bladder is visible in the diagram."
+    ],
+    "note": "An organ in many fish, distinct from a human bladder.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4250": {
+    "english": "to look down on; to despise",
+    "pos": "verb",
+    "second": [
+      "不要藐视别人的努力。",
+      "bù yào miǎo shì bié ren de nǔ lì.",
+      "Do not look down on other people's efforts."
+    ],
+    "note": "Takes the person or thing being dismissed as its object.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4251": {
+    "english": "to eliminate by armed force",
+    "pos": "verb",
+    "second": [
+      "史书写到了剿灭山中盗匪。",
+      "shǐ shū xiě dào le jiǎo miè shān zhōng dào fěi.",
+      "The history describes eliminating bandits in the mountains."
+    ],
+    "note": "Usually used in military or historical accounts.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4255": {
+    "english": "imperial edict",
+    "pos": "noun",
+    "second": [
+      "博物馆展出了一份诏书。",
+      "bó wù guǎn zhǎn chū le yī fèn zhào shū.",
+      "The museum displays an imperial edict."
+    ],
+    "note": "An order issued by an emperor.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4256": {
+    "english": "radius, a forearm bone",
+    "pos": "noun",
+    "second": [
+      "模型上标出了桡骨。",
+      "mó xíng shàng biāo chū le ráo gǔ.",
+      "The radius is labeled on the model."
+    ],
+    "note": "An anatomical noun naming a specific bone.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4257": {
+    "english": "buckwheat",
+    "pos": "noun",
+    "second": [
+      "山坡上种着荞麦。",
+      "shān pō shàng zhòng zhe qiáo mài.",
+      "Buckwheat grows on the hillside."
+    ],
+    "note": "Names the crop and its grain.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4261": {
+    "english": "to copulate; to have sexual intercourse",
+    "pos": "verb",
+    "second": [
+      "词典把交媾列为书面用语。",
+      "cí diǎn bǎ jiāo gòu liè wéi shū miàn yòng yǔ.",
+      "The dictionary lists copulate as a formal written term."
+    ],
+    "note": "A formal adult term; this example discusses language.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4262": {
+    "english": "small bowl or drinking vessel",
+    "pos": "noun",
+    "second": [
+      "案上摆着一瓯酒。",
+      "àn shàng bǎi zhe yī ōu jiǔ.",
+      "A small bowl of wine sits on the table."
+    ],
+    "note": "Literary; also used as a measure for the vessel's contents.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4263": {
+    "english": "to brawl; fistfight",
+    "pos": "verb",
+    "second": [
+      "两人因口角在巷里殴斗。",
+      "liǎng rén yīn kǒu jiǎo zài xiàng lǐ ōu dòu.",
+      "The two brawl in the alley after an argument."
+    ],
+    "note": "Refers to physical fighting rather than a verbal disagreement.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4264": {
+    "english": "to make fertilizer by soaking organic matter",
+    "pos": "verb",
+    "second": [
+      "这些菜叶可以用来沤肥。",
+      "zhè xiē cài yè kě yǐ yòng lái òu féi.",
+      "These vegetable leaves can be used to make soaked fertilizer."
+    ],
+    "note": "沤 is òu in this agricultural process.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4265": {
+    "english": "mound; earthen hill",
+    "pos": "noun",
+    "second": [
+      "古文把小土山称为阜。",
+      "gǔ wén bǎ xiǎo tǔ shān chēng wéi fù.",
+      "Classical text calls a small earthen hill fu."
+    ],
+    "note": "The mound sense is used here; it can also mean abundant.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4267": {
+    "english": "to distill",
+    "pos": "verb",
+    "second": [
+      "老师演示了蒸馏过程。",
+      "lǎo shī yǎn shì le zhēng liú guò chéng.",
+      "The teacher demonstrates the distillation process."
+    ],
+    "note": "May be a verb or name the process as a noun.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4268": {
+    "english": "a thousand years; ages",
+    "pos": "noun",
+    "second": [
+      "这首诗歌颂了千秋功业。",
+      "zhè shǒu shī gē sòng le qiān qiū gōng yè.",
+      "This poem praises achievements enduring through the ages."
+    ],
+    "note": "A literary expression of very long duration.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4269": {
+    "english": "to swim",
+    "pos": "verb",
+    "second": [
+      "他在江边学会了泅水。",
+      "tā zài jiāng biān xué huì le qiú shuǐ.",
+      "He learned to swim by the river."
+    ],
+    "note": "A literary or regional equivalent of 游泳.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4271": {
+    "english": "broom",
+    "pos": "noun",
+    "second": [
+      "扫帚靠在门后。",
+      "sào zhou kào zài mén hòu.",
+      "The broom leans behind the door."
+    ],
+    "note": "帚 is neutral in this word.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4272": {
+    "english": "coffin containing the deceased",
+    "pos": "noun",
+    "second": [
+      "灵柩前摆着白花。",
+      "líng jiù qián bǎi zhe bái huā.",
+      "White flowers are placed before the coffin."
+    ],
+    "note": "A respectful term used in funeral settings.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4273": {
+    "english": "good and bad people mixed together",
+    "pos": "idiom",
+    "second": [
+      "报名者良莠不齐，需要筛选。",
+      "bào míng zhě liáng yǒu bù qí, xū yào shāi xuǎn.",
+      "The applicants vary in character and need screening."
+    ],
+    "note": "Traditionally concerns people's character, not merely unequal skill.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4275": {
+    "english": "to collapse",
+    "pos": "verb",
+    "second": [
+      "废弃的墙壁突然坍塌了。",
+      "fèi qì de qiáng bì tū rán tān tā le.",
+      "The abandoned wall suddenly collapses."
+    ],
+    "note": "Usually describes buildings, walls, or earth structures.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4276": {
+    "english": "chisel",
+    "pos": "noun",
+    "second": [
+      "他把錾子交给了石匠。",
+      "tā bǎ zàn zi jiāo gěi le shí jiàng.",
+      "He hands the chisel to the stoneworker."
+    ],
+    "note": "A tool used for cutting or engraving hard material.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4277": {
+    "english": "slops; food waste mixed with water",
+    "pos": "noun",
+    "second": [
+      "泔水桶需要清洗。",
+      "gān shuǐ tǒng xū yào qīng xǐ.",
+      "The slop bucket needs cleaning."
+    ],
+    "note": "Often associated with kitchen or restaurant waste.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4278": {
+    "english": "blood clam",
+    "pos": "noun",
+    "second": [
+      "摊位上摆着新鲜蚶子。",
+      "tān wèi shàng bǎi zhe xīn xiān hān zi.",
+      "Fresh blood clams are displayed at the stall."
+    ],
+    "note": "A shellfish name; 子 is neutral.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4279": {
+    "english": "Handan, a city in Hebei",
+    "pos": "proper noun",
+    "second": [
+      "邯郸的朋友发来了照片。",
+      "hán dān de péng you fā lái le zhào piàn.",
+      "A friend in Handan sends photos."
+    ],
+    "note": "A Chinese city name pronounced hán dān.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4280": {
+    "english": "slanderous words",
+    "pos": "noun",
+    "second": [
+      "谗言动摇了他的信任。",
+      "chán yán dòng yáo le tā de xìn rèn.",
+      "Slander shakes his trust."
+    ],
+    "note": "A literary word for malicious accusations or gossip.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4282": {
+    "english": "to repent",
+    "pos": "verb",
+    "second": [
+      "他在信中向朋友忏悔。",
+      "tā zài xìn zhōng xiàng péng you chàn huǐ.",
+      "He expresses repentance to his friend in a letter."
+    ],
+    "note": "Can be secular or religious, depending on context.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4283": {
+    "english": "shoulder-blade region",
+    "pos": "noun",
+    "second": [
+      "背包的带子压在肩胛处。",
+      "bēi bāo de dài zi yā zài jiān jiǎ chù.",
+      "The backpack straps press against the shoulder-blade area."
+    ],
+    "note": "Here it refers to the region around the shoulder blade.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4284": {
+    "english": "overfamiliar; improperly intimate",
+    "pos": "adjective",
+    "second": [
+      "这种狎昵的称呼令她不快。",
+      "zhè zhǒng xiá nì de chēng hu lìng tā bù kuài.",
+      "This overfamiliar form of address displeases her."
+    ],
+    "note": "Usually carries a negative judgment about excessive familiarity.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4285": {
+    "english": "tweezers; forceps",
+    "pos": "noun",
+    "second": [
+      "镊子放在托盘右边。",
+      "niè zi fàng zài tuō pán yòu biān.",
+      "The tweezers are on the right of the tray."
+    ],
+    "note": "A tool for gripping small objects.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4287": {
+    "english": "to annihilate; to wipe out",
+    "pos": "verb",
+    "second": [
+      "战报称敌军已被歼灭。",
+      "zhàn bào chēng dí jūn yǐ bèi jiān miè.",
+      "The battle report says the enemy forces have been annihilated."
+    ],
+    "note": "Typically military language.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4288": {
+    "english": "all, classical usage",
+    "pos": "pronoun",
+    "second": [
+      "老师说佥可解释为皆。",
+      "lǎo shī shuō qiān kě jiě shì wéi jiē.",
+      "The teacher says qian can be explained as all."
+    ],
+    "note": "An uncommon classical character.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4289": {
+    "english": "Siam, the former name of Thailand",
+    "pos": "proper noun",
+    "second": [
+      "这张旧地图上写着暹罗。",
+      "zhè zhāng jiù dì tú shàng xiě zhe xiān luó.",
+      "Siam is written on this old map."
+    ],
+    "note": "A historical country name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4290": {
+    "english": "to support elderly dependents",
+    "pos": "verb",
+    "second": [
+      "兄弟俩一起赡养祖母。",
+      "xiōng dì liǎ yī qǐ shàn yǎng zǔ mǔ.",
+      "The two brothers support their grandmother together."
+    ],
+    "note": "Usually refers to providing for older relatives.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4291": {
+    "english": "to castrate",
+    "pos": "verb",
+    "second": [
+      "教材解释了阉割这一术语。",
+      "jiào cái jiě shì le yān gē zhè yī shù yǔ.",
+      "The textbook explains the term castration."
+    ],
+    "note": "Here the literal animal-related meaning is used.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4292": {
+    "english": "nightmare",
+    "pos": "noun",
+    "second": [
+      "昨晚的梦魇让她难以入睡。",
+      "zuó wǎn de mèng yǎn ràng tā nán yǐ rù shuì.",
+      "Last night's nightmare makes it hard for her to fall asleep."
+    ],
+    "note": "Can also describe a distressing experience figuratively.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4295": {
+    "english": "iron shovel; spade",
+    "pos": "noun",
+    "second": [
+      "铁锨的木柄断了。",
+      "tiě xiān de mù bǐng duàn le.",
+      "The shovel's wooden handle has broken."
+    ],
+    "note": "A tool used for moving or digging soil.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4297": {
+    "english": "to weigh in the hand",
+    "pos": "verb",
+    "second": [
+      "他掂量着手里的石头。",
+      "tā diān liang zhe shǒu lǐ de shí tou.",
+      "He weighs the stone in his hand."
+    ],
+    "note": "Also figuratively means considering something carefully.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4298": {
+    "english": "diplomatic note; formal notification",
+    "pos": "noun",
+    "second": [
+      "双方交换了书面通牒。",
+      "shuāng fāng jiāo huàn le shū miàn tōng dié.",
+      "The two sides exchange written diplomatic notes."
+    ],
+    "note": "A formal document; 最后通牒 means ultimatum.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4299": {
+    "english": "spy",
+    "pos": "noun",
+    "second": [
+      "故事里的间谍使用假名。",
+      "gù shi lǐ de jiàn dié shǐ yòng jiǎ míng.",
+      "The spy in the story uses a false name."
+    ],
+    "note": "间 is jiàn here.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4301": {
+    "english": "to overstep one's authority",
+    "pos": "verb",
+    "second": [
+      "代办事务不等于可以僭越。",
+      "dài bàn shì wù bù děng yú kě yǐ jiàn yuè.",
+      "Handling matters for someone does not permit overstepping authority."
+    ],
+    "note": "A formal word describing an improper crossing of rank or power.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4302": {
+    "english": "rental; leasing",
+    "pos": "noun",
+    "second": [
+      "租赁合同明天到期。",
+      "zū lìn hé tong míng tiān dào qī.",
+      "The rental contract expires tomorrow."
+    ],
+    "note": "Often modifies services or contracts; 赁 is lìn.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4304": {
+    "english": "granary, literary usage",
+    "pos": "noun",
+    "second": [
+      "官员查看仓廪中的存粮。",
+      "guān yuán chá kàn cāng lǐn zhōng de cún liáng.",
+      "The official checks the grain stored in the granary."
+    ],
+    "note": "A literary collective name for grain stores.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4305": {
+    "english": "mushroom; fungus",
+    "pos": "noun",
+    "second": [
+      "古书把这种菌称作蕈。",
+      "gǔ shū bǎ zhè zhǒng jūn chēng zuò xùn.",
+      "The old book calls this fungus xun."
+    ],
+    "note": "A literary character associated with fungi.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4306": {
+    "english": "precious treasure; gem",
+    "pos": "noun",
+    "second": [
+      "诗中的琛指珍贵的宝物。",
+      "shī zhōng de chēn zhǐ zhēn guì de bǎo wù.",
+      "Chen in the poem refers to precious treasure."
+    ],
+    "note": "Also appears in personal names.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4307": {
+    "english": "Cen, a surname",
+    "pos": "proper noun",
+    "second": [
+      "岑先生住在楼上。",
+      "cén xiān sheng zhù zài lóu shàng.",
+      "Mr. Cen lives upstairs."
+    ],
+    "note": "A Chinese family name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4308": {
+    "english": "pregnancy; gestation",
+    "pos": "noun",
+    "second": [
+      "课程介绍了妊娠相关术语。",
+      "kè chéng jiè shào le rèn shēn xiāng guān shù yǔ.",
+      "The course introduces terms related to pregnancy."
+    ],
+    "note": "A medical or formal equivalent of 怀孕.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4310": {
+    "english": "inspection chamber; manhole",
+    "pos": "noun",
+    "second": [
+      "路上的窨井盖已经换新。",
+      "lù shàng de yìn jǐng gài yǐ jīng huàn xīn.",
+      "The road's manhole cover has been replaced."
+    ],
+    "note": "窨 is yìn in this word.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4313": {
+    "english": "amaranth greens",
+    "pos": "noun",
+    "second": [
+      "市场的苋菜很新鲜。",
+      "shì chǎng de xiàn cài hěn xīn xiān.",
+      "The amaranth greens at the market are fresh."
+    ],
+    "note": "Names a leafy vegetable.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4314": {
+    "english": "wrench; spanner",
+    "pos": "noun",
+    "second": [
+      "把那把扳手递给我。",
+      "bǎ nà bǎ bān shǒu dì gěi wǒ.",
+      "Pass me that wrench."
+    ],
+    "note": "把 is a common classifier for handled tools.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4315": {
+    "english": "trigger",
+    "pos": "noun",
+    "second": [
+      "展品的扳机被固定住了。",
+      "zhǎn pǐn de bān jī bèi gù dìng zhù le.",
+      "The exhibit's trigger is fixed in place."
+    ],
+    "note": "Here it names a mechanical part.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4316": {
+    "english": "classifier for shops and similar establishments",
+    "pos": "classifier",
+    "second": [
+      "河边新开了一爿茶馆。",
+      "hé biān xīn kāi le yī pán chá guǎn.",
+      "A new teahouse has opened by the river."
+    ],
+    "note": "A regional classifier used for shops or businesses.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4317": {
+    "english": "hernia",
+    "pos": "noun",
+    "second": [
+      "讲义解释了疝气这个病名。",
+      "jiǎng yì jiě shì le shàn qì zhè ge bìng míng.",
+      "The handout explains the disease name hernia."
+    ],
+    "note": "A medical term, not a reference to ordinary intestinal gas.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4318": {
+    "english": "ancient solid metal truncheon",
+    "pos": "noun",
+    "second": [
+      "博物馆陈列着一对铜锏。",
+      "bó wù guǎn chén liè zhe yī duì tóng jiǎn.",
+      "The museum displays a pair of bronze truncheons."
+    ],
+    "note": "锏 is jiǎn for the ancient weapon.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4320": {
+    "english": "to hold one's breath",
+    "pos": "verb",
+    "second": [
+      "游泳课上他练习短暂憋气。",
+      "yóu yǒng kè shàng tā liàn xí duǎn zàn biē qì.",
+      "In swimming class he practices briefly holding his breath."
+    ],
+    "note": "Here it is the literal breathing sense.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4321": {
+    "english": "to give birth",
+    "pos": "verb",
+    "second": [
+      "书中讲述了母亲分娩的经历。",
+      "shū zhōng jiǎng shù le mǔ qīn fēn miǎn de jīng lì.",
+      "The book tells of the mother's experience of childbirth."
+    ],
+    "note": "A formal term used for childbirth.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4323": {
+    "english": "ringworm",
+    "pos": "noun",
+    "second": [
+      "书中有一节介绍癣的名称。",
+      "shū zhōng yǒu yī jié jiè shào xuǎn de míng chēng.",
+      "A section of the book introduces names for ringworm."
+    ],
+    "note": "A medical character pronounced xuǎn.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4324": {
+    "english": "to desecrate; to profane",
+    "pos": "verb",
+    "second": [
+      "他们认为毁坏祭坛是在亵渎。",
+      "tā men rèn wéi huǐ huài jì tán shì zài xiè dú.",
+      "They regard damaging the altar as desecration."
+    ],
+    "note": "Used for disrespect toward something sacred or revered.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4325": {
+    "english": "to salivate over; to crave",
+    "pos": "verb",
+    "second": [
+      "橱窗里的蛋糕令人垂涎。",
+      "chú chuāng lǐ de dàn gāo lìng rén chuí xián.",
+      "The cake in the window makes one's mouth water."
+    ],
+    "note": "Often used for desire prompted by appetizing food.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4328": {
+    "english": "meals; diet",
+    "pos": "noun",
+    "second": [
+      "学校公布了每周膳食安排。",
+      "xué xiào gōng bù le měi zhōu shàn shí ān pái.",
+      "The school publishes the weekly meal plan."
+    ],
+    "note": "A formal collective word for food and meals.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4329": {
+    "english": "alone; solitary",
+    "pos": "adjective",
+    "second": [
+      "多年以后，他仍孑然一身。",
+      "duō nián yǐ hòu, tā réng jié rán yī shēn.",
+      "Many years later, he is still alone."
+    ],
+    "note": "Commonly appears in 孑然一身.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4330": {
+    "english": "broker; intermediary",
+    "pos": "noun",
+    "second": [
+      "掮客安排双方见面。",
+      "qián kè ān pái shuāng fāng jiàn miàn.",
+      "The broker arranges for both sides to meet."
+    ],
+    "note": "Someone who helps connect parties to a transaction.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4331": {
+    "english": "bullock; castrated male bovine",
+    "pos": "noun",
+    "second": [
+      "一头犍牛拉着木车。",
+      "yī tóu jiān niú lā zhe mù chē.",
+      "A bullock pulls the wooden cart."
+    ],
+    "note": "犍 is jiān in this animal term.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4332": {
+    "english": "evil creature, an old insult",
+    "pos": "noun",
+    "second": [
+      "小说人物怒骂他是孽障。",
+      "xiǎo shuō rén wù nù mà tā shì niè zhàng.",
+      "A character in the novel angrily calls him an evil creature."
+    ],
+    "note": "An insulting historical expression, not neutral address.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4333": {
+    "english": "to wilt; to droop",
+    "pos": "verb",
+    "second": [
+      "几天没浇水，盆栽发蔫了。",
+      "jǐ tiān méi jiāo shuǐ, pén zāi fā niān le.",
+      "After several days without watering, the potted plant wilts."
+    ],
+    "note": "Can also describe a person's listless appearance.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4335": {
+    "english": "Qianwei, a county in Sichuan",
+    "pos": "proper noun",
+    "second": [
+      "去犍为的车快到了。",
+      "qù qián wéi de chē kuài dào le.",
+      "The bus to Qianwei is nearly here."
+    ],
+    "note": "犍 is qián in this place name, unlike 犍牛.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4336": {
+    "english": "tendon",
+    "pos": "noun",
+    "second": [
+      "图解显示了肌腱的位置。",
+      "tú jiě xiǎn shì le jī jiàn de wèi zhi.",
+      "The diagram shows the position of the tendon."
+    ],
+    "note": "An anatomical noun distinct from muscle itself.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4340": {
+    "english": "to feel stifled; oppressive stuffiness",
+    "pos": "verb",
+    "second": [
+      "车窗关着，车内十分憋闷。",
+      "chē chuāng guān zhe, chē nèi shí fēn biē men.",
+      "With the windows closed, the car feels very stifling."
+    ],
+    "note": "Here it concerns uncomfortable stuffiness.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4342": {
+    "english": "to drive away",
+    "pos": "verb",
+    "second": [
+      "保安把闯入者撵走了。",
+      "bǎo ān bǎ chuǎng rù zhě niǎn zǒu le.",
+      "The guard drives the intruder away."
+    ],
+    "note": "走 marks the result of being forced to leave.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4346": {
+    "english": "to tidy up",
+    "pos": "verb",
+    "second": [
+      "出门前先拾掇一下桌子。",
+      "chū mén qián xiān shí duo yī xià zhuō zi.",
+      "Tidy the desk before going out."
+    ],
+    "note": "A colloquial word; 掇 is neutral here.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4348": {
+    "english": "luan and phoenix, mythical birds",
+    "pos": "noun",
+    "second": [
+      "屏风上绣着金色鸾凤。",
+      "píng fēng shàng xiù zhe jīn sè luán fèng.",
+      "Golden luan and phoenix birds are embroidered on the screen."
+    ],
+    "note": "Here it refers to the mythical birds, not spouses figuratively.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4349": {
+    "english": "to push up one's sleeves",
+    "pos": "verb",
+    "second": [
+      "她捋袖子开始揉面。",
+      "tā luō xiù zi kāi shǐ róu miàn.",
+      "She pushes up her sleeves and starts kneading dough."
+    ],
+    "note": "捋 is luō in this action.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4350": {
+    "english": "to compile",
+    "pos": "verb",
+    "second": [
+      "编辑正在编纂新的词典。",
+      "biān jí zhèng zài biān zuǎn xīn de cí diǎn.",
+      "The editor is compiling a new dictionary."
+    ],
+    "note": "Usually concerns organized written reference material.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4351": {
+    "english": "to save little by little",
+    "pos": "verb",
+    "second": [
+      "他积攒了好几年的零花钱。",
+      "tā jī zǎn le hǎo jǐ nián de líng huā qián.",
+      "He has saved his pocket money for several years."
+    ],
+    "note": "Often describes gradual accumulation.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4353": {
+    "english": "Anhui, abbreviated province name",
+    "pos": "proper noun",
+    "second": [
+      "车牌上的皖表示安徽。",
+      "chē pái shàng de wǎn biǎo shì ān huī.",
+      "Wan on the license plate stands for Anhui."
+    ],
+    "note": "A one-character provincial abbreviation.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4354": {
+    "english": "pea",
+    "pos": "noun",
+    "second": [
+      "孩子把豌豆放进碗里。",
+      "hái zi bǎ wān dòu fàng jìn wǎn lǐ.",
+      "The child puts the peas into a bowl."
+    ],
+    "note": "Names the plant and its seeds.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4357": {
+    "english": "to mediate",
+    "pos": "verb",
+    "second": [
+      "第三方正在斡旋这场争端。",
+      "dì sān fāng zhèng zài wò xuán zhè chǎng zhēng duān.",
+      "A third party is mediating the dispute."
+    ],
+    "note": "Usually involves an intermediary between conflicting parties.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4358": {
+    "english": "to usurp; to seize illegitimately",
+    "pos": "verb",
+    "second": [
+      "剧中的国王担心有人篡夺王权。",
+      "jù zhōng de guó wáng dān xīn yǒu rén cuàn duó wáng quán.",
+      "The king in the play fears someone will usurp his power."
+    ],
+    "note": "Especially used for taking a throne or political power.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4360": {
+    "english": "thinly sliced mutton cooked in hot pot",
+    "pos": "noun",
+    "second": [
+      "这家店的涮羊肉很受欢迎。",
+      "zhè jiā diàn de shuàn yáng ròu hěn shòu huān yíng.",
+      "This restaurant's mutton hot pot is popular."
+    ],
+    "note": "Names the dish as well as the way it is eaten.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4361": {
+    "english": "court eunuch",
+    "pos": "noun",
+    "second": [
+      "史书中提到了几位宦官。",
+      "shǐ shū zhōng tí dào le jǐ wèi huàn guān.",
+      "The history book mentions several court eunuchs."
+    ],
+    "note": "A historical palace position.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4363": {
+    "english": "rafter",
+    "pos": "noun",
+    "second": [
+      "屋顶的椽子需要加固。",
+      "wū dǐng de chuán zi xū yào jiā gù.",
+      "The roof rafters need strengthening."
+    ],
+    "note": "A structural timber supporting the roof.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4364": {
+    "english": "seal script",
+    "pos": "noun",
+    "second": [
+      "她正在临摹篆书作品。",
+      "tā zhèng zài lín mó zhuàn shū zuò pǐn.",
+      "She is copying a seal-script work."
+    ],
+    "note": "A historical Chinese writing style.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4365": {
+    "english": "cheekbone",
+    "pos": "noun",
+    "second": [
+      "画像突出了他的颧骨。",
+      "huà xiàng tū chū le tā de quán gǔ.",
+      "The portrait emphasizes his cheekbones."
+    ],
+    "note": "An anatomical noun used in facial description.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4366": {
+    "english": "Yanzhou, a district in Shandong",
+    "pos": "proper noun",
+    "second": [
+      "这封信寄往兖州。",
+      "zhè fēng xìn jì wǎng yǎn zhōu.",
+      "This letter is addressed to Yanzhou."
+    ],
+    "note": "A place name pronounced yǎn zhōu.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4367": {
+    "english": "alum",
+    "pos": "noun",
+    "second": [
+      "标签注明瓶中装的是明矾。",
+      "biāo qiān zhù míng píng zhōng zhuāng de shì míng fán.",
+      "The label states that the bottle contains alum."
+    ],
+    "note": "A chemical substance name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4368": {
+    "english": "to faint",
+    "pos": "verb",
+    "second": [
+      "小说中的老人突然昏厥。",
+      "xiǎo shuō zhōng de lǎo rén tū rán hūn jué.",
+      "The elderly person in the novel suddenly faints."
+    ],
+    "note": "A formal word for temporarily losing consciousness.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4369": {
+    "english": "mosquito larva",
+    "pos": "noun",
+    "second": [
+      "显微镜下能看到孑孓。",
+      "xiǎn wēi jìng xià néng kàn dào jié jué.",
+      "Mosquito larvae are visible under the microscope."
+    ],
+    "note": "Names the larval stage of a mosquito.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4370": {
+    "english": "funeral and burial",
+    "pos": "noun",
+    "second": [
+      "他们请人协助安排殡葬。",
+      "tā men qǐng rén xié zhù ān pái bìn zàng.",
+      "They ask someone to help arrange the funeral and burial."
+    ],
+    "note": "A formal collective term for funeral arrangements.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4372": {
+    "english": "to assist a ruler in governing",
+    "pos": "verb",
+    "second": [
+      "大臣尽心辅弼君主。",
+      "dà chén jìn xīn fǔ bì jūn zhǔ.",
+      "The minister does his utmost to assist the ruler."
+    ],
+    "note": "A historical term for assisting a sovereign.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4373": {
+    "english": "to disappear; to be obliterated",
+    "pos": "verb",
+    "second": [
+      "时间没有让这份希望泯灭。",
+      "shí jiān méi yǒu ràng zhè fèn xī wàng mǐn miè.",
+      "Time has not extinguished this hope."
+    ],
+    "note": "Often used for memories, hopes, or conscience.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4375": {
+    "english": "nickname",
+    "pos": "noun",
+    "second": [
+      "她的网名也是朋友叫她的昵称。",
+      "tā de wǎng míng yě shì péng you jiào tā de nì chēng.",
+      "Her screen name is also the nickname her friends use."
+    ],
+    "note": "May be affectionate or simply informal.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4376": {
+    "english": "hazelnut",
+    "pos": "noun",
+    "second": [
+      "袋里还剩几颗榛子。",
+      "dài lǐ hái shèng jǐ kē zhēn zi.",
+      "A few hazelnuts remain in the bag."
+    ],
+    "note": "子 is neutral in this nut name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4379": {
+    "english": "to question sharply; to interrogate",
+    "pos": "verb",
+    "second": [
+      "记者诘问他为何隐瞒事实。",
+      "jì zhě jié wèn tā wèi hé yǐn mán shì shí.",
+      "The reporter presses him on why he concealed the facts."
+    ],
+    "note": "Stronger and more confrontational than simply 问.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4380": {
+    "english": "to provoke",
+    "pos": "verb",
+    "second": [
+      "这种挑衅只会加深矛盾。",
+      "zhè zhǒng tiǎo xìn zhǐ huì jiā shēn máo dùn.",
+      "This provocation will only deepen the conflict."
+    ],
+    "note": "Can name provocative conduct or function as a verb.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4381": {
+    "english": "beginning and end",
+    "pos": "noun",
+    "second": [
+      "请注明工作的起讫日期。",
+      "qǐng zhù míng gōng zuò de qǐ qì rì qī.",
+      "Please specify the start and end dates of the work."
+    ],
+    "note": "Common in forms and administrative records.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4382": {
+    "english": "adze",
+    "pos": "noun",
+    "second": [
+      "这把锛是祖父留下的。",
+      "zhè bǎ bēn shì zǔ fù liú xià de.",
+      "This adze was left by my grandfather."
+    ],
+    "note": "A woodworking tool with a blade across the handle.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4383": {
+    "english": "bun; pastry, regional usage",
+    "pos": "noun",
+    "second": [
+      "她把饽饽分给了孩子。",
+      "tā bǎ bō bo fēn gěi le hái zi.",
+      "She shares the buns with the children."
+    ],
+    "note": "A regional food term; the second syllable is neutral.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4384": {
+    "english": "wonton",
+    "pos": "noun",
+    "second": [
+      "这家店的馄饨皮很薄。",
+      "zhè jiā diàn de hún tun pí hěn báo.",
+      "This shop's wontons have thin wrappers."
+    ],
+    "note": "饨 is neutral in this word.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4385": {
+    "english": "to stockpile; to hoard",
+    "pos": "verb",
+    "second": [
+      "仓库里囤积着过量的材料。",
+      "cāng kù lǐ tún jī zhe guò liàng de cái liào.",
+      "Excessive supplies are stockpiled in the warehouse."
+    ],
+    "note": "Can imply storing too much or holding goods for profit.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4386": {
+    "english": "suddenly; abruptly",
+    "pos": "adverb",
+    "second": [
+      "灯光猝然熄灭了。",
+      "dēng guāng cù rán xī miè le.",
+      "The lights abruptly go out."
+    ],
+    "note": "A literary adverb used before a sudden event.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4388": {
+    "english": "plague; pestilence",
+    "pos": "noun",
+    "second": [
+      "这部小说以瘟疫为背景。",
+      "zhè bù xiǎo shuō yǐ wēn yì wéi bèi jǐng.",
+      "This novel is set against a plague."
+    ],
+    "note": "Often used in historical or literary descriptions of epidemics.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4389": {
+    "english": "to become chapped",
+    "pos": "verb",
+    "second": [
+      "干冷的天气让嘴唇皴裂。",
+      "gān lěng de tiān qì ràng zuǐ chún cūn liè.",
+      "Dry, cold weather leaves the lips chapped."
+    ],
+    "note": "Describes cracks in dry skin or lips.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4390": {
+    "english": "Xunzi, a Chinese philosopher",
+    "pos": "proper noun",
+    "second": [
+      "老师比较了荀子和孟子的观点。",
+      "lǎo shī bǐ jiào le xún zǐ hé mèng zǐ de guān diǎn.",
+      "The teacher compares the views of Xunzi and Mencius."
+    ],
+    "note": "子 retains its third tone in this philosopher's name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4391": {
+    "english": "to dredge",
+    "pos": "verb",
+    "second": [
+      "港口计划疏浚航道。",
+      "gǎng kǒu jì huà shū jùn háng dào.",
+      "The port plans to dredge the shipping channel."
+    ],
+    "note": "Refers to removing sediment to clear waterways.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4392": {
+    "english": "Chinese toon",
+    "pos": "noun",
+    "second": [
+      "春天的香椿嫩叶很香。",
+      "chūn tiān de xiāng chūn nèn yè hěn xiāng.",
+      "The young spring leaves of Chinese toon are fragrant."
+    ],
+    "note": "Names a tree whose young shoots are used as food.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4393": {
+    "english": "to pale by comparison",
+    "pos": "idiom",
+    "second": [
+      "旁边的杰作让这幅画相形见绌。",
+      "páng biān de jié zuò ràng zhè fú huà xiāng xíng jiàn chù.",
+      "The masterpiece beside it makes this painting pale by comparison."
+    ],
+    "note": "Requires an explicit or understood comparison.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4394": {
+    "english": "sorghum stalk",
+    "pos": "noun",
+    "second": [
+      "墙角堆着一捆秫秸。",
+      "qiáng jiǎo duī zhe yī kǔn shú jie.",
+      "A bundle of sorghum stalks lies in the corner."
+    ],
+    "note": "秸 is neutral in this regional word.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4396": {
+    "english": "nurturing influence",
+    "pos": "noun",
+    "second": [
+      "家庭的艺术熏陶影响了她。",
+      "jiā tíng de yì shù xūn táo yǐng xiǎng le tā.",
+      "Her family's artistic influence shaped her."
+    ],
+    "note": "Often describes a gradual positive cultural influence.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4397": {
+    "english": "meat or fish dish",
+    "pos": "noun",
+    "second": [
+      "菜单上荤菜和素菜分开列。",
+      "cài dān shàng hūn cài hé sù cài fēn kāi liè.",
+      "The menu lists meat dishes and vegetable dishes separately."
+    ],
+    "note": "In ordinary meal contexts, contrasted with 素菜.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4398": {
+    "english": "to slander; to libel",
+    "pos": "verb",
+    "second": [
+      "不要诽谤没有做错事的人。",
+      "bù yào fěi bàng méi yǒu zuò cuò shì de rén.",
+      "Do not slander people who have done nothing wrong."
+    ],
+    "note": "Concerns damaging someone's reputation with false claims.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4400": {
+    "english": "Zang, a surname",
+    "pos": "proper noun",
+    "second": [
+      "臧老师教我们历史。",
+      "zāng lǎo shī jiāo wǒ men lì shǐ.",
+      "Teacher Zang teaches us history."
+    ],
+    "note": "A Chinese surname pronounced zāng.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4402": {
+    "english": "to shove; to jostle",
+    "pos": "verb",
+    "second": [
+      "拥挤的人群不断推搡。",
+      "yōng jǐ de rén qún bù duàn tuī sǎng.",
+      "The crowded group keeps jostling."
+    ],
+    "note": "Often involves forceful repeated pushing.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4403": {
+    "english": "barbell",
+    "pos": "noun",
+    "second": [
+      "杠铃放在训练室的地上。",
+      "gàng líng fàng zài xùn liàn shì de dì shàng.",
+      "The barbell is on the training-room floor."
+    ],
+    "note": "A weight-training object, unlike an individual dumbbell.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4404": {
+    "english": "rice bran",
+    "pos": "noun",
+    "second": [
+      "米糠从筛子旁边落下。",
+      "mǐ kāng cóng shāi zi páng biān luò xià.",
+      "Rice bran falls beside the sieve."
+    ],
+    "note": "The outer layer separated when rice is milled.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4405": {
+    "english": "Hubei, abbreviated province name",
+    "pos": "proper noun",
+    "second": [
+      "这辆车的车牌以鄂开头。",
+      "zhè liàng chē de chē pái yǐ è kāi tóu.",
+      "This vehicle's license plate starts with the Hubei abbreviation."
+    ],
+    "note": "Here 鄂 is the provincial abbreviation, not a surname.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4406": {
+    "english": "widow, formal usage",
+    "pos": "noun",
+    "second": [
+      "小说中的孀妇独自抚养孩子。",
+      "xiǎo shuō zhōng de shuāng fù dú zì fǔ yǎng hái zi.",
+      "The widow in the novel raises her children alone."
+    ],
+    "note": "A formal or older equivalent of 寡妇.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4407": {
+    "english": "miasma, a historical concept",
+    "pos": "noun",
+    "second": [
+      "游记把林中的湿气称作瘴气。",
+      "yóu jì bǎ lín zhōng de shī qì chēng zuò zhàng qì.",
+      "The travel account calls the forest's damp air miasma."
+    ],
+    "note": "A historical explanation of unhealthy air, presented as old usage.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4408": {
+    "english": "to blanch; to parboil",
+    "pos": "verb",
+    "second": [
+      "拌豆芽前要先焯水。",
+      "bàn dòu yá qián yào xiān chāo shuǐ.",
+      "Blanch the bean sprouts before making the salad."
+    ],
+    "note": "焯 is chāo for this cooking action.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4409": {
+    "english": "army provisions and pay",
+    "pos": "noun",
+    "second": [
+      "运输队把粮饷送到军营。",
+      "yùn shū duì bǎ liáng xiǎng sòng dào jūn yíng.",
+      "The transport unit brings provisions and pay to the camp."
+    ],
+    "note": "A historical collective term for army supplies and funding.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4410": {
+    "english": "herbaceous peony",
+    "pos": "noun",
+    "second": [
+      "花瓶里插着粉色芍药。",
+      "huā píng lǐ chā zhe fěn sè sháo yào.",
+      "Pink peonies stand in the vase."
+    ],
+    "note": "Distinguished from the woody 牡丹 in plant naming.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4411": {
+    "english": "melon flesh",
+    "pos": "noun",
+    "second": [
+      "西瓜的瓜瓤又红又甜。",
+      "xī guā de guā ráng yòu hóng yòu tián.",
+      "The watermelon flesh is red and sweet."
+    ],
+    "note": "The soft inside of a melon, rather than its rind.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4412": {
+    "english": "chromium",
+    "pos": "noun",
+    "second": [
+      "铬的化学符号是两个字母。",
+      "gè de huà xué fú hào shì liǎng ge zì mǔ.",
+      "Chromium's chemical symbol has two letters."
+    ],
+    "note": "The symbol is Cr; 铬 is gè.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4413": {
+    "english": "safe and well; unharmed",
+    "pos": "adjective",
+    "second": [
+      "旅途结束，大家都安然无恙。",
+      "lǚ tú jié shù, dà jiā dōu ān rán wú yàng.",
+      "At the end of the journey, everyone is safe and sound."
+    ],
+    "note": "Commonly used in 安然无恙.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4414": {
+    "english": "wrinkled giant hyssop",
+    "pos": "noun",
+    "second": [
+      "植物园为藿香立了名牌。",
+      "zhí wù yuán wèi huò xiāng lì le míng pái.",
+      "The botanical garden puts up a nameplate for the hyssop."
+    ],
+    "note": "A plant name, here used botanically.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4416": {
+    "english": "cauldron; wok",
+    "pos": "noun",
+    "second": [
+      "戏台上摆着一口铁镬。",
+      "xì tái shàng bǎi zhe yī kǒu tiě huò.",
+      "An iron cauldron stands on the stage."
+    ],
+    "note": "A literary or regional name for a large cooking vessel.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4417": {
+    "english": "mattock; hoe, dialect usage",
+    "pos": "noun",
+    "second": [
+      "那把镢的木柄很长。",
+      "nà bǎ jué de mù bǐng hěn cháng.",
+      "That mattock has a long wooden handle."
+    ],
+    "note": "A regional farm-tool word, also seen as 镢头.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4419": {
+    "english": "Zhuozhou, a city in Hebei",
+    "pos": "proper noun",
+    "second": [
+      "去涿州的票已经买好了。",
+      "qù zhuō zhōu de piào yǐ jīng mǎi hǎo le.",
+      "The tickets to Zhuozhou have been bought."
+    ],
+    "note": "涿 is pronounced zhuō in this place name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4420": {
+    "english": "to tamp down; to compact",
+    "pos": "verb",
+    "second": [
+      "修路前先把地基夯实。",
+      "xiū lù qián xiān bǎ dì jī hāng shí.",
+      "Compact the foundation before building the road."
+    ],
+    "note": "Here it is literal; figuratively it can mean strengthening a foundation.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4422": {
+    "english": "to make a fair copy; to transcribe",
+    "pos": "verb",
+    "second": [
+      "他把日记誊写到新本子上。",
+      "tā bǎ rì jì téng xiě dào xīn běn zi shàng.",
+      "He copies the diary neatly into a new notebook."
+    ],
+    "note": "Usually implies producing a clean written copy.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4423": {
+    "english": "to dawdle",
+    "pos": "verb",
+    "second": [
+      "他磨蹭了半天才穿好鞋。",
+      "tā mó ceng le bàn tiān cái chuān hǎo xié.",
+      "He dawdles for ages before putting his shoes on."
+    ],
+    "note": "The second syllable is neutral in this colloquial word.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4426": {
+    "english": "to impose strict discipline; to admonish sternly",
+    "pos": "verb",
+    "second": [
+      "官员严饬下属遵守规定。",
+      "guān yuán yán chì xià shǔ zūn shǒu guī dìng.",
+      "The official sternly orders his subordinates to follow the rules."
+    ],
+    "note": "A literary verb; 飭 carries ordering or admonishing senses.",
+    "source": "Original compositional teaching gloss; 飭 ordering/admonishing sense checked against Academia Sinica: https://chardb.iis.sinica.edu.tw/meancompare/98ED/98FE",
+    "first": [
+      "严饬在古文中可以指严肃告诫。",
+      "yán chì zài gǔ wén zhōng kě yǐ zhǐ yán sù gào jiè.",
+      "Yanchi can mean to admonish sternly in classical Chinese."
+    ]
+  },
+  "4429": {
+    "english": "horsefly",
+    "pos": "noun",
+    "second": [
+      "一只牛虻停在窗边。",
+      "yī zhī niú méng tíng zài chuāng biān.",
+      "A horsefly rests by the window."
+    ],
+    "note": "A fly name; 虻 is méng.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4430": {
+    "english": "japonica rice",
+    "pos": "noun",
+    "second": [
+      "储物罐里装着粳米。",
+      "chǔ wù guàn lǐ zhuāng zhe jīng mǐ.",
+      "The storage jar holds japonica rice."
+    ],
+    "note": "A non-glutinous rice variety; 粳 is jīng.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4432": {
+    "english": "Amur cork tree",
+    "pos": "noun",
+    "second": [
+      "黄檗旁边立着植物说明牌。",
+      "huáng bò páng biān lì zhe zhí wù shuō míng pái.",
+      "A plant information sign stands beside the Amur cork tree."
+    ],
+    "note": "Here it names the tree rather than its bark.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4434": {
+    "english": "ox yoke",
+    "pos": "noun",
+    "second": [
+      "旧牛轭挂在农舍墙上。",
+      "jiù niú è guà zài nóng shè qiáng shàng.",
+      "An old ox yoke hangs on the farmhouse wall."
+    ],
+    "note": "A harness piece placed on cattle for pulling.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4435": {
+    "english": "halberd",
+    "pos": "noun",
+    "second": [
+      "展柜里陈列着一柄戟。",
+      "zhǎn guì lǐ chén liè zhe yī bǐng jǐ.",
+      "A halberd is displayed in the cabinet."
+    ],
+    "note": "An ancient pole weapon.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4436": {
+    "english": "clog; wooden shoe",
+    "pos": "noun",
+    "second": [
+      "这双木屐的底很厚。",
+      "zhè shuāng mù jī de dǐ hěn hòu.",
+      "These wooden clogs have thick soles."
+    ],
+    "note": "Usually encountered in the compound 木屐.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4437": {
+    "english": "banners; flags",
+    "pos": "noun",
+    "second": [
+      "队伍前方举着旌旗。",
+      "duì wu qián fāng jǔ zhe jīng qí.",
+      "Banners are held at the front of the procession."
+    ],
+    "note": "A literary or ceremonial collective word for flags.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4439": {
+    "english": "illicit lover, derogatory usage",
+    "pos": "noun",
+    "second": [
+      "这个人物把对方骂作姘头。",
+      "zhè ge rén wù bǎ duì fāng mà zuò pīn tou.",
+      "This character insults the other person as an illicit lover."
+    ],
+    "note": "A derogatory term; not a neutral word for a partner.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4441": {
+    "english": "forces under one's direct command",
+    "pos": "noun",
+    "second": [
+      "这支嫡系部队得到优先补给。",
+      "zhè zhī dí xì bù duì dé dào yōu xiān bǔ jǐ.",
+      "This directly controlled unit receives supplies first."
+    ],
+    "note": "Here it concerns personal military command, not genealogy.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4442": {
+    "english": "born to the principal wife",
+    "pos": "adjective",
+    "second": [
+      "族谱注明这位长子是嫡出。",
+      "zú pǔ zhù míng zhè wèi zhǎng zǐ shì dí chū.",
+      "The genealogy states that this eldest son was born to the principal wife."
+    ],
+    "note": "A historical family-status term, contrasted with 庶出.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4445": {
+    "english": "stone chime",
+    "pos": "noun",
+    "second": [
+      "古乐演出中传来磬声。",
+      "gǔ yuè yǎn chū zhōng chuán lái qìng shēng.",
+      "Stone-chime notes sound during the ancient-music performance."
+    ],
+    "note": "An old percussion instrument made of stone or jade.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4446": {
+    "english": "Jingxing, a county in Hebei",
+    "pos": "proper noun",
+    "second": [
+      "井陉的朋友来信了。",
+      "jǐng xíng de péng you lái xìn le.",
+      "A friend from Jingxing writes."
+    ],
+    "note": "陉 is xíng in this place name.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4449": {
+    "english": "Xingyang, a city in Henan",
+    "pos": "proper noun",
+    "second": [
+      "地图上标出了荥阳。",
+      "dì tú shàng biāo chū le xíng yáng.",
+      "Xingyang is marked on the map."
+    ],
+    "note": "荥 is xíng here, unlike its yíng reading elsewhere.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4450": {
+    "english": "midge",
+    "pos": "noun",
+    "second": [
+      "蠓虫在灯下聚成一团。",
+      "měng chóng zài dēng xià jù chéng yī tuán.",
+      "Midges gather in a swarm under the light."
+    ],
+    "note": "A name for very small flies.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4451": {
+    "english": "to poke through; to puncture",
+    "pos": "verb",
+    "second": [
+      "树枝把薄膜捅破了。",
+      "shù zhī bǎ báo mó tǒng pò le.",
+      "A branch punctures the thin film."
+    ],
+    "note": "破 marks the result of puncturing.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4452": {
+    "english": "pupil of the eye",
+    "pos": "noun",
+    "second": [
+      "画像中的瞳孔画得很清楚。",
+      "huà xiàng zhōng de tóng kǒng huà de hěn qīng chu.",
+      "The pupils are clearly drawn in the portrait."
+    ],
+    "note": "Not the whole eye or iris.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4453": {
+    "english": "bamboo and wooden writing slips",
+    "pos": "noun",
+    "second": [
+      "考古人员整理出土的简牍。",
+      "kǎo gǔ rén yuán zhěng lǐ chū tǔ de jiǎn dú.",
+      "Archaeologists sort the excavated writing slips."
+    ],
+    "note": "A writing medium used before paper became widespread.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4454": {
+    "english": "mercury",
+    "pos": "noun",
+    "second": [
+      "元素表上的汞排在这里。",
+      "yuán sù biǎo shàng de gǒng pái zài zhè lǐ.",
+      "Mercury appears here on the periodic table."
+    ],
+    "note": "The chemical element has the symbol Hg.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4455": {
+    "english": "to create a rowdy disturbance; to heckle",
+    "pos": "verb",
+    "second": [
+      "请别在演出时起哄。",
+      "qǐng bié zài yǎn chū shí qǐ hòng.",
+      "Please do not heckle during the performance."
+    ],
+    "note": "哄 is hòng in this expression.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4457": {
+    "english": "slaughter; killing",
+    "pos": "noun",
+    "second": [
+      "这部作品描写了战争中的杀戮。",
+      "zhè bù zuò pǐn miáo xiě le zhàn zhēng zhōng de shā lù.",
+      "This work depicts wartime slaughter."
+    ],
+    "note": "A formal word for brutal killing.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4458": {
+    "english": "military attire",
+    "pos": "noun",
+    "second": [
+      "照片中的他穿着戎装。",
+      "zhào piàn zhōng de tā chuān zhe róng zhuāng.",
+      "He is wearing military attire in the photo."
+    ],
+    "note": "A literary equivalent of 军装.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4459": {
+    "english": "small wine cup",
+    "pos": "noun",
+    "second": [
+      "桌上排着几个酒盅。",
+      "zhuō shàng pái zhe jǐ ge jiǔ zhōng.",
+      "Several small wine cups are lined up on the table."
+    ],
+    "note": "Usually a small vessel, unlike a large goblet.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4460": {
+    "english": "long and tedious; verbose",
+    "pos": "adjective",
+    "second": [
+      "冗长的说明让人失去耐心。",
+      "rǒng cháng de shuō míng ràng rén shī qù nài xīn.",
+      "The lengthy explanation makes people lose patience."
+    ],
+    "note": "Usually criticizes unnecessary length.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4462": {
+    "english": "passageway; corridor",
+    "pos": "noun",
+    "second": [
+      "甬道尽头有一道木门。",
+      "yǒng dào jìn tóu yǒu yī dào mù mén.",
+      "A wooden door stands at the end of the passageway."
+    ],
+    "note": "Often used in architectural descriptions.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4464": {
+    "english": "Siberian weasel",
+    "pos": "noun",
+    "second": [
+      "镜头拍到一只黄鼬。",
+      "jìng tóu pāi dào yī zhī huáng yòu.",
+      "The camera captures a Siberian weasel."
+    ],
+    "note": "A specific animal name, also colloquially 黄鼠狼.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4465": {
+    "english": "duster",
+    "pos": "noun",
+    "second": [
+      "掸子挂在墙边。",
+      "dǎn zi guà zài qiáng biān.",
+      "The duster hangs by the wall."
+    ],
+    "note": "掸 is dǎn for this cleaning tool.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4466": {
+    "english": "to weld",
+    "pos": "verb",
+    "second": [
+      "他戴着面罩进行焊接。",
+      "tā dài zhe miàn zhào jìn xíng hàn jiē.",
+      "He wears a face shield while welding."
+    ],
+    "note": "Can be a verb or name the joining process.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4468": {
+    "english": "legacy; mantle of a teacher",
+    "pos": "noun",
+    "second": [
+      "这位弟子传承了老师的衣钵。",
+      "zhè wèi dì zǐ chuán chéng le lǎo shī de yī bō.",
+      "This disciple carries on the teacher's legacy."
+    ],
+    "note": "A Buddhist-origin expression now used figuratively.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4469": {
+    "english": "pitch-black",
+    "pos": "adjective",
+    "second": [
+      "停电后，走廊里黢黑。",
+      "tíng diàn hòu, zǒu láng lǐ qū hēi.",
+      "After the power cut, the corridor is pitch-black."
+    ],
+    "note": "A vivid description of deep darkness.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4472": {
+    "english": "ambiguous; equivocal",
+    "pos": "adjective",
+    "second": [
+      "这句话的意思有些暧昧。",
+      "zhè jù huà de yì si yǒu xiē ài mèi.",
+      "The meaning of this sentence is somewhat ambiguous."
+    ],
+    "note": "Here it concerns unclear meaning, not a romantic relationship.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4473": {
+    "english": "aqueous ammonia; ammonia solution",
+    "pos": "noun",
+    "second": [
+      "实验清单上列着氨水。",
+      "shí yàn qīng dān shàng liè zhe ān shuǐ.",
+      "Ammonia solution is listed on the laboratory inventory."
+    ],
+    "note": "氨水 names the solution, distinct from ammonia gas.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4474": {
+    "english": "amino acid, Taiwan terminology",
+    "pos": "noun",
+    "second": [
+      "这本教材使用胺基酸一词。",
+      "zhè běn jiào cái shǐ yòng àn jī suān yī cí.",
+      "This textbook uses the term amino acid."
+    ],
+    "note": "A Taiwan term; mainland texts generally use 氨基酸.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4476": {
+    "english": "sampan",
+    "pos": "noun",
+    "second": [
+      "一只舢舨停在码头旁。",
+      "yī zhī shān bǎn tíng zài mǎ tóu páng.",
+      "A sampan is moored beside the dock."
+    ],
+    "note": "Also written 舢板.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4477": {
+    "english": "pound sterling",
+    "pos": "noun",
+    "second": [
+      "这件外套标价五十英镑。",
+      "zhè jiàn wài tào biāo jià wǔ shí yīng bàng.",
+      "This coat is priced at fifty pounds."
+    ],
+    "note": "The currency unit, not a unit of weight.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4478": {
+    "english": "female brothel keeper, historical usage",
+    "pos": "noun",
+    "second": [
+      "旧小说里的鸨母催客人付钱。",
+      "jiù xiǎo shuō lǐ de bǎo mǔ cuī kè rén fù qián.",
+      "The brothel keeper in the old novel urges the guest to pay."
+    ],
+    "note": "A historical adult term for a brothel keeper.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4479": {
+    "english": "pond; reservoir",
+    "pos": "noun",
+    "second": [
+      "雨后陂塘的水位升高了。",
+      "yǔ hòu bēi táng de shuǐ wèi shēng gāo le.",
+      "After the rain, the pond's water level rises."
+    ],
+    "note": "陂 is bēi in this water-related term.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  },
+  "4481": {
+    "english": "Buddhist chanting",
+    "pos": "noun",
+    "second": [
+      "僧人以梵呗开始仪式。",
+      "sēng rén yǐ fàn bài kāi shǐ yí shì.",
+      "The monks begin the ceremony with Buddhist chanting."
+    ],
+    "note": "呗 is bài in this Buddhist term.",
+    "source": "CC-CEDICT sense checked; original teaching gloss and independent example"
+  }
+}

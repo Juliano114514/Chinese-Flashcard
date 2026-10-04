@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "modifiedOn": "2026-10-04",
+  "sources": [
+    {
+      "id": "cc-cedict",
+      "title": "CC-CEDICT",
+      "authors": "CC-CEDICT contributors; CEDICT originally started by Paul Denisowski",
+      "publisher": "MDBG",
+      "page": "https://www.mdbg.net/chinese/dictionary?page=cc-cedict",
+      "download": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "releaseUtc": "2026-10-03T08:59:08Z",
+      "sha256OfUncompressedUtf8": "1710773bbab29df832f5967bdfb62ca1281868e1240d184165a36c0d948f39e3",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "licenseAsset": "wordlist-strokes/licenses/CC-BY-SA-4.0.txt",
+      "modifications": "Selected contextual senses; converted numerical pinyin to tone marks; added original English explanations and examples."
+    },
+    {
+      "id": "supplied-wordlist",
+      "file": "wordlist.original.csv",
+      "sha256": "f2d70fd87f82fd3ef9542715b87905639376a67d830ebf68e8237633fa8160a3",
+      "description": "Original user-provided wordlist, first examples and translations, preserved as an exact backup."
+    },
+    {
+      "id": "wordlist-authoring",
+      "description": "New contextual explanations, corrected readings and translations, second examples and usage notes authored for this project on 2026-10-04. Per-entry references are in the CSV 来源说明 field and curated source files."
+    }
+  ],
+  "referencePolicy": "HanDian, MOE dictionaries and other cited references were used to verify facts. No third-party example corpus or dictionary pages are redistributed; new examples are independently authored.",
+  "separation": "Lexicon content derived from CC-CEDICT retains CC BY-SA 4.0. Stroke geometry retains the separate Arphic Public License. Independent app source code is not relicensed by these data notices."
+}

@@ -1,0 +1,2752 @@
+{
+  "2804": {
+    "english": "to collect and keep",
+    "pos": "verb",
+    "second": [
+      "爷爷喜欢收藏旧邮票。",
+      "yé ye xǐ huān shōu cáng jiù yóu piào.",
+      "Grandpa likes collecting old stamps."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2805": {
+    "english": "hidden treasure",
+    "pos": "noun",
+    "second": [
+      "传说山洞里藏着宝藏。",
+      "chuán shuō shān dòng lǐ cáng zhe bǎo zàng.",
+      "Legend says there is treasure hidden in the cave."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2806": {
+    "english": "mulberry tree",
+    "pos": "noun",
+    "second": [
+      "桑树的叶子可以喂蚕。",
+      "sāng shù de yè zi kě yǐ wèi cán.",
+      "Mulberry leaves can be fed to silkworms."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2807": {
+    "english": "funeral arrangements and mourning rites",
+    "pos": "noun",
+    "second": [
+      "邻居们来帮忙办丧事。",
+      "lín jū men lái bāng máng bàn sāng shì.",
+      "The neighbors came to help with the funeral arrangements."
+    ],
+    "note": "丧 is sāng in funeral-related words.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2808": {
+    "english": "to lose",
+    "pos": "verb",
+    "second": [
+      "事故使他丧失了听力。",
+      "shì gù shǐ tā sàng shī le tīng lì.",
+      "The accident caused him to lose his hearing."
+    ],
+    "note": "Often used for the loss of an ability, right, opportunity, or loved one.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2809": {
+    "english": "high and resonant",
+    "pos": "adjective",
+    "second": [
+      "她的歌声高亢有力。",
+      "tā de gē shēng gāo kàng yǒu lì.",
+      "Her singing voice is high and powerful."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2810": {
+    "english": "just now; a moment ago",
+    "pos": "adverb",
+    "second": [
+      "刚才有人来找你。",
+      "gāng cái yǒu rén lái zhǎo nǐ.",
+      "Someone came looking for you just now."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2812": {
+    "english": "job position; work post",
+    "pos": "noun",
+    "second": [
+      "护士回到了自己的岗位。",
+      "hù shi huí dào le zì jǐ de gǎng wèi.",
+      "The nurse returned to her post."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2814": {
+    "english": "low hill; ridge",
+    "pos": "noun",
+    "second": [
+      "羊群正在山冈上吃草。",
+      "yáng qún zhèng zài shān gāng shàng chī cǎo.",
+      "The sheep are grazing on the hill."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2815": {
+    "english": "to run rampant; to behave lawlessly",
+    "pos": "verb",
+    "second": [
+      "过去这一带盗匪横行。",
+      "guò qù zhè yī dài dào fěi héng xíng.",
+      "Bandits once ran rampant in this area."
+    ],
+    "note": "Here 横行 refers to unchecked harmful behavior.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2816": {
+    "english": "guiding program; statement of principles",
+    "pos": "noun",
+    "second": [
+      "成员们共同制定了新的纲领。",
+      "chéng yuán men gòng tóng zhì dìng le xīn de gāng lǐng.",
+      "The members jointly drew up a new guiding program."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2817": {
+    "english": "expensive; costly",
+    "pos": "adjective",
+    "second": [
+      "这件珠宝太昂贵了。",
+      "zhè jiàn zhū bǎo tài áng guì le.",
+      "This piece of jewelry is too expensive."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2819": {
+    "english": "uncultivated land; wasteland",
+    "pos": "noun",
+    "second": [
+      "村民把荒地变成了菜园。",
+      "cūn mín bǎ huāng dì biàn chéng le cài yuán.",
+      "The villagers turned the wasteland into a vegetable garden."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2820": {
+    "english": "Hangzhou, a city in Zhejiang",
+    "pos": "proper noun",
+    "second": [
+      "我们打算去杭州看西湖。",
+      "wǒ men dǎ suàn qù háng zhōu kàn xī hú.",
+      "We plan to go to Hangzhou to see West Lake."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2821": {
+    "english": "to sail; to navigate",
+    "pos": "verb",
+    "second": [
+      "这艘船已经航行了三天。",
+      "zhè sōu chuán yǐ jīng háng xíng le sān tiān.",
+      "This ship has been sailing for three days."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2822": {
+    "english": "fearful and uneasy",
+    "pos": "adjective",
+    "second": [
+      "突如其来的消息使他惶恐不安。",
+      "tū rú qí lái de xiāo xi shǐ tā huáng kǒng bù ān.",
+      "The unexpected news left him fearful and uneasy."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2823": {
+    "english": "to hesitate in uncertainty",
+    "pos": "verb",
+    "second": [
+      "面对两个选择，她彷徨了很久。",
+      "miàn duì liǎng gè xuǎn zé, tā páng huáng le hěn jiǔ.",
+      "Faced with two choices, she hesitated for a long time."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2824": {
+    "english": "spring, a coiled elastic part",
+    "pos": "noun",
+    "second": [
+      "这支笔里的弹簧坏了。",
+      "zhè zhī bǐ lǐ de tán huáng huài le.",
+      "The spring inside this pen is broken."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2829": {
+    "english": "moral character; conduct",
+    "pos": "noun",
+    "second": [
+      "他的品行受到大家尊重。",
+      "tā de pǐn xíng shòu dào dà jiā zūn zhòng.",
+      "Everyone respects his moral character."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2831": {
+    "english": "to sing loudly with a raised voice",
+    "pos": "phrase",
+    "second": [
+      "登上山顶后，他们引吭高歌。",
+      "dēng shàng shān dǐng hòu, tā men yǐn háng gāo gē.",
+      "After reaching the summit, they sang at the tops of their voices."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2832": {
+    "english": "without saying a word",
+    "pos": "phrase",
+    "second": [
+      "听完批评，他一声不吭地走了。",
+      "tīng wán pī píng, tā yī shēng bù kēng de zǒu le.",
+      "After hearing the criticism, he left without saying a word."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2833": {
+    "english": "to decorate an interior",
+    "pos": "verb",
+    "second": [
+      "他们正在装潢新开的咖啡店。",
+      "tā men zhèng zài zhuāng huáng xīn kāi de kā fēi diàn.",
+      "They are decorating the newly opened cafe."
+    ],
+    "note": "Here refers to interior decoration, rather than mounting a painting.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2835": {
+    "english": "splendid; glorious",
+    "pos": "adjective",
+    "second": [
+      "这座剧院曾有辉煌的历史。",
+      "zhè zuò jù yuàn céng yǒu huī huáng de lì shǐ.",
+      "This theater once had a glorious history."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2836": {
+    "english": "a vast expanse of water",
+    "pos": "noun",
+    "second": [
+      "暴雨后，田野成了一片汪洋。",
+      "bào yǔ hòu, tián yě chéng le yī piàn wāng yáng.",
+      "After the downpour, the fields became a vast expanse of water."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2837": {
+    "english": "to lie beside; to depend on nearby support",
+    "pos": "verb",
+    "second": [
+      "古老的村庄依傍着青山。",
+      "gǔ lǎo de cūn zhuāng yī bàng zhe qīng shān.",
+      "The old village nestles beside the green hills."
+    ],
+    "note": "In this context, used for a settlement situated beside a natural feature.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2838": {
+    "english": "early evening; dusk",
+    "pos": "noun",
+    "second": [
+      "傍晚我们沿着河边散步。",
+      "bàng wǎn wǒ men yán zhe hé biān sàn bù.",
+      "We take a walk along the river at dusk."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2839": {
+    "english": "bewildered; at a loss",
+    "pos": "adjective",
+    "second": [
+      "听到这个陌生的名字，他神情茫然。",
+      "tīng dào zhè gè mò shēng de míng zi, tā shén qíng máng rán.",
+      "He looked bewildered on hearing the unfamiliar name."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2840": {
+    "english": "vast and imposing",
+    "pos": "adjective",
+    "second": [
+      "瀑布奔流而下，气势磅礴。",
+      "pù bù bēn liú ér xià, qì shì páng bó.",
+      "The waterfall rushes down with imposing force."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2841": {
+    "english": "pound, a unit of weight",
+    "pos": "noun",
+    "second": [
+      "这袋米大约有五磅重。",
+      "zhè dài mǐ dà yuē yǒu wǔ bàng zhòng.",
+      "This bag of rice weighs about five pounds."
+    ],
+    "note": "Here 磅 is the unit of weight, rather than the verb to weigh.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2842": {
+    "english": "political party",
+    "pos": "noun",
+    "second": [
+      "这本书介绍了几个政党的历史。",
+      "zhè běn shū jiè shào le jǐ gè zhèng dǎng de lì shǐ.",
+      "This book introduces the histories of several political parties."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2843": {
+    "english": "to sway; to rock unsteadily",
+    "pos": "verb",
+    "second": [
+      "小船在浪中不停地晃荡。",
+      "xiǎo chuán zài làng zhōng bù tíng de huàng dang.",
+      "The little boat keeps rocking in the waves."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2844": {
+    "english": "clear and understandable",
+    "pos": "adjective",
+    "second": [
+      "调查结束后，事实终于明朗了。",
+      "diào chá jié shù hòu, shì shí zhōng yú míng lǎng le.",
+      "After the investigation ended, the facts finally became clear."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2845": {
+    "english": "dirty; filthy",
+    "pos": "adjective",
+    "second": [
+      "不要把肮脏的鞋子放在桌上。",
+      "bù yào bǎ āng zāng de xié zi fàng zài zhuō shàng.",
+      "Do not put dirty shoes on the table."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2846": {
+    "english": "Xuanzang, a Tang dynasty Buddhist monk",
+    "pos": "proper noun",
+    "second": [
+      "玄奘曾到印度求取佛经。",
+      "xuán zàng céng dào yìn dù qiú qǔ fó jīng.",
+      "Xuanzang traveled to India to obtain Buddhist scriptures."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2848": {
+    "english": "generous",
+    "pos": "adjective",
+    "second": [
+      "她慷慨地捐出了自己的奖金。",
+      "tā kāng kǎi de juān chū le zì jǐ de jiǎng jīn.",
+      "She generously donated her prize money."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2849": {
+    "english": "flustered; nervous and hurried",
+    "pos": "adjective",
+    "second": [
+      "发现钥匙丢了，他十分慌张。",
+      "fā xiàn yào shi diū le, tā shí fēn huāng zhāng.",
+      "He became very flustered when he found his keys were missing."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2850": {
+    "english": "to reflect; to represent",
+    "pos": "verb",
+    "second": [
+      "这幅画反映了乡村生活。",
+      "zhè fú huà fǎn yìng le xiāng cūn shēng huó.",
+      "This painting reflects rural life."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2851": {
+    "english": "full of; overflowing with",
+    "pos": "adjective",
+    "second": [
+      "花园里绿意盎然。",
+      "huā yuán lǐ lǜ yì àng rán.",
+      "The garden is full of lush greenery."
+    ],
+    "note": "Usually follows a noun such as 春意 or 生机.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2852": {
+    "english": "python, a large snake",
+    "pos": "noun",
+    "second": [
+      "这条蟒蛇盘在树枝上。",
+      "zhè tiáo mǎng shé pán zài shù zhī shàng.",
+      "The python is coiled around a branch."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2853": {
+    "english": "to arrange; to put in order",
+    "pos": "verb",
+    "second": [
+      "出发前，他摒挡好随身物品。",
+      "chū fā qián, tā bìng dàng hǎo suí shēn wù pǐn.",
+      "Before leaving, he put his belongings in order."
+    ],
+    "note": "Literary word for arranging or making preparations.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2854": {
+    "english": "to block; to obstruct",
+    "pos": "verb",
+    "second": [
+      "围栏阻挡了游客的去路。",
+      "wéi lán zǔ dǎng le yóu kè de qù lù.",
+      "The fence blocked the tourists' path."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2855": {
+    "english": "full of twists and turns",
+    "pos": "adjective",
+    "second": [
+      "这部小说的情节十分跌宕。",
+      "zhè bù xiǎo shuō de qíng jié shí fēn diē dàng.",
+      "The plot of this novel is full of twists and turns."
+    ],
+    "note": "Here describes fluctuations in a story, especially in 跌宕起伏.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2856": {
+    "english": "to bury",
+    "pos": "verb",
+    "second": [
+      "他们把小鸟埋葬在树下。",
+      "tā men bǎ xiǎo niǎo mái zàng zài shù xià.",
+      "They buried the little bird under the tree."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2857": {
+    "english": "open wilderness",
+    "pos": "noun",
+    "second": [
+      "一只狐狸穿过了旷野。",
+      "yī zhī hú li chuān guò le kuàng yě.",
+      "A fox crossed the open wilderness."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2858": {
+    "english": "to enlarge; to expand",
+    "pos": "verb",
+    "second": [
+      "学校计划扩大图书馆。",
+      "xué xiào jì huà kuò dà tú shū guǎn.",
+      "The school plans to expand its library."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2860": {
+    "english": "soul; spirit",
+    "pos": "noun",
+    "second": [
+      "传说中，魂魄可以离开身体。",
+      "chuán shuō zhōng, hún pò kě yǐ lí kāi shēn tǐ.",
+      "In legends, the soul can leave the body."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2861": {
+    "english": "down and out; in reduced circumstances",
+    "pos": "adjective",
+    "second": [
+      "他落魄时，老朋友仍然帮助他。",
+      "tā luò pò shí, lǎo péng you réng rán bāng zhù tā.",
+      "His old friend still helped him when he was down and out."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2863": {
+    "english": "to ask someone a favor; please",
+    "pos": "verb",
+    "second": [
+      "我拜托邻居照看小猫。",
+      "wǒ bài tuō lín jū zhào kàn xiǎo māo.",
+      "I asked my neighbor to look after the kitten."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2864": {
+    "english": "to develop; to open up",
+    "pos": "verb",
+    "second": [
+      "村民开拓了一片新的耕地。",
+      "cūn mín kāi tuò le yī piàn xīn de gēng dì.",
+      "The villagers opened up a new area of farmland."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2865": {
+    "english": "rubbing of an inscription",
+    "pos": "noun",
+    "second": [
+      "博物馆展示了一份石碑拓本。",
+      "bó wù guǎn zhǎn shì le yī fèn shí bēi tà běn.",
+      "The museum displayed a rubbing of a stone inscription."
+    ],
+    "note": "拓 is tà in this word.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2866": {
+    "english": "to pace; to walk slowly",
+    "pos": "verb",
+    "second": [
+      "等待消息时，他在门口踱步。",
+      "děng dài xiāo xi shí, tā zài mén kǒu duó bù.",
+      "He paced by the doorway while waiting for news."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2867": {
+    "english": "promise",
+    "pos": "noun",
+    "second": [
+      "你应该遵守自己的诺言。",
+      "nǐ yīng gāi zūn shǒu zì jǐ de nuò yán.",
+      "You should keep your promise."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2868": {
+    "english": "cheese",
+    "pos": "noun",
+    "second": [
+      "她把乳酪切成了小块。",
+      "tā bǎ rǔ lào qiē chéng le xiǎo kuài.",
+      "She cut the cheese into small pieces."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2871": {
+    "english": "lasting imprint; indelible mark",
+    "pos": "noun",
+    "second": [
+      "这段经历在心中留下了烙印。",
+      "zhè duàn jīng lì zài xīn zhōng liú xià le lào yìn.",
+      "This experience left an indelible mark on the heart."
+    ],
+    "note": "Figurative sense of a lasting impression, derived from a branded mark.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2872": {
+    "english": "to contact; to get in touch with",
+    "pos": "verb",
+    "second": [
+      "请尽快联络负责的老师。",
+      "qǐng jǐn kuài lián luò fù zé de lǎo shī.",
+      "Please contact the teacher in charge as soon as possible."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2873": {
+    "english": "to fall; to descend",
+    "pos": "verb",
+    "second": [
+      "一片叶子从树上落下。",
+      "yī piàn yè zi cóng shù shàng luò xià.",
+      "A leaf falls from the tree."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2875": {
+    "english": "yesterday",
+    "pos": "noun",
+    "second": [
+      "昨天我们一起去了公园。",
+      "zuó tiān wǒ men yī qǐ qù le gōng yuán.",
+      "Yesterday we went to the park together."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2876": {
+    "english": "to request; to demand",
+    "pos": "verb",
+    "second": [
+      "你可以向前台索取地图。",
+      "nǐ kě yǐ xiàng qián tái suǒ qǔ dì tú.",
+      "You can request a map at the reception desk."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2878": {
+    "english": "attic; loft",
+    "pos": "noun",
+    "second": [
+      "我在阁楼找到了一本旧相册。",
+      "wǒ zài gé lóu zhǎo dào le yī běn jiù xiàng cè.",
+      "I found an old photo album in the attic."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2879": {
+    "english": "arm",
+    "pos": "noun",
+    "second": [
+      "他的胳膊被树枝划伤了。",
+      "tā de gē bo bèi shù zhī huá shāng le.",
+      "His arm was scratched by a branch."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2881": {
+    "english": "Guo, a surname",
+    "pos": "proper noun",
+    "second": [
+      "郭老师教我们画画。",
+      "guō lǎo shī jiāo wǒ men huà huà.",
+      "Teacher Guo teaches us to draw."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2884": {
+    "english": "astonished; stunned",
+    "pos": "adjective",
+    "second": [
+      "大家惊愕地望着突然倒下的雕像。",
+      "dà jiā jīng è de wàng zhe tū rán dǎo xià de diāo xiàng.",
+      "Everyone stared in astonishment at the statue that had suddenly fallen."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2886": {
+    "english": "deep gully; ravine",
+    "pos": "noun",
+    "second": [
+      "雨水沿着沟壑流向山脚。",
+      "yǔ shuǐ yán zhe gōu hè liú xiàng shān jiǎo.",
+      "Rainwater runs down the gullies toward the foot of the mountain."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2887": {
+    "english": "Huo, a surname",
+    "pos": "proper noun",
+    "second": [
+      "霍医生今天下午上班。",
+      "huò yī shēng jīn tiān xià wǔ shàng bān.",
+      "Doctor Huo works this afternoon."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2888": {
+    "english": "Hao, a surname",
+    "pos": "proper noun",
+    "second": [
+      "郝先生正在修理自行车。",
+      "hǎo xiān sheng zhèng zài xiū lǐ zì xíng chē.",
+      "Mr. Hao is repairing a bicycle."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2890": {
+    "english": "to dry up",
+    "pos": "verb",
+    "second": [
+      "河水干涸后，河床露了出来。",
+      "hé shuǐ gān hé hòu, hé chuáng lù le chū lái.",
+      "After the river dried up, its bed was exposed."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2891": {
+    "english": "crane, especially a red-crowned crane",
+    "pos": "noun",
+    "second": [
+      "湖边站着两只仙鹤。",
+      "hú biān zhàn zhe liǎng zhī xiān hè.",
+      "Two cranes are standing beside the lake."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2892": {
+    "english": "chalk, a soft white limestone",
+    "pos": "noun",
+    "second": [
+      "这种白垩很容易碎。",
+      "zhè zhǒng bái è hěn róng yì suì.",
+      "This chalk crumbles easily."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2893": {
+    "english": "doctorate; PhD",
+    "pos": "noun",
+    "second": [
+      "她正在攻读化学博士学位。",
+      "tā zhèng zài gōng dú huà xué bó shì xué wèi.",
+      "She is studying for a doctorate in chemistry."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2894": {
+    "english": "weak; inadequate",
+    "pos": "adjective",
+    "second": [
+      "这个计划的资金基础很薄弱。",
+      "zhè gè jì huà de zī jīn jī chǔ hěn bó ruò.",
+      "The financial foundation of this plan is weak."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2895": {
+    "english": "to moor; to anchor",
+    "pos": "verb",
+    "second": [
+      "几艘渔船停泊在港口。",
+      "jǐ sōu yú chuán tíng bó zài gǎng kǒu.",
+      "Several fishing boats are moored in the harbor."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2896": {
+    "english": "tin foil",
+    "pos": "noun",
+    "second": [
+      "锡箔在灯光下闪闪发亮。",
+      "xī bó zài dēng guāng xià shǎn shǎn fā liàng.",
+      "The tin foil gleams under the light."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2897": {
+    "english": "could it be that; surely not",
+    "pos": "adverb",
+    "second": [
+      "门锁着，莫非他已经走了？",
+      "mén suǒ zhe, mò fēi tā yǐ jīng zǒu le?",
+      "The door is locked; could he have left already?"
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2898": {
+    "english": "lonely; lonesome",
+    "pos": "adjective",
+    "second": [
+      "没有朋友陪伴，他觉得寂寞。",
+      "méi yǒu péng you péi bàn, tā jué de jì mò.",
+      "Without friends for company, he feels lonely."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2901": {
+    "english": "worthless remnants; dross",
+    "pos": "noun",
+    "second": [
+      "学习传统文化时，要辨别其中的糟粕。",
+      "xué xí chuán tǒng wén huà shí, yào biàn bié qí zhōng de zāo pò.",
+      "When studying traditional culture, distinguish its worthless elements."
+    ],
+    "note": "Figurative sense: undesirable or outdated parts of an idea or tradition.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2903": {
+    "english": "grain; staple food",
+    "pos": "noun",
+    "second": [
+      "仓库里储存着大量粮食。",
+      "cāng kù lǐ chǔ cún zhe dà liàng liáng shi.",
+      "Large quantities of grain are stored in the warehouse."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2904": {
+    "english": "to measure",
+    "pos": "verb",
+    "second": [
+      "他用尺子测量桌子的长度。",
+      "tā yòng chǐ zi cè liáng zhuō zi de cháng dù.",
+      "He measures the length of the table with a ruler."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2905": {
+    "english": "sorghum",
+    "pos": "noun",
+    "second": [
+      "秋天，高粱成熟了。",
+      "qiū tiān, gāo liáng chéng shú le.",
+      "The sorghum ripens in autumn."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2907": {
+    "english": "Jiang, a surname",
+    "pos": "proper noun",
+    "second": [
+      "蒋阿姨送来了一篮苹果。",
+      "jiǎng ā yí sòng lái le yī lán píng guǒ.",
+      "Auntie Jiang brought a basket of apples."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2908": {
+    "english": "the future; in the future",
+    "pos": "noun",
+    "second": [
+      "将来我想当一名老师。",
+      "jiāng lái wǒ xiǎng dāng yī míng lǎo shī.",
+      "I want to become a teacher in the future."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2910": {
+    "english": "soy milk",
+    "pos": "noun",
+    "second": [
+      "早餐有热豆浆和包子。",
+      "zǎo cān yǒu rè dòu jiāng hé bāo zi.",
+      "There is hot soy milk and steamed buns for breakfast."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2911": {
+    "english": "to rob; robbery",
+    "pos": "verb",
+    "second": [
+      "警方调查了一起抢劫案件。",
+      "jǐng fāng diào chá le yī qǐ qiǎng jié àn jiàn.",
+      "The police investigated a robbery case."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2912": {
+    "english": "to act ahead of others; to be first",
+    "pos": "verb",
+    "second": [
+      "她抢先举手回答问题。",
+      "tā qiǎng xiān jǔ shǒu huí dá wèn tí.",
+      "She was the first to raise her hand to answer."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2913": {
+    "english": "ringing and powerful; sonorous",
+    "pos": "adjective",
+    "second": [
+      "他的朗诵声铿锵有力。",
+      "tā de lǎng sòng shēng kēng qiāng yǒu lì.",
+      "His recitation is resonant and powerful."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2914": {
+    "english": "firearms; guns",
+    "pos": "noun",
+    "second": [
+      "这些枪支被锁在柜中。",
+      "zhè xiē qiāng zhī bèi suǒ zài guì zhōng.",
+      "These firearms are locked in a cabinet."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2916": {
+    "english": "to assist; to lend support",
+    "pos": "verb",
+    "second": [
+      "承蒙朋友襄助，展览顺利开幕。",
+      "chéng méng péng you xiāng zhù, zhǎn lǎn shùn lì kāi mù.",
+      "With my friends' kind assistance, the exhibition opened smoothly."
+    ],
+    "note": "Formal or literary word for assistance.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2917": {
+    "english": "Xiang River, in Hunan",
+    "pos": "proper noun",
+    "second": [
+      "湘江从长沙城中流过。",
+      "xiāng jiāng cóng cháng shā chéng zhōng liú guò.",
+      "The Xiang River flows through Changsha."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2918": {
+    "english": "facial appearance; looks",
+    "pos": "noun",
+    "second": [
+      "这两兄弟的相貌很相似。",
+      "zhè liǎng xiōng dì de xiàng mào hěn xiāng sì.",
+      "These two brothers look very similar."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2919": {
+    "english": "train carriage; compartment",
+    "pos": "noun",
+    "second": [
+      "这个车厢里还有空座位。",
+      "zhè gè chē xiāng lǐ hái yǒu kōng zuò wèi.",
+      "There are still empty seats in this carriage."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2921": {
+    "english": "to fly; to soar",
+    "pos": "verb",
+    "second": [
+      "雄鹰在山谷上空飞翔。",
+      "xióng yīng zài shān gǔ shàng kōng fēi xiáng.",
+      "An eagle soars above the valley."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2922": {
+    "english": "to open; to spread apart",
+    "pos": "verb",
+    "second": [
+      "他张开双臂迎接孩子。",
+      "tā zhāng kāi shuāng bì yíng jiē hái zi.",
+      "He opens his arms to welcome the child."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2923": {
+    "english": "to rise in price",
+    "pos": "verb",
+    "second": [
+      "今年水果又涨价了。",
+      "jīn nián shuǐ guǒ yòu zhǎng jià le.",
+      "Fruit prices have risen again this year."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2924": {
+    "english": "lasting; for a long time",
+    "pos": "adjective",
+    "second": [
+      "这段友谊维持了很长久的时间。",
+      "zhè duàn yǒu yì wéi chí le hěn cháng jiǔ de shí jiān.",
+      "This friendship lasted for a very long time."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2926": {
+    "english": "stomach and intestines; digestive system",
+    "pos": "noun",
+    "second": [
+      "这种食物容易刺激肠胃。",
+      "zhè zhǒng shí wù róng yì cì jī cháng wèi.",
+      "This food can easily irritate the digestive system."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2927": {
+    "english": "place; venue",
+    "pos": "noun",
+    "second": [
+      "图书馆是安静的学习场所。",
+      "tú shū guǎn shì ān jìng de xué xí chǎng suǒ.",
+      "The library is a quiet place to study."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2928": {
+    "english": "to apply makeup",
+    "pos": "verb",
+    "second": [
+      "她出门前花了十分钟化妆。",
+      "tā chū mén qián huā le shí fēn zhōng huà zhuāng.",
+      "She spent ten minutes applying makeup before going out."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2929": {
+    "english": "solemn; dignified",
+    "pos": "adjective",
+    "second": [
+      "庄严的钟声响遍广场。",
+      "zhuāng yán de zhōng shēng xiǎng biàn guǎng chǎng.",
+      "The solemn sound of bells rings across the square."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2930": {
+    "english": "to decorate",
+    "pos": "verb",
+    "second": [
+      "她用鲜花装饰餐桌。",
+      "tā yòng xiān huā zhuāng shì cān zhuō.",
+      "She decorates the dining table with fresh flowers."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2931": {
+    "english": "trauma; injury",
+    "pos": "noun",
+    "second": [
+      "战争留下的创伤很难消除。",
+      "zhàn zhēng liú xià de chuāng shāng hěn nán xiāo chú.",
+      "The trauma left by war is difficult to overcome."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2932": {
+    "english": "to create",
+    "pos": "verb",
+    "second": [
+      "孩子们一起创造了一个新故事。",
+      "hái zi men yī qǐ chuàng zào le yī gè xīn gù shi.",
+      "The children created a new story together."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2933": {
+    "english": "chilblains",
+    "pos": "noun",
+    "second": [
+      "寒冷的冬天，她的手上生了冻疮。",
+      "hán lěng de dōng tiān, tā de shǒu shàng shēng le dòng chuāng.",
+      "She developed chilblains on her hands during the cold winter."
+    ],
+    "note": "Cold-related inflamed skin lesions; not necessarily frostbite with tissue freezing.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2934": {
+    "english": "bed; bedding",
+    "pos": "noun",
+    "second": [
+      "客人到来前，我们铺好了床铺。",
+      "kè rén dào lái qián, wǒ men pū hǎo le chuáng pù.",
+      "We made up the bed before the guest arrived."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2935": {
+    "english": "Frost Descent, one of the twenty-four solar terms",
+    "pos": "proper noun",
+    "second": [
+      "霜降时节，山里的树叶渐渐变红。",
+      "shuāng jiàng shí jié, shān lǐ de shù yè jiàn jiàn biàn hóng.",
+      "During Frost Descent, leaves in the mountains gradually turn red."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2936": {
+    "english": "to ensure; to safeguard",
+    "pos": "verb",
+    "second": [
+      "这些措施能保障工人的安全。",
+      "zhè xiē cuò shī néng bǎo zhàng gōng rén de ān quán.",
+      "These measures can safeguard the workers' safety."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2938": {
+    "english": "camphor",
+    "pos": "noun",
+    "second": [
+      "打开旧箱子时，他闻到了樟脑的气味。",
+      "dǎ kāi jiù xiāng zi shí, tā wén dào le zhāng nǎo de qì wèi.",
+      "When opening the old trunk, he smelled camphor."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2940": {
+    "english": "Zhangzhou, a city in Fujian",
+    "pos": "proper noun",
+    "second": [
+      "这次旅行的第一站是漳州。",
+      "zhè cì lǚ xíng de dì yī zhàn shì zhāng zhōu.",
+      "The first stop on this trip is Zhangzhou."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2941": {
+    "english": "to reveal clearly; to demonstrate",
+    "pos": "verb",
+    "second": [
+      "这项成就彰显了团队的实力。",
+      "zhè xiàng chéng jiù zhāng xiǎn le tuán duì de shí lì.",
+      "This achievement demonstrates the team's strength."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2942": {
+    "english": "rampant; brazenly wild",
+    "pos": "adjective",
+    "second": [
+      "盗匪的活动越来越猖狂。",
+      "dào fěi de huó dòng yuè lái yuè chāng kuáng.",
+      "The bandits' activities are becoming increasingly brazen."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2944": {
+    "english": "to advocate; to promote",
+    "pos": "verb",
+    "second": [
+      "学校倡导节约用水。",
+      "xué xiào chàng dǎo jié yuē yòng shuǐ.",
+      "The school promotes saving water."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2945": {
+    "english": "prosperous; flourishing",
+    "pos": "adjective",
+    "second": [
+      "大家希望社会安定，经济昌盛。",
+      "dà jiā xī wàng shè huì ān dìng, jīng jì chāng shèng.",
+      "Everyone hopes for a stable society and a flourishing economy."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2946": {
+    "english": "sweet flag, an aromatic wetland plant",
+    "pos": "noun",
+    "second": [
+      "池塘边长着几丛菖蒲。",
+      "chí táng biān zhǎng zhe jǐ cóng chāng pú.",
+      "Several clumps of sweet flag grow beside the pond."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2948": {
+    "english": "ordinary; usual",
+    "pos": "adjective",
+    "second": [
+      "今天的街道比平常安静。",
+      "jīn tiān de jiē dào bǐ píng cháng ān jìng.",
+      "The streets are quieter than usual today."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2949": {
+    "english": "compensation",
+    "pos": "noun",
+    "second": [
+      "受伤的乘客获得了赔偿。",
+      "shòu shāng de chéng kè huò dé le péi cháng.",
+      "The injured passenger received compensation."
+    ],
+    "note": "Noun use in the original sentence; it can also be a verb meaning to compensate.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2950": {
+    "english": "to stroll leisurely",
+    "pos": "verb",
+    "second": [
+      "游人在湖边徜徉。",
+      "yóu rén zài hú biān cháng yáng.",
+      "Visitors stroll leisurely by the lake."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2952": {
+    "english": "clothes; clothing",
+    "pos": "noun",
+    "second": [
+      "她把洗好的衣裳挂在院里。",
+      "tā bǎ xǐ hǎo de yī shang guà zài yuàn lǐ.",
+      "She hangs the washed clothes in the courtyard."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2956": {
+    "english": "to remove; to drive away",
+    "pos": "verb",
+    "second": [
+      "祭文表达了攘除灾祸的愿望。",
+      "jì wén biǎo dá le rǎng chú zāi huò de yuàn wàng.",
+      "The ritual text expresses the wish to drive away disaster."
+    ],
+    "note": "Literary verb, often used with calamities or evils.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2957": {
+    "english": "bustling and noisy",
+    "pos": "adjective",
+    "second": [
+      "扰攘的集市直到夜里才安静下来。",
+      "rǎo rǎng de jí shì zhí dào yè lǐ cái ān jìng xià lái.",
+      "The bustling market did not quiet down until night."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2958": {
+    "english": "to inlay; to set into a surface",
+    "pos": "verb",
+    "second": [
+      "工匠把玉石镶嵌在木盒上。",
+      "gōng jiàng bǎ yù shí xiāng qiàn zài mù hé shàng.",
+      "The craftsman inlays jade into the wooden box."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2959": {
+    "english": "border region; frontier",
+    "pos": "noun",
+    "second": [
+      "他多年生活在北方边疆。",
+      "tā duō nián shēng huó zài běi fāng biān jiāng.",
+      "He has lived in the northern frontier region for many years."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2961": {
+    "english": "reins",
+    "pos": "noun",
+    "second": [
+      "骑手轻轻拉了一下缰绳。",
+      "qí shǒu qīng qīng lā le yī xià jiāng shéng.",
+      "The rider gave the reins a gentle pull."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2962": {
+    "english": "stiff; rigid",
+    "pos": "adjective",
+    "second": [
+      "久坐以后，他的肩膀变得僵硬。",
+      "jiǔ zuò yǐ hòu, tā de jiān bǎng biàn de jiāng yìng.",
+      "After sitting for a long time, his shoulders became stiff."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2963": {
+    "english": "frame; framework",
+    "pos": "noun",
+    "second": [
+      "工人先搭好了门的框架。",
+      "gōng rén xiān dā hǎo le mén de kuàng jià.",
+      "The workers first assembled the door frame."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2965": {
+    "english": "Qiang ethnic group",
+    "pos": "proper noun",
+    "second": [
+      "她正在研究羌族的传统建筑。",
+      "tā zhèng zài yán jiū qiāng zú de chuán tǒng jiàn zhù.",
+      "She is studying the traditional architecture of the Qiang people."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2966": {
+    "english": "eye socket; area around the eye",
+    "pos": "noun",
+    "second": [
+      "听到好消息，她的眼眶红了。",
+      "tīng dào hǎo xiāo xi, tā de yǎn kuàng hóng le.",
+      "Her eyes reddened when she heard the good news."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2969": {
+    "english": "center; middle",
+    "pos": "noun",
+    "second": [
+      "喷泉位于广场中央。",
+      "pēn quán wèi yú guǎng chǎng zhōng yāng.",
+      "The fountain is in the center of the square."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2970": {
+    "english": "disaster; calamity",
+    "pos": "noun",
+    "second": [
+      "洪水给村庄带来了灾殃。",
+      "hóng shuǐ gěi cūn zhuāng dài lái le zāi yāng.",
+      "The flood brought disaster to the village."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2971": {
+    "english": "seedling, especially a rice seedling",
+    "pos": "noun",
+    "second": [
+      "农民把秧苗插进水田。",
+      "nóng mín bǎ yāng miáo chā jìn shuǐ tián.",
+      "The farmers plant rice seedlings in the flooded fields."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2974": {
+    "english": "in detail; detailed",
+    "pos": "adjective",
+    "second": [
+      "她向我们详细介绍了路线。",
+      "tā xiàng wǒ men xiáng xì jiè shào le lù xiàn.",
+      "She explained the route to us in detail."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2975": {
+    "english": "goat",
+    "pos": "noun",
+    "second": [
+      "小山羊跟着母羊走。",
+      "xiǎo shān yáng gēn zhe mǔ yáng zǒu.",
+      "The young goat follows its mother."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2977": {
+    "english": "poplar tree",
+    "pos": "noun",
+    "second": [
+      "路边的杨树长得很高。",
+      "lù biān de yáng shù zhǎng de hěn gāo.",
+      "The poplars by the road grow very tall."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2980": {
+    "english": "neighbor; people in the neighborhood",
+    "pos": "noun",
+    "second": [
+      "街坊们一起打扫小巷。",
+      "jiē fāng men yī qǐ dǎ sǎo xiǎo xiàng.",
+      "The neighbors clean the alley together."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2982": {
+    "english": "radiance; rays of light",
+    "pos": "noun",
+    "second": [
+      "星星发出微弱的光芒。",
+      "xīng xing fā chū wēi ruò de guāng máng.",
+      "The stars give off a faint light."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2983": {
+    "english": "mango",
+    "pos": "noun",
+    "second": [
+      "这个芒果又甜又香。",
+      "zhè gè máng guǒ yòu tián yòu xiāng.",
+      "This mango is sweet and fragrant."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2984": {
+    "english": "to hinder; to obstruct",
+    "pos": "verb",
+    "second": [
+      "路上的积雪妨碍了交通。",
+      "lù shàng de jī xuě fáng ài le jiāo tōng.",
+      "The snow on the road obstructed traffic."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2985": {
+    "english": "physically strong",
+    "pos": "adjective",
+    "second": [
+      "这匹马十分强壮。",
+      "zhè pǐ mǎ shí fēn qiáng zhuàng.",
+      "This horse is very strong."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2986": {
+    "english": "to force; to compel unwillingly",
+    "pos": "verb",
+    "second": [
+      "如果他不愿意，就别勉强他。",
+      "rú guǒ tā bù yuàn yì, jiù bié miǎn qiǎng tā.",
+      "If he is unwilling, do not force him."
+    ],
+    "note": "Here a verb meaning to compel, not an adverb meaning barely.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2987": {
+    "english": "frenzied; wildly excited",
+    "pos": "adjective",
+    "second": [
+      "球迷疯狂地欢呼起来。",
+      "qiú mí fēng kuáng de huān hū qǐ lái.",
+      "The fans burst into frenzied cheers."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2992": {
+    "english": "rubber",
+    "pos": "noun",
+    "second": [
+      "这双手套是用橡胶做的。",
+      "zhè shuāng shǒu tào shì yòng xiàng jiāo zuò de.",
+      "These gloves are made of rubber."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2993": {
+    "english": "to seem; to be like",
+    "pos": "verb",
+    "second": [
+      "那片云好像一只小兔。",
+      "nà piàn yún hǎo xiàng yī zhī xiǎo tù.",
+      "That cloud looks like a little rabbit."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2994": {
+    "english": "elephant",
+    "pos": "noun",
+    "second": [
+      "大象用长鼻子卷起树枝。",
+      "dà xiàng yòng cháng bí zi juǎn qǐ shù zhī.",
+      "The elephant picks up a branch with its long trunk."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2995": {
+    "english": "righteous; loyal and willing to help",
+    "pos": "adjective",
+    "second": [
+      "他很仗义，从不抛下有困难的朋友。",
+      "tā hěn zhàng yì, cóng bù pāo xià yǒu kùn nan de péng you.",
+      "He is loyal and never abandons friends in difficulty."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2996": {
+    "english": "to fight a war; to engage in battle",
+    "pos": "verb",
+    "second": [
+      "打仗让许多人失去了家园。",
+      "dǎ zhàng ràng xǔ duō rén shī qù le jiā yuán.",
+      "War caused many people to lose their homes."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2998": {
+    "english": "deeply sorrowful; tragic",
+    "pos": "adjective",
+    "second": [
+      "这首诗的语调十分悲怆。",
+      "zhè shǒu shī de yǔ diào shí fēn bēi chuàng.",
+      "The tone of this poem is deeply sorrowful."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "2999": {
+    "english": "straightforward; readily agreeable",
+    "pos": "adjective",
+    "second": [
+      "她爽快地答应了邀请。",
+      "tā shuǎng kuai de dā ying le yāo qǐng.",
+      "She readily accepted the invitation."
+    ],
+    "note": "Here describes an open, direct, and readily helpful manner.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3000": {
+    "english": "palm of the hand",
+    "pos": "noun",
+    "second": [
+      "他把种子放在手掌上。",
+      "tā bǎ zhǒng zi fàng zài shǒu zhǎng shàng.",
+      "He puts the seeds on his palm."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3001": {
+    "english": "to open wide",
+    "pos": "verb",
+    "second": [
+      "天气暖和了，请把窗户敞开。",
+      "tiān qì nuǎn huo le, qǐng bǎ chuāng hu chǎng kāi.",
+      "The weather is warm; please open the window wide."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3004": {
+    "english": "to go up; to move toward a higher or forward position",
+    "pos": "verb",
+    "second": [
+      "山路很陡，我们慢慢走上去。",
+      "shān lù hěn dǒu, wǒ men màn màn zǒu shàng qù.",
+      "The mountain path is steep, so we walk up slowly."
+    ],
+    "note": "Often follows a motion verb as a directional complement.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3006": {
+    "english": "to stroll through shops; to go shopping",
+    "pos": "verb",
+    "second": [
+      "周末她喜欢和朋友逛街。",
+      "zhōu mò tā xǐ huān hé péng you guàng jiē.",
+      "She likes going shopping with friends on weekends."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3007": {
+    "english": "rough and vigorous; rugged",
+    "pos": "adjective",
+    "second": [
+      "这幅画展现了粗犷的笔法。",
+      "zhè fú huà zhǎn xiàn le cū guǎng de bǐ fǎ.",
+      "This painting displays rough and vigorous brushwork."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3008": {
+    "english": "religious faith; belief",
+    "pos": "noun",
+    "second": [
+      "他们有不同的宗教信仰。",
+      "tā men yǒu bù tóng de zōng jiào xìn yǎng.",
+      "They have different religious beliefs."
+    ],
+    "note": "Noun use in the original sentence.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3009": {
+    "english": "to long for; to yearn for",
+    "pos": "verb",
+    "second": [
+      "他一直向往海边的生活。",
+      "tā yī zhí xiàng wǎng hǎi biān de shēng huó.",
+      "He has always longed for life by the sea."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3011": {
+    "english": "feast; banquet",
+    "pos": "noun",
+    "second": [
+      "宾客们在花园里享用飨宴。",
+      "bīn kè men zài huā yuán lǐ xiǎng yòng xiǎng yàn.",
+      "The guests enjoy a feast in the garden."
+    ],
+    "note": "Formal expression for a feast held to entertain guests.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3012": {
+    "english": "to wrong; to accuse unjustly",
+    "pos": "verb",
+    "second": [
+      "你误会了我，不要冤枉我。",
+      "nǐ wù huì le wǒ, bù yào yuān wang wǒ.",
+      "You have misunderstood me; do not accuse me unfairly."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3013": {
+    "english": "usual times; ordinarily",
+    "pos": "noun",
+    "second": [
+      "他今天比往常来得早。",
+      "tā jīn tiān bǐ wǎng cháng lái de zǎo.",
+      "He arrived earlier than usual today."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3014": {
+    "english": "to itch; to become itchy",
+    "pos": "verb",
+    "second": [
+      "被蚊子咬过的地方正在发痒。",
+      "bèi wén zi yǎo guò de dì fang zhèng zài fā yǎng.",
+      "The mosquito bite is itching."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3015": {
+    "english": "to feel at ease; to stop worrying",
+    "pos": "verb",
+    "second": [
+      "孩子平安回家，她才放心。",
+      "hái zi píng ān huí jiā, tā cái fàng xīn.",
+      "She only stopped worrying when the child came home safely."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3016": {
+    "english": "confused; uncertain about one's direction",
+    "pos": "adjective",
+    "second": [
+      "毕业后，他对未来感到迷惘。",
+      "bì yè hòu, tā duì wèi lái gǎn dào mí wǎng.",
+      "After graduating, he felt uncertain about his future."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3017": {
+    "english": "network; the Internet",
+    "pos": "noun",
+    "second": [
+      "这里的网络很稳定。",
+      "zhè lǐ de wǎng luò hěn wěn dìng.",
+      "The network here is very stable."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3018": {
+    "english": "to imitate",
+    "pos": "verb",
+    "second": [
+      "小孩喜欢模仿大人的动作。",
+      "xiǎo hái xǐ huān mó fǎng dà rén de dòng zuò.",
+      "Children like to imitate adults' movements."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3019": {
+    "english": "spinning and weaving; textile production",
+    "pos": "noun",
+    "second": [
+      "这座城市以纺织工业闻名。",
+      "zhè zuò chéng shì yǐ fǎng zhī gōng yè wén míng.",
+      "This city is famous for its textile industry."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3020": {
+    "english": "to make through fermentation; to brew",
+    "pos": "verb",
+    "second": [
+      "酒厂用粮食酿造白酒。",
+      "jiǔ chǎng yòng liáng shi niàng zào bái jiǔ.",
+      "The distillery makes Chinese liquor from grain through fermentation."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3023": {
+    "english": "to forgive; forgiveness",
+    "pos": "verb",
+    "second": [
+      "他请求朋友原谅自己的迟到。",
+      "tā qǐng qiú péng you yuán liàng zì jǐ de chí dào.",
+      "He asked his friend to forgive him for being late."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3024": {
+    "english": "soy sauce",
+    "pos": "noun",
+    "second": [
+      "煮面时可以加一点酱油。",
+      "zhǔ miàn shí kě yǐ jiā yī diǎn jiàng yóu.",
+      "You can add a little soy sauce when cooking noodles."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3026": {
+    "english": "to expand; to swell",
+    "pos": "verb",
+    "second": [
+      "受热以后，金属会膨胀。",
+      "shòu rè yǐ hòu, jīn shǔ huì péng zhàng.",
+      "Metal expands when heated."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3027": {
+    "english": "melancholy; disappointed sadness",
+    "pos": "adjective",
+    "second": [
+      "离开故乡时，她心中十分惆怅。",
+      "lí kāi gù xiāng shí, tā xīn zhōng shí fēn chóu chàng.",
+      "She felt deeply melancholy when leaving her hometown."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3028": {
+    "english": "fluent; smooth and flowing",
+    "pos": "adjective",
+    "second": [
+      "他的中文表达很流畅。",
+      "tā de zhōng wén biǎo dá hěn liú chàng.",
+      "He expresses himself fluently in Chinese."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3029": {
+    "english": "to grow in size and strength",
+    "pos": "verb",
+    "second": [
+      "经过几年发展，公司逐渐壮大。",
+      "jīng guò jǐ nián fā zhǎn, gōng sī zhú jiàn zhuàng dà.",
+      "After several years of development, the company has grown stronger and larger."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3030": {
+    "english": "condition; state",
+    "pos": "noun",
+    "second": [
+      "休息以后，他恢复了良好的状态。",
+      "xiū xi yǐ hòu, tā huī fù le liáng hǎo de zhuàng tài.",
+      "After resting, he returned to good form."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3032": {
+    "english": "to defer politely; to yield modestly",
+    "pos": "verb",
+    "second": [
+      "两位客人互相谦让座位。",
+      "liǎng wèi kè rén hù xiāng qiān ràng zuò wèi.",
+      "The two guests politely offer the seat to each other."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3034": {
+    "english": "flourishing; prosperous",
+    "pos": "adjective",
+    "second": [
+      "这一带的商业十分兴旺。",
+      "zhè yī dài de shāng yè shí fēn xīng wàng.",
+      "Business in this area is flourishing."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3035": {
+    "english": "to ripple; to undulate gently",
+    "pos": "verb",
+    "second": [
+      "微风中，湖水轻轻荡漾。",
+      "wēi fēng zhōng, hú shuǐ qīng qīng dàng yàng.",
+      "The lake water ripples gently in the breeze."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3036": {
+    "english": "arrogant; conceited",
+    "pos": "adjective",
+    "second": [
+      "他的狂妄态度使同事反感。",
+      "tā de kuáng wàng tài dù shǐ tóng shì fǎn gǎn.",
+      "His arrogant attitude irritates his colleagues."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3038": {
+    "english": "to visit; to call on",
+    "pos": "verb",
+    "second": [
+      "代表团明天访问这所学校。",
+      "dài biǎo tuán míng tiān fǎng wèn zhè suǒ xué xiào.",
+      "The delegation will visit this school tomorrow."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3039": {
+    "english": "strategy",
+    "pos": "noun",
+    "second": [
+      "将军重新调整了防守战略。",
+      "jiāng jūn chóng xīn tiáo zhěng le fáng shǒu zhàn lüè.",
+      "The general revised the defensive strategy."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3040": {
+    "english": "sparrow",
+    "pos": "noun",
+    "second": [
+      "几只麻雀在地上找食物。",
+      "jǐ zhī má què zài dì shàng zhǎo shí wù.",
+      "Several sparrows are looking for food on the ground."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3041": {
+    "english": "noble title; rank of nobility",
+    "pos": "noun",
+    "second": [
+      "国王赐给他一个爵位。",
+      "guó wáng cì gěi tā yī gè jué wèi.",
+      "The king granted him a noble title."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3042": {
+    "english": "magpie",
+    "pos": "noun",
+    "second": [
+      "喜鹊在树上搭了一个窝。",
+      "xǐ què zài shù shàng dā le yī gè wō.",
+      "A magpie built a nest in the tree."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3043": {
+    "english": "to cut back; to reduce",
+    "pos": "verb",
+    "second": [
+      "公司决定削减广告费用。",
+      "gōng sī jué dìng xuē jiǎn guǎng gào fèi yòng.",
+      "The company decided to cut advertising costs."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3044": {
+    "english": "to weigh carefully; to deliberate",
+    "pos": "verb",
+    "second": [
+      "签字之前，请再斟酌一下。",
+      "qiān zì zhī qián, qǐng zài zhēn zhuó yī xià.",
+      "Please think it over once more before signing."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3045": {
+    "english": "scorching; intensely hot",
+    "pos": "adjective",
+    "second": [
+      "灼热的空气使人难以呼吸。",
+      "zhuó rè de kōng qì shǐ rén nán yǐ hū xī.",
+      "The scorching air makes it difficult to breathe."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3046": {
+    "english": "spoon",
+    "pos": "noun",
+    "second": [
+      "他用勺子舀了一碗汤。",
+      "tā yòng sháo zi yǎo le yī wǎn tāng.",
+      "He ladled a bowl of soup with a spoon."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3047": {
+    "english": "wealthy and lavish with money",
+    "pos": "adjective",
+    "second": [
+      "他手头阔绰，常请朋友吃饭。",
+      "tā shǒu tóu kuò chuò, cháng qǐng péng you chī fàn.",
+      "He has plenty of money and often treats his friends to meals."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3048": {
+    "english": "to glitter; to flicker; to twinkle",
+    "pos": "verb",
+    "second": [
+      "远处的灯光在夜色中闪烁。",
+      "yuǎn chù de dēng guāng zài yè sè zhōng shǎn shuò.",
+      "Distant lights twinkle in the darkness."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3049": {
+    "english": "to be drowning; to suffer submersion",
+    "pos": "verb",
+    "second": [
+      "救生员救起了溺水的孩子。",
+      "jiù shēng yuán jiù qǐ le nì shuǐ de hái zi.",
+      "The lifeguard rescued the drowning child."
+    ],
+    "note": "Does not by itself imply that the person died.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3050": {
+    "english": "to urinate or defecate",
+    "pos": "verb",
+    "second": [
+      "公共场所禁止随地便溺。",
+      "gōng gòng chǎng suǒ jìn zhǐ suí dì biàn niào.",
+      "Urinating or defecating outside designated facilities is prohibited in public places."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3052": {
+    "english": "weak; lacking resolve",
+    "pos": "adjective",
+    "second": [
+      "他不愿在困难面前显得软弱。",
+      "tā bù yuàn zài kùn nan miàn qián xiǎn de ruǎn ruò.",
+      "He does not want to appear weak in the face of difficulty."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3053": {
+    "english": "to retreat; to back down",
+    "pos": "verb",
+    "second": [
+      "面对压力，她没有退却。",
+      "miàn duì yā lì, tā méi yǒu tuì què.",
+      "She did not back down under pressure."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3054": {
+    "english": "malaria",
+    "pos": "noun",
+    "second": [
+      "这篇文章介绍了疟疾的传播方式。",
+      "zhè piān wén zhāng jiè shào le nüè jí de chuán bō fāng shì.",
+      "This article explains how malaria spreads."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3055": {
+    "english": "to abuse; to mistreat",
+    "pos": "verb",
+    "second": [
+      "他因虐待动物而受到处罚。",
+      "tā yīn nüè dài dòng wù ér shòu dào chǔ fá.",
+      "He was punished for abusing animals."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3056": {
+    "english": "to tease playfully; playful banter",
+    "pos": "verb",
+    "second": [
+      "朋友们常用戏谑的口吻交谈。",
+      "péng you men cháng yòng xì xuè de kǒu wěn jiāo tán.",
+      "The friends often talk in a playful, teasing tone."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3057": {
+    "english": "medication; drug",
+    "pos": "noun",
+    "second": [
+      "这种药物需要妥善保存。",
+      "zhè zhǒng yào wù xū yào tuǒ shàn bǎo cún.",
+      "This medication needs to be stored properly."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3058": {
+    "english": "ferocious and terrifying in appearance",
+    "pos": "adjective",
+    "second": [
+      "石像露出狰狞的面容。",
+      "shí xiàng lù chū zhēng níng de miàn róng.",
+      "The stone statue has a terrifying, ferocious face."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3060": {
+    "english": "dumbfounded; speechless with astonishment",
+    "pos": "phrase",
+    "second": [
+      "突然出现的巨响使大家瞠目结舌。",
+      "tū rán chū xiàn de jù xiǎng shǐ dà jiā chēng mù jié shé.",
+      "The sudden loud noise left everyone dumbfounded."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3061": {
+    "english": "to fix one's gaze on; to watch closely",
+    "pos": "verb",
+    "second": [
+      "小猫盯住了地上的虫子。",
+      "xiǎo māo dīng zhù le dì shàng de chóng zi.",
+      "The kitten fixed its gaze on the insect on the ground."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3062": {
+    "english": "to clarify; to clear up a misunderstanding",
+    "pos": "verb",
+    "second": [
+      "他在会上澄清了误会。",
+      "tā zài huì shàng chéng qīng le wù huì.",
+      "He cleared up the misunderstanding at the meeting."
+    ],
+    "note": "Here chéng qīng means clarifying information, not making liquid settle.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3063": {
+    "english": "towering and rugged",
+    "pos": "adjective",
+    "second": [
+      "峥嵘的山峰直入云端。",
+      "zhēng róng de shān fēng zhí rù yún duān.",
+      "The towering, rugged peaks reach into the clouds."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3065": {
+    "english": "lusheng, a reed-pipe wind instrument",
+    "pos": "noun",
+    "second": [
+      "老人吹起了芦笙。",
+      "lǎo rén chuī qǐ le lú shēng.",
+      "The old man began to play the lusheng."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3066": {
+    "english": "orangutan",
+    "pos": "noun",
+    "second": [
+      "猩猩在树枝间灵活地移动。",
+      "xīng xing zài shù zhī jiān líng huó de yí dòng.",
+      "The orangutan moves nimbly among the branches."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3067": {
+    "english": "nephew, one's sister's son",
+    "pos": "noun",
+    "second": [
+      "我的外甥今年上小学。",
+      "wǒ de wài shēng jīn nián shàng xiǎo xué.",
+      "My sister's son starts primary school this year."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3069": {
+    "english": "to change; to alter",
+    "pos": "verb",
+    "second": [
+      "我们需要更改会议时间。",
+      "wǒ men xū yào gēng gǎi huì yì shí jiān.",
+      "We need to change the meeting time."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3070": {
+    "english": "very late at night; the middle of the night",
+    "pos": "phrase",
+    "second": [
+      "三更半夜，楼下仍传来音乐声。",
+      "sān gēng bàn yè, lóu xià réng chuán lái yīn yuè shēng.",
+      "Music could still be heard downstairs in the middle of the night."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3071": {
+    "english": "even more; to a greater degree",
+    "pos": "adverb",
+    "second": [
+      "雨后的空气更加清新。",
+      "yǔ hòu de kōng qì gèng jiā qīng xīn.",
+      "The air is even fresher after the rain."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3072": {
+    "english": "raised ridge between fields",
+    "pos": "noun",
+    "second": [
+      "他沿着田埂走向村庄。",
+      "tā yán zhe tián gěng zǒu xiàng cūn zhuāng.",
+      "He walks toward the village along the ridge between the fields."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3073": {
+    "english": "Gengzi, the thirty-seventh year of the sixty-year cycle",
+    "pos": "proper noun",
+    "second": [
+      "展板介绍了庚子年发生的事件。",
+      "zhǎn bǎn jiè shào le gēng zǐ nián fā shēng de shì jiàn.",
+      "The display describes events that occurred in a Gengzi year."
+    ],
+    "note": "A traditional cyclical year designation; which calendar year it means depends on context.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3074": {
+    "english": "Beijing",
+    "pos": "proper noun",
+    "second": [
+      "我们坐火车去北京。",
+      "wǒ men zuò huǒ chē qù běi jīng.",
+      "We take the train to Beijing."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3075": {
+    "english": "thorny bushes; thorns",
+    "pos": "noun",
+    "second": [
+      "小路两旁长满了荆棘。",
+      "xiǎo lù liǎng páng zhǎng mǎn le jīng jí.",
+      "Thorny bushes grow thickly on both sides of the path."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3076": {
+    "english": "pit; hole in the ground",
+    "pos": "noun",
+    "second": [
+      "路面上的坑洞已经填平了。",
+      "lù miàn shàng de kēng dòng yǐ jīng tián píng le.",
+      "The hole in the road has been filled in."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3079": {
+    "english": "smooth and successful; prosperous",
+    "pos": "adjective",
+    "second": [
+      "他希望新的一年事业亨通。",
+      "tā xī wàng xīn de yī nián shì yè hēng tōng.",
+      "He hopes his career will go smoothly in the new year."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3083": {
+    "english": "clear and sparkling; translucent",
+    "pos": "adjective",
+    "second": [
+      "晶莹的露珠挂在叶尖上。",
+      "jīng yíng de lù zhū guà zài yè jiān shàng.",
+      "Clear, sparkling dewdrops hang from the leaf tips."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3084": {
+    "english": "honorable; glorious",
+    "pos": "adjective",
+    "second": [
+      "她认为帮助别人是一件光荣的事。",
+      "tā rèn wéi bāng zhù bié rén shì yī jiàn guāng róng de shì.",
+      "She considers helping others an honorable thing."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3085": {
+    "english": "tent",
+    "pos": "noun",
+    "second": [
+      "我们在河边搭了一顶帐棚。",
+      "wǒ men zài hé biān dā le yī dǐng zhàng peng.",
+      "We put up a tent beside the river."
+    ],
+    "note": "Variant spelling of 帐篷.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3086": {
+    "english": "role model; example to follow",
+    "pos": "noun",
+    "second": [
+      "哥哥一直是我的榜样。",
+      "gē ge yī zhí shì wǒ de bǎng yàng.",
+      "My older brother has always been my role model."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3087": {
+    "english": "Peng, a surname",
+    "pos": "proper noun",
+    "second": [
+      "彭老师正在准备明天的课。",
+      "péng lǎo shī zhèng zài zhǔn bèi míng tiān de kè.",
+      "Teacher Peng is preparing tomorrow's lesson."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3089": {
+    "english": "blind; unthinking",
+    "pos": "adjective",
+    "second": [
+      "不要盲目相信网上的消息。",
+      "bù yào máng mù xiāng xìn wǎng shàng de xiāo xi.",
+      "Do not blindly believe information online."
+    ],
+    "note": "Figurative sense of acting without careful thought.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3091": {
+    "english": "alliance; coalition",
+    "pos": "noun",
+    "second": [
+      "几个组织成立了一个联盟。",
+      "jǐ gè zǔ zhī chéng lì le yī gè lián méng.",
+      "Several organizations formed an alliance."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3093": {
+    "english": "engine",
+    "pos": "noun",
+    "second": [
+      "汽车的引擎发出了奇怪的声音。",
+      "qì chē de yǐn qíng fā chū le qí guài de shēng yīn.",
+      "The car's engine made a strange noise."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3095": {
+    "english": "to deal a blow to; to discourage",
+    "pos": "verb",
+    "second": [
+      "失败没有打击她继续努力的信心。",
+      "shī bài méi yǒu dǎ jī tā jì xù nǔ lì de xìn xīn.",
+      "Failure did not shake her confidence in continuing to try."
+    ],
+    "note": "Figurative psychological blow in this context.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3097": {
+    "english": "to reflect on one's own conduct",
+    "pos": "verb",
+    "second": [
+      "他认真反省了自己的错误。",
+      "tā rèn zhēn fǎn xǐng le zì jǐ de cuò wù.",
+      "He carefully reflected on his own mistakes."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3098": {
+    "english": "provincial capital",
+    "pos": "noun",
+    "second": [
+      "她每周坐车到省城上课。",
+      "tā měi zhōu zuò chē dào shěng chéng shàng kè.",
+      "She travels to the provincial capital for classes every week."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3100": {
+    "english": "outline; synopsis",
+    "pos": "noun",
+    "second": [
+      "请先读一下这部小说的梗概。",
+      "qǐng xiān dú yī xià zhè bù xiǎo shuō de gěng gài.",
+      "Please read the synopsis of this novel first."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3105": {
+    "english": "forever; always",
+    "pos": "adverb",
+    "second": [
+      "我会永远记得这一天。",
+      "wǒ huì yǒng yuǎn jì de zhè yī tiān.",
+      "I will always remember this day."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3106": {
+    "english": "glorious; shining with distinction",
+    "pos": "adjective",
+    "second": [
+      "这些功绩彪炳史册。",
+      "zhè xiē gōng jì biāo bǐng shǐ cè.",
+      "These achievements shine gloriously in the historical record."
+    ],
+    "note": "Literary; especially common in 彪炳史册.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3107": {
+    "english": "to uphold; to carry forward",
+    "pos": "verb",
+    "second": [
+      "学校秉承认真求学的传统。",
+      "xué xiào bǐng chéng rèn zhēn qiú xué de chuán tǒng.",
+      "The school upholds a tradition of diligent study."
+    ],
+    "note": "Here means continuing a principle or tradition, not receiving an order.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3108": {
+    "english": "third grade; C grade",
+    "pos": "noun",
+    "second": [
+      "这份作业被评为丙等。",
+      "zhè fèn zuò yè bèi píng wéi bǐng děng.",
+      "This assignment was graded C."
+    ],
+    "note": "丙 is the third item in the traditional ordering 甲、乙、丙.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3109": {
+    "english": "violent; intense",
+    "pos": "adjective",
+    "second": [
+      "夜里刮起了猛烈的风。",
+      "yè lǐ guā qǐ le měng liè de fēng.",
+      "A violent wind arose during the night."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3110": {
+    "english": "grasshopper",
+    "pos": "noun",
+    "second": [
+      "一只蚱蜢跳进了草丛。",
+      "yī zhī zhà měng tiào jìn le cǎo cóng.",
+      "A grasshopper jumped into the grass."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3111": {
+    "english": "vessels; utensils",
+    "pos": "noun",
+    "second": [
+      "桌上摆着几个陶制器皿。",
+      "zhuō shàng bǎi zhe jǐ gè táo zhì qì mǐn.",
+      "Several pottery vessels are arranged on the table."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3112": {
+    "english": "to respect; to esteem",
+    "pos": "verb",
+    "second": [
+      "我们尊敬认真工作的医生。",
+      "wǒ men zūn jìng rèn zhēn gōng zuò de yī shēng.",
+      "We respect doctors who work conscientiously."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3113": {
+    "english": "eyeglasses",
+    "pos": "noun",
+    "second": [
+      "看书时，他戴上了眼镜。",
+      "kàn shū shí, tā dài shàng le yǎn jìng.",
+      "He puts on his glasses when reading."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3114": {
+    "english": "unexpectedly; to one's surprise",
+    "pos": "adverb",
+    "second": [
+      "这么小的孩子竟然会下棋。",
+      "zhè me xiǎo de hái zi jìng rán huì xià qí.",
+      "To my surprise, such a young child can play chess."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3115": {
+    "english": "to celebrate",
+    "pos": "verb",
+    "second": [
+      "全家一起庆祝奶奶的生日。",
+      "quán jiā yī qǐ qìng zhù nǎi nai de shēng rì.",
+      "The whole family celebrates Grandma's birthday together."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3116": {
+    "english": "to sing of; to celebrate in song",
+    "pos": "verb",
+    "second": [
+      "诗人歌咏故乡的山川。",
+      "shī rén gē yǒng gù xiāng de shān chuān.",
+      "The poet sings of the mountains and rivers of his hometown."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3117": {
+    "english": "to swim; swimming",
+    "pos": "verb",
+    "second": [
+      "夏天我们常去游泳。",
+      "xià tiān wǒ men cháng qù yóu yǒng.",
+      "We often go swimming in summer."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3119": {
+    "english": "Mencius, a Confucian philosopher",
+    "pos": "proper noun",
+    "second": [
+      "学生正在读孟子的文章。",
+      "xué sheng zhèng zài dú mèng zǐ de wén zhāng.",
+      "The students are reading writings by Mencius."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3121": {
+    "english": "competition; to compete",
+    "pos": "noun",
+    "second": [
+      "两家商店之间的竞争很激烈。",
+      "liǎng jiā shāng diàn zhī jiān de jìng zhēng hěn jī liè.",
+      "Competition between the two shops is fierce."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3122": {
+    "english": "residence; dwelling",
+    "pos": "noun",
+    "second": [
+      "这条街上有许多私人住宅。",
+      "zhè tiáo jiē shàng yǒu xǔ duō sī rén zhù zhái.",
+      "There are many private residences on this street."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3123": {
+    "english": "luster; sheen",
+    "pos": "noun",
+    "second": [
+      "擦干以后，银器恢复了光泽。",
+      "cā gān yǐ hòu, yín qì huī fù le guāng zé.",
+      "After being wiped dry, the silverware regained its luster."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3124": {
+    "english": "tongue-clicking sound expressing admiration",
+    "pos": "onomatopoeia",
+    "second": [
+      "看到精美的雕刻，游客啧啧赞叹。",
+      "kàn dào jīng měi de diāo kè, yóu kè zé zé zàn tàn.",
+      "Seeing the exquisite carving, the visitors click their tongues in admiration."
+    ],
+    "note": "Here the tongue-clicking expresses admiration, rather than disapproval.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3127": {
+    "english": "Kashgar, in Xinjiang",
+    "pos": "proper noun",
+    "second": [
+      "他们在喀什参观了老街。",
+      "tā men zài kā shí cān guān le lǎo jiē.",
+      "They visited the old streets of Kashgar."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3129": {
+    "english": "gap; small space between objects",
+    "pos": "noun",
+    "second": [
+      "阳光从窗帘的空隙照进来。",
+      "yáng guāng cóng chuāng lián de kòng xì zhào jìn lái.",
+      "Sunlight comes in through a gap in the curtains."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3131": {
+    "english": "to reverse; to turn around a situation",
+    "pos": "verb",
+    "second": [
+      "最后一球逆转了比赛的局势。",
+      "zuì hòu yī qiú nì zhuǎn le bǐ sài de jú shì.",
+      "The final goal turned the match around."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3132": {
+    "english": "illustrious; prominent",
+    "pos": "adjective",
+    "second": [
+      "他的家族曾经十分显赫。",
+      "tā de jiā zú céng jīng shí fēn xiǎn hè.",
+      "His family was once very prominent."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3133": {
+    "english": "pine and cypress trees",
+    "pos": "noun",
+    "second": [
+      "山坡上种着松柏。",
+      "shān pō shàng zhòng zhe sōng bǎi.",
+      "Pines and cypresses are planted on the hillside."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3134": {
+    "english": "uncle; respectful address for an older man",
+    "pos": "noun",
+    "second": [
+      "老伯，请问车站在哪里？",
+      "lǎo bó, qǐng wèn chē zhàn zài nǎ lǐ?",
+      "Sir, could you tell me where the station is?"
+    ],
+    "note": "A polite address to an older man, who need not be a relative.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3137": {
+    "english": "oppression; to oppress",
+    "pos": "noun",
+    "second": [
+      "他们无法忍受长期的压迫。",
+      "tā men wú fǎ rěn shòu cháng qī de yā pò.",
+      "They cannot bear the prolonged oppression."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3138": {
+    "english": "cloth and silk; textiles",
+    "pos": "noun",
+    "second": [
+      "商人带来了各色布帛。",
+      "shāng rén dài lái le gè sè bù bó.",
+      "The merchant brought cloth and silk in various colors."
+    ],
+    "note": "Literary collective term for textiles.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3140": {
+    "english": "suddenly; all at once",
+    "pos": "adverb",
+    "second": [
+      "她蓦然发现自己走错了路。",
+      "tā mò rán fā xiàn zì jǐ zǒu cuò le lù.",
+      "She suddenly realized she had taken the wrong path."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3142": {
+    "english": "hundred, in formal financial writing",
+    "pos": "numeral",
+    "second": [
+      "票据上写着叁佰元。",
+      "piào jù shàng xiě zhe sān bǎi yuán.",
+      "The voucher says three hundred yuan."
+    ],
+    "note": "Formal financial form of 百, used to make alteration harder.",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3143": {
+    "english": "to take photographs",
+    "pos": "verb",
+    "second": [
+      "游客站在桥上拍照。",
+      "yóu kè zhàn zài qiáo shàng pāi zhào.",
+      "The tourists stand on the bridge taking photographs."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  },
+  "3144": {
+    "english": "drama; theater; a play",
+    "pos": "noun",
+    "second": [
+      "她对传统戏剧很感兴趣。",
+      "tā duì chuán tǒng xì jù hěn gǎn xìng qù.",
+      "She is very interested in traditional theater."
+    ],
+    "note": "",
+    "source": "CC-CEDICT context-selected teaching gloss; original second example"
+  }
+}

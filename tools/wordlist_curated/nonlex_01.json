@@ -1,0 +1,3323 @@
+{
+  "3787": {
+    "english": "to possess in entirety",
+    "pos": "verb",
+    "second": [
+      "古书说周王奄有四海。",
+      "gǔ shū shuō zhōu wáng yǎn yǒu sì hǎi.",
+      "The old book says the Zhou king possessed the whole realm."
+    ],
+    "note": "A classical verb taking the territory or possessions as its object.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3800": {
+    "english": "to twist thread between the fingers",
+    "pos": "verb phrase",
+    "second": [
+      "她拈线时很有耐心。",
+      "tā niān xiàn shí hěn yǒu nài xīn.",
+      "She is very patient when twisting thread."
+    ],
+    "note": "An action involving thread; 拈 describes handling it with the fingers.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3830": {
+    "english": "mountain mist",
+    "pos": "noun",
+    "second": [
+      "岚气遮住了远山。",
+      "lán qì zhē zhù le yuǎn shān.",
+      "Mountain mist hid the distant hills."
+    ],
+    "note": "A literary expression for mist in mountain scenery.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3837": {
+    "english": "Buddhist nunnery",
+    "pos": "noun",
+    "second": [
+      "尼庵门前种着竹子。",
+      "ní ān mén qián zhòng zhe zhú zi.",
+      "Bamboo grows in front of the nunnery."
+    ],
+    "note": "尼 identifies Buddhist nuns; 庵 is their small religious dwelling.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3856": {
+    "english": "a kind of frog in old literary usage",
+    "pos": "noun",
+    "second": [
+      "诗人写圆蛤的叫声。",
+      "shī rén xiě yuán há de jiào shēng.",
+      "The poet writes about the frog's call."
+    ],
+    "note": "This card uses the frog sense found in old poetry, not the shellfish sense of 蛤.",
+    "source": "Original teaching gloss and example; classical frog usage checked in Chinese Text Project: https://ctext.org/wiki.pl?chapter=896954&if=en"
+  },
+  "3860": {
+    "english": "unit of capacity",
+    "pos": "noun phrase",
+    "second": [
+      "升是一种容量单位。",
+      "shēng shì yī zhǒng róng liàng dān wèi.",
+      "The liter is a unit of capacity."
+    ],
+    "note": "A transparent technical phrase; common examples include 升 and 毫升.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3867": {
+    "english": "to stand on tiptoe",
+    "pos": "verb phrase",
+    "second": [
+      "孩子踮脚看窗外。",
+      "hái zi diǎn jiǎo kàn chuāng wài.",
+      "The child stands on tiptoe to look outside."
+    ],
+    "note": "Often followed by the action made possible by standing on tiptoe.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3915": {
+    "english": "colored ceramic glaze",
+    "pos": "noun",
+    "second": [
+      "釉彩在灯下泛着光。",
+      "yòu cǎi zài dēng xià fàn zhe guāng.",
+      "The colored glaze gleams under the light."
+    ],
+    "note": "Used for the colors of a glazed ceramic surface.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3927": {
+    "english": "tincture of iodine",
+    "pos": "noun",
+    "second": [
+      "这瓶碘酒已经过期。",
+      "zhè píng diǎn jiǔ yǐ jīng guò qī.",
+      "This bottle of iodine tincture has expired."
+    ],
+    "note": "A product name; 酒 here refers to its alcohol solution, not a drink.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3937": {
+    "english": "one metric ton",
+    "pos": "number phrase",
+    "second": [
+      "这辆车能装一吨沙子。",
+      "zhè liàng chē néng zhuāng yī dūn shā zi.",
+      "This truck can carry one metric ton of sand."
+    ],
+    "note": "吨 is the unit; 一 gives the amount. The spelling keeps 一's citation tone.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3965": {
+    "english": "hey, hey",
+    "pos": "interjection",
+    "second": [
+      "嗨嗨，等我一下！",
+      "hāi hāi, děng wǒ yī xià!",
+      "Hey, hey, wait a moment for me!"
+    ],
+    "note": "An informal repeated call to get attention; intonation changes with the situation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3966": {
+    "english": "mm-hmm; yes, I understand",
+    "pos": "interjection",
+    "second": [
+      "嗯嗯，我会记住的。",
+      "en en, wǒ huì jì zhù de.",
+      "Mm-hmm, I'll remember."
+    ],
+    "note": "A repeated affirmative response. This entry uses the neutral en spelling given by the MOE mini dictionary.",
+    "source": "Original affirmative-response gloss and example; reading checked against MOE: https://dict.mini.moe.edu.tw/SearchIndex/word_detail?dictSearchField=%E5%97%AF&wordID=D0001539",
+    "pinyin": "en en",
+    "first": [
+      "嗯嗯，我已经听明白了。",
+      "en en, wǒ yǐ jīng tīng míng bai le.",
+      "Mm-hm, I understand now."
+    ]
+  },
+  "3972": {
+    "english": "to irritate the nose with a strong odor",
+    "pos": "verb phrase",
+    "second": [
+      "油烟太重，有些呛鼻。",
+      "yóu yān tài zhòng, yǒu xiē qiàng bí.",
+      "The cooking fumes are heavy and irritate the nose."
+    ],
+    "note": "呛 is read qiàng for a pungent smell or fumes that cause irritation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3974": {
+    "english": "one performance or episode of a play",
+    "pos": "number phrase",
+    "second": [
+      "今晚演一出新戏。",
+      "jīn wǎn yǎn yī chū xīn xì.",
+      "They will perform a new play tonight."
+    ],
+    "note": "出 is a measure word used with plays and theatrical scenes.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3979": {
+    "english": "entrance to a mountain valley",
+    "pos": "noun",
+    "second": [
+      "峪口有一座石桥。",
+      "yù kǒu yǒu yī zuò shí qiáo.",
+      "There is a stone bridge at the valley entrance."
+    ],
+    "note": "峪 means a mountain valley; 口 refers to its opening.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3995": {
+    "english": "earthenware wine jar",
+    "pos": "noun",
+    "second": [
+      "这个酒坛是空的。",
+      "zhè ge jiǔ tán shì kōng de.",
+      "This wine jar is empty."
+    ],
+    "note": "坛 names a large jar; 瓶 is used for an ordinary bottle.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "3996": {
+    "english": "to extend diagonally",
+    "pos": "verb phrase",
+    "second": [
+      "这条石缝向右斜行延伸。",
+      "zhè tiáo shí fèng xiàng yòu xié xíng yán shēn.",
+      "This crack in the rock extends diagonally to the right."
+    ],
+    "note": "A descriptive phrase combining diagonal direction with extension.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4000": {
+    "english": "all right; that's enough",
+    "pos": "expression",
+    "second": [
+      "好啦，别再争了。",
+      "hǎo la, bié zài zhēng le.",
+      "All right, stop arguing."
+    ],
+    "note": "啦 adds a conversational tone and can signal that an action should finish.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4001": {
+    "english": "sure; that sounds good",
+    "pos": "expression",
+    "second": [
+      "好啊，明天见！",
+      "hǎo a, míng tiān jiàn!",
+      "Sure, see you tomorrow!"
+    ],
+    "note": "An enthusiastic spoken response to a suggestion or invitation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4002": {
+    "english": "to gnaw or bite",
+    "pos": "verb",
+    "second": [
+      "兔子正在啃咬胡萝卜。",
+      "tù zi zhèng zài kěn yǎo hú luó bo.",
+      "The rabbit is gnawing on a carrot."
+    ],
+    "note": "Typically describes repeated biting, especially by animals.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4010": {
+    "english": "do not; please don't, in Cantonese",
+    "pos": "expression",
+    "second": [
+      "粤语里，唔好常用来劝阻。",
+      "yuè yǔ lǐ, wú hǎo cháng yòng lái quàn zǔ.",
+      "In Cantonese, this expression is often used to tell someone not to do something."
+    ],
+    "note": "This is Cantonese. The pinyin gives Mandarin character readings, not Cantonese pronunciation.",
+    "source": "Original teaching gloss and metalinguistic example; Cantonese meaning checked against CantoDict: https://www.cantonese.sheik.co.uk/dictionary/words/1639/"
+  },
+  "4017": {
+    "english": "to freeze in surprise",
+    "pos": "verb phrase",
+    "second": [
+      "他看见礼物，立刻愣住。",
+      "tā kàn jiàn lǐ wù, lì kè lèng zhù.",
+      "He freezes in surprise on seeing the present."
+    ],
+    "note": "住 marks the resulting stopped state after surprise.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4018": {
+    "english": "to hum a song",
+    "pos": "verb phrase",
+    "second": [
+      "爸爸开车时爱哼歌。",
+      "bà ba kāi chē shí ài hēng gē.",
+      "Dad likes to hum while driving."
+    ],
+    "note": "哼 is hēng when humming; the disapproving interjection has a different reading.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4023": {
+    "english": "to ramble unclearly",
+    "pos": "verb",
+    "second": [
+      "他说话总爱哩噜。",
+      "tā shuō huà zǒng ài lī lū.",
+      "He tends to ramble unclearly when speaking."
+    ],
+    "note": "A colloquial word about muddled, overly lengthy speech.",
+    "source": "Original teaching gloss and example; meaning and reading checked against MOE Revised Mandarin Dictionary: https://dict.revised.moe.edu.tw/dictView.jsp?ID=61603"
+  },
+  "4026": {
+    "english": "moo-moo",
+    "pos": "onomatopoeia",
+    "second": [
+      "远处传来哞哞的牛叫声。",
+      "yuǎn chù chuán lái mōu mōu de niú jiào shēng.",
+      "Mooing comes from a distance."
+    ],
+    "note": "Imitates a cow's call; often used before 叫 or 牛叫声.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4034": {
+    "english": "holding in the mouth",
+    "pos": "verb phrase",
+    "second": [
+      "猫叼着玩具走进屋。",
+      "māo diāo zhe wán jù zǒu jìn wū.",
+      "The cat walks into the room holding a toy in its mouth."
+    ],
+    "note": "着 describes the continuing state of holding something in the mouth.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4036": {
+    "english": "to be here; to lie in this",
+    "pos": "verb phrase",
+    "second": [
+      "古人的心意在兹。",
+      "gǔ rén de xīn yì zài zī.",
+      "The intention of the ancients lies in this."
+    ],
+    "note": "A classical expression; 兹 means this or here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4047": {
+    "english": "to cook rice in a covered pot",
+    "pos": "verb phrase",
+    "second": [
+      "米洗好后就可以焖饭。",
+      "mǐ xǐ hǎo hòu jiù kě yǐ mèn fàn.",
+      "After washing the rice, you can cook it in a covered pot."
+    ],
+    "note": "焖 describes cooking with the lid on; it is read mèn.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4052": {
+    "english": "the two of us",
+    "pos": "pronoun phrase",
+    "second": [
+      "我俩住在同一条街。",
+      "wǒ liǎ zhù zài tóng yī tiáo jiē.",
+      "The two of us live on the same street."
+    ],
+    "note": "俩 means two people and does not take an additional 个.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4053": {
+    "english": "wooden peg",
+    "pos": "noun",
+    "second": [
+      "帐篷旁有几根木橛子。",
+      "zhàng peng páng yǒu jǐ gēn mù jué zi.",
+      "There are several wooden pegs beside the tent."
+    ],
+    "note": "根 counts long narrow pegs; 子 is an unstressed noun ending.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4054": {
+    "english": "two broken pieces or sections",
+    "pos": "number phrase",
+    "second": [
+      "这根木棍断成两橛。",
+      "zhè gēn mù gùn duàn chéng liǎng jué.",
+      "This stick broke into two pieces."
+    ],
+    "note": "橛 is used regionally for a section broken from something long.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4062": {
+    "english": "baa-baa",
+    "pos": "onomatopoeia",
+    "second": [
+      "小羊咩咩地叫着。",
+      "xiǎo yáng miē miē de jiào zhe.",
+      "The little sheep keeps bleating."
+    ],
+    "note": "A sheep's bleating sound, commonly paired with 叫.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4078": {
+    "english": "earthenware wine jar, regional usage",
+    "pos": "noun",
+    "second": [
+      "酒埕上盖着红布。",
+      "jiǔ chéng shàng gài zhe hóng bù.",
+      "A red cloth covers the wine jar."
+    ],
+    "note": "埕 is a regional name for an earthenware vessel.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4079": {
+    "english": "Puli, a town in Taiwan",
+    "pos": "proper noun",
+    "second": [
+      "我们在埔里住了一晚。",
+      "wǒ men zài pǔ lǐ zhù le yī wǎn.",
+      "We stayed one night in Puli."
+    ],
+    "note": "A place name in Nantou, Taiwan; do not translate its characters separately.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4086": {
+    "english": "a series of sharp popping sounds",
+    "pos": "onomatopoeia",
+    "second": [
+      "雨点啪啪地打在窗上。",
+      "yǔ diǎn pā pā de dǎ zài chuāng shàng.",
+      "Raindrops patter sharply against the window."
+    ],
+    "note": "Used for repeated slaps, pops, or impacts; the context identifies the sound.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4090": {
+    "english": "slender and graceful",
+    "pos": "adjective",
+    "second": [
+      "荷花婷婷，立在水中。",
+      "hé huā tíng tíng, lì zài shuǐ zhōng.",
+      "The lotus flowers stand slender and graceful in the water."
+    ],
+    "note": "A literary description of an upright, graceful form.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4112": {
+    "english": "to collapse or fall apart",
+    "pos": "verb phrase",
+    "second": [
+      "旧屋顶终于垮掉了。",
+      "jiù wū dǐng zhōng yú kuǎ diào le.",
+      "The old roof finally collapsed."
+    ],
+    "note": "掉 emphasizes the completed collapse; also used figuratively for plans or morale.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4119": {
+    "english": "bright moon",
+    "pos": "noun",
+    "second": [
+      "皓月映在江面上。",
+      "hào yuè yìng zài jiāng miàn shàng.",
+      "The bright moon is reflected on the river."
+    ],
+    "note": "A poetic noun phrase; 皓 describes bright whiteness.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4125": {
+    "english": "base of a flower",
+    "pos": "noun",
+    "second": [
+      "花蒂旁有一片小叶子。",
+      "huā dì páng yǒu yī piàn xiǎo yè zi.",
+      "There is a small leaf beside the flower's base."
+    ],
+    "note": "蒂 identifies the part where a flower or fruit connects to its stalk.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4128": {
+    "english": "to lie face down",
+    "pos": "verb phrase",
+    "second": [
+      "他累得在桌上趴下了。",
+      "tā lèi de zài zhuō shàng pā xià le.",
+      "He was so tired that he slumped face down on the desk."
+    ],
+    "note": "下 indicates the change into the face-down position.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4142": {
+    "english": "battlement on a city wall",
+    "pos": "noun",
+    "second": [
+      "城垛之间留着缺口。",
+      "chéng duǒ zhī jiān liú zhe quē kǒu.",
+      "There are openings between the battlements."
+    ],
+    "note": "Refers to raised defensive sections along the top of a city wall.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4144": {
+    "english": "a stack",
+    "pos": "number phrase",
+    "second": [
+      "她抱着一摞课本。",
+      "tā bào zhe yī luò kè běn.",
+      "She is holding a stack of textbooks."
+    ],
+    "note": "摞 counts things stacked one above another, such as books or bowls.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4146": {
+    "english": "a short person, derogatory",
+    "pos": "noun",
+    "second": [
+      "不要叫别人矬子。",
+      "bù yào jiào bié rén cuó zi.",
+      "Do not call other people derogatory names for being short."
+    ],
+    "note": "An insulting word for a short person; learn it for recognition, not polite address.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4151": {
+    "english": "to apply medicine externally",
+    "pos": "verb phrase",
+    "second": [
+      "医生告诉他怎样搽药。",
+      "yī shēng gào su tā zěn yàng chá yào.",
+      "The doctor tells him how to apply the medicine."
+    ],
+    "note": "搽 describes spreading something on the skin; distinguish it from 擦, to rub or wipe.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4152": {
+    "english": "fork of a tree branch",
+    "pos": "noun",
+    "second": [
+      "一只小鸟落在树杈上。",
+      "yī zhī xiǎo niǎo luò zài shù chà shàng.",
+      "A little bird lands on the fork of a branch."
+    ],
+    "note": "杈 names a branching fork, not the whole branch.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4157": {
+    "english": "to welcome arriving guests",
+    "pos": "verb",
+    "second": [
+      "侍从出门迎迓使者。",
+      "shì cóng chū mén yíng yà shǐ zhě.",
+      "The attendants go out to welcome the envoy."
+    ],
+    "note": "A formal or literary equivalent of welcoming an arriving person.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4158": {
+    "english": "to sigh with emotion",
+    "pos": "verb",
+    "second": [
+      "老人对着残碑嗟叹。",
+      "lǎo rén duì zhe cán bēi jiē tàn.",
+      "The old man sighs at the damaged stone tablet."
+    ],
+    "note": "Literary, usually expressing sorrow, regret, or admiration.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4162": {
+    "english": "death by slicing, a historical punishment",
+    "pos": "noun",
+    "second": [
+      "展览介绍了剐刑的历史。",
+      "zhǎn lǎn jiè shào le guǎ xíng de lì shǐ.",
+      "The exhibition describes the history of this punishment."
+    ],
+    "note": "A historical term for a cruel form of execution; not a modern legal procedure.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4166": {
+    "english": "bull or ox",
+    "pos": "noun",
+    "second": [
+      "牯牛在树下休息。",
+      "gǔ niú zài shù xià xiū xi.",
+      "The ox rests beneath the tree."
+    ],
+    "note": "Refers to a male bovine; regional usage may include a castrated working ox.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4168": {
+    "english": "carbuncle or severe suppurating sore, old terminology",
+    "pos": "noun",
+    "second": [
+      "这部医书有疽疮一章。",
+      "zhè bù yī shū yǒu jū chuāng yī zhāng.",
+      "This medical book has a chapter on such sores."
+    ],
+    "note": "An old medical label; historical terms need not match a single modern diagnosis.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4174": {
+    "english": "tarsal bones",
+    "pos": "noun",
+    "second": [
+      "图中的跗骨靠近脚踝。",
+      "tú zhōng de fū gǔ kào jìn jiǎo huái.",
+      "The tarsal bones in the diagram are near the ankle."
+    ],
+    "note": "An anatomical term for the group of bones toward the back of the foot.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4192": {
+    "english": "hairpin with prongs",
+    "pos": "noun",
+    "second": [
+      "这支钗子上刻着花纹。",
+      "zhè zhī chāi zi shàng kè zhe huā wén.",
+      "A pattern is engraved on this hairpin."
+    ],
+    "note": "A traditional ornament used to hold up hair, commonly counted with 支.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4195": {
+    "english": "to cut grass",
+    "pos": "verb phrase",
+    "second": [
+      "他趁天晴去刈草。",
+      "tā chèn tiān qíng qù yì cǎo.",
+      "He goes to cut grass while the weather is clear."
+    ],
+    "note": "刈 is a literary verb for cutting vegetation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4201": {
+    "english": "a pestle-and-mortar grain pounding device",
+    "pos": "noun",
+    "second": [
+      "村里的碓臼已经不用了。",
+      "cūn lǐ de duì jiù yǐ jīng bù yòng le.",
+      "The village's grain-pounding device is no longer used."
+    ],
+    "note": "碓 is the pounding apparatus and 臼 is the mortar beneath it.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4204": {
+    "english": "to simmer soup gently",
+    "pos": "verb phrase",
+    "second": [
+      "这只砂锅适合煨汤。",
+      "zhè zhī shā guō shì hé wēi tāng.",
+      "This clay pot is suitable for gently simmering soup."
+    ],
+    "note": "煨 emphasizes slow cooking over gentle heat.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4211": {
+    "english": "imperial jade seal",
+    "pos": "noun",
+    "second": [
+      "玉玺上的字很清楚。",
+      "yù xǐ shàng de zì hěn qīng chu.",
+      "The characters on the imperial jade seal are clear."
+    ],
+    "note": "玺 is a seal, particularly an imperial one in historical contexts.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4225": {
+    "english": "respected elders",
+    "pos": "noun",
+    "second": [
+      "耆老们记得村子的旧名。",
+      "qí lǎo men jì de cūn zi de jiù míng.",
+      "The elders remember the village's old name."
+    ],
+    "note": "A formal, respectful collective term for elderly people.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4235": {
+    "english": "Chinese torreya nuts",
+    "pos": "noun",
+    "second": [
+      "榧子剥壳后才能吃。",
+      "fěi zi bō ké hòu cái néng chī.",
+      "The torreya nuts must be shelled before eating."
+    ],
+    "note": "Names the edible seeds of the Chinese torreya tree.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4237": {
+    "english": "flooding disaster",
+    "pos": "noun",
+    "second": [
+      "涝灾过后，农田仍有积水。",
+      "lào zāi guò hòu, nóng tián réng yǒu jī shuǐ.",
+      "After the flooding, water still stands in the fields."
+    ],
+    "note": "涝 refers to excess water or waterlogging, contrasting with drought.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4240": {
+    "english": "to pull out weeds",
+    "pos": "verb phrase",
+    "second": [
+      "我们一起给花圃薅草。",
+      "wǒ men yī qǐ gěi huā pǔ hāo cǎo.",
+      "We pull weeds from the flower bed together."
+    ],
+    "note": "薅 describes pulling plants out, often with their roots.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4242": {
+    "english": "cymbals",
+    "pos": "noun",
+    "second": [
+      "铙钹声盖过了鼓声。",
+      "náo bó shēng gài guò le gǔ shēng.",
+      "The cymbal sound drowned out the drums."
+    ],
+    "note": "A pair of metal percussion instruments, often heard with drums and gongs.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4243": {
+    "english": "to bring along incidentally",
+    "pos": "verb",
+    "second": [
+      "去乡下时请捎带这包茶。",
+      "qù xiāng xià shí qǐng shāo dài zhè bāo chá.",
+      "Please take this packet of tea along when you go to the countryside."
+    ],
+    "note": "Used when carrying something for someone during a trip already being made.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4245": {
+    "english": "hollow among hills",
+    "pos": "noun",
+    "second": [
+      "山坳里升起了炊烟。",
+      "shān ào lǐ shēng qǐ le chuī yān.",
+      "Cooking smoke rises from the hollow among the hills."
+    ],
+    "note": "Names a low, sheltered space between hills.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4252": {
+    "english": "to perform a Taoist ritual offering",
+    "pos": "verb phrase",
+    "second": [
+      "当地人每年都要打醮。",
+      "dāng dì rén měi nián dōu yào dǎ jiào.",
+      "The local people hold the Taoist offering ritual each year."
+    ],
+    "note": "A Taoist ceremony, often performed for blessings or communal well-being.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4254": {
+    "english": "sword sheath",
+    "pos": "noun",
+    "second": [
+      "剑鞘上镶着银片。",
+      "jiàn qiào shàng xiāng zhe yín piàn.",
+      "Silver pieces are inlaid on the sword sheath."
+    ],
+    "note": "The sheath holds a sword when it is not being used.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4258": {
+    "english": "sparrowhawk or similar hawk",
+    "pos": "noun",
+    "second": [
+      "鹞鹰落在高高的树梢。",
+      "yào yīng luò zài gāo gāo de shù shāo.",
+      "The hawk lands on the high treetop."
+    ],
+    "note": "A traditional bird name; everyday usage may be broader than a precise species label.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4259": {
+    "english": "to sell rice",
+    "pos": "verb phrase",
+    "second": [
+      "粮商到镇上粜米。",
+      "liáng shāng dào zhèn shàng tiào mǐ.",
+      "The grain merchant goes to town to sell rice."
+    ],
+    "note": "粜 means selling grain; the opposite 籴 means buying grain.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4260": {
+    "english": "traditional seed drill",
+    "pos": "noun",
+    "second": [
+      "农具展上摆着一辆耧车。",
+      "nóng jù zhǎn shàng bǎi zhe yī liàng lóu chē.",
+      "A traditional seed drill is displayed at the farm-tool exhibition."
+    ],
+    "note": "A wheeled sowing implement; 车 refers to the device, not a passenger vehicle.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4266": {
+    "english": "bright, beautiful eyes",
+    "pos": "noun",
+    "second": [
+      "画中少女有一双明眸。",
+      "huà zhōng shào nǚ yǒu yī shuāng míng móu.",
+      "The girl in the painting has bright, beautiful eyes."
+    ],
+    "note": "A literary, often admiring description of eyes.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4270": {
+    "english": "sour-smelling spoiled liquid or slops",
+    "pos": "noun",
+    "second": [
+      "这桶馊水不能再用了。",
+      "zhè tǒng sōu shuǐ bù néng zài yòng le.",
+      "This bucket of spoiled liquid cannot be used anymore."
+    ],
+    "note": "馊 describes a sour, spoiled smell; 水 can refer to waste liquid here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4274": {
+    "english": "hairpin",
+    "pos": "noun",
+    "second": [
+      "木簪子比银簪子轻。",
+      "mù zān zi bǐ yín zān zi qīng.",
+      "A wooden hairpin is lighter than a silver one."
+    ],
+    "note": "A traditional hair ornament used to secure a hair bun.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4281": {
+    "english": "lined garment",
+    "pos": "noun",
+    "second": [
+      "入秋后，他换上袷衣。",
+      "rù qiū hòu, tā huàn shàng jiá yī.",
+      "When autumn arrived, he changed into a lined garment."
+    ],
+    "note": "An older term for a garment with a lining; 袷 is read jiá in this sense.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4286": {
+    "english": "dowry, literary usage",
+    "pos": "noun",
+    "second": [
+      "她的奁妆装在木箱里。",
+      "tā de lián zhuāng zhuāng zài mù xiāng lǐ.",
+      "Her dowry is packed in a wooden chest."
+    ],
+    "note": "A historical expression connected with a bride's dowry or trousseau.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4294": {
+    "english": "strong tea",
+    "pos": "noun",
+    "second": [
+      "他嫌这杯酽茶太苦。",
+      "tā xián zhè bēi yàn chá tài kǔ.",
+      "He finds this strong tea too bitter."
+    ],
+    "note": "酽 describes a concentrated or strong flavor, especially in tea.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4300": {
+    "english": "catfish",
+    "pos": "noun",
+    "second": [
+      "这条鲇鱼有长长的须。",
+      "zhè tiáo nián yú yǒu cháng cháng de xū.",
+      "This catfish has long whisker-like barbels."
+    ],
+    "note": "鲇 is a writing variant of 鲶 in the fish name.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4303": {
+    "english": "roof purlin",
+    "pos": "noun",
+    "second": [
+      "旧屋的檩条需要更换。",
+      "jiù wū de lǐn tiáo xū yào gēng huàn.",
+      "The purlins of the old house need replacing."
+    ],
+    "note": "A horizontal roof-supporting member; a building term.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4309": {
+    "english": "to press a doorbell",
+    "pos": "verb phrase",
+    "second": [
+      "来访前先揿铃。",
+      "lái fǎng qián xiān qìn líng.",
+      "Ring the doorbell before entering as a visitor."
+    ],
+    "note": "揿 is a regional verb meaning to press; 按铃 is more widely used.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4311": {
+    "english": "to roll out dough",
+    "pos": "verb phrase",
+    "second": [
+      "爸爸擀面，我来切。",
+      "bà ba gǎn miàn, wǒ lái qiē.",
+      "Dad rolls out the dough, and I cut it."
+    ],
+    "note": "面 here means dough rather than flour as a loose powder.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4312": {
+    "english": "invitation cards",
+    "pos": "noun",
+    "second": [
+      "婚礼的柬帖已经写好。",
+      "hūn lǐ de jiǎn tiě yǐ jīng xiě hǎo.",
+      "The wedding invitation cards are already written."
+    ],
+    "note": "An older word for written invitations; 帖 is read tiě here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4322": {
+    "english": "imperial carriage",
+    "pos": "noun",
+    "second": [
+      "画中的辇车十分华丽。",
+      "huà zhōng de niǎn chē shí fēn huá lì.",
+      "The imperial carriage in the painting is very ornate."
+    ],
+    "note": "A historical vehicle associated with rulers or nobility.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4326": {
+    "english": "to sting a person",
+    "pos": "verb phrase",
+    "second": [
+      "不要碰蜂巢，蜂会蜇人。",
+      "bù yào pèng fēng cháo, fēng huì zhē rén.",
+      "Do not touch the hive; bees can sting people."
+    ],
+    "note": "蜇 takes the person or body part that is stung as its object.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4327": {
+    "english": "strong mutton-like odor",
+    "pos": "noun",
+    "second": [
+      "他不喜欢羊肉的膻味。",
+      "tā bù xǐ huan yáng ròu de shān wèi.",
+      "He dislikes the strong smell of mutton."
+    ],
+    "note": "膻 refers to a characteristic animal odor, especially from sheep or goats.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4334": {
+    "english": "to grab and hold onto",
+    "pos": "verb phrase",
+    "second": [
+      "他拽住绳子不放。",
+      "tā zhuài zhù shéng zi bù fàng.",
+      "He grabs the rope and refuses to let go."
+    ],
+    "note": "拽 is zhuài for pulling or grabbing; 住 marks holding firmly.",
+    "source": "Original teaching gloss and example; 拽 reading checked against MOE: https://dict.revised.moe.edu.tw/dictView.jsp?ID=63956",
+    "pinyin": "zhuài zhù",
+    "first": [
+      "她及时拽住了弟弟的手。",
+      "tā jí shí zhuài zhù le dì di de shǒu.",
+      "She grabs her little brother's hand in time."
+    ]
+  },
+  "4338": {
+    "english": "to have an audience with a superior",
+    "pos": "verb",
+    "second": [
+      "官员获准谒见国王。",
+      "guān yuán huò zhǔn yè jiàn guó wáng.",
+      "The official is granted an audience with the king."
+    ],
+    "note": "A formal or historical verb for visiting a respected or higher-ranking person.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4341": {
+    "english": "parallel prose",
+    "pos": "noun",
+    "second": [
+      "老师分析了这篇骈文。",
+      "lǎo shī fēn xī le zhè piān pián wén.",
+      "The teacher analyzed this piece of parallel prose."
+    ],
+    "note": "A literary prose style using balanced clauses and parallel structure.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4343": {
+    "english": "chinaberry tree",
+    "pos": "noun",
+    "second": [
+      "楝树的叶子渐渐黄了。",
+      "liàn shù de yè zi jiàn jiàn huáng le.",
+      "The chinaberry tree's leaves are gradually turning yellow."
+    ],
+    "note": "The name of a tree; 楝 should not be confused with 练.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4345": {
+    "english": "to weigh up or consider",
+    "pos": "verb",
+    "second": [
+      "这件事还得仔细掂掇。",
+      "zhè jiàn shì hái děi zǐ xì diān duō.",
+      "This matter still needs careful consideration."
+    ],
+    "note": "A colloquial verb for weighing an idea or decision mentally.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4347": {
+    "english": "linden wood",
+    "pos": "noun",
+    "second": [
+      "椴木的木纹很细。",
+      "duàn mù de mù wén hěn xì.",
+      "The linden wood has a fine grain."
+    ],
+    "note": "Names the wood of a linden tree, often discussed as a material.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4352": {
+    "english": "an idle, privileged young man",
+    "pos": "noun",
+    "second": [
+      "小说里的纨绔只知享乐。",
+      "xiǎo shuō lǐ de wán kù zhǐ zhī xiǎng lè.",
+      "The privileged young man in the novel cares only about pleasure."
+    ],
+    "note": "A disapproving label associated with wealthy families; often seen in 纨绔子弟.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4355": {
+    "english": "to solve one problem by creating another",
+    "pos": "idiom",
+    "second": [
+      "这样省钱，恐怕是剜肉补疮。",
+      "zhè yàng shěng qián, kǒng pà shì wān ròu bǔ chuāng.",
+      "Saving money this way may only create another problem."
+    ],
+    "note": "A negative metaphor for a remedy that causes fresh harm elsewhere.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4356": {
+    "english": "widowers and widows",
+    "pos": "noun",
+    "second": [
+      "邻里常照顾鳏寡。",
+      "lín lǐ cháng zhào gù guān guǎ.",
+      "The neighbors often look after widowers and widows."
+    ],
+    "note": "鳏 refers to widowers and 寡 to widows; a formal collective expression.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4359": {
+    "english": "to bolt a door",
+    "pos": "verb phrase",
+    "second": [
+      "风大，记得闩门。",
+      "fēng dà, jì de shuān mén.",
+      "The wind is strong; remember to bolt the door."
+    ],
+    "note": "闩 involves a door bolt, not simply closing the door.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4362": {
+    "english": "lathe",
+    "pos": "noun",
+    "second": [
+      "这台镟床已经停工。",
+      "zhè tái xuàn chuáng yǐ jīng tíng gōng.",
+      "This lathe is no longer operating."
+    ],
+    "note": "An older or variant term for a lathe, a machine that turns material for cutting.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4371": {
+    "english": "hen, classical usage",
+    "pos": "noun",
+    "second": [
+      "古书把母鸡称作牝鸡。",
+      "gǔ shū bǎ mǔ jī chēng zuò pìn jī.",
+      "Old books call a hen by this classical term."
+    ],
+    "note": "牝 means female in reference to an animal; modern speech normally uses 母鸡.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4374": {
+    "english": "to press one's lips together",
+    "pos": "verb phrase",
+    "second": [
+      "她抿嘴不说话。",
+      "tā mǐn zuǐ bù shuō huà.",
+      "She presses her lips together without speaking."
+    ],
+    "note": "Describes holding the lips closed, often while suppressing a smile or words.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4377": {
+    "english": "to attain or reach a state",
+    "pos": "verb phrase",
+    "second": [
+      "他的书法已臻于精妙。",
+      "tā de shū fǎ yǐ zhēn yú jīng miào.",
+      "His calligraphy has attained great refinement."
+    ],
+    "note": "A formal expression followed by an achieved state, such as perfection or maturity.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4378": {
+    "english": "to be pregnant, old terminology",
+    "pos": "verb",
+    "second": [
+      "古书中，怀娠就是有孕。",
+      "gǔ shū zhōng, huái shēn jiù shì yǒu yùn.",
+      "In old books, this expression means being pregnant."
+    ],
+    "note": "An older expression; 怀孕 is the usual modern word.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4387": {
+    "english": "small backless stool",
+    "pos": "noun",
+    "second": [
+      "小杌子放在门边。",
+      "xiǎo wù zi fàng zài mén biān.",
+      "The little backless stool is by the door."
+    ],
+    "note": "A stool without a backrest; 子 is an unstressed ending.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4087": {
+    "drop": "The supplied e e reading and laughter sense could not be established as a stable Standard Mandarin expression from the consulted authoritative dictionaries; the original sentence is not a reliable usage example."
+  },
+  "4399": {
+    "english": "small ceremonial or hanging bells",
+    "pos": "noun",
+    "second": [
+      "塔上的铃铎随风响起。",
+      "tǎ shàng de líng duó suí fēng xiǎng qǐ.",
+      "The bells on the tower ring in the wind."
+    ],
+    "note": "铎 names a type of bell; the phrase is common in descriptions of temples or ritual objects.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4401": {
+    "english": "oak wood",
+    "pos": "noun",
+    "second": [
+      "这块柞木很结实。",
+      "zhè kuài zuò mù hěn jiē shi.",
+      "This piece of oak wood is sturdy."
+    ],
+    "note": "柞 is zuò in the oak name; the wood can be used as a material.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4418": {
+    "english": "to uphold and support",
+    "pos": "verb",
+    "second": [
+      "他立志匡扶国家。",
+      "tā lì zhì kuāng fú guó jiā.",
+      "He resolves to uphold the country."
+    ],
+    "note": "A formal or historical verb, often taking the state or political order as its object.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4421": {
+    "english": "excessively; too much",
+    "pos": "adverb",
+    "second": [
+      "这人欺负别人忒甚。",
+      "zhè rén qī fu bié rén tè shèn.",
+      "This person bullies others far too much."
+    ],
+    "note": "An older vernacular expression; modern speech usually says 太过分 or 太厉害.",
+    "source": "Original teaching gloss and example; reading and meaning checked against MOE: https://dict.revised.moe.edu.tw/dictView.jsp?ID=49346"
+  },
+  "4427": {
+    "english": "ridge between fields",
+    "pos": "noun",
+    "second": [
+      "田塍两旁都是稻田。",
+      "tián chéng liǎng páng dōu shì dào tián.",
+      "There are rice fields on both sides of the field ridge."
+    ],
+    "note": "A raised strip dividing fields, which may also serve as a narrow path.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4428": {
+    "english": "to shoot birds with a tethered arrow",
+    "pos": "verb",
+    "second": [
+      "图上画着古人弋射的情景。",
+      "tú shàng huà zhe gǔ rén yì shè de qíng jǐng.",
+      "The picture shows people shooting birds with tethered arrows in ancient times."
+    ],
+    "note": "弋 specifically refers to shooting with an arrow attached to a cord.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4431": {
+    "english": "small river or creek, regional usage",
+    "pos": "noun",
+    "second": [
+      "河浜边停着几只船。",
+      "hé bāng biān tíng zhe jǐ zhī chuán.",
+      "Several boats are moored beside the creek."
+    ],
+    "note": "浜 is a regional name for a small watercourse, especially in the Jiangnan area.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4438": {
+    "english": "tassels or decorative hanging cords",
+    "pos": "noun",
+    "second": [
+      "枪上的缨络已经褪色。",
+      "qiāng shàng de yīng luò yǐ jīng tuì sè.",
+      "The tassels on the spear have faded."
+    ],
+    "note": "Used for hanging ornaments made from tassels or cords; compare 缨, a tassel.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4440": {
+    "english": "furuncle or boil, traditional terminology",
+    "pos": "noun",
+    "second": [
+      "他查阅了疔疮的旧记载。",
+      "tā chá yuè le dīng chuāng de jiù jì zǎi.",
+      "He consulted old descriptions of boils."
+    ],
+    "note": "A traditional medical name for a localized sore; this card teaches terminology, not treatment.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4444": {
+    "english": "flatterer",
+    "pos": "noun",
+    "second": [
+      "史书批评朝中的佞人。",
+      "shǐ shū pī píng cháo zhōng de nìng rén.",
+      "The history book criticizes flatterers at court."
+    ],
+    "note": "A negative literary term for someone who flatters through clever speech.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4447": {
+    "english": "the ancient state of Guo",
+    "pos": "proper noun",
+    "second": [
+      "这件铜器出土于虢国旧地。",
+      "zhè jiàn tóng qì chū tǔ yú guó guó jiù dì.",
+      "This bronze object was unearthed in the former territory of Guo."
+    ],
+    "note": "A historical state name; 虢 and 国 both have the reading guó.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4448": {
+    "english": "burial ground",
+    "pos": "noun",
+    "second": [
+      "茔地四周种着松树。",
+      "yíng dì sì zhōu zhòng zhe sōng shù.",
+      "Pine trees are planted around the burial ground."
+    ],
+    "note": "A formal or historical term for a place used for burials.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4456": {
+    "english": "Nong people, a historical ethnic designation",
+    "pos": "noun",
+    "second": [
+      "这段史料记载了侬人的生活。",
+      "zhè duàn shǐ liào jì zǎi le nóng rén de shēng huó.",
+      "This historical passage records the lives of the Nong people."
+    ],
+    "note": "An older designation used for certain Zhuang communities; it is not a name for all Zhuang people.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4461": {
+    "english": "carbuncle or abscess, traditional terminology",
+    "pos": "noun",
+    "second": [
+      "医史展板解释了痈疮一词。",
+      "yī shǐ zhǎn bǎn jiě shì le yōng chuāng yī cí.",
+      "The medical-history display explains the term for carbuncles."
+    ],
+    "note": "A traditional term for a suppurating sore; modern diagnostic labels may differ.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4463": {
+    "english": "wheat stubble",
+    "pos": "noun",
+    "second": [
+      "麦茬上落着几只麻雀。",
+      "mài chá shàng luò zhe jǐ zhī má què.",
+      "Several sparrows land among the wheat stubble."
+    ],
+    "note": "茬 refers to stalks left in the field after harvesting.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4467": {
+    "english": "to twist or rotate with the fingers",
+    "pos": "verb",
+    "second": [
+      "他捻转着手中的笔。",
+      "tā niǎn zhuǎn zhe shǒu zhōng de bǐ.",
+      "He rotates the pen between his fingers."
+    ],
+    "note": "捻 describes the finger action; 转 is zhuǎn for turning.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4470": {
+    "english": "to drink tea, regional or older usage",
+    "pos": "verb phrase",
+    "second": [
+      "请进屋来吃茶。",
+      "qǐng jìn wū lái chī chá.",
+      "Please come inside for tea."
+    ],
+    "note": "Some regional and older usage uses 吃茶 where modern standard speech often uses 喝茶.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4471": {
+    "english": "Aigun, a historical place name",
+    "pos": "proper noun",
+    "second": [
+      "旧地图上标着瑷珲。",
+      "jiù dì tú shàng biāo zhe ài huī.",
+      "Aigun is marked on the old map."
+    ],
+    "note": "A historical place name in northeastern China; treat it as a whole name.",
+    "source": "Original place-name gloss and example; name checked against NDRC: https://zfxxgk.ndrc.gov.cn/web/iteminfo.jsp?id=15943 ; 珲 reading checked against CNS11643: https://www.cns11643.gov.tw/wordView.jsp?ID=940358"
+  },
+  "4475": {
+    "english": "sloping road",
+    "pos": "noun",
+    "second": [
+      "雨后的坂道有些滑。",
+      "yǔ hòu de bǎn dào yǒu xiē huá.",
+      "The sloping road is a little slippery after the rain."
+    ],
+    "note": "坂 means a slope; 坡道 is the more familiar everyday word.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4480": {
+    "english": "barium meal for diagnostic imaging",
+    "pos": "noun",
+    "second": [
+      "检查说明里提到钡餐。",
+      "jiǎn chá shuō míng lǐ tí dào bèi cān.",
+      "The examination instructions mention a barium meal."
+    ],
+    "note": "A medical examination term for an ingested barium preparation; it does not mean an ordinary meal.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4484": {
+    "english": "to give or grant, classical usage",
+    "pos": "verb",
+    "second": [
+      "国君畀予他一块土地。",
+      "guó jūn bì yǔ tā yī kuài tǔ dì.",
+      "The ruler grants him a piece of land."
+    ],
+    "note": "Both characters express giving; this is a classical rather than everyday verb.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4486": {
+    "english": "hip bone, an older anatomical term",
+    "pos": "noun",
+    "second": [
+      "图谱把这块髀骨画得很清楚。",
+      "tú pǔ bǎ zhè kuài bì gǔ huà de hěn qīng chu.",
+      "The atlas clearly illustrates this hip bone."
+    ],
+    "note": "MOE defines 髀骨 as the hip bone. The supplied first example's equation with 股骨 needs correction.",
+    "source": "Original teaching gloss and example; anatomy meaning checked against MOE: https://dict.revised.moe.edu.tw/dictView.jsp?ID=17863",
+    "first": [
+      "旧医书中的髀骨，可以指髋骨。",
+      "jiù yī shū zhōng de bì gǔ, kě yǐ zhǐ kuān gǔ.",
+      "The older anatomical term can refer to the hip bone."
+    ]
+  },
+  "4489": {
+    "english": "to mount a painting or calligraphy",
+    "pos": "verb",
+    "second": [
+      "这幅画装裱得很漂亮。",
+      "zhè fú huà zhuāng biǎo de hěn piào liang.",
+      "This painting is beautifully mounted."
+    ],
+    "note": "Refers to preparing a support and border for a painting or calligraphy work.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4490": {
+    "english": "Bin County, an old county name",
+    "pos": "proper noun",
+    "second": [
+      "地方志中保存了邠县旧名。",
+      "dì fāng zhì zhōng bǎo cún le bīn xiàn jiù míng.",
+      "The local gazetteer preserves the old name of Bin County."
+    ],
+    "note": "A historical place name; 邠 is read bīn.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4494": {
+    "english": "to flee; to go into hiding",
+    "pos": "verb",
+    "second": [
+      "败军向山中逋逃。",
+      "bài jūn xiàng shān zhōng bū táo.",
+      "The defeated troops flee into the mountains."
+    ],
+    "note": "A literary verb for flight or evasion; not a neutral travel verb.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4501": {
+    "english": "to spit once",
+    "pos": "verb phrase",
+    "second": [
+      "他低头朝地上啐一口。",
+      "tā dī tóu cháo dì shàng cuì yī kǒu.",
+      "He lowers his head and spits onto the ground."
+    ],
+    "note": "啐 means to spit; 一口 indicates one mouthful or spitting action.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4509": {
+    "english": "to see, in Cantonese",
+    "pos": "verb",
+    "second": [
+      "粤语的睇见相当于看见。",
+      "yuè yǔ de dì jiàn xiāng dāng yú kàn jiàn.",
+      "The Cantonese expression corresponds to seeing."
+    ],
+    "note": "A Cantonese expression; the pinyin is a Mandarin reading of the written characters.",
+    "source": "Original teaching gloss and metalinguistic example; Cantonese meaning checked against CantoDict: https://www.cantonese.sheik.co.uk/dictionary/characters/%E8%A7%81/"
+  },
+  "4510": {
+    "english": "the chemical element tellurium",
+    "pos": "noun phrase",
+    "second": [
+      "周期表上能找到碲元素。",
+      "zhōu qī biǎo shàng néng zhǎo dào dì yuán sù.",
+      "The element tellurium can be found on the periodic table."
+    ],
+    "note": "An element-name phrase; 碲 corresponds to the symbol Te.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4514": {
+    "english": "bare-bottomed",
+    "pos": "adjective",
+    "second": [
+      "小孩光腚坐在盆边。",
+      "xiǎo hái guāng dìng zuò zài pén biān.",
+      "The child sits bare-bottomed beside the basin."
+    ],
+    "note": "A very informal regional expression; avoid it in formal descriptions.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4516": {
+    "english": "tall and large, literary usage",
+    "pos": "adjective",
+    "second": [
+      "古文用侗侗描写高大的身体。",
+      "gǔ wén yòng tǒng tǒng miáo xiě gāo dà de shēn tǐ.",
+      "Classical writing uses this expression for a tall, large body."
+    ],
+    "note": "An uncommon reduplicated adjective, unrelated to the modern ethnic-group reading dòng.",
+    "source": "Original teaching gloss and example; classical 侗 sense and reduplicated usage checked against Chinese Text Project: https://ctext.org/dictionary.pl?char=%E4%BE%97&if=en&remap=gb"
+  },
+  "4519": {
+    "english": "to speak frankly and critically",
+    "pos": "adjective",
+    "second": [
+      "大臣谔谔，不肯阿谀。",
+      "dà chén è è, bù kěn ē yú.",
+      "The minister speaks frankly and refuses to flatter."
+    ],
+    "note": "A literary description of outspoken, forthright speech.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4521": {
+    "english": "bream",
+    "pos": "noun",
+    "second": [
+      "渔网里有一条鲂鱼。",
+      "yú wǎng lǐ yǒu yī tiáo fáng yú.",
+      "There is a bream in the fishing net."
+    ],
+    "note": "A traditional freshwater fish name; 条 is the usual measure word.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4524": {
+    "english": "snow falling thickly",
+    "pos": "idiom",
+    "second": [
+      "诗中的雨雪霏霏令人难忘。",
+      "shī zhōng de yù xuě fēi fēi lìng rén nán wàng.",
+      "The poem's image of thickly falling snow is unforgettable."
+    ],
+    "note": "In this classical phrase, 雨 is the verb yù, to fall as precipitation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4527": {
+    "english": "fluorine gas",
+    "pos": "noun",
+    "second": [
+      "课本说明氟气呈淡黄色。",
+      "kè běn shuō míng fú qì chéng dàn huáng sè.",
+      "The textbook explains that fluorine gas is pale yellow."
+    ],
+    "note": "Names elemental fluorine in its gaseous form, not fluoride in a compound.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4533": {
+    "english": "Gen, the mountain trigram or hexagram",
+    "pos": "noun",
+    "second": [
+      "这页图中画着艮卦。",
+      "zhè yè tú zhōng huà zhe gèn guà.",
+      "The Gen figure is shown on this page."
+    ],
+    "note": "艮 is gèn in the I Ching name; its gěn reading belongs to other senses.",
+    "source": "Original teaching gloss and example; I Ching reading checked against MOE: https://dict.revised.moe.edu.tw/dictView.jsp?ID=4094",
+    "pinyin": "gèn guà",
+    "first": [
+      "艮卦是易经中的一个卦。",
+      "gèn guà shì yì jīng zhōng de yī ge guà.",
+      "Gen is a hexagram in the Book of Changes."
+    ]
+  },
+  "4540": {
+    "english": "bulrush used for weaving",
+    "pos": "noun",
+    "second": [
+      "她用莞草编了一顶帽子。",
+      "tā yòng guān cǎo biān le yī dǐng mào zi.",
+      "She wove a hat from bulrush."
+    ],
+    "note": "莞 is guān in the plant name; do not confuse it with the Dongguan place-name reading guǎn.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4546": {
+    "english": "the grand dignitaries, often ironic",
+    "pos": "idiom",
+    "second": [
+      "文章讽刺了衮衮诸公。",
+      "wén zhāng fěng cì le gǔn gǔn zhū gōng.",
+      "The article satirizes the grand dignitaries."
+    ],
+    "note": "Usually an ironic reference to high-ranking officials rather than a neutral title.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4547": {
+    "english": "to slap someone in the face",
+    "pos": "verb phrase",
+    "second": [
+      "争执时也不该掴耳光。",
+      "zhēng zhí shí yě bù gāi guāi ěr guāng.",
+      "Even during an argument, one should not slap someone."
+    ],
+    "note": "An act of striking the cheek with the palm; guāi is a recognized variant reading of 掴.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4550": {
+    "english": "moat",
+    "pos": "noun",
+    "second": [
+      "濠沟外面是一片树林。",
+      "háo gōu wài miàn shì yī piàn shù lín.",
+      "There is woodland beyond the moat."
+    ],
+    "note": "An older spelling for the ditch surrounding a fortified place.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4554": {
+    "english": "with a loud booming sound",
+    "pos": "adverb",
+    "second": [
+      "远处訇然响了一声。",
+      "yuǎn chù hōng rán xiǎng le yī shēng.",
+      "A loud boom sounded in the distance."
+    ],
+    "note": "A literary sound expression usually followed by a verb such as 响 or 倒下.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4555": {
+    "english": "death of a prince or noble, historical usage",
+    "pos": "verb",
+    "second": [
+      "史书记录了王公的薨逝。",
+      "shǐ shū jì lù le wáng gōng de hōng shì.",
+      "The history book records the noble's death."
+    ],
+    "note": "A historical honorific for death, restricted by the person's rank and context.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4560": {
+    "english": "Heaven's blessing",
+    "pos": "noun",
+    "second": [
+      "碑文说国家蒙受天祜。",
+      "bēi wén shuō guó jiā méng shòu tiān hù.",
+      "The inscription says the state received Heaven's blessing."
+    ],
+    "note": "A literary religious expression; 祜 means blessing or good fortune.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4565": {
+    "english": "semicircular jade ornament",
+    "pos": "noun",
+    "second": [
+      "这件玉璜已经断成两块。",
+      "zhè jiàn yù huáng yǐ jīng duàn chéng liǎng kuài.",
+      "This semicircular jade ornament has broken into two pieces."
+    ],
+    "note": "璜 names a specific curved jade form, not jade ornaments in general.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4569": {
+    "english": "to insert a comic remark",
+    "pos": "verb",
+    "second": [
+      "说书人插诨，听众笑了。",
+      "shuō shū rén chā hùn, tīng zhòng xiào le.",
+      "The storyteller inserts a joke, and the audience laughs."
+    ],
+    "note": "Used for comic comments inserted into performance or conversation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4570": {
+    "english": "Ji Kang, a historical writer and musician",
+    "pos": "proper noun",
+    "second": [
+      "他正在读嵇康的文章。",
+      "tā zhèng zài dú jī kāng de wén zhāng.",
+      "He is reading an essay by Ji Kang."
+    ],
+    "note": "A personal name; 嵇 is the surname and 康 the given name.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4572": {
+    "english": "Buddhist verse",
+    "pos": "noun",
+    "second": [
+      "这首偈语只有四句。",
+      "zhè shǒu jì yǔ zhǐ yǒu sì jù.",
+      "This Buddhist verse has only four lines."
+    ],
+    "note": "偈 is jì for a Buddhist verse; another reading jié has a different historical sense.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4573": {
+    "english": "hu jia, an ancient reed wind instrument",
+    "pos": "noun",
+    "second": [
+      "乐声中还能听到胡笳。",
+      "yuè shēng zhōng hái néng tīng dào hú jiā.",
+      "The ancient reed instrument can still be heard in the music."
+    ],
+    "note": "A historical wind-instrument name, often encountered in poetry.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4574": {
+    "english": "abdominal masses in traditional Chinese medicine",
+    "pos": "noun",
+    "second": [
+      "古医书把症瘕列为一类病证。",
+      "gǔ yī shū bǎ zhēng jiǎ liè wéi yī lèi bìng zhèng.",
+      "The old medical book lists abdominal masses as a category of conditions."
+    ],
+    "note": "A historical Chinese-medicine category; it should not be equated with one modern diagnosis.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4577": {
+    "english": "to display sexual excitement or flirt provocatively, Cantonese usage",
+    "pos": "verb",
+    "second": [
+      "这篇粤语文章用了发姣一词。",
+      "zhè piān yuè yǔ wén zhāng yòng le fā xiáo yī cí.",
+      "This Cantonese article uses this expression for provocative flirting."
+    ],
+    "note": "Cantonese and often disparaging; the pinyin represents Mandarin character readings, not spoken Cantonese.",
+    "source": "Original teaching gloss and metalinguistic example; Cantonese meaning checked against CantoDict: https://www.cantonese.sheik.co.uk/dictionary/words/1485/"
+  },
+  "4578": {
+    "english": "Jie and Zhou, rulers traditionally portrayed as tyrants",
+    "pos": "proper noun",
+    "second": [
+      "史书常以桀纣警戒君王。",
+      "shǐ shū cháng yǐ jié zhòu jǐng jiè jūn wáng.",
+      "History books often use Jie and Zhou to warn rulers."
+    ],
+    "note": "Combines two historical ruler names; it is not a single person's name.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4580": {
+    "english": "small stone grave marker",
+    "pos": "noun",
+    "second": [
+      "墓碣上的字已经模糊。",
+      "mù jié shàng de zì yǐ jīng mó hu.",
+      "The inscription on the grave marker has become blurred."
+    ],
+    "note": "A stone memorial placed at a grave; a historical funerary term.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4582": {
+    "english": "famine",
+    "pos": "noun",
+    "second": [
+      "百姓在饥馑中艰难度日。",
+      "bǎi xìng zài jī jǐn zhōng jiān nán dù rì.",
+      "The people struggle to get by during the famine."
+    ],
+    "note": "A formal or literary noun for severe shortage of food.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4586": {
+    "english": "hem or skirt of a garment",
+    "pos": "noun",
+    "second": [
+      "衣裾轻轻扫过地面。",
+      "yī jū qīng qīng sǎo guò dì miàn.",
+      "The garment's hem lightly brushes the ground."
+    ],
+    "note": "A literary clothing term for the lower or hanging part of a garment.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4590": {
+    "english": "strange and unpredictable",
+    "pos": "adjective",
+    "second": [
+      "局势谲诡，很难判断。",
+      "jú shì jué guǐ, hěn nán pàn duàn.",
+      "The situation is unpredictable and difficult to assess."
+    ],
+    "note": "A literary adjective for something unusual, shifting, or difficult to fathom.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4593": {
+    "english": "a treasured sword, classical usage",
+    "pos": "noun",
+    "second": [
+      "诗人把宝剑称作锟铻。",
+      "shī rén bǎ bǎo jiàn chēng zuò kūn wú.",
+      "The poet calls the treasured sword by this classical name."
+    ],
+    "note": "A classical name associated with a fine sword; 铻 is wú in this word.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4596": {
+    "english": "perverse or contrary to reason",
+    "pos": "adjective",
+    "second": [
+      "他的性情乖剌，难以相处。",
+      "tā de xìng qíng guāi là, nán yǐ xiāng chǔ.",
+      "His perverse temperament makes him hard to get along with."
+    ],
+    "note": "A negative literary adjective; 乖 here does not mean well-behaved.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4597": {
+    "english": "favus or scalp ringworm, colloquial terminology",
+    "pos": "noun",
+    "second": [
+      "旧小说提到他头上的瘌痢。",
+      "jiù xiǎo shuō tí dào tā tóu shàng de là lì.",
+      "The old novel mentions his scalp disease."
+    ],
+    "note": "An old colloquial disease name, also found in insults; do not use it as a casual label for people.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4598": {
+    "english": "Seto, a Japanese place name",
+    "pos": "proper noun",
+    "second": [
+      "这件瓷器产于濑户。",
+      "zhè jiàn cí qì chǎn yú lài hù.",
+      "This ceramic piece was made in Seto."
+    ],
+    "note": "Chinese reading of a Japanese place name; this example concerns ceramics.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4601": {
+    "english": "Mount Tianmu",
+    "pos": "proper noun",
+    "second": [
+      "诗人梦中游历天姥。",
+      "shī rén mèng zhōng yóu lì tiān mǔ.",
+      "The poet visits Mount Tianmu in a dream."
+    ],
+    "note": "A mountain name found in Chinese poetry; 姥 is mǔ here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4606": {
+    "english": "to judge narrowly from limited evidence",
+    "pos": "idiom",
+    "second": [
+      "只看一页便下结论，未免管蠡窥测。",
+      "zhǐ kàn yī yè biàn xià jié lùn, wèi miǎn guǎn lí kuī cè.",
+      "Drawing a conclusion from one page is too narrow a judgment."
+    ],
+    "note": "A literary expression akin to 管窥蠡测; the app follows the supplied lí reading.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4608": {
+    "english": "sweet ritual wine",
+    "pos": "noun",
+    "second": [
+      "宾客面前摆着醴酒。",
+      "bīn kè miàn qián bǎi zhe lǐ jiǔ.",
+      "Sweet wine is set before the guests."
+    ],
+    "note": "An older wine name; 醴 often refers to a sweet fermented drink in ritual descriptions.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4613": {
+    "english": "mane",
+    "pos": "noun",
+    "second": [
+      "马的鬣鬃沾上了雨水。",
+      "mǎ de liè zōng zhān shàng le yǔ shuǐ.",
+      "Rain has wet the horse's mane."
+    ],
+    "note": "Both characters concern long animal hair; used here for a horse's mane.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4616": {
+    "english": "granary",
+    "pos": "noun",
+    "second": [
+      "廪仓里堆满了粮食。",
+      "lǐn cāng lǐ duī mǎn le liáng shi.",
+      "The granary is full of grain."
+    ],
+    "note": "A historical grain-storage term; both characters point to storage buildings.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4618": {
+    "english": "fine silk fabrics",
+    "pos": "noun",
+    "second": [
+      "柜中收着几匹绫罗。",
+      "guì zhōng shōu zhe jǐ pǐ líng luó.",
+      "Several lengths of fine silk are stored in the cabinet."
+    ],
+    "note": "A collective expression for luxurious silk textiles, often counted with 匹.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4622": {
+    "english": "wine shop or serving counter",
+    "pos": "noun",
+    "second": [
+      "他在酒垆旁买酒。",
+      "tā zài jiǔ lú páng mǎi jiǔ.",
+      "He buys wine at the wine counter."
+    ],
+    "note": "A literary term for a wine-selling place or its serving counter.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4625": {
+    "english": "beautiful or precious jade",
+    "pos": "noun",
+    "second": [
+      "诗中以宝璐赞美品德。",
+      "shī zhōng yǐ bǎo lù zàn měi pǐn dé.",
+      "The poem uses precious jade to praise good character."
+    ],
+    "note": "A classical jade expression that can appear in metaphors for virtue.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4632": {
+    "english": "Mao, a Chinese lunar mansion associated with the Pleiades",
+    "pos": "proper noun",
+    "second": [
+      "古人把昴星画在星图上。",
+      "gǔ rén bǎ mǎo xīng huà zài xīng tú shàng.",
+      "The ancients drew the Mao stars on star charts."
+    ],
+    "note": "An ancient Chinese star-group name, not simply any bright star.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4635": {
+    "english": "water's edge",
+    "pos": "noun",
+    "second": [
+      "水湄长着一排芦苇。",
+      "shuǐ méi zhǎng zhe yī pái lú wěi.",
+      "A row of reeds grows by the water's edge."
+    ],
+    "note": "A literary expression for the bank or edge of water.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4636": {
+    "english": "enzyme, an older term",
+    "pos": "noun",
+    "second": [
+      "这本旧教材使用酶素一词。",
+      "zhè běn jiù jiào cái shǐ yòng méi sù yī cí.",
+      "This old textbook uses the older term for enzyme."
+    ],
+    "note": "An older name for 酶; 素 does not mean a particular vitamin here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4640": {
+    "english": "to quell disorder or rebellion",
+    "pos": "verb phrase",
+    "second": [
+      "地方官设法弭乱。",
+      "dì fāng guān shè fǎ mǐ luàn.",
+      "The local official tries to quell the unrest."
+    ],
+    "note": "弭 means to stop or suppress; a formal historical expression.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4643": {
+    "english": "Mian River, a historical river name",
+    "pos": "proper noun",
+    "second": [
+      "旧志记载沔水的流向。",
+      "jiù zhì jì zǎi miǎn shuǐ de liú xiàng.",
+      "The old gazetteer records the course of the Mian River."
+    ],
+    "note": "A historical river name related to the Han River system; interpretation depends on period and location.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4646": {
+    "english": "evening darkness",
+    "pos": "noun",
+    "second": [
+      "暝色渐深，行人归去。",
+      "míng sè jiàn shēn, xíng rén guī qù.",
+      "Evening darkness deepens, and the travelers head home."
+    ],
+    "note": "A literary scenery word for the darkening appearance of evening.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4648": {
+    "english": "to pass away",
+    "pos": "verb",
+    "second": [
+      "这位诗人早年殁世。",
+      "zhè wèi shī rén zǎo nián mò shì.",
+      "This poet died at a young age."
+    ],
+    "note": "A literary expression for death; 殁 is read mò.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4652": {
+    "english": "gnawing; rodent dentition",
+    "pos": "adjective",
+    "second": [
+      "松鼠属于啮齿动物。",
+      "sōng shǔ shǔ yú niè chǐ dòng wù.",
+      "Squirrels are rodents."
+    ],
+    "note": "Most often encountered in the classification term 啮齿动物.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4653": {
+    "english": "so; in this way, older vernacular",
+    "pos": "adverb",
+    "second": [
+      "你为何恁地着急？",
+      "nǐ wèi hé nèn dì zháo jí?",
+      "Why are you so anxious?"
+    ],
+    "note": "Common in old vernacular writing; modern speech would usually say 这么.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4661": {
+    "english": "to frown",
+    "pos": "verb",
+    "second": [
+      "她听完后颦蹙不语。",
+      "tā tīng wán hòu pín cù bù yǔ.",
+      "After listening, she frowns without speaking."
+    ],
+    "note": "A literary facial-expression verb, often describing worry or displeasure.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4664": {
+    "english": "extensive and all-embracing",
+    "pos": "adjective",
+    "second": [
+      "古文赞其德泽溥博。",
+      "gǔ wén zàn qí dé zé pǔ bó.",
+      "The classical text praises the broad reach of his benevolence."
+    ],
+    "note": "A literary adjective emphasizing breadth and widespread influence.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4673": {
+    "english": "lonely and without support",
+    "pos": "adjective",
+    "second": [
+      "他茕茕独行，身边无人。",
+      "tā qióng qióng dú xíng, shēn biān wú rén.",
+      "He walks alone, with nobody beside him."
+    ],
+    "note": "A literary reduplication, frequently occurring in 茕茕独立.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4675": {
+    "english": "vigorous and forceful",
+    "pos": "adjective",
+    "second": [
+      "他的笔画遒劲有力。",
+      "tā de bǐ huà qiú jìng yǒu lì.",
+      "His brushstrokes are vigorous and strong."
+    ],
+    "note": "Often describes the strength of calligraphy or literary style.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4676": {
+    "english": "fur or pelt",
+    "pos": "noun",
+    "second": [
+      "这件旧裘皮已经磨损。",
+      "zhè jiàn jiù qiú pí yǐ jīng mó sǔn.",
+      "This old fur garment is already worn."
+    ],
+    "note": "Refers to animal fur as a clothing material or the fur item itself.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4680": {
+    "english": "bedding or sleeping mat",
+    "pos": "noun",
+    "second": [
+      "旅人整理衽席，准备休息。",
+      "lǚ rén zhěng lǐ rèn xí, zhǔn bèi xiū xi.",
+      "The traveler arranges the bedding and prepares to rest."
+    ],
+    "note": "A classical expression for bedding or a sleeping place.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4681": {
+    "english": "to mix together",
+    "pos": "verb",
+    "second": [
+      "作品糅杂了民歌和戏曲。",
+      "zuò pǐn róu zá le mín gē hé xì qǔ.",
+      "The work mixes folk songs and opera."
+    ],
+    "note": "Usually takes several materials, ideas, or styles as its object.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4682": {
+    "english": "elaborate, burdensome rituals",
+    "pos": "noun",
+    "second": [
+      "婚礼不必拘于缛礼。",
+      "hūn lǐ bù bì jū yú rù lǐ.",
+      "A wedding need not be bound by elaborate rituals."
+    ],
+    "note": "A literary expression with a critical sense of excessive ceremonial detail.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4687": {
+    "english": "mirage, literary usage",
+    "pos": "noun",
+    "second": [
+      "远处的蜃楼很快消失了。",
+      "yuǎn chù de shèn lóu hěn kuài xiāo shī le.",
+      "The distant mirage soon disappeared."
+    ],
+    "note": "A shortened literary expression associated with 海市蜃楼.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4693": {
+    "english": "to think deeply",
+    "pos": "verb",
+    "second": [
+      "他覃思许久才落笔。",
+      "tā tán sī xǔ jiǔ cái luò bǐ.",
+      "He thinks deeply for a long time before beginning to write."
+    ],
+    "note": "覃 is tán in this literary word; the surname has another reading.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4694": {
+    "english": "the surname Qin, written 覃",
+    "pos": "noun phrase",
+    "second": [
+      "这位覃姓医生来自广西。",
+      "zhè wèi qín xìng yī shēng lái zì guǎng xī.",
+      "This doctor surnamed Qin comes from Guangxi."
+    ],
+    "note": "This card uses the qín surname reading, distinct from tán in 覃思.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4697": {
+    "english": "the surname Tong, written 佟",
+    "pos": "noun phrase",
+    "second": [
+      "一位佟姓作家参加了活动。",
+      "yī wèi tóng xìng zuò jiā cān jiā le huó dòng.",
+      "A writer surnamed Tong attended the event."
+    ],
+    "note": "姓 labels the surname reading rather than forming part of the person's name.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4699": {
+    "english": "colorful cloud patterns, literary usage",
+    "pos": "noun",
+    "second": [
+      "画家用彩墨描绘雯华。",
+      "huà jiā yòng cǎi mò miáo huì wén huá.",
+      "The painter depicts colorful cloud patterns with colored ink."
+    ],
+    "note": "A rare literary cloud expression; 雯 concerns patterned clouds.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4700": {
+    "english": "the surname Wu, written 邬",
+    "pos": "noun phrase",
+    "second": [
+      "一位邬姓邻居送来了水果。",
+      "yī wèi wū xìng lín jū sòng lái le shuǐ guǒ.",
+      "A neighbor surnamed Wu brought fruit."
+    ],
+    "note": "邬 is pronounced wū here; distinguish it from the many other surnames spelled Wu in English.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4706": {
+    "english": "the surname Xian, written 冼",
+    "pos": "noun phrase",
+    "second": [
+      "这位冼姓歌手登台了。",
+      "zhè wèi xiǎn xìng gē shǒu dēng tái le.",
+      "This singer surnamed Xian took the stage."
+    ],
+    "note": "冼 is xiǎn, not xǐ like the similar-looking 洗.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4707": {
+    "english": "shot or shrapnel projectile",
+    "pos": "noun",
+    "second": [
+      "展柜中有一枚霰弹。",
+      "zhǎn guì zhōng yǒu yī méi xiàn dàn.",
+      "There is a shot projectile in the display case."
+    ],
+    "note": "A weapons-history term; 弹 is dàn when it names ammunition.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4708": {
+    "english": "slender bamboo",
+    "pos": "noun",
+    "second": [
+      "筱竹在微风中轻轻摇动。",
+      "xiǎo zhú zài wēi fēng zhōng qīng qīng yáo dòng.",
+      "The slender bamboo sways gently in the breeze."
+    ],
+    "note": "筱 is a literary word for small or slender bamboo.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4714": {
+    "english": "ancient astronomical instrument",
+    "pos": "noun",
+    "second": [
+      "天文展览介绍了璇玑。",
+      "tiān wén zhǎn lǎn jiè shào le xuán jī.",
+      "The astronomy exhibition introduces the ancient instrument."
+    ],
+    "note": "A historical astronomy term; it may also have specialized star-related senses in old texts.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4719": {
+    "english": "to be satisfied or satiated",
+    "pos": "adjective",
+    "second": [
+      "一碗热粥让他感到餍足。",
+      "yī wǎn rè zhōu ràng tā gǎn dào yàn zú.",
+      "A bowl of hot porridge leaves him satisfied."
+    ],
+    "note": "Often concerns satisfaction after eating, but can describe other fulfilled desires.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4722": {
+    "english": "line statement in the I Ching",
+    "pos": "noun",
+    "second": [
+      "这一段爻辞很难理解。",
+      "zhè yī duàn yáo cí hěn nán lǐ jiě.",
+      "This line statement is difficult to understand."
+    ],
+    "note": "The explanatory text attached to a line of an I Ching hexagram.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4724": {
+    "english": "to play a board game such as chess",
+    "pos": "verb phrase",
+    "second": [
+      "他们约好明天弈棋。",
+      "tā men yuē hǎo míng tiān yì qí.",
+      "They agreed to play a board game tomorrow."
+    ],
+    "note": "A formal or literary expression; the particular game depends on context.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4726": {
+    "english": "obstruction or opacity affecting the eye, old medical terminology",
+    "pos": "noun",
+    "second": [
+      "医史课讨论了翳障的名称。",
+      "yī shǐ kè tǎo lùn le yì zhàng de míng chēng.",
+      "The medical-history class discussed this old name for an eye obstruction."
+    ],
+    "note": "A historical eye-disease term; it should not be treated as a precise modern diagnosis.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4727": {
+    "english": "shady and covered by foliage",
+    "pos": "adjective",
+    "second": [
+      "山路阴翳，十分凉爽。",
+      "shān lù yīn yì, shí fēn liáng shuǎng.",
+      "The mountain path is shaded and pleasantly cool."
+    ],
+    "note": "Often describes dense tree cover or the resulting shade.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4733": {
+    "english": "the world",
+    "pos": "noun",
+    "second": [
+      "古人借书籍认识瀛寰。",
+      "gǔ rén jiè shū jí rèn shi yíng huán.",
+      "People in the past learned about the world through books."
+    ],
+    "note": "A literary name for the world, often appearing in old geographic writing.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4736": {
+    "english": "to be limited by",
+    "pos": "verb phrase",
+    "second": [
+      "讨论不应囿于个人经验。",
+      "tǎo lùn bù yīng yòu yú gè rén jīng yàn.",
+      "The discussion should not be limited to personal experience."
+    ],
+    "note": "A formal expression followed by the limit or restriction.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4742": {
+    "english": "lush and flourishing, literary usage",
+    "pos": "adjective",
+    "second": [
+      "雨后草木彧彧，满园青绿。",
+      "yǔ hòu cǎo mù yù yù, mǎn yuán qīng lǜ.",
+      "After the rain, the plants flourish and the garden is green."
+    ],
+    "note": "An uncommon literary reduplication describing luxuriant growth.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4752": {
+    "english": "pheasant tail feathers",
+    "pos": "noun",
+    "second": [
+      "礼器旁放着一束翟羽。",
+      "lǐ qì páng fàng zhe yī shù dí yǔ.",
+      "A bundle of pheasant feathers lies beside the ritual vessel."
+    ],
+    "note": "翟 is dí when referring to a pheasant or its feathers, not the surname reading zhái.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4753": {
+    "english": "the surname Zhai, written 翟",
+    "pos": "noun phrase",
+    "second": [
+      "一位翟姓同事负责接待。",
+      "yī wèi zhái xìng tóng shì fù zé jiē dài.",
+      "A colleague surnamed Zhai is responsible for reception."
+    ],
+    "note": "This card teaches the common zhái surname reading, distinct from dí in 翟羽.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4754": {
+    "english": "Li Zhao, a personal name",
+    "pos": "proper noun",
+    "second": [
+      "李钊把书放回书架。",
+      "lǐ zhāo bǎ shū fàng huí shū jià.",
+      "Li Zhao puts the book back on the shelf."
+    ],
+    "note": "An example personal name, not a claim about a specific historical individual.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4761": {
+    "english": "over minute amounts, literary usage",
+    "pos": "adverb",
+    "second": [
+      "他对小利铢铢计较。",
+      "tā duì xiǎo lì zhū zhū jì jiào.",
+      "He fusses over every tiny gain."
+    ],
+    "note": "Literary, normally used with verbs of petty calculation; not a usual standalone noun.",
+    "source": "Original teaching gloss and example; minute-calculation usage checked against MOE: https://dict.revised.moe.edu.tw/dictView.jsp?ID=118091"
+  },
+  "4762": {
+    "english": "one stick of burning incense",
+    "pos": "number phrase",
+    "second": [
+      "桌前燃着一炷香。",
+      "zhuō qián rán zhe yī zhù xiāng.",
+      "One stick of incense burns in front of the table."
+    ],
+    "note": "炷 counts burning incense; the phrase may also indicate the time it takes to burn.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4768": {
+    "english": "wine cup or goblet",
+    "pos": "noun",
+    "second": [
+      "席间传来酒樽相碰的声音。",
+      "xí jiān chuán lái jiǔ zūn xiāng pèng de shēng yīn.",
+      "The clinking of wine cups is heard at the gathering."
+    ],
+    "note": "A literary drinking-vessel term; the exact shape depends on context.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4771": {
+    "english": "to bind or tether",
+    "pos": "verb",
+    "second": [
+      "船被绳索縻系在岸边。",
+      "chuán bèi shéng suǒ mí xì zài àn biān.",
+      "The boat is tethered to the bank with a rope."
+    ],
+    "note": "A classical expression; 系 is xì for binding or connecting here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4772": {
+    "english": "right and wrong; black and white",
+    "pos": "noun",
+    "second": [
+      "先问清皂白，再作判断。",
+      "xiān wèn qīng zào bái, zài zuò pàn duàn.",
+      "Clarify right and wrong before judging."
+    ],
+    "note": "Usually figurative, especially in 不分皂白; 皂 is the dark color.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4775": {
+    "english": "tiny or insignificant, literary usage",
+    "pos": "adjective",
+    "second": [
+      "这点幺么小事不必争论。",
+      "zhè diǎn yāo mó xiǎo shì bù bì zhēng lùn.",
+      "There is no need to argue about such an insignificant matter."
+    ],
+    "note": "A rare literary expression; the second syllable is mó, not mǒ. Retains the original older spelling 幺么 (variant of 幺麽); read mó in this literary usage, not the neutral interrogative ending me.",
+    "source": "Original literary gloss and example; readings checked against MOE 幺 and 麼: https://dict.revised.moe.edu.tw/dictView.jsp?ID=10372 ; https://stroke-order.learningweb.moe.edu.tw/dictMean.jsp?ID=40636 Classical mó sense checked against Chinese Text Project https://ctext.org/dictionary.pl?char=麼&if=gb; original spelling retained.",
+    "pinyin": "yāo mó",
+    "first": [
+      "幺么在古文中可以指微小。",
+      "yāo mó zài gǔ wén zhōng kě yǐ zhǐ wēi xiǎo.",
+      "Yaomo can mean tiny or insignificant in classical Chinese."
+    ]
+  },
+  "4777": {
+    "english": "abundant and ripe, of crops",
+    "pos": "adjective",
+    "second": [
+      "秋日庄稼穰穰，农人欢喜。",
+      "qiū rì zhuāng jia ráng ráng, nóng rén huān xǐ.",
+      "In autumn the crops are abundant and the farmers rejoice."
+    ],
+    "note": "A classical reduplication associated with plentiful harvests.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4781": {
+    "english": "to block or clog up",
+    "pos": "verb",
+    "second": [
+      "泥沙壅闭了水道。",
+      "ní shā yōng bì le shuǐ dào.",
+      "Mud and sand have clogged the waterway."
+    ],
+    "note": "A formal or literary expression for obstruction.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4782": {
+    "english": "hoarse",
+    "pos": "adjective",
+    "second": [
+      "他嗄哑的声音几乎听不见。",
+      "tā shà yǎ de shēng yīn jī hū tīng bù jiàn.",
+      "His hoarse voice is almost inaudible."
+    ],
+    "note": "嗄 is shà for a rough or hoarse voice; this is a less common equivalent of 沙哑.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4785": {
+    "english": "ammonium ion",
+    "pos": "noun",
+    "second": [
+      "这道题要求识别铵根。",
+      "zhè dào tí yāo qiú shí bié ǎn gēn.",
+      "This problem asks students to identify the ammonium ion."
+    ],
+    "note": "A chemistry term for NH4+, not the element nitrogen by itself.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4787": {
+    "english": "a repeated howling or crying sound",
+    "pos": "onomatopoeia",
+    "second": [
+      "远处有狼嗷嗷地叫。",
+      "yuǎn chù yǒu láng áo áo de jiào.",
+      "A wolf is howling in the distance."
+    ],
+    "note": "Represents repeated cries or howls; the animal or person is specified by context.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4788": {
+    "english": "first place; highest distinction",
+    "pos": "noun",
+    "second": [
+      "他在书法比赛中夺得鳌头。",
+      "tā zài shū fǎ bǐ sài zhōng duó dé áo tóu.",
+      "He wins first place in the calligraphy competition."
+    ],
+    "note": "Usually figurative in 独占鳌头 or 夺得鳌头.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4790": {
+    "english": "elderly woman",
+    "pos": "noun",
+    "second": [
+      "老媪提着篮子走过小桥。",
+      "lǎo ǎo tí zhe lán zi zǒu guò xiǎo qiáo.",
+      "The elderly woman carries a basket across the little bridge."
+    ],
+    "note": "A literary term; contemporary conversation usually uses 老太太 or an appropriate title.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4792": {
+    "english": "unruly and defiant",
+    "pos": "adjective",
+    "second": [
+      "少年桀骜，不愿听劝。",
+      "shào nián jié ào, bù yuàn tīng quàn.",
+      "The youth is defiant and unwilling to listen to advice."
+    ],
+    "note": "Often appears in 桀骜不驯 and carries a disapproving sense of being hard to control.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4793": {
+    "english": "opening and closing; strategic persuasion",
+    "pos": "noun",
+    "second": [
+      "古书以捭阖论说服之术。",
+      "gǔ shū yǐ bǎi hé lùn shuō fú zhī shù.",
+      "The old book discusses the art of persuasion through opening and closing."
+    ],
+    "note": "Classical, with literal opening-and-closing and figurative strategic senses.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4797": {
+    "english": "brave warriors or elite guards, historical usage",
+    "pos": "noun",
+    "second": [
+      "宫门外立着几名虎贲。",
+      "gōng mén wài lì zhe jǐ míng hǔ bēn.",
+      "Several elite guards stand outside the palace gate."
+    ],
+    "note": "A historical warrior or guard designation; 贲 is bēn here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4800": {
+    "english": "a series of thudding or snapping sounds",
+    "pos": "onomatopoeia",
+    "second": [
+      "木板被敲得嘣嘣响。",
+      "mù bǎn bèi qiāo de bēng bēng xiǎng.",
+      "The wooden board makes repeated thudding sounds when struck."
+    ],
+    "note": "A repeated impact sound; its source is supplied by the sentence.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4802": {
+    "english": "to learn a lesson and exercise caution",
+    "pos": "verb",
+    "second": [
+      "他受挫之后懂得惩毖。",
+      "tā shòu cuò zhī hòu dǒng de chéng bì.",
+      "After the setback, he learns to heed the lesson and be cautious."
+    ],
+    "note": "A classical expression connecting a past lesson with future vigilance.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4803": {
+    "english": "bamboo door of a poor dwelling",
+    "pos": "noun",
+    "second": [
+      "筚门外长着一丛野草。",
+      "bì mén wài zhǎng zhe yī cóng yě cǎo.",
+      "A clump of wild grass grows outside the bamboo door."
+    ],
+    "note": "A literary image of a simple or poor dwelling.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4804": {
+    "english": "folds or pleats in clothing",
+    "pos": "noun",
+    "second": [
+      "衣服的襞积十分细密。",
+      "yī fu de bì jī shí fēn xì mì.",
+      "The garment's pleats are closely spaced."
+    ],
+    "note": "A literary textile term referring to gathered folds.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4806": {
+    "english": "hasty and irritable",
+    "pos": "adjective",
+    "second": [
+      "他卞急的脾气渐渐改了。",
+      "tā biàn jí de pí qi jiàn jiàn gǎi le.",
+      "His hasty temper gradually improved."
+    ],
+    "note": "An uncommon literary description of a quick, impatient temperament.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4807": {
+    "english": "an officer's attendant, historical usage",
+    "pos": "noun",
+    "second": [
+      "马弁替军官牵着马。",
+      "mǎ biàn tì jūn guān qiān zhe mǎ.",
+      "The attendant leads the officer's horse."
+    ],
+    "note": "A historical military term for an officer's attendant or orderly.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4808": {
+    "english": "Piaoqi, an ancient military title",
+    "pos": "noun",
+    "second": [
+      "史书称他为骠骑将军。",
+      "shǐ shū chēng tā wéi piào qí jiāng jūn.",
+      "The history book calls him a Piaoqi General."
+    ],
+    "note": "A historical military title; 骠 is piào in this title.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4815": {
+    "english": "jagged broken edge",
+    "pos": "noun",
+    "second": [
+      "碴口很尖，别碰它。",
+      "chá kǒu hěn jiān, bié pèng tā.",
+      "The broken edge is sharp; don't touch it."
+    ],
+    "note": "碴口 is the uneven edge left after a brittle object breaks.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4817": {
+    "english": "one's peers",
+    "pos": "noun",
+    "second": [
+      "他在侪辈中颇有名望。",
+      "tā zài chái bèi zhōng pō yǒu míng wàng.",
+      "He has a considerable reputation among his peers."
+    ],
+    "note": "A literary term for people of the same generation or status.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4818": {
+    "english": "bees and scorpions; venomous creatures",
+    "pos": "noun",
+    "second": [
+      "古书把蜂虿并提。",
+      "gǔ shū bǎ fēng chài bìng tí.",
+      "The old book mentions bees and scorpions together."
+    ],
+    "note": "A classical collective expression for stinging or venomous creatures.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4821": {
+    "english": "market area or shops",
+    "pos": "noun",
+    "second": [
+      "市廛中人来人往。",
+      "shì chán zhōng rén lái rén wǎng.",
+      "People come and go through the market area."
+    ],
+    "note": "A literary term for places occupied by market stalls or shops.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4822": {
+    "english": "steep, rugged rocks",
+    "pos": "noun",
+    "second": [
+      "巉岩挡住了去路。",
+      "chán yán dǎng zhù le qù lù.",
+      "Steep rocks block the way."
+    ],
+    "note": "A literary landscape term emphasizing steepness and roughness.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4828": {
+    "english": "the surname Chen, written 谌",
+    "pos": "noun phrase",
+    "second": [
+      "一位谌姓朋友来访。",
+      "yī wèi chén xìng péng you lái fǎng.",
+      "A friend surnamed Chen visits."
+    ],
+    "note": "This card uses the chén surname reading; some families use shèn.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4829": {
+    "english": "to feel grit between the teeth",
+    "pos": "verb phrase",
+    "second": [
+      "这口饭有点碜牙。",
+      "zhè kǒu fàn yǒu diǎn chěn yá.",
+      "This mouthful of rice feels gritty between the teeth."
+    ],
+    "note": "Used when sand or other hard particles make chewing unpleasant.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4830": {
+    "english": "tamarisk",
+    "pos": "noun",
+    "second": [
+      "柽柳的枝条很细。",
+      "chēng liǔ de zhī tiáo hěn xì.",
+      "The tamarisk has slender branches."
+    ],
+    "note": "A shrub or small-tree name; 柳 here is part of the established plant name.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4831": {
+    "english": "a clear ringing sound of struck jade or strings",
+    "pos": "onomatopoeia",
+    "second": [
+      "琴弦琤琤，回声很清亮。",
+      "qín xián chēng chēng, huí shēng hěn qīng liàng.",
+      "The strings ring with a clear, bright echo."
+    ],
+    "note": "A literary sound word for clear musical or jade-like ringing.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4832": {
+    "english": "a sudden snorting laugh",
+    "pos": "onomatopoeia",
+    "second": [
+      "他忍不住噗哧一笑。",
+      "tā rěn bù zhù pū chī yī xiào.",
+      "He cannot help letting out a sudden laugh."
+    ],
+    "note": "Commonly used with 一笑 or 笑出声 to describe a burst of laughter.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4835": {
+    "english": "red steps before a palace",
+    "pos": "noun",
+    "second": [
+      "使者在丹墀前等候。",
+      "shǐ zhě zài dān chí qián děng hòu.",
+      "The envoy waits before the palace steps."
+    ],
+    "note": "A historical palace term; 丹 contributes the image of red coloration.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4842": {
+    "english": "to kick a door",
+    "pos": "verb phrase",
+    "second": [
+      "不要用脚踹门。",
+      "bù yào yòng jiǎo chuài mén.",
+      "Do not kick the door."
+    ],
+    "note": "踹 describes a forceful kick rather than opening the door normally.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4844": {
+    "english": "bracelet",
+    "pos": "noun",
+    "second": [
+      "这只手钏是铜做的。",
+      "zhè zhī shǒu chuàn shì tóng zuò de.",
+      "This bracelet is made of copper."
+    ],
+    "note": "钏 names a ring-shaped ornament worn around the wrist.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4849": {
+    "english": "interstices of the skin, traditional medical terminology",
+    "pos": "noun",
+    "second": [
+      "古医书常用腠理解释皮肤。",
+      "gǔ yī shū cháng yòng còu lǐ jiě shì pí fū.",
+      "Old medical books often use this term to discuss the skin."
+    ],
+    "note": "A traditional anatomical concept referring to the texture and interstices of skin or flesh.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4850": {
+    "english": "Mount Culai",
+    "pos": "proper noun",
+    "second": [
+      "旅行笔记描写了徂徕山色。",
+      "lǚ xíng bǐ jì miáo xiě le cú lái shān sè.",
+      "The travel notes describe the scenery of Mount Culai."
+    ],
+    "note": "A mountain name in Shandong in this usage, not the ordinary verb meaning of 徂.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4855": {
+    "english": "to maintain separate households and cooking arrangements",
+    "pos": "verb",
+    "second": [
+      "两家分爨，各自开火。",
+      "liǎng jiā fēn cuàn, gè zì kāi huǒ.",
+      "The two households cook and live separately."
+    ],
+    "note": "A historical family-life term; separate cooking signals separate household arrangements.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4858": {
+    "english": "a repeated tapping sound",
+    "pos": "onomatopoeia",
+    "second": [
+      "机器哒哒地响着。",
+      "jī qì dā dā de xiǎng zhe.",
+      "The machine makes a repeated tapping sound."
+    ],
+    "note": "Imitates light repeated mechanical or hoofbeat sounds.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4860": {
+    "english": "a repeated clicking or tapping sound",
+    "pos": "onomatopoeia",
+    "second": [
+      "墙上的钟嗒嗒作响。",
+      "qiáng shàng de zhōng dā dā zuò xiǎng.",
+      "The clock on the wall keeps ticking."
+    ],
+    "note": "A sound imitation often used with 作响 or 响.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4862": {
+    "english": "to grieve; to feel deep sorrow",
+    "pos": "verb",
+    "second": [
+      "失去故园，他心中怛伤。",
+      "shī qù gù yuán, tā xīn zhōng dá shāng.",
+      "Having lost his homeland, he feels deep sorrow."
+    ],
+    "note": "A literary word for emotional sorrow, not a bodily injury.",
+    "source": "Original teaching gloss and example; meaning checked against MOE: https://dict.revised.moe.edu.tw/dictView.jsp?ID=39599"
+  },
+  "4867": {
+    "english": "by the time of; until reaching",
+    "pos": "expression",
+    "second": [
+      "迨至清晨，雨才停。",
+      "dài zhì qīng chén, yǔ cái tíng.",
+      "It is not until dawn that the rain stops."
+    ],
+    "note": "A formal temporal expression introducing the point eventually reached.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4868": {
+    "english": "earthen embankment or dam",
+    "pos": "noun",
+    "second": [
+      "土埭挡住了上涨的河水。",
+      "tǔ dài dǎng zhù le shàng zhǎng de hé shuǐ.",
+      "The earthen embankment holds back the rising river water."
+    ],
+    "note": "埭 refers to an embankment or barrier used to control water.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4869": {
+    "english": "food in a bamboo basket",
+    "pos": "noun",
+    "second": [
+      "箪食虽少，他仍知足。",
+      "dān shí suī shǎo, tā réng zhī zú.",
+      "Although the basket contains little food, he is content."
+    ],
+    "note": "A classical food expression; 箪 is the bamboo container.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4871": {
+    "english": "to eat or consume food",
+    "pos": "verb",
+    "second": [
+      "他坐下来啖食面包。",
+      "tā zuò xià lái dàn shí miàn bāo.",
+      "He sits down to eat bread."
+    ],
+    "note": "啖 is a literary or regional verb for eating.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4872": {
+    "english": "to eat heartily",
+    "pos": "verb phrase",
+    "second": [
+      "客人们大啖鲜鱼。",
+      "kè rén men dà dàn xiān yú.",
+      "The guests feast on fresh fish."
+    ],
+    "note": "大 intensifies 啖, suggesting enthusiastic or substantial eating.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4876": {
+    "english": "stone steps",
+    "pos": "noun",
+    "second": [
+      "石磴湿滑，行人放慢了脚步。",
+      "shí dèng shī huá, xíng rén fàng màn le jiǎo bù.",
+      "The stone steps are slippery, so the travelers slow down."
+    ],
+    "note": "磴 refers to steps cut or made in stone, often on a hillside.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4879": {
+    "english": "a flowering tree symbolizing brotherhood in classical poetry",
+    "pos": "noun",
+    "second": [
+      "棠棣盛开，兄弟相聚。",
+      "táng dì shèng kāi, xiōng dì xiāng jù.",
+      "The tangdi tree blossoms as the brothers gather."
+    ],
+    "note": "Known from classical poetry as an image of the bond between brothers.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4880": {
+    "english": "a coy or affectedly sweet voice",
+    "pos": "noun",
+    "second": [
+      "她的嗲声让人听得不自在。",
+      "tā de diǎ shēng ràng rén tīng de bù zì zài.",
+      "Her affectedly sweet voice makes the listener uncomfortable."
+    ],
+    "note": "嗲 describes a coy tone and can carry a critical implication.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4882": {
+    "english": "gold hair ornament",
+    "pos": "noun",
+    "second": [
+      "金钿映着烛光。",
+      "jīn diàn yìng zhe zhú guāng.",
+      "The gold hair ornament reflects the candlelight."
+    ],
+    "note": "A literary ornament name; 钿 is diàn for decorative inlay or ornament here.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4884": {
+    "english": "battlements of a city wall",
+    "pos": "noun",
+    "second": [
+      "城堞上已经长满野草。",
+      "chéng dié shàng yǐ jīng zhǎng mǎn yě cǎo.",
+      "Wild grass now covers the battlements."
+    ],
+    "note": "A formal historical term for defensive features along the top of a city wall.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4888": {
+    "english": "to drop anchor",
+    "pos": "verb phrase",
+    "second": [
+      "风浪太大，船只能下碇。",
+      "fēng làng tài dà, chuán zhǐ néng xià dìng.",
+      "The wind and waves are so strong that the boat must anchor."
+    ],
+    "note": "碇 is an anchoring device; 下 indicates lowering it into the water.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4889": {
+    "english": "radon gas",
+    "pos": "noun",
+    "second": [
+      "研究员测量室内的氡气。",
+      "yán jiū yuán cè liáng shì nèi de dōng qì.",
+      "The researcher measures radon gas indoors."
+    ],
+    "note": "Radon is a radioactive gas; this card teaches the chemical name.",
+    "source": "Original teaching gloss and example; gas properties checked against Taiwan NHRI: https://nehrc.nhri.edu.tw/wp-content/uploads/2023/06/RADON.pdf"
+  },
+  "4892": {
+    "english": "tree stump or root base, regional usage",
+    "pos": "noun",
+    "second": [
+      "树蔸旁长出了新芽。",
+      "shù dōu páng zhǎng chū le xīn yá.",
+      "New shoots have grown beside the tree stump."
+    ],
+    "note": "蔸 is regional vocabulary for a plant's root base or stump.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4893": {
+    "english": "bamboo basket",
+    "pos": "noun",
+    "second": [
+      "她把竹篼背在身后。",
+      "tā bǎ zhú dōu bēi zài shēn hòu.",
+      "She carries the bamboo basket on her back."
+    ],
+    "note": "A regional basket name, often used for a carrying basket.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4895": {
+    "english": "platform above a city gate",
+    "pos": "noun",
+    "second": [
+      "守城人登上阇台。",
+      "shǒu chéng rén dēng shàng dū tái.",
+      "The city's guard climbs onto the gate platform."
+    ],
+    "note": "A rare architectural term; 阇 is dū for this city-gate sense.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4898": {
+    "english": "honest and kind",
+    "pos": "adjective",
+    "second": [
+      "这位老人惇厚而谦和。",
+      "zhè wèi lǎo rén dūn hòu ér qiān hé.",
+      "This elderly man is honest, kind, and modest."
+    ],
+    "note": "An older spelling related to 敦厚, describing sincere character.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4903": {
+    "english": "osprey",
+    "pos": "noun",
+    "second": [
+      "鱼鹗俯冲到水面。",
+      "yú è fǔ chōng dào shuǐ miàn.",
+      "The osprey dives toward the water's surface."
+    ],
+    "note": "Names a bird of prey that catches fish; 鹗 is read è.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4904": {
+    "english": "to press down and hold",
+    "pos": "verb phrase",
+    "second": [
+      "请摁住这一页。",
+      "qǐng èn zhù zhè yī yè.",
+      "Please hold this page down."
+    ],
+    "note": "摁 refers to pressing with a finger or hand; 住 indicates keeping it in place.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4905": {
+    "english": "small immature fish, older usage",
+    "pos": "noun",
+    "second": [
+      "古书谈到了鲕鱼的生长。",
+      "gǔ shū tán dào le ér yú de shēng zhǎng.",
+      "The old book discusses the growth of immature fish."
+    ],
+    "note": "A rare old fish term; 鲕 can also concern fish roe in other contexts.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4909": {
+    "english": "long narrow ceremonial flag",
+    "pos": "noun",
+    "second": [
+      "庙门前挂着一面幡旗。",
+      "miào mén qián guà zhe yī miàn fān qí.",
+      "A long ceremonial flag hangs before the temple gate."
+    ],
+    "note": "幡 often denotes a long hanging banner used in ceremonies.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4910": {
+    "english": "the chemical element vanadium",
+    "pos": "noun phrase",
+    "second": [
+      "这份材料含有钒元素。",
+      "zhè fèn cái liào hán yǒu fán yuán sù.",
+      "This material contains the element vanadium."
+    ],
+    "note": "钒 is the element represented by V on the periodic table.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4911": {
+    "english": "to burn or consume by fire",
+    "pos": "verb",
+    "second": [
+      "史书记载了城池被燔烧。",
+      "shǐ shū jì zǎi le chéng chí bèi fán shāo.",
+      "The history book records the city being burned."
+    ],
+    "note": "燔 is a literary burning verb; modern everyday speech normally uses 烧.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4912": {
+    "english": "white mugwort",
+    "pos": "noun",
+    "second": [
+      "蘩蒿的叶片带着细毛。",
+      "fán hāo de yè piàn dài zhe xì máo.",
+      "The white mugwort's leaves have fine hairs."
+    ],
+    "note": "A traditional plant name associated with 白蒿; plant identifications in old texts can vary.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4913": {
+    "english": "the 匚 radical section in a dictionary",
+    "pos": "noun phrase",
+    "second": [
+      "匚部下面收着几个字。",
+      "fāng bù xià miàn shōu zhe jǐ ge zì.",
+      "Several characters are listed under the 匚 radical."
+    ],
+    "note": "部 refers to a dictionary radical section rather than a department.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4922": {
+    "english": "dense and overgrown, of vegetation",
+    "pos": "adjective",
+    "second": [
+      "园中草木茀郁，几乎无路可走。",
+      "yuán zhōng cǎo mù fú yù, jī hū wú lù kě zǒu.",
+      "The garden is so overgrown that there is almost no path."
+    ],
+    "note": "A rare literary description; 茀 can refer to dense vegetation obstructing a way.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4925": {
+    "english": "money, literary allusion",
+    "pos": "noun",
+    "second": [
+      "诗人用青蚨代指钱财。",
+      "shī rén yòng qīng fú dài zhǐ qián cái.",
+      "The poet uses this literary allusion to refer to money."
+    ],
+    "note": "A figurative money name derived from a traditional tale, not a modern currency unit.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4930": {
+    "english": "to sip tea",
+    "pos": "verb phrase",
+    "second": [
+      "他端起杯子慢慢呷茶。",
+      "tā duān qǐ bēi zi màn màn xiā chá.",
+      "He lifts the cup and slowly sips tea."
+    ],
+    "note": "呷 means taking a small sip; 喝茶 is the ordinary broader expression.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4932": {
+    "english": "fine jade-like stone",
+    "pos": "noun",
+    "second": [
+      "项链上串着几颗琅玕。",
+      "xiàng liàn shàng chuàn zhe jǐ kē láng gān.",
+      "Several fine jade-like stones are strung on the necklace."
+    ],
+    "note": "A classical name for beautiful stone or jade; botanical allusions occur in other contexts.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4934": {
+    "english": "acid anhydride",
+    "pos": "noun",
+    "second": [
+      "这道题要求辨认酸酐。",
+      "zhè dào tí yāo qiú biàn rèn suān gān.",
+      "This problem asks students to identify an acid anhydride."
+    ],
+    "note": "A chemistry compound-category name, distinct from an acid itself.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4935": {
+    "english": "to eat late in the day",
+    "pos": "verb",
+    "second": [
+      "公务繁忙，他经常旰食。",
+      "gōng wù fán máng, tā jīng cháng gàn shí.",
+      "Official duties keep him busy, so he often eats late."
+    ],
+    "note": "A literary expression for a delayed meal, often associated with diligent work.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4936": {
+    "english": "dark blue with a purplish tint",
+    "pos": "noun",
+    "second": [
+      "她选了一块绀青色的布。",
+      "tā xuǎn le yī kuài gàn qīng sè de bù.",
+      "She chose a piece of dark purplish-blue cloth."
+    ],
+    "note": "A traditional color term, often followed by 色.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4939": {
+    "english": "bluntly honest",
+    "pos": "adjective",
+    "second": [
+      "他虽戆直，却没有恶意。",
+      "tā suī zhuàng zhí, què méi yǒu è yì.",
+      "Although he is bluntly honest, he has no ill intent."
+    ],
+    "note": "戆 is zhuàng in this word; the phrase can imply honesty lacking tact.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4940": {
+    "english": "bright and shining",
+    "pos": "adjective",
+    "second": [
+      "晨光杲杲，照入书房。",
+      "chén guāng gǎo gǎo, zhào rù shū fáng.",
+      "Bright morning light shines into the study."
+    ],
+    "note": "A literary reduplication usually associated with sunlight.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4943": {
+    "english": "imperial edict granting rank or honor",
+    "pos": "noun",
+    "second": [
+      "家中保存着一卷诰命。",
+      "jiā zhōng bǎo cún zhe yī juàn gào mìng.",
+      "An imperial grant of honor is preserved at home."
+    ],
+    "note": "A historical imperial document; other contexts may refer to a woman awarded an honorary title.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4946": {
+    "english": "ding and li cooking vessels",
+    "pos": "noun",
+    "second": [
+      "博物馆陈列着古代鼎鬲。",
+      "bó wù guǎn chén liè zhe gǔ dài dǐng lì.",
+      "The museum displays ancient ding and li cooking vessels."
+    ],
+    "note": "Names two types of ancient vessels; 鬲 is lì for the cooking-vessel sense.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4947": {
+    "english": "the ancient state of Ge",
+    "pos": "proper noun",
+    "second": [
+      "地方志介绍了鬲国旧址。",
+      "dì fāng zhì jiè shào le gé guó jiù zhǐ.",
+      "The gazetteer describes the former site of the state of Ge."
+    ],
+    "note": "A historical state name; 鬲 is gé in this proper-name use.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4950": {
+    "english": "the chemical element cadmium",
+    "pos": "noun phrase",
+    "second": [
+      "周期表上标出了镉元素。",
+      "zhōu qī biǎo shàng biāo chū le gé yuán sù.",
+      "Cadmium is marked on the periodic table."
+    ],
+    "note": "镉 corresponds to the symbol Cd; this phrase names the element.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4952": {
+    "english": "the surname Gong, written 龚",
+    "pos": "noun phrase",
+    "second": [
+      "一位龚姓记者采访了他。",
+      "yī wèi gōng xìng jì zhě cǎi fǎng le tā.",
+      "A reporter surnamed Gong interviewed him."
+    ],
+    "note": "龚 is a surname pronounced gōng; 姓 makes the surname sense explicit.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4955": {
+    "english": "basket trap for catching fish",
+    "pos": "noun",
+    "second": [
+      "岸边放着一个鱼笱。",
+      "àn biān fàng zhe yī ge yú gǒu.",
+      "A basket fish trap lies on the bank."
+    ],
+    "note": "笱 is a traditional basket-like trap, not a fishing net.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4958": {
+    "english": "the chemical element cobalt",
+    "pos": "noun phrase",
+    "second": [
+      "合金中加入了钴元素。",
+      "hé jīn zhōng jiā rù le gǔ yuán sù.",
+      "Cobalt was added to the alloy."
+    ],
+    "note": "钴 corresponds to the symbol Co; do not confuse it with copper, Cu.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4960": {
+    "english": "whole; without breaking it up, older usage",
+    "pos": "adverb",
+    "second": [
+      "他读书不能只鹘仑吞下。",
+      "tā dú shū bù néng zhǐ hú lún tūn xià.",
+      "He cannot simply swallow a book whole without understanding it."
+    ],
+    "note": "An older variant associated with 囫囵; often modifies 吞 or 吞下.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4968": {
+    "english": "to wash one's face and rinse the mouth",
+    "pos": "verb",
+    "second": [
+      "旅人盥漱后穿好衣服。",
+      "lǚ rén guàn shù hòu chuān hǎo yī fu.",
+      "The traveler gets dressed after washing and rinsing his mouth."
+    ],
+    "note": "A formal expression for washing and oral rinsing, especially morning preparation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4977": {
+    "english": "lotus flower",
+    "pos": "noun",
+    "second": [
+      "菡萏初开，清香满池。",
+      "hàn dàn chū kāi, qīng xiāng mǎn chí.",
+      "The lotus blossoms begin to open, filling the pond with fragrance."
+    ],
+    "note": "A literary name for lotus flowers, often found in poetry.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4987": {
+    "english": "one pool of clear water",
+    "pos": "number phrase",
+    "second": [
+      "石洞里有一泓泉水。",
+      "shí dòng lǐ yǒu yī hóng quán shuǐ.",
+      "There is a pool of spring water inside the cave."
+    ],
+    "note": "泓 is a literary measure word for a pool or expanse of water.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4991": {
+    "english": "Hutuo, a river name",
+    "pos": "proper noun",
+    "second": [
+      "桥下就是滹沱河。",
+      "qiáo xià jiù shì hū tuó hé.",
+      "The Hutuo River lies beneath the bridge."
+    ],
+    "note": "The two characters belong to a river name; 河 makes the referent explicit.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4992": {
+    "english": "with a sudden cracking or swishing sound",
+    "pos": "adverb",
+    "second": [
+      "刀出鞘时砉然一响。",
+      "dāo chū qiào shí xū rán yī xiǎng.",
+      "The blade makes a sudden swishing sound as it leaves its sheath."
+    ],
+    "note": "A literary sound expression; 砉 is xū in this usage.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4994": {
+    "english": "fine red or bay horse with a dark mane",
+    "pos": "noun",
+    "second": [
+      "一匹骅骝奔驰而过。",
+      "yī pǐ huá liú bēn chí ér guò.",
+      "A fine bay horse gallops past."
+    ],
+    "note": "A classical horse name often describing color and a dark mane.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4995": {
+    "english": "badger",
+    "pos": "noun",
+    "second": [
+      "獾子在洞口留下脚印。",
+      "huān zi zài dòng kǒu liú xià jiǎo yìn.",
+      "The badger left footprints at the entrance to its burrow."
+    ],
+    "note": "子 is an unstressed noun ending; the shorter 獾 is also used.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4996": {
+    "english": "Huan River, a historical name",
+    "pos": "proper noun",
+    "second": [
+      "古书说洹水流经城北。",
+      "gǔ shū shuō huán shuǐ liú jīng chéng běi.",
+      "The old book says the Huan River flows north of the city."
+    ],
+    "note": "水 functions as a river-name ending in historical usage.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4997": {
+    "english": "Huan River",
+    "pos": "proper noun",
+    "second": [
+      "洹河两岸种着杨树。",
+      "huán hé liǎng àn zhòng zhe yáng shù.",
+      "Poplars grow along both banks of the Huan River."
+    ],
+    "note": "A river name associated with the Anyang area; read 洹 as huán.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "4998": {
+    "english": "an inaccessible vital region; a hopeless stage, in an idiom",
+    "pos": "noun",
+    "second": [
+      "他把久拖的问题比作病入膏肓。",
+      "tā bǎ jiǔ tuō de wèn tí bǐ zuò bìng rù gāo huāng.",
+      "He compares the long-neglected problem to an illness beyond remedy."
+    ],
+    "note": "Most commonly encountered in 病入膏肓, literally or figuratively; the anatomy is historical.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "5001": {
+    "english": "bamboo grove or bamboo",
+    "pos": "noun",
+    "second": [
+      "篁竹掩映着一间小屋。",
+      "huáng zhú yǎn yìng zhe yī jiān xiǎo wū.",
+      "Bamboo partly hides a small cottage."
+    ],
+    "note": "A literary bamboo expression; 篁 often evokes a grove.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "5008": {
+    "english": "with measured, dignified steps, literary usage",
+    "pos": "adjective",
+    "second": [
+      "礼乐中，舞者跻跻而行。",
+      "lǐ yuè zhōng, wǔ zhě jī jī ér xíng.",
+      "During the ritual music, the dancers walk with measured steps."
+    ],
+    "note": "A rare gait description related to 躋躋蹌蹌; it is not the verb sense in 跻身.",
+    "source": "Original teaching gloss and example; gait sense checked against MOE 躋躋蹌蹌: https://dict.revised.moe.edu.tw/dictView.jsp?ID=87730"
+  },
+  "5012": {
+    "english": "boats and oars; water transport",
+    "pos": "noun",
+    "second": [
+      "舟楫不通，货物无法运走。",
+      "zhōu jí bù tōng, huò wù wú fǎ yùn zǒu.",
+      "With water transport blocked, the goods cannot be taken away."
+    ],
+    "note": "A literary collective term for boats and their equipment, sometimes meaning navigation.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  },
+  "5014": {
+    "english": "craft skill or technique",
+    "pos": "noun",
+    "second": [
+      "工匠凭伎艺谋生。",
+      "gōng jiàng píng jì yì móu shēng.",
+      "The craftsman makes a living through his skills."
+    ],
+    "note": "A literary or older word for skill in a craft or performance.",
+    "source": "Original teaching gloss and independent example; constituent readings checked against CC-CEDICT"
+  }
+}
