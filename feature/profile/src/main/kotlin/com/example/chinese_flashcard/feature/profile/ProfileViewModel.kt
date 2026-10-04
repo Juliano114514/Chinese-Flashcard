@@ -6,6 +6,7 @@ import com.example.chinese_flashcard.core.domain.CsvImportPreview
 import com.example.chinese_flashcard.core.domain.CsvImportReport
 import com.example.chinese_flashcard.core.domain.CsvImportRepository
 import com.example.chinese_flashcard.core.domain.CsvSource
+import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.SettingsRepository
 import com.example.chinese_flashcard.core.domain.StudyRepository
 import com.example.chinese_flashcard.core.domain.StudySettings
@@ -43,13 +44,16 @@ data class ProfileUpdate(
   val rounds: Int? = null,
   val reviewDays: List<Int>? = null,
 ) {
-  fun applyTo(value: StudySettings): StudySettings = value.copy(
-    displayName = displayName?.trim() ?: value.displayName,
-    avatarId = avatarId ?: value.avatarId,
-    dailyWords = dailyWords ?: value.dailyWords,
-    rounds = rounds ?: value.rounds,
-    reviewDays = reviewDays ?: value.reviewDays,
-  )
+  fun applyTo(value: StudySettings): StudySettings {
+    dailyWords?.let { require(DailyWordChoices.isAllowed(it)) { "Daily words must be 5–50 in steps of 5." } }
+    return value.copy(
+      displayName = displayName?.trim() ?: value.displayName,
+      avatarId = avatarId ?: value.avatarId,
+      dailyWords = dailyWords ?: value.dailyWords,
+      rounds = rounds ?: value.rounds,
+      reviewDays = reviewDays ?: value.reviewDays,
+    )
+  }
 }
 
 sealed interface ProfileAction {

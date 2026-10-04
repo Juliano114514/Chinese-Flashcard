@@ -45,6 +45,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
@@ -172,15 +173,16 @@ private fun NameDialog(initial: String, saving: Boolean, error: String?, onDismi
 
 @Composable
 private fun DailyWordsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
-  var count by rememberSaveable { mutableIntStateOf(initial) }
-  SettingDialog("Words per day", saving, error, true, onDismiss, { onConfirm(count) }) {
+  var count by rememberSaveable { mutableIntStateOf(DailyWordChoices.normalize(initial)) }
+  SettingDialog("Words per day", saving, error, DailyWordChoices.isAllowed(count), onDismiss, { onConfirm(count) }) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
       Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
-      Slider(count.coerceIn(5, 100).toFloat(), onValueChange = { count = it.roundToInt() },
-        modifier = Modifier.fillMaxWidth(), enabled = !saving, valueRange = 5f..100f, steps = 94)
+      Slider(count.toFloat(), onValueChange = { count = DailyWordChoices.normalize(it.roundToInt()) },
+        modifier = Modifier.fillMaxWidth(), enabled = !saving,
+        valueRange = DailyWordChoices.MIN.toFloat()..DailyWordChoices.MAX.toFloat(), steps = 8)
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        Text("5", style = MaterialTheme.typography.bodySmall)
-        Text("100", style = MaterialTheme.typography.bodySmall)
+        Text(DailyWordChoices.MIN.toString(), style = MaterialTheme.typography.bodySmall)
+        Text(DailyWordChoices.MAX.toString(), style = MaterialTheme.typography.bodySmall)
       }
       Text("Changes apply to the next daily plan.", style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
