@@ -44,7 +44,8 @@ fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongCl
       trailing?.invoke()
     }
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-      Text(word.pinyin, fontSize = 18.sp, lineHeight = 26.sp, color = FlashcardStyle.colors.gradientSecondaryInk)
+      Text(word.pinyin, modifier = Modifier.weight(1f), fontSize = 18.sp, lineHeight = 26.sp,
+        color = FlashcardStyle.colors.gradientSecondaryInk)
       IconButton(onClick = onSpeak, enabled = enabled, modifier = Modifier.size(48.dp)) {
         Icon(Icons.Default.PlayArrow, contentDescription = "Listen to word", modifier = Modifier.size(20.dp))
       }
