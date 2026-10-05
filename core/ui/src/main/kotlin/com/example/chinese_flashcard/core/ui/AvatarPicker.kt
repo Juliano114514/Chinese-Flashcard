@@ -57,6 +57,7 @@ fun AvatarPickerDialog(
 ) {
   var draftId by rememberSaveable { mutableStateOf(selectedId.takeIf(avatarsById::containsKey) ?: DEFAULT_AVATAR_ID) }
   AlertDialog(onDismissRequest = { if (!saving) onDismiss() }, shape = MaterialTheme.shapes.large,
+    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
     title = { Text("Choose avatar") }, text = {
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         LazyVerticalGrid(columns = GridCells.Adaptive(56.dp),

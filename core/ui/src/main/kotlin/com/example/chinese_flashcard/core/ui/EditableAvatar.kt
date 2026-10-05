@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Icon
@@ -41,13 +40,13 @@ fun EditableAvatar(
     .semantics(mergeDescendants = true) { contentDescription = "Change avatar" },
     contentAlignment = Alignment.Center) {
     Box(Modifier.size(size)) {
-      Surface(Modifier.fillMaxSize(), shape = CircleShape, color = colors.surface,
-        border = BorderStroke(1.5.dp, colors.primary)) {
-        Box(Modifier.padding(3.5.dp).clip(CircleShape)) {
+      Surface(Modifier.fillMaxSize(), shape = MaterialTheme.shapes.medium, color = colors.surface,
+        border = BorderStroke(1.dp, colors.outlineVariant)) {
+        Box(Modifier.padding(3.dp).clip(MaterialTheme.shapes.small)) {
           PresetAvatar(avatarId, Modifier.fillMaxSize().clearAndSetSemantics { })
         }
       }
-      Surface(Modifier.align(Alignment.BottomEnd).size(18.dp), shape = CircleShape,
+      Surface(Modifier.align(Alignment.BottomEnd).size(18.dp), shape = MaterialTheme.shapes.extraSmall,
         color = colors.primary, border = BorderStroke(1.5.dp, colors.surface)) {
         Box(contentAlignment = Alignment.Center) {
           Icon(Icons.Default.Edit, contentDescription = null, modifier = Modifier.size(12.dp),

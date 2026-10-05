@@ -4,16 +4,11 @@ import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Card
@@ -28,8 +23,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.intl.LocaleList
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.text.style.Hyphens
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.domain.ExampleSentence
@@ -41,14 +38,14 @@ fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongCl
   trailing: (@Composable () -> Unit)? = null) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-      Text(word.hanzi, fontSize = 48.sp, lineHeight = 58.sp, fontWeight = FontWeight.SemiBold,
+      Text(word.hanzi, fontSize = 40.sp, lineHeight = 52.sp, fontWeight = FontWeight.Medium,
         modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = enabled, onClick = onSpeak,
           onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) "Word actions" else null))
       trailing?.invoke()
     }
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(word.pinyin, fontSize = 18.sp, lineHeight = 26.sp, color = FlashcardStyle.colors.gradientSecondaryInk)
-      IconButton(onClick = onSpeak, enabled = enabled, modifier = Modifier.size(40.dp)) {
+      IconButton(onClick = onSpeak, enabled = enabled, modifier = Modifier.size(48.dp)) {
         Icon(Icons.Default.PlayArrow, contentDescription = "Listen to word", modifier = Modifier.size(20.dp))
       }
     }
@@ -59,8 +56,11 @@ fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongCl
 fun WordMeanings(word: WordEntry) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
     word.meanings.forEach { meaning ->
-      Text(listOf(meaning.partOfSpeech, meaning.english).filter(String::isNotBlank).joinToString(" · "),
-        style = MaterialTheme.typography.bodyLarge)
+      Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        if (meaning.partOfSpeech.isNotBlank()) Text(meaning.partOfSpeech,
+          style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(meaning.english, style = MaterialTheme.typography.bodyLarge)
+      }
     }
   }
 }
@@ -70,12 +70,12 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
   if (word.literalExplanations.isNotEmpty() || word.figurativeExplanations.isNotEmpty()) {
     WordPanel {
       if (word.literalExplanations.isNotEmpty()) {
-        PanelLabel("Literal meaning")
+        PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) "Literal meaning" else "Meanings")
         ExplanationMeanings(word.literalExplanations)
       }
       if (word.figurativeExplanations.isNotEmpty()) {
         if (word.literalExplanations.isNotEmpty()) PanelDivider()
-        PanelLabel("Figurative meaning")
+        PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) "Figurative meaning" else "Extended use")
         ExplanationMeanings(word.figurativeExplanations)
       }
     }
@@ -125,40 +125,46 @@ fun WordExamplePanel(example: ExampleSentence, onSpeak: (String) -> Unit, enable
 private fun WordPanel(content: @Composable ColumnScope.() -> Unit) {
   Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = FlashcardStyle.opacity.explanationPanel),
     contentColor = MaterialTheme.colorScheme.onSurface),
-    shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
-    Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(12.dp), content = content)
+    shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth()) {
+    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp), content = content)
   }
 }
 
 @Composable
-@OptIn(ExperimentalLayoutApi::class)
 private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
-  Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+  Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
       PanelLabel("Example")
       Spacer(Modifier.weight(1f))
-      IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(40.dp)) {
+      IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
         Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
       }
     }
-    FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp),
-      verticalArrangement = Arrangement.spacedBy(12.dp)) {
-      example.chunks.forEach { chunk ->
-        Column(Modifier.width(IntrinsicSize.Max),
-          horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-          Text(chunk.pinyin, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-          Text(chunk.hanzi, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
-            fontSize = 18.sp, lineHeight = 27.sp, fontWeight = FontWeight.Medium)
-          Text(chunk.gloss, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.bodySmall.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
-        }
-      }
+    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+      Text(exampleLine(example.chunks.map { it.hanzi }, example.hanzi),
+        fontSize = 20.sp, lineHeight = 30.sp, fontWeight = FontWeight.Medium)
+      Text(exampleLine(example.chunks.map { it.pinyin }, example.pinyin),
+        style = MaterialTheme.typography.bodyMedium,
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
+      if (example.chunks.isNotEmpty()) Text(exampleLine(example.chunks.map { it.gloss }, ""),
+        style = MaterialTheme.typography.bodyMedium.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
     PanelDivider()
-    Text(example.english, style = MaterialTheme.typography.bodyMedium.copy(
+    Text(example.english, style = MaterialTheme.typography.bodyLarge.copy(
       localeList = LocaleList("en"), hyphens = Hyphens.None))
+  }
+}
+
+@Composable
+private fun exampleLine(chunks: List<String>, fallback: String): androidx.compose.ui.text.AnnotatedString {
+  val separatorColor = MaterialTheme.colorScheme.outline
+  return buildAnnotatedString {
+    if (chunks.isEmpty()) append(fallback)
+    else chunks.forEachIndexed { index, chunk ->
+      if (index > 0) withStyle(SpanStyle(color = separatorColor)) { append(" / ") }
+      append(chunk)
+    }
   }
 }
 
