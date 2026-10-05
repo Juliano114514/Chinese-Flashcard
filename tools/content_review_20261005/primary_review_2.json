@@ -1,0 +1,360 @@
+{
+  "scope": {
+    "zeroBasedRange": [
+      2574,
+      5147
+    ],
+    "investigatedIds": [
+      "wl_03423",
+      "wl_03571",
+      "wl_03911",
+      "wl_03941",
+      "wl_03992",
+      "wl_04461",
+      "wl_04631",
+      "wl_04705",
+      "wl_05067",
+      "wl_04080"
+    ],
+    "count": 10
+  },
+  "sourceSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "semanticOverlay": "final_patch_2.json",
+  "delivery": {
+    "reviewedCases": 10,
+    "changedRows": 7,
+    "primaryReadingChanges": 3,
+    "changedFieldCounts": {
+      "拼音": 3,
+      "例句JSON": 7,
+      "部件JSON": 4,
+      "英文释义": 1,
+      "本义解释JSON": 1
+    },
+    "errors": []
+  },
+  "regionPolicy": "简体普通话/大陆教学；台湾原辞书作语义/历史互证，不覆盖有明确大陆规范的字音。",
+  "cases": [
+    {
+      "id": "wl_03423",
+      "hanzi": "茨菰",
+      "original": "cí gu",
+      "selected": "cí gu",
+      "decision": "retain neutral pronunciation; full-tone alternative recorded",
+      "reason": "大陆植物智给慈姑 cí gū 并列茨菰别名，台湾教育部也标 cí gū。但本库原读 cí gu 是轻声，不是缺失拼音；未取到大陆原版现代汉语词典的本词轻声条目，不能仅以台湾或植物名称的全调替换已有词汇轻声。字形、主读音、部件与两句保持一致。",
+      "evidence": [
+        {
+          "title": "植物智：慈姑",
+          "url": "https://www.iplant.cn/bk/B01CC88A478DBE22",
+          "finding": "大陆植物专业平台标 cí gū，茨菰列为别名；支持全调替代音，不证明轻声错误。",
+          "kind": "primary"
+        },
+        {
+          "title": "教育部重编国语辞典：茨菰",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=140535&la=0&powerMode=0",
+          "finding": "直接本词 cí gū，明确台湾参考，未用于覆盖大陆轻声。",
+          "kind": "primary"
+        },
+        {
+          "title": "原版现汉条目检索线索",
+          "url": "https://www.gxdq.com/hydcd/396992v.html",
+          "finding": "二手页面 cí gu 并给出现汉第212页；原版扫描未获取，作为保留疑点线索而非权威证明。",
+          "kind": "secondary lead"
+        }
+      ],
+      "confidence": "primary full-tone alternative verified; neutral lexical standard not conclusively settled",
+      "changedFields": [],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_03571",
+      "hanzi": "仆倒",
+      "original": "pū dào",
+      "selected": "pū dǎo",
+      "decision": "correct main and component; examples already have dǎo in semantic overlay",
+      "reason": "两句均为跌倒在地，倒为 dǎo；主词和倒部件同步到此义，不把倒置/倾倒义 dào 混入。",
+      "evidence": [
+        {
+          "title": "教育部重编国语辞典：仆",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=982&la=0&powerMode=0",
+          "finding": "仆 pū 为跌倒伏地。",
+          "kind": "primary"
+        },
+        {
+          "title": "教育部国语辞典简编本：倒",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=7606&la=0&powerMode=0",
+          "finding": "倒 dǎo 为仆下、横躺；台湾辞书用于无地区冲突的语义核实。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; whole compound reading inferred from directly verified constituents in exact sentence sense",
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_03911",
+      "hanzi": "茄瓜",
+      "original": "jiā guā",
+      "selected": "qié guā",
+      "decision": "correct main, 茄 component and both examples",
+      "reason": "词义是茄子，主读茄 qié；jiā 用于音译词，不适用于此植物。地方词茄瓜保留原字形。",
+      "evidence": [
+        {
+          "title": "植物智：茄 Solanum melongena",
+          "url": "https://www.iplant.cn/info/Solanum%20melongena?t=focn",
+          "finding": "直接植物名茄(qié)，列茄子等别名。",
+          "kind": "primary"
+        },
+        {
+          "title": "深圳市市场监督管理局 DB4403/T 346—2023",
+          "url": "https://amr.sz.gov.cn/attachment/1/1315/1315322/9772236.pdf",
+          "finding": "官方种植业产品表茄子(qiezi) 别名列茄瓜；PDF检索缓存完整行已读取，直接抓取可能受网站限制。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; whole compound phonetic inferred from verified plant reading and official synonym mapping",
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_03941",
+      "hanzi": "瓦铛",
+      "original": "wǎ dāng",
+      "selected": "wǎ chēng",
+      "decision": "correct main, 铛 component and both examples",
+      "reason": "词义与两例均为陶制炊具，铛 chēng 对应锅；dāng 的金属碰撞拟声义不适用。",
+      "evidence": [
+        {
+          "title": "陕西省地方志：明万历咸阳县新志稽注",
+          "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/sxjz/xys_16200/201706/P020240923599920471213.pdf",
+          "finding": "官方原书注⑤铛(chēng) 为温器及浅锅；本次读取PDF检索缓存的字音注释，抓取全文失败，未声称检查扫描页。",
+          "kind": "primary"
+        },
+        {
+          "title": "教育部国语辞典简编本：铛",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=32286&la=0&powerMode=0",
+          "finding": "锅义 chēng 与大陆原书注音互证。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; whole compound phonetic inferred from verified cooking-vessel constituent meaning",
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_03992",
+      "hanzi": "堤坊",
+      "original": "dī fáng",
+      "selected": "dī fáng",
+      "decision": "retain; no identity or pronunciation change",
+      "reason": "坊 fáng 有堤坊义，词形不是必然错别字，不能擅换成堤防。现有语义补丁已经把坊部件从作坊义改为本词的embankment义。",
+      "evidence": [
+        {
+          "title": "教育部重编国语辞典：坊",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=1705&la=0&powerMode=0",
+          "finding": "第二读 fáng 明列堤坊，并引礼记经解；用于历史词形和坊读音核实。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; historical spelling directly attested",
+      "changedFields": [],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_04461",
+      "hanzi": "掴耳光",
+      "original": "guāi ěr guāng",
+      "selected": "guāi ěr guāng",
+      "decision": "retain guāi; record guó alternative",
+      "reason": "掴 guāi 是有辞书支持的读音，不能当作笔误机械改成guó。语义补丁已把耳光合并为slap in the face，主词与两例一致。",
+      "evidence": [
+        {
+          "title": "Unicode 2015 unified readings proposal",
+          "url": "https://www.unicode.org/L2/L2015/15036r2-unified-readings.pdf",
+          "finding": "U+63B4 表中原 kMandarin guāi，kXHC1983 收guāi和guó；可直接读取PDF文本。",
+          "kind": "primary"
+        },
+        {
+          "title": "Unicode kTGHZ2013 原始提案",
+          "url": "https://www.unicode.org/L2/L2019/19160-adding-ktghz-2013.pdf",
+          "finding": "大陆通用规范汉字字典音序索引guāi含掴；10.75MB PDF超过web工具抓取限额，本次通过检索缓存核对，不称全文/扫描图验证。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; original alternative reading retained",
+      "changedFields": [],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_04631",
+      "hanzi": "跻跻",
+      "original": "jī jī",
+      "selected": "jī jī",
+      "decision": "retain reading; correct standalone lexical sense, whole-word component and examples",
+      "reason": "二字词跻跻用于人物众多，不能把四字词跻跻跄跄的步态义直接赋给二字词。改为many people gathered together的文学用法，整词部件避免把非组合义误拆为ascend+ascend；两句改为词义说明与群臣聚集语境。",
+      "evidence": [
+        {
+          "title": "识典古籍：跻（汉语大词典字项）",
+          "url": "https://www.shidianguji.com/character/%E8%B7%BB",
+          "finding": "原辞书字项 jī，第8义指向跻跻；核实二字词存在和读音，页面不直接给二字词释义。",
+          "kind": "primary"
+        },
+        {
+          "title": "搜韵：王錂普天乐（六十种曲春芜记第九出）",
+          "url": "https://sou-yun.cn/Query.aspx?id=938200&type=poem1",
+          "finding": "专业诗词数据库原文本含跻跻臣邻，词的原文语境是群臣；全文检索缓存已读，直接open失败。",
+          "kind": "professional original-text transcription"
+        },
+        {
+          "title": "教育部重编国语辞典：跻跻跄跄",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=87730&la=1&powerMode=0",
+          "finding": "步态义直接属于四字词，不证明独立二字词同义。",
+          "kind": "primary"
+        },
+        {
+          "title": "二字词原汉语大词典释义检索线索",
+          "url": "https://m.cidianwang.com/cd/j/jiji331111.htm",
+          "finding": "二手辞书明确人物众多并引春芜记、奈何天，与原文群臣语境一致；没有取到原版二字词扫描页。",
+          "kind": "secondary corroboration"
+        }
+      ],
+      "confidence": "medium-high; pronunciation directly verified, semantic correction corroborated by original literary context and dictionary transcription",
+      "residual": "原版汉语大词典的二字词独立条目扫描未取得；报告不把二手转载说成原版逐页核验。",
+      "changedFields": [
+        "英文释义",
+        "例句JSON",
+        "部件JSON",
+        "本义解释JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_04705",
+      "hanzi": "炔",
+      "original": "quē",
+      "selected": "quē",
+      "decision": "retain mainland primary reading and restore both examples from erroneous què semantic patch",
+      "reason": "大陆通用规范汉字字典的单一规范音明确quē，化学义与此读音一致。先前分片语义补丁把例句炔标què属于审校错误，现覆盖撤回。",
+      "evidence": [
+        {
+          "title": "Unicode kTGHZ2013 原始提案",
+          "url": "https://www.unicode.org/L2/L2019/19160-adding-ktghz-2013.pdf",
+          "finding": "大陆通用规范汉字字典映射序号4008、U+7094 炔为quē；大PDF检索缓存表行已读。",
+          "kind": "primary"
+        },
+        {
+          "title": "Unicode 2023 kMandarin updates",
+          "url": "https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf",
+          "finding": "第11页U+7094明确依据kTGHZ2013单一读音quē，并注明化学用quē；PDF全文文本已取得。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; mainland dictionary mapping directly attested",
+      "changedFields": [
+        "例句JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_05067",
+      "hanzi": "蔺相如",
+      "original": "lìn xiāng rú",
+      "selected": "lìn xiāng rú",
+      "decision": "retain supported original name reading; restore both examples from xiàng semantic patch",
+      "reason": "人名xiāng有直接原辞书与大陆原采访依据，不是只在台湾读法。xiàng在部分大陆在线辞书存在，记录分歧，不把将相和标题的官名相读音当作姓名注音。先前语义补丁只改例句xiàng导致不一致，此处恢复。",
+      "evidence": [
+        {
+          "title": "教育部重编国语辞典：蔺相如",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=64854&la=0&powerMode=0",
+          "finding": "直接姓名词条 lìn xiāng rú。",
+          "kind": "primary"
+        },
+        {
+          "title": "封面新闻原采访：司马相如字音",
+          "url": "https://www.thecover.cn/news/4421330",
+          "finding": "2020-06-09魏明伦明确蔺相如和司马相如均读xiāng；四川大学周裕锴说明相如字义、汉语大词典体例与诗律读音。",
+          "kind": "primary mainland expert interview"
+        },
+        {
+          "title": "字典分歧记录：汉典蔺相如",
+          "url": "https://zdic.net/hans/%E8%94%BA%E7%9B%B8%E5%A6%82",
+          "finding": "同页基本词条xiàng、国语辞典xiāng；作为异读分歧记录，不单凭二手词条决定主音。",
+          "kind": "secondary disagreement"
+        }
+      ],
+      "confidence": "high for original supported xiāng; modern dictionary disagreement explicitly retained",
+      "changedFields": [
+        "例句JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    },
+    {
+      "id": "wl_04080",
+      "hanzi": "天秤",
+      "original": "tiān chèng",
+      "selected": "tiān chèng",
+      "decision": "retain primary and restore first example to consistent chèng",
+      "reason": "交叉二审发现原语义补丁只把第1例改píng，主词、部件及第2例仍chèng。秤píng有台湾历史辞书依据，但本次统一大陆教学且原主音chèng有完整词条直接支持，恢复第1例为chèng，不判有据异读为错字。",
+      "evidence": [
+        {
+          "title": "教育部重编国语辞典：天秤",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=53242&la=0&powerMode=0",
+          "finding": "完整器具词条直接标tiān chèng，对应两端置物和砝码的例句语境。",
+          "kind": "primary"
+        },
+        {
+          "title": "教育部异体字字典：秤",
+          "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=31237",
+          "finding": "记录píng的天秤用法；作为地区/历史异读记录，不据此只改一个例句。",
+          "kind": "primary"
+        }
+      ],
+      "confidence": "high; supported original pronunciation retained",
+      "discoveredBy": "content_1 cross-review",
+      "changedFields": [
+        "例句JSON"
+      ],
+      "reviewedBothExamplesAndParts": true
+    }
+  ],
+  "compatibility": {
+    "source": "core/data/src/main/kotlin/com/example/chinese_flashcard/core/data/CsvImporter.kt",
+    "lines": [
+      303,
+      308,
+      313,
+      413,
+      416
+    ],
+    "managedPreset": "presetSourceId identifies owned presets; same owned ID and NFC Hanzi accepts reading refresh; copy updates pinyin/content while preserving database IDs and references.",
+    "risk": "Without managed preset ownership, existing same-ID old-reading entries fail the wordIdentity comparison at lines308-309. Do not silently relabel user-owned legacy entries or erase progress; primary corrections require the existing managed-preset refresh route.",
+    "evidenceLevel": "current source review only; no import/device/build execution in this subtask"
+  },
+  "limitations": [
+    "茨菰现汉原版轻声条目未取得，保留已有cí gu并记录大陆专业全调cí gū。",
+    "跻跻二字词原版字典扫描未取得，语义依据原文语境和一致辞书转载；不冒充原版逐页验证。",
+    "部分官方PDF仅检索缓存可读，逐项可访问边界已记录。"
+  ],
+  "preserved": [
+    "词条ID",
+    "组词",
+    "罕度",
+    "顺序",
+    "干扰词ID",
+    "词性",
+    "来源说明"
+  ],
+  "noCsvMutation": true
+}

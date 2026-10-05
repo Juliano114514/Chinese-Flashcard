@@ -1,0 +1,198 @@
+{
+  "inputSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "crossReviewCompleteAtRequestedLevel": true,
+  "level": "Exhaustive actual changed-field parse/format/reconstruction scan and rule-application audit; targeted second semantic review, not a second complete semantic review of all vocabulary rows.",
+  "patches": {
+    "2": {
+      "changedRows": 2053,
+      "changedFields": 2647,
+      "fieldCounts": {
+        "例句JSON": 1879,
+        "部件JSON": 450,
+        "本义解释JSON": 176,
+        "引申义解释JSON": 134,
+        "英文释义": 8
+      },
+      "sha256": "46225c4b6b988f3920bf827e3725bda4d9f2a6de3e31396d1b66d97019f3aac0"
+    },
+    "3": {
+      "changedRows": 2305,
+      "changedFields": 5716,
+      "fieldCounts": {
+        "例句JSON": 2100,
+        "引申义解释JSON": 1132,
+        "部件JSON": 240,
+        "本义解释JSON": 1149,
+        "英文释义": 1094,
+        "词性": 1
+      },
+      "sha256": "2e29c34a21387bb884a4f020a5fb67eb757cfb4a9e9ea03915816ec343bb0f07"
+    }
+  },
+  "allChangedFieldsScanned": 8363,
+  "structuralErrors": [],
+  "manualCoverage": {
+    "allChangedSyllablePairTypes": {
+      "batch2": 43,
+      "batch3": 88
+    },
+    "allNonOneUniquePronunciationDeltaContexts": 349,
+    "allChangedEnglishTranslationPairs": 213,
+    "scalarMeaningDeltaRecordsRead": 100,
+    "componentDeltaRecordsRead": 7,
+    "repeatedOneOnlyContextsAutomaticallyTriaged": 521,
+    "ordinalCandidateChangesFound": 0,
+    "notes": "349 non-one pronunciation contexts include full Hanzi and English with every changed syllable; corrections additionally read complete before/after JSON chunks. 213 English pairs fully read. First 100 non-format scalar deltas and first 7 component delta records read. The 1186 lexical-delta list and 3932 new unique chunk-gloss groups were exhaustively extracted and fingerprinted but not all second-read semantically."
+  },
+  "findings": [
+    {
+      "id": "wl_06712",
+      "word": "一见钟情",
+      "reason": "Retrospective in those days / back then uses dāngnián; not same-year dàngnián.",
+      "applications": [
+        {
+          "sentenceIndex": 1,
+          "hanzi": "这对夫妻讲起当年一见钟情的故事。",
+          "beforePinyin": "zhè duì fū qī jiǎng qǐ dàng nián yī jiàn zhōng qíng de gù shì.",
+          "afterPinyin": "zhè duì fū qī jiǎng qǐ dāng nián yī jiàn zhōng qíng de gù shì."
+        }
+      ]
+    },
+    {
+      "id": "wl_06721",
+      "word": "身无分文",
+      "reason": "Retrospective in those days / back then uses dāngnián; not same-year dàngnián.",
+      "applications": [
+        {
+          "sentenceIndex": 1,
+          "hanzi": "当年身无分文的她，如今开起了自己的店。",
+          "beforePinyin": "dàng nián shēn wú fēn wén de tā, rú jīn kāi qǐ le zì jǐ de diàn.",
+          "afterPinyin": "dāng nián shēn wú fēn wén de tā, rú jīn kāi qǐ le zì jǐ de diàn."
+        }
+      ]
+    },
+    {
+      "id": "wl_06787",
+      "word": "无名小卒",
+      "reason": "Retrospective in those days / back then uses dāngnián; not same-year dàngnián.",
+      "applications": [
+        {
+          "sentenceIndex": 0,
+          "hanzi": "他当年还是个无名小卒，如今已是著名演员。",
+          "beforePinyin": "tā dàng nián hái shì gè wú míng xiǎo zú, rú jīn yǐ shì zhù míng yǎn yuán.",
+          "afterPinyin": "tā dāng nián hái shì gè wú míng xiǎo zú, rú jīn yǐ shì zhù míng yǎn yuán."
+        }
+      ]
+    },
+    {
+      "id": "wl_07336",
+      "word": "风云人物",
+      "reason": "Retrospective in those days / back then uses dāngnián; not same-year dàngnián.",
+      "applications": [
+        {
+          "sentenceIndex": 1,
+          "hanzi": "当年的体育风云人物，如今正培养年轻队员。",
+          "beforePinyin": "dàng nián de tǐ yù fēng yún rén wù, rú jīn zhèng péi yǎng nián qīng duì yuán.",
+          "afterPinyin": "dāng nián de tǐ yù fēng yún rén wù, rú jīn zhèng péi yǎng nián qīng duì yuán."
+        }
+      ]
+    },
+    {
+      "id": "wl_06554",
+      "word": "椋",
+      "reason": "Head-hair reading replacement crossed punctuation in 枝头，发出; emit/call uses fā.",
+      "applications": [
+        {
+          "sentenceIndex": 0,
+          "hanzi": "椋鸟停在枝头，发出清脆的叫声。",
+          "beforePinyin": "liáng niǎo tíng zài zhī tóu, fa chū qīng cuì de jiào shēng.",
+          "afterPinyin": "liáng niǎo tíng zài zhī tóu, fā chū qīng cuì de jiào shēng."
+        }
+      ]
+    },
+    {
+      "id": "wl_07054",
+      "word": "掉以轻心",
+      "reason": "只 is merely in 只是, not the animal measure word zhī.",
+      "applications": [
+        {
+          "sentenceIndex": 1,
+          "hanzi": "这只是一次小检查，但我们仍不能掉以轻心。",
+          "beforePinyin": "zhè zhī shì yī cì xiǎo jiǎn chá, dàn wǒ men réng bù néng diào yǐ qīng xīn.",
+          "afterPinyin": "zhè zhǐ shì yī cì xiǎo jiǎn chá, dàn wǒ men réng bù néng diào yǐ qīng xīn."
+        }
+      ]
+    },
+    {
+      "id": "wl_07452",
+      "word": "各奔东西",
+      "reason": "Directions in 各奔东西 require full-tone xī; neutral xi means things.",
+      "applications": [
+        {
+          "sentenceIndex": 0,
+          "hanzi": "毕业以后，同学们各奔东西，仍保持联系。",
+          "beforePinyin": "bì yè yǐ hòu, tóng xué men gè bèn dōng xi, réng bǎo chí lián xì.",
+          "afterPinyin": "bì yè yǐ hòu, tóng xué men gè bèn dōng xī, réng bǎo chí lián xì."
+        },
+        {
+          "sentenceIndex": 1,
+          "hanzi": "暑假结束，旅行的伙伴各奔东西。",
+          "beforePinyin": "shǔ jià jié shù, lǚ xíng de huǒ bàn gè bèn dōng xi.",
+          "afterPinyin": "shǔ jià jié shù, lǚ xíng de huǒ bàn gè bèn dōng xī."
+        }
+      ]
+    },
+    {
+      "id": "wl_07519",
+      "word": "星星之火",
+      "reason": "Use attested formal idiom reading xīngxīngzhīhuǒ consistently with the supplied primary reading.",
+      "applications": [
+        {
+          "sentenceIndex": 0,
+          "hanzi": "几个人的善举像星星之火，带动了整个社区。",
+          "beforePinyin": "jǐ gè rén de shàn jǔ xiàng xīng xing zhī huǒ, dài dòng le zhěng gè shè qū.",
+          "afterPinyin": "jǐ gè rén de shàn jǔ xiàng xīng xīng zhī huǒ, dài dòng le zhěng gè shè qū."
+        },
+        {
+          "sentenceIndex": 1,
+          "hanzi": "这次小小的创新，是未来变革的星星之火。",
+          "beforePinyin": "zhè cì xiǎo xiǎo de chuàng xīn, shì wèi lái biàn gé de xīng xing zhī huǒ.",
+          "afterPinyin": "zhè cì xiǎo xiǎo de chuàng xīn, shì wèi lái biàn gé de xīng xīng zhī huǒ."
+        }
+      ]
+    }
+  ],
+  "correctionRows": 8,
+  "correctedSentenceApplications": 10,
+  "outsideScope": "Primary pronunciation adjudication for batches 2/3 delegated to their owners. 炔 quē restoration owned by content_2; avoid overlapping complete example JSON fields. No CSV edits, tests, builds, device or Git actions performed.",
+  "retainedSupportedChanges": [
+    {
+      "word": "困难",
+      "reading": "kùn nan",
+      "source": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201010/W020220124393643101738.pdf",
+      "evidence": "GF0015—2010 official vocabulary row 979 lists kùnnan."
+    }
+  ],
+  "sources": [
+    {
+      "topic": "当年 distinction",
+      "url": "https://kotobank.jp/zhjaword/当年",
+      "evidence": "Publisher dictionary 中日辞典 第3版 distinguishes retrospective dāngnián from same-year dàngnián."
+    },
+    {
+      "topic": "各奔东西 directions",
+      "url": "https://zdic.net/hans/東西",
+      "evidence": "direction dōngxī contrasted with objects dōngxi; original mainland primary gè bèn dōng xī retained."
+    },
+    {
+      "topic": "星星之火 formal full tones",
+      "url": "https://zdic.net/hans/星星之火",
+      "evidence": "Dictionary entry gives xīng xīng zhī huǒ; no claim that every informal neutral variant is impossible."
+    },
+    {
+      "topic": "炔 mainland pronunciation",
+      "url": "https://www.unicode.org/L2/L2023/23269-kmandarin-updates.pdf",
+      "evidence": "page 10 U+7094 quē, follows single reading in kTGHZ2013; chemical usage noted."
+    }
+  ]
+}

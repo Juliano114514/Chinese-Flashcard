@@ -1,0 +1,101 @@
+{
+  "range": [
+    2574,
+    5147
+  ],
+  "sourceSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "patchSha256": "46225c4b6b988f3920bf827e3725bda4d9f2a6de3e31396d1b66d97019f3aac0",
+  "changedRows": 2053,
+  "changedFieldCounts": {
+    "例句JSON": 1879,
+    "部件JSON": 450,
+    "本义解释JSON": 176,
+    "引申义解释JSON": 134,
+    "英文释义": 8
+  },
+  "checkedCounts": {
+    "rows": 2574,
+    "parts": 4573,
+    "examples": 5148,
+    "chunks": 35060,
+    "changed_examples": 2571,
+    "explanations": 5419
+  },
+  "protectedFields": [
+    "罕度",
+    "组词",
+    "拼音",
+    "词条ID",
+    "词性",
+    "干扰词ID",
+    "来源说明"
+  ],
+  "errors": [],
+  "unresolvedSourceIdentityCases": [
+    {
+      "index": 3570,
+      "wordId": "wl_03571",
+      "word": "仆倒",
+      "issues": [
+        "Main pinyin currently pū dào; falling 倒 is dǎo. Primary reading preserved per assignment; sentence readings corrected."
+      ]
+    },
+    {
+      "index": 3910,
+      "wordId": "wl_03911",
+      "word": "茄瓜",
+      "issues": [
+        "Main 茄瓜 reading jiā guā appears inconsistent with eggplant qié; primary reading preserved pending dictionary decision."
+      ]
+    },
+    {
+      "index": 3940,
+      "wordId": "wl_03941",
+      "word": "瓦铛",
+      "issues": [
+        "Primary 瓦铛 wǎ dāng preserved; cookware sense of 铛 is normally chēng. Verify the whole rare word before changing."
+      ]
+    },
+    {
+      "index": 3991,
+      "wordId": "wl_03992",
+      "word": "堤坊",
+      "issues": [
+        "Rare spelling 堤坊 retained as source identity; usual standard form is 堤防."
+      ]
+    },
+    {
+      "index": 4460,
+      "wordId": "wl_04461",
+      "word": "掴耳光",
+      "issues": [
+        "Source primary 掴耳光 guāi ěr guāng seems inconsistent with modern Mandarin guāi not being the usual reading of 掴; preserve primary pending authority check."
+      ]
+    },
+    {
+      "index": 4630,
+      "wordId": "wl_04631",
+      "word": "跻跻",
+      "issues": [
+        "The supplied dignified-step meaning resembles 济济; 跻 is attested as ascend, but a direct authority entry for 跻跻 was inaccessible. Preserve source identity pending lexical confirmation. Source consulted: https://zdic.net/hans/跻"
+      ]
+    },
+    {
+      "index": 4704,
+      "wordId": "wl_04705",
+      "word": "炔",
+      "issues": [
+        "Source primary reading quē belongs to surname usage; the alkyne sense is què. Sentence readings corrected to què, but primary reading preserved under shard contract for coordinated identity review."
+      ]
+    },
+    {
+      "index": 5066,
+      "wordId": "wl_05067",
+      "word": "蔺相如",
+      "issues": [
+        "The proper name is normally read Lìn Xiàngrú; source primary lìn xiāng rú is preserved for coordinated identity review. Both sentence readings corrected to xiàng."
+      ]
+    }
+  ],
+  "evidenceBoundary": "AI editorial full reading is logged per row; this overlay audit validates structure, coverage and protected data only. No human linguistic certification or app runtime proof."
+}

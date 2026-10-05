@@ -1,0 +1,322 @@
+{
+  "reviewedQuestions": 9,
+  "correctedPrimaryReadings": 8,
+  "retainedPrimaryReadings": 1,
+  "patchRows": 9,
+  "checkedExamples": 18,
+  "errors": [],
+  "identityChanges": [],
+  "sourceCsvSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "semanticPatchSha256": "2e29c34a21387bb884a4f020a5fb67eb757cfb4a9e9ea03915816ec343bb0f07",
+  "basedOn": "Current original-reading CSV plus final_patch_3 semantic overlay; apply this patch after final_patch_3.",
+  "authorization": "Parent explicitly authorized authority-backed/mainland main-reading corrections; 装模作样 mú explicitly required.",
+  "method": "All nine questions re-read with their two complete examples, parts and chunks. Sources reviewed by sense, not only dictionary headers. Updated main pinyin, all component readings, both sentence pinyin strings and every target chunk. Removed obsolete English romanizations. No CSV, identity, rarity, row order or distractor changes.",
+  "validationBoundary": "Production content overlay check only; no app build, application tests, or device actions.",
+  "semanticCleanups": [
+    {
+      "id": "wl_05894",
+      "hanzi": "画",
+      "before": "picture",
+      "after": "depict; draw"
+    },
+    {
+      "id": "wl_05894",
+      "hanzi": "车",
+      "before": "vehicle",
+      "after": "chariot"
+    },
+    {
+      "id": "wl_05894",
+      "hanzi": "车",
+      "before": "vehicle",
+      "after": "chariot"
+    },
+    {
+      "id": "wl_05894",
+      "hanzi": "车",
+      "before": "vehicle",
+      "after": "chariot"
+    },
+    {
+      "id": "wl_05894",
+      "hanzi": "出行。",
+      "before": "set off on a journey (longer trip)",
+      "after": "travel; go out"
+    },
+    {
+      "id": "wl_06006",
+      "hanzi": "锅",
+      "before": "pot-shaped thing",
+      "after": "cooking pot"
+    },
+    {
+      "id": "wl_06179",
+      "hanzi": "制度。",
+      "before": "system (e.g. political, adminstrative etc)",
+      "after": "system; institution"
+    },
+    {
+      "id": "wl_06179",
+      "hanzi": "文",
+      "before": "formal",
+      "after": "text"
+    },
+    {
+      "id": "wl_06303",
+      "hanzi": "自由",
+      "before": "free",
+      "after": "freely"
+    },
+    {
+      "id": "wl_06303",
+      "hanzi": "古文",
+      "before": "Classical Chinese",
+      "after": "classical text"
+    },
+    {
+      "id": "wl_06303",
+      "hanzi": "之中。",
+      "before": "among",
+      "after": "in; inside"
+    },
+    {
+      "id": "wl_06526",
+      "hanzi": "字典",
+      "before": "Chinese character dictionary (containing entries for single characters, contrasted with a , which has entries for words of one or more characters)",
+      "after": "dictionary"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "wl_05894",
+      "word": "骖乘",
+      "original": "cān chéng",
+      "reading": "cān chéng",
+      "decision": "retain_mainland_variant",
+      "judgment": "大陆汉典词语解释明确将古代车右陪乘者标为 cān chéng；该项原读音有依据，保留。部件骖改用陪乘语境的乘/驾驭义，避免把人物解释为边马。",
+      "regionalDifference": "同页国语辞典标 cān shèng；保留已有大陆 chéng，不以台湾单一读音替换。",
+      "sources": [
+        {
+          "sourceURL": "https://zdic.net/hans/骖乘",
+          "support": "词语解释 cān chéng、国语辞典 cān shèng，均含车右陪乘之人义。"
+        },
+        {
+          "sourceURL": "https://zdic.net/hans/骖",
+          "support": "详细解释动词乘、驾驭，引用骖乘和陪乘注。"
+        }
+      ],
+      "changedFields": [
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "cān chéng",
+      "readingChanged": false
+    },
+    {
+      "id": "wl_05937",
+      "word": "鸣镝",
+      "original": "míng dī",
+      "reading": "míng dí",
+      "decision": "correct_contextual_reading",
+      "judgment": "两句均为发声的响箭，整词鸣镝读 míng dí；dī 为化学元素义，与本词不符。",
+      "regionalDifference": "整词大陆词语解释与国语辞典均为 míng dí，无须保留 dī。",
+      "sources": [
+        {
+          "sourceURL": "https://www.zdic.net/hans/鸣镝",
+          "support": "整词 míng dí，古代用于发号令的响箭。"
+        },
+        {
+          "sourceURL": "https://www.zdic.net/hans/镝",
+          "support": "箭头义 dí 与化学元素 dysprosium 义 dī 分立。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "míng dí",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_05962",
+      "word": "葑菲",
+      "original": "fēng fēi",
+      "reading": "fēng fěi",
+      "decision": "correct_contextual_reading",
+      "judgment": "主释义和两句明确指两种可食植物；整词旧版 www 汉典标 fēng fěi，单字菲的植物义也标 fěi，采用该语境读音。",
+      "regionalDifference": "部分非 www/检索缓存整词标 fēng fēi，存在页面版本冲突，不能仅凭标题机械定音；植物义 fěi 的整词、单字和国语辞典证据相互一致。保留 fēi 为芳香/茂盛等其他词义，不移植到本词。",
+      "sources": [
+        {
+          "sourceURL": "https://www.zdic.net/hans/葑菲",
+          "support": "整词拼音与词语解释 fēng fěi，普通蔬菜及自谦义。"
+        },
+        {
+          "sourceURL": "https://zdic.net/hans/菲",
+          "support": "fěi 名词为古代芜菁类可食植物，并引用采葑采菲；fēi 为香气、茂盛等其他义。"
+        },
+        {
+          "sourceURL": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=36903&la=0&powerMode=0",
+          "support": "葑菲之采 fēng fěi zhī cǎi，解释葑、菲两种野菜。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "fēng fěi",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_06006",
+      "word": "菜蕻",
+      "original": "cài hóng",
+      "reading": "cài hòng",
+      "decision": "correct_contextual_reading",
+      "judgment": "菜蕻的蔬菜长茎义对应 hòng；hóng 见雪里蕻菜名，不能替代长茎义。",
+      "regionalDifference": "汉典基本解释、详细解释与国语辞典均将蔬菜长茎标 hòng。",
+      "sources": [
+        {
+          "sourceURL": "https://www.zdic.net/hans/蕻",
+          "support": "hòng 名词菜苔、某些蔬菜的长茎；hóng 另见雪里蕻。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "cài hòng",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_06179",
+      "word": "掊击",
+      "original": "póu jī",
+      "reading": "pǒu jī",
+      "decision": "correct_contextual_reading",
+      "judgment": "抨击、打击义整词读 pǒu jī，掊不取搜集/聚敛义 póu。",
+      "regionalDifference": "大陆词语解释 pǒu jī，国语辞典 pǒu jí；修正掊为 pǒu，同时保留大陆击的 jī。",
+      "sources": [
+        {
+          "sourceURL": "https://www.zdic.net/hans/掊击",
+          "support": "词语解释 pǒu jī，attack/lash out at；国语辞典 pǒu jí。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "pǒu jī",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_06303",
+      "word": "槛柙",
+      "original": "kǎn xiá",
+      "reading": "jiàn xiá",
+      "decision": "correct_contextual_reading",
+      "judgment": "本词及两句为关野兽的笼栏，槛取 jiàn；kǎn 为门下横木/门槛。",
+      "regionalDifference": "按单字 jiàn 的兽栏义结合柙的兽笼义裁定，未以不相关门槛读音或方言替代。",
+      "sources": [
+        {
+          "sourceURL": "https://zdic.net/hans/槛",
+          "support": "jiàn 为圈兽的栅栏，kǎn 为门下横木。"
+        },
+        {
+          "sourceURL": "https://ctext.org/dictionary.pl?char=柙&if=gb&remap=gb",
+          "support": "柙 xiá，古籍字书释为槛、藏虎兕之笼。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "jiàn xiá",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_06343",
+      "word": "嶷嶷",
+      "original": "yí yí",
+      "reading": "nì nì",
+      "decision": "correct_contextual_reading",
+      "judgment": "两句均形容山峰高耸；最新非 www 汉典整词语义段标 nì nì，嶷详细解释 nì 含高耸并列嶷嶷。",
+      "regionalDifference": "旧 www 页面曾将整词和各义统标 yí yí，新版标题仍列两音；按高耸义的语义段和单字释义共同裁定 nì，保留 yí 用于九嶷山名等其他语境。",
+      "sources": [
+        {
+          "sourceURL": "https://zdic.net/hans/嶷嶷",
+          "support": "词语解释 nì nì 的第二义为山势高耸；国语辞典 nì nì。"
+        },
+        {
+          "sourceURL": "https://zdic.net/hans/嶷",
+          "support": "nì 详细解释高耸并举嶷嶷；yí 见九嶷。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "nì nì",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_06526",
+      "word": "淠",
+      "original": "pì",
+      "reading": "pèi",
+      "decision": "correct_contextual_reading",
+      "judgment": "本词主释义与两句均为水草茂盛，取 pèi；pì 的水名/船行貌不对应本语境。",
+      "regionalDifference": "依大陆基本解释 pèi 的淠淠多、茂盛义；国语辞典还载 pì/pèi 舟行貌又音，属于别义，不据此保留错误植物义 pì。",
+      "sources": [
+        {
+          "sourceURL": "https://zdic.net/hans/淠",
+          "support": "基本解释 pèi：淠淠，多、茂盛，例萑苇淠淠；pì 水名、船行貌。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "pèi",
+      "readingChanged": true
+    },
+    {
+      "id": "wl_06794",
+      "word": "装模作样",
+      "original": "zhuāng mó zuò yàng",
+      "reading": "zhuāng mú zuò yàng",
+      "decision": "correct_mainland_standard",
+      "judgment": "采用大陆普通话装模作样 mú，已获大陆院校官方普通话课程整词标音依据，并按父代理明确授权执行。",
+      "regionalDifference": "既有 mó 可见台湾词典，本项目采用大陆普通话 mú；不改变主字形、词义、罕度和身份。",
+      "sources": [
+        {
+          "sourceURL": "https://www.sxftc.edu.cn/cjc/info/1228/3011.htm",
+          "support": "山西财政税务专科学校继续教育学院 2021-09-26 普通话课程直接标装模作样 zhuāng mú zuò yàng，注明依现代汉语黄廖本。"
+        }
+      ],
+      "changedFields": [
+        "拼音",
+        "例句JSON",
+        "部件JSON"
+      ],
+      "checkedExamples": 2,
+      "synchronizedReading": "zhuāng mú zuò yàng",
+      "readingChanged": true
+    }
+  ],
+  "unresolvedQuestions": []
+}

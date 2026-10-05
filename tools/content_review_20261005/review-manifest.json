@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-05",
+  "sourceSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "partitions": [
+    {
+      "range": [
+        0,
+        2573
+      ],
+      "report": "final_report_1.json",
+      "patch": "final_patch_1.json"
+    },
+    {
+      "range": [
+        2574,
+        5147
+      ],
+      "report": "final_report_2.json",
+      "patch": "final_patch_2.json"
+    },
+    {
+      "range": [
+        5148,
+        7722
+      ],
+      "report": "final_report_3.json",
+      "patch": "final_patch_3.json"
+    }
+  ],
+  "overlays": [
+    "final_patch_1.json",
+    "final_patch_2.json",
+    "final_patch_3.json",
+    "cross_review_corrections_1.json",
+    "primary_corrections_1.json",
+    "primary_corrections_2.json",
+    "primary_corrections_3.json",
+    "user_sample_patch_1.json",
+    "format_corrections_1.json",
+    "format_corrections_2.json",
+    "format_corrections_3.json"
+  ],
+  "evidence": [
+    "cross_review_report_1.json",
+    "primary_review_1.json",
+    "primary_review_2.json",
+    "primary_review_3.json",
+    "final_audit_2.json",
+    "delivery_audit_3.json",
+    "format_review_1.json",
+    "format_review_2.json",
+    "format_review_3.json"
+  ],
+  "method": "Three exhaustive AI semantic reading partitions cover every lexical row, both complete examples and every contextual chunk. Identical complete examples are reviewed once and mapped to every application. All final records undergo the existing CSV/import-shape/reference/stroke checks. Cross-review independently scans every changed field and second-reads targeted semantic/reading changes; it is not a second complete semantic reading of every row.",
+  "primaryPolicy": "Preserve valid mainland Mandarin readings, regional/rare source words and existing stable identities; authority-backed primary corrections synchronize components and examples. Source conflicts and evidence limitations remain in primary_review reports.",
+  "sample": "wl_01083 retains its first example and uses the requested four-line sample as its second. Compound spellings sīkǎo and yíxià are explicit editorial text; the app does not infer or concatenate syllables at runtime.",
+  "boundary": "Complete AI editorial review, not human linguistic certification. Original partition audits precede the primary/cross overlays; final integrity and actual changes are recorded separately in final-validation.json."
+}

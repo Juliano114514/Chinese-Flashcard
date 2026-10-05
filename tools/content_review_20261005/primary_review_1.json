@@ -1,0 +1,46 @@
+{
+  "scope": [
+    "wl_01846",
+    "wl_02509"
+  ],
+  "regionalPolicy": "Simplified Mandarin learning; mainland ordinary/PSC readings preferred; Taiwan dictionary evidence alone does not override mainland neutral-word conventions.",
+  "corrections": [
+    {
+      "id": "wl_02509",
+      "word": "娇嫩",
+      "from": "jiāo nen",
+      "to": "jiāo nèn",
+      "fields": [
+        "拼音",
+        "部件JSON"
+      ],
+      "reason": "Mainland PSC word list gives jiāonèn; research directly comparing Modern Chinese Dictionary editions reports fifth edition neutral nen replaced by fourth tone nèn in sixth edition. Sentence readings already nèn in final_patch_1."
+    },
+    {
+      "id": "wl_01846",
+      "word": "痢疾",
+      "mainReading": "lì ji",
+      "decision": "retain",
+      "fields": [
+        "例句JSON"
+      ],
+      "reason": "Mainland PSC word list explicitly gives lìji; preserve source main/whole component and make the second example consistent, replacing earlier jí refinement. Full-tone jí is dictionary-attested in Taiwan and alternate speech; not labelled universally invalid."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://hsfz.hainnu.edu.cn/_upload/article/files/62/35/5640eab04e22b040834cbf0fbb9c/5bf0def9-ea37-46d2-a2ae-a33baf13d404.pdf",
+      "evidence": "普通话水平测试专用教材 附录三 word table: printed page 260 娇嫩 jiāonèn; printed page 264 痢疾 lìji. Live open returned 404, indexed text retrieved explicitly for each target; lower evidence boundary recorded."
+    },
+    {
+      "url": "https://rwycb.gdufe.edu.cn/2023/0914/c6800a179562/page.htm",
+      "evidence": "Guangdong University of Finance & Economics 普通话水平测试发音难点辅导 lists 痢疾 lìji among neutral words."
+    },
+    {
+      "url": "https://opac.std.cloud.iliswave.jp/iwjs0001opc/bdyview.do?bodyid=TB10037670&elmid=Body&fname=fiu_00_30-all-02honbun.pdf&loginflg=on&once=true",
+      "evidence": "Original university journal research 2013, PDF page 14 table: 娇嫩 jiāonèn ← jiāo·nen, Modern Chinese Dictionary sixth vs fifth editions. Opened and read relevant text."
+    }
+  ],
+  "validation": "Compact JSON and full example Hanzi/pinyin reconstruction passed; original CSV untouched.",
+  "changedPrimaryReadings": 1
+}

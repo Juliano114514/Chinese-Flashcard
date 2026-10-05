@@ -1,0 +1,5 @@
+{
+  "wl_01083": {
+    "例句JSON": "[{\"hanzi\":\"他胃口很好，一下吃了两碗面条。\",\"pinyin\":\"tā wèi kǒu hěn hǎo, yī xià chī le liǎng wǎn miàn tiáo.\",\"english\":\"He has a good appetite and ate two bowls of noodles at once.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"胃口\",\"pinyin\":\"wèi kǒu\",\"gloss\":\"appetite\"},{\"hanzi\":\"很好，\",\"pinyin\":\"hěn hǎo,\",\"gloss\":\"very good\"},{\"hanzi\":\"一下\",\"pinyin\":\"yī xià\",\"gloss\":\"at once; in one go\"},{\"hanzi\":\"吃\",\"pinyin\":\"chī\",\"gloss\":\"eat\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"两\",\"pinyin\":\"liǎng\",\"gloss\":\"two\"},{\"hanzi\":\"碗\",\"pinyin\":\"wǎn\",\"gloss\":\"WAN (measure word)\"},{\"hanzi\":\"面条。\",\"pinyin\":\"miàn tiáo.\",\"gloss\":\"noodles\"}]},{\"hanzi\":\"让我思考一下\",\"pinyin\":\"ràng wǒ sīkǎo yíxià\",\"english\":\"Let me think about it.\",\"chunks\":[{\"hanzi\":\"让我\",\"pinyin\":\"ràng wǒ\",\"gloss\":\"let me\"},{\"hanzi\":\"思考\",\"pinyin\":\"sīkǎo\",\"gloss\":\"think\"},{\"hanzi\":\"一下\",\"pinyin\":\"yíxià\",\"gloss\":\"a little\"}]}]"
+  }
+}

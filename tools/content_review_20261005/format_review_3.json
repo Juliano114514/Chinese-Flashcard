@@ -1,0 +1,1118 @@
+{
+  "range": [
+    5148,
+    7722
+  ],
+  "coveredRows": 2575,
+  "checkedEnglishTeachingStrings": 54275,
+  "changedRows": 58,
+  "changedStrings": 75,
+  "remainingHanEnglishTeachingStrings": 0,
+  "reviewedBeforeAfterStrings": 75,
+  "sourceSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "manifestSha256": "2f64a7f8f500fe42c90c7218ed2a83f1153d759cbfa0de3d07e3aed0c4b3dbb1",
+  "inheritedOverlayOrder": [
+    "final_patch_1.json",
+    "final_patch_2.json",
+    "final_patch_3.json",
+    "cross_review_corrections_1.json",
+    "primary_corrections_1.json",
+    "primary_corrections_2.json",
+    "primary_corrections_3.json",
+    "user_sample_patch_1.json"
+  ],
+  "inheritedOverlaySha256": {
+    "final_patch_1.json": "6b752165bbaa9111a51f5638607839389e081f267c5c2311e44dfa165419256d",
+    "final_patch_2.json": "46225c4b6b988f3920bf827e3725bda4d9f2a6de3e31396d1b66d97019f3aac0",
+    "final_patch_3.json": "2e29c34a21387bb884a4f020a5fb67eb757cfb4a9e9ea03915816ec343bb0f07",
+    "cross_review_corrections_1.json": "71069776356dc8f8da2c1022f1fb8460bdc5ca8d14e127d79340524cda072950",
+    "primary_corrections_1.json": "79bc3fc3d79080b4fadb8a5429cfed0dac7756cf02482482f992a7c1c7fd8178",
+    "primary_corrections_2.json": "31362c1d9ab281ea79f57186aec624613d5f3e04d25011f2b43ea6ea718c7625",
+    "primary_corrections_3.json": "93ccdfd312210fbb8db8d26d483e192b7446c82407ca5939f68f3d39a4aa6e0d",
+    "user_sample_patch_1.json": "c346dc4c4ab7307cea3f34150a496be16f84e8517d9b162670990a7ec476da0c"
+  },
+  "applyAfter": "All review-manifest.json overlays in their listed order; append format_corrections_3.json.",
+  "method": "Exhaustive scan of every English main meaning, literal/figurative explanation, part gloss, example translation and chunk gloss in this partition after the entire frozen overlay stack. All 75 affected strings were read before and after in lexical or example context. Explicit exact-string edits preserve meaning and references using already reviewed tone-marked pinyin or clear English; no general dictionary-sense guessing and no validator relaxation.",
+  "identityChanges": [],
+  "readingChanges": [],
+  "exampleHanziOrPinyinChanges": [],
+  "sources": [
+    {
+      "sourceURL": "https://zdic.net/hans/合",
+      "support": "Capacity-unit sense is gě, distinct from hé; retains the half-unit relationship."
+    },
+    {
+      "sourceURL": "https://zdic.net/hans/栝楼",
+      "support": "Compound reference guā lóu for Chinese cucumber."
+    },
+    {
+      "sourceURL": "https://zdic.net/hans/鸸鹋",
+      "support": "Compound reference ér miáo for emu."
+    },
+    {
+      "sourceURL": "https://zdic.net/hans/猃狁",
+      "support": "Compound reference xiǎn yǔn for the ancient people Xianyun."
+    }
+  ],
+  "changes": [
+    {
+      "index": 5637,
+      "id": "wl_05638",
+      "word": "傥",
+      "wordPinyin": "tǎng",
+      "wordMeaning": "unrestrained, in 'tì tǎng'",
+      "path": "本义解释JSON.0",
+      "before": "unrestrained, in 倜傥 (tìtǎng)",
+      "after": "unrestrained, in tì tǎng",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5655,
+      "id": "wl_05656",
+      "word": "葳蕤",
+      "wordPinyin": "wēi ruí",
+      "wordMeaning": "lush, of vegetation",
+      "path": "部件JSON.1.gloss",
+      "before": "lush vegetation, in 葳蕤",
+      "after": "lush vegetation, in wēi ruí",
+      "context": {
+        "hanzi": "蕤",
+        "pinyin": "ruí"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5660,
+      "id": "wl_05661",
+      "word": "挝",
+      "wordPinyin": "wō",
+      "wordMeaning": "Wo, a component of Laos ('lǎo wō')",
+      "path": "本义解释JSON.0",
+      "before": "the second character of 老挝 (Laos)",
+      "after": "the second character in the Chinese name for Laos (lǎo wō)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5675,
+      "id": "wl_05676",
+      "word": "痫",
+      "wordPinyin": "xián",
+      "wordMeaning": "epilepsy, in 'diān xián'",
+      "path": "本义解释JSON.0",
+      "before": "epilepsy, in 癫痫 (diānxián)",
+      "after": "epilepsy, in diān xián",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5706,
+      "id": "wl_05707",
+      "word": "涟猗",
+      "wordPinyin": "lián yī",
+      "wordMeaning": "ripples on water",
+      "path": "部件JSON.1.gloss",
+      "before": "a classical particle, in 涟猗",
+      "after": "a classical particle, in lián yī",
+      "context": {
+        "hanzi": "猗",
+        "pinyin": "yī"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5708,
+      "id": "wl_05709",
+      "word": "噫嘻",
+      "wordPinyin": "yī xī",
+      "wordMeaning": "ah!; alas!",
+      "path": "部件JSON.1.gloss",
+      "before": "an exclamatory syllable, in 噫嘻",
+      "after": "an exclamatory syllable, in yī xī",
+      "context": {
+        "hanzi": "嘻",
+        "pinyin": "xī"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5739,
+      "id": "wl_05740",
+      "word": "旃檀",
+      "wordPinyin": "zhān tán",
+      "wordMeaning": "sandalwood",
+      "path": "部件JSON.0.gloss",
+      "before": "phonetic element in the loanword 旃檀",
+      "after": "phonetic element in the loanword zhān tán (sandalwood)",
+      "context": {
+        "hanzi": "旃",
+        "pinyin": "zhān"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5757,
+      "id": "wl_05758",
+      "word": "咔唑",
+      "wordPinyin": "kā zuò",
+      "wordMeaning": "carbazole",
+      "path": "部件JSON.0.gloss",
+      "before": "phonetic syllable in 咔唑 (carbazole)",
+      "after": "phonetic syllable in kā zuò (carbazole)",
+      "context": {
+        "hanzi": "咔",
+        "pinyin": "kā"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5778,
+      "id": "wl_05779",
+      "word": "仂语",
+      "wordPinyin": "lè yǔ",
+      "wordMeaning": "phrase",
+      "path": "部件JSON.0.gloss",
+      "before": "a component of the older grammatical term 仂语",
+      "after": "a component of the older grammatical term lè yǔ (phrase)",
+      "context": {
+        "hanzi": "仂",
+        "pinyin": "lè"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5791,
+      "id": "wl_05792",
+      "word": "葶苈",
+      "wordPinyin": "tíng lì",
+      "wordMeaning": "pepperweed",
+      "path": "部件JSON.0.gloss",
+      "before": "plant-name element, in 葶苈",
+      "after": "plant-name element, in tíng lì (pepperweed)",
+      "context": {
+        "hanzi": "葶",
+        "pinyin": "tíng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5791,
+      "id": "wl_05792",
+      "word": "葶苈",
+      "wordPinyin": "tíng lì",
+      "wordMeaning": "pepperweed",
+      "path": "部件JSON.1.gloss",
+      "before": "plant-name element, in 葶苈",
+      "after": "plant-name element, in tíng lì (pepperweed)",
+      "context": {
+        "hanzi": "苈",
+        "pinyin": "lì"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5792,
+      "id": "wl_05793",
+      "word": "芗剧",
+      "wordPinyin": "xiāng jù",
+      "wordMeaning": "Xiang opera",
+      "path": "部件JSON.0.gloss",
+      "before": "Xiang, a place-name element in 芗剧",
+      "after": "Xiang, a place-name element in xiāng jù (Xiang opera)",
+      "context": {
+        "hanzi": "芗",
+        "pinyin": "xiāng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5843,
+      "id": "wl_05844",
+      "word": "蚰蜒",
+      "wordPinyin": "yóu yán",
+      "wordMeaning": "house centipede",
+      "path": "部件JSON.1.gloss",
+      "before": "part of the name 蚰蜒 (house centipede)",
+      "after": "part of the name yóu yán (house centipede)",
+      "context": {
+        "hanzi": "蜒",
+        "pinyin": "yán"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5850,
+      "id": "wl_05851",
+      "word": "蹁跹",
+      "wordPinyin": "pián xiān",
+      "wordMeaning": "dance lightly and gracefully",
+      "path": "部件JSON.0.gloss",
+      "before": "moving lightly, in 蹁跹",
+      "after": "moving lightly, in pián xiān",
+      "context": {
+        "hanzi": "蹁",
+        "pinyin": "pián"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5850,
+      "id": "wl_05851",
+      "word": "蹁跹",
+      "wordPinyin": "pián xiān",
+      "wordMeaning": "dance lightly and gracefully",
+      "path": "部件JSON.1.gloss",
+      "before": "dancing lightly, in 蹁跹",
+      "after": "dancing lightly, in pián xiān",
+      "context": {
+        "hanzi": "跹",
+        "pinyin": "xiān"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5876,
+      "id": "wl_05877",
+      "word": "唵嘛",
+      "wordPinyin": "ǎn ma",
+      "wordMeaning": "opening mantra syllables",
+      "path": "部件JSON.1.gloss",
+      "before": "a mantra syllable, in 唵嘛",
+      "after": "a mantra syllable, in ǎn ma",
+      "context": {
+        "hanzi": "嘛",
+        "pinyin": "ma"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5878,
+      "id": "wl_05879",
+      "word": "聱牙",
+      "wordPinyin": "áo yá",
+      "wordMeaning": "awkward and hard to read",
+      "path": "部件JSON.1.gloss",
+      "before": "part of the word 聱牙 (awkward to read)",
+      "after": "part of the word áo yá (awkward to read)",
+      "context": {
+        "hanzi": "牙",
+        "pinyin": "yá"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5889,
+      "id": "wl_05890",
+      "word": "摽梅",
+      "wordPinyin": "biāo méi",
+      "wordMeaning": "falling ripe plums; marriageable age",
+      "path": "部件JSON.0.gloss",
+      "before": "fall (of ripe plums), in the classical image 摽梅",
+      "after": "fall (of ripe plums), in the classical image biāo méi",
+      "context": {
+        "hanzi": "摽",
+        "pinyin": "biāo"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5918,
+      "id": "wl_05919",
+      "word": "踔厉",
+      "wordPinyin": "chuō lì",
+      "wordMeaning": "vigorous and resolute",
+      "path": "部件JSON.0.gloss",
+      "before": "vigorous, in 踔厉",
+      "after": "vigorous, in chuō lì",
+      "context": {
+        "hanzi": "踔",
+        "pinyin": "chuō"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5952,
+      "id": "wl_05953",
+      "word": "莪术",
+      "wordPinyin": "é zhú",
+      "wordMeaning": "zedoary",
+      "path": "部件JSON.1.gloss",
+      "before": "plant-name element, in 莪术",
+      "after": "plant-name element, in é zhú (zedoary)",
+      "context": {
+        "hanzi": "术",
+        "pinyin": "zhú"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5960,
+      "id": "wl_05961",
+      "word": "沨沨",
+      "wordPinyin": "fēng fēng",
+      "wordMeaning": "full, resonant musical sound",
+      "path": "部件JSON.0.gloss",
+      "before": "resonant sound, in 沨沨",
+      "after": "resonant sound, in fēng fēng",
+      "context": {
+        "hanzi": "沨",
+        "pinyin": "fēng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5960,
+      "id": "wl_05961",
+      "word": "沨沨",
+      "wordPinyin": "fēng fēng",
+      "wordMeaning": "full, resonant musical sound",
+      "path": "部件JSON.1.gloss",
+      "before": "resonant sound, in 沨沨",
+      "after": "resonant sound, in fēng fēng",
+      "context": {
+        "hanzi": "沨",
+        "pinyin": "fēng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 5982,
+      "id": "wl_05983",
+      "word": "鞲鹰",
+      "wordPinyin": "gōu yīng",
+      "wordMeaning": "prepare a hawk for hunting",
+      "path": "部件JSON.0.gloss",
+      "before": "prepare a hawk, in 鞲鹰",
+      "after": "prepare a hawk, in gōu yīng",
+      "context": {
+        "hanzi": "鞲",
+        "pinyin": "gōu"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6006,
+      "id": "wl_06007",
+      "word": "鲎鱼",
+      "wordPinyin": "hòu yú",
+      "wordMeaning": "horseshoe crab",
+      "path": "部件JSON.1.gloss",
+      "before": "conventional suffix in the name 鲎鱼 (horseshoe crab)",
+      "after": "conventional suffix in the name hòu yú (horseshoe crab)",
+      "context": {
+        "hanzi": "鱼",
+        "pinyin": "yú"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6041,
+      "id": "wl_06042",
+      "word": "鹪鹩",
+      "wordPinyin": "jiāo liáo",
+      "wordMeaning": "Eurasian wren",
+      "path": "部件JSON.0.gloss",
+      "before": "wren, in 鹪鹩",
+      "after": "wren, in jiāo liáo",
+      "context": {
+        "hanzi": "鹪",
+        "pinyin": "jiāo"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6041,
+      "id": "wl_06042",
+      "word": "鹪鹩",
+      "wordPinyin": "jiāo liáo",
+      "wordMeaning": "Eurasian wren",
+      "path": "部件JSON.1.gloss",
+      "before": "wren, in 鹪鹩",
+      "after": "wren, in jiāo liáo",
+      "context": {
+        "hanzi": "鹩",
+        "pinyin": "liáo"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6055,
+      "id": "wl_06056",
+      "word": "雎鸠",
+      "wordPinyin": "jū jiū",
+      "wordMeaning": "osprey in classical poetry",
+      "path": "部件JSON.1.gloss",
+      "before": "a bird-name element, in 雎鸠",
+      "after": "a bird-name element, in jū jiū",
+      "context": {
+        "hanzi": "鸠",
+        "pinyin": "jiū"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6056,
+      "id": "wl_06057",
+      "word": "蒟酱",
+      "wordPinyin": "jǔ jiàng",
+      "wordMeaning": "betel pepper plant",
+      "path": "部件JSON.1.gloss",
+      "before": "plant-name element, in 蒟酱",
+      "after": "plant-name element, in jǔ jiàng (betel pepper)",
+      "context": {
+        "hanzi": "酱",
+        "pinyin": "jiàng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6057,
+      "id": "wl_06058",
+      "word": "蒟蒻",
+      "wordPinyin": "jǔ ruò",
+      "wordMeaning": "konjac",
+      "path": "部件JSON.0.gloss",
+      "before": "plant-name element, in 蒟蒻",
+      "after": "plant-name element, in jǔ ruò (konjac)",
+      "context": {
+        "hanzi": "蒟",
+        "pinyin": "jǔ"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6057,
+      "id": "wl_06058",
+      "word": "蒟蒻",
+      "wordPinyin": "jǔ ruò",
+      "wordMeaning": "konjac",
+      "path": "部件JSON.1.gloss",
+      "before": "plant-name element, in 蒟蒻",
+      "after": "plant-name element, in jǔ ruò (konjac)",
+      "context": {
+        "hanzi": "蒻",
+        "pinyin": "ruò"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6097,
+      "id": "wl_06098",
+      "word": "卓跞",
+      "wordPinyin": "zhuó lì",
+      "wordMeaning": "outstanding and exceptional",
+      "path": "部件JSON.1.gloss",
+      "before": "exceptional, in 卓跞",
+      "after": "exceptional, in zhuó lì",
+      "context": {
+        "hanzi": "跞",
+        "pinyin": "lì"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6099,
+      "id": "wl_06100",
+      "word": "觱篥",
+      "wordPinyin": "bì lì",
+      "wordMeaning": "bili; an ancient reed instrument",
+      "path": "部件JSON.0.gloss",
+      "before": "instrument-name element, in 觱篥",
+      "after": "instrument-name element, in bì lì (an ancient reed instrument)",
+      "context": {
+        "hanzi": "觱",
+        "pinyin": "bì"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6099,
+      "id": "wl_06100",
+      "word": "觱篥",
+      "wordPinyin": "bì lì",
+      "wordMeaning": "bili; an ancient reed instrument",
+      "path": "部件JSON.1.gloss",
+      "before": "instrument-name element, in 觱篥",
+      "after": "instrument-name element, in bì lì (an ancient reed instrument)",
+      "context": {
+        "hanzi": "篥",
+        "pinyin": "lì"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6109,
+      "id": "wl_06110",
+      "word": "桫椤",
+      "wordPinyin": "suō luó",
+      "wordMeaning": "tree fern",
+      "path": "部件JSON.0.gloss",
+      "before": "tree-fern name element, in 桫椤",
+      "after": "tree-fern name element, in suō luó",
+      "context": {
+        "hanzi": "桫",
+        "pinyin": "suō"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6111,
+      "id": "wl_06112",
+      "word": "荦荦",
+      "wordPinyin": "luò luò",
+      "wordMeaning": "conspicuous and clearly evident",
+      "path": "部件JSON.0.gloss",
+      "before": "clearly evident, in 荦荦",
+      "after": "clearly evident, in luò luò",
+      "context": {
+        "hanzi": "荦",
+        "pinyin": "luò"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6111,
+      "id": "wl_06112",
+      "word": "荦荦",
+      "wordPinyin": "luò luò",
+      "wordMeaning": "conspicuous and clearly evident",
+      "path": "部件JSON.1.gloss",
+      "before": "clearly evident, in 荦荦",
+      "after": "clearly evident, in luò luò",
+      "context": {
+        "hanzi": "荦",
+        "pinyin": "luò"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6118,
+      "id": "wl_06119",
+      "word": "硭硝",
+      "wordPinyin": "máng xiāo",
+      "wordMeaning": "sodium sulfate mineral",
+      "path": "部件JSON.0.gloss",
+      "before": "variant of 芒, in the mineral name 硭硝",
+      "after": "variant of the mineral-name character máng, in máng xiāo (sodium sulfate)",
+      "context": {
+        "hanzi": "硭",
+        "pinyin": "máng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6118,
+      "id": "wl_06119",
+      "word": "硭硝",
+      "wordPinyin": "máng xiāo",
+      "wordMeaning": "sodium sulfate mineral",
+      "path": "部件JSON.1.gloss",
+      "before": "a salt mineral, in 硭硝",
+      "after": "a salt mineral, in máng xiāo (sodium sulfate)",
+      "context": {
+        "hanzi": "硝",
+        "pinyin": "xiāo"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6119,
+      "id": "wl_06120",
+      "word": "茆屋",
+      "wordPinyin": "máo wū",
+      "wordMeaning": "thatched cottage",
+      "path": "部件JSON.0.gloss",
+      "before": "thatching grass; variant of 茅",
+      "after": "thatching grass; variant of máo (the standard character for thatching grass)",
+      "context": {
+        "hanzi": "茆",
+        "pinyin": "máo"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6120,
+      "id": "wl_06121",
+      "word": "茅茆",
+      "wordPinyin": "máo máo",
+      "wordMeaning": "thatching grass",
+      "path": "部件JSON.1.gloss",
+      "before": "thatching grass; variant of 茅",
+      "after": "thatching grass; variant of máo (the standard character for thatching grass)",
+      "context": {
+        "hanzi": "茆",
+        "pinyin": "máo"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6128,
+      "id": "wl_06129",
+      "word": "瞢腾",
+      "wordPinyin": "méng téng",
+      "wordMeaning": "drowsy and muddled",
+      "path": "部件JSON.1.gloss",
+      "before": "part of the word 瞢腾 (drowsy and muddled)",
+      "after": "part of the word méng téng (drowsy and muddled)",
+      "context": {
+        "hanzi": "腾",
+        "pinyin": "téng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6129,
+      "id": "wl_06130",
+      "word": "艨冲",
+      "wordPinyin": "méng chōng",
+      "wordMeaning": "ancient warship",
+      "path": "部件JSON.0.gloss",
+      "before": "ancient warship, in 艨冲",
+      "after": "ancient warship, in méng chōng",
+      "context": {
+        "hanzi": "艨",
+        "pinyin": "méng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6129,
+      "id": "wl_06130",
+      "word": "艨冲",
+      "wordPinyin": "méng chōng",
+      "wordMeaning": "ancient warship",
+      "path": "部件JSON.1.gloss",
+      "before": "variant of 艟, in 艨冲",
+      "after": "variant of the warship-name character chōng, in méng chōng",
+      "context": {
+        "hanzi": "冲",
+        "pinyin": "chōng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6143,
+      "id": "wl_06144",
+      "word": "兜鍪",
+      "wordPinyin": "dōu móu",
+      "wordMeaning": "ancient battle helmet",
+      "path": "部件JSON.0.gloss",
+      "before": "part of the helmet name 兜鍪",
+      "after": "part of the helmet name dōu móu",
+      "context": {
+        "hanzi": "兜",
+        "pinyin": "dōu"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6182,
+      "id": "wl_06183",
+      "word": "萁草",
+      "wordPinyin": "qí cǎo",
+      "wordMeaning": "qi grass, a classical plant name",
+      "path": "部件JSON.0.gloss",
+      "before": "plant-name element in 萁草",
+      "after": "plant-name element in qí cǎo",
+      "context": {
+        "hanzi": "萁",
+        "pinyin": "qí"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6184,
+      "id": "wl_06185",
+      "word": "芑草",
+      "wordPinyin": "qǐ cǎo",
+      "wordMeaning": "qi, a classical plant name",
+      "path": "部件JSON.0.gloss",
+      "before": "plant-name element in 芑草",
+      "after": "plant-name element in qǐ cǎo",
+      "context": {
+        "hanzi": "芑",
+        "pinyin": "qǐ"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6279,
+      "id": "wl_06280",
+      "word": "芄兰",
+      "wordPinyin": "wán lán",
+      "wordMeaning": "metaplexis vine",
+      "path": "部件JSON.1.gloss",
+      "before": "plant-name element in 芄兰",
+      "after": "plant-name element in wán lán (metaplexis vine)",
+      "context": {
+        "hanzi": "兰",
+        "pinyin": "lán"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6319,
+      "id": "wl_06320",
+      "word": "川芎",
+      "wordPinyin": "chuān xiōng",
+      "wordMeaning": "chuanxiong rhizome",
+      "path": "部件JSON.1.gloss",
+      "before": "herb-name element in 川芎",
+      "after": "herb-name element in chuān xiōng (chuanxiong rhizome)",
+      "context": {
+        "hanzi": "芎",
+        "pinyin": "xiōng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6322,
+      "id": "wl_06323",
+      "word": "谖草",
+      "wordPinyin": "xuān cǎo",
+      "wordMeaning": "daylily, an old spelling",
+      "path": "部件JSON.0.gloss",
+      "before": "old spelling of 萱 in the plant name",
+      "after": "old spelling of xuān (the daylily character) in the plant name",
+      "context": {
+        "hanzi": "谖",
+        "pinyin": "xuān"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6379,
+      "id": "wl_06380",
+      "word": "龠",
+      "wordPinyin": "yuè",
+      "wordMeaning": "ancient flute",
+      "path": "本义解释JSON.1",
+      "before": "ancient unit of capacity, equal to half a ge (合)",
+      "after": "ancient unit of capacity, equal to half a gě (a traditional capacity unit)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6434,
+      "id": "wl_06435",
+      "word": "魈",
+      "wordPinyin": "xiāo",
+      "wordMeaning": "bound character in 山魈 (mandrill)",
+      "path": "英文释义",
+      "before": "bound character in 山魈 (mandrill)",
+      "after": "bound character in shān xiāo (mandrill)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6434,
+      "id": "wl_06435",
+      "word": "魈",
+      "wordPinyin": "xiāo",
+      "wordMeaning": "bound character in 山魈 (mandrill)",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 山魈 (shānxiāo, mandrill)",
+      "after": "bound character in shān xiāo (mandrill)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6456,
+      "id": "wl_06457",
+      "word": "姓隗",
+      "wordPinyin": "xìng wěi",
+      "wordMeaning": "to have the surname Wei",
+      "path": "本义解释JSON.0",
+      "before": "to have the surname Wei (隗, wěi)",
+      "after": "to have the surname Wei (wěi)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6471,
+      "id": "wl_06472",
+      "word": "肉苁蓉",
+      "wordPinyin": "ròu cōng róng",
+      "wordMeaning": "desert cistanche",
+      "path": "部件JSON.1.gloss",
+      "before": "plant-name element in 苁蓉",
+      "after": "plant-name element in cōng róng (cistanche)",
+      "context": {
+        "hanzi": "苁",
+        "pinyin": "cōng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6471,
+      "id": "wl_06472",
+      "word": "肉苁蓉",
+      "wordPinyin": "ròu cōng róng",
+      "wordMeaning": "desert cistanche",
+      "path": "部件JSON.2.gloss",
+      "before": "plant-name element in 苁蓉",
+      "after": "plant-name element in cōng róng (cistanche)",
+      "context": {
+        "hanzi": "蓉",
+        "pinyin": "róng"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6479,
+      "id": "wl_06480",
+      "word": "萝菔",
+      "wordPinyin": "luó fú",
+      "wordMeaning": "radish",
+      "path": "部件JSON.0.gloss",
+      "before": "plant-name element in 萝菔",
+      "after": "plant-name element in luó fú (radish)",
+      "context": {
+        "hanzi": "萝",
+        "pinyin": "luó"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6489,
+      "id": "wl_06490",
+      "word": "芨",
+      "wordPinyin": "jī",
+      "wordMeaning": "bound character in 白芨 (Bletilla striata)",
+      "path": "英文释义",
+      "before": "bound character in 白芨 (Bletilla striata)",
+      "after": "bound character in the Chinese name for Bletilla striata",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6489,
+      "id": "wl_06490",
+      "word": "芨",
+      "wordPinyin": "jī",
+      "wordMeaning": "bound character in 白芨 (Bletilla striata)",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 白芨 (Bletilla striata, Chinese ground orchid)",
+      "after": "bound character in the Chinese name for Bletilla striata (Chinese ground orchid)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6510,
+      "id": "wl_06511",
+      "word": "猃",
+      "wordPinyin": "xiǎn",
+      "wordMeaning": "long-snouted dog",
+      "path": "本义解释JSON.1",
+      "before": "bound character in 猃狁 (Xianyun, an ancient northern people)",
+      "after": "bound character in xiǎn yǔn (Xianyun, an ancient northern people)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6515,
+      "id": "wl_06516",
+      "word": "恹",
+      "wordPinyin": "yān",
+      "wordMeaning": "weak and listless, in 'yān yān'",
+      "path": "本义解释JSON.0",
+      "before": "weak and listless, as in 恹恹",
+      "after": "weak and listless, as in yān yān",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6519,
+      "id": "wl_06520",
+      "word": "沩",
+      "wordPinyin": "wéi",
+      "wordMeaning": "Wei, a river-name character in 沩水",
+      "path": "英文释义",
+      "before": "Wei, a river-name character in 沩水",
+      "after": "Wei, a river-name character in Wéi Shuǐ (Wei River)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6519,
+      "id": "wl_06520",
+      "word": "沩",
+      "wordPinyin": "wéi",
+      "wordMeaning": "Wei, a river-name character in 沩水",
+      "path": "本义解释JSON.0",
+      "before": "Wei, a river-name character in 沩水 (Wéi River)",
+      "after": "Wei, a river-name character in Wéi Shuǐ (Wei River)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6549,
+      "id": "wl_06550",
+      "word": "栝",
+      "wordPinyin": "guā",
+      "wordMeaning": "bound character in 栝楼 (Chinese cucumber)",
+      "path": "英文释义",
+      "before": "bound character in 栝楼 (Chinese cucumber)",
+      "after": "bound character in guā lóu (Chinese cucumber)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6549,
+      "id": "wl_06550",
+      "word": "栝",
+      "wordPinyin": "guā",
+      "wordMeaning": "bound character in 栝楼 (Chinese cucumber)",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 栝楼 (Trichosanthes kirilowii, Chinese cucumber)",
+      "after": "bound character in guā lóu (Trichosanthes kirilowii, Chinese cucumber)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6553,
+      "id": "wl_06554",
+      "word": "椋",
+      "wordPinyin": "liáng",
+      "wordMeaning": "liang, a component of starling ('liáng niǎo')",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 椋鸟 (starling)",
+      "after": "bound character in liáng niǎo (starling)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6554,
+      "id": "wl_06555",
+      "word": "楂",
+      "wordPinyin": "zhā",
+      "wordMeaning": "component of hawthorn",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 山楂 (hawthorn) and related fruit-tree names",
+      "after": "bound character in shān zhā (hawthorn) and related fruit-tree names",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6602,
+      "id": "wl_06603",
+      "word": "鹋",
+      "wordPinyin": "miáo",
+      "wordMeaning": "miao, a component of emu ('ér miáo')",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 鸸鹋 (emu)",
+      "after": "bound character in ér miáo (emu)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6635,
+      "id": "wl_06636",
+      "word": "鲡",
+      "wordPinyin": "lí",
+      "wordMeaning": "li, a component of eel ('mán lí')",
+      "path": "本义解释JSON.0",
+      "before": "bound character in 鳗鲡 (eel)",
+      "after": "bound character in mán lí (eel)",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6719,
+      "id": "wl_06720",
+      "word": "无时无刻",
+      "wordPinyin": "wú shí wú kè",
+      "wordMeaning": "at no time; with 不: always",
+      "path": "英文释义",
+      "before": "at no time; with 不: always",
+      "after": "at no time; with bù (not): always",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6719,
+      "id": "wl_06720",
+      "word": "无时无刻",
+      "wordPinyin": "wú shí wú kè",
+      "wordMeaning": "at no time; with 不: always",
+      "path": "引申义解释JSON.0",
+      "before": "with 不: always; at every moment",
+      "after": "with bù (not): always; at every moment",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6719,
+      "id": "wl_06720",
+      "word": "无时无刻",
+      "wordPinyin": "wú shí wú kè",
+      "wordMeaning": "at no time; with 不: always",
+      "path": "例句JSON.0.chunks.3.gloss",
+      "before": "at no time (used with 不 to mean always)",
+      "after": "at no time (used with bù, meaning not, to mean always)",
+      "context": {
+        "hanzi": "出差期间，她无时无刻不在惦记孩子。",
+        "pinyin": "chū chāi qí jiān, tā wú shí wú kè bù zài diàn jì hái zǐ.",
+        "english": "During the business trip, she was thinking about her children all the time.",
+        "chunk": "无时无刻",
+        "chunkPinyin": "wú shí wú kè"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6719,
+      "id": "wl_06720",
+      "word": "无时无刻",
+      "wordPinyin": "wú shí wú kè",
+      "wordMeaning": "at no time; with 不: always",
+      "path": "例句JSON.1.chunks.1.gloss",
+      "before": "at no time (used with 不 to mean always)",
+      "after": "at no time (used with bù, meaning not, to mean always)",
+      "context": {
+        "hanzi": "运动员无时无刻不在为下一场比赛做准备。",
+        "pinyin": "yùn dòng yuán wú shí wú kè bù zài wèi xià yī chǎng bǐ sài zuò zhǔn bèi.",
+        "english": "Athletes are always preparing for the next game.",
+        "chunk": "无时无刻",
+        "chunkPinyin": "wú shí wú kè"
+      },
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 6924,
+      "id": "wl_06925",
+      "word": "大相径庭",
+      "wordPinyin": "dà xiāng jìng tíng",
+      "wordMeaning": "a very large difference between two things",
+      "path": "本义解释JSON.0",
+      "before": "a great separation or disparity; 径 is a path and 庭 a courtyard",
+      "after": "a great separation or disparity; jìng means path and tíng means courtyard",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 7068,
+      "id": "wl_07069",
+      "word": "差强人意",
+      "wordPinyin": "chā qiáng rén yì",
+      "wordMeaning": "being reasonably satisfactory despite some shortcomings",
+      "path": "本义解释JSON.0",
+      "before": "giving some encouragement; 差 means somewhat and 强 means hearten",
+      "after": "giving some encouragement; chā means somewhat and qiáng means hearten",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    },
+    {
+      "index": 7291,
+      "id": "wl_07292",
+      "word": "独树一帜",
+      "wordPinyin": "dú shù yī zhì",
+      "wordMeaning": "creating an original style or approach",
+      "path": "本义解释JSON.0",
+      "before": "setting up one’s own banner; 树 means erect",
+      "after": "setting up one's own banner; shù means erect",
+      "context": {},
+      "review": "Source and replacement reviewed together in the lexical/part or full example context; sense and grammatical relationship retained."
+    }
+  ]
+}

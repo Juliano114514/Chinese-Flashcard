@@ -1,0 +1,167 @@
+{
+  "wl_02983": {
+    "例句JSON": "[{\"hanzi\":\"这种碳酸饮料有很多小气泡。\",\"pinyin\":\"zhè zhǒng tàn suān yǐn liào yǒu hěn duō xiǎo qì pào.\",\"english\":\"This carbonated drink has many small bubbles.\",\"chunks\":[{\"hanzi\":\"这种\",\"pinyin\":\"zhè zhǒng\",\"gloss\":\"this kind\"},{\"hanzi\":\"碳酸\",\"pinyin\":\"tàn suān\",\"gloss\":\"carbonated (in tàn suān yǐn liào)\"},{\"hanzi\":\"饮料\",\"pinyin\":\"yǐn liào\",\"gloss\":\"drink\"},{\"hanzi\":\"有\",\"pinyin\":\"yǒu\",\"gloss\":\"have; there is\"},{\"hanzi\":\"很\",\"pinyin\":\"hěn\",\"gloss\":\"very\"},{\"hanzi\":\"多\",\"pinyin\":\"duō\",\"gloss\":\"many; much\"},{\"hanzi\":\"小\",\"pinyin\":\"xiǎo\",\"gloss\":\"small\"},{\"hanzi\":\"气泡。\",\"pinyin\":\"qì pào.\",\"gloss\":\"bubble\"}]},{\"hanzi\":\"他打开了一瓶碳酸饮料。\",\"pinyin\":\"tā dǎ kāi le yì píng tàn suān yǐn liào.\",\"english\":\"He opened a bottle of carbonated drink.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"打开\",\"pinyin\":\"dǎ kāi\",\"gloss\":\"open\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"一\",\"pinyin\":\"yì\",\"gloss\":\"one\"},{\"hanzi\":\"瓶\",\"pinyin\":\"píng\",\"gloss\":\"bottle\"},{\"hanzi\":\"碳酸\",\"pinyin\":\"tàn suān\",\"gloss\":\"carbonated (in tàn suān yǐn liào)\"},{\"hanzi\":\"饮料。\",\"pinyin\":\"yǐn liào.\",\"gloss\":\"drink\"}]}]"
+  },
+  "wl_03017": {
+    "例句JSON": "[{\"hanzi\":\"孩子玩耍累了，坐在椅子上打瞌睡。\",\"pinyin\":\"hái zi wán shuǎ lèi le, zuò zài yǐ zi shàng dǎ kē shuì.\",\"english\":\"Tired from playing, the child dozed in the chair.\",\"chunks\":[{\"hanzi\":\"孩子\",\"pinyin\":\"hái zi\",\"gloss\":\"child\"},{\"hanzi\":\"玩耍\",\"pinyin\":\"wán shuǎ\",\"gloss\":\"play\"},{\"hanzi\":\"累\",\"pinyin\":\"lèi\",\"gloss\":\"tired\"},{\"hanzi\":\"了，\",\"pinyin\":\"le,\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"坐\",\"pinyin\":\"zuò\",\"gloss\":\"sit\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"椅子\",\"pinyin\":\"yǐ zi\",\"gloss\":\"chair\"},{\"hanzi\":\"上\",\"pinyin\":\"shàng\",\"gloss\":\"on; up\"},{\"hanzi\":\"打瞌睡。\",\"pinyin\":\"dǎ kē shuì.\",\"gloss\":\"doze\"}]},{\"hanzi\":\"他在车上打起了瞌睡。\",\"pinyin\":\"tā zài chē shàng dǎ qǐ le kē shuì.\",\"english\":\"He began to doze in the vehicle.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"车\",\"pinyin\":\"chē\",\"gloss\":\"vehicle\"},{\"hanzi\":\"上\",\"pinyin\":\"shàng\",\"gloss\":\"on; up\"},{\"hanzi\":\"打\",\"pinyin\":\"dǎ\",\"gloss\":\"have; do (in dǎ kē shuì)\"},{\"hanzi\":\"起\",\"pinyin\":\"qǐ\",\"gloss\":\"begin (action complement)\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"瞌睡。\",\"pinyin\":\"kē shuì.\",\"gloss\":\"drowsiness\"}]}]"
+  },
+  "wl_03320": {
+    "例句JSON": "[{\"hanzi\":\"字典把呒解释为惊讶的样子。\",\"pinyin\":\"zì diǎn bǎ fǔ jiě shì wéi jīng yà de yàng zi.\",\"english\":\"The dictionary explains this character as expressing astonishment.\",\"chunks\":[{\"hanzi\":\"字典\",\"pinyin\":\"zì diǎn\",\"gloss\":\"character dictionary\"},{\"hanzi\":\"把\",\"pinyin\":\"bǎ\",\"gloss\":\"BA (object marker)\"},{\"hanzi\":\"呒\",\"pinyin\":\"fǔ\",\"gloss\":\"astonished\"},{\"hanzi\":\"解释\",\"pinyin\":\"jiě shì\",\"gloss\":\"explain; explanation\"},{\"hanzi\":\"为\",\"pinyin\":\"wéi\",\"gloss\":\"as; be\"},{\"hanzi\":\"惊讶\",\"pinyin\":\"jīng yà\",\"gloss\":\"astonishment\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"样子。\",\"pinyin\":\"yàng zi.\",\"gloss\":\"appearance; state\"}]},{\"hanzi\":\"注释把呒释为惊讶。\",\"pinyin\":\"zhù shì bǎ fǔ shì wéi jīng yà.\",\"english\":\"The annotation defines fǔ as 'astonished'.\",\"chunks\":[{\"hanzi\":\"注释\",\"pinyin\":\"zhù shì\",\"gloss\":\"annotation\"},{\"hanzi\":\"把\",\"pinyin\":\"bǎ\",\"gloss\":\"BA (object marker)\"},{\"hanzi\":\"呒\",\"pinyin\":\"fǔ\",\"gloss\":\"astonished\"},{\"hanzi\":\"释\",\"pinyin\":\"shì\",\"gloss\":\"explain\"},{\"hanzi\":\"为\",\"pinyin\":\"wéi\",\"gloss\":\"as; be\"},{\"hanzi\":\"惊讶。\",\"pinyin\":\"jīng yà.\",\"gloss\":\"surprised or astonished\"}]}]"
+  },
+  "wl_03322": {
+    "例句JSON": "[{\"hanzi\":\"叁是数字三的大写形式。\",\"pinyin\":\"sān shì shù zì sān de dà xiě xíng shì.\",\"english\":\"The character 'sān' is the formal form of the number three.\",\"chunks\":[{\"hanzi\":\"叁\",\"pinyin\":\"sān\",\"gloss\":\"three (formal financial numeral)\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"be\"},{\"hanzi\":\"数字\",\"pinyin\":\"shù zì\",\"gloss\":\"number\"},{\"hanzi\":\"三\",\"pinyin\":\"sān\",\"gloss\":\"three\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"大写\",\"pinyin\":\"dà xiě\",\"gloss\":\"formal financial numeral form\"},{\"hanzi\":\"形式。\",\"pinyin\":\"xíng shì.\",\"gloss\":\"form\"}]},{\"hanzi\":\"收据上写着金额叁元。\",\"pinyin\":\"shōu jù shàng xiě zhe jīn é sān yuán.\",\"english\":\"The receipt gives the amount as three yuan, using the formal financial numeral sān.\",\"chunks\":[{\"hanzi\":\"收据\",\"pinyin\":\"shōu jù\",\"gloss\":\"receipt\"},{\"hanzi\":\"上\",\"pinyin\":\"shàng\",\"gloss\":\"on; up\"},{\"hanzi\":\"写\",\"pinyin\":\"xiě\",\"gloss\":\"write\"},{\"hanzi\":\"着\",\"pinyin\":\"zhe\",\"gloss\":\"ZHE (ongoing state)\"},{\"hanzi\":\"金额\",\"pinyin\":\"jīn é\",\"gloss\":\"sum of money\"},{\"hanzi\":\"叁\",\"pinyin\":\"sān\",\"gloss\":\"three (formal financial numeral)\"},{\"hanzi\":\"元。\",\"pinyin\":\"yuán.\",\"gloss\":\"currency unit (esp. Chinese yuan)\"}]}]"
+  },
+  "wl_03324": {
+    "部件JSON": "[{\"hanzi\":\"慰\",\"pinyin\":\"wèi\",\"gloss\":\"to comfort\"},{\"hanzi\":\"藉\",\"pinyin\":\"jiè\",\"gloss\":\"comfort; console (in wèi jiè)\"}]"
+  },
+  "wl_03340": {
+    "部件JSON": "[{\"hanzi\":\"蒙\",\"pinyin\":\"méng\",\"gloss\":\"fine and misty (in méng méng)\"},{\"hanzi\":\"蒙\",\"pinyin\":\"méng\",\"gloss\":\"fine and misty (in méng méng)\"}]",
+    "例句JSON": "[{\"hanzi\":\"蒙蒙细雨中，她的双眼蒙眬。\",\"pinyin\":\"méng méng xì yǔ zhōng, tā de shuāng yǎn méng lóng.\",\"english\":\"Her vision is blurred in the fine rain.\",\"chunks\":[{\"hanzi\":\"蒙蒙\",\"pinyin\":\"méng méng\",\"gloss\":\"fine and misty\"},{\"hanzi\":\"细雨\",\"pinyin\":\"xì yǔ\",\"gloss\":\"fine rain\"},{\"hanzi\":\"中，\",\"pinyin\":\"zhōng,\",\"gloss\":\"in; among\"},{\"hanzi\":\"她\",\"pinyin\":\"tā\",\"gloss\":\"she\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"双眼\",\"pinyin\":\"shuāng yǎn\",\"gloss\":\"the two eyes\"},{\"hanzi\":\"蒙眬。\",\"pinyin\":\"méng lóng.\",\"gloss\":\"blurred, of one's eyes\"}]},{\"hanzi\":\"蒙蒙细雨打湿了她的头发。\",\"pinyin\":\"méng méng xì yǔ dǎ shī le tā de tóu fa.\",\"english\":\"Fine misty rain wet her hair.\",\"chunks\":[{\"hanzi\":\"蒙蒙\",\"pinyin\":\"méng méng\",\"gloss\":\"fine and misty\"},{\"hanzi\":\"细雨\",\"pinyin\":\"xì yǔ\",\"gloss\":\"fine rain\"},{\"hanzi\":\"打\",\"pinyin\":\"dǎ\",\"gloss\":\"cause (in dǎ shī, wet)\"},{\"hanzi\":\"湿\",\"pinyin\":\"shī\",\"gloss\":\"wet\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"她\",\"pinyin\":\"tā\",\"gloss\":\"she\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"头发。\",\"pinyin\":\"tóu fa.\",\"gloss\":\"hair (on the head)\"}]}]"
+  },
+  "wl_03404": {
+    "引申义解释JSON": "[\"to deal evasively or perfunctorily, as in xū yǔ wēi yí\"]"
+  },
+  "wl_03440": {
+    "部件JSON": "[{\"hanzi\":\"呢\",\"pinyin\":\"ní\",\"gloss\":\"soft murmuring sound (in ní nán)\"},{\"hanzi\":\"喃\",\"pinyin\":\"nán\",\"gloss\":\"mumble in repetition\"}]"
+  },
+  "wl_03522": {
+    "部件JSON": "[{\"hanzi\":\"膜\",\"pinyin\":\"mó\",\"gloss\":\"bound form in mó bài (prostrate worship)\"},{\"hanzi\":\"拜\",\"pinyin\":\"bài\",\"gloss\":\"to bow to; to pay one's respects\"}]"
+  },
+  "wl_03529": {
+    "部件JSON": "[{\"hanzi\":\"跋\",\"pinyin\":\"bá\",\"gloss\":\"bound form in bá hù (domineering)\"},{\"hanzi\":\"扈\",\"pinyin\":\"hù\",\"gloss\":\"bound form in bá hù (domineering)\"}]"
+  },
+  "wl_03562": {
+    "部件JSON": "[{\"hanzi\":\"台\",\"pinyin\":\"tái\",\"gloss\":\"honorific referring to the other person\"},{\"hanzi\":\"甫\",\"pinyin\":\"fǔ\",\"gloss\":\"a man’s courtesy name (in tái fǔ)\"}]"
+  },
+  "wl_03564": {
+    "部件JSON": "[{\"hanzi\":\"足\",\"pinyin\":\"zú\",\"gloss\":\"excessively (in zú gōng)\"},{\"hanzi\":\"恭\",\"pinyin\":\"gōng\",\"gloss\":\"respectful\"}]"
+  },
+  "wl_03573": {
+    "部件JSON": "[{\"hanzi\":\"癞\",\"pinyin\":\"lài\",\"gloss\":\"bound form in lài lì (scalp ringworm)\"},{\"hanzi\":\"痢\",\"pinyin\":\"lì\",\"gloss\":\"bound form in lài lì (scalp ringworm)\"}]"
+  },
+  "wl_03625": {
+    "部件JSON": "[{\"hanzi\":\"镭\",\"pinyin\":\"léi\",\"gloss\":\"phonetic element in the loanword léi shè\"},{\"hanzi\":\"射\",\"pinyin\":\"shè\",\"gloss\":\"emit (light)\"}]"
+  },
+  "wl_03656": {
+    "部件JSON": "[{\"hanzi\":\"仓\",\"pinyin\":\"cāng\",\"gloss\":\"bound form in cāng cù (hurriedly)\"},{\"hanzi\":\"卒\",\"pinyin\":\"cù\",\"gloss\":\"abruptly; suddenly; unexpectedly\"}]"
+  },
+  "wl_03694": {
+    "引申义解释JSON": "[\"to yield or make concessions, as in wěi qū qiú quán\"]",
+    "部件JSON": "[{\"hanzi\":\"委\",\"pinyin\":\"wěi\",\"gloss\":\"detailed; winding (in wěi qū)\"},{\"hanzi\":\"曲\",\"pinyin\":\"qū\",\"gloss\":\"bent\"}]"
+  },
+  "wl_03698": {
+    "部件JSON": "[{\"hanzi\":\"阑\",\"pinyin\":\"lán\",\"gloss\":\"wane; come to an end\"},{\"hanzi\":\"珊\",\"pinyin\":\"shān\",\"gloss\":\"bound form in lán shān (waning)\"}]"
+  },
+  "wl_03726": {
+    "部件JSON": "[{\"hanzi\":\"豁\",\"pinyin\":\"huò\",\"gloss\":\"open; clear; liberal-minded; generous\"},{\"hanzi\":\"达\",\"pinyin\":\"dá\",\"gloss\":\"open; untroubled (in huò dá)\"}]"
+  },
+  "wl_03744": {
+    "例句JSON": "[{\"hanzi\":\"他用粤语诠释这首民歌的含义。\",\"pinyin\":\"tā yòng yuè yǔ quán shì zhè shǒu mín gē de hán yì.\",\"english\":\"He explains the folk song's meaning in Cantonese.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"用\",\"pinyin\":\"yòng\",\"gloss\":\"use\"},{\"hanzi\":\"粤语\",\"pinyin\":\"yuè yǔ\",\"gloss\":\"Cantonese language\"},{\"hanzi\":\"诠释\",\"pinyin\":\"quán shì\",\"gloss\":\"interpret\"},{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"首\",\"pinyin\":\"shǒu\",\"gloss\":\"classifier for poems, songs etc\"},{\"hanzi\":\"民歌\",\"pinyin\":\"mín gē\",\"gloss\":\"folk song\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"含义。\",\"pinyin\":\"hán yì.\",\"gloss\":\"meaning\"}]},{\"hanzi\":\"睇见在粤语中表示看见。\",\"pinyin\":\"dì jiàn zài yuè yǔ zhōng biǎo shì kàn jiàn.\",\"english\":\"The expression shown means 'to see' in Cantonese.\",\"chunks\":[{\"hanzi\":\"睇见\",\"pinyin\":\"dì jiàn\",\"gloss\":\"see, in Cantonese\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"粤语\",\"pinyin\":\"yuè yǔ\",\"gloss\":\"Cantonese language\"},{\"hanzi\":\"中\",\"pinyin\":\"zhōng\",\"gloss\":\"in; among\"},{\"hanzi\":\"表示\",\"pinyin\":\"biǎo shì\",\"gloss\":\"express; indicate\"},{\"hanzi\":\"看见。\",\"pinyin\":\"kàn jiàn.\",\"gloss\":\"see\"}]}]"
+  },
+  "wl_03763": {
+    "部件JSON": "[{\"hanzi\":\"连\",\"pinyin\":\"lián\",\"gloss\":\"immediately; continuously (in lián máng)\"},{\"hanzi\":\"忙\",\"pinyin\":\"máng\",\"gloss\":\"hurriedly\"}]"
+  },
+  "wl_03794": {
+    "部件JSON": "[{\"hanzi\":\"杜\",\"pinyin\":\"dù\",\"gloss\":\"bound form in the name dù juān\"},{\"hanzi\":\"鹃\",\"pinyin\":\"juān\",\"gloss\":\"cuckoo\"}]"
+  },
+  "wl_03872": {
+    "部件JSON": "[{\"hanzi\":\"嘹\",\"pinyin\":\"liáo\",\"gloss\":\"bound form in liáo liàng (loud and clear)\"},{\"hanzi\":\"亮\",\"pinyin\":\"liàng\",\"gloss\":\"loud and clear\"}]"
+  },
+  "wl_03883": {
+    "部件JSON": "[{\"hanzi\":\"滂\",\"pinyin\":\"pāng\",\"gloss\":\"rushing (water)\"},{\"hanzi\":\"沱\",\"pinyin\":\"tuó\",\"gloss\":\"bound element in pāng tuó (pouring)\"}]"
+  },
+  "wl_03886": {
+    "部件JSON": "[{\"hanzi\":\"喽\",\"pinyin\":\"lóu\",\"gloss\":\"(bound form) subordinates in a gang of bandits\"},{\"hanzi\":\"啰\",\"pinyin\":\"luo\",\"gloss\":\"bound element in lóu luo (minion)\"}]"
+  },
+  "wl_03890": {
+    "部件JSON": "[{\"hanzi\":\"婆\",\"pinyin\":\"pó\",\"gloss\":\"phonetic element in pó suō (swaying gracefully)\"},{\"hanzi\":\"娑\",\"pinyin\":\"suō\",\"gloss\":\"(phonetic)\"}]"
+  },
+  "wl_03926": {
+    "部件JSON": "[{\"hanzi\":\"芭\",\"pinyin\":\"bā\",\"gloss\":\"bound element in bā jiāo (banana plant)\"},{\"hanzi\":\"蕉\",\"pinyin\":\"jiāo\",\"gloss\":\"banana\"}]"
+  },
+  "wl_03956": {
+    "部件JSON": "[{\"hanzi\":\"摒\",\"pinyin\":\"bìng\",\"gloss\":\"put in order (in bìng dàng)\"},{\"hanzi\":\"挡\",\"pinyin\":\"dàng\",\"gloss\":\"to put in order\"}]"
+  },
+  "wl_03978": {
+    "部件JSON": "[{\"hanzi\":\"樟\",\"pinyin\":\"zhāng\",\"gloss\":\"(bound form) camphor tree\"},{\"hanzi\":\"脑\",\"pinyin\":\"nǎo\",\"gloss\":\"bound element in zhāng nǎo (camphor)\"}]"
+  },
+  "wl_03992": {
+    "部件JSON": "[{\"hanzi\":\"堤\",\"pinyin\":\"dī\",\"gloss\":\"dike\"},{\"hanzi\":\"坊\",\"pinyin\":\"fáng\",\"gloss\":\"embankment (in dī fáng)\"}]"
+  },
+  "wl_04055": {
+    "部件JSON": "[{\"hanzi\":\"叮\",\"pinyin\":\"dīng\",\"gloss\":\"repeat instructions (in dīng níng)\"},{\"hanzi\":\"咛\",\"pinyin\":\"níng\",\"gloss\":\"to enjoin\"}]"
+  },
+  "wl_04080": {
+    "部件JSON": "[{\"hanzi\":\"天\",\"pinyin\":\"tiān\",\"gloss\":\"bound element in tiān chèng (balance scale)\"},{\"hanzi\":\"秤\",\"pinyin\":\"chèng\",\"gloss\":\"steelyard balance; Roman balance\"}]"
+  },
+  "wl_04082": {
+    "部件JSON": "[{\"hanzi\":\"恻\",\"pinyin\":\"cè\",\"gloss\":\"sorrowful\"},{\"hanzi\":\"隐\",\"pinyin\":\"yǐn\",\"gloss\":\"sorrow; compassion (in cè yǐn)\"}]"
+  },
+  "wl_04096": {
+    "部件JSON": "[{\"hanzi\":\"噢\",\"pinyin\":\"ō\",\"gloss\":\"bound element in ō xiū (soothe)\"},{\"hanzi\":\"咻\",\"pinyin\":\"xiū\",\"gloss\":\"bound element in ō xiū (soothe)\"}]"
+  },
+  "wl_04120": {
+    "部件JSON": "[{\"hanzi\":\"苟\",\"pinyin\":\"gǒu\",\"gloss\":\"part of making do or acting carelessly\"},{\"hanzi\":\"且\",\"pinyin\":\"qiě\",\"gloss\":\"bound element in gǒu qiě (make do carelessly)\"}]"
+  },
+  "wl_04236": {
+    "部件JSON": "[{\"hanzi\":\"哔\",\"pinyin\":\"bì\",\"gloss\":\"(phonetic)\"},{\"hanzi\":\"叽\",\"pinyin\":\"jī\",\"gloss\":\"phonetic element in the loanword bì jī\"}]"
+  },
+  "wl_04261": {
+    "部件JSON": "[{\"hanzi\":\"腮\",\"pinyin\":\"sāi\",\"gloss\":\"cheek\"},{\"hanzi\":\"帮\",\"pinyin\":\"bāng\",\"gloss\":\"side; part (in sāi bāng)\"}]"
+  },
+  "wl_04319": {
+    "部件JSON": "[{\"hanzi\":\"荔\",\"pinyin\":\"lì\",\"gloss\":\"litchi\"},{\"hanzi\":\"枝\",\"pinyin\":\"zhī\",\"gloss\":\"bound element in lì zhī (lychee)\"}]"
+  },
+  "wl_04322": {
+    "部件JSON": "[{\"hanzi\":\"辔\",\"pinyin\":\"pèi\",\"gloss\":\"bridle; reins\"},{\"hanzi\":\"头\",\"pinyin\":\"tóu\",\"gloss\":\"noun element in pèi tóu (bridle)\"}]"
+  },
+  "wl_04363": {
+    "部件JSON": "[{\"hanzi\":\"孽\",\"pinyin\":\"niè\",\"gloss\":\"evil\"},{\"hanzi\":\"障\",\"pinyin\":\"zhàng\",\"gloss\":\"bound element in niè zhàng (evil creature; karmic obstacle)\"}]"
+  },
+  "wl_04434": {
+    "部件JSON": "[{\"hanzi\":\"鸨\",\"pinyin\":\"bǎo\",\"gloss\":\"female brothel keeper (in bǎo mǔ)\"},{\"hanzi\":\"母\",\"pinyin\":\"mǔ\",\"gloss\":\"woman; female\"}]"
+  },
+  "wl_04484": {
+    "部件JSON": "[{\"hanzi\":\"磊\",\"pinyin\":\"lěi\",\"gloss\":\"open and honest\"},{\"hanzi\":\"落\",\"pinyin\":\"luò\",\"gloss\":\"bound element in lěi luò, open and honest\"}]"
+  },
+  "wl_04564": {
+    "部件JSON": "[{\"hanzi\":\"贲\",\"pinyin\":\"bēn\",\"gloss\":\"bound element in bēn mén, the cardia\"},{\"hanzi\":\"门\",\"pinyin\":\"mén\",\"gloss\":\"an anatomical opening\"}]"
+  },
+  "wl_04585": {
+    "部件JSON": "[{\"hanzi\":\"嗒\",\"pinyin\":\"tà\",\"gloss\":\"dejected, in tà rán\"},{\"hanzi\":\"然\",\"pinyin\":\"rán\",\"gloss\":\"suffix indicating a state or manner\"}]"
+  },
+  "wl_04603": {
+    "部件JSON": "[{\"hanzi\":\"腓\",\"pinyin\":\"féi\",\"gloss\":\"calf of leg\"},{\"hanzi\":\"肠\",\"pinyin\":\"cháng\",\"gloss\":\"bound element in féi cháng, the calf of the leg\"}]"
+  },
+  "wl_04625": {
+    "引申义解释JSON": "[\"collusive association, in hàng xiè yí qì\"]",
+    "部件JSON": "[{\"hanzi\":\"沆\",\"pinyin\":\"hàng\",\"gloss\":\"mist, in hàng xiè\"},{\"hanzi\":\"瀣\",\"pinyin\":\"xiè\",\"gloss\":\"mist\"}]"
+  },
+  "wl_04629": {
+    "引申义解释JSON": "[\"a condition beyond remedy, in bìng rù gāo huāng\"]"
+  },
+  "wl_04636": {
+    "部件JSON": "[{\"hanzi\":\"戛\",\"pinyin\":\"jiá\",\"gloss\":\"abrupt stopping, in jiá rán\"},{\"hanzi\":\"然\",\"pinyin\":\"rán\",\"gloss\":\"suffix indicating a state or manner\"}]"
+  },
+  "wl_04727": {
+    "部件JSON": "[{\"hanzi\":\"昙\",\"pinyin\":\"tán\",\"gloss\":\"bound element in tán huā, a night-blooming cactus\"},{\"hanzi\":\"花\",\"pinyin\":\"huā\",\"gloss\":\"flower\"}]"
+  },
+  "wl_04765": {
+    "部件JSON": "[{\"hanzi\":\"癔\",\"pinyin\":\"yì\",\"gloss\":\"bound element in yì zhèng, hysteria\"},{\"hanzi\":\"症\",\"pinyin\":\"zhèng\",\"gloss\":\"disease\"}]"
+  },
+  "wl_04770": {
+    "部件JSON": "[{\"hanzi\":\"须\",\"pinyin\":\"xū\",\"gloss\":\"bound element in xū yú, a moment\"},{\"hanzi\":\"臾\",\"pinyin\":\"yú\",\"gloss\":\"a moment\"}]"
+  },
+  "wl_04802": {
+    "部件JSON": "[{\"hanzi\":\"酞\",\"pinyin\":\"tài\",\"gloss\":\"phthalein (chemistry)\"},{\"hanzi\":\"菁\",\"pinyin\":\"jīng\",\"gloss\":\"bound element in tài jīng, phthalocyanine\"}]"
+  },
+  "wl_04987": {
+    "例句JSON": "[{\"hanzi\":\"僮族是壮族过去的民族名称。\",\"pinyin\":\"zhuàng zú shì zhuàng zú guò qù de mín zú míng chēng.\",\"english\":\"Zhuàngzú was the former written name for the Zhuang people.\",\"chunks\":[{\"hanzi\":\"僮族\",\"pinyin\":\"zhuàng zú\",\"gloss\":\"former name for the Zhuang people\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"be\"},{\"hanzi\":\"壮族\",\"pinyin\":\"zhuàng zú\",\"gloss\":\"Zhuang ethnic group, the largest ethnic minority in China\"},{\"hanzi\":\"过去\",\"pinyin\":\"guò qù\",\"gloss\":\"formerly; in the past\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"民族\",\"pinyin\":\"mín zú\",\"gloss\":\"ethnic group\"},{\"hanzi\":\"名称。\",\"pinyin\":\"míng chēng.\",\"gloss\":\"name\"}]},{\"hanzi\":\"这份旧资料仍使用僮族这一名称。\",\"pinyin\":\"zhè fèn jiù zī liào réng shǐ yòng zhuàng zú zhè yì míng chēng.\",\"english\":\"This old document still uses the former name for the Zhuang people.\",\"chunks\":[{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"份\",\"pinyin\":\"fèn\",\"gloss\":\"FEN (measure word)\"},{\"hanzi\":\"旧\",\"pinyin\":\"jiù\",\"gloss\":\"old\"},{\"hanzi\":\"资料\",\"pinyin\":\"zī liào\",\"gloss\":\"data\"},{\"hanzi\":\"仍\",\"pinyin\":\"réng\",\"gloss\":\"still\"},{\"hanzi\":\"使用\",\"pinyin\":\"shǐ yòng\",\"gloss\":\"use\"},{\"hanzi\":\"僮族\",\"pinyin\":\"zhuàng zú\",\"gloss\":\"former name for the Zhuang people\"},{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"一\",\"pinyin\":\"yì\",\"gloss\":\"one\"},{\"hanzi\":\"名称。\",\"pinyin\":\"míng chēng.\",\"gloss\":\"name\"}]}]"
+  },
+  "wl_05087": {
+    "部件JSON": "[{\"hanzi\":\"婵\",\"pinyin\":\"chán\",\"gloss\":\"lovely; graceful, in chán juān\"},{\"hanzi\":\"娟\",\"pinyin\":\"juān\",\"gloss\":\"beautiful\"}]"
+  },
+  "wl_05135": {
+    "部件JSON": "[{\"hanzi\":\"澹\",\"pinyin\":\"dàn\",\"gloss\":\"tranquil\"},{\"hanzi\":\"泊\",\"pinyin\":\"bó\",\"gloss\":\"untroubled by worldly ambitions, in dàn bó\"}]"
+  }
+}

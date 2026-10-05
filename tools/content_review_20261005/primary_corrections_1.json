@@ -1,0 +1,9 @@
+{
+  "wl_02509": {
+    "拼音": "jiāo nèn",
+    "部件JSON": "[{\"hanzi\":\"娇嫩\",\"pinyin\":\"jiāo nèn\",\"gloss\":\"delicate and tender\"}]"
+  },
+  "wl_01846": {
+    "例句JSON": "[{\"hanzi\":\"他因痢疾住院，已经接受治疗。\",\"pinyin\":\"tā yīn lì ji zhù yuàn, yǐ jīng jiē shòu zhì liáo.\",\"english\":\"He was hospitalized with dysentery and has already received treatment.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"因\",\"pinyin\":\"yīn\",\"gloss\":\"because of\"},{\"hanzi\":\"痢疾\",\"pinyin\":\"lì ji\",\"gloss\":\"dysentery\"},{\"hanzi\":\"住院，\",\"pinyin\":\"zhù yuàn,\",\"gloss\":\"stay in hospital\"},{\"hanzi\":\"已经\",\"pinyin\":\"yǐ jīng\",\"gloss\":\"already\"},{\"hanzi\":\"接受\",\"pinyin\":\"jiē shòu\",\"gloss\":\"receive\"},{\"hanzi\":\"治疗。\",\"pinyin\":\"zhì liáo.\",\"gloss\":\"medical treatment\"}]},{\"hanzi\":\"这篇资料介绍了痢疾这一疾病名称。\",\"pinyin\":\"Zhè piān zī liào jiè shào le lì ji zhè yì jí bìng míng chēng.\",\"english\":\"This document explains the medical term “dysentery”.\",\"chunks\":[{\"hanzi\":\"这\",\"pinyin\":\"Zhè\",\"gloss\":\"this\"},{\"hanzi\":\"篇\",\"pinyin\":\"piān\",\"gloss\":\"PIAN (measure word for written texts)\"},{\"hanzi\":\"资料\",\"pinyin\":\"zī liào\",\"gloss\":\"document; reference material\"},{\"hanzi\":\"介绍\",\"pinyin\":\"jiè shào\",\"gloss\":\"introduce\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"痢疾\",\"pinyin\":\"lì ji\",\"gloss\":\"dysentery\"},{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"一\",\"pinyin\":\"yì\",\"gloss\":\"one\"},{\"hanzi\":\"疾病\",\"pinyin\":\"jí bìng\",\"gloss\":\"disease\"},{\"hanzi\":\"名称。\",\"pinyin\":\"míng chēng.\",\"gloss\":\"name\"}]}]"
+  }
+}

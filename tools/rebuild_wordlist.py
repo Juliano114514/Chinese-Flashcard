@@ -26,6 +26,7 @@ DATA = ROOT / 'tools/wordlist_rebuild'
 BASELINE = DATA / 'baseline.csv'
 OUTPUT = ROOT / 'wordlist.csv'
 DICTIONARY = ROOT / '.gradle/wordlist-implementation/dictionary-index.json'
+REVIEW = ROOT / 'tools/content_review_20261005'
 HEADERS = ['罕度', '组词', '拼音', '词条ID', '英文释义', '词性', '例句JSON',
            '部件JSON', '干扰词ID', '来源说明', '本义解释JSON', '引申义解释JSON']
 JSON_FIELDS = ['例句JSON', '部件JSON', '干扰词ID', '本义解释JSON', '引申义解释JSON']
@@ -700,6 +701,41 @@ def apply():
         row['干扰词ID']=[mapping[x] for x in row['干扰词ID']]
         row['词条ID']=mapping[row['词条ID']]
     content = serialize(rows)
+    review_path = REVIEW / 'review-manifest.json'
+    if review_path.exists():
+        review = load(review_path)
+        if hashlib.sha256(content).hexdigest() != review['sourceSha256']:
+            raise ValueError('Editorial overlay does not match the frozen rebuild')
+        indexed = {r['词条ID']: r for r in rows}
+        coverage = set()
+        for partition in review['partitions']:
+            first, last = partition['range']
+            report_data = load(REVIEW / partition['report'])
+            completed = report_data.get('coveredRows', report_data.get('semanticComplete'))
+            source_digest = report_data.get('sourceSha256', report_data.get('inputSha256'))
+            if (completed != last - first + 1 or report_data['range'] != [first, last]
+                    or source_digest != review['sourceSha256']):
+                raise ValueError('Editorial partition is not fully reviewed')
+            assigned = set(range(first, last + 1))
+            if coverage & assigned:
+                raise ValueError('Overlapping editorial partitions')
+            coverage |= assigned
+        if coverage != set(range(len(rows))):
+            raise ValueError('Editorial review must cover every row')
+        allowed = {'英文释义', '词性', '例句JSON', '部件JSON', '本义解释JSON', '引申义解释JSON'}
+        for filename in review['overlays']:
+            changes = load(REVIEW / filename)
+            permitted = allowed | ({'拼音'} if filename.startswith('primary_corrections_') else set())
+            for word_id, fields in changes.items():
+                if word_id not in indexed or not set(fields) <= permitted:
+                    raise ValueError('Editorial overlay changes a protected field or unknown ID')
+                for field, value in fields.items():
+                    if not isinstance(value, str):
+                        raise ValueError('Editorial CSV field must be a string')
+                    indexed[word_id][field] = json.loads(value) if field in JSON_FIELDS else value
+        if len({(r['组词'], reading_key(r['拼音'])) for r in rows}) != len(rows):
+            raise ValueError('Editorial corrections introduce duplicate word/reading identities')
+        content = serialize(rows)
     validate(content)
     if OUTPUT.exists():
         permitted = {hashlib.sha256(BASELINE.read_bytes()).hexdigest(), hashlib.sha256(content).hexdigest()}
@@ -728,6 +764,15 @@ def report(content, rows):
         'learningOrder':'rarity, syllable letters then tone 1/2/3/4/5, next syllable, stable ID',
         'firstLearningWords':[{k:r[k] for k in ['词条ID','组词','拼音']} for r in ordered[:20]],
         'verification':'Complete structural/content-shape/reference/stroke-coverage checks. AI-assisted lexical gloss selection is not human linguistic sign-off.'}
+    review_path = REVIEW / 'review-manifest.json'
+    if review_path.exists():
+        review = load(review_path)
+        names = list(dict.fromkeys(review['overlays'] + [p['report'] for p in review['partitions']] + review.get('evidence', [])))
+        summary['contentReview'] = {
+            'reviewedRows': len(rows), 'date': '2026-10-05',
+            'manifestSha256': hashlib.sha256(review_path.read_bytes()).hexdigest(),
+            'inputSha256': {name: hashlib.sha256((REVIEW/name).read_bytes()).hexdigest() for name in names},
+            'boundary': 'Complete AI editorial reading with contextual refinements and independent structural validation; not human linguistic certification.'}
     save(ROOT/'docs/wordlist-validation.json',summary)
     save(DATA/'build-manifest.json',summary)
     print(json.dumps(summary,ensure_ascii=False))
@@ -750,6 +795,13 @@ def main():
         for name, digest in expected['inputSha256'].items():
             if hashlib.sha256((DATA/name).read_bytes()).hexdigest()!=digest:
                 raise ValueError('Frozen rebuild input differs from manifest: '+name)
+        if 'contentReview' in expected:
+            review = expected['contentReview']
+            if hashlib.sha256((REVIEW/'review-manifest.json').read_bytes()).hexdigest() != review['manifestSha256']:
+                raise ValueError('Editorial review manifest differs')
+            for name, digest in review['inputSha256'].items():
+                if hashlib.sha256((REVIEW/name).read_bytes()).hexdigest() != digest:
+                    raise ValueError('Editorial input differs from manifest: '+name)
         if hashlib.sha256(content).hexdigest()!=expected['sha256']:
             raise ValueError('Final CSV hash differs from rebuild manifest')
         print(json.dumps({'words':len(rows),'bytes':len(content),'sha256':expected['sha256'],'status':'PASS'},ensure_ascii=False))

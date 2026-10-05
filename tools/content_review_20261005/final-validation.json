@@ -1,0 +1,131 @@
+{
+  "sourceSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "finalSha256": "388ab2d79afdd4685a101a27c550a1b4cb9fb5e051add0874cbaf47c2f5706e1",
+  "rows": 7723,
+  "examples": 15446,
+  "chunks": 109337,
+  "wordParts": 14149,
+  "changedRows": 6310,
+  "changedFields": {
+    "例句JSON": 5732,
+    "本义解释JSON": 1373,
+    "部件JSON": 1221,
+    "引申义解释JSON": 1370,
+    "英文释义": 1113,
+    "拼音": 12,
+    "词性": 1
+  },
+  "changedExampleApplications": 7941,
+  "primaryReadingChanges": [
+    {
+      "id": "wl_02509",
+      "word": "娇嫩",
+      "before": "jiāo nen",
+      "after": "jiāo nèn"
+    },
+    {
+      "id": "wl_03571",
+      "word": "仆倒",
+      "before": "pū dào",
+      "after": "pū dǎo"
+    },
+    {
+      "id": "wl_03911",
+      "word": "茄瓜",
+      "before": "jiā guā",
+      "after": "qié guā"
+    },
+    {
+      "id": "wl_03941",
+      "word": "瓦铛",
+      "before": "wǎ dāng",
+      "after": "wǎ chēng"
+    },
+    {
+      "id": "wl_05937",
+      "word": "鸣镝",
+      "before": "míng dī",
+      "after": "míng dí"
+    },
+    {
+      "id": "wl_05962",
+      "word": "葑菲",
+      "before": "fēng fēi",
+      "after": "fēng fěi"
+    },
+    {
+      "id": "wl_06006",
+      "word": "菜蕻",
+      "before": "cài hóng",
+      "after": "cài hòng"
+    },
+    {
+      "id": "wl_06179",
+      "word": "掊击",
+      "before": "póu jī",
+      "after": "pǒu jī"
+    },
+    {
+      "id": "wl_06303",
+      "word": "槛柙",
+      "before": "kǎn xiá",
+      "after": "jiàn xiá"
+    },
+    {
+      "id": "wl_06343",
+      "word": "嶷嶷",
+      "before": "yí yí",
+      "after": "nì nì"
+    },
+    {
+      "id": "wl_06526",
+      "word": "淠",
+      "before": "pì",
+      "after": "pèi"
+    },
+    {
+      "id": "wl_06794",
+      "word": "装模作样",
+      "before": "zhuāng mó zuò yàng",
+      "after": "zhuāng mú zuò yàng"
+    }
+  ],
+  "protectedFields": [
+    "罕度",
+    "组词",
+    "词条ID",
+    "干扰词ID",
+    "来源说明"
+  ],
+  "physicalOrderPreserved": true,
+  "formatCorrections": {
+    "englishStrings": 188,
+    "remainingHan": 0
+  },
+  "sampleFourLines": [
+    "让我 / 思考 / 一下",
+    "ràng wǒ / sīkǎo / yíxià",
+    "let me / think / a little",
+    "Let me think about it."
+  ],
+  "checks": {
+    "existingFullCsvValidator": "PASS: format, lengths, JSON shape/depth, English, pinyin, reconstruction, target inclusion, distinct choices, references and genuine stroke coverage",
+    "frozenInputsAndEditorialHashes": "PASS: tools/rebuild_wordlist.py --check",
+    "frozenRegeneration": "PASS: repeated --apply produced the same SHA-256",
+    "stableWordIdentityAndOrder": "PASS: exact per-row comparison against the original 7723-record snapshot"
+  },
+  "overlays": [
+    "final_patch_1.json",
+    "final_patch_2.json",
+    "final_patch_3.json",
+    "cross_review_corrections_1.json",
+    "primary_corrections_1.json",
+    "primary_corrections_2.json",
+    "primary_corrections_3.json",
+    "user_sample_patch_1.json",
+    "format_corrections_1.json",
+    "format_corrections_2.json",
+    "format_corrections_3.json"
+  ],
+  "boundary": "Complete AI editorial review with exhaustive structural checks and targeted independent semantic cross-review; no human linguistic certification or device behavior proof."
+}

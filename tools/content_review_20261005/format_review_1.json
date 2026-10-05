@@ -1,0 +1,1161 @@
+{
+  "range": [
+    0,
+    2573
+  ],
+  "inputSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "baseOverlays": {
+    "final_patch_1.json": "6b752165bbaa9111a51f5638607839389e081f267c5c2311e44dfa165419256d",
+    "final_patch_2.json": "46225c4b6b988f3920bf827e3725bda4d9f2a6de3e31396d1b66d97019f3aac0",
+    "final_patch_3.json": "2e29c34a21387bb884a4f020a5fb67eb757cfb4a9e9ea03915816ec343bb0f07",
+    "cross_review_corrections_1.json": "71069776356dc8f8da2c1022f1fb8460bdc5ca8d14e127d79340524cda072950",
+    "primary_corrections_1.json": "79bc3fc3d79080b4fadb8a5429cfed0dac7756cf02482482f992a7c1c7fd8178",
+    "primary_corrections_2.json": "31362c1d9ab281ea79f57186aec624613d5f3e04d25011f2b43ea6ea718c7625",
+    "primary_corrections_3.json": "93ccdfd312210fbb8db8d26d483e192b7446c82407ca5939f68f3d39a4aa6e0d",
+    "user_sample_patch_1.json": "c346dc4c4ab7307cea3f34150a496be16f84e8517d9b162670990a7ec476da0c"
+  },
+  "scannedRows": 2574,
+  "scannedFields": [
+    "英文释义",
+    "本义解释JSON entries",
+    "引申义解释JSON entries",
+    "部件JSON.gloss",
+    "both 例句JSON.english and every chunks.gloss"
+  ],
+  "changedStrings": 51,
+  "changedRows": 47,
+  "changedFields": 48,
+  "fieldCounts": {
+    "部件JSON": 31,
+    "本义解释JSON": 4,
+    "例句JSON": 16
+  },
+  "allChanges": [
+    {
+      "index": 37,
+      "id": "wl_00038",
+      "word": "忙碌",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "busy (bound element in 忙碌)",
+      "after": "busy (bound element in máng lù)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "叔叔总是忙碌，很少有空休息。",
+          "pinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kōng xiū xi.",
+          "englishBefore": "My uncle is always busy and rarely has time to rest."
+        },
+        {
+          "hanzi": "别在大家忙碌时捣乱。",
+          "pinyin": "bié zài dà jiā máng lù shí dǎo luàn.",
+          "englishBefore": "Do not cause trouble while everyone is busy."
+        }
+      ]
+    },
+    {
+      "index": 125,
+      "id": "wl_00126",
+      "word": "只有",
+      "field": "本义解释JSON",
+      "path": "2",
+      "before": "only if (used with 才)",
+      "after": "only if (used with cái)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "杯子里只有一茶匙糖。",
+          "pinyin": "bēi zi lǐ zhǐ yǒu yī chá chí táng.",
+          "englishBefore": "There is only one teaspoon of sugar in the cup."
+        },
+        {
+          "hanzi": "这个小屏幕只有三英寸宽。",
+          "pinyin": "zhè ge xiǎo píng mù zhǐ yǒu sān yīng cùn kuān.",
+          "englishBefore": "This little screen is only three inches wide."
+        }
+      ]
+    },
+    {
+      "index": 180,
+      "id": "wl_00181",
+      "word": "虽然",
+      "field": "本义解释JSON",
+      "path": "0",
+      "before": "although; even though (often paired with 但是 or 可是)",
+      "after": "although; even though (often paired with dàn shì or kě shì)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他虽然愤怒，仍接受了这次教训。",
+          "pinyin": "tā suī rán fèn nù, réng jiē shòu le zhè cì jiào xun.",
+          "englishBefore": "Although angry, he accepted the lesson from the experience."
+        },
+        {
+          "hanzi": "房间虽然寒伧，收拾得却很干净。",
+          "pinyin": "fáng jiān suī rán hán chen, shōu shi de què hěn gān jìng.",
+          "englishBefore": "Although the room was shabby, it had been kept very clean."
+        }
+      ]
+    },
+    {
+      "index": 180,
+      "id": "wl_00181",
+      "word": "虽然",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 虽然 (although)",
+      "after": "bound element in suī rán (although)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他虽然愤怒，仍接受了这次教训。",
+          "pinyin": "tā suī rán fèn nù, réng jiē shòu le zhè cì jiào xun.",
+          "englishBefore": "Although angry, he accepted the lesson from the experience."
+        },
+        {
+          "hanzi": "房间虽然寒伧，收拾得却很干净。",
+          "pinyin": "fáng jiān suī rán hán chen, shōu shi de què hěn gān jìng.",
+          "englishBefore": "Although the room was shabby, it had been kept very clean."
+        }
+      ]
+    },
+    {
+      "index": 242,
+      "id": "wl_00243",
+      "word": "仔细",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "careful (bound element in 仔细)",
+      "after": "careful (bound element in zǐ xì)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "这两张图片的确值得仔细比较。",
+          "pinyin": "zhè liǎng zhāng tú piàn dí què zhí de zǐ xì bǐ jiào.",
+          "englishBefore": "These two pictures really deserve a careful comparison."
+        },
+        {
+          "hanzi": "这份稿件需要仔细校对。",
+          "pinyin": "zhè fèn gǎo jiàn xū yào zǐ xì jiào duì.",
+          "englishBefore": "This manuscript needs careful proofreading."
+        }
+      ]
+    },
+    {
+      "index": 245,
+      "id": "wl_00246",
+      "word": "意思",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "In the name, the character 煊 conveys warmth.",
+      "after": "In the name, the character xuān conveys warmth.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "你刚才说的是啥意思？",
+          "pinyin": "nǐ gāng cái shuō de shì shá yì si?",
+          "englishBefore": "What did you mean by what you just said?"
+        },
+        {
+          "hanzi": "名字里的煊，带有温暖的意思。",
+          "pinyin": "míng zi lǐ de xuān, dài yǒu wēn nuǎn de yì si.",
+          "englishBefore": "In the name, the character 煊 conveys warmth."
+        }
+      ]
+    },
+    {
+      "index": 292,
+      "id": "wl_00293",
+      "word": "机会",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "opportunity (bound element in 机会)",
+      "after": "opportunity (bound element in jī huì)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "认识新朋友是练习语言的好机会。",
+          "pinyin": "rèn shi xīn péng you shì liàn xí yǔ yán de hǎo jī huì.",
+          "englishBefore": "Meeting new friends is a good opportunity to practice a language."
+        },
+        {
+          "hanzi": "失去机会焉知非福，不必怨恨。",
+          "pinyin": "shī qù jī huì yān zhī fēi fú, bù bì yuàn hèn.",
+          "englishBefore": "Losing an opportunity may be a blessing; do not resent it."
+        }
+      ]
+    },
+    {
+      "index": 306,
+      "id": "wl_00307",
+      "word": "几乎",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 几乎 (almost)",
+      "after": "bound element in jī hū (almost)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "几个孩子躲在门后，几乎没有出声。",
+          "pinyin": "jǐ ge hái zi duǒ zài mén hòu, jī hū méi yǒu chū shēng.",
+          "englishBefore": "A few children hid behind the door, barely making a sound."
+        },
+        {
+          "hanzi": "池水湉湉，水面几乎没有波纹。",
+          "pinyin": "chí shuǐ tián tián, shuǐ miàn jī hū méi yǒu bō wén.",
+          "englishBefore": "The pond is tranquil, with almost no ripples on its surface."
+        }
+      ]
+    },
+    {
+      "index": 322,
+      "id": "wl_00323",
+      "word": "沮丧",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "dejected (bound element in 沮丧)",
+      "after": "dejected (bound element in jǔ sàng)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "想到未来的工作，他有些沮丧。",
+          "pinyin": "xiǎng dào wèi lái de gōng zuò, tā yǒu xiē jǔ sàng.",
+          "englishBefore": "Thinking about his future job made him a little discouraged."
+        },
+        {
+          "hanzi": "考试没通过，他感到很沮丧。",
+          "pinyin": "Kǎo shì méi tōng guò, tā gǎn dào hěn jǔ sàng.",
+          "englishBefore": "He felt discouraged after failing the exam."
+        }
+      ]
+    },
+    {
+      "index": 326,
+      "id": "wl_00327",
+      "word": "着急",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "come under; be affected (bound element in 着急)",
+      "after": "come under; be affected (bound element in zháo jí)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "着凉后他一直咳嗽，妈妈很着急。",
+          "pinyin": "zháo liáng hòu tā yī zhí ké sou, mā ma hěn zháo jí.",
+          "englishBefore": "He has been coughing since catching a chill, and Mom is worried."
+        },
+        {
+          "hanzi": "他还没有回来，家人很着急。",
+          "pinyin": "Tā hái méi yǒu huí lái, jiā rén hěn zháo jí.",
+          "englishBefore": "He has not returned yet, and the family is worried."
+        }
+      ]
+    },
+    {
+      "index": 329,
+      "id": "wl_00330",
+      "word": "如果",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 如果 (if)",
+      "after": "bound element in rú guǒ (if)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "如果汽车坏了，请联系修理店。",
+          "pinyin": "rú guǒ qì chē huài le, qǐng lián xì xiū lǐ diàn.",
+          "englishBefore": "If the car breaks down, please contact a repair shop."
+        },
+        {
+          "hanzi": "如果明天晴天，我们就去野餐。",
+          "pinyin": "Rú guǒ míng tiān qíng tiān, wǒ men jiù qù yě cān.",
+          "englishBefore": "If it is sunny tomorrow, we will have a picnic."
+        }
+      ]
+    },
+    {
+      "index": 346,
+      "id": "wl_00347",
+      "word": "情绪",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "state of mind (bound element in 情绪)",
+      "after": "state of mind (bound element in qíng xù)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他平静地叙述经过，没有激动的情绪。",
+          "pinyin": "tā píng jìng de xù shù jīng guò, méi yǒu jī dòng de qíng xù.",
+          "englishBefore": "He calmly described what happened without becoming emotional."
+        },
+        {
+          "hanzi": "听到这个消息，大家的情绪都很激动。",
+          "pinyin": "Tīng dào zhè ge xiāo xi, dà jiā de qíng xù dōu hěn jī dòng.",
+          "englishBefore": "Everyone felt excited on hearing the news."
+        }
+      ]
+    },
+    {
+      "index": 350,
+      "id": "wl_00351",
+      "word": "所以",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "bound element in 所以 (therefore)",
+      "after": "bound element in suǒ yǐ (therefore)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "住处附近有老鼠，所以要收好食物。",
+          "pinyin": "zhù chù fù jìn yǒu lǎo shǔ, suǒ yǐ yào shōu hǎo shí wù.",
+          "englishBefore": "There are mice near our home, so we need to store food carefully."
+        },
+        {
+          "hanzi": "今天下雨，所以比赛推迟了。",
+          "pinyin": "Jīn tiān xià yǔ, suǒ yǐ bǐ sài tuī chí le.",
+          "englishBefore": "It is raining today, so the match was postponed."
+        }
+      ]
+    },
+    {
+      "index": 350,
+      "id": "wl_00351",
+      "word": "所以",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 所以 (therefore)",
+      "after": "bound element in suǒ yǐ (therefore)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "住处附近有老鼠，所以要收好食物。",
+          "pinyin": "zhù chù fù jìn yǒu lǎo shǔ, suǒ yǐ yào shōu hǎo shí wù.",
+          "englishBefore": "There are mice near our home, so we need to store food carefully."
+        },
+        {
+          "hanzi": "今天下雨，所以比赛推迟了。",
+          "pinyin": "Jīn tiān xià yǔ, suǒ yǐ bǐ sài tuī chí le.",
+          "englishBefore": "It is raining today, so the match was postponed."
+        }
+      ]
+    },
+    {
+      "index": 370,
+      "id": "wl_00371",
+      "word": "犹豫",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "bound element in 犹豫 (hesitate)",
+      "after": "bound element in yóu yù (hesitate)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他想戒掉香烟，却仍有些犹豫。",
+          "pinyin": "tā xiǎng jiè diào xiāng yān, què réng yǒu xiē yóu yù.",
+          "englishBefore": "He wants to give up cigarettes but is still hesitating."
+        },
+        {
+          "hanzi": "她犹豫了一会儿，才答应邀请。",
+          "pinyin": "Tā yóu yù le yí huì er, cái dā ying yāo qǐng.",
+          "englishBefore": "She hesitated for a moment before accepting the invitation."
+        }
+      ]
+    },
+    {
+      "index": 370,
+      "id": "wl_00371",
+      "word": "犹豫",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 犹豫 (hesitate)",
+      "after": "bound element in yóu yù (hesitate)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他想戒掉香烟，却仍有些犹豫。",
+          "pinyin": "tā xiǎng jiè diào xiāng yān, què réng yǒu xiē yóu yù.",
+          "englishBefore": "He wants to give up cigarettes but is still hesitating."
+        },
+        {
+          "hanzi": "她犹豫了一会儿，才答应邀请。",
+          "pinyin": "Tā yóu yù le yí huì er, cái dā ying yāo qǐng.",
+          "englishBefore": "She hesitated for a moment before accepting the invitation."
+        }
+      ]
+    },
+    {
+      "index": 514,
+      "id": "wl_00515",
+      "word": "介绍",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 介绍 (introduce)",
+      "after": "bound element in jiè shào (introduce)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "老师在化学课上介绍氨水。",
+          "pinyin": "lǎo shī zài huà xué kè shàng jiè shào ān shuǐ.",
+          "englishBefore": "The teacher introduces aqueous ammonia in chemistry class."
+        },
+        {
+          "hanzi": "这本书介绍傣族的节日。",
+          "pinyin": "zhè běn shū jiè shào dǎi zú de jié rì.",
+          "englishBefore": "This book introduces Dai festivals."
+        }
+      ]
+    },
+    {
+      "index": 553,
+      "id": "wl_00554",
+      "word": "身体",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "The character 㧐 can mean straightening up the body.",
+      "after": "The character sǒng can mean straightening up the body.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "洗澡以后，身体暖和起来了。",
+          "pinyin": "xǐ zǎo yǐ hòu, shēn tǐ nuǎn huo qǐ lai le.",
+          "englishBefore": "After a bath, my body felt warmer."
+        },
+        {
+          "hanzi": "㧐有挺起身体的意思。",
+          "pinyin": "sǒng yǒu tǐng qǐ shēn tǐ de yì si.",
+          "englishBefore": "The character 㧐 can mean straightening up the body."
+        }
+      ]
+    },
+    {
+      "index": 562,
+      "id": "wl_00563",
+      "word": "一切",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "all (bound element in 一切)",
+      "after": "all (bound element in yī qiè)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "她用牛奶代替水，把一切材料搅拌好。",
+          "pinyin": "tā yòng niú nǎi dài tì shuǐ, bǎ yī qiè cái liào jiǎo bàn hǎo.",
+          "englishBefore": "She used milk instead of water and mixed all the ingredients."
+        },
+        {
+          "hanzi": "出门前，他检查了一切必需的物品。",
+          "pinyin": "Chū mén qián, tā jiǎn chá le yī qiè bì xū de wù pǐn.",
+          "englishBefore": "Before going out, he checked all the necessary items."
+        }
+      ]
+    },
+    {
+      "index": 646,
+      "id": "wl_00647",
+      "word": "苹果",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "apple (bound element in 苹果)",
+      "after": "apple (bound element in píng guǒ)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "每个苹果平均分成四块，大小均匀。",
+          "pinyin": "měi ge píng guǒ píng jūn fēn chéng sì kuài, dà xiǎo jūn yún.",
+          "englishBefore": "Each apple is divided into four evenly sized pieces."
+        },
+        {
+          "hanzi": "篮子里的苹果已经熟了。",
+          "pinyin": "Lán zi lǐ de píng guǒ yǐ jīng shú le.",
+          "englishBefore": "The apples in the basket are ripe."
+        }
+      ]
+    },
+    {
+      "index": 749,
+      "id": "wl_00750",
+      "word": "干涉",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "interfere (bound element in 干涉)",
+      "after": "interfere (bound element in gān shè)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "冠军感谢教练没有过多干涉训练。",
+          "pinyin": "guàn jūn gǎn xiè jiào liàn méi yǒu guò duō gān shè xùn liàn.",
+          "englishBefore": "The champion thanked the coach for not interfering too much with training."
+        },
+        {
+          "hanzi": "请不要过多干涉他的选择。",
+          "pinyin": "qǐng bù yào guò duō gān shè tā de xuǎn zé.",
+          "englishBefore": "Please do not interfere too much in his choices."
+        }
+      ]
+    },
+    {
+      "index": 802,
+      "id": "wl_00803",
+      "word": "反对",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "oppose (bound element in 反对)",
+      "after": "oppose (bound element in fǎn duì)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "大家反对在公园里修建工厂。",
+          "pinyin": "dà jiā fǎn duì zài gōng yuán lǐ xiū jiàn gōng chǎng.",
+          "englishBefore": "Everyone opposed building a factory in the park."
+        },
+        {
+          "hanzi": "学校反对排斥，欢迎广大学生。",
+          "pinyin": "xué xiào fǎn duì pái chì, huān yíng guǎng dà xué sheng.",
+          "englishBefore": "The school opposes exclusion and welcomes a broad student body."
+        }
+      ]
+    },
+    {
+      "index": 936,
+      "id": "wl_00937",
+      "word": "高大",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "The literary term 侗侗 describes a tall, large build.",
+      "after": "The literary term tǒng tǒng describes a tall, large build.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他把牙膏放在高大的柜子上。",
+          "pinyin": "tā bǎ yá gāo fàng zài gāo dà de guì zi shàng.",
+          "englishBefore": "He put the toothpaste on the tall cabinet."
+        },
+        {
+          "hanzi": "侗侗形容身材高大。",
+          "pinyin": "tǒng tǒng xíng róng shēn cái gāo dà.",
+          "englishBefore": "The literary term 侗侗 describes a tall, large build."
+        }
+      ]
+    },
+    {
+      "index": 1041,
+      "id": "wl_01042",
+      "word": "火焰",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "The character 焱 can mean flames.",
+      "after": "The character yàn can mean flames.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "火焰很快吞噬了这间小屋。",
+          "pinyin": "huǒ yàn hěn kuài tūn shì le zhè jiān xiǎo wū.",
+          "englishBefore": "The flames quickly engulfed the cottage."
+        },
+        {
+          "hanzi": "焱字可以表示火焰。",
+          "pinyin": "yàn zì kě yǐ biǎo shì huǒ yàn.",
+          "englishBefore": "The character 焱 can mean flames."
+        }
+      ]
+    },
+    {
+      "index": 1043,
+      "id": "wl_01044",
+      "word": "什么",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "suffix in 什么 (what)",
+      "after": "suffix in shén me (what)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "亲家来吃饭，他询问对方想吃什么。",
+          "pinyin": "qìng jia lái chī fàn, tā xún wèn duì fāng xiǎng chī shén me.",
+          "englishBefore": "When the in-laws came for dinner, he asked what they would like to eat."
+        },
+        {
+          "hanzi": "嗨嗨，你们在找什么？",
+          "pinyin": "hāi hāi, nǐ men zài zhǎo shén me?",
+          "englishBefore": "Hey, what are you looking for?"
+        }
+      ]
+    },
+    {
+      "index": 1055,
+      "id": "wl_01056",
+      "word": "鲨鱼",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "The ancient book uses 鲛 to refer to a shark in the sea.",
+      "after": "The ancient book uses jiāo to refer to a shark in the sea.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "鲨鱼从海底的沙子上方游过。",
+          "pinyin": "shā yú cóng hǎi dǐ de shā zi shàng fāng yóu guò.",
+          "englishBefore": "A shark swam over the sand on the seabed."
+        },
+        {
+          "hanzi": "古书用鲛，指海中的鲨鱼。",
+          "pinyin": "gǔ shū yòng jiāo, zhǐ hǎi zhōng de shā yú.",
+          "englishBefore": "The ancient book uses 鲛 to refer to a shark in the sea."
+        }
+      ]
+    },
+    {
+      "index": 1074,
+      "id": "wl_01075",
+      "word": "寡妇",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "孀妇 is an older term for a widow.",
+      "after": "Shuāng fù is an older term for a widow.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "寡妇牢记邻居相助的恩情。",
+          "pinyin": "guǎ fu láo jì lín jū xiāng zhù de ēn qíng.",
+          "englishBefore": "The widow remembers her neighbor's kindness."
+        },
+        {
+          "hanzi": "孀妇是对寡妇的旧称。",
+          "pinyin": "shuāng fù shì duì guǎ fu de jiù chēng.",
+          "englishBefore": "孀妇 is an older term for a widow."
+        }
+      ]
+    },
+    {
+      "index": 1092,
+      "id": "wl_01093",
+      "word": "价格",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "value; price (bound element in 价格)",
+      "after": "value; price (bound element in jià gé)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "从图表看，价格呈下降趋势。",
+          "pinyin": "cóng tú biǎo kàn, jià gé chéng xià jiàng qū shì.",
+          "englishBefore": "The chart shows that prices are trending downward."
+        },
+        {
+          "hanzi": "他估计这只股票的价格还会涨。",
+          "pinyin": "tā gū jì zhè zhī gǔ piào de jià gé hái huì zhǎng.",
+          "englishBefore": "He estimates that this stock's price will rise further."
+        }
+      ]
+    },
+    {
+      "index": 1190,
+      "id": "wl_01191",
+      "word": "上面",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "阇台 means a platform above a city gate.",
+      "after": "Dū tái means a platform above a city gate.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "上面的照片是我们逛街时拍的。",
+          "pinyin": "shàng miàn de zhào piàn shì wǒ men guàng jiē shí pāi de.",
+          "englishBefore": "The photo above was taken while we were shopping."
+        },
+        {
+          "hanzi": "阇台是城门上面的台。",
+          "pinyin": "dū tái shì chéng mén shàng miàn de tái.",
+          "englishBefore": "阇台 means a platform above a city gate."
+        }
+      ]
+    },
+    {
+      "index": 1217,
+      "id": "wl_01218",
+      "word": "榜样",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "bound element in 榜样 (role model)",
+      "after": "bound element in bǎng yàng (role model)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "她把这位老师当作自己的榜样。",
+          "pinyin": "tā bǎ zhè wèi lǎo shī dàng zuò zì jǐ de bǎng yàng.",
+          "englishBefore": "She takes this teacher as her role model."
+        },
+        {
+          "hanzi": "哥哥一直是我的榜样。",
+          "pinyin": "gē ge yī zhí shì wǒ de bǎng yàng.",
+          "englishBefore": "My older brother has always been my role model."
+        }
+      ]
+    },
+    {
+      "index": 1266,
+      "id": "wl_01267",
+      "word": "名字",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "The character 鸹 is often used in names for crows.",
+      "after": "The character guā is often used in names for crows.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "忘记朋友的名字，让他感到尴尬。",
+          "pinyin": "wàng jì péng you de míng zi, ràng tā gǎn dào gān gà.",
+          "englishBefore": "Forgetting his friend's name made him feel embarrassed."
+        },
+        {
+          "hanzi": "鸹字常用在乌鸦的名字中。",
+          "pinyin": "guā zì cháng yòng zài wū yā de míng zi zhōng.",
+          "englishBefore": "The character 鸹 is often used in names for crows."
+        }
+      ]
+    },
+    {
+      "index": 1376,
+      "id": "wl_01377",
+      "word": "尤其",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 尤其 (especially)",
+      "after": "bound element in yóu qí (especially)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "我喜欢这种水果，尤其喜欢它的香味。",
+          "pinyin": "wǒ xǐ huan zhè zhǒng shuǐ guǒ, yóu qí xǐ huan tā de xiāng wèi.",
+          "englishBefore": "I like this fruit, especially its pleasant smell."
+        },
+        {
+          "hanzi": "我厌恶欺骗，尤其是涉及金钱的谎言。",
+          "pinyin": "wǒ yàn wù qī piàn, yóu qí shì shè jí jīn qián de huǎng yán.",
+          "englishBefore": "I dislike deception, especially lies involving money."
+        }
+      ]
+    },
+    {
+      "index": 1388,
+      "id": "wl_01389",
+      "word": "手工",
+      "field": "例句JSON",
+      "path": "0.chunks.8.gloss",
+      "before": "ends a 是…的 statement emphasizing how it was made",
+      "after": "ends a shì...de statement emphasizing how it was made",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "这件小礼物是他手工制作的。",
+          "pinyin": "zhè jiàn xiǎo lǐ wù shì tā shǒu gōng zhì zuò de.",
+          "englishBefore": "He made this little gift by hand."
+        },
+        {
+          "hanzi": "这些杯子都是手工制作的。",
+          "pinyin": "zhè xiē bēi zi dōu shì shǒu gōng zhì zuò de.",
+          "englishBefore": "These cups are all handmade."
+        }
+      ]
+    },
+    {
+      "index": 1389,
+      "id": "wl_01390",
+      "word": "所有",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "bound element in 所有 (all)",
+      "after": "bound element in suǒ yǒu (all)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "贪婪的男人拿走了所有金钱。",
+          "pinyin": "tān lán de nán rén ná zǒu le suǒ yǒu jīn qián.",
+          "englishBefore": "The greedy man took all the money."
+        },
+        {
+          "hanzi": "所有的窗户都关上了。",
+          "pinyin": "suǒ yǒu de chuāng hu dōu guān shàng le.",
+          "englishBefore": "All the windows are closed."
+        }
+      ]
+    },
+    {
+      "index": 1395,
+      "id": "wl_01396",
+      "word": "就是",
+      "field": "本义解释JSON",
+      "path": "2",
+      "before": "even if (used with 也)",
+      "after": "even if (used with yě)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "有人欺负她，我怀疑就是那个人。",
+          "pinyin": "yǒu rén qī fu tā, wǒ huái yí jiù shì nà ge rén.",
+          "englishBefore": "Someone bullied her, and I suspect it was that person."
+        },
+        {
+          "hanzi": "你要找的人就是她。",
+          "pinyin": "nǐ yào zhǎo de rén jiù shì tā.",
+          "englishBefore": "She is exactly the person you are looking for."
+        }
+      ]
+    },
+    {
+      "index": 1414,
+      "id": "wl_01415",
+      "word": "沟通",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "connect (bound element in 沟通)",
+      "after": "connect (bound element in gōu tōng)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "沟通以后，她投入更多时间练习。",
+          "pinyin": "gōu tōng yǐ hòu, tā tóu rù gèng duō shí jiān liàn xí.",
+          "englishBefore": "After discussing it, she devoted more time to practicing."
+        },
+        {
+          "hanzi": "遇到分歧时，要及时沟通。",
+          "pinyin": "yù dào fēn qí shí, yào jí shí gōu tōng.",
+          "englishBefore": "When disagreements arise, communicate promptly."
+        }
+      ]
+    },
+    {
+      "index": 1491,
+      "id": "wl_01492",
+      "word": "占领",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "take possession (bound element in 占领)",
+      "after": "take possession (bound element in zhàn lǐng)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "军队占领了这座城堡。",
+          "pinyin": "jūn duì zhàn lǐng le zhè zuò chéng bǎo.",
+          "englishBefore": "The army occupied this castle."
+        },
+        {
+          "hanzi": "军队占领了河边的据点。",
+          "pinyin": "jūn duì zhàn lǐng le hé biān de jù diǎn.",
+          "englishBefore": "The army captured the stronghold by the river."
+        }
+      ]
+    },
+    {
+      "index": 1553,
+      "id": "wl_01554",
+      "word": "怎么",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "suffix in 怎么 (how)",
+      "after": "suffix in zěn me (how)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "阿姨告诉我她的姓氏怎么写。",
+          "pinyin": "ā yí gào su wǒ tā de xìng shì zěn me xiě.",
+          "englishBefore": "My aunt told me how to write her surname."
+        },
+        {
+          "hanzi": "这个字怎么读？",
+          "pinyin": "zhè gè zì zěn me dú?",
+          "englishBefore": "How is this character pronounced?"
+        }
+      ]
+    },
+    {
+      "index": 1579,
+      "id": "wl_01580",
+      "word": "天哪",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "exclamatory particle (啊 after an n sound)",
+      "after": "exclamatory particle (a after an n sound)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "天哪，我把车票弄丢了！",
+          "pinyin": "tiān na, wǒ bǎ chē piào nòng diū le!",
+          "englishBefore": "Oh no, I lost my ticket!"
+        },
+        {
+          "hanzi": "天哪，窗户没关！",
+          "pinyin": "tiān na, chuāng hu méi guān!",
+          "englishBefore": "Oh no, the window is open!"
+        }
+      ]
+    },
+    {
+      "index": 1623,
+      "id": "wl_01624",
+      "word": "间谍",
+      "field": "部件JSON",
+      "path": "0.gloss",
+      "before": "spy (bound element in 间谍)",
+      "after": "spy (bound element in jiàn dié)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "间谍隐藏身份，秘密搜集资料。",
+          "pinyin": "jiàn dié yǐn cáng shēn fèn, mì mì sōu jí zī liào.",
+          "englishBefore": "The spy concealed his identity and secretly collected information."
+        },
+        {
+          "hanzi": "故事里的间谍使用假名。",
+          "pinyin": "gù shi lǐ de jiàn dié shǐ yòng jiǎ míng.",
+          "englishBefore": "The spy in the story uses a false name."
+        }
+      ]
+    },
+    {
+      "index": 1701,
+      "id": "wl_01702",
+      "word": "湿漉漉",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "dripping wet (bound element in 湿漉漉)",
+      "after": "dripping wet (bound element in shī lù lù)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "她把湿漉漉的衣服烘干了。",
+          "pinyin": "tā bǎ shī lù lù de yī fu hōng gān le.",
+          "englishBefore": "She dried the soaking-wet clothes with heat."
+        },
+        {
+          "hanzi": "雨伞湿漉漉的，先放在门外吧。",
+          "pinyin": "Yǔ sǎn shī lù lù de, xiān fàng zài mén wài ba.",
+          "englishBefore": "The umbrella is soaking wet; leave it outside the door for now."
+        }
+      ]
+    },
+    {
+      "index": 1701,
+      "id": "wl_01702",
+      "word": "湿漉漉",
+      "field": "部件JSON",
+      "path": "2.gloss",
+      "before": "dripping wet (bound element in 湿漉漉)",
+      "after": "dripping wet (bound element in shī lù lù)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "她把湿漉漉的衣服烘干了。",
+          "pinyin": "tā bǎ shī lù lù de yī fu hōng gān le.",
+          "englishBefore": "She dried the soaking-wet clothes with heat."
+        },
+        {
+          "hanzi": "雨伞湿漉漉的，先放在门外吧。",
+          "pinyin": "Yǔ sǎn shī lù lù de, xiān fàng zài mén wài ba.",
+          "englishBefore": "The umbrella is soaking wet; leave it outside the door for now."
+        }
+      ]
+    },
+    {
+      "index": 1731,
+      "id": "wl_01732",
+      "word": "从容",
+      "field": "部件JSON",
+      "path": "1.gloss",
+      "before": "bound element in 从容 (calm and unhurried)",
+      "after": "bound element in cóng róng (calm and unhurried)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "她神情笃定，从容回答问题。",
+          "pinyin": "tā shén qíng dǔ dìng, cóng róng huí dá wèn tí.",
+          "englishBefore": "She looks confident and answers calmly."
+        },
+        {
+          "hanzi": "面对突然的问题，他回答得很从容。",
+          "pinyin": "Miàn duì tū rán de wèn tí, tā huí dá de hěn cóng róng.",
+          "englishBefore": "He answered the unexpected question calmly."
+        }
+      ]
+    },
+    {
+      "index": 1959,
+      "id": "wl_01960",
+      "word": "乌鸦",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "The character 鸹 is often used in names for crows.",
+      "after": "The character guā is often used in names for crows.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "乌鸦站在朴素的小屋顶上。",
+          "pinyin": "wū yā zhàn zài pǔ sù de xiǎo wū dǐng shàng.",
+          "englishBefore": "A crow stands on the roof of the simple little house."
+        },
+        {
+          "hanzi": "鸹字常用在乌鸦的名字中。",
+          "pinyin": "guā zì cháng yòng zài wū yā de míng zi zhōng.",
+          "englishBefore": "The character 鸹 is often used in names for crows."
+        }
+      ]
+    },
+    {
+      "index": 1983,
+      "id": "wl_01984",
+      "word": "侏儒",
+      "field": "本义解释JSON",
+      "path": "1",
+      "before": "dwarfism (in 侏儒症)",
+      "after": "dwarfism (in zhū rú zhèng)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "医生研究侏儒症的解剖特征。",
+          "pinyin": "yī shēng yán jiū zhū rú zhèng de jiě pōu tè zhēng.",
+          "englishBefore": "The doctor studies the anatomical features of dwarfism."
+        },
+        {
+          "hanzi": "资料介绍了侏儒症这一医学名称。",
+          "pinyin": "Zī liào jiè shào le zhū rú zhèng zhè yì yī xué míng chēng.",
+          "englishBefore": "The document explains the medical term “dwarfism”."
+        }
+      ]
+    },
+    {
+      "index": 1990,
+      "id": "wl_01991",
+      "word": "痰盂",
+      "field": "例句JSON",
+      "path": "1.chunks.7.gloss",
+      "before": "ends a descriptive 是…的 statement",
+      "after": "ends a descriptive shì...de statement",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "他每天清洗床旁的痰盂。",
+          "pinyin": "tā měi tiān qīng xǐ chuáng páng de tán yú.",
+          "englishBefore": "He washes the spittoon beside the bed every day."
+        },
+        {
+          "hanzi": "展柜里的痰盂是陶瓷制成的。",
+          "pinyin": "Zhǎn guì lǐ de tán yú shì táo cí zhì chéng de.",
+          "englishBefore": "The spittoon in the display case is made of ceramic."
+        }
+      ]
+    },
+    {
+      "index": 2150,
+      "id": "wl_02151",
+      "word": "亲家",
+      "field": "例句JSON",
+      "path": "1.chunks.8.gloss",
+      "before": "face (in 见面: meet)",
+      "after": "face (in jiàn miàn: meet)",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "亲家来吃饭，他询问对方想吃什么。",
+          "pinyin": "qìng jia lái chī fàn, tā xún wèn duì fāng xiǎng chī shén me.",
+          "englishBefore": "When the in-laws came for dinner, he asked what they would like to eat."
+        },
+        {
+          "hanzi": "两位亲家在婚礼前见了面。",
+          "pinyin": "Liǎng wèi qìng jia zài hūn lǐ qián jiàn le miàn.",
+          "englishBefore": "The parents from the two families met before their children's wedding."
+        }
+      ]
+    },
+    {
+      "index": 2413,
+      "id": "wl_02414",
+      "word": "玄妙",
+      "field": "例句JSON",
+      "path": "0.english",
+      "before": "In Classical Chinese, 玄妙 can refer to profound mysteries.",
+      "after": "In Classical Chinese, xuán miào can refer to profound mysteries.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "古文中的玄妙可指深奥的奥妙。",
+          "pinyin": "gǔ wén zhōng de xuán miào kě zhǐ shēn ào de ào miào.",
+          "englishBefore": "In Classical Chinese, 玄妙 can refer to profound mysteries."
+        },
+        {
+          "hanzi": "这段文字的道理十分玄妙。",
+          "pinyin": "zhè duàn wén zì de dào lǐ shí fēn xuán miào.",
+          "englishBefore": "The ideas in this passage are profound and subtle."
+        }
+      ]
+    },
+    {
+      "index": 2418,
+      "id": "wl_02419",
+      "word": "词典",
+      "field": "例句JSON",
+      "path": "1.english",
+      "before": "In a dictionary of metal terms, 锴 can refer to high-quality iron.",
+      "after": "In a dictionary of metal terms, kǎi can refer to high-quality iron.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "旁边的词典里有这个词的解释。",
+          "pinyin": "páng biān de cí diǎn lǐ yǒu zhè ge cí de jiě shì.",
+          "englishBefore": "The dictionary beside us has an explanation of this word."
+        },
+        {
+          "hanzi": "金属词典里，锴可以指好铁。",
+          "pinyin": "jīn shǔ cí diǎn lǐ, kǎi kě yǐ zhǐ hǎo tiě.",
+          "englishBefore": "In a dictionary of metal terms, 锴 can refer to high-quality iron."
+        }
+      ]
+    },
+    {
+      "index": 2428,
+      "id": "wl_02429",
+      "word": "瘪三",
+      "field": "例句JSON",
+      "path": "0.english",
+      "before": "The novel uses the derogatory term 瘪三 to describe loafers roaming the streets.",
+      "after": "The novel uses the derogatory term biē sān to describe loafers roaming the streets.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "小说以瘪三描写街头游荡的无赖。",
+          "pinyin": "xiǎo shuō yǐ biē sān miáo xiě jiē tóu yóu dàng de wú lài.",
+          "englishBefore": "The novel uses the derogatory term 瘪三 to describe loafers roaming the streets."
+        },
+        {
+          "hanzi": "小说中的瘪三整日在街头闲逛。",
+          "pinyin": "xiǎo shuō zhōng de biē sān zhěng rì zài jiē tóu xián guàng.",
+          "englishBefore": "The novel's street loafer wanders about all day."
+        }
+      ]
+    },
+    {
+      "index": 2460,
+      "id": "wl_02461",
+      "word": "奥妙",
+      "field": "例句JSON",
+      "path": "0.english",
+      "before": "In Classical Chinese, 玄妙 can refer to profound mysteries.",
+      "after": "In Classical Chinese, xuán miào can refer to profound mysteries.",
+      "reason": "Preserve the quoted Chinese reference and its meaning through explicitly reviewed tone-marked pinyin; grammatical shi...de and interjection a remain readable in the English assistance column.",
+      "context": [
+        {
+          "hanzi": "古文中的玄妙可指深奥的奥妙。",
+          "pinyin": "gǔ wén zhōng de xuán miào kě zhǐ shēn ào de ào miào.",
+          "englishBefore": "In Classical Chinese, 玄妙 can refer to profound mysteries."
+        },
+        {
+          "hanzi": "他想弄懂这项技术的奥妙。",
+          "pinyin": "tā xiǎng nòng dǒng zhè xiàng jì shù de ào miào.",
+          "englishBefore": "He wants to understand the subtle secrets of this technique."
+        }
+      ]
+    }
+  ],
+  "beforeAndAfterReadComplete": true,
+  "remainingHanInEnglishAssistance": [],
+  "preservation": "Every full changed CSV field starts from all manifest overlays in order, including primary/cross and the user sample. Hanzi, pinyin, segmentation, arrays, stable identities and unrelated fields are unchanged. Original CSV and frozen overlays/manifest are not edited.",
+  "method": "All 51 affected teaching strings read with both complete sentence contexts, then replaced only through explicitly reviewed word/rare-character readings or grammatical shi...de. All 51 written before/after strings were read with the unchanged full Hanzi/pinyin/translation context; two sentence-initial romanized terms additionally receive English sentence capitalization. Automatic invariant checks separately verify no remaining Han and only assistance text changed."
+}

@@ -25,8 +25,8 @@
     "2": 1922
   },
   "examples": 15446,
-  "bytes": 17881368,
-  "sha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "bytes": 17705699,
+  "sha256": "388ab2d79afdd4685a101a27c550a1b4cb9fb5e051add0874cbaf47c2f5706e1",
   "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix",
   "learningOrder": "rarity, syllable letters then tone 1/2/3/4/5, next syllable, stable ID",
   "firstLearningWords": [
@@ -131,5 +131,36 @@
       "拼音": "bái sè"
     }
   ],
-  "verification": "Complete structural/content-shape/reference/stroke-coverage checks. AI-assisted lexical gloss selection is not human linguistic sign-off."
+  "verification": "Complete structural/content-shape/reference/stroke-coverage checks. AI-assisted lexical gloss selection is not human linguistic sign-off.",
+  "contentReview": {
+    "reviewedRows": 7723,
+    "date": "2026-10-05",
+    "manifestSha256": "0a7582b842673b539fb1cce976feea2fee118aa19cdf8d3ea4d1259ca0160385",
+    "inputSha256": {
+      "final_patch_1.json": "6b752165bbaa9111a51f5638607839389e081f267c5c2311e44dfa165419256d",
+      "final_patch_2.json": "46225c4b6b988f3920bf827e3725bda4d9f2a6de3e31396d1b66d97019f3aac0",
+      "final_patch_3.json": "2e29c34a21387bb884a4f020a5fb67eb757cfb4a9e9ea03915816ec343bb0f07",
+      "cross_review_corrections_1.json": "71069776356dc8f8da2c1022f1fb8460bdc5ca8d14e127d79340524cda072950",
+      "primary_corrections_1.json": "79bc3fc3d79080b4fadb8a5429cfed0dac7756cf02482482f992a7c1c7fd8178",
+      "primary_corrections_2.json": "31362c1d9ab281ea79f57186aec624613d5f3e04d25011f2b43ea6ea718c7625",
+      "primary_corrections_3.json": "93ccdfd312210fbb8db8d26d483e192b7446c82407ca5939f68f3d39a4aa6e0d",
+      "user_sample_patch_1.json": "c346dc4c4ab7307cea3f34150a496be16f84e8517d9b162670990a7ec476da0c",
+      "format_corrections_1.json": "a30431fc5df296a1a2aac090e2635d54c79b6ddf4f07fc9e8f42986634d7bef6",
+      "format_corrections_2.json": "8845e6685de76fef135a15ddba5c02e8124f602de46d614a3d5a4b3dec26beb8",
+      "format_corrections_3.json": "cfdb349f4479ee8303a47c22e29a32a83e2ed3637b9a4b54f9c09b638fb00022",
+      "final_report_1.json": "14f76bc476f122bb5a8f72cb4a42f0d1b7bc662a5f08ed42eec7d5a1281fb40a",
+      "final_report_2.json": "cdf12f3222047aa13e591709b175bcc90f001389f64609fd4baabfe6ac12badc",
+      "final_report_3.json": "5991b3649992f5983c33495e79d484a5d126c98bc88ae901fcb3405e0576aea3",
+      "cross_review_report_1.json": "911f79c0f332df60200f44f1058111e9ff268e6d536e954b58d8c52b4f73b3c2",
+      "primary_review_1.json": "1621fc56c7c78823efa57e4b2701575677f401308e6a0d3f77d29e8ff1ca9a66",
+      "primary_review_2.json": "46862983aff2611408a79f5ce4719ccc88ee4091f10df47588ce58c22571c959",
+      "primary_review_3.json": "ebd0ff47f47e345b7b34a5c416a9093ae02f651818fae1a4851cf0222138db4c",
+      "final_audit_2.json": "a630b0dade24b73412ce563af2024ac00e75671d42f3ee2e0e2adc54495e9c0a",
+      "delivery_audit_3.json": "1d1d7fecaea7bea06d410e61fa3f15bb029ebed304caff728a990bca381a232a",
+      "format_review_1.json": "3a0cfa408936e04b13a6396ed378a215198291758087bb104a11133c33607546",
+      "format_review_2.json": "348d3e4b2a1abd90a43612280833e096a7404ac858d4a3bc5df4fb964589457c",
+      "format_review_3.json": "18777b4f30b63640b7972d5963f395a9598be99071e7011c6e1ecd686e226b88"
+    },
+    "boundary": "Complete AI editorial reading with contextual refinements and independent structural validation; not human linguistic certification."
+  }
 }

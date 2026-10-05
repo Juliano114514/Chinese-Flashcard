@@ -1,0 +1,144 @@
+{
+  "wl_00038": {
+    "部件JSON": "[{\"hanzi\":\"忙\",\"pinyin\":\"máng\",\"gloss\":\"busy\"},{\"hanzi\":\"碌\",\"pinyin\":\"lù\",\"gloss\":\"busy (bound element in máng lù)\"}]"
+  },
+  "wl_00126": {
+    "本义解释JSON": "[\"only; merely\",\"only have; there is only\",\"only if (used with cái)\",\"have no choice but to\"]"
+  },
+  "wl_00181": {
+    "本义解释JSON": "[\"although; even though (often paired with dàn shì or kě shì)\"]",
+    "部件JSON": "[{\"hanzi\":\"虽\",\"pinyin\":\"suī\",\"gloss\":\"although\"},{\"hanzi\":\"然\",\"pinyin\":\"rán\",\"gloss\":\"bound element in suī rán (although)\"}]"
+  },
+  "wl_00243": {
+    "部件JSON": "[{\"hanzi\":\"仔\",\"pinyin\":\"zǐ\",\"gloss\":\"careful (bound element in zǐ xì)\"},{\"hanzi\":\"细\",\"pinyin\":\"xì\",\"gloss\":\"fine; detailed\"}]"
+  },
+  "wl_00246": {
+    "例句JSON": "[{\"hanzi\":\"你刚才说的是啥意思？\",\"pinyin\":\"nǐ gāng cái shuō de shì shá yì si?\",\"english\":\"What did you mean by what you just said?\",\"chunks\":[{\"hanzi\":\"你\",\"pinyin\":\"nǐ\",\"gloss\":\"you\"},{\"hanzi\":\"刚才\",\"pinyin\":\"gāng cái\",\"gloss\":\"just now\"},{\"hanzi\":\"说\",\"pinyin\":\"shuō\",\"gloss\":\"say\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"be\"},{\"hanzi\":\"啥\",\"pinyin\":\"shá\",\"gloss\":\"what, colloquial usage\"},{\"hanzi\":\"意思？\",\"pinyin\":\"yì si?\",\"gloss\":\"meaning\"}]},{\"hanzi\":\"名字里的煊，带有温暖的意思。\",\"pinyin\":\"míng zi lǐ de xuān, dài yǒu wēn nuǎn de yì si.\",\"english\":\"In the name, the character xuān conveys warmth.\",\"chunks\":[{\"hanzi\":\"名字\",\"pinyin\":\"míng zi\",\"gloss\":\"name (of a person or thing)\"},{\"hanzi\":\"里\",\"pinyin\":\"lǐ\",\"gloss\":\"in; inside\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"煊，\",\"pinyin\":\"xuān,\",\"gloss\":\"warm\"},{\"hanzi\":\"带有\",\"pinyin\":\"dài yǒu\",\"gloss\":\"have as a feature or characteristic\"},{\"hanzi\":\"温暖\",\"pinyin\":\"wēn nuǎn\",\"gloss\":\"warmth\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"意思。\",\"pinyin\":\"yì si.\",\"gloss\":\"meaning\"}]}]"
+  },
+  "wl_00293": {
+    "部件JSON": "[{\"hanzi\":\"机\",\"pinyin\":\"jī\",\"gloss\":\"(bound form) an opportunity\"},{\"hanzi\":\"会\",\"pinyin\":\"huì\",\"gloss\":\"opportunity (bound element in jī huì)\"}]"
+  },
+  "wl_00307": {
+    "部件JSON": "[{\"hanzi\":\"几\",\"pinyin\":\"jī\",\"gloss\":\"(literary) almost\"},{\"hanzi\":\"乎\",\"pinyin\":\"hū\",\"gloss\":\"bound element in jī hū (almost)\"}]"
+  },
+  "wl_00323": {
+    "部件JSON": "[{\"hanzi\":\"沮\",\"pinyin\":\"jǔ\",\"gloss\":\"dejected (bound element in jǔ sàng)\"},{\"hanzi\":\"丧\",\"pinyin\":\"sàng\",\"gloss\":\"discouraged\"}]"
+  },
+  "wl_00327": {
+    "部件JSON": "[{\"hanzi\":\"着\",\"pinyin\":\"zháo\",\"gloss\":\"come under; be affected (bound element in zháo jí)\"},{\"hanzi\":\"急\",\"pinyin\":\"jí\",\"gloss\":\"worried\"}]"
+  },
+  "wl_00330": {
+    "部件JSON": "[{\"hanzi\":\"如\",\"pinyin\":\"rú\",\"gloss\":\"as\"},{\"hanzi\":\"果\",\"pinyin\":\"guǒ\",\"gloss\":\"bound element in rú guǒ (if)\"}]"
+  },
+  "wl_00347": {
+    "部件JSON": "[{\"hanzi\":\"情\",\"pinyin\":\"qíng\",\"gloss\":\"(bound form) feelings; emotion; sentiment; passion\"},{\"hanzi\":\"绪\",\"pinyin\":\"xù\",\"gloss\":\"state of mind (bound element in qíng xù)\"}]"
+  },
+  "wl_00351": {
+    "部件JSON": "[{\"hanzi\":\"所\",\"pinyin\":\"suǒ\",\"gloss\":\"bound element in suǒ yǐ (therefore)\"},{\"hanzi\":\"以\",\"pinyin\":\"yǐ\",\"gloss\":\"bound element in suǒ yǐ (therefore)\"}]"
+  },
+  "wl_00371": {
+    "部件JSON": "[{\"hanzi\":\"犹\",\"pinyin\":\"yóu\",\"gloss\":\"bound element in yóu yù (hesitate)\"},{\"hanzi\":\"豫\",\"pinyin\":\"yù\",\"gloss\":\"bound element in yóu yù (hesitate)\"}]"
+  },
+  "wl_00515": {
+    "部件JSON": "[{\"hanzi\":\"介\",\"pinyin\":\"jiè\",\"gloss\":\"to introduce\"},{\"hanzi\":\"绍\",\"pinyin\":\"shào\",\"gloss\":\"bound element in jiè shào (introduce)\"}]"
+  },
+  "wl_00554": {
+    "例句JSON": "[{\"hanzi\":\"洗澡以后，身体暖和起来了。\",\"pinyin\":\"xǐ zǎo yǐ hòu, shēn tǐ nuǎn huo qǐ lai le.\",\"english\":\"After a bath, my body felt warmer.\",\"chunks\":[{\"hanzi\":\"洗澡\",\"pinyin\":\"xǐ zǎo\",\"gloss\":\"bathe\"},{\"hanzi\":\"以后，\",\"pinyin\":\"yǐ hòu,\",\"gloss\":\"after\"},{\"hanzi\":\"身体\",\"pinyin\":\"shēn tǐ\",\"gloss\":\"the body\"},{\"hanzi\":\"暖和\",\"pinyin\":\"nuǎn huo\",\"gloss\":\"warm\"},{\"hanzi\":\"起来\",\"pinyin\":\"qǐ lai\",\"gloss\":\"begin to, after a verb or adjective\"},{\"hanzi\":\"了。\",\"pinyin\":\"le.\",\"gloss\":\"LE (completed action or change)\"}]},{\"hanzi\":\"㧐有挺起身体的意思。\",\"pinyin\":\"sǒng yǒu tǐng qǐ shēn tǐ de yì si.\",\"english\":\"The character sǒng can mean straightening up the body.\",\"chunks\":[{\"hanzi\":\"㧐\",\"pinyin\":\"sǒng\",\"gloss\":\"straighten up the body\"},{\"hanzi\":\"有\",\"pinyin\":\"yǒu\",\"gloss\":\"have\"},{\"hanzi\":\"挺起\",\"pinyin\":\"tǐng qǐ\",\"gloss\":\"straighten; raise\"},{\"hanzi\":\"身体\",\"pinyin\":\"shēn tǐ\",\"gloss\":\"body\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"意思。\",\"pinyin\":\"yì si.\",\"gloss\":\"meaning\"}]}]"
+  },
+  "wl_00563": {
+    "部件JSON": "[{\"hanzi\":\"一\",\"pinyin\":\"yī\",\"gloss\":\"one\"},{\"hanzi\":\"切\",\"pinyin\":\"qiè\",\"gloss\":\"all (bound element in yī qiè)\"}]"
+  },
+  "wl_00647": {
+    "部件JSON": "[{\"hanzi\":\"苹\",\"pinyin\":\"píng\",\"gloss\":\"apple (bound element in píng guǒ)\"},{\"hanzi\":\"果\",\"pinyin\":\"guǒ\",\"gloss\":\"fruit\"}]"
+  },
+  "wl_00750": {
+    "部件JSON": "[{\"hanzi\":\"干\",\"pinyin\":\"gān\",\"gloss\":\"interfere (bound element in gān shè)\"},{\"hanzi\":\"涉\",\"pinyin\":\"shè\",\"gloss\":\"involve\"}]"
+  },
+  "wl_00803": {
+    "部件JSON": "[{\"hanzi\":\"反\",\"pinyin\":\"fǎn\",\"gloss\":\"to oppose\"},{\"hanzi\":\"对\",\"pinyin\":\"duì\",\"gloss\":\"oppose (bound element in fǎn duì)\"}]"
+  },
+  "wl_00937": {
+    "例句JSON": "[{\"hanzi\":\"他把牙膏放在高大的柜子上。\",\"pinyin\":\"tā bǎ yá gāo fàng zài gāo dà de guì zi shàng.\",\"english\":\"He put the toothpaste on the tall cabinet.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"把\",\"pinyin\":\"bǎ\",\"gloss\":\"BA (object marker)\"},{\"hanzi\":\"牙膏\",\"pinyin\":\"yá gāo\",\"gloss\":\"toothpaste\"},{\"hanzi\":\"放\",\"pinyin\":\"fàng\",\"gloss\":\"put\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"高大\",\"pinyin\":\"gāo dà\",\"gloss\":\"tall\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"柜子\",\"pinyin\":\"guì zi\",\"gloss\":\"cabinet\"},{\"hanzi\":\"上。\",\"pinyin\":\"shàng.\",\"gloss\":\"on; up\"}]},{\"hanzi\":\"侗侗形容身材高大。\",\"pinyin\":\"tǒng tǒng xíng róng shēn cái gāo dà.\",\"english\":\"The literary term tǒng tǒng describes a tall, large build.\",\"chunks\":[{\"hanzi\":\"侗侗\",\"pinyin\":\"tǒng tǒng\",\"gloss\":\"tall and large, literary usage\"},{\"hanzi\":\"形容\",\"pinyin\":\"xíng róng\",\"gloss\":\"describe\"},{\"hanzi\":\"身材\",\"pinyin\":\"shēn cái\",\"gloss\":\"build (height and weight)\"},{\"hanzi\":\"高大。\",\"pinyin\":\"gāo dà.\",\"gloss\":\"tall\"}]}]"
+  },
+  "wl_01042": {
+    "例句JSON": "[{\"hanzi\":\"火焰很快吞噬了这间小屋。\",\"pinyin\":\"huǒ yàn hěn kuài tūn shì le zhè jiān xiǎo wū.\",\"english\":\"The flames quickly engulfed the cottage.\",\"chunks\":[{\"hanzi\":\"火焰\",\"pinyin\":\"huǒ yàn\",\"gloss\":\"flame\"},{\"hanzi\":\"很\",\"pinyin\":\"hěn\",\"gloss\":\"very\"},{\"hanzi\":\"快\",\"pinyin\":\"kuài\",\"gloss\":\"fast; quick\"},{\"hanzi\":\"吞噬\",\"pinyin\":\"tūn shì\",\"gloss\":\"engulf\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"间\",\"pinyin\":\"jiān\",\"gloss\":\"JIAN (classifier for rooms or buildings)\"},{\"hanzi\":\"小屋。\",\"pinyin\":\"xiǎo wū.\",\"gloss\":\"cottage\"}]},{\"hanzi\":\"焱字可以表示火焰。\",\"pinyin\":\"yàn zì kě yǐ biǎo shì huǒ yàn.\",\"english\":\"The character yàn can mean flames.\",\"chunks\":[{\"hanzi\":\"焱\",\"pinyin\":\"yàn\",\"gloss\":\"flame\"},{\"hanzi\":\"字\",\"pinyin\":\"zì\",\"gloss\":\"character\"},{\"hanzi\":\"可以\",\"pinyin\":\"kě yǐ\",\"gloss\":\"can; may\"},{\"hanzi\":\"表示\",\"pinyin\":\"biǎo shì\",\"gloss\":\"express; indicate\"},{\"hanzi\":\"火焰。\",\"pinyin\":\"huǒ yàn.\",\"gloss\":\"flame\"}]}]"
+  },
+  "wl_01044": {
+    "部件JSON": "[{\"hanzi\":\"什\",\"pinyin\":\"shén\",\"gloss\":\"what\"},{\"hanzi\":\"么\",\"pinyin\":\"me\",\"gloss\":\"suffix in shén me (what)\"}]"
+  },
+  "wl_01056": {
+    "例句JSON": "[{\"hanzi\":\"鲨鱼从海底的沙子上方游过。\",\"pinyin\":\"shā yú cóng hǎi dǐ de shā zi shàng fāng yóu guò.\",\"english\":\"A shark swam over the sand on the seabed.\",\"chunks\":[{\"hanzi\":\"鲨鱼\",\"pinyin\":\"shā yú\",\"gloss\":\"shark\"},{\"hanzi\":\"从\",\"pinyin\":\"cóng\",\"gloss\":\"from\"},{\"hanzi\":\"海底\",\"pinyin\":\"hǎi dǐ\",\"gloss\":\"seabed\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"沙子\",\"pinyin\":\"shā zi\",\"gloss\":\"sand\"},{\"hanzi\":\"上方\",\"pinyin\":\"shàng fāng\",\"gloss\":\"place above (it)\"},{\"hanzi\":\"游\",\"pinyin\":\"yóu\",\"gloss\":\"swim\"},{\"hanzi\":\"过。\",\"pinyin\":\"guò.\",\"gloss\":\"pass; cross\"}]},{\"hanzi\":\"古书用鲛，指海中的鲨鱼。\",\"pinyin\":\"gǔ shū yòng jiāo, zhǐ hǎi zhōng de shā yú.\",\"english\":\"The ancient book uses jiāo to refer to a shark in the sea.\",\"chunks\":[{\"hanzi\":\"古书\",\"pinyin\":\"gǔ shū\",\"gloss\":\"ancient book\"},{\"hanzi\":\"用\",\"pinyin\":\"yòng\",\"gloss\":\"use\"},{\"hanzi\":\"鲛，\",\"pinyin\":\"jiāo,\",\"gloss\":\"shark, in literary compounds\"},{\"hanzi\":\"指\",\"pinyin\":\"zhǐ\",\"gloss\":\"refer to; point to\"},{\"hanzi\":\"海\",\"pinyin\":\"hǎi\",\"gloss\":\"sea\"},{\"hanzi\":\"中\",\"pinyin\":\"zhōng\",\"gloss\":\"in; among\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"鲨鱼。\",\"pinyin\":\"shā yú.\",\"gloss\":\"shark\"}]}]"
+  },
+  "wl_01075": {
+    "例句JSON": "[{\"hanzi\":\"寡妇牢记邻居相助的恩情。\",\"pinyin\":\"guǎ fu láo jì lín jū xiāng zhù de ēn qíng.\",\"english\":\"The widow remembers her neighbor's kindness.\",\"chunks\":[{\"hanzi\":\"寡妇\",\"pinyin\":\"guǎ fu\",\"gloss\":\"widow\"},{\"hanzi\":\"牢记\",\"pinyin\":\"láo jì\",\"gloss\":\"keep in mind\"},{\"hanzi\":\"邻居\",\"pinyin\":\"lín jū\",\"gloss\":\"neighbor\"},{\"hanzi\":\"相助\",\"pinyin\":\"xiāng zhù\",\"gloss\":\"help one another\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"恩情。\",\"pinyin\":\"ēn qíng.\",\"gloss\":\"kindness\"}]},{\"hanzi\":\"孀妇是对寡妇的旧称。\",\"pinyin\":\"shuāng fù shì duì guǎ fu de jiù chēng.\",\"english\":\"Shuāng fù is an older term for a widow.\",\"chunks\":[{\"hanzi\":\"孀妇\",\"pinyin\":\"shuāng fù\",\"gloss\":\"widow, formal usage\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"be\"},{\"hanzi\":\"对\",\"pinyin\":\"duì\",\"gloss\":\"toward; regarding\"},{\"hanzi\":\"寡妇\",\"pinyin\":\"guǎ fu\",\"gloss\":\"widow\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"旧称。\",\"pinyin\":\"jiù chēng.\",\"gloss\":\"old term\"}]}]"
+  },
+  "wl_01093": {
+    "部件JSON": "[{\"hanzi\":\"价\",\"pinyin\":\"jià\",\"gloss\":\"price\"},{\"hanzi\":\"格\",\"pinyin\":\"gé\",\"gloss\":\"value; price (bound element in jià gé)\"}]"
+  },
+  "wl_01191": {
+    "例句JSON": "[{\"hanzi\":\"上面的照片是我们逛街时拍的。\",\"pinyin\":\"shàng miàn de zhào piàn shì wǒ men guàng jiē shí pāi de.\",\"english\":\"The photo above was taken while we were shopping.\",\"chunks\":[{\"hanzi\":\"上面\",\"pinyin\":\"shàng miàn\",\"gloss\":\"above\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"照片\",\"pinyin\":\"zhào piàn\",\"gloss\":\"photograph\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"SHI (introduces emphasis on circumstances)\"},{\"hanzi\":\"我们\",\"pinyin\":\"wǒ men\",\"gloss\":\"we\"},{\"hanzi\":\"逛街\",\"pinyin\":\"guàng jiē\",\"gloss\":\"stroll through shops\"},{\"hanzi\":\"时\",\"pinyin\":\"shí\",\"gloss\":\"when\"},{\"hanzi\":\"拍\",\"pinyin\":\"pāi\",\"gloss\":\"take a photo\"},{\"hanzi\":\"的。\",\"pinyin\":\"de.\",\"gloss\":\"DE (closes the SHI...DE emphasis construction)\"}]},{\"hanzi\":\"阇台是城门上面的台。\",\"pinyin\":\"dū tái shì chéng mén shàng miàn de tái.\",\"english\":\"Dū tái means a platform above a city gate.\",\"chunks\":[{\"hanzi\":\"阇台\",\"pinyin\":\"dū tái\",\"gloss\":\"platform above a city gate\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"be\"},{\"hanzi\":\"城门\",\"pinyin\":\"chéng mén\",\"gloss\":\"city gate\"},{\"hanzi\":\"上面\",\"pinyin\":\"shàng miàn\",\"gloss\":\"above\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"台。\",\"pinyin\":\"tái.\",\"gloss\":\"platform\"}]}]"
+  },
+  "wl_01218": {
+    "部件JSON": "[{\"hanzi\":\"榜\",\"pinyin\":\"bǎng\",\"gloss\":\"bound element in bǎng yàng (role model)\"},{\"hanzi\":\"样\",\"pinyin\":\"yàng\",\"gloss\":\"example; model\"}]"
+  },
+  "wl_01267": {
+    "例句JSON": "[{\"hanzi\":\"忘记朋友的名字，让他感到尴尬。\",\"pinyin\":\"wàng jì péng you de míng zi, ràng tā gǎn dào gān gà.\",\"english\":\"Forgetting his friend's name made him feel embarrassed.\",\"chunks\":[{\"hanzi\":\"忘记\",\"pinyin\":\"wàng jì\",\"gloss\":\"forget\"},{\"hanzi\":\"朋友\",\"pinyin\":\"péng you\",\"gloss\":\"friend\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"名字，\",\"pinyin\":\"míng zi,\",\"gloss\":\"name (of a person or thing)\"},{\"hanzi\":\"让\",\"pinyin\":\"ràng\",\"gloss\":\"let; make\"},{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"感到\",\"pinyin\":\"gǎn dào\",\"gloss\":\"feel\"},{\"hanzi\":\"尴尬。\",\"pinyin\":\"gān gà.\",\"gloss\":\"embarrassed\"}]},{\"hanzi\":\"鸹字常用在乌鸦的名字中。\",\"pinyin\":\"guā zì cháng yòng zài wū yā de míng zi zhōng.\",\"english\":\"The character guā is often used in names for crows.\",\"chunks\":[{\"hanzi\":\"鸹\",\"pinyin\":\"guā\",\"gloss\":\"crow, in compounds\"},{\"hanzi\":\"字\",\"pinyin\":\"zì\",\"gloss\":\"character\"},{\"hanzi\":\"常用\",\"pinyin\":\"cháng yòng\",\"gloss\":\"often used\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"乌鸦\",\"pinyin\":\"wū yā\",\"gloss\":\"crow\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"名字\",\"pinyin\":\"míng zi\",\"gloss\":\"name (of a person or thing)\"},{\"hanzi\":\"中。\",\"pinyin\":\"zhōng.\",\"gloss\":\"in; among\"}]}]"
+  },
+  "wl_01377": {
+    "部件JSON": "[{\"hanzi\":\"尤\",\"pinyin\":\"yóu\",\"gloss\":\"particularly, especially\"},{\"hanzi\":\"其\",\"pinyin\":\"qí\",\"gloss\":\"bound element in yóu qí (especially)\"}]"
+  },
+  "wl_01389": {
+    "例句JSON": "[{\"hanzi\":\"这件小礼物是他手工制作的。\",\"pinyin\":\"zhè jiàn xiǎo lǐ wù shì tā shǒu gōng zhì zuò de.\",\"english\":\"He made this little gift by hand.\",\"chunks\":[{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"件\",\"pinyin\":\"jiàn\",\"gloss\":\"JIAN (measure word)\"},{\"hanzi\":\"小\",\"pinyin\":\"xiǎo\",\"gloss\":\"small\"},{\"hanzi\":\"礼物\",\"pinyin\":\"lǐ wù\",\"gloss\":\"gift\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"is\"},{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"手工\",\"pinyin\":\"shǒu gōng\",\"gloss\":\"handwork\"},{\"hanzi\":\"制作\",\"pinyin\":\"zhì zuò\",\"gloss\":\"make\"},{\"hanzi\":\"的。\",\"pinyin\":\"de.\",\"gloss\":\"ends a shì...de statement emphasizing how it was made\"}]},{\"hanzi\":\"这些杯子都是手工制作的。\",\"pinyin\":\"zhè xiē bēi zi dōu shì shǒu gōng zhì zuò de.\",\"english\":\"These cups are all handmade.\",\"chunks\":[{\"hanzi\":\"这些\",\"pinyin\":\"zhè xiē\",\"gloss\":\"these\"},{\"hanzi\":\"杯子\",\"pinyin\":\"bēi zi\",\"gloss\":\"cup\"},{\"hanzi\":\"都\",\"pinyin\":\"dōu\",\"gloss\":\"all\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"be\"},{\"hanzi\":\"手工\",\"pinyin\":\"shǒu gōng\",\"gloss\":\"handwork\"},{\"hanzi\":\"制作\",\"pinyin\":\"zhì zuò\",\"gloss\":\"make\"},{\"hanzi\":\"的。\",\"pinyin\":\"de.\",\"gloss\":\"DE (modifier marker)\"}]}]"
+  },
+  "wl_01390": {
+    "部件JSON": "[{\"hanzi\":\"所\",\"pinyin\":\"suǒ\",\"gloss\":\"bound element in suǒ yǒu (all)\"},{\"hanzi\":\"有\",\"pinyin\":\"yǒu\",\"gloss\":\"to have; there is\"}]"
+  },
+  "wl_01396": {
+    "本义解释JSON": "[\"exactly; precisely\",\"simply; just\",\"even if (used with yě)\"]"
+  },
+  "wl_01415": {
+    "部件JSON": "[{\"hanzi\":\"沟\",\"pinyin\":\"gōu\",\"gloss\":\"connect (bound element in gōu tōng)\"},{\"hanzi\":\"通\",\"pinyin\":\"tōng\",\"gloss\":\"to communicate\"}]"
+  },
+  "wl_01492": {
+    "部件JSON": "[{\"hanzi\":\"占\",\"pinyin\":\"zhàn\",\"gloss\":\"to occupy\"},{\"hanzi\":\"领\",\"pinyin\":\"lǐng\",\"gloss\":\"take possession (bound element in zhàn lǐng)\"}]"
+  },
+  "wl_01554": {
+    "部件JSON": "[{\"hanzi\":\"怎\",\"pinyin\":\"zěn\",\"gloss\":\"how\"},{\"hanzi\":\"么\",\"pinyin\":\"me\",\"gloss\":\"suffix in zěn me (how)\"}]"
+  },
+  "wl_01580": {
+    "部件JSON": "[{\"hanzi\":\"天\",\"pinyin\":\"tiān\",\"gloss\":\"heaven\"},{\"hanzi\":\"哪\",\"pinyin\":\"na\",\"gloss\":\"exclamatory particle (a after an n sound)\"}]"
+  },
+  "wl_01624": {
+    "部件JSON": "[{\"hanzi\":\"间\",\"pinyin\":\"jiàn\",\"gloss\":\"spy (bound element in jiàn dié)\"},{\"hanzi\":\"谍\",\"pinyin\":\"dié\",\"gloss\":\"to spy\"}]"
+  },
+  "wl_01702": {
+    "部件JSON": "[{\"hanzi\":\"湿\",\"pinyin\":\"shī\",\"gloss\":\"wet\"},{\"hanzi\":\"漉\",\"pinyin\":\"lù\",\"gloss\":\"dripping wet (bound element in shī lù lù)\"},{\"hanzi\":\"漉\",\"pinyin\":\"lù\",\"gloss\":\"dripping wet (bound element in shī lù lù)\"}]"
+  },
+  "wl_01732": {
+    "部件JSON": "[{\"hanzi\":\"从\",\"pinyin\":\"cóng\",\"gloss\":\"part of calm and unhurried\"},{\"hanzi\":\"容\",\"pinyin\":\"róng\",\"gloss\":\"bound element in cóng róng (calm and unhurried)\"}]"
+  },
+  "wl_01960": {
+    "例句JSON": "[{\"hanzi\":\"乌鸦站在朴素的小屋顶上。\",\"pinyin\":\"wū yā zhàn zài pǔ sù de xiǎo wū dǐng shàng.\",\"english\":\"A crow stands on the roof of the simple little house.\",\"chunks\":[{\"hanzi\":\"乌鸦\",\"pinyin\":\"wū yā\",\"gloss\":\"crow\"},{\"hanzi\":\"站\",\"pinyin\":\"zhàn\",\"gloss\":\"stand\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"朴素\",\"pinyin\":\"pǔ sù\",\"gloss\":\"plain and simple\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"小屋\",\"pinyin\":\"xiǎo wū\",\"gloss\":\"hut\"},{\"hanzi\":\"顶上。\",\"pinyin\":\"dǐng shàng.\",\"gloss\":\"on top of\"}]},{\"hanzi\":\"鸹字常用在乌鸦的名字中。\",\"pinyin\":\"guā zì cháng yòng zài wū yā de míng zi zhōng.\",\"english\":\"The character guā is often used in names for crows.\",\"chunks\":[{\"hanzi\":\"鸹\",\"pinyin\":\"guā\",\"gloss\":\"crow, in compounds\"},{\"hanzi\":\"字\",\"pinyin\":\"zì\",\"gloss\":\"character\"},{\"hanzi\":\"常用\",\"pinyin\":\"cháng yòng\",\"gloss\":\"often used\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"乌鸦\",\"pinyin\":\"wū yā\",\"gloss\":\"crow\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"名字\",\"pinyin\":\"míng zi\",\"gloss\":\"name (of a person or thing)\"},{\"hanzi\":\"中。\",\"pinyin\":\"zhōng.\",\"gloss\":\"in; among\"}]}]"
+  },
+  "wl_01984": {
+    "本义解释JSON": "[\"person with dwarfism; dwarf\",\"dwarfism (in zhū rú zhèng)\"]"
+  },
+  "wl_01991": {
+    "例句JSON": "[{\"hanzi\":\"他每天清洗床旁的痰盂。\",\"pinyin\":\"tā měi tiān qīng xǐ chuáng páng de tán yú.\",\"english\":\"He washes the spittoon beside the bed every day.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"每天\",\"pinyin\":\"měi tiān\",\"gloss\":\"every day\"},{\"hanzi\":\"清洗\",\"pinyin\":\"qīng xǐ\",\"gloss\":\"wash\"},{\"hanzi\":\"床\",\"pinyin\":\"chuáng\",\"gloss\":\"bed\"},{\"hanzi\":\"旁\",\"pinyin\":\"páng\",\"gloss\":\"beside\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"痰盂。\",\"pinyin\":\"tán yú.\",\"gloss\":\"spittoon\"}]},{\"hanzi\":\"展柜里的痰盂是陶瓷制成的。\",\"pinyin\":\"Zhǎn guì lǐ de tán yú shì táo cí zhì chéng de.\",\"english\":\"The spittoon in the display case is made of ceramic.\",\"chunks\":[{\"hanzi\":\"展柜\",\"pinyin\":\"Zhǎn guì\",\"gloss\":\"display case\"},{\"hanzi\":\"里\",\"pinyin\":\"lǐ\",\"gloss\":\"inside\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"modifies the following noun\"},{\"hanzi\":\"痰盂\",\"pinyin\":\"tán yú\",\"gloss\":\"spittoon\"},{\"hanzi\":\"是\",\"pinyin\":\"shì\",\"gloss\":\"is\"},{\"hanzi\":\"陶瓷\",\"pinyin\":\"táo cí\",\"gloss\":\"ceramic\"},{\"hanzi\":\"制成\",\"pinyin\":\"zhì chéng\",\"gloss\":\"made of\"},{\"hanzi\":\"的。\",\"pinyin\":\"de.\",\"gloss\":\"ends a descriptive shì...de statement\"}]}]"
+  },
+  "wl_02151": {
+    "例句JSON": "[{\"hanzi\":\"亲家来吃饭，他询问对方想吃什么。\",\"pinyin\":\"qìng jia lái chī fàn, tā xún wèn duì fāng xiǎng chī shén me.\",\"english\":\"When the in-laws came for dinner, he asked what they would like to eat.\",\"chunks\":[{\"hanzi\":\"亲家\",\"pinyin\":\"qìng jia\",\"gloss\":\"parents of one's daughter-in-law or son-in-law\"},{\"hanzi\":\"来\",\"pinyin\":\"lái\",\"gloss\":\"come\"},{\"hanzi\":\"吃饭，\",\"pinyin\":\"chī fàn,\",\"gloss\":\"eat\"},{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"询问\",\"pinyin\":\"xún wèn\",\"gloss\":\"inquire\"},{\"hanzi\":\"对方\",\"pinyin\":\"duì fāng\",\"gloss\":\"the other person\"},{\"hanzi\":\"想\",\"pinyin\":\"xiǎng\",\"gloss\":\"want to; think\"},{\"hanzi\":\"吃\",\"pinyin\":\"chī\",\"gloss\":\"eat\"},{\"hanzi\":\"什么。\",\"pinyin\":\"shén me.\",\"gloss\":\"what?\"}]},{\"hanzi\":\"两位亲家在婚礼前见了面。\",\"pinyin\":\"Liǎng wèi qìng jia zài hūn lǐ qián jiàn le miàn.\",\"english\":\"The parents from the two families met before their children's wedding.\",\"chunks\":[{\"hanzi\":\"两\",\"pinyin\":\"Liǎng\",\"gloss\":\"two\"},{\"hanzi\":\"位\",\"pinyin\":\"wèi\",\"gloss\":\"WEI (measure word)\"},{\"hanzi\":\"亲家\",\"pinyin\":\"qìng jia\",\"gloss\":\"parents of one's child's spouse\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"婚礼\",\"pinyin\":\"hūn lǐ\",\"gloss\":\"wedding\"},{\"hanzi\":\"前\",\"pinyin\":\"qián\",\"gloss\":\"before\"},{\"hanzi\":\"见\",\"pinyin\":\"jiàn\",\"gloss\":\"meet; see\"},{\"hanzi\":\"了\",\"pinyin\":\"le\",\"gloss\":\"LE (completed action or change)\"},{\"hanzi\":\"面。\",\"pinyin\":\"miàn.\",\"gloss\":\"face (in jiàn miàn: meet)\"}]}]"
+  },
+  "wl_02414": {
+    "例句JSON": "[{\"hanzi\":\"古文中的玄妙可指深奥的奥妙。\",\"pinyin\":\"gǔ wén zhōng de xuán miào kě zhǐ shēn ào de ào miào.\",\"english\":\"In Classical Chinese, xuán miào can refer to profound mysteries.\",\"chunks\":[{\"hanzi\":\"古文\",\"pinyin\":\"gǔ wén\",\"gloss\":\"Classical Chinese\"},{\"hanzi\":\"中\",\"pinyin\":\"zhōng\",\"gloss\":\"in; among\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"玄妙\",\"pinyin\":\"xuán miào\",\"gloss\":\"profound mystery\"},{\"hanzi\":\"可\",\"pinyin\":\"kě\",\"gloss\":\"can; may\"},{\"hanzi\":\"指\",\"pinyin\":\"zhǐ\",\"gloss\":\"refer to; point to\"},{\"hanzi\":\"深奥\",\"pinyin\":\"shēn ào\",\"gloss\":\"profound\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"奥妙。\",\"pinyin\":\"ào miào.\",\"gloss\":\"mystery; subtle meaning\"}]},{\"hanzi\":\"这段文字的道理十分玄妙。\",\"pinyin\":\"zhè duàn wén zì de dào lǐ shí fēn xuán miào.\",\"english\":\"The ideas in this passage are profound and subtle.\",\"chunks\":[{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"段\",\"pinyin\":\"duàn\",\"gloss\":\"DUAN (measure word for passages)\"},{\"hanzi\":\"文字\",\"pinyin\":\"wén zì\",\"gloss\":\"passage of writing\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"道理\",\"pinyin\":\"dào lǐ\",\"gloss\":\"ideas; principles\"},{\"hanzi\":\"十分\",\"pinyin\":\"shí fēn\",\"gloss\":\"very\"},{\"hanzi\":\"玄妙。\",\"pinyin\":\"xuán miào.\",\"gloss\":\"profound and subtle\"}]}]"
+  },
+  "wl_02419": {
+    "例句JSON": "[{\"hanzi\":\"旁边的词典里有这个词的解释。\",\"pinyin\":\"páng biān de cí diǎn lǐ yǒu zhè ge cí de jiě shì.\",\"english\":\"The dictionary beside us has an explanation of this word.\",\"chunks\":[{\"hanzi\":\"旁边\",\"pinyin\":\"páng biān\",\"gloss\":\"beside\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"词典\",\"pinyin\":\"cí diǎn\",\"gloss\":\"dictionary\"},{\"hanzi\":\"里\",\"pinyin\":\"lǐ\",\"gloss\":\"in; inside\"},{\"hanzi\":\"有\",\"pinyin\":\"yǒu\",\"gloss\":\"have; there is\"},{\"hanzi\":\"这个\",\"pinyin\":\"zhè ge\",\"gloss\":\"this\"},{\"hanzi\":\"词\",\"pinyin\":\"cí\",\"gloss\":\"word\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"解释。\",\"pinyin\":\"jiě shì.\",\"gloss\":\"explain; explanation\"}]},{\"hanzi\":\"金属词典里，锴可以指好铁。\",\"pinyin\":\"jīn shǔ cí diǎn lǐ, kǎi kě yǐ zhǐ hǎo tiě.\",\"english\":\"In a dictionary of metal terms, kǎi can refer to high-quality iron.\",\"chunks\":[{\"hanzi\":\"金属\",\"pinyin\":\"jīn shǔ\",\"gloss\":\"metal\"},{\"hanzi\":\"词典\",\"pinyin\":\"cí diǎn\",\"gloss\":\"dictionary\"},{\"hanzi\":\"里，\",\"pinyin\":\"lǐ,\",\"gloss\":\"in; inside\"},{\"hanzi\":\"锴\",\"pinyin\":\"kǎi\",\"gloss\":\"high-quality iron\"},{\"hanzi\":\"可以\",\"pinyin\":\"kě yǐ\",\"gloss\":\"can; may\"},{\"hanzi\":\"指\",\"pinyin\":\"zhǐ\",\"gloss\":\"refer to; point to\"},{\"hanzi\":\"好\",\"pinyin\":\"hǎo\",\"gloss\":\"good\"},{\"hanzi\":\"铁。\",\"pinyin\":\"tiě.\",\"gloss\":\"iron (metal)\"}]}]"
+  },
+  "wl_02429": {
+    "例句JSON": "[{\"hanzi\":\"小说以瘪三描写街头游荡的无赖。\",\"pinyin\":\"xiǎo shuō yǐ biē sān miáo xiě jiē tóu yóu dàng de wú lài.\",\"english\":\"The novel uses the derogatory term biē sān to describe loafers roaming the streets.\",\"chunks\":[{\"hanzi\":\"小说\",\"pinyin\":\"xiǎo shuō\",\"gloss\":\"novel; fiction\"},{\"hanzi\":\"以\",\"pinyin\":\"yǐ\",\"gloss\":\"use\"},{\"hanzi\":\"瘪三\",\"pinyin\":\"biē sān\",\"gloss\":\"street loafer or bum\"},{\"hanzi\":\"描写\",\"pinyin\":\"miáo xiě\",\"gloss\":\"describe\"},{\"hanzi\":\"街头\",\"pinyin\":\"jiē tóu\",\"gloss\":\"street\"},{\"hanzi\":\"游荡\",\"pinyin\":\"yóu dàng\",\"gloss\":\"wander\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"无赖。\",\"pinyin\":\"wú lài.\",\"gloss\":\"rogue\"}]},{\"hanzi\":\"小说中的瘪三整日在街头闲逛。\",\"pinyin\":\"xiǎo shuō zhōng de biē sān zhěng rì zài jiē tóu xián guàng.\",\"english\":\"The novel's street loafer wanders about all day.\",\"chunks\":[{\"hanzi\":\"小说\",\"pinyin\":\"xiǎo shuō\",\"gloss\":\"novel; fiction\"},{\"hanzi\":\"中\",\"pinyin\":\"zhōng\",\"gloss\":\"in; among\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"瘪三\",\"pinyin\":\"biē sān\",\"gloss\":\"street loafer or bum\"},{\"hanzi\":\"整日\",\"pinyin\":\"zhěng rì\",\"gloss\":\"all day long\"},{\"hanzi\":\"在\",\"pinyin\":\"zài\",\"gloss\":\"at; be doing\"},{\"hanzi\":\"街头\",\"pinyin\":\"jiē tóu\",\"gloss\":\"street\"},{\"hanzi\":\"闲逛。\",\"pinyin\":\"xián guàng.\",\"gloss\":\"stroll\"}]}]"
+  },
+  "wl_02461": {
+    "例句JSON": "[{\"hanzi\":\"古文中的玄妙可指深奥的奥妙。\",\"pinyin\":\"gǔ wén zhōng de xuán miào kě zhǐ shēn ào de ào miào.\",\"english\":\"In Classical Chinese, xuán miào can refer to profound mysteries.\",\"chunks\":[{\"hanzi\":\"古文\",\"pinyin\":\"gǔ wén\",\"gloss\":\"Classical Chinese\"},{\"hanzi\":\"中\",\"pinyin\":\"zhōng\",\"gloss\":\"in; among\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"玄妙\",\"pinyin\":\"xuán miào\",\"gloss\":\"profound mystery\"},{\"hanzi\":\"可\",\"pinyin\":\"kě\",\"gloss\":\"can; may\"},{\"hanzi\":\"指\",\"pinyin\":\"zhǐ\",\"gloss\":\"refer to; point to\"},{\"hanzi\":\"深奥\",\"pinyin\":\"shēn ào\",\"gloss\":\"profound\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"奥妙。\",\"pinyin\":\"ào miào.\",\"gloss\":\"mystery; subtle meaning\"}]},{\"hanzi\":\"他想弄懂这项技术的奥妙。\",\"pinyin\":\"tā xiǎng nòng dǒng zhè xiàng jì shù de ào miào.\",\"english\":\"He wants to understand the subtle secrets of this technique.\",\"chunks\":[{\"hanzi\":\"他\",\"pinyin\":\"tā\",\"gloss\":\"he\"},{\"hanzi\":\"想\",\"pinyin\":\"xiǎng\",\"gloss\":\"want to; think\"},{\"hanzi\":\"弄懂\",\"pinyin\":\"nòng dǒng\",\"gloss\":\"figure out\"},{\"hanzi\":\"这\",\"pinyin\":\"zhè\",\"gloss\":\"this\"},{\"hanzi\":\"项\",\"pinyin\":\"xiàng\",\"gloss\":\"item\"},{\"hanzi\":\"技术\",\"pinyin\":\"jì shù\",\"gloss\":\"technology\"},{\"hanzi\":\"的\",\"pinyin\":\"de\",\"gloss\":\"DE (modifier marker)\"},{\"hanzi\":\"奥妙。\",\"pinyin\":\"ào miào.\",\"gloss\":\"subtle mystery or secret\"}]}]"
+  }
+}

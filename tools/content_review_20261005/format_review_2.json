@@ -1,0 +1,1880 @@
+{
+  "range": [
+    2574,
+    5147
+  ],
+  "scannedRows": 2574,
+  "affectedRows": 54,
+  "modifiedEnglishStrings": 62,
+  "remainingHanStrings": [],
+  "changedFieldCounts": {
+    "例句JSON": 7,
+    "部件JSON": 46,
+    "引申义解释JSON": 4
+  },
+  "sourceSha256": "18e071fc0568f8ecfa7ce25af9594fbdf6b8239febcb87d62d39b88f875ee703",
+  "overlays": [
+    {
+      "file": "final_patch_1.json",
+      "sha256": "6b752165bbaa9111a51f5638607839389e081f267c5c2311e44dfa165419256d"
+    },
+    {
+      "file": "final_patch_2.json",
+      "sha256": "46225c4b6b988f3920bf827e3725bda4d9f2a6de3e31396d1b66d97019f3aac0"
+    },
+    {
+      "file": "final_patch_3.json",
+      "sha256": "2e29c34a21387bb884a4f020a5fb67eb757cfb4a9e9ea03915816ec343bb0f07"
+    },
+    {
+      "file": "cross_review_corrections_1.json",
+      "sha256": "71069776356dc8f8da2c1022f1fb8460bdc5ca8d14e127d79340524cda072950"
+    },
+    {
+      "file": "primary_corrections_1.json",
+      "sha256": "79bc3fc3d79080b4fadb8a5429cfed0dac7756cf02482482f992a7c1c7fd8178"
+    },
+    {
+      "file": "primary_corrections_2.json",
+      "sha256": "31362c1d9ab281ea79f57186aec624613d5f3e04d25011f2b43ea6ea718c7625"
+    },
+    {
+      "file": "primary_corrections_3.json",
+      "sha256": "93ccdfd312210fbb8db8d26d483e192b7446c82407ca5939f68f3d39a4aa6e0d"
+    },
+    {
+      "file": "user_sample_patch_1.json",
+      "sha256": "c346dc4c4ab7307cea3f34150a496be16f84e8517d9b162670990a7ec476da0c"
+    }
+  ],
+  "inheritance": "Every complete CSV-field replacement starts from original CSV plus ALL manifest overlays in listed order, including primary_corrections_2.json.",
+  "reviewedCases": [
+    {
+      "index": 2982,
+      "id": "wl_02983",
+      "hanzi": "碳酸",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3016,
+      "id": "wl_03017",
+      "hanzi": "瞌睡",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3319,
+      "id": "wl_03320",
+      "hanzi": "呒",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3321,
+      "id": "wl_03322",
+      "hanzi": "叁",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3323,
+      "id": "wl_03324",
+      "hanzi": "慰藉",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3339,
+      "id": "wl_03340",
+      "hanzi": "蒙蒙",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3403,
+      "id": "wl_03404",
+      "hanzi": "委蛇",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3439,
+      "id": "wl_03440",
+      "hanzi": "呢喃",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3521,
+      "id": "wl_03522",
+      "hanzi": "膜拜",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3528,
+      "id": "wl_03529",
+      "hanzi": "跋扈",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3561,
+      "id": "wl_03562",
+      "hanzi": "台甫",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3563,
+      "id": "wl_03564",
+      "hanzi": "足恭",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3572,
+      "id": "wl_03573",
+      "hanzi": "癞痢",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3624,
+      "id": "wl_03625",
+      "hanzi": "镭射",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3655,
+      "id": "wl_03656",
+      "hanzi": "仓卒",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3693,
+      "id": "wl_03694",
+      "hanzi": "委曲",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3697,
+      "id": "wl_03698",
+      "hanzi": "阑珊",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3725,
+      "id": "wl_03726",
+      "hanzi": "豁达",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3743,
+      "id": "wl_03744",
+      "hanzi": "粤语",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3762,
+      "id": "wl_03763",
+      "hanzi": "连忙",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3793,
+      "id": "wl_03794",
+      "hanzi": "杜鹃",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3871,
+      "id": "wl_03872",
+      "hanzi": "嘹亮",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3882,
+      "id": "wl_03883",
+      "hanzi": "滂沱",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3885,
+      "id": "wl_03886",
+      "hanzi": "喽啰",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3889,
+      "id": "wl_03890",
+      "hanzi": "婆娑",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3925,
+      "id": "wl_03926",
+      "hanzi": "芭蕉",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3955,
+      "id": "wl_03956",
+      "hanzi": "摒挡",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3977,
+      "id": "wl_03978",
+      "hanzi": "樟脑",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 3991,
+      "id": "wl_03992",
+      "hanzi": "堤坊",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4054,
+      "id": "wl_04055",
+      "hanzi": "叮咛",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4079,
+      "id": "wl_04080",
+      "hanzi": "天秤",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4081,
+      "id": "wl_04082",
+      "hanzi": "恻隐",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4095,
+      "id": "wl_04096",
+      "hanzi": "噢咻",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4119,
+      "id": "wl_04120",
+      "hanzi": "苟且",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4235,
+      "id": "wl_04236",
+      "hanzi": "哔叽",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4260,
+      "id": "wl_04261",
+      "hanzi": "腮帮",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4318,
+      "id": "wl_04319",
+      "hanzi": "荔枝",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4321,
+      "id": "wl_04322",
+      "hanzi": "辔头",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4362,
+      "id": "wl_04363",
+      "hanzi": "孽障",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4433,
+      "id": "wl_04434",
+      "hanzi": "鸨母",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4483,
+      "id": "wl_04484",
+      "hanzi": "磊落",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4563,
+      "id": "wl_04564",
+      "hanzi": "贲门",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4584,
+      "id": "wl_04585",
+      "hanzi": "嗒然",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4602,
+      "id": "wl_04603",
+      "hanzi": "腓肠",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4624,
+      "id": "wl_04625",
+      "hanzi": "沆瀣",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4628,
+      "id": "wl_04629",
+      "hanzi": "膏肓",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4635,
+      "id": "wl_04636",
+      "hanzi": "戛然",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4726,
+      "id": "wl_04727",
+      "hanzi": "昙花",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4764,
+      "id": "wl_04765",
+      "hanzi": "癔症",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4769,
+      "id": "wl_04770",
+      "hanzi": "须臾",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4801,
+      "id": "wl_04802",
+      "hanzi": "酞菁",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 4986,
+      "id": "wl_04987",
+      "hanzi": "僮族",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 5086,
+      "id": "wl_05087",
+      "hanzi": "婵娟",
+      "beforeAndAfterEnglishContextRead": true
+    },
+    {
+      "index": 5134,
+      "id": "wl_05135",
+      "hanzi": "澹泊",
+      "beforeAndAfterEnglishContextRead": true
+    }
+  ],
+  "changes": [
+    {
+      "index": 2982,
+      "id": "wl_02983",
+      "hanzi": "碳酸",
+      "path": [
+        "例句JSON",
+        0,
+        "chunks",
+        1,
+        "gloss"
+      ],
+      "before": "carbonated (in 碳酸饮料)",
+      "after": "carbonated (in tàn suān yǐn liào)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "这种碳酸饮料有很多小气泡。",
+          "english": "This carbonated drink has many small bubbles."
+        },
+        {
+          "hanzi": "他打开了一瓶碳酸饮料。",
+          "english": "He opened a bottle of carbonated drink."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 2982,
+      "id": "wl_02983",
+      "hanzi": "碳酸",
+      "path": [
+        "例句JSON",
+        1,
+        "chunks",
+        5,
+        "gloss"
+      ],
+      "before": "carbonated (in 碳酸饮料)",
+      "after": "carbonated (in tàn suān yǐn liào)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "这种碳酸饮料有很多小气泡。",
+          "english": "This carbonated drink has many small bubbles."
+        },
+        {
+          "hanzi": "他打开了一瓶碳酸饮料。",
+          "english": "He opened a bottle of carbonated drink."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3016,
+      "id": "wl_03017",
+      "hanzi": "瞌睡",
+      "path": [
+        "例句JSON",
+        1,
+        "chunks",
+        4,
+        "gloss"
+      ],
+      "before": "have; do (in 打瞌睡)",
+      "after": "have; do (in dǎ kē shuì)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "孩子玩耍累了，坐在椅子上打瞌睡。",
+          "english": "Tired from playing, the child dozed in the chair."
+        },
+        {
+          "hanzi": "他在车上打起了瞌睡。",
+          "english": "He began to doze in the vehicle."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3319,
+      "id": "wl_03320",
+      "hanzi": "呒",
+      "path": [
+        "例句JSON",
+        1,
+        "english"
+      ],
+      "before": "The annotation defines 呒 (fǔ) as astonished.",
+      "after": "The annotation defines fǔ as 'astonished'.",
+      "reason": "Keep the named character/term as reviewed pinyin; avoid repeating the same reading twice.",
+      "context": [
+        {
+          "hanzi": "字典把呒解释为惊讶的样子。",
+          "english": "The dictionary explains this character as expressing astonishment."
+        },
+        {
+          "hanzi": "注释把呒释为惊讶。",
+          "english": "The annotation defines 呒 (fǔ) as astonished."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3321,
+      "id": "wl_03322",
+      "hanzi": "叁",
+      "path": [
+        "例句JSON",
+        1,
+        "english"
+      ],
+      "before": "The receipt gives the amount as three yuan, using the formal financial numeral 叁.",
+      "after": "The receipt gives the amount as three yuan, using the formal financial numeral sān.",
+      "reason": "Use the reviewed formal numeral reading without losing its financial-writing distinction.",
+      "context": [
+        {
+          "hanzi": "叁是数字三的大写形式。",
+          "english": "The character 'sān' is the formal form of the number three."
+        },
+        {
+          "hanzi": "收据上写着金额叁元。",
+          "english": "The receipt gives the amount as three yuan, using the formal financial numeral 叁."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3323,
+      "id": "wl_03324",
+      "hanzi": "慰藉",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "comfort; console (in 慰藉)",
+      "after": "comfort; console (in wèi jiè)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "朋友的话给了我一些慰藉。",
+          "english": "My friend's words gave me some comfort."
+        },
+        {
+          "hanzi": "这封信给她带来了慰藉。",
+          "english": "This letter brought her consolation."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3339,
+      "id": "wl_03340",
+      "hanzi": "蒙蒙",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "fine and misty (in 蒙蒙)",
+      "after": "fine and misty (in méng méng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "蒙蒙细雨中，她的双眼蒙眬。",
+          "english": "Her vision is blurred in the fine rain."
+        },
+        {
+          "hanzi": "蒙蒙细雨打湿了她的头发。",
+          "english": "Fine misty rain wet her hair."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3339,
+      "id": "wl_03340",
+      "hanzi": "蒙蒙",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "fine and misty (in 蒙蒙)",
+      "after": "fine and misty (in méng méng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "蒙蒙细雨中，她的双眼蒙眬。",
+          "english": "Her vision is blurred in the fine rain."
+        },
+        {
+          "hanzi": "蒙蒙细雨打湿了她的头发。",
+          "english": "Fine misty rain wet her hair."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3339,
+      "id": "wl_03340",
+      "hanzi": "蒙蒙",
+      "path": [
+        "例句JSON",
+        1,
+        "chunks",
+        2,
+        "gloss"
+      ],
+      "before": "cause (in 打湿, wet)",
+      "after": "cause (in dǎ shī, wet)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "蒙蒙细雨中，她的双眼蒙眬。",
+          "english": "Her vision is blurred in the fine rain."
+        },
+        {
+          "hanzi": "蒙蒙细雨打湿了她的头发。",
+          "english": "Fine misty rain wet her hair."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3403,
+      "id": "wl_03404",
+      "hanzi": "委蛇",
+      "path": [
+        "引申义解释JSON",
+        0
+      ],
+      "before": "to deal evasively or perfunctorily, as in 虚与委蛇",
+      "after": "to deal evasively or perfunctorily, as in xū yǔ wēi yí",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他只想虚与委蛇，不想认真合作。",
+          "english": "He only wants to deal with the other person evasively rather than cooperate seriously."
+        },
+        {
+          "hanzi": "他对问题虚与委蛇，始终不作承诺。",
+          "english": "He deals evasively with the question and never makes a commitment."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3439,
+      "id": "wl_03440",
+      "hanzi": "呢喃",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "soft murmuring sound (in 呢喃)",
+      "after": "soft murmuring sound (in ní nán)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "她轻声呢喃，安慰悲伤的孩子。",
+          "english": "She murmured softly to comfort the sad child."
+        },
+        {
+          "hanzi": "孩子在睡梦中轻轻呢喃。",
+          "english": "The child murmurs softly in their sleep."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3521,
+      "id": "wl_03522",
+      "hanzi": "膜拜",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound form in 膜拜 (prostrate worship)",
+      "after": "bound form in mó bài (prostrate worship)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "旧时人们向祖先的牌位膜拜。",
+          "english": "In the past, people bowed in worship before ancestral tablets."
+        },
+        {
+          "hanzi": "画中的信徒向神像膜拜。",
+          "english": "The worshippers in the painting bow before the deity's statue."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3528,
+      "id": "wl_03529",
+      "hanzi": "跋扈",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound form in 跋扈 (domineering)",
+      "after": "bound form in bá hù (domineering)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "跋扈的权臣陷入尔虞我诈的争斗。",
+          "english": "The domineering minister is caught in deceitful struggles."
+        },
+        {
+          "hanzi": "他态度跋扈，不肯听别人的意见。",
+          "english": "He is domineering and refuses to listen to others."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3528,
+      "id": "wl_03529",
+      "hanzi": "跋扈",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound form in 跋扈 (domineering)",
+      "after": "bound form in bá hù (domineering)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "跋扈的权臣陷入尔虞我诈的争斗。",
+          "english": "The domineering minister is caught in deceitful struggles."
+        },
+        {
+          "hanzi": "他态度跋扈，不肯听别人的意见。",
+          "english": "He is domineering and refuses to listen to others."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3561,
+      "id": "wl_03562",
+      "hanzi": "台甫",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "a man’s courtesy name (in 台甫)",
+      "after": "a man’s courtesy name (in tái fǔ)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "古人问台甫，是敬问对方的字。",
+          "english": "Asking this in classical usage politely asks someone's courtesy name."
+        },
+        {
+          "hanzi": "请问先生台甫？",
+          "english": "May I ask your courtesy name, sir?"
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3563,
+      "id": "wl_03564",
+      "hanzi": "足恭",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "excessively (in 足恭)",
+      "after": "excessively (in zú gōng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他以阿谀和足恭讨好权贵。",
+          "english": "He flatters the powerful with excessive deference."
+        },
+        {
+          "hanzi": "他厌恶以足恭换取赏赐的人。",
+          "english": "He dislikes people who use excessive deference to gain rewards."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3572,
+      "id": "wl_03573",
+      "hanzi": "癞痢",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound form in 癞痢 (scalp ringworm)",
+      "after": "bound form in lài lì (scalp ringworm)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "旧时剃头师也会遇到患癞痢的人。",
+          "english": "Barbers in the past also met people with scalp ringworm."
+        },
+        {
+          "hanzi": "旧医书记载了癞痢的症状。",
+          "english": "The old medical book records the symptoms of scalp ringworm."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3572,
+      "id": "wl_03573",
+      "hanzi": "癞痢",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound form in 癞痢 (scalp ringworm)",
+      "after": "bound form in lài lì (scalp ringworm)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "旧时剃头师也会遇到患癞痢的人。",
+          "english": "Barbers in the past also met people with scalp ringworm."
+        },
+        {
+          "hanzi": "旧医书记载了癞痢的症状。",
+          "english": "The old medical book records the symptoms of scalp ringworm."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3624,
+      "id": "wl_03625",
+      "hanzi": "镭射",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "phonetic element in the loanword 镭射",
+      "after": "phonetic element in the loanword léi shè",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "镭射灯让舞台变得璀璨夺目。",
+          "english": "Laser lights make the stage dazzling."
+        },
+        {
+          "hanzi": "演出开始时，镭射灯照亮了舞台。",
+          "english": "When the performance began, laser lights lit up the stage."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3655,
+      "id": "wl_03656",
+      "hanzi": "仓卒",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound form in 仓卒 (hurriedly)",
+      "after": "bound form in cāng cù (hurriedly)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他仓卒出门又摔跤，直呼晦气。",
+          "english": "He rushes out, falls again, and complains of bad luck."
+        },
+        {
+          "hanzi": "他仓卒收拾行李，忘了带钥匙。",
+          "english": "He packed in haste and forgot his keys."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3693,
+      "id": "wl_03694",
+      "hanzi": "委曲",
+      "path": [
+        "引申义解释JSON",
+        0
+      ],
+      "before": "to yield or make concessions, as in 委曲求全",
+      "after": "to yield or make concessions, as in wěi qū qiú quán",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "她说明事情的委曲，求得家人宽容。",
+          "english": "She explains the full circumstances and asks her family for understanding."
+        },
+        {
+          "hanzi": "他把事情的委曲告诉了老师。",
+          "english": "He told the teacher the full circumstances of the matter."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3693,
+      "id": "wl_03694",
+      "hanzi": "委曲",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "detailed; winding (in 委曲)",
+      "after": "detailed; winding (in wěi qū)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "她说明事情的委曲，求得家人宽容。",
+          "english": "She explains the full circumstances and asks her family for understanding."
+        },
+        {
+          "hanzi": "他把事情的委曲告诉了老师。",
+          "english": "He told the teacher the full circumstances of the matter."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3697,
+      "id": "wl_03698",
+      "hanzi": "阑珊",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound form in 阑珊 (waning)",
+      "after": "bound form in lán shān (waning)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "灯火阑珊处，他心广体胖地闲坐。",
+          "english": "In the dim lamplight, he sits at ease with an open heart."
+        },
+        {
+          "hanzi": "夜深了，街上的灯火阑珊。",
+          "english": "Late at night, the lights on the street are sparse and fading."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3725,
+      "id": "wl_03726",
+      "hanzi": "豁达",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "open; untroubled (in 豁达)",
+      "after": "open; untroubled (in huò dá)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "豁达的人较少受旧怨牵绊。",
+          "english": "Open-minded people are less bound by old grievances."
+        },
+        {
+          "hanzi": "她为人豁达，不计较小事。",
+          "english": "She is broad-minded and does not fret over small things."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3743,
+      "id": "wl_03744",
+      "hanzi": "粤语",
+      "path": [
+        "例句JSON",
+        1,
+        "english"
+      ],
+      "before": "In Cantonese, 睇见 means “to see.”",
+      "after": "The expression shown means 'to see' in Cantonese.",
+      "reason": "Use an explicit English reference; the displayed Mandarin reading must not be presented as Cantonese pronunciation.",
+      "context": [
+        {
+          "hanzi": "他用粤语诠释这首民歌的含义。",
+          "english": "He explains the folk song's meaning in Cantonese."
+        },
+        {
+          "hanzi": "睇见在粤语中表示看见。",
+          "english": "In Cantonese, 睇见 means “to see.”"
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3762,
+      "id": "wl_03763",
+      "hanzi": "连忙",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "immediately; continuously (in 连忙)",
+      "after": "immediately; continuously (in lián máng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "孩子撅嘴，母亲连忙上前安慰。",
+          "english": "The child pouts, and his mother quickly comforts him."
+        },
+        {
+          "hanzi": "看见客人进来，她连忙起身。",
+          "english": "Seeing the guest enter, she gets up at once."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3793,
+      "id": "wl_03794",
+      "hanzi": "杜鹃",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound form in the name 杜鹃",
+      "after": "bound form in the name dù juān",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "树梢上鸟声啁啾，杜鹃也在鸣叫。",
+          "english": "Birds chirp in the treetops, joined by a cuckoo."
+        },
+        {
+          "hanzi": "杜鹃的叫声从林中传来。",
+          "english": "A cuckoo's call comes from the woods."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3871,
+      "id": "wl_03872",
+      "hanzi": "嘹亮",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound form in 嘹亮 (loud and clear)",
+      "after": "bound form in liáo liàng (loud and clear)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "嘹亮歌声响彻辽阔草原。",
+          "english": "A clear, strong song rings over the vast grassland."
+        },
+        {
+          "hanzi": "她嘹亮的歌声传遍大厅。",
+          "english": "Her loud, clear singing fills the hall."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3882,
+      "id": "wl_03883",
+      "hanzi": "滂沱",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 滂沱 (pouring)",
+      "after": "bound element in pāng tuó (pouring)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "大雨滂沱，涡河水位上涨。",
+          "english": "Torrential rain raises the Guo River's water level."
+        },
+        {
+          "hanzi": "夜里雨势滂沱。",
+          "english": "The rain is torrential at night."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3885,
+      "id": "wl_03886",
+      "hanzi": "喽啰",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 喽啰 (minion)",
+      "after": "bound element in lóu luo (minion)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "故事中，妖怪指使喽啰抢东西。",
+          "english": "The monster orders its minions to steal in the story."
+        },
+        {
+          "hanzi": "强盗派喽啰在门口守着。",
+          "english": "The bandit sends a minion to guard the entrance."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3889,
+      "id": "wl_03890",
+      "hanzi": "婆娑",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "phonetic element in 婆娑 (swaying gracefully)",
+      "after": "phonetic element in pó suō (swaying gracefully)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "枝柯围绕小亭，树影婆娑。",
+          "english": "Branches surround the pavilion, casting swaying shadows."
+        },
+        {
+          "hanzi": "月光下，竹影婆娑。",
+          "english": "The bamboo shadows sway gracefully in the moonlight."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3925,
+      "id": "wl_03926",
+      "hanzi": "芭蕉",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 芭蕉 (banana plant)",
+      "after": "bound element in bā jiāo (banana plant)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "斜坡上种着芭蕉，旁边就是巴士站。",
+          "english": "Banana plants grow on the slope beside the bus stop."
+        },
+        {
+          "hanzi": "院里的芭蕉叶子很大。",
+          "english": "The banana plants in the courtyard have large leaves."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3955,
+      "id": "wl_03956",
+      "hanzi": "摒挡",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "put in order (in 摒挡)",
+      "after": "put in order (in bìng dàng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他摒挡行李，准备绕开横行的盗匪。",
+          "english": "He packs his bags to avoid the roaming bandits."
+        },
+        {
+          "hanzi": "出发前，他摒挡好随身物品。",
+          "english": "Before leaving, he put his belongings in order."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3977,
+      "id": "wl_03978",
+      "hanzi": "樟脑",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 樟脑 (camphor)",
+      "after": "bound element in zhāng nǎo (camphor)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "画上的仙鹤展翅，柜中放着樟脑。",
+          "english": "A crane spreads its wings in the painting, and camphor is stored in the cabinet."
+        },
+        {
+          "hanzi": "打开旧箱子时，他闻到了樟脑的气味。",
+          "english": "When opening the old trunk, he smelled camphor."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 3991,
+      "id": "wl_03992",
+      "hanzi": "堤坊",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "embankment (in 堤坊)",
+      "after": "embankment (in dī fáng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "加固堤坊有助于防止洪水漫入。",
+          "english": "Strengthening the embankment helps keep floodwater out."
+        },
+        {
+          "hanzi": "洪水退后，村民修补堤坊。",
+          "english": "After the flood recedes, the villagers repair the embankment."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4054,
+      "id": "wl_04055",
+      "hanzi": "叮咛",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "repeat instructions (in 叮咛)",
+      "after": "repeat instructions (in dīng níng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "雷霆响起，他想起母亲的叮咛。",
+          "english": "Thunder reminds him of his mother's careful advice."
+        },
+        {
+          "hanzi": "临行前，他牢记母亲的叮咛。",
+          "english": "Before leaving, he keeps his mother's caring reminders firmly in mind."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4079,
+      "id": "wl_04080",
+      "hanzi": "天秤",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 天秤 (balance scale)",
+      "after": "bound element in tiān chèng (balance scale)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "她把砝码放在天秤的一端。",
+          "english": "She puts a weight on one side of the balance."
+        },
+        {
+          "hanzi": "老师用天秤比较两块石头的重量。",
+          "english": "The teacher uses a balance scale to compare the weights of two stones."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4081,
+      "id": "wl_04082",
+      "hanzi": "恻隐",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "sorrow; compassion (in 恻隐)",
+      "after": "sorrow; compassion (in cè yǐn)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他见此情景，心生恻隐。",
+          "english": "Seeing this, he feels compassion."
+        },
+        {
+          "hanzi": "看到受伤的小鸟，她起了恻隐之心。",
+          "english": "Seeing the injured bird, she felt compassion."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4095,
+      "id": "wl_04096",
+      "hanzi": "噢咻",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 噢咻 (soothe)",
+      "after": "bound element in ō xiū (soothe)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "噢咻在古文中可指安抚。",
+          "english": "Oxiu can mean comforting or soothing in classical Chinese."
+        },
+        {
+          "hanzi": "古文以噢咻表达安抚病者之意。",
+          "english": "The classical text uses oxiu to express comforting a sick person."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4095,
+      "id": "wl_04096",
+      "hanzi": "噢咻",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 噢咻 (soothe)",
+      "after": "bound element in ō xiū (soothe)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "噢咻在古文中可指安抚。",
+          "english": "Oxiu can mean comforting or soothing in classical Chinese."
+        },
+        {
+          "hanzi": "古文以噢咻表达安抚病者之意。",
+          "english": "The classical text uses oxiu to express comforting a sick person."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4119,
+      "id": "wl_04120",
+      "hanzi": "苟且",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 苟且 (make do carelessly)",
+      "after": "bound element in gǒu qiě (make do carelessly)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他不愿苟且地度过一生。",
+          "english": "He refuses to drift through life."
+        },
+        {
+          "hanzi": "他不愿苟且偷生。",
+          "english": "He refuses to live on merely to survive without principles."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4235,
+      "id": "wl_04236",
+      "hanzi": "哔叽",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "phonetic element in the loanword 哔叽",
+      "after": "phonetic element in the loanword bì jī",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "这件外套是用哔叽做的。",
+          "english": "This coat is made of serge."
+        },
+        {
+          "hanzi": "裁缝用哔叽缝了一条长裤。",
+          "english": "The tailor made a pair of trousers from serge."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4260,
+      "id": "wl_04261",
+      "hanzi": "腮帮",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "side; part (in 腮帮)",
+      "after": "side; part (in sāi bāng)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "孩子鼓起腮帮吹气球。",
+          "english": "The child puffs out his cheeks to blow up a balloon."
+        },
+        {
+          "hanzi": "他吃东西时，腮帮鼓得圆圆的。",
+          "english": "His cheeks puff out as he eats."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4318,
+      "id": "wl_04319",
+      "hanzi": "荔枝",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 荔枝 (lychee)",
+      "after": "bound element in lì zhī (lychee)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "她剥开荔枝的外壳。",
+          "english": "She peels the lychee."
+        },
+        {
+          "hanzi": "这盘荔枝已经洗好了。",
+          "english": "This plate of lychees has been washed."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4321,
+      "id": "wl_04322",
+      "hanzi": "辔头",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "noun element in 辔头 (bridle)",
+      "after": "noun element in pèi tóu (bridle)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "骑手握着辔头慢慢前进。",
+          "english": "The rider holds the bridle and advances slowly."
+        },
+        {
+          "hanzi": "她给马套上辔头。",
+          "english": "She puts the bridle on the horse."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4362,
+      "id": "wl_04363",
+      "hanzi": "孽障",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 孽障 (evil creature; karmic obstacle)",
+      "after": "bound element in niè zhàng (evil creature; karmic obstacle)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "孽障是责骂人的旧词。",
+          "english": "Niezhang is an old insulting term for a person."
+        },
+        {
+          "hanzi": "小说人物怒骂他是孽障。",
+          "english": "A character in the novel angrily calls him an evil creature."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4433,
+      "id": "wl_04434",
+      "hanzi": "鸨母",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "female brothel keeper (in 鸨母)",
+      "after": "female brothel keeper (in bǎo mǔ)",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "鸨母是旧时妓院女老板的称呼。",
+          "english": "Baomu was a term for a female brothel keeper."
+        },
+        {
+          "hanzi": "旧小说里的鸨母催客人付钱。",
+          "english": "The brothel keeper in the old novel urges the guest to pay."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4483,
+      "id": "wl_04484",
+      "hanzi": "磊落",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 磊落, open and honest",
+      "after": "bound element in lěi luò, open and honest",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "她为人坦荡磊落。",
+          "english": "She is open and honorable."
+        },
+        {
+          "hanzi": "他做事磊落，从不隐瞒。",
+          "english": "He acts openly and never conceals things."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4563,
+      "id": "wl_04564",
+      "hanzi": "贲门",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 贲门, the cardia",
+      "after": "bound element in bēn mén, the cardia",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "贲门连接食管和胃。",
+          "english": "The cardia connects the esophagus and the stomach."
+        },
+        {
+          "hanzi": "图中标明了贲门的位置。",
+          "english": "The cardia is marked in the diagram."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4584,
+      "id": "wl_04585",
+      "hanzi": "嗒然",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "dejected, in 嗒然",
+      "after": "dejected, in tà rán",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "听见坏消息，他嗒然坐下。",
+          "english": "Hearing the bad news, he sat down dejectedly."
+        },
+        {
+          "hanzi": "他望着空屋，嗒然若失。",
+          "english": "He looks at the empty room, dejected as if something were lost."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4602,
+      "id": "wl_04603",
+      "hanzi": "腓肠",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 腓肠, the calf of the leg",
+      "after": "bound element in féi cháng, the calf of the leg",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "跑步以后，他的腓肠有些酸痛。",
+          "english": "His calves felt a little sore after running."
+        },
+        {
+          "hanzi": "图中标出了腓肠的位置。",
+          "english": "The calf region is labeled in the diagram."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4624,
+      "id": "wl_04625",
+      "hanzi": "沆瀣",
+      "path": [
+        "引申义解释JSON",
+        0
+      ],
+      "before": "collusive association, in 沆瀣一气",
+      "after": "collusive association, in hàng xiè yí qì",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他们沆瀣一气，合伙欺骗顾客。",
+          "english": "They colluded to cheat their customers."
+        },
+        {
+          "hanzi": "两人沆瀣一气，隐瞒了真相。",
+          "english": "The two collude to conceal the truth."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4624,
+      "id": "wl_04625",
+      "hanzi": "沆瀣",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "mist, in 沆瀣",
+      "after": "mist, in hàng xiè",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他们沆瀣一气，合伙欺骗顾客。",
+          "english": "They colluded to cheat their customers."
+        },
+        {
+          "hanzi": "两人沆瀣一气，隐瞒了真相。",
+          "english": "The two collude to conceal the truth."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4628,
+      "id": "wl_04629",
+      "hanzi": "膏肓",
+      "path": [
+        "引申义解释JSON",
+        0
+      ],
+      "before": "a condition beyond remedy, in 病入膏肓",
+      "after": "a condition beyond remedy, in bìng rù gāo huāng",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "病入膏肓的故事，让大家十分难过。",
+          "english": "The story of the incurably ill person made everyone very sad."
+        },
+        {
+          "hanzi": "他把久拖的问题比作病入膏肓。",
+          "english": "He compares the long-neglected problem to an illness beyond remedy."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4635,
+      "id": "wl_04636",
+      "hanzi": "戛然",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "abrupt stopping, in 戛然",
+      "after": "abrupt stopping, in jiá rán",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "听到敲门声，歌声戛然而止。",
+          "english": "The singing stopped abruptly at the sound of knocking."
+        },
+        {
+          "hanzi": "铃声戛然而止，屋里安静了。",
+          "english": "The bell stops abruptly, leaving the room quiet."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4726,
+      "id": "wl_04727",
+      "hanzi": "昙花",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 昙花, a night-blooming cactus",
+      "after": "bound element in tán huā, a night-blooming cactus",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "夜里，这盆昙花终于开了。",
+          "english": "This night-blooming cactus finally bloomed during the night."
+        },
+        {
+          "hanzi": "她守着昙花等它开放。",
+          "english": "She waits beside the night-blooming cactus for its flower to open."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4764,
+      "id": "wl_04765",
+      "hanzi": "癔症",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 癔症, hysteria",
+      "after": "bound element in yì zhèng, hysteria",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "旧医学书中记载了癔症。",
+          "english": "Older medical books recorded the condition called hysteria."
+        },
+        {
+          "hanzi": "讲座讨论了癔症名称的历史。",
+          "english": "The lecture discusses the history of the term hysteria."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4769,
+      "id": "wl_04770",
+      "hanzi": "须臾",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "bound element in 须臾, a moment",
+      "after": "bound element in xū yú, a moment",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他坐下不到须臾，就有人来访。",
+          "english": "A visitor arrived just moments after he sat down."
+        },
+        {
+          "hanzi": "他停了须臾，又继续说话。",
+          "english": "He pauses for a moment, then continues speaking."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4801,
+      "id": "wl_04802",
+      "hanzi": "酞菁",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "bound element in 酞菁, phthalocyanine",
+      "after": "bound element in tài jīng, phthalocyanine",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "工厂用酞菁颜料制作蓝色油墨。",
+          "english": "The factory uses phthalocyanine pigment to make blue ink."
+        },
+        {
+          "hanzi": "这款蓝色颜料属于酞菁类。",
+          "english": "This blue pigment belongs to the phthalocyanine class."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 4986,
+      "id": "wl_04987",
+      "hanzi": "僮族",
+      "path": [
+        "例句JSON",
+        0,
+        "english"
+      ],
+      "before": "僮族 was the former written name for the Zhuang people.",
+      "after": "Zhuàngzú was the former written name for the Zhuang people.",
+      "reason": "Keep the historical ethnic-name reading and former-written-name meaning.",
+      "context": [
+        {
+          "hanzi": "僮族是壮族过去的民族名称。",
+          "english": "僮族 was the former written name for the Zhuang people."
+        },
+        {
+          "hanzi": "这份旧资料仍使用僮族这一名称。",
+          "english": "This old document still uses the former name for the Zhuang people."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 5086,
+      "id": "wl_05087",
+      "hanzi": "婵娟",
+      "path": [
+        "部件JSON",
+        0,
+        "gloss"
+      ],
+      "before": "lovely; graceful, in 婵娟",
+      "after": "lovely; graceful, in chán juān",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "月色婵娟，湖面宛如银镜。",
+          "english": "The lovely moonlight makes the lake like a silver mirror."
+        },
+        {
+          "hanzi": "诗中描写月色婵娟。",
+          "english": "The poem describes the moonlight as lovely."
+        }
+      ],
+      "beforeAndAfterRead": true
+    },
+    {
+      "index": 5134,
+      "id": "wl_05135",
+      "hanzi": "澹泊",
+      "path": [
+        "部件JSON",
+        1,
+        "gloss"
+      ],
+      "before": "untroubled by worldly ambitions, in 澹泊",
+      "after": "untroubled by worldly ambitions, in dàn bó",
+      "reason": "Preserve the existing contextual sense and bound/phonetic-element explanation; replace the literal Hanzi citation with verified pinyin.",
+      "context": [
+        {
+          "hanzi": "他过着澹泊宁静的生活。",
+          "english": "He leads a quiet life free of worldly ambition."
+        },
+        {
+          "hanzi": "老人性情澹泊，不求名利。",
+          "english": "The old man is content with simplicity and does not seek fame or wealth."
+        }
+      ],
+      "beforeAndAfterRead": true
+    }
+  ],
+  "notes": [
+    "Only English teaching strings are modified; source Hanzi, pinyin, chunks, all previously corrected readings, identities, rarity and distractors are preserved.",
+    "Main-word references use the already-reviewed final main pinyin. Compound references use verified constituent readings in the existing examples or conventional compound reading.",
+    "No shi...de Hanzi grammar reference occurs in this shard; no rule weakening or validator changes.",
+    "The Cantonese example uses an explicit English reference to the displayed expression, so Mandarin pinyin is not mistaken for Cantonese pronunciation."
+  ],
+  "noCsvMutation": true,
+  "noFrozenOverlayMutation": true,
+  "validation": "All 2574 merged rows rescanned for Hanzi in every English field; zero remain. Non-English JSON contents and protected fields compared before/after; unchanged."
+}
