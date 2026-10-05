@@ -92,7 +92,7 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
         Spacer(Modifier.width(48.dp))
       }
     }, bottomBar = {
-      if (word != null) Column(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 12.dp),
+      if (word != null) Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -106,7 +106,7 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
       }
     }) { padding ->
       Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())
-        .padding(horizontal = 24.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        .padding(horizontal = 20.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (state.loading) {
           Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)) {

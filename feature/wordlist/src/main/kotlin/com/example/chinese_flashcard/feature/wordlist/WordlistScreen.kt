@@ -80,7 +80,7 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
   onQuery: (String) -> Unit, onStatus: (WordlistStatus?) -> Unit, onDifficulty: (Int?) -> Unit,
   onRetry: () -> Unit, onWord: (String) -> Unit) {
   Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-    LazyColumn(state = listState, contentPadding = PaddingValues(horizontal = 24.dp, vertical = 20.dp)) {
+    LazyColumn(state = listState, contentPadding = PaddingValues(horizontal = 20.dp, vertical = 20.dp)) {
       item(key = "header") {
         Column(verticalArrangement = Arrangement.spacedBy(16.dp), modifier = Modifier.padding(bottom = 12.dp)) {
           Text("Wordlist", style = MaterialTheme.typography.headlineLarge)
@@ -97,7 +97,8 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
             }
           }
           OutlinedTextField(value = state.query, onValueChange = onQuery,
-            modifier = Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(8.dp),
+            modifier = Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(6.dp),
+            textStyle = MaterialTheme.typography.bodyLarge,
             placeholder = { Text("Hanzi, pinyin or meaning", style = MaterialTheme.typography.bodyMedium) },
             leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
             trailingIcon = if (state.query.isNotEmpty()) {
@@ -106,16 +107,16 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
           Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Text("Status", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-              FilterChip(selected = state.status == null, onClick = { onStatus(null) }, label = { Text("All") })
+              FilterChip(shape = MaterialTheme.shapes.small, selected = state.status == null, onClick = { onStatus(null) }, label = { Text("All") })
               WordlistStatus.entries.forEach { status ->
-                FilterChip(selected = state.status == status, onClick = { onStatus(status) }, label = { Text(status.label()) })
+                FilterChip(shape = MaterialTheme.shapes.small, selected = state.status == status, onClick = { onStatus(status) }, label = { Text(status.label()) })
               }
             }
             Text("Difficulty", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-              FilterChip(selected = state.difficulties.isEmpty(), onClick = { onDifficulty(null) }, label = { Text("All") })
+              FilterChip(shape = MaterialTheme.shapes.small, selected = state.difficulties.isEmpty(), onClick = { onDifficulty(null) }, label = { Text("All") })
               (0..3).forEach { level ->
-                FilterChip(selected = level in state.difficulties, onClick = { onDifficulty(level) }, label = { Text(level.toString()) })
+                FilterChip(shape = MaterialTheme.shapes.small, selected = level in state.difficulties, onClick = { onDifficulty(level) }, label = { Text(level.toString()) })
               }
             }
           }
@@ -161,8 +162,8 @@ private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
       Text(entry.hanzi, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleLarge,
         fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
-      Text(entry.pinyin, modifier = Modifier.widthIn(max = 140.dp), style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.Ellipsis)
+      Text(entry.pinyin, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
+        color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End)
     }
     Text(entry.english, style = MaterialTheme.typography.bodyMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {

@@ -14,8 +14,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
@@ -42,6 +43,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -77,7 +79,7 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
     }
   }
   Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
-    .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 24.dp),
+    .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 20.dp),
     verticalArrangement = Arrangement.spacedBy(24.dp)) {
     Text("Profile", style = MaterialTheme.typography.headlineLarge)
     if (state.loading) {
@@ -107,22 +109,28 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
       }
-      Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-        Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
-          SettingsRow("Name", value.displayName.ifBlank { "Add" }, enabled) { openEditor(ProfileEditor.NAME) }
-          SettingsDivider()
-          SettingsRow("Daily words", value.dailyWords.toString(), enabled) { openEditor(ProfileEditor.DAILY_WORDS) }
-          SettingsDivider()
-          SettingsRow("Correct rounds", value.rounds.toString(), enabled) { openEditor(ProfileEditor.ROUNDS) }
-          SettingsDivider()
-          SettingsRow("Review days", value.reviewDays.joinToString(" / "), enabled) { openEditor(ProfileEditor.REVIEW_DAYS) }
+      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text("Learning", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth()) {
+            SettingsRow("Name", value.displayName.ifBlank { "Add" }, enabled) { openEditor(ProfileEditor.NAME) }
+            SettingsDivider()
+            SettingsRow("Daily words", value.dailyWords.toString(), enabled) { openEditor(ProfileEditor.DAILY_WORDS) }
+            SettingsDivider()
+            SettingsRow("Correct rounds", value.rounds.toString(), enabled) { openEditor(ProfileEditor.ROUNDS) }
+            SettingsDivider()
+            SettingsRow("Review days", value.reviewDays.joinToString(" / "), enabled) { openEditor(ProfileEditor.REVIEW_DAYS) }
+          }
         }
       }
-      Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-        Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
-          SettingsRow("Import CSV", enabled = enabled, onClick = onImportCsv)
-          SettingsDivider()
-          SettingsRow("Data & licenses", enabled = enabled, onClick = onLicenses)
+      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text("Data", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth()) {
+            SettingsRow("Import CSV", enabled = enabled, onClick = onImportCsv)
+            SettingsDivider()
+            SettingsRow("Data & licenses", enabled = enabled, onClick = onLicenses)
+          }
         }
       }
       if (defaultWordlistLoading || defaultWordlistError != null) {
@@ -164,19 +172,20 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
 
 @Composable
 private fun SettingsDivider() {
-  HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
+  HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp),
+    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
 }
 
 @Composable
 private fun SettingsRow(title: String, value: String? = null, enabled: Boolean = true, onClick: () -> Unit) {
   val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = FlashcardStyle.opacity.disabledContent)
-  Row(Modifier.fillMaxWidth().heightIn(min = 56.dp)
-    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(vertical = 12.dp),
+  Row(Modifier.fillMaxWidth().heightIn(min = 60.dp)
+    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(horizontal = 16.dp, vertical = 14.dp),
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
     Text(title, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = color)
     value?.let {
       Text(it, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
-        maxLines = 1, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End,
+        maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End,
         color = if (enabled) MaterialTheme.colorScheme.onSurfaceVariant else color)
     }
     Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, Modifier.size(20.dp),
@@ -190,6 +199,8 @@ private fun NameDialog(initial: String, saving: Boolean, error: String?, onDismi
   SettingDialog("Your name", saving, error, text.trim().isNotEmpty(), onDismiss, { onConfirm(text.trim()) }) {
     OutlinedTextField(text, onValueChange = { if (it.length <= 40 && it.none(Char::isISOControl)) text = it },
       Modifier.fillMaxWidth(), singleLine = true, enabled = !saving, shape = MaterialTheme.shapes.medium,
+      keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+      keyboardActions = KeyboardActions(onDone = { if (!saving && text.trim().isNotEmpty()) onConfirm(text.trim()) }),
       label = { Text("Name") })
   }
 }
@@ -246,7 +257,7 @@ private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: String?
             onValueChange = { selected = if (it) (selected + day).distinct().sorted() else selected - day }),
           verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
           Box(Modifier.size(22.dp).background(if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
-            CircleShape).border(1.dp, if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline, CircleShape),
+            MaterialTheme.shapes.extraSmall).border(1.dp, if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline, MaterialTheme.shapes.extraSmall),
             contentAlignment = Alignment.Center) {
             if (checked) Icon(Icons.Default.Check, contentDescription = null, Modifier.size(16.dp),
               tint = MaterialTheme.colorScheme.onPrimary)
@@ -267,7 +278,8 @@ private fun CsvImportDialog(state: CsvImportUiState, progress: StateFlow<Wordlis
   val report = state.report
   val issues = preview?.issues?.take(100).orEmpty()
   AlertDialog(onDismissRequest = { if (state.canDismiss) onDismiss() }, shape = MaterialTheme.shapes.large,
-    title = { Text("CSV import", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center) }, text = {
+    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
+    title = { Text("CSV import") }, text = {
       Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (state.busy) {
@@ -330,6 +342,7 @@ private fun SettingDialog(
   content: @Composable () -> Unit,
 ) {
   AlertDialog(onDismissRequest = { if (!saving) onDismiss() }, shape = MaterialTheme.shapes.large,
+    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
     title = { Text(title) }, text = {
       Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {

@@ -109,7 +109,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
   }
   BackHandler(enabled = state.busy) { /* Finish the Room write before leaving. */ }
   Column(Modifier.fillMaxSize().background(studyBackgroundBrush())
-    .verticalScroll(rememberScrollState()).padding(horizontal = 24.dp, vertical = 12.dp),
+    .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 12.dp),
     verticalArrangement = Arrangement.spacedBy(12.dp)) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
       IconButton(onClick = onBack, enabled = !state.busy) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back") }
@@ -232,8 +232,8 @@ private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
   val colors = FlashcardStyle.colors
   val item = snapshot.item
   Surface(color = colors.writingPaper, contentColor = colors.writingInk,
-    shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth()) {
-    Column(Modifier.padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally,
+    shape = RoundedCornerShape(4.dp), modifier = Modifier.fillMaxWidth()) {
+    Column(Modifier.padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
       WritingWordHeader(snapshot.word, snapshot.characterIndex)
       TextButton(onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
@@ -388,7 +388,7 @@ private fun WritingPreview() {
   FlashcardTheme {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
       Column(Modifier.fillMaxSize().background(studyBackgroundBrush()).verticalScroll(rememberScrollState())
-        .padding(horizontal = 24.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        .padding(horizontal = 20.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text("Writing", style = MaterialTheme.typography.titleMedium)
         Text("Word 1 / 1 · Character 1 / 1", color = FlashcardStyle.colors.gradientSecondaryInk,
           style = MaterialTheme.typography.labelLarge)
@@ -477,7 +477,7 @@ private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, d
   val medians = remember(item.id, item.revision) { item.medians.map { StrokeMatcher.resample(it, 80) } }
   var drawing by remember(drawingKey) { mutableStateOf(emptyList<StrokePoint>()) }
   val latestStroke by rememberUpdatedState(onStroke)
-  Canvas(Modifier.fillMaxWidth().aspectRatio(1f).clip(RoundedCornerShape(6.dp))
+  Canvas(Modifier.fillMaxWidth().aspectRatio(1f).clip(RoundedCornerShape(2.dp))
     .semantics { contentDescription = "Four-square tracing grid; draw one stroke at a time" }
     .pointerInput(drawingKey, enabled) {
       if (enabled) detectDragGestures(

@@ -38,6 +38,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -131,7 +132,7 @@ fun WelcomeScreen(
   BackHandler(enabled = step > 0 || saving) {
     if (!saving) { focus.clearFocus(); step = (step - 1).coerceAtLeast(0) }
   }
-  Column(Modifier.fillMaxSize().imePadding().padding(horizontal = 24.dp, vertical = 20.dp),
+  Column(Modifier.fillMaxSize().imePadding().padding(horizontal = 20.dp, vertical = 20.dp),
     horizontalAlignment = Alignment.CenterHorizontally) {
     Box(Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
       Column(Modifier.widthIn(max = 360.dp).fillMaxWidth()
@@ -182,9 +183,9 @@ fun WelcomeScreen(
                   verticalAlignment = Alignment.CenterVertically,
                   horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                   Box(Modifier.size(22.dp).background(
-                    if (checked) MaterialTheme.colorScheme.primary else Color.Transparent, CircleShape)
+                    if (checked) MaterialTheme.colorScheme.primary else Color.Transparent, MaterialTheme.shapes.extraSmall)
                     .border(1.dp, if (checked) MaterialTheme.colorScheme.primary
-                      else MaterialTheme.colorScheme.outline, CircleShape), contentAlignment = Alignment.Center) {
+                      else MaterialTheme.colorScheme.outline, MaterialTheme.shapes.extraSmall), contentAlignment = Alignment.Center) {
                     if (checked) Icon(Icons.Default.Check, contentDescription = null,
                       tint = MaterialTheme.colorScheme.onPrimary, modifier = Modifier.size(16.dp))
                   }
@@ -268,7 +269,7 @@ fun TodayScreen(
         Text(today.date, style = MaterialTheme.typography.bodyMedium,
           color = MaterialTheme.colorScheme.onSurfaceVariant)
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-          Text("${today.completed} / ${today.planned}", fontSize = 48.sp, lineHeight = 56.sp,
+          Text("${today.completed} / ${today.planned}", fontSize = 44.sp, lineHeight = 52.sp,
             fontWeight = FontWeight.SemiBold)
           Text("Words today", color = MaterialTheme.colorScheme.onSurfaceVariant)
           LinearProgressIndicator(progress = {
@@ -325,7 +326,8 @@ fun TodayScreen(
   }
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
     AlertDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
-      shape = RoundedCornerShape(12.dp), title = { Text("Finish today's plan") }, text = {
+      shape = MaterialTheme.shapes.large, containerColor = MaterialTheme.colorScheme.surface,
+      tonalElevation = 0.dp, title = { Text("Finish today's plan") }, text = {
         Text(when (blocker) {
           StudyKind.REVIEW -> "Review the due words before learning more."
           StudyKind.CARRYOVER -> "Finish the unfinished words before learning more."
@@ -443,12 +445,12 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       }
     }
     if (card != null && card.phase != CardPhase.FINISHED) state.today?.let { today ->
-      DailyProgress(today.completed, today.planned, Modifier.padding(horizontal = 24.dp).padding(bottom = 12.dp))
+      DailyProgress(today.completed, today.planned, Modifier.padding(horizontal = 20.dp).padding(bottom = 12.dp))
     }
     }
   }, bottomBar = {
     if (card != null && card.phase != CardPhase.FINISHED) {
-      Column(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 12.dp),
+      Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
         when (card.phase) {
@@ -641,7 +643,7 @@ private fun WritingNavigation(state: StudyUiState, vm: StudyViewModel, onWriting
 private fun DailyWritingInvitation(state: StudyUiState, vm: StudyViewModel) {
   if (state.dailyInvitation) AlertDialog(onDismissRequest = vm::dismissInvitation,
     title = { Text("Write today's words?") },
-    shape = RoundedCornerShape(12.dp),
+    shape = MaterialTheme.shapes.large, containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
     text = { Text("${state.today?.todayNewWords?.size ?: 0} new words") },
     confirmButton = { TextButton(onClick = vm::startDailyWriting, enabled = !state.busy) { Text("Write now") } },
     dismissButton = { TextButton(onClick = vm::dismissInvitation, enabled = !state.busy) { Text("Not now") } })
@@ -673,8 +675,14 @@ private fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> U
   WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailing = {
     if (card != null && !card.reviewRecall) RoundProgress(card)
   })
-  if (showActions) AlertDialog(onDismissRequest = { showActions = false }, shape = RoundedCornerShape(12.dp),
-    title = { Text(word.hanzi) }, text = {
+  if (showActions) AlertDialog(onDismissRequest = { showActions = false }, shape = MaterialTheme.shapes.large,
+    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
+    title = {
+      Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Text(word.hanzi, style = MaterialTheme.typography.headlineSmall)
+        Text(word.pinyin, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      }
+    }, text = {
       Column {
         Row(Modifier.fillMaxWidth().heightIn(min = 52.dp).clickable(enabled = enabled, role = Role.Button) {
           showActions = false; onSpeak()
@@ -687,7 +695,9 @@ private fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> U
           HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
           Row(Modifier.fillMaxWidth().heightIn(min = 52.dp).clickable(enabled = enabled, role = Role.Button) {
             showActions = false; write()
-          }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically) {
+          }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Icon(Icons.Default.Edit, contentDescription = null, modifier = Modifier.size(20.dp))
             Text("Write", style = MaterialTheme.typography.bodyLarge)
           }
         }
@@ -701,8 +711,8 @@ private fun PageColumn(modifier: Modifier = Modifier, scrollKey: Any? = null, st
   val scroll = rememberScrollState()
   LaunchedEffect(scrollKey) { scroll.scrollTo(0) }
   Column(modifier.fillMaxSize().then(if (studyPage) Modifier else Modifier.background(MaterialTheme.colorScheme.background))
-    .verticalScroll(scroll).padding(horizontal = 24.dp, vertical = if (studyPage) 12.dp else 20.dp),
-    verticalArrangement = Arrangement.spacedBy(if (studyPage) 8.dp else 16.dp), content = content)
+    .verticalScroll(scroll).padding(horizontal = 20.dp, vertical = if (studyPage) 12.dp else 20.dp),
+    verticalArrangement = Arrangement.spacedBy(if (studyPage) 12.dp else 16.dp), content = content)
 }
 
 @Composable
@@ -730,11 +740,11 @@ private fun CompletionCount(label: String, completed: Int, planned: Int) {
 
 @Composable
 private fun ActionTile(title: String, subtitle: String, progress: String, enabled: Boolean, onClick: () -> Unit) {
-  Surface(onClick = onClick, enabled = enabled, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp),
-    color = MaterialTheme.colorScheme.surface, border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)) {
+  Surface(onClick = onClick, enabled = enabled, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(6.dp),
+    color = MaterialTheme.colorScheme.surface) {
     Column(Modifier.padding(horizontal = 18.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        Text(title, style = MaterialTheme.typography.titleLarge,
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(title, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium,
           color = if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
         Text(progress, style = MaterialTheme.typography.titleMedium)
       }
@@ -750,7 +760,7 @@ private fun TotalProgress(learned: Int, total: Int) {
     LinearProgressIndicator(progress = {
       if (total <= 0) 0f else (learned.toFloat() / total).coerceIn(0f, 1f)
     }, modifier = Modifier.fillMaxWidth())
-    Text("$learned learned / $total in total", style = MaterialTheme.typography.bodySmall,
+    Text("$learned / $total learned", style = MaterialTheme.typography.bodySmall,
       color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
@@ -801,7 +811,7 @@ private fun TotalProgressPreview() {
   FlashcardTheme {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
       contentColor = MaterialTheme.colorScheme.onBackground) {
-      Column(Modifier.padding(horizontal = 24.dp, vertical = 20.dp)) {
+      Column(Modifier.padding(horizontal = 20.dp, vertical = 20.dp)) {
         TotalProgress(learned = 240, total = 6648)
       }
     }
@@ -817,7 +827,7 @@ private fun WelcomePreview() {
   FlashcardTheme {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
       contentColor = MaterialTheme.colorScheme.onBackground) {
-      Box(Modifier.fillMaxSize().padding(horizontal = 24.dp, vertical = 44.dp),
+      Box(Modifier.fillMaxSize().padding(horizontal = 20.dp, vertical = 44.dp),
         contentAlignment = Alignment.Center) {
         WelcomeNameFields(name = "Alex", avatarId = "1", enabled = true,
           onNameChange = {}, onAvatar = {}, onNext = {})

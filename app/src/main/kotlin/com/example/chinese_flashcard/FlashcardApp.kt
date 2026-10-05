@@ -281,7 +281,7 @@ private fun LicenseScreen(onBack: () -> Unit) {
       catch (_: Exception) { "Source licenses could not be read. Please reopen this page." }
     }
   }
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(24.dp),
+  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
     verticalArrangement = Arrangement.spacedBy(14.dp)) {
     TextButton(onClick = onBack) { Text("Back") }
     Text("Sources & licenses", style = MaterialTheme.typography.headlineMedium)
