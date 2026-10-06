@@ -2,7 +2,6 @@ package com.example.chinese_flashcard.core.ui
 
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
@@ -28,6 +27,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.text.style.Hyphens
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.WordEntry
@@ -35,9 +35,9 @@ import com.example.chinese_flashcard.core.domain.WordEntry
 /** Presentation only: callers own playback, writing, and any long-press menu. */
 @Composable
 fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongClick: (() -> Unit)? = null,
-  trailing: (@Composable () -> Unit)? = null, trailingOnNewLine: Boolean = false) {
+  trailing: (@Composable () -> Unit)? = null, trailingOnNewLine: Boolean = false, trailingSpacing: Dp = 4.dp) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(trailingSpacing)) {
       Text(word.hanzi, fontSize = 40.sp, lineHeight = 52.sp, fontWeight = FontWeight.Medium,
         modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = enabled, onClick = onSpeak,
           onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) "Word actions" else null))
@@ -68,9 +68,9 @@ fun WordMeanings(word: WordEntry) {
 }
 
 @Composable
-fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
+fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit, compact: Boolean = false) {
   if (word.literalExplanations.isNotEmpty() || word.figurativeExplanations.isNotEmpty()) {
-    WordPanel {
+    WordPanel(compact) {
       if (word.literalExplanations.isNotEmpty()) {
         PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) "Literal meaning" else "Meanings")
         ExplanationMeanings(word.literalExplanations)
@@ -83,7 +83,7 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
     }
   }
   if (word.examples.isNotEmpty()) {
-    WordPanel {
+    WordPanel(compact) {
       word.examples.forEachIndexed { index, example ->
         if (index > 0) PanelDivider()
         ExampleContent(example, onSpeak)
@@ -91,7 +91,7 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit) {
     }
   }
   if (word.parts.isNotEmpty()) {
-    WordPanel {
+    WordPanel(compact) {
       PanelLabel("Word breakdown")
       word.parts.forEach { part ->
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -119,45 +119,45 @@ private fun ExplanationMeanings(meanings: List<String>) {
 }
 
 @Composable
-fun WordExamplePanel(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
-  WordPanel { ExampleContent(example, onSpeak, enabled) }
+fun WordExamplePanel(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true,
+  compact: Boolean = false) {
+  WordPanel(compact) { ExampleContent(example, onSpeak, enabled) }
 }
 
 @Composable
-private fun WordPanel(content: @Composable ColumnScope.() -> Unit) {
+private fun WordPanel(compact: Boolean, content: @Composable ColumnScope.() -> Unit) {
   Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface.copy(alpha = FlashcardStyle.opacity.explanationPanel),
     contentColor = MaterialTheme.colorScheme.onSurface),
     shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth()) {
-    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp), content = content)
+    Column(Modifier.padding(if (compact) 12.dp else 16.dp),
+      verticalArrangement = Arrangement.spacedBy(if (compact) 8.dp else 12.dp), content = content)
   }
 }
 
 @Composable
 private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
-  Box(Modifier.fillMaxWidth()) {
+  Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        PanelLabel("Example")
-        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-          Text(exampleLine(example.chunks.map { it.hanzi }, example.hanzi),
-            modifier = Modifier.padding(end = 48.dp),
+      PanelLabel("Example")
+      Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+          Text(exampleLine(example.chunks.map { it.hanzi }, example.hanzi), modifier = Modifier.weight(1f),
             fontSize = 20.sp, lineHeight = 30.sp, fontWeight = FontWeight.Medium)
-          Text(exampleLine(example.chunks.map { it.pinyin }, example.pinyin),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
-          if (example.chunks.isNotEmpty()) Text(exampleLine(example.chunks.map { it.gloss }, ""),
-            style = MaterialTheme.typography.bodyMedium.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
+          IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
+            Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
+          }
         }
+        Text(exampleLine(example.chunks.map { it.pinyin }, example.pinyin),
+          style = MaterialTheme.typography.bodyMedium,
+          color = MaterialTheme.colorScheme.onSurfaceVariant)
+        if (example.chunks.isNotEmpty()) Text(exampleLine(example.chunks.map { it.gloss }, ""),
+          style = MaterialTheme.typography.bodyMedium.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
+          color = MaterialTheme.colorScheme.onSurfaceVariant)
       }
-      PanelDivider()
-      Text(example.english, style = MaterialTheme.typography.bodyLarge.copy(
-        localeList = LocaleList("en"), hyphens = Hyphens.None))
     }
-    IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled,
-      modifier = Modifier.size(48.dp).align(Alignment.TopEnd)) {
-      Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
-    }
+    PanelDivider()
+    Text(example.english, style = MaterialTheme.typography.bodyLarge.copy(
+      localeList = LocaleList("en"), hyphens = Hyphens.None))
   }
 }
 

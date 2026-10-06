@@ -3,18 +3,22 @@ package com.example.chinese_flashcard.core.ui
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LocalMinimumInteractiveComponentSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -53,15 +57,22 @@ fun CollectionIcon(filled: Boolean, modifier: Modifier = Modifier, contentDescri
 @Composable
 fun WordUserActions(isCollected: Boolean, isSkipped: Boolean, enabled: Boolean,
   onCollection: (Boolean) -> Unit, onSkip: (Boolean) -> Unit, wordId: String? = null,
-  wordLabel: String = "") {
+  wordLabel: String = "", compact: Boolean = false) {
   var confirming by remember(wordId) { mutableStateOf<Boolean?>(null) }
-  Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-    IconButton(onClick = { onCollection(!isCollected) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
-      CollectionIcon(isCollected, contentDescription = if (isCollected) "Remove from my collection" else "Add to my collection")
-    }
-    TextButton(onClick = { confirming = !isSkipped }, enabled = enabled, modifier = Modifier.heightIn(min = 48.dp)) {
-      Text(if (isSkipped) "unskip" else "skip", style = MaterialTheme.typography.labelMedium,
-        color = if (enabled) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurface.copy(alpha = .38f))
+  val actionWidth = if (compact) 36.dp else 48.dp
+  // Compact layout keeps the platform's expanded touch targets; only horizontal visual space shrinks.
+  CompositionLocalProvider(LocalMinimumInteractiveComponentSize provides actionWidth) {
+    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(0.dp)) {
+      IconButton(onClick = { onCollection(!isCollected) }, enabled = enabled,
+        modifier = Modifier.size(width = actionWidth, height = 48.dp)) {
+        CollectionIcon(isCollected, contentDescription = if (isCollected) "Remove from my collection" else "Add to my collection")
+      }
+      TextButton(onClick = { confirming = !isSkipped }, enabled = enabled,
+        modifier = Modifier.defaultMinSize(minWidth = actionWidth).heightIn(min = 48.dp),
+        contentPadding = PaddingValues(horizontal = if (compact) 2.dp else 4.dp)) {
+        Text(if (isSkipped) "unskip" else "skip", style = MaterialTheme.typography.labelMedium,
+          color = if (enabled) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurface.copy(alpha = .38f))
+      }
     }
   }
   confirming?.let { target ->

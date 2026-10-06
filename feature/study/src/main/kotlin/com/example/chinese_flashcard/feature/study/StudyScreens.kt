@@ -642,13 +642,13 @@ private fun StudyContent(
                 AnswerFeedback(card.correct == true,
                   card.options.firstOrNull { it.id == card.selectedOptionId }?.english ?: "I don't know")
               }
-              WordExplanation(card.word, onSpeak)
+              WordExplanation(card.word, onSpeak, compact = true)
             }
             CardPhase.QUESTION, CardPhase.FEEDBACK -> {
               val feedback = card.phase == CardPhase.FEEDBACK
               if (card.showContext && card.word.examples.isNotEmpty()) {
                 val index = (card.round - 1).coerceAtLeast(0) % card.word.examples.size
-                WordExamplePanel(card.word.examples[index], onSpeak, enabled = !feedback && !state.busy)
+                WordExamplePanel(card.word.examples[index], onSpeak, enabled = !feedback && !state.busy, compact = true)
               }
               Text("Choose the meaning", style = MaterialTheme.typography.bodyMedium,
                 color = FlashcardStyle.colors.gradientSecondaryInk)
@@ -769,10 +769,14 @@ private fun DailyProgress(completed: Int, planned: Int, modifier: Modifier = Mod
 
 @Composable
 private fun RoundProgress(card: StudyCard) {
-  Text("${card.round}/${card.targetRounds}", style = MaterialTheme.typography.labelLarge,
-    color = FlashcardStyle.colors.gradientSecondaryInk, modifier = Modifier.semantics {
-      contentDescription = "Round ${card.round} of ${card.targetRounds}"
-    })
+  Column(verticalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
+    contentDescription = "Round ${card.round} of ${card.targetRounds}"
+  }) {
+    repeat(card.targetRounds) { index ->
+      Spacer(Modifier.size(width = 10.dp, height = 3.dp).background(
+        if (index < card.round) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant))
+    }
+  }
 }
 
 @Composable
@@ -783,13 +787,15 @@ private fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> U
     card.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.FEEDBACK)
   val fontScale = LocalDensity.current.fontScale
   BoxWithConstraints(Modifier.fillMaxWidth()) {
-    val actionsWidth = if (showRound) 168.dp else 120.dp
-    val actionsBelow = (word.hanzi.length * 40 * fontScale).dp + actionsWidth + 16.dp > maxWidth
-    WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailingOnNewLine = actionsBelow, trailing = {
-      Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    val actionsWidth = 36.dp + maxOf(36.dp, (40 * fontScale).dp) + (if (showRound) 14.dp else 0.dp)
+    val actionsBelow = (word.hanzi.length * 40 * fontScale).dp + actionsWidth + 2.dp > maxWidth
+    WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailingOnNewLine = actionsBelow,
+      trailingSpacing = 2.dp, trailing = {
+      Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
         if (showRound) RoundProgress(checkNotNull(card))
         WordUserActions(isCollected = card?.isCollected ?: false, isSkipped = card?.isSkipped ?: false,
-          enabled = enabled, onCollection = onCollection, onSkip = onSkip, wordId = word.id, wordLabel = word.hanzi)
+          enabled = enabled, onCollection = onCollection, onSkip = onSkip, wordId = word.id, wordLabel = word.hanzi,
+          compact = true)
       }
     })
   }
@@ -830,7 +836,7 @@ private fun PageColumn(modifier: Modifier = Modifier, scrollKey: Any? = null, st
   LaunchedEffect(scrollKey) { scroll.scrollTo(0) }
   Column(modifier.fillMaxSize().then(if (studyPage) Modifier else Modifier.background(MaterialTheme.colorScheme.background))
     .verticalScroll(scroll).padding(horizontal = 20.dp, vertical = if (studyPage) 12.dp else 20.dp),
-    verticalArrangement = Arrangement.spacedBy(if (studyPage) 12.dp else 16.dp), content = content)
+    verticalArrangement = Arrangement.spacedBy(if (studyPage) 8.dp else 16.dp), content = content)
 }
 
 @Composable

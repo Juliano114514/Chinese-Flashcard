@@ -173,10 +173,14 @@ private fun WordCount(count: Int, label: String, modifier: Modifier = Modifier) 
 private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
   Column(Modifier.fillMaxWidth().heightIn(min = 72.dp).clickable(role = Role.Button, onClick = onClick)
     .padding(vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-      Text(entry.hanzi, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleLarge,
-        fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
-      if (entry.isCollected) CollectionIcon(true, contentDescription = "In my collection")
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp),
+      verticalAlignment = Alignment.CenterVertically) {
+      Row(Modifier.weight(1f), horizontalArrangement = Arrangement.spacedBy(4.dp),
+        verticalAlignment = Alignment.CenterVertically) {
+        Text(entry.hanzi, modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.titleLarge,
+          fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
+        if (entry.isCollected) CollectionIcon(true, contentDescription = "In my collection")
+      }
       Text(entry.pinyin, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
         color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End)
     }
