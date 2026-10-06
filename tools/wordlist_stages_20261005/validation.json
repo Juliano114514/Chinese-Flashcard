@@ -1,0 +1,18 @@
+{
+  "words": 9223,
+  "reviewedRows": 9223,
+  "rarity": {
+    "0": 1276,
+    "1": 4310,
+    "2": 2210,
+    "3": 633,
+    "4": 794
+  },
+  "changedRarityCells": 5439,
+  "nonRarityBytesUnchanged": true,
+  "idsAndPhysicalOrderUnchanged": true,
+  "sha256": "762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237",
+  "bytes": 20435483,
+  "completeStructuralValidator": "PASS",
+  "boundary": "All entries were individually AI-reviewed under the requested educational bands; these are inferred learning stages, not an official national per-grade word list or human linguistic certification. Only rarity cells change."
+}

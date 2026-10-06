@@ -1,0 +1,22 @@
+{
+  "checkedOn": "2026-10-05",
+  "purpose": "Educational context for the requested semantic learning bands; individual assignments are AI editorial judgments.",
+  "sources": [
+    {
+      "title": "Ministry of Education: compulsory education curriculum standards, 2022",
+      "url": "https://www.moe.gov.cn/srcsite/A26/s8001/202204/t20220420_619921.html",
+      "use": "Overall primary and middle-school learning stages and increasing language expectations; not a per-grade vocabulary list."
+    },
+    {
+      "title": "Ministry of Education: high-school curriculum standards, 2017 edition revised in 2020",
+      "url": "https://hudong.moe.gov.cn/srcsite/A26/s8001/202006/t20200603_462199.html",
+      "use": "High-school language, literary and thinking context; not a word-by-word grade certification."
+    },
+    {
+      "title": "Hunan Normal University: Chinese language and literature undergraduate curriculum, 2025",
+      "url": "https://sdwxy.hunnu.edu.cn/info/1058/6818.htm",
+      "use": "First-year modern Chinese and literary reading courses distinguish major-specific language/literature from general university technical vocabulary. Later specialist courses do not prove that every specialist word is required in Year 1."
+    }
+  ],
+  "boundary": "Source context informs a practical approximation of the user's five bands. The data does not claim official textbook occurrence, nationwide uniformity, human linguistic certification or device verification."
+}

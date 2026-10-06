@@ -1,0 +1,506 @@
+{
+  "wl_05486": {
+    "word": "倥偬",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "目标义为军务、事务忙迫；常见戎马倥偬及一般文学书面语可形成识读背景，无须训诂或专业文学分析。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05583": {
+    "word": "钤",
+    "rarity": "3",
+    "reason": "TECHNICAL_NONLANGUAGE",
+    "rationale": "两例均为书画上盖印的动作，是书画、印章操作用语；与装裱的褙同属工艺语境，应按艺术专业术语归3，不因单字古雅自动归汉语言4。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05642": {
+    "word": "饕餮",
+    "rarity": "3",
+    "reason": "TECHNICAL_NONLANGUAGE",
+    "rationale": "答题目标是青铜器兽面纹饰，两例均为文物纹样；属于文物、艺术史知识，不要求汉语言专门训诂。以词的纹样义评3，并未按更常见的盛宴引申义降档。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05656": {
+    "word": "葳蕤",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "目标仅为草木繁茂，现代文学及诗歌阅读已有常规接触；无需植物分类或冷僻典故。苏州教科院刊载的初一阅读试卷也使用该词，但综合识读难度保守取高中2。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05694": {
+    "word": "洵",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "目标为文言副词确实，可随学校诗经静女中的洵美且异掌握；不要求专门文字学或训诂。《静女》及其邶风出处列入普通高中课程古诗文范围。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05724": {
+    "word": "喁喁",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "两例均为喁喁细语，即低声交谈；属于一般文学描写及常见搭配，没有特殊古典制度或典故背景。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05757": {
+    "word": "国祚",
+    "rarity": "3",
+    "reason": "UNIVERSITY_ABSTRACT",
+    "rationale": "目标为王朝或国家延续的年数，例句是历史记录、王朝比较；词形较正式冷僻，取大学通识历史阅读3，但概念与用法不要求汉语言专业学习。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05818": {
+    "word": "棹歌",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "目标为划船者唱的歌；普通古诗阅读中棹、舟行及渔歌意象可解释该词，没有需专业考据的乐曲体制或典故义。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05883": {
+    "word": "邶风",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "当前仅指诗经的这一分部，未考国风目录、地理源流或文学史分析；普通高中静女的出处直接提供识读背景，故不需汉语言专业4。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_05909": {
+    "word": "妍媸",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "目标为美与丑，例句为外貌、画评的一般评价词；普通文学评论词义即可掌握，没有美学理论或文字学专门内容。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_06024": {
+    "word": "扶乩",
+    "rarity": "3",
+    "reason": "UNIVERSITY_ABSTRACT",
+    "rationale": "目标为以扶乩器具进行的降神书写，两例介绍民俗和器具；是宗教、民俗研究的专门行为名，应按大学领域知识3，未考古文词义、文学典故或语言分析。",
+    "reviewReport": "cross4b.json"
+  },
+  "wl_03286": {
+    "word": "呔",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "旧小说和戏曲中常见的喝止叹词，录义为简单的 hey/halt，普通文学阅读即可认识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03329": {
+    "word": "书僮",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通古小说中的书童角色；“僮”旧写不增加专门制度或文学分析内涵。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03334": {
+    "word": "女红",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "传统针线活的通常文化称呼，普通中学文学和生活文化词汇即可覆盖。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03339": {
+    "word": "暴虎冯河",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "常见的《论语》成语义为鲁莽蛮勇，属普通中学典故与成语知识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03349": {
+    "word": "击筑",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通中学古文和荆轲、高渐离故事中可识读的演奏动作；录义没有专业乐理要求。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03388": {
+    "word": "扛鼎",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "项羽故事中常见的举鼎、力大表达，属普通古文典故认知。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03439": {
+    "word": "贰心",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "录义是古文常见的二心、不忠，未包含特殊经学或官制概念。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03442": {
+    "word": "铁椎",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "铁锤/铁槌的通常旧写，可由普通古文阅读认识；不需专门古器物考证。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03456": {
+    "word": "恭禧",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "贺词中的恭喜/祝贺旧写，例句只为贺卡祝词，不需专业语言研究。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03466": {
+    "word": "已矣",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "一般中学文言常见的已矣（结束了）表达，属基础文言句式。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03491": {
+    "word": "着衫",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "着作穿着、衫作上衣的普通书面组合，录义和句例无特殊古典内涵。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03503": {
+    "word": "汝等",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "汝与等组成的普通文言第二人称复数表达，中学古文认知即可。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03600": {
+    "word": "稽首",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "一般古文和旧小说中常见的叩首行礼动作，录义不涉及复杂九拜礼制辨析。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03621": {
+    "word": "岱岳",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "泰山的通常文学名称，可由普通中学古诗与地理文化知识认识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03656": {
+    "word": "仓卒",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "仓促、匆忙的旧写，录义和句例没有专门古典义项。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03689": {
+    "word": "文过",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "文过饰非中的通常文言动词义，属于普通中学成语/文言认识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03701": {
+    "word": "堂倌",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通旧小说和近现代文学中的茶馆、饭店侍者称谓，无专门制度义。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03705": {
+    "word": "般若",
+    "rarity": "3",
+    "reason": "UNIVERSITY_ABSTRACT",
+    "rationale": "录义是佛教的智慧/洞见概念，属于高级宗教哲学知识，非语言文学专业术语。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03723": {
+    "word": "心广体胖",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通古典成语，录义为心境宽舒、体态安适，属中学成语与文化阅读。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03732": {
+    "word": "辕门",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "古小说、历史故事中的军营大门通称，未包含专门军制考证。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03779": {
+    "word": "缮写",
+    "rarity": "3",
+    "reason": "UNIVERSITY_ABSTRACT",
+    "rationale": "录义和句例为秘书誊写正式公文；属于高级行政书面词，并非文本训诂或文学分析术语。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03904": {
+    "word": "唱和",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "诗人相互酬答、和诗的普通文学常识；只录一般唱和行为，没有专业格律细则。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_03983": {
+    "word": "攘除",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "攘除奸凶中的通常文言动词义，普通中学古文阅读即可覆盖。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04126": {
+    "word": "蔻丹",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "近现代旧用的指甲油商品借词，属于普通旧文学/文化词；稀有现代日常词本身不足以列入专业4。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04405": {
+    "word": "镬",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "大锅、汤镬的通常古文/方言词义，不需要进一步考订特殊古器物类型。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04454": {
+    "word": "艮卦",
+    "rarity": "3",
+    "reason": "UNIVERSITY_ABSTRACT",
+    "rationale": "录义为《易经》的艮卦概念，按已确认的八卦通识哲学边界归一般大学3，非语言专业4。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04512": {
+    "word": "黔首",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "古文与历史叙述中常见的百姓称谓，普通中学古文词汇即可覆盖。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04635": {
+    "word": "骥",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "骥由良马比喻人才的常见古文修辞义，普通中学古文与千里马典故即可认识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04657": {
+    "word": "聩",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "振聋发聩中的耳聋古义，属于通常中学成语/古文实词知识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04658": {
+    "word": "篑",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "功亏一篑中的土筐义，属于普通成语本义及中学古文知识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04672": {
+    "word": "闾",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "一般中学古文中的里巷之门义；录义未要求细分古代闾里编制。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04686": {
+    "word": "唱喏",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "旧小说中常见的作揖问安动作，普通古典小说阅读即可认识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04722": {
+    "word": "铄",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "众口铄金中的熔化金属义，属普通中学成语及文言实词知识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04858": {
+    "word": "草菅",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "草菅人命中野草的通常本义；录义不是具体植物分类或专门《诗经》象征研究。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04900": {
+    "word": "缇骑",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通历史古文中的骑马卫士称谓，录义未包含需专门考据的完整官制。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04951": {
+    "word": "姝",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通中学古诗中姝的美丽女子义，属于通常古诗词汇。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04959": {
+    "word": "殁",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "传记和一般古文中的去世常用书面词，不需专门经学背景。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_04997": {
+    "word": "一斛",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "古文中通常粮食容量单位斛的数词短语，未涉及历代计量制度考证。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05010": {
+    "word": "赠遗",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "遗读wèi、表赠予的通常文言实词义，与赠组成同义复词；录义没有额外专业内涵。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05014": {
+    "word": "先妣",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "一般中学古文中的亡母敬称，属于通常古文亲属称谓知识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05033": {
+    "word": "欤",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "一般中学文言句末疑问/感叹助词，不属需专业研究的罕见语法机制。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05035": {
+    "word": "不以语人",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "语读yù、意为告诉的通常文言实词用法，短语无需专门背景。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05039": {
+    "word": "恶乎",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通中学古文中的文言疑问表达，恶乎的哪里义属于通常文言词汇。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05044": {
+    "word": "厝火积薪",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "在火柴堆下置火、比喻隐藏大危险的普通成语义，不需专门古典考据。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05088": {
+    "word": "翦除",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "录义和例句只是剪除枯枝的旧写，未包含特殊古代制度或专门语义。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05095": {
+    "word": "发见",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "发现的近现代旧写，属于普通近现代文学识读，专业语言研究不是理解条件。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05170": {
+    "word": "俟候",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "俟的等待古义与候组成普通文言动词，中学文言实词知识即可。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05195": {
+    "word": "辇车",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "皇帝车驾的普通古文、历史文化词，当前录义无需专门车制考证。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05206": {
+    "word": "牝鸡",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "牝鸡司晨中母鸡的通常本义，属普通中学成语及古文动物雌雄称谓。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05246": {
+    "word": "谔谔",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "千人诺诺不如一士谔谔中的直言义，属普通古典名句与文言阅读。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05257": {
+    "word": "衮衮诸公",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通近现代讽刺性成语，当前指高位而无所作为的官员，并非专门官服礼制意义。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05259": {
+    "word": "薨逝",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通中学古文文化常识中的贵族死亡称谓，录义没有复杂丧礼细分。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05279": {
+    "word": "廪仓",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "仓廪、粮仓的通常古文词义，例句无特殊仓制或文本研究要求。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05285": {
+    "word": "殁世",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通诗人传记中的去世书面表达，由殁的通常文言义即可认识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05287": {
+    "word": "恁地",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "水浒等旧白话小说中的常见这样、如此表达，普通中学名著阅读即可覆盖。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05311": {
+    "word": "璇玑",
+    "rarity": "3",
+    "reason": "TECHNICAL_NONLANGUAGE",
+    "rationale": "录义与两句均明确是古代天文仪器实体，属于专业天文/科技史知识，非语言文学专业术语。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05333": {
+    "word": "谶语",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "古小说及历史叙述中常见的预言、应验之语，录义不涉及谶纬经学文本的专门研究。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05347": {
+    "word": "马弁",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "普通近现代历史小说中的军官随从角色，未包含需专门古籍考订的制度意义。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05369": {
+    "word": "分爨",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "一般中学古文中的分家另炊行为，与异爨同类；当前录义无需专门礼制知识。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05372": {
+    "word": "迨至",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "迨的等到、到某时义与至组合，属通常中学文言虚词识读。",
+    "reviewReport": "cross4a.json"
+  },
+  "wl_05375": {
+    "word": "啖食",
+    "rarity": "2",
+    "reason": "LITERARY_COMMON",
+    "rationale": "啖的吃义与食组成普通书面文言动词，录义未涉及特殊古典用法。",
+    "reviewReport": "cross4a.json"
+  }
+}
