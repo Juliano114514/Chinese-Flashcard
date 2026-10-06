@@ -23,6 +23,8 @@ internal data class WordEntity(@PrimaryKey val id: String, val hanzi: String, va
 
 internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: String)
 
+internal data class WordStudyRow(val id: String, val rarity: Int)
+
 internal data class WordlistRow(val id: String, val hanzi: String, val pinyin: String,
   val english: String, val searchMeanings: String, val difficulty: Int,
   val firstEncounterShown: Boolean, val firstPassedDay: Long?,
@@ -146,6 +148,7 @@ internal interface FlashcardDao {
   """)
   fun observeWordlist(): Flow<List<WordlistRow>>
   @Query("SELECT * FROM words ORDER BY rarity, sortOrder, id") suspend fun words(): List<WordEntity>
+  @Query("SELECT id, rarity FROM words ORDER BY rarity, sortOrder, id") suspend fun studyWords(): List<WordStudyRow>
   @Query("SELECT id, hanzi, pinyin FROM words ORDER BY id") suspend fun wordIdentities(): List<WordIdentity>
   @Query("UPDATE words SET sortOrder = :rank WHERE id = :id AND sortOrder != :rank")
   suspend fun updateWordOrder(id: String, rank: Int)

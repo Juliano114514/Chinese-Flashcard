@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -103,7 +104,7 @@ class FlashcardRepositories(context: Context) {
 
   /** Called only inside preset bootstrap's Room transaction; never re-enters prepare or its locks. */
   private suspend fun reconcilePresetStages() {
-    val words = dao.words().associateBy { it.id }
+    val words = dao.studyWords().associateBy { it.id }
     val states = dao.stageStates().associateBy { it.stage }.toMutableMap()
     for (rarity in words.values.map { it.rarity }.distinct()) {
       if (rarity !in states) {
@@ -188,7 +189,7 @@ class FlashcardRepositories(context: Context) {
             row.isCollected, row.isSkipped, row.mistakePending, learningStatus)
         }
       }.distinctUntilChanged())
-    }
+    }.flowOn(Dispatchers.Default)
 
     override suspend fun word(id: String): WordEntry? = transaction {
       dao.word(id)?.let { this@FlashcardRepositories.word(it) }
@@ -451,7 +452,7 @@ class FlashcardRepositories(context: Context) {
     val state = appState()
     state.selectedStage?.let { VocabularyStage.fromRarity(it) }?.let { return it }
     val progress = dao.progress().associateBy { it.wordId }
-    val eligible = dao.words().filter { progress[it.id]?.isSkipped != true }
+    val eligible = dao.studyWords().filter { progress[it.id]?.isSkipped != true }
     val stage = state.currentCardId?.let { dao.card(it) }?.takeIf {
       it.kind == StudyKind.NEW.name && it.phase != CardPhase.FINISHED.name
     }?.let { dao.word(it.wordId) }?.let { VocabularyStage.fromRarity(it.rarity) }
@@ -466,7 +467,7 @@ class FlashcardRepositories(context: Context) {
     val state = StageStateEntity(stage.rarity)
     dao.putStageState(state)
     val progress = dao.progress().associateBy { it.wordId }
-    dao.words().filter { it.rarity == stage.rarity }.forEach { word ->
+    dao.studyWords().filter { it.rarity == stage.rarity }.forEach { word ->
       progress[word.id]?.firstPassedDay?.let { day ->
         dao.putStageCompletion(StageCompletionEntity(stage.rarity, state.lap, word.id, day))
       }
@@ -485,15 +486,21 @@ class FlashcardRepositories(context: Context) {
     enqueueStageWords(day, stage, goal, allowNewLap = false)
   }
 
-  private suspend fun stageCandidates(stage: VocabularyStage, allowNewLap: Boolean): List<WordEntity> {
+  private suspend fun stageCandidates(stage: VocabularyStage, allowNewLap: Boolean): List<WordStudyRow> {
     val state = stageState(stage)
     val progress = dao.progress().associateBy { it.wordId }
-    val words = dao.words().filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true }
+    val words = dao.studyWords()
     val completed = dao.stageCompletions(stage.rarity, state.lap).map { it.wordId }.toSet()
+    return stageCandidates(stage, allowNewLap, words, progress, completed)
+  }
+
+  private suspend fun stageCandidates(stage: VocabularyStage, allowNewLap: Boolean,
+    words: List<WordStudyRow>, progress: Map<String, WordProgressEntity>, completed: Set<String>): List<WordStudyRow> {
+    val eligible = words.filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true }
     val active = activeLearningCycles().map { it.wordId }.toSet()
-    val remaining = words.filter { it.id !in completed && it.id !in active }
-    if (remaining.isNotEmpty() || !allowNewLap || words.isEmpty() || words.any { it.id !in completed }) return remaining
-    return words.filter { it.id !in active }
+    val remaining = eligible.filter { it.id !in completed && it.id !in active }
+    if (remaining.isNotEmpty() || !allowNewLap || eligible.isEmpty() || eligible.any { it.id !in completed }) return remaining
+    return eligible.filter { it.id !in active }
   }
 
   private suspend fun enqueueStageWords(day: Long, stage: VocabularyStage, limit: Int, allowNewLap: Boolean): Boolean {
@@ -547,7 +554,7 @@ class FlashcardRepositories(context: Context) {
       if (dao.plan(day) == null) {
         val settings = savedSettings()
         dao.putPlan(DailyPlanEntity(day, settings.dailyWords))
-        val words = dao.words()
+        val words = dao.studyWords()
         val progress = dao.progress().associateBy { it.wordId }
         val order = words.mapIndexed { rank, word -> word.id to rank }.toMap()
         val active = activeLearningCycles().filter { progress[it.wordId]?.isSkipped != true }
@@ -658,7 +665,7 @@ class FlashcardRepositories(context: Context) {
       }
       finishPracticeIfReady(session.id)
     }
-    val eligible = dao.words().filter { progress[it.id]?.isSkipped != true &&
+    val eligible = dao.studyWords().filter { progress[it.id]?.isSkipped != true &&
       if (kind == StudyKind.COLLECTION) progress[it.id]?.isCollected == true else progress[it.id]?.mistakePending == true }
     if (eligible.isEmpty()) return null
     var lap = sessions.maxOfOrNull { it.lap } ?: 1
@@ -769,7 +776,9 @@ class FlashcardRepositories(context: Context) {
       PracticeProgress(StudyKind.valueOf(session.kind), items.count { it.completed }, items.size,
         paused = session.status == "PAUSED")
     }
-    return StudySnapshot(summaryAt(day), card?.let { cardDomain(it) }, practice)
+    val summary = summaryAt(day)
+    val studyCard = card?.let { cardDomain(it) }
+    return StudySnapshot(summary, studyCard, practice, revision = appState().revision)
   }
 
   private suspend fun summaryAt(day: Long): TodaySummary {
@@ -782,13 +791,14 @@ class FlashcardRepositories(context: Context) {
       it.kind == kind.name && (kind != StudyKind.NEW || it.originStage == stage.rarity) &&
         (complete == null || it.completed == complete)
     }
-    val words = dao.words()
+    val words = dao.studyWords()
     val stageWords = words.filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true }
     val completed = dao.stageCompletions(stage.rarity, state.lap).map { it.wordId }.toSet()
     val stageProgress = StageProgress(stage, stageWords.count { it.id in completed }, stageWords.size, state.lap)
     val newWords = words.filter { progress[it.id]?.firstPassedDay == day && progress[it.id]?.isSkipped != true }
       .map { word(it.id) }
-    val available = stageCandidates(stage, allowNewLap = true).size
+    val available = stageCandidates(stage, allowNewLap = true,
+      words = words, progress = progress, completed = completed).size
     val blocker = learnMoreBlocker(day, items, stage)
     val collectionIds = words.filter { progress[it.id]?.isCollected == true && progress[it.id]?.isSkipped != true }
       .mapTo(mutableSetOf()) { it.id }

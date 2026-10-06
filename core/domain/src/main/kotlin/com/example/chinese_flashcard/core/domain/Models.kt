@@ -52,7 +52,7 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
 data class PracticeProgress(val kind: StudyKind, val completed: Int, val planned: Int,
   val paused: Boolean = false)
 data class StudySnapshot(val today: TodaySummary, val card: StudyCard?,
-  val practice: PracticeProgress? = null)
+  val practice: PracticeProgress? = null, val revision: Long = 0)
 
 data class StrokePoint(val x: Float, val y: Float)
 data class TracingItem(val id: String, val glyph: String, val paths: List<String>,

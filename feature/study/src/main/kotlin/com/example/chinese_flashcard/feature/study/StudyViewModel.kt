@@ -145,9 +145,14 @@ class StudyViewModel(
     observation?.cancel()
     observation = viewModelScope.launch {
       try {
-        combine(settings.settings, study.changes.onStart { emit(0L) }) { _, _ -> Unit }
-          .collect {
+        combine(settings.settings, study.changes.onStart { emit(0L) }) { value, revision -> value to revision }
+          .collect { (value, revision) ->
             operationLock.withLock {
+              val loaded = state.value
+              // Actions already return the snapshot saved at this revision. Keep later external changes observable.
+              if (loaded.snapshot != null && revision <= loaded.snapshot.revision && value == loaded.settings) {
+                return@withLock
+              }
               val (snapshot, value) = withContext(Dispatchers.IO) { study.snapshot() to settings.settings.first() }
               mutate(StudyMutation.Loaded(snapshot, value))
               offerDailyWriting(snapshot)

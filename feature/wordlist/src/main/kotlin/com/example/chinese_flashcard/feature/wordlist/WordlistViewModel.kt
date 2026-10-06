@@ -42,6 +42,8 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
   private val mutableState = MutableStateFlow(WordlistUiState())
   val state = mutableState.asStateFlow()
   private data class SearchEntry(val item: WordlistItem, val pinyin: String, val meanings: String)
+  private data class CatalogUpdate(val entries: List<SearchEntry>, val learned: Int, val learning: Int,
+    val unlearned: Int, val skipped: Int)
   private var searchEntries = emptyList<SearchEntry>()
   private var observation: Job? = null
   private var searchJob: Job? = null
@@ -100,15 +102,24 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
     observation = viewModelScope.launch {
       try {
         repository.entries.collectLatest { items ->
-          // Normalize once per catalog update, away from the UI thread.
-          searchEntries = withContext(Dispatchers.Default) {
-            items.map { SearchEntry(it, searchText(it.pinyin).filterNot(Char::isWhitespace), searchText(it.searchMeanings)) }
+          // Progress/collection changes reuse the catalog's normalized text.
+          val previous = searchEntries
+          val updated = withContext(Dispatchers.Default) {
+            val cached = previous.associateBy { it.item.id }
+            val entries = items.map { item ->
+              val entry = cached[item.id]
+              if (entry != null && entry.item.pinyin == item.pinyin && entry.item.searchMeanings == item.searchMeanings) {
+                if (entry.item == item) entry else entry.copy(item = item)
+              } else SearchEntry(item, searchText(item.pinyin).filterNot(Char::isWhitespace), searchText(item.searchMeanings))
+            }
+            CatalogUpdate(entries, items.count { it.learningStatus == WordlistStatus.LEARNED },
+              items.count { it.learningStatus == WordlistStatus.LEARNING },
+              items.count { it.learningStatus == WordlistStatus.UNLEARNED }, items.count { it.isSkipped })
           }
+          searchEntries = updated.entries
           mutableState.update { it.copy(error = null, total = items.size,
-            learned = items.count { it.learningStatus == WordlistStatus.LEARNED },
-            learning = items.count { it.learningStatus == WordlistStatus.LEARNING },
-            unlearned = items.count { it.learningStatus == WordlistStatus.UNLEARNED },
-            skipped = items.count { it.isSkipped }) }
+            learned = updated.learned, learning = updated.learning,
+            unlearned = updated.unlearned, skipped = updated.skipped) }
           updateResults()
         }
       } catch (error: CancellationException) {
