@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "words": 7723,
+  "words": 9223,
   "retainedWords": 7648,
   "newRarity0Idioms": 75,
   "editorialCorrections": {
@@ -16,18 +16,21 @@
     "id-map.json": "1c0255f7b6c2ae8163006646b727ce146a151756f3844ef2149591877926d005",
     "gloss-overrides.json": "b0593405c86487526d6566f3a0d8843dbff97e6164e2769c5b4d43dde54b1464",
     "sentence-corrections.json": "15a90439bdf9c4fef5ddb1bc1e16ada6941f226b9950219f64e5c320def2e35a",
-    "draft-audit.json": "97e266479fd4abf5422d025c3fc357d1e0dff2f3232790e83612db52f69b3e2b"
+    "draft-audit.json": "97e266479fd4abf5422d025c3fc357d1e0dff2f3232790e83612db52f69b3e2b",
+    "expansion-20261005.json": "7f21bec316fec0688e0287490c6b8ad0ea1c3ee5ad9699da44daef130dc751c1",
+    "stage-grading-20261005.json": "ab84c09af2d262c4ec21f104f09aa78e7f07f1548ca29856415d2f8863191a01"
   },
   "rarity": {
-    "0": 1656,
-    "1": 2025,
-    "3": 2120,
-    "2": 1922
+    "0": 1276,
+    "1": 4310,
+    "2": 2210,
+    "3": 633,
+    "4": 794
   },
-  "examples": 15446,
-  "bytes": 17705699,
-  "sha256": "388ab2d79afdd4685a101a27c550a1b4cb9fb5e051add0874cbaf47c2f5706e1",
-  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix",
+  "examples": 18446,
+  "bytes": 20435483,
+  "sha256": "762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237",
+  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix, then frozen 1,500-word expansion (500 each in levels 0/1/2); five-stage grading changes only rarity cells",
   "learningOrder": "rarity, syllable letters then tone 1/2/3/4/5, next syllable, stable ID",
   "firstLearningWords": [
     {
@@ -36,14 +39,14 @@
       "拼音": "ā yí"
     },
     {
-      "词条ID": "wl_07698",
-      "组词": "唉声叹气",
-      "拼音": "āi shēng tàn qì"
-    },
-    {
       "词条ID": "wl_01062",
       "组词": "哎呀",
       "拼音": "āi yā"
+    },
+    {
+      "词条ID": "wl_03616",
+      "组词": "唉呀",
+      "拼音": "āi ya"
     },
     {
       "词条ID": "wl_01566",
@@ -51,14 +54,19 @@
       "拼音": "āi yō"
     },
     {
-      "词条ID": "wl_00599",
-      "组词": "爱情",
-      "拼音": "ài qíng"
+      "词条ID": "wl_05142",
+      "组词": "哎唷",
+      "拼音": "āi yō"
     },
     {
-      "词条ID": "wl_00708",
-      "组词": "安顿",
-      "拼音": "ān dùn"
+      "词条ID": "wl_02058",
+      "组词": "挨打",
+      "拼音": "ái dǎ"
+    },
+    {
+      "词条ID": "wl_02043",
+      "组词": "矮小",
+      "拼音": "ǎi xiǎo"
     },
     {
       "词条ID": "wl_01269",
@@ -66,19 +74,19 @@
       "拼音": "ān jìng"
     },
     {
-      "词条ID": "wl_01292",
-      "组词": "安宁",
-      "拼音": "ān níng"
-    },
-    {
       "词条ID": "wl_00758",
       "组词": "安全",
       "拼音": "ān quán"
     },
     {
-      "词条ID": "wl_00314",
-      "组词": "安慰",
-      "拼音": "ān wèi"
+      "词条ID": "wl_08208",
+      "组词": "安全带",
+      "拼音": "ān quán dài"
+    },
+    {
+      "词条ID": "wl_02935",
+      "组词": "俺",
+      "拼音": "ǎn"
     },
     {
       "词条ID": "wl_00783",
@@ -86,29 +94,9 @@
       "拼音": "àn niǔ"
     },
     {
-      "词条ID": "wl_01121",
-      "组词": "肮脏",
-      "拼音": "āng zāng"
-    },
-    {
-      "词条ID": "wl_01113",
-      "组词": "昂贵",
-      "拼音": "áng guì"
-    },
-    {
-      "词条ID": "wl_02443",
-      "组词": "熬夜",
-      "拼音": "áo yè"
-    },
-    {
       "词条ID": "wl_03762",
       "组词": "八个",
       "拼音": "bā gè"
-    },
-    {
-      "词条ID": "wl_00511",
-      "组词": "八卦",
-      "拼音": "bā guà"
     },
     {
       "词条ID": "wl_01065",
@@ -116,19 +104,34 @@
       "拼音": "bā shì"
     },
     {
-      "词条ID": "wl_01085",
-      "组词": "把握",
-      "拼音": "bǎ wò"
-    },
-    {
       "词条ID": "wl_01043",
       "组词": "爸爸",
       "拼音": "bà ba"
     },
     {
+      "词条ID": "wl_03202",
+      "组词": "掰开",
+      "拼音": "bāi kāi"
+    },
+    {
       "词条ID": "wl_01243",
       "组词": "白色",
       "拼音": "bái sè"
+    },
+    {
+      "词条ID": "wl_01127",
+      "组词": "拜托",
+      "拼音": "bài tuō"
+    },
+    {
+      "词条ID": "wl_02338",
+      "组词": "斑点",
+      "拼音": "bān diǎn"
+    },
+    {
+      "词条ID": "wl_02339",
+      "组词": "班级",
+      "拼音": "bān jí"
     }
   ],
   "verification": "Complete structural/content-shape/reference/stroke-coverage checks. AI-assisted lexical gloss selection is not human linguistic sign-off.",
@@ -162,5 +165,86 @@
       "format_review_3.json": "18777b4f30b63640b7972d5963f395a9598be99071e7011c6e1ecd686e226b88"
     },
     "boundary": "Complete AI editorial reading with contextual refinements and independent structural validation; not human linguistic certification."
+  },
+  "vocabularyExpansion": {
+    "date": "2026-10-05",
+    "baseRows": 7723,
+    "baseSha256": "388ab2d79afdd4685a101a27c550a1b4cb9fb5e051add0874cbaf47c2f5706e1",
+    "additionalRows": 1500,
+    "rarity": {
+      "0": 500,
+      "1": 500,
+      "2": 500
+    },
+    "sourceSha256": {
+      "assemble.py": "9c1a47787f4ebd1e4468a4106481ee1900092ca2e8ced6c0ca71be2a8fc28699",
+      "level0_authoring.tsv": "cdebf0f3a7532417966b3f3fcb16d3eb98668462757bf91bf963749e2c2d8e39",
+      "level0_review.json": "182ae3893d5a4ef7798d6c0cf21f69513541b8fc659481f6b1873b4e9705ee72",
+      "level0_draft.json": "67144cb73cf473848e9d06ee0149e88ef16bce52596db91d71f0c32432a2632a",
+      "level1_authoring.tsv": "50e03ff32b28d9812bf88b53f3761cb727824234bff4d9ebd2fc619321122942",
+      "level1_review.json": "9956ea16327bb43bd3ed7df4d8a8a1c8e03c270c4678b55bd4d685c0e236ef96",
+      "level1_draft.json": "19cc73d6ef1cb019882c519a27db7aac4e559860654d4680c271d826382737e2",
+      "level2_authoring.tsv": "b42f8edc884da4d568b8c2626f745b000b5609ac86e49d2b3990f325e5bf9807",
+      "level2_review.json": "c0a85eca50f67582c3614f21b907a335049855be233fb0cd3df65fb97cec533e",
+      "level2_draft.json": "f0200e4cdba850be9ff18d36d54961378dec27829aef588931c92f7f384bfd82",
+      "level0_corrections.json": "eef07f1d89ef0ef7c3f16a3fd0ba5715df54cb0cac50d069ea28c8af20c31b4a",
+      "level1_corrections.json": "4621a3fb28333d294958cad75c1a56324f3f203ad7c6da9b6701e2a2d4bb8075",
+      "level2_corrections.json": "de2adbc52de4a032aae0b7ef8017316df9b5adcea42449b241bba6eab3584a03",
+      "cross_review_0_from_1.json": "2c6654f0639927e1814a82f80556bc74ff741a1ab32f13181b7b55c753633551",
+      "cross_review_1_from_0.json": "761729f9a97f9ee8374d389377c410d25925b4cce5bd8cb79a7189d760d1adfb",
+      "cross_review_2_from_0.json": "bf766a266611a91afd58bd8e63476676f1de1e1878bb9d0e5fce3d12c559d8f2",
+      "cross_corrections_0_from_1.json": "dd4e6a2056945eccb52eee1c4ef6eefb7a67750390d0763ecf868cd61458c5b4",
+      "generated_review_0.json": "d24a9e80ad66fab20fec5dc42ad89e75e9fcb5e346ea668453f57af4b0562eae",
+      "generated_review_1.json": "ddbb1c9de87dea857280daedd0c9701216aeb7ede4ff26f0ca39cd4d9c27214d",
+      "generated_review_2.json": "ba2223d524450d44ce177167eb6e7d0d50656b1d068c7fd1cbe6af597b194d0e"
+    },
+    "boundary": "AI-authored contextual teaching content with structural verification and recorded AI review; not human linguistic certification or device import proof."
+  },
+  "stageGrading": {
+    "date": "2026-10-05",
+    "rows": 9223,
+    "baseSha256": "82f6084f63cff8c4a945608b3fe185ba1b2cce9d9e6e797a1026b603ae814a3c",
+    "reviewedRows": 9223,
+    "levels": {
+      "0": {
+        "grade": "Primary school, Grade 1",
+        "label": "Primary school"
+      },
+      "1": {
+        "grade": "Middle school, Grade 7",
+        "label": "Middle school"
+      },
+      "2": {
+        "grade": "High school, Grade 10",
+        "label": "High school"
+      },
+      "3": {
+        "grade": "University, Year 1",
+        "label": "University"
+      },
+      "4": {
+        "grade": "Chinese language/literature major, Year 1",
+        "label": "Specialist"
+      }
+    },
+    "sourceSha256": {
+      "freeze.py": "c3b1b1f6ede165d0b409cdafc5d74c5c00bfbe8b120d1fee1ca73a34e256adad",
+      "policy.md": "5d12d4538a7f0168be81d628e41aefa00177878ce3cdf719106244e85c61fc80",
+      "sources.json": "85c1ccd5bbd8591bc498ccd95194e4a7401f8bf4e3ec2937ed71ae23cd8d47ff",
+      "input0.tsv": "5322408328c6277de5743be2d4b37fb2d2c3662e62c5591f139b959a5cc15746",
+      "decisions0.tsv": "e4092f6c47f1cee8bf590e60bd702103ed3d662aed6e31542757f243e2bd1831",
+      "review0.json": "73bed3a316a2d8e489bd685acaa89f184ab4c07b8740a7dee7bee6f948472912",
+      "input1.tsv": "d599fdddfece78995835f20e7fff3ad557a786e4393c66084dc28423cfb1bc32",
+      "decisions1.tsv": "a0dc813df3ee8bb7f4537cdc026a261604d6b8d48fc8ddb32c0cf25e59d3f905",
+      "review1.json": "519e793dc486263e48d901c1d940286c970a8261f73ef1787b22b8689b593246",
+      "input2.tsv": "9577ba3b62a3eb34e9f61a2266d6b67768c02b247ac9a0b464d425c71ae21ab6",
+      "decisions2.tsv": "fc9a96f2ee24a21fc8ef66030d75a04c934f1f5255a9e015d23d767c11abb7f5",
+      "review2.json": "c68f38863aae76d7f7555f950e64e9ba1c417d86e171a9ff326141d8196bc74b",
+      "cross_corrections.json": "55608228ba1317faae003b713f9f1919bfe1a2fa876ea6b9e2027bb8552531c7",
+      "cross_review.json": "d126047257cf56142cbb06a41c5ff3763514e0a6930767949ea99f666e59c610",
+      "cross4a.json": "62e7eb61c6c7fc996a2dfa55b4703d7ec119f68aceaedf5ac2e375c7f4cf37e4",
+      "cross4b.json": "6a0fb856a4d5eed2a8e09ad06d3e420b0b48dedeafe8d20b463140f6a5fd5963"
+    },
+    "boundary": "All entries were individually AI-reviewed under the requested educational bands; these are inferred learning stages, not an official national per-grade word list or human linguistic certification. Only rarity cells change."
   }
 }

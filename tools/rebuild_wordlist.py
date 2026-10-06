@@ -583,7 +583,7 @@ def validate(content):
     stroke_index = load(ROOT / 'core/data/src/main/assets/wordlist-strokes/index.json')
     glyphs = {item['glyph'] for item in stroke_index['items']}
     for r in rows:
-        if r['罕度'] not in {'0','1','2','3'} or not re.fullmatch(r'wl_[0-9]{5}', r['词条ID']):
+        if r['罕度'] not in {'0','1','2','3','4'} or not re.fullmatch(r'wl_[0-9]{5}', r['词条ID']):
             raise ValueError('Invalid ID or rarity: ' + r['组词'])
         word = unicodedata.normalize('NFC', r['组词'])
         if not 1 <= len(word) <= 32 or not all(is_word_hanzi(c) for c in word):
@@ -649,6 +649,18 @@ def validate(content):
 
 
 def apply():
+    manifest_path = DATA / 'build-manifest.json'
+    if manifest_path.exists():
+        published = load(manifest_path)
+        required = set(published['inputSha256'])
+        if 'vocabularyExpansion' in published:
+            required.add('expansion-20261005.json')
+        if 'stageGrading' in published:
+            required.add('stage-grading-20261005.json')
+        missing = sorted(name for name in required if not (DATA / name).is_file())
+        if missing:
+            raise ValueError('Published frozen inputs are missing; refuse to roll back the wordlist: '
+                             + ', '.join(missing))
     retained, definitions, examples = baseline(), load(DATA/'definitions.json'), load(DATA/'examples.json')
     extras = load(DATA/'additional-idioms.json')['entries']
     if len(retained) != 7648 or len(extras) != 75:
@@ -736,6 +748,42 @@ def apply():
         if len({(r['组词'], reading_key(r['拼音'])) for r in rows}) != len(rows):
             raise ValueError('Editorial corrections introduce duplicate word/reading identities')
         content = serialize(rows)
+    expansion_path = DATA / 'expansion-20261005.json'
+    if expansion_path.exists():
+        expansion = load(expansion_path)
+        for name, digest in expansion['sourceSha256'].items():
+            if hashlib.sha256((ROOT / 'tools/wordlist_expansion_20261005' / name).read_bytes()).hexdigest() != digest:
+                raise ValueError('Vocabulary expansion source differs before publishing: ' + name)
+        if len(rows) != expansion['baseRows'] or hashlib.sha256(content).hexdigest() != expansion['baseSha256']:
+            raise ValueError('Vocabulary expansion does not match the reviewed frozen base')
+        additions = expansion['entries']
+        if (len(additions) != expansion['additionalRows'] or
+                dict(collections.Counter(row['罕度'] for row in additions)) != expansion['rarity']):
+            raise ValueError('Vocabulary expansion count or learning levels changed')
+        rows.extend(additions)
+        if len({(row['组词'], reading_key(row['拼音'])) for row in rows}) != len(rows):
+            raise ValueError('Vocabulary expansion introduces duplicate identities')
+        content = serialize(rows)
+    stage_path = DATA / 'stage-grading-20261005.json'
+    if stage_path.exists():
+        grading = load(stage_path)
+        for name, digest in grading['sourceSha256'].items():
+            if hashlib.sha256((ROOT / 'tools/wordlist_stages_20261005' / name).read_bytes()).hexdigest() != digest:
+                raise ValueError('Stage grading source differs before publishing: ' + name)
+        if len(rows) != grading['rows'] or hashlib.sha256(content).hexdigest() != grading['baseSha256']:
+            raise ValueError('Stage grading does not match its frozen complete wordlist')
+        decisions = grading['rarityById']
+        if set(decisions) != {row['词条ID'] for row in rows} or any(
+                level not in {'0','1','2','3','4'} for level in decisions.values()):
+            raise ValueError('Stage grading must cover every word with a valid level')
+        before = content.splitlines(keepends=True)
+        for row in rows:
+            row['罕度'] = decisions[row['词条ID']]
+        content = serialize(rows)
+        after = content.splitlines(keepends=True)
+        if (len(before) != len(rows) + 1 or len(after) != len(before) or before[0] != after[0]
+                or any(old[1:] != new[1:] for old, new in zip(before[1:], after[1:]))):
+            raise ValueError('Stage grading changes a byte outside the rarity column')
     validate(content)
     if OUTPUT.exists():
         permitted = {hashlib.sha256(BASELINE.read_bytes()).hexdigest(), hashlib.sha256(content).hexdigest()}
@@ -769,10 +817,24 @@ def report(content, rows):
         review = load(review_path)
         names = list(dict.fromkeys(review['overlays'] + [p['report'] for p in review['partitions']] + review.get('evidence', [])))
         summary['contentReview'] = {
-            'reviewedRows': len(rows), 'date': '2026-10-05',
+            'reviewedRows': sum(p['range'][1]-p['range'][0]+1 for p in review['partitions']), 'date': '2026-10-05',
             'manifestSha256': hashlib.sha256(review_path.read_bytes()).hexdigest(),
             'inputSha256': {name: hashlib.sha256((REVIEW/name).read_bytes()).hexdigest() for name in names},
             'boundary': 'Complete AI editorial reading with contextual refinements and independent structural validation; not human linguistic certification.'}
+    expansion_path = DATA / 'expansion-20261005.json'
+    if expansion_path.exists():
+        expansion = load(expansion_path)
+        summary['inputSha256'][expansion_path.name] = hashlib.sha256(expansion_path.read_bytes()).hexdigest()
+        summary['vocabularyExpansion'] = {key: expansion[key] for key in
+            ['date','baseRows','baseSha256','additionalRows','rarity','sourceSha256','boundary']}
+        summary['csvPhysicalOrder'] += ', then frozen 1,500-word expansion (500 each in levels 0/1/2)'
+    stage_path = DATA / 'stage-grading-20261005.json'
+    if stage_path.exists():
+        grading = load(stage_path)
+        summary['inputSha256'][stage_path.name] = hashlib.sha256(stage_path.read_bytes()).hexdigest()
+        summary['stageGrading'] = {key: grading[key] for key in
+            ['date','rows','baseSha256','reviewedRows','levels','sourceSha256','boundary']}
+        summary['csvPhysicalOrder'] += '; five-stage grading changes only rarity cells'
     save(ROOT/'docs/wordlist-validation.json',summary)
     save(DATA/'build-manifest.json',summary)
     print(json.dumps(summary,ensure_ascii=False))
@@ -795,6 +857,15 @@ def main():
         for name, digest in expected['inputSha256'].items():
             if hashlib.sha256((DATA/name).read_bytes()).hexdigest()!=digest:
                 raise ValueError('Frozen rebuild input differs from manifest: '+name)
+        if 'vocabularyExpansion' in expected:
+            expansion = expected['vocabularyExpansion']
+            for name, digest in expansion['sourceSha256'].items():
+                if hashlib.sha256((ROOT/'tools/wordlist_expansion_20261005'/name).read_bytes()).hexdigest() != digest:
+                    raise ValueError('Vocabulary expansion source differs: '+name)
+        if 'stageGrading' in expected:
+            for name, digest in expected['stageGrading']['sourceSha256'].items():
+                if hashlib.sha256((ROOT/'tools/wordlist_stages_20261005'/name).read_bytes()).hexdigest() != digest:
+                    raise ValueError('Stage grading source differs: '+name)
         if 'contentReview' in expected:
             review = expected['contentReview']
             if hashlib.sha256((REVIEW/'review-manifest.json').read_bytes()).hexdigest() != review['manifestSha256']:
