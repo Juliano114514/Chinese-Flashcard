@@ -7,6 +7,9 @@ import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.WordlistRepository
 import com.example.chinese_flashcard.core.domain.WordlistStatus
+import com.example.chinese_flashcard.core.domain.VocabularyStage
+import com.example.chinese_flashcard.core.domain.WordStateRepository
+import com.example.chinese_flashcard.core.domain.WordUserState
 import java.text.Normalizer
 import java.util.Locale
 import kotlinx.coroutines.CancellationException
@@ -15,6 +18,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -29,6 +33,8 @@ data class WordlistUiState(
   val query: String = "",
   val status: WordlistStatus? = null,
   val difficulties: Set<Int> = emptySet(),
+  val myCollectionOnly: Boolean = false,
+  val skipped: Int = 0,
   val error: String? = null,
 )
 
@@ -61,9 +67,16 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
     updateResults()
   }
 
+  fun setMyCollection(value: Boolean) {
+    if (value == state.value.myCollectionOnly) return
+    resetScroll()
+    mutableState.update { it.copy(myCollectionOnly = value) }
+    updateResults()
+  }
+
   /** An empty set is All. Selecting All clears the numbered choices. */
   fun toggleDifficulty(value: Int?) {
-    if (value != null && value !in 0..3) return
+    if (value != null && value !in VocabularyStage.rarityRange) return
     val current = state.value.difficulties
     val next = if (value == null) emptySet() else if (value in current) current - value else current + value
     if (next == current) return
@@ -92,9 +105,10 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
             items.map { SearchEntry(it, searchText(it.pinyin).filterNot(Char::isWhitespace), searchText(it.searchMeanings)) }
           }
           mutableState.update { it.copy(error = null, total = items.size,
-            learned = items.count { it.status == WordlistStatus.LEARNED },
-            learning = items.count { it.status == WordlistStatus.LEARNING },
-            unlearned = items.count { it.status == WordlistStatus.UNLEARNED }) }
+            learned = items.count { it.learningStatus == WordlistStatus.LEARNED },
+            learning = items.count { it.learningStatus == WordlistStatus.LEARNING },
+            unlearned = items.count { it.learningStatus == WordlistStatus.UNLEARNED },
+            skipped = items.count { it.isSkipped }) }
           updateResults()
         }
       } catch (error: CancellationException) {
@@ -116,6 +130,7 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
         val pinyinNeedle = needle.filterNot(Char::isWhitespace)
         catalog.filter { entry ->
           (filters.status == null || filters.status == entry.item.status) &&
+            (!filters.myCollectionOnly || entry.item.isCollected) &&
             (filters.difficulties.isEmpty() || entry.item.difficulty in filters.difficulties) &&
             (needle.isEmpty() || entry.item.hanzi.contains(needle) ||
               entry.pinyin.contains(pinyinNeedle) || entry.meanings.contains(needle))
@@ -137,23 +152,26 @@ data class WordDetailUiState(
   val word: WordEntry? = null,
   val error: String? = null,
   val writingSessionId: String? = null,
+  val userState: WordUserState = WordUserState(),
 )
 
 class WordDetailViewModel(
   val wordId: String,
   private val repository: WordlistRepository,
   private val study: StudyRepository,
+  private val wordState: WordStateRepository,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(WordDetailUiState())
   val state = mutableState.asStateFlow()
   private var loading: Job? = null
   private var spoken = false
+  private var retryAction: () -> Unit = ::load
 
   init { load() }
 
   fun retry() {
     if (state.value.busy) return
-    if (state.value.word == null) load() else write()
+    retryAction()
   }
 
   /** The view model survives a writing round trip and only claims playback once. */
@@ -167,6 +185,7 @@ class WordDetailViewModel(
     val current = state.value
     val word = current.word ?: return
     if (current.loading || current.busy || current.writingSessionId != null) return
+    retryAction = ::write
     // Set this before launching: two taps in the same frame cannot create two sessions.
     mutableState.update { it.copy(busy = true, error = null) }
     viewModelScope.launch {
@@ -181,6 +200,31 @@ class WordDetailViewModel(
     }
   }
 
+  fun setCollected(value: Boolean) {
+    updateLabel({ setCollected(value) }) { wordState.setCollected(wordId, value) }
+  }
+
+  fun setSkipped(value: Boolean) {
+    updateLabel({ setSkipped(value) }) { wordState.setSkipped(wordId, value) }
+  }
+
+  private fun updateLabel(retry: () -> Unit, operation: suspend () -> Unit) {
+    if (state.value.loading || state.value.busy || state.value.word == null) return
+    retryAction = retry
+    mutableState.update { it.copy(busy = true, error = null) }
+    viewModelScope.launch {
+      try {
+        withContext(Dispatchers.IO) { operation() }
+      } catch (error: CancellationException) {
+        throw error
+      } catch (_: Exception) {
+        mutableState.update { it.copy(error = "This change couldn't be saved. Try again.") }
+      } finally {
+        mutableState.update { it.copy(busy = false) }
+      }
+    }
+  }
+
   fun claimWriting(sessionId: String): Boolean {
     if (state.value.writingSessionId != sessionId) return false
     mutableState.update { it.copy(writingSessionId = null) }
@@ -188,13 +232,18 @@ class WordDetailViewModel(
   }
 
   private fun load() {
+    retryAction = ::load
     loading?.cancel()
     mutableState.update { it.copy(loading = true, error = null) }
     loading = viewModelScope.launch {
       try {
         val word = withContext(Dispatchers.IO) { repository.word(wordId) }
-        mutableState.update { it.copy(loading = false, word = word,
+        val labels = if (word != null) wordState.observe(wordId).first() else WordUserState()
+        mutableState.update { it.copy(loading = false, word = word, userState = labels,
           error = if (word == null) "This word is no longer available." else null) }
+        if (word != null) wordState.observe(wordId).collectLatest { labels ->
+          mutableState.update { it.copy(userState = labels) }
+        }
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {

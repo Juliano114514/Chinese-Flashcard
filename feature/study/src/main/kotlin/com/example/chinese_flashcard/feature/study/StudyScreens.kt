@@ -7,6 +7,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -17,6 +18,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -35,10 +38,13 @@ import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -53,6 +59,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -63,6 +70,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.selected
@@ -94,6 +102,11 @@ import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.StudyCard
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.StudySettings
+import com.example.chinese_flashcard.core.domain.StudySnapshot
+import com.example.chinese_flashcard.core.domain.TodaySummary
+import com.example.chinese_flashcard.core.domain.PracticeProgress
+import com.example.chinese_flashcard.core.domain.StageProgress
+import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
@@ -104,6 +117,8 @@ import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordMeanings
 import com.example.chinese_flashcard.core.ui.WordExplanation
 import com.example.chinese_flashcard.core.ui.WordExamplePanel
+import com.example.chinese_flashcard.core.ui.WordUserActions
+import kotlinx.coroutines.flow.first
 import kotlin.math.roundToInt
 
 @Composable
@@ -260,8 +275,49 @@ fun TodayScreen(
   LaunchedEffect(state.today?.learnMoreBlocker) {
     if (state.today?.learnMoreBlocker == null) showLearnMoreBlocker = false
   }
+  TodayContent(state, onStart, onResume, onWriting, onLearnMore,
+    onLearnMoreBlocked = { showLearnMoreBlocker = true }, onStage = vm::selectStage,
+    onDailyWriting = vm::startDailyWriting, onRetry = vm::retry)
+  state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
+    AlertDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
+      shape = MaterialTheme.shapes.large, containerColor = MaterialTheme.colorScheme.surface,
+      tonalElevation = 0.dp, title = { Text("Finish today's plan") }, text = {
+        Text(when (blocker) {
+          StudyKind.REVIEW -> "Review the due words before learning more."
+          StudyKind.CARRYOVER -> "Finish the unfinished words before learning more."
+          else -> "Finish the current word before learning more."
+        })
+      }, confirmButton = {
+        TextButton(onClick = { showLearnMoreBlocker = false; onStart(blocker) }, enabled = !state.busy) {
+          Text(when (blocker) {
+            StudyKind.REVIEW -> "Go to review"
+            StudyKind.CARRYOVER -> "Go to continue"
+            else -> "Continue learning"
+          })
+        }
+      }, dismissButton = {
+        TextButton(onClick = { showLearnMoreBlocker = false }, enabled = !state.busy) { Text("Back") }
+      })
+  }
+  if (!showLearnMoreBlocker) DailyWritingInvitation(state, vm)
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+private fun TodayContent(
+  state: StudyUiState,
+  onStart: (StudyKind) -> Unit,
+  onResume: () -> Unit,
+  onWriting: (String) -> Unit,
+  onLearnMore: () -> Unit,
+  onLearnMoreBlocked: () -> Unit,
+  onStage: (VocabularyStage) -> Unit,
+  onDailyWriting: () -> Unit,
+  onRetry: () -> Unit,
+) {
   PageColumn {
-    Text("Home", style = MaterialTheme.typography.headlineLarge)
+    HomeStageHeading(state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY,
+      enabled = !state.busy && !state.loading, onStage = onStage)
     when {
       state.loading -> LoadingNotice()
       state.today != null -> {
@@ -275,29 +331,41 @@ fun TodayScreen(
           LinearProgressIndicator(progress = {
             if (today.planned == 0) 0f else (today.completed.toFloat() / today.planned).coerceIn(0f, 1f)
           }, modifier = Modifier.fillMaxWidth())
-          Text("Daily goal · ${today.dailyGoal} new words",
+          Text("Learn goal · ${today.dailyGoal} words",
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        TotalProgress(learned = today.learnedWords, total = today.totalWords)
+        VocabularyStageProgress(today.stageProgress)
         state.card?.takeIf { it.phase != CardPhase.FINISHED }?.let { card ->
           ActionTile("Resume", "${card.word.hanzi}  ${card.word.pinyin}", "${card.round} / ${card.targetRounds}",
             !state.busy, onResume)
         }
         SectionLabel("Study")
-        ActionTile(if (today.showLearnMore) "Learn more" else "Learn",
-          if (today.showLearnMore && today.availableNewWords == 0) "No new words"
-          else if (today.showLearnMore) "Next ${minOf(5, today.availableNewWords)} words"
-          else "New words", "${today.newCompleted} / ${today.newPlanned}",
-          !state.busy && (!today.showLearnMore || today.learnMoreBlocker != null || today.availableNewWords > 0)) {
-          if (!today.showLearnMore) onStart(StudyKind.NEW)
-          else if (today.learnMoreBlocker != null) showLearnMoreBlocker = true
-          else if (today.availableNewWords > 0) onLearnMore()
+        StudyGridRow {
+          StudyGridTile(if (today.showLearnMore) "Learn more" else "Learn",
+            if (today.showLearnMore && today.availableNewWords == 0) "No words available"
+            else if (today.showLearnMore) "Next ${minOf(5, today.availableNewWords)} words"
+            else if (today.stageProgress.lap > 1) "Stage words" else "New words", "${today.newCompleted} / ${today.newPlanned}",
+            !state.busy && (!today.showLearnMore || today.learnMoreBlocker != null || today.availableNewWords > 0), it) {
+            if (!today.showLearnMore) onStart(StudyKind.NEW)
+            else if (today.learnMoreBlocker != null) onLearnMoreBlocked()
+            else if (today.availableNewWords > 0) onLearnMore()
+          }
+          StudyGridTile("Review", "Due words", "${today.reviewCompleted} / ${today.reviewPlanned}",
+            !state.busy && today.reviewCompleted < today.reviewPlanned, it) { onStart(StudyKind.REVIEW) }
         }
-        ActionTile("Review", "Due words", "${today.reviewCompleted} / ${today.reviewPlanned}",
-          !state.busy && today.reviewCompleted < today.reviewPlanned) { onStart(StudyKind.REVIEW) }
         if (today.carryoverPlanned > 0) ActionTile("Continue", "Unfinished words",
           "${today.carryoverCompleted} / ${today.carryoverPlanned}",
           !state.busy && today.carryoverCompleted < today.carryoverPlanned) { onStart(StudyKind.CARRYOVER) }
+        StudyGridRow {
+          StudyGridTile("Review my collections", "Next ${minOf(5, today.collectionsAvailable)} words",
+            "${today.collectionsAvailable} available", !state.busy && today.collectionsAvailable > 0, it) {
+            onStart(StudyKind.COLLECTION)
+          }
+          StudyGridTile("Review mistakes", "Next ${minOf(5, today.mistakesAvailable)} words",
+            "${today.mistakesAvailable} to review", !state.busy && today.mistakesAvailable > 0, it) {
+            onStart(StudyKind.MISTAKES)
+          }
+        }
         today.resumableWritingId?.let { id ->
           OutlinedButton(onClick = { onWriting(id) }, enabled = !state.busy, shape = RoundedCornerShape(8.dp),
             modifier = Modifier.fillMaxWidth()) {
@@ -306,7 +374,7 @@ fun TodayScreen(
         }
         if (today.allComplete) {
           Text("Plan complete", style = MaterialTheme.typography.titleMedium)
-          if (today.todayNewWords.isNotEmpty()) TextButton(onClick = vm::startDailyWriting, enabled = !state.busy) {
+          if (today.todayNewWords.isNotEmpty()) TextButton(onClick = onDailyWriting, enabled = !state.busy) {
             Text("Write today's words")
           }
         }
@@ -322,30 +390,8 @@ fun TodayScreen(
         }
       }
     }
-    state.error?.let { ErrorNotice(it, !state.busy, vm::retry) }
+    state.error?.let { ErrorNotice(it, !state.busy, onRetry) }
   }
-  state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
-    AlertDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
-      shape = MaterialTheme.shapes.large, containerColor = MaterialTheme.colorScheme.surface,
-      tonalElevation = 0.dp, title = { Text("Finish today's plan") }, text = {
-        Text(when (blocker) {
-          StudyKind.REVIEW -> "Review the due words before learning more."
-          StudyKind.CARRYOVER -> "Finish the unfinished words before learning more."
-          StudyKind.NEW -> "Finish the current word before learning more."
-        })
-      }, confirmButton = {
-        TextButton(onClick = { showLearnMoreBlocker = false; onStart(blocker) }, enabled = !state.busy) {
-          Text(when (blocker) {
-            StudyKind.REVIEW -> "Go to review"
-            StudyKind.CARRYOVER -> "Go to continue"
-            StudyKind.NEW -> "Continue learning"
-          })
-        }
-      }, dismissButton = {
-        TextButton(onClick = { showLearnMoreBlocker = false }, enabled = !state.busy) { Text("Back") }
-      })
-  }
-  if (!showLearnMoreBlocker) DailyWritingInvitation(state, vm)
 }
 
 @Composable
@@ -360,15 +406,30 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var feedbackPlaybackSucceeded by rememberSaveable(card?.id) { mutableStateOf(false) }
   var feedbackAdvanceRequested by rememberSaveable(card?.id) { mutableStateOf(false) }
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
+  var manualSpeechRevision by remember { mutableLongStateOf(0L) }
+  val manualSpeak: (String) -> Unit = { text -> manualSpeechRevision++; onSpeak(text) }
   val lifecycle = LocalLifecycleOwner.current.lifecycle
   val speechPage = card?.takeIf { it.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.EXPLANATION) }
     ?.let { "${it.id}/${it.phase}" }
-  LaunchedEffect(speechPage, state.busy, state.loading, lifecycle) {
-    if (speechPage != null && !state.busy && !state.loading) {
+  LaunchedEffect(speechPage, lifecycle) {
+    val entryRevision = manualSpeechRevision
+    if (speechPage != null) {
       lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+        vm.state.first { !it.busy && !it.loading }
+        val activeCard = vm.state.value.card
         if (spokenPage != speechPage) {
+          if (activeCard == null || "${activeCard.id}/${activeCard.phase}" != speechPage) return@repeatOnLifecycle
           spokenPage = speechPage
-          onSpeak(card.word.hanzi)
+          if (manualSpeechRevision != entryRevision) return@repeatOnLifecycle
+          if (activeCard.phase == CardPhase.EXPLANATION) {
+            val played = onSpeakAndWait(activeCard.word.hanzi)
+            currentCoroutineContext().ensureActive()
+            val current = vm.state.value.card
+            if (played && manualSpeechRevision == entryRevision && current?.id == activeCard.id &&
+              current.phase == CardPhase.EXPLANATION) {
+              activeCard.word.examples.firstOrNull()?.hanzi?.takeIf(String::isNotBlank)?.let { onSpeakAndWait(it) }
+            }
+          } else onSpeak(activeCard.word.hanzi)
         }
         awaitCancellation()
       }
@@ -423,6 +484,41 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       }
     }
   }
+  StudyContent(state, selectedOption, answerChosen, correctAnswerRevealed, feedbackFinished,
+    feedbackPlaybackSucceeded, onBack, onWriting, manualSpeak,
+    onSubmit = { id, option ->
+      selectedOption = option; answerChosen = true
+      vm.onAction(StudyAction.Submit(id, option))
+    }, onExplain = { vm.onAction(StudyAction.Explain(it)) }, onAdvance = vm::advance,
+    onWordWriting = vm::startManualWriting, onCollection = vm::setCollected, onSkip = vm::setSkipped,
+    onRetry = vm::retry)
+  DailyWritingInvitation(state, vm)
+}
+
+@Composable
+private fun StudyContent(
+  state: StudyUiState,
+  selectedOption: String?,
+  answerChosen: Boolean,
+  correctAnswerRevealed: Boolean,
+  feedbackFinished: Boolean,
+  feedbackPlaybackSucceeded: Boolean,
+  onBack: () -> Unit,
+  onWriting: (String) -> Unit,
+  onSpeak: (String) -> Unit,
+  onSubmit: (String, String?) -> Unit,
+  onExplain: (String) -> Unit,
+  onAdvance: () -> Unit,
+  onWordWriting: (String) -> Unit,
+  onCollection: (String, Boolean) -> Unit,
+  onSkip: (String, Boolean) -> Unit,
+  onRetry: () -> Unit,
+) {
+  val card = state.card
+  val practice = state.snapshot?.practice?.takeIf { it.kind == card?.kind }
+  val completed = practice?.completed ?: state.today?.completed ?: 0
+  val planned = practice?.planned ?: state.today?.planned ?: 0
+  val largeText = LocalDensity.current.fontScale >= 1.25f
   Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
   Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
     Column {
@@ -435,17 +531,23 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
         StudyKind.NEW -> "Learn"
         StudyKind.REVIEW -> "Review"
         StudyKind.CARRYOVER -> "Continue"
+        StudyKind.COLLECTION -> "Collections"
+        StudyKind.MISTAKES -> "Mistakes"
         null -> "Study"
       }, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
-      if (card != null && card.phase != CardPhase.FINISHED) {
-        state.today?.let { today ->
-          Text("Progress ${today.completed} / ${today.planned}", modifier = Modifier.padding(end = 12.dp),
+      if (card != null && card.phase != CardPhase.FINISHED && !largeText) {
+        if (state.snapshot != null) {
+          Text("Progress $completed / $planned", modifier = Modifier.padding(end = 12.dp),
             style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
         }
       }
     }
-    if (card != null && card.phase != CardPhase.FINISHED) state.today?.let { today ->
-      DailyProgress(today.completed, today.planned, Modifier.padding(horizontal = 20.dp).padding(bottom = 12.dp))
+    if (card != null && card.phase != CardPhase.FINISHED && state.snapshot != null && largeText) {
+      Text("Progress $completed / $planned", modifier = Modifier.align(Alignment.End).padding(horizontal = 20.dp, vertical = 4.dp),
+        style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
+    }
+    if (card != null && card.phase != CardPhase.FINISHED && state.snapshot != null) {
+      DailyProgress(completed, planned, Modifier.padding(horizontal = 20.dp).padding(bottom = 12.dp))
     }
     }
   }, bottomBar = {
@@ -457,14 +559,13 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           CardPhase.QUESTION -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
               OutlinedButton(onClick = {
-                selectedOption = null; answerChosen = true
-                vm.onAction(StudyAction.Submit(card.id, null))
+                onSubmit(card.id, null)
               }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp,
                   if (answerChosen && selectedOption == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp).semantics { selected = answerChosen && selectedOption == null }) { Text("I don't know") }
-              Button(onClick = { vm.onAction(StudyAction.Submit(card.id, selectedOption)) }, enabled = answerChosen && !state.busy,
+              Button(onClick = { onSubmit(card.id, selectedOption) }, enabled = answerChosen && !state.busy,
                 shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Next") }
             }
           }
@@ -473,16 +574,16 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
               Text("Audio unavailable. Tap Next.", style = MaterialTheme.typography.bodySmall,
                 color = FlashcardStyle.colors.gradientSecondaryInk)
             }
-            Button(onClick = { vm.onAction(StudyAction.Explain(card.id)) }, enabled = !state.busy && feedbackFinished,
+            Button(onClick = { onExplain(card.id) }, enabled = !state.busy && feedbackFinished,
               shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Next") }
           }
           CardPhase.INTRO, CardPhase.EXPLANATION -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-              OutlinedButton(onClick = { vm.startManualWriting(card.word.id) }, enabled = !state.busy,
+              OutlinedButton(onClick = { onWordWriting(card.word.id) }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction),
                 shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Write") }
-              Button(onClick = vm::advance, enabled = !state.busy && card.phase != CardPhase.FEEDBACK, shape = RoundedCornerShape(8.dp),
+              Button(onClick = onAdvance, enabled = !state.busy && card.phase != CardPhase.FEEDBACK, shape = RoundedCornerShape(8.dp),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
                 Text(if (card.phase == CardPhase.INTRO) "Continue" else "Next word")
               }
@@ -503,10 +604,21 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
         }
         card.phase == CardPhase.FINISHED -> {
           Spacer(Modifier.height(32.dp))
-          Text("Session complete", style = MaterialTheme.typography.headlineLarge)
-          state.today?.let { today ->
+          val unfinishedDaily = state.today?.let { today -> when (card.kind) {
+            StudyKind.NEW -> today.newCompleted < today.newPlanned
+            StudyKind.REVIEW -> today.reviewCompleted < today.reviewPlanned
+            StudyKind.CARRYOVER -> today.carryoverCompleted < today.carryoverPlanned
+            else -> false
+          } } == true
+          val paused = practice?.paused == true || (practice == null && (card.isSkipped || unfinishedDaily))
+          Text(if (paused) "Session paused" else "Session complete", style = MaterialTheme.typography.headlineLarge)
+          if (paused) Text("Open this session from Home to continue. Skipped words stay paused until you unskip them.",
+            color = FlashcardStyle.colors.gradientSecondaryInk)
+          if (practice != null) {
+            CompletionCount(if (practice.kind == StudyKind.COLLECTION) "Collections" else "Mistakes", completed, planned)
+          } else state.today?.let { today ->
             Text("${today.completed} / ${today.planned} words today")
-            CompletionCount("New words", today.newCompleted, today.newPlanned)
+            CompletionCount("Learn", today.newCompleted, today.newPlanned)
             CompletionCount("Reviews", today.reviewCompleted, today.reviewPlanned)
             if (today.carryoverPlanned > 0) CompletionCount("Continued", today.carryoverCompleted, today.carryoverPlanned)
             today.nextReviewDate?.let { date ->
@@ -521,7 +633,8 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           StudyWordHeading(card.word, enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
             onSpeak = { onSpeak(card.word.hanzi) },
             onWrite = if (card.phase in listOf(CardPhase.INTRO, CardPhase.EXPLANATION))
-              ({ vm.startManualWriting(card.word.id) }) else null, card = card)
+              ({ onWordWriting(card.word.id) }) else null, card = card,
+            onCollection = { onCollection(card.word.id, it) }, onSkip = { onSkip(card.word.id, it) })
           when (card.phase) {
             CardPhase.INTRO, CardPhase.EXPLANATION -> {
               WordMeanings(card.word)
@@ -545,8 +658,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
                 val revealed = feedback && (selected || (card.correct == false && correct && correctAnswerRevealed))
                 MeaningOption(index, option.english, selected, enabled = !state.busy && !feedback,
                   onClick = {
-                    selectedOption = option.id; answerChosen = true
-                    vm.onAction(StudyAction.Submit(card.id, option.id))
+                    onSubmit(card.id, option.id)
                   },
                   result = when {
                     feedback && selected && !correct -> false
@@ -569,10 +681,9 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           }
         }
       }
-      state.error?.let { ErrorNotice(it, !state.busy, vm::retry, studyPage = true) }
+      state.error?.let { ErrorNotice(it, !state.busy, onRetry, studyPage = true) }
     }
   }
-  DailyWritingInvitation(state, vm)
   }
 }
 
@@ -658,23 +769,30 @@ private fun DailyProgress(completed: Int, planned: Int, modifier: Modifier = Mod
 
 @Composable
 private fun RoundProgress(card: StudyCard) {
-  Column(verticalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
-    contentDescription = "Round ${card.round} of ${card.targetRounds}"
-  }) {
-    repeat(card.targetRounds) { index ->
-      Spacer(Modifier.size(width = 10.dp, height = 3.dp).background(if (index < card.round) MaterialTheme.colorScheme.primary
-        else MaterialTheme.colorScheme.outlineVariant))
-    }
-  }
+  Text("${card.round}/${card.targetRounds}", style = MaterialTheme.typography.labelLarge,
+    color = FlashcardStyle.colors.gradientSecondaryInk, modifier = Modifier.semantics {
+      contentDescription = "Round ${card.round} of ${card.targetRounds}"
+    })
 }
 
 @Composable
 private fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?,
-  card: StudyCard? = null) {
+  card: StudyCard? = null, onCollection: (Boolean) -> Unit = {}, onSkip: (Boolean) -> Unit = {}) {
   var showActions by remember(word.id) { mutableStateOf(false) }
-  WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailing = {
-    if (card != null && !card.reviewRecall) RoundProgress(card)
-  })
+  val showRound = card != null && !card.reviewRecall &&
+    card.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.FEEDBACK)
+  val fontScale = LocalDensity.current.fontScale
+  BoxWithConstraints(Modifier.fillMaxWidth()) {
+    val actionsWidth = if (showRound) 168.dp else 120.dp
+    val actionsBelow = (word.hanzi.length * 40 * fontScale).dp + actionsWidth + 16.dp > maxWidth
+    WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailingOnNewLine = actionsBelow, trailing = {
+      Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        if (showRound) RoundProgress(checkNotNull(card))
+        WordUserActions(isCollected = card?.isCollected ?: false, isSkipped = card?.isSkipped ?: false,
+          enabled = enabled, onCollection = onCollection, onSkip = onSkip, wordId = word.id, wordLabel = word.hanzi)
+      }
+    })
+  }
   if (showActions) AlertDialog(onDismissRequest = { showActions = false }, shape = MaterialTheme.shapes.large,
     containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
     title = {
@@ -739,10 +857,69 @@ private fun CompletionCount(label: String, completed: Int, planned: Int) {
 }
 
 @Composable
-private fun ActionTile(title: String, subtitle: String, progress: String, enabled: Boolean, onClick: () -> Unit) {
-  Surface(onClick = onClick, enabled = enabled, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(6.dp),
+private fun HomeStageHeading(stage: VocabularyStage, enabled: Boolean, onStage: (VocabularyStage) -> Unit) {
+  var expanded by remember { mutableStateOf(false) }
+  val fontScale = LocalDensity.current.fontScale
+  BoxWithConstraints(Modifier.fillMaxWidth()) {
+    val compact = maxWidth < 300.dp || fontScale >= 1.25f
+    Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clickable(enabled = enabled, role = Role.Button) {
+      expanded = true
+    }, verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+      Text("Home · stage ${stage.rarity}", modifier = Modifier.weight(1f),
+        style = if (compact) MaterialTheme.typography.headlineSmall else MaterialTheme.typography.headlineLarge)
+      Icon(Icons.Default.KeyboardArrowDown, contentDescription = "Choose learning stage", modifier = Modifier.size(24.dp))
+    }
+    DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+      VocabularyStage.entries.forEach { entry ->
+        DropdownMenuItem(text = {
+          Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Text("Stage ${entry.rarity}", style = MaterialTheme.typography.titleMedium)
+            Text(entry.label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+          }
+        }, leadingIcon = if (entry == stage) {
+          { Icon(Icons.Default.Check, contentDescription = "Selected stage", modifier = Modifier.size(20.dp)) }
+        } else null, onClick = { expanded = false; onStage(entry) }, enabled = enabled)
+      }
+    }
+  }
+}
+
+@Composable
+private fun StudyGridRow(content: @Composable (Modifier) -> Unit) {
+  val fontScale = LocalDensity.current.fontScale
+  BoxWithConstraints(Modifier.fillMaxWidth()) {
+    if (maxWidth < 300.dp || fontScale >= 1.25f) {
+      Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        content(Modifier.fillMaxWidth())
+      }
+    } else {
+      Row(Modifier.fillMaxWidth().height(IntrinsicSize.Min), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        content(Modifier.weight(1f).fillMaxHeight())
+      }
+    }
+  }
+}
+
+@Composable
+private fun StudyGridTile(title: String, subtitle: String, progress: String, enabled: Boolean,
+  modifier: Modifier, onClick: () -> Unit) {
+  Surface(onClick = onClick, enabled = enabled, modifier = modifier, shape = MaterialTheme.shapes.medium,
     color = MaterialTheme.colorScheme.surface) {
-    Column(Modifier.padding(horizontal = 18.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Column(Modifier.heightIn(min = 132.dp).padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+      Text(title, style = MaterialTheme.typography.titleMedium,
+        color = if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
+      Text(subtitle, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Spacer(Modifier.weight(1f))
+      Text(progress, style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+  }
+}
+
+@Composable
+private fun ActionTile(title: String, subtitle: String, progress: String, enabled: Boolean, onClick: () -> Unit) {
+  Surface(onClick = onClick, enabled = enabled, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(8.dp),
+    color = MaterialTheme.colorScheme.surface) {
+    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(title, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium,
           color = if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant)
@@ -754,13 +931,13 @@ private fun ActionTile(title: String, subtitle: String, progress: String, enable
 }
 
 @Composable
-private fun TotalProgress(learned: Int, total: Int) {
+private fun VocabularyStageProgress(progress: StageProgress) {
   Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    Text("Total progress", style = MaterialTheme.typography.titleSmall)
+    Text("stage ${progress.stage.rarity} ${progress.stage.label}", style = MaterialTheme.typography.titleSmall)
     LinearProgressIndicator(progress = {
-      if (total <= 0) 0f else (learned.toFloat() / total).coerceIn(0f, 1f)
+      if (progress.total <= 0) 0f else (progress.learned.toFloat() / progress.total).coerceIn(0f, 1f)
     }, modifier = Modifier.fillMaxWidth())
-    Text("$learned / $total learned", style = MaterialTheme.typography.bodySmall,
+    Text("${progress.learned} / ${progress.total} learned · lap ${progress.lap}", style = MaterialTheme.typography.bodySmall,
       color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
@@ -796,23 +973,59 @@ private val PreviewWord = WordEntry(
   parts = emptyList(), distractorMeaningIds = emptyList(), literalExplanations = listOf("Express thanks."),
 )
 
-private val PreviewCard = StudyCard("preview", PreviewWord, StudyKind.NEW, CardPhase.QUESTION, 3, 4, false,
+private val PreviewCard = StudyCard("preview", PreviewWord, StudyKind.NEW, CardPhase.QUESTION, 2, 4, false,
   listOf(AnswerOption("thank-you", "thank you", "谢谢", "xièxie"),
     AnswerOption("morning", "good morning", "早上好", "zǎoshang hǎo"),
     AnswerOption("welcome", "you're welcome", "不客气", "bú kèqi"),
     AnswerOption("tomorrow", "see you tomorrow", "明天见", "míngtiān jiàn")))
 
-@Preview(name = "Total progress · light", widthDp = 360, heightDp = 144)
-@Preview(name = "Total progress · dark", widthDp = 360, heightDp = 144, uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Preview(name = "Total progress · compact", widthDp = 320, heightDp = 144, fontScale = 1.3f)
-@Preview(name = "Total progress · compact dark", widthDp = 320, heightDp = 144, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+private val PreviewToday = TodaySummary(date = "2026-10-06", dailyGoal = 10, totalWords = 7723,
+  remainingWords = 7483, learnedWords = 240, newPlanned = 10, newCompleted = 6,
+  reviewPlanned = 3, reviewCompleted = 1, carryoverPlanned = 2, carryoverCompleted = 0,
+  availableNewWords = 50, collectionsAvailable = 12, mistakesAvailable = 3,
+  stageProgress = StageProgress(VocabularyStage.PRIMARY, learned = 240, total = 1545))
+
+@Preview(name = "Home · light", widthDp = 360, heightDp = 760)
+@Preview(name = "Home · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Home · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
+@Preview(name = "Home · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun TotalProgressPreview() {
+private fun HomePreview() {
+  FlashcardTheme {
+    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
+      contentColor = MaterialTheme.colorScheme.onBackground) {
+      TodayContent(StudyUiState(loading = false, snapshot = StudySnapshot(PreviewToday, null)),
+        onStart = {}, onResume = {}, onWriting = {}, onLearnMore = {}, onLearnMoreBlocked = {},
+        onStage = {}, onDailyWriting = {}, onRetry = {})
+    }
+  }
+}
+
+@Composable
+private fun StudyPagePreview(card: StudyCard, selectedOption: String? = null,
+  revealCorrect: Boolean = false, feedbackFinished: Boolean = false) {
+  FlashcardTheme {
+    val practice = if (card.kind in listOf(StudyKind.COLLECTION, StudyKind.MISTAKES)) PracticeProgress(card.kind, 2, 5) else null
+    StudyContent(StudyUiState(loading = false, snapshot = StudySnapshot(PreviewToday, card, practice)),
+      selectedOption = selectedOption, answerChosen = selectedOption != null,
+      correctAnswerRevealed = revealCorrect, feedbackFinished = feedbackFinished,
+      feedbackPlaybackSucceeded = feedbackFinished, onBack = {}, onWriting = {}, onSpeak = {},
+      onSubmit = { _, _ -> }, onExplain = {}, onAdvance = {}, onWordWriting = {},
+      onCollection = { _, _ -> }, onSkip = { _, _ -> }, onRetry = {})
+  }
+}
+
+@Preview(name = "Stage progress · light", widthDp = 360, heightDp = 144)
+@Preview(name = "Stage progress · dark", widthDp = 360, heightDp = 144, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Stage progress · compact", widthDp = 320, heightDp = 144, fontScale = 1.3f)
+@Preview(name = "Stage progress · compact dark", widthDp = 320, heightDp = 144, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun VocabularyStageProgressPreview() {
   FlashcardTheme {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
       contentColor = MaterialTheme.colorScheme.onBackground) {
       Column(Modifier.padding(horizontal = 20.dp, vertical = 20.dp)) {
-        TotalProgress(learned = 240, total = 6648)
+        VocabularyStageProgress(StageProgress(VocabularyStage.CHINESE_STUDIES, learned = 240, total = 600))
       }
     }
   }
@@ -842,28 +1055,7 @@ private fun WelcomePreview() {
 @Preview(name = "Question · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun QuestionPreview() {
-  FlashcardTheme {
-    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-      Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
-        PageColumn(studyPage = true) {
-          Text("Progress 6 / 10", modifier = Modifier.align(Alignment.End),
-            style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
-          DailyProgress(6, 10)
-          StudyWordHeading(PreviewWord, enabled = true, onSpeak = {}, onWrite = null, card = PreviewCard)
-          WordExamplePanel(PreviewWord.examples.first(), onSpeak = {})
-          Text("Choose the meaning", color = FlashcardStyle.colors.gradientSecondaryInk)
-          listOf("thank you", "good morning", "you're welcome", "see you tomorrow").forEachIndexed { index, meaning ->
-            MeaningOption(index, meaning, selected = index == 0, enabled = true, onClick = {})
-          }
-          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            OutlinedButton(onClick = {}, modifier = Modifier.weight(1f),
-              colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) { Text("I don't know") }
-            Button(onClick = {}, modifier = Modifier.weight(1f)) { Text("Next") }
-          }
-        }
-      }
-    }
-  }
+  StudyPagePreview(PreviewCard)
 }
 
 @Preview(name = "Wrong answer · Chinese revealed", widthDp = 360, heightDp = 640)
@@ -884,29 +1076,10 @@ private fun CorrectAnswerFeedbackPreview() = AnswerSequencePreview(revealCorrect
 
 @Composable
 private fun AnswerSequencePreview(revealCorrect: Boolean, selectedCorrect: Boolean = false) {
-  FlashcardTheme {
-    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-      Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
-        PageColumn(studyPage = true) {
-          Text("Progress 6 / 10", modifier = Modifier.align(Alignment.End),
-            style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
-          DailyProgress(6, 10)
-          StudyWordHeading(PreviewWord, enabled = false, onSpeak = {}, onWrite = null, card = PreviewCard)
-          Text("Choose the meaning", color = FlashcardStyle.colors.gradientSecondaryInk)
-          PreviewCard.options.forEachIndexed { index, option ->
-            val wrong = index == 1 && !selectedCorrect
-            val correct = index == 0 && (selectedCorrect || revealCorrect)
-            MeaningOption(index, option.english, selected = if (selectedCorrect) correct else wrong, enabled = false, onClick = {},
-              result = if (wrong) false else if (correct) true else null,
-              hanzi = if (wrong || correct) option.hanzi else "",
-              pinyin = if (wrong || correct) option.pinyin else "", dimmed = !wrong && !correct)
-          }
-          AnswerFeedback(selectedCorrect, if (selectedCorrect) "thank you" else "good morning")
-          Button(onClick = {}, enabled = revealCorrect, modifier = Modifier.fillMaxWidth()) { Text("Next") }
-        }
-      }
-    }
-  }
+  val selected = if (selectedCorrect) "thank-you" else "morning"
+  StudyPagePreview(PreviewCard.copy(phase = CardPhase.FEEDBACK, selectedOptionId = selected,
+    correct = selectedCorrect), selectedOption = selected, revealCorrect = revealCorrect,
+    feedbackFinished = revealCorrect)
 }
 
 @Preview(name = "Explanation · light", widthDp = 360, heightDp = 640)
@@ -915,23 +1088,21 @@ private fun AnswerSequencePreview(revealCorrect: Boolean, selectedCorrect: Boole
 @Preview(name = "Explanation · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun ExplanationPreview() {
-  FlashcardTheme {
-    Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-      Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
-        PageColumn(studyPage = true) {
-          StudyWordHeading(PreviewWord, enabled = true, onSpeak = {}, onWrite = {})
-          Text("expression · thank you")
-          AnswerFeedback(correct = true, selectedMeaning = "thank you")
-          WordExplanation(PreviewWord, onSpeak = {})
-          AnswerFeedback(correct = false, selectedMeaning = "good morning")
-          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            OutlinedButton(onClick = {}, modifier = Modifier.weight(1f),
-              colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
-              border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction)) { Text("Write") }
-            Button(onClick = {}, modifier = Modifier.weight(1f)) { Text("Next word") }
-          }
-        }
-      }
-    }
-  }
+  StudyPagePreview(PreviewCard.copy(phase = CardPhase.EXPLANATION, correct = true,
+    selectedOptionId = "thank-you", isCollected = true))
+}
+
+@Preview(name = "Collections · long word", widthDp = 360, heightDp = 760)
+@Preview(name = "Collections · compact large text", widthDp = 320, heightDp = 760, fontScale = 1.3f)
+@Preview(name = "Collections · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f,
+  uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+private fun LongWordPreview() {
+  val word = PreviewWord.copy(id = "preview-lesson", hanzi = "吃一堑，长一智", pinyin = "chī yī qiàn, zhǎng yī zhì",
+    meanings = listOf(Meaning("lesson", "learn from a setback", "idiom")),
+    literalExplanations = listOf("After a setback, you gain wisdom."),
+    examples = listOf(ExampleSentence("吃一堑，长一智。", "Chī yī qiàn, zhǎng yī zhì.",
+      "Learn from your setbacks.", emptyList())))
+  StudyPagePreview(PreviewCard.copy(word = word, kind = StudyKind.COLLECTION,
+    phase = CardPhase.EXPLANATION, isCollected = true))
 }

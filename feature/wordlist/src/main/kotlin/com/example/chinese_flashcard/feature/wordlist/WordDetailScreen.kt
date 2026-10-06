@@ -39,6 +39,7 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -56,6 +57,7 @@ import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.WordExplanation
 import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordMeanings
+import com.example.chinese_flashcard.core.ui.WordUserActions
 import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
 import kotlinx.coroutines.awaitCancellation
 
@@ -75,12 +77,14 @@ fun WordDetailScreen(vm: WordDetailViewModel, onBack: () -> Unit, onWriting: (St
   LaunchedEffect(state.writingSessionId) {
     state.writingSessionId?.let { id -> if (vm.claimWriting(id)) onWriting(id) }
   }
-  WordDetailContent(state, onBack, onWrite = vm::write, onRetry = vm::retry, onSpeak = onSpeak)
+  WordDetailContent(state, onBack, onWrite = vm::write, onRetry = vm::retry, onSpeak = onSpeak,
+    onCollection = vm::setCollected, onSkip = vm::setSkipped)
 }
 
 @Composable
 private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
-  onWrite: () -> Unit, onRetry: () -> Unit, onSpeak: (String) -> Unit) {
+  onWrite: () -> Unit, onRetry: () -> Unit, onSpeak: (String) -> Unit,
+  onCollection: (Boolean) -> Unit = {}, onSkip: (Boolean) -> Unit = {}) {
   val word = state.word
   val enabled = !state.loading && !state.busy && state.writingSessionId == null
   Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
@@ -115,7 +119,12 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
               color = FlashcardStyle.colors.gradientSecondaryInk)
           }
         } else if (word != null) {
-          WordHeading(word, enabled, onSpeak = { onSpeak(word.hanzi) })
+          WordHeading(word, enabled, onSpeak = { onSpeak(word.hanzi) },
+            trailingOnNewLine = word.hanzi.codePointCount(0, word.hanzi.length) > 2 || LocalDensity.current.fontScale >= 1.25f,
+            trailing = {
+            WordUserActions(state.userState.isCollected, state.userState.isSkipped, enabled,
+              onCollection, onSkip, wordId = word.id, wordLabel = word.hanzi)
+          })
           WordMeanings(word)
           WordExplanation(word, onSpeak)
         }

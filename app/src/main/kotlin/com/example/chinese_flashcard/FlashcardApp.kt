@@ -123,7 +123,9 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val navigationScope = rememberCoroutineScope()
   val defaultWordlist by repositories.defaultWordlistState.collectAsStateWithLifecycle()
   var defaultWordlistRetry by remember { mutableStateOf<Job?>(null) }
-  val study: StudyViewModel = viewModel(factory = factory { StudyViewModel(repositories.study, repositories.settings) })
+  val study: StudyViewModel = viewModel(factory = factory {
+    StudyViewModel(repositories.study, repositories.settings, repositories.wordState)
+  })
   val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
   val wordlist: WordlistViewModel = viewModel(factory = factory { WordlistViewModel(repositories.wordlist) })
   val context = LocalContext.current
@@ -152,10 +154,11 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val route = entry?.destination?.route
   DisposableEffect(entry, speech) { onDispose { speech.stop() } }
   val state by study.state.collectAsStateWithLifecycle()
-  var learnMoreRequest by rememberSaveable { mutableStateOf<Pair<String, Int>?>(null) }
+  var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Int>?>(null) }
   LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
     val request = learnMoreRequest ?: return@LaunchedEffect
-    if (route != "today" || state.today?.date != request.first) {
+    if (route != "today" || state.today?.date != request.first ||
+      state.today?.stageProgress?.stage?.rarity != request.third) {
       learnMoreRequest = null
     } else if (!state.busy) {
       if ((state.today?.newPlanned ?: 0) > request.second && state.card?.kind == StudyKind.NEW &&
@@ -196,7 +199,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
           onLearnMore = {
             val before = study.state.value.today
             if (before != null && !study.state.value.busy) {
-              learnMoreRequest = before.date to before.newPlanned
+              learnMoreRequest = Triple(before.date, before.newPlanned, before.stageProgress.stage.rarity)
               study.learnMore()
             }
           })
@@ -224,7 +227,9 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       composable("word/{wordId}") { detailEntry ->
         val wordId = requireNotNull(detailEntry.arguments?.getString("wordId"))
         val vm: WordDetailViewModel = viewModel(detailEntry, key = wordId,
-          factory = factory { WordDetailViewModel(wordId, repositories.wordlist, repositories.study) })
+          factory = factory {
+            WordDetailViewModel(wordId, repositories.wordlist, repositories.study, repositories.wordState)
+          })
         WordDetailScreen(vm, onBack = { speech.stop(); nav.popBackStack() }, onWriting = { sessionId ->
           if (nav.currentBackStackEntry == detailEntry) {
             nav.navigate("word-writing/$sessionId") { launchSingleTop = true }

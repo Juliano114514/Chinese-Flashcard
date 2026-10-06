@@ -2,10 +2,10 @@ package com.example.chinese_flashcard.core.ui
 
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -35,14 +35,15 @@ import com.example.chinese_flashcard.core.domain.WordEntry
 /** Presentation only: callers own playback, writing, and any long-press menu. */
 @Composable
 fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongClick: (() -> Unit)? = null,
-  trailing: (@Composable () -> Unit)? = null) {
+  trailing: (@Composable () -> Unit)? = null, trailingOnNewLine: Boolean = false) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
       Text(word.hanzi, fontSize = 40.sp, lineHeight = 52.sp, fontWeight = FontWeight.Medium,
         modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = enabled, onClick = onSpeak,
           onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) "Word actions" else null))
-      trailing?.invoke()
+      if (!trailingOnNewLine) trailing?.invoke()
     }
+    if (trailingOnNewLine) trailing?.invoke()
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(word.pinyin, modifier = Modifier.weight(1f), fontSize = 18.sp, lineHeight = 26.sp,
         color = FlashcardStyle.colors.gradientSecondaryInk)
@@ -133,27 +134,30 @@ private fun WordPanel(content: @Composable ColumnScope.() -> Unit) {
 
 @Composable
 private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
-  Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-      PanelLabel("Example")
-      Spacer(Modifier.weight(1f))
-      IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
-        Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
+  Box(Modifier.fillMaxWidth()) {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        PanelLabel("Example")
+        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+          Text(exampleLine(example.chunks.map { it.hanzi }, example.hanzi),
+            modifier = Modifier.padding(end = 48.dp),
+            fontSize = 20.sp, lineHeight = 30.sp, fontWeight = FontWeight.Medium)
+          Text(exampleLine(example.chunks.map { it.pinyin }, example.pinyin),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+          if (example.chunks.isNotEmpty()) Text(exampleLine(example.chunks.map { it.gloss }, ""),
+            style = MaterialTheme.typography.bodyMedium.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
       }
+      PanelDivider()
+      Text(example.english, style = MaterialTheme.typography.bodyLarge.copy(
+        localeList = LocaleList("en"), hyphens = Hyphens.None))
     }
-    Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-      Text(exampleLine(example.chunks.map { it.hanzi }, example.hanzi),
-        fontSize = 20.sp, lineHeight = 30.sp, fontWeight = FontWeight.Medium)
-      Text(exampleLine(example.chunks.map { it.pinyin }, example.pinyin),
-        style = MaterialTheme.typography.bodyMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
-      if (example.chunks.isNotEmpty()) Text(exampleLine(example.chunks.map { it.gloss }, ""),
-        style = MaterialTheme.typography.bodyMedium.copy(localeList = LocaleList("en"), hyphens = Hyphens.None),
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
+    IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled,
+      modifier = Modifier.size(48.dp).align(Alignment.TopEnd)) {
+      Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
     }
-    PanelDivider()
-    Text(example.english, style = MaterialTheme.typography.bodyLarge.copy(
-      localeList = LocaleList("en"), hyphens = Hyphens.None))
   }
 }
 

@@ -19,10 +19,12 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -50,8 +52,10 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.WordlistStatus
+import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.CollectionIcon
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -72,13 +76,14 @@ fun WordlistScreen(vm: WordlistViewModel, onWord: (String) -> Unit) {
     onQuery = { vm.setQuery(it); resetScroll() },
     onStatus = { vm.setStatus(it); resetScroll() },
     onDifficulty = { vm.toggleDifficulty(it); resetScroll() },
+    onCollection = { vm.setMyCollection(it); resetScroll() },
     onRetry = vm::retry, onWord = onWord)
 }
 
 @Composable
 private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
   onQuery: (String) -> Unit, onStatus: (WordlistStatus?) -> Unit, onDifficulty: (Int?) -> Unit,
-  onRetry: () -> Unit, onWord: (String) -> Unit) {
+  onCollection: (Boolean) -> Unit, onRetry: () -> Unit, onWord: (String) -> Unit) {
   Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
     LazyColumn(state = listState, contentPadding = PaddingValues(horizontal = 20.dp, vertical = 20.dp)) {
       item(key = "header") {
@@ -112,15 +117,24 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
                 FilterChip(shape = MaterialTheme.shapes.small, selected = state.status == status, onClick = { onStatus(status) }, label = { Text(status.label()) })
               }
             }
-            Text("Difficulty", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text("Stage", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
               FilterChip(shape = MaterialTheme.shapes.small, selected = state.difficulties.isEmpty(), onClick = { onDifficulty(null) }, label = { Text("All") })
-              (0..3).forEach { level ->
+              VocabularyStage.rarityRange.forEach { level ->
                 FilterChip(shape = MaterialTheme.shapes.small, selected = level in state.difficulties, onClick = { onDifficulty(level) }, label = { Text(level.toString()) })
               }
             }
           }
+          Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
+            .toggleable(value = state.myCollectionOnly, role = Role.Checkbox, onValueChange = onCollection),
+            verticalAlignment = Alignment.CenterVertically) {
+            Checkbox(checked = state.myCollectionOnly, onCheckedChange = null)
+            Text("My collection", style = MaterialTheme.typography.bodyMedium,
+              modifier = Modifier.padding(start = 8.dp))
+          }
           Text("${state.entries.size} ${if (state.entries.size == 1) "word" else "words"}",
+            style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+          if (state.skipped > 0) Text("${state.skipped} skipped",
             style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
           state.error?.let { message ->
             Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
@@ -162,6 +176,7 @@ private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
       Text(entry.hanzi, modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleLarge,
         fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
+      if (entry.isCollected) CollectionIcon(true, contentDescription = "In my collection")
       Text(entry.pinyin, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
         color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End)
     }
@@ -174,9 +189,11 @@ private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
           WordlistStatus.LEARNED -> FlashcardStyle.colors.success
           WordlistStatus.LEARNING -> MaterialTheme.colorScheme.primary
           WordlistStatus.UNLEARNED -> MaterialTheme.colorScheme.onSurfaceVariant
+          WordlistStatus.SKIPPED -> MaterialTheme.colorScheme.onSurfaceVariant
         })
-      Text("Difficulty ${entry.difficulty}", style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text("Stage ${entry.difficulty} · ${VocabularyStage.fromRarity(entry.difficulty)?.label.orEmpty()}",
+        modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.End)
     }
   }
 }
@@ -185,6 +202,7 @@ private fun WordlistStatus.label(): String = when (this) {
   WordlistStatus.UNLEARNED -> "Unlearned"
   WordlistStatus.LEARNING -> "Learning"
   WordlistStatus.LEARNED -> "Learned"
+  WordlistStatus.SKIPPED -> "Skipped"
 }
 
 @Preview(name = "Wordlist · light", widthDp = 360, heightDp = 900)
@@ -194,12 +212,13 @@ private fun WordlistStatus.label(): String = when (this) {
 @Composable
 private fun WordlistPreview() {
   val entries = listOf(
-    WordlistItem("hello", "你好", "nǐ hǎo", "hello", "hello", 0, WordlistStatus.LEARNED, 0, 0),
+    WordlistItem("hello", "你好", "nǐ hǎo", "hello", "hello", 0, WordlistStatus.LEARNED, 0, 0, isCollected = true),
     WordlistItem("thanks", "谢谢", "xièxie", "thank you", "thank you", 1, WordlistStatus.LEARNING, 2, 4),
-    WordlistItem("tomorrow", "明天", "míngtiān", "tomorrow", "tomorrow", 2, WordlistStatus.UNLEARNED, 0, 0),
+    WordlistItem("tomorrow", "明天", "míngtiān", "tomorrow", "tomorrow", 2, WordlistStatus.SKIPPED, 0, 0,
+      isCollected = true, isSkipped = true, learningStatus = WordlistStatus.UNLEARNED),
   )
   FlashcardTheme {
     WordlistContent(WordlistUiState(loading = false, entries = entries, total = 3, learned = 1, learning = 1, unlearned = 1),
-      rememberLazyListState(), onQuery = {}, onStatus = {}, onDifficulty = {}, onRetry = {}, onWord = {})
+      rememberLazyListState(), onQuery = {}, onStatus = {}, onDifficulty = {}, onCollection = {}, onRetry = {}, onWord = {})
   }
 }

@@ -22,13 +22,15 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
   }
 }
 
-enum class StudyKind { NEW, REVIEW, CARRYOVER }
+enum class StudyKind { NEW, REVIEW, CARRYOVER, COLLECTION, MISTAKES }
 enum class CardPhase { INTRO, QUESTION, FEEDBACK, EXPLANATION, WRITING, FINISHED }
 data class AnswerOption(val id: String, val english: String, val hanzi: String = "", val pinyin: String = "")
 data class StudyCard(val id: String, val word: WordEntry, val kind: StudyKind,
   val phase: CardPhase, val round: Int, val targetRounds: Int, val reviewRecall: Boolean,
   val options: List<AnswerOption>, val selectedOptionId: String? = null,
-  val correct: Boolean? = null, val writingSessionId: String? = null) {
+  val correct: Boolean? = null, val writingSessionId: String? = null,
+  val isCollected: Boolean = false, val isSkipped: Boolean = false,
+  val sessionId: String? = null) {
   val showContext: Boolean get() = !reviewRecall && round <= 2
 }
 
@@ -37,7 +39,9 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val reviewPlanned: Int, val reviewCompleted: Int, val carryoverPlanned: Int,
   val carryoverCompleted: Int, val todayNewWords: List<WordEntry> = emptyList(),
   val resumableWritingId: String? = null, val nextReviewDate: String? = null,
-  val availableNewWords: Int = 0, val learnMoreBlocker: StudyKind? = null) {
+  val availableNewWords: Int = 0, val learnMoreBlocker: StudyKind? = null,
+  val stageProgress: StageProgress = StageProgress(),
+  val collectionsAvailable: Int = 0, val mistakesAvailable: Int = 0) {
   val planned: Int get() = newPlanned + reviewPlanned + carryoverPlanned
   val completed: Int get() = newCompleted + reviewCompleted + carryoverCompleted
   val allComplete: Boolean get() = planned > 0 && completed == planned
@@ -45,7 +49,10 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val canLearnMore: Boolean get() = showLearnMore && completed == planned &&
     learnMoreBlocker == null && availableNewWords > 0
 }
-data class StudySnapshot(val today: TodaySummary, val card: StudyCard?)
+data class PracticeProgress(val kind: StudyKind, val completed: Int, val planned: Int,
+  val paused: Boolean = false)
+data class StudySnapshot(val today: TodaySummary, val card: StudyCard?,
+  val practice: PracticeProgress? = null)
 
 data class StrokePoint(val x: Float, val y: Float)
 data class TracingItem(val id: String, val glyph: String, val paths: List<String>,
@@ -68,7 +75,9 @@ interface StudyRepository {
   val changes: kotlinx.coroutines.flow.Flow<Long>
   suspend fun snapshot(): StudySnapshot
   suspend fun start(kind: StudyKind): StudySnapshot
-  suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int): StudySnapshot
+  suspend fun selectStage(stage: VocabularyStage): StudySnapshot
+  suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int,
+    expectedStage: VocabularyStage, expectedLap: Int): StudySnapshot
   suspend fun submit(cardId: String, optionId: String?): StudySnapshot
   suspend fun advance(cardId: String): StudySnapshot
   suspend fun explain(cardId: String): StudySnapshot

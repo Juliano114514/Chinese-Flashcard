@@ -8,6 +8,8 @@ import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.StudyRepository
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudySnapshot
+import com.example.chinese_flashcard.core.domain.VocabularyStage
+import com.example.chinese_flashcard.core.domain.WordStateRepository
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -42,7 +44,11 @@ sealed interface StudyAction {
   data object Refresh : StudyAction
   data object Retry : StudyAction
   data class Start(val kind: StudyKind) : StudyAction
-  data class LearnMore(val expectedDate: String, val expectedNewPlanned: Int) : StudyAction
+  data class SelectStage(val stage: VocabularyStage) : StudyAction
+  data class LearnMore(val expectedDate: String, val expectedNewPlanned: Int,
+    val expectedStage: VocabularyStage, val expectedLap: Int) : StudyAction
+  data class SetCollected(val wordId: String, val value: Boolean) : StudyAction
+  data class SetSkipped(val wordId: String, val value: Boolean) : StudyAction
   data class Submit(val cardId: String, val optionId: String?) : StudyAction
   data class Advance(val cardId: String) : StudyAction
   data class Explain(val cardId: String) : StudyAction
@@ -82,6 +88,7 @@ object StudyReducer {
 class StudyViewModel(
   private val study: StudyRepository,
   private val settings: SettingsRepository,
+  private val wordState: WordStateRepository,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(StudyUiState())
   val state = mutableState.asStateFlow()
@@ -106,7 +113,12 @@ class StudyViewModel(
   }
 
   fun start(kind: StudyKind) = onAction(StudyAction.Start(kind))
-  fun learnMore() { state.value.today?.let { onAction(StudyAction.LearnMore(it.date, it.newPlanned)) } }
+  fun selectStage(stage: VocabularyStage) = onAction(StudyAction.SelectStage(stage))
+  fun setCollected(wordId: String, value: Boolean) = onAction(StudyAction.SetCollected(wordId, value))
+  fun setSkipped(wordId: String, value: Boolean) = onAction(StudyAction.SetSkipped(wordId, value))
+  fun learnMore() { state.value.today?.let {
+    onAction(StudyAction.LearnMore(it.date, it.newPlanned, it.stageProgress.stage, it.stageProgress.lap))
+  } }
   fun refresh() = onAction(StudyAction.Refresh)
   fun retry() = onAction(StudyAction.Retry)
   fun advance() { state.value.card?.let { onAction(StudyAction.Advance(it.id)) } }
@@ -161,7 +173,19 @@ class StudyViewModel(
           val snapshot = withContext(Dispatchers.IO) {
             when (action) {
               is StudyAction.Start -> study.start(action.kind)
-              is StudyAction.LearnMore -> study.learnMore(action.expectedDate, action.expectedNewPlanned)
+              is StudyAction.SelectStage -> study.selectStage(action.stage)
+              is StudyAction.LearnMore -> study.learnMore(action.expectedDate, action.expectedNewPlanned,
+                action.expectedStage, action.expectedLap)
+              is StudyAction.SetCollected -> {
+                wordState.setCollected(action.wordId, action.value)
+                stored = true
+                study.snapshot()
+              }
+              is StudyAction.SetSkipped -> {
+                wordState.setSkipped(action.wordId, action.value)
+                stored = true
+                study.snapshot()
+              }
               is StudyAction.Submit -> study.submit(action.cardId, action.optionId)
               is StudyAction.Advance -> study.advance(action.cardId)
               is StudyAction.Explain -> study.explain(action.cardId)

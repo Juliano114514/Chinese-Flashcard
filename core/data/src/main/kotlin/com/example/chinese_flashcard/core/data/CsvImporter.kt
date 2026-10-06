@@ -27,7 +27,8 @@ import java.util.UUID
 /** User imports append only; only the bundled preset can refresh owned teaching content. */
 internal class CsvImporter(private val context: Context, private val database: FlashcardDatabase,
   private val dao: FlashcardDao, private val operationMutex: Mutex,
-  private val prepare: suspend () -> Unit, private val touch: suspend () -> Unit) : CsvImportRepository {
+  private val prepare: suspend () -> Unit, private val touch: suspend () -> Unit,
+  private val reconcilePresetStages: suspend () -> Unit) : CsvImportRepository {
   private val strokes = CsvStrokeResources(context)
   private val pendingMutex = Mutex()
   private data class PendingCsv(val file: File, val totalRows: Int)
@@ -72,6 +73,8 @@ internal class CsvImporter(private val context: Context, private val database: F
             }
           }
           reorderWords()
+          // Stage ownership follows the final preset classification in this same atomic commit.
+          reconcilePresetStages()
           if (updated > 0 || report.addedWords > 0 || plan.refreshes.isNotEmpty()) touch()
           currentCoroutineContext().ensureActive()
           reporter.update(WordlistLoadStage.COMMITTING)

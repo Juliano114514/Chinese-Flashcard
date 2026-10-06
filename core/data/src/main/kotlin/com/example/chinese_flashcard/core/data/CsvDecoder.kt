@@ -3,6 +3,7 @@ package com.example.chinese_flashcard.core.data
 import com.example.chinese_flashcard.core.domain.CsvImportIssue
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.WordPart
+import com.example.chinese_flashcard.core.domain.VocabularyStage
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
 import org.json.JSONArray
@@ -147,8 +148,8 @@ internal object CsvDecoder {
         invalid(fieldName, "IDs must contain 1–92 ASCII letters, digits or underscores.")
       return value
     }
-    val rarity = field("罕度", 1).toIntOrNull()?.takeIf { it in 0..3 }
-      ?: invalid("罕度", "Difficulty must be 0, 1, 2 or 3.")
+    val rarity = field("罕度", 1).toIntOrNull()?.takeIf { it in VocabularyStage.rarityRange }
+      ?: invalid("罕度", "Stage must be 0, 1, 2, 3 or 4.")
     val wordId = id(field("词条ID", 92), "词条ID")
     val hanzi = Normalizer.normalize(field("组词", 64), Normalizer.Form.NFC)
     val codePoints = hanzi.codePoints().toArray()
