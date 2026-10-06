@@ -1,0 +1,13 @@
+# Disposable authoring helpers and candidate queues; frozen TSV/JSON remain tracked.
+level*_author.py
+level*_candidates.txt
+level*_available.txt
+level*_pool.txt
+level*_rows.txt
+level*_raw.tsv
+level*_view.txt
+level*.py
+level*_reviewed.json
+level*_chunk_units.json
+level*_part_edits.txt
+__pycache__/

@@ -1,0 +1,1018 @@
+{
+  "reviewer": "rarity1 author, independently reviewing rarity0 generated content",
+  "reviewType": "AI independent peer review; not human linguistic certification",
+  "coverage": {
+    "entries": 500,
+    "examples": 1000,
+    "entryIds": [
+      "wl_07724",
+      "wl_07725",
+      "wl_07726",
+      "wl_07727",
+      "wl_07728",
+      "wl_07729",
+      "wl_07730",
+      "wl_07731",
+      "wl_07732",
+      "wl_07733",
+      "wl_07734",
+      "wl_07735",
+      "wl_07736",
+      "wl_07737",
+      "wl_07738",
+      "wl_07739",
+      "wl_07740",
+      "wl_07741",
+      "wl_07742",
+      "wl_07743",
+      "wl_07744",
+      "wl_07745",
+      "wl_07746",
+      "wl_07747",
+      "wl_07748",
+      "wl_07749",
+      "wl_07750",
+      "wl_07751",
+      "wl_07752",
+      "wl_07753",
+      "wl_07754",
+      "wl_07755",
+      "wl_07756",
+      "wl_07757",
+      "wl_07758",
+      "wl_07759",
+      "wl_07760",
+      "wl_07761",
+      "wl_07762",
+      "wl_07763",
+      "wl_07764",
+      "wl_07765",
+      "wl_07766",
+      "wl_07767",
+      "wl_07768",
+      "wl_07769",
+      "wl_07770",
+      "wl_07771",
+      "wl_07772",
+      "wl_07773",
+      "wl_07774",
+      "wl_07775",
+      "wl_07776",
+      "wl_07777",
+      "wl_07778",
+      "wl_07779",
+      "wl_07780",
+      "wl_07781",
+      "wl_07782",
+      "wl_07783",
+      "wl_07784",
+      "wl_07785",
+      "wl_07786",
+      "wl_07787",
+      "wl_07788",
+      "wl_07789",
+      "wl_07790",
+      "wl_07791",
+      "wl_07792",
+      "wl_07793",
+      "wl_07794",
+      "wl_07795",
+      "wl_07796",
+      "wl_07797",
+      "wl_07798",
+      "wl_07799",
+      "wl_07800",
+      "wl_07801",
+      "wl_07802",
+      "wl_07803",
+      "wl_07804",
+      "wl_07805",
+      "wl_07806",
+      "wl_07807",
+      "wl_07808",
+      "wl_07809",
+      "wl_07810",
+      "wl_07811",
+      "wl_07812",
+      "wl_07813",
+      "wl_07814",
+      "wl_07815",
+      "wl_07816",
+      "wl_07817",
+      "wl_07818",
+      "wl_07819",
+      "wl_07820",
+      "wl_07821",
+      "wl_07822",
+      "wl_07823",
+      "wl_07824",
+      "wl_07825",
+      "wl_07826",
+      "wl_07827",
+      "wl_07828",
+      "wl_07829",
+      "wl_07830",
+      "wl_07831",
+      "wl_07832",
+      "wl_07833",
+      "wl_07834",
+      "wl_07835",
+      "wl_07836",
+      "wl_07837",
+      "wl_07838",
+      "wl_07839",
+      "wl_07840",
+      "wl_07841",
+      "wl_07842",
+      "wl_07843",
+      "wl_07844",
+      "wl_07845",
+      "wl_07846",
+      "wl_07847",
+      "wl_07848",
+      "wl_07849",
+      "wl_07850",
+      "wl_07851",
+      "wl_07852",
+      "wl_07853",
+      "wl_07854",
+      "wl_07855",
+      "wl_07856",
+      "wl_07857",
+      "wl_07858",
+      "wl_07859",
+      "wl_07860",
+      "wl_07861",
+      "wl_07862",
+      "wl_07863",
+      "wl_07864",
+      "wl_07865",
+      "wl_07866",
+      "wl_07867",
+      "wl_07868",
+      "wl_07869",
+      "wl_07870",
+      "wl_07871",
+      "wl_07872",
+      "wl_07873",
+      "wl_07874",
+      "wl_07875",
+      "wl_07876",
+      "wl_07877",
+      "wl_07878",
+      "wl_07879",
+      "wl_07880",
+      "wl_07881",
+      "wl_07882",
+      "wl_07883",
+      "wl_07884",
+      "wl_07885",
+      "wl_07886",
+      "wl_07887",
+      "wl_07888",
+      "wl_07889",
+      "wl_07890",
+      "wl_07891",
+      "wl_07892",
+      "wl_07893",
+      "wl_07894",
+      "wl_07895",
+      "wl_07896",
+      "wl_07897",
+      "wl_07898",
+      "wl_07899",
+      "wl_07900",
+      "wl_07901",
+      "wl_07902",
+      "wl_07903",
+      "wl_07904",
+      "wl_07905",
+      "wl_07906",
+      "wl_07907",
+      "wl_07908",
+      "wl_07909",
+      "wl_07910",
+      "wl_07911",
+      "wl_07912",
+      "wl_07913",
+      "wl_07914",
+      "wl_07915",
+      "wl_07916",
+      "wl_07917",
+      "wl_07918",
+      "wl_07919",
+      "wl_07920",
+      "wl_07921",
+      "wl_07922",
+      "wl_07923",
+      "wl_07924",
+      "wl_07925",
+      "wl_07926",
+      "wl_07927",
+      "wl_07928",
+      "wl_07929",
+      "wl_07930",
+      "wl_07931",
+      "wl_07932",
+      "wl_07933",
+      "wl_07934",
+      "wl_07935",
+      "wl_07936",
+      "wl_07937",
+      "wl_07938",
+      "wl_07939",
+      "wl_07940",
+      "wl_07941",
+      "wl_07942",
+      "wl_07943",
+      "wl_07944",
+      "wl_07945",
+      "wl_07946",
+      "wl_07947",
+      "wl_07948",
+      "wl_07949",
+      "wl_07950",
+      "wl_07951",
+      "wl_07952",
+      "wl_07953",
+      "wl_07954",
+      "wl_07955",
+      "wl_07956",
+      "wl_07957",
+      "wl_07958",
+      "wl_07959",
+      "wl_07960",
+      "wl_07961",
+      "wl_07962",
+      "wl_07963",
+      "wl_07964",
+      "wl_07965",
+      "wl_07966",
+      "wl_07967",
+      "wl_07968",
+      "wl_07969",
+      "wl_07970",
+      "wl_07971",
+      "wl_07972",
+      "wl_07973",
+      "wl_07974",
+      "wl_07975",
+      "wl_07976",
+      "wl_07977",
+      "wl_07978",
+      "wl_07979",
+      "wl_07980",
+      "wl_07981",
+      "wl_07982",
+      "wl_07983",
+      "wl_07984",
+      "wl_07985",
+      "wl_07986",
+      "wl_07987",
+      "wl_07988",
+      "wl_07989",
+      "wl_07990",
+      "wl_07991",
+      "wl_07992",
+      "wl_07993",
+      "wl_07994",
+      "wl_07995",
+      "wl_07996",
+      "wl_07997",
+      "wl_07998",
+      "wl_07999",
+      "wl_08000",
+      "wl_08001",
+      "wl_08002",
+      "wl_08003",
+      "wl_08004",
+      "wl_08005",
+      "wl_08006",
+      "wl_08007",
+      "wl_08008",
+      "wl_08009",
+      "wl_08010",
+      "wl_08011",
+      "wl_08012",
+      "wl_08013",
+      "wl_08014",
+      "wl_08015",
+      "wl_08016",
+      "wl_08017",
+      "wl_08018",
+      "wl_08019",
+      "wl_08020",
+      "wl_08021",
+      "wl_08022",
+      "wl_08023",
+      "wl_08024",
+      "wl_08025",
+      "wl_08026",
+      "wl_08027",
+      "wl_08028",
+      "wl_08029",
+      "wl_08030",
+      "wl_08031",
+      "wl_08032",
+      "wl_08033",
+      "wl_08034",
+      "wl_08035",
+      "wl_08036",
+      "wl_08037",
+      "wl_08038",
+      "wl_08039",
+      "wl_08040",
+      "wl_08041",
+      "wl_08042",
+      "wl_08043",
+      "wl_08044",
+      "wl_08045",
+      "wl_08046",
+      "wl_08047",
+      "wl_08048",
+      "wl_08049",
+      "wl_08050",
+      "wl_08051",
+      "wl_08052",
+      "wl_08053",
+      "wl_08054",
+      "wl_08055",
+      "wl_08056",
+      "wl_08057",
+      "wl_08058",
+      "wl_08059",
+      "wl_08060",
+      "wl_08061",
+      "wl_08062",
+      "wl_08063",
+      "wl_08064",
+      "wl_08065",
+      "wl_08066",
+      "wl_08067",
+      "wl_08068",
+      "wl_08069",
+      "wl_08070",
+      "wl_08071",
+      "wl_08072",
+      "wl_08073",
+      "wl_08074",
+      "wl_08075",
+      "wl_08076",
+      "wl_08077",
+      "wl_08078",
+      "wl_08079",
+      "wl_08080",
+      "wl_08081",
+      "wl_08082",
+      "wl_08083",
+      "wl_08084",
+      "wl_08085",
+      "wl_08086",
+      "wl_08087",
+      "wl_08088",
+      "wl_08089",
+      "wl_08090",
+      "wl_08091",
+      "wl_08092",
+      "wl_08093",
+      "wl_08094",
+      "wl_08095",
+      "wl_08096",
+      "wl_08097",
+      "wl_08098",
+      "wl_08099",
+      "wl_08100",
+      "wl_08101",
+      "wl_08102",
+      "wl_08103",
+      "wl_08104",
+      "wl_08105",
+      "wl_08106",
+      "wl_08107",
+      "wl_08108",
+      "wl_08109",
+      "wl_08110",
+      "wl_08111",
+      "wl_08112",
+      "wl_08113",
+      "wl_08114",
+      "wl_08115",
+      "wl_08116",
+      "wl_08117",
+      "wl_08118",
+      "wl_08119",
+      "wl_08120",
+      "wl_08121",
+      "wl_08122",
+      "wl_08123",
+      "wl_08124",
+      "wl_08125",
+      "wl_08126",
+      "wl_08127",
+      "wl_08128",
+      "wl_08129",
+      "wl_08130",
+      "wl_08131",
+      "wl_08132",
+      "wl_08133",
+      "wl_08134",
+      "wl_08135",
+      "wl_08136",
+      "wl_08137",
+      "wl_08138",
+      "wl_08139",
+      "wl_08140",
+      "wl_08141",
+      "wl_08142",
+      "wl_08143",
+      "wl_08144",
+      "wl_08145",
+      "wl_08146",
+      "wl_08147",
+      "wl_08148",
+      "wl_08149",
+      "wl_08150",
+      "wl_08151",
+      "wl_08152",
+      "wl_08153",
+      "wl_08154",
+      "wl_08155",
+      "wl_08156",
+      "wl_08157",
+      "wl_08158",
+      "wl_08159",
+      "wl_08160",
+      "wl_08161",
+      "wl_08162",
+      "wl_08163",
+      "wl_08164",
+      "wl_08165",
+      "wl_08166",
+      "wl_08167",
+      "wl_08168",
+      "wl_08169",
+      "wl_08170",
+      "wl_08171",
+      "wl_08172",
+      "wl_08173",
+      "wl_08174",
+      "wl_08175",
+      "wl_08176",
+      "wl_08177",
+      "wl_08178",
+      "wl_08179",
+      "wl_08180",
+      "wl_08181",
+      "wl_08182",
+      "wl_08183",
+      "wl_08184",
+      "wl_08185",
+      "wl_08186",
+      "wl_08187",
+      "wl_08188",
+      "wl_08189",
+      "wl_08190",
+      "wl_08191",
+      "wl_08192",
+      "wl_08193",
+      "wl_08194",
+      "wl_08195",
+      "wl_08196",
+      "wl_08197",
+      "wl_08198",
+      "wl_08199",
+      "wl_08200",
+      "wl_08201",
+      "wl_08202",
+      "wl_08203",
+      "wl_08204",
+      "wl_08205",
+      "wl_08206",
+      "wl_08207",
+      "wl_08208",
+      "wl_08209",
+      "wl_08210",
+      "wl_08211",
+      "wl_08212",
+      "wl_08213",
+      "wl_08214",
+      "wl_08215",
+      "wl_08216",
+      "wl_08217",
+      "wl_08218",
+      "wl_08219",
+      "wl_08220",
+      "wl_08221",
+      "wl_08222",
+      "wl_08223"
+    ],
+    "firstId": "wl_07724",
+    "lastId": "wl_08223",
+    "exampleChunkCount": 5184,
+    "distinctChunkReadingGlossTriples": 1777,
+    "readBatches": [
+      [
+        0,
+        100
+      ],
+      [
+        100,
+        200
+      ],
+      [
+        200,
+        300
+      ],
+      [
+        300,
+        400
+      ],
+      [
+        400,
+        500
+      ]
+    ],
+    "fieldsRead": [
+      "拼音",
+      "英文释义",
+      "词性",
+      "例句JSON.hanzi",
+      "例句JSON.english",
+      "例句JSON.chunks.hanzi",
+      "例句JSON.chunks.pinyin",
+      "例句JSON.chunks.gloss",
+      "部件JSON",
+      "本义解释JSON",
+      "引申义解释JSON"
+    ]
+  },
+  "inputs": {
+    "level0_draft.json": "67144cb73cf473848e9d06ee0149e88ef16bce52596db91d71f0c32432a2632a",
+    "level0_corrections.json": "eef07f1d89ef0ef7c3f16a3fd0ba5715df54cb0cac50d069ea28c8af20c31b4a",
+    "effectiveEntriesCanonicalSha256": "8f6d42ab1984b58f4e313d4d5ca50696e25283259600a411bb413aed8b37c1b9"
+  },
+  "method": "Read all 500 words and component arrays, all 1000 complete Chinese/English examples, all example chunks with readings and glosses in five consecutive batches, and all explanation arrays. Corrections were based on the primary overlay in memory; existing neutral tones, lexical tones, sound loans, fixed grammar units, and valid context-specific readings were preserved. Local pinned CC-CEDICT entries were consulted for 把/拖把/矿泉/出租/到/处. Only definite contextual or component meaning errors were patched. Full example arrays preserve all other primary-reviewed values.",
+  "result": {
+    "correctedEntries": 19,
+    "componentArraysChanged": 8,
+    "exampleArraysChanged": 12,
+    "findings": 20,
+    "readingCorrections": 0,
+    "wholeSentenceTranslationCorrections": 0,
+    "protectedSourceFilesUnchanged": true
+  },
+  "findings": [
+    {
+      "id": "wl_07782",
+      "word": "不能",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "不",
+          "pinyin": "bù",
+          "gloss": "cannot"
+        },
+        {
+          "hanzi": "能",
+          "pinyin": "néng",
+          "gloss": "can"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "不",
+          "pinyin": "bù",
+          "gloss": "not"
+        },
+        {
+          "hanzi": "能",
+          "pinyin": "néng",
+          "gloss": "can"
+        }
+      ],
+      "evidence": "不 is the negative marker; cannot belongs to the whole word 不能, not to 不 alone."
+    },
+    {
+      "id": "wl_07891",
+      "word": "到处",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "到",
+          "pinyin": "dào",
+          "gloss": "(a place)"
+        },
+        {
+          "hanzi": "处",
+          "pinyin": "chù",
+          "gloss": "area; place"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "到",
+          "pinyin": "dào",
+          "gloss": "to; reach"
+        },
+        {
+          "hanzi": "处",
+          "pinyin": "chù",
+          "gloss": "area; place"
+        }
+      ],
+      "evidence": "The existing (a place) is an incomplete parenthetical fragment from to (a place), and incorrectly defines 到 as a noun."
+    },
+    {
+      "id": "wl_07962",
+      "word": "不够",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "不",
+          "pinyin": "bù",
+          "gloss": "not"
+        },
+        {
+          "hanzi": "够",
+          "pinyin": "gòu",
+          "gloss": "enough (too much)"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "不",
+          "pinyin": "bù",
+          "gloss": "not"
+        },
+        {
+          "hanzi": "够",
+          "pinyin": "gòu",
+          "gloss": "enough"
+        }
+      ],
+      "evidence": "够 marks sufficiency here; the inherited enough (too much) wrongly adds an excessive-amount sense."
+    },
+    {
+      "id": "wl_08042",
+      "word": "好多",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "gloss": "good"
+        },
+        {
+          "hanzi": "多",
+          "pinyin": "duō",
+          "gloss": "many; much; more; a lot of"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "gloss": "very; quite"
+        },
+        {
+          "hanzi": "多",
+          "pinyin": "duō",
+          "gloss": "many; much; more; a lot of"
+        }
+      ],
+      "evidence": "In 好多, 好 is a degree intensifier rather than good."
+    },
+    {
+      "id": "wl_08141",
+      "word": "出租车",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "出",
+          "pinyin": "chū",
+          "gloss": "out"
+        },
+        {
+          "hanzi": "租车",
+          "pinyin": "zū chē",
+          "gloss": "rent a car"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "出租",
+          "pinyin": "chū zū",
+          "gloss": "for hire; rent out"
+        },
+        {
+          "hanzi": "车",
+          "pinyin": "chē",
+          "gloss": "vehicle"
+        }
+      ],
+      "evidence": "A taxi is a vehicle for hire. The previous 出 + 租车 grouped rent a car and missed the compound 出租."
+    },
+    {
+      "id": "wl_08143",
+      "word": "晚点",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "晚",
+          "pinyin": "wǎn",
+          "gloss": "night"
+        },
+        {
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "gloss": "a little; some"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "晚",
+          "pinyin": "wǎn",
+          "gloss": "late"
+        },
+        {
+          "hanzi": "点",
+          "pinyin": "diǎn",
+          "gloss": "a little; some"
+        }
+      ],
+      "evidence": "Both examples use 晚点 to mean a little later; 晚 means late rather than night in this construction."
+    },
+    {
+      "id": "wl_08154",
+      "word": "拖把",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "拖",
+          "pinyin": "tuō",
+          "gloss": "mop (the floor)"
+        },
+        {
+          "hanzi": "把",
+          "pinyin": "bǎ",
+          "gloss": "BA (measure word for handled tools)"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "拖把",
+          "pinyin": "tuō bǎ",
+          "gloss": "mop"
+        }
+      ],
+      "evidence": "A classifier reading of 把 does not explain this noun. Retain the dictionary-supported whole word, avoiding an unsupported handle gloss at bǎ; dictionary 把 handle is bà."
+    },
+    {
+      "id": "wl_08166",
+      "word": "矿泉水",
+      "field": "部件JSON",
+      "before": [
+        {
+          "hanzi": "矿",
+          "pinyin": "kuàng",
+          "gloss": "mineral deposit; ore deposit"
+        },
+        {
+          "hanzi": "泉水",
+          "pinyin": "quán shuǐ",
+          "gloss": "spring water"
+        }
+      ],
+      "after": [
+        {
+          "hanzi": "矿泉",
+          "pinyin": "kuàng quán",
+          "gloss": "mineral spring"
+        },
+        {
+          "hanzi": "水",
+          "pinyin": "shuǐ",
+          "gloss": "water"
+        }
+      ],
+      "evidence": "Use the dictionary-supported unit 矿泉 mineral spring; ore deposit + spring water would misrepresent the drinking-water compound."
+    },
+    {
+      "id": "wl_07752",
+      "word": "离开",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "离开前请关灯。",
+      "before": {
+        "hanzi": "关",
+        "pinyin": "guān",
+        "gloss": "close"
+      },
+      "after": {
+        "hanzi": "关",
+        "pinyin": "guān",
+        "gloss": "turn off"
+      },
+      "evidence": "The object is 灯: 关灯 means turn off a light, rather than close an opening."
+    },
+    {
+      "id": "wl_07939",
+      "word": "晚安",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "妈妈关灯前对我说晚安。",
+      "before": {
+        "hanzi": "关",
+        "pinyin": "guān",
+        "gloss": "close"
+      },
+      "after": {
+        "hanzi": "关",
+        "pinyin": "guān",
+        "gloss": "turn off"
+      },
+      "evidence": "The object is 灯: 关灯 means turn off a light, rather than close an opening."
+    },
+    {
+      "id": "wl_07780",
+      "word": "小时",
+      "field": "例句JSON",
+      "exampleIndex": 0,
+      "sentence": "坐车要两个小时。",
+      "before": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "gloss": "want to; need to"
+      },
+      "after": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "gloss": "take (time)"
+      },
+      "evidence": "坐车要两个小时 describes the time taken; 要 does not express wanting an action in this sentence."
+    },
+    {
+      "id": "wl_07865",
+      "word": "多久",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "坐车到机场要多久？",
+      "before": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "gloss": "want to; need to"
+      },
+      "after": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "gloss": "take (time)"
+      },
+      "evidence": "坐车到机场要多久 asks how long the journey takes."
+    },
+    {
+      "id": "wl_08050",
+      "word": "大约",
+      "field": "例句JSON",
+      "exampleIndex": 0,
+      "sentence": "走路大约要十分钟。",
+      "before": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "gloss": "want to; need to"
+      },
+      "after": {
+        "hanzi": "要",
+        "pinyin": "yào",
+        "gloss": "take (time)"
+      },
+      "evidence": "走路大约要十分钟 describes an estimated duration."
+    },
+    {
+      "id": "wl_07785",
+      "word": "没什么",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "只是擦破了皮，没什么大问题。",
+      "before": {
+        "hanzi": "没什么",
+        "pinyin": "méi shén me",
+        "gloss": "it is nothing"
+      },
+      "after": {
+        "hanzi": "没什么",
+        "pinyin": "méi shén me",
+        "gloss": "no; not any"
+      },
+      "evidence": "Before 大问题, 没什么 is a negative determiner construction, rather than the standalone reply it is nothing."
+    },
+    {
+      "id": "wl_07891",
+      "word": "到处",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "我到处找钥匙。",
+      "before": {
+        "hanzi": "找",
+        "pinyin": "zhǎo",
+        "gloss": "find"
+      },
+      "after": {
+        "hanzi": "找",
+        "pinyin": "zhǎo",
+        "gloss": "look for; search for"
+      },
+      "evidence": "到处找钥匙 describes searching, and does not assert that the key is found."
+    },
+    {
+      "id": "wl_08083",
+      "word": "好久",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "我找了好久才找到钥匙。",
+      "before": {
+        "hanzi": "找",
+        "pinyin": "zhǎo",
+        "gloss": "find"
+      },
+      "after": {
+        "hanzi": "找",
+        "pinyin": "zhǎo",
+        "gloss": "look for; search for"
+      },
+      "evidence": "找了好久才找到 explicitly contrasts the search with its eventual successful result 找到."
+    },
+    {
+      "id": "wl_08027",
+      "word": "取消",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "我想取消明天的预约。",
+      "before": {
+        "hanzi": "预约。",
+        "pinyin": "yù yuē.",
+        "gloss": "make an appointment"
+      },
+      "after": {
+        "hanzi": "预约。",
+        "pinyin": "yù yuē.",
+        "gloss": "appointment; booking"
+      },
+      "evidence": "明天的预约 is the nominal object of 取消; the previous make an appointment was a verb phrase."
+    },
+    {
+      "id": "wl_08092",
+      "word": "提前",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "买票最好提前预约。",
+      "before": {
+        "hanzi": "预约。",
+        "pinyin": "yù yuē.",
+        "gloss": "make an appointment"
+      },
+      "after": {
+        "hanzi": "预约。",
+        "pinyin": "yù yuē.",
+        "gloss": "book; reserve"
+      },
+      "evidence": "With 买票, 预约 means reserve or book tickets in advance, rather than make an appointment with a person."
+    },
+    {
+      "id": "wl_08098",
+      "word": "楼下",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "我去楼下拿快递。",
+      "before": {
+        "hanzi": "快递。",
+        "pinyin": "kuài dì.",
+        "gloss": "express delivery"
+      },
+      "after": {
+        "hanzi": "快递。",
+        "pinyin": "kuài dì.",
+        "gloss": "parcel; express delivery"
+      },
+      "evidence": "拿快递 refers to collecting a delivered parcel, as correctly expressed in the whole English sentence."
+    },
+    {
+      "id": "wl_08047",
+      "word": "吃惊",
+      "field": "例句JSON",
+      "exampleIndex": 1,
+      "sentence": "她突然出现，让我吃惊。",
+      "before": {
+        "hanzi": "让我",
+        "pinyin": "ràng wǒ",
+        "gloss": "let me"
+      },
+      "after": {
+        "hanzi": "让我",
+        "pinyin": "ràng wǒ",
+        "gloss": "make me"
+      },
+      "evidence": "An unexpected appearance causes surprise; this causative 让 does not express permission to be surprised."
+    }
+  ],
+  "boundary": "Full AI linguistic reread and local content consistency checks; no tests, builds, device operations, commits, or human linguistic review."
+}

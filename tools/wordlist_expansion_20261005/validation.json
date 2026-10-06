@@ -1,0 +1,20 @@
+{
+  "baseSha256": "388ab2d79afdd4685a101a27c550a1b4cb9fb5e051add0874cbaf47c2f5706e1",
+  "additionalRows": 1500,
+  "rarity": {
+    "0": 500,
+    "1": 500,
+    "2": 500
+  },
+  "resultRows": 9223,
+  "sha256": "82f6084f63cff8c4a945608b3fe185ba1b2cce9d9e6e797a1026b603ae814a3c",
+  "bytes": 20435483,
+  "examples": 3000,
+  "chunks": 16047,
+  "parts": 3074,
+  "duplicateAddedWords": 0,
+  "baselineRowsUnchanged": true,
+  "completeStructuralValidator": "PASS",
+  "genuineStrokeCoverage": "PASS: all added word glyphs in existing 6,324-glyph package",
+  "boundary": "AI-authored contextual teaching content with structural verification and recorded AI review; not human linguistic certification or device import proof."
+}

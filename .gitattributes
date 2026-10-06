@@ -6,4 +6,6 @@ core/data/src/main/assets/** -text
 # Frozen rebuild inputs are verified by their exact-byte SHA-256 manifests.
 tools/wordlist_rebuild/** -text
 tools/content_review_20261005/** -text
+tools/wordlist_expansion_20261005/** -text
+tools/wordlist_stages_20261005/** -text
 *.jar binary

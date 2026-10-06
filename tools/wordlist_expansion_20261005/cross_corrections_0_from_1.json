@@ -1,0 +1,958 @@
+{
+  "wl_07782": {
+    "部件JSON": [
+      {
+        "hanzi": "不",
+        "pinyin": "bù",
+        "gloss": "not"
+      },
+      {
+        "hanzi": "能",
+        "pinyin": "néng",
+        "gloss": "can"
+      }
+    ]
+  },
+  "wl_07891": {
+    "部件JSON": [
+      {
+        "hanzi": "到",
+        "pinyin": "dào",
+        "gloss": "to; reach"
+      },
+      {
+        "hanzi": "处",
+        "pinyin": "chù",
+        "gloss": "area; place"
+      }
+    ],
+    "例句JSON": [
+      {
+        "hanzi": "公园里到处都是花。",
+        "pinyin": "gōng yuán lǐ dào chù dōu shì huā.",
+        "english": "There are flowers everywhere in the park.",
+        "chunks": [
+          {
+            "hanzi": "公园",
+            "pinyin": "gōng yuán",
+            "gloss": "park (for public recreation)"
+          },
+          {
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "gloss": "in"
+          },
+          {
+            "hanzi": "到处",
+            "pinyin": "dào chù",
+            "gloss": "everywhere"
+          },
+          {
+            "hanzi": "都",
+            "pinyin": "dōu",
+            "gloss": "all"
+          },
+          {
+            "hanzi": "是",
+            "pinyin": "shì",
+            "gloss": "is; am; are"
+          },
+          {
+            "hanzi": "花。",
+            "pinyin": "huā.",
+            "gloss": "flower"
+          }
+        ]
+      },
+      {
+        "hanzi": "我到处找钥匙。",
+        "pinyin": "wǒ dào chù zhǎo yào shi.",
+        "english": "I looked everywhere for my keys.",
+        "chunks": [
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "到处",
+            "pinyin": "dào chù",
+            "gloss": "everywhere"
+          },
+          {
+            "hanzi": "找",
+            "pinyin": "zhǎo",
+            "gloss": "look for; search for"
+          },
+          {
+            "hanzi": "钥匙。",
+            "pinyin": "yào shi.",
+            "gloss": "key"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_07962": {
+    "部件JSON": [
+      {
+        "hanzi": "不",
+        "pinyin": "bù",
+        "gloss": "not"
+      },
+      {
+        "hanzi": "够",
+        "pinyin": "gòu",
+        "gloss": "enough"
+      }
+    ]
+  },
+  "wl_08042": {
+    "部件JSON": [
+      {
+        "hanzi": "好",
+        "pinyin": "hǎo",
+        "gloss": "very; quite"
+      },
+      {
+        "hanzi": "多",
+        "pinyin": "duō",
+        "gloss": "many; much; more; a lot of"
+      }
+    ]
+  },
+  "wl_08141": {
+    "部件JSON": [
+      {
+        "hanzi": "出租",
+        "pinyin": "chū zū",
+        "gloss": "for hire; rent out"
+      },
+      {
+        "hanzi": "车",
+        "pinyin": "chē",
+        "gloss": "vehicle"
+      }
+    ]
+  },
+  "wl_08143": {
+    "部件JSON": [
+      {
+        "hanzi": "晚",
+        "pinyin": "wǎn",
+        "gloss": "late"
+      },
+      {
+        "hanzi": "点",
+        "pinyin": "diǎn",
+        "gloss": "a little; some"
+      }
+    ]
+  },
+  "wl_08154": {
+    "部件JSON": [
+      {
+        "hanzi": "拖把",
+        "pinyin": "tuō bǎ",
+        "gloss": "mop"
+      }
+    ]
+  },
+  "wl_08166": {
+    "部件JSON": [
+      {
+        "hanzi": "矿泉",
+        "pinyin": "kuàng quán",
+        "gloss": "mineral spring"
+      },
+      {
+        "hanzi": "水",
+        "pinyin": "shuǐ",
+        "gloss": "water"
+      }
+    ]
+  },
+  "wl_07752": {
+    "例句JSON": [
+      {
+        "hanzi": "我们九点离开酒店。",
+        "pinyin": "wǒ men jiǔ diǎn lí kāi jiǔ diàn.",
+        "english": "We leave the hotel at nine.",
+        "chunks": [
+          {
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "gloss": "we"
+          },
+          {
+            "hanzi": "九",
+            "pinyin": "jiǔ",
+            "gloss": "nine"
+          },
+          {
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "gloss": "o'clock"
+          },
+          {
+            "hanzi": "离开",
+            "pinyin": "lí kāi",
+            "gloss": "to leave"
+          },
+          {
+            "hanzi": "酒店。",
+            "pinyin": "jiǔ diàn.",
+            "gloss": "hotel"
+          }
+        ]
+      },
+      {
+        "hanzi": "离开前请关灯。",
+        "pinyin": "lí kāi qián qǐng guān dēng.",
+        "english": "Please turn off the lights before leaving.",
+        "chunks": [
+          {
+            "hanzi": "离开",
+            "pinyin": "lí kāi",
+            "gloss": "to leave"
+          },
+          {
+            "hanzi": "前",
+            "pinyin": "qián",
+            "gloss": "before"
+          },
+          {
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "gloss": "please"
+          },
+          {
+            "hanzi": "关",
+            "pinyin": "guān",
+            "gloss": "turn off"
+          },
+          {
+            "hanzi": "灯。",
+            "pinyin": "dēng.",
+            "gloss": "light"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_07939": {
+    "例句JSON": [
+      {
+        "hanzi": "晚安，明天见。",
+        "pinyin": "wǎn ān, míng tiān jiàn.",
+        "english": "Good night; see you tomorrow.",
+        "chunks": [
+          {
+            "hanzi": "晚安，",
+            "pinyin": "wǎn ān,",
+            "gloss": "good night"
+          },
+          {
+            "hanzi": "明天见。",
+            "pinyin": "míng tiān jiàn.",
+            "gloss": "see you tomorrow"
+          }
+        ]
+      },
+      {
+        "hanzi": "妈妈关灯前对我说晚安。",
+        "pinyin": "mā ma guān dēng qián duì wǒ shuō wǎn ān.",
+        "english": "Mom said good night to me before turning off the light.",
+        "chunks": [
+          {
+            "hanzi": "妈妈",
+            "pinyin": "mā ma",
+            "gloss": "mom"
+          },
+          {
+            "hanzi": "关",
+            "pinyin": "guān",
+            "gloss": "turn off"
+          },
+          {
+            "hanzi": "灯",
+            "pinyin": "dēng",
+            "gloss": "light"
+          },
+          {
+            "hanzi": "前",
+            "pinyin": "qián",
+            "gloss": "before"
+          },
+          {
+            "hanzi": "对",
+            "pinyin": "duì",
+            "gloss": "toward; regarding"
+          },
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "说",
+            "pinyin": "shuō",
+            "gloss": "say"
+          },
+          {
+            "hanzi": "晚安。",
+            "pinyin": "wǎn ān.",
+            "gloss": "good night"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_07780": {
+    "例句JSON": [
+      {
+        "hanzi": "坐车要两个小时。",
+        "pinyin": "zuò chē yào liǎng gè xiǎo shí.",
+        "english": "The trip takes two hours by vehicle.",
+        "chunks": [
+          {
+            "hanzi": "坐车",
+            "pinyin": "zuò chē",
+            "gloss": "take the car, bus, train etc"
+          },
+          {
+            "hanzi": "要",
+            "pinyin": "yào",
+            "gloss": "take (time)"
+          },
+          {
+            "hanzi": "两个",
+            "pinyin": "liǎng gè",
+            "gloss": "two items or people"
+          },
+          {
+            "hanzi": "小时。",
+            "pinyin": "xiǎo shí.",
+            "gloss": "hour"
+          }
+        ]
+      },
+      {
+        "hanzi": "我每天学习一个小时。",
+        "pinyin": "wǒ měi tiān xué xí yí ge xiǎo shí.",
+        "english": "I study for an hour every day.",
+        "chunks": [
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "每天",
+            "pinyin": "měi tiān",
+            "gloss": "every day"
+          },
+          {
+            "hanzi": "学习",
+            "pinyin": "xué xí",
+            "gloss": "study; learn"
+          },
+          {
+            "hanzi": "一个",
+            "pinyin": "yí ge",
+            "gloss": "one; a"
+          },
+          {
+            "hanzi": "小时。",
+            "pinyin": "xiǎo shí.",
+            "gloss": "hour"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_07865": {
+    "例句JSON": [
+      {
+        "hanzi": "你要在这里住多久？",
+        "pinyin": "nǐ yào zài zhè lǐ zhù duō jiǔ?",
+        "english": "How long will you stay here?",
+        "chunks": [
+          {
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "gloss": "you"
+          },
+          {
+            "hanzi": "要",
+            "pinyin": "yào",
+            "gloss": "want to; need to"
+          },
+          {
+            "hanzi": "在",
+            "pinyin": "zài",
+            "gloss": "at; be doing"
+          },
+          {
+            "hanzi": "这里",
+            "pinyin": "zhè lǐ",
+            "gloss": "here"
+          },
+          {
+            "hanzi": "住",
+            "pinyin": "zhù",
+            "gloss": "live; stay"
+          },
+          {
+            "hanzi": "多久？",
+            "pinyin": "duō jiǔ?",
+            "gloss": "how long"
+          }
+        ]
+      },
+      {
+        "hanzi": "坐车到机场要多久？",
+        "pinyin": "zuò chē dào jī chǎng yào duō jiǔ?",
+        "english": "How long does it take to get to the airport by vehicle?",
+        "chunks": [
+          {
+            "hanzi": "坐车",
+            "pinyin": "zuò chē",
+            "gloss": "take the car, bus, train etc"
+          },
+          {
+            "hanzi": "到",
+            "pinyin": "dào",
+            "gloss": "to"
+          },
+          {
+            "hanzi": "机场",
+            "pinyin": "jī chǎng",
+            "gloss": "airport"
+          },
+          {
+            "hanzi": "要",
+            "pinyin": "yào",
+            "gloss": "take (time)"
+          },
+          {
+            "hanzi": "多久？",
+            "pinyin": "duō jiǔ?",
+            "gloss": "how long"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_08050": {
+    "例句JSON": [
+      {
+        "hanzi": "走路大约要十分钟。",
+        "pinyin": "zǒu lù dà yuē yào shí fēn zhōng.",
+        "english": "It takes about ten minutes on foot.",
+        "chunks": [
+          {
+            "hanzi": "走路",
+            "pinyin": "zǒu lù",
+            "gloss": "to walk; to go on foot"
+          },
+          {
+            "hanzi": "大约",
+            "pinyin": "dà yuē",
+            "gloss": "about; approximately"
+          },
+          {
+            "hanzi": "要",
+            "pinyin": "yào",
+            "gloss": "take (time)"
+          },
+          {
+            "hanzi": "十",
+            "pinyin": "shí",
+            "gloss": "ten"
+          },
+          {
+            "hanzi": "分钟。",
+            "pinyin": "fēn zhōng.",
+            "gloss": "minute"
+          }
+        ]
+      },
+      {
+        "hanzi": "屋子里大约有二十个人。",
+        "pinyin": "wū zi lǐ dà yuē yǒu èr shí ge rén.",
+        "english": "There are about twenty people in the room.",
+        "chunks": [
+          {
+            "hanzi": "屋子",
+            "pinyin": "wū zi",
+            "gloss": "room"
+          },
+          {
+            "hanzi": "里",
+            "pinyin": "lǐ",
+            "gloss": "in"
+          },
+          {
+            "hanzi": "大约",
+            "pinyin": "dà yuē",
+            "gloss": "about; approximately"
+          },
+          {
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "gloss": "have; there is"
+          },
+          {
+            "hanzi": "二十",
+            "pinyin": "èr shí",
+            "gloss": "twenty"
+          },
+          {
+            "hanzi": "个",
+            "pinyin": "ge",
+            "gloss": "GE (measure word)"
+          },
+          {
+            "hanzi": "人。",
+            "pinyin": "rén.",
+            "gloss": "people"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_07785": {
+    "例句JSON": [
+      {
+        "hanzi": "没什么，我只是顺手帮忙。",
+        "pinyin": "méi shén me, wǒ zhǐ shì shùn shǒu bāng máng.",
+        "english": "It was nothing; I was just helping while I was there.",
+        "chunks": [
+          {
+            "hanzi": "没什么，",
+            "pinyin": "méi shén me,",
+            "gloss": "it is nothing"
+          },
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "只是",
+            "pinyin": "zhǐ shì",
+            "gloss": "merely"
+          },
+          {
+            "hanzi": "顺手",
+            "pinyin": "shùn shǒu",
+            "gloss": "as an incidental action while doing sth else"
+          },
+          {
+            "hanzi": "帮忙。",
+            "pinyin": "bāng máng.",
+            "gloss": "help"
+          }
+        ]
+      },
+      {
+        "hanzi": "只是擦破了皮，没什么大问题。",
+        "pinyin": "zhǐ shì cā pò le pí, méi shén me dà wèn tí.",
+        "english": "It is just a scrape; there is no major problem.",
+        "chunks": [
+          {
+            "hanzi": "只是",
+            "pinyin": "zhǐ shì",
+            "gloss": "merely"
+          },
+          {
+            "hanzi": "擦",
+            "pinyin": "cā",
+            "gloss": "scrape"
+          },
+          {
+            "hanzi": "破",
+            "pinyin": "pò",
+            "gloss": "broken"
+          },
+          {
+            "hanzi": "了",
+            "pinyin": "le",
+            "gloss": "LE"
+          },
+          {
+            "hanzi": "皮，",
+            "pinyin": "pí,",
+            "gloss": "skin"
+          },
+          {
+            "hanzi": "没什么",
+            "pinyin": "méi shén me",
+            "gloss": "no; not any"
+          },
+          {
+            "hanzi": "大",
+            "pinyin": "dà",
+            "gloss": "big"
+          },
+          {
+            "hanzi": "问题。",
+            "pinyin": "wèn tí.",
+            "gloss": "question; problem"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_08083": {
+    "例句JSON": [
+      {
+        "hanzi": "我们好久没见面了。",
+        "pinyin": "wǒ men hǎo jiǔ méi jiàn miàn le.",
+        "english": "We have not seen each other for a long time.",
+        "chunks": [
+          {
+            "hanzi": "我们",
+            "pinyin": "wǒ men",
+            "gloss": "we"
+          },
+          {
+            "hanzi": "好久",
+            "pinyin": "hǎo jiǔ",
+            "gloss": "a long time"
+          },
+          {
+            "hanzi": "没",
+            "pinyin": "méi",
+            "gloss": "have not"
+          },
+          {
+            "hanzi": "见面",
+            "pinyin": "jiàn miàn",
+            "gloss": "meet"
+          },
+          {
+            "hanzi": "了。",
+            "pinyin": "le.",
+            "gloss": "LE"
+          }
+        ]
+      },
+      {
+        "hanzi": "我找了好久才找到钥匙。",
+        "pinyin": "wǒ zhǎo le hǎo jiǔ cái zhǎo dào yào shi.",
+        "english": "I looked for a long time before finding the keys.",
+        "chunks": [
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "找",
+            "pinyin": "zhǎo",
+            "gloss": "look for; search for"
+          },
+          {
+            "hanzi": "了",
+            "pinyin": "le",
+            "gloss": "LE"
+          },
+          {
+            "hanzi": "好久",
+            "pinyin": "hǎo jiǔ",
+            "gloss": "a long time"
+          },
+          {
+            "hanzi": "才",
+            "pinyin": "cái",
+            "gloss": "only then"
+          },
+          {
+            "hanzi": "找到",
+            "pinyin": "zhǎo dào",
+            "gloss": "find"
+          },
+          {
+            "hanzi": "钥匙。",
+            "pinyin": "yào shi.",
+            "gloss": "key"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_08027": {
+    "例句JSON": [
+      {
+        "hanzi": "因为下雨，比赛取消了。",
+        "pinyin": "yīn wèi xià yǔ, bǐ sài qǔ xiāo le.",
+        "english": "The match was canceled because of the rain.",
+        "chunks": [
+          {
+            "hanzi": "因为",
+            "pinyin": "yīn wèi",
+            "gloss": "because"
+          },
+          {
+            "hanzi": "下雨，",
+            "pinyin": "xià yǔ,",
+            "gloss": "rain"
+          },
+          {
+            "hanzi": "比赛",
+            "pinyin": "bǐ sài",
+            "gloss": "match; competition"
+          },
+          {
+            "hanzi": "取消",
+            "pinyin": "qǔ xiāo",
+            "gloss": "to cancel"
+          },
+          {
+            "hanzi": "了。",
+            "pinyin": "le.",
+            "gloss": "LE"
+          }
+        ]
+      },
+      {
+        "hanzi": "我想取消明天的预约。",
+        "pinyin": "wǒ xiǎng qǔ xiāo míng tiān de yù yuē.",
+        "english": "I would like to cancel tomorrow's appointment.",
+        "chunks": [
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "想",
+            "pinyin": "xiǎng",
+            "gloss": "want to; think"
+          },
+          {
+            "hanzi": "取消",
+            "pinyin": "qǔ xiāo",
+            "gloss": "to cancel"
+          },
+          {
+            "hanzi": "明天",
+            "pinyin": "míng tiān",
+            "gloss": "tomorrow"
+          },
+          {
+            "hanzi": "的",
+            "pinyin": "de",
+            "gloss": "DE"
+          },
+          {
+            "hanzi": "预约。",
+            "pinyin": "yù yuē.",
+            "gloss": "appointment; booking"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_08092": {
+    "例句JSON": [
+      {
+        "hanzi": "请提前十分钟到。",
+        "pinyin": "qǐng tí qián shí fēn zhōng dào.",
+        "english": "Please arrive ten minutes early.",
+        "chunks": [
+          {
+            "hanzi": "请",
+            "pinyin": "qǐng",
+            "gloss": "please"
+          },
+          {
+            "hanzi": "提前",
+            "pinyin": "tí qián",
+            "gloss": "ahead of time; in advance"
+          },
+          {
+            "hanzi": "十",
+            "pinyin": "shí",
+            "gloss": "ten"
+          },
+          {
+            "hanzi": "分钟",
+            "pinyin": "fēn zhōng",
+            "gloss": "minute"
+          },
+          {
+            "hanzi": "到。",
+            "pinyin": "dào.",
+            "gloss": "arrive"
+          }
+        ]
+      },
+      {
+        "hanzi": "买票最好提前预约。",
+        "pinyin": "mǎi piào zuì hǎo tí qián yù yuē.",
+        "english": "It is best to reserve tickets in advance.",
+        "chunks": [
+          {
+            "hanzi": "买票",
+            "pinyin": "mǎi piào",
+            "gloss": "buy tickets"
+          },
+          {
+            "hanzi": "最好",
+            "pinyin": "zuì hǎo",
+            "gloss": "best"
+          },
+          {
+            "hanzi": "提前",
+            "pinyin": "tí qián",
+            "gloss": "ahead of time; in advance"
+          },
+          {
+            "hanzi": "预约。",
+            "pinyin": "yù yuē.",
+            "gloss": "book; reserve"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_08098": {
+    "例句JSON": [
+      {
+        "hanzi": "楼下有一家便利店。",
+        "pinyin": "lóu xià yǒu yī jiā biàn lì diàn.",
+        "english": "There is a convenience store downstairs.",
+        "chunks": [
+          {
+            "hanzi": "楼下",
+            "pinyin": "lóu xià",
+            "gloss": "downstairs"
+          },
+          {
+            "hanzi": "有",
+            "pinyin": "yǒu",
+            "gloss": "have; there is"
+          },
+          {
+            "hanzi": "一家",
+            "pinyin": "yī jiā",
+            "gloss": "one (JIA measure word for businesses)"
+          },
+          {
+            "hanzi": "便利店。",
+            "pinyin": "biàn lì diàn.",
+            "gloss": "convenience store"
+          }
+        ]
+      },
+      {
+        "hanzi": "我去楼下拿快递。",
+        "pinyin": "wǒ qù lóu xià ná kuài dì.",
+        "english": "I am going downstairs to collect a delivery.",
+        "chunks": [
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "去",
+            "pinyin": "qù",
+            "gloss": "go"
+          },
+          {
+            "hanzi": "楼下",
+            "pinyin": "lóu xià",
+            "gloss": "downstairs"
+          },
+          {
+            "hanzi": "拿",
+            "pinyin": "ná",
+            "gloss": "take"
+          },
+          {
+            "hanzi": "快递。",
+            "pinyin": "kuài dì.",
+            "gloss": "parcel; express delivery"
+          }
+        ]
+      }
+    ]
+  },
+  "wl_08047": {
+    "例句JSON": [
+      {
+        "hanzi": "听到这个价格，我很吃惊。",
+        "pinyin": "tīng dào zhè ge jià gé, wǒ hěn chī jīng.",
+        "english": "I was surprised to hear this price.",
+        "chunks": [
+          {
+            "hanzi": "听到",
+            "pinyin": "tīng dào",
+            "gloss": "hear"
+          },
+          {
+            "hanzi": "这个",
+            "pinyin": "zhè ge",
+            "gloss": "this one"
+          },
+          {
+            "hanzi": "价格，",
+            "pinyin": "jià gé,",
+            "gloss": "price"
+          },
+          {
+            "hanzi": "我",
+            "pinyin": "wǒ",
+            "gloss": "I"
+          },
+          {
+            "hanzi": "很",
+            "pinyin": "hěn",
+            "gloss": "very"
+          },
+          {
+            "hanzi": "吃惊。",
+            "pinyin": "chī jīng.",
+            "gloss": "surprised; startled"
+          }
+        ]
+      },
+      {
+        "hanzi": "她突然出现，让我吃惊。",
+        "pinyin": "tā tū rán chū xiàn, ràng wǒ chī jīng.",
+        "english": "I was startled when she suddenly appeared.",
+        "chunks": [
+          {
+            "hanzi": "她",
+            "pinyin": "tā",
+            "gloss": "she"
+          },
+          {
+            "hanzi": "突然",
+            "pinyin": "tū rán",
+            "gloss": "suddenly"
+          },
+          {
+            "hanzi": "出现，",
+            "pinyin": "chū xiàn,",
+            "gloss": "appear"
+          },
+          {
+            "hanzi": "让我",
+            "pinyin": "ràng wǒ",
+            "gloss": "make me"
+          },
+          {
+            "hanzi": "吃惊。",
+            "pinyin": "chī jīng.",
+            "gloss": "surprised; startled"
+          }
+        ]
+      }
+    ]
+  }
+}
