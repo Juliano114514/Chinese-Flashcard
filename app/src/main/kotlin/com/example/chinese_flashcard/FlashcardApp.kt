@@ -248,7 +248,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
-        }, onWriting = openWriting, onSpeak = speech::speak, onSpeakAndWait = speech::speakAndWait)
+        }, onWriting = openWriting, onSpeakAndWait = speech::speakAndWait)
       }
       composable("writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))

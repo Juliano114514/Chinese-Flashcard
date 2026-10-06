@@ -56,12 +56,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameNanos
@@ -88,11 +91,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import android.content.res.Configuration
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.awaitCancellation
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.AnswerOption
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
@@ -395,7 +401,7 @@ private fun TodayContent(
 }
 
 @Composable
-fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> Unit, onSpeak: (String) -> Unit,
+fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> Unit,
   onSpeakAndWait: suspend (String) -> Boolean) {
   val state by vm.state.collectAsStateWithLifecycle()
   val card = state.card
@@ -407,8 +413,27 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var feedbackAdvanceRequested by rememberSaveable(card?.id) { mutableStateOf(false) }
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
   var manualSpeechRevision by remember { mutableLongStateOf(0L) }
-  val manualSpeak: (String) -> Unit = { text -> manualSpeechRevision++; onSpeak(text) }
+  val latestSpeakAndWait by rememberUpdatedState(onSpeakAndWait)
+  val playback = remember { StudyPlayback { latestSpeakAndWait(it) } }
+  val speechScope = rememberCoroutineScope()
+  var manualSpeechJob by remember { mutableStateOf<Job?>(null) }
+  val manualSpeak: (String) -> Unit = { text ->
+    manualSpeechRevision++
+    manualSpeechJob?.cancel()
+    playback.cancel()
+    manualSpeechJob = speechScope.launch { playback.sequence { speak(text, immediate = true) } }
+  }
   val lifecycle = LocalLifecycleOwner.current.lifecycle
+  DisposableEffect(card?.id, card?.phase, lifecycle, playback) {
+    val observer = LifecycleEventObserver { _, event ->
+      if (event == Lifecycle.Event.ON_PAUSE || event == Lifecycle.Event.ON_STOP) {
+        manualSpeechJob?.cancel()
+        playback.cancel()
+      }
+    }
+    lifecycle.addObserver(observer)
+    onDispose { lifecycle.removeObserver(observer); manualSpeechJob?.cancel(); playback.cancel() }
+  }
   val speechPage = card?.takeIf { it.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.EXPLANATION) }
     ?.let { "${it.id}/${it.phase}" }
   LaunchedEffect(speechPage, lifecycle) {
@@ -421,15 +446,15 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
           if (activeCard == null || "${activeCard.id}/${activeCard.phase}" != speechPage) return@repeatOnLifecycle
           spokenPage = speechPage
           if (manualSpeechRevision != entryRevision) return@repeatOnLifecycle
-          if (activeCard.phase == CardPhase.EXPLANATION) {
-            val played = onSpeakAndWait(activeCard.word.hanzi)
-            currentCoroutineContext().ensureActive()
-            val current = vm.state.value.card
-            if (played && manualSpeechRevision == entryRevision && current?.id == activeCard.id &&
-              current.phase == CardPhase.EXPLANATION) {
-              activeCard.word.examples.firstOrNull()?.hanzi?.takeIf(String::isNotBlank)?.let { onSpeakAndWait(it) }
+          playback.sequence {
+            if (!speak(activeCard.word.hanzi)) return@sequence
+            for (example in activeCard.playbackExamples()) {
+              val current = vm.state.value.card
+              if (manualSpeechRevision != entryRevision || current?.id != activeCard.id ||
+                current.phase != activeCard.phase) break
+              if (example.hanzi.isNotBlank() && !speak(example.hanzi)) break
             }
-          } else onSpeak(activeCard.word.hanzi)
+          }
         }
         awaitCancellation()
       }
@@ -440,24 +465,26 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     if (card?.phase == CardPhase.FEEDBACK && !state.loading) {
       lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
         if (!feedbackFinished) {
-          if (!correctAnswerRevealed) {
-            if (card.correct == false) {
-              withFrameNanos { }; withFrameNanos { }
-              card.options.firstOrNull { it.id == card.selectedOptionId }?.hanzi
-                ?.takeIf(String::isNotBlank)?.let { onSpeakAndWait(it) }
-              currentCoroutineContext().ensureActive()
+          playback.sequence {
+            if (!correctAnswerRevealed) {
+              if (card.correct == false) {
+                withFrameNanos { }; withFrameNanos { }
+                card.options.firstOrNull { it.id == card.selectedOptionId }?.hanzi
+                  ?.takeIf(String::isNotBlank)?.let { speak(it) }
+                currentCoroutineContext().ensureActive()
+              }
+              correctAnswerRevealed = true
             }
-            correctAnswerRevealed = true
-          }
-          withFrameNanos { }; withFrameNanos { }
-          val active = vm.state.value.card
-          if (active == null || active.id != card.id || active.phase != CardPhase.FEEDBACK) return@repeatOnLifecycle
-          val played = onSpeakAndWait(card.word.hanzi)
-          currentCoroutineContext().ensureActive()
-          val current = vm.state.value.card
-          if (current != null && current.id == card.id && current.phase == CardPhase.FEEDBACK) {
-            feedbackPlaybackSucceeded = played
-            feedbackFinished = true
+            withFrameNanos { }; withFrameNanos { }
+            val active = vm.state.value.card
+            if (active == null || active.id != card.id || active.phase != CardPhase.FEEDBACK) return@sequence
+            val played = speak(card.word.hanzi)
+            currentCoroutineContext().ensureActive()
+            val current = vm.state.value.card
+            if (current != null && current.id == card.id && current.phase == CardPhase.FEEDBACK) {
+              feedbackPlaybackSucceeded = played
+              feedbackFinished = true
+            }
           }
         }
         awaitCancellation()
@@ -646,9 +673,8 @@ private fun StudyContent(
             }
             CardPhase.QUESTION, CardPhase.FEEDBACK -> {
               val feedback = card.phase == CardPhase.FEEDBACK
-              if (card.showContext && card.word.examples.isNotEmpty()) {
-                val index = (card.round - 1).coerceAtLeast(0) % card.word.examples.size
-                WordExamplePanel(card.word.examples[index], onSpeak, enabled = !feedback && !state.busy, compact = true)
+              card.contextExample()?.let { example ->
+                WordExamplePanel(example, onSpeak, enabled = !feedback && !state.busy, compact = true)
               }
               Text("Choose the meaning", style = MaterialTheme.typography.bodyMedium,
                 color = FlashcardStyle.colors.gradientSecondaryInk)
