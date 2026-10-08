@@ -1,6 +1,6 @@
 # 开发与维护
 
-当前仓库版本为 `1.1.0 / versionCode 2`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；不表示应用已经打包或上线。
+当前仓库版本为 `1.2.0 / versionCode 3`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；不表示应用已经打包或上线。
 
 ## 工程与环境
 
