@@ -1,0 +1,2002 @@
+{
+  "牙刷": {
+    "rarity": "0",
+    "reason": "一年级可理解的日常清洁用品。"
+  },
+  "洗发水": {
+    "rarity": "0",
+    "reason": "儿童熟悉的具体洗护用品。"
+  },
+  "沐浴露": {
+    "rarity": "0",
+    "reason": "儿童日常洗澡接触的用品。"
+  },
+  "洗衣液": {
+    "rarity": "0",
+    "reason": "具体家庭清洁用品不需专业背景。"
+  },
+  "洗衣粉": {
+    "rarity": "0",
+    "reason": "基础家庭用品。"
+  },
+  "洗衣机": {
+    "rarity": "0",
+    "reason": "儿童熟悉的具体家电。"
+  },
+  "洗碗机": {
+    "rarity": "0",
+    "reason": "具体家电用途直观。"
+  },
+  "微波炉": {
+    "rarity": "0",
+    "reason": "按家电实物用途而非微波原理判定。"
+  },
+  "水龙头": {
+    "rarity": "0",
+    "reason": "基础生活物件。"
+  },
+  "下水道": {
+    "rarity": "1",
+    "reason": "一般生活设施和功能概念。"
+  },
+  "马桶": {
+    "rarity": "0",
+    "reason": "基础生活设施。"
+  },
+  "浴缸": {
+    "rarity": "0",
+    "reason": "直观的家居物件。"
+  },
+  "淋浴": {
+    "rarity": "0",
+    "reason": "基础日常动作。"
+  },
+  "浴巾": {
+    "rarity": "0",
+    "reason": "直观日用物件。"
+  },
+  "牙线": {
+    "rarity": "1",
+    "reason": "普通口腔清洁用品及具体使用场景。"
+  },
+  "牙签": {
+    "rarity": "0",
+    "reason": "简单具体用品。"
+  },
+  "湿巾": {
+    "rarity": "0",
+    "reason": "儿童熟悉的清洁用品。"
+  },
+  "餐巾": {
+    "rarity": "0",
+    "reason": "基础餐桌用品。"
+  },
+  "洗手液": {
+    "rarity": "0",
+    "reason": "基础清洁用品。"
+  },
+  "拖地": {
+    "rarity": "0",
+    "reason": "基础家务动作。"
+  },
+  "抹布": {
+    "rarity": "0",
+    "reason": "直观家务用品。"
+  },
+  "地毯": {
+    "rarity": "0",
+    "reason": "基础家居用品。"
+  },
+  "插头": {
+    "rarity": "0",
+    "reason": "按具体物件用途判定。"
+  },
+  "插座": {
+    "rarity": "0",
+    "reason": "日常家庭物件。"
+  },
+  "衣柜": {
+    "rarity": "0",
+    "reason": "基础家具。"
+  },
+  "衣架": {
+    "rarity": "0",
+    "reason": "基础家务用品。"
+  },
+  "被单": {
+    "rarity": "0",
+    "reason": "具体寝具。"
+  },
+  "床垫": {
+    "rarity": "0",
+    "reason": "直观寝具。"
+  },
+  "枕套": {
+    "rarity": "0",
+    "reason": "具体寝具。"
+  },
+  "天花板": {
+    "rarity": "0",
+    "reason": "按房间具体位置义判定。"
+  },
+  "厨具": {
+    "rarity": "1",
+    "reason": "普通生活用品总称。"
+  },
+  "锅铲": {
+    "rarity": "0",
+    "reason": "具体做饭工具。"
+  },
+  "平底锅": {
+    "rarity": "0",
+    "reason": "可直接识别的厨房用品。"
+  },
+  "汤匙": {
+    "rarity": "0",
+    "reason": "基础餐具。"
+  },
+  "饭碗": {
+    "rarity": "0",
+    "reason": "采用具体餐具义而非职业引申义。"
+  },
+  "保鲜": {
+    "rarity": "1",
+    "reason": "普通食品保存概念。"
+  },
+  "冷藏": {
+    "rarity": "1",
+    "reason": "常见保存方法而非技术机制。"
+  },
+  "过期": {
+    "rarity": "1",
+    "reason": "日常有效期限概念。"
+  },
+  "变质": {
+    "rarity": "1",
+    "reason": "常见食品质量变化。"
+  },
+  "剩菜": {
+    "rarity": "0",
+    "reason": "直观日常食物状态。"
+  },
+  "清扫": {
+    "rarity": "1",
+    "reason": "一般生活和学校劳动词。"
+  },
+  "收纳": {
+    "rarity": "1",
+    "reason": "日常物品整理用语。"
+  },
+  "洗衣": {
+    "rarity": "0",
+    "reason": "基础家务动作。"
+  },
+  "开水": {
+    "rarity": "0",
+    "reason": "儿童熟悉的饮水词。"
+  },
+  "冷水": {
+    "rarity": "0",
+    "reason": "基础温度与物质组合。"
+  },
+  "下厨": {
+    "rarity": "1",
+    "reason": "普通生活表达。"
+  },
+  "煎蛋": {
+    "rarity": "0",
+    "reason": "直观常见食物。"
+  },
+  "蛋炒饭": {
+    "rarity": "0",
+    "reason": "常见具体饭食。"
+  },
+  "食醋": {
+    "rarity": "1",
+    "reason": "日常调味品正式名称。"
+  },
+  "香油": {
+    "rarity": "1",
+    "reason": "普通饮食调味词。"
+  },
+  "菜油": {
+    "rarity": "1",
+    "reason": "常见油品名称。"
+  },
+  "食用油": {
+    "rarity": "1",
+    "reason": "普通饮食用品类别。"
+  },
+  "调料": {
+    "rarity": "1",
+    "reason": "日常烹饪类别词。"
+  },
+  "味精": {
+    "rarity": "1",
+    "reason": "按熟悉调味品义而非化学结构判定。"
+  },
+  "胡椒": {
+    "rarity": "1",
+    "reason": "普通香料名称。"
+  },
+  "甜味": {
+    "rarity": "0",
+    "reason": "基础味觉描述。"
+  },
+  "苦味": {
+    "rarity": "0",
+    "reason": "基础味觉描述。"
+  },
+  "咸菜": {
+    "rarity": "1",
+    "reason": "常见具体食品。"
+  },
+  "生姜": {
+    "rarity": "1",
+    "reason": "常见烹饪食材。"
+  },
+  "蒜头": {
+    "rarity": "1",
+    "reason": "具体日常食材名称。"
+  },
+  "绿豆": {
+    "rarity": "0",
+    "reason": "儿童可理解的具体食物。"
+  },
+  "黄豆": {
+    "rarity": "0",
+    "reason": "具体食物。"
+  },
+  "红豆": {
+    "rarity": "0",
+    "reason": "具体食物。"
+  },
+  "扁豆": {
+    "rarity": "1",
+    "reason": "常见但需辨识的蔬菜名称。"
+  },
+  "豆奶": {
+    "rarity": "0",
+    "reason": "具体常见饮品。"
+  },
+  "蛋白": {
+    "rarity": "0",
+    "reason": "选具体鸡蛋组成义而非蛋白质学术义。"
+  },
+  "蛋黄": {
+    "rarity": "0",
+    "reason": "基础食物组成。"
+  },
+  "皮蛋": {
+    "rarity": "1",
+    "reason": "常见传统食品。"
+  },
+  "奶粉": {
+    "rarity": "0",
+    "reason": "儿童熟悉的具体食品。"
+  },
+  "奶油": {
+    "rarity": "0",
+    "reason": "具体常见食物。"
+  },
+  "芝士": {
+    "rarity": "0",
+    "reason": "儿童熟悉的具体食品名称。"
+  },
+  "奶酪": {
+    "rarity": "0",
+    "reason": "具体食品。"
+  },
+  "黄油": {
+    "rarity": "0",
+    "reason": "具体日常食品。"
+  },
+  "鸡腿": {
+    "rarity": "0",
+    "reason": "基础具体食物。"
+  },
+  "鸡胸": {
+    "rarity": "1",
+    "reason": "采用食材义，排除医学胸廓畸形义。"
+  },
+  "鱼肉": {
+    "rarity": "0",
+    "reason": "基础具体食物。"
+  },
+  "排骨": {
+    "rarity": "0",
+    "reason": "常见具体食物。"
+  },
+  "肉馅": {
+    "rarity": "1",
+    "reason": "普通烹饪词。"
+  },
+  "肉丸": {
+    "rarity": "0",
+    "reason": "直观具体食物。"
+  },
+  "肉片": {
+    "rarity": "0",
+    "reason": "直观食物形状词。"
+  },
+  "火腿": {
+    "rarity": "0",
+    "reason": "常见具体食物。"
+  },
+  "香肠": {
+    "rarity": "0",
+    "reason": "常见具体食物。"
+  },
+  "豆腐": {
+    "rarity": "0",
+    "reason": "基础具体食物。"
+  },
+  "豆腐干": {
+    "rarity": "1",
+    "reason": "普通豆制品名称。"
+  },
+  "豆腐皮": {
+    "rarity": "1",
+    "reason": "普通食材类别。"
+  },
+  "豆芽": {
+    "rarity": "0",
+    "reason": "具体日常蔬菜。"
+  },
+  "零食": {
+    "rarity": "0",
+    "reason": "儿童熟悉的具体食品类别。"
+  },
+  "白饭": {
+    "rarity": "0",
+    "reason": "基本饭食。"
+  },
+  "白粥": {
+    "rarity": "0",
+    "reason": "基本饭食。"
+  },
+  "小米": {
+    "rarity": "1",
+    "reason": "常见谷物名称。"
+  },
+  "燕麦": {
+    "rarity": "1",
+    "reason": "常见谷物名称。"
+  },
+  "麦片": {
+    "rarity": "0",
+    "reason": "儿童熟悉的早餐食品。"
+  },
+  "菜谱": {
+    "rarity": "1",
+    "reason": "日常烹饪文本用途。"
+  },
+  "甜瓜": {
+    "rarity": "0",
+    "reason": "具体常见水果。"
+  },
+  "木瓜": {
+    "rarity": "1",
+    "reason": "常见但需识别的水果名称。"
+  },
+  "杏子": {
+    "rarity": "1",
+    "reason": "一般具体水果名称。"
+  },
+  "樱桃": {
+    "rarity": "0",
+    "reason": "具体水果。"
+  },
+  "番茄": {
+    "rarity": "0",
+    "reason": "基础常见食材。"
+  },
+  "花菜": {
+    "rarity": "1",
+    "reason": "普通蔬菜识别词。"
+  },
+  "青椒": {
+    "rarity": "0",
+    "reason": "常见具体蔬菜。"
+  },
+  "空心菜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：water spinach."
+  },
+  "香菜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：coriander; cilantro."
+  },
+  "茄子": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：eggplant."
+  },
+  "南瓜": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：pumpkin."
+  },
+  "冬瓜": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：winter melon."
+  },
+  "苦瓜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：bitter melon."
+  },
+  "丝瓜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：luffa; sponge gourd."
+  },
+  "木耳": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：wood ear mushroom."
+  },
+  "海带": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：kelp."
+  },
+  "紫菜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：laver; edible seaweed."
+  },
+  "山药": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：Chinese yam."
+  },
+  "绿茶": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：green tea."
+  },
+  "红茶": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：black tea."
+  },
+  "奶茶": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：milk tea."
+  },
+  "凉茶": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：herbal cooling drink."
+  },
+  "豆乳": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：soy milk."
+  },
+  "饮用水": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：drinking water."
+  },
+  "汽水": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：soda; fizzy drink."
+  },
+  "苏打水": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：soda water."
+  },
+  "热饮": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：hot drink."
+  },
+  "冷饮": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：cold drink."
+  },
+  "冰块": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：ice cube; piece of ice."
+  },
+  "甜点": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：dessert."
+  },
+  "甜食": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：sweet food."
+  },
+  "主食": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：staple food."
+  },
+  "副食": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：foods accompanying a staple."
+  },
+  "素菜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：vegetable dish; meatless dish."
+  },
+  "凉菜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：cold dish."
+  },
+  "汤面": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：noodles in soup."
+  },
+  "拌面": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：noodles mixed with sauce."
+  },
+  "炸鸡": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：fried chicken."
+  },
+  "烤鸭": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：roast duck."
+  },
+  "炖肉": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：stew meat."
+  },
+  "油炸": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：deep-fry."
+  },
+  "红烧": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：braise in a savory sauce."
+  },
+  "凉拌": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：dress a cold dish."
+  },
+  "炒锅": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：wok."
+  },
+  "蒸锅": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：steaming pot."
+  },
+  "蒸笼": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：steamer basket."
+  },
+  "电饭锅": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：electric rice cooker."
+  },
+  "高压锅": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：pressure cooker."
+  },
+  "烤箱": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：oven."
+  },
+  "榨汁机": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：juicer."
+  },
+  "烤面包机": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：toaster."
+  },
+  "抽油烟机": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：kitchen extractor hood."
+  },
+  "打火机": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：lighter."
+  },
+  "菜刀": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：kitchen knife."
+  },
+  "餐具": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：tableware."
+  },
+  "食材": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：food ingredients."
+  },
+  "饭量": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：amount one usually eats."
+  },
+  "食量": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：food intake."
+  },
+  "食欲": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：appetite."
+  },
+  "饿肚子": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：go hungry."
+  },
+  "夜宵": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：late-night snack."
+  },
+  "便饭": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：simple everyday meal."
+  },
+  "便当": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：packed meal; lunchbox meal."
+  },
+  "饮酒": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：drink alcohol."
+  },
+  "酒量": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：ability to tolerate alcohol."
+  },
+  "白酒": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：Chinese distilled liquor."
+  },
+  "红酒": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：red wine."
+  },
+  "料酒": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：cooking wine."
+  },
+  "开瓶器": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：bottle opener."
+  },
+  "保温瓶": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：vacuum flask."
+  },
+  "热水瓶": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：hot-water flask."
+  },
+  "罐子": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：jar; canister."
+  },
+  "玻璃杯": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：glass drinking cup."
+  },
+  "保鲜膜": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：food wrap."
+  },
+  "头痛": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：headache; have a headache."
+  },
+  "牙痛": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：toothache."
+  },
+  "腹痛": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：abdominal pain."
+  },
+  "胃痛": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：stomach pain."
+  },
+  "发热": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：have a fever."
+  },
+  "流感": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：influenza; flu."
+  },
+  "过敏": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：allergic; have an allergy."
+  },
+  "恶心": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：feel nauseous."
+  },
+  "鼻炎": {
+    "rarity": "3",
+    "reason": "专业医学诊断、测量或学科术语，需成人或专门知识背景。 本条记录义：rhinitis."
+  },
+  "咽炎": {
+    "rarity": "3",
+    "reason": "专业医学诊断、测量或学科术语，需成人或专门知识背景。 本条记录义：pharyngitis."
+  },
+  "肺炎": {
+    "rarity": "3",
+    "reason": "专业医学诊断、测量或学科术语，需成人或专门知识背景。 本条记录义：pneumonia."
+  },
+  "胃病": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：stomach illness."
+  },
+  "血压": {
+    "rarity": "3",
+    "reason": "专业医学诊断、测量或学科术语，需成人或专门知识背景。 本条记录义：blood pressure."
+  },
+  "血糖": {
+    "rarity": "3",
+    "reason": "专业医学诊断、测量或学科术语，需成人或专门知识背景。 本条记录义：blood sugar."
+  },
+  "体温": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：body temperature."
+  },
+  "体重": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：body weight."
+  },
+  "心跳": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：heartbeat."
+  },
+  "脉搏": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：pulse."
+  },
+  "胸口": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：chest."
+  },
+  "腰部": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：waist; lower back area."
+  },
+  "后背": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：back of the body."
+  },
+  "肩头": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：shoulder."
+  },
+  "嗓子": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：throat; voice."
+  },
+  "脚趾": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：toe."
+  },
+  "指头": {
+    "rarity": "0",
+    "reason": "具体日用物品、食物或基础动作，儿童可直接理解记录义。 本条记录义：finger; toe."
+  },
+  "头皮": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：scalp."
+  },
+  "毛孔": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：pore."
+  },
+  "汗液": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：sweat."
+  },
+  "关节": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：joint."
+  },
+  "伤痕": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：scar; mark of an injury."
+  },
+  "擦伤": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：scrape; abrasion."
+  },
+  "扭伤": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：sprain."
+  },
+  "出血": {
+    "rarity": "1",
+    "reason": "一般生活或初中前后基础知识，不依赖专门背景。 本条记录义：bleed."
+  },
+  "止血": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：stop bleeding."
+  },
+  "创可贴": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：adhesive bandage."
+  },
+  "消毒": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：disinfect."
+  },
+  "药片": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：medicine tablet."
+  },
+  "处方": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：medical prescription."
+  },
+  "药方": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：prescription; medicinal formula."
+  },
+  "药房": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：pharmacy."
+  },
+  "服药": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：take medicine."
+  },
+  "吃药": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：take medicine."
+  },
+  "打针": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：get or give an injection."
+  },
+  "输液": {
+    "rarity": "3",
+    "reason": "专业医学操作、检验或学科术语，需要专门背景。 本条记录义：receive or administer an intravenous infusion."
+  },
+  "退烧药": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：fever-reducing medicine."
+  },
+  "止痛药": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：painkiller."
+  },
+  "消炎药": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：anti-inflammatory medicine."
+  },
+  "感冒药": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：cold medicine."
+  },
+  "护理": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：nurse; provide care."
+  },
+  "看病": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：see a doctor."
+  },
+  "就医": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：seek medical treatment."
+  },
+  "挂号": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：register for a medical appointment."
+  },
+  "门诊": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：outpatient service."
+  },
+  "急诊": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：emergency medical service."
+  },
+  "出院": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：leave hospital after treatment."
+  },
+  "患者": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：patient."
+  },
+  "病史": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：medical history."
+  },
+  "病因": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：cause of an illness."
+  },
+  "病房": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：hospital ward; patient room."
+  },
+  "病假": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：sick leave."
+  },
+  "体检": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：health checkup."
+  },
+  "化验": {
+    "rarity": "3",
+    "reason": "专业医学操作、检验或学科术语，需要专门背景。 本条记录义：laboratory test."
+  },
+  "内科": {
+    "rarity": "3",
+    "reason": "专业医学操作、检验或学科术语，需要专门背景。 本条记录义：internal medicine."
+  },
+  "外科": {
+    "rarity": "3",
+    "reason": "专业医学操作、检验或学科术语，需要专门背景。 本条记录义：surgery; surgical department."
+  },
+  "儿科": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：pediatrics."
+  },
+  "眼科": {
+    "rarity": "3",
+    "reason": "专业医学操作、检验或学科术语，需要专门背景。 本条记录义：ophthalmology."
+  },
+  "牙科": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：dentistry."
+  },
+  "麻醉": {
+    "rarity": "3",
+    "reason": "专业医学操作、检验或学科术语，需要专门背景。 本条记录义：anesthesia."
+  },
+  "康复": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：recover; rehabilitation."
+  },
+  "保健": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：health maintenance."
+  },
+  "营养": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：nutrition."
+  },
+  "维生素": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：vitamin."
+  },
+  "热量": {
+    "rarity": "2",
+    "reason": "高中常见科学和抽象概念，需要概念理解。 本条记录义：calories; heat energy."
+  },
+  "热身": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：warm up."
+  },
+  "健身": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：exercise for fitness."
+  },
+  "慢跑": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：jog."
+  },
+  "拉伸": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：stretch."
+  },
+  "按摩": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：massage."
+  },
+  "午睡": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：take an afternoon nap."
+  },
+  "抽烟": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：smoke cigarettes."
+  },
+  "戒烟": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：quit smoking."
+  },
+  "戒酒": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：stop drinking alcohol."
+  },
+  "护肤": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：care for the skin."
+  },
+  "防晒": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：protect against sunlight."
+  },
+  "防晒霜": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：sunscreen cream."
+  },
+  "护手霜": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：hand cream."
+  },
+  "面霜": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：face cream."
+  },
+  "乳液": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：lotion."
+  },
+  "香皂": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：toilet soap."
+  },
+  "梳子": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：comb."
+  },
+  "洗面奶": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：facial cleanser."
+  },
+  "剃须": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：shave facial hair."
+  },
+  "剃须刀": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：razor."
+  },
+  "电吹风": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：electric hair dryer."
+  },
+  "吹风机": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：hair dryer."
+  },
+  "口臭": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：bad breath."
+  },
+  "近视": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：nearsightedness."
+  },
+  "远视": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：farsightedness."
+  },
+  "视力": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：eyesight."
+  },
+  "镜框": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：eyeglass frame."
+  },
+  "隐形眼镜": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：contact lenses."
+  },
+  "助听器": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：hearing aid."
+  },
+  "耳塞": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：earplugs."
+  },
+  "棉签": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：cotton swab."
+  },
+  "棉球": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：cotton ball."
+  },
+  "鼻塞": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：blocked nose."
+  },
+  "流鼻涕": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：have a runny nose."
+  },
+  "咳痰": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：cough up phlegm."
+  },
+  "焦虑": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：anxiety."
+  },
+  "关怀": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：care and concern."
+  },
+  "喂养": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：feed and raise."
+  },
+  "养育": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：raise; bring up."
+  },
+  "看护": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：look after."
+  },
+  "护工": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：care worker."
+  },
+  "月嫂": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：postpartum care worker."
+  },
+  "托儿所": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：nursery; daycare center."
+  },
+  "幼儿园": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：kindergarten."
+  },
+  "奶瓶": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：feeding bottle."
+  },
+  "奶嘴": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：bottle teat; nipple."
+  },
+  "纸尿裤": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：disposable diaper."
+  },
+  "尿布": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：diaper; nappy."
+  },
+  "童装": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：children's clothing."
+  },
+  "儿女": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：sons and daughters; children."
+  },
+  "小孩子": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：young child."
+  },
+  "亲子": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：parent and child."
+  },
+  "母女": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：mother and daughter."
+  },
+  "母子": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：mother and son."
+  },
+  "父子": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：father and son."
+  },
+  "父女": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：father and daughter."
+  },
+  "夫妇": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：husband and wife; married couple."
+  },
+  "姐妹": {
+    "rarity": "0",
+    "reason": "直观日用物品、基础家庭关系或动作，儿童可直接理解。 本条记录义：sisters."
+  },
+  "侄女": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：brother's daughter; niece."
+  },
+  "外甥女": {
+    "rarity": "1",
+    "reason": "一般生活、社会服务或初中前后基础知识。 本条记录义：sister's daughter; niece."
+  },
+  "公公": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：husband's father; father-in-law."
+  },
+  "岳母": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：wife's mother; mother-in-law."
+  },
+  "晚辈": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：younger-generation relative."
+  },
+  "辈分": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：generation status in a family."
+  },
+  "家务": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：housework."
+  },
+  "养家": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：support a family."
+  },
+  "宠物": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：pet."
+  },
+  "猫粮": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：cat food."
+  },
+  "狗粮": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：dog food."
+  },
+  "鱼缸": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：fish tank."
+  },
+  "狗窝": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：dog kennel; dog bed."
+  },
+  "猫砂": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：cat litter."
+  },
+  "羽绒服": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：down jacket."
+  },
+  "棉衣": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：padded cotton coat."
+  },
+  "风衣": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：windbreaker; trench coat."
+  },
+  "大衣": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：overcoat."
+  },
+  "夹克": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：jacket."
+  },
+  "长袖": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：long sleeves."
+  },
+  "短裤": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：shorts."
+  },
+  "连衣裙": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：dress."
+  },
+  "内衣": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：underwear."
+  },
+  "内裤": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：underpants."
+  },
+  "凉鞋": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：sandals."
+  },
+  "皮鞋": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：leather shoes."
+  },
+  "布鞋": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：cloth shoes."
+  },
+  "鞋垫": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：insole."
+  },
+  "领口": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：neckline; collar opening."
+  },
+  "帽檐": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：hat brim."
+  },
+  "纽扣": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：button."
+  },
+  "拉链": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：zipper."
+  },
+  "毛线": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：wool yarn."
+  },
+  "熨烫": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：iron clothes."
+  },
+  "漂洗": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：rinse washed items."
+  },
+  "脱水": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：remove water; spin-dry."
+  },
+  "手洗": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：wash by hand."
+  },
+  "干洗": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：dry-clean."
+  },
+  "晾衣架": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：clothes-drying rack."
+  },
+  "试衣": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：try on clothes."
+  },
+  "抱枕": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：cushion for holding."
+  },
+  "靠垫": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：back cushion."
+  },
+  "坐垫": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：seat cushion."
+  },
+  "扶手": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：armrest; handrail."
+  },
+  "床头柜": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：bedside table."
+  },
+  "杂物": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：miscellaneous items."
+  },
+  "客房": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：guest room."
+  },
+  "屋外": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：outside the house."
+  },
+  "花束": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：bouquet."
+  },
+  "花肥": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：flower fertilizer."
+  },
+  "浇花": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：water flowers."
+  },
+  "盆栽": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：potted plant."
+  },
+  "盆景": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：miniature landscape in a pot."
+  },
+  "种菜": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：grow vegetables."
+  },
+  "园艺": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：gardening; horticulture."
+  },
+  "肥料": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：fertilizer."
+  },
+  "通风": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：ventilate."
+  },
+  "换气": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：exchange air; ventilate."
+  },
+  "暖气": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：heating; radiator."
+  },
+  "空调": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：air conditioner."
+  },
+  "电扇": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：electric fan."
+  },
+  "风扇": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：fan."
+  },
+  "台灯": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：desk lamp."
+  },
+  "电灯": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：electric light."
+  },
+  "灯罩": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：lampshade."
+  },
+  "电池": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：battery."
+  },
+  "遥控器": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：remote control."
+  },
+  "手电筒": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：flashlight."
+  },
+  "电源": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：power supply."
+  },
+  "插线板": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：power strip."
+  },
+  "排插": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：power strip."
+  },
+  "电表": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：electricity meter."
+  },
+  "水表": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：water meter."
+  },
+  "燃气": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：fuel gas."
+  },
+  "煤气": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：coal gas; household gas."
+  },
+  "热水器": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：water heater."
+  },
+  "漏电": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：electrical leakage."
+  },
+  "停水": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：water supply interruption."
+  },
+  "断电": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：lose or cut electrical power."
+  },
+  "水箱": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：water tank."
+  },
+  "门把手": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：door handle."
+  },
+  "房门": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：room door."
+  },
+  "后门": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：back door."
+  },
+  "纱窗": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：window screen."
+  },
+  "防盗门": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：security door."
+  },
+  "防盗": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：prevent theft."
+  },
+  "报警器": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：alarm device."
+  },
+  "灭火器": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：fire extinguisher."
+  },
+  "灭火": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：put out a fire."
+  },
+  "消防": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：fire prevention and firefighting."
+  },
+  "逃生": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：escape from danger."
+  },
+  "门框": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：doorframe."
+  },
+  "垃圾箱": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：rubbish container."
+  },
+  "垃圾车": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：garbage truck."
+  },
+  "纸盒": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：cardboard box."
+  },
+  "纸袋": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：paper bag."
+  },
+  "废纸": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：waste paper."
+  },
+  "废品": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：discarded materials."
+  },
+  "回收": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：recycle; collect for reuse."
+  },
+  "厨余": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：kitchen food waste."
+  },
+  "生活垃圾": {
+    "rarity": "1",
+    "reason": "普通生活、家庭社会关系或服务设施概念，适合初中以前的一般理解。 本条记录义：household waste."
+  },
+  "棉布": {
+    "rarity": "0",
+    "reason": "基础家居实物、日常动作或直观亲属关系。 本条记录义：cotton fabric."
+  },
+  "鸡爪": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：chicken foot."
+  },
+  "鸡翅": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：chicken wing."
+  },
+  "猪蹄": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：pig's trotter."
+  },
+  "牛排": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：beef steak."
+  },
+  "羊排": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：lamb chop."
+  },
+  "猪排": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：pork chop."
+  },
+  "鸡排": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：chicken cutlet."
+  },
+  "鱼排": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：fish steak; fish fillet portion."
+  },
+  "鱼刺": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：fishbone."
+  },
+  "生鱼片": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：sashimi; raw fish slices."
+  },
+  "鱼头": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：fish head."
+  },
+  "肉汤": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：meat broth."
+  },
+  "烤串": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：grilled skewers."
+  },
+  "串烧": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：grilled food on skewers."
+  },
+  "凉粉": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：starch jelly dish."
+  },
+  "凉皮": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：cold skin noodles."
+  },
+  "酸辣汤": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：hot and sour soup."
+  },
+  "烧卖": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：shumai dumpling."
+  },
+  "春卷": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：spring roll."
+  },
+  "煎饼": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：pancake; Chinese crepe."
+  },
+  "葱油饼": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：scallion pancake."
+  },
+  "馅料": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：filling; stuffing."
+  },
+  "酱料": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：sauce."
+  },
+  "豆瓣酱": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：chili bean paste."
+  },
+  "番茄酱": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：ketchup; tomato sauce."
+  },
+  "沙拉酱": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：salad dressing."
+  },
+  "花生酱": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：peanut butter."
+  },
+  "果酱": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：jam."
+  },
+  "味觉": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：sense of taste."
+  },
+  "鲜味": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：umami; savory taste."
+  },
+  "卤肉": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：braised seasoned meat."
+  },
+  "卤蛋": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：seasoned boiled egg."
+  },
+  "冰糖": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：rock sugar."
+  },
+  "砂糖": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：granulated sugar."
+  },
+  "白糖": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：white sugar."
+  },
+  "红糖": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：brown sugar."
+  },
+  "糖浆": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：syrup."
+  },
+  "糖粉": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：powdered sugar."
+  },
+  "花生": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：peanut."
+  },
+  "腰果": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：cashew."
+  },
+  "核桃": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：walnut."
+  },
+  "开心果": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：pistachio."
+  },
+  "瓜子": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：roasted seeds for snacking."
+  },
+  "葵花子": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：sunflower seeds."
+  },
+  "豆瓣": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：halves of a bean."
+  },
+  "小白菜": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：bok choy."
+  },
+  "大白菜": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：napa cabbage."
+  },
+  "腌肉": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：salted or marinated meat."
+  },
+  "腊肉": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：cured and air-dried meat."
+  },
+  "肉丝": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：shredded meat."
+  },
+  "蜜枣": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：candied jujube."
+  },
+  "枣泥": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：jujube paste."
+  },
+  "桂圆": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：longan."
+  },
+  "奶昔": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：milkshake."
+  },
+  "乳酸菌": {
+    "rarity": "3",
+    "reason": "微生物、医学或传统治疗学科术语，需要专门背景。 本条记录义：lactic acid bacteria."
+  },
+  "酸奶油": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：sour cream."
+  },
+  "冰棍": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：ice pop."
+  },
+  "冰棒": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：ice pop."
+  },
+  "雪糕": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：ice cream bar."
+  },
+  "冰淇淋": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：ice cream."
+  },
+  "冰沙": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：slush drink."
+  },
+  "冰水": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：iced water."
+  },
+  "温热": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：warm; lukewarm."
+  },
+  "泡茶": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：make tea."
+  },
+  "煮沸": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：bring to a boil."
+  },
+  "加热": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：heat up."
+  },
+  "熟食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：cooked prepared food."
+  },
+  "生食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：eat raw."
+  },
+  "生肉": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：raw meat."
+  },
+  "半熟": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：partly cooked."
+  },
+  "可口": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：tasty."
+  },
+  "软烂": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：soft and well cooked."
+  },
+  "肉皮": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：pork skin."
+  },
+  "饮食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：diet; food and drink."
+  },
+  "用餐": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：have a meal."
+  },
+  "就餐": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：have a meal."
+  },
+  "进食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：take food; eat."
+  },
+  "禁食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：fast; abstain from eating."
+  },
+  "节食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：restrict food intake."
+  },
+  "食疗": {
+    "rarity": "3",
+    "reason": "微生物、医学或传统治疗学科术语，需要专门背景。 本条记录义：food-based therapy."
+  },
+  "偏食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：favor only certain foods."
+  },
+  "挑食": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：be picky about food."
+  },
+  "素食": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：vegetarian food."
+  },
+  "素食者": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：vegetarian."
+  },
+  "健康食品": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：health food."
+  },
+  "绿色食品": {
+    "rarity": "2",
+    "reason": "高中常见生物免疫或较抽象质量分类概念。 本条记录义：Green Food; certified quality food."
+  },
+  "免疫": {
+    "rarity": "2",
+    "reason": "高中常见生物免疫或较抽象质量分类概念。 本条记录义：immunity."
+  },
+  "抗体": {
+    "rarity": "2",
+    "reason": "高中常见生物免疫或较抽象质量分类概念。 本条记录义：antibody."
+  },
+  "传染病": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：infectious disease."
+  },
+  "慢性病": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：chronic disease."
+  },
+  "外伤": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：external injury."
+  },
+  "急救箱": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：first-aid kit."
+  },
+  "瘀青": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：bruise."
+  },
+  "淤青": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：bruise."
+  },
+  "水肿": {
+    "rarity": "3",
+    "reason": "微生物、医学或传统治疗学科术语，需要专门背景。 本条记录义：edema; swelling from fluid."
+  },
+  "红肿": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：red and swollen."
+  },
+  "流血": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：bleed."
+  },
+  "头疼": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：headache; have a headache."
+  },
+  "睡衣": {
+    "rarity": "0",
+    "reason": "基础具体食物、衣物、身体感受或简单动作。 本条记录义：pajamas."
+  },
+  "睡袋": {
+    "rarity": "1",
+    "reason": "一般生活、饮食文化、健康照护或日常概念。 本条记录义：sleeping bag."
+  }
+}

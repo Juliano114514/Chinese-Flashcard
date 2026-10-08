@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "words": 9223,
+  "words": 13223,
   "retainedWords": 7648,
   "newRarity0Idioms": 75,
   "editorialCorrections": {
@@ -18,19 +18,20 @@
     "sentence-corrections.json": "15a90439bdf9c4fef5ddb1bc1e16ada6941f226b9950219f64e5c320def2e35a",
     "draft-audit.json": "97e266479fd4abf5422d025c3fc357d1e0dff2f3232790e83612db52f69b3e2b",
     "expansion-20261005.json": "7f21bec316fec0688e0287490c6b8ad0ea1c3ee5ad9699da44daef130dc751c1",
-    "stage-grading-20261005.json": "ab84c09af2d262c4ec21f104f09aa78e7f07f1548ca29856415d2f8863191a01"
+    "stage-grading-20261005.json": "ab84c09af2d262c4ec21f104f09aa78e7f07f1548ca29856415d2f8863191a01",
+    "expansion-20261007.json": "61135ccb35e6c5a51b8dbe1ba5a36ce8bd3ab738e92a5070148e80d8d1f52f50"
   },
   "rarity": {
-    "0": 1276,
-    "1": 4310,
-    "2": 2210,
-    "3": 633,
-    "4": 794
+    "0": 2499,
+    "1": 6722,
+    "2": 2561,
+    "3": 637,
+    "4": 804
   },
-  "examples": 18446,
-  "bytes": 20435483,
-  "sha256": "762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237",
-  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix, then frozen 1,500-word expansion (500 each in levels 0/1/2); five-stage grading changes only rarity cells",
+  "examples": 26446,
+  "bytes": 28011628,
+  "sha256": "94d98ce1fff7171d74d6ae46c6ac42925f6c8676f7e8b4989864971cba5c7d79",
+  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix, then frozen 1,500-word expansion (500 each in levels 0/1/2); five-stage grading changes only rarity cells; then reviewed 2026-10-07 additions, with only evidenced teaching-field corrections to old rows",
   "learningOrder": "rarity, syllable letters then tone 1/2/3/4/5, next syllable, stable ID",
   "firstLearningWords": [
     {
@@ -69,6 +70,11 @@
       "拼音": "ǎi xiǎo"
     },
     {
+      "词条ID": "wl_09624",
+      "组词": "爱上",
+      "拼音": "ài shàng"
+    },
+    {
       "词条ID": "wl_01269",
       "组词": "安静",
       "拼音": "ān jìng"
@@ -84,9 +90,24 @@
       "拼音": "ān quán dài"
     },
     {
+      "词条ID": "wl_11453",
+      "组词": "安心",
+      "拼音": "ān xīn"
+    },
+    {
       "词条ID": "wl_02935",
       "组词": "俺",
       "拼音": "ǎn"
+    },
+    {
+      "词条ID": "wl_12004",
+      "组词": "岸边",
+      "拼音": "àn biān"
+    },
+    {
+      "词条ID": "wl_09241",
+      "组词": "按键",
+      "拼音": "àn jiàn"
     },
     {
       "词条ID": "wl_00783",
@@ -94,44 +115,24 @@
       "拼音": "àn niǔ"
     },
     {
+      "词条ID": "wl_12315",
+      "组词": "岸上",
+      "拼音": "àn shàng"
+    },
+    {
+      "词条ID": "wl_11625",
+      "组词": "按时",
+      "拼音": "àn shí"
+    },
+    {
+      "词条ID": "wl_13130",
+      "组词": "按下",
+      "拼音": "àn xià"
+    },
+    {
       "词条ID": "wl_03762",
       "组词": "八个",
       "拼音": "bā gè"
-    },
-    {
-      "词条ID": "wl_01065",
-      "组词": "巴士",
-      "拼音": "bā shì"
-    },
-    {
-      "词条ID": "wl_01043",
-      "组词": "爸爸",
-      "拼音": "bà ba"
-    },
-    {
-      "词条ID": "wl_03202",
-      "组词": "掰开",
-      "拼音": "bāi kāi"
-    },
-    {
-      "词条ID": "wl_01243",
-      "组词": "白色",
-      "拼音": "bái sè"
-    },
-    {
-      "词条ID": "wl_01127",
-      "组词": "拜托",
-      "拼音": "bài tuō"
-    },
-    {
-      "词条ID": "wl_02338",
-      "组词": "斑点",
-      "拼音": "bān diǎn"
-    },
-    {
-      "词条ID": "wl_02339",
-      "组词": "班级",
-      "拼音": "bān jí"
     }
   ],
   "verification": "Complete structural/content-shape/reference/stroke-coverage checks. AI-assisted lexical gloss selection is not human linguistic sign-off.",
@@ -246,5 +247,66 @@
       "cross4b.json": "6a0fb856a4d5eed2a8e09ad06d3e420b0b48dedeafe8d20b463140f6a5fd5963"
     },
     "boundary": "All entries were individually AI-reviewed under the requested educational bands; these are inferred learning stages, not an official national per-grade word list or human linguistic certification. Only rarity cells change."
+  },
+  "vocabularyExpansion20261007": {
+    "date": "2026-10-07",
+    "baseRows": 9223,
+    "baseSha256": "762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237",
+    "additionalRows": 4000,
+    "rarity": {
+      "1": 2412,
+      "0": 1223,
+      "2": 351,
+      "3": 4,
+      "4": 10
+    },
+    "sourceSha256": {
+      "freeze.py": "311c34b19301ae175c8ff3605a3e9d0236d3158a5483791e1d73cc3c23e2a46e",
+      "entries.json": "52d04daf55e8a22002c8a520153872ccbe172dfde6ddaaae8dfa26dadafa8397",
+      "corrections.json": "071907bdcd4c595788e147dd937d4ba5821685c16db06a045c53b4649e58ce2a",
+      "reviews.json": "e7ce86ac0a93cb45e24d0a9300484743b94b05c8dc3528b879af1e52455c587a",
+      "activity_authoring.tsv": "865326b626c59e38263086d3bb8071f741f8f19625de338b42e6290c0e6a3617",
+      "activity_stages.json": "234969020571b9a42c1d9aa4a9750e884945d75e7029643448fa9ec726cae039",
+      "activity_words.txt": "8bf179f016d1f73397e36e3914c33abd65a6416bf5d169214b3436861264f79a",
+      "additional-sources.json": "c4141111d9753adb2ee469b020b493599f4fa9dfa704b444bca66916f3f29173",
+      "aggregate_reviews.py": "a2c0e94659d192f321302bce1c6033a6663f37456aac4a879bca4b308275e096",
+      "authored-drafts.json": "6c70ba74dfed7c59cc248d52050ea53946784db88b49026902f89f119048c336",
+      "authored_cross_activity.json": "b4f50b3c287ec88362c82b64f572c74bcd3f9b0ee8d80eb413569eca278e50f9",
+      "authored_cross_family.json": "8d01f105b88cfe3507cd8f1881247223ff591fc77784334db2646210c33d1221",
+      "authored_cross_services.json": "bfe42091e0415ff325507da6bebdd86620c2108f0c49ff0ff5b4bf3822d1789b",
+      "authoring-duplicates.json": "6267cdd28ba67388eaf0356ed1c083522eb57351227602c4df5e7d8db98fcbaa",
+      "candidates.json": "4ce2550855effab1884b80b68304f8389c2095f898a5ab5953fff3e6196baf19",
+      "coverage-audit.json": "ba1e600f4c149e58b399e2ce7cf4a8f9a5844d2e349efc238a07203d81873561",
+      "draft-provenance.json": "905579b677971c0f3f3d9e590fd6d8a1216acdfb5ef0f82c233ecb191847ea8c",
+      "editorial.py": "9080d97030c3e1156d3cc5d9ff0031492efdd01be37ff49019f1244d9d3289fb",
+      "entries.final-review.json": "8fd3c0f7c2b12ee4122878235e22aff5e6f42a2dd9c075eabe4c2fd4bea7f66d",
+      "entries.initial.json": "4bdebf861724df02043412da291fe988b2746dd6641033b0294710aa6a0e8026",
+      "family_authoring.tsv": "6df4dc2a9f11d14b67ef580e9b40f9b46bc94d775b06b6a1c2bc708d1a64c770",
+      "family_stages.json": "85eb8c46d05c5986e735dc0219d6800463e1ac8093fa4fc9d943731e17911fd2",
+      "final-confirmation-activity.json": "f93d7c0c03d8718f8e11dc25139bc3f5f293d8d65d33b05e89fa29adfba025f4",
+      "final-confirmation-family.json": "ffae126e07cc5f610a8e8926fa5084bc1d66ff06274dfb3442e0b9241a508ad1",
+      "final-confirmation-services.json": "4ebb9b4b42ecff539e5c261790707426e9a75bfaa027defeadb3b84e8d802d4e",
+      "final-review-snapshot.json": "534f79e9381ae30b683abc3693372519ddbfffecbe38e709db38f4cf5a4c2855",
+      "final-services-middle.json": "bec9829dd6609c9380a30a167d140a159ae75dc500d3665a8f0e008e0c899528",
+      "final-services-prefix.json": "9c4fa79bb3febd163a961edeb1efda496e13bd29e7b61cc3b5b0a4df4d2bf442",
+      "final-services-suffix.json": "67de8744aae8c73f08dd0abbfa845060f2f239e9f52ba4db71899152585df912",
+      "finalize_draft.py": "3575707bf9ccb97044ee7975d825bbb0ab751962b8d0c597e2f965017932dab5",
+      "initial-review-snapshot.json": "02b9b1bacb9aece10bd06743ef506a625f3b0a313326c30eaa2de642f8078643",
+      "merge_final_service_confirmations.py": "eb683c43dfe1f1cb3ca4088e6c6f5a4c56ff1fdb3703ef042f566578824c874d",
+      "merge_service_reviews.py": "b937f8d5e6d3296ba2cda88b7bb918264864960dcb89ade6436c1b4019052960",
+      "prepare_candidates.py": "c88b4fac11975b28f6d3b1f5399bfe0e35cab64df0eb523898da4bcc460e5c6d",
+      "prepare_content.py": "ed89f11b03e98902709c659cbe9f3db3ac91cbf6fe0ea50d4a81281cc76c06fa",
+      "retained-drafts.json": "53322f7abe8704c4b0d522cc3aa3c8e5600e139b99299ea29adc85e3cb32ac9c",
+      "root-final-corrections.json": "dea1a32c45e1e31a2c0249a19ab2e27eedaabedc6b702c1da2a8a56550568b9c",
+      "services-cross-prefix.json": "c2b3f2bf56995cc433ecca356160422596d0f31a54bd1b22262c3d44425aa230",
+      "services-cross-suffix.json": "a73a02ec71120447db5b40393b225fe64f8ed2140f64e6f2da722012517b8f6f",
+      "services_authoring.tsv": "6a988ba3e32f78a4ed629c0700da249171b19528c760666f32ce200ddde1434b",
+      "services_stages.json": "1025ad0c3e27c8a1c4bdf6a674cc2c96b29dcaa956a72aa19df2c468cc33643c",
+      "source_primary_activity.json": "04ee9f7349cee5770ec5fa4c2e48dc86d35384489f40dbf4c104bc177d44decb",
+      "source_primary_family.json": "64422c74e009c517ed86e1ee03580697634a1f1a7bf707427cdefc8d7bdbd7f4",
+      "source_primary_services.json": "26197216eeb4fea096e191882eb3fa450fc3639d64399bfa17cc03db9dba8558"
+    },
+    "boundary": "New teaching entries and evidenced existing-field corrections are AI-assisted; primary author-input/source/structural checks and independent complete editorial reading plus final changed-field/choice confirmations are separate evidence, bound to exact final input hashes. No second independent full language pass is claimed. All existing word IDs, headwords, stages, physical order and distractor IDs remain fixed. Structural validation and recorded AI review are not human linguistic certification or device-import evidence.",
+    "correctedExistingRows": 2
   }
 }

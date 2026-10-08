@@ -1,0 +1,5509 @@
+{
+  "inputSha256": "4bdebf861724df02043412da291fe988b2746dd6641033b0294710aa6a0e8026",
+  "source": "services",
+  "reviewer": "activity",
+  "range": [
+    252,
+    492
+  ],
+  "coveredIds": [
+    "wl_10475",
+    "wl_10476",
+    "wl_10477",
+    "wl_10478",
+    "wl_10479",
+    "wl_10480",
+    "wl_10481",
+    "wl_10482",
+    "wl_10483",
+    "wl_10484",
+    "wl_10485",
+    "wl_10486",
+    "wl_10487",
+    "wl_10488",
+    "wl_10489",
+    "wl_10490",
+    "wl_10491",
+    "wl_10492",
+    "wl_10493",
+    "wl_10494",
+    "wl_10495",
+    "wl_10496",
+    "wl_10497",
+    "wl_10498",
+    "wl_10499",
+    "wl_10500",
+    "wl_10501",
+    "wl_10502",
+    "wl_10503",
+    "wl_10504",
+    "wl_10505",
+    "wl_10506",
+    "wl_10507",
+    "wl_10508",
+    "wl_10509",
+    "wl_10510",
+    "wl_10511",
+    "wl_10512",
+    "wl_10513",
+    "wl_10514",
+    "wl_10515",
+    "wl_10516",
+    "wl_10517",
+    "wl_10518",
+    "wl_10519",
+    "wl_10520",
+    "wl_10521",
+    "wl_10522",
+    "wl_10523",
+    "wl_10524",
+    "wl_10525",
+    "wl_10526",
+    "wl_10527",
+    "wl_10528",
+    "wl_10529",
+    "wl_10530",
+    "wl_10531",
+    "wl_10532",
+    "wl_10533",
+    "wl_10534",
+    "wl_10535",
+    "wl_10536",
+    "wl_10537",
+    "wl_10538",
+    "wl_10539",
+    "wl_10540",
+    "wl_10541",
+    "wl_10542",
+    "wl_10543",
+    "wl_10544",
+    "wl_10545",
+    "wl_10546",
+    "wl_10547",
+    "wl_10548",
+    "wl_10549",
+    "wl_10550",
+    "wl_10551",
+    "wl_10552",
+    "wl_10553",
+    "wl_10554",
+    "wl_10555",
+    "wl_10556",
+    "wl_10557",
+    "wl_10558",
+    "wl_10559",
+    "wl_10560",
+    "wl_10561",
+    "wl_10562",
+    "wl_10563",
+    "wl_10564",
+    "wl_10565",
+    "wl_10566",
+    "wl_10567",
+    "wl_10568",
+    "wl_10569",
+    "wl_10570",
+    "wl_10571",
+    "wl_10572",
+    "wl_10573",
+    "wl_10574",
+    "wl_10575",
+    "wl_10576",
+    "wl_10577",
+    "wl_10578",
+    "wl_10579",
+    "wl_10580",
+    "wl_10581",
+    "wl_10582",
+    "wl_10583",
+    "wl_10584",
+    "wl_10585",
+    "wl_10586",
+    "wl_10587",
+    "wl_10588",
+    "wl_10589",
+    "wl_10590",
+    "wl_10591",
+    "wl_10592",
+    "wl_10593",
+    "wl_10594",
+    "wl_10595",
+    "wl_10596",
+    "wl_10597",
+    "wl_10598",
+    "wl_10599",
+    "wl_10600",
+    "wl_10601",
+    "wl_10602",
+    "wl_10603",
+    "wl_10604",
+    "wl_10605",
+    "wl_10606",
+    "wl_10607",
+    "wl_10608",
+    "wl_10609",
+    "wl_10610",
+    "wl_10611",
+    "wl_10612",
+    "wl_10613",
+    "wl_10614",
+    "wl_10615",
+    "wl_10616",
+    "wl_10617",
+    "wl_10618",
+    "wl_10619",
+    "wl_10620",
+    "wl_10621",
+    "wl_10622",
+    "wl_10623",
+    "wl_10624",
+    "wl_10625",
+    "wl_10626",
+    "wl_10627",
+    "wl_10628",
+    "wl_10629",
+    "wl_10630",
+    "wl_10631",
+    "wl_10632",
+    "wl_10633",
+    "wl_10634",
+    "wl_10635",
+    "wl_10636",
+    "wl_10637",
+    "wl_10638",
+    "wl_10639",
+    "wl_10640",
+    "wl_10641",
+    "wl_10642",
+    "wl_10643",
+    "wl_10644",
+    "wl_10645",
+    "wl_10646",
+    "wl_10647",
+    "wl_10648",
+    "wl_10649",
+    "wl_10650",
+    "wl_10651",
+    "wl_10652",
+    "wl_10653",
+    "wl_10654",
+    "wl_10655",
+    "wl_10656",
+    "wl_10657",
+    "wl_10658",
+    "wl_10659",
+    "wl_10660",
+    "wl_10661",
+    "wl_10662",
+    "wl_10663",
+    "wl_10664",
+    "wl_10665",
+    "wl_10666",
+    "wl_10667",
+    "wl_10668",
+    "wl_10669",
+    "wl_10670",
+    "wl_10671",
+    "wl_10672",
+    "wl_10673",
+    "wl_10674",
+    "wl_10675",
+    "wl_10676",
+    "wl_10677",
+    "wl_10678",
+    "wl_10679",
+    "wl_10680",
+    "wl_10681",
+    "wl_10682",
+    "wl_10683",
+    "wl_10684",
+    "wl_10685",
+    "wl_10686",
+    "wl_10687",
+    "wl_10688",
+    "wl_10689",
+    "wl_10690",
+    "wl_10691",
+    "wl_10692",
+    "wl_10693",
+    "wl_10694",
+    "wl_10695",
+    "wl_10696",
+    "wl_10697",
+    "wl_10698",
+    "wl_10699",
+    "wl_10700",
+    "wl_10701",
+    "wl_10702",
+    "wl_10703",
+    "wl_10704",
+    "wl_10705",
+    "wl_10706",
+    "wl_10707",
+    "wl_10708",
+    "wl_10709",
+    "wl_10710",
+    "wl_10711",
+    "wl_10712",
+    "wl_10713",
+    "wl_10714"
+  ],
+  "corrections": {
+    "wl_10481": {
+      "例句JSON": [
+        {
+          "hanzi": "他因公务外出。",
+          "pinyin": "tā yīn gōng wù wài chū.",
+          "english": "He is away on official business.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "因",
+              "pinyin": "yīn",
+              "gloss": "because of"
+            },
+            {
+              "hanzi": "公务",
+              "pinyin": "gōng wù",
+              "gloss": "official business"
+            },
+            {
+              "hanzi": "外出。",
+              "pinyin": "wài chū.",
+              "gloss": "go away (on a trip etc)"
+            }
+          ]
+        },
+        {
+          "hanzi": "这辆车只用于公务。",
+          "pinyin": "zhè liàng chē zhǐ yòng yú gōng wù.",
+          "english": "This vehicle is used only for official duties.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "辆",
+              "pinyin": "liàng",
+              "gloss": "LIANG (measure word)"
+            },
+            {
+              "hanzi": "车",
+              "pinyin": "chē",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "只",
+              "pinyin": "zhǐ",
+              "gloss": "only"
+            },
+            {
+              "hanzi": "用于",
+              "pinyin": "yòng yú",
+              "gloss": "be used for"
+            },
+            {
+              "hanzi": "公务。",
+              "pinyin": "gōng wù.",
+              "gloss": "official business"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10487": {
+      "例句JSON": [
+        {
+          "hanzi": "这辆车挡路了。",
+          "pinyin": "zhè liàng chē dǎng lù le.",
+          "english": "This vehicle is blocking the way.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "辆",
+              "pinyin": "liàng",
+              "gloss": "LIANG (measure word)"
+            },
+            {
+              "hanzi": "车",
+              "pinyin": "chē",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "挡路",
+              "pinyin": "dǎng lù",
+              "gloss": "block the way"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "请把挡路的箱子搬开。",
+          "pinyin": "qǐng bǎ dǎng lù de xiāng zi bān kāi.",
+          "english": "Move the boxes blocking the path.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "挡路",
+              "pinyin": "dǎng lù",
+              "gloss": "block the way"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "箱子",
+              "pinyin": "xiāng zi",
+              "gloss": "box"
+            },
+            {
+              "hanzi": "搬",
+              "pinyin": "bān",
+              "gloss": "move (sth relatively heavy or bulky)"
+            },
+            {
+              "hanzi": "开。",
+              "pinyin": "kāi.",
+              "gloss": "away; aside (result complement)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10482": {
+      "例句JSON": [
+        {
+          "hanzi": "请给这批设备报价。",
+          "pinyin": "qǐng gěi zhè pī shè bèi bào jià.",
+          "english": "Quote a price for this equipment.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "给",
+              "pinyin": "gěi",
+              "gloss": "to; for"
+            },
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "批",
+              "pinyin": "pī",
+              "gloss": "PI (measure word)"
+            },
+            {
+              "hanzi": "设备",
+              "pinyin": "shè bèi",
+              "gloss": "equipment"
+            },
+            {
+              "hanzi": "报价。",
+              "pinyin": "bào jià.",
+              "gloss": "quote a price"
+            }
+          ]
+        },
+        {
+          "hanzi": "他们比较了三家公司的报价。",
+          "pinyin": "tā men bǐ jiào le sān jiā gōng sī de bào jià.",
+          "english": "They compared quotations from three companies.",
+          "chunks": [
+            {
+              "hanzi": "他们",
+              "pinyin": "tā men",
+              "gloss": "they"
+            },
+            {
+              "hanzi": "比较",
+              "pinyin": "bǐ jiào",
+              "gloss": "compare"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "三",
+              "pinyin": "sān",
+              "gloss": "three"
+            },
+            {
+              "hanzi": "家",
+              "pinyin": "jiā",
+              "gloss": "JIA (measure word)"
+            },
+            {
+              "hanzi": "公司",
+              "pinyin": "gōng sī",
+              "gloss": "company"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "报价。",
+              "pinyin": "bào jià.",
+              "gloss": "price quotation"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10483": {
+      "例句JSON": [
+        {
+          "hanzi": "我们需要在这里转机。",
+          "pinyin": "wǒ men xū yào zài zhè lǐ zhuǎn jī.",
+          "english": "We need to change planes here.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "这里",
+              "pinyin": "zhè lǐ",
+              "gloss": "here"
+            },
+            {
+              "hanzi": "转机。",
+              "pinyin": "zhuǎn jī.",
+              "gloss": "change planes"
+            }
+          ]
+        },
+        {
+          "hanzi": "谈判终于出现了转机。",
+          "pinyin": "tán pàn zhōng yú chū xiàn le zhuǎn jī.",
+          "english": "The negotiations finally took a favorable turn.",
+          "chunks": [
+            {
+              "hanzi": "谈判",
+              "pinyin": "tán pàn",
+              "gloss": "negotiation"
+            },
+            {
+              "hanzi": "终于",
+              "pinyin": "zhōng yú",
+              "gloss": "finally"
+            },
+            {
+              "hanzi": "出现",
+              "pinyin": "chū xiàn",
+              "gloss": "appear"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "转机。",
+              "pinyin": "zhuǎn jī.",
+              "gloss": "favorable turn"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10485": {
+      "例句JSON": [
+        {
+          "hanzi": "违章停车会被罚款。",
+          "pinyin": "wéi zhāng tíng chē huì bèi fá kuǎn.",
+          "english": "Parking illegally can result in a fine.",
+          "chunks": [
+            {
+              "hanzi": "违章",
+              "pinyin": "wéi zhāng",
+              "gloss": "violate regulations"
+            },
+            {
+              "hanzi": "停车",
+              "pinyin": "tíng chē",
+              "gloss": "park"
+            },
+            {
+              "hanzi": "会",
+              "pinyin": "huì",
+              "gloss": "may; can (possibility)"
+            },
+            {
+              "hanzi": "被",
+              "pinyin": "bèi",
+              "gloss": "BEI (passive)"
+            },
+            {
+              "hanzi": "罚款。",
+              "pinyin": "fá kuǎn.",
+              "gloss": "fine"
+            }
+          ]
+        },
+        {
+          "hanzi": "他按时缴纳了罚款。",
+          "pinyin": "tā àn shí jiǎo nà le fá kuǎn.",
+          "english": "He paid the fine on time.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "按时",
+              "pinyin": "àn shí",
+              "gloss": "on time"
+            },
+            {
+              "hanzi": "缴纳",
+              "pinyin": "jiǎo nà",
+              "gloss": "pay a required charge"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "罚款。",
+              "pinyin": "fá kuǎn.",
+              "gloss": "fine"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10500": {
+      "例句JSON": [
+        {
+          "hanzi": "餐厅每天采购新鲜蔬菜。",
+          "pinyin": "cān tīng měi tiān cǎi gòu xīn xiān shū cài.",
+          "english": "The restaurant buys fresh vegetables daily.",
+          "chunks": [
+            {
+              "hanzi": "餐厅",
+              "pinyin": "cān tīng",
+              "gloss": "restaurant"
+            },
+            {
+              "hanzi": "每天",
+              "pinyin": "měi tiān",
+              "gloss": "every day"
+            },
+            {
+              "hanzi": "采购",
+              "pinyin": "cǎi gòu",
+              "gloss": "purchase supplies"
+            },
+            {
+              "hanzi": "新鲜",
+              "pinyin": "xīn xiān",
+              "gloss": "fresh (experience, food etc)"
+            },
+            {
+              "hanzi": "蔬菜。",
+              "pinyin": "shū cài.",
+              "gloss": "vegetables"
+            }
+          ]
+        },
+        {
+          "hanzi": "采购清单上有十种材料。",
+          "pinyin": "cǎi gòu qīng dān shàng yǒu shí zhǒng cái liào.",
+          "english": "The purchasing list contains ten materials.",
+          "chunks": [
+            {
+              "hanzi": "采购",
+              "pinyin": "cǎi gòu",
+              "gloss": "purchase supplies"
+            },
+            {
+              "hanzi": "清单",
+              "pinyin": "qīng dān",
+              "gloss": "list of items"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "have; there is"
+            },
+            {
+              "hanzi": "十",
+              "pinyin": "shí",
+              "gloss": "ten"
+            },
+            {
+              "hanzi": "种",
+              "pinyin": "zhǒng",
+              "gloss": "ZHONG (classifier for kinds)"
+            },
+            {
+              "hanzi": "材料。",
+              "pinyin": "cái liào.",
+              "gloss": "(raw) material"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10503": {
+      "例句JSON": [
+        {
+          "hanzi": "客人下午到访。",
+          "pinyin": "kè rén xià wǔ dào fǎng.",
+          "english": "The guests will visit this afternoon.",
+          "chunks": [
+            {
+              "hanzi": "客人",
+              "pinyin": "kè rén",
+              "gloss": "guest"
+            },
+            {
+              "hanzi": "下午",
+              "pinyin": "xià wǔ",
+              "gloss": "afternoon"
+            },
+            {
+              "hanzi": "到访。",
+              "pinyin": "dào fǎng.",
+              "gloss": "pay a visit"
+            }
+          ]
+        },
+        {
+          "hanzi": "到访人员需要登记。",
+          "pinyin": "dào fǎng rén yuán xū yào dēng jì.",
+          "english": "Visitors need to register.",
+          "chunks": [
+            {
+              "hanzi": "到访",
+              "pinyin": "dào fǎng",
+              "gloss": "pay a visit"
+            },
+            {
+              "hanzi": "人员",
+              "pinyin": "rén yuán",
+              "gloss": "people; persons"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "登记。",
+              "pinyin": "dēng jì.",
+              "gloss": "register (one's name)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10509": {
+      "罕度": "1"
+    },
+    "wl_10515": {
+      "例句JSON": [
+        {
+          "hanzi": "搬运工把箱子送进仓库。",
+          "pinyin": "bān yùn gōng bǎ xiāng zi sòng jìn cāng kù.",
+          "english": "The porter moved the boxes into the warehouse.",
+          "chunks": [
+            {
+              "hanzi": "搬运工",
+              "pinyin": "bān yùn gōng",
+              "gloss": "porter"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "箱子",
+              "pinyin": "xiāng zi",
+              "gloss": "box"
+            },
+            {
+              "hanzi": "送",
+              "pinyin": "sòng",
+              "gloss": "send; deliver"
+            },
+            {
+              "hanzi": "进",
+              "pinyin": "jìn",
+              "gloss": "go in"
+            },
+            {
+              "hanzi": "仓库。",
+              "pinyin": "cāng kù.",
+              "gloss": "warehouse"
+            }
+          ]
+        },
+        {
+          "hanzi": "他请搬运工帮忙抬家具。",
+          "pinyin": "tā qǐng bān yùn gōng bāng máng tái jiā jù.",
+          "english": "He asked a porter to help lift the furniture.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "ask; invite"
+            },
+            {
+              "hanzi": "搬运工",
+              "pinyin": "bān yùn gōng",
+              "gloss": "porter"
+            },
+            {
+              "hanzi": "帮忙",
+              "pinyin": "bāng máng",
+              "gloss": "help"
+            },
+            {
+              "hanzi": "抬",
+              "pinyin": "tái",
+              "gloss": "lift"
+            },
+            {
+              "hanzi": "家具。",
+              "pinyin": "jiā jù.",
+              "gloss": "furniture"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10517": {
+      "例句JSON": [
+        {
+          "hanzi": "她请家人代办手续。",
+          "pinyin": "tā qǐng jiā rén dài bàn shǒu xù.",
+          "english": "She asked a relative to handle the formalities.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "ask; request"
+            },
+            {
+              "hanzi": "家人",
+              "pinyin": "jiā rén",
+              "gloss": "family members"
+            },
+            {
+              "hanzi": "代办",
+              "pinyin": "dài bàn",
+              "gloss": "handle on someone's behalf"
+            },
+            {
+              "hanzi": "手续。",
+              "pinyin": "shǒu xù.",
+              "gloss": "formalities"
+            }
+          ]
+        },
+        {
+          "hanzi": "这项业务可以代办。",
+          "pinyin": "zhè xiàng yè wù kě yǐ dài bàn.",
+          "english": "Someone else can handle this service for you.",
+          "chunks": [
+            {
+              "hanzi": "这项",
+              "pinyin": "zhè xiàng",
+              "gloss": "this (XIANG classifier)"
+            },
+            {
+              "hanzi": "业务",
+              "pinyin": "yè wù",
+              "gloss": "business services; work"
+            },
+            {
+              "hanzi": "可以",
+              "pinyin": "kě yǐ",
+              "gloss": "can; may"
+            },
+            {
+              "hanzi": "代办。",
+              "pinyin": "dài bàn.",
+              "gloss": "handle on someone's behalf"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10523": {
+      "例句JSON": [
+        {
+          "hanzi": "冬天的电费比较高。",
+          "pinyin": "dōng tiān de diàn fèi bǐ jiào gāo.",
+          "english": "Electricity charges are higher in winter.",
+          "chunks": [
+            {
+              "hanzi": "冬天",
+              "pinyin": "dōng tiān",
+              "gloss": "winter"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "电费",
+              "pinyin": "diàn fèi",
+              "gloss": "electricity charge"
+            },
+            {
+              "hanzi": "比较",
+              "pinyin": "bǐ jiào",
+              "gloss": "relatively; rather"
+            },
+            {
+              "hanzi": "高。",
+              "pinyin": "gāo.",
+              "gloss": "high"
+            }
+          ]
+        },
+        {
+          "hanzi": "他忘了缴电费。",
+          "pinyin": "tā wàng le jiǎo diàn fèi.",
+          "english": "He forgot to pay the electricity bill.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "忘",
+              "pinyin": "wàng",
+              "gloss": "forget"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "缴",
+              "pinyin": "jiǎo",
+              "gloss": "hand in"
+            },
+            {
+              "hanzi": "电费。",
+              "pinyin": "diàn fèi.",
+              "gloss": "electricity charge"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10524": {
+      "例句JSON": [
+        {
+          "hanzi": "燃气费按用量计算。",
+          "pinyin": "rán qì fèi àn yòng liàng jì suàn.",
+          "english": "The gas charge is calculated from usage.",
+          "chunks": [
+            {
+              "hanzi": "燃气费",
+              "pinyin": "rán qì fèi",
+              "gloss": "gas utility charge"
+            },
+            {
+              "hanzi": "按",
+              "pinyin": "àn",
+              "gloss": "according to"
+            },
+            {
+              "hanzi": "用量",
+              "pinyin": "yòng liàng",
+              "gloss": "quantity used"
+            },
+            {
+              "hanzi": "计算。",
+              "pinyin": "jì suàn.",
+              "gloss": "calculate"
+            }
+          ]
+        },
+        {
+          "hanzi": "她在网上交了燃气费。",
+          "pinyin": "tā zài wǎng shàng jiāo le rán qì fèi.",
+          "english": "She paid the gas bill online.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "网上",
+              "pinyin": "wǎng shàng",
+              "gloss": "online"
+            },
+            {
+              "hanzi": "交",
+              "pinyin": "jiāo",
+              "gloss": "pay"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "燃气费。",
+              "pinyin": "rán qì fèi.",
+              "gloss": "gas utility charge"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10531": {
+      "例句JSON": [
+        {
+          "hanzi": "公司发出了一封催款邮件。",
+          "pinyin": "gōng sī fā chū le yì fēng cuī kuǎn yóu jiàn.",
+          "english": "The company sent a payment reminder email.",
+          "chunks": [
+            {
+              "hanzi": "公司",
+              "pinyin": "gōng sī",
+              "gloss": "company"
+            },
+            {
+              "hanzi": "发出",
+              "pinyin": "fā chū",
+              "gloss": "send out; issue"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "一",
+              "pinyin": "yì",
+              "gloss": "one"
+            },
+            {
+              "hanzi": "封",
+              "pinyin": "fēng",
+              "gloss": "FENG (measure word)"
+            },
+            {
+              "hanzi": "催款",
+              "pinyin": "cuī kuǎn",
+              "gloss": "request overdue payment"
+            },
+            {
+              "hanzi": "邮件。",
+              "pinyin": "yóu jiàn.",
+              "gloss": "email"
+            }
+          ]
+        },
+        {
+          "hanzi": "他打电话给客户催款。",
+          "pinyin": "tā dǎ diàn huà gěi kè hù cuī kuǎn.",
+          "english": "He called the customer to request payment.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "打电话",
+              "pinyin": "dǎ diàn huà",
+              "gloss": "make a phone call"
+            },
+            {
+              "hanzi": "给",
+              "pinyin": "gěi",
+              "gloss": "to; for"
+            },
+            {
+              "hanzi": "客户",
+              "pinyin": "kè hù",
+              "gloss": "client"
+            },
+            {
+              "hanzi": "催款。",
+              "pinyin": "cuī kuǎn.",
+              "gloss": "request overdue payment"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10533": {
+      "例句JSON": [
+        {
+          "hanzi": "工资打进了储蓄卡。",
+          "pinyin": "gōng zī dǎ jìn le chǔ xù kǎ.",
+          "english": "The salary was paid into the savings account.",
+          "chunks": [
+            {
+              "hanzi": "工资",
+              "pinyin": "gōng zī",
+              "gloss": "wages"
+            },
+            {
+              "hanzi": "打进",
+              "pinyin": "dǎ jìn",
+              "gloss": "pay into (an account)"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "储蓄卡。",
+              "pinyin": "chǔ xù kǎ.",
+              "gloss": "savings account card"
+            }
+          ]
+        },
+        {
+          "hanzi": "这张储蓄卡已经停用了。",
+          "pinyin": "zhè zhāng chǔ xù kǎ yǐ jīng tíng yòng le.",
+          "english": "This savings account card is no longer in use.",
+          "chunks": [
+            {
+              "hanzi": "这张",
+              "pinyin": "zhè zhāng",
+              "gloss": "this (ZHANG measure word)"
+            },
+            {
+              "hanzi": "储蓄卡",
+              "pinyin": "chǔ xù kǎ",
+              "gloss": "savings account card"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "停用",
+              "pinyin": "tíng yòng",
+              "gloss": "stop using"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10529": {
+      "例句JSON": [
+        {
+          "hanzi": "他给家人汇款。",
+          "pinyin": "tā gěi jiā rén huì kuǎn.",
+          "english": "He sends money to his family.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "给",
+              "pinyin": "gěi",
+              "gloss": "to; for"
+            },
+            {
+              "hanzi": "家人",
+              "pinyin": "jiā rén",
+              "gloss": "family members"
+            },
+            {
+              "hanzi": "汇款。",
+              "pinyin": "huì kuǎn.",
+              "gloss": "remit money"
+            }
+          ]
+        },
+        {
+          "hanzi": "这笔汇款还没有到账。",
+          "pinyin": "zhè bǐ huì kuǎn hái méi yǒu dào zhàng.",
+          "english": "This remittance has not arrived yet.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "笔",
+              "pinyin": "bǐ",
+              "gloss": "BI (measure word)"
+            },
+            {
+              "hanzi": "汇款",
+              "pinyin": "huì kuǎn",
+              "gloss": "remittance"
+            },
+            {
+              "hanzi": "还",
+              "pinyin": "hái",
+              "gloss": "still; also"
+            },
+            {
+              "hanzi": "没有",
+              "pinyin": "méi yǒu",
+              "gloss": "do not have; have not"
+            },
+            {
+              "hanzi": "到账。",
+              "pinyin": "dào zhàng.",
+              "gloss": "(of money) to arrive in an account"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10538": {
+      "例句JSON": [
+        {
+          "hanzi": "这家公司经营客运业务。",
+          "pinyin": "zhè jiā gōng sī jīng yíng kè yùn yè wù.",
+          "english": "This company operates passenger transport services.",
+          "chunks": [
+            {
+              "hanzi": "这家",
+              "pinyin": "zhè jiā",
+              "gloss": "this (JIA classifier)"
+            },
+            {
+              "hanzi": "公司",
+              "pinyin": "gōng sī",
+              "gloss": "company"
+            },
+            {
+              "hanzi": "经营",
+              "pinyin": "jīng yíng",
+              "gloss": "to run; to operate a business"
+            },
+            {
+              "hanzi": "客运",
+              "pinyin": "kè yùn",
+              "gloss": "passenger transport"
+            },
+            {
+              "hanzi": "业务。",
+              "pinyin": "yè wù.",
+              "gloss": "business services; work"
+            }
+          ]
+        },
+        {
+          "hanzi": "客运高峰出现在假期。",
+          "pinyin": "kè yùn gāo fēng chū xiàn zài jià qī.",
+          "english": "Passenger transport peaks during holidays.",
+          "chunks": [
+            {
+              "hanzi": "客运",
+              "pinyin": "kè yùn",
+              "gloss": "passenger transport"
+            },
+            {
+              "hanzi": "高峰",
+              "pinyin": "gāo fēng",
+              "gloss": "peak"
+            },
+            {
+              "hanzi": "出现",
+              "pinyin": "chū xiàn",
+              "gloss": "occur"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "during; in"
+            },
+            {
+              "hanzi": "假期。",
+              "pinyin": "jià qī.",
+              "gloss": "vacation"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10546": {
+      "例句JSON": [
+        {
+          "hanzi": "交通卡可以在机器上充值。",
+          "pinyin": "jiāo tōng kǎ kě yǐ zài jī qì shàng chōng zhí.",
+          "english": "You can top up the transport card at the machine.",
+          "chunks": [
+            {
+              "hanzi": "交通卡",
+              "pinyin": "jiāo tōng kǎ",
+              "gloss": "transport card"
+            },
+            {
+              "hanzi": "可以",
+              "pinyin": "kě yǐ",
+              "gloss": "can; may"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "机器",
+              "pinyin": "jī qì",
+              "gloss": "machine"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "充值。",
+              "pinyin": "chōng zhí.",
+              "gloss": "recharge (money onto a card)"
+            }
+          ]
+        },
+        {
+          "hanzi": "这张交通卡能坐地铁。",
+          "pinyin": "zhè zhāng jiāo tōng kǎ néng zuò dì tiě.",
+          "english": "This transport card can be used on the subway.",
+          "chunks": [
+            {
+              "hanzi": "这张",
+              "pinyin": "zhè zhāng",
+              "gloss": "this (ZHANG measure word)"
+            },
+            {
+              "hanzi": "交通卡",
+              "pinyin": "jiāo tōng kǎ",
+              "gloss": "transport card"
+            },
+            {
+              "hanzi": "能",
+              "pinyin": "néng",
+              "gloss": "can"
+            },
+            {
+              "hanzi": "坐",
+              "pinyin": "zuò",
+              "gloss": "ride; travel by"
+            },
+            {
+              "hanzi": "地铁。",
+              "pinyin": "dì tiě.",
+              "gloss": "subway"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10549": {
+      "例句JSON": [
+        {
+          "hanzi": "我想坐靠窗的座位。",
+          "pinyin": "wǒ xiǎng zuò kào chuāng de zuò wèi.",
+          "english": "I would like a window seat.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "想",
+              "pinyin": "xiǎng",
+              "gloss": "want to; think"
+            },
+            {
+              "hanzi": "坐",
+              "pinyin": "zuò",
+              "gloss": "sit in"
+            },
+            {
+              "hanzi": "靠窗",
+              "pinyin": "kào chuāng",
+              "gloss": "by a window"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "座位。",
+              "pinyin": "zuò wèi.",
+              "gloss": "seat"
+            }
+          ]
+        },
+        {
+          "hanzi": "靠窗的桌子已经有人了。",
+          "pinyin": "kào chuāng de zhuō zi yǐ jīng yǒu rén le.",
+          "english": "The table by the window is occupied.",
+          "chunks": [
+            {
+              "hanzi": "靠窗",
+              "pinyin": "kào chuāng",
+              "gloss": "by a window"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "桌子",
+              "pinyin": "zhuō zi",
+              "gloss": "table"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "有人",
+              "pinyin": "yǒu rén",
+              "gloss": "someone"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10550": {
+      "例句JSON": [
+        {
+          "hanzi": "司机把车靠边停下。",
+          "pinyin": "sī jī bǎ chē kào biān tíng xià.",
+          "english": "The driver pulled over and stopped.",
+          "chunks": [
+            {
+              "hanzi": "司机",
+              "pinyin": "sī jī",
+              "gloss": "driver"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "车",
+              "pinyin": "chē",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "靠边",
+              "pinyin": "kào biān",
+              "gloss": "move to the side"
+            },
+            {
+              "hanzi": "停下。",
+              "pinyin": "tíng xià.",
+              "gloss": "stop"
+            }
+          ]
+        },
+        {
+          "hanzi": "请靠边走，让出中间的路。",
+          "pinyin": "qǐng kào biān zǒu, ràng chū zhōng jiān de lù.",
+          "english": "Walk to the side and leave the center clear.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "靠边",
+              "pinyin": "kào biān",
+              "gloss": "move to the side"
+            },
+            {
+              "hanzi": "走，",
+              "pinyin": "zǒu,",
+              "gloss": "walk; go"
+            },
+            {
+              "hanzi": "让",
+              "pinyin": "ràng",
+              "gloss": "give way; leave room"
+            },
+            {
+              "hanzi": "出",
+              "pinyin": "chū",
+              "gloss": "out"
+            },
+            {
+              "hanzi": "中间",
+              "pinyin": "zhōng jiān",
+              "gloss": "middle"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "路。",
+              "pinyin": "lù.",
+              "gloss": "road"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10554": {
+      "例句JSON": [
+        {
+          "hanzi": "绿灯亮后车辆开始前进。",
+          "pinyin": "lǜ dēng liàng hòu chē liàng kāi shǐ qián jìn.",
+          "english": "The vehicles moved forward when the light turned green.",
+          "chunks": [
+            {
+              "hanzi": "绿灯",
+              "pinyin": "lǜ dēng",
+              "gloss": "green light"
+            },
+            {
+              "hanzi": "亮",
+              "pinyin": "liàng",
+              "gloss": "light up; turn on"
+            },
+            {
+              "hanzi": "后",
+              "pinyin": "hòu",
+              "gloss": "after"
+            },
+            {
+              "hanzi": "车辆",
+              "pinyin": "chē liàng",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "开始",
+              "pinyin": "kāi shǐ",
+              "gloss": "begin"
+            },
+            {
+              "hanzi": "前进。",
+              "pinyin": "qián jìn.",
+              "gloss": "go forward"
+            }
+          ]
+        },
+        {
+          "hanzi": "我等绿灯再过马路。",
+          "pinyin": "wǒ děng lǜ dēng zài guò mǎ lù.",
+          "english": "I wait for the green light before crossing.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "等",
+              "pinyin": "děng",
+              "gloss": "wait for"
+            },
+            {
+              "hanzi": "绿灯",
+              "pinyin": "lǜ dēng",
+              "gloss": "green light"
+            },
+            {
+              "hanzi": "再",
+              "pinyin": "zài",
+              "gloss": "then; again"
+            },
+            {
+              "hanzi": "过马路。",
+              "pinyin": "guò mǎ lù.",
+              "gloss": "cross the street"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10553": {
+      "例句JSON": [
+        {
+          "hanzi": "前方是红灯，请停车。",
+          "pinyin": "qián fāng shì hóng dēng, qǐng tíng chē.",
+          "english": "The light ahead is red; stop.",
+          "chunks": [
+            {
+              "hanzi": "前方",
+              "pinyin": "qián fāng",
+              "gloss": "ahead"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "is; am; are"
+            },
+            {
+              "hanzi": "红灯，",
+              "pinyin": "hóng dēng,",
+              "gloss": "red light"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "停车。",
+              "pinyin": "tíng chē.",
+              "gloss": "to park; to stop a vehicle"
+            }
+          ]
+        },
+        {
+          "hanzi": "机器上的红灯亮了。",
+          "pinyin": "jī qì shàng de hóng dēng liàng le.",
+          "english": "The red light on the machine came on.",
+          "chunks": [
+            {
+              "hanzi": "机器",
+              "pinyin": "jī qì",
+              "gloss": "machine"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "红灯",
+              "pinyin": "hóng dēng",
+              "gloss": "red light"
+            },
+            {
+              "hanzi": "亮",
+              "pinyin": "liàng",
+              "gloss": "light up; turn on"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10555": {
+      "例句JSON": [
+        {
+          "hanzi": "信号灯变成了黄灯。",
+          "pinyin": "xìn hào dēng biàn chéng le huáng dēng.",
+          "english": "The traffic light turned amber.",
+          "chunks": [
+            {
+              "hanzi": "信号灯",
+              "pinyin": "xìn hào dēng",
+              "gloss": "signal light"
+            },
+            {
+              "hanzi": "变成",
+              "pinyin": "biàn chéng",
+              "gloss": "become"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "黄灯。",
+              "pinyin": "huáng dēng.",
+              "gloss": "amber light"
+            }
+          ]
+        },
+        {
+          "hanzi": "面板上的黄灯一直闪烁。",
+          "pinyin": "miàn bǎn shàng de huáng dēng yì zhí shǎn shuò.",
+          "english": "The amber light on the panel kept flashing.",
+          "chunks": [
+            {
+              "hanzi": "面板",
+              "pinyin": "miàn bǎn",
+              "gloss": "panel"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "黄灯",
+              "pinyin": "huáng dēng",
+              "gloss": "amber light"
+            },
+            {
+              "hanzi": "一直",
+              "pinyin": "yì zhí",
+              "gloss": "continuously; all along"
+            },
+            {
+              "hanzi": "闪烁。",
+              "pinyin": "shǎn shuò.",
+              "gloss": "flash; blink"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10557": {
+      "例句JSON": [
+        {
+          "hanzi": "过桥后左转。",
+          "pinyin": "guò qiáo hòu zuǒ zhuǎn.",
+          "english": "Turn left after crossing the bridge.",
+          "chunks": [
+            {
+              "hanzi": "过",
+              "pinyin": "guò",
+              "gloss": "cross"
+            },
+            {
+              "hanzi": "桥",
+              "pinyin": "qiáo",
+              "gloss": "bridge"
+            },
+            {
+              "hanzi": "后",
+              "pinyin": "hòu",
+              "gloss": "after"
+            },
+            {
+              "hanzi": "左转。",
+              "pinyin": "zuǒ zhuǎn.",
+              "gloss": "turn left"
+            }
+          ]
+        },
+        {
+          "hanzi": "这辆车准备左转。",
+          "pinyin": "zhè liàng chē zhǔn bèi zuǒ zhuǎn.",
+          "english": "This vehicle is preparing to turn left.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "辆",
+              "pinyin": "liàng",
+              "gloss": "LIANG (measure word)"
+            },
+            {
+              "hanzi": "车",
+              "pinyin": "chē",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "准备",
+              "pinyin": "zhǔn bèi",
+              "gloss": "prepare"
+            },
+            {
+              "hanzi": "左转。",
+              "pinyin": "zuǒ zhuǎn.",
+              "gloss": "turn left"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10571": {
+      "例句JSON": [
+        {
+          "hanzi": "警员记录了她的描述。",
+          "pinyin": "jǐng yuán jì lù le tā de miáo shù.",
+          "english": "The police officer recorded her description.",
+          "chunks": [
+            {
+              "hanzi": "警员",
+              "pinyin": "jǐng yuán",
+              "gloss": "police officer"
+            },
+            {
+              "hanzi": "记录",
+              "pinyin": "jì lù",
+              "gloss": "record"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "描述。",
+              "pinyin": "miáo shù.",
+              "gloss": "description"
+            }
+          ]
+        },
+        {
+          "hanzi": "两名警员来到现场。",
+          "pinyin": "liǎng míng jǐng yuán lái dào xiàn chǎng.",
+          "english": "Two police officers arrived at the scene.",
+          "chunks": [
+            {
+              "hanzi": "两",
+              "pinyin": "liǎng",
+              "gloss": "two"
+            },
+            {
+              "hanzi": "名",
+              "pinyin": "míng",
+              "gloss": "MING (classifier for people)"
+            },
+            {
+              "hanzi": "警员",
+              "pinyin": "jǐng yuán",
+              "gloss": "police officer"
+            },
+            {
+              "hanzi": "来到",
+              "pinyin": "lái dào",
+              "gloss": "arrive"
+            },
+            {
+              "hanzi": "现场。",
+              "pinyin": "xiàn chǎng.",
+              "gloss": "the scene (of a crime, accident etc)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10562": {
+      "例句JSON": [
+        {
+          "hanzi": "酒店门口有泊车服务。",
+          "pinyin": "jiǔ diàn mén kǒu yǒu bó chē fú wù.",
+          "english": "There is a parking service at the hotel entrance.",
+          "chunks": [
+            {
+              "hanzi": "酒店",
+              "pinyin": "jiǔ diàn",
+              "gloss": "hotel"
+            },
+            {
+              "hanzi": "门口",
+              "pinyin": "mén kǒu",
+              "gloss": "entrance"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "have; there is"
+            },
+            {
+              "hanzi": "泊车",
+              "pinyin": "bó chē",
+              "gloss": "park a vehicle"
+            },
+            {
+              "hanzi": "服务。",
+              "pinyin": "fú wù.",
+              "gloss": "service"
+            }
+          ]
+        },
+        {
+          "hanzi": "他在路边泊车。",
+          "pinyin": "tā zài lù biān bó chē.",
+          "english": "He parked beside the road.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "路边",
+              "pinyin": "lù biān",
+              "gloss": "beside the road"
+            },
+            {
+              "hanzi": "泊车。",
+              "pinyin": "bó chē.",
+              "gloss": "park a vehicle"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10576": {
+      "例句JSON": [
+        {
+          "hanzi": "收件地址少了门牌号。",
+          "pinyin": "shōu jiàn dì zhǐ shǎo le mén pái hào.",
+          "english": "The delivery address is missing the house number.",
+          "chunks": [
+            {
+              "hanzi": "收件地址",
+              "pinyin": "shōu jiàn dì zhǐ",
+              "gloss": "delivery address"
+            },
+            {
+              "hanzi": "少",
+              "pinyin": "shǎo",
+              "gloss": "be missing"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "门牌号。",
+              "pinyin": "mén pái hào.",
+              "gloss": "house or building number"
+            }
+          ]
+        },
+        {
+          "hanzi": "她在手机上修改了收件地址。",
+          "pinyin": "tā zài shǒu jī shàng xiū gǎi le shōu jiàn dì zhǐ.",
+          "english": "She changed the delivery address on her phone.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "手机",
+              "pinyin": "shǒu jī",
+              "gloss": "cell phone"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "修改",
+              "pinyin": "xiū gǎi",
+              "gloss": "revise"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "收件地址。",
+              "pinyin": "shōu jiàn dì zhǐ.",
+              "gloss": "delivery address"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10582": {
+      "例句JSON": [
+        {
+          "hanzi": "柜台上贴着收款码。",
+          "pinyin": "guì tái shàng tiē zhe shōu kuǎn mǎ.",
+          "english": "A payment collection code is posted on the counter.",
+          "chunks": [
+            {
+              "hanzi": "柜台",
+              "pinyin": "guì tái",
+              "gloss": "counter"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "贴",
+              "pinyin": "tiē",
+              "gloss": "stick; post"
+            },
+            {
+              "hanzi": "着",
+              "pinyin": "zhe",
+              "gloss": "ZHE (ongoing state)"
+            },
+            {
+              "hanzi": "收款码。",
+              "pinyin": "shōu kuǎn mǎ.",
+              "gloss": "payment collection code"
+            }
+          ]
+        },
+        {
+          "hanzi": "店主更换了收款码。",
+          "pinyin": "diàn zhǔ gēng huàn le shōu kuǎn mǎ.",
+          "english": "The shopkeeper changed the payment collection code.",
+          "chunks": [
+            {
+              "hanzi": "店主",
+              "pinyin": "diàn zhǔ",
+              "gloss": "shop owner"
+            },
+            {
+              "hanzi": "更换",
+              "pinyin": "gēng huàn",
+              "gloss": "replace; change"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "收款码。",
+              "pinyin": "shōu kuǎn mǎ.",
+              "gloss": "payment collection code"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10581": {
+      "英文释义": "payer's payment code",
+      "部件JSON": [
+        {
+          "hanzi": "付款码",
+          "pinyin": "fù kuǎn mǎ",
+          "gloss": "payer's payment code"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "请向收银员出示付款码。",
+          "pinyin": "qǐng xiàng shōu yín yuán chū shì fù kuǎn mǎ.",
+          "english": "Show your payment code to the cashier.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "向",
+              "pinyin": "xiàng",
+              "gloss": "toward"
+            },
+            {
+              "hanzi": "收银员",
+              "pinyin": "shōu yín yuán",
+              "gloss": "cashier"
+            },
+            {
+              "hanzi": "出示",
+              "pinyin": "chū shì",
+              "gloss": "show"
+            },
+            {
+              "hanzi": "付款码。",
+              "pinyin": "fù kuǎn mǎ.",
+              "gloss": "payer's payment code"
+            }
+          ]
+        },
+        {
+          "hanzi": "付款码已经刷新了。",
+          "pinyin": "fù kuǎn mǎ yǐ jīng shuā xīn le.",
+          "english": "The payment code has refreshed.",
+          "chunks": [
+            {
+              "hanzi": "付款码",
+              "pinyin": "fù kuǎn mǎ",
+              "gloss": "payer's payment code"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "刷新",
+              "pinyin": "shuā xīn",
+              "gloss": "refresh"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10586": {
+      "例句JSON": [
+        {
+          "hanzi": "包装已经破损了。",
+          "pinyin": "bāo zhuāng yǐ jīng pò sǔn le.",
+          "english": "The packaging is damaged.",
+          "chunks": [
+            {
+              "hanzi": "包装",
+              "pinyin": "bāo zhuāng",
+              "gloss": "packaging; package goods"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "破损",
+              "pinyin": "pò sǔn",
+              "gloss": "become damaged"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "她把礼物包装好了。",
+          "pinyin": "tā bǎ lǐ wù bāo zhuāng hǎo le.",
+          "english": "She wrapped the gift.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "礼物",
+              "pinyin": "lǐ wù",
+              "gloss": "gift"
+            },
+            {
+              "hanzi": "包装",
+              "pinyin": "bāo zhuāng",
+              "gloss": "packaging; package goods"
+            },
+            {
+              "hanzi": "好",
+              "pinyin": "hǎo",
+              "gloss": "HAO (successful completion)"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10589": {
+      "例句JSON": [
+        {
+          "hanzi": "请用胶带封好箱子。",
+          "pinyin": "qǐng yòng jiāo dài fēng hǎo xiāng zi.",
+          "english": "Seal the box with adhesive tape.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "用",
+              "pinyin": "yòng",
+              "gloss": "use"
+            },
+            {
+              "hanzi": "胶带",
+              "pinyin": "jiāo dài",
+              "gloss": "adhesive tape"
+            },
+            {
+              "hanzi": "封",
+              "pinyin": "fēng",
+              "gloss": "seal"
+            },
+            {
+              "hanzi": "好",
+              "pinyin": "hǎo",
+              "gloss": "HAO (successful completion)"
+            },
+            {
+              "hanzi": "箱子。",
+              "pinyin": "xiāng zi.",
+              "gloss": "box"
+            }
+          ]
+        },
+        {
+          "hanzi": "她剪下一段胶带。",
+          "pinyin": "tā jiǎn xià yì duàn jiāo dài.",
+          "english": "She cut off a piece of tape.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "剪",
+              "pinyin": "jiǎn",
+              "gloss": "cut as with scissors"
+            },
+            {
+              "hanzi": "下",
+              "pinyin": "xià",
+              "gloss": "off (result complement)"
+            },
+            {
+              "hanzi": "一",
+              "pinyin": "yì",
+              "gloss": "one"
+            },
+            {
+              "hanzi": "段",
+              "pinyin": "duàn",
+              "gloss": "section"
+            },
+            {
+              "hanzi": "胶带。",
+              "pinyin": "jiāo dài.",
+              "gloss": "adhesive tape"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10590": {
+      "例句JSON": [
+        {
+          "hanzi": "袋子装满后需要封口。",
+          "pinyin": "dài zi zhuāng mǎn hòu xū yào fēng kǒu.",
+          "english": "The bag needs sealing after it is filled.",
+          "chunks": [
+            {
+              "hanzi": "袋子",
+              "pinyin": "dài zi",
+              "gloss": "bag"
+            },
+            {
+              "hanzi": "装满",
+              "pinyin": "zhuāng mǎn",
+              "gloss": "fill up"
+            },
+            {
+              "hanzi": "后",
+              "pinyin": "hòu",
+              "gloss": "after"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "封口。",
+              "pinyin": "fēng kǒu.",
+              "gloss": "seal an opening"
+            }
+          ]
+        },
+        {
+          "hanzi": "这封信的封口已经破了。",
+          "pinyin": "zhè fēng xìn de fēng kǒu yǐ jīng pò le.",
+          "english": "The seal on this letter is broken.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "封",
+              "pinyin": "fēng",
+              "gloss": "FENG (classifier for letters)"
+            },
+            {
+              "hanzi": "信",
+              "pinyin": "xìn",
+              "gloss": "letter"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "封口",
+              "pinyin": "fēng kǒu",
+              "gloss": "seal; sealed opening"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "破",
+              "pinyin": "pò",
+              "gloss": "broken"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10598": {
+      "例句JSON": [
+        {
+          "hanzi": "请在登记表上写姓名。",
+          "pinyin": "qǐng zài dēng jì biǎo shàng xiě xìng míng.",
+          "english": "Write your name on the registration form.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "登记表",
+              "pinyin": "dēng jì biǎo",
+              "gloss": "registration form"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "写",
+              "pinyin": "xiě",
+              "gloss": "write"
+            },
+            {
+              "hanzi": "姓名。",
+              "pinyin": "xìng míng.",
+              "gloss": "surname and given name"
+            }
+          ]
+        },
+        {
+          "hanzi": "老师收回了登记表。",
+          "pinyin": "lǎo shī shōu huí le dēng jì biǎo.",
+          "english": "The teacher collected the registration forms.",
+          "chunks": [
+            {
+              "hanzi": "老师",
+              "pinyin": "lǎo shī",
+              "gloss": "teacher"
+            },
+            {
+              "hanzi": "收回",
+              "pinyin": "shōu huí",
+              "gloss": "collect back"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "登记表。",
+              "pinyin": "dēng jì biǎo.",
+              "gloss": "registration form"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10607": {
+      "例句JSON": [
+        {
+          "hanzi": "请把背包放进储物柜。",
+          "pinyin": "qǐng bǎ bēi bāo fàng jìn chǔ wù guì.",
+          "english": "Put your backpack in the locker.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "背包",
+              "pinyin": "bēi bāo",
+              "gloss": "backpack"
+            },
+            {
+              "hanzi": "放进",
+              "pinyin": "fàng jìn",
+              "gloss": "put into"
+            },
+            {
+              "hanzi": "储物柜。",
+              "pinyin": "chǔ wù guì.",
+              "gloss": "storage locker"
+            }
+          ]
+        },
+        {
+          "hanzi": "这个储物柜需要扫码打开。",
+          "pinyin": "zhè ge chǔ wù guì xū yào sǎo mǎ dǎ kāi.",
+          "english": "This locker opens by scanning a code.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this one"
+            },
+            {
+              "hanzi": "储物柜",
+              "pinyin": "chǔ wù guì",
+              "gloss": "storage locker"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "扫码",
+              "pinyin": "sǎo mǎ",
+              "gloss": "scan a code"
+            },
+            {
+              "hanzi": "打开。",
+              "pinyin": "dǎ kāi.",
+              "gloss": "open"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10609": {
+      "例句JSON": [
+        {
+          "hanzi": "背包放在行李架上。",
+          "pinyin": "bēi bāo fàng zài xíng li jià shàng.",
+          "english": "The backpack is on the luggage rack.",
+          "chunks": [
+            {
+              "hanzi": "背包",
+              "pinyin": "bēi bāo",
+              "gloss": "backpack"
+            },
+            {
+              "hanzi": "放",
+              "pinyin": "fàng",
+              "gloss": "put"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "行李架",
+              "pinyin": "xíng li jià",
+              "gloss": "luggage rack"
+            },
+            {
+              "hanzi": "上。",
+              "pinyin": "shàng.",
+              "gloss": "on"
+            }
+          ]
+        },
+        {
+          "hanzi": "下车前请检查行李架。",
+          "pinyin": "xià chē qián qǐng jiǎn chá xíng li jià.",
+          "english": "Check the luggage rack before getting off.",
+          "chunks": [
+            {
+              "hanzi": "下车",
+              "pinyin": "xià chē",
+              "gloss": "get off a vehicle"
+            },
+            {
+              "hanzi": "前",
+              "pinyin": "qián",
+              "gloss": "before"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "检查",
+              "pinyin": "jiǎn chá",
+              "gloss": "check"
+            },
+            {
+              "hanzi": "行李架。",
+              "pinyin": "xíng li jià.",
+              "gloss": "luggage rack"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10608": {
+      "英文释义": "suitcase",
+      "部件JSON": [
+        {
+          "hanzi": "行李箱",
+          "pinyin": "xíng li xiāng",
+          "gloss": "suitcase"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "我的行李箱轮子坏了。",
+          "pinyin": "wǒ de xíng li xiāng lún zi huài le.",
+          "english": "A wheel on my suitcase is broken.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "行李箱",
+              "pinyin": "xíng li xiāng",
+              "gloss": "suitcase"
+            },
+            {
+              "hanzi": "轮子",
+              "pinyin": "lún zi",
+              "gloss": "wheel"
+            },
+            {
+              "hanzi": "坏了。",
+              "pinyin": "huài le.",
+              "gloss": "broken; gone bad"
+            }
+          ]
+        },
+        {
+          "hanzi": "她把行李箱推进房间。",
+          "pinyin": "tā bǎ xíng li xiāng tuī jìn fáng jiān.",
+          "english": "She rolled the suitcase into the room.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "行李箱",
+              "pinyin": "xíng li xiāng",
+              "gloss": "suitcase"
+            },
+            {
+              "hanzi": "推进",
+              "pinyin": "tuī jìn",
+              "gloss": "push into"
+            },
+            {
+              "hanzi": "房间。",
+              "pinyin": "fáng jiān.",
+              "gloss": "room"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10614": {
+      "例句JSON": [
+        {
+          "hanzi": "安检口前排着长队。",
+          "pinyin": "ān jiǎn kǒu qián pái zhe cháng duì.",
+          "english": "There is a long queue at the security screening entrance.",
+          "chunks": [
+            {
+              "hanzi": "安检口",
+              "pinyin": "ān jiǎn kǒu",
+              "gloss": "security screening entrance"
+            },
+            {
+              "hanzi": "前",
+              "pinyin": "qián",
+              "gloss": "in front"
+            },
+            {
+              "hanzi": "排",
+              "pinyin": "pái",
+              "gloss": "queue"
+            },
+            {
+              "hanzi": "着",
+              "pinyin": "zhe",
+              "gloss": "ZHE (ongoing state)"
+            },
+            {
+              "hanzi": "长队。",
+              "pinyin": "cháng duì.",
+              "gloss": "queue"
+            }
+          ]
+        },
+        {
+          "hanzi": "请从左侧安检口进入。",
+          "pinyin": "qǐng cóng zuǒ cè ān jiǎn kǒu jìn rù.",
+          "english": "Enter through the security checkpoint on the left.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "gloss": "from"
+            },
+            {
+              "hanzi": "左侧",
+              "pinyin": "zuǒ cè",
+              "gloss": "left side"
+            },
+            {
+              "hanzi": "安检口",
+              "pinyin": "ān jiǎn kǒu",
+              "gloss": "security screening entrance"
+            },
+            {
+              "hanzi": "进入。",
+              "pinyin": "jìn rù.",
+              "gloss": "enter"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10623": {
+      "例句JSON": [
+        {
+          "hanzi": "工作人员调解了邻里纠纷。",
+          "pinyin": "gōng zuò rén yuán tiáo jiě le lín lǐ jiū fēn.",
+          "english": "The staff mediated the neighborhood dispute.",
+          "chunks": [
+            {
+              "hanzi": "工作人员",
+              "pinyin": "gōng zuò rén yuán",
+              "gloss": "staff member"
+            },
+            {
+              "hanzi": "调解",
+              "pinyin": "tiáo jiě",
+              "gloss": "mediate a dispute"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "邻里",
+              "pinyin": "lín lǐ",
+              "gloss": "neighborhood"
+            },
+            {
+              "hanzi": "纠纷。",
+              "pinyin": "jiū fēn.",
+              "gloss": "dispute"
+            }
+          ]
+        },
+        {
+          "hanzi": "双方同意接受调解。",
+          "pinyin": "shuāng fāng tóng yì jiē shòu tiáo jiě.",
+          "english": "Both parties agreed to mediation.",
+          "chunks": [
+            {
+              "hanzi": "双方",
+              "pinyin": "shuāng fāng",
+              "gloss": "both sides"
+            },
+            {
+              "hanzi": "同意",
+              "pinyin": "tóng yì",
+              "gloss": "agree"
+            },
+            {
+              "hanzi": "接受",
+              "pinyin": "jiē shòu",
+              "gloss": "accept"
+            },
+            {
+              "hanzi": "调解。",
+              "pinyin": "tiáo jiě.",
+              "gloss": "mediation"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10629": {
+      "例句JSON": [
+        {
+          "hanzi": "商家补发了漏装的配件。",
+          "pinyin": "shāng jiā bǔ fā le lòu zhuāng de pèi jiàn.",
+          "english": "The seller sent the missing accessory.",
+          "chunks": [
+            {
+              "hanzi": "商家",
+              "pinyin": "shāng jiā",
+              "gloss": "merchant"
+            },
+            {
+              "hanzi": "补发",
+              "pinyin": "bǔ fā",
+              "gloss": "issue or send additionally"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "漏",
+              "pinyin": "lòu",
+              "gloss": "omit; overlook"
+            },
+            {
+              "hanzi": "装",
+              "pinyin": "zhuāng",
+              "gloss": "put in; contain"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "配件。",
+              "pinyin": "pèi jiàn.",
+              "gloss": "accessory"
+            }
+          ]
+        },
+        {
+          "hanzi": "公司补发了上个月的工资。",
+          "pinyin": "gōng sī bǔ fā le shàng gè yuè de gōng zī.",
+          "english": "The company paid the salary missing from last month.",
+          "chunks": [
+            {
+              "hanzi": "公司",
+              "pinyin": "gōng sī",
+              "gloss": "company"
+            },
+            {
+              "hanzi": "补发",
+              "pinyin": "bǔ fā",
+              "gloss": "issue or send additionally"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "上个月",
+              "pinyin": "shàng gè yuè",
+              "gloss": "last month"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "工资。",
+              "pinyin": "gōng zī.",
+              "gloss": "wages"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10646": {
+      "例句JSON": [
+        {
+          "hanzi": "这家店的营业额增加了。",
+          "pinyin": "zhè jiā diàn de yíng yè é zēng jiā le.",
+          "english": "This shop's turnover increased.",
+          "chunks": [
+            {
+              "hanzi": "这家",
+              "pinyin": "zhè jiā",
+              "gloss": "this (JIA classifier)"
+            },
+            {
+              "hanzi": "店",
+              "pinyin": "diàn",
+              "gloss": "shop"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "营业额",
+              "pinyin": "yíng yè é",
+              "gloss": "business turnover"
+            },
+            {
+              "hanzi": "增加",
+              "pinyin": "zēng jiā",
+              "gloss": "increase or add to"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "经理统计了本月营业额。",
+          "pinyin": "jīng lǐ tǒng jì le běn yuè yíng yè é.",
+          "english": "The manager totaled this month's sales.",
+          "chunks": [
+            {
+              "hanzi": "经理",
+              "pinyin": "jīng lǐ",
+              "gloss": "manager"
+            },
+            {
+              "hanzi": "统计",
+              "pinyin": "tǒng jì",
+              "gloss": "calculate; total"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "本月",
+              "pinyin": "běn yuè",
+              "gloss": "this month"
+            },
+            {
+              "hanzi": "营业额。",
+              "pinyin": "yíng yè é.",
+              "gloss": "business turnover"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10650": {
+      "例句JSON": [
+        {
+          "hanzi": "拍照需要得到许可。",
+          "pinyin": "pāi zhào xū yào dé dào xǔ kě.",
+          "english": "Permission is needed to take photographs.",
+          "chunks": [
+            {
+              "hanzi": "拍照",
+              "pinyin": "pāi zhào",
+              "gloss": "take photographs"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "得到",
+              "pinyin": "dé dào",
+              "gloss": "get"
+            },
+            {
+              "hanzi": "许可。",
+              "pinyin": "xǔ kě.",
+              "gloss": "permission; permit"
+            }
+          ]
+        },
+        {
+          "hanzi": "负责人许可他进入仓库。",
+          "pinyin": "fù zé rén xǔ kě tā jìn rù cāng kù.",
+          "english": "The person in charge allowed him into the warehouse.",
+          "chunks": [
+            {
+              "hanzi": "负责人",
+              "pinyin": "fù zé rén",
+              "gloss": "person in charge"
+            },
+            {
+              "hanzi": "许可",
+              "pinyin": "xǔ kě",
+              "gloss": "allow; permit"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "进入",
+              "pinyin": "jìn rù",
+              "gloss": "enter"
+            },
+            {
+              "hanzi": "仓库。",
+              "pinyin": "cāng kù.",
+              "gloss": "warehouse"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10651": {
+      "例句JSON": [
+        {
+          "hanzi": "公司已经缴清税款。",
+          "pinyin": "gōng sī yǐ jīng jiǎo qīng shuì kuǎn.",
+          "english": "The company has paid its taxes in full.",
+          "chunks": [
+            {
+              "hanzi": "公司",
+              "pinyin": "gōng sī",
+              "gloss": "company"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "缴清",
+              "pinyin": "jiǎo qīng",
+              "gloss": "pay in full"
+            },
+            {
+              "hanzi": "税款。",
+              "pinyin": "shuì kuǎn.",
+              "gloss": "tax payment"
+            }
+          ]
+        },
+        {
+          "hanzi": "税款金额列在通知里。",
+          "pinyin": "shuì kuǎn jīn é liè zài tōng zhī lǐ.",
+          "english": "The tax amount is listed in the notice.",
+          "chunks": [
+            {
+              "hanzi": "税款",
+              "pinyin": "shuì kuǎn",
+              "gloss": "tax payment"
+            },
+            {
+              "hanzi": "金额",
+              "pinyin": "jīn é",
+              "gloss": "sum of money"
+            },
+            {
+              "hanzi": "列",
+              "pinyin": "liè",
+              "gloss": "be listed"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "通知",
+              "pinyin": "tōng zhī",
+              "gloss": "notice"
+            },
+            {
+              "hanzi": "里。",
+              "pinyin": "lǐ.",
+              "gloss": "in"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10653": {
+      "例句JSON": [
+        {
+          "hanzi": "公司委托会计报税。",
+          "pinyin": "gōng sī wěi tuō kuài jì bào shuì.",
+          "english": "The company entrusted its tax filing to an accountant.",
+          "chunks": [
+            {
+              "hanzi": "公司",
+              "pinyin": "gōng sī",
+              "gloss": "company"
+            },
+            {
+              "hanzi": "委托",
+              "pinyin": "wěi tuō",
+              "gloss": "entrust"
+            },
+            {
+              "hanzi": "会计",
+              "pinyin": "kuài jì",
+              "gloss": "accountant"
+            },
+            {
+              "hanzi": "报税。",
+              "pinyin": "bào shuì.",
+              "gloss": "file a tax return"
+            }
+          ]
+        },
+        {
+          "hanzi": "报税材料已经准备好了。",
+          "pinyin": "bào shuì cái liào yǐ jīng zhǔn bèi hǎo le.",
+          "english": "The documents for filing the tax return are ready.",
+          "chunks": [
+            {
+              "hanzi": "报税",
+              "pinyin": "bào shuì",
+              "gloss": "file a tax return"
+            },
+            {
+              "hanzi": "材料",
+              "pinyin": "cái liào",
+              "gloss": "documents; materials"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "准备好了。",
+              "pinyin": "zhǔn bèi hǎo le.",
+              "gloss": "be ready"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10656": {
+      "例句JSON": [
+        {
+          "hanzi": "她拿到了工作证明书。",
+          "pinyin": "tā ná dào le gōng zuò zhèng míng shū.",
+          "english": "She received a certificate of employment.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "拿到",
+              "pinyin": "ná dào",
+              "gloss": "get"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "工作",
+              "pinyin": "gōng zuò",
+              "gloss": "work; job"
+            },
+            {
+              "hanzi": "证明书。",
+              "pinyin": "zhèng míng shū.",
+              "gloss": "certificate"
+            }
+          ]
+        },
+        {
+          "hanzi": "证明书上盖有印章。",
+          "pinyin": "zhèng míng shū shàng gài yǒu yìn zhāng.",
+          "english": "The certificate bears a stamp.",
+          "chunks": [
+            {
+              "hanzi": "证明书",
+              "pinyin": "zhèng míng shū",
+              "gloss": "certificate"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "盖有",
+              "pinyin": "gài yǒu",
+              "gloss": "be stamped with"
+            },
+            {
+              "hanzi": "印章。",
+              "pinyin": "yìn zhāng.",
+              "gloss": "seal; stamp"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10668": {
+      "例句JSON": [
+        {
+          "hanzi": "信箱里有一封信。",
+          "pinyin": "xìn xiāng lǐ yǒu yì fēng xìn.",
+          "english": "There is a letter in the mailbox.",
+          "chunks": [
+            {
+              "hanzi": "信箱",
+              "pinyin": "xìn xiāng",
+              "gloss": "mailbox"
+            },
+            {
+              "hanzi": "里",
+              "pinyin": "lǐ",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "have; there is"
+            },
+            {
+              "hanzi": "一",
+              "pinyin": "yì",
+              "gloss": "one"
+            },
+            {
+              "hanzi": "封",
+              "pinyin": "fēng",
+              "gloss": "FENG (measure word)"
+            },
+            {
+              "hanzi": "信。",
+              "pinyin": "xìn.",
+              "gloss": "letter"
+            }
+          ]
+        },
+        {
+          "hanzi": "请检查你的电子信箱。",
+          "pinyin": "qǐng jiǎn chá nǐ de diàn zǐ xìn xiāng.",
+          "english": "Check your email inbox.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "检查",
+              "pinyin": "jiǎn chá",
+              "gloss": "check"
+            },
+            {
+              "hanzi": "你",
+              "pinyin": "nǐ",
+              "gloss": "you"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "电子",
+              "pinyin": "diàn zǐ",
+              "gloss": "electronic"
+            },
+            {
+              "hanzi": "信箱。",
+              "pinyin": "xìn xiāng.",
+              "gloss": "mailbox"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10669": {
+      "例句JSON": [
+        {
+          "hanzi": "拖车把坏车带走了。",
+          "pinyin": "tuō chē bǎ huài chē dài zǒu le.",
+          "english": "The tow truck removed the broken-down vehicle.",
+          "chunks": [
+            {
+              "hanzi": "拖车",
+              "pinyin": "tuō chē",
+              "gloss": "tow truck"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "坏",
+              "pinyin": "huài",
+              "gloss": "broken"
+            },
+            {
+              "hanzi": "车",
+              "pinyin": "chē",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "带走",
+              "pinyin": "dài zǒu",
+              "gloss": "to take away"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "他联系了拖车服务。",
+          "pinyin": "tā lián xì le tuō chē fú wù.",
+          "english": "He contacted the towing service.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "联系",
+              "pinyin": "lián xì",
+              "gloss": "contact"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "拖车",
+              "pinyin": "tuō chē",
+              "gloss": "towing"
+            },
+            {
+              "hanzi": "服务。",
+              "pinyin": "fú wù.",
+              "gloss": "service"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10674": {
+      "例句JSON": [
+        {
+          "hanzi": "车辆驶上了高架。",
+          "pinyin": "chē liàng shǐ shàng le gāo jià.",
+          "english": "The vehicles drove onto the elevated road.",
+          "chunks": [
+            {
+              "hanzi": "车辆",
+              "pinyin": "chē liàng",
+              "gloss": "vehicle"
+            },
+            {
+              "hanzi": "驶",
+              "pinyin": "shǐ",
+              "gloss": "(of a vehicle, horse etc) to go fast"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on; onto"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "高架。",
+              "pinyin": "gāo jià.",
+              "gloss": "elevated structure"
+            }
+          ]
+        },
+        {
+          "hanzi": "高架桥下有一条小路。",
+          "pinyin": "gāo jià qiáo xià yǒu yì tiáo xiǎo lù.",
+          "english": "There is a small road beneath the viaduct.",
+          "chunks": [
+            {
+              "hanzi": "高架",
+              "pinyin": "gāo jià",
+              "gloss": "elevated"
+            },
+            {
+              "hanzi": "桥",
+              "pinyin": "qiáo",
+              "gloss": "bridge"
+            },
+            {
+              "hanzi": "下",
+              "pinyin": "xià",
+              "gloss": "under; down"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "have; there is"
+            },
+            {
+              "hanzi": "一条",
+              "pinyin": "yì tiáo",
+              "gloss": "one (TIAO measure word)"
+            },
+            {
+              "hanzi": "小路。",
+              "pinyin": "xiǎo lù.",
+              "gloss": "minor road"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10676": {
+      "例句JSON": [
+        {
+          "hanzi": "志愿者为游客引路。",
+          "pinyin": "zhì yuàn zhě wèi yóu kè yǐn lù.",
+          "english": "The volunteer led the way for the visitors.",
+          "chunks": [
+            {
+              "hanzi": "志愿者",
+              "pinyin": "zhì yuàn zhě",
+              "gloss": "volunteer"
+            },
+            {
+              "hanzi": "为",
+              "pinyin": "wèi",
+              "gloss": "for"
+            },
+            {
+              "hanzi": "游客",
+              "pinyin": "yóu kè",
+              "gloss": "visitor; tourist"
+            },
+            {
+              "hanzi": "引路。",
+              "pinyin": "yǐn lù.",
+              "gloss": "lead the way"
+            }
+          ]
+        },
+        {
+          "hanzi": "我请邻居帮忙引路。",
+          "pinyin": "wǒ qǐng lín jū bāng máng yǐn lù.",
+          "english": "I asked the neighbor to show the way.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "ask; request"
+            },
+            {
+              "hanzi": "邻居",
+              "pinyin": "lín jū",
+              "gloss": "neighbor"
+            },
+            {
+              "hanzi": "帮忙",
+              "pinyin": "bāng máng",
+              "gloss": "help"
+            },
+            {
+              "hanzi": "引路。",
+              "pinyin": "yǐn lù.",
+              "gloss": "lead the way"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10679": {
+      "例句JSON": [
+        {
+          "hanzi": "学生按时交纳学费。",
+          "pinyin": "xué sheng àn shí jiāo nà xué fèi.",
+          "english": "Students pay tuition on time.",
+          "chunks": [
+            {
+              "hanzi": "学生",
+              "pinyin": "xué sheng",
+              "gloss": "student"
+            },
+            {
+              "hanzi": "按时",
+              "pinyin": "àn shí",
+              "gloss": "on time"
+            },
+            {
+              "hanzi": "交纳",
+              "pinyin": "jiāo nà",
+              "gloss": "pay a required fee"
+            },
+            {
+              "hanzi": "学费。",
+              "pinyin": "xué fèi.",
+              "gloss": "tuition fee"
+            }
+          ]
+        },
+        {
+          "hanzi": "他交纳了停车费用。",
+          "pinyin": "tā jiāo nà le tíng chē fèi yòng.",
+          "english": "He paid the parking charges.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "交纳",
+              "pinyin": "jiāo nà",
+              "gloss": "pay a required fee"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "停车费用。",
+              "pinyin": "tíng chē fèi yòng.",
+              "gloss": "parking charges"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10680": {
+      "例句JSON": [
+        {
+          "hanzi": "客人陆续入席。",
+          "pinyin": "kè rén lù xù rù xí.",
+          "english": "The guests gradually took their seats.",
+          "chunks": [
+            {
+              "hanzi": "客人",
+              "pinyin": "kè rén",
+              "gloss": "guest"
+            },
+            {
+              "hanzi": "陆续",
+              "pinyin": "lù xù",
+              "gloss": "in turn"
+            },
+            {
+              "hanzi": "入席。",
+              "pinyin": "rù xí.",
+              "gloss": "take a seat at a meal or event"
+            }
+          ]
+        },
+        {
+          "hanzi": "请按桌号入席。",
+          "pinyin": "qǐng àn zhuō hào rù xí.",
+          "english": "Take your seats according to the table numbers.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "按",
+              "pinyin": "àn",
+              "gloss": "according to"
+            },
+            {
+              "hanzi": "桌",
+              "pinyin": "zhuō",
+              "gloss": "table"
+            },
+            {
+              "hanzi": "号",
+              "pinyin": "hào",
+              "gloss": "number"
+            },
+            {
+              "hanzi": "入席。",
+              "pinyin": "rù xí.",
+              "gloss": "take a seat at a meal or event"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10675": {
+      "英文释义": "stop trading",
+      "部件JSON": [
+        {
+          "hanzi": "停业",
+          "pinyin": "tíng yè",
+          "gloss": "stop trading"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "餐馆装修期间停业。",
+          "pinyin": "cān guǎn zhuāng xiū qí jiān tíng yè.",
+          "english": "The restaurant is closed during renovation.",
+          "chunks": [
+            {
+              "hanzi": "餐馆",
+              "pinyin": "cān guǎn",
+              "gloss": "restaurant"
+            },
+            {
+              "hanzi": "装修",
+              "pinyin": "zhuāng xiū",
+              "gloss": "decorate"
+            },
+            {
+              "hanzi": "期间",
+              "pinyin": "qí jiān",
+              "gloss": "during; period"
+            },
+            {
+              "hanzi": "停业。",
+              "pinyin": "tíng yè.",
+              "gloss": "stop trading"
+            }
+          ]
+        },
+        {
+          "hanzi": "这家店已经停业了。",
+          "pinyin": "zhè jiā diàn yǐ jīng tíng yè le.",
+          "english": "This shop has closed.",
+          "chunks": [
+            {
+              "hanzi": "这家",
+              "pinyin": "zhè jiā",
+              "gloss": "this (JIA classifier)"
+            },
+            {
+              "hanzi": "店",
+              "pinyin": "diàn",
+              "gloss": "shop"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "停业",
+              "pinyin": "tíng yè",
+              "gloss": "stop trading"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (aspect or change marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10677": {
+      "例句JSON": [
+        {
+          "hanzi": "长途车早上六点出发。",
+          "pinyin": "cháng tú chē zǎo shang liù diǎn chū fā.",
+          "english": "The long-distance coach leaves at six in the morning.",
+          "chunks": [
+            {
+              "hanzi": "长途车",
+              "pinyin": "cháng tú chē",
+              "gloss": "long-distance coach"
+            },
+            {
+              "hanzi": "早上",
+              "pinyin": "zǎo shang",
+              "gloss": "morning"
+            },
+            {
+              "hanzi": "六",
+              "pinyin": "liù",
+              "gloss": "six"
+            },
+            {
+              "hanzi": "点",
+              "pinyin": "diǎn",
+              "gloss": "o'clock"
+            },
+            {
+              "hanzi": "出发。",
+              "pinyin": "chū fā.",
+              "gloss": "set off"
+            }
+          ]
+        },
+        {
+          "hanzi": "她坐长途车去看父母。",
+          "pinyin": "tā zuò cháng tú chē qù kàn fù mǔ.",
+          "english": "She took a coach to visit her parents.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "坐",
+              "pinyin": "zuò",
+              "gloss": "travel by; ride"
+            },
+            {
+              "hanzi": "长途车",
+              "pinyin": "cháng tú chē",
+              "gloss": "long-distance coach"
+            },
+            {
+              "hanzi": "去",
+              "pinyin": "qù",
+              "gloss": "go"
+            },
+            {
+              "hanzi": "看",
+              "pinyin": "kàn",
+              "gloss": "visit"
+            },
+            {
+              "hanzi": "父母。",
+              "pinyin": "fù mǔ.",
+              "gloss": "parents"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10703": {
+      "例句JSON": [
+        {
+          "hanzi": "床下的空间可以储物。",
+          "pinyin": "chuáng xià de kōng jiān kě yǐ chǔ wù.",
+          "english": "The space under the bed can be used for storage.",
+          "chunks": [
+            {
+              "hanzi": "床",
+              "pinyin": "chuáng",
+              "gloss": "bed"
+            },
+            {
+              "hanzi": "下",
+              "pinyin": "xià",
+              "gloss": "under; down"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "空间",
+              "pinyin": "kōng jiān",
+              "gloss": "space"
+            },
+            {
+              "hanzi": "可以",
+              "pinyin": "kě yǐ",
+              "gloss": "can; may"
+            },
+            {
+              "hanzi": "储物。",
+              "pinyin": "chǔ wù.",
+              "gloss": "store belongings"
+            }
+          ]
+        },
+        {
+          "hanzi": "这个柜子只用于储物。",
+          "pinyin": "zhè ge guì zi zhǐ yòng yú chǔ wù.",
+          "english": "This cabinet is used only for storing belongings.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this one"
+            },
+            {
+              "hanzi": "柜子",
+              "pinyin": "guì zi",
+              "gloss": "cabinet"
+            },
+            {
+              "hanzi": "只",
+              "pinyin": "zhǐ",
+              "gloss": "only"
+            },
+            {
+              "hanzi": "用于",
+              "pinyin": "yòng yú",
+              "gloss": "be used for"
+            },
+            {
+              "hanzi": "储物。",
+              "pinyin": "chǔ wù.",
+              "gloss": "store belongings"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10696": {
+      "例句JSON": [
+        {
+          "hanzi": "她上午处理办公室杂务。",
+          "pinyin": "tā shàng wǔ chǔ lǐ bàn gōng shì zá wù.",
+          "english": "She dealt with office tasks this morning.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "上午",
+              "pinyin": "shàng wǔ",
+              "gloss": "morning"
+            },
+            {
+              "hanzi": "处理",
+              "pinyin": "chǔ lǐ",
+              "gloss": "deal with"
+            },
+            {
+              "hanzi": "办公室",
+              "pinyin": "bàn gōng shì",
+              "gloss": "office"
+            },
+            {
+              "hanzi": "杂务。",
+              "pinyin": "zá wù.",
+              "gloss": "miscellaneous tasks"
+            }
+          ]
+        },
+        {
+          "hanzi": "这些杂务由大家分担。",
+          "pinyin": "zhè xiē zá wù yóu dà jiā fēn dān.",
+          "english": "Everyone shares these miscellaneous duties.",
+          "chunks": [
+            {
+              "hanzi": "这些",
+              "pinyin": "zhè xiē",
+              "gloss": "these"
+            },
+            {
+              "hanzi": "杂务",
+              "pinyin": "zá wù",
+              "gloss": "miscellaneous tasks"
+            },
+            {
+              "hanzi": "由",
+              "pinyin": "yóu",
+              "gloss": "by"
+            },
+            {
+              "hanzi": "大家",
+              "pinyin": "dà jiā",
+              "gloss": "everyone"
+            },
+            {
+              "hanzi": "分担。",
+              "pinyin": "fēn dān.",
+              "gloss": "share (a burden, a cost, a responsibility)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10714": {
+      "英文释义": "merchant; business operator",
+      "部件JSON": [
+        {
+          "hanzi": "商户",
+          "pinyin": "shāng hù",
+          "gloss": "merchant; business operator"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "市场里的商户准备开门。",
+          "pinyin": "shì chǎng lǐ de shāng hù zhǔn bèi kāi mén.",
+          "english": "The market merchants are preparing to open.",
+          "chunks": [
+            {
+              "hanzi": "市场",
+              "pinyin": "shì chǎng",
+              "gloss": "market"
+            },
+            {
+              "hanzi": "里",
+              "pinyin": "lǐ",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "商户",
+              "pinyin": "shāng hù",
+              "gloss": "merchant; business operator"
+            },
+            {
+              "hanzi": "准备",
+              "pinyin": "zhǔn bèi",
+              "gloss": "prepare"
+            },
+            {
+              "hanzi": "开门。",
+              "pinyin": "kāi mén.",
+              "gloss": "open for business"
+            }
+          ]
+        },
+        {
+          "hanzi": "商户收到了新的通知。",
+          "pinyin": "shāng hù shōu dào le xīn de tōng zhī.",
+          "english": "The merchants received a new notice.",
+          "chunks": [
+            {
+              "hanzi": "商户",
+              "pinyin": "shāng hù",
+              "gloss": "merchant; business operator"
+            },
+            {
+              "hanzi": "收到",
+              "pinyin": "shōu dào",
+              "gloss": "receive"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (aspect or change marker)"
+            },
+            {
+              "hanzi": "新",
+              "pinyin": "xīn",
+              "gloss": "new"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive or attributive marker)"
+            },
+            {
+              "hanzi": "通知。",
+              "pinyin": "tōng zhī.",
+              "gloss": "notice"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_10695": {
+      "罕度": "0"
+    },
+    "wl_10700": {
+      "罕度": "0"
+    },
+    "wl_10701": {
+      "罕度": "0"
+    },
+    "wl_10712": {
+      "罕度": "0"
+    }
+  },
+  "rejections": {},
+  "complete": true,
+  "reviewedRanges": [
+    [
+      252,
+      272
+    ],
+    [
+      272,
+      292
+    ],
+    [
+      292,
+      312
+    ],
+    [
+      312,
+      332
+    ],
+    [
+      332,
+      352
+    ],
+    [
+      352,
+      372
+    ],
+    [
+      372,
+      392
+    ],
+    [
+      392,
+      412
+    ],
+    [
+      412,
+      432
+    ],
+    [
+      432,
+      452
+    ],
+    [
+      452,
+      472
+    ],
+    [
+      472,
+      492
+    ]
+  ],
+  "reviewedEntries": 240,
+  "reviewedExamples": 480,
+  "reviewDecisions": {
+    "wl_10475": {
+      "rarity": "1",
+      "pos": "noun; verb",
+      "reason": "为公益筹款售物的普通社会活动。",
+      "reviewer": "activity"
+    },
+    "wl_10476": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "小额个人花费的钱，基础生活词。",
+      "reviewer": "activity"
+    },
+    "wl_10477": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "船上工作人员的普通职业名。",
+      "reviewer": "activity"
+    },
+    "wl_10478": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "卖出去不再持有的基础结果动作。",
+      "reviewer": "activity"
+    },
+    "wl_10479": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "车辆船只在站或码头停下，普通交通动作。",
+      "reviewer": "activity"
+    },
+    "wl_10480": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "热情招待客人，普通礼仪动词。",
+      "reviewer": "activity"
+    },
+    "wl_10481": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "公职职责相关事务的正式社会用语。",
+      "reviewer": "activity"
+    },
+    "wl_10482": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "说明售价或所报价格，普通交易用语。",
+      "reviewer": "activity"
+    },
+    "wl_10483": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "换乘航班或事情改善的契机，普通交通与叙述双义词。",
+      "reviewer": "activity"
+    },
+    "wl_10484": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "旅行的人，普通人物角色。",
+      "reviewer": "activity"
+    },
+    "wl_10485": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "规则违反后的金钱处罚，普通公共生活词。",
+      "reviewer": "activity"
+    },
+    "wl_10486": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "担保交易约定的预付款名称，较正式合同概念，本条不提供法律规则。",
+      "reviewer": "activity"
+    },
+    "wl_10487": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "阻挡道路，基础生活动作。",
+      "reviewer": "activity"
+    },
+    "wl_10488": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "把物件材料送回原处，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10489": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "指路标牌，基础交通设施。",
+      "reviewer": "activity"
+    },
+    "wl_10490": {
+      "rarity": "1",
+      "pos": "noun; adjective",
+      "reason": "较低价格，普通交易描述。",
+      "reviewer": "activity"
+    },
+    "wl_10491": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "设置机构课程等，普通工作学习用语。",
+      "reviewer": "activity"
+    },
+    "wl_10492": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "接收应收费用或材料，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10493": {
+      "rarity": "1",
+      "pos": "adjective",
+      "reason": "需求很多，普通商品或机会评价。",
+      "reviewer": "activity"
+    },
+    "wl_10494": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "检查修理设备，普通维护动作。",
+      "reviewer": "activity"
+    },
+    "wl_10495": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "一群车辆或组织的车辆集合，普通交通类别。",
+      "reviewer": "activity"
+    },
+    "wl_10496": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "先后排列，普通排序概念。",
+      "reviewer": "activity"
+    },
+    "wl_10497": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "送邮件的工作人员，普通职业名。",
+      "reviewer": "activity"
+    },
+    "wl_10498": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "纳入名单或类别，普通办事动词。",
+      "reviewer": "activity"
+    },
+    "wl_10499": {
+      "rarity": "1",
+      "pos": "noun; adverb",
+      "reason": "行程中的中途，普通时间空间词。",
+      "reviewer": "activity"
+    },
+    "wl_10500": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "为需要购买物资，普通工作生活活动。",
+      "reviewer": "activity"
+    },
+    "wl_10501": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "返回的行程，普通旅行名。",
+      "reviewer": "activity"
+    },
+    "wl_10502": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "供应商品服务的人或企业，普通交易角色。",
+      "reviewer": "activity"
+    },
+    "wl_10503": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "前来访问，普通较正式交往动词。",
+      "reviewer": "activity"
+    },
+    "wl_10504": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "钱币或货币的合称，普通生活类别。",
+      "reviewer": "activity"
+    },
+    "wl_10505": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "归还或退款，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10506": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "启动经营活动或机构，普通社会生活动词。",
+      "reviewer": "activity"
+    },
+    "wl_10507": {
+      "rarity": "1",
+      "pos": "adjective",
+      "reason": "有条理按顺序，普通状态评价。",
+      "reviewer": "activity"
+    },
+    "wl_10508": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "处理手续交易的费用，普通办事名词。",
+      "reviewer": "activity"
+    },
+    "wl_10509": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "吸引顾客或生意的普通商店动作，本条无商业专业概念。",
+      "reviewer": "activity"
+    },
+    "wl_10510": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "有游乐设施的公园，基础休闲场所。",
+      "reviewer": "activity"
+    },
+    "wl_10511": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "出售的普通较正式说法。",
+      "reviewer": "activity"
+    },
+    "wl_10512": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "冒充真的商品，普通购物安全词。",
+      "reviewer": "activity"
+    },
+    "wl_10513": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "营业店铺，普通生活场所。",
+      "reviewer": "activity"
+    },
+    "wl_10514": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "乘船产生晕动不适，普通旅行症状名称。",
+      "reviewer": "activity"
+    },
+    "wl_10515": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "搬物资行李的普通职业。",
+      "reviewer": "activity"
+    },
+    "wl_10516": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "询问道路方向，基础出行动作。",
+      "reviewer": "activity"
+    },
+    "wl_10517": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "替别人办事手续，普通服务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10518": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "用机器复制纸件，普通办公动作。",
+      "reviewer": "activity"
+    },
+    "wl_10519": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "电子读取图像文件，普通数码操作。",
+      "reviewer": "activity"
+    },
+    "wl_10520": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "向远端发送文件，普通数码操作。",
+      "reviewer": "activity"
+    },
+    "wl_10521": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "从远端取文件到本机，普通数码操作。",
+      "reviewer": "activity"
+    },
+    "wl_10522": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "供水费用，普通家庭账单词。",
+      "reviewer": "activity"
+    },
+    "wl_10523": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "用电费用，普通家庭账单词。",
+      "reviewer": "activity"
+    },
+    "wl_10524": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "用燃气费用，普通家庭账单词。",
+      "reviewer": "activity"
+    },
+    "wl_10525": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "公共物业管理费用，普通住宅办事词。",
+      "reviewer": "activity"
+    },
+    "wl_10526": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "订购预约时预付金额，普通生活交易词，未陈述法律退费规则。",
+      "reviewer": "activity"
+    },
+    "wl_10527": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "逾期付款附加费的正式事务名词。",
+      "reviewer": "activity"
+    },
+    "wl_10528": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "从账户费用中扣去金额，普通交易动作。",
+      "reviewer": "activity"
+    },
+    "wl_10529": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "把钱汇出或所汇金额，普通金融办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10530": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "列示费用交易记录的单据，普通生活文本。",
+      "reviewer": "activity"
+    },
+    "wl_10531": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "要求付清欠款，普通交易工作动作。",
+      "reviewer": "activity"
+    },
+    "wl_10532": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "偿还欠钱，普通生活办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10533": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "关联储蓄存款账户的银行卡，普通金融用品。",
+      "reviewer": "activity"
+    },
+    "wl_10534": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "停放车辆需付的费用，普通生活交易词。",
+      "reviewer": "activity"
+    },
+    "wl_10535": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "停车凭证而非罚单，本条为入口和缴费停车票，普通服务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10536": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "短期租用的公用自行车，普通城市出行用品。",
+      "reviewer": "activity"
+    },
+    "wl_10537": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "载乘客的车辆，普通交通类别。",
+      "reviewer": "activity"
+    },
+    "wl_10538": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "旅客运输的普通交通业务类别。",
+      "reviewer": "activity"
+    },
+    "wl_10539": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "旅客运输车站，普通交通场所。",
+      "reviewer": "activity"
+    },
+    "wl_10540": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "列车停靠供上下客的地方，基础场所。",
+      "reviewer": "activity"
+    },
+    "wl_10541": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "上下列车等候的平台，普通交通设施。",
+      "reviewer": "activity"
+    },
+    "wl_10542": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "铁路站台的普通别称。",
+      "reviewer": "activity"
+    },
+    "wl_10543": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "标明公交站点路线的牌，普通交通设施。",
+      "reviewer": "activity"
+    },
+    "wl_10544": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "设置某服务的地点，普通服务类别。",
+      "reviewer": "activity"
+    },
+    "wl_10545": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "公共交通付费用卡，普通出行用品。",
+      "reviewer": "activity"
+    },
+    "wl_10546": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "公共交通付费用卡，普通出行用品。",
+      "reviewer": "activity"
+    },
+    "wl_10547": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "车辆窗口，基础部件。",
+      "reviewer": "activity"
+    },
+    "wl_10548": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "未被占用的位置，普通空间状态词。",
+      "reviewer": "activity"
+    },
+    "wl_10549": {
+      "rarity": "0",
+      "pos": "verb phrase",
+      "reason": "靠近窗的位置，基础方位表达。",
+      "reviewer": "activity"
+    },
+    "wl_10550": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "靠向边侧，基础移动动作。",
+      "reviewer": "activity"
+    },
+    "wl_10551": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "道路交接处，基础交通地点。",
+      "reviewer": "activity"
+    },
+    "wl_10552": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "交叉呈十字的路口，基础交通地点。",
+      "reviewer": "activity"
+    },
+    "wl_10553": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "红色信号灯，基础交通设备名。",
+      "reviewer": "activity"
+    },
+    "wl_10554": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "绿色信号灯，基础交通设备名。",
+      "reviewer": "activity"
+    },
+    "wl_10555": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "黄色警示信号灯，基础设备名。",
+      "reviewer": "activity"
+    },
+    "wl_10556": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "直向前行，基础方向动作。",
+      "reviewer": "activity"
+    },
+    "wl_10557": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "向左改变方向，基础方向动作。",
+      "reviewer": "activity"
+    },
+    "wl_10558": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "向右改变方向，基础方向动作。",
+      "reviewer": "activity"
+    },
+    "wl_10559": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "反转行进方向，普通交通动作。",
+      "reviewer": "activity"
+    },
+    "wl_10560": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "超过同向前车，普通交通动作。",
+      "reviewer": "activity"
+    },
+    "wl_10561": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "车辆往后移动，本条dào义非dǎo换车义。",
+      "reviewer": "activity"
+    },
+    "wl_10562": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "停车的普通地区/较正式说法，读bó。",
+      "reviewer": "activity"
+    },
+    "wl_10563": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "违反停车规则的普通简称。",
+      "reviewer": "activity"
+    },
+    "wl_10564": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "违反规定，普通公共生活动词。",
+      "reviewer": "activity"
+    },
+    "wl_10565": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "车辆风险保险的合同类别，普通中学社会经济概念。",
+      "reviewer": "activity"
+    },
+    "wl_10566": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "约定风险保障的交易制度，本条非安全稳妥形容词。",
+      "reviewer": "activity"
+    },
+    "wl_10567": {
+      "rarity": "2",
+      "pos": "verb; noun",
+      "reason": "竞价售物的较正式交易概念。",
+      "reviewer": "activity"
+    },
+    "wl_10568": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "警务工作机构，基础公共场所。",
+      "reviewer": "activity"
+    },
+    "wl_10569": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "交通警察，基础公共职业。",
+      "reviewer": "activity"
+    },
+    "wl_10570": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "协助警察工作的人员，普通职业名，不陈述具体权限。",
+      "reviewer": "activity"
+    },
+    "wl_10571": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "警察人员的较正式称谓。",
+      "reviewer": "activity"
+    },
+    "wl_10572": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "记录快递地址等的单据，普通办事文本。",
+      "reviewer": "activity"
+    },
+    "wl_10573": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "接收邮件包裹的人，普通投递角色名。",
+      "reviewer": "activity"
+    },
+    "wl_10574": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "发送邮件包裹的人，普通投递角色名。",
+      "reviewer": "activity"
+    },
+    "wl_10575": {
+      "rarity": "1",
+      "pos": "noun phrase",
+      "reason": "邮件发送端的地址，普通邮政办事字段。",
+      "reviewer": "activity"
+    },
+    "wl_10576": {
+      "rarity": "1",
+      "pos": "noun phrase",
+      "reason": "邮件接收地点，普通邮政办事字段。",
+      "reviewer": "activity"
+    },
+    "wl_10577": {
+      "rarity": "1",
+      "pos": "noun phrase",
+      "reason": "商品送达地点，普通购物字段。",
+      "reviewer": "activity"
+    },
+    "wl_10578": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "接收商品的人，普通物流角色。",
+      "reviewer": "activity"
+    },
+    "wl_10579": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "接收付款的人，普通交易角色。",
+      "reviewer": "activity"
+    },
+    "wl_10580": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "支付钱的人，普通交易角色。",
+      "reviewer": "activity"
+    },
+    "wl_10581": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "付款方展示供收银读取的码，普通电子支付用品，不误当文字验证码。",
+      "reviewer": "activity"
+    },
+    "wl_10582": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "收钱方展示供他人付款的码，普通电子支付用品。",
+      "reviewer": "activity"
+    },
+    "wl_10583": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "电子支付使用的码，普通操作对象。",
+      "reviewer": "activity"
+    },
+    "wl_10584": {
+      "rarity": "1",
+      "pos": "noun phrase",
+      "reason": "用何手段付款，普通交易类别。",
+      "reviewer": "activity"
+    },
+    "wl_10585": {
+      "rarity": "1",
+      "pos": "verb phrase",
+      "reason": "送货后才付款的普通购买方式。",
+      "reviewer": "activity"
+    },
+    "wl_10586": {
+      "rarity": "1",
+      "pos": "noun; verb",
+      "reason": "包裹商品或包材，普通日常工作词。",
+      "reviewer": "activity"
+    },
+    "wl_10587": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "保护商品的袋，基础物品。",
+      "reviewer": "activity"
+    },
+    "wl_10588": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "纸板做的箱，基础容器。",
+      "reviewer": "activity"
+    },
+    "wl_10589": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "粘贴封装的带，基础用品。",
+      "reviewer": "activity"
+    },
+    "wl_10590": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "封住开口或封合部位，普通包装动作。",
+      "reviewer": "activity"
+    },
+    "wl_10591": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "写名字表示认可，基础办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10592": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "把章印到文件上，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10593": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "带姓名标记等的印具，普通办事器具。",
+      "reviewer": "activity"
+    },
+    "wl_10594": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "复印得到的纸件，普通办公文本。",
+      "reviewer": "activity"
+    },
+    "wl_10595": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "文件原本而非复本，普通办事概念。",
+      "reviewer": "activity"
+    },
+    "wl_10596": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "复印用纸，基础办公材料。",
+      "reviewer": "activity"
+    },
+    "wl_10597": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "交易记录凭单，普通办事文本。",
+      "reviewer": "activity"
+    },
+    "wl_10598": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "记录登记信息的表，普通事务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10599": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "登记记录编号，普通办事字段。",
+      "reviewer": "activity"
+    },
+    "wl_10600": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "提出申请的人，普通事务角色。",
+      "reviewer": "activity"
+    },
+    "wl_10601": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "已接收请求的处理编号，普通办事字段。",
+      "reviewer": "activity"
+    },
+    "wl_10602": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "证明收到受理的凭单，较正式事务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10603": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "回执的纸单形态，较正式事务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10604": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "确认接收办理的凭单，较正式事务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10605": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "通知事项的纸单，普通办事文本。",
+      "reviewer": "activity"
+    },
+    "wl_10606": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "从账户提取现金的机器，普通生活设备。",
+      "reviewer": "activity"
+    },
+    "wl_10607": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "存放物品的柜，基础设备。",
+      "reviewer": "activity"
+    },
+    "wl_10608": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "装旅行物品的箱，基础用品。",
+      "reviewer": "activity"
+    },
+    "wl_10609": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "放旅客行李的架，普通交通设施。",
+      "reviewer": "activity"
+    },
+    "wl_10610": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "等待航班的房间，普通旅行场所。",
+      "reviewer": "activity"
+    },
+    "wl_10611": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "等待车辆的房间，普通旅行场所。",
+      "reviewer": "activity"
+    },
+    "wl_10612": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "机场上飞机的入口，普通旅行场所。",
+      "reviewer": "activity"
+    },
+    "wl_10613": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "登机凭证，普通旅行用品。",
+      "reviewer": "activity"
+    },
+    "wl_10614": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "安全检查入口，普通旅行设施。",
+      "reviewer": "activity"
+    },
+    "wl_10615": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "检查票券的入口，普通旅行设施。",
+      "reviewer": "activity"
+    },
+    "wl_10616": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "卖票场所，普通出行服务地点。",
+      "reviewer": "activity"
+    },
+    "wl_10617": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "提供信息的柜台处，普通公共服务地点。",
+      "reviewer": "activity"
+    },
+    "wl_10618": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "收取道路通行费等的设施，普通出行地点。",
+      "reviewer": "activity"
+    },
+    "wl_10619": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "路旁休息服务区，普通旅行设施。",
+      "reviewer": "activity"
+    },
+    "wl_10620": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "询问信息的较正式说法，普通服务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10621": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "救助危急者的行动，普通公共服务词。",
+      "reviewer": "activity"
+    },
+    "wl_10622": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "帮助危险或困难者，普通照护社会动作。",
+      "reviewer": "activity"
+    },
+    "wl_10623": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "协助纠纷各方达成约定的较正式社会事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10624": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "搜集了解信息，普通工作学习动作。",
+      "reviewer": "activity"
+    },
+    "wl_10625": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "核查有效性符合要求的正式办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10626": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "检查收到邮件等，普通办公交往词。",
+      "reviewer": "activity"
+    },
+    "wl_10627": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "重新办理以补缺失，普通事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10628": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "补充遗漏未交之物费用，普通事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10629": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "追加或补缺发出，普通事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10630": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "发给替换原物的新文件，普通事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10631": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "获取补缺替代的文件物品，普通事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10632": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "凭旧物换新的办理动作，普通事务词。",
+      "reviewer": "activity"
+    },
+    "wl_10633": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "领取证书证件，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10634": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "向相关机构报告遗失，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10635": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "报告卡证遗失以采取保护措施，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10636": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "正式关闭账户，普通银行服务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10637": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "设立账户，普通银行服务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10638": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "开立账户的银行分支名称，正式金融办事字段。",
+      "reviewer": "activity"
+    },
+    "wl_10639": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "账户登记名称，普通银行字段。",
+      "reviewer": "activity"
+    },
+    "wl_10640": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "家庭居住登记记录，普通生活行政概念。",
+      "reviewer": "activity"
+    },
+    "wl_10641": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "记录家庭登记的簿本，普通生活证件。",
+      "reviewer": "activity"
+    },
+    "wl_10642": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "家庭居住身份登记的正式概念。",
+      "reviewer": "activity"
+    },
+    "wl_10643": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "登记家庭负责人，普通角色称谓。",
+      "reviewer": "activity"
+    },
+    "wl_10644": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "服务商接待办理业务处，普通生活场所。",
+      "reviewer": "activity"
+    },
+    "wl_10645": {
+      "rarity": "1",
+      "pos": "noun phrase",
+      "reason": "对顾客营业的时段，普通生活字段。",
+      "reviewer": "activity"
+    },
+    "wl_10646": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "一定时期销售金额，普通中学商业经济概念。",
+      "reviewer": "activity"
+    },
+    "wl_10647": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "允许经营的正式证件，普通社会行政概念。",
+      "reviewer": "activity"
+    },
+    "wl_10648": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "允许某事的文件，普通办事证件。",
+      "reviewer": "activity"
+    },
+    "wl_10649": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "授权活动的证件，普通办事证件。",
+      "reviewer": "activity"
+    },
+    "wl_10650": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "允许或准许，普通社会办事词。",
+      "reviewer": "activity"
+    },
+    "wl_10651": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "需缴或已缴税的钱，正式经济事务名词。",
+      "reviewer": "activity"
+    },
+    "wl_10652": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "税务金额等记录单据，正式经济事务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10653": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "向相关机构申报税信息，正式经济事务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10654": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "税务登记身份编号，正式经济事务字段。",
+      "reviewer": "activity"
+    },
+    "wl_10655": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "正式出具文书，较书面事务动词。",
+      "reviewer": "activity"
+    },
+    "wl_10656": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "证实事实资格的文件，普通办事文本。",
+      "reviewer": "activity"
+    },
+    "wl_10657": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "提供事实证明的人，普通办事角色。",
+      "reviewer": "activity"
+    },
+    "wl_10658": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "缴付应交的钱的正式事务说法。",
+      "reviewer": "activity"
+    },
+    "wl_10659": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "从存款等取钱的较正式金融动作名。",
+      "reviewer": "activity"
+    },
+    "wl_10660": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "记银行交易的本子，普通生活用品。",
+      "reviewer": "activity"
+    },
+    "wl_10661": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "把欠钱全部还完，普通生活结果动作。",
+      "reviewer": "activity"
+    },
+    "wl_10662": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "把费用全部付完，普通生活结果动作。",
+      "reviewer": "activity"
+    },
+    "wl_10663": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "寻找后确定所在，基础结果动作。",
+      "reviewer": "activity"
+    },
+    "wl_10664": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "改走间接路线，普通出行动作。",
+      "reviewer": "activity"
+    },
+    "wl_10665": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "按顺序轮至某人，基础生活表达。",
+      "reviewer": "activity"
+    },
+    "wl_10666": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "车辆行程的时间距离，普通出行概念。",
+      "reviewer": "activity"
+    },
+    "wl_10667": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "把钱支付给他人，普通生活动作。",
+      "reviewer": "activity"
+    },
+    "wl_10668": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "接收信件的箱或电子信账户，基础交往用品。",
+      "reviewer": "activity"
+    },
+    "wl_10669": {
+      "rarity": "1",
+      "pos": "verb; noun",
+      "reason": "拖动车辆或执行拖车的车，普通交通名。",
+      "reviewer": "activity"
+    },
+    "wl_10670": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "开始道路行程，普通出行动作。",
+      "reviewer": "activity"
+    },
+    "wl_10671": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "稳定站立，基础身体动作。",
+      "reviewer": "activity"
+    },
+    "wl_10672": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "陪同旅途行动，普通较书面出行词。",
+      "reviewer": "activity"
+    },
+    "wl_10673": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "出发前送别某人，普通交往动作。",
+      "reviewer": "activity"
+    },
+    "wl_10674": {
+      "rarity": "1",
+      "pos": "adjective; noun",
+      "reason": "高出地面的道路构造或相应属性，普通交通设施。",
+      "reviewer": "activity"
+    },
+    "wl_10675": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "暂停或结束营业，普通商业生活动作。",
+      "reviewer": "activity"
+    },
+    "wl_10676": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "带领道路方向，普通交往动作。",
+      "reviewer": "activity"
+    },
+    "wl_10677": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "长距离客车，普通交通名。",
+      "reviewer": "activity"
+    },
+    "wl_10678": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "暂借给别人，基础交往动作。",
+      "reviewer": "activity"
+    },
+    "wl_10679": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "付应交费用，普通办事动作。",
+      "reviewer": "activity"
+    },
+    "wl_10680": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "到餐桌或会场座位就坐，普通礼仪动作。",
+      "reviewer": "activity"
+    },
+    "wl_10681": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "道路旁边，基础地点。",
+      "reviewer": "activity"
+    },
+    "wl_10682": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "生产用厂内建筑，普通场所类别。",
+      "reviewer": "activity"
+    },
+    "wl_10683": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "偿还或支付债务补偿的正式事务动词。",
+      "reviewer": "activity"
+    },
+    "wl_10684": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "绕过障碍改变路线，普通出行动作。",
+      "reviewer": "activity"
+    },
+    "wl_10685": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "邮寄出去，普通方向动作。",
+      "reviewer": "activity"
+    },
+    "wl_10686": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "关闭道路通行，普通公共服务动作。",
+      "reviewer": "activity"
+    },
+    "wl_10687": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "放到里面，基础容器操作。",
+      "reviewer": "activity"
+    },
+    "wl_10688": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "为使用购得设备等，普通工作生活动词。",
+      "reviewer": "activity"
+    },
+    "wl_10689": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "接受并留住物品，基础交往动作。",
+      "reviewer": "activity"
+    },
+    "wl_10690": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "随意走动游看，普通休闲动作。",
+      "reviewer": "activity"
+    },
+    "wl_10691": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "城市旧发展部分，普通地理场所。",
+      "reviewer": "activity"
+    },
+    "wl_10692": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "小规模卖物人，普通职业角色。",
+      "reviewer": "activity"
+    },
+    "wl_10693": {
+      "rarity": "1",
+      "pos": "verb; adjective",
+      "reason": "靠街并面向街，普通房产位置描述。",
+      "reviewer": "activity"
+    },
+    "wl_10694": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "街道小巷合称，普通居住环境名。",
+      "reviewer": "activity"
+    },
+    "wl_10695": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "慢慢行进的基础动作，本条道路提示也不用专业交通概念。",
+      "reviewer": "activity"
+    },
+    "wl_10696": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "零散日常事务，普通工作类别。",
+      "reviewer": "activity"
+    },
+    "wl_10697": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "锁上插钥匙的孔，基础部件。",
+      "reviewer": "activity"
+    },
+    "wl_10698": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "到定期开市的集市，普通地区生活活动。",
+      "reviewer": "activity"
+    },
+    "wl_10699": {
+      "rarity": "0",
+      "pos": "noun",
+      "reason": "小袋包裹，基础实物。",
+      "reviewer": "activity"
+    },
+    "wl_10700": {
+      "rarity": "0",
+      "pos": "noun phrase",
+      "reason": "接下来的停靠处，基础顺序与地点表达。",
+      "reviewer": "activity"
+    },
+    "wl_10701": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "把钱付出去，基础生活动作。",
+      "reviewer": "activity"
+    },
+    "wl_10702": {
+      "rarity": "2",
+      "pos": "noun",
+      "reason": "记录钱款交易的账簿，较正式经济事务文本。",
+      "reviewer": "activity"
+    },
+    "wl_10703": {
+      "rarity": "1",
+      "pos": "verb",
+      "reason": "存放物品的较书面生活动词。",
+      "reviewer": "activity"
+    },
+    "wl_10704": {
+      "rarity": "2",
+      "pos": "verb",
+      "reason": "履行约定责任，正式社会事务动词。",
+      "reviewer": "activity"
+    },
+    "wl_10705": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "春节准备的物品，普通生活文化类别。",
+      "reviewer": "activity"
+    },
+    "wl_10706": {
+      "rarity": "2",
+      "pos": "noun phrase",
+      "reason": "约定付款方式时间等要求，正式交易概念。",
+      "reviewer": "activity"
+    },
+    "wl_10707": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "吸引游人的地点，普通旅行类别。",
+      "reviewer": "activity"
+    },
+    "wl_10708": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "住在旅馆等的人，普通服务角色。",
+      "reviewer": "activity"
+    },
+    "wl_10709": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "方便营业售日用物的商店，普通生活场所。",
+      "reviewer": "activity"
+    },
+    "wl_10710": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "模仿原物的产品，普通商品类别，不必等于欺骗假货。",
+      "reviewer": "activity"
+    },
+    "wl_10711": {
+      "rarity": "1",
+      "pos": "noun; verb",
+      "reason": "介绍带看场馆的服务，普通旅游活动。",
+      "reviewer": "activity"
+    },
+    "wl_10712": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "把钱全部花完，基础生活结果动作。",
+      "reviewer": "activity"
+    },
+    "wl_10713": {
+      "rarity": "0",
+      "pos": "verb",
+      "reason": "送到他处，基础方向动作。",
+      "reviewer": "activity"
+    },
+    "wl_10714": {
+      "rarity": "1",
+      "pos": "noun",
+      "reason": "经营买卖的人或单位，普通生活商业角色。",
+      "reviewer": "activity"
+    }
+  },
+  "boundary": "Independent full-record AI editorial review of all 12 decoded fields and all three initial distractor labels. No human linguistic certification or runtime proof.",
+  "method": {
+    "initialRead": "All 240 records and 480 complete examples read in sequential batches of 20, including all 12 fields, chunks, pinyin, parts, grade/POS, source notes and three choice labels.",
+    "reuse": "No example cache; identical source notes checked by equality against the full shared note, differing source notes printed in full.",
+    "boundary": "Candidate word identity/order unchanged; only decoded whitelisted new teaching/grade fields corrected."
+  },
+  "deltaReviewedRanges": [
+    [
+      0,
+      58
+    ]
+  ],
+  "deltaReviewedRecords": 58,
+  "finalChoicesPending": true
+}

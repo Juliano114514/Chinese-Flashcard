@@ -1,0 +1,23 @@
+{
+  "baseRows": 9223,
+  "baseSha256": "762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237",
+  "additionalRows": 4000,
+  "correctedExistingRows": 2,
+  "resultRows": 13223,
+  "rarity": {
+    "1": 2412,
+    "0": 1223,
+    "2": 351,
+    "3": 4,
+    "4": 10
+  },
+  "sha256": "94d98ce1fff7171d74d6ae46c6ac42925f6c8676f7e8b4989864971cba5c7d79",
+  "bytes": 28011628,
+  "newExamples": 8000,
+  "primaryStructurallyCheckedEntries": 4000,
+  "independentlyEditorialReviewedEntries": 4000,
+  "existingIdsStagesReferencesOrderUnchanged": true,
+  "newHeadwordDuplicates": 0,
+  "completeStructuralValidator": "PASS",
+  "boundary": "New teaching entries and evidenced existing-field corrections are AI-assisted; primary author-input/source/structural checks and independent complete editorial reading plus final changed-field/choice confirmations are separate evidence, bound to exact final input hashes. No second independent full language pass is claimed. All existing word IDs, headwords, stages, physical order and distractor IDs remain fixed. Structural validation and recorded AI review are not human linguistic certification or device-import evidence."
+}

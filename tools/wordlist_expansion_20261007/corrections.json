@@ -1,0 +1,190 @@
+{
+  "wl_06211": {
+    "fields": {
+      "例句JSON": [
+        {
+          "hanzi": "夜里，窗外传来蛩声。",
+          "pinyin": "yè li, chuāng wài chuán lái qióng shēng.",
+          "english": "At night, the sound of crickets comes from outside the window.",
+          "chunks": [
+            {
+              "hanzi": "夜里，",
+              "pinyin": "yè li,",
+              "gloss": "at night"
+            },
+            {
+              "hanzi": "窗",
+              "pinyin": "chuāng",
+              "gloss": "window"
+            },
+            {
+              "hanzi": "外",
+              "pinyin": "wài",
+              "gloss": "outside"
+            },
+            {
+              "hanzi": "传",
+              "pinyin": "chuán",
+              "gloss": "transmit; come from"
+            },
+            {
+              "hanzi": "来",
+              "pinyin": "lái",
+              "gloss": "come"
+            },
+            {
+              "hanzi": "蛩声。",
+              "pinyin": "qióng shēng.",
+              "gloss": "sound of crickets"
+            }
+          ]
+        },
+        {
+          "hanzi": "秋夜的蛩声从草丛中传来。",
+          "pinyin": "qiū yè de qióng shēng cóng cǎo cóng zhōng chuán lái.",
+          "english": "On the autumn night, the sound of crickets comes from the grass.",
+          "chunks": [
+            {
+              "hanzi": "秋夜",
+              "pinyin": "qiū yè",
+              "gloss": "autumn night"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "蛩声",
+              "pinyin": "qióng shēng",
+              "gloss": "sound of crickets"
+            },
+            {
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "gloss": "from"
+            },
+            {
+              "hanzi": "草丛",
+              "pinyin": "cǎo cóng",
+              "gloss": "underbrush"
+            },
+            {
+              "hanzi": "中",
+              "pinyin": "zhōng",
+              "gloss": "in; among"
+            },
+            {
+              "hanzi": "传来。",
+              "pinyin": "chuán lái.",
+              "gloss": "come from; be heard"
+            }
+          ]
+        }
+      ]
+    },
+    "expectedSha256": {
+      "例句JSON": "2a92a4cc2a11303032e0a798cd828ee243988cddb2d9480660f778391474972a"
+    },
+    "reason": "Confirmed reading error in the unchanged example 夜里，窗外传来蛩声。: 传来 means a sound comes through and is chuán lái, not the biography reading zhuàn. Change only the aligned example and 传 chunk pinyin; keep the word, ID, stage, English, other chunks and examples unchanged. Independently identified in source_primary_services.json / 夜里."
+  },
+  "wl_06550": {
+    "fields": {
+      "例句JSON": [
+        {
+          "hanzi": "他在植物书里读到栝楼的名称。",
+          "pinyin": "tā zài zhí wù shū lǐ dú dào guā lóu de míng chēng.",
+          "english": "He reads the name of the Chinese cucumber in a botanical book.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "植物书",
+              "pinyin": "zhí wù shū",
+              "gloss": "a botanical book"
+            },
+            {
+              "hanzi": "里",
+              "pinyin": "lǐ",
+              "gloss": "inside"
+            },
+            {
+              "hanzi": "读到",
+              "pinyin": "dú dào",
+              "gloss": "read about"
+            },
+            {
+              "hanzi": "栝楼",
+              "pinyin": "guā lóu",
+              "gloss": "Trichosanthes kirilowii; Chinese cucumber"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "名称。",
+              "pinyin": "míng chēng.",
+              "gloss": "name"
+            }
+          ]
+        },
+        {
+          "hanzi": "图册里的栝楼结着果实。",
+          "pinyin": "tú cè lǐ de guā lóu jiē zhe guǒ shí.",
+          "english": "The Chinese cucumber in the guide bears fruit.",
+          "chunks": [
+            {
+              "hanzi": "图册",
+              "pinyin": "tú cè",
+              "gloss": "illustrated book"
+            },
+            {
+              "hanzi": "里",
+              "pinyin": "lǐ",
+              "gloss": "in; inside"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "栝楼",
+              "pinyin": "guā lóu",
+              "gloss": "Trichosanthes kirilowii; Chinese cucumber"
+            },
+            {
+              "hanzi": "结",
+              "pinyin": "jiē",
+              "gloss": "bear (fruit)"
+            },
+            {
+              "hanzi": "着",
+              "pinyin": "zhe",
+              "gloss": "ZHE (ongoing state)"
+            },
+            {
+              "hanzi": "果实。",
+              "pinyin": "guǒ shí.",
+              "gloss": "fruit (produced by a plant)"
+            }
+          ]
+        }
+      ]
+    },
+    "expectedSha256": {
+      "例句JSON": "1efd7e8371b2fb2ba16540971b1a6ba75275cd03a88d4481f2169ceadd55abf9"
+    },
+    "reason": "Confirmed reading and sense error in 图册里的栝楼结着果实。: the plant produces fruit, so 结 is jiē / bear (fruit), not jié / knot. Pinned CC-CEDICT 结 jie1 explicitly gives the plant-producing-fruit sense. Change only this aligned example pinyin and 结 chunk reading/gloss; keep all other fields unchanged. Independently identified in source_primary_services.json / 果实."
+  }
+}

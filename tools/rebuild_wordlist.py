@@ -30,6 +30,11 @@ REVIEW = ROOT / 'tools/content_review_20261005'
 HEADERS = ['罕度', '组词', '拼音', '词条ID', '英文释义', '词性', '例句JSON',
            '部件JSON', '干扰词ID', '来源说明', '本义解释JSON', '引申义解释JSON']
 JSON_FIELDS = ['例句JSON', '部件JSON', '干扰词ID', '本义解释JSON', '引申义解释JSON']
+EXPANSION_20261007 = ROOT / 'tools/wordlist_expansion_20261007'
+EXPANSION_20261007_BASE_SHA = '762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237'
+EXPANSION_20261007_BASE_ROWS = 9223
+EXPANSION_CORRECTION_FIELDS = {'拼音', '英文释义', '词性', '例句JSON', '部件JSON',
+                               '本义解释JSON', '引申义解释JSON'}
 HANZI = re.compile(r'[\u3400-\u9fff\U00020000-\U000323af]')
 PINYIN = re.compile(r'[a-züêāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜńňǹḿ]+', re.I)
 SENSE_MARKER = 'Other attested senses with this reading:'
@@ -573,7 +578,7 @@ def validate(content):
         for key in JSON_FIELDS:
             row[key] = json_array(row[key], 400 if key == '干扰词ID' else 16000, key)
         rows.append(row)
-        if len(rows) > 10000:
+        if len(rows) > 20000:
             raise ValueError('CSV headers/count invalid')
     if not rows:
         raise ValueError('CSV headers/count invalid')
@@ -648,6 +653,120 @@ def validate(content):
     return rows
 
 
+def expansion_20261007_sources(sources):
+    """Verify this round's exact files; only relative paths within its directory are valid."""
+    if not isinstance(sources, dict) or not {'freeze.py', 'entries.json', 'corrections.json', 'reviews.json'} <= set(sources):
+        raise ValueError('The 2026-10-07 expansion lacks its frozen authoring/review inputs')
+    directory = EXPANSION_20261007.resolve()
+    for name, digest in sources.items():
+        if (not isinstance(name, str) or Path(name).is_absolute() or
+                not isinstance(digest, str) or not re.fullmatch('[0-9a-f]{64}', digest)):
+            raise ValueError('Invalid expansion source path or hash')
+        path = (directory / name).resolve()
+        if not path.is_relative_to(directory) or not path.is_file():
+            raise ValueError('Expansion source escapes its directory or is missing: ' + name)
+        if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+            raise ValueError('Expansion authoring/review source differs: ' + name)
+
+
+def expansion_20261007_reviews(review, additions, corrections, source_hashes):
+    if (review.get('entriesSha256') != source_hashes['entries.json'] or
+            review.get('correctionsSha256') != source_hashes['corrections.json']):
+        raise ValueError('Expansion review does not match its final entries/corrections snapshot')
+    if (load(EXPANSION_20261007 / 'entries.json')['entries'] != additions or
+            load(EXPANSION_20261007 / 'corrections.json') != corrections):
+        raise ValueError('Frozen expansion entries/corrections differ from the reviewed input')
+    expected_ids = {row['词条ID'] for row in additions}
+    for role in ['primary', 'independent']:
+        coverage = review.get(role, {})
+        covered = coverage.get('coveredIds', [])
+        if (coverage.get('reviewedEntries') != len(additions) or
+                coverage.get('reviewedExamples') != 2 * len(additions) or
+                len(covered) != len(additions) or set(covered) != expected_ids or
+                coverage.get('issues') != []):
+            raise ValueError('Expansion lacks a complete issue-free ' + role + ' review')
+        covered_corrections = coverage.get('coveredCorrectionIds', [])
+        if len(covered_corrections) != len(corrections) or set(covered_corrections) != set(corrections):
+            raise ValueError('Existing teaching corrections lack complete ' + role + ' review')
+    for name, digest in review.get('sourceSha256', {}).items():
+        if source_hashes.get(name) != digest:
+            raise ValueError('Expansion reviewer evidence differs from its frozen source: ' + name)
+
+
+def compose_expansion_20261007(content, expansion):
+    """Correct only proven teaching errors, then append; no old identity/stage/reference moves."""
+    if (expansion.get('baseRows') != EXPANSION_20261007_BASE_ROWS or
+            expansion.get('baseSha256') != EXPANSION_20261007_BASE_SHA or
+            hashlib.sha256(content).hexdigest() != EXPANSION_20261007_BASE_SHA):
+        raise ValueError('Expansion must follow the frozen 9,223-word five-stage snapshot')
+    rows = validate(content)
+    if len(rows) != EXPANSION_20261007_BASE_ROWS or serialize(rows) != content:
+        raise ValueError('Expansion baseline count or serialized bytes changed')
+    raw_rows = list(csv.DictReader(io.StringIO(content.decode('utf-8-sig'), newline='')))
+    raw_by_id = {row['词条ID']: row for row in raw_rows}
+    indexed = {row['词条ID']: row for row in rows}
+    corrections = expansion.get('corrections', {})
+    if not isinstance(corrections, dict):
+        raise ValueError('Expansion corrections must be keyed by the existing word ID')
+    for word_id, correction in corrections.items():
+        if word_id not in indexed or not isinstance(correction, dict):
+            raise ValueError('Unknown or invalid existing-word correction: ' + word_id)
+        fields, hashes = correction.get('fields', {}), correction.get('expectedSha256', {})
+        reason = correction.get('reason', '')
+        if (not isinstance(fields, dict) or not fields or not set(fields) <= EXPANSION_CORRECTION_FIELDS or
+                not isinstance(hashes, dict) or set(fields) != set(hashes) or
+                not isinstance(reason, str) or not reason.strip() or len(reason) > 2000):
+            raise ValueError('Existing-word correction lacks allowed fields, original hashes or evidence: ' + word_id)
+        for field, value in fields.items():
+            old = raw_by_id[word_id][field]
+            if hashlib.sha256(old.encode('utf-8')).hexdigest() != hashes[field]:
+                raise ValueError('Correction original-field hash differs: ' + word_id + ' ' + field)
+            if (field in JSON_FIELDS and not isinstance(value, list) or
+                    field not in JSON_FIELDS and not isinstance(value, str)):
+                raise ValueError('Correction field does not use the decoded CSV type: ' + field)
+            indexed[word_id][field] = value
+    # In particular, do not refresh old rarity values, distractor IDs, source text or physical order.
+    protected = set(HEADERS) - EXPANSION_CORRECTION_FIELDS
+    for original, row in zip(raw_rows, rows):
+        for field in protected:
+            value = json.dumps(row[field], ensure_ascii=False, separators=(',', ':')) if field in JSON_FIELDS else row[field]
+            if value != original[field]:
+                raise ValueError('Expansion changes a protected existing field: ' + field)
+    additions = expansion.get('entries', [])
+    if (not isinstance(additions, list) or not 3000 <= len(additions) <= 5000 or
+            expansion.get('additionalRows') != len(additions)):
+        raise ValueError('Expansion requires 3,000–5,000 reviewed new words')
+    seen_words = {unicodedata.normalize('NFC', row['组词']) for row in rows}
+    particle_pos = re.compile(r'(?i)\b(?:particle|filler)\b|discourse marker')
+    particles = set('啊呀吗呢吧啦嘛呐哪哦噢喔呵哈嘻啵哎唉哟哇喂嘿哼嗯咦嗨咯啰呗嘞罢欤兮矣焉乎哉耶')
+    fillers = {'我去', '我的天', '天哪', '哎呀', '好哇', '好啦', '你呢', '什么的', '就是嘛', '对吧', '好吧', '嗯哼', '嗯嗯'}
+    particle_forms = re.compile(r'^(?:好|对|是|行|算了|走|来|你|我|他|她|我们|你们|他们|这|那|真的|天|什么)(?:啊|呀|吗|呢|吧|啦|呗|咯|嘞|哟|喽)$')
+    for offset, row in enumerate(additions, EXPANSION_20261007_BASE_ROWS + 1):
+        if not isinstance(row, dict) or set(row) != set(HEADERS):
+            raise ValueError('Expansion entries require exactly the twelve decoded CSV columns')
+        if any(not isinstance(row[field], list if field in JSON_FIELDS else str) for field in HEADERS):
+            raise ValueError('Expansion entries require text cells and decoded JSON arrays')
+        if row['词条ID'] != f'wl_{offset:05d}':
+            raise ValueError('Expansion IDs must be assigned sequentially after wl_09223')
+        word = unicodedata.normalize('NFC', row['组词'])
+        if word in seen_words:
+            raise ValueError('Existing or repeated new headword: ' + word)
+        if particle_pos.search(row['词性']) or word in fillers or all(glyph in particles for glyph in word) or particle_forms.fullmatch(word):
+            raise ValueError('New particles or particle-based fillers are prohibited: ' + word)
+        seen_words.add(word)
+    if dict(collections.Counter(row['罕度'] for row in additions)) != expansion.get('rarity'):
+        raise ValueError('Expansion rarity totals differ from its reviewed entries')
+    rows.extend(additions)
+    if len({(row['组词'], reading_key(row['拼音'])) for row in rows}) != len(rows):
+        raise ValueError('Expansion/corrections introduce duplicate word-reading identities')
+    result = serialize(rows)
+    validate(result)
+    if (expansion.get('resultSha256', hashlib.sha256(result).hexdigest()) != hashlib.sha256(result).hexdigest() or
+            expansion.get('resultBytes', len(result)) != len(result)):
+        raise ValueError('Expansion publication differs from its frozen result hash or size')
+    return result, rows
+
+
 def apply():
     manifest_path = DATA / 'build-manifest.json'
     if manifest_path.exists():
@@ -657,6 +776,8 @@ def apply():
             required.add('expansion-20261005.json')
         if 'stageGrading' in published:
             required.add('stage-grading-20261005.json')
+        if 'vocabularyExpansion20261007' in published:
+            required.add('expansion-20261007.json')
         missing = sorted(name for name in required if not (DATA / name).is_file())
         if missing:
             raise ValueError('Published frozen inputs are missing; refuse to roll back the wordlist: '
@@ -784,6 +905,13 @@ def apply():
         if (len(before) != len(rows) + 1 or len(after) != len(before) or before[0] != after[0]
                 or any(old[1:] != new[1:] for old, new in zip(before[1:], after[1:]))):
             raise ValueError('Stage grading changes a byte outside the rarity column')
+    current_expansion = DATA / 'expansion-20261007.json'
+    if current_expansion.exists():
+        expansion = load(current_expansion)
+        expansion_20261007_sources(expansion['sourceSha256'])
+        expansion_20261007_reviews(load(EXPANSION_20261007 / 'reviews.json'),
+                                   expansion['entries'], expansion['corrections'], expansion['sourceSha256'])
+        content, rows = compose_expansion_20261007(content, expansion)
     validate(content)
     if OUTPUT.exists():
         permitted = {hashlib.sha256(BASELINE.read_bytes()).hexdigest(), hashlib.sha256(content).hexdigest()}
@@ -835,6 +963,14 @@ def report(content, rows):
         summary['stageGrading'] = {key: grading[key] for key in
             ['date','rows','baseSha256','reviewedRows','levels','sourceSha256','boundary']}
         summary['csvPhysicalOrder'] += '; five-stage grading changes only rarity cells'
+    current_expansion = DATA / 'expansion-20261007.json'
+    if current_expansion.exists():
+        expansion = load(current_expansion)
+        summary['inputSha256'][current_expansion.name] = hashlib.sha256(current_expansion.read_bytes()).hexdigest()
+        summary['vocabularyExpansion20261007'] = {key: expansion[key] for key in
+            ['date', 'baseRows', 'baseSha256', 'additionalRows', 'rarity', 'sourceSha256', 'boundary']}
+        summary['vocabularyExpansion20261007']['correctedExistingRows'] = len(expansion['corrections'])
+        summary['csvPhysicalOrder'] += '; then reviewed 2026-10-07 additions, with only evidenced teaching-field corrections to old rows'
     save(ROOT/'docs/wordlist-validation.json',summary)
     save(DATA/'build-manifest.json',summary)
     print(json.dumps(summary,ensure_ascii=False))
@@ -866,6 +1002,14 @@ def main():
             for name, digest in expected['stageGrading']['sourceSha256'].items():
                 if hashlib.sha256((ROOT/'tools/wordlist_stages_20261005'/name).read_bytes()).hexdigest() != digest:
                     raise ValueError('Stage grading source differs: '+name)
+        if 'vocabularyExpansion20261007' in expected:
+            expansion = load(DATA / 'expansion-20261007.json')
+            expansion_20261007_sources(expansion['sourceSha256'])
+            expansion_20261007_reviews(load(EXPANSION_20261007 / 'reviews.json'),
+                                       expansion['entries'], expansion['corrections'], expansion['sourceSha256'])
+            if (expansion['resultSha256'] != hashlib.sha256(content).hexdigest() or
+                    expansion['resultBytes'] != len(content)):
+                raise ValueError('Final CSV differs from the frozen current expansion')
         if 'contentReview' in expected:
             review = expected['contentReview']
             if hashlib.sha256((REVIEW/'review-manifest.json').read_bytes()).hexdigest() != review['manifestSha256']:

@@ -8,7 +8,7 @@ import java.nio.CharBuffer
 import java.nio.charset.CodingErrorAction
 import java.nio.charset.MalformedInputException
 
-internal const val CSV_MAX_ROWS = 10000
+internal const val CSV_MAX_ROWS = 20000
 internal const val CSV_MAX_BYTES = 32L * 1024 * 1024
 
 internal class CsvFormatException(val line: Int, val fieldIndex: Int, message: String) : IllegalArgumentException(message)

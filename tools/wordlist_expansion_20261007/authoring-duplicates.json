@@ -1,0 +1,59 @@
+{
+  "selectionOrder": "activity, family, services; first authored headword retained",
+  "duplicates": [
+    {
+      "word": "电源",
+      "retainedAuthor": "activity_authoring.tsv",
+      "duplicateAuthor": "family_authoring.tsv",
+      "duplicateLine": 368
+    },
+    {
+      "word": "挂号",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 67
+    },
+    {
+      "word": "门诊",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 69
+    },
+    {
+      "word": "急诊",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 70
+    },
+    {
+      "word": "客房",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 131
+    },
+    {
+      "word": "纸盒",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 181
+    },
+    {
+      "word": "餐具",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 249
+    },
+    {
+      "word": "注销",
+      "retainedAuthor": "activity_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 421
+    },
+    {
+      "word": "停水",
+      "retainedAuthor": "family_authoring.tsv",
+      "duplicateAuthor": "services_authoring.tsv",
+      "duplicateLine": 472
+    }
+  ]
+}

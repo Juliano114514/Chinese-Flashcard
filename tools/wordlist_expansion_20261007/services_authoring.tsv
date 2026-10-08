@@ -1,0 +1,501 @@
+word	reading	english	pos	explanation	h1	e1	h2	e2
+扫码	sǎo mǎ	scan a code	verb	Read a printed or displayed code with a scanner or phone.	请扫码查看菜单。	Scan the code to see the menu.	我扫码打开了储物柜。	I scanned the code to open the locker.
+扫码支付	sǎo mǎ zhī fù	pay by scanning a code	verb phrase	Make an electronic payment by scanning a payment code.	这家店支持扫码支付。	This shop accepts payment by scanning a code.	我扫码支付了停车费。	I paid the parking fee by scanning a code.
+二维码	èr wéi mǎ	QR code	noun	A square two-dimensional code that stores information.	门票上的二维码已经过期。	The QR code on the ticket has expired.	请把二维码对准镜头。	Point the QR code at the camera.
+条形码	tiáo xíng mǎ	barcode	noun	A printed pattern of bars read by a scanner.	收银员扫了包装上的条形码。	The cashier scanned the barcode on the package.	这本书的条形码被磨掉了。	The barcode on this book has worn off.
+付款	fù kuǎn	make a payment	verb	Pay money for goods, services or a bill.	请先付款，再到门口取餐。	Pay first, then collect your food at the door.	客户答应周五付款。	The customer agreed to pay on Friday.
+收款	shōu kuǎn	receive payment	verb	Accept money paid for goods or services.	店主用手机收款。	The shopkeeper receives payments on a phone.	收款后请给我一张收据。	Give me a receipt after receiving the payment.
+退款	tuì kuǎn	refund	verb; noun	Return money already paid, or the money returned.	店员同意给我退款。	The clerk agreed to refund my payment.	退款将在三天内到账。	The refund will arrive within three days.
+退货	tuì huò	return purchased goods	verb	Send or take purchased goods back to the seller.	这双鞋太小，我想退货。	These shoes are too small; I want to return them.	退货时需要保留包装。	Keep the packaging when returning goods.
+换货	huàn huò	exchange purchased goods	verb	Replace purchased goods with another item from the seller.	她拿着收据来换货。	She brought the receipt to exchange the item.	商品拆封后不能换货。	The item cannot be exchanged once opened.
+下单	xià dān	place an order	verb	Submit an order for goods or services.	我昨晚下单买了一把伞。	I ordered an umbrella last night.	下单前请核对地址。	Check the address before placing the order.
+订单	dìng dān	order	noun	A recorded request to purchase goods or services.	这笔订单还没有发货。	This order has not been shipped yet.	我把订单号发给了客服。	I sent the order number to customer service.
+购物车	gòu wù chē	shopping cart	noun	A cart for carrying purchases, or an online list of items to buy.	购物车里放着牛奶和面包。	There is milk and bread in the shopping cart.	我把这件衣服加入了购物车。	I added this garment to my online cart.
+购物袋	gòu wù dài	shopping bag	noun	A bag used to carry purchased goods.	她出门时带了一个购物袋。	She took a shopping bag when she went out.	这个购物袋可以重复使用。	This shopping bag can be used again.
+收据	shōu jù	receipt	noun	A written record confirming that money has been received.	交完房租后，房东给了我收据。	The landlord gave me a receipt after I paid the rent.	请保留这张收据作为凭证。	Keep this receipt as proof.
+电子发票	diàn zǐ fā piào	electronic invoice	noun	An invoice issued and stored in electronic form.	电子发票已经发到我的邮箱。	The electronic invoice has been sent to my email.	报销时可以上传电子发票。	You can upload an electronic invoice for reimbursement.
+开票	kāi piào	issue an invoice	verb	Prepare and issue an invoice for a transaction.	请按公司的名称开票。	Issue the invoice in the company's name.	这家小店也能开票。	This small shop can also issue invoices.
+补票	bǔ piào	pay for a missing ticket	verb	Obtain or pay for a required ticket that was not bought earlier.	他上车后去找乘务员补票。	He found the attendant to buy a ticket after boarding.	坐过了站，需要补票。	If you travel beyond your stop, you need to pay the extra fare.
+买票	mǎi piào	buy a ticket	verb phrase	Purchase admission or a ticket for travel.	我们提前买票去看演出。	We bought tickets in advance for the performance.	老人可以在窗口买票。	Older passengers can buy tickets at the counter.
+售票	shòu piào	sell tickets	verb	Offer and sell tickets for travel or admission.	音乐厅明天开始售票。	The concert hall starts selling tickets tomorrow.	这个窗口只负责售票。	This counter only sells tickets.
+票价	piào jià	ticket price	noun	The amount charged for a ticket.	儿童票价比成人票价低。	Children's tickets cost less than adult tickets.	节假日的票价没有变化。	Ticket prices have not changed for the holidays.
+地铁	dì tiě	subway	noun	An urban railway system, often running underground.	我每天坐地铁上班。	I take the subway to work every day.	最后一班地铁已经开走了。	The last subway train has already left.
+公交	gōng jiāo	public bus transport	noun	Public transport, commonly used to mean the city bus system.	下雨天坐公交更方便。	Taking public buses is more convenient on rainy days.	这个小区附近的公交很少。	There are few bus services near this residential area.
+公交车	gōng jiāo chē	city bus	noun	A bus that carries passengers on a scheduled public route.	公交车在路口停了下来。	The city bus stopped at the junction.	这辆公交车能到医院。	This bus goes to the hospital.
+转乘	zhuǎn chéng	transfer to another vehicle	verb	Continue a journey by changing to another service or vehicle.	到市中心后转乘地铁。	Transfer to the subway when you reach the city center.	我们需要在下一站转乘。	We need to change services at the next stop.
+进站	jìn zhàn	enter a station	verb	Enter a railway station, or arrive at one in a train.	进站前请准备好证件。	Have your identification ready before entering the station.	列车正在缓慢进站。	The train is slowly pulling into the station.
+出站	chū zhàn	leave a station	verb	Exit a railway station or depart from it in a train.	出站后向左走就是广场。	Turn left after leaving the station to reach the square.	乘客需要刷卡出站。	Passengers need to tap their cards to exit the station.
+闸机	zhá jī	ticket gate	noun	A controlled gate that allows entry after a ticket or pass is checked.	闸机前排着一队乘客。	A line of passengers is waiting at the ticket gate.	他的车票没能打开闸机。	His ticket did not open the ticket gate.
+月票	yuè piào	monthly pass	noun	A ticket or pass valid for a month.	经常坐车的人可以买月票。	Frequent travelers can buy a monthly pass.	我的月票月底到期。	My monthly pass expires at the end of the month.
+年票	nián piào	annual pass	noun	A ticket or pass valid for a year.	这张年票可以用于多次入园。	This annual pass allows repeated entry to the park.	我为游泳馆续了年票。	I renewed my annual pass for the swimming pool.
+单程	dān chéng	one-way journey	noun; adjective	Travel in one direction without the return journey.	这段路单程需要两个小时。	This route takes two hours each way.	他只订了单程机票。	He booked only a one-way flight.
+往返	wǎng fǎn	go and return	verb; adjective	Travel to a place and back again.	我每天往返于学校和家之间。	I travel between school and home every day.	往返车费一共六十元。	The round-trip fare is sixty yuan.
+单程票	dān chéng piào	one-way ticket	noun	A ticket covering a journey in one direction only.	她买了一张单程票。	She bought a one-way ticket.	单程票只能使用一次。	A single-journey ticket can be used only once.
+往返票	wǎng fǎn piào	round-trip ticket	noun	A ticket covering travel to a destination and back.	往返票比分开买两张票便宜。	A round-trip ticket is cheaper than two separate tickets.	这张往返票的回程日期能改。	The return date on this round-trip ticket can be changed.
+通票	tōng piào	combined admission pass	noun	One ticket that covers several connected journeys or attractions.	这张通票包括三个展馆。	This combined pass includes three exhibition halls.	购买通票后不用分别买票。	You do not need separate tickets after buying the combined pass.
+优惠券	yōu huì quàn	discount coupon	noun	A coupon that reduces the price of a purchase.	这张优惠券下周到期。	This discount coupon expires next week.	结账时别忘了使用优惠券。	Remember to use the discount coupon at checkout.
+优惠码	yōu huì mǎ	discount code	noun	A code entered to obtain a discount on a purchase.	输入优惠码后，价格降了十元。	Entering the discount code reduced the price by ten yuan.	这个优惠码只适用于新客户。	This discount code applies only to new customers.
+促销	cù xiāo	sales promotion	noun; verb	Activities or special offers intended to increase sales.	超市正在举行周末促销。	The supermarket is running a weekend promotion.	促销结束后就恢复原价。	The original price returns after the promotion ends.
+打折	dǎ zhé	sell at a discount	verb	Reduce the selling price by a stated proportion.	这件外套正在打折。	This coat is on sale.	会员买书可以打折。	Members can get a discount on books.
+折扣	zhé kòu	discount	noun	A reduction from the usual price.	这家店给学生提供折扣。	This shop offers students a discount.	折扣只适用于指定商品。	The discount applies only to selected items.
+原价	yuán jià	original price	noun	The price before a discount or adjustment.	标签上写着这件衣服的原价。	The label shows the original price of this garment.	活动结束后商品恢复原价。	The goods return to their original price after the event.
+现价	xiàn jià	current price	noun	The price currently charged for an item.	这台电脑的现价比去年低。	The current price of this computer is lower than last year's.	牌子上标明了原价和现价。	The sign shows the original and current prices.
+标价	biāo jià	marked price	noun; verb	The price displayed for an item, or the act of displaying it.	这把椅子的标价是两百元。	The marked price of this chair is two hundred yuan.	店员正在给新商品标价。	The clerk is putting prices on the new goods.
+总价	zǒng jià	total price	noun	The combined price of all items in a purchase.	三件商品的总价是八十元。	The three items cost eighty yuan in total.	运费没有计入总价。	Shipping has not been included in the total price.
+运费	yùn fèi	shipping charge	noun	The charge for transporting or delivering goods.	退货的运费由商家承担。	The seller pays the shipping charge for the return.	偏远地区的运费更高。	Shipping charges are higher for remote areas.
+包邮	bāo yóu	include free shipping	verb	Sell an item with the shipping charge included or waived.	买两本书就能包邮。	Buying two books qualifies for free shipping.	这件商品包邮送到家。	This item includes free delivery to your home.
+快递	kuài dì	express delivery	noun; verb	A service that sends parcels quickly to recipients.	我的快递放在楼下。	My parcel delivery is downstairs.	请用快递寄这份合同。	Send this contract by express delivery.
+外卖	wài mài	takeaway food	noun	Food prepared by a business for takeaway or delivery.	加班时我们点了外卖。	We ordered food delivery while working late.	这家餐馆只做外卖。	This restaurant only prepares food for takeaway and delivery.
+快递员	kuài dì yuán	parcel courier	noun	A worker who delivers express parcels.	快递员打电话确认了地址。	The courier called to confirm the address.	她向快递员出示了取件码。	She showed the courier the collection code.
+配送	pèi sòng	distribute and deliver	verb	Send goods to their assigned destinations.	生鲜食品每天早上配送。	Fresh food is delivered every morning.	商家不向这个区域配送。	The seller does not deliver to this area.
+配送员	pèi sòng yuán	delivery worker	noun	A worker who delivers ordered goods or meals.	配送员把餐点送到了前台。	The delivery worker left the meal at reception.	下雨时配送员仍在工作。	Delivery workers are still working in the rain.
+取件	qǔ jiàn	collect a parcel	verb	Pick up a parcel or another item held for collection.	取件时请带上手机。	Bring your phone when collecting the parcel.	我下班后去楼下取件。	I collect my parcel downstairs after work.
+寄件	jì jiàn	send a parcel	verb	Hand over a parcel or document for delivery.	寄件前要填写收件人的地址。	Fill in the recipient's address before sending the parcel.	附近的便利店可以寄件。	You can send parcels at the nearby convenience store.
+收件	shōu jiàn	receive a parcel	verb	Accept an item sent by post or courier.	前台可以代替住客收件。	Reception can receive parcels for guests.	收件时请检查包装是否完整。	Check that the packaging is intact when receiving the parcel.
+寄送	jì sòng	send by post	verb	Send an item to someone using a postal or delivery service.	学校会寄送录取通知书。	The school will send the admission letter by post.	我给朋友寄送了一份礼物。	I sent a gift to my friend.
+签收	qiān shōu	sign for a delivery	verb	Confirm receipt of a delivered item, usually with a signature.	包裹由门卫签收了。	The security guard signed for the parcel.	签收之前请检查货物。	Check the goods before signing for them.
+自提	zì tí	collect in person	verb	Pick up an order personally rather than having it delivered.	这张桌子只能到店自提。	This table is available for collection at the shop only.	我选择了明天下午自提。	I chose to collect my order tomorrow afternoon.
+提货	tí huò	collect ordered goods	verb	Take delivery of goods from the place where they are held.	司机带着单据来仓库提货。	The driver brought the documents to collect goods from the warehouse.	付款后可以凭收据提货。	After paying, you can collect the goods with your receipt.
+提货码	tí huò mǎ	goods collection code	noun	A code used to identify an order when collecting goods.	提货码已经发到你的手机。	The goods collection code has been sent to your phone.	店员核对提货码后交出了商品。	The clerk handed over the goods after checking the collection code.
+取件码	qǔ jiàn mǎ	parcel collection code	noun	A code needed to collect a parcel from a locker or collection point.	我不小心删除了取件码。	I accidentally deleted the parcel collection code.	输入取件码后，柜门打开了。	The locker opened after I entered the collection code.
+取餐	qǔ cān	collect a meal	verb	Pick up food that has been prepared for an order.	请到左边的窗口取餐。	Collect your meal at the window on the left.	我的取餐时间是十二点。	My meal collection time is noon.
+餐盒	cān hé	food container	noun	A container used to hold or pack a meal.	请把空餐盒放进垃圾桶。	Put the empty food container in the bin.	这个餐盒可以放进微波炉。	This food container can go in the microwave.
+送餐	sòng cān	deliver meals	verb	Bring prepared meals to customers or other recipients.	餐厅每天给老人送餐。	The restaurant delivers meals to older people every day.	送餐途中汤洒了出来。	The soup spilled during the meal delivery.
+加急	jiā jí	expedite	verb	Give a request or item urgent treatment to finish it sooner.	这份文件需要加急处理。	This document needs urgent processing.	加急服务要另外收费。	Expedited service costs extra.
+预约	yù yuē	make an appointment	verb; noun	Arrange a time in advance for a service or visit.	看展览需要提前预约。	You need to reserve a visit to the exhibition in advance.	我取消了明天的预约。	I canceled tomorrow's appointment.
+预约号	yù yuē hào	appointment number	noun	A number identifying a reservation or appointment.	请告诉我你的预约号。	Tell me your appointment number.	护士根据预约号找到了记录。	The nurse found the record using the appointment number.
+挂号	guà hào	register for a medical visit	verb	Register and obtain a place to see a doctor.	我早上去医院挂号。	I went to the hospital to register this morning.	你可以在网上挂号。	You can register for a medical visit online.
+挂号费	guà hào fèi	medical registration fee	noun	The fee charged when registering to see a doctor.	挂号费可以用银行卡支付。	You can pay the medical registration fee by bank card.	这张收据上列出了挂号费。	The medical registration fee is listed on this receipt.
+门诊	mén zhěn	outpatient service	noun	Medical treatment for patients who are not admitted to hospital.	门诊每天八点开始。	The outpatient service opens at eight every day.	医生建议他先去门诊检查。	The doctor advised him to have an outpatient examination first.
+急诊	jí zhěn	emergency medical service	noun	Medical assessment and treatment for urgent conditions.	急诊入口在大楼后面。	The emergency entrance is behind the building.	医院的急诊全天开放。	The hospital's emergency service is open all day.
+就诊	jiù zhěn	seek medical care	verb	Go to a medical professional for assessment or treatment.	就诊时请带上以前的报告。	Bring your earlier reports when seeing the doctor.	她陪父亲去医院就诊。	She accompanied her father to the hospital for medical care.
+候诊	hòu zhěn	wait to see a doctor	verb	Wait for one's turn to receive a medical consultation.	请在走廊里候诊。	Wait in the corridor to see the doctor.	候诊的人已经坐满了椅子。	The chairs are full of people waiting to see a doctor.
+复诊	fù zhěn	return for a medical consultation	verb; noun	See a doctor again after an earlier consultation or treatment.	医生让她两周后复诊。	The doctor asked her to return in two weeks.	复诊时需要带上病历。	Bring your medical record to the follow-up consultation.
+转诊	zhuǎn zhěn	refer to another medical service	verb	Send a patient to another clinician or medical institution.	医生安排他转诊到另一家医院。	The doctor arranged a referral to another hospital.	转诊之前需要准备相关材料。	Prepare the relevant documents before the referral.
+号源	hào yuán	available appointment slots	noun	The supply of registration or appointment slots that can be booked.	明天上午的号源已经用完了。	All tomorrow morning's appointment slots have been booked.	医院每周公布新的号源。	The hospital releases new appointment slots each week.
+叫号	jiào hào	call queue numbers	verb	Call out or display numbers to summon people in a queue.	大厅用屏幕叫号。	The hall displays queue numbers on a screen.	请留意叫号，不要错过。	Pay attention to the queue calls so you do not miss yours.
+排号	pái hào	take a place in a numbered queue	verb	Obtain a number that determines one's turn for a service.	我们先到前台排号。	We first got a queue number at reception.	这家餐馆周末需要排号。	This restaurant uses a numbered waiting list on weekends.
+排队	pái duì	stand in line	verb	Wait in an ordered line for a turn.	大家在售票窗口前排队。	Everyone is lining up at the ticket counter.	排队的人一直等到门口。	The queue stretched all the way to the door.
+办事	bàn shì	handle a matter	verb	Carry out work or deal with practical affairs.	他今天去银行办事。	He went to the bank to handle some business today.	这位工作人员办事很认真。	This staff member handles matters carefully.
+办证	bàn zhèng	apply for a certificate	verb	Arrange the issue of an official document or certificate.	办证需要两张照片。	Applying for the document requires two photographs.	大厅周六也能办证。	The hall also processes certificates on Saturdays.
+证件	zhèng jiàn	identification document	noun	An official document proving identity or another recognized status.	进入考场前要检查证件。	Identification is checked before entering the exam room.	他把证件放在内侧口袋里。	He put his identification documents in an inner pocket.
+身份证	shēn fèn zhèng	identity card	noun	An official card that verifies a person's identity.	她在柜台出示了身份证。	She showed her identity card at the counter.	我的身份证快要到期了。	My identity card will expire soon.
+护照	hù zhào	passport	noun	An official document used to identify a traveler internationally.	请检查护照上的姓名。	Check the name in the passport.	他的护照丢在酒店了。	He left his passport at the hotel.
+居住证	jū zhù zhèng	residence permit	noun	An official document confirming residence in a place.	申请居住证需要准备哪些材料？	What documents are needed to apply for a residence permit?	她到窗口领取了居住证。	She collected her residence permit at the counter.
+驾照	jià zhào	driving license	noun	A common short form for the document permitting someone to drive.	他上个月拿到了驾照。	He got his driving license last month.	租车时需要出示驾照。	You need to show your driving license when renting a car.
+驾驶证	jià shǐ zhèng	driver's license	noun	An official document permitting a person to drive specified vehicles.	他的驾驶证需要更新照片。	His driver's license needs an updated photograph.	请把驾驶证带在身上。	Keep your driver's license with you.
+车牌	chē pái	vehicle license plate	noun	A plate displaying a vehicle's registration number.	监控拍到了这辆车的车牌。	The camera recorded this vehicle's license plate.	车牌上的泥需要擦掉。	The mud on the license plate needs to be wiped off.
+号牌	hào pái	number plate	noun	A plate or tag displaying an assigned identifying number.	这辆新车还没有安装号牌。	This new vehicle does not have its number plates installed yet.	工作人员核对了车辆号牌。	The staff checked the vehicle's number plate.
+手续	shǒu xù	formalities	noun	The required steps or documents for completing an official matter.	入住手续已经办好了。	The check-in formalities are complete.	这些手续可以在网上办理。	These formalities can be completed online.
+申请表	shēn qǐng biǎo	application form	noun	A form used to request a service, permission or position.	请在申请表上签名。	Sign the application form.	她认真填写了申请表。	She filled in the application form carefully.
+填表	tián biǎo	fill in a form	verb	Enter the requested information on a form.	不会填表的人可以询问工作人员。	Anyone unsure how to fill in the form can ask the staff.	填表时不要漏掉联系电话。	Do not leave out your contact number when filling in the form.
+表格	biǎo gé	form; table	noun	A document with arranged fields or cells for entering information.	老师发给每个人一张表格。	The teacher gave everyone a form.	这份表格需要填写两遍。	This form needs to be completed twice.
+窗口	chuāng kǒu	service window	noun	A counter opening where a service is provided; also an ordinary window.	三号窗口负责领取材料。	Window three handles document collection.	请到右边的窗口缴费。	Pay at the service window on the right.
+服务台	fú wù tái	service desk	noun	A desk where staff provide assistance to visitors or customers.	服务台可以借轮椅。	Wheelchairs can be borrowed at the service desk.	她把捡到的手机交给了服务台。	She handed the phone she found to the service desk.
+咨询台	zī xún tái	information desk	noun	A desk where staff answer questions and provide information.	咨询台就在大厅中央。	The information desk is in the center of the hall.	我到咨询台询问了路线。	I asked for directions at the information desk.
+客服	kè fú	customer service	noun	Staff or a service responsible for helping customers.	客服帮我修改了收货地址。	Customer service helped me change the delivery address.	我一直联系不上客服。	I have not been able to reach customer service.
+热线	rè xiàn	hotline	noun	A telephone service for assistance or particular inquiries.	遇到问题可以拨打这条热线。	Call this hotline if you have a problem.	热线在晚上十点关闭。	The hotline closes at ten in the evening.
+客服热线	kè fú rè xiàn	customer service hotline	noun	A telephone number providing assistance to customers.	包装上印着客服热线。	The customer service hotline is printed on the package.	我拨打客服热线查询订单。	I called the customer service hotline to check the order.
+取号	qǔ hào	get a queue number	verb	Obtain a number that marks one's turn for a service.	办业务前请先取号。	Get a queue number before handling your transaction.	他替父亲去机器上取号。	He got a queue number from the machine for his father.
+取号机	qǔ hào jī	queue ticket machine	noun	A machine that issues numbered tickets for a service queue.	取号机今天不能使用。	The queue ticket machine is out of service today.	工作人员站在取号机旁边。	A staff member is standing beside the queue ticket machine.
+自助	zì zhù	self-service	adjective; verb	Obtain or use a service without having staff complete each step.	这家酒店提供自助入住。	This hotel offers self-service check-in.	我在机器上自助缴费。	I paid at the self-service machine.
+关门	guān mén	close a door; close for business	verb	Shut a door or stop serving customers.	睡觉前记得关门。	Remember to close the door before bed.	这家店九点关门。	This shop closes at nine.
+公路	gōng lù	road; highway	noun	A road built for motor vehicles.	公路上有一辆卡车。	There is a truck on the road.	这条公路通向海边。	This road leads to the coast.
+航班	háng bān	scheduled flight	noun	A scheduled air transport service.	我的航班晚点了。	My flight was delayed.	这趟航班没有空位。	There are no seats left on this flight.
+机票	jī piào	airline ticket	noun	A ticket for a journey by air.	她提前订好了机票。	She booked her airline ticket in advance.	机票价格周末更高。	Airline tickets cost more on weekends.
+终点	zhōng diǎn	end point	noun	The place where a route or activity ends.	前面就是比赛的终点。	The finish line is just ahead.	这条线路的终点在机场。	This route ends at the airport.
+房东	fáng dōng	landlord	noun	A person who rents property to a tenant.	房东来修水管了。	The landlord came to fix the pipe.	我把钥匙还给了房东。	I returned the key to the landlord.
+合身	hé shēn	fit well	adjective	Be the right size and shape for someone's body.	这件外套很合身。	This coat fits well.	姐姐帮我挑了合身的裙子。	My sister helped me choose a dress that fits.
+起点	qǐ diǎn	starting point	noun	The place or stage where something begins.	我们在起点集合。	We meet at the starting point.	地图上标出了路线的起点。	The map marks the starting point of the route.
+导航	dǎo háng	navigate	verb; noun	Find or guide a route to a destination.	司机打开手机导航。	The driver opened navigation on his phone.	导航让我们走错了路。	The navigation system sent us the wrong way.
+存款	cún kuǎn	bank deposit; deposit money	verb; noun	Money kept in a bank or the act of placing it there.	她每月去银行存款。	She deposits money at the bank each month.	这笔存款到期了。	This bank deposit has reached maturity.
+铁路	tiě lù	railway	noun	Tracks and related facilities used by trains.	村外有一条铁路。	There is a railway outside the village.	新铁路明年开通。	The new railway opens next year.
+贵重	guì zhòng	valuable	adjective	Having a high monetary value.	贵重物品请随身携带。	Keep valuables with you.	她把贵重首饰锁好了。	She locked away the valuable jewelry.
+堵车	dǔ chē	traffic congestion	verb; noun	Vehicles being delayed by congested traffic.	下雨时这条路常常堵车。	This road often gets congested when it rains.	堵车让我迟到了。	The traffic jam made me late.
+账号	zhàng hào	account identifier	noun	The name or number identifying an account.	我忘了登录账号。	I forgot my login account name.	转账前请核对账号。	Check the account number before making the transfer.
+入住	rù zhù	check in; move in	verb	Begin staying in accommodation or living in a home.	我们下午三点入住酒店。	We check into the hotel at three.	新住户已经入住了。	The new residents have moved in.
+车灯	chē dēng	vehicle light	noun	A light fitted to a vehicle.	司机打开了车灯。	The driver switched on the vehicle lights.	这辆车的车灯坏了。	This vehicle has a broken light.
+欠款	qiàn kuǎn	money owed	noun; verb	An unpaid amount of money or being in debt.	他月底还清了欠款。	He cleared the debt at the end of the month.	账单上列出了欠款。	The bill lists the amount owed.
+路灯	lù dēng	streetlight	noun	A lamp used to light a street.	路灯把街道照亮了。	The streetlights lit up the street.	门前的路灯不亮了。	The streetlight outside the door has stopped working.
+转账	zhuǎn zhàng	transfer money	verb	Move money from one account to another.	我已经给你转账了。	I have already transferred the money to you.	银行限制了每日转账金额。	The bank limits daily transfer amounts.
+赠品	zèng pǐn	complimentary gift	noun	An item given free with a purchase or promotion.	买这瓶洗发水有赠品。	This shampoo comes with a free gift.	店员忘了把赠品放进去。	The clerk forgot to include the complimentary gift.
+宽度	kuān dù	width	noun	The distance across something from side to side.	这张桌子的宽度是一米。	This table is one meter wide.	门的宽度不够，沙发进不来。	The doorway is too narrow for the sofa.
+退票	tuì piào	return a ticket	verb	Return a purchased ticket and request a refund.	演出取消后可以退票。	Tickets can be refunded after the performance is canceled.	他到窗口办理退票。	He went to the counter to return his ticket.
+楼道	lóu dào	building corridor	noun	A shared passage inside a building.	请不要在楼道堆东西。	Do not pile belongings in the corridor.	楼道里的灯一直亮着。	The corridor light is still on.
+缴纳	jiǎo nà	pay a required charge	verb	Pay taxes, contributions or other required charges.	居民按月缴纳物业费。	Residents pay the property fee monthly.	他按时缴纳了税款。	He paid the tax on time.
+缺货	quē huò	be out of stock	verb	Have insufficient stock of an item.	这款鞋目前缺货。	This shoe model is currently out of stock.	药店告诉我这种药缺货。	The pharmacy told me this medicine is unavailable.
+信用卡	xìn yòng kǎ	credit card	noun	A card allowing purchases on borrowed credit.	我用信用卡付了房费。	I paid the room charge by credit card.	她把信用卡锁在抽屉里。	She locked her credit card in the drawer.
+车库	chē kù	garage	noun	A building or enclosed space for vehicles.	汽车停在车库里。	The car is parked in the garage.	车库的门打不开了。	The garage door will not open.
+航空	háng kōng	aviation	noun	Air travel and the operation of aircraft.	航空运输速度很快。	Air transport is fast.	哥哥学习航空技术。	My older brother studies aviation technology.
+摩托车	mó tuō chē	motorcycle	noun	A motor vehicle usually having two wheels.	他骑摩托车去上班。	He rides a motorcycle to work.	门口停着一辆摩托车。	There is a motorcycle parked outside.
+客房	kè fáng	guest room	noun	A room provided for guests, especially in a hotel.	酒店的客房已经订满了。	The hotel's guest rooms are fully booked.	这间客房朝向花园。	This guest room faces the garden.
+会员	huì yuán	member	noun	A person enrolled in an organization or membership program.	会员可以免费入场。	Members can enter free of charge.	我申请成为图书馆会员。	I applied for library membership.
+收费	shōu fèi	charge a fee	verb	Require payment for a service or admission.	这座公园周末也不收费。	This park is free even on weekends.	停车场按小时收费。	The car park charges by the hour.
+房产	fáng chǎn	real estate	noun	Buildings and related property held as assets.	他名下没有房产。	He owns no real estate.	这家公司经营房产买卖。	This company trades in real estate.
+高速公路	gāo sù gōng lù	expressway	noun	A major road designed for fast motor traffic.	高速公路上不能停车。	You cannot park on the expressway.	我们沿高速公路向南行驶。	We drove south along the expressway.
+车道	chē dào	traffic lane	noun	A marked lane used by vehicles.	司机换到了左侧车道。	The driver moved into the left lane.	这条车道只供公交车使用。	This lane is for buses only.
+路程	lù chéng	journey distance	noun	The distance or course traveled on a journey.	剩下的路程还有十公里。	There are ten kilometers left to travel.	回家的路程比去时短。	The journey home is shorter than the outward trip.
+车门	chē mén	vehicle door	noun	A door on a car or other vehicle.	下车后请关好车门。	Close the car door after getting out.	车门被冰冻住了。	The car door has frozen shut.
+租金	zū jīn	rent	noun	Money paid for the use of rented property.	这套房子的租金很高。	The rent for this apartment is high.	房东同意降低租金。	The landlord agreed to lower the rent.
+登机	dēng jī	board an aircraft	verb	Get onto an aircraft for a flight.	乘客开始排队登机。	Passengers started lining up to board.	登机前要检查机票。	Tickets are checked before boarding.
+预订	yù dìng	book in advance	verb	Arrange a reservation or order ahead of time.	我预订了周六的房间。	I booked a room for Saturday.	这家餐厅需要提前预订。	This restaurant requires advance reservations.
+海关	hǎi guān	customs authority	noun	The authority checking goods crossing a country's border.	行李需要接受海关检查。	The luggage must undergo a customs check.	海关人员询问了箱子里的物品。	The customs officer asked about the items in the suitcase.
+签证	qiān zhèng	visa	noun	Official permission to enter or stay in a country.	我的签证下个月到期。	My visa expires next month.	申请签证需要一张照片。	Applying for a visa requires a photograph.
+手提箱	shǒu tí xiāng	suitcase	noun	A handled case used for carrying luggage.	她把手提箱放在床下。	She put the suitcase under the bed.	我的手提箱太重了。	My suitcase is too heavy.
+优惠	yōu huì	favorable deal; discount	noun; adjective	Terms giving someone a financial or other advantage.	老顾客可以享受优惠。	Regular customers can enjoy a discount.	这个套餐没有任何优惠。	This package has no special offer.
+出境	chū jìng	leave a country	verb	Cross a border to leave a country or region.	出境前请检查证件。	Check your documents before leaving the country.	他计划下周出境。	He plans to leave the country next week.
+楼层	lóu céng	floor of a building	noun	One level in a building.	请告诉我你住的楼层。	Tell me which floor you live on.	电梯没有停在正确的楼层。	The elevator did not stop at the correct floor.
+单元	dān yuán	unit	noun	One constituent unit, including an entrance section in a residential building.	她住在三单元。	She lives in entrance section three.	课本的第二单元讲天气。	The second unit of the textbook covers weather.
+公告	gōng gào	public notice	noun	Information formally announced to the public.	停水公告贴在门口。	The water outage notice is posted at the entrance.	学校发布了新的公告。	The school issued a new public notice.
+车主	chē zhǔ	vehicle owner	noun	The person who owns a vehicle.	车主正在寻找停车位。	The vehicle owner is looking for parking.	警察联系了车主。	The police contacted the vehicle owner.
+尺码	chǐ mǎ	clothing size	noun	A size designation for clothing or footwear.	这双鞋没有我的尺码。	These shoes do not come in my size.	买衣服前请核对尺码。	Check the size before buying clothes.
+收银	shōu yín	process a customer's payment	verb	Receive and record payment for purchases.	她在超市负责收银。	She handles checkout payments at the supermarket.	收银时发现少了一件商品。	An item was found missing during checkout.
+回国	huí guó	return to one's country	verb	Go back to one's home country.	他毕业后决定回国。	He decided to return home after graduation.	姐姐下周回国探亲。	My sister returns to her home country next week to visit relatives.
+车位	chē wèi	parking space	noun	A space designated for parking a vehicle.	地下车库还有空车位。	There are still free spaces in the underground car park.	这个车位属于隔壁住户。	This parking space belongs to the neighboring resident.
+安检	ān jiǎn	security check	noun; verb	A check for items or conditions that threaten security.	进入机场需要经过安检。	You must pass security before entering the airport.	安检人员检查了背包。	Security staff inspected the backpack.
+入境	rù jìng	enter a country	verb	Cross a border into a country or region.	旅客入境时填写了表格。	The traveler filled in a form on entering the country.	我的入境日期是周五。	My date of entry is Friday.
+礼品	lǐ pǐn	gift item	noun	An item intended to be presented as a gift.	柜台上摆着节日礼品。	Holiday gift items are displayed on the counter.	她为老师准备了礼品。	She prepared a gift for the teacher.
+试穿	shì chuān	try on clothes	verb	Put on clothing to check its fit or appearance.	我可以试穿这件外套吗？	May I try on this coat?	试穿后她选了小一号。	After trying it on, she chose a smaller size.
+邮寄	yóu jì	send by post	verb	Send something using a postal service.	这份材料不能邮寄。	These documents cannot be sent by post.	我把照片邮寄给奶奶。	I mailed the photographs to my grandmother.
+打车	dǎ chē	take a taxi	verb	Hire a taxi for a journey.	太晚了，我们打车回家。	It is late, so we will take a taxi home.	下雨时这里很难打车。	It is hard to get a taxi here when it rains.
+库存	kù cún	inventory	noun	Goods held and available for use or sale.	仓库正在清点库存。	The warehouse is counting its inventory.	这种纸的库存不多了。	There is little of this paper left in stock.
+受理	shòu lǐ	accept for processing	verb	Accept a case or application to be dealt with.	窗口已经受理了申请。	The counter has accepted the application for processing.	材料不全时无法受理。	The request cannot be processed with incomplete documents.
+押金	yā jīn	security deposit	noun	Money held as security and potentially returned later.	租房时需要交押金。	You need to pay a deposit when renting a home.	退房后押金退回了。	The deposit was returned after checkout.
+取款	qǔ kuǎn	withdraw money	verb	Take money out of an account.	她去银行取款。	She went to the bank to withdraw money.	取款时请保护好密码。	Protect your PIN when withdrawing money.
+车费	chē fèi	passenger fare	noun	Money paid for a journey in a vehicle.	这段路的车费是十元。	The fare for this journey is ten yuan.	他替我付了车费。	He paid my fare for me.
+积分	jī fēn	accumulated points	noun	Points accumulated in a reward scheme, game or other system.	购物积分可以兑换礼品。	Shopping points can be exchanged for gifts.	他的会员积分年底到期。	His membership points expire at the end of the year.
+纸币	zhǐ bì	banknote	noun	Paper money issued as currency.	这张纸币有些破损。	This banknote is slightly damaged.	售票机只接受纸币。	The ticket machine accepts only banknotes.
+分期付款	fēn qī fù kuǎn	pay in installments	verb phrase	Pay a total amount in several scheduled portions.	他选择分期付款买电脑。	He chose installments to pay for the computer.	分期付款的日期写在合同里。	The installment payment dates are stated in the contract.
+余额	yú é	remaining balance	noun	The amount of money remaining in an account or on a card.	银行卡余额不足。	The bank card has insufficient funds.	我查了一下账户余额。	I checked the account balance.
+景点	jǐng diǎn	tourist attraction	noun	A place people visit for sightseeing.	这个景点周一不开放。	This attraction is closed on Mondays.	附近还有几个著名景点。	There are several other famous attractions nearby.
+物业	wù yè	property management; property	noun	Real property, or the service managing a residential or commercial property.	物业安排人来修电梯。	Property management sent someone to repair the elevator.	有问题可以联系物业。	You can contact property management if there is a problem.
+车速	chē sù	vehicle speed	noun	The speed at which a vehicle travels.	雨天要降低车速。	Reduce your speed in rainy weather.	仪表上显示着车速。	The dashboard displays the vehicle's speed.
+找钱	zhǎo qián	give change	verb	Return the excess money from a customer's payment.	收银员忘了找钱。	The cashier forgot to give change.	请按实际金额找钱。	Give change according to the actual amount.
+车流	chē liú	flow of traffic	noun	Vehicles moving along a road as a continuous stream.	早上的车流特别大。	Traffic is especially heavy in the morning.	车流在路口缓慢移动。	Traffic moves slowly through the junction.
+定价	dìng jià	set a price	verb; noun	Decide the amount charged for something.	这家店按成本定价。	This shop sets its prices according to cost.	新产品的定价还没确定。	The new product's price has not been decided.
+返程	fǎn chéng	return journey	noun; verb	The journey back from a destination.	返程时我们遇到了大雨。	We encountered heavy rain on the return trip.	她提前买好了返程票。	She bought her return ticket in advance.
+速递	sù dì	express courier service	noun	A service for quickly delivering documents or parcels.	公司用速递寄出合同。	The company sent the contract by express courier.	速递费用由客户支付。	The customer pays the express delivery charge.
+邮编	yóu biān	postal code	noun	A code identifying a postal delivery area.	寄信时别漏写邮编。	Do not omit the postal code when mailing a letter.	我在网上查到了邮编。	I found the postal code online.
+门牌	mén pái	house number plate	noun	A plate showing a building or doorway's identifying number.	这栋房子的门牌被树挡住了。	A tree blocks the house number plate.	请按照门牌寻找地址。	Use the house numbers to find the address.
+发货	fā huò	dispatch goods	verb	Send purchased goods out for delivery.	商家明天发货。	The seller will dispatch the goods tomorrow.	付款后仍然没有发货。	The goods still have not been dispatched after payment.
+纸盒	zhǐ hé	cardboard box	noun	A box made from paperboard or cardboard.	蛋糕装在纸盒里。	The cake is in a cardboard box.	她把纸盒压扁后回收。	She flattened the cardboard box for recycling.
+房费	fáng fèi	room charge	noun	Money charged for the use of accommodation.	房费包括早餐。	The room charge includes breakfast.	退房时他付清了房费。	He paid the room charge in full at checkout.
+房价	fáng jià	housing price	noun	The selling price of housing, or a room price in context.	附近的房价上涨了。	Housing prices nearby have risen.	他正在比较不同地区的房价。	He is comparing housing prices in different areas.
+有效期	yǒu xiào qī	period of validity	noun	The period during which a document or item remains valid.	优惠券的有效期只有一周。	The coupon is valid for only one week.	请检查证件的有效期。	Check your document's period of validity.
+赔付	péi fù	pay compensation	verb	Pay money to compensate for a loss or covered claim.	保险公司已经赔付了损失。	The insurer has compensated for the loss.	赔付金额写在通知里。	The compensation amount is stated in the notice.
+换算	huàn suàn	convert between units	verb	Express an amount using a different unit or system.	请把米换算成厘米。	Convert meters into centimeters.	她把外币换算成人民币。	She converted the foreign currency amount into yuan.
+保修	bǎo xiū	warranty; repair under warranty	verb; noun	Provide repairs under stated warranty conditions.	这台冰箱保修一年。	This refrigerator has a one-year warranty.	人为损坏不在保修范围内。	Damage caused by misuse is not covered by the warranty.
+返乡	fǎn xiāng	return to one's hometown	verb	Go back to the place one comes from.	春节前很多人返乡。	Many people return to their hometowns before the Spring Festival.	她买好了返乡的车票。	She has bought her ticket home.
+交费	jiāo fèi	pay a fee	verb	Pay a charge for a service or required expense.	报名后请到窗口交费。	Pay at the counter after registering.	这台机器也能交费。	You can also pay fees at this machine.
+租房	zū fáng	rent housing	verb	Pay to use a home belonging to someone else.	他想在学校附近租房。	He wants to rent a home near the school.	租房前要看看合同。	Read the contract before renting a home.
+欠费	qiàn fèi	have unpaid charges	verb	Fail to pay charges that are due.	手机因欠费停机了。	The phone service was suspended for unpaid charges.	请先补交欠费。	Pay the outstanding charges first.
+专柜	zhuān guì	specialist sales counter	noun	A counter dedicated to a particular brand or product type.	她在化妆品专柜工作。	She works at a cosmetics counter.	商场新开了一个手表专柜。	The mall has opened a new watch counter.
+分期	fēn qī	in stages; in installments	adverb; verb	Divide an action or payment into successive stages.	这笔费用可以分期支付。	This fee can be paid in installments.	工程将分期完成。	The project will be completed in stages.
+候车	hòu chē	wait for transport	verb	Wait for a bus, train or another vehicle.	旅客在大厅候车。	Passengers are waiting in the hall.	候车时请远离车道。	Stay away from the roadway while waiting for transport.
+转车	zhuǎn chē	change vehicles	verb	Continue a journey by changing buses or trains.	到医院需要转车。	You need to change services to reach the hospital.	我们在市中心转车。	We change vehicles in the city center.
+邮费	yóu fèi	postage	noun	The charge for sending an item by post.	邮费已经包含在价格里。	Postage is already included in the price.	寄往国外的邮费更高。	Postage abroad is more expensive.
+单价	dān jià	unit price	noun	The price charged for one unit of an item.	这袋米的单价写在标签上。	The unit price of this rice is on the label.	买得多时单价会降低。	The unit price falls when you buy more.
+现货	xiàn huò	goods in stock	noun	Goods available for immediate sale or delivery.	这款手机还有现货。	This phone model is still in stock.	现货可以当天发出。	Goods in stock can be dispatched the same day.
+续签	xù qiān	renew a contract or visa	verb	Extend an existing agreement or authorization by renewing it.	她准备续签租房合同。	She is preparing to renew her rental contract.	签证续签需要新的照片。	Visa renewal requires new photographs.
+件数	jiàn shù	number of items	noun	The count of individual pieces or items.	请核对行李的件数。	Check the number of pieces of luggage.	件数不符时要联系仓库。	Contact the warehouse if the item count does not match.
+借记卡	jiè jì kǎ	debit card	noun	A card that pays directly from available account funds.	她用借记卡买了车票。	She bought the ticket with a debit card.	这张借记卡不能透支。	This debit card does not allow an overdraft.
+刷卡	shuā kǎ	use a payment or access card	verb	Read a card electronically for payment or access.	进门需要刷卡。	You need to use your card to enter.	我刷卡买了午饭。	I paid for lunch with my card.
+取钱	qǔ qián	withdraw money	verb	Take money from a bank account.	他到银行取钱。	He went to the bank to withdraw money.	取钱以后请收好银行卡。	Put your bank card away after withdrawing money.
+售后	shòu hòu	after-sales service	noun; adjective	Support provided after a product is sold.	她联系售后申请维修。	She contacted after-sales support for a repair.	这家公司的售后服务很好。	This company provides good after-sales service.
+存钱	cún qián	save or deposit money	verb	Put money aside or place it in an account.	我每月存钱买书。	I save money every month to buy books.	她去银行存钱了。	She went to deposit money at the bank.
+小票	xiǎo piào	purchase receipt	noun	A small printed receipt recording a purchase.	请把购物小票给我。	Give me the purchase receipt.	小票上的金额不对。	The amount on the receipt is wrong.
+房卡	fáng kǎ	hotel room card	noun	A card used to unlock a hotel room.	我的房卡打不开门。	My room card will not open the door.	退房时请归还房卡。	Return the room card at checkout.
+收货	shōu huò	receive delivered goods	verb	Accept goods that have been delivered.	她在家等着收货。	She is waiting at home for the delivery.	收货地址需要修改。	The delivery address needs changing.
+断货	duàn huò	run out of stock	verb	Have no remaining stock of a product.	这种牛奶已经断货。	This milk is out of stock.	商家说断货后要等一周。	The seller said to wait a week after stocks ran out.
+检票	jiǎn piào	check tickets	verb	Examine tickets before allowing entry or travel.	列车开始检票了。	Ticket checks for the train have begun.	检票员站在入口处。	The ticket inspector is at the entrance.
+租客	zū kè	tenant	noun	A person who pays to use rented property.	新租客明天搬进来。	The new tenant moves in tomorrow.	房东把通知发给了租客。	The landlord sent the notice to the tenant.
+续费	xù fèi	pay to renew a service	verb	Pay to extend a subscription or service period.	会员下个月需要续费。	The membership needs renewing next month.	不续费就无法继续使用。	You cannot keep using it without renewing payment.
+网约车	wǎng yuē chē	app-booked car service	noun	A passenger car booked through an online platform.	我叫了一辆网约车。	I booked a car through an app.	网约车停在门口。	The app-booked car is outside the door.
+补货	bǔ huò	restock	verb	Replenish goods that have sold or run low.	店员正在给货架补货。	The clerk is restocking the shelves.	这款鞋周五补货。	This shoe model will be restocked on Friday.
+订房	dìng fáng	reserve accommodation	verb	Book a room for a future stay.	出发前先订房。	Book your accommodation before departure.	她打电话给酒店订房。	She called the hotel to reserve a room.
+退房	tuì fáng	check out of accommodation	verb	End a stay and return a rented room.	我们中午退房。	We check out at noon.	退房前请检查抽屉。	Check the drawers before checking out.
+银行卡	yín háng kǎ	bank card	noun	A card issued by a bank for account access or payments.	我的银行卡找不到了。	I cannot find my bank card.	他用银行卡支付车费。	He paid the fare by bank card.
+乘坐	chéng zuò	travel as a passenger	verb	Ride in or on a vehicle.	我们乘坐火车去海边。	We travel to the coast by train.	老人免费乘坐这班车。	Older passengers ride this service free.
+线路	xiàn lù	route; circuit	noun	An established transport route or electrical connection.	这条公交线路经过学校。	This bus route passes the school.	电工检查了照明线路。	The electrician checked the lighting circuit.
+马路	mǎ lù	road	noun	A road used by vehicles and pedestrians.	过马路时要看信号灯。	Watch the traffic lights when crossing the road.	马路对面有一家书店。	There is a bookstore across the road.
+商场	shāng chǎng	shopping mall	noun	A large building or area containing shops.	商场里有很多餐厅。	There are many restaurants in the mall.	这家商场晚上十点关闭。	This mall closes at ten at night.
+公车	gōng chē	public bus; official vehicle	noun	A public bus or a vehicle provided for official work.	她每天搭公车上学。	She takes a bus to school every day.	这辆公车只用于公务。	This official vehicle is used only for official work.
+街区	jiē qū	neighborhood block	noun	An area of a city bounded by streets.	这个街区有很多老店。	This neighborhood has many old shops.	整片街区正在修路。	Road work is underway throughout the neighborhood.
+套餐	tào cān	set meal; service package	noun	Items or services sold together as a package.	我点了一份午餐套餐。	I ordered a lunch set.	这个手机套餐包含流量。	This phone package includes data.
+业务	yè wù	business services; work	noun	Professional work or services provided by an organization.	银行下午暂停这项业务。	The bank suspends this service in the afternoon.	她正在学习新的业务流程。	She is learning the new business procedure.
+开通	kāi tōng	open or activate a service	verb	Bring a route or service into use.	新地铁明天开通。	The new subway opens tomorrow.	我刚开通网上银行。	I have just activated online banking.
+用品	yòng pǐn	articles for use	noun	Items used for an activity or purpose.	他去商店买生活用品。	He went to buy household necessities.	旅行用品已经收拾好了。	The travel supplies are packed.
+进出	jìn chū	enter and leave	verb	Move into and out of a place.	车辆从侧门进出。	Vehicles enter and leave through the side gate.	进出大楼需要登记。	Registration is required when entering or leaving the building.
+边境	biān jìng	border region	noun	The area along a country's territorial boundary.	边境附近有一个小镇。	There is a small town near the border.	他们在边境接受检查。	They underwent checks at the border.
+持有	chí yǒu	hold; possess	verb	Have a document, asset or other thing in one's possession.	她持有有效护照。	She holds a valid passport.	持有这张票可以免费参观。	Holders of this ticket can visit for free.
+外出	wài chū	go out	verb	Leave one's home or usual location.	外出前关好窗户。	Close the windows before going out.	她外出办事还没回来。	She went out on business and has not returned.
+路过	lù guò	pass by	verb	Go past a place on the way somewhere.	我回家时路过这家店。	I pass this shop on my way home.	他路过医院时看望了朋友。	He visited his friend while passing the hospital.
+咖啡店	kā fēi diàn	coffee shop	noun	A shop serving coffee and related drinks or snacks.	我们在咖啡店见面。	We meet at the coffee shop.	这家咖啡店早上七点开门。	This coffee shop opens at seven in the morning.
+开走	kāi zǒu	drive away	verb	Move away in a vehicle or cause a vehicle to leave.	公交车已经开走了。	The bus has already left.	他把车从门口开走了。	He drove the car away from the entrance.
+签署	qiān shǔ	sign a formal document	verb	Sign an agreement or official document.	双方签署了合同。	Both parties signed the contract.	签署之前请仔细阅读。	Read carefully before signing.
+赊账	shē zhàng	buy on credit	verb	Receive goods with payment deferred.	这家店不允许赊账。	This shop does not allow purchases on credit.	他赊账买了种子。	He bought the seeds on credit.
+捐款	juān kuǎn	donate money	verb; noun	Give money for a charitable or public purpose.	她向救助机构捐款。	She donated to a relief organization.	捐款用于修建图书馆。	The donations fund construction of the library.
+获取	huò qǔ	obtain	verb	Acquire information, goods or other things.	我们从公告中获取信息。	We obtained the information from the notice.	会员可以获取优惠券。	Members can obtain discount coupons.
+超出	chāo chū	exceed	verb	Go beyond an amount, boundary or expectation.	行李重量超出了限制。	The luggage exceeded the weight limit.	维修费用超出了预算。	The repair cost exceeded the budget.
+酒馆	jiǔ guǎn	tavern	noun	A place serving alcoholic drinks.	街角的酒馆关门了。	The tavern on the corner has closed.	游客坐在酒馆外聊天。	The visitors chatted outside the tavern.
+市区	shì qū	urban area	noun	The built-up area of a city.	从机场到市区需要一小时。	It takes an hour from the airport to the city.	市区里停车很贵。	Parking is expensive in the urban area.
+撞车	zhuàng chē	vehicle collision	verb	Have a collision involving vehicles.	路口发生了撞车事故。	A vehicle collision occurred at the junction.	司机及时刹车，避免了撞车。	The driver braked in time and avoided a collision.
+交出	jiāo chū	hand over	verb	Give something in one's possession to another party.	请交出柜子的钥匙。	Hand over the cabinet key.	他交出了找到的钱包。	He handed in the wallet he found.
+驾驶员	jià shǐ yuán	driver; pilot	noun	A person operating a vehicle or aircraft.	驾驶员检查了车门。	The driver checked the doors.	所有驾驶员都参加了培训。	All the drivers attended the training.
+终点站	zhōng diǎn zhàn	final stop	noun	The last station or stop on a route.	下一站是终点站。	The next stop is the terminus.	到了终点站请下车。	Get off at the final stop.
+失灵	shī líng	stop working properly	verb	Fail to function as intended.	电梯按钮失灵了。	The elevator button is not working.	刹车失灵让司机很紧张。	The brake failure made the driver nervous.
+储备	chǔ bèi	reserve; store for future use	verb; noun	Keep supplies for later use or the supplies kept.	仓库储备了足够的粮食。	The warehouse has stored enough grain.	家庭储备不能全部用完。	The household reserves should not all be used up.
+可行	kě xíng	feasible	adjective	Able to be carried out successfully.	这个计划是可行的。	This plan is feasible.	我们需要一个可行的办法。	We need a workable method.
+餐具	cān jù	tableware	noun	Utensils used to serve or eat food.	餐具放在桌子右边。	The tableware is on the right side of the table.	饭后请把餐具洗干净。	Wash the dishes and utensils after eating.
+游船	yóu chuán	sightseeing boat	noun	A boat used for leisure or sightseeing trips.	游船沿河缓缓前进。	The sightseeing boat moved slowly along the river.	我们买了游船的票。	We bought tickets for the sightseeing boat.
+筹集	chóu jí	raise or gather funds	verb	Gather money or other resources for a purpose.	村民筹集了修桥的钱。	The villagers raised money to repair the bridge.	学校正在筹集设备。	The school is gathering equipment.
+款项	kuǎn xiàng	sum of money	noun	Money assigned, paid or owed for a particular purpose.	款项将在周五到账。	The money will arrive on Friday.	会计核对了这笔款项。	The accountant checked this sum of money.
+赔钱	péi qián	lose money; pay compensation	verb	Suffer a financial loss or pay for damage.	这家店连续两个月赔钱。	This shop lost money for two months in a row.	弄坏商品后他愿意赔钱。	He offered to pay for the item he damaged.
+启程	qǐ chéng	set out on a journey	verb	Begin traveling toward a destination.	我们明早启程。	We set out tomorrow morning.	启程前他检查了行李。	He checked his luggage before departure.
+买房	mǎi fáng	buy housing	verb	Purchase a house or apartment.	他们计划明年买房。	They plan to buy a home next year.	买房前要了解周围环境。	Learn about the surroundings before buying a home.
+买进	mǎi jìn	purchase stock or goods	verb	Acquire items by purchasing them.	商店买进了一批新书。	The shop purchased a new batch of books.	他低价买进了这些材料。	He bought these materials at a low price.
+乘船	chéng chuán	travel by boat	verb	Ride on a boat as a passenger.	游客乘船前往小岛。	The tourists traveled to the island by boat.	乘船时请穿好救生衣。	Wear your life jacket when traveling by boat.
+畅销	chàng xiāo	sell well	verb; adjective	Be sold in large quantities because of demand.	这本书一直很畅销。	This book has consistently sold well.	店里补进了畅销商品。	The shop restocked popular items.
+失窃	shī qiè	have property stolen	verb	Lose property because of theft.	他的自行车失窃了。	His bicycle was stolen.	仓库失窃后安装了监控。	Cameras were installed after the warehouse theft.
+义卖	yì mài	charity sale	noun; verb	Sell items to raise money for a good cause.	学校举办了一场义卖。	The school held a charity sale.	这些书将用于义卖。	These books will be sold for charity.
+零花钱	líng huā qián	pocket money	noun	Money available for small personal purchases.	她用零花钱买了画笔。	She bought brushes with her pocket money.	孩子把零花钱存起来了。	The child saved the pocket money.
+船员	chuán yuán	crew member of a vessel	noun	A person working aboard a boat or ship.	船员正在检查绳索。	The crew member is checking the ropes.	所有船员都穿着救生衣。	All the crew members are wearing life jackets.
+卖掉	mài diào	sell off	verb	Dispose of something by selling it.	她卖掉了旧自行车。	She sold her old bicycle.	这些水果今天必须卖掉。	These fruits must be sold today.
+停靠	tíng kào	stop at a designated place	verb	Bring a vehicle or vessel to a stop at a station or berth.	公交车在这里停靠。	Buses stop here.	轮船停靠在码头。	The ship is berthed at the dock.
+款待	kuǎn dài	entertain a guest	verb	Welcome a guest with food, drink or hospitality.	主人用茶和点心款待我们。	The host treated us to tea and snacks.	感谢你热情款待。	Thank you for your warm hospitality.
+公务	gōng wù	official business	noun	Work carried out as part of an official duty.	他因公务外出。	He is away on official business.	这辆车只用于公务。	This vehicle is used only for official duties.
+报价	bào jià	quote a price	verb; noun	State a proposed price for goods or services.	请给这批设备报价。	Quote a price for this equipment.	他们比较了三家公司的报价。	They compared quotations from three companies.
+转机	zhuǎn jī	change planes; favorable turn	verb; noun	Change flights, or a turn toward improvement.	我们需要在这里转机。	We need to change planes here.	谈判终于出现了转机。	The negotiations finally took a favorable turn.
+旅行者	lǚ xíng zhě	traveler	noun	A person on a journey.	旅行者在地图上寻找车站。	The traveler looked for the station on the map.	酒店接待了来自各地的旅行者。	The hotel welcomed travelers from many places.
+罚款	fá kuǎn	fine	verb; noun	A monetary penalty imposed for breaking a rule.	违章停车会被罚款。	Parking illegally can result in a fine.	他按时缴纳了罚款。	He paid the fine on time.
+定金	dìng jīn	earnest-money deposit	noun	A deposit paid to secure an agreement or purchase.	买方先支付了定金。	The buyer first paid a deposit.	合同写明了定金的金额。	The contract states the deposit amount.
+挡路	dǎng lù	block the way	verb	Obstruct the path of someone or something.	这辆车挡路了。	This vehicle is blocking the way.	请把挡路的箱子搬开。	Move the boxes blocking the path.
+退回	tuì huí	send back	verb	Return an item to its source or sender.	材料不全被退回了。	The incomplete documents were returned.	我把错误的订单退回。	I returned the incorrect order.
+路标	lù biāo	road sign	noun	A sign giving directions or information along a road.	前面的路标指向医院。	The sign ahead points toward the hospital.	旧路标被树叶遮住了。	Leaves are covering the old road sign.
+低价	dī jià	low price	noun; adjective	A price lower than usual or compared with others.	这家店低价出售旧书。	This shop sells used books cheaply.	他用低价买到了桌子。	He bought the table at a low price.
+开设	kāi shè	open or establish	verb	Set up a business, service or course.	学校开设了新的课程。	The school introduced a new course.	银行在这里开设了分行。	The bank opened a branch here.
+收取	shōu qǔ	collect a payment or item	verb	Receive or collect money or something due.	酒店收取停车费。	The hotel charges a parking fee.	工作人员收取了申请材料。	The staff collected the application documents.
+抢手	qiǎng shǒu	in high demand	adjective	Wanted by many buyers or applicants.	这款玩具很抢手。	This toy is in high demand.	抢手的门票很快卖完了。	The sought-after tickets sold out quickly.
+检修	jiǎn xiū	inspect and repair	verb	Examine equipment and fix faults.	工人正在检修电梯。	Workers are inspecting and repairing the elevator.	检修期间暂停服务。	Service is suspended during maintenance.
+车队	chē duì	fleet or convoy	noun	A group of vehicles traveling or operated together.	车队清晨出发了。	The convoy departed early in the morning.	这家公司拥有自己的车队。	This company has its own fleet.
+次序	cì xù	order; sequence	noun	The arrangement of things or people one after another.	请按次序上车。	Board in order.	名单上的次序被调整了。	The order on the list was changed.
+邮递员	yóu dì yuán	postal worker	noun	A worker who delivers mail.	邮递员送来了信。	The postal worker delivered the letter.	我在门口等邮递员。	I am waiting for the postal worker at the entrance.
+列入	liè rù	include in a list	verb	Add something to a list or category.	请把这项费用列入预算。	Include this expense in the budget.	他的名字被列入名单。	His name was added to the list.
+半路	bàn lù	partway through a journey	noun; adverb	At a point between the start and destination.	车在半路坏了。	The vehicle broke down on the way.	他半路下车去买水。	He got out partway through the journey to buy water.
+采购	cǎi gòu	purchase supplies	verb; noun	Buy goods or materials for use by an organization or household.	餐厅每天采购新鲜蔬菜。	The restaurant buys fresh vegetables daily.	采购清单上有十种材料。	The purchasing list contains ten materials.
+回程	huí chéng	return journey	noun	The journey back to the point of departure.	回程的火车很拥挤。	The return train was crowded.	我们回程时走了另一条路。	We took another route on the way back.
+供应商	gōng yìng shāng	supplier	noun	A business or person supplying goods or services.	供应商送来了新设备。	The supplier delivered the new equipment.	公司更换了纸张供应商。	The company changed its paper supplier.
+到访	dào fǎng	pay a visit	verb	Arrive somewhere as a visitor.	客人下午到访。	The guests will visit this afternoon.	到访人员需要登记。	Visitors need to register.
+钱币	qián bì	currency; coins	noun	Money in the form of coins or other currency.	博物馆展出了古代钱币。	The museum displayed ancient coins.	她把不同的钱币分开放好。	She stored the different coins separately.
+退还	tuì huán	return or refund	verb	Give back something received, borrowed or paid.	押金将在明天退还。	The deposit will be refunded tomorrow.	请退还借用的钥匙。	Return the borrowed key.
+开办	kāi bàn	start or establish	verb	Begin operating a business, school or other undertaking.	他们开办了一家小店。	They started a small shop.	学校准备开办夜间课程。	The school plans to start evening classes.
+有序	yǒu xù	orderly	adjective	Arranged or proceeding in a proper sequence.	乘客有序下车。	Passengers got off in an orderly manner.	工作正在有序进行。	The work is proceeding in an orderly fashion.
+手续费	shǒu xù fèi	service or processing fee	noun	A charge for handling a transaction or procedure.	转账需要支付手续费。	The transfer requires a processing fee.	手续费已经从账户扣除。	The processing fee has been deducted from the account.
+招揽	zhāo lǎn	attract customers	verb	Draw customers or business toward oneself.	店主在门口招揽客人。	The shopkeeper is attracting customers at the entrance.	这家店靠口碑招揽生意。	This shop attracts business through its reputation.
+游乐园	yóu lè yuán	amusement park	noun	A park with rides and activities for entertainment.	孩子们想去游乐园。	The children want to go to the amusement park.	游乐园周末游客很多。	The amusement park has many visitors on weekends.
+售卖	shòu mài	sell	verb	Offer goods for purchase.	摊位上售卖新鲜水果。	The stall sells fresh fruit.	这家店不再售卖报纸。	This shop no longer sells newspapers.
+假货	jiǎ huò	counterfeit goods	noun	Goods falsely presented as genuine products.	他发现买到了假货。	He found he had bought a counterfeit item.	店主拒绝销售假货。	The shopkeeper refuses to sell counterfeit goods.
+商铺	shāng pù	shop premises	noun	Premises used for selling goods or services.	街边的商铺正在装修。	The shop premises beside the street are being renovated.	这间商铺每月租金很高。	The monthly rent for these shop premises is high.
+晕船	yùn chuán	be seasick	verb	Feel ill because of a boat's movement.	她坐船时容易晕船。	She easily gets seasick on boats.	他晕船后躺下休息。	He lay down to rest after becoming seasick.
+搬运工	bān yùn gōng	porter	noun	A worker who moves goods or luggage.	搬运工把箱子送进仓库。	The porter moved the boxes into the warehouse.	他请搬运工帮忙抬家具。	He asked a porter to help lift the furniture.
+问路	wèn lù	ask for directions	verb	Ask how to reach a place.	我向警察问路。	I asked the police officer for directions.	问路时可以出示地图。	You can show a map when asking for directions.
+代办	dài bàn	handle on someone's behalf	verb	Carry out a task or procedure for another person.	她请家人代办手续。	She asked a relative to handle the formalities.	这项业务可以代办。	Someone else can handle this service for you.
+复印	fù yìn	photocopy	verb	Make a paper copy of a document using a machine.	请复印这份合同。	Photocopy this contract.	我在楼下复印了证件。	I photocopied my identification downstairs.
+扫描	sǎo miáo	scan	verb	Read or capture an image or document electronically.	她把照片扫描到电脑里。	She scanned the photo into the computer.	这台机器可以扫描文件。	This machine can scan documents.
+上传	shàng chuán	upload	verb	Send a file from a device to a remote system.	请上传一张清楚的照片。	Upload a clear photograph.	合同已经上传成功。	The contract was uploaded successfully.
+下载	xià zài	download	verb	Copy a file from a remote system to a device.	我下载了车站地图。	I downloaded the station map.	下载完成后可以打印。	You can print it after the download finishes.
+水费	shuǐ fèi	water bill charge	noun	The amount charged for water supply.	这个月的水费已经交了。	This month's water charge has been paid.	账单上列出了水费。	The water charge is listed on the bill.
+电费	diàn fèi	electricity charge	noun	The amount charged for electricity use.	冬天的电费比较高。	Electricity charges are higher in winter.	他忘了缴电费。	He forgot to pay the electricity bill.
+燃气费	rán qì fèi	gas utility charge	noun	The amount charged for a household gas supply.	燃气费按用量计算。	The gas charge is calculated from usage.	她在网上交了燃气费。	She paid the gas bill online.
+物业费	wù yè fèi	property management fee	noun	A charge for managing and maintaining shared property.	物业费包含清洁服务。	The property management fee includes cleaning services.	我收到了一张物业费账单。	I received a property management bill.
+订金	dìng jīn	advance reservation payment	noun	Money paid in advance when arranging an order or reservation.	订桌时她先付了订金。	She paid an advance amount when reserving the table.	收据注明了订金金额。	The receipt states the advance payment amount.
+滞纳金	zhì nà jīn	late payment charge	noun	An additional charge associated with overdue payment.	通知中列出了滞纳金。	The notice lists the late payment charge.	他询问滞纳金如何计算。	He asked how the late payment charge was calculated.
+扣款	kòu kuǎn	deduct or debit money	verb	Remove an amount from an account or payment.	银行已经自动扣款。	The bank has debited the payment automatically.	扣款记录可以在手机上查看。	You can check the debit record on your phone.
+汇款	huì kuǎn	remit money	verb; noun	Send money to another person or account.	他给家人汇款。	He sends money to his family.	这笔汇款还没有到账。	This remittance has not arrived yet.
+账单	zhàng dān	bill; statement	noun	A document listing charges or account transactions.	请把账单拿给我。	Bring me the bill.	她检查了每月的账单。	She checked the monthly statement.
+催款	cuī kuǎn	request overdue payment	verb	Urge someone to pay money owed.	公司发出了一封催款邮件。	The company sent a payment reminder email.	他打电话给客户催款。	He called the customer to request payment.
+还款	huán kuǎn	repay money	verb	Pay back money that is owed.	还款日期是每月五号。	Repayment is due on the fifth of each month.	她按时完成了还款。	She made the repayment on time.
+储蓄卡	chǔ xù kǎ	savings account card	noun	A bank card linked to a savings or deposit account.	工资打进了储蓄卡。	The salary was paid into the savings account.	这张储蓄卡已经停用了。	This savings account card is no longer in use.
+停车费	tíng chē fèi	parking fee	noun	The charge for leaving a vehicle in a parking area.	停车费每小时五元。	Parking costs five yuan an hour.	酒店替住客支付停车费。	The hotel pays guests' parking fees.
+停车票	tíng chē piào	parking ticket	noun	A ticket recording payment or entitlement to use a parking space.	请保留入口发的停车票。	Keep the parking ticket issued at the entrance.	付款后把停车票插进机器。	Insert the parking ticket into the machine after paying.
+共享单车	gòng xiǎng dān chē	shared bicycle	noun	A bicycle available for short-term public rental.	我骑共享单车去车站。	I rode a shared bicycle to the station.	请把共享单车停在指定区域。	Park the shared bicycle in the designated area.
+客车	kè chē	passenger vehicle	noun	A motor or rail vehicle designed to carry passengers.	客车停在广场旁边。	The passenger vehicle is parked beside the square.	这辆客车能坐三十人。	This passenger vehicle seats thirty people.
+客运	kè yùn	passenger transport	noun	The transport of people rather than goods.	这家公司经营客运业务。	This company operates passenger transport services.	客运高峰出现在假期。	Passenger transport peaks during holidays.
+客运站	kè yùn zhàn	passenger transport station	noun	A station where passenger vehicles arrive and depart.	客运站离这里很远。	The passenger station is far from here.	她在客运站等长途车。	She waited for a coach at the passenger station.
+火车站	huǒ chē zhàn	train station	noun	A place where trains stop for passengers.	火车站旁边有一家旅馆。	There is an inn beside the train station.	爸爸到火车站接我。	Dad met me at the train station.
+站台	zhàn tái	station platform	noun	The area beside a track where passengers board trains.	列车停在二号站台。	The train is at platform two.	请不要跨越站台上的黄线。	Do not cross the yellow line on the platform.
+月台	yuè tái	railway platform	noun	A platform beside railway tracks used by passengers.	月台上站着很多旅客。	Many passengers were standing on the platform.	工作人员清扫了月台。	The staff cleaned the platform.
+站牌	zhàn pái	bus stop sign	noun	A sign identifying a stop and its route information.	站牌上写着发车时间。	The departure times are on the bus stop sign.	他在站牌旁边等我。	He waited for me beside the bus stop sign.
+站点	zhàn diǎn	service stop or site	noun	A location set up for a particular service.	附近有一个快递站点。	There is a parcel service point nearby.	这条线路增加了两个站点。	Two stops were added to this route.
+公交卡	gōng jiāo kǎ	bus travel card	noun	A reusable card for paying public bus fares.	我的公交卡余额不足。	My bus card has insufficient funds.	她去窗口补办公交卡。	She went to the counter for a replacement bus card.
+交通卡	jiāo tōng kǎ	transport card	noun	A reusable payment card for public transport.	交通卡可以在机器上充值。	You can top up the transport card at the machine.	这张交通卡能坐地铁。	This transport card can be used on the subway.
+车窗	chē chuāng	vehicle window	noun	A window fitted to a vehicle.	他打开车窗透气。	He opened the vehicle window for fresh air.	雨水顺着车窗流下。	Rain ran down the vehicle window.
+空位	kōng wèi	vacant seat or space	noun	A place that is not currently occupied.	车上还有两个空位。	There are two vacant seats on the vehicle.	她把箱子放在空位上。	She put the box in an empty space.
+靠窗	kào chuāng	by a window	verb phrase	Be positioned next to a window.	我想坐靠窗的座位。	I would like a window seat.	靠窗的桌子已经有人了。	The table by the window is occupied.
+靠边	kào biān	move to the side	verb	Move or position something near an edge or side.	司机把车靠边停下。	The driver pulled over and stopped.	请靠边走，让出中间的路。	Walk to the side and leave the center clear.
+路口	lù kǒu	road junction	noun	A place where roads meet or branch.	在下一个路口右转。	Turn right at the next junction.	路口的信号灯坏了。	The traffic light at the junction is broken.
+十字路口	shí zì lù kǒu	crossroads	noun	A junction where two roads cross.	我们在十字路口等绿灯。	We waited for the green light at the crossroads.	十字路口旁边有一家药店。	There is a pharmacy beside the crossroads.
+红灯	hóng dēng	red light	noun	A red signal, often indicating that traffic must stop.	前方是红灯，请停车。	The light ahead is red; stop.	机器上的红灯亮了。	The red light on the machine came on.
+绿灯	lǜ dēng	green light	noun	A green signal, often indicating permission to proceed.	绿灯亮后车辆开始前进。	The vehicles moved forward when the light turned green.	我等绿灯再过马路。	I wait for the green light before crossing.
+黄灯	huáng dēng	amber light	noun	A yellow or amber signal giving a warning.	信号灯变成了黄灯。	The traffic light turned amber.	面板上的黄灯一直闪烁。	The amber light on the panel kept flashing.
+直行	zhí xíng	go straight ahead	verb	Continue forward without turning.	从这里直行就到车站。	Go straight from here to reach the station.	这条车道只能直行。	This lane is for straight-ahead traffic only.
+左转	zuǒ zhuǎn	turn left	verb	Change direction toward the left.	过桥后左转。	Turn left after crossing the bridge.	这辆车准备左转。	This vehicle is preparing to turn left.
+右转	yòu zhuǎn	turn right	verb	Change direction toward the right.	在银行前右转。	Turn right before the bank.	右转时请留意行人。	Watch for pedestrians when turning right.
+掉头	diào tóu	turn around	verb	Reverse one's direction of travel.	司机在前面掉头。	The driver turned around ahead.	这条窄路不能掉头。	You cannot turn around on this narrow road.
+超车	chāo chē	overtake a vehicle	verb	Pass a slower vehicle traveling in the same direction.	弯道上不要超车。	Do not overtake on a bend.	司机等到安全时才超车。	The driver waited until it was safe to overtake.
+倒车	dào chē	reverse a vehicle	verb	Move a vehicle backward.	他慢慢倒车进入车位。	He slowly reversed into the parking space.	倒车前先看看后面。	Check behind you before reversing.
+泊车	bó chē	park a vehicle	verb	Bring a vehicle to rest in a parking space.	酒店门口有泊车服务。	The hotel entrance has valet parking.	他在路边泊车。	He parked beside the road.
+违停	wéi tíng	park in violation of rules	verb	Leave a vehicle parked where it is not permitted.	这辆车因违停被拖走。	This vehicle was towed for illegal parking.	路口经常有人违停。	People often park illegally at the junction.
+违章	wéi zhāng	violate regulations	verb	Act against established rules or regulations.	司机承认了违章行为。	The driver admitted the violation.	违章记录可以在线查询。	Violation records can be checked online.
+车险	chē xiǎn	vehicle insurance	noun	Insurance covering risks involving a vehicle.	他的车险下周到期。	His vehicle insurance expires next week.	她打电话询问车险费用。	She called to ask about the vehicle insurance cost.
+保险	bǎo xiǎn	insurance	noun	An arrangement providing coverage for specified risks.	这份保险包含行李损失。	This insurance covers lost luggage.	她保存了保险合同。	She kept the insurance contract.
+拍卖	pāi mài	auction	verb; noun	Sell an item through competitive bidding.	这幅画将公开拍卖。	This painting will be auctioned publicly.	他参加了旧家具拍卖。	He attended the used furniture auction.
+警察局	jǐng chá jú	police station	noun	An office where police services are based.	她去警察局报失钱包。	She went to the police station to report her missing wallet.	警察局就在广场对面。	The police station is opposite the square.
+交警	jiāo jǐng	traffic police	noun	Police officers responsible for traffic.	交警正在指挥车辆。	The traffic officer is directing vehicles.	我向交警询问了路线。	I asked the traffic officer for directions.
+辅警	fǔ jǐng	auxiliary police worker	noun	A worker assisting police officers with their duties.	辅警帮助老人过马路。	The auxiliary police worker helped the older person cross the road.	辅警在入口维持秩序。	Auxiliary police staff maintained order at the entrance.
+警员	jǐng yuán	police officer	noun	A member of a police force.	警员记录了她的描述。	The police officer recorded her description.	两名警员来到现场。	Two police officers arrived at the scene.
+快递单	kuài dì dān	courier waybill	noun	A document or label recording an express delivery.	请在快递单上填写地址。	Fill in the address on the courier waybill.	快递单上的号码看不清了。	The number on the courier label is unreadable.
+收件人	shōu jiàn rén	recipient	noun	The person to whom a parcel or letter is addressed.	收件人已经搬家了。	The recipient has moved.	请写清楚收件人的姓名。	Write the recipient's name clearly.
+寄件人	jì jiàn rén	sender	noun	The person who posts or sends an item.	寄件人没有留下电话。	The sender left no phone number.	包裹上写着寄件人的地址。	The sender's address is on the parcel.
+寄件地址	jì jiàn dì zhǐ	sender's address	noun phrase	The address from which an item is sent.	寄件地址需要重新填写。	The sender's address needs to be entered again.	他把寄件地址写在信封背面。	He wrote the sender's address on the back of the envelope.
+收件地址	shōu jiàn dì zhǐ	delivery address	noun phrase	The address where posted goods should be received.	收件地址少了门牌号。	The delivery address is missing the house number.	她在手机上修改了收件地址。	She changed the delivery address on her phone.
+收货地址	shōu huò dì zhǐ	goods delivery address	noun phrase	The destination address for ordered goods.	下单时请核对收货地址。	Check the delivery address when ordering.	默认收货地址是办公室。	The default delivery address is the office.
+收货人	shōu huò rén	consignee	noun	The person designated to receive goods.	司机联系了收货人。	The driver contacted the consignee.	收货人的姓名写错了。	The consignee's name was written incorrectly.
+收款人	shōu kuǎn rén	payment recipient	noun	The person designated to receive a payment.	转账前请确认收款人。	Confirm the recipient before transferring money.	收款人已经收到通知。	The payment recipient has received the notification.
+付款人	fù kuǎn rén	payer	noun	The person making or responsible for a payment.	表格需要填写付款人的姓名。	The form requires the payer's name.	付款人保留了收据。	The payer kept the receipt.
+付款码	fù kuǎn mǎ	payment authorization code	noun	A displayed code that a seller can read to collect a payment.	请向收银员出示付款码。	Show your payment code to the cashier.	付款码已经刷新了。	The payment code has refreshed.
+收款码	shōu kuǎn mǎ	payment collection code	noun	A code displayed by a recipient for others to send money.	柜台上贴着收款码。	A payment collection code is posted on the counter.	店主更换了收款码。	The shopkeeper changed the payment collection code.
+支付码	zhī fù mǎ	payment code	noun	A code used in an electronic payment process.	这张支付码已经失效。	This payment code is no longer valid.	请把支付码对准扫描器。	Hold the payment code toward the scanner.
+支付方式	zhī fù fāng shì	payment method	noun phrase	The means chosen for paying money.	请选择一种支付方式。	Choose a payment method.	现金也是可用的支付方式。	Cash is also an available payment method.
+货到付款	huò dào fù kuǎn	cash on delivery	verb phrase	Pay for goods when they are delivered.	这家店支持货到付款。	This shop accepts payment on delivery.	我选择货到付款买这台风扇。	I chose payment on delivery for this fan.
+包装	bāo zhuāng	packaging; package goods	noun; verb	Material enclosing goods or the act of enclosing them.	包装已经破损了。	The packaging is damaged.	她把礼物包装好了。	She wrapped the gift.
+包装袋	bāo zhuāng dài	packaging bag	noun	A bag enclosing or protecting a product.	这个包装袋不能加热。	This packaging bag cannot be heated.	店员换了一个新的包装袋。	The clerk used a new packaging bag.
+纸箱	zhǐ xiāng	cardboard carton	noun	A box made of thick cardboard for storage or transport.	书装在纸箱里。	The books are in the cardboard carton.	搬家后留下了很多纸箱。	Many cardboard boxes remained after the move.
+胶带	jiāo dài	adhesive tape	noun	A strip with an adhesive surface for joining or sealing.	请用胶带封好箱子。	Seal the box with adhesive tape.	她剪下一段胶带。	She cut off a piece of tape.
+封口	fēng kǒu	seal an opening	verb; noun	Close the opening of a container or package.	袋子装满后需要封口。	The bag needs sealing after it is filled.	这封信的封口已经破了。	The seal on this letter is broken.
+签字	qiān zì	sign one's name	verb	Write one's name to confirm a document or receipt.	请在这里签字。	Sign here.	双方签字后各留一份。	Each party kept a copy after signing.
+盖章	gài zhāng	stamp a document	verb	Apply an official or identifying stamp to a document.	这份证明需要盖章。	This certificate needs a stamp.	工作人员在表格上盖章。	The staff member stamped the form.
+印章	yìn zhāng	seal; stamp	noun	A device bearing a mark used to authenticate or identify documents.	印章放在抽屉里。	The stamp is in the drawer.	她仔细核对了印章。	She checked the seal carefully.
+复印件	fù yìn jiàn	photocopy	noun	A reproduced paper copy of an original document.	请带上证件复印件。	Bring a photocopy of your identification.	复印件上的字太淡了。	The writing on the photocopy is too faint.
+原件	yuán jiàn	original document	noun	The original item rather than a copy.	工作人员检查了原件。	The staff member checked the original.	原件请保管好。	Keep the original document safe.
+复印纸	fù yìn zhǐ	copy paper	noun	Paper intended for use in photocopiers or printers.	复印纸已经用完了。	The copy paper has run out.	她买了一包复印纸。	She bought a pack of copy paper.
+单据	dān jù	transaction document	noun	A document recording a sale, payment or related transaction.	报销时需要提交单据。	Submit the transaction documents for reimbursement.	这些单据按日期排列。	These documents are arranged by date.
+登记表	dēng jì biǎo	registration form	noun	A form for recording registration information.	请在登记表上写姓名。	Write your name on the registration form.	老师收回了登记表。	The teacher collected the registration forms.
+登记号	dēng jì hào	registration number	noun	A number identifying a registration record.	请记住自己的登记号。	Remember your registration number.	查询时需要输入登记号。	Enter the registration number to look up the record.
+申请人	shēn qǐng rén	applicant	noun	The person requesting approval or a service.	申请人需要亲自签字。	The applicant needs to sign in person.	申请人已经补交材料。	The applicant has submitted the additional documents.
+受理号	shòu lǐ hào	application processing number	noun	A number identifying a request accepted for processing.	回执上印着受理号。	The acknowledgment bears the processing number.	我凭受理号查询进度。	I checked progress using the processing number.
+回执	huí zhí	acknowledgment receipt	noun	A document confirming receipt or acceptance of something.	她收到了一张回执。	She received an acknowledgment receipt.	请保留回执方便查询。	Keep the acknowledgment for later inquiries.
+回执单	huí zhí dān	acknowledgment slip	noun	A slip confirming that an item or application was received.	回执单上写着领取日期。	The acknowledgment slip states the collection date.	工作人员把回执单交给我。	The staff member handed me the acknowledgment slip.
+受理单	shòu lǐ dān	processing acknowledgment slip	noun	A slip confirming that a request was accepted for processing.	受理单放在文件夹里。	The processing slip is in the folder.	领取证件时带上受理单。	Bring the processing slip when collecting the document.
+通知单	tōng zhī dān	notification slip	noun	A printed slip notifying someone of an action or event.	邮箱里有一张通知单。	There is a notification slip in the mailbox.	她按照通知单上的时间到场。	She arrived at the time stated on the notice.
+取款机	qǔ kuǎn jī	cash withdrawal machine	noun	A machine that dispenses money from an account.	取款机在银行门口。	The cash machine is outside the bank.	这台取款机今天不能使用。	This cash machine is unavailable today.
+储物柜	chǔ wù guì	storage locker	noun	A cabinet or locker used to store belongings.	请把背包放进储物柜。	Put your backpack in the locker.	这个储物柜需要扫码打开。	This locker opens by scanning a code.
+行李箱	xíng li xiāng	luggage suitcase	noun	A case used to carry belongings while traveling.	我的行李箱轮子坏了。	A wheel on my suitcase is broken.	她把行李箱推进房间。	She rolled the suitcase into the room.
+行李架	xíng li jià	luggage rack	noun	A rack for holding passenger luggage.	背包放在行李架上。	The backpack is on the luggage rack.	下车前请检查行李架。	Check the luggage rack before getting off.
+候机室	hòu jī shì	airport waiting lounge	noun	A room where passengers wait before a flight.	我们在候机室等通知。	We waited for an announcement in the airport lounge.	候机室里有饮水机。	There is a water dispenser in the waiting lounge.
+候车室	hòu chē shì	station waiting room	noun	A room where passengers wait for transport.	候车室里坐满了旅客。	The station waiting room is full of passengers.	候车室晚上十点关闭。	The waiting room closes at ten at night.
+登机口	dēng jī kǒu	boarding gate	noun	The airport gate through which passengers board a flight.	登机口改到二楼了。	The boarding gate has changed to the second floor.	她赶到登机口时还没开始登机。	Boarding had not started when she reached the gate.
+登机牌	dēng jī pái	boarding pass	noun	A document authorizing a passenger to board a flight.	请出示登机牌。	Show your boarding pass.	登机牌上写着座位号。	The boarding pass shows the seat number.
+安检口	ān jiǎn kǒu	security screening entrance	noun	An entrance where people and belongings undergo security checks.	安检口前排着长队。	There is a long queue at the security screening entrance.	请从左侧安检口进入。	Enter through the security checkpoint on the left.
+检票口	jiǎn piào kǒu	ticket-checking gate	noun	An entrance where tickets are checked.	检票口已经开放。	The ticket-checking gate is open.	我在检票口旁边等你。	I will wait beside the ticket gate.
+售票处	shòu piào chù	ticket office	noun	A place where tickets are sold.	售票处就在入口右边。	The ticket office is to the right of the entrance.	她去售票处询问余票。	She asked about remaining tickets at the ticket office.
+问讯处	wèn xùn chù	information office	noun	A desk or office providing answers and directions.	问讯处就在大厅门口。	The information office is at the hall entrance.	我到问讯处询问发车时间。	I asked about departure times at the information office.
+收费站	shōu fèi zhàn	toll station	noun	A station where road tolls or other fees are collected.	车辆在收费站前减速。	Vehicles slowed before the toll station.	这个收费站接受现金。	This toll station accepts cash.
+服务区	fú wù qū	roadside service area	noun	A roadside area providing rest, food and vehicle services.	我们在服务区吃午饭。	We ate lunch at the service area.	下一个服务区还有二十公里。	The next service area is twenty kilometers away.
+问讯	wèn xùn	ask for information	verb	Inquire about information or directions.	他向值班人员问讯。	He asked the duty staff for information.	旅客可以到大厅问讯。	Passengers can inquire in the hall.
+救援	jiù yuán	rescue operation	verb; noun	Help people in danger or difficulty.	救援车辆已经到达。	The rescue vehicles have arrived.	大雨给救援增加了困难。	Heavy rain made the rescue harder.
+救助	jiù zhù	provide help or relief	verb	Give assistance to someone in danger or need.	她救助了受伤的小猫。	She helped the injured kitten.	中心为困难家庭提供救助。	The center provides relief to families in difficulty.
+调解	tiáo jiě	mediate a dispute	verb	Help disputing parties reach an agreement.	工作人员调解了邻里纠纷。	The staff mediated the neighborhood dispute.	双方同意接受调解。	Both parties agreed to mediation.
+调查	diào chá	investigate; survey	verb	Gather information to understand an issue.	警察正在调查事故。	The police are investigating the accident.	学校调查了学生的需求。	The school surveyed students' needs.
+查验	chá yàn	inspect and verify	verb	Check an item or document for validity or compliance.	工作人员查验了护照。	The staff checked the passport.	货物需要开箱查验。	The goods need to be unpacked for inspection.
+查收	chá shōu	check and acknowledge receipt	verb	Check that something sent has been received.	材料已经寄出，请查收。	The documents have been sent; check their receipt.	她查收了今天的邮件。	She checked today's incoming email.
+补办	bǔ bàn	obtain a replacement through formalities	verb	Complete a procedure again to replace a missing item.	身份证丢了需要补办。	A lost identity card needs replacing.	她到窗口补办证件。	She applied for replacement documents at the counter.
+补交	bǔ jiāo	submit or pay an outstanding amount	verb	Provide something omitted or still due.	他补交了申请材料。	He submitted the missing application documents.	请在周五前补交费用。	Pay the outstanding fee before Friday.
+补发	bǔ fā	issue or send additionally	verb	Send something missing or issue a replacement.	商家补发了漏装的配件。	The seller sent the missing accessory.	公司补发了上个月的工资。	The company paid the salary missing from last month.
+换发	huàn fā	issue a replacement	verb	Issue a new document to replace an existing one.	旧证件需要换发。	The old document needs replacing.	窗口为他换发了新的证书。	The counter issued him a replacement certificate.
+补领	bǔ lǐng	collect a replacement	verb	Apply for and obtain an item replacing one lost or omitted.	她来补领丢失的证件。	She came to obtain a replacement for the lost document.	补领卡片需要登记。	Registration is needed to obtain a replacement card.
+换领	huàn lǐng	exchange for a new document	verb	Hand in an existing item and receive a replacement.	他换领了新的驾驶证。	He exchanged his driver's license for a new one.	换领时请带上旧卡。	Bring the old card when collecting the replacement.
+领证	lǐng zhèng	collect an official document	verb	Receive an issued certificate or identification document.	领证日期写在回执上。	The collection date is on the acknowledgment.	她上午去窗口领证。	She collected the document at the counter this morning.
+报失	bào shī	report a loss	verb	Notify an authority or service of a lost item.	钱包丢失后他立即报失。	He reported the loss as soon as his wallet went missing.	报失时需要描述物品。	Describe the item when reporting its loss.
+挂失	guà shī	report loss to block a document or card	verb	Report a lost card or document so protective action can be taken.	她打电话挂失银行卡。	She called to report her lost bank card.	挂失后旧卡不能再使用。	The old card cannot be used after the loss is registered.
+注销	zhù xiāo	cancel a registration	verb	Remove a registration or formally close an account.	这个账号已经注销了。	This account has been closed.	注销业务需要本人办理。	Closing the service must be handled in person.
+销户	xiāo hù	close an account	verb	Formally terminate an existing account.	她到银行办理销户。	She went to the bank to close the account.	销户前需要处理余额。	The remaining balance must be handled before closure.
+开户	kāi hù	open an account	verb	Create an account with a bank or service provider.	他准备去银行开户。	He plans to open an account at the bank.	开户时需要登记身份信息。	Identity information is recorded when opening an account.
+开户行	kāi hù háng	account-opening bank	noun	The bank or branch where an account was opened.	请填写开户行的名称。	Enter the name of the account-opening bank.	她记不清自己的开户行。	She cannot remember where she opened her account.
+户名	hù míng	account holder's name	noun	The registered name associated with an account.	户名必须与记录一致。	The account name must match the record.	转账前他核对了户名。	He checked the account holder's name before transferring money.
+户口	hù kǒu	household registration	noun	An official record of a person's registered household residence.	她询问如何迁移户口。	She asked how to move her household registration.	表格上需要填写户口信息。	The form asks for household registration information.
+户口本	hù kǒu běn	household registration booklet	noun	A booklet recording registered members of a household.	妈妈把户口本收好了。	Mom put the household registration booklet away.	他带着户口本来办理手续。	He brought the registration booklet for the formalities.
+户籍	hù jí	household registration record	noun	The formal record of a person's registered household status.	工作人员查询了户籍信息。	The staff checked the household registration information.	她申请更新户籍记录。	She applied to update the registration record.
+户主	hù zhǔ	head of a registered household	noun	The person identified as the head of a household.	户主在表格上签了字。	The head of the household signed the form.	她核对了户主的姓名。	She checked the head of household's name.
+营业厅	yíng yè tīng	customer service hall	noun	Premises where a service provider handles customer transactions.	营业厅周末也开放。	The customer service hall is open on weekends.	我去营业厅更换电话卡。	I went to the service hall to replace my phone card.
+营业时间	yíng yè shí jiān	business hours	noun phrase	The times during which a business serves customers.	门上写着营业时间。	Business hours are written on the door.	假期的营业时间有变化。	Business hours change during the holiday.
+营业额	yíng yè é	business turnover	noun	The value of sales made over a period.	这家店的营业额增加了。	This shop's turnover increased.	经理统计了本月营业额。	The manager totaled this month's sales.
+营业执照	yíng yè zhí zhào	business license	noun	An official document authorizing a business to operate.	营业执照挂在墙上。	The business license hangs on the wall.	店主更新了营业执照。	The shopkeeper renewed the business license.
+许可证	xǔ kě zhèng	permit	noun	A document granting permission for an activity.	工作人员检查了许可证。	The staff checked the permit.	许可证的有效期写在下方。	The permit's validity period is written below.
+执照	zhí zhào	license	noun	A document granting formal permission to undertake an activity.	他的执照下个月到期。	His license expires next month.	开店前需要办理执照。	A license needs to be arranged before opening the shop.
+许可	xǔ kě	permission; permit	verb; noun	Authorization to do something.	拍照需要得到许可。	Permission is needed to take photographs.	负责人许可他进入仓库。	The person in charge allowed him into the warehouse.
+税款	shuì kuǎn	tax payment	noun	Money due or paid as tax.	公司已经缴清税款。	The company has paid its taxes in full.	税款金额列在通知里。	The tax amount is listed in the notice.
+税单	shuì dān	tax statement	noun	A document recording tax due or paid.	她把税单交给会计。	She gave the tax statement to the accountant.	请保存去年的税单。	Keep last year's tax statement.
+报税	bào shuì	file a tax return	verb	Report required tax information to the relevant authority.	公司委托会计报税。	The company hired an accountant to file its taxes.	报税材料已经准备好了。	The documents for filing the tax return are ready.
+税号	shuì hào	tax identification number	noun	A number used to identify a taxpayer or tax registration.	发票上的税号写错了。	The tax identification number on the invoice is incorrect.	开票前请核对税号。	Check the tax number before issuing the invoice.
+开具	kāi jù	issue a document	verb	Prepare and formally issue a written document.	医生开具了证明。	The doctor issued a certificate.	商家为客户开具发票。	The seller issued an invoice to the customer.
+证明书	zhèng míng shū	certificate	noun	A written document confirming a fact or qualification.	她拿到了工作证明书。	She received a certificate of employment.	证明书上盖有印章。	The certificate bears a stamp.
+证明人	zhèng míng rén	person providing confirmation	noun	Someone who verifies a fact or supports a claim.	表格需要填写证明人的电话。	The form requires the confirming person's phone number.	证明人向工作人员解释了情况。	The confirming person explained the situation to the staff.
+缴款	jiǎo kuǎn	pay a required sum	verb	Pay an amount that has been requested or assessed.	他按通知到银行缴款。	He went to the bank to pay as instructed in the notice.	缴款凭证已经打印出来。	The payment confirmation has been printed.
+支取	zhī qǔ	withdraw funds	verb	Obtain money from an account or fund.	她支取了一部分存款。	She withdrew part of her savings.	支取记录可以查询。	The withdrawal record can be checked.
+存折	cún zhé	bank passbook	noun	A booklet recording bank account transactions.	奶奶带着存折去银行。	Grandmother took her passbook to the bank.	存折上印着账户余额。	The account balance is printed in the passbook.
+还清	huán qīng	repay in full	verb	Pay back the entire amount owed.	他已经还清了借款。	He has repaid the loan in full.	这笔钱年底才能还清。	This debt can only be repaid in full at the end of the year.
+付清	fù qīng	pay in full	verb	Complete payment of the total amount due.	离开前请付清房费。	Pay the room charge in full before leaving.	她一次付清了货款。	She paid for the goods in full at once.
+找出	zhǎo chū	find; identify	verb	Locate or identify something sought.	我找出了丢失的收据。	I found the missing receipt.	技术员找出了机器的问题。	The technician identified the machine's problem.
+绕路	rào lù	take a detour	verb	Travel by a longer or indirect route.	前面修路，需要绕路。	There is roadwork ahead, so a detour is needed.	司机绕路避开了拥堵。	The driver took a detour to avoid congestion.
+轮到	lún dào	be someone's turn	verb	Reach a person's place in a sequence.	终于轮到我办理手续。	It is finally my turn to handle the formalities.	下一次轮到她发言。	It is her turn to speak next time.
+车程	chē chéng	travel time by vehicle	noun	The time or distance involved in a vehicle journey.	到机场有一小时车程。	The airport is an hour's drive away.	车程比我们预计的长。	The journey took longer than we expected.
+付给	fù gěi	pay to someone	verb	Give money to a specified recipient.	我把房租付给了房东。	I paid the rent to the landlord.	这笔钱已经付给供应商。	This money has been paid to the supplier.
+信箱	xìn xiāng	mailbox	noun	A box or account used to receive mail.	信箱里有一封信。	There is a letter in the mailbox.	请检查你的电子信箱。	Check your email inbox.
+拖车	tuō chē	tow a vehicle; tow truck	verb; noun	Pull a vehicle using another vehicle or equipment.	拖车把坏车带走了。	The tow truck removed the broken-down vehicle.	他联系了拖车服务。	He contacted the towing service.
+上路	shàng lù	set off on the road	verb	Begin traveling or driving on a road.	我们吃过早饭就上路。	We set off after breakfast.	这辆车维修后才能上路。	This vehicle can go on the road after repair.
+站稳	zhàn wěn	stand firmly	verb	Keep one's balance while standing.	车开动前请站稳。	Keep your footing before the vehicle starts moving.	老人扶着栏杆站稳了。	The older person steadied himself with the railing.
+随行	suí xíng	accompany on a journey	verb	Travel along with someone.	两位工作人员随行。	Two staff members accompanied the group.	她带着随行的孩子办理登机。	She checked in with the child accompanying her.
+送行	sòng xíng	see someone off	verb	Go with someone to bid farewell before departure.	朋友到车站为她送行。	Her friend came to the station to see her off.	爸爸明早会来送行。	Dad will come to see us off tomorrow morning.
+高架	gāo jià	elevated structure	adjective; noun	A road or similar structure built above ground level.	车辆驶上了高架。	The vehicles drove onto the elevated road.	高架桥下有一条小路。	There is a small road beneath the viaduct.
+停业	tíng yè	close for business	verb	Stop trading temporarily or permanently.	餐馆装修期间停业。	The restaurant is closed during renovation.	这家店已经停业了。	This shop has closed.
+引路	yǐn lù	lead the way	verb	Guide someone along a route.	志愿者为游客引路。	The volunteer led the way for the visitors.	我请邻居帮忙引路。	I asked the neighbor to show the way.
+长途车	cháng tú chē	long-distance coach	noun	A bus used for journeys between distant places.	长途车早上六点出发。	The long-distance coach leaves at six in the morning.	她坐长途车去看父母。	She took a coach to visit her parents.
+借出	jiè chū	lend out	verb	Give something temporarily to someone who will return it.	图书馆借出了这本书。	The library lent out this book.	他把雨伞借出去了。	He lent out his umbrella.
+交纳	jiāo nà	pay a required fee	verb	Hand over money due as a charge or contribution.	学生按时交纳学费。	Students pay tuition on time.	他交纳了停车费用。	He paid the parking charges.
+入席	rù xí	take a seat at a meal or event	verb	Sit in one's assigned place at a table or gathering.	客人陆续入席。	The guests gradually took their seats.	请按桌号入席。	Take your seats according to the table numbers.
+路旁	lù páng	beside the road	noun	The area alongside a road.	路旁种着高大的树。	Tall trees grow beside the road.	他在路旁停下休息。	He stopped beside the road to rest.
+厂房	chǎng fáng	factory building	noun	A building housing industrial production.	旧厂房改成了展厅。	The old factory building became an exhibition hall.	工人正在打扫厂房。	The workers are cleaning the factory building.
+偿付	cháng fù	repay or settle a debt	verb	Pay an amount owed or due as compensation.	公司已经偿付了债务。	The company has settled its debt.	合同说明了偿付时间。	The contract specifies the repayment time.
+绕行	rào xíng	go by an alternative route	verb	Avoid an obstruction by taking another route.	车辆需要绕行。	Vehicles need to take an alternative route.	行人从右边绕行。	Pedestrians go around on the right.
+寄出	jì chū	mail out	verb	Send an item away by post.	这封信昨天寄出了。	This letter was mailed yesterday.	她把合同寄出后保留了收据。	She kept the receipt after mailing the contract.
+停水	tíng shuǐ	water supply interruption	verb; noun	Stop the supply of running water.	小区今晚停水。	The neighborhood's water will be off tonight.	停水通知贴在楼下。	The water outage notice is posted downstairs.
+封路	fēng lù	close a road	verb	Prevent traffic from using a road.	暴雨后这条街封路了。	This street was closed after the heavy rain.	警方临时封路处理事故。	The police temporarily closed the road to handle the accident.
+装入	zhuāng rù	put or load into	verb	Place something inside a container or machine.	她把衣服装入箱子。	She packed the clothes into the suitcase.	请把纸装入打印机。	Load the paper into the printer.
+购置	gòu zhì	purchase equipment or property	verb	Buy items to acquire them for use.	学校购置了新电脑。	The school purchased new computers.	他们为新家购置家具。	They bought furniture for their new home.
+收下	shōu xià	accept and keep	verb	Take and retain something offered.	她收下了这份礼物。	She accepted the gift.	请收下这张收据。	Keep this receipt.
+游逛	yóu guàng	wander for leisure	verb	Walk around sightseeing or enjoying oneself.	我们在老街游逛。	We wandered around the old street.	游客沿河游逛了一下午。	The tourists strolled beside the river all afternoon.
+老城区	lǎo chéng qū	old city district	noun	The older established part of a city.	老城区保留着许多旧建筑。	The old city district retains many old buildings.	她住在老城区附近。	She lives near the old city district.
+商贩	shāng fàn	vendor	noun	A person selling goods, often at a small stall.	商贩把水果摆在路边。	The vendor displayed fruit beside the road.	市场里的商贩很忙。	The market vendors are busy.
+临街	lín jiē	face the street	verb; adjective	Be positioned alongside and facing a street.	我们订了临街的房间。	We booked a room facing the street.	这家临街商铺正在招租。	This street-front shop is available to rent.
+街巷	jiē xiàng	streets and alleys	noun	The streets and narrower lanes of an area.	老城的街巷很安静。	The old city's streets and alleys are quiet.	游客穿过街巷寻找餐馆。	The visitors walked through the lanes looking for a restaurant.
+慢行	màn xíng	proceed slowly	verb	Move at a slow pace.	前方施工，请慢行。	Roadwork ahead; proceed slowly.	车辆在雨中慢行。	The vehicles moved slowly in the rain.
+杂务	zá wù	miscellaneous tasks	noun	Small practical duties of different kinds.	她上午处理办公室杂务。	She dealt with office tasks this morning.	这些杂务由大家分担。	Everyone shares these miscellaneous duties.
+锁孔	suǒ kǒng	keyhole	noun	The opening in a lock where a key is inserted.	锁孔里卡着一片纸。	A piece of paper is stuck in the keyhole.	他把钥匙插进锁孔。	He inserted the key into the keyhole.
+赶集	gǎn jí	visit a periodic market	verb	Go to a local market on a market day.	村民周末去赶集。	The villagers visit the market on weekends.	她赶集时买了蔬菜。	She bought vegetables at the market.
+小包	xiǎo bāo	small bag or packet	noun	A bag or parcel of a small size.	她把钥匙放进小包。	She put the keys in the small bag.	这小包饼干是送给你的。	This small packet of biscuits is for you.
+下一站	xià yī zhàn	next stop	noun phrase	The next stop on a transport route or journey.	下一站就是医院。	The next stop is the hospital.	我们在下一站下车。	We get off at the next stop.
+交钱	jiāo qián	pay money	verb	Hand over money as payment.	报名后请到前台交钱。	Pay at reception after registering.	她交钱时拿到了收据。	She received a receipt when she paid.
+账册	zhàng cè	account ledger	noun	A book containing financial transaction records.	会计打开账册核对金额。	The accountant opened the ledger to check the amounts.	旧账册保存在柜子里。	The old ledgers are stored in the cabinet.
+储物	chǔ wù	store belongings	verb	Keep items in a place for later use.	床下的空间可以储物。	The space under the bed can be used for storage.	这个柜子只用于储物。	This cabinet is used only for storing belongings.
+履约	lǚ yuē	fulfill an agreement	verb	Carry out obligations set by an agreement.	双方承诺按时履约。	Both parties promised to fulfill the agreement on time.	公司提交了履约记录。	The company submitted its performance record.
+年货	nián huò	New Year supplies	noun	Goods bought for celebrating the lunar New Year.	一家人去市场买年货。	The family went to buy New Year supplies.	年货已经摆满了桌子。	The New Year supplies filled the table.
+付款条件	fù kuǎn tiáo jiàn	payment terms	noun phrase	The agreed requirements governing how and when payment is made.	合同列出了付款条件。	The contract lists the payment terms.	双方重新商量了付款条件。	The parties discussed the payment terms again.
+旅游胜地	lǚ yóu shèng dì	popular tourist destination	noun	A place especially attractive to tourists.	这座海岛是旅游胜地。	This island is a popular tourist destination.	假期的旅游胜地很拥挤。	Popular tourist destinations are crowded during holidays.
+住客	zhù kè	guest staying in accommodation	noun	A person staying in rented or guest accommodation.	酒店为住客提供早餐。	The hotel provides breakfast for its guests.	住客可以借用雨伞。	Guests can borrow umbrellas.
+便利店	biàn lì diàn	convenience store	noun	A small store selling everyday goods with convenient hours.	楼下的便利店全天营业。	The convenience store downstairs is open all day.	我在便利店买了牛奶。	I bought milk at the convenience store.
+仿品	fǎng pǐn	imitation item	noun	An item made to resemble another product or original.	这件摆设是仿品。	This decorative item is a replica.	标签注明这是仿品。	The label states that this is an imitation.
+导览	dǎo lǎn	guided introduction or tour	noun; verb	A guide explaining a site or exhibition to visitors.	博物馆提供语音导览。	The museum offers an audio guide.	导览结束后可以自由参观。	You can visit freely after the guided tour.
+花光	huā guāng	spend all	verb	Use up an amount of money through spending.	他把零花钱花光了。	He spent all his pocket money.	旅行花光了她的积蓄。	The trip used up all her savings.
+送去	sòng qù	send or take to a place	verb	Deliver or bring something to a destination.	我把文件送去办公室。	I took the documents to the office.	这些书明天送去学校。	These books will be delivered to the school tomorrow.
+商户	shāng hù	merchant business	noun	A person or business conducting commercial trade.	市场里的商户准备开门。	The market merchants are preparing to open.	商户收到了新的通知。	The merchants received a new notice.

@@ -1,0 +1,2002 @@
+{
+  "扫码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "扫码支付": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "二维码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "条形码": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "付款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "退款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "退货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "换货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "下单": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "订单": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "购物车": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "购物袋": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "收据": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "电子发票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "开票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "补票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "买票": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "售票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "票价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "地铁": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "公交": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "公交车": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "转乘": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "进站": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "出站": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "闸机": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "月票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "年票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "单程": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "往返": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "单程票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "往返票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "通票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "优惠券": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "优惠码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "促销": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "打折": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "折扣": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "原价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "现价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "标价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "总价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "运费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "包邮": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "快递": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "外卖": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "快递员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "配送": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "配送员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取件": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "寄件": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收件": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "寄送": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "签收": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "自提": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "提货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "提货码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取件码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取餐": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "餐盒": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "送餐": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "加急": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "预约": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "预约号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "挂号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "挂号费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "门诊": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "急诊": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "就诊": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "候诊": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "复诊": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "转诊": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "号源": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "叫号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "排号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "排队": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "办事": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "办证": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "证件": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "身份证": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "护照": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "居住证": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "驾照": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "驾驶证": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车牌": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "号牌": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "手续": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "申请表": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "填表": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "表格": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "窗口": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "服务台": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "咨询台": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "客服": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "热线": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "客服热线": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取号机": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "自助": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "关门": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "公路": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "航班": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "机票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "终点": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "房东": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "合身": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "起点": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "导航": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "存款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "铁路": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "贵重": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "堵车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "账号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "入住": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车灯": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "欠款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "路灯": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "转账": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "赠品": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "宽度": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "退票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "楼道": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "缴纳": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "缺货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "信用卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车库": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "航空": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "摩托车": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "客房": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "会员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "房产": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "高速公路": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车道": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "路程": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "车门": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "租金": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "登机": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "预订": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "海关": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "签证": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "手提箱": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "优惠": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "出境": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "楼层": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "单元": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "公告": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "车主": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "尺码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收银": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "回国": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车位": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "安检": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "入境": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "礼品": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "试穿": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "邮寄": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "打车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "库存": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "受理": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "押金": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "积分": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "纸币": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "分期付款": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "余额": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "景点": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "物业": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车速": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "找钱": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车流": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "定价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "返程": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "速递": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "邮编": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "门牌": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "发货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "纸盒": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "房费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "房价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "有效期": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "赔付": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "换算": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "保修": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "返乡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "交费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "租房": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "欠费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "专柜": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "分期": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "候车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "转车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "邮费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "单价": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "现货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "续签": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "件数": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "借记卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "刷卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取钱": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "售后": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "存钱": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "小票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "房卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "断货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "检票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "租客": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "续费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "网约车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "补货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "订房": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "退房": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "银行卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "乘坐": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "线路": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "马路": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "商场": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "公车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "街区": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "套餐": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "业务": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "开通": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "用品": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "进出": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "边境": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "持有": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "外出": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "路过": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "咖啡店": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "开走": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "签署": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "赊账": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "捐款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "获取": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "超出": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "酒馆": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "市区": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "撞车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "交出": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "驾驶员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "终点站": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "失灵": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "储备": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "可行": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "餐具": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "游船": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "筹集": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "款项": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "赔钱": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "启程": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "买房": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "买进": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "乘船": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "畅销": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "失窃": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "义卖": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "零花钱": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "船员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "卖掉": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "停靠": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "款待": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "公务": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "报价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "转机": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "旅行者": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "罚款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "定金": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "挡路": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "退回": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "路标": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "低价": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "开设": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "收取": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "抢手": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "检修": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "车队": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "次序": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "邮递员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "列入": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "半路": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "采购": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "回程": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "供应商": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "到访": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "钱币": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "退还": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "开办": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "有序": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "手续费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "招揽": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "游乐园": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "售卖": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "假货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "商铺": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "晕船": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "搬运工": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "问路": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "代办": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "复印": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "扫描": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "上传": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "下载": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "水费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "电费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "燃气费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "物业费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "订金": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "滞纳金": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "扣款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "汇款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "账单": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "催款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "还款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "储蓄卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "停车费": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "停车票": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "共享单车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "客车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "客运": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "客运站": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "火车站": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "站台": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "月台": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "站牌": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "站点": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "公交卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "交通卡": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "车窗": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "空位": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "靠窗": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "靠边": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "路口": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "十字路口": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "红灯": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "绿灯": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "黄灯": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "直行": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "左转": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "右转": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "掉头": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "超车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "倒车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "泊车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "违停": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "违章": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "车险": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "保险": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "拍卖": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "警察局": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "交警": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "辅警": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "警员": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "快递单": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收件人": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "寄件人": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "寄件地址": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收件地址": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收货地址": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收货人": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收款人": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "付款人": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "付款码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收款码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "支付码": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "支付方式": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "货到付款": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "包装": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "包装袋": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "纸箱": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "胶带": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "封口": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "签字": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "盖章": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "印章": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "复印件": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "原件": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "复印纸": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "单据": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "登记表": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "登记号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "申请人": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "受理号": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "回执": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "回执单": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "受理单": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "通知单": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "取款机": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "储物柜": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "行李箱": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "行李架": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "候机室": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "候车室": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "登机口": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "登机牌": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "安检口": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "检票口": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "售票处": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "问讯处": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "收费站": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "服务区": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "问讯": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "救援": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "救助": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "调解": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "调查": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "查验": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "查收": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "补办": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "补交": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "补发": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "换发": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "补领": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "换领": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "领证": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "报失": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "挂失": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "注销": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "销户": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "开户": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "开户行": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "户名": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "户口": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "户口本": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "户籍": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "户主": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "营业厅": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "营业时间": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "营业额": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "营业执照": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "许可证": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "执照": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "许可": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "税款": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "税单": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "报税": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "税号": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "开具": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "证明书": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "证明人": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "缴款": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "支取": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "存折": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "还清": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "付清": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "找出": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "绕路": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "轮到": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "车程": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "付给": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "信箱": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "拖车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "上路": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "站稳": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "随行": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "送行": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "高架": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "停业": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "引路": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "长途车": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "借出": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "交纳": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "入席": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "路旁": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "厂房": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "偿付": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "绕行": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "寄出": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "停水": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "封路": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "装入": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "购置": {
+    "rarity": "1",
+    "reason": "SCHOOL_GENERAL"
+  },
+  "收下": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "游逛": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "老城区": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "商贩": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "临街": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "街巷": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "慢行": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "杂务": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "锁孔": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "赶集": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "小包": {
+    "rarity": "0",
+    "reason": "BASIC_OBJECT"
+  },
+  "下一站": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "交钱": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "账册": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "储物": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "履约": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "年货": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "付款条件": {
+    "rarity": "2",
+    "reason": "FORMAL_ABSTRACT"
+  },
+  "旅游胜地": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "住客": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "便利店": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "仿品": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "导览": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "花光": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  },
+  "送去": {
+    "rarity": "0",
+    "reason": "BASIC_ACTION"
+  },
+  "商户": {
+    "rarity": "1",
+    "reason": "GENERAL_LIFE"
+  }
+}

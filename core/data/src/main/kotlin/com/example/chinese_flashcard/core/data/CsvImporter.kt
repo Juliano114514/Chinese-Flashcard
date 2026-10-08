@@ -328,7 +328,7 @@ internal class CsvImporter(private val context: Context, private val database: F
       }
     }
     if (existing.byId.size + newIds.size > CSV_MAX_ROWS)
-      issues.add(0, "CSV", "The resulting wordbook would contain more than 10,000 words.")
+      issues.add(0, "CSV", "The resulting wordbook would contain more than 20,000 words.")
     val meanings = existing.primary.mapValues { it.value.id }.toMutableMap()
     val english = existing.primary.mapValues { it.value.english }.toMutableMap()
     for (row in rows.filter { it.id in newIds }) {

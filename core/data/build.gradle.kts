@@ -57,7 +57,7 @@ abstract class BundleDefaultWordlist : DefaultTask() {
     fun finishRecord() {
       check(state != 2) { "The default wordlist has an unclosed quoted field." }
       if (fields > 1 || hasContent) records++
-      check(records <= 10_001) { "The default wordlist exceeds 10,000 words." }
+      check(records <= 20_001) { "The default wordlist exceeds 20,000 words." }
       state = 0; fields = 1; hasContent = false
     }
     PushbackReader(InputStreamReader(file.inputStream(), decoder).buffered(), 1).use { reader ->

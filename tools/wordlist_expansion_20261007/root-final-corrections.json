@@ -1,0 +1,174 @@
+{
+  "inputSha256": "8fd3c0f7c2b12ee4122878235e22aff5e6f42a2dd9c075eabe4c2fd4bea7f66d",
+  "corrections": {
+    "wl_10789": {
+      "本义解释JSON": [
+        "Mental activity, an inner state, or a way of thinking; the examples refer to a person's mindset."
+      ]
+    },
+    "wl_10816": {
+      "本义解释JSON": [
+        "The function or effect something has, or the role it plays in an event."
+      ]
+    },
+    "wl_10899": {
+      "本义解释JSON": [
+        "To affect other people with an emotion, attitude, or spirit so that they share the feeling; this is the figurative sense in these examples."
+      ]
+    },
+    "wl_10905": {
+      "本义解释JSON": [
+        "To start doing something personally; it can also mean using physical force or hitting someone."
+      ]
+    },
+    "wl_11362": {
+      "本义解释JSON": [
+        "To engage in a kind of work or take part in an activity."
+      ]
+    },
+    "wl_11376": {
+      "本义解释JSON": [
+        "The resources or money currently at hand; it can also describe a person's present financial situation."
+      ]
+    },
+    "wl_11460": {
+      "本义解释JSON": [
+        "To operate or run, as a machine, program, or transport service does."
+      ]
+    },
+    "wl_12075": {
+      "本义解释JSON": [
+        "To carry something on the back. The ongoing-state marker ZHE follows the verb; this is an action phrase, not an utterance particle."
+      ]
+    },
+    "wl_12496": {
+      "本义解释JSON": [
+        "The outline, shape, or posture of a person's body."
+      ]
+    },
+    "wl_12824": {
+      "本义解释JSON": [
+        "To learn something well or reach a good level of skill; HAO marks a successful result here."
+      ]
+    },
+    "wl_12987": {
+      "本义解释JSON": [
+        "One round or cycle. LUN also counts round objects, such as the moon."
+      ]
+    },
+    "wl_13000": {
+      "本义解释JSON": [
+        "Not clear or not understood. After a verb, it can express an inability to make something clear."
+      ]
+    },
+    "wl_13178": {
+      "本义解释JSON": [
+        "Clear and bright, describing eyes, or clear and ringing, describing a voice."
+      ]
+    },
+    "wl_13202": {
+      "本义解释JSON": [
+        "To use something up, or to finish one use of an item."
+      ]
+    },
+    "wl_12389": {
+      "例句JSON": [
+        {
+          "hanzi": "图书按类别排放，整个书架井然有序。",
+          "pinyin": "tú shū àn lèi bié pái fàng, zhěng gè shū jià jǐng rán yǒu xù.",
+          "english": "Books are arranged according to categories, and the entire bookshelf is well organized.",
+          "chunks": [
+            {
+              "hanzi": "图书",
+              "pinyin": "tú shū",
+              "gloss": "books (in a library or bookstore)"
+            },
+            {
+              "hanzi": "按",
+              "pinyin": "àn",
+              "gloss": "according to"
+            },
+            {
+              "hanzi": "类别",
+              "pinyin": "lèi bié",
+              "gloss": "category"
+            },
+            {
+              "hanzi": "排放，",
+              "pinyin": "pái fàng,",
+              "gloss": "emit; discharge; arrange in rows"
+            },
+            {
+              "hanzi": "整个",
+              "pinyin": "zhěng gè",
+              "gloss": "entire"
+            },
+            {
+              "hanzi": "书架",
+              "pinyin": "shū jià",
+              "gloss": "bookshelf"
+            },
+            {
+              "hanzi": "井然有序。",
+              "pinyin": "jǐng rán yǒu xù.",
+              "gloss": "things being neatly arranged and well organized"
+            }
+          ]
+        },
+        {
+          "hanzi": "骑车上班既锻炼身体又减少排放，一举两得。",
+          "pinyin": "qí chē shàng bān jì duàn liàn shēn tǐ yòu jiǎn shǎo pái fàng, yī jǔ liǎng dé.",
+          "english": "Cycling to work not only exercises your body but also reduces emissions, killing two birds with one stone.",
+          "chunks": [
+            {
+              "hanzi": "骑车",
+              "pinyin": "qí chē",
+              "gloss": "ride a bike (motorbike or bicycle)"
+            },
+            {
+              "hanzi": "上班",
+              "pinyin": "shàng bān",
+              "gloss": "go to work"
+            },
+            {
+              "hanzi": "既",
+              "pinyin": "jì",
+              "gloss": "both ... and ... (paired construction)"
+            },
+            {
+              "hanzi": "锻炼",
+              "pinyin": "duàn liàn",
+              "gloss": "exercise"
+            },
+            {
+              "hanzi": "身体",
+              "pinyin": "shēn tǐ",
+              "gloss": "the body"
+            },
+            {
+              "hanzi": "又",
+              "pinyin": "yòu",
+              "gloss": "and (in both ... and ...)"
+            },
+            {
+              "hanzi": "减少",
+              "pinyin": "jiǎn shǎo",
+              "gloss": "reduce"
+            },
+            {
+              "hanzi": "排放，",
+              "pinyin": "pái fàng,",
+              "gloss": "emit; discharge; arrange in rows"
+            },
+            {
+              "hanzi": "一举两得。",
+              "pinyin": "yī jǔ liǎng dé.",
+              "gloss": "two birds with one stone"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "reason": "English teaching fields must contain Latin text and no Han script; translate explicit editorial meanings without changing word identity or intended sense."
+}

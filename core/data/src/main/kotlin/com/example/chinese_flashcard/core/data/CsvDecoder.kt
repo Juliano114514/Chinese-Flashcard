@@ -63,7 +63,7 @@ internal object CsvDecoder {
           if (record.fields.size == 1 && record.fields[0].isBlank()) continue
           total++
           if (total > CSV_MAX_ROWS) {
-            issues.add(record.line, "CSV", "A CSV may contain at most 10,000 words.")
+            issues.add(record.line, "CSV", "A CSV may contain at most 20,000 words.")
             break
           }
         }
@@ -111,7 +111,7 @@ internal object CsvDecoder {
           total++
           onRecord(total, record.fields.getOrNull(positions.getValue("组词")))
           if (total > CSV_MAX_ROWS) {
-            issues.add(record.line, "CSV", "A CSV may contain at most 10,000 words.")
+            issues.add(record.line, "CSV", "A CSV may contain at most 20,000 words.")
             break
           }
           if (record.fields.size != names.size) {

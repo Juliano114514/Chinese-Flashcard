@@ -474,7 +474,7 @@ def validate_csv(path):
 def validate_csv_bytes(content, verify_difficulty=True):
     if len(content)>32*1024*1024: raise ValueError('CSV exceeds byte limit')
     table=list(csv.DictReader(io.StringIO(content.decode('utf-8-sig'),newline='')))
-    if not table or list(table[0]) not in [HEADERS,LEGACY_HEADERS] or len(table)>10000: raise ValueError('CSV headers/count invalid')
+    if not table or list(table[0]) not in [HEADERS,LEGACY_HEADERS] or len(table)>20000: raise ValueError('CSV headers/count invalid')
     ids={r['词条ID']:r for r in table}
     if len(ids)!=len(table): raise ValueError('Duplicate word IDs')
     seen=set()

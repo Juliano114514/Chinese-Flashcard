@@ -209,8 +209,8 @@ def read_csv_words(csv_path):
                 ("CJK UNIFIED IDEOGRAPH", "CJK COMPATIBILITY IDEOGRAPH")) for char in hanzi):
                 raise ValueError(f"Invalid Hanzi in CSV ending at line {reader.line_num}")
             words.append(dict(csvLine=reader.line_num, hanzi=hanzi))
-            if len(words) > 10000:
-                raise ValueError("CSV exceeds the 10,000-word resource limit")
+            if len(words) > 20000:
+                raise ValueError("CSV exceeds the 20,000-word resource limit")
     if not words:
         raise ValueError("CSV contains no vocabulary")
     return words
