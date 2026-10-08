@@ -10,6 +10,8 @@ import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudySnapshot
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordStateRepository
+import com.example.chinese_flashcard.core.domain.WordlistRepository
+import com.example.chinese_flashcard.core.domain.WordlistItem
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -17,6 +19,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
@@ -35,6 +39,9 @@ data class StudyUiState(
   val error: String? = null,
   val dailyInvitation: Boolean = false,
   val writingRequest: WritingRequest? = null,
+  val homeWord: WordlistItem? = null,
+  val homeWordError: Boolean = false,
+  val homeWordStage: VocabularyStage? = null,
 ) {
   val today get() = snapshot?.today
   val card get() = snapshot?.card
@@ -89,6 +96,7 @@ class StudyViewModel(
   private val study: StudyRepository,
   private val settings: SettingsRepository,
   private val wordState: WordStateRepository,
+  private val wordlist: WordlistRepository,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(StudyUiState())
   val state = mutableState.asStateFlow()
@@ -98,7 +106,42 @@ class StudyViewModel(
   private var writingToken = 0L
   private var openedCardWriting: String? = null
 
-  init { observe() }
+  private var homeWords = emptyList<WordlistItem>()
+  private var homeWordObservation: Job? = null
+
+  init { observe(); observeHomeWords() }
+
+  fun shuffleHomeWord(): WordlistItem? {
+    if (state.value.busy || state.value.loading) return null
+    if (homeWordObservation?.isActive != true) { observeHomeWords(); return null }
+    val current = state.value.homeWord?.id
+    val stageWords = homeWords.filter { it.difficulty == state.value.today?.stageProgress?.stage?.rarity }
+    val candidates = if (stageWords.size > 1) stageWords.filter { it.id != current } else stageWords
+    val word = candidates.randomOrNull()
+    mutableState.update { it.copy(homeWord = word, homeWordError = false) }
+    return word
+  }
+
+  private fun observeHomeWords() {
+    homeWordObservation?.cancel()
+    homeWordObservation = viewModelScope.launch {
+      try {
+        combine(state.map { it.today?.stageProgress?.stage }.distinctUntilChanged(), wordlist.entries) {
+          stage, words -> stage to if (stage == null) emptyList() else words.filter { it.difficulty == stage.rarity }
+        }.collect { (stage, words) ->
+          homeWords = words
+          mutableState.update { current -> current.copy(
+            homeWord = words.firstOrNull { it.id == current.homeWord?.id } ?: words.randomOrNull(),
+            homeWordError = false, homeWordStage = stage) }
+        }
+      } catch (error: CancellationException) {
+        throw error
+      } catch (_: Exception) {
+        homeWords = emptyList()
+        mutableState.update { it.copy(homeWord = null, homeWordError = true) }
+      }
+    }
+  }
 
   fun onAction(action: StudyAction) {
     when (action) {

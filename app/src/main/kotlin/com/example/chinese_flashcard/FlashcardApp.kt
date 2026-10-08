@@ -127,7 +127,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val defaultWordlist by repositories.defaultWordlistState.collectAsStateWithLifecycle()
   var defaultWordlistRetry by remember { mutableStateOf<Job?>(null) }
   val study: StudyViewModel = viewModel(factory = factory {
-    StudyViewModel(repositories.study, repositories.settings, repositories.wordState)
+    StudyViewModel(repositories.study, repositories.settings, repositories.wordState, repositories.wordlist)
   })
   val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
   val wordlist: WordlistViewModel = viewModel(factory = factory { WordlistViewModel(repositories.wordlist) })
@@ -186,13 +186,23 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       NavigationBar(containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
         listOf("today" to "Home", "profile" to "Profile", "wordlist" to "Wordlist").forEach { (destination, label) ->
           NavigationBarItem(selected = route == destination, onClick = {
-            nav.navigate(destination) { popUpTo("today") { saveState = true }; launchSingleTop = true; restoreState = true }
+            if (destination == "today") {
+              if (route != "today" && !nav.popBackStack("today", inclusive = false)) {
+                nav.navigate("today") { launchSingleTop = true }
+              }
+            } else {
+              nav.navigate(destination) {
+                popUpTo("today") { saveState = true }
+                launchSingleTop = true
+                restoreState = true
+              }
+            }
           }, icon = { Icon(when (destination) {
             "today" -> Icons.Default.Home
             "profile" -> Icons.Default.Person
             else -> Icons.AutoMirrored.Filled.List
           }, label) },
-            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent), label = { Text(label) })
+            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent))
         }
       }
     }
@@ -207,7 +217,8 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
               learnMoreRequest = Triple(before.date, before.newPlanned, before.stageProgress.stage.rarity)
               study.learnMore()
             }
-          })
+          }, onProfile = { nav.navigate("profile") { launchSingleTop = true } },
+          onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = speech::speak)
       }
       composable("profile") { ProfileScreen(profile,
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
