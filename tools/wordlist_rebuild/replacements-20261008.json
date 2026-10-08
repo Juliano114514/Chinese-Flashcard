@@ -1,0 +1,414 @@
+{
+  "date": "2026-10-08",
+  "baseSha256": "94d98ce1fff7171d74d6ae46c6ac42925f6c8676f7e8b4989864971cba5c7d79",
+  "resultSha256": "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7",
+  "resultBytes": 28010152,
+  "boundary": "Two requested vocabulary replacements; previous wordlist identities are not a learner-data compatibility promise. Original AI-authored teaching content; not human linguistic certification.",
+  "entries": [
+    {
+      "replaces": "唉呀",
+      "original": {
+        "罕度": "0",
+        "组词": "唉呀",
+        "拼音": "āi ya",
+        "词条ID": "wl_03616",
+        "英文释义": "oh dear; oh",
+        "词性": "interjection",
+        "例句JSON": [
+          {
+            "hanzi": "唉呀，那位暴戾的人又发火了。",
+            "pinyin": "āi ya, nà wèi bào lì de rén yòu fā huǒ le.",
+            "english": "Oh dear, that violent-tempered man is angry again.",
+            "chunks": [
+              {
+                "hanzi": "唉呀，",
+                "pinyin": "āi ya,",
+                "gloss": "oh dear"
+              },
+              {
+                "hanzi": "那",
+                "pinyin": "nà",
+                "gloss": "that"
+              },
+              {
+                "hanzi": "位",
+                "pinyin": "wèi",
+                "gloss": "WEI (measure word)"
+              },
+              {
+                "hanzi": "暴戾",
+                "pinyin": "bào lì",
+                "gloss": "violent and cruel"
+              },
+              {
+                "hanzi": "的",
+                "pinyin": "de",
+                "gloss": "DE (modifier marker)"
+              },
+              {
+                "hanzi": "人",
+                "pinyin": "rén",
+                "gloss": "person"
+              },
+              {
+                "hanzi": "又",
+                "pinyin": "yòu",
+                "gloss": "again"
+              },
+              {
+                "hanzi": "发火",
+                "pinyin": "fā huǒ",
+                "gloss": "get angry"
+              },
+              {
+                "hanzi": "了。",
+                "pinyin": "le.",
+                "gloss": "LE (completed action or change)"
+              }
+            ]
+          },
+          {
+            "hanzi": "唉呀，我把钥匙忘在家了。",
+            "pinyin": "āi ya, wǒ bǎ yào shi wàng zài jiā le.",
+            "english": "Oh dear, I left my keys at home.",
+            "chunks": [
+              {
+                "hanzi": "唉呀，",
+                "pinyin": "āi ya,",
+                "gloss": "oh dear"
+              },
+              {
+                "hanzi": "我",
+                "pinyin": "wǒ",
+                "gloss": "I"
+              },
+              {
+                "hanzi": "把",
+                "pinyin": "bǎ",
+                "gloss": "BA (object marker)"
+              },
+              {
+                "hanzi": "钥匙",
+                "pinyin": "yào shi",
+                "gloss": "key"
+              },
+              {
+                "hanzi": "忘",
+                "pinyin": "wàng",
+                "gloss": "forget"
+              },
+              {
+                "hanzi": "在家",
+                "pinyin": "zài jiā",
+                "gloss": "be at home"
+              },
+              {
+                "hanzi": "了。",
+                "pinyin": "le.",
+                "gloss": "LE (completed action or change)"
+              }
+            ]
+          }
+        ],
+        "部件JSON": [
+          {
+            "hanzi": "唉",
+            "pinyin": "āi",
+            "gloss": "an exclamation of surprise or distress"
+          },
+          {
+            "hanzi": "呀",
+            "pinyin": "ya",
+            "gloss": "exclamatory particle"
+          }
+        ],
+        "干扰词ID": [
+          "wl_01235",
+          "wl_01115",
+          "wl_02290"
+        ],
+        "来源说明": "Original compositional teaching gloss; constituent readings checked against CC-CEDICT Refinement 2026-10-04: automatic source-assisted enrichment; not individually manually reviewed. Chinese draft translated from the retained English sense by Google Translate on 2026-10-04. AI translation proofreading against retained English, reading and example; not dictionary/human verified. Rebuild 2026-10-05: English explanations retained; sentence chunks use context-ranked CC-CEDICT/retained glosses and AI grammar/editorial corrections; not human-reviewed.",
+        "本义解释JSON": [
+          "oh dear; oh"
+        ],
+        "引申义解释JSON": []
+      },
+      "row": {
+        "罕度": "0",
+        "组词": "爱护",
+        "拼音": "ài hù",
+        "词条ID": "wl_03616",
+        "英文释义": "take good care of; protect",
+        "词性": "verb",
+        "例句JSON": [
+          {
+            "hanzi": "我们要爱护树木。",
+            "pinyin": "wǒ men yào ài hù shù mù.",
+            "english": "We should take good care of trees.",
+            "chunks": [
+              {
+                "hanzi": "我们",
+                "pinyin": "wǒ men",
+                "gloss": "we"
+              },
+              {
+                "hanzi": "要",
+                "pinyin": "yào",
+                "gloss": "should"
+              },
+              {
+                "hanzi": "爱护",
+                "pinyin": "ài hù",
+                "gloss": "take good care of"
+              },
+              {
+                "hanzi": "树木。",
+                "pinyin": "shù mù.",
+                "gloss": "trees"
+              }
+            ]
+          },
+          {
+            "hanzi": "请爱护你的书。",
+            "pinyin": "qǐng ài hù nǐ de shū.",
+            "english": "Please take good care of your books.",
+            "chunks": [
+              {
+                "hanzi": "请",
+                "pinyin": "qǐng",
+                "gloss": "please"
+              },
+              {
+                "hanzi": "爱护",
+                "pinyin": "ài hù",
+                "gloss": "take good care of"
+              },
+              {
+                "hanzi": "你的",
+                "pinyin": "nǐ de",
+                "gloss": "your"
+              },
+              {
+                "hanzi": "书。",
+                "pinyin": "shū.",
+                "gloss": "books"
+              }
+            ]
+          }
+        ],
+        "部件JSON": [
+          {
+            "hanzi": "爱",
+            "pinyin": "ài",
+            "gloss": "love; care for"
+          },
+          {
+            "hanzi": "护",
+            "pinyin": "hù",
+            "gloss": "protect"
+          }
+        ],
+        "干扰词ID": [
+          "wl_01235",
+          "wl_01115",
+          "wl_02290"
+        ],
+        "来源说明": "Requested replacement 2026-10-08: original AI-authored teaching gloss, explanations, sentence chunks and examples; not human linguistic certification. Replaces the redundant interjection 唉呀.",
+        "本义解释JSON": [
+          "To care for and protect someone or something, keeping them safe or in good condition."
+        ],
+        "引申义解释JSON": []
+      }
+    },
+    {
+      "replaces": "哎唷",
+      "original": {
+        "罕度": "0",
+        "组词": "哎唷",
+        "拼音": "āi yō",
+        "词条ID": "wl_05142",
+        "英文释义": "oh; exclamation of pain or surprise",
+        "词性": "interjection",
+        "例句JSON": [
+          {
+            "hanzi": "哎唷，这个箱子真重！",
+            "pinyin": "āi yō, zhè ge xiāng zi zhēn zhòng!",
+            "english": "Oh, this box is really heavy!",
+            "chunks": [
+              {
+                "hanzi": "哎唷，",
+                "pinyin": "āi yō,",
+                "gloss": "oh"
+              },
+              {
+                "hanzi": "这个",
+                "pinyin": "zhè ge",
+                "gloss": "this"
+              },
+              {
+                "hanzi": "箱子",
+                "pinyin": "xiāng zi",
+                "gloss": "box"
+              },
+              {
+                "hanzi": "真",
+                "pinyin": "zhēn",
+                "gloss": "really"
+              },
+              {
+                "hanzi": "重！",
+                "pinyin": "zhòng!",
+                "gloss": "heavy"
+              }
+            ]
+          },
+          {
+            "hanzi": "哎唷，这水真凉！",
+            "pinyin": "āi yō, zhè shuǐ zhēn liáng!",
+            "english": "Oh, this water is really cold!",
+            "chunks": [
+              {
+                "hanzi": "哎唷，",
+                "pinyin": "āi yō,",
+                "gloss": "oh"
+              },
+              {
+                "hanzi": "这",
+                "pinyin": "zhè",
+                "gloss": "this"
+              },
+              {
+                "hanzi": "水",
+                "pinyin": "shuǐ",
+                "gloss": "water"
+              },
+              {
+                "hanzi": "真",
+                "pinyin": "zhēn",
+                "gloss": "really"
+              },
+              {
+                "hanzi": "凉！",
+                "pinyin": "liáng!",
+                "gloss": "cold"
+              }
+            ]
+          }
+        ],
+        "部件JSON": [
+          {
+            "hanzi": "哎",
+            "pinyin": "āi",
+            "gloss": "(interjection used to attract attention or to express surprise or disapprobation)"
+          },
+          {
+            "hanzi": "唷",
+            "pinyin": "yō",
+            "gloss": "(interjection expressing surprise) Oh!"
+          }
+        ],
+        "干扰词ID": [
+          "wl_00722",
+          "wl_00495",
+          "wl_01164"
+        ],
+        "来源说明": "CC-CEDICT context-selected teaching gloss; original second example Refinement 2026-10-04: automatic source-assisted enrichment; not individually manually reviewed. Chinese draft translated from the retained English sense by Google Translate on 2026-10-04. AI translation proofreading against retained English, reading and example; not dictionary/human verified. Rebuild 2026-10-05: English explanations retained; sentence chunks use context-ranked CC-CEDICT/retained glosses and AI grammar/editorial corrections; not human-reviewed.",
+        "本义解释JSON": [
+          "an exclamation of pain or surprise; oh"
+        ],
+        "引申义解释JSON": []
+      },
+      "row": {
+        "罕度": "0",
+        "组词": "爱心",
+        "拼音": "ài xīn",
+        "词条ID": "wl_05142",
+        "英文释义": "kindness; a caring heart",
+        "词性": "noun",
+        "例句JSON": [
+          {
+            "hanzi": "她很有爱心。",
+            "pinyin": "tā hěn yǒu ài xīn.",
+            "english": "She is very kind and caring.",
+            "chunks": [
+              {
+                "hanzi": "她",
+                "pinyin": "tā",
+                "gloss": "she"
+              },
+              {
+                "hanzi": "很",
+                "pinyin": "hěn",
+                "gloss": "very"
+              },
+              {
+                "hanzi": "有",
+                "pinyin": "yǒu",
+                "gloss": "has"
+              },
+              {
+                "hanzi": "爱心。",
+                "pinyin": "ài xīn.",
+                "gloss": "a caring heart"
+              }
+            ]
+          },
+          {
+            "hanzi": "他用爱心帮助别人。",
+            "pinyin": "tā yòng ài xīn bāng zhù bié ren.",
+            "english": "He helps others with kindness.",
+            "chunks": [
+              {
+                "hanzi": "他",
+                "pinyin": "tā",
+                "gloss": "he"
+              },
+              {
+                "hanzi": "用",
+                "pinyin": "yòng",
+                "gloss": "with"
+              },
+              {
+                "hanzi": "爱心",
+                "pinyin": "ài xīn",
+                "gloss": "kindness"
+              },
+              {
+                "hanzi": "帮助",
+                "pinyin": "bāng zhù",
+                "gloss": "help"
+              },
+              {
+                "hanzi": "别人。",
+                "pinyin": "bié ren.",
+                "gloss": "others"
+              }
+            ]
+          }
+        ],
+        "部件JSON": [
+          {
+            "hanzi": "爱",
+            "pinyin": "ài",
+            "gloss": "love; care for"
+          },
+          {
+            "hanzi": "心",
+            "pinyin": "xīn",
+            "gloss": "heart"
+          }
+        ],
+        "干扰词ID": [
+          "wl_00722",
+          "wl_00495",
+          "wl_01164"
+        ],
+        "来源说明": "Requested replacement 2026-10-08: original AI-authored teaching gloss, explanations, sentence chunks and examples; not human linguistic certification. Replaces the redundant interjection 哎唷.",
+        "本义解释JSON": [
+          "A caring attitude that makes someone want to help and look after others."
+        ],
+        "引申义解释JSON": []
+      }
+    }
+  ]
+}

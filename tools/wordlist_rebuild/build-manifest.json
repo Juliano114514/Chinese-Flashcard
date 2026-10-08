@@ -19,7 +19,8 @@
     "draft-audit.json": "97e266479fd4abf5422d025c3fc357d1e0dff2f3232790e83612db52f69b3e2b",
     "expansion-20261005.json": "7f21bec316fec0688e0287490c6b8ad0ea1c3ee5ad9699da44daef130dc751c1",
     "stage-grading-20261005.json": "ab84c09af2d262c4ec21f104f09aa78e7f07f1548ca29856415d2f8863191a01",
-    "expansion-20261007.json": "61135ccb35e6c5a51b8dbe1ba5a36ce8bd3ab738e92a5070148e80d8d1f52f50"
+    "expansion-20261007.json": "61135ccb35e6c5a51b8dbe1ba5a36ce8bd3ab738e92a5070148e80d8d1f52f50",
+    "replacements-20261008.json": "7593a04a88afc060e1b8cf4651171c1f13ea1a80a6fe7b1fc85120ab65b45633"
   },
   "rarity": {
     "0": 2499,
@@ -29,9 +30,9 @@
     "4": 804
   },
   "examples": 26446,
-  "bytes": 28011628,
-  "sha256": "94d98ce1fff7171d74d6ae46c6ac42925f6c8676f7e8b4989864971cba5c7d79",
-  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix, then frozen 1,500-word expansion (500 each in levels 0/1/2); five-stage grading changes only rarity cells; then reviewed 2026-10-07 additions, with only evidenced teaching-field corrections to old rows",
+  "bytes": 28010152,
+  "sha256": "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7",
+  "csvPhysicalOrder": "retained order, then frozen 75-idiom appendix, then frozen 1,500-word expansion (500 each in levels 0/1/2); five-stage grading changes only rarity cells; then reviewed 2026-10-07 additions, with only evidenced teaching-field corrections to old rows; then two requested vocabulary replacements with original row positions",
   "learningOrder": "rarity, syllable letters then tone 1/2/3/4/5, next syllable, stable ID",
   "firstLearningWords": [
     {
@@ -45,18 +46,8 @@
       "拼音": "āi yā"
     },
     {
-      "词条ID": "wl_03616",
-      "组词": "唉呀",
-      "拼音": "āi ya"
-    },
-    {
       "词条ID": "wl_01566",
       "组词": "哎哟",
-      "拼音": "āi yō"
-    },
-    {
-      "词条ID": "wl_05142",
-      "组词": "哎唷",
       "拼音": "āi yō"
     },
     {
@@ -70,9 +61,19 @@
       "拼音": "ǎi xiǎo"
     },
     {
+      "词条ID": "wl_03616",
+      "组词": "爱护",
+      "拼音": "ài hù"
+    },
+    {
       "词条ID": "wl_09624",
       "组词": "爱上",
       "拼音": "ài shàng"
+    },
+    {
+      "词条ID": "wl_05142",
+      "组词": "爱心",
+      "拼音": "ài xīn"
     },
     {
       "词条ID": "wl_01269",
@@ -308,5 +309,22 @@
     },
     "boundary": "New teaching entries and evidenced existing-field corrections are AI-assisted; primary author-input/source/structural checks and independent complete editorial reading plus final changed-field/choice confirmations are separate evidence, bound to exact final input hashes. No second independent full language pass is claimed. All existing word IDs, headwords, stages, physical order and distractor IDs remain fixed. Structural validation and recorded AI review are not human linguistic certification or device-import evidence.",
     "correctedExistingRows": 2
+  },
+  "vocabularyReplacements20261008": {
+    "date": "2026-10-08",
+    "baseSha256": "94d98ce1fff7171d74d6ae46c6ac42925f6c8676f7e8b4989864971cba5c7d79",
+    "entries": [
+      {
+        "id": "wl_03616",
+        "before": "唉呀",
+        "after": "爱护"
+      },
+      {
+        "id": "wl_05142",
+        "before": "哎唷",
+        "after": "爱心"
+      }
+    ],
+    "boundary": "Two requested vocabulary replacements; previous wordlist identities are not a learner-data compatibility promise. Original AI-authored teaching content; not human linguistic certification."
   }
 }

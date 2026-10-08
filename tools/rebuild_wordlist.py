@@ -33,6 +33,7 @@ JSON_FIELDS = ['例句JSON', '部件JSON', '干扰词ID', '本义解释JSON', '�
 EXPANSION_20261007 = ROOT / 'tools/wordlist_expansion_20261007'
 EXPANSION_20261007_BASE_SHA = '762c94d2ee6a058b2af1222094f791672d7b28bcf707b9a2cace637d7c065237'
 EXPANSION_20261007_BASE_ROWS = 9223
+REPLACEMENTS_20261008 = DATA / 'replacements-20261008.json'
 EXPANSION_CORRECTION_FIELDS = {'拼音', '英文释义', '词性', '例句JSON', '部件JSON',
                                '本义解释JSON', '引申义解释JSON'}
 HANZI = re.compile(r'[\u3400-\u9fff\U00020000-\U000323af]')
@@ -767,6 +768,28 @@ def compose_expansion_20261007(content, expansion):
     return result, rows
 
 
+def compose_replacements_20261008(content):
+    replacement = load(REPLACEMENTS_20261008)
+    if hashlib.sha256(content).hexdigest() != replacement['baseSha256']:
+        raise ValueError('Vocabulary replacements do not match their frozen base')
+    rows = validate(content)
+    by_id = {row['词条ID']: row for row in rows}
+    seen = set()
+    for item in replacement['entries']:
+        row = item['row']
+        identity = row['词条ID']
+        if (identity in seen or identity not in by_id or set(row) != set(HEADERS)
+                or by_id[identity]['组词'] != item['replaces']):
+            raise ValueError('Invalid vocabulary replacement identity: ' + identity)
+        seen.add(identity)
+        by_id[identity].update(row)
+    result = serialize(rows)
+    if (hashlib.sha256(result).hexdigest() != replacement['resultSha256']
+            or len(result) != replacement['resultBytes']):
+        raise ValueError('Vocabulary replacements differ from their frozen result')
+    return result, rows
+
+
 def apply():
     manifest_path = DATA / 'build-manifest.json'
     if manifest_path.exists():
@@ -912,6 +935,8 @@ def apply():
         expansion_20261007_reviews(load(EXPANSION_20261007 / 'reviews.json'),
                                    expansion['entries'], expansion['corrections'], expansion['sourceSha256'])
         content, rows = compose_expansion_20261007(content, expansion)
+    if REPLACEMENTS_20261008.exists():
+        content, rows = compose_replacements_20261008(content)
     validate(content)
     if OUTPUT.exists():
         permitted = {hashlib.sha256(BASELINE.read_bytes()).hexdigest(), hashlib.sha256(content).hexdigest()}
@@ -971,6 +996,14 @@ def report(content, rows):
             ['date', 'baseRows', 'baseSha256', 'additionalRows', 'rarity', 'sourceSha256', 'boundary']}
         summary['vocabularyExpansion20261007']['correctedExistingRows'] = len(expansion['corrections'])
         summary['csvPhysicalOrder'] += '; then reviewed 2026-10-07 additions, with only evidenced teaching-field corrections to old rows'
+    if REPLACEMENTS_20261008.exists():
+        replacement = load(REPLACEMENTS_20261008)
+        summary['inputSha256'][REPLACEMENTS_20261008.name] = hashlib.sha256(REPLACEMENTS_20261008.read_bytes()).hexdigest()
+        summary['vocabularyReplacements20261008'] = {
+            'date': replacement['date'], 'baseSha256': replacement['baseSha256'],
+            'entries': [{'id': item['row']['词条ID'], 'before': item['replaces'], 'after': item['row']['组词']}
+                        for item in replacement['entries']], 'boundary': replacement['boundary']}
+        summary['csvPhysicalOrder'] += '; then two requested vocabulary replacements with original row positions'
     save(ROOT/'docs/wordlist-validation.json',summary)
     save(DATA/'build-manifest.json',summary)
     print(json.dumps(summary,ensure_ascii=False))
@@ -1007,8 +1040,20 @@ def main():
             expansion_20261007_sources(expansion['sourceSha256'])
             expansion_20261007_reviews(load(EXPANSION_20261007 / 'reviews.json'),
                                        expansion['entries'], expansion['corrections'], expansion['sourceSha256'])
-            if (expansion['resultSha256'] != hashlib.sha256(content).hexdigest() or
-                    expansion['resultBytes'] != len(content)):
+            expansion_content = content
+            if 'vocabularyReplacements20261008' in expected:
+                replacement = load(REPLACEMENTS_20261008)
+                if expansion['resultSha256'] != replacement['baseSha256']:
+                    raise ValueError('Vocabulary replacement base differs from the frozen current expansion')
+                # Reconstruct the frozen expansion by restoring only the two replaced rows.
+                original = {item['row']['词条ID']: item['original'] for item in replacement['entries']}
+                restored = [original.get(row['词条ID'], row) for row in rows]
+                expansion_content = serialize(restored)
+                rebuilt, _ = compose_replacements_20261008(expansion_content)
+                if rebuilt != content:
+                    raise ValueError('Vocabulary replacement result differs from the current CSV')
+            if (expansion['resultSha256'] != hashlib.sha256(expansion_content).hexdigest() or
+                    expansion['resultBytes'] != len(expansion_content)):
                 raise ValueError('Final CSV differs from the frozen current expansion')
         if 'contentReview' in expected:
             review = expected['contentReview']

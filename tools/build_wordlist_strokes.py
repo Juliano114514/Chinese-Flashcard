@@ -221,7 +221,10 @@ def build(csv_path, check, allow_missing):
     demo_path = ROOT / "core/data/src/main/assets/demo/strokes.json"
     demo_items = json.loads(demo_path.read_text(encoding="utf-8"))["items"]
     csv_glyphs = {char for word in words for char in word["hanzi"]}
-    required = csv_glyphs | {item["glyph"] for item in demo_items} | CONFIRMED_ANIM_GLYPHS
+    # Removing the redundant 哎唷 entry must not reshuffle every later stroke shard.
+    # Keep its existing genuine 唷 glyph available alongside the unused supplements.
+    retained_glyphs = {"唷"}
+    required = csv_glyphs | {item["glyph"] for item in demo_items} | CONFIRMED_ANIM_GLYPHS | retained_glyphs
     if len(required) > 10000:
         raise ValueError("Stroke index exceeds the 10,000-glyph limit")
     records, descriptors, licenses = read_sources(check)
@@ -290,6 +293,7 @@ def build(csv_path, check, allow_missing):
         csvGlyphCount=len(csv_glyphs), demoGlyphCount=len(demo_items), requiredGlyphCount=len(required),
         confirmedSupplementGlyphs=sorted(CONFIRMED_ANIM_GLYPHS, key=ord),
         retainedUnusedSupplementGlyphs=sorted(CONFIRMED_ANIM_GLYPHS - csv_glyphs, key=ord),
+        retainedUnusedPrimaryGlyphs=sorted(retained_glyphs - csv_glyphs, key=ord),
         includedGlyphCount=len(selected), missingGlyphCount=len(missing), sources=descriptors,
         coordinateSystem=dict(size=1024, topY=900, bottomY=-124, yAxis="up"),
         index=dict(asset="wordlist-strokes/index.json", bytes=len(files["index.json"]), sha256=digest(files["index.json"])),
