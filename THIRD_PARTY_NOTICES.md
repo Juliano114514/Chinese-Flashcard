@@ -47,6 +47,8 @@ Make Me a Hanzi 固定版本 `bddc96d41bef78427ed0e034e9f7e31d71fd1b92` 的 `gra
 
 README 和历史 UI 文档中的产品与设计体系链接仅作设计参考说明，不表示授权或合作。不使用其他产品的名称、标志、截图或外观作项目官方背书。MIT 不授予第三方商标或肖像权。
 
+等级图标于 2026-10-09 从本地 `Codex-QQ-Skin/assets/level-icons/` 原样复制：`star.png`、`moon.png`、`sun.png` 和 `king.png`（皇冠），在应用中以 `ic_level_*.png` 引用。保留原色、透明通道与字节；来源、映射及 SHA-256 见 [等级图标声明](feature/profile/src/main/assets/level-icons/NOTICE.txt)，应用内 Sources & licenses 同步展示。本地来源不证明原作者或公开再分发授权，这些图形资源不纳入项目 MIT 授权。
+
 ## 软件依赖与构建工具
 
 当前直接版本来自 `gradle/libs.versions.toml` 和 Gradle 配置：AndroidX Core 1.17.0、Activity 1.10.1、Lifecycle 2.9.2、Navigation 2.9.3、Room 2.8.5、Compose BOM 2025.08.01、Kotlin 2.2.10、Coroutines 1.10.2、AGP 9.2.1、KSP 2.3.12、Gradle 9.4.1，以及配置中的测试依赖和 Foojay 插件。

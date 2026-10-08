@@ -16,6 +16,8 @@ EXCLUDED FROM THE PROJECT MIT GRANT:
   wordlist-strokes/: Arphic Public License; retain upstream COPYING files.
 - avatar_qq_*.png: retain the existing avatar NOTICE for provenance and
   rights information. These images are not covered by the project MIT License.
+- ic_level_*.png: copied from Codex QQ Skin; retain the source notice under
+  feature/profile/src/main/assets/level-icons/NOTICE.txt.
 - Third-party excerpts, translations, binaries, dependencies, trademarks,
   and other assets without established project ownership.
 
