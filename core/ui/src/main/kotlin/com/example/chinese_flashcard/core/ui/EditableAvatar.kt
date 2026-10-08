@@ -32,12 +32,13 @@ fun EditableAvatar(
   size: Dp,
   modifier: Modifier = Modifier,
   enabled: Boolean = true,
+  accessibilityLabel: String = "Change avatar",
   onClick: () -> Unit,
 ) {
   val colors = MaterialTheme.colorScheme
   Box(modifier.sizeIn(minWidth = 48.dp, minHeight = 48.dp).clip(MaterialTheme.shapes.small)
     .clickable(enabled = enabled, role = Role.Button, onClick = onClick)
-    .semantics(mergeDescendants = true) { contentDescription = "Change avatar" },
+    .semantics(mergeDescendants = true) { contentDescription = accessibilityLabel },
     contentAlignment = Alignment.Center) {
     Box(Modifier.size(size)) {
       Surface(Modifier.fillMaxSize(), shape = MaterialTheme.shapes.medium, color = colors.surface,
@@ -61,12 +62,6 @@ fun EditableAvatar(
 @Composable
 private fun EditableAvatarsLightPreview() {
   EditableAvatarsPreview(darkTheme = false)
-}
-
-@Preview(name = "Editable avatars - dark", showBackground = true)
-@Composable
-private fun EditableAvatarsDarkPreview() {
-  EditableAvatarsPreview(darkTheme = true)
 }
 
 @Composable

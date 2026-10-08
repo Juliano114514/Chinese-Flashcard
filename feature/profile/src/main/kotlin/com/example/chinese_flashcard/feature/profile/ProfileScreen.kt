@@ -360,10 +360,9 @@ private fun SettingDialog(
     })
 }
 
-@Preview(name = "Settings · stage themes", widthDp = 360)
-@Preview(name = "Settings - compact", widthDp = 320, fontScale = 1.3f)
+@Preview(name = "Settings", widthDp = 360)
 @Composable
-private fun SettingsPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+private fun SettingsPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
   FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     Surface(Modifier.flashcardBackground(), color = androidx.compose.ui.graphics.Color.Transparent) {
       Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(24.dp)) {
@@ -387,10 +386,9 @@ private fun SettingsPreview(@PreviewParameter(StageThemePreviewProvider::class) 
   }
 }
 
-@Preview(name = "Name form · stage themes", widthDp = 360)
-@Preview(name = "Name form · compact", widthDp = 320, fontScale = 1.3f)
+@Preview(name = "Name form", widthDp = 360)
 @Composable
-private fun NameFormPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+private fun NameFormPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
   FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     NameDialog("Alexander", saving = false, error = null, onDismiss = {}, onConfirm = {})
   }

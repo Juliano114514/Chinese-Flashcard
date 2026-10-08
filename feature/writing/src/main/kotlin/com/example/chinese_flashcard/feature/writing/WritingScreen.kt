@@ -76,7 +76,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
-import android.content.res.Configuration
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -371,10 +370,9 @@ private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
   }
 }
 
-@Preview(name = "Writing · stage themes", widthDp = 360, heightDp = 760)
-@Preview(name = "Writing · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
+@Preview(name = "Writing", widthDp = 360, heightDp = 760)
 @Composable
-private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
   val word = WordEntry("preview-ten", "十", "shí", listOf(Meaning("ten", "ten")),
     emptyList(), emptyList(), emptyList())
   val item = TracingItem("preview-ten", "十",
@@ -407,8 +405,6 @@ private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class) t
 }
 
 @Preview(name = "Word breakdown · friend", widthDp = 360)
-@Preview(name = "Word breakdown · friend dark", widthDp = 360, uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Preview(name = "Word breakdown · compact", widthDp = 320, fontScale = 1.3f)
 @Composable
 private fun WritingWordHeaderPreview() {
   val word = WordEntry("preview-friend", "朋友", "péngyou", listOf(Meaning("friend", "friend")),

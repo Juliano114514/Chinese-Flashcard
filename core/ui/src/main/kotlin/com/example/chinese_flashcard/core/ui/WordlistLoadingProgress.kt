@@ -1,6 +1,5 @@
 package com.example.chinese_flashcard.core.ui
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -63,16 +62,16 @@ private fun WordlistLoadingProgress(progress: WordlistLoadProgress?, modifier: M
     }
   }
   val density = LocalDensity.current
-  val percentWidth = with(density) { 48.sp.toDp() }
+  val percentWidth = with(density) { 32.sp.toDp() }
   Column(modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.spacedBy(8.dp)) {
-    Row(Modifier.fillMaxWidth(.75f), verticalAlignment = Alignment.CenterVertically,
+    Row(Modifier.fillMaxWidth(.80f), verticalAlignment = Alignment.CenterVertically,
       horizontalArrangement = Arrangement.spacedBy(12.dp)) {
       LinearProgressIndicator(progress = { fraction }, modifier = Modifier.weight(1f).height(4.dp),
         color = MaterialTheme.colorScheme.primary, trackColor = MaterialTheme.colorScheme.surfaceContainerHighest)
       Text("$percent%", modifier = Modifier.width(percentWidth),
         style = MaterialTheme.typography.bodySmall.copy(fontFeatureSettings = "tnum"),
-        color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.End,
+        color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center,
         maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
     Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
@@ -81,10 +80,6 @@ private fun WordlistLoadingProgress(progress: WordlistLoadProgress?, modifier: M
 }
 
 @Preview(name = "Wordlist loading - light", widthDp = 320)
-@Preview(name = "Wordlist loading - dark", widthDp = 320, uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Preview(name = "Wordlist loading - large text", widthDp = 320, fontScale = 1.5f)
-@Preview(name = "Wordlist loading - dark large text", widthDp = 320, fontScale = 1.5f,
-  uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun WordlistLoadingProgressPreview() {
   FlashcardTheme {

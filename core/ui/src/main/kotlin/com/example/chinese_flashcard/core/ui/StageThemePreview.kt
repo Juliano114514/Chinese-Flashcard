@@ -7,7 +7,7 @@ data class StageThemePreviewCase(val stage: VocabularyStage, val darkTheme: Bool
   override fun toString() = "Stage ${stage.rarity} · ${if (darkTheme) "dark" else "light"}"
 }
 
-/** Every stage/appearance pair is available in both regular and compact screen previews. */
+/** Full theme gallery; screen previews use limit = 1 to avoid repeating all ten themes. */
 class StageThemePreviewProvider : PreviewParameterProvider<StageThemePreviewCase> {
   override val values = VocabularyStage.entries.asSequence().flatMap { stage ->
     sequenceOf(StageThemePreviewCase(stage, false), StageThemePreviewCase(stage, true))

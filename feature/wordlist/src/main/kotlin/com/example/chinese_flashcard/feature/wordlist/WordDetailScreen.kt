@@ -143,10 +143,9 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
   }
 }
 
-@Preview(name = "Word detail · stage themes", widthDp = 360, heightDp = 760)
-@Preview(name = "Word detail · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
+@Preview(name = "Word detail", widthDp = 360, heightDp = 760)
 @Composable
-private fun WordDetailPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+private fun WordDetailPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
   val word = WordEntry("preview-study", "学习", "xuéxí", listOf(Meaning("study", "to study; to learn", "verb")),
     examples = listOf(ExampleSentence("我每天学习中文。", "Wǒ měitiān xuéxí Zhōngwén.", "I study Chinese every day.",
       listOf(ExampleChunk("我", "wǒ", "I"), ExampleChunk("每天", "měitiān", "every day"),

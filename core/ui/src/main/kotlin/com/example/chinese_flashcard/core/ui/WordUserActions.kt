@@ -1,6 +1,5 @@
 package com.example.chinese_flashcard.core.ui
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -94,7 +93,6 @@ fun SkipConfirmationDialog(skip: Boolean, wordLabel: String, enabled: Boolean,
 }
 
 @Preview(name = "Word actions · light", showBackground = true)
-@Preview(name = "Word actions · dark", showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun WordUserActionsPreview() = FlashcardTheme {
   Surface(color = MaterialTheme.colorScheme.background) {
@@ -106,8 +104,6 @@ private fun WordUserActionsPreview() = FlashcardTheme {
 }
 
 @Preview(name = "Skip confirmation", widthDp = 320, heightDp = 500, fontScale = 1.3f)
-@Preview(name = "Skip confirmation · dark", widthDp = 320, heightDp = 500, fontScale = 1.3f,
-  uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun SkipConfirmationPreview() = FlashcardTheme {
   Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {

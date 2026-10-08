@@ -23,7 +23,6 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 
 @Preview(name = "Stage themes", widthDp = 360, heightDp = 640)
-@Preview(name = "Stage themes · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
 @Composable
 private fun ThemePreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
   FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {

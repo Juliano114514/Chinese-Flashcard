@@ -213,10 +213,9 @@ private fun WordlistStatus.label(): String = when (this) {
   WordlistStatus.SKIPPED -> "Skipped"
 }
 
-@Preview(name = "Wordlist · stage themes", widthDp = 360, heightDp = 900)
-@Preview(name = "Wordlist · compact", widthDp = 320, heightDp = 900, fontScale = 1.3f)
+@Preview(name = "Wordlist", widthDp = 360, heightDp = 900)
 @Composable
-private fun WordlistPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+private fun WordlistPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
   val entries = listOf(
     WordlistItem("hello", "你好", "nǐ hǎo", "hello", "hello", 0, WordlistStatus.LEARNED, 0, 0, isCollected = true),
     WordlistItem("thanks", "谢谢", "xièxie", "thank you", "thank you", 1, WordlistStatus.LEARNING, 2, 4),
