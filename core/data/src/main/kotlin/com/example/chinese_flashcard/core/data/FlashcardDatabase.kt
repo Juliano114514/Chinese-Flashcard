@@ -26,7 +26,7 @@ internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: 
 internal data class WordStudyRow(val id: String, val rarity: Int)
 
 internal data class WordlistRow(val id: String, val hanzi: String, val pinyin: String,
-  val english: String, val searchMeanings: String, val difficulty: Int,
+  val english: String, val partOfSpeech: String, val searchMeanings: String, val difficulty: Int,
   val firstEncounterShown: Boolean, val firstPassedDay: Long?,
   val correctRounds: Int, val targetRounds: Int,
   val isCollected: Boolean, val isSkipped: Boolean, val mistakePending: Boolean)
@@ -134,6 +134,7 @@ internal interface FlashcardDao {
   @Query("""
     SELECT w.id, w.hanzi, w.pinyin, w.rarity AS difficulty,
       COALESCE((SELECT english FROM meanings WHERE wordId = w.id ORDER BY position, id LIMIT 1), '') AS english,
+      COALESCE((SELECT partOfSpeech FROM meanings WHERE wordId = w.id ORDER BY position, id LIMIT 1), '') AS partOfSpeech,
       COALESCE(GROUP_CONCAT(m.english, ' '), '') AS searchMeanings,
       COALESCE(p.firstEncounterShown, 0) AS firstEncounterShown, p.firstPassedDay,
       COALESCE(c.correctRounds, 0) AS correctRounds, COALESCE(c.targetRounds, 0) AS targetRounds,

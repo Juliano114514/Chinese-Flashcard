@@ -18,6 +18,7 @@ data class WordlistItem(
   val isSkipped: Boolean = false,
   val mistakePending: Boolean = false,
   val learningStatus: WordlistStatus = status,
+  val partOfSpeech: String = "",
 )
 
 data class WordUserState(val isCollected: Boolean = false, val isSkipped: Boolean = false,

@@ -186,7 +186,7 @@ class FlashcardRepositories(context: Context) {
           val status = if (row.isSkipped) WordlistStatus.SKIPPED else learningStatus
           WordlistItem(row.id, row.hanzi, row.pinyin, row.english, row.searchMeanings,
             row.difficulty, status, row.correctRounds, row.targetRounds,
-            row.isCollected, row.isSkipped, row.mistakePending, learningStatus)
+            row.isCollected, row.isSkipped, row.mistakePending, learningStatus, partOfSpeech = row.partOfSpeech)
         }
       }.distinctUntilChanged())
     }.flowOn(Dispatchers.Default)
