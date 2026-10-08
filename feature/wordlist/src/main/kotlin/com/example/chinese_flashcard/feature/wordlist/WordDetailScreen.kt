@@ -1,9 +1,7 @@
 package com.example.chinese_flashcard.feature.wordlist
 
-import android.content.res.Configuration
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -42,6 +40,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
@@ -54,11 +53,13 @@ import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordPart
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
+import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import com.example.chinese_flashcard.core.ui.WordExplanation
 import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordMeanings
 import com.example.chinese_flashcard.core.ui.WordUserActions
-import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
+import com.example.chinese_flashcard.core.ui.flashcardBackground
 import kotlinx.coroutines.awaitCancellation
 
 @Composable
@@ -87,7 +88,7 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
   onCollection: (Boolean) -> Unit = {}, onSkip: (Boolean) -> Unit = {}) {
   val word = state.word
   val enabled = !state.loading && !state.busy && state.writingSessionId == null
-  Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
+  Box(Modifier.fillMaxSize().flashcardBackground()) {
     Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
       Row(Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 12.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically) {
@@ -142,19 +143,17 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
   }
 }
 
-@Preview(name = "Word detail · light", widthDp = 360, heightDp = 760)
-@Preview(name = "Word detail · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Word detail · stage themes", widthDp = 360, heightDp = 760)
 @Preview(name = "Word detail · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
-@Preview(name = "Word detail · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun WordDetailPreview() {
+private fun WordDetailPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
   val word = WordEntry("preview-study", "学习", "xuéxí", listOf(Meaning("study", "to study; to learn", "verb")),
     examples = listOf(ExampleSentence("我每天学习中文。", "Wǒ měitiān xuéxí Zhōngwén.", "I study Chinese every day.",
       listOf(ExampleChunk("我", "wǒ", "I"), ExampleChunk("每天", "měitiān", "every day"),
         ExampleChunk("学习", "xuéxí", "study"), ExampleChunk("中文。", "Zhōngwén.", "Chinese")))),
     parts = listOf(WordPart("学", "xué", "learn"), WordPart("习", "xí", "practise")),
     distractorMeaningIds = emptyList(), literalExplanations = listOf("Gain knowledge or skills by studying.", "Learn from another person."))
-  FlashcardTheme {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
       WordDetailContent(WordDetailUiState(loading = false, word = word), onBack = {}, onWrite = {}, onRetry = {}, onSpeak = {})
     }

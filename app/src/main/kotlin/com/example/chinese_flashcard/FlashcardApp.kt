@@ -34,9 +34,12 @@ import com.example.chinese_flashcard.core.domain.CsvSource
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
+import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.flashcardMessage
+import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
 import com.example.chinese_flashcard.feature.profile.ProfileViewModel
 import com.example.chinese_flashcard.feature.study.*
@@ -175,7 +178,9 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val openWriting: (String) -> Unit = { id ->
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
-  Scaffold(snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
+  FlashcardTheme(stage = state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY) {
+  Scaffold(modifier = Modifier.flashcardBackground(), containerColor = Color.Transparent,
+    snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
     if (route in listOf("today", "profile", "wordlist")) Column {
       HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
       NavigationBar(containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
@@ -269,6 +274,7 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
       }
       composable("licenses") { LicenseScreen { nav.popBackStack() } }
     }
+  }
   }
 }
 

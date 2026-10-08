@@ -2,7 +2,6 @@ package com.example.chinese_flashcard.feature.writing
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -76,6 +75,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import android.content.res.Configuration
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -90,9 +90,11 @@ import com.example.chinese_flashcard.core.domain.WordPart
 import com.example.chinese_flashcard.core.domain.WritingReason
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
-import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
+import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
+import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import kotlinx.coroutines.delay
 import java.text.Normalizer
 import kotlin.math.ceil
@@ -108,7 +110,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
     if (snapshot?.status == WritingStatus.SKIPPED) latestFinished()
   }
   BackHandler(enabled = state.busy) { /* Finish the Room write before leaving. */ }
-  Column(Modifier.fillMaxSize().background(studyBackgroundBrush())
+  Column(Modifier.fillMaxSize().flashcardBackground()
     .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 12.dp),
     verticalArrangement = Arrangement.spacedBy(12.dp)) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
@@ -369,12 +371,10 @@ private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
   }
 }
 
-@Preview(name = "Writing · light", widthDp = 360, heightDp = 760)
-@Preview(name = "Writing · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Writing · stage themes", widthDp = 360, heightDp = 760)
 @Preview(name = "Writing · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
-@Preview(name = "Writing · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun WritingPreview() {
+private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
   val word = WordEntry("preview-ten", "十", "shí", listOf(Meaning("ten", "ten")),
     emptyList(), emptyList(), emptyList())
   val item = TracingItem("preview-ten", "十",
@@ -385,9 +385,9 @@ private fun WritingPreview() {
   val snapshot = WritingSnapshot("preview", word, wordIndex = 0, totalWords = 1,
     characterIndex = 0, item = item, accepted = emptyList(), mistakes = 0,
     status = WritingStatus.ACTIVE, reason = WritingReason.MANUAL)
-  FlashcardTheme {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-      Column(Modifier.fillMaxSize().background(studyBackgroundBrush()).verticalScroll(rememberScrollState())
+      Column(Modifier.fillMaxSize().flashcardBackground().verticalScroll(rememberScrollState())
         .padding(horizontal = 20.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text("Writing", style = MaterialTheme.typography.titleMedium)
         Text("Word 1 / 1 · Character 1 / 1", color = FlashcardStyle.colors.gradientSecondaryInk,

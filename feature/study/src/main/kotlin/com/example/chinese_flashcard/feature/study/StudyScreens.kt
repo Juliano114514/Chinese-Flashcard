@@ -88,6 +88,7 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import android.content.res.Configuration
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.Lifecycle
@@ -116,9 +117,11 @@ import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
-import com.example.chinese_flashcard.core.ui.studyBackgroundBrush
+import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
+import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordMeanings
 import com.example.chinese_flashcard.core.ui.WordExplanation
@@ -546,7 +549,7 @@ private fun StudyContent(
   val completed = practice?.completed ?: state.today?.completed ?: 0
   val planned = practice?.planned ?: state.today?.planned ?: 0
   val largeText = LocalDensity.current.fontScale >= 1.25f
-  Box(Modifier.fillMaxSize().background(studyBackgroundBrush())) {
+  Box(Modifier.fillMaxSize().flashcardBackground()) {
   Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
     Column {
     Row(Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 12.dp, vertical = 4.dp),
@@ -860,7 +863,7 @@ private fun PageColumn(modifier: Modifier = Modifier, scrollKey: Any? = null, st
   content: @Composable androidx.compose.foundation.layout.ColumnScope.() -> Unit) {
   val scroll = rememberScrollState()
   LaunchedEffect(scrollKey) { scroll.scrollTo(0) }
-  Column(modifier.fillMaxSize().then(if (studyPage) Modifier else Modifier.background(MaterialTheme.colorScheme.background))
+  Column(modifier.fillMaxSize().then(if (studyPage) Modifier else Modifier.flashcardBackground())
     .verticalScroll(scroll).padding(horizontal = 20.dp, vertical = if (studyPage) 12.dp else 20.dp),
     verticalArrangement = Arrangement.spacedBy(if (studyPage) 8.dp else 16.dp), content = content)
 }
@@ -1017,16 +1020,15 @@ private val PreviewToday = TodaySummary(date = "2026-10-06", dailyGoal = 10, tot
   availableNewWords = 50, collectionsAvailable = 12, mistakesAvailable = 3,
   stageProgress = StageProgress(VocabularyStage.PRIMARY, learned = 240, total = 1545))
 
-@Preview(name = "Home · light", widthDp = 360, heightDp = 760)
-@Preview(name = "Home · dark", widthDp = 360, heightDp = 760, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Home · stage themes", widthDp = 360, heightDp = 760)
 @Preview(name = "Home · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
-@Preview(name = "Home · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun HomePreview() {
-  FlashcardTheme {
+private fun HomePreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
       contentColor = MaterialTheme.colorScheme.onBackground) {
-      TodayContent(StudyUiState(loading = false, snapshot = StudySnapshot(PreviewToday, null)),
+      val today = PreviewToday.copy(stageProgress = PreviewToday.stageProgress.copy(stage = theme.stage))
+      TodayContent(StudyUiState(loading = false, snapshot = StudySnapshot(today, null)),
         onStart = {}, onResume = {}, onWriting = {}, onLearnMore = {}, onLearnMoreBlocked = {},
         onStage = {}, onDailyWriting = {}, onRetry = {})
     }
@@ -1034,9 +1036,9 @@ private fun HomePreview() {
 }
 
 @Composable
-private fun StudyPagePreview(card: StudyCard, selectedOption: String? = null,
+private fun StudyPagePreview(theme: StageThemePreviewCase, card: StudyCard, selectedOption: String? = null,
   revealCorrect: Boolean = false, feedbackFinished: Boolean = false) {
-  FlashcardTheme {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     val practice = if (card.kind in listOf(StudyKind.COLLECTION, StudyKind.MISTAKES)) PracticeProgress(card.kind, 2, 5) else null
     StudyContent(StudyUiState(loading = false, snapshot = StudySnapshot(PreviewToday, card, practice)),
       selectedOption = selectedOption, answerChosen = selectedOption != null,
@@ -1047,17 +1049,15 @@ private fun StudyPagePreview(card: StudyCard, selectedOption: String? = null,
   }
 }
 
-@Preview(name = "Stage progress · light", widthDp = 360, heightDp = 144)
-@Preview(name = "Stage progress · dark", widthDp = 360, heightDp = 144, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Stage progress · stage themes", widthDp = 360, heightDp = 144)
 @Preview(name = "Stage progress · compact", widthDp = 320, heightDp = 144, fontScale = 1.3f)
-@Preview(name = "Stage progress · compact dark", widthDp = 320, heightDp = 144, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun VocabularyStageProgressPreview() {
-  FlashcardTheme {
+private fun VocabularyStageProgressPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background,
       contentColor = MaterialTheme.colorScheme.onBackground) {
       Column(Modifier.padding(horizontal = 20.dp, vertical = 20.dp)) {
-        VocabularyStageProgress(StageProgress(VocabularyStage.CHINESE_STUDIES, learned = 240, total = 600))
+        VocabularyStageProgress(StageProgress(theme.stage, learned = 240, total = 600))
       }
     }
   }
@@ -1081,60 +1081,56 @@ private fun WelcomePreview() {
   }
 }
 
-@Preview(name = "Question · light", widthDp = 360, heightDp = 640)
-@Preview(name = "Question · dark", widthDp = 360, heightDp = 640, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Question · stage themes", widthDp = 360, heightDp = 640)
 @Preview(name = "Question · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
-@Preview(name = "Question · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun QuestionPreview() {
-  StudyPagePreview(PreviewCard)
+private fun QuestionPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+  StudyPagePreview(theme, PreviewCard)
 }
 
 @Preview(name = "Wrong answer · Chinese revealed", widthDp = 360, heightDp = 640)
+@Preview(name = "Wrong answer · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
 @Composable
-private fun WrongAnswerPreview() = AnswerSequencePreview(revealCorrect = false)
+private fun WrongAnswerPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) =
+  AnswerSequencePreview(theme, revealCorrect = false)
 
 @Preview(name = "Wrong answer · correct revealed", widthDp = 360, heightDp = 640)
-@Preview(name = "Wrong answer · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f,
-  uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Wrong answer revealed · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
 @Composable
-private fun CorrectAnswerRevealedPreview() = AnswerSequencePreview(revealCorrect = true)
+private fun CorrectAnswerRevealedPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) =
+  AnswerSequencePreview(theme, revealCorrect = true)
 
 @Preview(name = "Correct answer · Chinese revealed", widthDp = 360, heightDp = 640)
-@Preview(name = "Correct answer · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f,
-  uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Correct answer · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
 @Composable
-private fun CorrectAnswerFeedbackPreview() = AnswerSequencePreview(revealCorrect = true, selectedCorrect = true)
+private fun CorrectAnswerFeedbackPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) =
+  AnswerSequencePreview(theme, revealCorrect = true, selectedCorrect = true)
 
 @Composable
-private fun AnswerSequencePreview(revealCorrect: Boolean, selectedCorrect: Boolean = false) {
+private fun AnswerSequencePreview(theme: StageThemePreviewCase, revealCorrect: Boolean, selectedCorrect: Boolean = false) {
   val selected = if (selectedCorrect) "thank-you" else "morning"
-  StudyPagePreview(PreviewCard.copy(phase = CardPhase.FEEDBACK, selectedOptionId = selected,
+  StudyPagePreview(theme, PreviewCard.copy(phase = CardPhase.FEEDBACK, selectedOptionId = selected,
     correct = selectedCorrect), selectedOption = selected, revealCorrect = revealCorrect,
     feedbackFinished = revealCorrect)
 }
 
-@Preview(name = "Explanation · light", widthDp = 360, heightDp = 640)
-@Preview(name = "Explanation · dark", widthDp = 360, heightDp = 640, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Explanation · stage themes", widthDp = 360, heightDp = 640)
 @Preview(name = "Explanation · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
-@Preview(name = "Explanation · compact dark", widthDp = 320, heightDp = 640, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun ExplanationPreview() {
-  StudyPagePreview(PreviewCard.copy(phase = CardPhase.EXPLANATION, correct = true,
+private fun ExplanationPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+  StudyPagePreview(theme, PreviewCard.copy(phase = CardPhase.EXPLANATION, correct = true,
     selectedOptionId = "thank-you", isCollected = true))
 }
 
 @Preview(name = "Collections · long word", widthDp = 360, heightDp = 760)
 @Preview(name = "Collections · compact large text", widthDp = 320, heightDp = 760, fontScale = 1.3f)
-@Preview(name = "Collections · compact dark", widthDp = 320, heightDp = 760, fontScale = 1.3f,
-  uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun LongWordPreview() {
+private fun LongWordPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
   val word = PreviewWord.copy(id = "preview-lesson", hanzi = "吃一堑，长一智", pinyin = "chī yī qiàn, zhǎng yī zhì",
     meanings = listOf(Meaning("lesson", "learn from a setback", "idiom")),
     literalExplanations = listOf("After a setback, you gain wisdom."),
     examples = listOf(ExampleSentence("吃一堑，长一智。", "Chī yī qiàn, zhǎng yī zhì.",
       "Learn from your setbacks.", emptyList())))
-  StudyPagePreview(PreviewCard.copy(word = word, kind = StudyKind.COLLECTION,
+  StudyPagePreview(theme, PreviewCard.copy(word = word, kind = StudyKind.COLLECTION,
     phase = CardPhase.EXPLANATION, isCollected = true))
 }

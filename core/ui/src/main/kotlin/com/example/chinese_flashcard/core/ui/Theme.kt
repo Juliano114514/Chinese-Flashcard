@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.chinese_flashcard.core.domain.VocabularyStage
 
 private val Light = lightColorScheme(
   primary = Color(0xFF9C4C16), onPrimary = Color.White,
@@ -125,8 +126,14 @@ private val LightOpacity = FlashcardOpacity(explanationPanel = .76f, choicePanel
 private val DarkOpacity = FlashcardOpacity(explanationPanel = .92f, choicePanel = .96f)
 private val LocalColors = staticCompositionLocalOf { LightColors }
 private val LocalOpacity = staticCompositionLocalOf { LightOpacity }
+private val LocalStage = staticCompositionLocalOf { VocabularyStage.PRIMARY }
+private val LocalDarkTheme = staticCompositionLocalOf { false }
 
 object FlashcardStyle {
+  val stage: VocabularyStage
+    @Composable @ReadOnlyComposable get() = LocalStage.current
+  val darkTheme: Boolean
+    @Composable @ReadOnlyComposable get() = LocalDarkTheme.current
   val colors: FlashcardColors
     @Composable @ReadOnlyComposable get() = LocalColors.current
   val opacity: FlashcardOpacity
@@ -154,12 +161,27 @@ private val Corners = Shapes(
   extraLarge = RoundedCornerShape(12.dp))
 
 @Composable
-fun FlashcardTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun FlashcardTheme(darkTheme: Boolean = isSystemInDarkTheme(),
+  stage: VocabularyStage = VocabularyStage.PRIMARY, content: @Composable () -> Unit) {
+  val palette = StagePalettes.getValue(stage)
+  val scheme = remember(stage, darkTheme) { palette.scheme(if (darkTheme) Dark else Light, darkTheme) }
+  val colors = remember(stage, darkTheme, scheme) {
+    val base = if (darkTheme) DarkColors else LightColors
+    base.copy(
+      gradientStart = if (darkTheme) palette.darkStart else palette.lightStart,
+      gradientMiddle = scheme.background,
+      gradientEnd = if (darkTheme) palette.darkEnd else palette.lightEnd,
+      gradientAction = scheme.primary,
+      gradientSecondaryInk = scheme.onSurfaceVariant,
+    )
+  }
   CompositionLocalProvider(
-    LocalColors provides if (darkTheme) DarkColors else LightColors,
+    LocalColors provides colors,
     LocalOpacity provides if (darkTheme) DarkOpacity else LightOpacity,
+    LocalStage provides stage,
+    LocalDarkTheme provides darkTheme,
   ) {
-    MaterialTheme(colorScheme = if (darkTheme) Dark else Light,
+    MaterialTheme(colorScheme = scheme,
       typography = Type, shapes = Corners, content = content)
   }
 }

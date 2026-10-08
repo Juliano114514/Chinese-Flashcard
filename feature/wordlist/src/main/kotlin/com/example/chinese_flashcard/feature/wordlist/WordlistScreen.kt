@@ -1,6 +1,5 @@
 package com.example.chinese_flashcard.feature.wordlist
 
-import android.content.res.Configuration
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -43,11 +42,13 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.WordlistItem
@@ -56,6 +57,9 @@ import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.CollectionIcon
+import com.example.chinese_flashcard.core.ui.flashcardBackground
+import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
+import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -84,7 +88,7 @@ fun WordlistScreen(vm: WordlistViewModel, onWord: (String) -> Unit) {
 private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
   onQuery: (String) -> Unit, onStatus: (WordlistStatus?) -> Unit, onDifficulty: (Int?) -> Unit,
   onCollection: (Boolean) -> Unit, onRetry: () -> Unit, onWord: (String) -> Unit) {
-  Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+  Surface(Modifier.fillMaxSize().flashcardBackground(), color = Color.Transparent) {
     LazyColumn(state = listState, contentPadding = PaddingValues(horizontal = 20.dp, vertical = 20.dp)) {
       item(key = "header") {
         Column(verticalArrangement = Arrangement.spacedBy(16.dp), modifier = Modifier.padding(bottom = 12.dp)) {
@@ -209,19 +213,17 @@ private fun WordlistStatus.label(): String = when (this) {
   WordlistStatus.SKIPPED -> "Skipped"
 }
 
-@Preview(name = "Wordlist · light", widthDp = 360, heightDp = 900)
-@Preview(name = "Wordlist · dark", widthDp = 360, heightDp = 900, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Wordlist · stage themes", widthDp = 360, heightDp = 900)
 @Preview(name = "Wordlist · compact", widthDp = 320, heightDp = 900, fontScale = 1.3f)
-@Preview(name = "Wordlist · compact dark", widthDp = 320, heightDp = 900, fontScale = 1.3f, uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
-private fun WordlistPreview() {
+private fun WordlistPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
   val entries = listOf(
     WordlistItem("hello", "你好", "nǐ hǎo", "hello", "hello", 0, WordlistStatus.LEARNED, 0, 0, isCollected = true),
     WordlistItem("thanks", "谢谢", "xièxie", "thank you", "thank you", 1, WordlistStatus.LEARNING, 2, 4),
     WordlistItem("tomorrow", "明天", "míngtiān", "tomorrow", "tomorrow", 2, WordlistStatus.SKIPPED, 0, 0,
       isCollected = true, isSkipped = true, learningStatus = WordlistStatus.UNLEARNED),
   )
-  FlashcardTheme {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     WordlistContent(WordlistUiState(loading = false, entries = entries, total = 3, learned = 1, learning = 1, unlearned = 1),
       rememberLazyListState(), onQuery = {}, onStatus = {}, onDifficulty = {}, onCollection = {}, onRetry = {}, onWord = {})
   }

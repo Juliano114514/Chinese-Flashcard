@@ -45,6 +45,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
@@ -53,6 +54,9 @@ import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.flashcardBackground
+import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
+import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.roundToInt
@@ -78,7 +82,7 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
       appliedSaveRevision = state.savedRevision
     }
   }
-  Column(Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)
+  Column(Modifier.fillMaxSize().flashcardBackground()
     .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 20.dp),
     verticalArrangement = Arrangement.spacedBy(24.dp)) {
     Text("Profile", style = MaterialTheme.typography.headlineLarge)
@@ -356,13 +360,12 @@ private fun SettingDialog(
     })
 }
 
-@Preview(name = "Settings - light", widthDp = 360)
-@Preview(name = "Settings - dark", widthDp = 360, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Settings · stage themes", widthDp = 360)
 @Preview(name = "Settings - compact", widthDp = 320, fontScale = 1.3f)
 @Composable
-private fun SettingsPreview() {
-  FlashcardTheme {
-    Surface(color = MaterialTheme.colorScheme.background) {
+private fun SettingsPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
+    Surface(Modifier.flashcardBackground(), color = androidx.compose.ui.graphics.Color.Transparent) {
       Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(24.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(20.dp)) {
           EditableAvatar("1", size = 44.dp, onClick = {})
@@ -384,11 +387,11 @@ private fun SettingsPreview() {
   }
 }
 
-@Preview(name = "Name form - light", widthDp = 360)
-@Preview(name = "Name form - dark", widthDp = 360, uiMode = android.content.res.Configuration.UI_MODE_NIGHT_YES)
+@Preview(name = "Name form · stage themes", widthDp = 360)
+@Preview(name = "Name form · compact", widthDp = 320, fontScale = 1.3f)
 @Composable
-private fun NameFormPreview() {
-  FlashcardTheme {
+private fun NameFormPreview(@PreviewParameter(StageThemePreviewProvider::class) theme: StageThemePreviewCase) {
+  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     NameDialog("Alexander", saving = false, error = null, onDismiss = {}, onConfirm = {})
   }
 }
