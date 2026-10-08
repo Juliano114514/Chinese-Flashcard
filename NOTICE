@@ -1,0 +1,31 @@
+Chinese Flashcard
+Copyright (c) 2026 Chinese Flashcard contributors
+
+The MIT License in LICENSE applies to project-owned application source,
+project-owned tooling, and project-owned documentation only, to the extent
+the contributors hold the necessary rights. Existing third-party notices
+must be retained. This notice is not a claim of exclusive ownership over
+third-party or AI-assisted material.
+
+EXCLUDED FROM THE PROJECT MIT GRANT:
+- Vocabulary datasets and teaching-content inputs/outputs, including
+  wordlist*.csv and data records under tools/: see THIRD_PARTY_NOTICES.md.
+  CC-CEDICT-derived content retains CC BY-SA 4.0. No grant is made for
+  underlying content whose redistribution rights remain unverified.
+- Stroke outlines and medians in core/data/src/main/assets/demo/ and
+  wordlist-strokes/: Arphic Public License; retain upstream COPYING files.
+- avatar_qq_*.png: retain the existing avatar NOTICE for provenance and
+  rights information. These images are not covered by the project MIT License.
+- Third-party excerpts, translations, binaries, dependencies, trademarks,
+  and other assets without established project ownership.
+
+Public release of the current complete repository or APK remains blocked
+by unresolved asset/content rights. See docs/OPEN_SOURCE_COMPLIANCE.md.
+Attribution, "educational use", and non-affiliation statements do not
+replace a redistribution license. No upstream publisher or product owner
+is claimed to endorse this project.
+
+Bundled data license texts and source metadata are retained under
+core/data/src/main/assets/wordlist-strokes/; avatar provenance is recorded
+under core/ui/src/main/assets/avatars/NOTICE.txt. They are also read by
+the application's existing Sources & licenses screen.

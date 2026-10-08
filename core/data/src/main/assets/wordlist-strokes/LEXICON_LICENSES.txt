@@ -1,3 +1,52 @@
+CHINESE FLASHCARD — LICENSE SCOPE UPDATE, 2026-10-08
+
+Project-owned application code, project-owned tooling code and project-owned
+documentation are licensed under the MIT License reproduced below. Third-party
+data, teaching-content inputs/outputs, stroke geometry, avatars, dependencies,
+excerpts and material with unverified rights are excluded from that grant.
+Existing upstream copyrights and licenses remain applicable.
+
+All 13,223 current CSV rows mention CC-CEDICT in their source notes.
+CC-CEDICT-derived content and corresponding authorized contributions retain
+CC BY-SA 4.0; the mixed wordlist is not a purely MIT dataset. The supplied
+original examples/translations have not been established as licensed for
+public redistribution. Mapull's declared MIT license and the recorded
+uncertain provenance of some collected material must both be retained.
+AI editing and language review do not establish independent copyright or
+clear missing permissions. Historical machine-translation service terms and
+underlying input rights require verification before public redistribution.
+
+The complete repository/APK has not been cleared for public release.
+See NOTICE, THIRD_PARTY_NOTICES.md and docs/OPEN_SOURCE_COMPLIANCE.md in the
+source repository for current scope and unresolved data-rights requirements.
+Avatar provenance and license scope remain in the existing avatar notice.
+
+MIT License — independent project-owned code and documentation only
+
+Copyright (c) 2026 Chinese Flashcard contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Historical source notices follow; preserved with their original dates and
+upstream legal text. References to authored/original content describe the
+recorded production process, not a certification of redistribution rights.
+
 Wordlist lexical sources and notices — 2026-10-04
 
 CC-CEDICT, by the CC-CEDICT contributors; CEDICT originally started by Paul Denisowski.
