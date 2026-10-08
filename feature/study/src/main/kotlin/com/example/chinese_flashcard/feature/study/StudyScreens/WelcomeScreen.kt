@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -166,7 +165,7 @@ fun WelcomeScreen(
       }
       Button(onClick = { if (step < 2) { focus.clearFocus(); step++ } else save() },
         enabled = !saving && if (step == 0) validName else if (step == 2) canSave else true,
-        shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) {
+        shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) {
         Text(if (saving) "Saving…" else if (step < 2) "Next" else "Let's start")
       }
     }
@@ -191,7 +190,7 @@ private fun WelcomeNameFields(
       Text("Your name", style = MaterialTheme.typography.titleLarge)
       OutlinedTextField(value = name, onValueChange = onNameChange,
         modifier = Modifier.fillMaxWidth(), enabled = enabled, singleLine = true,
-        shape = RoundedCornerShape(8.dp),
+        shape = MaterialTheme.shapes.medium,
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Next),
         keyboardActions = KeyboardActions(onNext = { onNext() }))
     }

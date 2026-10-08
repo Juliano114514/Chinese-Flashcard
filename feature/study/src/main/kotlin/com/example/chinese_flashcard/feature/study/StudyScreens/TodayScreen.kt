@@ -1,6 +1,9 @@
 package com.example.chinese_flashcard.feature.study
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -11,6 +14,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
+import com.example.chinese_flashcard.core.ui.FlashcardDialog
+import com.example.chinese_flashcard.core.ui.FlashcardLayout
 import com.example.chinese_flashcard.core.ui.EditableAvatar
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,7 +24,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -84,16 +88,15 @@ fun TodayScreen(
     onShuffle = { vm.shuffleHomeWord()?.let { onSpeak(it.hanzi) } },
     onProfile = onProfile, onWordlist = onWordlist)
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
-    AlertDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
-      shape = MaterialTheme.shapes.large, containerColor = MaterialTheme.colorScheme.surface,
-      tonalElevation = 0.dp, title = { Text("Finish today's plan") }, text = {
+    FlashcardDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
+      title = { Text("Finish today's plan") }, text = {
         Text(when (blocker) {
           StudyKind.REVIEW -> "Review the due words before learning more."
           StudyKind.CARRYOVER -> "Finish the unfinished words before learning more."
           else -> "Finish the current word before learning more."
         })
       }, confirmButton = {
-        TextButton(onClick = { showLearnMoreBlocker = false; onStart(blocker) }, enabled = !state.busy) {
+        TextButton(shape = MaterialTheme.shapes.small, onClick = { showLearnMoreBlocker = false; onStart(blocker) }, enabled = !state.busy) {
           Text(when (blocker) {
             StudyKind.REVIEW -> "Go to review"
             StudyKind.CARRYOVER -> "Go to continue"
@@ -101,7 +104,7 @@ fun TodayScreen(
           })
         }
       }, dismissButton = {
-        TextButton(onClick = { showLearnMoreBlocker = false }, enabled = !state.busy) { Text("Back") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = { showLearnMoreBlocker = false }, enabled = !state.busy) { Text("Back") }
       })
   }
   if (!showLearnMoreBlocker) DailyWritingInvitation(state, vm)
@@ -122,11 +125,11 @@ private fun TodayContent(
 ) {
   val today = state.today
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
-  BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
+  BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = FlashcardLayout.pageInset)) {
     val panelMaxHeight = maxHeight * 0.48f
     Column(Modifier.fillMaxSize().padding(bottom = 16.dp)) {
-      Row(Modifier.fillMaxWidth().padding(top = 8.dp), verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+      Row(Modifier.fillMaxWidth().padding(top = 12.dp), verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         EditableAvatar(state.settings.avatarId, size = 44.dp,
           accessibilityLabel = "Open profile", onClick = onProfile)
         StagePicker(stage, !state.busy && !state.loading, onStage)
@@ -171,7 +174,7 @@ private fun HomeWordShowcase(
           textAlign = TextAlign.Center)
       }
     }
-    TextButton(onClick = onShuffle, enabled = !state.loading && !state.busy &&
+    TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !state.loading && !state.busy &&
       (state.homeWord != null || state.homeWordError), modifier = Modifier.align(Alignment.BottomEnd)) {
       Text("Shuffle")
     }
@@ -191,7 +194,7 @@ private fun HomeStudyPanel(
 ) {
   val today = state.today
   Surface(modifier = modifier, shape = MaterialTheme.shapes.large,
-    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.9f)) {
+    color = MaterialTheme.colorScheme.surface) {
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp),
       verticalArrangement = Arrangement.spacedBy(12.dp)) {
       if (today != null) {
@@ -212,7 +215,7 @@ private fun HomeStudyPanel(
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           DailyProgress(today.stageProgress.learned, today.stageProgress.total, Modifier.weight(1f))
-          TextButton(onClick = onWordlist) {
+          TextButton(shape = MaterialTheme.shapes.small, onClick = onWordlist) {
             Text("${today.stageProgress.learned} / ${today.stageProgress.total} words",
               style = MaterialTheme.typography.labelMedium)
           }
@@ -263,7 +266,7 @@ private fun HomeActionButton(row: HomeRow, modifier: Modifier, primary: Boolean 
       Text(if (row.done) "${row.title} ✓" else row.title, style = MaterialTheme.typography.titleMedium,
         maxLines = 1, overflow = TextOverflow.Ellipsis)
       Text(row.trailing.ifEmpty { row.subtitle },
-        style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp, lineHeight = 16.sp),
+        style = MaterialTheme.typography.bodySmall,
         maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
   }
@@ -280,17 +283,24 @@ private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (Voca
       Icon(Icons.Default.KeyboardArrowDown, contentDescription = "Choose learning stage",
         modifier = Modifier.size(20.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
     }
-    DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+    DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false },
+      modifier = Modifier.widthIn(min = 260.dp), shape = MaterialTheme.shapes.medium,
+      containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp, shadowElevation = 4.dp,
+      border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)) {
       VocabularyStage.entries.forEach { entry ->
         DropdownMenuItem(text = {
-          Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-            Text(entry.label, style = MaterialTheme.typography.titleMedium)
+          Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+            Text(entry.label, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
             Text("Stage ${entry.rarity}", style = MaterialTheme.typography.bodySmall,
               color = MaterialTheme.colorScheme.onSurfaceVariant)
           }
-        }, leadingIcon = if (entry == stage) {
-          { Icon(Icons.Default.Check, contentDescription = "Selected stage", modifier = Modifier.size(20.dp)) }
-        } else null, onClick = { expanded = false; onStage(entry) }, enabled = enabled)
+        }, leadingIcon = {
+          if (entry == stage) Icon(Icons.Default.Check, contentDescription = "Selected stage",
+            modifier = Modifier.size(20.dp), tint = MaterialTheme.colorScheme.primary)
+          else Spacer(Modifier.size(20.dp))
+        }, contentPadding = PaddingValues(horizontal = 12.dp),
+          onClick = { expanded = false; onStage(entry) }, enabled = enabled)
       }
     }
   }

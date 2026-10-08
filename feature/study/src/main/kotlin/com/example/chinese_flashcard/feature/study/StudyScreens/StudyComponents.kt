@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
@@ -22,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.chinese_flashcard.core.ui.FlashcardDialog
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 
@@ -38,12 +38,11 @@ internal fun WritingNavigation(state: StudyUiState, vm: StudyViewModel, onWritin
 
 @Composable
 internal fun DailyWritingInvitation(state: StudyUiState, vm: StudyViewModel) {
-  if (state.dailyInvitation) AlertDialog(onDismissRequest = vm::dismissInvitation,
+  if (state.dailyInvitation) FlashcardDialog(onDismissRequest = vm::dismissInvitation,
     title = { Text("Write today's words?") },
-    shape = MaterialTheme.shapes.large, containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
     text = { Text("${state.today?.todayNewWords?.size ?: 0} new words") },
-    confirmButton = { TextButton(onClick = vm::startDailyWriting, enabled = !state.busy) { Text("Write now") } },
-    dismissButton = { TextButton(onClick = vm::dismissInvitation, enabled = !state.busy) { Text("Not now") } })
+    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = vm::startDailyWriting, enabled = !state.busy) { Text("Write now") } },
+    dismissButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = vm::dismissInvitation, enabled = !state.busy) { Text("Not now") } })
 }
 
 @Composable
@@ -85,7 +84,7 @@ internal fun ErrorNotice(message: String, enabled: Boolean, onRetry: () -> Unit,
     Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
       color = if (studyPage) FlashcardStyle.colors.gradientError else MaterialTheme.colorScheme.error,
       style = MaterialTheme.typography.bodyMedium)
-    TextButton(onClick = onRetry, enabled = enabled, colors = ButtonDefaults.textButtonColors(
+    TextButton(shape = MaterialTheme.shapes.small, onClick = onRetry, enabled = enabled, colors = ButtonDefaults.textButtonColors(
       contentColor = if (studyPage) FlashcardStyle.colors.gradientAction else MaterialTheme.colorScheme.primary)) { Text("Try again") }
   }
 }

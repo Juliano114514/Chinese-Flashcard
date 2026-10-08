@@ -1,7 +1,5 @@
 package com.example.chinese_flashcard.feature.profile
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,67 +11,48 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Slider
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Surface
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.chinese_flashcard.core.domain.DailyWordChoices
-import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
+import com.example.chinese_flashcard.core.domain.StudyGrowth
+import com.example.chinese_flashcard.core.ui.FlashcardDialog
+import com.example.chinese_flashcard.core.ui.FlashcardLayout
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
-import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.flashcardBackground
-import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
-import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
-import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
-import kotlinx.coroutines.flow.StateFlow
-import kotlin.math.roundToInt
 
-private enum class ProfileEditor { NAME, AVATAR, DAILY_WORDS, ROUNDS, REVIEW_DAYS }
+private enum class ProfileEditor { NAME, AVATAR }
 
 @Composable
-fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () -> Unit,
-  defaultWordlistProgress: StateFlow<WordlistLoadProgress?>, csvImportProgress: StateFlow<WordlistLoadProgress?>,
-  defaultWordlistLoading: Boolean = false, defaultWordlistError: String? = null,
-  onRetryDefaultWordlist: () -> Unit = {}) {
+fun ProfileScreen(vm: ProfileViewModel, onSettings: () -> Unit) {
   val state by vm.state.collectAsStateWithLifecycle()
-  val csv by vm.importState.collectAsStateWithLifecycle()
   var editor by rememberSaveable { mutableStateOf<ProfileEditor?>(null) }
   var appliedSaveRevision by rememberSaveable { mutableLongStateOf(state.savedRevision) }
   val value = state.stored
-  val enabled = !state.loading && !state.saving && !csv.open && !defaultWordlistLoading
+  val enabled = !state.loading && !state.saving
   fun openEditor(next: ProfileEditor) { vm.beginEdit(); editor = next }
   fun closeEditor() { if (!state.saving) { editor = null; vm.beginEdit() } }
   LaunchedEffect(state.savedRevision) {
@@ -83,9 +62,14 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
     }
   }
   Column(Modifier.fillMaxSize().flashcardBackground()
-    .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 20.dp),
-    verticalArrangement = Arrangement.spacedBy(24.dp)) {
-    Text("Profile", style = MaterialTheme.typography.headlineLarge)
+    .verticalScroll(rememberScrollState()).padding(FlashcardLayout.pageInset),
+    verticalArrangement = Arrangement.spacedBy(FlashcardLayout.sectionGap)) {
+    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+      Text("Profile", Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
+      IconButton(onClick = onSettings, enabled = !state.saving) {
+        Icon(painterResource(R.drawable.ic_settings), contentDescription = "Settings")
+      }
+    }
     if (state.loading) {
       Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
         CircularProgressIndicator(Modifier.size(28.dp))
@@ -96,14 +80,14 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
         EditableAvatar(value.avatarId, size = 44.dp, enabled = enabled,
           onClick = { openEditor(ProfileEditor.AVATAR) })
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-          Text(value.displayName.ifBlank { "Your name" }, style = MaterialTheme.typography.titleLarge,
-            maxLines = 2, overflow = TextOverflow.Ellipsis)
-          Text("Chinese Flashcard", style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
+          Text(value.displayName.ifBlank { "Your name" },
+            Modifier.clickable(enabled = enabled, role = Role.Button, onClick = { openEditor(ProfileEditor.NAME) }),
+            style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
+          LevelBadge(state.today?.growth ?: StudyGrowth())
         }
       }
       state.today?.let { today ->
-        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Column(verticalArrangement = Arrangement.spacedBy(FlashcardLayout.contentGap)) {
           Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
             Metric(today.totalWords, "Total", Modifier.weight(1f))
             Metric(today.learnedWords, "Learned", Modifier.weight(1f))
@@ -112,284 +96,112 @@ fun ProfileScreen(vm: ProfileViewModel, onImportCsv: () -> Unit, onLicenses: () 
           Text("Today · ${today.completed} / ${today.planned}", style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-      }
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text("Learning", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth()) {
-            SettingsRow("Name", value.displayName.ifBlank { "Add" }, enabled) { openEditor(ProfileEditor.NAME) }
-            SettingsDivider()
-            SettingsRow("Daily words", value.dailyWords.toString(), enabled) { openEditor(ProfileEditor.DAILY_WORDS) }
-            SettingsDivider()
-            SettingsRow("Correct rounds", value.rounds.toString(), enabled) { openEditor(ProfileEditor.ROUNDS) }
-            SettingsDivider()
-            SettingsRow("Review days", value.reviewDays.joinToString(" / "), enabled) { openEditor(ProfileEditor.REVIEW_DAYS) }
-          }
-        }
-      }
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text("Data", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth()) {
-            SettingsRow("Import CSV", enabled = enabled, onClick = onImportCsv)
-            SettingsDivider()
-            SettingsRow("Data & licenses", enabled = enabled, onClick = onLicenses)
-          }
-        }
-      }
-      if (defaultWordlistLoading || defaultWordlistError != null) {
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
-          verticalArrangement = Arrangement.spacedBy(8.dp)) {
-          Text("Default wordlist", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.titleSmall)
-          if (defaultWordlistLoading) {
-            WordlistLoadingProgress(defaultWordlistProgress)
-          } else {
-            Text(defaultWordlistError.orEmpty(), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
-              color = MaterialTheme.colorScheme.error,
-              style = MaterialTheme.typography.bodySmall)
-            TextButton(onClick = onRetryDefaultWordlist, enabled = enabled && editor == null) { Text("Retry") }
-          }
-        }
+        GrowthDetails(today.growth)
       }
       if (state.error != null && editor == null) {
         Text(state.error.orEmpty(), color = MaterialTheme.colorScheme.error)
-        TextButton(onClick = vm::retry, enabled = enabled) { Text("Try again") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = vm::retry, enabled = enabled) { Text("Try again") }
       }
     }
   }
-  if (csv.open) CsvImportDialog(csv, csvImportProgress, vm::confirmCsvImport, vm::dismissCsvImport)
   when (editor) {
     ProfileEditor.NAME -> NameDialog(value.displayName, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(displayName = it)) })
     ProfileEditor.AVATAR -> AvatarPickerDialog(value.avatarId, onDismiss = ::closeEditor,
       onConfirm = { vm.save(ProfileUpdate(avatarId = it)) }, saving = state.saving, error = state.error)
-    ProfileEditor.DAILY_WORDS -> DailyWordsDialog(value.dailyWords, state.saving, state.error,
-      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(dailyWords = it)) })
-    ProfileEditor.ROUNDS -> RoundsDialog(value.rounds, state.saving, state.error,
-      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(rounds = it)) })
-    ProfileEditor.REVIEW_DAYS -> ReviewDaysDialog(value.reviewDays, state.saving, state.error,
-      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(reviewDays = it)) })
     null -> Unit
   }
 }
 
 @Composable
-private fun SettingsDivider() {
-  HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp),
-    color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
-}
-
-@Composable
-private fun SettingsRow(title: String, value: String? = null, enabled: Boolean = true, onClick: () -> Unit) {
-  val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = FlashcardStyle.opacity.disabledContent)
-  Row(Modifier.fillMaxWidth().heightIn(min = 60.dp)
-    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(horizontal = 16.dp, vertical = 14.dp),
-    verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-    Text(title, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = color)
-    value?.let {
-      Text(it, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
-        maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End,
-        color = if (enabled) MaterialTheme.colorScheme.onSurfaceVariant else color)
-    }
-    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null, Modifier.size(20.dp),
-      tint = if (enabled) MaterialTheme.colorScheme.onSurfaceVariant else color)
-  }
-}
-
-@Composable
-private fun NameDialog(initial: String, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (String) -> Unit) {
-  var text by rememberSaveable { mutableStateOf(initial) }
-  SettingDialog("Your name", saving, error, text.trim().isNotEmpty(), onDismiss, { onConfirm(text.trim()) }) {
-    OutlinedTextField(text, onValueChange = { if (it.length <= 40 && it.none(Char::isISOControl)) text = it },
-      Modifier.fillMaxWidth(), singleLine = true, enabled = !saving, shape = MaterialTheme.shapes.medium,
-      keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
-      keyboardActions = KeyboardActions(onDone = { if (!saving && text.trim().isNotEmpty()) onConfirm(text.trim()) }),
-      label = { Text("Name") })
-  }
-}
-
-@Composable
-private fun DailyWordsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
-  var count by rememberSaveable { mutableIntStateOf(DailyWordChoices.normalize(initial)) }
-  SettingDialog("Words per day", saving, error, DailyWordChoices.isAllowed(count), onDismiss, { onConfirm(count) }) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
-      Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
-      Slider(count.toFloat(), onValueChange = { count = DailyWordChoices.normalize(it.roundToInt()) },
-        modifier = Modifier.fillMaxWidth(), enabled = !saving,
-        valueRange = DailyWordChoices.MIN.toFloat()..DailyWordChoices.MAX.toFloat(), steps = 8)
-      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-        Text(DailyWordChoices.MIN.toString(), style = MaterialTheme.typography.bodySmall)
-        Text(DailyWordChoices.MAX.toString(), style = MaterialTheme.typography.bodySmall)
+private fun GrowthDetails(growth: StudyGrowth) {
+  var showInfo by rememberSaveable { mutableStateOf(false) }
+  Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+      Text("Level ${growth.level}", style = MaterialTheme.typography.titleMedium)
+      IconButton(onClick = { showInfo = true }) {
+        Icon(painterResource(R.drawable.ic_info), contentDescription = "Growth information",
+          modifier = Modifier.size(20.dp))
       }
-      Text("Changes apply to the next daily plan.", style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
+    LinearProgressIndicator(progress = { growth.fraction }, modifier = Modifier.fillMaxWidth())
+    Text("${growth.earned} / ${growth.span} days · ${growth.remaining} days to next level",
+      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Text("${growth.days} growth days", style = MaterialTheme.typography.bodyMedium)
   }
+  if (showInfo) GrowthInfoDialog(growth, onDismiss = { showInfo = false })
 }
 
 @Composable
-private fun RoundsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
-  var count by rememberSaveable { mutableIntStateOf(initial) }
-  SettingDialog("Correct rounds", saving, error, true, onDismiss, { onConfirm(count) }) {
-    Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceEvenly) {
-        TextButton(onClick = { count-- }, enabled = !saving && count > 2, modifier = Modifier.size(48.dp)) { Text("−") }
-        Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
-        TextButton(onClick = { count++ }, enabled = !saving && count < 8, modifier = Modifier.size(48.dp)) { Text("+") }
-      }
-      Text("Consecutive correct answers. A wrong answer resets the round.",
-        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Text("Changes apply to new learning cycles.", style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
-  }
-}
-
-@Composable
-private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (List<Int>) -> Unit) {
-  var selected by rememberSaveable { mutableStateOf(initial) }
-  SettingDialog("Review days", saving, error, selected.isNotEmpty(), onDismiss, { onConfirm(selected.sorted()) }) {
-    Column {
-      Text("Days after passing a word", style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
-      listOf(1, 3, 5, 7, 14, 30).forEach { day ->
-        val checked = day in selected
-        Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
-          .toggleable(value = checked, enabled = !saving, role = Role.Checkbox,
-            onValueChange = { selected = if (it) (selected + day).distinct().sorted() else selected - day }),
-          verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-          Box(Modifier.size(22.dp).background(if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surface,
-            MaterialTheme.shapes.extraSmall).border(1.dp, if (checked) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outline, MaterialTheme.shapes.extraSmall),
-            contentAlignment = Alignment.Center) {
-            if (checked) Icon(Icons.Default.Check, contentDescription = null, Modifier.size(16.dp),
-              tint = MaterialTheme.colorScheme.onPrimary)
-          }
-          Text(if (day == 1) "1 day later" else "$day days later", style = MaterialTheme.typography.bodyLarge)
+private fun GrowthInfoDialog(growth: StudyGrowth, onDismiss: () -> Unit) {
+  FlashcardDialog(onDismissRequest = onDismiss,
+    title = { Text("Growth information") },
+    text = {
+      Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(16.dp)) {
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+          GrowthRule("Open the app daily")
+          GrowthRule("Finish today's Learn")
         }
-      }
-      Text("Changes apply to new learning cycles.", style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
-  }
-}
-
-@Composable
-private fun CsvImportDialog(state: CsvImportUiState, progress: StateFlow<WordlistLoadProgress?>,
-  onImport: () -> Unit, onDismiss: () -> Unit) {
-  val preview = state.preview
-  val report = state.report
-  val issues = preview?.issues?.take(100).orEmpty()
-  AlertDialog(onDismissRequest = { if (state.canDismiss) onDismiss() }, shape = MaterialTheme.shapes.large,
-    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
-    title = { Text("CSV import") }, text = {
-      Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        if (state.busy) {
-          if (state.stage == CsvImportStage.READING || state.stage == CsvImportStage.IMPORTING)
-            WordlistLoadingProgress(progress)
-          else Text("Closing preview…", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
-            style = MaterialTheme.typography.bodySmall)
+        HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+          GrowthRule("Complete 10 words", "Learn or Collection")
+          GrowthRule("Clear 20 mistakes")
         }
-        preview?.let {
-          Text("${it.totalRows} rows · ${it.newWords} new · ${it.duplicateWords} duplicates")
-          when {
-            it.errorCount > 0 -> {
-              Text("${it.errorCount} errors. Fix the CSV and choose it again. No words imported.",
-                color = MaterialTheme.colorScheme.error)
-              issues.forEach { issue ->
-                val location = if (issue.line > 0) "Line ${issue.line}" else "File"
-                Text("$location · ${issue.field}: ${issue.message}",
-                  style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error)
-              }
-              if (it.errorCount > issues.size) {
-                Text("Showing the first ${issues.size} errors.", style = MaterialTheme.typography.bodySmall)
-              }
+        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surfaceContainer) {
+          Row(Modifier.fillMaxWidth().padding(12.dp), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+              Text("Words", style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
+              Text("${growth.learnedCompletions % 10} / 10", style = MaterialTheme.typography.titleMedium)
             }
-            it.newWords == 0 -> Text("All words are already in your wordbook.")
-            else -> Text("Existing words and progress will be kept.")
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+              Text("Mistakes", style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
+              Text("${growth.clearedMistakes % 20} / 20", style = MaterialTheme.typography.titleMedium)
+            }
           }
         }
-        report?.let { Text("Added ${it.addedWords} words. Skipped ${it.skippedWords} duplicates.") }
-        state.error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
       }
-    }, confirmButton = {
-      if (preview?.canImport == true && preview.newWords > 0) {
-        TextButton(onClick = onImport, enabled = !state.busy) { Text("Import ${preview.newWords} words") }
-      } else if (!state.busy) {
-        TextButton(onClick = onDismiss) { Text("Done") }
-      }
-    }, dismissButton = {
-      if (report == null && state.error == null && (preview == null || preview.newWords > 0 && preview.errorCount == 0)) {
-        TextButton(onClick = onDismiss, enabled = state.canDismiss) { Text("Cancel") }
-      }
-    })
+    },
+    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss) { Text("OK") } })
+}
+
+@Composable
+private fun GrowthRule(title: String, detail: String? = null) {
+  Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+    horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+      Text(title, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurface)
+      detail?.let { Text(it, style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant) }
+    }
+    Text("+1", style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+  }
 }
 
 @Composable
 private fun Metric(count: Int, label: String, modifier: Modifier = Modifier) {
   Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Text(count.toString(), style = MaterialTheme.typography.headlineSmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
-    Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Text(count.toString(), style = MaterialTheme.typography.headlineSmall)
+    Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
 
+@Preview(name = "Profile growth", widthDp = 360)
 @Composable
-private fun SettingDialog(
-  title: String,
-  saving: Boolean,
-  error: String?,
-  valid: Boolean,
-  onDismiss: () -> Unit,
-  onConfirm: () -> Unit,
-  content: @Composable () -> Unit,
-) {
-  AlertDialog(onDismissRequest = { if (!saving) onDismiss() }, shape = MaterialTheme.shapes.large,
-    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
-    title = { Text(title) }, text = {
-      Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        content()
-        error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
-      }
-    }, confirmButton = {
-      TextButton(onClick = onConfirm, enabled = !saving && valid) { Text(if (saving) "Saving…" else "Done") }
-    }, dismissButton = {
-      TextButton(onClick = onDismiss, enabled = !saving) { Text("Cancel") }
-    })
-}
-
-@Preview(name = "Settings", widthDp = 360)
-@Composable
-private fun SettingsPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
-  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
-    Surface(Modifier.flashcardBackground(), color = androidx.compose.ui.graphics.Color.Transparent) {
-      Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(24.dp)) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-          EditableAvatar("1", size = 44.dp, onClick = {})
-          Text("Profile", style = MaterialTheme.typography.titleLarge)
-        }
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp)) {
-            SettingsRow("Name", "Alexander", onClick = {})
-            SettingsDivider()
-            SettingsRow("Daily words", "10", onClick = {})
-            SettingsDivider()
-            SettingsRow("Review days", "1 / 3 / 7", onClick = {})
-            SettingsDivider()
-            SettingsRow("Import CSV", enabled = false, onClick = {})
-          }
-        }
-      }
+private fun GrowthPreview() {
+  FlashcardTheme {
+    Column(Modifier.flashcardBackground().padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      LevelBadge(StudyGrowth(320, 27, 41))
+      GrowthDetails(StudyGrowth(320, 27, 41))
     }
   }
 }
 
-@Preview(name = "Name form", widthDp = 360)
+@Preview(name = "Growth information", widthDp = 360, heightDp = 640)
+@Preview(name = "Growth information · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
 @Composable
-private fun NameFormPreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
-  FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
-    NameDialog("Alexander", saving = false, error = null, onDismiss = {}, onConfirm = {})
-  }
+private fun GrowthInfoPreview() {
+  FlashcardTheme { GrowthInfoDialog(StudyGrowth(320, 27, 41), onDismiss = {}) }
 }

@@ -15,11 +15,11 @@ internal data class StagePalette(
 ) {
   fun scheme(base: ColorScheme, dark: Boolean): ColorScheme {
     val accent = if (dark) darkAccent else lightAccent
-    val background = if (dark) darkMiddle else lightMiddle
-    val tint = if (dark) darkEnd else lightEnd
+    val background = if (dark) Color(0xFF17181B) else Color(0xFFF7F8FA)
+    val tint = lerp(background, accent, if (dark) .14f else .08f)
     val ink = if (dark) Color(0xFFEDEFF1) else Color(0xFF232529)
     val secondaryInk = if (dark) Color(0xFFBCC1C6) else Color(0xFF56595F)
-    val surface = if (dark) lerp(background, tint, .28f) else lerp(Color.White, background, .60f)
+    val surface = if (dark) Color(0xFF212226) else Color.White
     val container = if (dark) lerp(background, accent, .19f) else tint
     val onAccent = if (dark) background else Color.White
     return base.copy(
@@ -28,25 +28,25 @@ internal data class StagePalette(
       inversePrimary = if (dark) lightAccent else darkAccent,
       secondary = if (dark) lerp(darkAccent, ink, .30f) else lerp(lightAccent, secondaryInk, .50f),
       onSecondary = onAccent,
-      secondaryContainer = if (dark) lerp(background, accent, .12f) else lerp(surface, tint, .70f),
+      secondaryContainer = if (dark) lerp(surface, accent, .10f) else lerp(surface, accent, .06f),
       onSecondaryContainer = ink,
       tertiary = accent, onTertiary = onAccent,
       tertiaryContainer = container, onTertiaryContainer = if (dark) darkAccent else ink,
       background = background, onBackground = ink,
       surface = surface, onSurface = ink, surfaceTint = accent,
-      surfaceVariant = if (dark) lerp(background, ink, .12f) else lerp(surface, tint, .80f),
+      surfaceVariant = if (dark) Color(0xFF2D2E33) else Color(0xFFF0F1F4),
       onSurfaceVariant = secondaryInk,
       inverseSurface = if (dark) lightMiddle else darkMiddle,
       inverseOnSurface = if (dark) Color(0xFF232529) else Color(0xFFEDEFF1),
       surfaceBright = if (dark) lerp(background, ink, .12f) else surface,
       surfaceDim = if (dark) background else lerp(surface, tint, .80f),
       surfaceContainerLowest = if (dark) lerp(background, Color.Black, .20f) else Color.White,
-      surfaceContainerLow = if (dark) lerp(background, tint, .22f) else lerp(surface, tint, .15f),
-      surfaceContainer = if (dark) lerp(background, tint, .40f) else lerp(surface, tint, .30f),
-      surfaceContainerHigh = if (dark) lerp(background, ink, .08f) else lerp(surface, tint, .55f),
-      surfaceContainerHighest = if (dark) lerp(background, ink, .12f) else lerp(surface, tint, .80f),
+      surfaceContainerLow = surface,
+      surfaceContainer = if (dark) Color(0xFF25262B) else Color(0xFFF2F3F5),
+      surfaceContainerHigh = if (dark) Color(0xFF2A2B30) else Color(0xFFEBEDF0),
+      surfaceContainerHighest = if (dark) Color(0xFF303137) else Color(0xFFE5E7EB),
       outline = if (dark) Color(0xFF959AA0) else Color(0xFF74777B),
-      outlineVariant = if (dark) lerp(background, ink, .22f) else lerp(surface, secondaryInk, .25f),
+      outlineVariant = if (dark) Color(0xFF3B3D43) else Color(0xFFE1E3E8),
     )
   }
 }

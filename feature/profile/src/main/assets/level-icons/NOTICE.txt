@@ -1,0 +1,15 @@
+QQ-style level icons
+
+Copied unchanged on 2026-10-09 from the local Codex-QQ-Skin/assets/level-icons directory.
+Mapping: star.png -> ic_level_star.png; moon.png -> ic_level_moon.png;
+sun.png -> ic_level_sun.png; king.png -> ic_level_crown.png.
+The source PNG bytes, colors and transparency are preserved.
+
+These third-party visual assets are not covered by this project MIT license.
+The local source does not establish original authorship or public redistribution permission.
+
+SHA-256:
+star.png: f881b0564da34f39290f57e1ae8a4969bb8f8c161d6b6d0cfabde373176886af
+moon.png: 90f58b7278b8d54faecd89b5a372e510ec400a7e2e4c654fcb9b4fb21015e438
+sun.png: aec831147a4048bbd873ad2722d56d51aa41d77ae6713d7c60fb4c43e60228bd
+king.png: 0c34cc574b7d1e5acc0324daf0ea4050806d9f58db3aa0d2650d594655bbcb8b

@@ -2,6 +2,7 @@ package com.example.chinese_flashcard.feature.study
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,14 +15,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -52,6 +50,7 @@ import com.example.chinese_flashcard.core.domain.PracticeProgress
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.WordMeanings
@@ -85,26 +84,21 @@ internal fun StudyContent(
   Box(Modifier.fillMaxSize().flashcardBackground()) {
   Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
     Column {
-    Row(Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 12.dp, vertical = 4.dp),
-      verticalAlignment = Alignment.CenterVertically) {
-      IconButton(onClick = onBack, enabled = !state.busy) {
-        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
-      }
-      Text(when (card?.kind) {
+    FlashcardToolbar(when (card?.kind) {
         StudyKind.NEW -> "Learn"
         StudyKind.REVIEW -> "Review"
         StudyKind.CARRYOVER -> "Continue"
         StudyKind.COLLECTION -> "Collections"
         StudyKind.MISTAKES -> "Mistakes"
         null -> "Study"
-      }, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+      }, onBack, Modifier.padding(horizontal = 12.dp, vertical = 4.dp), enabled = !state.busy, trailing = {
       if (card != null && card.phase != CardPhase.FINISHED && !largeText) {
         if (state.snapshot != null) {
           Text("Progress $completed / $planned", modifier = Modifier.padding(end = 12.dp),
             style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
         }
       }
-    }
+    })
     if (card != null && card.phase != CardPhase.FINISHED && state.snapshot != null && largeText) {
       Text("Progress $completed / $planned", modifier = Modifier.align(Alignment.End).padding(horizontal = 20.dp, vertical = 4.dp),
         style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
@@ -115,7 +109,8 @@ internal fun StudyContent(
     }
   }, bottomBar = {
     if (card != null && card.phase != CardPhase.FINISHED) {
-      Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp),
+      Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)
+        .padding(horizontal = 20.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
         when (card.phase) {
@@ -125,11 +120,11 @@ internal fun StudyContent(
                 onSubmit(card.id, null)
               }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
-                shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp,
+                shape = MaterialTheme.shapes.medium, border = BorderStroke(1.dp,
                   if (answerChosen && selectedOption == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp).semantics { selected = answerChosen && selectedOption == null }) { Text("I don't know") }
               Button(onClick = { onSubmit(card.id, selectedOption) }, enabled = answerChosen && !state.busy,
-                shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Next") }
+                shape = MaterialTheme.shapes.medium, modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Next") }
             }
           }
           CardPhase.FEEDBACK -> {
@@ -138,15 +133,15 @@ internal fun StudyContent(
                 color = FlashcardStyle.colors.gradientSecondaryInk)
             }
             Button(onClick = { onExplain(card.id) }, enabled = !state.busy && feedbackFinished,
-              shape = RoundedCornerShape(8.dp), modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Next") }
+              shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Next") }
           }
           CardPhase.INTRO, CardPhase.EXPLANATION -> {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
               OutlinedButton(onClick = { onWordWriting(card.word.id) }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction),
-                shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Write") }
-              Button(onClick = onAdvance, enabled = !state.busy && card.phase != CardPhase.FEEDBACK, shape = RoundedCornerShape(8.dp),
+                shape = MaterialTheme.shapes.medium, modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Write") }
+              Button(onClick = onAdvance, enabled = !state.busy && card.phase != CardPhase.FEEDBACK, shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
                 Text(if (card.phase == CardPhase.INTRO) "Continue" else "Next word")
               }
@@ -163,7 +158,7 @@ internal fun StudyContent(
         card == null -> {
           Text("No active session", style = MaterialTheme.typography.headlineMedium)
           Text("Choose Learn or Review from Home.", color = FlashcardStyle.colors.gradientSecondaryInk)
-          Button(onClick = onBack, enabled = !state.busy, shape = RoundedCornerShape(8.dp)) { Text("Back to Home") }
+          Button(onClick = onBack, enabled = !state.busy, shape = MaterialTheme.shapes.medium) { Text("Back to Home") }
         }
         card.phase == CardPhase.FINISHED -> {
           Spacer(Modifier.height(32.dp))
@@ -189,7 +184,7 @@ internal fun StudyContent(
                 color = FlashcardStyle.colors.gradientAction)
             }
           }
-          Button(onClick = onBack, enabled = !state.busy, shape = RoundedCornerShape(8.dp),
+          Button(onClick = onBack, enabled = !state.busy, shape = MaterialTheme.shapes.medium,
             modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text("Done") }
         }
         else -> {
@@ -236,7 +231,7 @@ internal fun StudyContent(
             CardPhase.WRITING -> {
               Text("Writing", style = MaterialTheme.typography.titleLarge)
               card.writingSessionId?.let { id ->
-                Button(onClick = { onWriting(id) }, enabled = !state.busy, shape = RoundedCornerShape(8.dp)) { Text("Continue writing") }
+                Button(onClick = { onWriting(id) }, enabled = !state.busy, shape = MaterialTheme.shapes.medium) { Text("Continue writing") }
               }
             }
             CardPhase.FINISHED -> Unit
@@ -272,7 +267,7 @@ private fun MeaningOption(index: Int, meaning: String, selected: Boolean, enable
     null -> if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface
   }
   Surface(modifier = Modifier.fillMaxWidth().alpha(if (dimmed) .45f else 1f).semantics { this.selected = selected },
-    shape = RoundedCornerShape(8.dp),
+    shape = MaterialTheme.shapes.medium,
     color = when (result) {
       true -> colors.successContainer
       false -> MaterialTheme.colorScheme.errorContainer

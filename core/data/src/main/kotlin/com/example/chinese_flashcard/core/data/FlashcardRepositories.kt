@@ -30,7 +30,7 @@ data class DefaultWordlistState(val loading: Boolean = false, val error: String?
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
-    .addMigrations(Migration7To8).build()
+    .addMigrations(Migration7To8, Migration8To9).build()
   private val dao = database.flashcards()
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
@@ -167,7 +167,7 @@ class FlashcardRepositories(context: Context) {
       transaction {
         dao.putSettings(SettingsEntity(dailyWords = value.dailyWords, rounds = value.rounds,
           reviewDaysJson = daysJson(value.reviewDays), welcomed = value.welcomed,
-          displayName = value.displayName.trim(), avatarId = value.avatarId))
+          displayName = value.displayName.trim(), avatarId = value.avatarId, themeMode = value.themeMode.name))
         touch()
       }
     }
@@ -322,6 +322,7 @@ class FlashcardRepositories(context: Context) {
         if (correct && updated.correctRounds >= updated.targetRounds) {
           dao.putCycle(updated.copy(status = "COMPLETED", passedDay = day))
           dao.putPracticeItem(item.copy(completed = true))
+          if (card.kind == StudyKind.COLLECTION.name) rewardLearningCompletion()
           clearMistake(card.wordId, answeringCardId = card.id)
         } else dao.putCycle(updated)
       } else {
@@ -427,7 +428,13 @@ class FlashcardRepositories(context: Context) {
 
   private suspend fun clearMistake(wordId: String, answeringCardId: String? = null) {
     val saved = dao.progress(wordId) ?: WordProgressEntity(wordId)
-    if (saved.mistakePending) dao.putProgress(saved.copy(mistakePending = false))
+    if (saved.mistakePending) {
+      dao.putProgress(saved.copy(mistakePending = false))
+      val state = appState()
+      val cleared = state.clearedMistakes + 1
+      dao.putAppState(state.copy(clearedMistakes = cleared,
+        growthDays = state.growthDays + cleared / 20 - state.clearedMistakes / 20))
+    }
     // Mastery ends the old mistake attempt, so a later error cannot inherit its partial rounds.
     val sessions = dao.practiceSessions(StudyKind.MISTAKES.name)
     for (session in sessions) {
@@ -578,6 +585,12 @@ class FlashcardRepositories(context: Context) {
         currentCardId = current?.takeIf { it.sessionId != null }?.id, revision = appState().revision + 1))
     }
     ensureStagePlan(day, selectedStage())
+    val plan = checkNotNull(dao.plan(day))
+    if (!plan.loginRewarded) {
+      dao.putPlan(plan.copy(loginRewarded = true))
+      val saved = appState()
+      dao.putAppState(saved.copy(growthDays = saved.growthDays + 1, revision = saved.revision + 1))
+    }
     return day
   }
 
@@ -763,7 +776,31 @@ class FlashcardRepositories(context: Context) {
     val stage = cycle.originStage ?: item.originStage
     val lap = cycle.originLap ?: item.originLap
     if (stage != null && lap != null) dao.putStageCompletion(StageCompletionEntity(stage, lap, item.wordId, day))
+    if (stage != null && item.kind in listOf(StudyKind.NEW.name, StudyKind.CARRYOVER.name)) {
+      rewardLearningCompletion()
+      if (item.kind == StudyKind.NEW.name) rewardDailyLearn(day, stage)
+    }
     clearMistake(item.wordId)
+  }
+
+  private suspend fun rewardLearningCompletion() {
+    val saved = appState()
+    val completed = saved.learnedCompletions + 1
+    dao.putAppState(saved.copy(learnedCompletions = completed,
+      growthDays = saved.growthDays + completed / 10 - saved.learnedCompletions / 10))
+  }
+
+  private suspend fun rewardDailyLearn(day: Long, stage: Int) {
+    val plan = checkNotNull(dao.plan(day))
+    if (plan.learnRewarded) return
+    val progress = dao.progress().associateBy { it.wordId }
+    val items = dao.dailyItems(day).filter { it.kind == StudyKind.NEW.name && it.originStage == stage &&
+      progress[it.wordId]?.isSkipped != true }
+    if (items.isNotEmpty() && items.all { it.completed }) {
+      dao.putPlan(plan.copy(learnRewarded = true))
+      val saved = appState()
+      dao.putAppState(saved.copy(growthDays = saved.growthDays + 1))
+    }
   }
 
   private suspend fun snapshotAt(day: Long): StudySnapshot {
@@ -813,7 +850,8 @@ class FlashcardRepositories(context: Context) {
       newWords, dao.resumableWriting()?.id,
       dao.nextReviewDay(day)?.let { LocalDate.ofEpochDay(it).toString() }, available, blocker, stageProgress,
       collectionIds.size,
-      words.count { progress[it.id]?.mistakePending == true && progress[it.id]?.isSkipped != true })
+      words.count { progress[it.id]?.mistakePending == true && progress[it.id]?.isSkipped != true },
+      appState().let { StudyGrowth(it.growthDays, it.learnedCompletions, it.clearedMistakes) })
   }
 
   private suspend fun learnMoreBlocker(day: Long, items: List<DailyItemEntity>, stage: VocabularyStage): StudyKind? {
@@ -955,5 +993,6 @@ class FlashcardRepositories(context: Context) {
       session.feedback, session.returnCardId)
   }
 
-  private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed, displayName, avatarId)
+  private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
+    displayName, avatarId, ThemeMode.valueOf(themeMode))
 }

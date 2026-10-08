@@ -1,9 +1,11 @@
 package com.example.chinese_flashcard
 
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -17,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
@@ -26,6 +29,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
+import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.*
 import com.example.chinese_flashcard.core.data.FlashcardRepositories
@@ -35,13 +39,17 @@ import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.VocabularyStage
+import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
 import com.example.chinese_flashcard.feature.profile.ProfileViewModel
+import com.example.chinese_flashcard.feature.profile.SettingScreen
 import com.example.chinese_flashcard.feature.study.*
 import com.example.chinese_flashcard.feature.wordlist.*
 import com.example.chinese_flashcard.feature.writing.WritingScreen
@@ -98,6 +106,8 @@ class StartupViewModel(private val repositories: FlashcardRepositories) : ViewMo
 fun FlashcardApp(repositories: FlashcardRepositories) {
   val startup: StartupViewModel = viewModel(factory = factory { StartupViewModel(repositories) })
   val boot by startup.state.collectAsStateWithLifecycle()
+  FlashcardTheme(themeMode = boot.settings.themeMode) {
+  if (!boot.ready || !boot.settings.welcomed) FlashcardSystemBars()
   Surface(Modifier.fillMaxSize()) {
     when {
       !boot.ready -> Column(Modifier.fillMaxSize().safeDrawingPadding().padding(28.dp),
@@ -115,13 +125,29 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
       !boot.settings.welcomed -> Box(Modifier.safeDrawingPadding()) {
         WelcomeScreen(boot.settings, boot.busy, boot.error, startup::welcome)
       }
-      else -> AppNavigation(repositories)
+      else -> AppNavigation(repositories, boot.settings.themeMode)
     }
+  }
   }
 }
 
 @Composable
-private fun AppNavigation(repositories: FlashcardRepositories) {
+private fun FlashcardSystemBars() {
+  val view = LocalView.current
+  val activity = LocalActivity.current ?: return
+  val dark = FlashcardStyle.darkTheme
+  if (!view.isInEditMode) SideEffect {
+    WindowCompat.getInsetsController(activity.window, view).apply {
+      isAppearanceLightStatusBars = !dark
+      isAppearanceLightNavigationBars = !dark
+    }
+    if (android.os.Build.VERSION.SDK_INT >= 29) activity.window.isNavigationBarContrastEnforced = false
+  }
+}
+
+@Composable
+private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeMode) {
+  val settings by repositories.settings.settings.collectAsStateWithLifecycle(initialValue = StudySettings(themeMode = themeMode))
   val nav = rememberNavController()
   val navigationScope = rememberCoroutineScope()
   val defaultWordlist by repositories.defaultWordlistState.collectAsStateWithLifecycle()
@@ -178,12 +204,16 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
   val openWriting: (String) -> Unit = { id ->
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
-  FlashcardTheme(stage = state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY) {
+  FlashcardTheme(stage = state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY, themeMode = settings.themeMode) {
+  FlashcardSystemBars()
   Scaffold(modifier = Modifier.flashcardBackground(), containerColor = Color.Transparent,
+    contentColor = MaterialTheme.colorScheme.onBackground,
     snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
-    if (route in listOf("today", "profile", "wordlist")) Column {
+    if (route in listOf("today", "profile", "wordlist")) Column(Modifier.background(MaterialTheme.colorScheme.surface)) {
       HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
-      NavigationBar(containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
+      NavigationBar(modifier = Modifier.windowInsetsPadding(NavigationBarDefaults.windowInsets).height(60.dp),
+        windowInsets = WindowInsets(0, 0, 0, 0),
+        containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
         listOf("today" to "Home", "profile" to "Profile", "wordlist" to "Wordlist").forEach { (destination, label) ->
           NavigationBarItem(selected = route == destination, onClick = {
             if (destination == "today") {
@@ -202,7 +232,9 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
             "profile" -> Icons.Default.Person
             else -> Icons.AutoMirrored.Filled.List
           }, label) },
-            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent))
+            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent,
+              selectedIconColor = MaterialTheme.colorScheme.primary,
+              unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant))
         }
       }
     }
@@ -220,7 +252,8 @@ private fun AppNavigation(repositories: FlashcardRepositories) {
           }, onProfile = { nav.navigate("profile") { launchSingleTop = true } },
           onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = speech::speak)
       }
-      composable("profile") { ProfileScreen(profile,
+      composable("profile") { ProfileScreen(profile, onSettings = { nav.navigate("settings") { launchSingleTop = true } }) }
+      composable("settings") { SettingScreen(profile, onBack = { nav.popBackStack() },
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
           "application/octet-stream", "application/vnd.ms-excel")) },
         onLicenses = { nav.navigate("licenses") },
@@ -296,7 +329,7 @@ private fun LicenseScreen(onBack: () -> Unit) {
     value = withContext(Dispatchers.IO) {
       try {
         listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
-          "wordlist-strokes/LEXICON_LICENSES.txt", "avatars/NOTICE.txt").joinToString("\n\n") { name ->
+          "wordlist-strokes/LEXICON_LICENSES.txt", "avatars/NOTICE.txt", "level-icons/NOTICE.txt").joinToString("\n\n") { name ->
           context.assets.open(name).bufferedReader().use { it.readText() }
         }
       } catch (error: CancellationException) { throw error }
@@ -305,11 +338,10 @@ private fun LicenseScreen(onBack: () -> Unit) {
   }
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
     verticalArrangement = Arrangement.spacedBy(14.dp)) {
-    TextButton(onClick = onBack) { Text("Back") }
-    Text("Sources & licenses", style = MaterialTheme.typography.headlineMedium)
+    FlashcardToolbar("Sources & licenses", onBack)
     Text("Default vocabulary: bundled wordlist.csv. Dictionary attribution and content sources are listed below.")
     Text("Legacy demo vocabulary and examples: original teaching material retained when upgrading.")
-    Text("Additional vocabulary: local CSV wordlists imported in Profile.")
+    Text("Additional vocabulary: local CSV wordlists imported in Settings.")
     Text("Stroke outlines and medians: Make Me a Hanzi, supplemented by AnimCJK. Selected glyphs are bundled for offline writing under the Arphic Public License.")
     Text(licenses, style = MaterialTheme.typography.bodySmall)
   }

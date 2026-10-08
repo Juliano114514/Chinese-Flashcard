@@ -12,7 +12,7 @@ data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
 
 data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
   val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
-  val displayName: String = "", val avatarId: String = "1") {
+  val displayName: String = "", val avatarId: String = "1", val themeMode: ThemeMode = ThemeMode.SYSTEM) {
   fun validate() {
     require(dailyWords in 1..100 && rounds in 2..8)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())
@@ -41,7 +41,8 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val resumableWritingId: String? = null, val nextReviewDate: String? = null,
   val availableNewWords: Int = 0, val learnMoreBlocker: StudyKind? = null,
   val stageProgress: StageProgress = StageProgress(),
-  val collectionsAvailable: Int = 0, val mistakesAvailable: Int = 0) {
+  val collectionsAvailable: Int = 0, val mistakesAvailable: Int = 0,
+  val growth: StudyGrowth = StudyGrowth()) {
   val planned: Int get() = newPlanned + reviewPlanned + carryoverPlanned
   val completed: Int get() = newCompleted + reviewCompleted + carryoverCompleted
   val allComplete: Boolean get() = planned > 0 && completed == planned

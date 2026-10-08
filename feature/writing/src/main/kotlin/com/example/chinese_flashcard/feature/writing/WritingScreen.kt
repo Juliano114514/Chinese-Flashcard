@@ -29,9 +29,6 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -91,6 +88,7 @@ import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
@@ -112,12 +110,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
   Column(Modifier.fillMaxSize().flashcardBackground()
     .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 12.dp),
     verticalArrangement = Arrangement.spacedBy(12.dp)) {
-    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-      IconButton(onClick = onBack, enabled = !state.busy) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back") }
-      Text("Writing", modifier = Modifier.weight(1f), textAlign = TextAlign.Center,
-        style = MaterialTheme.typography.titleMedium)
-      Spacer(Modifier.width(48.dp))
-    }
+    FlashcardToolbar("Writing", onBack, enabled = !state.busy)
     when {
       state.loading -> Box(Modifier.fillMaxWidth().height(180.dp), contentAlignment = Alignment.Center) {
         CircularProgressIndicator()
@@ -128,7 +121,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         Text("Writing complete", style = MaterialTheme.typography.headlineMedium)
         Text("${snapshot.totalWords} ${if (snapshot.totalWords == 1) "word" else "words"} practised.",
           color = FlashcardStyle.colors.gradientSecondaryInk)
-        Button(onClick = onFinished, shape = RoundedCornerShape(8.dp),
+        Button(onClick = onFinished, shape = MaterialTheme.shapes.medium,
           modifier = Modifier.fillMaxWidth()) { Text("Done") }
       }
       snapshot != null && snapshot.status == WritingStatus.ACTIVE -> {
@@ -136,13 +129,13 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         if (state.saveError != null) WritingError(state.saveError!!, "Retry save") { vm.onAction(WritingAction.RetrySave) }
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
-          TextButton(onClick = { vm.onAction(WritingAction.Skip) },
+          TextButton(shape = MaterialTheme.shapes.small, onClick = { vm.onAction(WritingAction.Skip) },
             colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             enabled = !state.busy && state.saveError == null, modifier = Modifier.fillMaxWidth()) {
             Text("Skip writing")
           }
         } else {
-          TextButton(onClick = onBack, enabled = !state.busy, modifier = Modifier.fillMaxWidth(),
+          TextButton(shape = MaterialTheme.shapes.small, onClick = onBack, enabled = !state.busy, modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
             Text("Continue later")
           }
@@ -237,7 +230,7 @@ private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
     Column(Modifier.padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
       WritingWordHeader(snapshot.word, snapshot.characterIndex)
-      TextButton(onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
         contentColor = colors.writingActive,
         disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) { Text("Listen") }
       if (item != null && item.paths.isNotEmpty()) {
@@ -360,9 +353,9 @@ private fun WritingToolbar(playing: Boolean, canGuide: Boolean, canUndo: Boolean
 @Composable
 private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
   modifier: Modifier = Modifier, onClick: () -> Unit) {
-  TextButton(onClick = onClick, enabled = enabled, modifier = modifier.heightIn(min = 64.dp),
+  TextButton(shape = MaterialTheme.shapes.small, onClick = onClick, enabled = enabled, modifier = modifier.heightIn(min = 64.dp),
     colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
-    contentPadding = PaddingValues(horizontal = 0.dp, vertical = 8.dp), shape = RoundedCornerShape(6.dp)) {
+    contentPadding = PaddingValues(horizontal = 0.dp, vertical = 8.dp)) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
       Icon(icon, contentDescription = if (label == "Next") "Next stroke" else label)
       Text(label, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
@@ -396,7 +389,7 @@ private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class, l
           onPlay = {}, onNext = {}, onReplay = {}, onUndo = {}, onRestart = {})
         Text("Follow the highlighted stroke.", style = MaterialTheme.typography.bodySmall,
           color = FlashcardStyle.colors.gradientSecondaryInk)
-        TextButton(onClick = {}, colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
+        TextButton(shape = MaterialTheme.shapes.small, onClick = {}, colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
           Text("Continue later")
         }
       }
@@ -454,12 +447,12 @@ private object WritingIcons {
 
 @Composable
 private fun WritingError(message: String, button: String, onRetry: () -> Unit) {
-  Surface(color = MaterialTheme.colorScheme.errorContainer, shape = RoundedCornerShape(12.dp)) {
+  Surface(color = MaterialTheme.colorScheme.errorContainer, shape = MaterialTheme.shapes.large) {
     Column(Modifier.fillMaxWidth().padding(14.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
         color = MaterialTheme.colorScheme.onErrorContainer)
-      TextButton(onClick = onRetry) { Text(button) }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onRetry) { Text(button) }
     }
   }
 }

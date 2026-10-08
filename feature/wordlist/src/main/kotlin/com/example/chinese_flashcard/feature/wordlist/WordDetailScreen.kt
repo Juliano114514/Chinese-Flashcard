@@ -2,27 +2,21 @@ package com.example.chinese_flashcard.feature.wordlist
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -52,6 +46,8 @@ import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordPart
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import com.example.chinese_flashcard.core.ui.FlashcardToolbar
+import com.example.chinese_flashcard.core.ui.FlashcardLayout
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
@@ -90,23 +86,19 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
   val enabled = !state.loading && !state.busy && state.writingSessionId == null
   Box(Modifier.fillMaxSize().flashcardBackground()) {
     Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
-      Row(Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 12.dp, vertical = 4.dp),
-        verticalAlignment = Alignment.CenterVertically) {
-        IconButton(onClick = onBack, enabled = !state.busy) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back") }
-        Text("Word", modifier = Modifier.weight(1f), textAlign = TextAlign.Center, style = MaterialTheme.typography.titleMedium)
-        Spacer(Modifier.width(48.dp))
-      }
+      FlashcardToolbar("Word", onBack, Modifier.padding(horizontal = 12.dp, vertical = 4.dp), enabled = !state.busy)
     }, bottomBar = {
-      if (word != null) Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp, vertical = 12.dp),
+      if (word != null) Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)
+        .padding(horizontal = FlashcardLayout.pageInset, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           OutlinedButton(onClick = { onSpeak(word.hanzi) }, enabled = enabled,
-            shape = RoundedCornerShape(8.dp), modifier = Modifier.weight(1f).heightIn(min = 52.dp),
+            shape = MaterialTheme.shapes.medium, modifier = Modifier.weight(1f).heightIn(min = FlashcardLayout.rowHeight),
             colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction)) { Text("Listen") }
-          Button(onClick = onWrite, enabled = enabled, shape = RoundedCornerShape(8.dp),
-            modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text("Write") }
+          Button(onClick = onWrite, enabled = enabled, shape = MaterialTheme.shapes.medium,
+            modifier = Modifier.weight(1f).heightIn(min = FlashcardLayout.rowHeight)) { Text("Write") }
         }
       }
     }) { padding ->
@@ -134,7 +126,7 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
             verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
               color = FlashcardStyle.colors.gradientError)
-            TextButton(onClick = onRetry, enabled = !state.busy,
+            TextButton(shape = MaterialTheme.shapes.small, onClick = onRetry, enabled = !state.busy,
               colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) { Text("Try again") }
           }
         }

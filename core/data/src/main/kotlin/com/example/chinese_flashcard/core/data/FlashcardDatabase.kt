@@ -49,18 +49,24 @@ internal data class WordTracingEntity(val wordId: String, val position: Int, val
 internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: Int = 10,
   val rounds: Int = 4, val reviewDaysJson: String = "[1,3,7]", val welcomed: Boolean = false,
   @ColumnInfo(defaultValue = "''") val displayName: String = "",
-  @ColumnInfo(defaultValue = "'1'") val avatarId: String = "1")
+  @ColumnInfo(defaultValue = "'1'") val avatarId: String = "1",
+  @ColumnInfo(defaultValue = "'SYSTEM'") val themeMode: String = "SYSTEM")
 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
   val day: Long? = null, val selectedKind: String? = null, val currentCardId: String? = null,
   val revision: Long = 0,
   @ColumnInfo(defaultValue = "''") val presetCsvVersion: String = "",
-  val selectedStage: Int? = null)
+  val selectedStage: Int? = null,
+  @ColumnInfo(defaultValue = "0") val growthDays: Long = 0,
+  @ColumnInfo(defaultValue = "0") val learnedCompletions: Long = 0,
+  @ColumnInfo(defaultValue = "0") val clearedMistakes: Long = 0)
 
 @Entity(tableName = "daily_plans")
 internal data class DailyPlanEntity(@PrimaryKey val day: Long, val dailyGoal: Int,
-  val invitationClaimed: Boolean = false)
+  val invitationClaimed: Boolean = false,
+  @ColumnInfo(defaultValue = "0") val loginRewarded: Boolean = false,
+  @ColumnInfo(defaultValue = "0") val learnRewarded: Boolean = false)
 
 @Entity(tableName = "word_progress")
 internal data class WordProgressEntity(@PrimaryKey val wordId: String,
@@ -246,7 +252,7 @@ internal interface FlashcardDao {
   CardEntity::class, WritingSessionEntity::class, WritingCompletionEntity::class,
   StageStateEntity::class, StageCompletionEntity::class, StageDailyPlanEntity::class,
   PracticeSessionEntity::class, PracticeItemEntity::class],
-  version = 8, exportSchema = true)
+  version = 9, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }

@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -37,6 +36,7 @@ import androidx.compose.ui.unit.dp
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.StudyCard
 import com.example.chinese_flashcard.core.domain.WordEntry
+import com.example.chinese_flashcard.core.ui.FlashcardDialog
 import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordUserActions
 
@@ -72,8 +72,7 @@ internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> 
       }
     })
   }
-  if (showActions) AlertDialog(onDismissRequest = { showActions = false }, shape = MaterialTheme.shapes.large,
-    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
+  if (showActions) FlashcardDialog(onDismissRequest = { showActions = false },
     title = {
       Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
         Text(word.hanzi, style = MaterialTheme.typography.headlineSmall)
@@ -99,5 +98,5 @@ internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> 
           }
         }
       }
-    }, confirmButton = { TextButton(onClick = { showActions = false }) { Text("Close") } })
+    }, confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = { showActions = false }) { Text("Close") } })
 }

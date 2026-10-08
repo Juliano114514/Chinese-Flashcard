@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalMinimumInteractiveComponentSize
@@ -66,7 +65,7 @@ fun WordUserActions(isCollected: Boolean, isSkipped: Boolean, enabled: Boolean,
         modifier = Modifier.size(width = actionWidth, height = 48.dp)) {
         CollectionIcon(isCollected, contentDescription = if (isCollected) "Remove from my collection" else "Add to my collection")
       }
-      TextButton(onClick = { confirming = !isSkipped }, enabled = enabled,
+      TextButton(shape = MaterialTheme.shapes.small, onClick = { confirming = !isSkipped }, enabled = enabled,
         modifier = Modifier.defaultMinSize(minWidth = actionWidth).heightIn(min = 48.dp),
         contentPadding = PaddingValues(horizontal = if (compact) 2.dp else 4.dp)) {
         Text(if (isSkipped) "unskip" else "skip", style = MaterialTheme.typography.labelMedium,
@@ -83,13 +82,12 @@ fun WordUserActions(isCollected: Boolean, isSkipped: Boolean, enabled: Boolean,
 @Composable
 fun SkipConfirmationDialog(skip: Boolean, wordLabel: String, enabled: Boolean,
   onDismiss: () -> Unit, onConfirm: () -> Unit) {
-  AlertDialog(onDismissRequest = { if (enabled) onDismiss() }, shape = MaterialTheme.shapes.large,
-    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
+  FlashcardDialog(onDismissRequest = { if (enabled) onDismiss() },
     title = { Text(if (skip) "Skip ${wordLabel.ifBlank { "this word" }}?" else "Unskip ${wordLabel.ifBlank { "this word" }}?") },
     text = { Text(if (skip) "This word will pause in Learn, Review, Collections and Mistakes until you unskip it. Your progress will be kept."
       else "This word will be available again the next time you open its study session.") },
-    confirmButton = { TextButton(onClick = onConfirm, enabled = enabled) { Text(if (skip) "Skip" else "Unskip") } },
-    dismissButton = { TextButton(onClick = onDismiss, enabled = enabled) { Text("Cancel") } })
+    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = enabled) { Text(if (skip) "Skip" else "Unskip") } },
+    dismissButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = enabled) { Text("Cancel") } })
 }
 
 @Preview(name = "Word actions · light", showBackground = true)

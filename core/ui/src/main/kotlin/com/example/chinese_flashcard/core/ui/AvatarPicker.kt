@@ -16,7 +16,6 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -56,8 +55,7 @@ fun AvatarPickerDialog(
   error: String? = null,
 ) {
   var draftId by rememberSaveable { mutableStateOf(selectedId.takeIf(avatarsById::containsKey) ?: DEFAULT_AVATAR_ID) }
-  AlertDialog(onDismissRequest = { if (!saving) onDismiss() }, shape = MaterialTheme.shapes.large,
-    containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp,
+  FlashcardDialog(onDismissRequest = { if (!saving) onDismiss() },
     title = { Text("Choose avatar") }, text = {
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         LazyVerticalGrid(columns = GridCells.Adaptive(56.dp),
@@ -84,8 +82,8 @@ fun AvatarPickerDialog(
         error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
       }
     }, confirmButton = {
-      TextButton(onClick = { onConfirm(draftId) }, enabled = !saving) { Text(if (saving) "Saving…" else "Done") }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = { onConfirm(draftId) }, enabled = !saving) { Text(if (saving) "Saving…" else "Done") }
     }, dismissButton = {
-      TextButton(onClick = onDismiss, enabled = !saving) { Text("Cancel") }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = !saving) { Text("Cancel") }
     })
 }

@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.domain.VocabularyStage
+import com.example.chinese_flashcard.core.domain.ThemeMode
 
 private val Light = lightColorScheme(
   primary = Color(0xFF9C4C16), onPrimary = Color.White,
@@ -122,8 +123,8 @@ private val DarkColors = FlashcardColors(
   writingActive = Color(0xFFF17D76), writingHighlight = Color(0xFFF17D76).copy(alpha = .22f),
   writingGuide = Color(0xFFF17D76).copy(alpha = .65f),
 )
-private val LightOpacity = FlashcardOpacity(explanationPanel = .76f, choicePanel = .86f)
-private val DarkOpacity = FlashcardOpacity(explanationPanel = .92f, choicePanel = .96f)
+private val LightOpacity = FlashcardOpacity(explanationPanel = 1f, choicePanel = 1f)
+private val DarkOpacity = FlashcardOpacity(explanationPanel = 1f, choicePanel = 1f)
 private val LocalColors = staticCompositionLocalOf { LightColors }
 private val LocalOpacity = staticCompositionLocalOf { LightOpacity }
 private val LocalStage = staticCompositionLocalOf { VocabularyStage.PRIMARY }
@@ -141,45 +142,55 @@ object FlashcardStyle {
 }
 private val Type = Typography(
   displayLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 56.sp, lineHeight = 68.sp, fontWeight = FontWeight.Medium),
-  headlineLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 28.sp, lineHeight = 36.sp, fontWeight = FontWeight.SemiBold),
-  headlineMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 24.sp, lineHeight = 32.sp, fontWeight = FontWeight.SemiBold),
-  headlineSmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 22.sp, lineHeight = 30.sp, fontWeight = FontWeight.Medium),
+  headlineLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 24.sp, lineHeight = 32.sp, fontWeight = FontWeight.SemiBold),
+  headlineMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 22.sp, lineHeight = 30.sp, fontWeight = FontWeight.SemiBold),
+  headlineSmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 20.sp, lineHeight = 28.sp, fontWeight = FontWeight.Medium),
   titleLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 20.sp, lineHeight = 28.sp, fontWeight = FontWeight.Medium),
   titleMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 16.sp, lineHeight = 24.sp, fontWeight = FontWeight.Medium),
   titleSmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Medium),
-  labelLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 14.sp, lineHeight = 20.sp, fontWeight = FontWeight.Medium),
+  labelLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 13.sp, lineHeight = 20.sp, fontWeight = FontWeight.Medium),
   labelMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 18.sp, fontWeight = FontWeight.Medium),
   labelSmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 11.sp, lineHeight = 16.sp, fontWeight = FontWeight.Medium),
   bodyLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 16.sp, lineHeight = 24.sp),
-  bodyMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 15.sp, lineHeight = 22.sp),
-  bodySmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 13.sp, lineHeight = 20.sp))
+  bodyMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 14.sp, lineHeight = 22.sp),
+  bodySmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 18.sp))
 private val Corners = Shapes(
   extraSmall = RoundedCornerShape(4.dp),
-  small = RoundedCornerShape(6.dp),
+  small = RoundedCornerShape(8.dp),
   medium = RoundedCornerShape(8.dp),
   large = RoundedCornerShape(12.dp),
   extraLarge = RoundedCornerShape(12.dp))
 
 @Composable
 fun FlashcardTheme(darkTheme: Boolean = isSystemInDarkTheme(),
-  stage: VocabularyStage = VocabularyStage.PRIMARY, content: @Composable () -> Unit) {
+  stage: VocabularyStage = VocabularyStage.PRIMARY, themeMode: ThemeMode = ThemeMode.SYSTEM,
+  content: @Composable () -> Unit) {
+  val dark = when (themeMode) {
+    ThemeMode.LIGHT -> false
+    ThemeMode.DARK -> true
+    ThemeMode.SYSTEM -> darkTheme
+  }
   val palette = StagePalettes.getValue(stage)
-  val scheme = remember(stage, darkTheme) { palette.scheme(if (darkTheme) Dark else Light, darkTheme) }
-  val colors = remember(stage, darkTheme, scheme) {
-    val base = if (darkTheme) DarkColors else LightColors
+  val scheme = remember(stage, dark) { palette.scheme(if (dark) Dark else Light, dark) }
+  val colors = remember(stage, dark, scheme) {
+    val base = if (dark) DarkColors else LightColors
     base.copy(
-      gradientStart = if (darkTheme) palette.darkStart else palette.lightStart,
+      gradientStart = scheme.background,
       gradientMiddle = scheme.background,
-      gradientEnd = if (darkTheme) palette.darkEnd else palette.lightEnd,
+      gradientEnd = scheme.background,
       gradientAction = scheme.primary,
       gradientSecondaryInk = scheme.onSurfaceVariant,
+      writingPaper = scheme.surface, writingInk = scheme.onSurface,
+      writingSecondaryInk = scheme.onSurfaceVariant,
+      writingGrid = scheme.onSurface.copy(alpha = if (dark) .22f else .16f),
+      writingGhost = scheme.onSurface.copy(alpha = if (dark) .14f else .09f),
     )
   }
   CompositionLocalProvider(
     LocalColors provides colors,
-    LocalOpacity provides if (darkTheme) DarkOpacity else LightOpacity,
+    LocalOpacity provides if (dark) DarkOpacity else LightOpacity,
     LocalStage provides stage,
-    LocalDarkTheme provides darkTheme,
+    LocalDarkTheme provides dark,
   ) {
     MaterialTheme(colorScheme = scheme,
       typography = Type, shapes = Corners, content = content)
