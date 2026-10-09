@@ -2,6 +2,16 @@
 
 版本配置以 `app/build.gradle.kts` 为准，升级规则见 [AGENTS.md](AGENTS.md)。按版本倒序，同版本只有一个条目。
 
+## 1.3.1 — 2026-10-09
+
+- versionCode：`5`。
+- 升级原因：本次请求交付 Debug APK，补丁位统一升级一次。
+- 变更摘要：基于已提交的 1.3.0 源码打包，包含主题颜色修复、Wordlist 选中态配色和 QQ 等级 PNG 图标；同步当前版本说明。
+- 实际验证：`:app:assembleDebug` 通过；APK 元数据为 `1.3.1 / versionCode 5` 且标记 debuggable。产物重命名为 `Chinese_Flashcard_v1.3.1.apk` 并导出到桌面；桌面文件与构建产物 SHA-256 一致。版本改动 diff 安全与空白自查通过。
+- 验证边界：上述 Debug 打包轮次未新增测试代码、未安装设备，当时未提交或推送。
+- 同版本后续维护：按用户要求保持 `1.3.1 / versionCode 5`，新增 GitHub CI、版本变更检测、签名 APK 与 Release 发布流程；签名仅使用仓库 Secrets，PR 不接触签名材料。后续 CI／发布验证以对应 GitHub Actions 运行记录为准。
+- CI 配置本地验证：三个现有 Python `--check` 通过；工作流 YAML 结构、Actions 完整 SHA 固定、Python 语法和 10 个 shell 步骤的 `bash -n` 通过；用实际前序提交检查版本差异，正确识别 `1.3.1` 发布条件。diff 安全自查未发现秘密入库或 PR 读取签名材料。
+
 ## 1.3.0 — 2026-10-09
 
 - versionCode：`4`。
