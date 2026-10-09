@@ -69,7 +69,7 @@ jobs:
         if: needs.version.outputs.publish == 'true'
         run: bash ./gradlew --no-daemon :app:assembleRelease
       - name: Upload Debug APK
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6, Node 24
         with:
           name: Chinese-Flashcard-debug-${{ needs.version.outputs.version }}
           path: app/build/outputs/apk/debug/app-debug.apk
@@ -77,7 +77,7 @@ jobs:
           retention-days: 14
       - name: Upload unsigned Release for signing
         if: needs.version.outputs.publish == 'true'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6, Node 24
         with:
           name: unsigned-release
           path: app/build/outputs/apk/release/app-release-unsigned.apk
@@ -85,7 +85,7 @@ jobs:
           retention-days: 1
       - name: Upload lint reports
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6, Node 24
         with:
           name: lint-reports
           path: app/build/reports/lint-results-debug.*
@@ -135,7 +135,7 @@ jobs:
             published=$(python3 -c 'import json,sys; print(str(not json.load(open(sys.argv[1]))["isDraft"]).lower())' "$RUNNER_TEMP/existing-release.json")
           fi
           echo "published=$published" >> "$GITHUB_OUTPUT"
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7, Node 24
         if: steps.existing.outputs.published != 'true'
         with:
           name: unsigned-release

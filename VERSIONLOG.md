@@ -12,6 +12,7 @@
 - 同版本后续维护：按用户要求保持 `1.3.1 / versionCode 5`，新增 GitHub CI、版本变更检测、签名 APK 与 Release 发布流程；签名仅使用仓库 Secrets，PR 不接触签名材料。后续 CI／发布验证以对应 GitHub Actions 运行记录为准。
 - CI 配置本地验证：三个现有 Python `--check` 通过；工作流 YAML 结构、Actions 完整 SHA 固定、Python 语法和 10 个 shell 步骤的 `bash -n` 通过；用实际前序提交检查版本差异，正确识别 `1.3.1` 发布条件。diff 安全自查未发现秘密入库或 PR 读取签名材料。
 - 云端发布验证：[Actions #1](https://github.com/Juliano114514/Chinese-Flashcard/actions/runs/37908806713) 的 version、build、release 全部通过，三个数据检查、lintDebug（0 错误、15 警告）、assembleDebug、assembleRelease、签名、ZIP 对齐及 APK 身份／版本／非调试检查通过。[v1.3.1 Release](https://github.com/Juliano114514/Chinese-Flashcard/releases/tag/v1.3.1) 已公开，源码提交 `ab0b416`；APK 为 36,800,948 字节，SHA-256 为 `828fce6ba9a86032493cdebccb3b92bccab5061709856543be513e1df9e72570`。下载后的附件哈希、签名和对齐再次核对通过；未安装设备或执行运行验收。
+- CI 维护：依据首轮 Actions 的 Node 20 弃用提示，将附件传输 Actions 固定到采用 Node 24 的 upload-artifact v6／download-artifact v7；不改变版本、签名步骤或已公开的 Release。
 
 ## 1.3.0 — 2026-10-09
 
