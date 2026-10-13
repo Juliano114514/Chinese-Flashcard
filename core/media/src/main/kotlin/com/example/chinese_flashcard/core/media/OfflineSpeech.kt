@@ -109,6 +109,8 @@ class OfflineSpeech(context: Context) : AutoCloseable {
       .distinct().take(3).toList()
     preloadJob = scope.launch {
       try {
+        // Let navigation settle; rapidly replaced pages cancel before native model work starts.
+        delay(220)
         withTimeout(15_000L) { withContext(Dispatchers.IO) {
           english.prepare()
           for (text in candidates) english.synthesize(text)

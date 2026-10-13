@@ -58,6 +58,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.StudySnapshot
+import com.example.chinese_flashcard.core.domain.StudyCard
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.domain.TodaySummary
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
@@ -157,10 +159,12 @@ private fun TodayContent(
             style = MaterialTheme.typography.labelMedium, maxLines = 1, softWrap = false)
         }
       }
-      HomeWordShowcase(state = state, stage = stage, onShuffle = onShuffle,
+      HomeWordShowcase(word = state.homeWord, wordError = state.homeWordError, wordStage = state.homeWordStage,
+        hasToday = today != null, loading = state.loading, busy = state.busy, stage = stage, onShuffle = onShuffle,
         modifier = Modifier.weight(1f).fillMaxWidth())
       Spacer(Modifier.height(16.dp))
-      HomeStudyPanel(state = state, onStart = onStart, onResume = onResume,
+      HomeStudyPanel(today = today, card = state.card, busy = state.busy, error = state.error,
+        onStart = onStart, onResume = onResume,
         onLearnMore = onLearnMore, onLearnMoreBlocked = onLearnMoreBlocked,
         onRetry = onRetry, onWordlist = onWordlist,
         modifier = Modifier.fillMaxWidth().heightIn(max = panelMaxHeight))
@@ -170,35 +174,39 @@ private fun TodayContent(
 
 @Composable
 private fun HomeWordShowcase(
-  state: StudyUiState,
+  word: WordlistItem?,
+  wordError: Boolean,
+  wordStage: VocabularyStage?,
+  hasToday: Boolean,
+  loading: Boolean,
+  busy: Boolean,
   stage: VocabularyStage,
   onShuffle: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
-  val today = state.today
   Box(modifier) {
     Column(Modifier.align(Alignment.Center).fillMaxWidth().padding(horizontal = 16.dp, vertical = 48.dp)
       .verticalScroll(rememberScrollState()), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(16.dp)) {
       when {
-        state.loading -> LoadingNotice()
-        state.homeWord != null && state.homeWord.difficulty == stage.rarity -> {
-          Text(state.homeWord.pinyin, style = MaterialTheme.typography.titleLarge,
+        loading -> LoadingNotice()
+        word != null && word.difficulty == stage.rarity -> {
+          Text(word.pinyin, style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
-          Text(state.homeWord.hanzi, style = MaterialTheme.typography.displayMedium.copy(fontSize = 48.sp),
+          Text(word.hanzi, style = MaterialTheme.typography.displayMedium.copy(fontSize = 48.sp),
             color = MaterialTheme.colorScheme.onBackground, textAlign = TextAlign.Center)
-          Text(listOf(state.homeWord.partOfSpeech.localizedPartOfSpeech(), state.homeWord.english)
+          Text(listOf(word.partOfSpeech.localizedPartOfSpeech(), word.english)
             .filter { it.isNotBlank() }.joinToString(" · "), style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         }
-        state.homeWordError -> Text(uiString(UiR.string.ui_couldn_t_load_a_word_tap_shuffle_to_retry), textAlign = TextAlign.Center)
-        today != null && state.homeWordStage != stage -> LoadingNotice()
-        today != null -> Text(uiString(UiR.string.ui_no_words_in_this_stage_yet), color = MaterialTheme.colorScheme.onSurfaceVariant,
+        wordError -> Text(uiString(UiR.string.ui_couldn_t_load_a_word_tap_shuffle_to_retry), textAlign = TextAlign.Center)
+        hasToday && wordStage != stage -> LoadingNotice()
+        hasToday -> Text(uiString(UiR.string.ui_no_words_in_this_stage_yet), color = MaterialTheme.colorScheme.onSurfaceVariant,
           textAlign = TextAlign.Center)
       }
     }
-    TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !state.loading && !state.busy &&
-      (state.homeWord != null || state.homeWordError), modifier = Modifier.align(Alignment.BottomEnd)) {
+    TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !loading && !busy &&
+      (word != null || wordError), modifier = Modifier.align(Alignment.BottomEnd)) {
       Text(uiString(UiR.string.ui_shuffle))
     }
   }
@@ -206,7 +214,10 @@ private fun HomeWordShowcase(
 
 @Composable
 private fun HomeStudyPanel(
-  state: StudyUiState,
+  today: TodaySummary?,
+  card: StudyCard?,
+  busy: Boolean,
+  error: UiMessageKey?,
   onStart: (StudyKind) -> Unit,
   onResume: () -> Unit,
   onLearnMore: () -> Unit,
@@ -215,15 +226,14 @@ private fun HomeStudyPanel(
   onWordlist: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
-  val today = state.today
   Surface(modifier = modifier, shape = MaterialTheme.shapes.extraLarge,
     color = MaterialTheme.colorScheme.surface) {
     Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(20.dp),
       verticalArrangement = Arrangement.spacedBy(16.dp)) {
       if (today != null) {
-        val resume = state.card?.takeIf { it.phase != CardPhase.FINISHED }
+        val resume = card?.takeIf { it.phase != CardPhase.FINISHED }
         val open: (HomeAction) -> Unit = { action ->
-          if (!state.busy) when (action) {
+          if (!busy) when (action) {
             HomeAction.RESUME -> onResume()
             HomeAction.CARRYOVER -> onStart(StudyKind.CARRYOVER)
             HomeAction.REVIEW -> onStart(StudyKind.REVIEW)
@@ -245,34 +255,34 @@ private fun HomeStudyPanel(
         }
         val learn = when {
           resume?.kind == StudyKind.NEW || resume?.kind == StudyKind.CARRYOVER ->
-            HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_continue_word), "", false, !state.busy, HomeAction.RESUME)
+            HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_continue_word), "", false, !busy, HomeAction.RESUME)
           today.carryoverCompleted < today.carryoverPlanned ->
             HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_unfinished_words), uiString(UiR.string.ui_fraction, today.carryoverCompleted, today.carryoverPlanned),
-              false, !state.busy, HomeAction.CARRYOVER)
-          else -> learnRow(today, state.busy)
+              false, !busy, HomeAction.CARRYOVER)
+          else -> learnRow(today, busy)
             ?: HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_no_new_words), "", false, false, HomeAction.LEARN)
         }
         val review = if (resume?.kind == StudyKind.REVIEW) {
-          HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_continue_word), "", false, !state.busy, HomeAction.RESUME)
+          HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_continue_word), "", false, !busy, HomeAction.RESUME)
         } else {
           val done = today.reviewPlanned > 0 && today.reviewCompleted >= today.reviewPlanned
           HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_nothing_due), if (today.reviewPlanned > 0)
             uiString(UiR.string.ui_fraction, today.reviewCompleted, today.reviewPlanned) else "", done,
-            !state.busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
+            !busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           HomeActionButton(learn, Modifier.weight(1f)) { open(learn.action) }
           HomeActionButton(review, Modifier.weight(1f)) { open(review.action) }
         }
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          practiceRows(today, state.busy).forEach { row ->
+          practiceRows(today, busy).forEach { row ->
             val kind = if (row.action == HomeAction.COLLECTIONS) StudyKind.COLLECTION else StudyKind.MISTAKES
-            val button = if (resume?.kind == kind) row.copy(enabled = !state.busy, action = HomeAction.RESUME) else row
+            val button = if (resume?.kind == kind) row.copy(enabled = !busy, action = HomeAction.RESUME) else row
             HomeActionButton(button, Modifier.weight(1f), primary = false) { open(button.action) }
           }
         }
       }
-      state.error?.let { ErrorNotice(it, !state.busy, onRetry) }
+      error?.let { ErrorNotice(it, !busy, onRetry) }
     }
   }
 }

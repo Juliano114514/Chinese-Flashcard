@@ -78,17 +78,19 @@ internal fun StudyCompletionEffects(cardId: String?, directionGeneration: Long, 
   }
   val palette = listOf(MaterialTheme.colorScheme.primary, FlashcardStyle.colors.success,
     MaterialTheme.colorScheme.tertiary, MaterialTheme.colorScheme.secondary)
-  if (progress < 1f) Canvas(modifier) {
-    val fade = ((1f - progress) / .35f).coerceIn(0f, 1f) * .8f
+  Canvas(modifier) {
+    val currentProgress = progress
+    if (currentProgress >= 1f) return@Canvas
+    val fade = ((1f - currentProgress) / .35f).coerceIn(0f, 1f) * .8f
     repeat(18) { index ->
       val spread = (index - 8.5f) / 8.5f
-      val x = size.width * .5f + spread * size.width * (.12f + .36f * progress)
-      val y = size.height * .16f + progress * size.height * .26f -
-        sin(PI * progress).toFloat() * (40f + index % 4 * 9f) * density
+      val x = size.width * .5f + spread * size.width * (.12f + .36f * currentProgress)
+      val y = size.height * .16f + currentProgress * size.height * .26f -
+        sin(PI * currentProgress).toFloat() * (40f + index % 4 * 9f) * density
       val center = Offset(x, y)
       val color = palette[index % palette.size].copy(alpha = fade)
       if (index % 3 == 0) drawCircle(color, radius = 2.5f * density, center = center)
-      else rotate(index * 27f + progress * 160f, pivot = center) {
+      else rotate(index * 27f + currentProgress * 160f, pivot = center) {
         drawRoundRect(color, topLeft = Offset(x - 2f * density, y - 4f * density),
           size = Size(4f * density, 8f * density), cornerRadius = CornerRadius(2f * density))
       }

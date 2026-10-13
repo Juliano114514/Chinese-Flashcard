@@ -8,10 +8,13 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.automirrored.filled.List
@@ -35,7 +38,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.navigation.compose.*
+import androidx.navigation.NavBackStackEntry
 import com.example.chinese_flashcard.core.data.FlashcardRepositories
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.CsvSource
@@ -47,6 +52,7 @@ import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.SpeechScene
+import com.example.chinese_flashcard.core.domain.SpeechOptions
 import com.example.chinese_flashcard.core.media.EnglishPronunciations
 import com.example.chinese_flashcard.core.ui.AppLanguageProvider
 import com.example.chinese_flashcard.core.ui.LocalExplanationOptions
@@ -55,6 +61,7 @@ import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
+import com.example.chinese_flashcard.core.ui.FlashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.flashcardBackground
@@ -179,7 +186,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     StudyViewModel(repositories.study, repositories.settings, repositories.wordState, repositories.wordlist)
   })
   val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
-  val wordlist: WordlistViewModel = viewModel(factory = factory { WordlistViewModel(repositories.wordlist) })
+  val sharedViewModelOwner = requireNotNull(LocalViewModelStoreOwner.current)
   val context = LocalContext.current
   val resolver = context.applicationContext.contentResolver
   val csvPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
@@ -234,32 +241,13 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val entry by nav.currentBackStackEntryAsState()
   val route = entry?.destination?.route
   DisposableEffect(entry, speech) { onDispose { manualPlayback.job?.cancel(); speech.stop() } }
-  val state by study.state.collectAsStateWithLifecycle()
-  LaunchedEffect(speech, entry, state.card?.id, state.homeWord?.id, settings.speechOptions) {
-    if (route !in listOf("today", "study", "word/{wordId}", "writing/{id}", "word-writing/{id}")) return@LaunchedEffect
-    val word = state.card?.word
-    val candidates = listOfNotNull(state.homeWord?.english, word?.meanings?.firstOrNull()?.english,
-      word?.examples?.firstOrNull()?.english)
-    speech.preloadEnglish(candidates)
-  }
+  val studyState = study.state.collectAsStateWithLifecycle()
+  val studyBusy by remember(studyState) { derivedStateOf { studyState.value.busy } }
+  val stage by remember(studyState) { derivedStateOf { studyState.value.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY } }
   var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Int>?>(null) }
-  LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
-    val request = learnMoreRequest ?: return@LaunchedEffect
-    if (route != "today" || state.today?.date != request.first ||
-      state.today?.stageProgress?.stage?.rarity != request.third) {
-      learnMoreRequest = null
-    } else if (!state.busy) {
-      if ((state.today?.newPlanned ?: 0) > request.second && state.card?.kind == StudyKind.NEW &&
-        state.card?.phase != CardPhase.FINISHED) {
-        learnMoreRequest = null
-        nav.navigate("study") { launchSingleTop = true }
-      } else if (state.error == null) {
-        learnMoreRequest = null
-      }
-      // A failed request stays on Home; its existing Retry can complete this same request.
-    }
-  }
-  BackHandler(enabled = route == "study" && state.busy) { }
+  StudyNavigationEffects(studyState, speech, entry, route, settings.speechOptions, learnMoreRequest,
+    onRequestHandled = { learnMoreRequest = null }, onStudy = { nav.navigate("study") { launchSingleTop = true } })
+  BackHandler(enabled = route == "study" && studyBusy) { }
   val openWriting: (String) -> Unit = { id ->
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
@@ -274,9 +262,10 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   }
   AppLanguageProvider(settings.uiLanguage) {
   CompositionLocalProvider(LocalExplanationOptions provides settings.explanationOptions) {
-  FlashcardTheme(stage = state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY, themeMode = settings.themeMode) {
+  FlashcardTheme(stage = stage, themeMode = settings.themeMode) {
   FlashcardSystemBars()
-  Scaffold(modifier = Modifier.flashcardBackground(), containerColor = Color.Transparent,
+  FlashcardBackground {
+  Scaffold(containerColor = Color.Transparent,
     contentWindowInsets = if (route == "study" || route == "word/{wordId}")
       WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
       else ScaffoldDefaults.contentWindowInsets,
@@ -291,6 +280,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         containerColor = Color.Transparent, tonalElevation = 0.dp) {
         listOf("today" to UiR.string.ui_home, "profile" to UiR.string.ui_profile, "wordlist" to UiR.string.ui_wordlist).forEach { (destination, label) ->
           NavigationBarItem(selected = route == destination, onClick = {
+            if (nav.currentDestination?.route == destination) return@NavigationBarItem
             if (destination == "today") {
               if (route != "today" && !nav.popBackStack("today", inclusive = false)) {
                 nav.navigate("today") { launchSingleTop = true }
@@ -318,7 +308,9 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       }
     }
   }) { padding ->
-    NavHost(nav, startDestination = "today", modifier = Modifier.padding(padding).consumeWindowInsets(padding)) {
+    NavHost(nav, startDestination = "today", modifier = Modifier.padding(padding).consumeWindowInsets(padding),
+      enterTransition = { fadeIn(tween(180)) }, exitTransition = { fadeOut(tween(120)) },
+      popEnterTransition = { fadeIn(tween(180)) }, popExitTransition = { fadeOut(tween(120)) }) {
       composable("today") {
         TodayScreen(study, onStart = { kind -> study.start(kind); nav.navigate("study") { launchSingleTop = true } },
           onResume = { study.refresh(); nav.navigate("study") { launchSingleTop = true } }, onWriting = openWriting,
@@ -343,7 +335,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         csvImportProgress = repositories.csvImport.progress,
         defaultWordlistLoading = defaultWordlist.loading,
         defaultWordlistError = defaultWordlist.error,
-        languageSwitchEnabled = !state.busy,
+        languageSwitchEnabled = !studyBusy,
         onRetryDefaultWordlist = {
           if (defaultWordlistRetry.job?.isActive != true) {
             defaultWordlistRetry.job = navigationScope.launch {
@@ -356,6 +348,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       composable("reading-options") { ReadingOptionsScreen(profile) { nav.popBackStack() } }
       composable("explanation-options") { ExplanationOptionsScreen(profile) { nav.popBackStack() } }
       composable("wordlist") {
+        val wordlist: WordlistViewModel = viewModel(viewModelStoreOwner = sharedViewModelOwner,
+          factory = factory { WordlistViewModel(repositories.wordlist) })
         WordlistScreen(wordlist, onWord = { id -> nav.navigate("word/$id") { launchSingleTop = true } })
       }
       composable("word/{wordId}") { detailEntry ->
@@ -411,11 +405,45 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       composable("licenses") { LicenseScreen { nav.popBackStack() } }
     }
   }
+  }
   if (openLanguages && route == "today") LanguagesDialog(profile, initial = settings,
-    enabled = !state.busy && !defaultWordlist.loading,
+    enabled = !studyBusy && !defaultWordlist.loading,
     onDismiss = { openLanguages = false; profile.beginEdit() })
   }
   }
+  }
+}
+
+/** Read detailed study updates here so card/shuffle changes do not rebuild the navigation host. */
+@Composable
+private fun StudyNavigationEffects(studyState: State<StudyUiState>,
+  speech: OfflineSpeech, entry: NavBackStackEntry?, route: String?, speechOptions: SpeechOptions,
+  learnMoreRequest: Triple<String, Int, Int>?, onRequestHandled: () -> Unit, onStudy: () -> Unit) {
+  val state by studyState
+  LaunchedEffect(speech, entry, state.card?.id, state.homeWord?.id, speechOptions) {
+    val candidates = when (route) {
+      "today" -> if (speechOptions.mode(SpeechScene.HOME_WORD, state.settings.learningLanguage).allows(AppLanguage.EN))
+        listOfNotNull(state.homeWord?.english) else emptyList()
+      "study" -> state.card?.word?.let { word ->
+        listOfNotNull(word.meanings.firstOrNull()?.english, word.examples.firstOrNull()?.english)
+      }.orEmpty()
+      else -> emptyList() // Detail owns its text; tracing does not need the previous study card's English.
+    }
+    if (candidates.isNotEmpty()) speech.preloadEnglish(candidates)
+  }
+  LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
+    val request = learnMoreRequest ?: return@LaunchedEffect
+    if (route != "today" || state.today?.date != request.first ||
+      state.today?.stageProgress?.stage?.rarity != request.third) {
+      onRequestHandled()
+    } else if (!state.busy) {
+      if ((state.today?.newPlanned ?: 0) > request.second && state.card?.kind == StudyKind.NEW &&
+        state.card?.phase != CardPhase.FINISHED) {
+        onRequestHandled()
+        onStudy()
+      } else if (state.error == null) onRequestHandled()
+      // A failed request stays on Home; its existing Retry can complete this same request.
+    }
   }
 }
 
@@ -430,24 +458,43 @@ private fun LicenseScreen(onBack: () -> Unit) {
           "english-speech/LICENSES.txt", "english-teaching/LICENSES.txt").joinToString("\n\n") { name ->
           context.assets.open(name).bufferedReader().use { it.readText() }
         }
-        LicenseText(text = text, loading = false)
+        val sections = mutableListOf<String>()
+        var start = 0
+        Regex("\\r?\\n\\r?\\n").findAll(text).forEach { boundary ->
+          val end = boundary.range.last + 1
+          if (end - start >= 4_000) {
+            sections += text.substring(start, end)
+            start = end
+          }
+        }
+        if (start < text.length) sections += text.substring(start)
+        LicenseText(sections = sections, loading = false)
       } catch (error: CancellationException) { throw error }
       catch (_: Exception) { LicenseText(loading = false, failed = true) }
     }
   }
-  Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
+  LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(20.dp),
     verticalArrangement = Arrangement.spacedBy(14.dp)) {
+    item(key = "header", contentType = "header") {
     FlashcardToolbar(uiString(UiR.string.ui_sources_licenses), onBack)
+    }
+    item(key = "intro", contentType = "intro") {
+    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
     Text(uiString(UiR.string.ui_default_vocabulary_bundled_wordlist_csv_dictionary_attribution_and_content_sources_are_listed_below))
     Text(uiString(UiR.string.ui_legacy_demo_vocabulary_and_examples_original_teaching_material_retained_when_upgrading))
     Text(uiString(UiR.string.ui_additional_vocabulary_local_csv_wordlists_imported_in_settings))
     Text(uiString(UiR.string.ui_stroke_outlines_and_medians_make_me_a_hanzi_supplemented_by_animcjk_selected_glyphs_are_bundled_for_offline_writing_under_the_arphic_public_license))
-    Text(when {
-      licenses.loading -> uiString(UiR.string.ui_loading)
-      licenses.failed -> uiString(UiMessageKey.SOURCE_LICENSES_COULD_NOT_BE_READ_PLEASE_REOPEN_THIS_PAGE)
-      else -> licenses.text
-    }, style = MaterialTheme.typography.bodySmall)
+    }
+    }
+    if (licenses.loading || licenses.failed) item(key = "status", contentType = "status") {
+      Text(if (licenses.loading) uiString(UiR.string.ui_loading)
+        else uiString(UiMessageKey.SOURCE_LICENSES_COULD_NOT_BE_READ_PLEASE_REOPEN_THIS_PAGE),
+        style = MaterialTheme.typography.bodySmall)
+    }
+    itemsIndexed(licenses.sections, key = { index, _ -> "license/$index" }, contentType = { _, _ -> "license" }) { _, text ->
+      Text(text, style = MaterialTheme.typography.bodySmall)
+    }
   }
 }
 
-private data class LicenseText(val text: String = "", val loading: Boolean = true, val failed: Boolean = false)
+private data class LicenseText(val sections: List<String> = emptyList(), val loading: Boolean = true, val failed: Boolean = false)

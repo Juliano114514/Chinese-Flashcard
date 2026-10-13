@@ -65,6 +65,7 @@ import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.launch
 
 @Composable
@@ -73,8 +74,9 @@ fun WordlistScreen(vm: WordlistViewModel, onWord: (String) -> Unit) {
   val listState = rememberLazyListState(vm.scrollIndex, vm.scrollOffset)
   val scope = rememberCoroutineScope()
   LaunchedEffect(vm, listState) {
-    snapshotFlow { listState.firstVisibleItemIndex to listState.firstVisibleItemScrollOffset }
-      .collect { (index, offset) -> if (!vm.state.value.loading) vm.rememberScroll(index, offset) }
+    snapshotFlow { listState.isScrollInProgress }.filter { !it }.collect {
+      if (!vm.state.value.loading) vm.rememberScroll(listState.firstVisibleItemIndex, listState.firstVisibleItemScrollOffset)
+    }
   }
   DisposableEffect(vm, listState) {
     onDispose { vm.rememberScroll(listState.firstVisibleItemIndex, listState.firstVisibleItemScrollOffset) }
@@ -95,7 +97,7 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
   Surface(Modifier.fillMaxSize().flashcardBackground(), color = Color.Transparent) {
     LazyColumn(state = listState, contentPadding = PaddingValues(FlashcardLayout.pageInset),
       verticalArrangement = Arrangement.spacedBy(12.dp)) {
-      item(key = "header") {
+      item(key = "header", contentType = "header") {
         Column(verticalArrangement = Arrangement.spacedBy(20.dp), modifier = Modifier.padding(bottom = 4.dp)) {
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -165,12 +167,12 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
         }
       }
       if (!state.loading && state.error == null && state.entries.isEmpty()) {
-        item(key = "empty") {
+        item(key = "empty", contentType = "empty") {
           Text(uiString(if (state.total == 0) UiR.string.ui_no_words_in_your_wordlist else UiR.string.ui_no_matching_words),
             modifier = Modifier.padding(vertical = 24.dp), color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
       }
-      items(state.entries, key = { "word/${it.id}" }) { entry ->
+      items(state.entries, key = { "word/${it.id}" }, contentType = { "word" }) { entry ->
         WordlistRow(entry, onClick = { onWord(entry.id) })
       }
     }

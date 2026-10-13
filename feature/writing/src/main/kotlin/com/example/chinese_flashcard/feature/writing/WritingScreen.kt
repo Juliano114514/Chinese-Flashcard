@@ -40,6 +40,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -47,8 +48,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.MotionDurationScale
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -97,7 +100,7 @@ import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.currentCoroutineContext
 import java.text.Normalizer
 import kotlin.math.ceil
 import kotlin.math.floor
@@ -164,7 +167,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   val latestSpeak by rememberUpdatedState(onSpeak)
   var spokenPosition by rememberSaveable(snapshot.id) { mutableStateOf<String?>(null) }
   var playing by rememberSaveable(key) { mutableStateOf(false) }
-  var frame by rememberSaveable(key) { mutableFloatStateOf(0f) }
+  val frame = rememberSaveable(key) { mutableFloatStateOf(0f) }
   var guideShown by rememberSaveable(key) { mutableStateOf(false) }
   val owner = LocalLifecycleOwner.current
   var resumed by remember(owner) {
@@ -173,7 +176,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   DisposableEffect(owner, key) {
     val observer = LifecycleEventObserver { _, event ->
       resumed = owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
-      if (event == Lifecycle.Event.ON_STOP) playing = false
+      if (event == Lifecycle.Event.ON_PAUSE || event == Lifecycle.Event.ON_STOP) playing = false
     }
     owner.lifecycle.addObserver(observer)
     onDispose { owner.lifecycle.removeObserver(observer); playing = false }
@@ -186,16 +189,23 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   }
   LaunchedEffect(playing, key) {
     if (playing && item != null) {
-      while (playing && frame < item.paths.size) {
-        delay(24)
-        frame = (frame + .025f).coerceAtMost(item.paths.size.toFloat())
+      val scale = currentCoroutineContext()[MotionDurationScale]?.scaleFactor ?: 1f
+      if (scale <= 0f) frame.floatValue = item.paths.size.toFloat()
+      else {
+        var previous = withFrameNanos { it }
+        while (playing && frame.floatValue < item.paths.size) {
+          val now = withFrameNanos { it }
+          frame.floatValue = (frame.floatValue + (now - previous) / (960_000_000f * scale))
+            .coerceAtMost(item.paths.size.toFloat())
+          previous = now
+        }
       }
       playing = false
     }
   }
   Text(uiString(UiR.string.ui_writing_word_character, uiString(UiR.string.ui_fraction, snapshot.wordIndex + 1, snapshot.totalWords), uiString(UiR.string.ui_fraction, snapshot.characterIndex + 1, glyphs.size)),
     style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
-  WritingPaper(snapshot, key, guideShown, frame,
+  WritingPaper(snapshot, key, guideShown, frame = { frame.floatValue },
     listenEnabled = !state.busy && currentGlyph != null,
     strokeEnabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < (item?.paths?.size ?: 0),
     onListen = { currentGlyph?.let(onSpeak) }, onStroke = { onAction(WritingAction.Stroke(it)) })
@@ -204,18 +214,17 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
       canUndo = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty(),
       onPlay = {
         guideShown = true
-        if (frame >= item.paths.size) frame = 0f
+        if (frame.floatValue >= item.paths.size) frame.floatValue = 0f
         playing = !playing
       }, onNext = {
         guideShown = true
         playing = false
-        frame = (floor(frame) + 1f).coerceAtMost(item.paths.size.toFloat())
-      }, onReplay = { guideShown = true; frame = 0f; playing = true },
+        frame.floatValue = (floor(frame.floatValue) + 1f).coerceAtMost(item.paths.size.toFloat())
+      }, onReplay = { guideShown = true; frame.floatValue = 0f; playing = true },
       onUndo = { playing = false; onAction(WritingAction.Undo) }, onRestart = {
-        playing = false; guideShown = false; frame = 0f; onAction(WritingAction.Restart)
+        playing = false; guideShown = false; frame.floatValue = 0f; onAction(WritingAction.Restart)
       })
-    if (guideShown) Text(uiString(UiR.string.ui_strokes_shown, uiString(UiR.string.ui_fraction, ceil(frame).toInt(), item.paths.size)),
-      style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
+    if (guideShown) StrokeGuideProgress(frame = { frame.floatValue }, total = item.paths.size)
   }
   snapshot.feedback?.let { Text(uiString(it), style = MaterialTheme.typography.bodyMedium) }
   Text(uiString(UiR.string.ui_follow_the_highlighted_stroke),
@@ -225,8 +234,15 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
 }
 
 @Composable
+private fun StrokeGuideProgress(frame: () -> Float, total: Int) {
+  val shown by remember(frame) { derivedStateOf { ceil(frame()).toInt() } }
+  Text(uiString(UiR.string.ui_strokes_shown, uiString(UiR.string.ui_fraction, shown, total)),
+    style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
+}
+
+@Composable
 private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
-  guideShown: Boolean, frame: Float, listenEnabled: Boolean, strokeEnabled: Boolean,
+  guideShown: Boolean, frame: () -> Float, listenEnabled: Boolean, strokeEnabled: Boolean,
   onListen: () -> Unit, onStroke: (List<StrokePoint>) -> Unit) {
   val colors = FlashcardStyle.colors
   val item = snapshot.item
@@ -388,7 +404,7 @@ private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class, l
         Text(uiString(UiR.string.ui_writing), style = MaterialTheme.typography.titleMedium)
         Text(uiString(UiR.string.ui_writing_word_character, uiString(UiR.string.ui_fraction, 1, 1), uiString(UiR.string.ui_fraction, 1, 1)), color = FlashcardStyle.colors.gradientSecondaryInk,
           style = MaterialTheme.typography.labelLarge)
-        WritingPaper(snapshot, "preview", guideShown = false, frame = 0f,
+        WritingPaper(snapshot, "preview", guideShown = false, frame = { 0f },
           listenEnabled = true, strokeEnabled = false, onListen = {}, onStroke = {})
         WritingToolbar(playing = false, canGuide = true, canUndo = false,
           onPlay = {}, onNext = {}, onReplay = {}, onUndo = {}, onRestart = {})
@@ -465,11 +481,19 @@ private fun WritingError(message: UiMessageKey, button: String, onRetry: () -> U
 /** The horizontal/vertical grid is a 田字格. Coordinates match the stored stroke geometry. */
 @Composable
 private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, drawingKey: String,
-  guideShown: Boolean, frame: Float, enabled: Boolean, onStroke: (List<StrokePoint>) -> Unit) {
+  guideShown: Boolean, frame: () -> Float, enabled: Boolean, onStroke: (List<StrokePoint>) -> Unit) {
   val colors = FlashcardStyle.colors
   val gridDescription = uiString(UiR.string.ui_four_square_tracing_grid_draw_one_stroke_at_a_time)
   val paths = remember(item.id, item.revision) { item.paths.map { PathParser().parsePathString(it).toPath() } }
   val medians = remember(item.id, item.revision) { item.medians.map { StrokeMatcher.resample(it, 80) } }
+  val acceptedPaths = remember(accepted) { accepted.filter { it.isNotEmpty() }.map { points ->
+    Path().apply {
+      moveTo(points.first().x, points.first().y)
+      for (index in 1 until points.size) lineTo(points[index].x, points[index].y)
+    }
+  } }
+  val medianPath = remember(drawingKey) { Path() }
+  val drawingPath = remember(drawingKey) { Path() }
   var drawing by remember(drawingKey) { mutableStateOf(emptyList<StrokePoint>()) }
   val latestStroke by rememberUpdatedState(onStroke)
   Canvas(Modifier.fillMaxWidth().aspectRatio(1f).clip(RoundedCornerShape(2.dp))
@@ -502,15 +526,16 @@ private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, d
     withTransform({ translate(inset, inset + 900f / 1024f * side); scale(side / 1024f, -side / 1024f, Offset.Zero) }) {
       paths.forEach { drawPath(it, colors.writingGhost) }
       if (accepted.size < paths.size) drawPath(paths[accepted.size], colors.writingHighlight)
+      val progress = frame()
       if (guideShown) paths.forEachIndexed { index, path ->
         when {
-          frame >= index + 1 -> drawPath(path, colors.writingActive)
-          frame > index -> {
-            val points = medians[index].take((medians[index].size * (frame - index)).toInt().coerceAtLeast(1))
-            val medianPath = Path().apply {
-              moveTo(points.first().x, points.first().y)
-              points.drop(1).forEach { lineTo(it.x, it.y) }
-            }
+          progress >= index + 1 -> drawPath(path, colors.writingActive)
+          progress > index -> {
+            val points = medians[index]
+            val count = (points.size * (progress - index)).toInt().coerceIn(1, points.size)
+            medianPath.reset()
+            medianPath.moveTo(points.first().x, points.first().y)
+            for (point in 1 until count) medianPath.lineTo(points[point].x, points[point].y)
             clipPath(path) { drawPath(medianPath, colors.writingActive, style = Stroke(130f, cap = StrokeCap.Round)) }
           }
         }
@@ -521,12 +546,15 @@ private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, d
         drawCircle(colors.writingGuide, 10f, Offset(points.last().x, points.last().y))
       }
     }
-    (accepted + listOf(drawing)).filter { it.isNotEmpty() }.forEach { points ->
-      val path = Path().apply {
-        moveTo(inset + points.first().x * side, inset + points.first().y * side)
-        points.drop(1).forEach { lineTo(inset + it.x * side, inset + it.y * side) }
+    withTransform({ translate(inset, inset); scale(side, side, Offset.Zero) }) {
+      acceptedPaths.forEach { drawPath(it, colors.writingActive, style = Stroke(.035f, cap = StrokeCap.Round)) }
+      val points = drawing
+      if (points.isNotEmpty()) {
+        drawingPath.reset()
+        drawingPath.moveTo(points.first().x, points.first().y)
+        for (point in 1 until points.size) drawingPath.lineTo(points[point].x, points[point].y)
+        drawPath(drawingPath, colors.writingActive, style = Stroke(.035f, cap = StrokeCap.Round))
       }
-      drawPath(path, colors.writingActive, style = Stroke(side * .035f, cap = StrokeCap.Round))
     }
   }
 }

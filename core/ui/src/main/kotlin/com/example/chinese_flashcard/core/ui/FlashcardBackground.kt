@@ -8,9 +8,13 @@ import android.graphics.Shader
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
@@ -21,9 +25,20 @@ import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 
+private val LocalBackgroundDrawn = staticCompositionLocalOf { false }
+
+/** Navigation destinations share one stationary decoration, including during transitions. */
+@Composable
+fun FlashcardBackground(content: @Composable () -> Unit) {
+  Box(Modifier.fillMaxSize().flashcardBackground()) {
+    CompositionLocalProvider(LocalBackgroundDrawn provides true, content = content)
+  }
+}
+
 /** Stage-tinted background. Only the cached decorative layer is blurred, never the content. */
 @Composable
 fun Modifier.flashcardBackground(): Modifier {
+  if (LocalBackgroundDrawn.current) return this
   val accent = MaterialTheme.colorScheme.primary
   val tint = accent.copy(alpha = if (FlashcardStyle.darkTheme) .07f else .09f)
   val decorationModifier = remember(tint) { Modifier.drawWithCache {

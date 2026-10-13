@@ -7,6 +7,7 @@ import android.view.ContextThemeWrapper
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -43,10 +44,12 @@ fun AppLanguageProvider(language: AppLanguage, content: @Composable () -> Unit) 
 
 /** Standard resource resolution also works directly through Compose stringResource. */
 @Composable
+@ReadOnlyComposable
 fun uiString(@StringRes id: Int, vararg arguments: Any): String =
   if (arguments.isEmpty()) stringResource(id) else stringResource(id, *arguments)
 
 @Composable
+@ReadOnlyComposable
 fun uiPlural(@PluralsRes id: Int, quantity: Int, vararg arguments: Any): String =
   if (arguments.isEmpty()) pluralStringResource(id, quantity)
   else pluralStringResource(id, quantity, *arguments)
@@ -177,6 +180,7 @@ fun UiMessageKey.stringResourceId(): Int = when (this) {
 }
 
 @Composable
+@ReadOnlyComposable
 fun uiString(key: UiMessageKey, vararg arguments: Any): String =
   uiString(key.stringResourceId(), *arguments)
 
@@ -184,6 +188,7 @@ fun uiText(context: Context, key: UiMessageKey, language: AppLanguage, vararg ar
   uiText(context, key.stringResourceId(), language, *arguments)
 
 @Composable
+@ReadOnlyComposable
 fun VocabularyStage.localizedLabel(): String = uiString(when (this) {
   VocabularyStage.PRIMARY -> R.string.ui_primary_school
   VocabularyStage.MIDDLE -> R.string.ui_middle_school
@@ -193,6 +198,7 @@ fun VocabularyStage.localizedLabel(): String = uiString(when (this) {
 })
 
 @Composable
+@ReadOnlyComposable
 fun AppLanguage.localizedLabel(): String = uiString(when (this) {
   AppLanguage.EN -> R.string.ui_english
   AppLanguage.CN -> R.string.ui_chinese
@@ -200,6 +206,7 @@ fun AppLanguage.localizedLabel(): String = uiString(when (this) {
 
 /** Translate presentation labels only; custom wordlist content stays intact. */
 @Composable
+@ReadOnlyComposable
 fun String.localizedPartOfSpeech(): String {
   if (LocalAppLanguage.current != AppLanguage.CN || isBlank()) return this
   val resources = LocalResources.current
