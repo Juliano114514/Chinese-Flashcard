@@ -63,6 +63,7 @@ jobs:
           python3 tools/rebuild_wordlist.py --check
           python3 tools/build_wordlist_strokes.py --check
           python3 tools/build_demo.py --check
+          python3 tools/build_english_resources.py --check
       - name: Lint and compile Debug
         run: bash ./gradlew --no-daemon :app:lintDebug :app:assembleDebug
       - name: Compile unsigned Release

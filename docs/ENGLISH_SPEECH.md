@@ -22,7 +22,7 @@
 
 - `modelPath` 指向原始 ONNX，`modelSha256` 校验复制进应用缓存的模型。
 - `stylePath` 指向 `bella.f32`，`styleSha256` 校验原始声音字节；小端 float32、400 行、256 列、无文件头，顺序为 row-major。
-- `sampleRate=24000`、`speedPrior=0.8`、`trimTailSamples=5000`；语速先验只应用一次，不再叠乘旧中文语速。
+- `sampleRate=24000`、`speedPrior=0.8`、`trimTailSamples=5000`；冻结资源保持原值，运行时将英语速度倍率 `1.2` 与声线先验相乘一次，模型输入为 `0.96`。设备离线英语回退也由 `0.8` 提高到 `0.96`，中文保持 `0.8`。
 - `hashPrefixChars=2`，`shardPattern=english-speech/shard_{prefix}.json`；前缀是下述 SHA-256 的前两个十六进制字符。
 - `maxTokenCount=510`；当前最长实际输入为 237 个 token。
 
@@ -31,6 +31,16 @@
 每个 chunk 的 ONNX 输入为 `input_ids: int64[1,N]`、`style: float32[1,256]` 和 `speed: float32[1]`。`styleRow` 已按预处理后的 chunk 长度计算 `min(length,399)`，播放器按此值读取矩阵的一行。模型输出展开为 float32 PCM，逐 chunk 去除末尾 5000 个样本后顺序播放；样本不足时报告失败，不补造音频。该规则来自固定 Kitten 官方 `onnx_model.py`。
 
 NPZ 仅为下载缓存中的声音来源，生成器使用 `numpy.load(..., allow_pickle=False)` 读取并验证所有浮点数有限，运行时只携带原始 float32 文件。APK 资源中无 `.npz`、`.npy`、Python、eSpeak DLL、eSpeak 语言数据或 sherpa native 库。
+
+## 加载与响应
+
+`OfflineSpeech.preloadEnglish()` 在后台提前读取、校验和加载模型／声线；`preloadEnglish(texts)` 还会预合成最多三条去重英语文本，可在当前学习卡片或详情内容变化时调用。预热不播放、不申请音频焦点、不显示失败提示，实际朗读仍保留设备离线英语回退。页面切换、应用停止与关闭通过既有 `stop()`／`close()` 取消预热；真实朗读优先取消预热，活动朗读期间不启动新的预热。
+
+近期合成结果仅保留在本次语音实例的内存中，按最近使用顺序限制为 24 条和 8 MiB PCM；关闭实例时清除，不写入用户文本或录音文件。发音 JSON 分片缓存仍限制为八片，模型缓存复制及 SHA-256 校验规则不变。
+
+首次未缓存的多片文本在第一片推理结束后开始播放，后台继续合成后续片，最多额外排队一片 PCM，不再等待整段推理结束。已开始播放后发生推理错误只报告失败，避免回退声音从头重复已经读过的文本。所有朗读仍有 30 秒截止时间。协程取消在片间及播放写入间生效，已进入的 ONNX 原生推理调用可能要等当前片返回，预热不保证在点击前完成。
+
+英语速度倍率遵循固定 [Kitten 官方输入实现](https://github.com/KittenML/KittenTTS/blob/8ed679c08e0976b236bd5d0dc4ec9ddd98b0da98/kittenml/kittentts_legacy/onnx_model.py)，不通过提高采样率改变音调。上述路径消除了可重复的加载／推理等待；实际首声延迟、片间连续性和音质需要 Android 设备测量，静态检查不能证明性能提升幅度。
 
 ## 词库覆盖与音标
 

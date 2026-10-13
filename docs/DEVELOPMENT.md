@@ -1,10 +1,10 @@
 # 开发与维护
 
-当前仓库版本为 `1.3.1 / versionCode 5`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；不表示应用已经打包或上线。
+当前仓库版本为 `1.4.0 / versionCode 6`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；不表示应用已经打包或上线。
 
 ## 工程与环境
 
-Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v10 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
+Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v11 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
 
@@ -65,3 +65,11 @@ UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）�
 英语资源由 `tools/build_english_resources.py` 生成；`--check` 只读验证冻结 CSV 哈希、模型／音标来源、分片哈希、token 覆盖与许可引用。资源生成和模型准备需要明确的联网下载与写入授权，不发生在普通应用构建或运行时。配置、固定版本、覆盖和复现方法见 [英语语音维护](ENGLISH_SPEECH.md)。APK 仅使用 ONNX Runtime、Kitten ONNX、Bella 原始浮点声线及发音 JSON，不携带构建期 phonemizer、Python 或其 GPL 运行代码。
 
 本次功能未升级应用版本。实际 lint／数据检查与未覆盖的设备行为以本轮交付为准；词库来源的既有授权待核实项继续保留。
+
+## 朗读与讲解偏好
+
+设置页的朗读选项进入二级页，枚举首页、学习题干、答题前例句、初见与讲解自动朗读、答题反馈、词条详情自动朗读、点击词语、点击英语释义、点击例句及写字页共十个场景。各自可选不朗读、仅英语、仅汉语或两种都读，选择立即保存到本地。自动场景未单独设置时沿用当前学习语言；手动词语默认汉语、释义默认英语、例句默认双语。只有实际存在的对应文本可参与朗读，答题前不朗读对照答案；写字单字没有英语对应项时跳过英语。关闭声音不会阻塞答题反馈或推进。
+
+讲解选项控制例句的原句、拼音、拆分直译和英语翻译。取消拆分直译后，原句与拼音使用整句；未全选时点击例句可展开或恢复，全部取消仍有展开入口。答题前展开仅恢复目标语言的内容。Room 10→11 只向设置表添加朗读模式与显示选项，不改词库和学习记录。
+
+学习页保持词头、释义、例句、本义／引申义、部件及原有操作入口，重新组织字号、留白和反馈层级；底部操作固定，大字体时双按钮上下排列。本轮源码／lint 与资源检查不能替代真机语音延迟、音质、迁移和排版验收。

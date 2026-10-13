@@ -4,7 +4,7 @@
 
 ## 日常使用
 
-- push 到 `main` 或向 `main` 发起 PR：准备固定版本的上游笔顺缓存，执行三个现有 Python `--check`、`:app:lintDebug` 和 `:app:assembleDebug`。Debug APK 和 lint 报告保存 14 天。
+- push 到 `main` 或向 `main` 发起 PR：准备固定版本的上游笔顺缓存，执行词库、笔顺、演示数据和英语资源四个现有 Python `--check`、`:app:lintDebug` 和 `:app:assembleDebug`。Debug APK 和 lint 报告保存 14 天。
 - `main` push 前后 `app/build.gradle.kts` 的 `versionName` 变大且 `versionCode` 递增：上述 CI 成功后编译 Release，再签名、验证并发布 `v<versionName>`。版本回退或只改其中一个字段会拒绝发布。
 - 普通代码或文档提交未改版本：只运行 CI。更新版本时同步 `VERSIONLOG.md`，每个版本保留一个条目；发布说明读取该条目。
 - 首次发布或失败重试：在工作流页面点击 **Run workflow**，选择 `main`，勾选 `publish_release`。默认不勾选，手动运行仅检查。无需额外增加版本号，也无需手工推标签。

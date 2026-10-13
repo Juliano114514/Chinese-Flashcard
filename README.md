@@ -37,13 +37,14 @@
 | feature/profile | 设置、统计与导入 |
 | feature/wordlist | 词库浏览、详情与手动书写入口 |
 
-使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v10。应用使用本地数据库和已安装的离线普通话 TTS，当前主 Manifest 未声明联网或录音权限；隐私边界见下方说明。
+使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v11。应用使用本地数据库和已安装的离线普通话 TTS，当前主 Manifest 未声明联网或录音权限；隐私边界见下方说明。
 
 ## 开发与维护文档
 
 - [开发与维护](docs/DEVELOPMENT.md)：环境、当前数据、工具入口、再现和验证边界。
 - [GitHub CI 与自动发布](docs/CI_RELEASE.md)：版本变更触发签名 APK 与 Release。
 - [CSV 格式与导入](docs/CSV_IMPORT.md)：12 列契约、限制、追加和事务。
+- [Compose 性能分析](docs/COMPOSE_PERFORMANCE.md)：页面层级、状态触发范围、真机采样和验证边界。
 - [版本日志](VERSIONLOG.md)、[仓库规则](AGENTS.md)、[贡献规范](CONTRIBUTING.md)。
 - [版权处理](docs/OPEN_SOURCE_COMPLIANCE.md)、[第三方声明](THIRD_PARTY_NOTICES.md)、[隐私](PRIVACY.md)、[安全报告](SECURITY.md)。
 
