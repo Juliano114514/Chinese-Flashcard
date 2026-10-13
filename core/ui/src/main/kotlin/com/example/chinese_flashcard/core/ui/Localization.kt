@@ -12,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import com.example.chinese_flashcard.core.domain.AppLanguage
@@ -33,6 +34,9 @@ fun AppLanguageProvider(language: AppLanguage, content: @Composable () -> Unit) 
     LocalAppLanguage provides language,
     LocalContext provides localizedContext,
     LocalConfiguration provides localizedContext.resources.configuration,
+    // Dialog and popup owners replace LocalContext and LocalConfiguration. Keep the
+    // saved app language's resources explicit so their content inherits it too.
+    LocalResources provides localizedContext.resources,
     content = content,
   )
 }
@@ -187,6 +191,112 @@ fun VocabularyStage.localizedLabel(): String = uiString(when (this) {
   VocabularyStage.UNIVERSITY -> R.string.ui_university
   VocabularyStage.CHINESE_STUDIES -> R.string.ui_specialist
 })
+
+@Composable
+fun AppLanguage.localizedLabel(): String = uiString(when (this) {
+  AppLanguage.EN -> R.string.ui_english
+  AppLanguage.CN -> R.string.ui_chinese
+})
+
+/** Translate presentation labels only; custom wordlist content stays intact. */
+@Composable
+fun String.localizedPartOfSpeech(): String {
+  if (LocalAppLanguage.current != AppLanguage.CN || isBlank()) return this
+  val resources = LocalResources.current
+  val labels = split(Regex("\\s*[;/]\\s*")).map { part ->
+    partOfSpeechResourceIds[part.trim().lowercase(Locale.ROOT)] ?: return this
+  }
+  return labels.joinToString(" · ", transform = resources::getString)
+}
+
+private val partOfSpeechResourceIds = mapOf(
+  "adjective" to R.string.ui_pos_adjective,
+  "adjective phrase" to R.string.ui_pos_adjective_phrase,
+  "adjective-aspect phrase" to R.string.ui_pos_adjective_aspect_phrase,
+  "adverb" to R.string.ui_pos_adverb,
+  "adverb pattern" to R.string.ui_pos_adverb_pattern,
+  "adverb phrase" to R.string.ui_pos_adverb_phrase,
+  "adverbial phrase" to R.string.ui_pos_adverbial_phrase,
+  "adverbial time phrase" to R.string.ui_pos_adverbial_time_phrase,
+  "auxiliary" to R.string.ui_pos_auxiliary,
+  "auxiliary verb phrase" to R.string.ui_pos_auxiliary_verb_phrase,
+  "bound adjective" to R.string.ui_pos_bound_adjective,
+  "bound form" to R.string.ui_pos_bound_form,
+  "bound morpheme" to R.string.ui_pos_bound_morpheme,
+  "bound noun" to R.string.ui_pos_bound_noun,
+  "bound verb" to R.string.ui_pos_bound_verb,
+  "causative verb phrase" to R.string.ui_pos_causative_verb_phrase,
+  "classifier" to R.string.ui_pos_classifier,
+  "classifier phrase" to R.string.ui_pos_classifier_phrase,
+  "clause" to R.string.ui_pos_clause,
+  "comparative adverb phrase" to R.string.ui_pos_comparative_adverb_phrase,
+  "complement" to R.string.ui_pos_complement,
+  "conjunction" to R.string.ui_pos_conjunction,
+  "degree complement" to R.string.ui_pos_degree_complement,
+  "demonstrative phrase" to R.string.ui_pos_demonstrative_phrase,
+  "demonstrative pronoun" to R.string.ui_pos_demonstrative_pronoun,
+  "determiner" to R.string.ui_pos_determiner,
+  "expression" to R.string.ui_pos_expression,
+  "formula" to R.string.ui_pos_formula,
+  "idiom" to R.string.ui_pos_idiom,
+  "interjection" to R.string.ui_pos_interjection,
+  "interrogative adverb" to R.string.ui_pos_interrogative_adverb,
+  "interrogative expression" to R.string.ui_pos_interrogative_expression,
+  "interrogative phrase" to R.string.ui_pos_interrogative_phrase,
+  "interrogative pronoun" to R.string.ui_pos_interrogative_pronoun,
+  "interrogative time phrase" to R.string.ui_pos_interrogative_time_phrase,
+  "location noun" to R.string.ui_pos_location_noun,
+  "location phrase" to R.string.ui_pos_location_phrase,
+  "location word" to R.string.ui_pos_location_word,
+  "locational noun" to R.string.ui_pos_locational_noun,
+  "locational noun phrase" to R.string.ui_pos_locational_noun_phrase,
+  "locative expression" to R.string.ui_pos_locative_expression,
+  "locative noun" to R.string.ui_pos_locative_noun,
+  "locative phrase" to R.string.ui_pos_locative_phrase,
+  "locative verb phrase" to R.string.ui_pos_locative_verb_phrase,
+  "measure word" to R.string.ui_pos_measure_word,
+  "modal phrase" to R.string.ui_pos_modal_phrase,
+  "modal verb" to R.string.ui_pos_modal_verb,
+  "modal verb phrase" to R.string.ui_pos_modal_verb_phrase,
+  "modifier" to R.string.ui_pos_modifier,
+  "negative copular phrase" to R.string.ui_pos_negative_copular_phrase,
+  "noun" to R.string.ui_pos_noun,
+  "noun phrase" to R.string.ui_pos_noun_phrase,
+  "number phrase" to R.string.ui_pos_number_phrase,
+  "numeral" to R.string.ui_pos_numeral,
+  "numeral-classifier phrase" to R.string.ui_pos_numeral_classifier_phrase,
+  "numeral-noun phrase" to R.string.ui_pos_numeral_noun_phrase,
+  "numeral-time phrase" to R.string.ui_pos_numeral_time_phrase,
+  "onomatopoeia" to R.string.ui_pos_onomatopoeia,
+  "ordinal number" to R.string.ui_pos_ordinal_number,
+  "ordinal-classifier phrase" to R.string.ui_pos_ordinal_classifier_phrase,
+  "particle" to R.string.ui_pos_particle,
+  "phrase" to R.string.ui_pos_phrase,
+  "postnominal phrase" to R.string.ui_pos_postnominal_phrase,
+  "postposition" to R.string.ui_pos_postposition,
+  "potential complement" to R.string.ui_pos_potential_complement,
+  "preposition" to R.string.ui_pos_preposition,
+  "prepositional phrase" to R.string.ui_pos_prepositional_phrase,
+  "prepositional time phrase" to R.string.ui_pos_prepositional_time_phrase,
+  "pronoun" to R.string.ui_pos_pronoun,
+  "pronoun phrase" to R.string.ui_pos_pronoun_phrase,
+  "proper noun" to R.string.ui_pos_proper_noun,
+  "quantity phrase" to R.string.ui_pos_quantity_phrase,
+  "resultative-aspect phrase" to R.string.ui_pos_resultative_aspect_phrase,
+  "suffix" to R.string.ui_pos_suffix,
+  "time adverb" to R.string.ui_pos_time_adverb,
+  "time expression" to R.string.ui_pos_time_expression,
+  "time localizer" to R.string.ui_pos_time_localizer,
+  "time noun" to R.string.ui_pos_time_noun,
+  "time noun phrase" to R.string.ui_pos_time_noun_phrase,
+  "time phrase" to R.string.ui_pos_time_phrase,
+  "time word" to R.string.ui_pos_time_word,
+  "title" to R.string.ui_pos_title,
+  "verb" to R.string.ui_pos_verb,
+  "verb phrase" to R.string.ui_pos_verb_phrase,
+  "verb-aspect construction" to R.string.ui_pos_verb_aspect_construction,
+  "verb-complement construction" to R.string.ui_pos_verb_complement_construction,
+)
 
 private fun Context.withAppLanguage(language: AppLanguage,
   baseConfiguration: Configuration = resources.configuration): Context {

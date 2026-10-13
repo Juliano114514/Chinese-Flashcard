@@ -2,7 +2,8 @@ package com.example.chinese_flashcard.core.domain
 
 enum class AppLanguage { EN, CN }
 
-data class SpeechRequest(val text: String, val language: AppLanguage)
+data class SpeechRequest(val text: String, val language: AppLanguage,
+  val scene: SpeechScene = SpeechScene.WORD_PRONUNCIATION, val counterpart: String? = null)
 
 data class LearningContext(val learningLanguage: AppLanguage, val version: Long)
 

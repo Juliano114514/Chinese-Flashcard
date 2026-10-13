@@ -52,7 +52,9 @@ internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: 
   @ColumnInfo(defaultValue = "'1'") val avatarId: String = "1",
   @ColumnInfo(defaultValue = "'SYSTEM'") val themeMode: String = "SYSTEM",
   @ColumnInfo(defaultValue = "'EN'") val uiLanguage: String = "EN",
-  @ColumnInfo(defaultValue = "'CN'") val learningLanguage: String = "CN")
+  @ColumnInfo(defaultValue = "'CN'") val learningLanguage: String = "CN",
+  @ColumnInfo(defaultValue = "'{}'") val speechModesJson: String = "{}",
+  @ColumnInfo(defaultValue = "15") val explanationMask: Int = 15)
 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
@@ -298,7 +300,7 @@ internal interface FlashcardDao {
   StageStateEntity::class, StageCompletionEntity::class, StageDailyPlanEntity::class,
   PracticeSessionEntity::class, PracticeItemEntity::class,
   LearningContextEntity::class, WordBookmarkEntity::class, DailyGrowthRewardEntity::class],
-  version = 10, exportSchema = true)
+  version = 11, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }

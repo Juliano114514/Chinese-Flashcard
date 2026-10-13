@@ -14,6 +14,8 @@ import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.TodaySummary
 import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.SpeechOptions
+import com.example.chinese_flashcard.core.domain.ExplanationOptions
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -49,6 +51,8 @@ data class ProfileUpdate(
   val themeMode: ThemeMode? = null,
   val uiLanguage: AppLanguage? = null,
   val learningLanguage: AppLanguage? = null,
+  val speechOptions: SpeechOptions? = null,
+  val explanationOptions: ExplanationOptions? = null,
 ) {
   fun applyTo(value: StudySettings): StudySettings {
     dailyWords?.let { require(DailyWordChoices.isAllowed(it)) { "Daily words must be 5–50 in steps of 5." } }
@@ -61,6 +65,8 @@ data class ProfileUpdate(
       themeMode = themeMode ?: value.themeMode,
       uiLanguage = uiLanguage ?: value.uiLanguage,
       learningLanguage = learningLanguage ?: value.learningLanguage,
+      speechOptions = speechOptions ?: value.speechOptions,
+      explanationOptions = explanationOptions ?: value.explanationOptions,
     )
   }
 }

@@ -13,7 +13,8 @@ data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
 data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
   val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
   val displayName: String = "", val avatarId: String = "1", val themeMode: ThemeMode = ThemeMode.SYSTEM,
-  val uiLanguage: AppLanguage = AppLanguage.EN, val learningLanguage: AppLanguage = AppLanguage.CN) {
+  val uiLanguage: AppLanguage = AppLanguage.EN, val learningLanguage: AppLanguage = AppLanguage.CN,
+  val speechOptions: SpeechOptions = SpeechOptions(), val explanationOptions: ExplanationOptions = ExplanationOptions()) {
   fun validate() {
     require(dailyWords in 1..100 && rounds in 2..8)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())

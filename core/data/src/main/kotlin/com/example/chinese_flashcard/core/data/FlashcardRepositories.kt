@@ -22,6 +22,7 @@ import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONException
+import org.json.JSONObject
 import java.io.IOException
 import java.time.LocalDate
 import java.time.ZoneId
@@ -33,7 +34,7 @@ data class DefaultWordlistState(val loading: Boolean = false, val error: UiMessa
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
-    .addMigrations(Migration7To8, Migration8To9, Migration9To10).build()
+    .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -189,7 +190,10 @@ class FlashcardRepositories(context: Context) {
         dao.putSettings(SettingsEntity(dailyWords = value.dailyWords, rounds = value.rounds,
           reviewDaysJson = daysJson(value.reviewDays), welcomed = value.welcomed,
           displayName = value.displayName.trim(), avatarId = value.avatarId, themeMode = value.themeMode.name,
-          uiLanguage = value.uiLanguage.name, learningLanguage = value.learningLanguage.name))
+          uiLanguage = value.uiLanguage.name, learningLanguage = value.learningLanguage.name,
+          speechModesJson = JSONObject().apply {
+            value.speechOptions.modes.forEach { (scene, mode) -> put(scene.name, mode.name) }
+          }.toString(), explanationMask = value.explanationOptions.mask))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -1064,5 +1068,13 @@ class FlashcardRepositories(context: Context) {
   }
 
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
-    displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage))
+    displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
+    speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask))
+
+  private fun speechOptions(json: String): SpeechOptions {
+    val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }
+    return SpeechOptions(SpeechScene.entries.mapNotNull { scene ->
+      SpeechMode.entries.firstOrNull { it.name == values.optString(scene.name) }?.let { scene to it }
+    }.toMap())
+  }
 }
