@@ -1,5 +1,6 @@
 package com.example.chinese_flashcard.core.data
 
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import java.io.InputStream
 import java.io.BufferedInputStream
 import java.io.Reader
@@ -11,7 +12,7 @@ import java.nio.charset.MalformedInputException
 internal const val CSV_MAX_ROWS = 20000
 internal const val CSV_MAX_BYTES = 32L * 1024 * 1024
 
-internal class CsvFormatException(val line: Int, val fieldIndex: Int, message: String) : IllegalArgumentException(message)
+internal class CsvFormatException(val line: Int, val fieldIndex: Int, val code: UiMessageKey) : IllegalArgumentException(code.name)
 internal data class CsvRecord(val line: Int, val fields: List<String>)
 
 /** Bounded RFC 4180 records, including quoted commas, doubled quotes and embedded newlines. */
@@ -27,11 +28,11 @@ internal class CsvParser(input: InputStream) : AutoCloseable {
     var state = 0 // 0: empty field, 1: unquoted, 2: quoted, 3: closing quote
     var bytes = 0
     var seen = false
-    fun fail(message: String): Nothing = throw CsvFormatException(line, fields.size, message)
+    fun fail(message: UiMessageKey): Nothing = throw CsvFormatException(line, fields.size, message)
     fun readCharacter(): Int = try { reader.read() }
-    catch (_: java.nio.charset.CharacterCodingException) { fail("This field contains invalid UTF-8 bytes.") }
+    catch (_: java.nio.charset.CharacterCodingException) { fail(UiMessageKey.THIS_FIELD_CONTAINS_INVALID_UTF_8_BYTES) }
     fun finishField() {
-      if (fields.size >= 64) fail("A record has more than 64 columns.")
+      if (fields.size >= 64) fail(UiMessageKey.A_RECORD_HAS_MORE_THAN_64_COLUMNS)
       fields += value.toString()
       value.setLength(0)
       state = 0
@@ -39,7 +40,7 @@ internal class CsvParser(input: InputStream) : AutoCloseable {
     while (true) {
       val read = readCharacter()
       if (read < 0) {
-        if (state == 2) fail("A quoted field is not closed.")
+        if (state == 2) fail(UiMessageKey.A_QUOTED_FIELD_IS_NOT_CLOSED)
         if (!seen) return null
         finishField()
         return CsvRecord(startLine, fields)
@@ -56,12 +57,12 @@ internal class CsvParser(input: InputStream) : AutoCloseable {
         character.isHighSurrogate() || character.isLowSurrogate() -> 2
         else -> 3
       }
-      if (bytes > 32 * 1024) fail("A record is larger than 32 KiB.")
+      if (bytes > 32 * 1024) fail(UiMessageKey.A_RECORD_IS_LARGER_THAN_32_KIB)
       if (character == '\r' || character == '\n') {
         if (character == '\r') {
           // Look only for the ASCII LF byte; do not decode the next record ahead of its location.
           if (reader.consumeLineFeed()) bytes++
-          if (bytes > 32 * 1024) fail("A record is larger than 32 KiB.")
+          if (bytes > 32 * 1024) fail(UiMessageKey.A_RECORD_IS_LARGER_THAN_32_KIB)
         }
         if (state == 2) {
           value.append('\n')
@@ -82,14 +83,14 @@ internal class CsvParser(input: InputStream) : AutoCloseable {
         }
         1 -> when (character) {
           ',' -> finishField()
-          '"' -> fail("A quote must start a quoted field.")
+          '"' -> fail(UiMessageKey.A_QUOTE_MUST_START_A_QUOTED_FIELD)
           else -> value.append(character)
         }
         2 -> if (character == '"') state = 3 else value.append(character)
         3 -> when (character) {
           '"' -> { value.append('"'); state = 2 }
           ',' -> finishField()
-          else -> fail("Only a comma or newline may follow a closing quote.")
+          else -> fail(UiMessageKey.ONLY_A_COMMA_OR_NEWLINE_MAY_FOLLOW_A_CLOSING_QUOTE)
         }
       }
     }

@@ -6,6 +6,7 @@ import androidx.room.withTransaction
 import com.example.chinese_flashcard.core.domain.*
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -13,6 +14,8 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -24,14 +27,16 @@ import java.time.LocalDate
 import java.time.ZoneId
 import java.util.UUID
 
-data class DefaultWordlistState(val loading: Boolean = false, val error: String? = null)
+data class DefaultWordlistState(val loading: Boolean = false, val error: UiMessageKey? = null)
 
 /** One application-scoped owner. The rebuilt library starts in its own database. */
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
-    .addMigrations(Migration7To8, Migration8To9).build()
-  private val dao = database.flashcards()
+    .addMigrations(Migration7To8, Migration8To9, Migration9To10).build()
+  private val rawDao = database.flashcards()
+  private var learningLanguage = AppLanguage.CN
+  private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
   private var prepared = false
@@ -51,7 +56,7 @@ class FlashcardRepositories(context: Context) {
   val writing: WritingRepository = LocalWriting()
   val wordlist: WordlistRepository = LocalWordlist()
   val wordState: WordStateRepository = LocalWordState()
-  private val csvImporter: CsvImporter = CsvImporter(app, database, dao, operationMutex,
+  private val csvImporter: CsvImporter = CsvImporter(app, database, rawDao, operationMutex,
     ::prepare, ::touch, ::reconcilePresetStages)
   val csvImport: CsvImportRepository = csvImporter
 
@@ -67,7 +72,7 @@ class FlashcardRepositories(context: Context) {
       mutableDefaultWordlistState.value = DefaultWordlistState(loading = true)
       var hasSavedWordlist = false
       try {
-        hasSavedWordlist = dao.appState()?.seeded == true
+        hasSavedWordlist = rawDao.appState()?.seeded == true
         csvImporter.cleanStaleSnapshots()
         csvImporter.bootstrapDefaultWordlist { mutableDefaultWordlistProgress.value = it }
         prepared = true
@@ -77,12 +82,12 @@ class FlashcardRepositories(context: Context) {
         throw error
       } catch (error: Exception) {
         mutableDefaultWordlistState.value = DefaultWordlistState(error =
-          if (error is PresetCardConflictException) error.message else "Default wordlist couldn't be loaded.")
+          if (error is PresetCardConflictException) error.code else UiMessageKey.DEFAULT_WORDLIST_COULDN_T_BE_LOADED)
         if (hasSavedWordlist) {
           // Preserve the usable library and avoid retrying on every snapshot in this process.
           prepared = true
         } else {
-          throw IllegalStateException("Default wordlist couldn't be loaded.", error)
+          throw UiMessageException(UiMessageKey.DEFAULT_WORDLIST_COULDN_T_BE_LOADED, error)
         }
       }
     }
@@ -90,7 +95,12 @@ class FlashcardRepositories(context: Context) {
 
   private suspend fun <T> transaction(block: suspend () -> T): T {
     prepare()
-    return operationMutex.withLock { database.withTransaction { block() } }
+    return operationMutex.withLock {
+      database.withTransaction {
+        learningLanguage = AppLanguage.valueOf(checkNotNull(rawDao.settings()).learningLanguage)
+        block()
+      }
+    }
   }
 
   private fun today(): Long = LocalDate.now(ZoneId.systemDefault()).toEpochDay()
@@ -104,6 +114,16 @@ class FlashcardRepositories(context: Context) {
 
   /** Called only inside preset bootstrap's Room transaction; never re-enters prepare or its locks. */
   private suspend fun reconcilePresetStages() {
+    val previous = learningLanguage
+    try {
+      for (language in AppLanguage.entries) {
+        learningLanguage = language
+        reconcilePresetStageDirection()
+      }
+    } finally { learningLanguage = previous }
+  }
+
+  private suspend fun reconcilePresetStageDirection() {
     val words = dao.studyWords().associateBy { it.id }
     val states = dao.stageStates().associateBy { it.stage }.toMutableMap()
     for (rarity in words.values.map { it.rarity }.distinct()) {
@@ -165,18 +185,26 @@ class FlashcardRepositories(context: Context) {
     override suspend fun save(value: StudySettings) {
       value.validate()
       transaction {
+        val previousLanguage = checkNotNull(dao.settings()).learningLanguage
         dao.putSettings(SettingsEntity(dailyWords = value.dailyWords, rounds = value.rounds,
           reviewDaysJson = daysJson(value.reviewDays), welcomed = value.welcomed,
-          displayName = value.displayName.trim(), avatarId = value.avatarId, themeMode = value.themeMode.name))
+          displayName = value.displayName.trim(), avatarId = value.avatarId, themeMode = value.themeMode.name,
+          uiLanguage = value.uiLanguage.name, learningLanguage = value.learningLanguage.name))
+        if (previousLanguage != value.learningLanguage.name) {
+          val state = appState()
+          dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
+        }
         touch()
       }
     }
   }
 
+  @OptIn(ExperimentalCoroutinesApi::class)
   private inner class LocalWordlist : WordlistRepository {
     override val entries: Flow<List<WordlistItem>> = flow {
       prepare()
-      emitAll(dao.observeWordlist().map { rows ->
+      emitAll(rawDao.observeSettings().map { checkNotNull(it).learningLanguage }.distinctUntilChanged()
+        .flatMapLatest { rawDao.observeWordlist(it) }.map { rows ->
         rows.map { row ->
           val learningStatus = when {
             row.firstPassedDay != null -> WordlistStatus.LEARNED
@@ -197,23 +225,24 @@ class FlashcardRepositories(context: Context) {
   }
 
   private inner class LocalWordState : WordStateRepository {
-    override fun observe(wordId: String): Flow<WordUserState> = flow {
+    override fun observe(wordId: String, learningLanguage: AppLanguage): Flow<WordUserState> = flow {
       prepare()
-      emitAll(dao.observeWordProgress(wordId).map { value ->
-        WordUserState(value?.isCollected == true, value?.isSkipped == true, value?.mistakePending == true)
+      emitAll(combine(rawDao.observeWordProgress(wordId, learningLanguage.name), rawDao.observeBookmark(wordId)) { value, bookmark ->
+        WordUserState(bookmark?.isCollected == true, value?.isSkipped == true, value?.mistakePending == true)
       }.distinctUntilChanged())
     }
 
     override suspend fun setCollected(wordId: String, value: Boolean) = transaction {
       checkNotNull(dao.word(wordId))
-      val saved = dao.progress(wordId) ?: WordProgressEntity(wordId)
-      if (saved.isCollected != value) {
-        dao.putProgress(saved.copy(isCollected = value))
+      val saved = rawDao.bookmark(wordId)
+      if ((saved?.isCollected == true) != value) {
+        rawDao.putBookmark(WordBookmarkEntity(wordId, value))
         touch()
       }
     }
 
-    override suspend fun setSkipped(wordId: String, value: Boolean) = transaction {
+    override suspend fun setSkipped(wordId: String, value: Boolean, learningLanguage: AppLanguage) = transaction {
+      if (learningLanguage != this@FlashcardRepositories.learningLanguage) return@transaction
       checkNotNull(dao.word(wordId))
       val day = ensureToday()
       val saved = dao.progress(wordId) ?: WordProgressEntity(wordId)
@@ -250,8 +279,13 @@ class FlashcardRepositories(context: Context) {
 
     override suspend fun snapshot(): StudySnapshot = transaction { snapshotAt(ensureToday()) }
 
-    override suspend fun selectStage(stage: VocabularyStage): StudySnapshot = transaction {
+    override suspend fun context(): LearningContext = transaction {
+      LearningContext(learningLanguage, appState().contextVersion)
+    }
+
+    override suspend fun selectStage(stage: VocabularyStage, expectedLanguage: AppLanguage?): StudySnapshot = transaction {
       val day = ensureToday()
+      if (!matchesLanguage(expectedLanguage)) return@transaction snapshotAt(day)
       val saved = appState()
       if (saved.selectedStage != stage.rarity) {
         val current = saved.currentCardId?.let { dao.card(it) }
@@ -263,8 +297,9 @@ class FlashcardRepositories(context: Context) {
       snapshotAt(day)
     }
 
-    override suspend fun start(kind: StudyKind): StudySnapshot = transaction {
+    override suspend fun start(kind: StudyKind, expectedLanguage: AppLanguage?): StudySnapshot = transaction {
       val day = ensureToday()
+      if (!matchesLanguage(expectedLanguage)) return@transaction snapshotAt(day)
       val previous = appState()
       if (previous.selectedKind != kind.name) {
         val old = previous.currentCardId?.let { dao.card(it) }
@@ -283,11 +318,12 @@ class FlashcardRepositories(context: Context) {
     }
 
     override suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int,
-      expectedStage: VocabularyStage, expectedLap: Int): StudySnapshot {
+      expectedStage: VocabularyStage, expectedLap: Int, expectedLanguage: AppLanguage?): StudySnapshot {
       var changedDay = false
       val result = transaction {
         val day = ensureToday()
         val current = snapshotAt(day)
+        if (!matchesLanguage(expectedLanguage)) return@transaction current
         if (current.today.date != expectedDate) {
           changedDay = true
           return@transaction current
@@ -304,11 +340,12 @@ class FlashcardRepositories(context: Context) {
       return result
     }
 
-    override suspend fun submit(cardId: String, optionId: String?): StudySnapshot = cardTransaction(cardId) { day, card ->
-      if (card.phase != CardPhase.QUESTION.name) return@cardTransaction snapshotAt(day)
+    override suspend fun submit(cardId: String, optionId: String?, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): StudySnapshot = cardTransaction(cardId, expectedLanguage, expectedContextVersion) { day, card ->
+      if (card.phase != CardPhase.QUESTION.name || strings(JSONArray(card.optionsJson)).size != 4) return@cardTransaction snapshotAt(day)
       val optionIds = strings(JSONArray(card.optionsJson))
       require(optionId == null || optionId in optionIds)
-      val correct = optionId != null && dao.meanings(card.wordId).any { it.id == optionId }
+      val correct = optionId != null && optionId == card.questionMeaningId
       if (!correct) {
         val progress = dao.progress(card.wordId) ?: WordProgressEntity(card.wordId)
         dao.putProgress(progress.copy(mistakePending = true))
@@ -356,18 +393,22 @@ class FlashcardRepositories(context: Context) {
       snapshotAt(day)
     }
 
-    override suspend fun advance(cardId: String): StudySnapshot = cardTransaction(cardId) { day, card ->
+    override suspend fun advance(cardId: String, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): StudySnapshot = cardTransaction(cardId, expectedLanguage, expectedContextVersion) { day, card ->
       when (CardPhase.valueOf(card.phase)) {
         CardPhase.INTRO -> {
-          val writingId = createWriting(listOf(card.wordId), WritingReason.FIRST_ENCOUNTER, card.id, day)
           val progress = dao.progress(card.wordId) ?: WordProgressEntity(card.wordId)
           dao.putProgress(progress.copy(firstEncounterShown = true))
-          dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
+          if (learningLanguage == AppLanguage.CN) {
+            val writingId = createWriting(listOf(card.wordId), WritingReason.FIRST_ENCOUNTER, card.id, day)
+            dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
+          } else dao.putCard(card.copy(phase = if (strings(JSONArray(card.optionsJson)).size == 4)
+            CardPhase.QUESTION.name else CardPhase.EXPLANATION.name))
         }
         CardPhase.FEEDBACK -> dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
         CardPhase.EXPLANATION -> {
           val cycle = checkNotNull(dao.cycle(card.cycleId))
-          if (card.correct == false && card.reviewRecall && !cycle.reviewErrorWritingOffered) {
+          if (learningLanguage == AppLanguage.CN && card.correct == false && card.reviewRecall && !cycle.reviewErrorWritingOffered) {
             val writingId = createWriting(listOf(card.wordId), WritingReason.REVIEW_ERROR, card.id, day)
             dao.putCycle(cycle.copy(reviewErrorWritingOffered = true))
             dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
@@ -377,7 +418,8 @@ class FlashcardRepositories(context: Context) {
           val session = card.writingSessionId?.let { dao.writing(it) }
           if (session != null && session.status != WritingStatus.ACTIVE.name) {
             if (session.reason == WritingReason.FIRST_ENCOUNTER.name)
-              dao.putCard(card.copy(phase = CardPhase.QUESTION.name))
+              dao.putCard(card.copy(phase = if (strings(JSONArray(card.optionsJson)).size == 4)
+                CardPhase.QUESTION.name else CardPhase.EXPLANATION.name))
             else finishAndSelect(card, day)
           }
         }
@@ -387,7 +429,8 @@ class FlashcardRepositories(context: Context) {
       snapshotAt(day)
     }
 
-    override suspend fun explain(cardId: String): StudySnapshot = cardTransaction(cardId) { day, card ->
+    override suspend fun explain(cardId: String, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): StudySnapshot = cardTransaction(cardId, expectedLanguage, expectedContextVersion) { day, card ->
       if (card.phase == CardPhase.FEEDBACK.name) {
         dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
         touch()
@@ -395,7 +438,8 @@ class FlashcardRepositories(context: Context) {
       snapshotAt(day)
     }
 
-    override suspend fun claimDailyInvitation(): Boolean = transaction {
+    override suspend fun claimDailyInvitation(expectedLanguage: AppLanguage?): Boolean = transaction {
+      if (!matchesLanguage(expectedLanguage) || learningLanguage != AppLanguage.CN) return@transaction false
       val day = ensureToday()
       val plan = checkNotNull(dao.plan(day))
       val summary = summaryAt(day)
@@ -409,7 +453,8 @@ class FlashcardRepositories(context: Context) {
       }
     }
 
-    override suspend fun startDailyWriting(): String? = transaction {
+    override suspend fun startDailyWriting(expectedLanguage: AppLanguage?): String? = transaction {
+      if (!matchesLanguage(expectedLanguage) || learningLanguage != AppLanguage.CN) return@transaction null
       val day = ensureToday()
       val summary = summaryAt(day)
       if (!summary.allComplete || summary.todayNewWords.isEmpty()) return@transaction null
@@ -418,7 +463,10 @@ class FlashcardRepositories(context: Context) {
       else createWriting(summary.todayNewWords.map { it.id }, WritingReason.DAILY, null, day).also { touch() }
     }
 
-    override suspend fun startManualWriting(wordId: String): String = transaction {
+    override suspend fun startManualWriting(wordId: String, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): String = transaction {
+      if (!matchesContext(expectedLanguage, expectedContextVersion))
+        throw UiMessageException(UiMessageKey.THE_LEARNING_CONTEXT_CHANGED_REOPEN_THIS_WORD_TO_WRITE)
       checkNotNull(dao.word(wordId))
       createWriting(listOf(wordId), WritingReason.MANUAL, null, today()).also { touch() }
     }
@@ -536,10 +584,18 @@ class FlashcardRepositories(context: Context) {
   }
 
   /** Practice cards survive midnight; normal daily cards retain the existing stale-date guard. */
-  private suspend fun cardTransaction(id: String, operation: suspend (Long, CardEntity) -> StudySnapshot): StudySnapshot {
+  private fun matchesLanguage(expected: AppLanguage?): Boolean = expected == null || expected == learningLanguage
+
+  private suspend fun matchesContext(expectedLanguage: AppLanguage?, expectedVersion: Long?): Boolean =
+    matchesLanguage(expectedLanguage) && (expectedVersion == null || expectedVersion == appState().contextVersion)
+
+  private suspend fun cardTransaction(id: String, expectedLanguage: AppLanguage?, expectedContextVersion: Long?,
+    operation: suspend (Long, CardEntity) -> StudySnapshot): StudySnapshot {
     var changedDay = false
     val result = transaction {
       val day = ensureToday()
+      if (!matchesLanguage(expectedLanguage) ||
+          expectedContextVersion?.let { it != appState().contextVersion } == true) return@transaction snapshotAt(day)
       val saved = dao.card(id)
       if (saved != null && saved.sessionId == null && saved.day != day) {
         changedDay = true
@@ -646,19 +702,20 @@ class FlashcardRepositories(context: Context) {
     check(!kind.isPractice())
     val selected = stage ?: selectedStage().rarity
     val progress = dao.progress().associateBy { it.wordId }
-    val item = dao.dailyItems(day).filter { it.kind == kind.name && !it.completed && progress[it.wordId]?.isSkipped != true &&
+    val viewOnly = dao.viewOnlyDailyWords(day, kind.name).toSet()
+    val item = dao.dailyItems(day).filter { it.kind == kind.name && !it.completed && it.wordId !in viewOnly && progress[it.wordId]?.isSkipped != true &&
       (kind != StudyKind.NEW || it.originStage == selected) }
       .minWithOrNull(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder }) ?: return null
     val cycle = checkNotNull(dao.cycle(item.cycleId))
     val entry = word(item.wordId)
     val saved = progress[item.wordId] ?: WordProgressEntity(item.wordId)
     val introduction = cycle.scope == "NORMAL" && !item.reviewRecall && !saved.firstEncounterShown
-    val options = (listOf(entry.meanings.first().id) + entry.distractorMeaningIds).shuffled()
+    val options = questionOptions(entry, dao)
     val card = CardEntity(newId(), day, item.wordId, cycle.id, kind.name,
-      if (introduction) CardPhase.INTRO.name else CardPhase.QUESTION.name,
+      if (introduction) CardPhase.INTRO.name else if (options.isEmpty()) CardPhase.EXPLANATION.name else CardPhase.QUESTION.name,
       if (item.reviewRecall) 1 else cycle.correctRounds + 1,
       if (item.reviewRecall) 1 else cycle.targetRounds, item.reviewRecall,
-      stringsJson(options), createdAt = System.currentTimeMillis(), itemId = item.id)
+      stringsJson(options), createdAt = System.currentTimeMillis(), itemId = item.id, questionMeaningId = entry.meanings.first().id)
     dao.putCard(card)
     return card
   }
@@ -708,7 +765,8 @@ class FlashcardRepositories(context: Context) {
   private suspend fun createPracticeCard(sessionId: String, day: Long): CardEntity? {
     val session = checkNotNull(dao.practiceSession(sessionId))
     val progress = dao.progress().associateBy { it.wordId }
-    val item = dao.practiceItems(sessionId).filter { !it.completed && progress[it.wordId]?.isSkipped != true &&
+    val viewOnly = dao.viewOnlyPracticeWords(sessionId).toSet()
+    val item = dao.practiceItems(sessionId).filter { !it.completed && it.wordId !in viewOnly && progress[it.wordId]?.isSkipped != true &&
       (session.kind != StudyKind.MISTAKES.name || progress[it.wordId]?.mistakePending == true) }
       .minByOrNull { it.queueOrder }
     if (item == null) {
@@ -717,10 +775,11 @@ class FlashcardRepositories(context: Context) {
     }
     val cycle = checkNotNull(dao.cycle(item.cycleId))
     val entry = word(item.wordId)
-    val options = (listOf(entry.meanings.first().id) + entry.distractorMeaningIds).shuffled()
-    val card = CardEntity(newId(), day, item.wordId, cycle.id, session.kind, CardPhase.QUESTION.name,
+    val options = questionOptions(entry, dao)
+    val card = CardEntity(newId(), day, item.wordId, cycle.id, session.kind,
+      if (options.isEmpty()) CardPhase.EXPLANATION.name else CardPhase.QUESTION.name,
       cycle.correctRounds + 1, cycle.targetRounds, false, stringsJson(options),
-      createdAt = System.currentTimeMillis(), sessionId = sessionId)
+      createdAt = System.currentTimeMillis(), sessionId = sessionId, questionMeaningId = entry.meanings.first().id)
     dao.putCard(card)
     return card
   }
@@ -851,7 +910,8 @@ class FlashcardRepositories(context: Context) {
       dao.nextReviewDay(day)?.let { LocalDate.ofEpochDay(it).toString() }, available, blocker, stageProgress,
       collectionIds.size,
       words.count { progress[it.id]?.mistakePending == true && progress[it.id]?.isSkipped != true },
-      appState().let { StudyGrowth(it.growthDays, it.learnedCompletions, it.clearedMistakes) })
+      appState().let { StudyGrowth(it.growthDays, it.learnedCompletions, it.clearedMistakes) },
+      learningLanguage = learningLanguage, contextVersion = appState().contextVersion)
   }
 
   private suspend fun learnMoreBlocker(day: Long, items: List<DailyItemEntity>, stage: VocabularyStage): StudyKind? {
@@ -871,7 +931,8 @@ class FlashcardRepositories(context: Context) {
     val state = dao.progress(card.wordId)
     return StudyCard(card.id, word(card.wordId), StudyKind.valueOf(card.kind), CardPhase.valueOf(card.phase),
       card.round, card.targetRounds, card.reviewRecall, options, card.selectedOptionId,
-      card.correct, card.writingSessionId, state?.isCollected == true, state?.isSkipped == true, card.sessionId)
+      card.correct, card.writingSessionId, state?.isCollected == true, state?.isSkipped == true, card.sessionId,
+      AppLanguage.valueOf(card.learningLanguage), card.questionMeaningId, appState().contextVersion)
   }
 
   private suspend fun word(id: String): WordEntry = word(checkNotNull(dao.word(id)))
@@ -884,6 +945,7 @@ class FlashcardRepositories(context: Context) {
   }
 
   private suspend fun createWriting(wordIds: List<String>, reason: WritingReason, returnCardId: String?, day: Long): String {
+    check(learningLanguage == AppLanguage.CN || reason == WritingReason.MANUAL) { UiMessageKey.AUTOMATIC_CHINESE_WRITING_IS_AVAILABLE_IN_CHINESE_LEARNING_MODE.name }
     require(wordIds.isNotEmpty() && wordIds.size <= 2000)
     wordIds.forEach { checkNotNull(dao.word(it)) }
     val session = WritingSessionEntity(newId(), stringsJson(wordIds), reason = reason.name,
@@ -897,8 +959,10 @@ class FlashcardRepositories(context: Context) {
       writingSnapshot(checkNotNull(dao.writing(sessionId)))
     }
 
-    override suspend fun submitStroke(sessionId: String, cursor: WritingCursor, points: List<StrokePoint>): WritingSnapshot = transaction {
+    override suspend fun submitStroke(sessionId: String, cursor: WritingCursor, points: List<StrokePoint>,
+      expectedLanguage: AppLanguage?, expectedContextVersion: Long?): WritingSnapshot = transaction {
       val session = checkNotNull(dao.writing(sessionId))
+      if (!matchesContext(expectedLanguage, expectedContextVersion)) return@transaction writingSnapshot(session)
       if (session.status != WritingStatus.ACTIVE.name || !matchesCursor(session, cursor))
         return@transaction writingSnapshot(session)
       require(points.size <= 1024 && points.all { it.x.isFinite() && it.y.isFinite() && it.x in -2f..3f && it.y in -2f..3f })
@@ -908,7 +972,7 @@ class FlashcardRepositories(context: Context) {
       val link = links.getOrNull(session.characterIndex)
       val item = link?.let { dao.tracing(it.itemId)?.toDomain() }
       if (item == null) {
-        val missing = session.copy(feedback = "Stroke data is unavailable. You can skip this writing session.")
+        val missing = session.copy(feedback = UiMessageKey.STROKE_DATA_IS_UNAVAILABLE_YOU_CAN_SKIP_THIS_WRITING_SESSION.name)
         dao.putWriting(missing)
         touch()
         return@transaction writingSnapshot(missing)
@@ -918,23 +982,23 @@ class FlashcardRepositories(context: Context) {
       if (expected == null) return@transaction writingSnapshot(session)
       val error = StrokeMatcher.feedback(points, expected.map { StrokePoint(it.x / 1024f, (900f - it.y) / 1024f) })
       if (error != null) {
-        val rejected = session.copy(mistakes = session.mistakes + 1, feedback = error)
+        val rejected = session.copy(mistakes = session.mistakes + 1, feedback = error.name)
         dao.putWriting(rejected)
         touch()
         return@transaction writingSnapshot(rejected)
       }
       val updatedStrokes = accepted + listOf(points)
       val now = System.currentTimeMillis()
-      var updated = session.copy(acceptedJson = pointsJson(updatedStrokes), feedback = "Stroke accepted.")
+      var updated = session.copy(acceptedJson = pointsJson(updatedStrokes), feedback = UiMessageKey.STROKE_ACCEPTED.name)
       if (updatedStrokes.size == item.paths.size) {
         dao.putWritingCompletion(WritingCompletionEntity("${session.id}:${session.wordIndex}:${session.characterIndex}",
           session.id, wordId, session.characterIndex, item.id, item.revision, session.mistakes, now))
         updated = when {
           session.characterIndex + 1 < links.size -> session.copy(characterIndex = session.characterIndex + 1,
-            acceptedJson = "[]", mistakes = 0, feedback = "Character completed. Write the next character.")
+            acceptedJson = "[]", mistakes = 0, feedback = UiMessageKey.CHARACTER_COMPLETED_WRITE_THE_NEXT_CHARACTER.name)
           session.wordIndex + 1 < wordIds.size -> session.copy(wordIndex = session.wordIndex + 1,
-            characterIndex = 0, acceptedJson = "[]", mistakes = 0, feedback = "Word completed. Write the next word.")
-          else -> updated.copy(status = WritingStatus.COMPLETED.name, completedAt = now, feedback = "Writing completed.")
+            characterIndex = 0, acceptedJson = "[]", mistakes = 0, feedback = UiMessageKey.WORD_COMPLETED_WRITE_THE_NEXT_WORD.name)
+          else -> updated.copy(status = WritingStatus.COMPLETED.name, completedAt = now, feedback = UiMessageKey.WRITING_COMPLETED.name)
         }
       }
       dao.putWriting(updated)
@@ -942,18 +1006,22 @@ class FlashcardRepositories(context: Context) {
       writingSnapshot(updated)
     }
 
-    override suspend fun undo(sessionId: String, cursor: WritingCursor): WritingSnapshot = transaction {
+    override suspend fun undo(sessionId: String, cursor: WritingCursor, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): WritingSnapshot = transaction {
       val session = checkNotNull(dao.writing(sessionId))
+      if (!matchesContext(expectedLanguage, expectedContextVersion)) return@transaction writingSnapshot(session)
       if (session.status != WritingStatus.ACTIVE.name || !matchesCursor(session, cursor)) return@transaction writingSnapshot(session)
       val accepted = decodePoints(JSONArray(session.acceptedJson))
-      val updated = session.copy(acceptedJson = pointsJson(accepted.dropLast(1)), feedback = "Last accepted stroke removed.")
+      val updated = session.copy(acceptedJson = pointsJson(accepted.dropLast(1)), feedback = UiMessageKey.LAST_ACCEPTED_STROKE_REMOVED.name)
       dao.putWriting(updated)
       touch()
       writingSnapshot(updated)
     }
 
-    override suspend fun restartCharacter(sessionId: String, cursor: WritingCursor): WritingSnapshot = transaction {
+    override suspend fun restartCharacter(sessionId: String, cursor: WritingCursor, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): WritingSnapshot = transaction {
       val session = checkNotNull(dao.writing(sessionId))
+      if (!matchesContext(expectedLanguage, expectedContextVersion)) return@transaction writingSnapshot(session)
       if (session.status != WritingStatus.ACTIVE.name || !matchesCursor(session, cursor)) return@transaction writingSnapshot(session)
       val updated = session.copy(acceptedJson = "[]", mistakes = 0, feedback = null)
       dao.putWriting(updated)
@@ -961,8 +1029,10 @@ class FlashcardRepositories(context: Context) {
       writingSnapshot(updated)
     }
 
-    override suspend fun skip(sessionId: String): WritingSnapshot = transaction {
+    override suspend fun skip(sessionId: String, expectedLanguage: AppLanguage?,
+      expectedContextVersion: Long?): WritingSnapshot = transaction {
       val session = checkNotNull(dao.writing(sessionId))
+      if (!matchesContext(expectedLanguage, expectedContextVersion)) return@transaction writingSnapshot(session)
       if (session.status != WritingStatus.ACTIVE.name) return@transaction writingSnapshot(session)
       val updated = session.copy(status = WritingStatus.SKIPPED.name, completedAt = System.currentTimeMillis(), feedback = null)
       dao.putWriting(updated)
@@ -990,9 +1060,9 @@ class FlashcardRepositories(context: Context) {
     return WritingSnapshot(session.id, displayEntry, session.wordIndex, wordIds.size, session.characterIndex,
       link?.let { dao.tracing(it.itemId)?.toDomain() }, decodePoints(JSONArray(session.acceptedJson)),
       session.mistakes, WritingStatus.valueOf(session.status), WritingReason.valueOf(session.reason),
-      session.feedback, session.returnCardId)
+      session.feedback.writingFeedbackKey(), session.returnCardId, AppLanguage.valueOf(session.learningLanguage), appState().contextVersion)
   }
 
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
-    displayName, avatarId, ThemeMode.valueOf(themeMode))
+    displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage))
 }

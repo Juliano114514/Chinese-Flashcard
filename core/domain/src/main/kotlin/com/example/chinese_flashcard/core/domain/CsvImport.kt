@@ -18,7 +18,8 @@ fun interface CsvSource {
   fun open(): InputStream
 }
 
-data class CsvImportIssue(val line: Int, val field: String, val message: String)
+data class CsvImportIssue(val line: Int, val field: String, val message: UiMessageKey,
+  val messageArguments: List<String> = emptyList(), val fieldIndex: Int? = null)
 
 data class CsvImportPreview(
   val previewId: String?,

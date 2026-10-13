@@ -3,6 +3,8 @@ package com.example.chinese_flashcard.core.data
 import android.content.Context
 import androidx.room.withTransaction
 import com.example.chinese_flashcard.core.domain.CsvImportPreview
+import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.domain.UiMessageException
 import com.example.chinese_flashcard.core.domain.CsvImportReport
 import com.example.chinese_flashcard.core.domain.CsvImportRepository
 import com.example.chinese_flashcard.core.domain.CsvSource
@@ -50,15 +52,14 @@ internal class CsvImporter(private val context: Context, private val database: F
       val file = createSnapshot()
       try {
         copySource(CsvSource { context.assets.open("default-wordlist/wordlist.csv") }, file)
-        check(snapshotHash(file) == version) { "The bundled default wordlist version does not match its content." }
+        check(snapshotHash(file) == version) { UiMessageKey.THE_BUNDLED_DEFAULT_WORDLIST_VERSION_DOES_NOT_MATCH_ITS_CONTENT }
         val issues = CsvIssues()
         val index = strokes.index()
         val plan = validate(file, readExisting(), index, issues, reporter, expectedRows, preset = true)
         check(issues.count == 0) {
-          "The default wordlist could not be added. " +
-            (issues.displayed.firstOrNull()?.message ?: "The bundled CSV is invalid.")
+          (issues.displayed.firstOrNull()?.message ?: UiMessageKey.THE_BUNDLED_CSV_IS_INVALID).name
         }
-        check(plan.totalRows == expectedRows) { "The bundled wordlist count does not match its content." }
+        check(plan.totalRows == expectedRows) { UiMessageKey.THE_BUNDLED_WORDLIST_COUNT_DOES_NOT_MATCH_ITS_CONTENT }
         validatePendingCards(plan)
         currentCoroutineContext().ensureActive()
         database.withTransaction {
@@ -92,9 +93,9 @@ internal class CsvImporter(private val context: Context, private val database: F
     .bufferedReader(Charsets.US_ASCII).use { reader ->
       val buffer = CharArray(32)
       val count = reader.read(buffer)
-      check(count in 1..31 && reader.read() == -1) { "The bundled wordlist count is invalid." }
+      check(count in 1..31 && reader.read() == -1) { UiMessageKey.THE_BUNDLED_WORDLIST_COUNT_IS_INVALID }
       String(buffer, 0, count).trim().toIntOrNull()?.takeIf { it in 1..CSV_MAX_ROWS }
-        ?: error("The bundled wordlist count is invalid.")
+        ?: error(UiMessageKey.THE_BUNDLED_WORDLIST_COUNT_IS_INVALID)
     }
 
   private fun defaultWordlistVersion(): String = context.assets.open("default-wordlist/version.txt")
@@ -103,11 +104,11 @@ internal class CsvImporter(private val context: Context, private val database: F
       while (true) {
         val character = reader.read()
         if (character < 0) break
-        check(text.length < 128) { "The bundled default wordlist version is invalid." }
+        check(text.length < 128) { UiMessageKey.THE_BUNDLED_DEFAULT_WORDLIST_VERSION_IS_INVALID }
         text.append(character.toChar())
       }
       text.toString().trim().also {
-        check(it.matches(Regex("[0-9a-f]{64}"))) { "The bundled default wordlist version is invalid." }
+        check(it.matches(Regex("[0-9a-f]{64}"))) { UiMessageKey.THE_BUNDLED_DEFAULT_WORDLIST_VERSION_IS_INVALID }
       }
     }
 
@@ -143,7 +144,7 @@ internal class CsvImporter(private val context: Context, private val database: F
           val index = try { strokes.index() }
           catch (error: CancellationException) { throw error }
           catch (_: Exception) {
-            issues.add(0, "笔顺资源", "The installed stroke resources are invalid or incomplete.")
+            issues.add(0, "笔顺资源", UiMessageKey.THE_INSTALLED_STROKE_RESOURCES_ARE_INVALID_OR_INCOMPLETE)
             return@withContext CsvImportPreview(null, 0, 0, 0, issues.count, issues.displayed.toList())
           }
           val existing = operationMutex.withLock { readExisting() }
@@ -157,7 +158,7 @@ internal class CsvImporter(private val context: Context, private val database: F
             }
           } catch (error: CancellationException) { throw error }
           catch (_: Exception) {
-            issues.add(0, "笔顺资源", "The installed stroke resources are invalid or incomplete.")
+            issues.add(0, "笔顺资源", UiMessageKey.THE_INSTALLED_STROKE_RESOURCES_ARE_INVALID_OR_INCOMPLETE)
             return@withContext CsvImportPreview(null, plan.totalRows, plan.newIds.size,
               plan.skipped, issues.count, issues.displayed.toList())
           }
@@ -176,7 +177,7 @@ internal class CsvImporter(private val context: Context, private val database: F
           CsvImportPreview(token, plan.totalRows, plan.newIds.size, plan.skipped, 0, emptyList())
         } catch (error: CancellationException) { throw error }
         catch (_: Exception) {
-          val issues = CsvIssues().also { it.add(0, "CSV", "The file could not be read. Choose a valid UTF-8 CSV up to 32 MiB.") }
+          val issues = CsvIssues().also { it.add(0, "CSV", UiMessageKey.THE_FILE_COULD_NOT_BE_READ_CHOOSE_A_VALID_UTF_8_CSV_UP_TO_32_MIB) }
           CsvImportPreview(null, 0, 0, 0, issues.count, issues.displayed.toList())
         } finally {
           if (!retained) file.delete()
@@ -193,7 +194,7 @@ internal class CsvImporter(private val context: Context, private val database: F
     val reporter = WordlistProgressReporter({ mutableProgress.value = it })
     return withContext(Dispatchers.IO) {
       val snapshot = pendingMutex.withLock { pending.remove(previewId) }
-        ?: throw IllegalStateException("This preview has expired. Choose the CSV again.")
+        ?: throw UiMessageException(UiMessageKey.THIS_PREVIEW_HAS_EXPIRED_CHOOSE_THE_CSV_AGAIN)
       val file = snapshot.file
       reporter.totalWords(snapshot.totalRows)
       try {
@@ -202,8 +203,8 @@ internal class CsvImporter(private val context: Context, private val database: F
           val issues = CsvIssues()
           val index = strokes.index()
           val plan = validate(file, readExisting(), index, issues, reporter, snapshot.totalRows)
-          check(issues.count == 0) { "The wordbook changed or the CSV is invalid. Choose the file again." }
-          check(plan.totalRows == snapshot.totalRows) { "The CSV snapshot changed." }
+          check(issues.count == 0) { UiMessageKey.THE_WORDBOOK_CHANGED_OR_THE_CSV_IS_INVALID_CHOOSE_THE_FILE_AGAIN }
+          check(plan.totalRows == snapshot.totalRows) { UiMessageKey.THE_CSV_SNAPSHOT_CHANGED }
           currentCoroutineContext().ensureActive()
           val report = database.withTransaction {
             append(file, plan, index, reporter).also {
@@ -229,7 +230,7 @@ internal class CsvImporter(private val context: Context, private val database: F
     if (cleaned) return@withLock
     check(directory.canonicalFile.parentFile == context.cacheDir.canonicalFile)
     if (directory.exists()) {
-      check(directory.isDirectory) { "The CSV cache is unavailable." }
+      check(directory.isDirectory) { UiMessageKey.THE_CSV_CACHE_IS_UNAVAILABLE }
       directory.listFiles()?.filter { it.isFile && it.name.startsWith("preview-") && it.name.endsWith(".csv") }
         ?.forEach { it.delete() }
     }
@@ -240,7 +241,7 @@ internal class CsvImporter(private val context: Context, private val database: F
     cleanStaleSnapshots()
     return pendingMutex.withLock {
       check(directory.canonicalFile.parentFile == context.cacheDir.canonicalFile)
-      check(directory.isDirectory || directory.mkdirs()) { "The CSV cache is unavailable." }
+      check(directory.isDirectory || directory.mkdirs()) { UiMessageKey.THE_CSV_CACHE_IS_UNAVAILABLE }
       File.createTempFile("preview-", ".csv", directory)
     }
   }
@@ -258,11 +259,11 @@ internal class CsvImporter(private val context: Context, private val database: F
             val single = input.read()
             if (single < 0) break
             bytes++
-            require(bytes <= CSV_MAX_BYTES) { "The CSV exceeds 32 MiB." }
+            require(bytes <= CSV_MAX_BYTES) { UiMessageKey.THE_CSV_EXCEEDS_32_MIB }
             output.write(single)
           } else {
             bytes += count
-            require(bytes <= CSV_MAX_BYTES) { "The CSV exceeds 32 MiB." }
+            require(bytes <= CSV_MAX_BYTES) { UiMessageKey.THE_CSV_EXCEEDS_32_MIB }
             output.write(block, 0, count)
           }
         }
@@ -274,7 +275,7 @@ internal class CsvImporter(private val context: Context, private val database: F
     val words = dao.words()
     val meanings = dao.allMeanings()
     val primary = meanings.groupBy { it.wordId }.mapValues { it.value.first() }
-    check(words.all { it.id in primary }) { "The saved wordbook is incomplete." }
+    check(words.all { it.id in primary }) { UiMessageKey.THE_SAVED_WORDBOOK_IS_INCOMPLETE }
     return ExistingWords(words.associateBy { it.id }, words.groupBy { wordIdentity(it.hanzi, it.pinyin) },
       primary, meanings.associateBy { it.id })
   }
@@ -288,7 +289,7 @@ internal class CsvImporter(private val context: Context, private val database: F
     val newIds = mutableSetOf<String>()
     val ownedWords = if (preset) existing.byId.values.filter { it.presetSourceId.isNotEmpty() } else emptyList()
     check(ownedWords.map { it.presetSourceId }.distinct().size == ownedWords.size) {
-      "The preset ownership mapping is ambiguous."
+      UiMessageKey.THE_PRESET_OWNERSHIP_MAPPING_IS_AMBIGUOUS
     }
     val bySourceId = ownedWords.associateBy { it.presetSourceId }
     val refreshes = mutableMapOf<String, PresetRefresh>()
@@ -299,17 +300,17 @@ internal class CsvImporter(private val context: Context, private val database: F
     }) { word ->
       var valid = true
       if (!seenIds.add(word.id)) {
-        issues.add(word.line, "词条ID", "Word IDs must be unique within the CSV.")
+        issues.add(word.line, "词条ID", UiMessageKey.WORD_IDS_MUST_BE_UNIQUE_WITHIN_THE_CSV)
         valid = false
       }
       val sameId = existing.byId[word.id]
       val owned = bySourceId[word.id]
       if (owned != null && (sameId != null && sameId.id != owned.id ||
           Normalizer.normalize(owned.hanzi, Normalizer.Form.NFC) != word.hanzi)) {
-        issues.add(word.line, "词条ID", "An owned preset ID cannot be reassigned to a different word.")
+        issues.add(word.line, "词条ID", UiMessageKey.AN_OWNED_PRESET_ID_CANNOT_BE_REASSIGNED_TO_A_DIFFERENT_WORD)
         valid = false
       } else if (owned == null && sameId != null && wordIdentity(sameId.hanzi, sameId.pinyin) != word.identity) {
-        issues.add(word.line, "词条ID", "This ID already belongs to a different word or pronunciation.")
+        issues.add(word.line, "词条ID", UiMessageKey.THIS_ID_ALREADY_BELONGS_TO_A_DIFFERENT_WORD_OR_PRONUNCIATION)
         valid = false
       }
       if (valid) {
@@ -321,20 +322,20 @@ internal class CsvImporter(private val context: Context, private val database: F
         if (owned != null) refreshes[word.id] = PresetRefresh(owned, existing.primary.getValue(owned.id))
         val ids = word.glyphs.map { glyph ->
           val indexed = index.byGlyph[glyph]
-          if (indexed == null) issues.add(word.line, "组词", "True stroke data is unavailable for character $glyph.")
+          if (indexed == null) issues.add(word.line, "组词", UiMessageKey.TRUE_STROKE_DATA_IS_UNAVAILABLE_FOR_CHARACTER_1_S, arguments = listOf(glyph))
           indexed?.id ?: glyphId(glyph)
         }
         rows += WordMetadata(word.line, word.id, canonicalId, word.english, word.distractorWordIds, ids, word.rarity)
       }
     }
     if (existing.byId.size + newIds.size > CSV_MAX_ROWS)
-      issues.add(0, "CSV", "The resulting wordbook would contain more than 20,000 words.")
+      issues.add(0, "CSV", UiMessageKey.THE_RESULTING_WORDBOOK_WOULD_CONTAIN_MORE_THAN_20_000_WORDS)
     val meanings = existing.primary.mapValues { it.value.id }.toMutableMap()
     val english = existing.primary.mapValues { it.value.english }.toMutableMap()
     for (row in rows.filter { it.id in newIds }) {
       val meaningId = csvMeaningId(row.id)
       if (meaningId in existing.allMeanings)
-        issues.add(row.line, "词条ID", "The derived meaning ID is already used by the saved wordbook.")
+        issues.add(row.line, "词条ID", UiMessageKey.THE_DERIVED_MEANING_ID_IS_ALREADY_USED_BY_THE_SAVED_WORDBOOK)
       meanings[row.canonicalId] = meaningId
       english[row.canonicalId] = row.english
     }
@@ -342,14 +343,14 @@ internal class CsvImporter(private val context: Context, private val database: F
     for (row in rows) {
       val targets = row.distractorIds.map { aliases[it] }
       if (targets.any { it == null || it !in meanings }) {
-        issues.add(row.line, "干扰词ID", "A distractor word is missing from the CSV and saved wordbook.")
+        issues.add(row.line, "干扰词ID", UiMessageKey.A_DISTRACTOR_WORD_IS_MISSING_FROM_THE_CSV_AND_SAVED_WORDBOOK)
       } else {
         val ids = targets.filterNotNull()
         if (ids.distinct().size != 3 || row.canonicalId in ids)
-          issues.add(row.line, "干扰词ID", "Distractors resolve to repeated words or this word itself.")
+          issues.add(row.line, "干扰词ID", UiMessageKey.DISTRACTORS_RESOLVE_TO_REPEATED_WORDS_OR_THIS_WORD_ITSELF)
         val options = (listOf(row.canonicalId) + ids).map { normalizedEnglish(english.getValue(it)) }
         if (options.distinct().size != 4)
-          issues.add(row.line, "干扰词ID", "The correct meaning and three distractor meanings must differ.")
+          issues.add(row.line, "干扰词ID", UiMessageKey.THE_CORRECT_MEANING_AND_THREE_DISTRACTOR_MEANINGS_MUST_DIFFER)
       }
     }
     val projectedMeanings = existing.allMeanings.toMutableMap()
@@ -366,13 +367,20 @@ internal class CsvImporter(private val context: Context, private val database: F
 
   /** Cards freeze IDs and order, while labels are resolved live. Never rewrite a chosen answer. */
   private suspend fun validatePendingCards(plan: ImportPlan) {
-    for (card in dao.unfinishedCards()) {
+    for (card in dao.unfinishedCardsAll()) {
       currentCoroutineContext().ensureActive()
       val optionIds = strings(JSONArray(card.optionsJson))
+      if (optionIds.isEmpty()) continue // A view-only card never asserted a correct option.
       val options = optionIds.map { plan.projectedMeanings[it] ?: throw PresetCardConflictException() }
+      val senseKeys = options.map { englishSenseKeys(it.english) }
       if (optionIds.size != 4 || optionIds.distinct().size != 4 ||
           options.count { it.wordId == card.wordId } != 1 ||
           options.map { normalizedEnglish(it.english) }.distinct().size != 4 ||
+          options.map { dao.word(it.wordId)?.hanzi }.distinct().size != 4 ||
+          senseKeys.indices.any { left -> (left + 1 until senseKeys.size).any { right ->
+            senseKeys[left].any { it in senseKeys[right] }
+          } } ||
+          card.questionMeaningId !in optionIds ||
           card.selectedOptionId?.let { it !in optionIds } == true)
         throw PresetCardConflictException()
     }
@@ -424,7 +432,7 @@ internal class CsvImporter(private val context: Context, private val database: F
       if (words.size >= 100) flush()
     }
     check(issues.count == 0 && total == plan.totalRows && added == plan.newIds.size && refreshed == plan.refreshes.size) {
-      "The CSV snapshot changed."
+      UiMessageKey.THE_CSV_SNAPSHOT_CHANGED
     }
     flush()
     currentCoroutineContext().ensureActive()
@@ -453,5 +461,5 @@ private data class ImportPlan(val totalRows: Int, val skipped: Int, val newIds: 
   val projectedMeanings: Map<String, MeaningEntity>)
 private data class PresetRefresh(val word: WordEntity, val meaning: MeaningEntity)
 
-internal class PresetCardConflictException : IllegalStateException(
-  "Finish the saved study card, then retry the default wordlist update.")
+internal class PresetCardConflictException : UiMessageException(
+  UiMessageKey.FINISH_THE_SAVED_STUDY_CARD_THEN_RETRY_THE_DEFAULT_WORDLIST_UPDATE)

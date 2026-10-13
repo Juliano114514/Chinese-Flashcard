@@ -26,9 +26,9 @@ data class WordUserState(val isCollected: Boolean = false, val isSkipped: Boolea
 
 /** User labels are independent from vocabulary content and normal learning progress. */
 interface WordStateRepository {
-  fun observe(wordId: String): Flow<WordUserState>
+  fun observe(wordId: String, learningLanguage: AppLanguage = AppLanguage.CN): Flow<WordUserState>
   suspend fun setCollected(wordId: String, value: Boolean)
-  suspend fun setSkipped(wordId: String, value: Boolean)
+  suspend fun setSkipped(wordId: String, value: Boolean, learningLanguage: AppLanguage = AppLanguage.CN)
 }
 
 /** Browsing does not create daily plans, learning cards, or review completions. */

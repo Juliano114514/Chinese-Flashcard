@@ -1,6 +1,7 @@
 package com.example.chinese_flashcard.core.data
 
 import com.example.chinese_flashcard.core.domain.CsvImportIssue
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.WordPart
 import com.example.chinese_flashcard.core.domain.VocabularyStage
@@ -16,9 +17,10 @@ internal class CsvIssues {
   var count: Int = 0
     private set
   val displayed = mutableListOf<CsvImportIssue>()
-  fun add(line: Int, field: String, message: String) {
+  fun add(line: Int, field: String, message: UiMessageKey,
+    arguments: List<String> = emptyList(), fieldIndex: Int? = null) {
     count++
-    if (displayed.size < 100) displayed += CsvImportIssue(line, field, message)
+    if (displayed.size < 100) displayed += CsvImportIssue(line, field, message, arguments, fieldIndex)
   }
 }
 
@@ -63,16 +65,16 @@ internal object CsvDecoder {
           if (record.fields.size == 1 && record.fields[0].isBlank()) continue
           total++
           if (total > CSV_MAX_ROWS) {
-            issues.add(record.line, "CSV", "A CSV may contain at most 20,000 words.")
+            issues.add(record.line, "CSV", UiMessageKey.A_CSV_MAY_CONTAIN_AT_MOST_20_000_WORDS)
             break
           }
         }
       }
     } catch (error: CsvFormatException) {
-      issues.add(error.line, names.getOrNull(error.fieldIndex) ?: "Column ${error.fieldIndex + 1}",
-        error.message ?: "The CSV format is invalid.")
+      issues.add(error.line, names.getOrNull(error.fieldIndex).orEmpty(), error.code,
+        fieldIndex = if (names.getOrNull(error.fieldIndex).isNullOrEmpty()) error.fieldIndex + 1 else null)
     } catch (_: java.nio.charset.CharacterCodingException) {
-      issues.add(0, "CSV", "The file must use valid UTF-8 encoding.")
+      issues.add(0, "CSV", UiMessageKey.THE_FILE_MUST_USE_VALID_UTF_8_ENCODING)
     }
     return total
   }
@@ -85,22 +87,22 @@ internal object CsvDecoder {
       CsvParser(file.inputStream()).use { parser ->
         val header = parser.next()
         if (header == null) {
-          issues.add(1, "CSV", "The CSV file is empty.")
+          issues.add(1, "CSV", UiMessageKey.THE_CSV_FILE_IS_EMPTY)
           return 0
         }
         val names = header.fields.map(String::trim)
         headerNames = names
         if (names.distinct().size != names.size) {
-          issues.add(header.line, "表头", "Column names must be unique.")
+          issues.add(header.line, "表头", UiMessageKey.COLUMN_NAMES_MUST_BE_UNIQUE)
           return 0
         }
         val missing = columns.filterNot { it in names }
         if (missing.isNotEmpty()) {
-          missing.forEach { issues.add(header.line, it, "A required column is missing.") }
+          missing.forEach { issues.add(header.line, it, UiMessageKey.A_REQUIRED_COLUMN_IS_MISSING) }
           return 0
         }
         if (names.size != columns.size) {
-          issues.add(header.line, "表头", "Use exactly the twelve current CSV columns.")
+          issues.add(header.line, "表头", UiMessageKey.USE_EXACTLY_THE_TWELVE_CURRENT_CSV_COLUMNS)
           return 0
         }
         val positions = names.withIndex().associate { it.value to it.index }
@@ -111,53 +113,53 @@ internal object CsvDecoder {
           total++
           onRecord(total, record.fields.getOrNull(positions.getValue("组词")))
           if (total > CSV_MAX_ROWS) {
-            issues.add(record.line, "CSV", "A CSV may contain at most 20,000 words.")
+            issues.add(record.line, "CSV", UiMessageKey.A_CSV_MAY_CONTAIN_AT_MOST_20_000_WORDS)
             break
           }
           if (record.fields.size != names.size) {
-            issues.add(record.line, "CSV", "The number of fields does not match the header.")
+            issues.add(record.line, "CSV", UiMessageKey.THE_NUMBER_OF_FIELDS_DOES_NOT_MATCH_THE_HEADER)
             continue
           }
           try {
             onWord(decode(record, positions, total - 1))
           } catch (error: CsvFieldException) {
-            issues.add(record.line, error.field, error.message ?: "The field is invalid.")
+            issues.add(record.line, error.field, error.code)
           }
         }
       }
     } catch (error: CsvFormatException) {
-      issues.add(error.line, headerNames.getOrNull(error.fieldIndex) ?: "Column ${error.fieldIndex + 1}",
-        error.message ?: "The CSV format is invalid.")
+      issues.add(error.line, headerNames.getOrNull(error.fieldIndex).orEmpty(), error.code,
+        fieldIndex = if (headerNames.getOrNull(error.fieldIndex).isNullOrEmpty()) error.fieldIndex + 1 else null)
     } catch (_: java.nio.charset.CharacterCodingException) {
-      issues.add(0, "CSV", "The file must use valid UTF-8 encoding.")
+      issues.add(0, "CSV", UiMessageKey.THE_FILE_MUST_USE_VALID_UTF_8_ENCODING)
     }
-    if (total == 0 && issues.count == 0) issues.add(2, "CSV", "The CSV contains no words.")
+    if (total == 0 && issues.count == 0) issues.add(2, "CSV", UiMessageKey.THE_CSV_CONTAINS_NO_WORDS)
     return total
   }
 
   private fun decode(record: CsvRecord, positions: Map<String, Int>, order: Int): CsvWord {
-    fun invalid(field: String, message: String): Nothing = throw CsvFieldException(field, message)
+    fun invalid(field: String, message: UiMessageKey): Nothing = throw CsvFieldException(field, message)
     fun field(name: String, max: Int): String {
       val value = record.fields[positions.getValue(name)].trim()
       if (value.isBlank() || value.length > max || value.any { it == '\u0000' })
-        invalid(name, "This field is required and must fit its length limit.")
+        invalid(name, UiMessageKey.THIS_FIELD_IS_REQUIRED_AND_MUST_FIT_ITS_LENGTH_LIMIT)
       return value
     }
     fun id(value: String, fieldName: String): String {
       if (!value.matches(wordIdPattern))
-        invalid(fieldName, "IDs must contain 1–92 ASCII letters, digits or underscores.")
+        invalid(fieldName, UiMessageKey.IDS_MUST_CONTAIN_1_92_ASCII_LETTERS_DIGITS_OR_UNDERSCORES)
       return value
     }
     val rarity = field("罕度", 1).toIntOrNull()?.takeIf { it in VocabularyStage.rarityRange }
-      ?: invalid("罕度", "Stage must be 0, 1, 2, 3 or 4.")
+      ?: invalid("罕度", UiMessageKey.STAGE_MUST_BE_0_1_2_3_OR_4)
     val wordId = id(field("词条ID", 92), "词条ID")
     val hanzi = Normalizer.normalize(field("组词", 64), Normalizer.Form.NFC)
     val codePoints = hanzi.codePoints().toArray()
     if (codePoints.size !in 1..32 || codePoints.any { !isHanzi(it) })
-      invalid("组词", "A word must contain 1–32 Han characters.")
+      invalid("组词", UiMessageKey.A_WORD_MUST_CONTAIN_1_32_HAN_CHARACTERS)
     val pinyin = checkedPinyin(field("拼音", 128), "拼音")
     if (pinyinSyllables(pinyin).size != codePoints.size)
-      invalid("拼音", "Separate each character's pinyin syllable with a space or an apostrophe.")
+      invalid("拼音", UiMessageKey.SEPARATE_EACH_CHARACTER_S_PINYIN_SYLLABLE_WITH_A_SPACE_OR_AN_APOSTROPHE)
     val english = field("英文释义", 300)
     val partOfSpeech = field("词性", 80)
     val examples = try {
@@ -166,35 +168,35 @@ internal object CsvDecoder {
           chunks = example.chunks.map { chunk -> chunk.copy(pinyin = checkedPinyin(chunk.pinyin, "例句JSON", true)) })
       }
     } catch (error: CsvFieldException) { throw error }
-    catch (_: Exception) { invalid("例句JSON", "Provide two valid examples with hanzi, pinyin, english and aligned English-glossed chunks.") }
-    if (examples[0].hanzi == examples[1].hanzi) invalid("例句JSON", "Provide two different example sentences.")
+    catch (_: Exception) { invalid("例句JSON", UiMessageKey.PROVIDE_TWO_VALID_EXAMPLES_WITH_HANZI_PINYIN_ENGLISH_AND_ALIGNED_ENGLISH_GLOSSED_CHUNKS) }
+    if (examples[0].hanzi == examples[1].hanzi) invalid("例句JSON", UiMessageKey.PROVIDE_TWO_DIFFERENT_EXAMPLE_SENTENCES)
     examples.forEach { example ->
-      if (!example.hanzi.contains(hanzi)) invalid("例句JSON", "Each example sentence must contain the complete word.")
+      if (!example.hanzi.contains(hanzi)) invalid("例句JSON", UiMessageKey.EACH_EXAMPLE_SENTENCE_MUST_CONTAIN_THE_COMPLETE_WORD)
     }
     val parts = try {
       val array = boundedArray(field("部件JSON", 16000), "部件JSON")
-      if (array.length() !in 1..32) invalid("部件JSON", "Provide 1–32 word parts.")
+      if (array.length() !in 1..32) invalid("部件JSON", UiMessageKey.PROVIDE_1_32_WORD_PARTS)
       decodeParts(array).map { it.copy(pinyin = checkedPinyin(it.pinyin, "部件JSON")) }
     } catch (error: CsvFieldException) { throw error }
-    catch (_: Exception) { invalid("部件JSON", "Word parts must be a valid JSON array with hanzi, pinyin and gloss.") }
+    catch (_: Exception) { invalid("部件JSON", UiMessageKey.WORD_PARTS_MUST_BE_A_VALID_JSON_ARRAY_WITH_HANZI_PINYIN_AND_GLOSS) }
     if (parts.joinToString("") { it.hanzi } != hanzi)
-      invalid("部件JSON", "The ordered word parts must reconstruct the complete word.")
+      invalid("部件JSON", UiMessageKey.THE_ORDERED_WORD_PARTS_MUST_RECONSTRUCT_THE_COMPLETE_WORD)
     field("来源说明", 2000) // Provenance stays in the user's CSV; no source field is added to the teaching model.
     fun explanations(name: String, required: Boolean): List<String> = try {
       decodeExplanations(boundedArray(field(name, 16000), name), required)
     } catch (error: CsvFieldException) { throw error }
-    catch (_: Exception) { invalid(name, "Provide an English string array with up to sixteen senses; literal meanings cannot be empty.") }
+    catch (_: Exception) { invalid(name, UiMessageKey.PROVIDE_AN_ENGLISH_STRING_ARRAY_WITH_UP_TO_SIXTEEN_SENSES_LITERAL_MEANINGS_CANNOT_BE_EMPTY) }
     val literalExplanations = explanations("本义解释JSON", required = true)
     val figurativeExplanations = explanations("引申义解释JSON", required = false)
     val distractors = try {
       val array = boundedArray(field("干扰词ID", 400), "干扰词ID")
       if (array.length() != 3 || (0 until array.length()).any { array.get(it) !is String })
-        invalid("干扰词ID", "Provide exactly three word IDs as a JSON string array.")
+        invalid("干扰词ID", UiMessageKey.PROVIDE_EXACTLY_THREE_WORD_IDS_AS_A_JSON_STRING_ARRAY)
       array.strings(3).map { id(it, "干扰词ID") }
     } catch (error: CsvFieldException) { throw error }
-    catch (_: Exception) { invalid("干扰词ID", "Distractors must be a JSON array of three word IDs.") }
+    catch (_: Exception) { invalid("干扰词ID", UiMessageKey.DISTRACTORS_MUST_BE_A_JSON_ARRAY_OF_THREE_WORD_IDS) }
     if (distractors.distinct().size != 3 || wordId in distractors)
-      invalid("干扰词ID", "Distractor IDs must be distinct and cannot include this word.")
+      invalid("干扰词ID", UiMessageKey.DISTRACTOR_IDS_MUST_BE_DISTINCT_AND_CANNOT_INCLUDE_THIS_WORD)
     return CsvWord(record.line, order, wordId, hanzi, pinyin, rarity, english, partOfSpeech,
       examples, parts, distractors, literalExplanations, figurativeExplanations)
   }
@@ -208,7 +210,7 @@ internal object CsvDecoder {
     if (!pinyinLetter.containsMatchIn(normalized) || normalized.any { character ->
       !character.isWhitespace() && !pinyinLetter.matches(character.toString()) &&
         character !in (if (sentence) SENTENCE_PUNCTUATION else "'-’")
-    }) throw CsvFieldException(field, "Use tone-marked pinyin letters and spacing; sentence pinyin may include punctuation.")
+    }) throw CsvFieldException(field, UiMessageKey.USE_TONE_MARKED_PINYIN_LETTERS_AND_SPACING_SENTENCE_PINYIN_MAY_INCLUDE_PUNCTUATION)
     return normalized
   }
 
@@ -222,48 +224,48 @@ internal object CsvDecoder {
       if (quoted) {
         when {
           character == '\\' -> {
-            if (position == value.length) throw CsvFieldException(field, "A JSON escape is incomplete.")
+            if (position == value.length) throw CsvFieldException(field, UiMessageKey.A_JSON_ESCAPE_IS_INCOMPLETE)
             when (value[position++]) {
               '"', '\\', '/', 'b', 'f', 'n', 'r', 't' -> Unit
               'u' -> {
                 if (position + 4 > value.length || value.substring(position, position + 4).any {
                   it !in "0123456789abcdefABCDEF"
-                }) throw CsvFieldException(field, "A JSON Unicode escape must contain four hexadecimal digits.")
+                }) throw CsvFieldException(field, UiMessageKey.A_JSON_UNICODE_ESCAPE_MUST_CONTAIN_FOUR_HEXADECIMAL_DIGITS)
                 position += 4
               }
-              else -> throw CsvFieldException(field, "The JSON string contains an invalid escape.")
+              else -> throw CsvFieldException(field, UiMessageKey.THE_JSON_STRING_CONTAINS_AN_INVALID_ESCAPE)
             }
           }
           character == '"' -> quoted = false
-          character.code < 0x20 -> throw CsvFieldException(field, "JSON strings must escape control characters.")
+          character.code < 0x20 -> throw CsvFieldException(field, UiMessageKey.JSON_STRINGS_MUST_ESCAPE_CONTROL_CHARACTERS)
         }
       } else when (character) {
         '"' -> quoted = true
         '[', '{' -> {
           depth++
-          if (depth > 4) throw CsvFieldException(field, "JSON nesting must not exceed four levels.")
+          if (depth > 4) throw CsvFieldException(field, UiMessageKey.JSON_NESTING_MUST_NOT_EXCEED_FOUR_LEVELS)
         }
         ']', '}' -> {
-          if (previous == ',') throw CsvFieldException(field, "JSON arrays and objects cannot end with a comma.")
+          if (previous == ',') throw CsvFieldException(field, UiMessageKey.JSON_ARRAYS_AND_OBJECTS_CANNOT_END_WITH_A_COMMA)
           depth--
-          if (depth < 0) throw CsvFieldException(field, "JSON brackets are unbalanced.")
+          if (depth < 0) throw CsvFieldException(field, UiMessageKey.JSON_BRACKETS_ARE_UNBALANCED)
         }
         ':' -> if (previous != '"')
-          throw CsvFieldException(field, "A JSON object key must be a double-quoted string.")
+          throw CsvFieldException(field, UiMessageKey.A_JSON_OBJECT_KEY_MUST_BE_A_DOUBLE_QUOTED_STRING)
         ',' -> if (previous !in "\"}]")
-          throw CsvFieldException(field, "JSON entries cannot be empty.")
+          throw CsvFieldException(field, UiMessageKey.JSON_ENTRIES_CANNOT_BE_EMPTY)
         else -> if (character !in " \t\r\n")
-          throw CsvFieldException(field, "These JSON arrays require double-quoted keys and string values.")
+          throw CsvFieldException(field, UiMessageKey.THESE_JSON_ARRAYS_REQUIRE_DOUBLE_QUOTED_KEYS_AND_STRING_VALUES)
       }
       if (!quoted && character !in " \t\r\n") previous = character
     }
-    if (depth != 0 || quoted) throw CsvFieldException(field, "JSON brackets or strings are not closed.")
+    if (depth != 0 || quoted) throw CsvFieldException(field, UiMessageKey.JSON_BRACKETS_OR_STRINGS_ARE_NOT_CLOSED)
     val tokener = JSONTokener(value)
     val array = tokener.nextValue()
     if (array !is JSONArray || tokener.nextClean() != '\u0000')
-      throw CsvFieldException(field, "The field must contain one complete JSON array.")
+      throw CsvFieldException(field, UiMessageKey.THE_FIELD_MUST_CONTAIN_ONE_COMPLETE_JSON_ARRAY)
     return array
   }
 }
 
-private class CsvFieldException(val field: String, message: String) : IllegalArgumentException(message)
+private class CsvFieldException(val field: String, val code: UiMessageKey) : IllegalArgumentException(code.name)
