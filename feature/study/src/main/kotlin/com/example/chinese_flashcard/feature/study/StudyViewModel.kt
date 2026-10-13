@@ -12,6 +12,8 @@ import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordStateRepository
 import com.example.chinese_flashcard.core.domain.WordlistRepository
 import com.example.chinese_flashcard.core.domain.WordlistItem
+import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -36,12 +38,13 @@ data class StudyUiState(
   val busy: Boolean = false,
   val settings: StudySettings = StudySettings(),
   val snapshot: StudySnapshot? = null,
-  val error: String? = null,
+  val error: UiMessageKey? = null,
   val dailyInvitation: Boolean = false,
   val writingRequest: WritingRequest? = null,
   val homeWord: WordlistItem? = null,
   val homeWordError: Boolean = false,
   val homeWordStage: VocabularyStage? = null,
+  val directionGeneration: Long = 0,
 ) {
   val today get() = snapshot?.today
   val card get() = snapshot?.card
@@ -50,16 +53,18 @@ data class StudyUiState(
 sealed interface StudyAction {
   data object Refresh : StudyAction
   data object Retry : StudyAction
-  data class Start(val kind: StudyKind) : StudyAction
-  data class SelectStage(val stage: VocabularyStage) : StudyAction
+  data class Start(val kind: StudyKind, val language: AppLanguage? = null) : StudyAction
+  data class SelectStage(val stage: VocabularyStage, val language: AppLanguage? = null) : StudyAction
   data class LearnMore(val expectedDate: String, val expectedNewPlanned: Int,
-    val expectedStage: VocabularyStage, val expectedLap: Int) : StudyAction
+    val expectedStage: VocabularyStage, val expectedLap: Int, val language: AppLanguage? = null) : StudyAction
   data class SetCollected(val wordId: String, val value: Boolean) : StudyAction
-  data class SetSkipped(val wordId: String, val value: Boolean) : StudyAction
-  data class Submit(val cardId: String, val optionId: String?) : StudyAction
-  data class Advance(val cardId: String) : StudyAction
-  data class Explain(val cardId: String) : StudyAction
-  data class ManualWriting(val wordId: String) : StudyAction
+  data class SetSkipped(val wordId: String, val value: Boolean, val language: AppLanguage? = null) : StudyAction
+  data class Submit(val cardId: String, val optionId: String?, val language: AppLanguage? = null,
+    val generation: Long? = null) : StudyAction
+  data class Advance(val cardId: String, val language: AppLanguage? = null, val generation: Long? = null) : StudyAction
+  data class Explain(val cardId: String, val language: AppLanguage? = null, val generation: Long? = null) : StudyAction
+  data class ManualWriting(val wordId: String, val language: AppLanguage? = null,
+    val generation: Long? = null) : StudyAction
   data object DailyWriting : StudyAction
   data object DismissInvitation : StudyAction
   data class ConsumeWriting(val token: Long) : StudyAction
@@ -69,7 +74,7 @@ sealed interface StudyMutation {
   data object Busy : StudyMutation
   data object Idle : StudyMutation
   data class Loaded(val snapshot: StudySnapshot, val settings: StudySettings? = null) : StudyMutation
-  data class Failed(val message: String) : StudyMutation
+  data class Failed(val message: UiMessageKey) : StudyMutation
   data class Invitation(val visible: Boolean) : StudyMutation
   data class WritingReady(val request: WritingRequest) : StudyMutation
   data class WritingConsumed(val token: Long) : StudyMutation
@@ -80,9 +85,13 @@ object StudyReducer {
     StudyMutation.Busy -> state.copy(busy = true, error = null)
     StudyMutation.Idle -> state.copy(busy = false)
     is StudyMutation.Loaded -> state.copy(loading = false, snapshot = mutation.snapshot,
-      settings = mutation.settings ?: state.settings, error = null,
-      dailyInvitation = state.dailyInvitation && state.snapshot?.today?.date == mutation.snapshot.today.date &&
-        mutation.snapshot.today.allComplete)
+      settings = (mutation.settings ?: state.settings).copy(learningLanguage = mutation.snapshot.learningLanguage), error = null,
+      directionGeneration = mutation.snapshot.contextVersion,
+      writingRequest = state.writingRequest.takeIf { state.snapshot?.contextVersion == mutation.snapshot.contextVersion },
+      dailyInvitation = state.dailyInvitation && mutation.snapshot.learningLanguage == AppLanguage.CN &&
+        state.snapshot?.learningLanguage == mutation.snapshot.learningLanguage &&
+        state.snapshot?.contextVersion == mutation.snapshot.contextVersion &&
+        state.snapshot?.today?.date == mutation.snapshot.today.date && mutation.snapshot.today.allComplete)
     is StudyMutation.Failed -> state.copy(loading = false, error = mutation.message)
     is StudyMutation.Invitation -> state.copy(dailyInvitation = mutation.visible)
     is StudyMutation.WritingReady -> state.copy(writingRequest = mutation.request, dailyInvitation = false)
@@ -155,19 +164,22 @@ class StudyViewModel(
     }
   }
 
-  fun start(kind: StudyKind) = onAction(StudyAction.Start(kind))
-  fun selectStage(stage: VocabularyStage) = onAction(StudyAction.SelectStage(stage))
+  fun start(kind: StudyKind) = onAction(StudyAction.Start(kind, state.value.settings.learningLanguage))
+  fun selectStage(stage: VocabularyStage) = onAction(StudyAction.SelectStage(stage, state.value.settings.learningLanguage))
   fun setCollected(wordId: String, value: Boolean) = onAction(StudyAction.SetCollected(wordId, value))
-  fun setSkipped(wordId: String, value: Boolean) = onAction(StudyAction.SetSkipped(wordId, value))
+  fun setSkipped(wordId: String, value: Boolean) = setSkipped(wordId, value, state.value.settings.learningLanguage)
+  fun setSkipped(wordId: String, value: Boolean, language: AppLanguage) =
+    onAction(StudyAction.SetSkipped(wordId, value, language))
   fun learnMore() { state.value.today?.let {
-    onAction(StudyAction.LearnMore(it.date, it.newPlanned, it.stageProgress.stage, it.stageProgress.lap))
+    onAction(StudyAction.LearnMore(it.date, it.newPlanned, it.stageProgress.stage, it.stageProgress.lap, it.learningLanguage))
   } }
   fun refresh() = onAction(StudyAction.Refresh)
   fun retry() = onAction(StudyAction.Retry)
-  fun advance() { state.value.card?.let { onAction(StudyAction.Advance(it.id)) } }
-  fun submit(optionId: String?) { state.value.card?.let { onAction(StudyAction.Submit(it.id, optionId)) } }
-  fun explain() { state.value.card?.let { onAction(StudyAction.Explain(it.id)) } }
-  fun startManualWriting(wordId: String) = onAction(StudyAction.ManualWriting(wordId))
+  fun advance() { state.value.card?.let { onAction(StudyAction.Advance(it.id, it.learningLanguage, state.value.directionGeneration)) } }
+  fun submit(optionId: String?) { state.value.card?.let { onAction(StudyAction.Submit(it.id, optionId, it.learningLanguage, state.value.directionGeneration)) } }
+  fun explain() { state.value.card?.let { onAction(StudyAction.Explain(it.id, it.learningLanguage, state.value.directionGeneration)) } }
+  fun startManualWriting(wordId: String) = onAction(StudyAction.ManualWriting(wordId,
+    state.value.settings.learningLanguage, state.value.directionGeneration))
   fun startDailyWriting() = onAction(StudyAction.DailyWriting)
   fun consumeWriting(token: Long) = onAction(StudyAction.ConsumeWriting(token))
   fun dismissInvitation() = onAction(StudyAction.DismissInvitation)
@@ -181,6 +193,10 @@ class StudyViewModel(
   }
 
   private fun mutate(mutation: StudyMutation) {
+    if (mutation is StudyMutation.Loaded && state.value.snapshot?.contextVersion != mutation.snapshot.contextVersion) {
+      failedAction = StudyAction.Refresh
+      openedCardWriting = null
+    }
     mutableState.update { StudyReducer.reduce(it, mutation) }
   }
 
@@ -196,7 +212,13 @@ class StudyViewModel(
               if (loaded.snapshot != null && revision <= loaded.snapshot.revision && value == loaded.settings) {
                 return@withLock
               }
-              val (snapshot, value) = withContext(Dispatchers.IO) { study.snapshot() to settings.settings.first() }
+              val (snapshot, value) = withContext(Dispatchers.IO) {
+                var snapshot = study.snapshot()
+                val value = settings.settings.first()
+                if (snapshot.learningLanguage != value.learningLanguage) snapshot = study.snapshot()
+                snapshot to value
+              }
+              if (snapshot.learningLanguage != value.learningLanguage) return@withLock
               mutate(StudyMutation.Loaded(snapshot, value))
               offerDailyWriting(snapshot)
             }
@@ -205,7 +227,7 @@ class StudyViewModel(
         throw error
       } catch (_: Exception) {
         failedAction = StudyAction.Refresh
-        mutate(StudyMutation.Failed("Your saved progress couldn't be loaded. Try again."))
+        mutate(StudyMutation.Failed(UiMessageKey.YOUR_SAVED_PROGRESS_COULDN_T_BE_LOADED_TRY_AGAIN))
       }
     }
   }
@@ -213,38 +235,68 @@ class StudyViewModel(
   private fun execute(action: StudyAction) {
     // Set busy before launch: two quick taps cannot queue duplicate writes.
     if (state.value.busy) return
+    val generation = when (action) {
+      is StudyAction.Submit -> action.generation
+      is StudyAction.Advance -> action.generation
+      is StudyAction.Explain -> action.generation
+      is StudyAction.ManualWriting -> action.generation
+      else -> null
+    }
+    if (generation != null && generation != state.value.directionGeneration) return
+    val expectedLanguage = when (action) {
+      is StudyAction.Start -> action.language
+      is StudyAction.SelectStage -> action.language
+      is StudyAction.LearnMore -> action.language
+      is StudyAction.SetSkipped -> action.language
+      is StudyAction.Submit -> action.language
+      is StudyAction.Advance -> action.language
+      is StudyAction.Explain -> action.language
+      is StudyAction.ManualWriting -> action.language
+      else -> null
+    } ?: state.value.settings.learningLanguage
     mutate(StudyMutation.Busy)
     viewModelScope.launch {
       var stored = false
       try {
         operationLock.withLock {
+          if (generation != null && generation != state.value.directionGeneration) return@withLock
+          val currentSettings = settings.settings.first()
+          if (action != StudyAction.Refresh && currentSettings.learningLanguage != expectedLanguage) {
+            mutate(StudyMutation.Loaded(withContext(Dispatchers.IO) { study.snapshot() }, currentSettings))
+            return@withLock
+          }
           val snapshot = withContext(Dispatchers.IO) {
             when (action) {
-              is StudyAction.Start -> study.start(action.kind)
-              is StudyAction.SelectStage -> study.selectStage(action.stage)
+              is StudyAction.Start -> study.start(action.kind, expectedLanguage)
+              is StudyAction.SelectStage -> study.selectStage(action.stage, expectedLanguage)
               is StudyAction.LearnMore -> study.learnMore(action.expectedDate, action.expectedNewPlanned,
-                action.expectedStage, action.expectedLap)
+                action.expectedStage, action.expectedLap, expectedLanguage)
               is StudyAction.SetCollected -> {
                 wordState.setCollected(action.wordId, action.value)
                 stored = true
                 study.snapshot()
               }
               is StudyAction.SetSkipped -> {
-                wordState.setSkipped(action.wordId, action.value)
+                wordState.setSkipped(action.wordId, action.value, expectedLanguage)
                 stored = true
                 study.snapshot()
               }
-              is StudyAction.Submit -> study.submit(action.cardId, action.optionId)
-              is StudyAction.Advance -> study.advance(action.cardId)
-              is StudyAction.Explain -> study.explain(action.cardId)
+              is StudyAction.Submit -> study.submit(action.cardId, action.optionId, expectedLanguage,
+                expectedContextVersion = generation ?: state.value.directionGeneration)
+              is StudyAction.Advance -> study.advance(action.cardId, expectedLanguage,
+                expectedContextVersion = generation ?: state.value.directionGeneration)
+              is StudyAction.Explain -> study.explain(action.cardId, expectedLanguage,
+                expectedContextVersion = generation ?: state.value.directionGeneration)
               is StudyAction.ManualWriting -> {
-                val id = study.startManualWriting(action.wordId)
+                val id = study.startManualWriting(action.wordId, expectedLanguage,
+                  expectedContextVersion = generation ?: state.value.directionGeneration)
                 stored = true
                 mutate(StudyMutation.WritingReady(WritingRequest(++writingToken, id)))
                 study.snapshot()
               }
               StudyAction.DailyWriting -> {
-                val id = study.startDailyWriting()
+                if (expectedLanguage != AppLanguage.CN) return@withContext study.snapshot()
+                val id = study.startDailyWriting(expectedLanguage)
                 stored = true
                 if (id != null) mutate(StudyMutation.WritingReady(WritingRequest(++writingToken, id)))
                 else mutate(StudyMutation.Invitation(false))
@@ -270,10 +322,10 @@ class StudyViewModel(
         } catch (_: Exception) {
           // Preserve the last saved snapshot and keep retry available.
         }
-        mutate(StudyMutation.Failed("A new day has started. Your daily plan has been refreshed."))
+        mutate(StudyMutation.Failed(UiMessageKey.A_NEW_DAY_HAS_STARTED_YOUR_DAILY_PLAN_HAS_BEEN_REFRESHED))
       } catch (_: Exception) {
         failedAction = if (stored) StudyAction.Refresh else action
-        mutate(StudyMutation.Failed("This step couldn't be completed. Try again."))
+        mutate(StudyMutation.Failed(UiMessageKey.THIS_STEP_COULDN_T_BE_COMPLETED_TRY_AGAIN))
       } finally {
         mutate(StudyMutation.Idle)
       }
@@ -281,16 +333,17 @@ class StudyViewModel(
   }
 
   private suspend fun offerDailyWriting(snapshot: StudySnapshot) {
-    if (!snapshot.today.allComplete || state.value.dailyInvitation) return
+    if (snapshot.learningLanguage != AppLanguage.CN || !snapshot.today.allComplete || state.value.dailyInvitation) return
     try {
-      if (withContext(Dispatchers.IO) { study.claimDailyInvitation() }) {
+      if (withContext(Dispatchers.IO) { study.claimDailyInvitation(snapshot.learningLanguage) }) {
         mutate(StudyMutation.Invitation(true))
       }
     } catch (error: CancellationException) {
       throw error
     } catch (_: Exception) {
       failedAction = StudyAction.Refresh
-      mutate(StudyMutation.Failed("The handwriting invitation couldn't be prepared. Try again."))
+      mutate(StudyMutation.Failed(UiMessageKey.THE_HANDWRITING_INVITATION_COULDN_T_BE_PREPARED_TRY_AGAIN))
     }
   }
+
 }

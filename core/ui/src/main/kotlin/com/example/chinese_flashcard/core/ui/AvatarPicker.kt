@@ -1,5 +1,8 @@
 package com.example.chinese_flashcard.core.ui
 
+import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -42,7 +45,7 @@ private val avatarsById = avatarPresets.associateBy { it.id }
 @Composable
 fun PresetAvatar(avatarId: String, modifier: Modifier = Modifier) {
   val avatar = avatarsById[avatarId] ?: avatarsById.getValue(DEFAULT_AVATAR_ID)
-  Image(painterResource(avatar.resourceId), contentDescription = "Avatar ${avatar.id}",
+  Image(painterResource(avatar.resourceId), contentDescription = uiString(UiR.string.ui_avatar_description, avatar.id),
     modifier = modifier.size(40.dp).clip(RoundedCornerShape(4.dp)), contentScale = ContentScale.Fit)
 }
 
@@ -52,11 +55,11 @@ fun AvatarPickerDialog(
   onDismiss: () -> Unit,
   onConfirm: (String) -> Unit,
   saving: Boolean = false,
-  error: String? = null,
+  error: UiMessageKey? = null,
 ) {
   var draftId by rememberSaveable { mutableStateOf(selectedId.takeIf(avatarsById::containsKey) ?: DEFAULT_AVATAR_ID) }
   FlashcardDialog(onDismissRequest = { if (!saving) onDismiss() },
-    title = { Text("Choose avatar") }, text = {
+    title = { Text(uiString(UiR.string.ui_choose_avatar)) }, text = {
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         LazyVerticalGrid(columns = GridCells.Adaptive(56.dp),
           modifier = Modifier.fillMaxWidth().heightIn(min = 200.dp, max = 360.dp),
@@ -79,11 +82,11 @@ fun AvatarPickerDialog(
             }
           }
         }
-        error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
+        error?.let { Text(uiString(it), color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
       }
     }, confirmButton = {
-      TextButton(shape = MaterialTheme.shapes.small, onClick = { onConfirm(draftId) }, enabled = !saving) { Text(if (saving) "Saving…" else "Done") }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = { onConfirm(draftId) }, enabled = !saving) { Text(uiString(if (saving) UiR.string.ui_saving_ff509c else UiR.string.ui_done)) }
     }, dismissButton = {
-      TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = !saving) { Text("Cancel") }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = !saving) { Text(uiString(UiR.string.ui_cancel)) }
     })
 }

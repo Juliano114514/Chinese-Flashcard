@@ -1,5 +1,8 @@
 package com.example.chinese_flashcard.feature.profile
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -65,9 +68,9 @@ fun ProfileScreen(vm: ProfileViewModel, onSettings: () -> Unit) {
     .verticalScroll(rememberScrollState()).padding(FlashcardLayout.pageInset),
     verticalArrangement = Arrangement.spacedBy(FlashcardLayout.sectionGap)) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-      Text("Profile", Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
+      Text(uiString(UiR.string.ui_profile), Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
       IconButton(onClick = onSettings, enabled = !state.saving) {
-        Icon(painterResource(R.drawable.ic_settings), contentDescription = "Settings")
+        Icon(painterResource(R.drawable.ic_settings), contentDescription = uiString(UiR.string.ui_settings))
       }
     }
     if (state.loading) {
@@ -80,7 +83,7 @@ fun ProfileScreen(vm: ProfileViewModel, onSettings: () -> Unit) {
         EditableAvatar(value.avatarId, size = 44.dp, enabled = enabled,
           onClick = { openEditor(ProfileEditor.AVATAR) })
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-          Text(value.displayName.ifBlank { "Your name" },
+          Text(value.displayName.ifBlank { uiString(UiR.string.ui_your_name) },
             Modifier.clickable(enabled = enabled, role = Role.Button, onClick = { openEditor(ProfileEditor.NAME) }),
             style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
           LevelBadge(state.today?.growth ?: StudyGrowth())
@@ -89,18 +92,18 @@ fun ProfileScreen(vm: ProfileViewModel, onSettings: () -> Unit) {
       state.today?.let { today ->
         Column(verticalArrangement = Arrangement.spacedBy(FlashcardLayout.contentGap)) {
           Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Metric(today.totalWords, "Total", Modifier.weight(1f))
-            Metric(today.learnedWords, "Learned", Modifier.weight(1f))
-            Metric(today.remainingWords, "Not started", Modifier.weight(1f))
+            Metric(today.totalWords, uiString(UiR.string.ui_total), Modifier.weight(1f))
+            Metric(today.learnedWords, uiString(UiR.string.ui_learned), Modifier.weight(1f))
+            Metric(today.remainingWords, uiString(UiR.string.ui_not_started), Modifier.weight(1f))
           }
-          Text("Today · ${today.completed} / ${today.planned}", style = MaterialTheme.typography.bodySmall,
+          Text(uiString(UiR.string.ui_today_detail, uiString(UiR.string.ui_fraction, today.completed, today.planned)), style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         GrowthDetails(today.growth)
       }
       if (state.error != null && editor == null) {
-        Text(state.error.orEmpty(), color = MaterialTheme.colorScheme.error)
-        TextButton(shape = MaterialTheme.shapes.small, onClick = vm::retry, enabled = enabled) { Text("Try again") }
+        Text(uiString(state.error!!), color = MaterialTheme.colorScheme.error)
+        TextButton(shape = MaterialTheme.shapes.small, onClick = vm::retry, enabled = enabled) { Text(uiString(UiR.string.ui_try_again)) }
       }
     }
   }
@@ -118,16 +121,16 @@ private fun GrowthDetails(growth: StudyGrowth) {
   var showInfo by rememberSaveable { mutableStateOf(false) }
   Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
     Row(verticalAlignment = Alignment.CenterVertically) {
-      Text("Level ${growth.level}", style = MaterialTheme.typography.titleMedium)
+      Text(uiString(UiR.string.ui_level, growth.level), style = MaterialTheme.typography.titleMedium)
       IconButton(onClick = { showInfo = true }) {
-        Icon(painterResource(R.drawable.ic_info), contentDescription = "Growth information",
+        Icon(painterResource(R.drawable.ic_info), contentDescription = uiString(UiR.string.ui_growth_information),
           modifier = Modifier.size(20.dp))
       }
     }
     LinearProgressIndicator(progress = { growth.fraction }, modifier = Modifier.fillMaxWidth())
-    Text("${growth.earned} / ${growth.span} days · ${growth.remaining} days to next level",
+    Text(uiString(UiR.string.ui_growth_to_next_level, uiString(UiR.string.ui_fraction, growth.earned, growth.span), growth.remaining),
       style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    Text("${growth.days} growth days", style = MaterialTheme.typography.bodyMedium)
+    Text(uiString(UiR.string.ui_growth_days, growth.days), style = MaterialTheme.typography.bodyMedium)
   }
   if (showInfo) GrowthInfoDialog(growth, onDismiss = { showInfo = false })
 }
@@ -135,36 +138,36 @@ private fun GrowthDetails(growth: StudyGrowth) {
 @Composable
 private fun GrowthInfoDialog(growth: StudyGrowth, onDismiss: () -> Unit) {
   FlashcardDialog(onDismissRequest = onDismiss,
-    title = { Text("Growth information") },
+    title = { Text(uiString(UiR.string.ui_growth_information)) },
     text = {
       Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp)) {
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-          GrowthRule("Open the app daily")
-          GrowthRule("Finish today's Learn")
+          GrowthRule(uiString(UiR.string.ui_open_the_app_daily))
+          GrowthRule(uiString(UiR.string.ui_finish_today_s_learn))
         }
         HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-          GrowthRule("Complete 10 words", "Learn or Collection")
-          GrowthRule("Clear 20 mistakes")
+          GrowthRule(uiString(UiR.string.ui_complete_10_words), "Learn or Collection")
+          GrowthRule(uiString(UiR.string.ui_clear_20_mistakes))
         }
         Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surfaceContainer) {
           Row(Modifier.fillMaxWidth().padding(12.dp), horizontalArrangement = Arrangement.spacedBy(16.dp)) {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-              Text("Words", style = MaterialTheme.typography.bodySmall,
+              Text(uiString(UiR.string.ui_words), style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
-              Text("${growth.learnedCompletions % 10} / 10", style = MaterialTheme.typography.titleMedium)
+              Text(uiString(UiR.string.ui_fraction, growth.learnedCompletions % 10, 10), style = MaterialTheme.typography.titleMedium)
             }
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-              Text("Mistakes", style = MaterialTheme.typography.bodySmall,
+              Text(uiString(UiR.string.ui_mistakes), style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant)
-              Text("${growth.clearedMistakes % 20} / 20", style = MaterialTheme.typography.titleMedium)
+              Text(uiString(UiR.string.ui_fraction, growth.clearedMistakes % 20, 20), style = MaterialTheme.typography.titleMedium)
             }
           }
         }
       }
     },
-    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss) { Text("OK") } })
+    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss) { Text(uiString(UiR.string.ui_ok)) } })
 }
 
 @Composable

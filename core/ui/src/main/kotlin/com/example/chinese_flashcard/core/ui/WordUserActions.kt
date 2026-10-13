@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.core.ui
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -63,12 +65,12 @@ fun WordUserActions(isCollected: Boolean, isSkipped: Boolean, enabled: Boolean,
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(0.dp)) {
       IconButton(onClick = { onCollection(!isCollected) }, enabled = enabled,
         modifier = Modifier.size(width = actionWidth, height = 48.dp)) {
-        CollectionIcon(isCollected, contentDescription = if (isCollected) "Remove from my collection" else "Add to my collection")
+        CollectionIcon(isCollected, contentDescription = uiString(if (isCollected) UiR.string.ui_remove_from_my_collection else UiR.string.ui_add_to_my_collection))
       }
       TextButton(shape = MaterialTheme.shapes.small, onClick = { confirming = !isSkipped }, enabled = enabled,
         modifier = Modifier.defaultMinSize(minWidth = actionWidth).heightIn(min = 48.dp),
         contentPadding = PaddingValues(horizontal = if (compact) 2.dp else 4.dp)) {
-        Text(if (isSkipped) "unskip" else "skip", style = MaterialTheme.typography.labelMedium,
+        Text(uiString(if (isSkipped) UiR.string.ui_unskip else UiR.string.ui_skip), style = MaterialTheme.typography.labelMedium,
           color = if (enabled) FlashcardStyle.colors.gradientSecondaryInk else MaterialTheme.colorScheme.onSurface.copy(alpha = .38f))
       }
     }
@@ -83,11 +85,10 @@ fun WordUserActions(isCollected: Boolean, isSkipped: Boolean, enabled: Boolean,
 fun SkipConfirmationDialog(skip: Boolean, wordLabel: String, enabled: Boolean,
   onDismiss: () -> Unit, onConfirm: () -> Unit) {
   FlashcardDialog(onDismissRequest = { if (enabled) onDismiss() },
-    title = { Text(if (skip) "Skip ${wordLabel.ifBlank { "this word" }}?" else "Unskip ${wordLabel.ifBlank { "this word" }}?") },
-    text = { Text(if (skip) "This word will pause in Learn, Review, Collections and Mistakes until you unskip it. Your progress will be kept."
-      else "This word will be available again the next time you open its study session.") },
-    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = enabled) { Text(if (skip) "Skip" else "Unskip") } },
-    dismissButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = enabled) { Text("Cancel") } })
+    title = { Text(uiString(if (skip) UiR.string.ui_skip_word_confirm else UiR.string.ui_unskip_word_confirm, wordLabel.ifBlank { uiString(UiR.string.ui_this_word) })) },
+    text = { Text(uiString(if (skip) UiR.string.ui_this_word_will_pause_in_learn_review_collections_and_mistakes_until_you_unskip_it_your_progress_will_be_kept else UiR.string.ui_this_word_will_be_available_again_the_next_time_you_open_its_study_session)) },
+    confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = enabled) { Text(uiString(if (skip) UiR.string.ui_skip_fc50a9 else UiR.string.ui_unskip_35cff7)) } },
+    dismissButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = enabled) { Text(uiString(UiR.string.ui_cancel)) } })
 }
 
 @Preview(name = "Word actions · light", showBackground = true)

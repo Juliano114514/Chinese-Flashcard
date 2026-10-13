@@ -1,5 +1,6 @@
 package com.example.chinese_flashcard.feature.profile
 
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chinese_flashcard.core.domain.CsvImportPreview
@@ -12,6 +13,7 @@ import com.example.chinese_flashcard.core.domain.StudyRepository
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.TodaySummary
 import com.example.chinese_flashcard.core.domain.ThemeMode
+import com.example.chinese_flashcard.core.domain.AppLanguage
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -33,7 +35,7 @@ data class ProfileUiState(
   val saving: Boolean = false,
   val stored: StudySettings = StudySettings(),
   val today: TodaySummary? = null,
-  val error: String? = null,
+  val error: UiMessageKey? = null,
   val savedRevision: Long = 0,
 )
 
@@ -45,6 +47,8 @@ data class ProfileUpdate(
   val rounds: Int? = null,
   val reviewDays: List<Int>? = null,
   val themeMode: ThemeMode? = null,
+  val uiLanguage: AppLanguage? = null,
+  val learningLanguage: AppLanguage? = null,
 ) {
   fun applyTo(value: StudySettings): StudySettings {
     dailyWords?.let { require(DailyWordChoices.isAllowed(it)) { "Daily words must be 5–50 in steps of 5." } }
@@ -55,6 +59,8 @@ data class ProfileUpdate(
       rounds = rounds ?: value.rounds,
       reviewDays = reviewDays ?: value.reviewDays,
       themeMode = themeMode ?: value.themeMode,
+      uiLanguage = uiLanguage ?: value.uiLanguage,
+      learningLanguage = learningLanguage ?: value.learningLanguage,
     )
   }
 }
@@ -69,7 +75,7 @@ sealed interface ProfileMutation {
   data object Editing : ProfileMutation
   data object Saving : ProfileMutation
   data class Saved(val settings: StudySettings) : ProfileMutation
-  data class Failed(val message: String) : ProfileMutation
+  data class Failed(val message: UiMessageKey) : ProfileMutation
   data object Idle : ProfileMutation
 }
 object ProfileReducer {
@@ -91,7 +97,7 @@ data class CsvImportUiState(
   val stage: CsvImportStage = CsvImportStage.IDLE,
   val preview: CsvImportPreview? = null,
   val report: CsvImportReport? = null,
-  val error: String? = null,
+  val error: UiMessageKey? = null,
 ) {
   val busy: Boolean get() = stage != CsvImportStage.IDLE
   val canDismiss: Boolean get() = stage != CsvImportStage.IMPORTING && stage != CsvImportStage.DISCARDING
@@ -106,7 +112,7 @@ sealed interface CsvImportMutation {
   data class Previewed(val preview: CsvImportPreview) : CsvImportMutation
   data object Importing : CsvImportMutation
   data class Imported(val report: CsvImportReport) : CsvImportMutation
-  data class Failed(val message: String) : CsvImportMutation
+  data class Failed(val message: UiMessageKey) : CsvImportMutation
   data object Discarding : CsvImportMutation
   data object Closed : CsvImportMutation
   data class Idle(val stage: CsvImportStage) : CsvImportMutation
@@ -171,7 +177,7 @@ class ProfileViewModel(
         throw error
       } catch (_: Exception) {
         failedSave = update
-        mutate(ProfileMutation.Failed("Your settings couldn't be saved. Try again."))
+        mutate(ProfileMutation.Failed(UiMessageKey.YOUR_SETTINGS_COULDN_T_BE_SAVED_TRY_AGAIN))
       } finally {
         mutate(ProfileMutation.Idle)
       }
@@ -198,7 +204,7 @@ class ProfileViewModel(
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        mutateImport(CsvImportMutation.Failed("The CSV couldn't be read. Check that it uses UTF-8, then choose the file again."))
+        mutateImport(CsvImportMutation.Failed(UiMessageKey.THE_CSV_COULDN_T_BE_READ_CHECK_THAT_IT_USES_UTF_8_THEN_CHOOSE_THE_FILE_AGAIN))
       } finally {
         mutateImport(CsvImportMutation.Idle(CsvImportStage.READING))
       }
@@ -222,7 +228,7 @@ class ProfileViewModel(
       } catch (_: Exception) {
         discardPreview(id)
         previewId = null
-        mutateImport(CsvImportMutation.Failed("The CSV couldn't be imported. Choose the file again to retry."))
+        mutateImport(CsvImportMutation.Failed(UiMessageKey.THE_CSV_COULDN_T_BE_IMPORTED_CHOOSE_THE_FILE_AGAIN_TO_RETRY))
       } finally {
         mutateImport(CsvImportMutation.Idle(CsvImportStage.IMPORTING))
       }
@@ -275,7 +281,7 @@ class ProfileViewModel(
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        mutate(ProfileMutation.Failed("Your saved settings couldn't be loaded. Try again."))
+        mutate(ProfileMutation.Failed(UiMessageKey.YOUR_SAVED_SETTINGS_COULDN_T_BE_LOADED_TRY_AGAIN))
       }
     }
   }

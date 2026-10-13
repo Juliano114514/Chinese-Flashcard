@@ -1,5 +1,8 @@
 package com.example.chinese_flashcard.feature.profile
 
+import com.example.chinese_flashcard.core.ui.R as UiR
+import com.example.chinese_flashcard.core.ui.uiString
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
@@ -18,7 +21,8 @@ import com.example.chinese_flashcard.core.domain.StudyGrowth
 
 @Composable
 internal fun LevelBadge(growth: StudyGrowth) {
-  Row(Modifier.semantics(mergeDescendants = true) { contentDescription = "Level ${growth.level}" },
+  val description = uiString(UiR.string.ui_level, growth.level)
+  Row(Modifier.semantics(mergeDescendants = true) { contentDescription = description },
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(3.dp)) {
     for ((count, drawable) in listOf(growth.crowns to R.drawable.ic_level_crown,
         growth.suns to R.drawable.ic_level_sun, growth.moons to R.drawable.ic_level_moon,
@@ -27,7 +31,7 @@ internal fun LevelBadge(growth: StudyGrowth) {
         Icon(painterResource(drawable), contentDescription = null,
           modifier = Modifier.size(18.dp), tint = Color.Unspecified)
       }
-      if (count > 3) Text("×$count", style = MaterialTheme.typography.labelSmall)
+      if (count > 3) Text(uiString(UiR.string.ui_multiplier, count), style = MaterialTheme.typography.labelSmall)
     }
   }
 }

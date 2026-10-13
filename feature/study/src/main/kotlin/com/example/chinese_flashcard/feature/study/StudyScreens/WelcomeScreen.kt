@@ -1,5 +1,9 @@
 package com.example.chinese_flashcard.feature.study
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.uiPlural
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -53,6 +57,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.StudySettings
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.ui.AvatarPickerDialog
 import com.example.chinese_flashcard.core.ui.EditableAvatar
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
@@ -62,7 +67,7 @@ import kotlin.math.roundToInt
 fun WelcomeScreen(
   settings: StudySettings,
   saving: Boolean,
-  error: String?,
+  error: UiMessageKey?,
   onSave: (StudySettings) -> Unit,
 ) {
   var step by rememberSaveable { mutableIntStateOf(0) }
@@ -98,7 +103,7 @@ fun WelcomeScreen(
             }, onAvatar = { focus.clearFocus(); choosingAvatar = true },
             onNext = { if (!saving && validName) { focus.clearFocus(); step = 1 } })
           1 -> {
-            Text("Words per day", style = MaterialTheme.typography.headlineMedium,
+            Text(uiString(UiR.string.ui_words_per_day_af7c07), style = MaterialTheme.typography.headlineMedium,
               textAlign = TextAlign.Center)
             Text(dailyWords.toString(), fontSize = 52.sp, lineHeight = 60.sp,
               fontWeight = FontWeight.SemiBold)
@@ -119,9 +124,9 @@ fun WelcomeScreen(
           2 -> {
             Column(horizontalAlignment = Alignment.CenterHorizontally,
               verticalArrangement = Arrangement.spacedBy(8.dp)) {
-              Text("When should you review?", style = MaterialTheme.typography.headlineMedium,
+              Text(uiString(UiR.string.ui_when_should_you_review), style = MaterialTheme.typography.headlineMedium,
                 textAlign = TextAlign.Center)
-              Text("Days after passing a new word", style = MaterialTheme.typography.bodyMedium,
+              Text(uiString(UiR.string.ui_days_after_passing_a_new_word), style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
             }
             Column(Modifier.fillMaxWidth()) {
@@ -141,12 +146,12 @@ fun WelcomeScreen(
                     if (checked) Icon(Icons.Default.Check, contentDescription = null,
                       tint = MaterialTheme.colorScheme.onPrimary, modifier = Modifier.size(16.dp))
                   }
-                  Text("$day ${if (day == 1) "day" else "days"} later",
+                  Text(uiPlural(UiR.plurals.ui_days_later_quantity, day, day),
                     style = MaterialTheme.typography.bodyLarge)
                 }
               }
             }
-            if (reviewDays.isEmpty()) Text("Select at least one day", color = MaterialTheme.colorScheme.error,
+            if (reviewDays.isEmpty()) Text(uiString(UiR.string.ui_select_at_least_one_day), color = MaterialTheme.colorScheme.error,
               style = MaterialTheme.typography.bodySmall)
           }
         }
@@ -155,8 +160,9 @@ fun WelcomeScreen(
     Column(Modifier.widthIn(max = 360.dp).fillMaxWidth(),
       horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(20.dp)) {
       error?.let { ErrorNotice(it, canSave, save) }
+      val setupDescription = uiString(UiR.string.ui_setup_page, step + 1)
       Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.semantics {
-        contentDescription = "Setup page ${step + 1} of 3"
+        contentDescription = setupDescription
       }) {
         repeat(3) { index ->
           Spacer(Modifier.size(6.dp).background(if (step == index) MaterialTheme.colorScheme.primary
@@ -166,7 +172,7 @@ fun WelcomeScreen(
       Button(onClick = { if (step < 2) { focus.clearFocus(); step++ } else save() },
         enabled = !saving && if (step == 0) validName else if (step == 2) canSave else true,
         shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) {
-        Text(if (saving) "Saving…" else if (step < 2) "Next" else "Let's start")
+        Text(if (saving) uiString(UiR.string.ui_saving_ff509c) else if (step < 2) uiString(UiR.string.ui_next) else uiString(UiR.string.ui_let_s_start))
       }
     }
   }
@@ -187,7 +193,7 @@ private fun WelcomeNameFields(
     verticalArrangement = Arrangement.spacedBy(24.dp)) {
     EditableAvatar(avatarId, size = 48.dp, enabled = enabled, onClick = onAvatar)
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-      Text("Your name", style = MaterialTheme.typography.titleLarge)
+      Text(uiString(UiR.string.ui_your_name), style = MaterialTheme.typography.titleLarge)
       OutlinedTextField(value = name, onValueChange = onNameChange,
         modifier = Modifier.fillMaxWidth(), enabled = enabled, singleLine = true,
         shape = MaterialTheme.shapes.medium,

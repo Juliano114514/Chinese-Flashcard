@@ -1,5 +1,10 @@
 package com.example.chinese_flashcard.feature.writing
 
+import com.example.chinese_flashcard.core.ui.uiPlural
+import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures
@@ -110,34 +115,34 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
   Column(Modifier.fillMaxSize().flashcardBackground()
     .verticalScroll(rememberScrollState()).padding(horizontal = 20.dp, vertical = 12.dp),
     verticalArrangement = Arrangement.spacedBy(12.dp)) {
-    FlashcardToolbar("Writing", onBack, enabled = !state.busy)
+    FlashcardToolbar(uiString(UiR.string.ui_writing), onBack, enabled = !state.busy)
     when {
       state.loading -> Box(Modifier.fillMaxWidth().height(180.dp), contentAlignment = Alignment.Center) {
         CircularProgressIndicator()
       }
-      state.error != null -> WritingError(state.error!!, "Try again") { vm.onAction(WritingAction.Retry) }
+      state.error != null -> WritingError(state.error!!, uiString(UiR.string.ui_try_again)) { vm.onAction(WritingAction.Retry) }
       snapshot != null && snapshot.status == WritingStatus.COMPLETED -> {
         Spacer(Modifier.height(24.dp))
-        Text("Writing complete", style = MaterialTheme.typography.headlineMedium)
-        Text("${snapshot.totalWords} ${if (snapshot.totalWords == 1) "word" else "words"} practised.",
+        Text(uiString(UiR.string.ui_writing_complete), style = MaterialTheme.typography.headlineMedium)
+        Text(uiPlural(UiR.plurals.ui_words_practised_quantity, snapshot.totalWords, snapshot.totalWords),
           color = FlashcardStyle.colors.gradientSecondaryInk)
         Button(onClick = onFinished, shape = MaterialTheme.shapes.medium,
-          modifier = Modifier.fillMaxWidth()) { Text("Done") }
+          modifier = Modifier.fillMaxWidth()) { Text(uiString(UiR.string.ui_done)) }
       }
       snapshot != null && snapshot.status == WritingStatus.ACTIVE -> {
         ActiveWriting(snapshot, state, vm::onAction, onSpeak)
-        if (state.saveError != null) WritingError(state.saveError!!, "Retry save") { vm.onAction(WritingAction.RetrySave) }
+        if (state.saveError != null) WritingError(state.saveError!!, uiString(UiR.string.ui_retry_save)) { vm.onAction(WritingAction.RetrySave) }
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if (snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
           TextButton(shape = MaterialTheme.shapes.small, onClick = { vm.onAction(WritingAction.Skip) },
             colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             enabled = !state.busy && state.saveError == null, modifier = Modifier.fillMaxWidth()) {
-            Text("Skip writing")
+            Text(uiString(UiR.string.ui_skip_writing))
           }
         } else {
           TextButton(shape = MaterialTheme.shapes.small, onClick = onBack, enabled = !state.busy, modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
-            Text("Continue later")
+            Text(uiString(UiR.string.ui_continue_later))
           }
         }
       }
@@ -188,7 +193,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
       playing = false
     }
   }
-  Text("Word ${snapshot.wordIndex + 1} / ${snapshot.totalWords}  ·  Character ${snapshot.characterIndex + 1} / ${glyphs.size}",
+  Text(uiString(UiR.string.ui_writing_word_character, uiString(UiR.string.ui_fraction, snapshot.wordIndex + 1, snapshot.totalWords), uiString(UiR.string.ui_fraction, snapshot.characterIndex + 1, glyphs.size)),
     style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
   WritingPaper(snapshot, key, guideShown, frame,
     listenEnabled = !state.busy && currentGlyph != null,
@@ -209,11 +214,11 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
       onUndo = { playing = false; onAction(WritingAction.Undo) }, onRestart = {
         playing = false; guideShown = false; frame = 0f; onAction(WritingAction.Restart)
       })
-    if (guideShown) Text("${ceil(frame).toInt()} / ${item.paths.size} strokes shown",
+    if (guideShown) Text(uiString(UiR.string.ui_strokes_shown, uiString(UiR.string.ui_fraction, ceil(frame).toInt(), item.paths.size)),
       style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
   }
-  snapshot.feedback?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
-  Text("Follow the highlighted stroke.",
+  snapshot.feedback?.let { Text(uiString(it), style = MaterialTheme.typography.bodyMedium) }
+  Text(uiString(UiR.string.ui_follow_the_highlighted_stroke),
     style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
   item?.let { Text(it.attribution, style = MaterialTheme.typography.bodySmall,
     color = FlashcardStyle.colors.gradientSecondaryInk) }
@@ -232,15 +237,15 @@ private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
       WritingWordHeader(snapshot.word, snapshot.characterIndex)
       TextButton(shape = MaterialTheme.shapes.small, onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
         contentColor = colors.writingActive,
-        disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) { Text("Listen") }
+        disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) { Text(uiString(UiR.string.ui_listen)) }
       if (item != null && item.paths.isNotEmpty()) {
         StrokeCanvas(item, snapshot.accepted, drawingKey, guideShown, frame,
           enabled = strokeEnabled, onStroke = onStroke)
-        Text("${snapshot.accepted.size} / ${item.paths.size} strokes  ·  ${snapshot.mistakes} ${if (snapshot.mistakes == 1) "retry" else "retries"}",
+        Text(uiString(UiR.string.ui_strokes_retries, uiString(UiR.string.ui_fraction, snapshot.accepted.size, item.paths.size), snapshot.mistakes),
           color = colors.writingSecondaryInk, style = MaterialTheme.typography.bodySmall)
       } else {
         Box(Modifier.fillMaxWidth().aspectRatio(1f), contentAlignment = Alignment.Center) {
-          Text("No stroke data for this character.", color = colors.writingInk,
+          Text(uiString(UiR.string.ui_no_stroke_data_for_this_character), color = colors.writingInk,
             textAlign = TextAlign.Center, modifier = Modifier.padding(24.dp))
         }
       }
@@ -341,12 +346,12 @@ private fun writingDisplayParts(word: WordEntry): List<WordPart> {
 private fun WritingToolbar(playing: Boolean, canGuide: Boolean, canUndo: Boolean,
   onPlay: () -> Unit, onNext: () -> Unit, onReplay: () -> Unit, onUndo: () -> Unit, onRestart: () -> Unit) {
   Row(Modifier.fillMaxWidth()) {
-    WritingTool(if (playing) "Pause" else "Play", if (playing) WritingIcons.Pause else WritingIcons.Play,
+    WritingTool(uiString(if (playing) UiR.string.ui_pause else UiR.string.ui_play), if (playing) WritingIcons.Pause else WritingIcons.Play,
       enabled = canGuide, modifier = Modifier.weight(1f), onClick = onPlay)
-    WritingTool("Next", WritingIcons.Next, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onNext)
-    WritingTool("Replay", WritingIcons.Replay, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onReplay)
-    WritingTool("Undo", WritingIcons.Undo, enabled = canUndo, modifier = Modifier.weight(1f), onClick = onUndo)
-    WritingTool("Restart", WritingIcons.Restart, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onRestart)
+    WritingTool(uiString(UiR.string.ui_next), WritingIcons.Next, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onNext)
+    WritingTool(uiString(UiR.string.ui_replay), WritingIcons.Replay, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onReplay)
+    WritingTool(uiString(UiR.string.ui_undo), WritingIcons.Undo, enabled = canUndo, modifier = Modifier.weight(1f), onClick = onUndo)
+    WritingTool(uiString(UiR.string.ui_restart), WritingIcons.Restart, enabled = canGuide, modifier = Modifier.weight(1f), onClick = onRestart)
   }
 }
 
@@ -357,7 +362,7 @@ private fun WritingTool(label: String, icon: ImageVector, enabled: Boolean,
     colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
     contentPadding = PaddingValues(horizontal = 0.dp, vertical = 8.dp)) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-      Icon(icon, contentDescription = if (label == "Next") "Next stroke" else label)
+      Icon(icon, contentDescription = if (icon == WritingIcons.Next) uiString(UiR.string.ui_next_stroke) else label)
       Text(label, fontSize = 12.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
     }
   }
@@ -380,17 +385,17 @@ private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class, l
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
       Column(Modifier.fillMaxSize().flashcardBackground().verticalScroll(rememberScrollState())
         .padding(horizontal = 20.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text("Writing", style = MaterialTheme.typography.titleMedium)
-        Text("Word 1 / 1 · Character 1 / 1", color = FlashcardStyle.colors.gradientSecondaryInk,
+        Text(uiString(UiR.string.ui_writing), style = MaterialTheme.typography.titleMedium)
+        Text(uiString(UiR.string.ui_writing_word_character, uiString(UiR.string.ui_fraction, 1, 1), uiString(UiR.string.ui_fraction, 1, 1)), color = FlashcardStyle.colors.gradientSecondaryInk,
           style = MaterialTheme.typography.labelLarge)
         WritingPaper(snapshot, "preview", guideShown = false, frame = 0f,
           listenEnabled = true, strokeEnabled = false, onListen = {}, onStroke = {})
         WritingToolbar(playing = false, canGuide = true, canUndo = false,
           onPlay = {}, onNext = {}, onReplay = {}, onUndo = {}, onRestart = {})
-        Text("Follow the highlighted stroke.", style = MaterialTheme.typography.bodySmall,
+        Text(uiString(UiR.string.ui_follow_the_highlighted_stroke), style = MaterialTheme.typography.bodySmall,
           color = FlashcardStyle.colors.gradientSecondaryInk)
         TextButton(shape = MaterialTheme.shapes.small, onClick = {}, colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction)) {
-          Text("Continue later")
+          Text(uiString(UiR.string.ui_continue_later))
         }
       }
     }
@@ -446,11 +451,11 @@ private object WritingIcons {
 }
 
 @Composable
-private fun WritingError(message: String, button: String, onRetry: () -> Unit) {
+private fun WritingError(message: UiMessageKey, button: String, onRetry: () -> Unit) {
   Surface(color = MaterialTheme.colorScheme.errorContainer, shape = MaterialTheme.shapes.large) {
     Column(Modifier.fillMaxWidth().padding(14.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
-      Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+      Text(uiString(message), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
         color = MaterialTheme.colorScheme.onErrorContainer)
       TextButton(shape = MaterialTheme.shapes.small, onClick = onRetry) { Text(button) }
     }
@@ -462,12 +467,13 @@ private fun WritingError(message: String, button: String, onRetry: () -> Unit) {
 private fun StrokeCanvas(item: TracingItem, accepted: List<List<StrokePoint>>, drawingKey: String,
   guideShown: Boolean, frame: Float, enabled: Boolean, onStroke: (List<StrokePoint>) -> Unit) {
   val colors = FlashcardStyle.colors
+  val gridDescription = uiString(UiR.string.ui_four_square_tracing_grid_draw_one_stroke_at_a_time)
   val paths = remember(item.id, item.revision) { item.paths.map { PathParser().parsePathString(it).toPath() } }
   val medians = remember(item.id, item.revision) { item.medians.map { StrokeMatcher.resample(it, 80) } }
   var drawing by remember(drawingKey) { mutableStateOf(emptyList<StrokePoint>()) }
   val latestStroke by rememberUpdatedState(onStroke)
   Canvas(Modifier.fillMaxWidth().aspectRatio(1f).clip(RoundedCornerShape(2.dp))
-    .semantics { contentDescription = "Four-square tracing grid; draw one stroke at a time" }
+    .semantics { contentDescription = gridDescription }
     .pointerInput(drawingKey, enabled) {
       if (enabled) detectDragGestures(
         onDragStart = { offset ->

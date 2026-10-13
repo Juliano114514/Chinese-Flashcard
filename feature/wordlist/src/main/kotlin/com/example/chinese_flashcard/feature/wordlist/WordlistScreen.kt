@@ -1,5 +1,9 @@
 package com.example.chinese_flashcard.feature.wordlist
 
+import com.example.chinese_flashcard.core.ui.localizedLabel
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -98,16 +102,16 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
         Column(verticalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.padding(bottom = 8.dp)) {
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text("Wordlist", Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
-            Text("${state.total} words", style = MaterialTheme.typography.bodySmall,
+            Text(uiString(UiR.string.ui_wordlist), Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
+            Text(uiString(UiR.string.ui_word_count, state.total), style = MaterialTheme.typography.bodySmall,
               color = MaterialTheme.colorScheme.onSurfaceVariant)
           }
           Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
             Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
               Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                WordCount(state.learned, "Learned", Modifier.weight(1f))
-                WordCount(state.learning, "Learning", Modifier.weight(1f))
-                WordCount(state.unlearned, "Not started", Modifier.weight(1f))
+                WordCount(state.learned, uiString(UiR.string.ui_learned), Modifier.weight(1f))
+                WordCount(state.learning, uiString(UiR.string.ui_learning), Modifier.weight(1f))
+                WordCount(state.unlearned, uiString(UiR.string.ui_not_started), Modifier.weight(1f))
               }
               LinearProgressIndicator(progress = {
                 if (state.total == 0) 0f else (state.learned.toFloat() / state.total).coerceIn(0f, 1f)
@@ -117,24 +121,25 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
           OutlinedTextField(value = state.query, onValueChange = onQuery,
             modifier = Modifier.fillMaxWidth(), singleLine = true, shape = MaterialTheme.shapes.medium,
             textStyle = MaterialTheme.typography.bodyMedium,
-            placeholder = { Text("Hanzi, pinyin or meaning", style = MaterialTheme.typography.bodyMedium) },
+            placeholder = { Text(uiString(UiR.string.ui_hanzi_pinyin_or_meaning), style = MaterialTheme.typography.bodyMedium) },
             leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, modifier = Modifier.size(20.dp)) },
             trailingIcon = if (state.query.isNotEmpty()) {
-              { IconButton(onClick = { onQuery("") }) { Icon(Icons.Default.Close, contentDescription = "Clear search") } }
+              { IconButton(onClick = { onQuery("") }) { Icon(Icons.Default.Close, contentDescription = uiString(UiR.string.ui_clear_search)) } }
             } else null)
           Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-              WordlistFilterChip(selected = state.status == null, onClick = { onStatus(null) }, label = "All")
+              WordlistFilterChip(selected = state.status == null, onClick = { onStatus(null) }, label = uiString(UiR.string.ui_all))
               WordlistStatus.entries.forEach { status ->
                 WordlistFilterChip(selected = state.status == status, onClick = { onStatus(status) }, label = status.label())
               }
             }
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()),
               verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-              WordlistFilterChip(selected = state.difficulties.isEmpty(), onClick = { onDifficulty(null) }, label = "All")
+              WordlistFilterChip(selected = state.difficulties.isEmpty(), onClick = { onDifficulty(null) }, label = uiString(UiR.string.ui_all))
               VocabularyStage.rarityRange.forEach { level ->
+                val description = VocabularyStage.fromRarity(level)?.localizedLabel().orEmpty()
                 WordlistFilterChip(selected = level in state.difficulties,
-                  modifier = Modifier.semantics { contentDescription = VocabularyStage.fromRarity(level)?.label.orEmpty() },
+                  modifier = Modifier.semantics { contentDescription = description },
                   onClick = { onDifficulty(level) }, label = level.toString())
               }
             }
@@ -142,19 +147,19 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Text(buildString {
-              append("${state.entries.size} ${if (state.entries.size == 1) "word" else "words"}")
-              if (state.skipped > 0) append(" · ${state.skipped} skipped")
+              append(uiString(UiR.string.ui_word_count, state.entries.size))
+              if (state.skipped > 0) append(uiString(UiR.string.ui_skipped_count_suffix, state.skipped))
             }, Modifier.weight(1f), style = MaterialTheme.typography.bodySmall,
               color = MaterialTheme.colorScheme.onSurfaceVariant)
             WordlistFilterChip(selected = state.myCollectionOnly,
-              onClick = { onCollection(!state.myCollectionOnly) }, label = "My collection")
+              onClick = { onCollection(!state.myCollectionOnly) }, label = uiString(UiR.string.ui_my_collection))
           }
           state.error?.let { message ->
             Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
               verticalArrangement = Arrangement.spacedBy(8.dp)) {
-              Text(message, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+              Text(uiString(message), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
-              TextButton(shape = MaterialTheme.shapes.small, onClick = onRetry) { Text("Try again") }
+              TextButton(shape = MaterialTheme.shapes.small, onClick = onRetry) { Text(uiString(UiR.string.ui_try_again)) }
             }
           }
           if (state.loading) Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
@@ -164,7 +169,7 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
       }
       if (!state.loading && state.error == null && state.entries.isEmpty()) {
         item(key = "empty") {
-          Text(if (state.total == 0) "No words in your wordlist." else "No matching words.",
+          Text(uiString(if (state.total == 0) UiR.string.ui_no_words_in_your_wordlist else UiR.string.ui_no_matching_words),
             modifier = Modifier.padding(vertical = 24.dp), color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
       }
@@ -207,17 +212,16 @@ private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
         verticalAlignment = Alignment.CenterVertically) {
         Text(entry.hanzi, modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.titleLarge,
           fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
-        if (entry.isCollected) CollectionIcon(true, contentDescription = "In my collection")
+        if (entry.isCollected) CollectionIcon(true, contentDescription = uiString(UiR.string.ui_in_my_collection))
       }
-      Text("Stage ${entry.difficulty}", style = MaterialTheme.typography.bodySmall,
+      Text(uiString(UiR.string.ui_stage_number, entry.difficulty), style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
     Text(entry.pinyin, style = MaterialTheme.typography.bodySmall,
       color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis)
     Text(entry.english, style = MaterialTheme.typography.bodyMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-      Text(if (entry.status == WordlistStatus.LEARNING && entry.targetRounds > 0)
-        "Learning · ${entry.correctRounds} / ${entry.targetRounds}" else entry.status.label(),
+      Text(if (entry.status == WordlistStatus.LEARNING && entry.targetRounds > 0) uiString(UiR.string.ui_learning_stage, uiString(UiR.string.ui_fraction, entry.correctRounds, entry.targetRounds)) else entry.status.label(),
         modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodySmall,
         color = when (entry.status) {
           WordlistStatus.LEARNED -> FlashcardStyle.colors.success
@@ -229,11 +233,12 @@ private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
   }
 }
 
+@Composable
 private fun WordlistStatus.label(): String = when (this) {
-  WordlistStatus.UNLEARNED -> "Not started"
-  WordlistStatus.LEARNING -> "Learning"
-  WordlistStatus.LEARNED -> "Learned"
-  WordlistStatus.SKIPPED -> "Skipped"
+  WordlistStatus.UNLEARNED -> uiString(UiR.string.ui_not_started)
+  WordlistStatus.LEARNING -> uiString(UiR.string.ui_learning)
+  WordlistStatus.LEARNED -> uiString(UiR.string.ui_learned)
+  WordlistStatus.SKIPPED -> uiString(UiR.string.ui_skipped)
 }
 
 @Preview(name = "Wordlist", widthDp = 360, heightDp = 760)

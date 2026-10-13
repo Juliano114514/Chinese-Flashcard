@@ -1,5 +1,8 @@
 package com.example.chinese_flashcard.core.ui
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -31,6 +34,9 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.WordEntry
+import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.splitEnglishMeanings
 
 /** Presentation only: callers own playback, writing, and any long-press menu. */
 @Composable
@@ -40,7 +46,7 @@ fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongCl
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(trailingSpacing)) {
       Text(word.hanzi, fontSize = 40.sp, lineHeight = 52.sp, fontWeight = FontWeight.Medium,
         modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = enabled, onClick = onSpeak,
-          onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) "Word actions" else null))
+          onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) uiString(UiR.string.ui_word_actions) else null))
       if (!trailingOnNewLine) trailing?.invoke()
     }
     if (trailingOnNewLine) trailing?.invoke()
@@ -48,36 +54,52 @@ fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongCl
       Text(word.pinyin, modifier = Modifier.weight(1f), fontSize = 18.sp, lineHeight = 26.sp,
         color = FlashcardStyle.colors.gradientSecondaryInk)
       IconButton(onClick = onSpeak, enabled = enabled, modifier = Modifier.size(48.dp)) {
-        Icon(Icons.Default.PlayArrow, contentDescription = "Listen to word", modifier = Modifier.size(20.dp))
+        Icon(Icons.Default.PlayArrow, contentDescription = uiString(UiR.string.ui_listen_to_word), modifier = Modifier.size(20.dp))
       }
     }
   }
 }
 
 @Composable
-fun WordMeanings(word: WordEntry) {
+fun WordMeanings(word: WordEntry, onSpeak: (SpeechRequest) -> Unit = {},
+  ipaResolver: (String) -> String? = { null }, enabled: Boolean = true) {
   Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
     word.meanings.forEach { meaning ->
       Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
         if (meaning.partOfSpeech.isNotBlank()) Text(meaning.partOfSpeech,
           style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Text(meaning.english, style = MaterialTheme.typography.bodyLarge)
+        splitEnglishMeanings(meaning.english).forEach { english ->
+          Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+              Text(english, style = MaterialTheme.typography.bodyLarge)
+              ipaResolver(english)?.takeIf { it.isNotBlank() }?.let { ipa ->
+                Text(ipa, style = MaterialTheme.typography.bodySmall,
+                  color = MaterialTheme.colorScheme.onSurfaceVariant)
+              }
+            }
+            IconButton(onClick = { onSpeak(SpeechRequest(english, AppLanguage.EN)) }, enabled = enabled,
+              modifier = Modifier.size(48.dp)) {
+              Icon(Icons.Default.PlayArrow, contentDescription = uiString(UiR.string.ui_listen_to_english_meaning),
+                modifier = Modifier.size(20.dp))
+            }
+          }
+        }
       }
     }
   }
 }
 
 @Composable
-fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit, compact: Boolean = false) {
+fun WordExplanation(word: WordEntry, onSpeak: (SpeechRequest) -> Unit, compact: Boolean = false) {
   if (word.literalExplanations.isNotEmpty() || word.figurativeExplanations.isNotEmpty()) {
     WordPanel(compact) {
       if (word.literalExplanations.isNotEmpty()) {
-        PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) "Literal meaning" else "Meanings")
+        PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) uiString(UiR.string.ui_literal_meaning) else uiString(UiR.string.ui_meanings))
         ExplanationMeanings(word.literalExplanations)
       }
       if (word.figurativeExplanations.isNotEmpty()) {
         if (word.literalExplanations.isNotEmpty()) PanelDivider()
-        PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) "Figurative meaning" else "Extended use")
+        PanelLabel(if (word.meanings.any { it.partOfSpeech == "idiom" }) uiString(UiR.string.ui_figurative_meaning) else uiString(UiR.string.ui_extended_use))
         ExplanationMeanings(word.figurativeExplanations)
       }
     }
@@ -92,7 +114,7 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit, compact: Boolean
   }
   if (word.parts.isNotEmpty()) {
     WordPanel(compact) {
-      PanelLabel("Word breakdown")
+      PanelLabel(uiString(UiR.string.ui_word_breakdown))
       word.parts.forEach { part ->
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           Text(part.hanzi, style = MaterialTheme.typography.titleLarge)
@@ -102,7 +124,7 @@ fun WordExplanation(word: WordEntry, onSpeak: (String) -> Unit, compact: Boolean
           }
         }
       }
-      word.meanings.firstOrNull()?.let { Text("Together: ${it.english}", style = MaterialTheme.typography.bodyMedium) }
+      word.meanings.firstOrNull()?.let { Text(uiString(UiR.string.ui_together_meaning, it.english), style = MaterialTheme.typography.bodyMedium) }
     }
   }
 }
@@ -119,7 +141,7 @@ private fun ExplanationMeanings(meanings: List<String>) {
 }
 
 @Composable
-fun WordExamplePanel(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true,
+fun WordExamplePanel(example: ExampleSentence, onSpeak: (SpeechRequest) -> Unit, enabled: Boolean = true,
   compact: Boolean = false) {
   WordPanel(compact) { ExampleContent(example, onSpeak, enabled) }
 }
@@ -135,16 +157,16 @@ private fun WordPanel(compact: Boolean, content: @Composable ColumnScope.() -> U
 }
 
 @Composable
-private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, enabled: Boolean = true) {
+private fun ExampleContent(example: ExampleSentence, onSpeak: (SpeechRequest) -> Unit, enabled: Boolean = true) {
   Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-      PanelLabel("Example")
+      PanelLabel(uiString(UiR.string.ui_example))
       Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
           Text(exampleLine(example.chunks.map { it.hanzi }, example.hanzi), modifier = Modifier.weight(1f),
             fontSize = 20.sp, lineHeight = 30.sp, fontWeight = FontWeight.Medium)
-          IconButton(onClick = { onSpeak(example.hanzi) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
-            Icon(Icons.Default.PlayArrow, contentDescription = "Listen to example", modifier = Modifier.size(20.dp))
+          IconButton(onClick = { onSpeak(SpeechRequest(example.hanzi, AppLanguage.CN)) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
+            Icon(Icons.Default.PlayArrow, contentDescription = uiString(UiR.string.ui_listen_to_chinese_example), modifier = Modifier.size(20.dp))
           }
         }
         Text(exampleLine(example.chunks.map { it.pinyin }, example.pinyin),
@@ -156,8 +178,15 @@ private fun ExampleContent(example: ExampleSentence, onSpeak: (String) -> Unit, 
       }
     }
     PanelDivider()
-    Text(example.english, style = MaterialTheme.typography.bodyLarge.copy(
-      localeList = LocaleList("en"), hyphens = Hyphens.None))
+    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+      Text(example.english, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge.copy(
+        localeList = LocaleList("en"), hyphens = Hyphens.None))
+      IconButton(onClick = { onSpeak(SpeechRequest(example.english, AppLanguage.EN)) }, enabled = enabled,
+        modifier = Modifier.size(48.dp)) {
+        Icon(Icons.Default.PlayArrow, contentDescription = uiString(UiR.string.ui_listen_to_english_example),
+          modifier = Modifier.size(20.dp))
+      }
+    }
   }
 }
 

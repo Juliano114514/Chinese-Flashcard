@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.core.ui
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -31,7 +33,7 @@ fun FlashcardToolbar(title: String, onBack: () -> Unit, modifier: Modifier = Mod
   Row(modifier.fillMaxWidth().heightIn(min = 56.dp),
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
     IconButton(onClick = onBack, enabled = enabled) {
-      Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+      Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = uiString(UiR.string.ui_back))
     }
     Text(title, Modifier.weight(1f), style = MaterialTheme.typography.titleLarge)
     trailing?.invoke()

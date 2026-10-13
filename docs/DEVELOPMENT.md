@@ -4,7 +4,7 @@
 
 ## 工程与环境
 
-Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v9 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
+Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v10 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
 
@@ -20,13 +20,9 @@ Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `
 
 当前契约见 [CSV_IMPORT](CSV_IMPORT.md)；来源和许可见 [第三方声明](../THIRD_PARTY_NOTICES.md) 与 [版权处理](OPEN_SOURCE_COMPLIANCE.md)。CSV 限制为 32 MiB、单记录 32 KiB、词库总量 20,000、字形 10,000。
 
-`tools/wordlist_rebuild/` 保存基线、ID 映射、教学字段、两轮追加与五档覆盖。重建器递归核对 content_review、两轮 expansion 和 stage_grading 的冻结哈希及审阅记录。目录名是历史再现契约，不改名、不统一换行、不重新编号。
+当前仅保留根目录 `wordlist.csv` 这一份正式词库。旧原表、基线、制作草稿、追加／分级／审校记录、历史报告和旧生成器已清理；历史资料可从 Git 历史查阅。当前 CSV 的 ID、顺序和全部内容保持不变，仍包含“爱护／爱心”及“哎呀／哎哟”。
 
-`complete_wordlist.py`、`refine_existing_wordlist.py` 与 `wordlist_difficulty.py` 保留供当前重建器及冻结脚本导入的共用函数。它们的旧生产流程不支持当前格式，不作为日常制作入口；历史过程中不再需要的作者工作队列和生成入口已清理。必要词典来源、最终生产记录、原表及删除依据继续保留，方便追溯授权与内容变化。
-
-历史 expansion／grading 目录中的脚本也可能是哈希冻结的证据；保留不等于其旧作者流程所需缓存仍在本机。日常使用上述三个检查及当前重建入口，历史制作流程需要另行准备对应输入，不能绕过完整性检查。
-
-`tools/wordlist_rebuild/replacements-20261008.json` 在冻结的 2026-10-07 词库上，将“唉呀／哎唷”替换为“爱护／爱心”，保留“哎呀／哎哟”；行数和五档数量不变。独立记录原行、替换教学字段及前后哈希，历史冻结文件不改写。本次按用户要求不维护旧词库 ID 的兼容语义；旧安装的词库更新仍会受到已有 ID 归属检查限制，不能把新 CSV 检查通过当作旧库升级已验证。
+`tools/rebuild_wordlist.py` 为兼容现有 CI 命令保留文件名，现在仅支持 `--check`，复用原有完整结构校验，并核对 `docs/wordlist-validation.json` 中当前快照的哈希、大小和统计。它不再支持 `--prepare`／`--apply`，不依赖旧版词库，也不能重建历史制作过程。当前笔顺、来源元数据和许可证继续保留。
 
 ## 检查与再现
 
@@ -36,12 +32,13 @@ Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `
 python tools/rebuild_wordlist.py --check
 python tools/build_wordlist_strokes.py --check
 python tools/build_demo.py --check
+python tools/build_english_resources.py --check
 .\gradlew.bat :app:lintDebug
 ```
 
-词库检查覆盖结构、引用、内容形状、资源与冻结清单；不代表词义、读音或版权全部正确。笔顺完整来源检查依赖本地 `.gradle/stroke-source/` 的固定原始文件与许可，不在 `--check` 时下载。缺少缓存时应先阅读工具中的固定版本与哈希，按明确授权准备来源；可以用不带 `--check` 的笔顺生成入口获取来源并重建，但该操作会联网并写资源，不能当作只读检查。重建后必须核对 diff 与哈希。
+词库检查覆盖结构、引用、内容形状、字形索引覆盖与当前快照清单；不代表词义、读音或版权全部正确。笔顺完整来源检查依赖本地 `.gradle/stroke-source/` 的固定原始文件与许可，不在 `--check` 时下载。缺少缓存时应先阅读工具中的固定版本与哈希，按明确授权准备来源；可以用不带 `--check` 的笔顺生成入口获取来源并重建，但该操作会联网并写资源，不能当作只读检查。重建后必须核对 diff 与哈希。
 
-`python tools/rebuild_wordlist.py --apply` 会重写词库和两个生成清单；`--prepare` 会读取固定 CC-CEDICT 缓存并生成作者草稿。只核对再现时，把必需输入和字形复制到独立临时目录，在那里执行 `--apply`，再与工作区 CSV 逐字节比较，不覆盖工作区。
+词库维护以当前 CSV 为唯一输入；内容变化时必须同步当前快照清单，并保留稳定 ID 与来源说明。只读检查不生成或改写 CSV。
 
 CSV 初始化／追加在事务中处理。导入取消不得落库，版本匹配不重复处理；默认库更新失败保持已有库可用，不清库或降级。学习／复习／续学、收藏／错词练习各自保持状态边界；写字完成不算词汇掌握。
 
@@ -49,10 +46,22 @@ Room 8→9 只新增主题字段、等级累计及每日奖励标记；学习记
 
 ## 资料管理与验证边界
 
-保留工具读取、manifest 引用和来源证据闭包中的文件；无引用的候选、快照、重复报告和私有附件不提交。删除未跟踪的独有内容前，在仓库外备份并校验哈希。忽略规则不替代已跟踪文件或历史的清理。
+保留当前词库、工具读取的运行资源与来源许可声明；无引用的候选、快照、重复报告和私有附件不提交。删除未跟踪的独有内容前，在仓库外备份并校验哈希。忽略规则不替代已跟踪文件或历史的清理。
 
 2026-10-04／05 的实施、UI、旧词库及构建／安装记录属于历史版本，其原文可在 Git 历史找到。它们不能证明当前版本首次初始化、导入取消、Room 迁移、窄屏大字体、TTS、触摸写字或恢复行为。AI 语言审校、静态检查、lint、构建、安装和设备操作分别记录覆盖。
 
 每轮提交的实际验证见 VERSIONLOG。1.3.0 提交任务执行已有数据检查与 lint；该轮未构建 APK、未签名或覆盖安装设备，未创建发布标签或 GitHub Release。手机操作仅复现更新前的主题问题，不能替代更新后运行验收。
 
 GitHub CI 与自动签名发布的触发条件、Secrets、失败重试和证据边界见 [CI 与 Release](CI_RELEASE.md)。工作流不自动升级版本；维护者按仓库规则更新版本及日志后推送到 `main`。
+
+## 双向学习与英语语音
+
+Room v10 将旧 v9 学习记录全部归入 CN，新增按目标语言的学习上下文、进度、计划、复习与会话。收藏书签及成长等级共用；日奖励以全局日期去重。系统语言 EN/CN 只控制界面，学习目标 CN/EN 决定题面及进度。迁移不清库，不改变 CSV。
+
+首页语言入口使用独立 `LanguagesDialog`，设置页继续保留两项编辑。中文目标的题干是中文词／拼音，选项为英文释义；英文目标的题干是逐行英文义项，选项为中文词／拼音。题干与自动朗读始终采用目标语言，答题前的例句不显示对照答案。英文学习页隐藏写字入口，词库详情仍保留手动中文写字。
+
+UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）及 `values-zh/strings.xml`（中文）同名资源中。Compose 用 `uiString`／`uiPlural` 调用标准 `stringResource`／`pluralStringResource`；非 Compose 事件用 `uiText`。`AppLanguageProvider` 为当前界面提供局部语言配置，保留设备字体、密度和主题设置。错误、CSV 诊断与描红反馈使用 `UiMessageKey`，不以英文句子或正则反查翻译；旧数据库中的描红反馈只在读取时映射为键，草稿不清除。
+
+英语资源由 `tools/build_english_resources.py` 生成；`--check` 只读验证冻结 CSV 哈希、模型／音标来源、分片哈希、token 覆盖与许可引用。资源生成和模型准备需要明确的联网下载与写入授权，不发生在普通应用构建或运行时。配置、固定版本、覆盖和复现方法见 [英语语音维护](ENGLISH_SPEECH.md)。APK 仅使用 ONNX Runtime、Kitten ONNX、Bella 原始浮点声线及发音 JSON，不携带构建期 phonemizer、Python 或其 GPL 运行代码。
+
+本次功能未升级应用版本。实际 lint／数据检查与未覆盖的设备行为以本轮交付为准；词库来源的既有授权待核实项继续保留。

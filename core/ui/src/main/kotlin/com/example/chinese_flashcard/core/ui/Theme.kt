@@ -206,7 +206,9 @@ fun studyBackgroundBrush(): Brush {
   }
 }
 
-fun Throwable.flashcardMessage(): String = when (this) {
-  is com.example.chinese_flashcard.core.domain.NewStudyDayException -> message.orEmpty()
-  else -> "Local data could not be read or saved. Please retry. Your saved progress has not been cleared."
+fun Throwable.flashcardMessage(): com.example.chinese_flashcard.core.domain.UiMessageKey = when (this) {
+  is com.example.chinese_flashcard.core.domain.UiMessageException -> code
+  is com.example.chinese_flashcard.core.domain.NewStudyDayException ->
+    com.example.chinese_flashcard.core.domain.UiMessageKey.A_NEW_DAY_HAS_STARTED_YOUR_DAILY_PLAN_HAS_BEEN_REFRESHED
+  else -> com.example.chinese_flashcard.core.domain.UiMessageKey.LOCAL_DATA_COULD_NOT_BE_READ_OR_SAVED_PLEASE_RETRY_YOUR_SAVED_PROGRESS_HAS_NOT_BEEN_CLEARED
 }

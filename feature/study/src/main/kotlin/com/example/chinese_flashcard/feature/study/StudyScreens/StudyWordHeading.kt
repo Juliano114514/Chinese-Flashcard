@@ -1,5 +1,8 @@
 package com.example.chinese_flashcard.feature.study
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -41,9 +44,10 @@ import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordUserActions
 
 @Composable
-private fun RoundProgress(card: StudyCard) {
+internal fun RoundProgress(card: StudyCard) {
+  val description = uiString(UiR.string.ui_round_of, card.round, card.targetRounds)
   Column(verticalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
-    contentDescription = "Round ${card.round} of ${card.targetRounds}"
+    contentDescription = description
   }) {
     repeat(card.targetRounds) { index ->
       Spacer(Modifier.size(width = 10.dp, height = 3.dp).background(
@@ -85,7 +89,7 @@ internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> 
         }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(20.dp))
-          Text("Listen", style = MaterialTheme.typography.bodyLarge)
+          Text(uiString(UiR.string.ui_listen_66b5db), style = MaterialTheme.typography.bodyLarge)
         }
         onWrite?.let { write ->
           HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
@@ -94,9 +98,9 @@ internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> 
           }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Icon(Icons.Default.Edit, contentDescription = null, modifier = Modifier.size(20.dp))
-            Text("Write", style = MaterialTheme.typography.bodyLarge)
+            Text(uiString(UiR.string.ui_write), style = MaterialTheme.typography.bodyLarge)
           }
         }
       }
-    }, confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = { showActions = false }) { Text("Close") } })
+    }, confirmButton = { TextButton(shape = MaterialTheme.shapes.small, onClick = { showActions = false }) { Text(uiString(UiR.string.ui_close)) } })
 }

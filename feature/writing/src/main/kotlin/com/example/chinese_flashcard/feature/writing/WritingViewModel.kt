@@ -1,5 +1,6 @@
 package com.example.chinese_flashcard.feature.writing
 
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chinese_flashcard.core.domain.StrokePoint
@@ -13,7 +14,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 data class WritingUiState(val loading: Boolean = true, val snapshot: WritingSnapshot? = null,
-  val busy: Boolean = false, val error: String? = null, val saveError: String? = null)
+  val busy: Boolean = false, val error: UiMessageKey? = null, val saveError: UiMessageKey? = null)
 
 sealed interface WritingAction {
   data object Retry : WritingAction
@@ -27,9 +28,9 @@ sealed interface WritingAction {
 sealed interface WritingMutation {
   data object Loading : WritingMutation
   data class Loaded(val snapshot: WritingSnapshot) : WritingMutation
-  data class LoadFailed(val message: String) : WritingMutation
+  data class LoadFailed(val message: UiMessageKey) : WritingMutation
   data object Saving : WritingMutation
-  data class SaveFailed(val message: String) : WritingMutation
+  data class SaveFailed(val message: UiMessageKey) : WritingMutation
 }
 
 object WritingReducer {
@@ -74,11 +75,11 @@ class WritingViewModel(private val sessionId: String, private val repository: Wr
     when (action) {
       is WritingAction.Stroke -> {
         val points = action.points.take(1024).toList()
-        write { repository.submitStroke(sessionId, cursor, points) }
+        write { repository.submitStroke(sessionId, cursor, points, snapshot.learningLanguage, snapshot.contextVersion) }
       }
-      WritingAction.Undo -> if (snapshot.accepted.isNotEmpty()) write { repository.undo(sessionId, cursor) }
-      WritingAction.Restart -> write { repository.restartCharacter(sessionId, cursor) }
-      WritingAction.Skip -> write { repository.skip(sessionId) }
+      WritingAction.Undo -> if (snapshot.accepted.isNotEmpty()) write { repository.undo(sessionId, cursor, snapshot.learningLanguage, snapshot.contextVersion) }
+      WritingAction.Restart -> write { repository.restartCharacter(sessionId, cursor, snapshot.learningLanguage, snapshot.contextVersion) }
+      WritingAction.Skip -> write { repository.skip(sessionId, snapshot.learningLanguage, snapshot.contextVersion) }
       else -> Unit
     }
   }
@@ -89,7 +90,7 @@ class WritingViewModel(private val sessionId: String, private val repository: Wr
       try { mutate(WritingMutation.Loaded(repository.load(sessionId))) }
       catch (error: Exception) {
         if (error is CancellationException) throw error
-        mutate(WritingMutation.LoadFailed("Writing practice could not be loaded. Your saved draft was kept."))
+        mutate(WritingMutation.LoadFailed(UiMessageKey.WRITING_PRACTICE_COULD_NOT_BE_LOADED_YOUR_SAVED_DRAFT_WAS_KEPT))
       }
     }
   }
@@ -104,7 +105,7 @@ class WritingViewModel(private val sessionId: String, private val repository: Wr
         mutate(WritingMutation.Loaded(saved))
       } catch (error: Exception) {
         if (error is CancellationException) throw error
-        mutate(WritingMutation.SaveFailed("The drawing could not be saved. Retry to continue; your previous draft was kept."))
+        mutate(WritingMutation.SaveFailed(UiMessageKey.THE_DRAWING_COULD_NOT_BE_SAVED_RETRY_TO_CONTINUE_YOUR_PREVIOUS_DRAFT_WAS_KEPT))
       }
     }
   }

@@ -1,5 +1,9 @@
 package com.example.chinese_flashcard.feature.profile
 
+import com.example.chinese_flashcard.core.ui.uiPlural
+import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -52,6 +56,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.ThemeMode
+import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
 import com.example.chinese_flashcard.core.ui.FlashcardDialog
 import com.example.chinese_flashcard.core.ui.FlashcardToolbar
@@ -62,13 +67,13 @@ import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.roundToInt
 
-private enum class SettingEditor { DAILY_WORDS, ROUNDS, REVIEW_DAYS, THEME }
+private enum class SettingEditor { DAILY_WORDS, ROUNDS, REVIEW_DAYS, THEME, UI_LANGUAGE, LEARNING_LANGUAGE }
 
 @Composable
 fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> Unit, onLicenses: () -> Unit,
   defaultWordlistProgress: StateFlow<WordlistLoadProgress?>, csvImportProgress: StateFlow<WordlistLoadProgress?>,
-  defaultWordlistLoading: Boolean = false, defaultWordlistError: String? = null,
-  onRetryDefaultWordlist: () -> Unit = {}) {
+  defaultWordlistLoading: Boolean = false, defaultWordlistError: UiMessageKey? = null,
+  onRetryDefaultWordlist: () -> Unit = {}, languageSwitchEnabled: Boolean = true) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
   var editor by rememberSaveable { mutableStateOf<SettingEditor?>(null) }
@@ -86,55 +91,70 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   Column(Modifier.fillMaxSize().flashcardBackground()
     .verticalScroll(rememberScrollState()).padding(FlashcardLayout.pageInset),
     verticalArrangement = Arrangement.spacedBy(FlashcardLayout.sectionGap)) {
-    FlashcardToolbar("Settings", onBack, enabled = !state.saving && !csv.busy)
+    FlashcardToolbar(uiString(UiR.string.ui_settings), onBack, enabled = !state.saving && !csv.busy)
     if (state.loading) {
       Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
         CircularProgressIndicator(Modifier.size(28.dp))
       }
     } else {
       Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text("Appearance", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-          SettingsRow("Theme", value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
-        }
-      }
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text("Learning", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(uiString(UiR.string.ui_languages), style = MaterialTheme.typography.labelLarge,
+          color = MaterialTheme.colorScheme.onSurfaceVariant)
         Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
-            SettingsRow("Daily words", value.dailyWords.toString(), enabled) { openEditor(SettingEditor.DAILY_WORDS) }
+            SettingsRow(uiString(UiR.string.ui_system_language), value.uiLanguage.label(), enabled && languageSwitchEnabled) {
+              openEditor(SettingEditor.UI_LANGUAGE)
+            }
             SettingsDivider()
-            SettingsRow("Correct rounds", value.rounds.toString(), enabled) { openEditor(SettingEditor.ROUNDS) }
-            SettingsDivider()
-            SettingsRow("Review days", value.reviewDays.joinToString(" / "), enabled) { openEditor(SettingEditor.REVIEW_DAYS) }
+            SettingsRow(uiString(UiR.string.ui_learning_language), value.learningLanguage.label(), enabled && languageSwitchEnabled) {
+              openEditor(SettingEditor.LEARNING_LANGUAGE)
+            }
           }
         }
       }
       Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text("Data", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(uiString(UiR.string.ui_appearance), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+          SettingsRow(uiString(UiR.string.ui_theme), value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
+        }
+      }
+      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(uiString(UiR.string.ui_learning), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
         Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
-            SettingsRow("Import CSV", enabled = enabled, onClick = onImportCsv)
+            SettingsRow(uiString(UiR.string.ui_daily_words), value.dailyWords.toString(), enabled) { openEditor(SettingEditor.DAILY_WORDS) }
             SettingsDivider()
-            SettingsRow("Data & licenses", enabled = enabled, onClick = onLicenses)
+            SettingsRow(uiString(UiR.string.ui_correct_rounds), value.rounds.toString(), enabled) { openEditor(SettingEditor.ROUNDS) }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_review_days), value.reviewDays.joinToString(" / "), enabled) { openEditor(SettingEditor.REVIEW_DAYS) }
+          }
+        }
+      }
+      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(uiString(UiR.string.ui_data), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth()) {
+            SettingsRow(uiString(UiR.string.ui_import_csv), enabled = enabled, onClick = onImportCsv)
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_data_licenses), enabled = enabled, onClick = onLicenses)
           }
         }
       }
       if (defaultWordlistLoading || defaultWordlistError != null) {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
           verticalArrangement = Arrangement.spacedBy(8.dp)) {
-          Text("Default wordlist", style = MaterialTheme.typography.titleSmall)
+          Text(uiString(UiR.string.ui_default_wordlist), style = MaterialTheme.typography.titleSmall)
           if (defaultWordlistLoading) WordlistLoadingProgress(defaultWordlistProgress)
           else {
-            Text(defaultWordlistError.orEmpty(), textAlign = TextAlign.Center,
+            Text(uiString(defaultWordlistError!!), textAlign = TextAlign.Center,
               color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
-            TextButton(shape = MaterialTheme.shapes.small, onClick = onRetryDefaultWordlist, enabled = enabled && editor == null) { Text("Retry") }
+            TextButton(shape = MaterialTheme.shapes.small, onClick = onRetryDefaultWordlist, enabled = enabled && editor == null) { Text(uiString(UiR.string.ui_retry)) }
           }
         }
       }
       if (state.error != null && editor == null) {
-        Text(state.error.orEmpty(), color = MaterialTheme.colorScheme.error)
-        TextButton(shape = MaterialTheme.shapes.small, onClick = vm::retry, enabled = enabled) { Text("Try again") }
+        Text(uiString(state.error!!), color = MaterialTheme.colorScheme.error)
+        TextButton(shape = MaterialTheme.shapes.small, onClick = vm::retry, enabled = enabled) { Text(uiString(UiR.string.ui_try_again)) }
       }
     }
   }
@@ -148,21 +168,51 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(reviewDays = it)) })
     SettingEditor.THEME -> ThemeDialog(value.themeMode, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(themeMode = it)) })
+    SettingEditor.UI_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_system_language), value.uiLanguage,
+      state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(uiLanguage = it)) }
+    SettingEditor.LEARNING_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_learning_language), value.learningLanguage,
+      state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(learningLanguage = it)) }
     null -> Unit
   }
 }
 
-private fun ThemeMode.label(): String = when (this) {
-  ThemeMode.LIGHT -> "Light"
-  ThemeMode.DARK -> "Dark"
-  ThemeMode.SYSTEM -> "Follow system"
+@Composable
+private fun AppLanguage.label(): String = when (this) {
+  AppLanguage.EN -> uiString(UiR.string.ui_english) + " · EN"
+  AppLanguage.CN -> uiString(UiR.string.ui_chinese) + " · CN"
 }
 
 @Composable
-private fun ThemeDialog(initial: ThemeMode, saving: Boolean, error: String?, onDismiss: () -> Unit,
+private fun LanguageDialog(title: String, initial: AppLanguage, saving: Boolean, error: UiMessageKey?,
+  onDismiss: () -> Unit, onConfirm: (AppLanguage) -> Unit) {
+  var selected by rememberSaveable(initial) { mutableStateOf(initial) }
+  SettingDialog(title, saving, error, true, onDismiss, { onConfirm(selected) }) {
+    Column(Modifier.selectableGroup()) {
+      AppLanguage.entries.forEach { language ->
+        Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
+          .selectable(selected = selected == language, enabled = !saving, role = Role.RadioButton,
+            onClick = { selected = language }).padding(horizontal = 8.dp),
+          verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+          RadioButton(selected = selected == language, onClick = null, enabled = !saving)
+          Text(language.label())
+        }
+      }
+    }
+  }
+}
+
+@Composable
+private fun ThemeMode.label(): String = when (this) {
+  ThemeMode.LIGHT -> uiString(UiR.string.ui_light)
+  ThemeMode.DARK -> uiString(UiR.string.ui_dark)
+  ThemeMode.SYSTEM -> uiString(UiR.string.ui_follow_system)
+}
+
+@Composable
+private fun ThemeDialog(initial: ThemeMode, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit,
   onConfirm: (ThemeMode) -> Unit) {
   var selected by rememberSaveable { mutableStateOf(initial) }
-  SettingDialog("Theme", saving, error, true, onDismiss, { onConfirm(selected) }) {
+  SettingDialog(uiString(UiR.string.ui_theme), saving, error, true, onDismiss, { onConfirm(selected) }) {
     Column(Modifier.selectableGroup()) {
       ThemeMode.entries.forEach { mode ->
         Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
@@ -201,22 +251,22 @@ private fun SettingsRow(title: String, value: String? = null, enabled: Boolean =
 }
 
 @Composable
-internal fun NameDialog(initial: String, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (String) -> Unit) {
+internal fun NameDialog(initial: String, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (String) -> Unit) {
   var text by rememberSaveable { mutableStateOf(initial) }
-  SettingDialog("Your name", saving, error, text.trim().isNotEmpty(), onDismiss, { onConfirm(text.trim()) }) {
+  SettingDialog(uiString(UiR.string.ui_your_name), saving, error, text.trim().isNotEmpty(), onDismiss, { onConfirm(text.trim()) }) {
     OutlinedTextField(text, onValueChange = { if (it.length <= 40 && it.none(Char::isISOControl)) text = it },
       Modifier.fillMaxWidth(), singleLine = true, enabled = !saving, shape = MaterialTheme.shapes.medium,
       textStyle = MaterialTheme.typography.bodyLarge,
       keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
       keyboardActions = KeyboardActions(onDone = { if (!saving && text.trim().isNotEmpty()) onConfirm(text.trim()) }),
-      label = { Text("Name") })
+      label = { Text(uiString(UiR.string.ui_name)) })
   }
 }
 
 @Composable
-private fun DailyWordsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
+private fun DailyWordsDialog(initial: Int, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
   var count by rememberSaveable { mutableIntStateOf(DailyWordChoices.normalize(initial)) }
-  SettingDialog("Words per day", saving, error, DailyWordChoices.isAllowed(count), onDismiss, { onConfirm(count) }) {
+  SettingDialog(uiString(UiR.string.ui_words_per_day), saving, error, DailyWordChoices.isAllowed(count), onDismiss, { onConfirm(count) }) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
       Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
       Slider(count.toFloat(), onValueChange = { count = DailyWordChoices.normalize(it.roundToInt()) },
@@ -227,16 +277,16 @@ private fun DailyWordsDialog(initial: Int, saving: Boolean, error: String?, onDi
         Text(DailyWordChoices.MIN.toString(), style = MaterialTheme.typography.bodySmall)
         Text(DailyWordChoices.MAX.toString(), style = MaterialTheme.typography.bodySmall)
       }
-      Text("Changes apply to the next daily plan.", style = MaterialTheme.typography.bodySmall,
+      Text(uiString(UiR.string.ui_changes_apply_to_the_next_daily_plan), style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
   }
 }
 
 @Composable
-private fun RoundsDialog(initial: Int, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
+private fun RoundsDialog(initial: Int, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
   var count by rememberSaveable { mutableIntStateOf(initial) }
-  SettingDialog("Correct rounds", saving, error, true, onDismiss, { onConfirm(count) }) {
+  SettingDialog(uiString(UiR.string.ui_correct_rounds), saving, error, true, onDismiss, { onConfirm(count) }) {
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceEvenly) {
@@ -244,20 +294,20 @@ private fun RoundsDialog(initial: Int, saving: Boolean, error: String?, onDismis
         Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
         TextButton(shape = MaterialTheme.shapes.small, onClick = { count++ }, enabled = !saving && count < 8, modifier = Modifier.size(48.dp)) { Text("+") }
       }
-      Text("Consecutive correct answers. A wrong answer resets the round.",
+      Text(uiString(UiR.string.ui_consecutive_correct_answers_a_wrong_answer_resets_the_round),
         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Text("Changes apply to new learning cycles.", style = MaterialTheme.typography.bodySmall,
+      Text(uiString(UiR.string.ui_changes_apply_to_new_learning_cycles), style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
   }
 }
 
 @Composable
-private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: String?, onDismiss: () -> Unit, onConfirm: (List<Int>) -> Unit) {
+private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (List<Int>) -> Unit) {
   var selected by rememberSaveable { mutableStateOf(initial) }
-  SettingDialog("Review days", saving, error, selected.isNotEmpty(), onDismiss, { onConfirm(selected.sorted()) }) {
+  SettingDialog(uiString(UiR.string.ui_review_days), saving, error, selected.isNotEmpty(), onDismiss, { onConfirm(selected.sorted()) }) {
     Column {
-      Text("Days after passing a word", style = MaterialTheme.typography.bodySmall,
+      Text(uiString(UiR.string.ui_days_after_passing_a_word), style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
       listOf(1, 3, 5, 7, 14, 30).forEach { day ->
         val checked = day in selected
@@ -271,10 +321,10 @@ private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: String?
             if (checked) Icon(Icons.Default.Check, contentDescription = null, Modifier.size(16.dp),
               tint = MaterialTheme.colorScheme.onPrimary)
           }
-          Text(if (day == 1) "1 day later" else "$day days later", style = MaterialTheme.typography.bodyMedium)
+          Text(uiPlural(UiR.plurals.ui_days_later_quantity, day, day), style = MaterialTheme.typography.bodyMedium)
         }
       }
-      Text("Changes apply to new learning cycles.", style = MaterialTheme.typography.bodySmall,
+      Text(uiString(UiR.string.ui_changes_apply_to_new_learning_cycles), style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
   }
@@ -287,46 +337,47 @@ private fun CsvImportDialog(state: CsvImportUiState, progress: StateFlow<Wordlis
   val report = state.report
   val issues = preview?.issues?.take(100).orEmpty()
   FlashcardDialog(onDismissRequest = { if (state.canDismiss) onDismiss() },
-    title = { Text("CSV import") }, text = {
+    title = { Text(uiString(UiR.string.ui_csv_import)) }, text = {
       Column(Modifier.heightIn(max = 360.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         if (state.busy) {
           if (state.stage == CsvImportStage.READING || state.stage == CsvImportStage.IMPORTING)
             WordlistLoadingProgress(progress)
-          else Text("Closing preview…", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+          else Text(uiString(UiR.string.ui_closing_preview), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
             style = MaterialTheme.typography.bodySmall)
         }
         preview?.let {
-          Text("${it.totalRows} rows · ${it.newWords} new · ${it.duplicateWords} duplicates")
+          Text(uiString(UiR.string.ui_import_summary, it.totalRows, it.newWords, it.duplicateWords))
           when {
             it.errorCount > 0 -> {
-              Text("${it.errorCount} errors. Fix the CSV and choose it again. No words imported.",
+              Text(uiString(UiR.string.ui_import_errors, it.errorCount),
                 color = MaterialTheme.colorScheme.error)
               issues.forEach { issue ->
-                val location = if (issue.line > 0) "Line ${issue.line}" else "File"
-                Text("$location · ${issue.field}: ${issue.message}",
+                val location = if (issue.line > 0) uiString(UiR.string.ui_line_number, issue.line) else uiString(UiR.string.ui_file)
+                val field = issue.fieldIndex?.let { index -> uiString(UiMessageKey.COLUMN_1_D, index) } ?: issue.field
+                Text(uiString(UiR.string.ui_csv_issue_detail, location, field, uiString(issue.message, *issue.messageArguments.toTypedArray())),
                   style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error)
               }
               if (it.errorCount > issues.size) {
-                Text("Showing the first ${issues.size} errors.", style = MaterialTheme.typography.bodySmall)
+                Text(uiString(UiR.string.ui_show_first_errors, issues.size), style = MaterialTheme.typography.bodySmall)
               }
             }
-            it.newWords == 0 -> Text("All words are already in your wordbook.")
-            else -> Text("Existing words and progress will be kept.")
+            it.newWords == 0 -> Text(uiString(UiR.string.ui_all_words_are_already_in_your_wordbook))
+            else -> Text(uiString(UiR.string.ui_existing_words_and_progress_will_be_kept))
           }
         }
-        report?.let { Text("Added ${it.addedWords} words. Skipped ${it.skippedWords} duplicates.") }
-        state.error?.let { Text(it, color = MaterialTheme.colorScheme.error) }
+        report?.let { Text(uiString(UiR.string.ui_import_added, it.addedWords, it.skippedWords)) }
+        state.error?.let { Text(uiString(it), color = MaterialTheme.colorScheme.error) }
       }
     }, confirmButton = {
       if (preview?.canImport == true && preview.newWords > 0) {
-        TextButton(shape = MaterialTheme.shapes.small, onClick = onImport, enabled = !state.busy) { Text("Import ${preview.newWords} words") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = onImport, enabled = !state.busy) { Text(uiString(UiR.string.ui_import_words, preview.newWords)) }
       } else if (!state.busy) {
-        TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss) { Text("Done") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss) { Text(uiString(UiR.string.ui_done)) }
       }
     }, dismissButton = {
       if (report == null && state.error == null && (preview == null || preview.newWords > 0 && preview.errorCount == 0)) {
-        TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = state.canDismiss) { Text("Cancel") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = state.canDismiss) { Text(uiString(UiR.string.ui_cancel)) }
       }
     })
 }
@@ -335,7 +386,7 @@ private fun CsvImportDialog(state: CsvImportUiState, progress: StateFlow<Wordlis
 private fun SettingDialog(
   title: String,
   saving: Boolean,
-  error: String?,
+  error: UiMessageKey?,
   valid: Boolean,
   onDismiss: () -> Unit,
   onConfirm: () -> Unit,
@@ -346,11 +397,11 @@ private fun SettingDialog(
       Column(Modifier.heightIn(max = 440.dp).verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         content()
-        error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
+        error?.let { Text(uiString(it), color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
       }
     }, confirmButton = {
-      TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = !saving && valid) { Text(if (saving) "Saving…" else "Done") }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = !saving && valid) { Text(uiString(if (saving) UiR.string.ui_saving_ff509c else UiR.string.ui_done)) }
     }, dismissButton = {
-      TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = !saving) { Text("Cancel") }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = !saving) { Text(uiString(UiR.string.ui_cancel)) }
     })
 }

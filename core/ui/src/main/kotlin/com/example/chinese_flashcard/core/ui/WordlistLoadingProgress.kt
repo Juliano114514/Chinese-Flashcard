@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.core.ui
 
+import com.example.chinese_flashcard.core.ui.R as UiR
+import com.example.chinese_flashcard.core.ui.uiString
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -41,24 +43,24 @@ private fun WordlistLoadingProgress(progress: WordlistLoadProgress?, modifier: M
   val percent = floor(fraction * 100).toInt()
   val entry = progress?.currentEntry?.takeIf { it.isNotBlank() }
   val stageLabel = when (progress?.stage) {
-    WordlistLoadStage.CHECKING -> "Checking"
-    WordlistLoadStage.STROKES -> "Stroke data"
-    WordlistLoadStage.SAVING -> "Saving"
-    WordlistLoadStage.COMMITTING -> "Finishing"
-    WordlistLoadStage.COMPLETE -> "Ready"
-    WordlistLoadStage.PREPARING, null -> "Preparing"
+    WordlistLoadStage.CHECKING -> uiString(UiR.string.ui_checking)
+    WordlistLoadStage.STROKES -> uiString(UiR.string.ui_stroke_data)
+    WordlistLoadStage.SAVING -> uiString(UiR.string.ui_saving)
+    WordlistLoadStage.COMMITTING -> uiString(UiR.string.ui_finishing)
+    WordlistLoadStage.COMPLETE -> uiString(UiR.string.ui_ready)
+    WordlistLoadStage.PREPARING, null -> uiString(UiR.string.ui_preparing)
   }
   val message = when {
-    progress?.stage == WordlistLoadStage.COMPLETE -> "Wordlist ready"
-    progress?.stage == WordlistLoadStage.COMMITTING -> "Finishing…"
-    entry != null -> "$stageLabel · Now loading $entry…"
+    progress?.stage == WordlistLoadStage.COMPLETE -> uiString(UiR.string.ui_wordlist_ready)
+    progress?.stage == WordlistLoadStage.COMMITTING -> uiString(UiR.string.ui_finishing_c93220)
+    entry != null -> uiString(UiR.string.ui_wordlist_loading_entry, stageLabel, entry)
     else -> when (progress?.stage) {
-      WordlistLoadStage.CHECKING -> "Checking words…"
-      WordlistLoadStage.STROKES -> "Loading stroke data…"
-      WordlistLoadStage.SAVING -> "Saving words…"
-      WordlistLoadStage.COMMITTING -> "Finishing…"
-      WordlistLoadStage.COMPLETE -> "Wordlist ready"
-      WordlistLoadStage.PREPARING, null -> "Preparing wordlist…"
+      WordlistLoadStage.CHECKING -> uiString(UiR.string.ui_checking_words)
+      WordlistLoadStage.STROKES -> uiString(UiR.string.ui_loading_stroke_data)
+      WordlistLoadStage.SAVING -> uiString(UiR.string.ui_saving_words)
+      WordlistLoadStage.COMMITTING -> uiString(UiR.string.ui_finishing_c93220)
+      WordlistLoadStage.COMPLETE -> uiString(UiR.string.ui_wordlist_ready)
+      WordlistLoadStage.PREPARING, null -> uiString(UiR.string.ui_preparing_wordlist)
     }
   }
   val density = LocalDensity.current
@@ -69,7 +71,7 @@ private fun WordlistLoadingProgress(progress: WordlistLoadProgress?, modifier: M
       horizontalArrangement = Arrangement.spacedBy(12.dp)) {
       LinearProgressIndicator(progress = { fraction }, modifier = Modifier.weight(1f).height(4.dp),
         color = MaterialTheme.colorScheme.primary, trackColor = MaterialTheme.colorScheme.surfaceContainerHighest)
-      Text("$percent%", modifier = Modifier.width(percentWidth),
+      Text(uiString(UiR.string.ui_percent, percent), modifier = Modifier.width(percentWidth),
         style = MaterialTheme.typography.bodySmall.copy(fontFeatureSettings = "tnum"),
         color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center,
         maxLines = 1, overflow = TextOverflow.Ellipsis)

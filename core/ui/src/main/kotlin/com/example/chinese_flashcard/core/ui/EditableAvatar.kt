@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.core.ui
 
+import com.example.chinese_flashcard.core.ui.R as UiR
+import com.example.chinese_flashcard.core.ui.uiString
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -32,13 +34,14 @@ fun EditableAvatar(
   size: Dp,
   modifier: Modifier = Modifier,
   enabled: Boolean = true,
-  accessibilityLabel: String = "Change avatar",
+  accessibilityLabel: String? = null,
   onClick: () -> Unit,
 ) {
+  val translatedLabel = accessibilityLabel ?: uiString(UiR.string.ui_change_avatar)
   val colors = MaterialTheme.colorScheme
   Box(modifier.sizeIn(minWidth = 48.dp, minHeight = 48.dp).clip(MaterialTheme.shapes.small)
     .clickable(enabled = enabled, role = Role.Button, onClick = onClick)
-    .semantics(mergeDescendants = true) { contentDescription = accessibilityLabel },
+    .semantics(mergeDescendants = true) { contentDescription = translatedLabel },
     contentAlignment = Alignment.Center) {
     Box(Modifier.size(size)) {
       Surface(Modifier.fillMaxSize(), shape = MaterialTheme.shapes.medium, color = colors.surface,

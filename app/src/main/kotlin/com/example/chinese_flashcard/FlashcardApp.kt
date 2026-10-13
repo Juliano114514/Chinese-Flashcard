@@ -1,5 +1,9 @@
 package com.example.chinese_flashcard
 
+import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -40,6 +44,10 @@ import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.ThemeMode
+import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.media.EnglishPronunciations
+import com.example.chinese_flashcard.core.ui.AppLanguageProvider
+import com.example.chinese_flashcard.core.ui.uiText
 import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.flashcardMessage
@@ -50,6 +58,7 @@ import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
 import com.example.chinese_flashcard.feature.profile.ProfileViewModel
 import com.example.chinese_flashcard.feature.profile.SettingScreen
+import com.example.chinese_flashcard.feature.profile.LanguagesDialog
 import com.example.chinese_flashcard.feature.study.*
 import com.example.chinese_flashcard.feature.wordlist.*
 import com.example.chinese_flashcard.feature.writing.WritingScreen
@@ -69,7 +78,7 @@ private fun <T : ViewModel> factory(create: () -> T) = object : ViewModelProvide
 }
 
 data class StartupState(val ready: Boolean = false, val busy: Boolean = false,
-  val settings: StudySettings = StudySettings(), val error: String? = null)
+  val settings: StudySettings = StudySettings(), val error: UiMessageKey? = null)
 class StartupViewModel(private val repositories: FlashcardRepositories) : ViewModel() {
   private val mutable = MutableStateFlow(StartupState())
   val state = mutable.asStateFlow()
@@ -106,6 +115,7 @@ class StartupViewModel(private val repositories: FlashcardRepositories) : ViewMo
 fun FlashcardApp(repositories: FlashcardRepositories) {
   val startup: StartupViewModel = viewModel(factory = factory { StartupViewModel(repositories) })
   val boot by startup.state.collectAsStateWithLifecycle()
+  AppLanguageProvider(boot.settings.uiLanguage) {
   FlashcardTheme(themeMode = boot.settings.themeMode) {
   if (!boot.ready || !boot.settings.welcomed) FlashcardSystemBars()
   Surface(Modifier.fillMaxSize()) {
@@ -116,8 +126,8 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
           style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.height(24.dp))
         if (boot.error != null) {
-          Text(boot.error!!, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
-          Button(onClick = startup::prepare, enabled = !boot.busy) { Text("Retry") }
+          Text(uiString(boot.error!!), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
+          Button(onClick = startup::prepare, enabled = !boot.busy) { Text(uiString(UiR.string.ui_retry)) }
         } else {
           WordlistLoadingProgress(repositories.defaultWordlistProgress)
         }
@@ -125,8 +135,9 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
       !boot.settings.welcomed -> Box(Modifier.safeDrawingPadding()) {
         WelcomeScreen(boot.settings, boot.busy, boot.error, startup::welcome)
       }
-      else -> AppNavigation(repositories, boot.settings.themeMode)
+      else -> AppNavigation(repositories, boot.settings)
     }
+  }
   }
   }
 }
@@ -146,8 +157,8 @@ private fun FlashcardSystemBars() {
 }
 
 @Composable
-private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeMode) {
-  val settings by repositories.settings.settings.collectAsStateWithLifecycle(initialValue = StudySettings(themeMode = themeMode))
+private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: StudySettings) {
+  val settings by repositories.settings.settings.collectAsStateWithLifecycle(initialValue = initialSettings)
   val nav = rememberNavController()
   val navigationScope = rememberCoroutineScope()
   val defaultWordlist by repositories.defaultWordlistState.collectAsStateWithLifecycle()
@@ -165,6 +176,15 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
     }) }
   }
   val speech = remember { OfflineSpeech(context) }
+  val pronunciations by produceState<EnglishPronunciations?>(null, context.applicationContext) {
+    value = withContext(Dispatchers.IO) {
+      try { EnglishPronunciations.load(context.applicationContext) }
+      catch (error: CancellationException) { throw error }
+      catch (_: Exception) { null }
+    }
+  }
+  var openLanguages by rememberSaveable { mutableStateOf(false) }
+  var appliedLearningLanguage by rememberSaveable { mutableStateOf(settings.learningLanguage) }
   val owner = LocalLifecycleOwner.current
   DisposableEffect(owner, speech) {
     val observer = LifecycleEventObserver { _, event ->
@@ -176,8 +196,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
   }
   val snackbar = remember { SnackbarHostState() }
   val speechMessage by speech.message.collectAsStateWithLifecycle()
-  LaunchedEffect(speechMessage) {
-    speechMessage?.let { snackbar.showSnackbar(it); speech.dismissMessage() }
+  LaunchedEffect(speechMessage, settings.uiLanguage) {
+    speechMessage?.let { snackbar.showSnackbar(uiText(context, it, settings.uiLanguage)); speech.dismissMessage() }
   }
   val entry by nav.currentBackStackEntryAsState()
   val route = entry?.destination?.route
@@ -204,6 +224,16 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
   val openWriting: (String) -> Unit = { id ->
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
+  LaunchedEffect(settings.learningLanguage) {
+    if (appliedLearningLanguage != settings.learningLanguage) {
+      speech.stop()
+      learnMoreRequest = null
+      study.refresh()
+      nav.navigate("today") { popUpTo("today"); launchSingleTop = true }
+      appliedLearningLanguage = settings.learningLanguage
+    }
+  }
+  AppLanguageProvider(settings.uiLanguage) {
   FlashcardTheme(stage = state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY, themeMode = settings.themeMode) {
   FlashcardSystemBars()
   Scaffold(modifier = Modifier.flashcardBackground(), containerColor = Color.Transparent,
@@ -214,7 +244,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
       NavigationBar(modifier = Modifier.windowInsetsPadding(NavigationBarDefaults.windowInsets).height(60.dp),
         windowInsets = WindowInsets(0, 0, 0, 0),
         containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
-        listOf("today" to "Home", "profile" to "Profile", "wordlist" to "Wordlist").forEach { (destination, label) ->
+        listOf("today" to UiR.string.ui_home, "profile" to UiR.string.ui_profile, "wordlist" to UiR.string.ui_wordlist).forEach { (destination, label) ->
           NavigationBarItem(selected = route == destination, onClick = {
             if (destination == "today") {
               if (route != "today" && !nav.popBackStack("today", inclusive = false)) {
@@ -231,7 +261,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
             "today" -> Icons.Default.Home
             "profile" -> Icons.Default.Person
             else -> Icons.AutoMirrored.Filled.List
-          }, label) },
+          }, uiString(label)) },
             colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent,
               selectedIconColor = MaterialTheme.colorScheme.primary,
               unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant))
@@ -250,7 +280,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
               study.learnMore()
             }
           }, onProfile = { nav.navigate("profile") { launchSingleTop = true } },
-          onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = speech::speak)
+          onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = speech::speak,
+          onLanguages = { profile.beginEdit(); openLanguages = true })
       }
       composable("profile") { ProfileScreen(profile, onSettings = { nav.navigate("settings") { launchSingleTop = true } }) }
       composable("settings") { SettingScreen(profile, onBack = { nav.popBackStack() },
@@ -261,6 +292,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
         csvImportProgress = repositories.csvImport.progress,
         defaultWordlistLoading = defaultWordlist.loading,
         defaultWordlistError = defaultWordlist.error,
+        languageSwitchEnabled = !state.busy,
         onRetryDefaultWordlist = {
           if (defaultWordlistRetry?.isActive != true) {
             defaultWordlistRetry = navigationScope.launch {
@@ -275,15 +307,15 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
       }
       composable("word/{wordId}") { detailEntry ->
         val wordId = requireNotNull(detailEntry.arguments?.getString("wordId"))
-        val vm: WordDetailViewModel = viewModel(detailEntry, key = wordId,
+        val vm: WordDetailViewModel = viewModel(detailEntry, key = "$wordId:${settings.learningLanguage}",
           factory = factory {
-            WordDetailViewModel(wordId, repositories.wordlist, repositories.study, repositories.wordState)
+            WordDetailViewModel(wordId, repositories.wordlist, repositories.study, repositories.wordState, settings.learningLanguage)
           })
         WordDetailScreen(vm, onBack = { speech.stop(); nav.popBackStack() }, onWriting = { sessionId ->
           if (nav.currentBackStackEntry == detailEntry) {
             nav.navigate("word-writing/$sessionId") { launchSingleTop = true }
           }
-        }, onSpeak = speech::speak)
+        }, onSpeak = speech::speak, ipaResolver = { pronunciations?.ipa(it) })
       }
       composable("word-writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -297,7 +329,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
-        }, onWriting = openWriting, onSpeakAndWait = speech::speakAndWait)
+        }, onWriting = openWriting, onSpeakAndWait = speech::speakAndWait, ipaResolver = { pronunciations?.ipa(it) })
       }
       composable("writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -319,30 +351,42 @@ private fun AppNavigation(repositories: FlashcardRepositories, themeMode: ThemeM
       composable("licenses") { LicenseScreen { nav.popBackStack() } }
     }
   }
+  if (openLanguages && route == "today") LanguagesDialog(profile, initial = settings,
+    enabled = !state.busy && !defaultWordlist.loading,
+    onDismiss = { openLanguages = false; profile.beginEdit() })
+  }
   }
 }
 
 @Composable
 private fun LicenseScreen(onBack: () -> Unit) {
   val context = LocalContext.current
-  val licenses by produceState("Loading…") {
+  val licenses by produceState(LicenseText()) {
     value = withContext(Dispatchers.IO) {
       try {
-        listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
-          "wordlist-strokes/LEXICON_LICENSES.txt", "avatars/NOTICE.txt", "level-icons/NOTICE.txt").joinToString("\n\n") { name ->
+        val text = listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
+          "wordlist-strokes/LEXICON_LICENSES.txt", "avatars/NOTICE.txt", "level-icons/NOTICE.txt",
+          "english-speech/LICENSES.txt", "english-teaching/LICENSES.txt").joinToString("\n\n") { name ->
           context.assets.open(name).bufferedReader().use { it.readText() }
         }
+        LicenseText(text = text, loading = false)
       } catch (error: CancellationException) { throw error }
-      catch (_: Exception) { "Source licenses could not be read. Please reopen this page." }
+      catch (_: Exception) { LicenseText(loading = false, failed = true) }
     }
   }
   Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
     verticalArrangement = Arrangement.spacedBy(14.dp)) {
-    FlashcardToolbar("Sources & licenses", onBack)
-    Text("Default vocabulary: bundled wordlist.csv. Dictionary attribution and content sources are listed below.")
-    Text("Legacy demo vocabulary and examples: original teaching material retained when upgrading.")
-    Text("Additional vocabulary: local CSV wordlists imported in Settings.")
-    Text("Stroke outlines and medians: Make Me a Hanzi, supplemented by AnimCJK. Selected glyphs are bundled for offline writing under the Arphic Public License.")
-    Text(licenses, style = MaterialTheme.typography.bodySmall)
+    FlashcardToolbar(uiString(UiR.string.ui_sources_licenses), onBack)
+    Text(uiString(UiR.string.ui_default_vocabulary_bundled_wordlist_csv_dictionary_attribution_and_content_sources_are_listed_below))
+    Text(uiString(UiR.string.ui_legacy_demo_vocabulary_and_examples_original_teaching_material_retained_when_upgrading))
+    Text(uiString(UiR.string.ui_additional_vocabulary_local_csv_wordlists_imported_in_settings))
+    Text(uiString(UiR.string.ui_stroke_outlines_and_medians_make_me_a_hanzi_supplemented_by_animcjk_selected_glyphs_are_bundled_for_offline_writing_under_the_arphic_public_license))
+    Text(when {
+      licenses.loading -> uiString(UiR.string.ui_loading)
+      licenses.failed -> uiString(UiMessageKey.SOURCE_LICENSES_COULD_NOT_BE_READ_PLEASE_REOPEN_THIS_PAGE)
+      else -> licenses.text
+    }, style = MaterialTheme.typography.bodySmall)
   }
 }
+
+private data class LicenseText(val text: String = "", val loading: Boolean = true, val failed: Boolean = false)

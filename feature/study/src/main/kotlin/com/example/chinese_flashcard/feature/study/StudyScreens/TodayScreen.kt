@@ -1,5 +1,9 @@
 package com.example.chinese_flashcard.feature.study
 
+import com.example.chinese_flashcard.core.ui.uiString
+import com.example.chinese_flashcard.core.ui.localizedLabel
+import com.example.chinese_flashcard.core.ui.R as UiR
+
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
@@ -59,6 +63,8 @@ import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.WordlistStatus
+import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.SpeechRequest
 
 private enum class HomeAction { RESUME, CARRYOVER, REVIEW, LEARN, LEARN_MORE, COLLECTIONS, MISTAKES }
 
@@ -74,7 +80,8 @@ fun TodayScreen(
   onLearnMore: () -> Unit,
   onProfile: () -> Unit,
   onWordlist: () -> Unit,
-  onSpeak: (String) -> Unit,
+  onSpeak: (SpeechRequest) -> Unit,
+  onLanguages: () -> Unit = {},
 ) {
   val state by vm.state.collectAsStateWithLifecycle()
   var showLearnMoreBlocker by rememberSaveable { mutableStateOf(false) }
@@ -85,26 +92,28 @@ fun TodayScreen(
   TodayContent(state, onStart, onResume, onLearnMore,
     onLearnMoreBlocked = { showLearnMoreBlocker = true }, onStage = vm::selectStage,
     onRetry = vm::retry,
-    onShuffle = { vm.shuffleHomeWord()?.let { onSpeak(it.hanzi) } },
-    onProfile = onProfile, onWordlist = onWordlist)
+    onShuffle = { vm.shuffleHomeWord()?.let {
+      val language = vm.state.value.settings.learningLanguage
+      onSpeak(SpeechRequest(if (language == AppLanguage.CN) it.hanzi else it.english, language))
+    } }, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
     FlashcardDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
-      title = { Text("Finish today's plan") }, text = {
+      title = { Text(uiString(UiR.string.ui_finish_today_s_plan)) }, text = {
         Text(when (blocker) {
-          StudyKind.REVIEW -> "Review the due words before learning more."
-          StudyKind.CARRYOVER -> "Finish the unfinished words before learning more."
-          else -> "Finish the current word before learning more."
+          StudyKind.REVIEW -> uiString(UiR.string.ui_review_the_due_words_before_learning_more)
+          StudyKind.CARRYOVER -> uiString(UiR.string.ui_finish_the_unfinished_words_before_learning_more)
+          else -> uiString(UiR.string.ui_finish_the_current_word_before_learning_more)
         })
       }, confirmButton = {
         TextButton(shape = MaterialTheme.shapes.small, onClick = { showLearnMoreBlocker = false; onStart(blocker) }, enabled = !state.busy) {
           Text(when (blocker) {
-            StudyKind.REVIEW -> "Go to review"
-            StudyKind.CARRYOVER -> "Go to continue"
-            else -> "Continue learning"
+            StudyKind.REVIEW -> uiString(UiR.string.ui_go_to_review)
+            StudyKind.CARRYOVER -> uiString(UiR.string.ui_go_to_continue)
+            else -> uiString(UiR.string.ui_continue_learning)
           })
         }
       }, dismissButton = {
-        TextButton(shape = MaterialTheme.shapes.small, onClick = { showLearnMoreBlocker = false }, enabled = !state.busy) { Text("Back") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = { showLearnMoreBlocker = false }, enabled = !state.busy) { Text(uiString(UiR.string.ui_back)) }
       })
   }
   if (!showLearnMoreBlocker) DailyWritingInvitation(state, vm)
@@ -122,6 +131,7 @@ private fun TodayContent(
   onShuffle: () -> Unit,
   onProfile: () -> Unit,
   onWordlist: () -> Unit,
+  onLanguages: () -> Unit = {},
 ) {
   val today = state.today
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
@@ -131,8 +141,14 @@ private fun TodayContent(
       Row(Modifier.fillMaxWidth().padding(top = 12.dp), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         EditableAvatar(state.settings.avatarId, size = 44.dp,
-          accessibilityLabel = "Open profile", onClick = onProfile)
+          accessibilityLabel = uiString(UiR.string.ui_open_profile), onClick = onProfile)
         StagePicker(stage, !state.busy && !state.loading, onStage)
+        TextButton(onClick = onLanguages, enabled = !state.busy && !state.loading,
+          contentPadding = PaddingValues(horizontal = 0.dp), modifier = Modifier.weight(1f)) {
+          Text(uiString(UiR.string.ui_use_1_s_learn_2_s, state.settings.uiLanguage.name, state.settings.learningLanguage.name),
+            modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.End,
+            style = MaterialTheme.typography.labelMedium, maxLines = 2)
+        }
       }
       HomeWordShowcase(state = state, stage = stage, onShuffle = onShuffle,
         modifier = Modifier.weight(1f).fillMaxWidth())
@@ -168,15 +184,15 @@ private fun HomeWordShowcase(
             .filter { it.isNotBlank() }.joinToString(" · "), style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         }
-        state.homeWordError -> Text("Couldn't load a word. Tap Shuffle to retry.", textAlign = TextAlign.Center)
+        state.homeWordError -> Text(uiString(UiR.string.ui_couldn_t_load_a_word_tap_shuffle_to_retry), textAlign = TextAlign.Center)
         today != null && state.homeWordStage != stage -> LoadingNotice()
-        today != null -> Text("No words in this stage yet", color = MaterialTheme.colorScheme.onSurfaceVariant,
+        today != null -> Text(uiString(UiR.string.ui_no_words_in_this_stage_yet), color = MaterialTheme.colorScheme.onSurfaceVariant,
           textAlign = TextAlign.Center)
       }
     }
     TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !state.loading && !state.busy &&
       (state.homeWord != null || state.homeWordError), modifier = Modifier.align(Alignment.BottomEnd)) {
-      Text("Shuffle")
+      Text(uiString(UiR.string.ui_shuffle))
     }
   }
 }
@@ -210,31 +226,31 @@ private fun HomeStudyPanel(
             HomeAction.MISTAKES -> onStart(StudyKind.MISTAKES)
           }
         }
-        Text("Study", style = MaterialTheme.typography.titleSmall,
+        Text(uiString(UiR.string.ui_study), style = MaterialTheme.typography.titleSmall,
           color = MaterialTheme.colorScheme.onSurfaceVariant)
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           DailyProgress(today.stageProgress.learned, today.stageProgress.total, Modifier.weight(1f))
           TextButton(shape = MaterialTheme.shapes.small, onClick = onWordlist) {
-            Text("${today.stageProgress.learned} / ${today.stageProgress.total} words",
+            Text(uiString(UiR.string.ui_stage_word_progress, today.stageProgress.learned, today.stageProgress.total),
               style = MaterialTheme.typography.labelMedium)
           }
         }
         val learn = when {
           resume?.kind == StudyKind.NEW || resume?.kind == StudyKind.CARRYOVER ->
-            HomeRow("Learn", "Continue word", "", false, !state.busy, HomeAction.RESUME)
+            HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_continue_word), "", false, !state.busy, HomeAction.RESUME)
           today.carryoverCompleted < today.carryoverPlanned ->
-            HomeRow("Learn", "Unfinished words", "${today.carryoverCompleted} / ${today.carryoverPlanned}",
+            HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_unfinished_words), uiString(UiR.string.ui_fraction, today.carryoverCompleted, today.carryoverPlanned),
               false, !state.busy, HomeAction.CARRYOVER)
           else -> learnRow(today, state.busy)
-            ?: HomeRow("Learn", "No new words", "", false, false, HomeAction.LEARN)
+            ?: HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_no_new_words), "", false, false, HomeAction.LEARN)
         }
         val review = if (resume?.kind == StudyKind.REVIEW) {
-          HomeRow("Review", "Continue word", "", false, !state.busy, HomeAction.RESUME)
+          HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_continue_word), "", false, !state.busy, HomeAction.RESUME)
         } else {
           val done = today.reviewPlanned > 0 && today.reviewCompleted >= today.reviewPlanned
-          HomeRow("Review", "Nothing due", if (today.reviewPlanned > 0)
-            "${today.reviewCompleted} / ${today.reviewPlanned}" else "", done,
+          HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_nothing_due), if (today.reviewPlanned > 0)
+            uiString(UiR.string.ui_fraction, today.reviewCompleted, today.reviewPlanned) else "", done,
             !state.busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -278,9 +294,10 @@ private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (Voca
   Box {
     Row(Modifier.heightIn(min = 48.dp).clickable(enabled = enabled, role = Role.Button) { expanded = true },
       verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-      Text(stage.label, style = MaterialTheme.typography.titleSmall,
+      Text(stage.localizedLabel(), modifier = Modifier.widthIn(max = 120.dp), maxLines = 1, overflow = TextOverflow.Ellipsis,
+        style = MaterialTheme.typography.titleSmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
-      Icon(Icons.Default.KeyboardArrowDown, contentDescription = "Choose learning stage",
+      Icon(Icons.Default.KeyboardArrowDown, contentDescription = uiString(UiR.string.ui_choose_learning_stage),
         modifier = Modifier.size(20.dp), tint = MaterialTheme.colorScheme.onSurfaceVariant)
     }
     DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false },
@@ -291,12 +308,12 @@ private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (Voca
         DropdownMenuItem(text = {
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-            Text(entry.label, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
-            Text("Stage ${entry.rarity}", style = MaterialTheme.typography.bodySmall,
+            Text(entry.localizedLabel(), Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
+            Text(uiString(UiR.string.ui_stage_number, entry.rarity), style = MaterialTheme.typography.bodySmall,
               color = MaterialTheme.colorScheme.onSurfaceVariant)
           }
         }, leadingIcon = {
-          if (entry == stage) Icon(Icons.Default.Check, contentDescription = "Selected stage",
+          if (entry == stage) Icon(Icons.Default.Check, contentDescription = uiString(UiR.string.ui_selected_stage),
             modifier = Modifier.size(20.dp), tint = MaterialTheme.colorScheme.primary)
           else Spacer(Modifier.size(20.dp))
         }, contentPadding = PaddingValues(horizontal = 12.dp),
@@ -306,34 +323,36 @@ private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (Voca
   }
 }
 
+@Composable
 private fun learnRow(today: TodaySummary, busy: Boolean): HomeRow? {
-  val base = if (today.stageProgress.lap > 1) "Stage words" else "New words"
+  val base = if (today.stageProgress.lap > 1) uiString(UiR.string.ui_stage_words) else uiString(UiR.string.ui_new_words)
   if (today.newCompleted < today.newPlanned) {
     val extra = today.newPlanned - today.dailyGoal
-    return HomeRow("Learn", if (extra > 0) "$base · $extra extra" else base,
-      "${today.newCompleted} / ${today.newPlanned}", false, !busy, HomeAction.LEARN)
+    return HomeRow(uiString(UiR.string.ui_learn_2118cb), if (extra > 0) uiString(UiR.string.ui_learning_extra, base, extra) else base,
+      uiString(UiR.string.ui_fraction, today.newCompleted, today.newPlanned), false, !busy, HomeAction.LEARN)
   }
   if (today.learnMoreBlocker != null || today.availableNewWords > 0) {
     val subtitle = when (today.learnMoreBlocker) {
-      StudyKind.REVIEW -> "Finish review first"
-      StudyKind.CARRYOVER -> "Finish unfinished words first"
-      null -> "Next ${minOf(5, today.availableNewWords)} words"
-      else -> "Finish the current word first"
+      StudyKind.REVIEW -> uiString(UiR.string.ui_finish_review_first)
+      StudyKind.CARRYOVER -> uiString(UiR.string.ui_finish_unfinished_words_first)
+      null -> uiString(UiR.string.ui_next_word_count, minOf(5, today.availableNewWords))
+      else -> uiString(UiR.string.ui_finish_the_current_word_first)
     }
-    val trailing = if (today.newPlanned > 0) "${today.newCompleted} / ${today.newPlanned}" else ""
-    return HomeRow("Learn more", subtitle, trailing, false, !busy, HomeAction.LEARN_MORE)
+    val trailing = if (today.newPlanned > 0) uiString(UiR.string.ui_fraction, today.newCompleted, today.newPlanned) else ""
+    return HomeRow(uiString(UiR.string.ui_learn_more), subtitle, trailing, false, !busy, HomeAction.LEARN_MORE)
   }
-  if (today.newPlanned > 0) return HomeRow("Learn", base, "${today.newCompleted} / ${today.newPlanned}",
+  if (today.newPlanned > 0) return HomeRow(uiString(UiR.string.ui_learn_2118cb), base, uiString(UiR.string.ui_fraction, today.newCompleted, today.newPlanned),
     true, false, HomeAction.LEARN)
   return null
 }
 
+@Composable
 private fun practiceRows(today: TodaySummary, busy: Boolean) = listOf(
-  HomeRow("Collections", if (today.collectionsAvailable > 0) "Next ${minOf(5, today.collectionsAvailable)} words"
-    else "None saved", today.collectionsAvailable.toString(), false,
+  HomeRow(uiString(UiR.string.ui_collections), if (today.collectionsAvailable > 0) uiString(UiR.string.ui_next_word_count, minOf(5, today.collectionsAvailable))
+    else uiString(UiR.string.ui_none_saved), today.collectionsAvailable.toString(), false,
     !busy && today.collectionsAvailable > 0, HomeAction.COLLECTIONS),
-  HomeRow("Mistakes", if (today.mistakesAvailable > 0) "Next ${minOf(5, today.mistakesAvailable)} words"
-    else "None to review", today.mistakesAvailable.toString(), false,
+  HomeRow(uiString(UiR.string.ui_mistakes_3bd9fb), if (today.mistakesAvailable > 0) uiString(UiR.string.ui_next_word_count, minOf(5, today.mistakesAvailable))
+    else uiString(UiR.string.ui_none_to_review), today.mistakesAvailable.toString(), false,
     !busy && today.mistakesAvailable > 0, HomeAction.MISTAKES),
 )
 

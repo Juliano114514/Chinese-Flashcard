@@ -1,5 +1,6 @@
 package com.example.chinese_flashcard.feature.wordlist
 
+import com.example.chinese_flashcard.core.domain.UiMessageKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chinese_flashcard.core.domain.StudyRepository
@@ -9,6 +10,7 @@ import com.example.chinese_flashcard.core.domain.WordlistRepository
 import com.example.chinese_flashcard.core.domain.WordlistStatus
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordStateRepository
+import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.WordUserState
 import java.text.Normalizer
 import java.util.Locale
@@ -35,7 +37,7 @@ data class WordlistUiState(
   val difficulties: Set<Int> = emptySet(),
   val myCollectionOnly: Boolean = false,
   val skipped: Int = 0,
-  val error: String? = null,
+  val error: UiMessageKey? = null,
 )
 
 class WordlistViewModel(private val repository: WordlistRepository) : ViewModel() {
@@ -125,7 +127,7 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        mutableState.update { it.copy(loading = false, error = "Your wordlist couldn't be loaded. Try again.") }
+        mutableState.update { it.copy(loading = false, error = UiMessageKey.YOUR_WORDLIST_COULDN_T_BE_LOADED_TRY_AGAIN) }
       }
     }
   }
@@ -161,9 +163,11 @@ data class WordDetailUiState(
   val loading: Boolean = true,
   val busy: Boolean = false,
   val word: WordEntry? = null,
-  val error: String? = null,
+  val error: UiMessageKey? = null,
   val writingSessionId: String? = null,
   val userState: WordUserState = WordUserState(),
+  val learningLanguage: AppLanguage = AppLanguage.CN,
+  val contextVersion: Long = 0,
 )
 
 class WordDetailViewModel(
@@ -171,8 +175,9 @@ class WordDetailViewModel(
   private val repository: WordlistRepository,
   private val study: StudyRepository,
   private val wordState: WordStateRepository,
+  private val learningLanguage: AppLanguage = AppLanguage.CN,
 ) : ViewModel() {
-  private val mutableState = MutableStateFlow(WordDetailUiState())
+  private val mutableState = MutableStateFlow(WordDetailUiState(learningLanguage = learningLanguage))
   val state = mutableState.asStateFlow()
   private var loading: Job? = null
   private var spoken = false
@@ -201,12 +206,12 @@ class WordDetailViewModel(
     mutableState.update { it.copy(busy = true, error = null) }
     viewModelScope.launch {
       try {
-        val id = withContext(Dispatchers.IO) { study.startManualWriting(word.id) }
+        val id = withContext(Dispatchers.IO) { study.startManualWriting(word.id, current.learningLanguage, current.contextVersion) }
         mutableState.update { it.copy(busy = false, writingSessionId = id) }
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        mutableState.update { it.copy(busy = false, error = "Writing couldn't be opened. Try again.") }
+        mutableState.update { it.copy(busy = false, error = UiMessageKey.WRITING_COULDN_T_BE_OPENED_TRY_AGAIN) }
       }
     }
   }
@@ -216,7 +221,7 @@ class WordDetailViewModel(
   }
 
   fun setSkipped(value: Boolean) {
-    updateLabel({ setSkipped(value) }) { wordState.setSkipped(wordId, value) }
+    updateLabel({ setSkipped(value) }) { wordState.setSkipped(wordId, value, learningLanguage) }
   }
 
   private fun updateLabel(retry: () -> Unit, operation: suspend () -> Unit) {
@@ -229,7 +234,7 @@ class WordDetailViewModel(
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        mutableState.update { it.copy(error = "This change couldn't be saved. Try again.") }
+        mutableState.update { it.copy(error = UiMessageKey.THIS_CHANGE_COULDN_T_BE_SAVED_TRY_AGAIN) }
       } finally {
         mutableState.update { it.copy(busy = false) }
       }
@@ -248,17 +253,19 @@ class WordDetailViewModel(
     mutableState.update { it.copy(loading = true, error = null) }
     loading = viewModelScope.launch {
       try {
+        val context = withContext(Dispatchers.IO) { study.context() }
+        check(context.learningLanguage == learningLanguage)
         val word = withContext(Dispatchers.IO) { repository.word(wordId) }
-        val labels = if (word != null) wordState.observe(wordId).first() else WordUserState()
-        mutableState.update { it.copy(loading = false, word = word, userState = labels,
-          error = if (word == null) "This word is no longer available." else null) }
-        if (word != null) wordState.observe(wordId).collectLatest { labels ->
+        val labels = if (word != null) wordState.observe(wordId, learningLanguage).first() else WordUserState()
+        mutableState.update { it.copy(loading = false, word = word, userState = labels, contextVersion = context.version,
+          error = if (word == null) UiMessageKey.THIS_WORD_IS_NO_LONGER_AVAILABLE else null) }
+        if (word != null) wordState.observe(wordId, learningLanguage).collectLatest { labels ->
           mutableState.update { it.copy(userState = labels) }
         }
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
-        mutableState.update { it.copy(loading = false, error = "This word couldn't be loaded. Try again.") }
+        mutableState.update { it.copy(loading = false, error = UiMessageKey.THIS_WORD_COULDN_T_BE_LOADED_TRY_AGAIN) }
       }
     }
   }
