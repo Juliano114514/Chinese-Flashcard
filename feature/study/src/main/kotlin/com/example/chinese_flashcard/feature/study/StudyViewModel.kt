@@ -24,12 +24,14 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
+import kotlin.random.Random
 
 data class WritingRequest(val token: Long, val sessionId: String)
 
@@ -84,7 +86,9 @@ object StudyReducer {
   fun reduce(state: StudyUiState, mutation: StudyMutation): StudyUiState = when (mutation) {
     StudyMutation.Busy -> state.copy(busy = true, error = null)
     StudyMutation.Idle -> state.copy(busy = false)
-    is StudyMutation.Loaded -> state.copy(loading = false, snapshot = mutation.snapshot,
+    is StudyMutation.Loaded -> state.copy(loading = false,
+      // Revision is an observation watermark, not displayed content. Keep unchanged UI references.
+      snapshot = state.snapshot?.takeIf { it == mutation.snapshot.copy(revision = it.revision) } ?: mutation.snapshot,
       settings = (mutation.settings ?: state.settings).copy(learningLanguage = mutation.snapshot.learningLanguage), error = null,
       directionGeneration = mutation.snapshot.contextVersion,
       writingRequest = state.writingRequest.takeIf { state.snapshot?.contextVersion == mutation.snapshot.contextVersion },
@@ -114,6 +118,8 @@ class StudyViewModel(
   private var failedAction: StudyAction = StudyAction.Refresh
   private var writingToken = 0L
   private var openedCardWriting: String? = null
+  private var lastSnapshotRevision = 0L
+  private var refreshing = false
 
   private var homeWords = emptyList<WordlistItem>()
   private var homeWordObservation: Job? = null
@@ -123,10 +129,14 @@ class StudyViewModel(
   fun shuffleHomeWord(): WordlistItem? {
     if (state.value.busy || state.value.loading) return null
     if (homeWordObservation?.isActive != true) { observeHomeWords(); return null }
+    if (state.value.homeWordStage != state.value.today?.stageProgress?.stage || homeWords.isEmpty()) return null
     val current = state.value.homeWord?.id
-    val stageWords = homeWords.filter { it.difficulty == state.value.today?.stageProgress?.stage?.rarity }
-    val candidates = if (stageWords.size > 1) stageWords.filter { it.id != current } else stageWords
-    val word = candidates.randomOrNull()
+    // The observation already filters the stage; skip the current item without copying that list.
+    var index = Random.nextInt(homeWords.size)
+    if (homeWords.size > 1 && homeWords[index].id == current) {
+      index = (index + Random.nextInt(1, homeWords.size)) % homeWords.size
+    }
+    val word = homeWords[index]
     mutableState.update { it.copy(homeWord = word, homeWordError = false) }
     return word
   }
@@ -137,7 +147,8 @@ class StudyViewModel(
       try {
         combine(state.map { it.today?.stageProgress?.stage }.distinctUntilChanged(), wordlist.entries) {
           stage, words -> stage to if (stage == null) emptyList() else words.filter { it.difficulty == stage.rarity }
-        }.collect { (stage, words) ->
+        }.distinctUntilChanged().flowOn(Dispatchers.Default).collect { (stage, words) ->
+          if (stage != state.value.today?.stageProgress?.stage) return@collect
           homeWords = words
           mutableState.update { current -> current.copy(
             homeWord = words.firstOrNull { it.id == current.homeWord?.id } ?: words.randomOrNull(),
@@ -193,9 +204,12 @@ class StudyViewModel(
   }
 
   private fun mutate(mutation: StudyMutation) {
-    if (mutation is StudyMutation.Loaded && state.value.snapshot?.contextVersion != mutation.snapshot.contextVersion) {
-      failedAction = StudyAction.Refresh
-      openedCardWriting = null
+    if (mutation is StudyMutation.Loaded) {
+      lastSnapshotRevision = mutation.snapshot.revision
+      if (state.value.snapshot?.contextVersion != mutation.snapshot.contextVersion) {
+        failedAction = StudyAction.Refresh
+        openedCardWriting = null
+      }
     }
     mutableState.update { StudyReducer.reduce(it, mutation) }
   }
@@ -209,7 +223,8 @@ class StudyViewModel(
             operationLock.withLock {
               val loaded = state.value
               // Actions already return the snapshot saved at this revision. Keep later external changes observable.
-              if (loaded.snapshot != null && revision <= loaded.snapshot.revision && value == loaded.settings) {
+              if (loaded.snapshot != null && loaded.snapshot.learningLanguage == value.learningLanguage &&
+                revision <= lastSnapshotRevision && value == loaded.settings) {
                 return@withLock
               }
               val (snapshot, value) = withContext(Dispatchers.IO) {
@@ -235,6 +250,9 @@ class StudyViewModel(
   private fun execute(action: StudyAction) {
     // Set busy before launch: two quick taps cannot queue duplicate writes.
     if (state.value.busy) return
+    val refresh = action == StudyAction.Refresh
+    if (refresh && refreshing) return
+    val showBusy = !refresh || state.value.snapshot == null
     val generation = when (action) {
       is StudyAction.Submit -> action.generation
       is StudyAction.Advance -> action.generation
@@ -254,7 +272,8 @@ class StudyViewModel(
       is StudyAction.ManualWriting -> action.language
       else -> null
     } ?: state.value.settings.learningLanguage
-    mutate(StudyMutation.Busy)
+    if (refresh) refreshing = true
+    if (showBusy) mutate(StudyMutation.Busy)
     viewModelScope.launch {
       var stored = false
       try {
@@ -327,7 +346,8 @@ class StudyViewModel(
         failedAction = if (stored) StudyAction.Refresh else action
         mutate(StudyMutation.Failed(UiMessageKey.THIS_STEP_COULDN_T_BE_COMPLETED_TRY_AGAIN))
       } finally {
-        mutate(StudyMutation.Idle)
+        if (refresh) refreshing = false
+        if (showBusy) mutate(StudyMutation.Idle)
       }
     }
   }

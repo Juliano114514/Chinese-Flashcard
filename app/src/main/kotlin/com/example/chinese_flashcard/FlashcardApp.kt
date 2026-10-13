@@ -45,8 +45,11 @@ import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.media.EnglishPronunciations
 import com.example.chinese_flashcard.core.ui.AppLanguageProvider
+import com.example.chinese_flashcard.core.ui.LocalExplanationOptions
 import com.example.chinese_flashcard.core.ui.uiText
 import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
@@ -55,10 +58,14 @@ import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.flashcardBackground
+import com.example.chinese_flashcard.core.ui.glassPanel
+import com.example.chinese_flashcard.core.ui.glassPanelColor
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
 import com.example.chinese_flashcard.feature.profile.ProfileViewModel
 import com.example.chinese_flashcard.feature.profile.SettingScreen
 import com.example.chinese_flashcard.feature.profile.LanguagesDialog
+import com.example.chinese_flashcard.feature.profile.ReadingOptionsScreen
+import com.example.chinese_flashcard.feature.profile.ExplanationOptionsScreen
 import com.example.chinese_flashcard.feature.study.*
 import com.example.chinese_flashcard.feature.wordlist.*
 import com.example.chinese_flashcard.feature.writing.WritingScreen
@@ -76,6 +83,8 @@ private fun <T : ViewModel> factory(create: () -> T) = object : ViewModelProvide
   @Suppress("UNCHECKED_CAST")
   override fun <V : ViewModel> create(modelClass: Class<V>): V = create() as V
 }
+
+private class NavigationJob { var job: Job? = null }
 
 data class StartupState(val ready: Boolean = false, val busy: Boolean = false,
   val settings: StudySettings = StudySettings(), val error: UiMessageKey? = null)
@@ -122,7 +131,7 @@ fun FlashcardApp(repositories: FlashcardRepositories) {
     when {
       !boot.ready -> Column(Modifier.fillMaxSize().safeDrawingPadding().padding(28.dp),
         horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-        Text("Chinese Flashcard", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
+        Text(uiString(UiR.string.ui_app_name), modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center,
           style = MaterialTheme.typography.headlineLarge)
         Spacer(Modifier.height(24.dp))
         if (boot.error != null) {
@@ -147,12 +156,15 @@ private fun FlashcardSystemBars() {
   val view = LocalView.current
   val activity = LocalActivity.current ?: return
   val dark = FlashcardStyle.darkTheme
-  if (!view.isInEditMode) SideEffect {
+  DisposableEffect(view, activity, dark) {
+    if (!view.isInEditMode) {
     WindowCompat.getInsetsController(activity.window, view).apply {
       isAppearanceLightStatusBars = !dark
       isAppearanceLightNavigationBars = !dark
     }
     if (android.os.Build.VERSION.SDK_INT >= 29) activity.window.isNavigationBarContrastEnforced = false
+    }
+    onDispose { }
   }
 }
 
@@ -162,7 +174,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val nav = rememberNavController()
   val navigationScope = rememberCoroutineScope()
   val defaultWordlist by repositories.defaultWordlistState.collectAsStateWithLifecycle()
-  var defaultWordlistRetry by remember { mutableStateOf<Job?>(null) }
+  val defaultWordlistRetry = remember { NavigationJob() }
   val study: StudyViewModel = viewModel(factory = factory {
     StudyViewModel(repositories.study, repositories.settings, repositories.wordState, repositories.wordlist)
   })
@@ -176,6 +188,26 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     }) }
   }
   val speech = remember { OfflineSpeech(context) }
+  val latestSpeechOptions by rememberUpdatedState(settings.speechOptions)
+  val manualPlayback = remember { NavigationJob() }
+  val configuredWait: suspend (SpeechRequest) -> Boolean = configuredWait@ { request ->
+    val options = latestSpeechOptions
+    var succeeded = true
+    for (part in options.requests(request)) {
+      if (latestSpeechOptions != options) return@configuredWait false
+      if (!speech.speakAndWait(part)) succeeded = false
+    }
+    succeeded // Intentionally disabled speech must not block feedback or navigation.
+  }
+  val configuredSpeak: (SpeechRequest) -> Unit = { request ->
+    manualPlayback.job?.cancel()
+    speech.stop()
+    manualPlayback.job = navigationScope.launch { configuredWait(request) }
+  }
+  LaunchedEffect(settings.speechOptions) {
+    manualPlayback.job?.cancel()
+    speech.stop()
+  }
   val pronunciations by produceState<EnglishPronunciations?>(null, context.applicationContext) {
     value = withContext(Dispatchers.IO) {
       try { EnglishPronunciations.load(context.applicationContext) }
@@ -188,11 +220,11 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val owner = LocalLifecycleOwner.current
   DisposableEffect(owner, speech) {
     val observer = LifecycleEventObserver { _, event ->
-      if (event == Lifecycle.Event.ON_STOP) speech.stop()
+      if (event == Lifecycle.Event.ON_STOP) { manualPlayback.job?.cancel(); speech.stop() }
       if (event == Lifecycle.Event.ON_RESUME) study.refresh()
     }
     owner.lifecycle.addObserver(observer)
-    onDispose { owner.lifecycle.removeObserver(observer); speech.close() }
+    onDispose { owner.lifecycle.removeObserver(observer); manualPlayback.job?.cancel(); speech.close() }
   }
   val snackbar = remember { SnackbarHostState() }
   val speechMessage by speech.message.collectAsStateWithLifecycle()
@@ -201,8 +233,15 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   }
   val entry by nav.currentBackStackEntryAsState()
   val route = entry?.destination?.route
-  DisposableEffect(entry, speech) { onDispose { speech.stop() } }
+  DisposableEffect(entry, speech) { onDispose { manualPlayback.job?.cancel(); speech.stop() } }
   val state by study.state.collectAsStateWithLifecycle()
+  LaunchedEffect(speech, entry, state.card?.id, state.homeWord?.id, settings.speechOptions) {
+    if (route !in listOf("today", "study", "word/{wordId}", "writing/{id}", "word-writing/{id}")) return@LaunchedEffect
+    val word = state.card?.word
+    val candidates = listOfNotNull(state.homeWord?.english, word?.meanings?.firstOrNull()?.english,
+      word?.examples?.firstOrNull()?.english)
+    speech.preloadEnglish(candidates)
+  }
   var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Int>?>(null) }
   LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
     val request = learnMoreRequest ?: return@LaunchedEffect
@@ -234,16 +273,22 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     }
   }
   AppLanguageProvider(settings.uiLanguage) {
+  CompositionLocalProvider(LocalExplanationOptions provides settings.explanationOptions) {
   FlashcardTheme(stage = state.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY, themeMode = settings.themeMode) {
   FlashcardSystemBars()
   Scaffold(modifier = Modifier.flashcardBackground(), containerColor = Color.Transparent,
+    contentWindowInsets = if (route == "study" || route == "word/{wordId}")
+      WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
+      else ScaffoldDefaults.contentWindowInsets,
     contentColor = MaterialTheme.colorScheme.onBackground,
-    snackbarHost = { SnackbarHost(snackbar) }, bottomBar = {
-    if (route in listOf("today", "profile", "wordlist")) Column(Modifier.background(MaterialTheme.colorScheme.surface)) {
-      HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
-      NavigationBar(modifier = Modifier.windowInsetsPadding(NavigationBarDefaults.windowInsets).height(60.dp),
+    snackbarHost = { SnackbarHost(snackbar, modifier = if (route == "study" || route == "word/{wordId}")
+      Modifier.navigationBarsPadding() else Modifier) }, bottomBar = {
+    if (route in listOf("today", "profile", "wordlist")) Column(Modifier
+      .glassPanel(androidx.compose.ui.graphics.RectangleShape).background(glassPanelColor())) {
+      HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.45f))
+      NavigationBar(modifier = Modifier.windowInsetsPadding(NavigationBarDefaults.windowInsets).height(72.dp),
         windowInsets = WindowInsets(0, 0, 0, 0),
-        containerColor = MaterialTheme.colorScheme.surface, tonalElevation = 0.dp) {
+        containerColor = Color.Transparent, tonalElevation = 0.dp) {
         listOf("today" to UiR.string.ui_home, "profile" to UiR.string.ui_profile, "wordlist" to UiR.string.ui_wordlist).forEach { (destination, label) ->
           NavigationBarItem(selected = route == destination, onClick = {
             if (destination == "today") {
@@ -261,10 +306,14 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
             "today" -> Icons.Default.Home
             "profile" -> Icons.Default.Person
             else -> Icons.AutoMirrored.Filled.List
-          }, uiString(label)) },
-            colors = NavigationBarItemDefaults.colors(indicatorColor = Color.Transparent,
+          }, uiString(label)) }, label = {
+            Text(uiString(label), style = MaterialTheme.typography.labelSmall)
+          },
+            colors = NavigationBarItemDefaults.colors(indicatorColor = MaterialTheme.colorScheme.primaryContainer,
               selectedIconColor = MaterialTheme.colorScheme.primary,
-              unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant))
+              selectedTextColor = MaterialTheme.colorScheme.primary,
+              unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+              unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant))
         }
       }
     }
@@ -280,7 +329,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
               study.learnMore()
             }
           }, onProfile = { nav.navigate("profile") { launchSingleTop = true } },
-          onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = speech::speak,
+          onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = configuredSpeak,
           onLanguages = { profile.beginEdit(); openLanguages = true })
       }
       composable("profile") { ProfileScreen(profile, onSettings = { nav.navigate("settings") { launchSingleTop = true } }) }
@@ -288,20 +337,24 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
           "application/octet-stream", "application/vnd.ms-excel")) },
         onLicenses = { nav.navigate("licenses") },
+        onReadingOptions = { profile.beginEdit(); nav.navigate("reading-options") },
+        onExplanationOptions = { profile.beginEdit(); nav.navigate("explanation-options") },
         defaultWordlistProgress = repositories.defaultWordlistProgress,
         csvImportProgress = repositories.csvImport.progress,
         defaultWordlistLoading = defaultWordlist.loading,
         defaultWordlistError = defaultWordlist.error,
         languageSwitchEnabled = !state.busy,
         onRetryDefaultWordlist = {
-          if (defaultWordlistRetry?.isActive != true) {
-            defaultWordlistRetry = navigationScope.launch {
+          if (defaultWordlistRetry.job?.isActive != true) {
+            defaultWordlistRetry.job = navigationScope.launch {
               try { repositories.retryDefaultWordlist() }
               catch (error: CancellationException) { throw error }
               catch (_: Exception) { /* The repository exposes this failure in defaultWordlistState. */ }
             }
           }
         }) }
+      composable("reading-options") { ReadingOptionsScreen(profile) { nav.popBackStack() } }
+      composable("explanation-options") { ExplanationOptionsScreen(profile) { nav.popBackStack() } }
       composable("wordlist") {
         WordlistScreen(wordlist, onWord = { id -> nav.navigate("word/$id") { launchSingleTop = true } })
       }
@@ -315,7 +368,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
           if (nav.currentBackStackEntry == detailEntry) {
             nav.navigate("word-writing/$sessionId") { launchSingleTop = true }
           }
-        }, onSpeak = speech::speak, ipaResolver = { pronunciations?.ipa(it) })
+        }, onSpeak = configuredSpeak, ipaResolver = { pronunciations?.ipa(it) },
+          onPreload = speech::preloadEnglish)
       }
       composable("word-writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -324,12 +378,15 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         val returnToWord: () -> Unit = {
           if (nav.currentBackStackEntry == writingEntry) { speech.stop(); nav.popBackStack() }
         }
-        WritingScreen(vm, onBack = returnToWord, onFinished = returnToWord, onSpeak = speech::speak)
+        WritingScreen(vm, onBack = returnToWord, onFinished = returnToWord, onSpeak = { text ->
+          configuredSpeak(SpeechRequest(text, AppLanguage.CN, SpeechScene.WRITING_WORD,
+            vm.state.value.snapshot?.word?.takeIf { it.hanzi == text }?.meanings?.firstOrNull()?.english))
+        })
       }
       composable("study") {
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
-        }, onWriting = openWriting, onSpeakAndWait = speech::speakAndWait, ipaResolver = { pronunciations?.ipa(it) })
+        }, onWriting = openWriting, onSpeakAndWait = configuredWait, ipaResolver = { pronunciations?.ipa(it) })
       }
       composable("writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -346,7 +403,10 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
               nav.popBackStack()
             }
           }
-        }, onSpeak = speech::speak)
+        }, onSpeak = { text ->
+          configuredSpeak(SpeechRequest(text, AppLanguage.CN, SpeechScene.WRITING_WORD,
+            vm.state.value.snapshot?.word?.takeIf { it.hanzi == text }?.meanings?.firstOrNull()?.english))
+        })
       }
       composable("licenses") { LicenseScreen { nav.popBackStack() } }
     }
@@ -354,6 +414,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   if (openLanguages && route == "today") LanguagesDialog(profile, initial = settings,
     enabled = !state.busy && !defaultWordlist.loading,
     onDismiss = { openLanguages = false; profile.beginEdit() })
+  }
   }
   }
 }

@@ -155,11 +155,11 @@ private val Type = Typography(
   bodyMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 14.sp, lineHeight = 22.sp),
   bodySmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 18.sp))
 private val Corners = Shapes(
-  extraSmall = RoundedCornerShape(4.dp),
-  small = RoundedCornerShape(8.dp),
-  medium = RoundedCornerShape(8.dp),
-  large = RoundedCornerShape(12.dp),
-  extraLarge = RoundedCornerShape(12.dp))
+  extraSmall = RoundedCornerShape(8.dp),
+  small = RoundedCornerShape(12.dp),
+  medium = RoundedCornerShape(18.dp),
+  large = RoundedCornerShape(24.dp),
+  extraLarge = RoundedCornerShape(28.dp))
 
 @Composable
 fun FlashcardTheme(darkTheme: Boolean = isSystemInDarkTheme(),
@@ -175,9 +175,9 @@ fun FlashcardTheme(darkTheme: Boolean = isSystemInDarkTheme(),
   val colors = remember(stage, dark, scheme) {
     val base = if (dark) DarkColors else LightColors
     base.copy(
-      gradientStart = scheme.background,
-      gradientMiddle = scheme.background,
-      gradientEnd = scheme.background,
+      gradientStart = if (dark) palette.darkStart else palette.lightStart,
+      gradientMiddle = if (dark) palette.darkMiddle else palette.lightMiddle,
+      gradientEnd = if (dark) palette.darkEnd else palette.lightEnd,
       gradientAction = scheme.primary,
       gradientSecondaryInk = scheme.onSurfaceVariant,
       writingPaper = scheme.surface, writingInk = scheme.onSurface,

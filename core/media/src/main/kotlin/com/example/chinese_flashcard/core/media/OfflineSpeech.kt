@@ -23,6 +23,9 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.channels.ReceiveChannel
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
@@ -53,6 +56,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
   private var pending: Utterance? = null
   @Volatile private var current: Utterance? = null
   private var englishJob: Job? = null
+  private var preloadJob: Job? = null
   @Volatile private var playingTrack: AudioTrack? = null
   private var tts: TextToSpeech? = null
   private val attributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA)
@@ -89,7 +93,6 @@ class OfflineSpeech(context: Context) : AutoCloseable {
       installed.filter { it.locale.language == "en" }
         .minByOrNull { if (it.locale.country == "US") 0 else 1 }?.let { voices[AppLanguage.EN] = it }
       tts?.setAudioAttributes(attributes)
-      tts?.setSpeechRate(0.8f)
     } catch (_: RuntimeException) { voices.clear() }
     val request = pending
     pending = null
@@ -98,6 +101,23 @@ class OfflineSpeech(context: Context) : AutoCloseable {
 
   fun speak(text: String) = speak(SpeechRequest(text, AppLanguage.CN))
   fun speak(request: SpeechRequest) { onMain { requestSpeech(Utterance(request.copy(text = request.text.take(2000)))) } }
+  /** Silent and cancellable: call on entering a speech page or when its English card text changes. */
+  fun preloadEnglish(texts: List<String> = emptyList()) { onMain {
+    if (closed || current != null || pending != null) return@onMain
+    preloadJob?.cancel()
+    val candidates = texts.asSequence().map { it.trim() }.filter { it.isNotEmpty() && it.length <= 2000 }
+      .distinct().take(3).toList()
+    preloadJob = scope.launch {
+      try {
+        withTimeout(15_000L) { withContext(Dispatchers.IO) {
+          english.prepare()
+          for (text in candidates) english.synthesize(text)
+        } }
+      } catch (error: CancellationException) { throw error }
+      catch (_: Exception) { /* Actual playback can still use the installed offline voice. */ }
+      catch (_: LinkageError) { /* Native runtime unavailable; leave fallback to playback. */ }
+    }
+  } }
   suspend fun speakAndWait(request: SpeechRequest): Boolean = withTimeoutOrNull(30_000L) {
     suspendCancellableCoroutine { waiter ->
       val utterance = Utterance(request.copy(text = request.text.take(2000)), waiter)
@@ -115,26 +135,45 @@ class OfflineSpeech(context: Context) : AutoCloseable {
   private fun startEnglish(utterance: Utterance) {
     current = utterance
     englishJob = scope.launch {
+      var playbackStarted = false
       try {
-        val audio = withTimeout((utterance.deadline - SystemClock.elapsedRealtime()).coerceAtLeast(1L)) { withContext(Dispatchers.IO) { english.synthesize(utterance.speech.text) } }
+        val completed = withTimeout((utterance.deadline - SystemClock.elapsedRealtime()).coerceAtLeast(1L)) {
+          playEnglish(utterance) { playbackStarted = true }
+        }
         if (current !== utterance || closed) return@launch
-        if (audio == null) {
+        if (completed == null) {
           current = null
           startSystem(utterance)
           return@launch
         }
-        if (manager.requestAudioFocus(focus) != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-          mutable.value = UiMessageKey.AUDIO_IS_CURRENTLY_UNAVAILABLE_YOU_CAN_CONTINUE_STUDYING
-          finish(utterance.id, false)
-          return@launch
-        }
-        mutable.value = null
-        val completed = withTimeout((utterance.deadline - SystemClock.elapsedRealtime()).coerceAtLeast(1L)) { withContext(Dispatchers.IO) { play(audio) } }
-        finish(utterance.id, completed, !completed)
+        finish(utterance.id, completed)
       } catch (_: TimeoutCancellationException) { finish(utterance.id, false, true) }
       catch (error: CancellationException) { throw error }
-      catch (_: Exception) { fallbackToSystem(utterance) }
-      catch (_: LinkageError) { fallbackToSystem(utterance) }
+      catch (_: Exception) { if (playbackStarted) finish(utterance.id, false, true) else fallbackToSystem(utterance) }
+      catch (_: LinkageError) { if (playbackStarted) finish(utterance.id, false, true) else fallbackToSystem(utterance) }
+    }
+  }
+
+  private suspend fun playEnglish(utterance: Utterance, onStarted: () -> Unit): Boolean? = coroutineScope {
+    // One queued chunk bounds streaming memory while synthesis and playback overlap.
+    val chunks = Channel<EnglishAudioChunk>(1)
+    val producer = launch(Dispatchers.IO) {
+      try { english.synthesize(utterance.speech.text) { chunks.send(it) } }
+      finally { chunks.close() }
+    }
+    try {
+      val first = chunks.receiveCatching().getOrNull() ?: return@coroutineScope null
+      currentCoroutineContext().ensureActive()
+      if (current !== utterance || closed) throw CancellationException()
+      if (manager.requestAudioFocus(focus) != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+        mutable.value = UiMessageKey.AUDIO_IS_CURRENTLY_UNAVAILABLE_YOU_CAN_CONTINUE_STUDYING
+        return@coroutineScope false
+      }
+      mutable.value = null
+      withContext(Dispatchers.IO) { play(first, chunks, onStarted) }
+    } finally {
+      producer.cancel()
+      chunks.cancel()
     }
   }
 
@@ -146,28 +185,33 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     }
   }
 
-  private suspend fun play(audio: EnglishAudio): Boolean {
+  private suspend fun play(first: EnglishAudioChunk, chunks: ReceiveChannel<EnglishAudioChunk>, onStarted: () -> Unit): Boolean {
     currentCoroutineContext().ensureActive()
-    val minimum = AudioTrack.getMinBufferSize(audio.sampleRate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_FLOAT)
+    val minimum = AudioTrack.getMinBufferSize(first.sampleRate, AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_FLOAT)
     require(minimum > 0)
     val track = AudioTrack.Builder().setAudioAttributes(attributes)
-      .setAudioFormat(AudioFormat.Builder().setSampleRate(audio.sampleRate)
+      .setAudioFormat(AudioFormat.Builder().setSampleRate(first.sampleRate)
         .setChannelMask(AudioFormat.CHANNEL_OUT_MONO).setEncoding(AudioFormat.ENCODING_PCM_FLOAT).build())
-      .setTransferMode(AudioTrack.MODE_STREAM).setBufferSizeInBytes(maxOf(minimum, audio.sampleRate / 5 * 4)).build()
+      .setTransferMode(AudioTrack.MODE_STREAM).setBufferSizeInBytes(maxOf(minimum, first.sampleRate / 5 * 4)).build()
     try {
       currentCoroutineContext().ensureActive()
       playingTrack = track
       track.play()
       var frames = 0L
-      for (samples in audio.chunks) {
+      var chunk: EnglishAudioChunk? = first
+      while (chunk != null) {
+        require(chunk.sampleRate == first.sampleRate)
+        val samples = chunk.samples
         var offset = 0
         while (offset < samples.size) {
           currentCoroutineContext().ensureActive()
           val count = track.write(samples, offset, minOf(2048, samples.size - offset), AudioTrack.WRITE_BLOCKING)
           check(count > 0)
+          if (frames == 0L) onStarted()
           offset += count
           frames += count
         }
+        chunk = chunks.receiveCatching().getOrNull()
       }
       while ((track.playbackHeadPosition.toLong() and 0xffffffffL) < frames) {
         currentCoroutineContext().ensureActive()
@@ -198,6 +242,8 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     }
     try {
       if (tts?.setVoice(voice) != TextToSpeech.SUCCESS) throw IllegalStateException(UiMessageKey.OFFLINE_VOICE_UNAVAILABLE.name)
+      val rate = if (utterance.speech.language == AppLanguage.EN) 0.8f * ENGLISH_SPEED_MULTIPLIER else 0.8f
+      if (tts?.setSpeechRate(rate) != TextToSpeech.SUCCESS) throw IllegalStateException(UiMessageKey.OFFLINE_VOICE_UNAVAILABLE.name)
       if (manager.requestAudioFocus(focus) != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
         mutable.value = UiMessageKey.AUDIO_IS_CURRENTLY_UNAVAILABLE_YOU_CAN_CONTINUE_STUDYING
         complete(utterance, false)
@@ -237,6 +283,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     val previousPending = pending; pending = null
     val previous = current; current = null
     englishJob?.cancel(); englishJob = null
+    preloadJob?.cancel(); preloadJob = null
     try { playingTrack?.pause(); playingTrack?.flush() } catch (_: RuntimeException) { }
     try { tts?.stop() } catch (_: RuntimeException) { }
     releaseFocus()

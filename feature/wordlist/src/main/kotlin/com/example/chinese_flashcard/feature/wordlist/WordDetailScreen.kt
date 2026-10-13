@@ -15,6 +15,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
@@ -47,6 +51,7 @@ import com.example.chinese_flashcard.core.domain.ExampleChunk
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordPart
@@ -57,6 +62,8 @@ import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import com.example.chinese_flashcard.core.ui.WordExplanation
+import com.example.chinese_flashcard.core.ui.glassPanel
+import com.example.chinese_flashcard.core.ui.glassPanelColor
 import com.example.chinese_flashcard.core.ui.WordHeading
 import com.example.chinese_flashcard.core.ui.WordMeanings
 import com.example.chinese_flashcard.core.ui.WordUserActions
@@ -64,15 +71,23 @@ import com.example.chinese_flashcard.core.ui.flashcardBackground
 import kotlinx.coroutines.awaitCancellation
 
 @Composable
-fun WordDetailScreen(vm: WordDetailViewModel, onBack: () -> Unit, onWriting: (String) -> Unit, onSpeak: (SpeechRequest) -> Unit, ipaResolver: (String) -> String? = { null }) {
+fun WordDetailScreen(vm: WordDetailViewModel, onBack: () -> Unit, onWriting: (String) -> Unit, onSpeak: (SpeechRequest) -> Unit,
+  ipaResolver: (String) -> String? = { null }, onPreload: (List<String>) -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
   val lifecycle = LocalLifecycleOwner.current.lifecycle
   val latestSpeak by rememberUpdatedState(onSpeak)
+  val latestPreload by rememberUpdatedState(onPreload)
+  LaunchedEffect(state.word?.id) {
+    state.word?.let { latestPreload(listOfNotNull(it.meanings.firstOrNull()?.english, it.examples.firstOrNull()?.english)) }
+  }
   BackHandler(enabled = state.busy) { /* Finish opening the writing session before leaving. */ }
   LaunchedEffect(vm, state.word?.id, state.loading, lifecycle) {
     val word = state.word
     if (word != null && !state.loading) lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-      if (vm.claimAutoplay()) latestSpeak(SpeechRequest(if (state.learningLanguage == AppLanguage.CN) word.hanzi else word.meanings.firstOrNull()?.english.orEmpty(), state.learningLanguage))
+      if (vm.claimAutoplay()) latestSpeak(SpeechRequest(
+        if (state.learningLanguage == AppLanguage.CN) word.hanzi else word.meanings.firstOrNull()?.english.orEmpty(),
+        state.learningLanguage, SpeechScene.WORD_DETAIL,
+        if (state.learningLanguage == AppLanguage.CN) word.meanings.firstOrNull()?.english else word.hanzi))
       awaitCancellation()
     }
   }
@@ -90,15 +105,19 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
   val word = state.word
   val enabled = !state.loading && !state.busy && state.writingSessionId == null
   Box(Modifier.fillMaxSize().flashcardBackground()) {
-    Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
+    Scaffold(containerColor = Color.Transparent,
+      contentWindowInsets = if (word != null) WindowInsets(0, 0, 0, 0)
+        else WindowInsets.navigationBars.only(WindowInsetsSides.Bottom), topBar = {
       FlashcardToolbar(uiString(UiR.string.ui_word), onBack, Modifier.padding(horizontal = 12.dp, vertical = 4.dp), enabled = !state.busy)
     }, bottomBar = {
-      if (word != null) Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)
+      if (word != null) Column(Modifier.fillMaxWidth().glassPanel(androidx.compose.ui.graphics.RectangleShape)
+        .background(glassPanelColor()).navigationBarsPadding()
         .padding(horizontal = FlashcardLayout.pageInset, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          OutlinedButton(onClick = { onSpeak(SpeechRequest(word.hanzi, AppLanguage.CN)) }, enabled = enabled,
+          OutlinedButton(onClick = { onSpeak(SpeechRequest(word.hanzi, AppLanguage.CN,
+            counterpart = word.meanings.firstOrNull()?.english)) }, enabled = enabled,
             shape = MaterialTheme.shapes.medium, modifier = Modifier.weight(1f).heightIn(min = FlashcardLayout.rowHeight),
             colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction)) { Text(uiString(UiR.string.ui_listen)) }
@@ -117,14 +136,15 @@ private fun WordDetailContent(state: WordDetailUiState, onBack: () -> Unit,
               color = FlashcardStyle.colors.gradientSecondaryInk)
           }
         } else if (word != null) {
-          WordHeading(word, enabled, onSpeak = { onSpeak(SpeechRequest(word.hanzi, AppLanguage.CN)) },
+          WordHeading(word, enabled, onSpeak = { onSpeak(SpeechRequest(word.hanzi, AppLanguage.CN,
+            counterpart = word.meanings.firstOrNull()?.english)) },
             trailingOnNewLine = word.hanzi.codePointCount(0, word.hanzi.length) > 2 || LocalDensity.current.fontScale >= 1.25f,
             trailing = {
             WordUserActions(state.userState.isCollected, state.userState.isSkipped, enabled,
               onCollection, onSkip, wordId = word.id, wordLabel = word.hanzi)
           })
           WordMeanings(word, onSpeak, ipaResolver, enabled)
-          WordExplanation(word, onSpeak)
+          WordExplanation(word, onSpeak, enabled = enabled, progressive = true)
         }
         state.error?.let { message ->
           Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,

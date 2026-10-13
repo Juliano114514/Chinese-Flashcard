@@ -73,7 +73,8 @@ private enum class SettingEditor { DAILY_WORDS, ROUNDS, REVIEW_DAYS, THEME, UI_L
 fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> Unit, onLicenses: () -> Unit,
   defaultWordlistProgress: StateFlow<WordlistLoadProgress?>, csvImportProgress: StateFlow<WordlistLoadProgress?>,
   defaultWordlistLoading: Boolean = false, defaultWordlistError: UiMessageKey? = null,
-  onRetryDefaultWordlist: () -> Unit = {}, languageSwitchEnabled: Boolean = true) {
+  onRetryDefaultWordlist: () -> Unit = {}, languageSwitchEnabled: Boolean = true,
+  onReadingOptions: () -> Unit = {}, onExplanationOptions: () -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
   var editor by rememberSaveable { mutableStateOf<SettingEditor?>(null) }
@@ -97,10 +98,10 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
         CircularProgressIndicator(Modifier.size(28.dp))
       }
     } else {
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(uiString(UiR.string.ui_languages), style = MaterialTheme.typography.labelLarge,
-          color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(uiString(UiR.string.ui_languages), style = MaterialTheme.typography.titleSmall,
+          color = MaterialTheme.colorScheme.primary)
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
             SettingsRow(uiString(UiR.string.ui_system_language), value.uiLanguage.label(), enabled && languageSwitchEnabled) {
               openEditor(SettingEditor.UI_LANGUAGE)
@@ -112,27 +113,31 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
           }
         }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(uiString(UiR.string.ui_appearance), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(uiString(UiR.string.ui_appearance), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           SettingsRow(uiString(UiR.string.ui_theme), value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
         }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(uiString(UiR.string.ui_learning), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(uiString(UiR.string.ui_learning), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
             SettingsRow(uiString(UiR.string.ui_daily_words), value.dailyWords.toString(), enabled) { openEditor(SettingEditor.DAILY_WORDS) }
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_correct_rounds), value.rounds.toString(), enabled) { openEditor(SettingEditor.ROUNDS) }
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_review_days), value.reviewDays.joinToString(" / "), enabled) { openEditor(SettingEditor.REVIEW_DAYS) }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_reading_options), uiString(UiR.string.ui_reading_options_summary), enabled, onReadingOptions)
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_explanation_options), uiString(UiR.string.ui_explanation_options_summary), enabled, onExplanationOptions)
           }
         }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(uiString(UiR.string.ui_data), style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(uiString(UiR.string.ui_data), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
             SettingsRow(uiString(UiR.string.ui_import_csv), enabled = enabled, onClick = onImportCsv)
             SettingsDivider()
@@ -229,19 +234,19 @@ private fun ThemeDialog(initial: ThemeMode, saving: Boolean, error: UiMessageKey
 
 @Composable
 private fun SettingsDivider() {
-  HorizontalDivider(modifier = Modifier.padding(horizontal = 16.dp),
+  HorizontalDivider(modifier = Modifier.padding(horizontal = 20.dp),
     color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
 }
 
 @Composable
 private fun SettingsRow(title: String, value: String? = null, enabled: Boolean = true, onClick: () -> Unit) {
   val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = FlashcardStyle.opacity.disabledContent)
-  Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
-    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(horizontal = 16.dp, vertical = 12.dp),
+  Row(Modifier.fillMaxWidth().heightIn(min = 64.dp)
+    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(horizontal = 20.dp, vertical = 16.dp),
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
     Text(title, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium, color = color)
     value?.let {
-      Text(it, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
+      Text(it, Modifier.weight(1f), style = MaterialTheme.typography.bodySmall,
         maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.End,
         color = if (enabled) MaterialTheme.colorScheme.onSurfaceVariant else color)
     }

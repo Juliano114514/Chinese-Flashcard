@@ -4,21 +4,26 @@ import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.R as UiR
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.WindowInsetsSides
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
@@ -29,6 +34,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
@@ -49,6 +55,10 @@ import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.WordMeanings
 import com.example.chinese_flashcard.core.ui.WordExplanation
+import com.example.chinese_flashcard.core.ui.WordUserActions
+import com.example.chinese_flashcard.core.ui.FlashcardIcons
+import com.example.chinese_flashcard.core.ui.glassPanel
+import com.example.chinese_flashcard.core.ui.glassPanelColor
 
 @Composable
 internal fun StudyContent(
@@ -76,7 +86,9 @@ internal fun StudyContent(
   val planned = practice?.planned ?: state.today?.planned ?: 0
   val largeText = LocalDensity.current.fontScale >= 1.25f
   Box(Modifier.fillMaxSize().flashcardBackground()) {
-  Scaffold(containerColor = Color.Transparent, contentWindowInsets = WindowInsets(0, 0, 0, 0), topBar = {
+  Scaffold(containerColor = Color.Transparent,
+    contentWindowInsets = if (card != null && card.phase != CardPhase.FINISHED) WindowInsets(0, 0, 0, 0)
+      else WindowInsets.navigationBars.only(WindowInsetsSides.Bottom), topBar = {
     Column {
     FlashcardToolbar(when (card?.kind) {
         StudyKind.NEW -> uiString(UiR.string.ui_learn_2118cb)
@@ -85,26 +97,36 @@ internal fun StudyContent(
         StudyKind.COLLECTION -> uiString(UiR.string.ui_collections)
         StudyKind.MISTAKES -> uiString(UiR.string.ui_mistakes_3bd9fb)
         null -> uiString(UiR.string.ui_study)
-      }, onBack, Modifier.padding(horizontal = 12.dp, vertical = 4.dp), enabled = !state.busy, trailing = {
-      if (card != null && card.phase != CardPhase.FINISHED && !largeText) {
-        if (state.snapshot != null) {
-          Text(uiString(UiR.string.ui_progress_count, completed, planned), modifier = Modifier.padding(end = 12.dp),
-            style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
+      }, onBack, Modifier.padding(horizontal = 12.dp, vertical = 3.dp), enabled = !state.busy, trailing = {
+      if (card != null && card.phase != CardPhase.FINISHED) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+          val showRound = !card.reviewRecall &&
+            card.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.FEEDBACK)
+          if (showRound) RoundProgress(card)
+          WordUserActions(isCollected = card.isCollected, isSkipped = card.isSkipped,
+            enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
+            onCollection = { onCollection(card.word.id, it) }, onSkip = { onSkip(card.word.id, it) },
+            wordId = card.word.id,
+            wordLabel = if (card.learningLanguage == AppLanguage.CN) card.word.hanzi else card.promptSpeech().text,
+            compact = true)
         }
       }
     })
-    if (card != null && card.phase != CardPhase.FINISHED && state.snapshot != null && largeText) {
-      Text(uiString(UiR.string.ui_progress_count, completed, planned), modifier = Modifier.align(Alignment.End).padding(horizontal = 20.dp, vertical = 4.dp),
-        style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
-    }
     if (card != null && card.phase != CardPhase.FINISHED && state.snapshot != null) {
-      DailyProgress(completed, planned, Modifier.padding(horizontal = 20.dp).padding(bottom = 12.dp))
+      Column(Modifier.fillMaxWidth().padding(horizontal = 24.dp).padding(bottom = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        DailyProgress(completed, planned)
+        Text(uiString(UiR.string.ui_progress_count, completed, planned), modifier = Modifier.align(Alignment.End),
+          style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
+      }
     }
     }
   }, bottomBar = {
     if (card != null && card.phase != CardPhase.FINISHED) {
-      Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)
-        .padding(horizontal = 20.dp, vertical = 12.dp),
+      val barShape = androidx.compose.foundation.shape.RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp)
+      Surface(color = glassPanelColor(), tonalElevation = 0.dp, shadowElevation = 0.dp,
+        modifier = Modifier.glassPanel(barShape), shape = barShape) {
+      Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 24.dp, vertical = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (state.busy) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
         when (card.phase) {
@@ -115,16 +137,16 @@ internal fun StudyContent(
               OutlinedButton(onClick = { onSkip(card.word.id, true) }, enabled = !state.busy,
                 modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_skip_word)) }
             } else {
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            StudyActionPair(stacked = largeText) { buttonModifier ->
               OutlinedButton(onClick = {
                 onSubmit(card.id, null)
               }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 shape = MaterialTheme.shapes.medium, border = BorderStroke(1.dp,
                   if (answerChosen && selectedOption == null) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant),
-                modifier = Modifier.weight(1f).heightIn(min = 52.dp).semantics { selected = answerChosen && selectedOption == null }) { Text(uiString(UiR.string.ui_i_don_t_know)) }
+                modifier = buttonModifier.heightIn(min = 52.dp).semantics { selected = answerChosen && selectedOption == null }) { Text(uiString(UiR.string.ui_i_don_t_know)) }
               Button(onClick = { onSubmit(card.id, selectedOption) }, enabled = answerChosen && !state.busy,
-                shape = MaterialTheme.shapes.medium, modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_next)) }
+                shape = MaterialTheme.shapes.medium, modifier = buttonModifier.heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_next)) }
             }
             }
           }
@@ -137,19 +159,20 @@ internal fun StudyContent(
               shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_next)) }
           }
           CardPhase.INTRO, CardPhase.EXPLANATION -> {
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            StudyActionPair(stacked = largeText) { buttonModifier ->
               if (card.learningLanguage == AppLanguage.CN) OutlinedButton(onClick = { onWordWriting(card.word.id) }, enabled = !state.busy,
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
                 border = BorderStroke(1.dp, FlashcardStyle.colors.gradientAction),
-                shape = MaterialTheme.shapes.medium, modifier = Modifier.weight(1f).heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_write)) }
+                shape = MaterialTheme.shapes.medium, modifier = buttonModifier.heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_write)) }
               Button(onClick = onAdvance, enabled = !state.busy && card.phase != CardPhase.FEEDBACK, shape = MaterialTheme.shapes.medium,
-                modifier = Modifier.weight(1f).heightIn(min = 52.dp)) {
+                modifier = buttonModifier.heightIn(min = 52.dp)) {
                 Text(if (card.phase == CardPhase.INTRO) uiString(UiR.string.ui_continue) else uiString(UiR.string.ui_next_word))
               }
             }
           }
           else -> Unit
         }
+      }
       }
     }
   }) { padding ->
@@ -170,6 +193,11 @@ internal fun StudyContent(
             else -> false
           } } == true
           val paused = practice?.paused == true || (practice == null && (card.isSkipped || unfinishedDaily))
+          if (card.canAnswer && !paused) {
+            Icon(FlashcardIcons.Complete, contentDescription = null, tint = MaterialTheme.colorScheme.primary,
+              modifier = Modifier.size(56.dp))
+            Text(uiString(UiR.string.ui_completion_encouragement), style = MaterialTheme.typography.titleMedium)
+          }
           Text(if (!card.canAnswer) uiString(UiR.string.ui_viewing_complete) else if (paused) uiString(UiR.string.ui_session_paused) else uiString(UiR.string.ui_session_complete), style = MaterialTheme.typography.headlineLarge)
           if (!card.canAnswer) Text(uiString(UiR.string.ui_no_reliable_question_is_available_for_this_word_no_learning_progress_was_recorded),
             color = FlashcardStyle.colors.gradientSecondaryInk)
@@ -194,24 +222,28 @@ internal fun StudyContent(
           if (card.phase in listOf(CardPhase.QUESTION, CardPhase.FEEDBACK) ||
             (card.learningLanguage == AppLanguage.EN && card.phase in listOf(CardPhase.INTRO, CardPhase.EXPLANATION))) {
             QuestionHeading(card, enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
-              onSpeak = onSpeak, ipaResolver = ipaResolver,
-              onCollection = { onCollection(card.word.id, it) }, onSkip = { onSkip(card.word.id, it) })
+              onSpeak = onSpeak, ipaResolver = ipaResolver)
           } else StudyWordHeading(card.word, enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
-            onSpeak = { onSpeak(SpeechRequest(card.word.hanzi, AppLanguage.CN)) },
+            onSpeak = { onSpeak(SpeechRequest(card.word.hanzi, AppLanguage.CN, counterpart = card.questionMeaning())) },
             onWrite = if (card.learningLanguage == AppLanguage.CN && card.phase in listOf(CardPhase.INTRO, CardPhase.EXPLANATION))
-              ({ onWordWriting(card.word.id) }) else null, card = card,
-            onCollection = { onCollection(card.word.id, it) }, onSkip = { onSkip(card.word.id, it) })
+              ({ onWordWriting(card.word.id) }) else null)
           when (card.phase) {
             CardPhase.INTRO, CardPhase.EXPLANATION -> {
-              if (card.learningLanguage == AppLanguage.EN) ChineseTranslation(card.word, !state.busy, onSpeak)
-              else WordMeanings(card.word, onSpeak, ipaResolver, enabled = !state.busy)
-              if (!card.canAnswer) Text(uiString(UiR.string.ui_no_reliable_question_is_available_for_this_word_viewing_it_does_not_count_as_learned),
-                style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
               if (card.correct != null) {
                 AnswerFeedback(card.correct == true,
                   card.options.firstOrNull { it.id == card.selectedOptionId }?.let { card.optionLabel(it) } ?: uiString(UiR.string.ui_i_don_t_know))
               }
-              WordExplanation(card.word, onSpeak, compact = true)
+              Surface(shape = MaterialTheme.shapes.large, color = glassPanelColor(),
+                contentColor = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.fillMaxWidth().glassPanel(shape = MaterialTheme.shapes.large)) {
+                Column(Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
+                  if (card.learningLanguage == AppLanguage.EN) ChineseTranslation(card.word, !state.busy, onSpeak)
+                  else WordMeanings(card.word, onSpeak, ipaResolver, enabled = !state.busy)
+                }
+              }
+              if (!card.canAnswer) Text(uiString(UiR.string.ui_no_reliable_question_is_available_for_this_word_viewing_it_does_not_count_as_learned),
+                style = MaterialTheme.typography.bodySmall, color = FlashcardStyle.colors.gradientSecondaryInk)
+              WordExplanation(card.word, onSpeak, compact = false, enabled = !state.busy, progressive = true)
             }
             CardPhase.QUESTION, CardPhase.FEEDBACK -> {
               val feedback = card.phase == CardPhase.FEEDBACK
@@ -220,6 +252,7 @@ internal fun StudyContent(
               }
               Text(if (card.learningLanguage == AppLanguage.CN) uiString(UiR.string.ui_choose_the_meaning) else uiString(UiR.string.ui_choose_the_chinese_word), style = MaterialTheme.typography.bodyMedium,
                 color = FlashcardStyle.colors.gradientSecondaryInk)
+              Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
               card.options.forEachIndexed { index, option ->
                 val selected = if (feedback) card.selectedOptionId == option.id else answerChosen && selectedOption == option.id
                 val correct = card.questionMeaningId == option.id
@@ -233,6 +266,7 @@ internal fun StudyContent(
                     feedback && correct && revealed -> true
                     else -> null
                   }, revealBilingual = revealed, dimmed = feedback && !revealed)
+              }
               }
               if (feedback) AnswerFeedback(card.correct == true,
                 card.options.firstOrNull { it.id == card.selectedOptionId }?.let { card.optionLabel(it) } ?: uiString(UiR.string.ui_i_don_t_know))
@@ -255,14 +289,23 @@ internal fun StudyContent(
 
 @Composable
 private fun AnswerFeedback(correct: Boolean, selectedMeaning: String) {
-  Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
-    Text(if (correct) uiString(UiR.string.ui_correct) else uiString(UiR.string.ui_incorrect_round_resets_to_1),
-      style = MaterialTheme.typography.bodySmall,
-      color = if (correct) FlashcardStyle.colors.gradientSuccess else FlashcardStyle.colors.gradientError)
-    if (!correct) {
-      Text(uiString(UiR.string.ui_your_answer_1_s, selectedMeaning), style = MaterialTheme.typography.bodySmall,
-        color = FlashcardStyle.colors.gradientSecondaryInk)
+  Surface(shape = MaterialTheme.shapes.large,
+    modifier = Modifier.fillMaxWidth().glassPanel(shape = MaterialTheme.shapes.large),
+    color = if (correct) FlashcardStyle.colors.successContainer else MaterialTheme.colorScheme.errorContainer,
+    contentColor = if (correct) FlashcardStyle.colors.onSuccessContainer else MaterialTheme.colorScheme.onErrorContainer) {
+  Column(Modifier.padding(horizontal = 16.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+      Icon(if (correct) FlashcardIcons.Check else FlashcardIcons.Close, contentDescription = null,
+        modifier = Modifier.size(24.dp))
+      Text(uiString(if (correct) UiR.string.ui_feedback_success else UiR.string.ui_feedback_retry),
+        style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
     }
+    Text(if (correct) uiString(UiR.string.ui_correct) else uiString(UiR.string.ui_incorrect_round_resets_to_1),
+      style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
+    if (!correct) {
+      Text(uiString(UiR.string.ui_your_answer_1_s, selectedMeaning), style = MaterialTheme.typography.bodySmall)
+    }
+  }
   }
 }
 

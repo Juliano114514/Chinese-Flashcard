@@ -4,9 +4,7 @@ import com.example.chinese_flashcard.core.ui.localizedLabel
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.R as UiR
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -30,7 +28,6 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
@@ -48,7 +45,6 @@ import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -97,17 +93,18 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
   onQuery: (String) -> Unit, onStatus: (WordlistStatus?) -> Unit, onDifficulty: (Int?) -> Unit,
   onCollection: (Boolean) -> Unit, onRetry: () -> Unit, onWord: (String) -> Unit) {
   Surface(Modifier.fillMaxSize().flashcardBackground(), color = Color.Transparent) {
-    LazyColumn(state = listState, contentPadding = PaddingValues(FlashcardLayout.pageInset)) {
+    LazyColumn(state = listState, contentPadding = PaddingValues(FlashcardLayout.pageInset),
+      verticalArrangement = Arrangement.spacedBy(12.dp)) {
       item(key = "header") {
-        Column(verticalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.padding(bottom = 8.dp)) {
+        Column(verticalArrangement = Arrangement.spacedBy(20.dp), modifier = Modifier.padding(bottom = 4.dp)) {
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
             Text(uiString(UiR.string.ui_wordlist), Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
             Text(uiString(UiR.string.ui_word_count, state.total), style = MaterialTheme.typography.bodySmall,
               color = MaterialTheme.colorScheme.onSurfaceVariant)
           }
-          Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
-            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+          Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
+            Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
               Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 WordCount(state.learned, uiString(UiR.string.ui_learned), Modifier.weight(1f))
                 WordCount(state.learning, uiString(UiR.string.ui_learning), Modifier.weight(1f))
@@ -126,7 +123,7 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
             trailingIcon = if (state.query.isNotEmpty()) {
               { IconButton(onClick = { onQuery("") }) { Icon(Icons.Default.Close, contentDescription = uiString(UiR.string.ui_clear_search)) } }
             } else null)
-          Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+          Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
               WordlistFilterChip(selected = state.status == null, onClick = { onStatus(null) }, label = uiString(UiR.string.ui_all))
               WordlistStatus.entries.forEach { status ->
@@ -175,7 +172,6 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
       }
       items(state.entries, key = { "word/${it.id}" }) { entry ->
         WordlistRow(entry, onClick = { onWord(entry.id) })
-        HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
       }
     }
   }
@@ -189,46 +185,48 @@ private fun WordlistFilterChip(selected: Boolean, onClick: () -> Unit, label: St
     shape = MaterialTheme.shapes.small,
     colors = FilterChipDefaults.filterChipColors(
       containerColor = colors.surface, labelColor = colors.onSurfaceVariant,
-      selectedContainerColor = colors.primary, selectedLabelColor = colors.onPrimary),
-    border = BorderStroke(1.dp, if (selected) colors.primary else colors.outlineVariant))
+      selectedContainerColor = colors.primaryContainer, selectedLabelColor = colors.onPrimaryContainer),
+    border = BorderStroke(1.dp, if (selected) colors.primary.copy(alpha = 0.4f) else colors.outlineVariant))
 }
 
 @Composable
 private fun WordCount(count: Int, label: String, modifier: Modifier = Modifier) {
-  Column(modifier, verticalArrangement = Arrangement.spacedBy(2.dp)) {
-    Text(count.toString(), style = MaterialTheme.typography.titleLarge)
+  Column(modifier, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+    Text(count.toString(), style = MaterialTheme.typography.titleLarge, color = MaterialTheme.colorScheme.primary)
     Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
 
 @Composable
 private fun WordlistRow(entry: WordlistItem, onClick: () -> Unit) {
-  Column(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surface)
-    .clickable(role = Role.Button, onClick = onClick).padding(horizontal = 16.dp, vertical = 14.dp),
-    verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp),
-      verticalAlignment = Alignment.CenterVertically) {
-      Row(Modifier.weight(1f), horizontalArrangement = Arrangement.spacedBy(4.dp),
+  Surface(onClick = onClick, shape = MaterialTheme.shapes.large,
+    color = MaterialTheme.colorScheme.surface) {
+    Column(Modifier.fillMaxWidth().padding(20.dp),
+      verticalArrangement = Arrangement.spacedBy(8.dp)) {
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp),
         verticalAlignment = Alignment.CenterVertically) {
-        Text(entry.hanzi, modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.titleLarge,
-          fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
-        if (entry.isCollected) CollectionIcon(true, contentDescription = uiString(UiR.string.ui_in_my_collection))
+        Row(Modifier.weight(1f), horizontalArrangement = Arrangement.spacedBy(4.dp),
+          verticalAlignment = Alignment.CenterVertically) {
+          Text(entry.hanzi, modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.titleLarge,
+            fontWeight = FontWeight.Medium, maxLines = 1, overflow = TextOverflow.Ellipsis)
+          if (entry.isCollected) CollectionIcon(true, contentDescription = uiString(UiR.string.ui_in_my_collection))
+        }
+        Text(uiString(UiR.string.ui_stage_number, entry.difficulty), style = MaterialTheme.typography.bodySmall,
+          color = MaterialTheme.colorScheme.onSurfaceVariant)
       }
-      Text(uiString(UiR.string.ui_stage_number, entry.difficulty), style = MaterialTheme.typography.bodySmall,
-        color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
-    Text(entry.pinyin, style = MaterialTheme.typography.bodySmall,
-      color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis)
-    Text(entry.english, style = MaterialTheme.typography.bodyMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-      Text(if (entry.status == WordlistStatus.LEARNING && entry.targetRounds > 0) uiString(UiR.string.ui_learning_stage, uiString(UiR.string.ui_fraction, entry.correctRounds, entry.targetRounds)) else entry.status.label(),
-        modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodySmall,
-        color = when (entry.status) {
-          WordlistStatus.LEARNED -> FlashcardStyle.colors.success
-          WordlistStatus.LEARNING -> MaterialTheme.colorScheme.primary
-          WordlistStatus.UNLEARNED -> MaterialTheme.colorScheme.onSurfaceVariant
-          WordlistStatus.SKIPPED -> MaterialTheme.colorScheme.onSurfaceVariant
-        })
+      Text(entry.pinyin, style = MaterialTheme.typography.bodySmall,
+        color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 2, overflow = TextOverflow.Ellipsis)
+      Text(entry.english, style = MaterialTheme.typography.bodyMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
+      Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(if (entry.status == WordlistStatus.LEARNING && entry.targetRounds > 0) uiString(UiR.string.ui_learning_stage, uiString(UiR.string.ui_fraction, entry.correctRounds, entry.targetRounds)) else entry.status.label(),
+          modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodySmall,
+          color = when (entry.status) {
+            WordlistStatus.LEARNED -> FlashcardStyle.colors.success
+            WordlistStatus.LEARNING -> MaterialTheme.colorScheme.primary
+            WordlistStatus.UNLEARNED -> MaterialTheme.colorScheme.onSurfaceVariant
+            WordlistStatus.SKIPPED -> MaterialTheme.colorScheme.onSurfaceVariant
+          })
+      }
     }
   }
 }

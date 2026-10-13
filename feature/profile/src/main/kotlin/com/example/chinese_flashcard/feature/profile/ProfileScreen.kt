@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -33,6 +34,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
@@ -78,26 +80,31 @@ fun ProfileScreen(vm: ProfileViewModel, onSettings: () -> Unit) {
         CircularProgressIndicator(Modifier.size(28.dp))
       }
     } else {
-      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-        EditableAvatar(value.avatarId, size = 44.dp, enabled = enabled,
-          onClick = { openEditor(ProfileEditor.AVATAR) })
-        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-          Text(value.displayName.ifBlank { uiString(UiR.string.ui_your_name) },
-            Modifier.clickable(enabled = enabled, role = Role.Button, onClick = { openEditor(ProfileEditor.NAME) }),
-            style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
-          LevelBadge(state.today?.growth ?: StudyGrowth())
+      Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
+        Row(Modifier.fillMaxWidth().padding(20.dp), verticalAlignment = Alignment.CenterVertically,
+          horizontalArrangement = Arrangement.spacedBy(20.dp)) {
+          EditableAvatar(value.avatarId, size = 60.dp, enabled = enabled,
+            onClick = { openEditor(ProfileEditor.AVATAR) })
+          Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            Text(value.displayName.ifBlank { uiString(UiR.string.ui_your_name) },
+              Modifier.clickable(enabled = enabled, role = Role.Button, onClick = { openEditor(ProfileEditor.NAME) }),
+              style = MaterialTheme.typography.titleLarge, maxLines = 2, overflow = TextOverflow.Ellipsis)
+            LevelBadge(state.today?.growth ?: StudyGrowth())
+          }
         }
       }
       state.today?.let { today ->
-        Column(verticalArrangement = Arrangement.spacedBy(FlashcardLayout.contentGap)) {
-          Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-            Metric(today.totalWords, uiString(UiR.string.ui_total), Modifier.weight(1f))
-            Metric(today.learnedWords, uiString(UiR.string.ui_learned), Modifier.weight(1f))
-            Metric(today.remainingWords, uiString(UiR.string.ui_not_started), Modifier.weight(1f))
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth().padding(20.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+              Metric(today.totalWords, uiString(UiR.string.ui_total), Modifier.weight(1f))
+              Metric(today.learnedWords, uiString(UiR.string.ui_learned), Modifier.weight(1f))
+              Metric(today.remainingWords, uiString(UiR.string.ui_not_started), Modifier.weight(1f))
+            }
+            Text(uiString(UiR.string.ui_today_detail, uiString(UiR.string.ui_fraction, today.completed, today.planned)), style = MaterialTheme.typography.bodySmall,
+              color = MaterialTheme.colorScheme.onSurfaceVariant)
           }
-          Text(uiString(UiR.string.ui_today_detail, uiString(UiR.string.ui_fraction, today.completed, today.planned)), style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         GrowthDetails(today.growth)
       }
@@ -119,18 +126,23 @@ fun ProfileScreen(vm: ProfileViewModel, onSettings: () -> Unit) {
 @Composable
 private fun GrowthDetails(growth: StudyGrowth) {
   var showInfo by rememberSaveable { mutableStateOf(false) }
-  Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
-    Row(verticalAlignment = Alignment.CenterVertically) {
-      Text(uiString(UiR.string.ui_level, growth.level), style = MaterialTheme.typography.titleMedium)
-      IconButton(onClick = { showInfo = true }) {
-        Icon(painterResource(R.drawable.ic_info), contentDescription = uiString(UiR.string.ui_growth_information),
-          modifier = Modifier.size(20.dp))
+  Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
+    Column(Modifier.fillMaxWidth().padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+        Text(uiString(UiR.string.ui_level, growth.level), Modifier.weight(1f),
+          style = MaterialTheme.typography.titleMedium)
+        IconButton(onClick = { showInfo = true }) {
+          Icon(painterResource(R.drawable.ic_info), contentDescription = uiString(UiR.string.ui_growth_information),
+            modifier = Modifier.size(20.dp), tint = MaterialTheme.colorScheme.primary)
+        }
       }
+      LinearProgressIndicator(progress = { growth.fraction },
+        modifier = Modifier.fillMaxWidth().height(6.dp).clip(MaterialTheme.shapes.small))
+      Text(uiString(UiR.string.ui_growth_to_next_level, uiString(UiR.string.ui_fraction, growth.earned, growth.span), growth.remaining),
+        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+      Text(uiString(UiR.string.ui_growth_days, growth.days), style = MaterialTheme.typography.bodyMedium,
+        color = MaterialTheme.colorScheme.primary)
     }
-    LinearProgressIndicator(progress = { growth.fraction }, modifier = Modifier.fillMaxWidth())
-    Text(uiString(UiR.string.ui_growth_to_next_level, uiString(UiR.string.ui_fraction, growth.earned, growth.span), growth.remaining),
-      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    Text(uiString(UiR.string.ui_growth_days, growth.days), style = MaterialTheme.typography.bodyMedium)
   }
   if (showInfo) GrowthInfoDialog(growth, onDismiss = { showInfo = false })
 }
@@ -148,7 +160,7 @@ private fun GrowthInfoDialog(growth: StudyGrowth, onDismiss: () -> Unit) {
         }
         HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
         Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-          GrowthRule(uiString(UiR.string.ui_complete_10_words), "Learn or Collection")
+          GrowthRule(uiString(UiR.string.ui_complete_10_words), uiString(UiR.string.ui_learn_or_collection))
           GrowthRule(uiString(UiR.string.ui_clear_20_mistakes))
         }
         Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surfaceContainer) {
@@ -185,8 +197,9 @@ private fun GrowthRule(title: String, detail: String? = null) {
 
 @Composable
 private fun Metric(count: Int, label: String, modifier: Modifier = Modifier) {
-  Column(modifier, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-    Text(count.toString(), style = MaterialTheme.typography.headlineSmall)
+  Column(modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Text(count.toString(), style = MaterialTheme.typography.headlineSmall,
+      color = MaterialTheme.colorScheme.primary)
     Text(label, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }

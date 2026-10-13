@@ -2,6 +2,7 @@ package com.example.chinese_flashcard.feature.study
 
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.localizedLabel
+import com.example.chinese_flashcard.core.ui.localizedPartOfSpeech
 import com.example.chinese_flashcard.core.ui.R as UiR
 
 import androidx.compose.foundation.clickable
@@ -48,6 +49,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -65,6 +68,7 @@ import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.WordlistStatus
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechScene
 
 private enum class HomeAction { RESUME, CARRYOVER, REVIEW, LEARN, LEARN_MORE, COLLECTIONS, MISTAKES }
 
@@ -94,7 +98,8 @@ fun TodayScreen(
     onRetry = vm::retry,
     onShuffle = { vm.shuffleHomeWord()?.let {
       val language = vm.state.value.settings.learningLanguage
-      onSpeak(SpeechRequest(if (language == AppLanguage.CN) it.hanzi else it.english, language))
+      onSpeak(SpeechRequest(if (language == AppLanguage.CN) it.hanzi else it.english, language,
+        SpeechScene.HOME_WORD, if (language == AppLanguage.CN) it.english else it.hanzi))
     } }, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
     FlashcardDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
@@ -137,22 +142,24 @@ private fun TodayContent(
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
   BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = FlashcardLayout.pageInset)) {
     val panelMaxHeight = maxHeight * 0.48f
-    Column(Modifier.fillMaxSize().padding(bottom = 16.dp)) {
-      Row(Modifier.fillMaxWidth().padding(top = 12.dp), verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Column(Modifier.fillMaxSize().padding(bottom = 20.dp)) {
+      Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         EditableAvatar(state.settings.avatarId, size = 44.dp,
           accessibilityLabel = uiString(UiR.string.ui_open_profile), onClick = onProfile)
-        StagePicker(stage, !state.busy && !state.loading, onStage)
+        StagePicker(stage, !state.busy && !state.loading, onStage, Modifier.weight(1f))
+        val languageDescription = uiString(UiR.string.ui_use_1_s_learn_2_s,
+          state.settings.uiLanguage.localizedLabel(), state.settings.learningLanguage.localizedLabel())
         TextButton(onClick = onLanguages, enabled = !state.busy && !state.loading,
-          contentPadding = PaddingValues(horizontal = 0.dp), modifier = Modifier.weight(1f)) {
-          Text(uiString(UiR.string.ui_use_1_s_learn_2_s, state.settings.uiLanguage.name, state.settings.learningLanguage.name),
-            modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.End,
-            style = MaterialTheme.typography.labelMedium, maxLines = 2)
+          contentPadding = PaddingValues(horizontal = 0.dp), modifier = Modifier.widthIn(min = 88.dp)) {
+          Text("${state.settings.uiLanguage.name} → ${state.settings.learningLanguage.name}",
+            modifier = Modifier.clearAndSetSemantics { contentDescription = languageDescription },
+            style = MaterialTheme.typography.labelMedium, maxLines = 1, softWrap = false)
         }
       }
       HomeWordShowcase(state = state, stage = stage, onShuffle = onShuffle,
         modifier = Modifier.weight(1f).fillMaxWidth())
-      Spacer(Modifier.height(12.dp))
+      Spacer(Modifier.height(16.dp))
       HomeStudyPanel(state = state, onStart = onStart, onResume = onResume,
         onLearnMore = onLearnMore, onLearnMoreBlocked = onLearnMoreBlocked,
         onRetry = onRetry, onWordlist = onWordlist,
@@ -172,7 +179,7 @@ private fun HomeWordShowcase(
   Box(modifier) {
     Column(Modifier.align(Alignment.Center).fillMaxWidth().padding(horizontal = 16.dp, vertical = 48.dp)
       .verticalScroll(rememberScrollState()), horizontalAlignment = Alignment.CenterHorizontally,
-      verticalArrangement = Arrangement.spacedBy(10.dp)) {
+      verticalArrangement = Arrangement.spacedBy(16.dp)) {
       when {
         state.loading -> LoadingNotice()
         state.homeWord != null && state.homeWord.difficulty == stage.rarity -> {
@@ -180,7 +187,7 @@ private fun HomeWordShowcase(
             color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
           Text(state.homeWord.hanzi, style = MaterialTheme.typography.displayMedium.copy(fontSize = 48.sp),
             color = MaterialTheme.colorScheme.onBackground, textAlign = TextAlign.Center)
-          Text(listOf(state.homeWord.partOfSpeech, state.homeWord.english)
+          Text(listOf(state.homeWord.partOfSpeech.localizedPartOfSpeech(), state.homeWord.english)
             .filter { it.isNotBlank() }.joinToString(" · "), style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
         }
@@ -209,10 +216,10 @@ private fun HomeStudyPanel(
   modifier: Modifier = Modifier,
 ) {
   val today = state.today
-  Surface(modifier = modifier, shape = MaterialTheme.shapes.large,
+  Surface(modifier = modifier, shape = MaterialTheme.shapes.extraLarge,
     color = MaterialTheme.colorScheme.surface) {
-    Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp),
-      verticalArrangement = Arrangement.spacedBy(12.dp)) {
+    Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(20.dp),
+      verticalArrangement = Arrangement.spacedBy(16.dp)) {
       if (today != null) {
         val resume = state.card?.takeIf { it.phase != CardPhase.FINISHED }
         val open: (HomeAction) -> Unit = { action ->
@@ -226,8 +233,8 @@ private fun HomeStudyPanel(
             HomeAction.MISTAKES -> onStart(StudyKind.MISTAKES)
           }
         }
-        Text(uiString(UiR.string.ui_study), style = MaterialTheme.typography.titleSmall,
-          color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(uiString(UiR.string.ui_study), style = MaterialTheme.typography.titleMedium,
+          color = MaterialTheme.colorScheme.onSurface)
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           DailyProgress(today.stageProgress.learned, today.stageProgress.total, Modifier.weight(1f))
@@ -253,11 +260,11 @@ private fun HomeStudyPanel(
             uiString(UiR.string.ui_fraction, today.reviewCompleted, today.reviewPlanned) else "", done,
             !state.busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
         }
-        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           HomeActionButton(learn, Modifier.weight(1f)) { open(learn.action) }
           HomeActionButton(review, Modifier.weight(1f)) { open(review.action) }
         }
-        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           practiceRows(today, state.busy).forEach { row ->
             val kind = if (row.action == HomeAction.COLLECTIONS) StudyKind.COLLECTION else StudyKind.MISTAKES
             val button = if (resume?.kind == kind) row.copy(enabled = !state.busy, action = HomeAction.RESUME) else row
@@ -273,12 +280,12 @@ private fun HomeStudyPanel(
 @Composable
 private fun HomeActionButton(row: HomeRow, modifier: Modifier, primary: Boolean = true, onClick: () -> Unit) {
   val colors = MaterialTheme.colorScheme
-  Surface(onClick = onClick, enabled = row.enabled, shape = MaterialTheme.shapes.medium,
-    modifier = modifier.heightIn(min = 76.dp),
-    color = if (primary) colors.primary.copy(alpha = if (row.enabled) 1f else 0.12f) else colors.secondaryContainer,
+  Surface(onClick = onClick, enabled = row.enabled, shape = MaterialTheme.shapes.large,
+    modifier = modifier.heightIn(min = 84.dp),
+    color = if (primary) colors.primary.copy(alpha = if (row.enabled) 1f else 0.12f) else colors.primaryContainer,
     contentColor = if (primary && row.enabled) colors.onPrimary else colors.onSurfaceVariant) {
-    Column(Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
-      verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Column(Modifier.padding(horizontal = 16.dp, vertical = 16.dp),
+      verticalArrangement = Arrangement.spacedBy(6.dp)) {
       Text(if (row.done) "${row.title} ✓" else row.title, style = MaterialTheme.typography.titleMedium,
         maxLines = 1, overflow = TextOverflow.Ellipsis)
       Text(row.trailing.ifEmpty { row.subtitle },
@@ -289,12 +296,14 @@ private fun HomeActionButton(row: HomeRow, modifier: Modifier, primary: Boolean 
 }
 
 @Composable
-private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (VocabularyStage) -> Unit) {
+private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (VocabularyStage) -> Unit,
+  modifier: Modifier = Modifier) {
   var expanded by remember { mutableStateOf(false) }
-  Box {
-    Row(Modifier.heightIn(min = 48.dp).clickable(enabled = enabled, role = Role.Button) { expanded = true },
+  Box(modifier) {
+    Row(Modifier.fillMaxWidth().heightIn(min = 48.dp).clickable(enabled = enabled, role = Role.Button) { expanded = true },
       verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-      Text(stage.localizedLabel(), modifier = Modifier.widthIn(max = 120.dp), maxLines = 1, overflow = TextOverflow.Ellipsis,
+      Text(stage.localizedLabel(), modifier = Modifier.weight(1f, fill = false).widthIn(max = 120.dp),
+        maxLines = 1, overflow = TextOverflow.Ellipsis,
         style = MaterialTheme.typography.titleSmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
       Icon(Icons.Default.KeyboardArrowDown, contentDescription = uiString(UiR.string.ui_choose_learning_stage),

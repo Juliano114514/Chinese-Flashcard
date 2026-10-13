@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -12,6 +11,9 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.withFrameNanos
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -25,6 +27,9 @@ import kotlinx.coroutines.launch
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.StudyKind
+import com.example.chinese_flashcard.core.domain.SpeechMode
+import com.example.chinese_flashcard.core.domain.SpeechScene
 import kotlinx.coroutines.flow.first
 
 @Composable
@@ -39,36 +44,43 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var feedbackFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackPlaybackSucceeded by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackAdvanceRequested by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
+  var feedbackSoundClaimed by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
+  var seenActiveSession by rememberSaveable(generation) { mutableStateOf(false) }
+  val sounds = rememberLearningSounds()
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
-  var manualSpeechRevision by remember { mutableLongStateOf(0L) }
+  val manualSpeech = remember { ManualSpeechPlayback() }
   val latestSpeakAndWait by rememberUpdatedState(onSpeakAndWait)
-  val playback = remember { StudyPlayback { latestSpeakAndWait(it) } }
+  val latestSpeechOptions by rememberUpdatedState(state.settings.speechOptions)
+  val playback = remember { StudyPlayback(requests = { latestSpeechOptions.requests(it) }) {
+    latestSpeakAndWait(it)
+  } }
   val speechScope = rememberCoroutineScope()
-  var manualSpeechJob by remember { mutableStateOf<Job?>(null) }
   val manualSpeak: (SpeechRequest) -> Unit = { request ->
     val current = vm.state.value
-    if (current.directionGeneration == generation && current.card?.id == card?.id && current.card?.phase == card?.phase) {
-      manualSpeechRevision++
-      manualSpeechJob?.cancel()
+    if (current.directionGeneration == generation && current.card?.id == card?.id && current.card?.phase == card?.phase &&
+      (current.card?.phase != CardPhase.FEEDBACK || feedbackFinished)) {
+      manualSpeech.revision++
+      sounds.stop()
+      manualSpeech.job?.cancel()
       playback.cancel()
-      manualSpeechJob = speechScope.launch { playback.sequence { speak(request, immediate = true) } }
+      manualSpeech.job = speechScope.launch { playback.sequence { speak(request, immediate = true) } }
     }
   }
   val lifecycle = LocalLifecycleOwner.current.lifecycle
   DisposableEffect(card?.id, card?.phase, generation, lifecycle, playback) {
     val observer = LifecycleEventObserver { _, event ->
       if (event == Lifecycle.Event.ON_PAUSE || event == Lifecycle.Event.ON_STOP) {
-        manualSpeechJob?.cancel()
+        manualSpeech.job?.cancel()
         playback.cancel()
       }
     }
     lifecycle.addObserver(observer)
-    onDispose { lifecycle.removeObserver(observer); manualSpeechJob?.cancel(); playback.cancel() }
+    onDispose { lifecycle.removeObserver(observer); manualSpeech.job?.cancel(); playback.cancel() }
   }
   val speechPage = card?.takeIf { it.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.EXPLANATION) }
     ?.let { "$generation/${it.id}/${it.phase}" }
   LaunchedEffect(speechPage, lifecycle) {
-    val entryRevision = manualSpeechRevision
+    val entryRevision = manualSpeech.revision
     if (speechPage != null) {
       lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
         vm.state.first { !it.busy && !it.loading }
@@ -76,12 +88,12 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
         if (spokenPage != speechPage) {
           if (activeCard == null || "${vm.state.value.directionGeneration}/${activeCard.id}/${activeCard.phase}" != speechPage) return@repeatOnLifecycle
           spokenPage = speechPage
-          if (manualSpeechRevision != entryRevision) return@repeatOnLifecycle
+          if (manualSpeech.revision != entryRevision) return@repeatOnLifecycle
           playback.sequence {
             if (!speak(activeCard.targetSpeech())) return@sequence
             for (example in activeCard.playbackExamples()) {
               val current = vm.state.value.card
-              if (vm.state.value.directionGeneration != generation || manualSpeechRevision != entryRevision || current?.id != activeCard.id ||
+              if (vm.state.value.directionGeneration != generation || manualSpeech.revision != entryRevision || current?.id != activeCard.id ||
                 current.phase != activeCard.phase) break
               if (!speak(activeCard.exampleSpeech(example))) break
             }
@@ -112,6 +124,13 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
             currentCoroutineContext().ensureActive()
             val current = vm.state.value.card
             if (vm.state.value.directionGeneration == generation && current != null && current.id == card.id && current.phase == CardPhase.FEEDBACK) {
+              if (!feedbackSoundClaimed) {
+                feedbackSoundClaimed = true
+                if (vm.state.value.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK, card.learningLanguage) != SpeechMode.NONE) {
+                  sounds.playAnswer(card.correct == true)
+                }
+              }
+              currentCoroutineContext().ensureActive()
               feedbackPlaybackSucceeded = played
               feedbackFinished = true
             }
@@ -141,6 +160,18 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       }
     }
   }
+  val dailyComplete = state.today?.let { today -> when (card?.kind) {
+    StudyKind.NEW -> today.newCompleted >= today.newPlanned
+    StudyKind.REVIEW -> today.reviewCompleted >= today.reviewPlanned
+    StudyKind.CARRYOVER -> today.carryoverCompleted >= today.carryoverPlanned
+    else -> true
+  } } ?: true
+  LaunchedEffect(card?.id, card?.phase, state.loading) {
+    if (!state.loading && card != null && card.phase != CardPhase.FINISHED) seenActiveSession = true
+  }
+  val completed = card?.phase == CardPhase.FINISHED && card.canAnswer && !card.isSkipped && dailyComplete &&
+    state.snapshot?.practice?.takeIf { it.kind == card.kind }?.paused != true && !state.loading && state.error == null
+  Box(Modifier.fillMaxSize()) {
   StudyContent(state, selectedOption, answerChosen, correctAnswerRevealed, feedbackFinished,
     feedbackPlaybackSucceeded, onBack, onWriting, manualSpeak,
     onSubmit = { id, option ->
@@ -152,5 +183,15 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     onCollection = vm::setCollected,
     onSkip = { id, skipped -> card?.let { vm.setSkipped(id, skipped, it.learningLanguage) } },
     onRetry = vm::retry, ipaResolver = ipaResolver)
+  StudyCompletionEffects(card?.id, generation, completed && seenActiveSession, sounds, Modifier.fillMaxSize(),
+    soundEnabled = state.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK,
+      card?.learningLanguage ?: state.settings.learningLanguage) != SpeechMode.NONE)
+  }
   DailyWritingInvitation(state, vm)
+}
+
+/** Playback handles do not describe a visible state and must not invalidate the study page. */
+private class ManualSpeechPlayback {
+  var revision = 0L
+  var job: Job? = null
 }

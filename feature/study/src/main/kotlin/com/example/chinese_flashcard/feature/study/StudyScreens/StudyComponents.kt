@@ -5,6 +5,7 @@ import com.example.chinese_flashcard.core.ui.R as UiR
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -55,7 +56,16 @@ internal fun DailyWritingInvitation(state: StudyUiState, vm: StudyViewModel) {
 internal fun DailyProgress(completed: Int, planned: Int, modifier: Modifier = Modifier) {
   LinearProgressIndicator(progress = {
     if (planned <= 0) 0f else (completed.toFloat() / planned).coerceIn(0f, 1f)
-  }, modifier = modifier.fillMaxWidth().height(4.dp))
+  }, modifier = modifier.fillMaxWidth().height(6.dp))
+}
+
+@Composable
+internal fun StudyActionPair(stacked: Boolean, content: @Composable (Modifier) -> Unit) {
+  if (stacked) Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    content(Modifier.fillMaxWidth())
+  } else Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+    content(Modifier.weight(1f))
+  }
 }
 
 @Composable
@@ -64,8 +74,8 @@ internal fun PageColumn(modifier: Modifier = Modifier, scrollKey: Any? = null, s
   val scroll = rememberScrollState()
   LaunchedEffect(scrollKey) { scroll.scrollTo(0) }
   Column(modifier.fillMaxSize().then(if (studyPage) Modifier else Modifier.flashcardBackground())
-    .verticalScroll(scroll).padding(horizontal = 20.dp, vertical = if (studyPage) 12.dp else 20.dp),
-    verticalArrangement = Arrangement.spacedBy(if (studyPage) 8.dp else 16.dp), content = content)
+    .verticalScroll(scroll).padding(horizontal = 24.dp, vertical = if (studyPage) 16.dp else 24.dp),
+    verticalArrangement = Arrangement.spacedBy(if (studyPage) 14.dp else 20.dp), content = content)
 }
 
 @Composable

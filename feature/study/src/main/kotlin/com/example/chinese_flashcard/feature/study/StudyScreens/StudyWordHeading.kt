@@ -6,22 +6,19 @@ import com.example.chinese_flashcard.core.ui.R as UiR
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -31,50 +28,41 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
-import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.StudyCard
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.ui.FlashcardDialog
+import com.example.chinese_flashcard.core.ui.FlashcardIcons
+import com.example.chinese_flashcard.core.ui.glassPanel
+import com.example.chinese_flashcard.core.ui.glassPanelColor
 import com.example.chinese_flashcard.core.ui.WordHeading
-import com.example.chinese_flashcard.core.ui.WordUserActions
 
 @Composable
 internal fun RoundProgress(card: StudyCard) {
   val description = uiString(UiR.string.ui_round_of, card.round, card.targetRounds)
-  Column(verticalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
+  Row(horizontalArrangement = Arrangement.spacedBy(4.dp), modifier = Modifier.semantics {
     contentDescription = description
   }) {
     repeat(card.targetRounds) { index ->
-      Spacer(Modifier.size(width = 10.dp, height = 3.dp).background(
+      Spacer(Modifier.size(width = 4.dp, height = 16.dp).background(
         if (index < card.round) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.outlineVariant))
     }
   }
 }
 
 @Composable
-internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?,
-  card: StudyCard? = null, onCollection: (Boolean) -> Unit = {}, onSkip: (Boolean) -> Unit = {}) {
+internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?) {
   var showActions by remember(word.id) { mutableStateOf(false) }
-  val showRound = card != null && !card.reviewRecall &&
-    card.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.FEEDBACK)
-  val fontScale = LocalDensity.current.fontScale
-  BoxWithConstraints(Modifier.fillMaxWidth()) {
-    val actionsWidth = 36.dp + maxOf(36.dp, (40 * fontScale).dp) + (if (showRound) 14.dp else 0.dp)
-    val actionsBelow = (word.hanzi.length * 40 * fontScale).dp + actionsWidth + 2.dp > maxWidth
-    WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true }, trailingOnNewLine = actionsBelow,
-      trailingSpacing = 2.dp, trailing = {
-      Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-        if (showRound) RoundProgress(checkNotNull(card))
-        WordUserActions(isCollected = card?.isCollected ?: false, isSkipped = card?.isSkipped ?: false,
-          enabled = enabled, onCollection = onCollection, onSkip = onSkip, wordId = word.id, wordLabel = word.hanzi,
-          compact = true)
-      }
-    })
+  Surface(shape = MaterialTheme.shapes.large, color = glassPanelColor(),
+    contentColor = MaterialTheme.colorScheme.onSurface,
+    modifier = Modifier.fillMaxWidth().glassPanel(shape = MaterialTheme.shapes.large)) {
+  Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 16.dp)) {
+    WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true },
+      trailingSpacing = 8.dp, playBesideWord = true)
+  }
   }
   if (showActions) FlashcardDialog(onDismissRequest = { showActions = false },
     title = {
@@ -88,7 +76,7 @@ internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> 
           showActions = false; onSpeak()
         }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          Icon(Icons.Default.PlayArrow, contentDescription = null, modifier = Modifier.size(20.dp))
+          Icon(FlashcardIcons.Play, contentDescription = null, modifier = Modifier.size(20.dp))
           Text(uiString(UiR.string.ui_listen_66b5db), style = MaterialTheme.typography.bodyLarge)
         }
         onWrite?.let { write ->

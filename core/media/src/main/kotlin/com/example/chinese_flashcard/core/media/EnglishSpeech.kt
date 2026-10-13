@@ -18,6 +18,9 @@ import java.security.MessageDigest
 import java.util.Locale
 
 internal data class EnglishAudio(val sampleRate: Int, val chunks: List<FloatArray>)
+internal data class EnglishAudioChunk(val sampleRate: Int, val samples: FloatArray)
+
+internal const val ENGLISH_SPEED_MULTIPLIER = 1.2f
 
 /** Fixed, locally bundled text-to-token data; no phonemizer, Python, recording or network at runtime. */
 internal class EnglishSpeech(context: Context) {
@@ -27,18 +30,31 @@ internal class EnglishSpeech(context: Context) {
   private var manifest: JSONObject? = null
   private var styles: FloatArray? = null
   private var closed = false
+  private var cachedSamples = 0
+  private val audioCache = LinkedHashMap<String, EnglishAudio>(24, .75f, true)
   private val shards = object : LinkedHashMap<String, JSONObject>(8, .75f, true) {
     override fun removeEldestEntry(eldest: MutableMap.MutableEntry<String, JSONObject>?): Boolean = size > 8
   }
 
-  suspend fun synthesize(text: String): EnglishAudio? = lock.withLock {
+  suspend fun prepare() = lock.withLock {
+    check(!closed)
+    prepareModel(metadata())
+    currentCoroutineContext().ensureActive()
+  }
+
+  /** Emits each chunk as it is ready; callers can play the first while the next is synthesized. */
+  suspend fun synthesize(text: String, onChunk: suspend (EnglishAudioChunk) -> Unit = {}): EnglishAudio? = lock.withLock {
     check(!closed)
     val trimmed = text.trim()
     require(trimmed.length <= 2000)
-    val metadata = manifest ?: readJson("english-speech/manifest.json").also {
-      require(it.getInt("schemaVersion") == 1)
-      manifest = it
+    audioCache[trimmed]?.let { cached ->
+      for (samples in cached.chunks) {
+        currentCoroutineContext().ensureActive()
+        onChunk(EnglishAudioChunk(cached.sampleRate, samples))
+      }
+      return@withLock cached
     }
+    val metadata = metadata()
     val hash = sha256(trimmed.toByteArray(Charsets.UTF_8))
     val entries = shards.getOrPut(hash.take(2)) {
       val name = "shard_${hash.take(2)}.json"
@@ -52,12 +68,9 @@ internal class EnglishSpeech(context: Context) {
     val columns = metadata.getInt("styleColumns")
     val sampleRate = metadata.getInt("sampleRate")
     require(rows in 1..1000 && columns == 256 && sampleRate == 24000)
-    val voice = styles ?: readStyle(metadata, rows, columns).also { styles = it }
+    val model = prepareModel(metadata)
+    val voice = checkNotNull(styles)
     val env = OrtEnvironment.getEnvironment()
-    val model = session ?: OrtSession.SessionOptions().use { options ->
-      options.setIntraOpNumThreads(2)
-      env.createSession(modelFile(metadata).absolutePath, options)
-    }.also { session = it }
     val chunks = entry.getJSONArray("chunks")
     require(chunks.length() in 1..32)
     var totalSamples = 0
@@ -73,8 +86,10 @@ internal class EnglishSpeech(context: Context) {
       val style = voice.copyOfRange(row * columns, (row + 1) * columns)
       OnnxTensor.createTensor(env, LongBuffer.wrap(tokenIds), longArrayOf(1, tokenIds.size.toLong())).use { input ->
         OnnxTensor.createTensor(env, FloatBuffer.wrap(style), longArrayOf(1, columns.toLong())).use { embedding ->
-          // Kitten's voice prior already sets 0.8; never apply the old system-TTS rate a second time.
-          OnnxTensor.createTensor(env, FloatBuffer.wrap(floatArrayOf(metadata.getDouble("speedPrior").toFloat())), longArrayOf(1)).use { speed ->
+          // Kitten's fixed Bella prior is applied once, then the requested 1.2x English rate.
+          val speechSpeed = metadata.getDouble("speedPrior").toFloat() * ENGLISH_SPEED_MULTIPLIER
+          require(speechSpeed.isFinite() && speechSpeed > 0f)
+          OnnxTensor.createTensor(env, FloatBuffer.wrap(floatArrayOf(speechSpeed)), longArrayOf(1)).use { speed ->
             model.run(mapOf("input_ids" to input, "style" to embedding, "speed" to speed)).use { output ->
               currentCoroutineContext().ensureActive()
               val buffer = (output[0] as OnnxTensor).floatBuffer
@@ -90,8 +105,38 @@ internal class EnglishSpeech(context: Context) {
           }
         }
       }
+      onChunk(EnglishAudioChunk(sampleRate, audio.last()))
     }
-    EnglishAudio(sampleRate, audio)
+    currentCoroutineContext().ensureActive()
+    EnglishAudio(sampleRate, audio).also { cache(trimmed, it, totalSamples) }
+  }
+
+  private fun metadata(): JSONObject = manifest ?: readJson("english-speech/manifest.json").also {
+    require(it.getInt("schemaVersion") == 1)
+    manifest = it
+  }
+
+  private fun prepareModel(metadata: JSONObject): OrtSession {
+    val rows = metadata.getInt("styleRows")
+    val columns = metadata.getInt("styleColumns")
+    require(rows in 1..1000 && columns == 256 && metadata.getInt("sampleRate") == 24000)
+    if (styles == null) styles = readStyle(metadata, rows, columns)
+    return session ?: OrtSession.SessionOptions().use { options ->
+      options.setIntraOpNumThreads(2)
+      OrtEnvironment.getEnvironment().createSession(modelFile(metadata).absolutePath, options)
+    }.also { session = it }
+  }
+
+  private fun cache(text: String, audio: EnglishAudio, sampleCount: Int) {
+    // At most 24 recent utterances and 8 MiB of PCM, retained only for this speech lifecycle.
+    if (sampleCount > 2 * 1024 * 1024) return
+    while (audioCache.isNotEmpty() && (audioCache.size >= 24 || cachedSamples + sampleCount > 2 * 1024 * 1024)) {
+      val oldest = audioCache.entries.iterator().next()
+      cachedSamples -= oldest.value.chunks.sumOf { it.size }
+      audioCache.remove(oldest.key)
+    }
+    audioCache[text] = audio
+    cachedSamples += sampleCount
   }
 
   private fun modelFile(metadata: JSONObject): File {
@@ -138,6 +183,8 @@ internal class EnglishSpeech(context: Context) {
     session = null
     styles = null
     shards.clear()
+    audioCache.clear()
+    cachedSamples = 0
   }
 }
 
