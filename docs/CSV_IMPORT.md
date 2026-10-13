@@ -2,7 +2,7 @@
 
 > 2026-10-08 文档核对：本文件描述当前导入契约。许可与来源义务见 [第三方声明](../THIRD_PARTY_NOTICES.md) 和 [发布检查](OPEN_SOURCE_COMPLIANCE.md)；当前版本索引见 [开发与维护](DEVELOPMENT.md)。导入／结构校验成功不证明作者拥有公开再分发权。
 
-根目录 `wordlist.csv` 是打包默认词库的来源。构建任务生成 `default-wordlist/wordlist.csv`、SHA-256 `version.txt` 和记录总量 `rows.txt`，首次启动在后台完整校验并入库。当前词库共 **13,223 条**：2026-10-07 在原 9,223 条后追加 4,000 条，新 ID 为 `wl_09224` 至 `wl_13223`。原记录的 ID、词头、罕度、干扰引用和物理顺序保持，只修正 `wl_06211`、`wl_06550` 的例句读音。原一次性编号映射、上一轮追加、五档分级及本轮追加分别冻结在 `tools/wordlist_rebuild/id-map.json`、`expansion-20261005.json`、`stage-grading-20261005.json`、`expansion-20261007.json`；重建按该链路复现，不再重新编号。
+根目录 `wordlist.csv` 是打包默认词库的来源。构建任务生成 `default-wordlist/wordlist.csv`、SHA-256 `version.txt` 和记录总量 `rows.txt`，首次启动在后台完整校验并入库。当前词库共 **13,223 条**：2026-10-07 在原 9,223 条后追加 4,000 条，新 ID 为 `wl_09224` 至 `wl_13223`。原记录的 ID、词头、罕度、干扰引用和物理顺序保持，只修正 `wl_06211`、`wl_06550` 的例句读音。当前仅保留根目录这一版 CSV；旧版与历史重建输入已清理，现有 ID 和顺序不变。
 
 12 列重构阶段采用 Room v7 和新数据库 `chinese-flashcard-v2.db`，与更早的课程数据库不兼容。当前为 **Room v8**，已有 v2 数据库沿用现行迁移链路；本轮追加不改变数据库版本或清空已有学习记录。历史内容指纹认领已移除；运行时加载错误不会触发额外的清库或降级。
 
@@ -93,7 +93,7 @@
 
 学习顺序按罕度升序，然后**逐音节**比较该音节的无调字母、声调，再比较下一音节。`ü` 独立且紧随 `u`，同字母声调顺序为 1、2、3、4、轻声 5；公共音节前缀相同时短词先，同音同调以词条 ID 稳定兜底。使用词条已录拼音，不按汉字自动猜读音。每次追加或预设更新的事务内重算全库 `sortOrder`，词表、新词、Learn more 和跨天续学共用该顺序；当天已冻结的计划与当前卡片保留原序，到期复习继续按到期顺序。
 
-罕度为五个教育阶段：0 小学一年级（Primary school）、1 初中一年级（Middle school）、2 高中一年级（High school）、3 大学一年级（University）、4 汉语言专业一年级（Specialist）。2026-10-05 已逐词重评全部 9,223 条；本轮保留这些档位，并对新增 4,000 条逐词标注。依据当前主义项、语境、抽象程度及专业背景判断，不用词频、字数或词典标签直接套档，不设等量配额。统计和覆盖见 `wordlist-validation.json`、`tools/wordlist_stages_20261005/` 与 `tools/wordlist_expansion_20261007/`；此为实用学习阶段估计，不是官方逐年级教材词表认证。
+罕度为五个教育阶段：0 小学一年级（Primary school）、1 初中一年级（Middle school）、2 高中一年级（High school）、3 大学一年级（University）、4 汉语言专业一年级（Specialist）。2026-10-05 已逐词重评全部 9,223 条；本轮保留这些档位，并对新增 4,000 条逐词标注。依据当前主义项、语境、抽象程度及专业背景判断，不用词频、字数或词典标签直接套档，不设等量配额。当前统计见 `wordlist-validation.json`，历史制作与审校记录可从 Git 历史查阅；此为实用学习阶段估计，不是官方逐年级教材词表认证。
 
 `来源说明` 中上一轮的分档文字保留为历史生成记录；当前档位以罕度列及新的分级覆盖层为准，不为本次重评改写其他教学字段。
 
@@ -109,7 +109,7 @@
 
 CSV 不内嵌笔顺，不在运行时下载笔顺。每个字符位置必须能在随 App 分发的 `wordlist-strokes/index.json` 中找到真实轮廓和中线；重复字共享资源但逐个位置练习。本轮 4,000 条新增词复用既有 **6,324 字**资源包，无需新增笔顺。资源之外的字会在导入预览报错，需要先补充并验证真实资源。每包最多 128 字且不超过 1 MiB，资源来源、固定版本、SHA-256 和完整许可随 assets 保存，Data & licenses 提供入口。
 
-原始文件保存在 `wordlist.original.csv`，早期删除依据保存在 `wordlist-removals.csv` 和 `wordlist-placeholder-audit.json`。本次冻结基线、例句、解释、追加成语、一次性 ID 映射和审校覆盖分别保存在 `tools/wordlist_rebuild/`；旧生成器的生产快照不用于覆盖新格式。当前入口为 `tools/rebuild_wordlist.py`：`--prepare` 生成草稿，`--apply` 写入，**`python tools/rebuild_wordlist.py --check` 只读核对最终结构、引用、内容形状、资源覆盖及冻结清单一致性**。
+旧原表、删除记录、历史基线、制作及审校产物已清理。当前入口仍为 `python tools/rebuild_wordlist.py --check`，仅只读核对当前 CSV 的完整结构、引用、内容形状、字形索引覆盖及快照哈希；旧 `--prepare`／`--apply` 制作入口已退役。
 
 释义参考 [CC-CEDICT 官方资料](https://www.mdbg.net/chinese/dictionary?page=cc-cedict)（**CC BY-SA 4.0**）和 [mapull/chinese-dictionary](https://github.com/mapull/chinese-dictionary) 固定提交 `e804ada333b68afddfdccbe8dcc938a72da157a7`。后者声明 MIT，并注明部分收集资料原始出处无法确定；保留具名来源与完整许可。[SUBTLEX-CH](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0010729) 固定词频表作为辅助，App 不分发完整语料，也不在运行时联网。
 
@@ -117,4 +117,4 @@ CSV 不内嵌笔顺，不在运行时下载笔顺。每个字符位置必须能�
 
 例句分块、直译、语法标记和义项选择包含机器辅助与明确校订，来源记录保留这些证据边界。词典命中、结构校验和审校覆盖不能表述为全库经过人工语言审核，也不能保证每个语境的译法唯一正确。
 
-新词库清单与静态结果由 `docs/wordlist-validation.json` 和 `tools/wordlist_rebuild/build-manifest.json` 记录。资源一致性可另用 `python tools/build_wordlist_strokes.py --check` 核对。检查成功只证明实际覆盖的结构、引用和资源；编译、首次启动、数据库升级、百分比布局、写字英文换行、TTS、跨日学习与恢复均需分别取得构建或运行证据。早期实施、UI 和静态验收原文可在 Git 历史查看，不能作为当前 Room v8 或新 CSV 契约的运行证明；当前检查结果集中在根目录 VERSIONLOG.md。
+当前词库快照由 `docs/wordlist-validation.json` 记录，实际静态结果以本次检查输出为准。资源一致性可另用 `python tools/build_wordlist_strokes.py --check` 核对。检查成功只证明实际覆盖的结构、引用和资源；编译、首次启动、数据库升级、百分比布局、写字英文换行、TTS、跨日学习与恢复均需分别取得构建或运行证据。早期实施、UI 和静态验收原文可在 Git 历史查看，不能作为当前 Room v8 或新 CSV 契约的运行证明；当前检查结果集中在根目录 VERSIONLOG.md。

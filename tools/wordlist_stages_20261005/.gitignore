@@ -1,7 +1,0 @@
-# Temporary authoring helpers; reviewed decisions and coverage remain traceable.
-*.py
-!freeze.py
-*.txt
-*_work.json
-*_progress.json
-__pycache__/

@@ -20,7 +20,7 @@
       "id": "supplied-wordlist",
       "file": "wordlist.original.csv",
       "sha256": "f2d70fd87f82fd3ef9542715b87905639376a67d830ebf68e8237633fa8160a3",
-      "description": "Original user-provided wordlist, first examples and translations, preserved as an exact backup."
+      "description": "Original user-provided wordlist, first examples and translations, retired from the working tree; the original hash is retained for attribution and the file is available in Git history."
     },
     {
       "id": "wordlist-authoring",
@@ -37,6 +37,6 @@
       "provenanceCaveat": "Upstream notes that original provenance of some collected content cannot be established. An attributed reference, not certified authoritative lexicography."
     }
   ],
-  "referencePolicy": "Definitions from CC-CEDICT and Mapull are selected and attributed. Other cited references verify individual facts. Modern idiom examples are independently authored; translation and pinyin drafts are explicitly labeled. See tools/wordlist_refined/audit.json and tools/idiom_curated/catalog.json for production evidence.",
+  "referencePolicy": "Definitions from CC-CEDICT and Mapull are selected and attributed. Other cited references verify individual facts. Modern idiom examples are independently authored; translation and pinyin drafts are explicitly labeled. Historical production evidence is available in Git history under tools/wordlist_refined/audit.json and tools/idiom_curated/catalog.json.",
   "separation": "Lexicon content derived from CC-CEDICT retains CC BY-SA 4.0. Stroke geometry retains the separate Arphic Public License. Independent app source code is not relicensed by these data notices."
 }

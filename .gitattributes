@@ -3,12 +3,6 @@
 # Preserve exact CSV backups and packaged resource hashes across platforms.
 *.csv -text
 core/data/src/main/assets/** -text
-# Frozen rebuild inputs are verified by their exact-byte SHA-256 manifests.
-tools/wordlist_rebuild/** -text
-tools/content_review_20261005/** -text
-tools/wordlist_expansion_20261005/** -text
-tools/wordlist_expansion_20261007/** -text
-tools/wordlist_stages_20261005/** -text
-# Keep the generated validation report identical to its rebuild manifest.
+# Preserve the current wordlist snapshot manifest bytes.
 docs/wordlist-validation.json -text
 *.jar binary
