@@ -8,10 +8,10 @@
 | --- | --- | --- |
 | CC-CEDICT 释义、读音及其改编 | CC-CEDICT contributors；CEDICT 最初由 Paul Denisowski 创建；MDBG 发布。固定版本 `2026-10-03T08:59:08Z`，原始 UTF-8 SHA-256 `1710773bbab29df832f5967bdfb62ca1281868e1240d184165a36c0d948f39e3` | CC BY-SA 4.0；保留作者、来源、许可及修改说明，同许可分发相关改编内容 |
 | Mapull 中文参考及成语资料 | `mapull/chinese-dictionary@e804ada333b68afddfdccbe8dcc938a72da157a7`；上游 MIT 声明为 Copyright (c) 2021 码谱；部分收集材料原始来源未明 | 保留上游 MIT 全文；MIT 声明不证明所有被收集材料的权利链完整，需逐项排查或替换 |
-| 原始词表、原例句与翻译 | `wordlist.original.csv`，现有元数据仅说明为用户提供，不能证明用户拥有全部公开再分发权 | 授权待核实；覆盖历史备份、基线、加工稿和派生产物，不授予 MIT |
-| AI 辅助补充、改写、拆分及例句 | `wordlist_refined/`、`idiom_curated/`、`content_review_20261005/`、`wordlist_expansion_20261005/`、`wordlist_expansion_20261007/`、`wordlist_rebuild/` 等 | 制作记录和语言审校不证明版权独立；派生自 CC-CEDICT 的内容沿用 CC BY-SA 4.0，其他部分按原来源核实 |
-| 机器辅助英译和拼音 | 已退役的历史脚本曾调用 Google 翻译接口，记录见 `tools/wordlist_refined/machine-translation-source.json` 及保留的生产资料 | 不能按接口可访问推定可批量分发；发布前核实当时服务条款、账号授权与原文权利，必要时独立重写 |
-| SUBTLEX-CH 历史分级参考 | Cai Q, Brysbaert M (2010), *SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles*, PLoS ONE 5(6): e10729；历史记录见 `tools/wordlist_difficulty.json` | 原始语料缓存未作为当前词库许可依据；公开语料或摘录前核实对应附件的实际许可，保留论文署名。当前五档为 AI 编辑判断 |
+| 原始词表、原例句与翻译 | 当前 `wordlist.csv` 的原始来源为用户提供；旧原表已清理，来源哈希仍保留在应用内元数据，不能证明用户拥有全部公开再分发权 | 授权待核实；覆盖历史备份、基线、加工稿和派生产物，不授予 MIT |
+| AI 辅助补充、改写、拆分及例句 | 当前 `wordlist.csv`；历史制作和审校产物已清理，可从 Git 历史查阅 | 制作记录和语言审校不证明版权独立；派生自 CC-CEDICT 的内容沿用 CC BY-SA 4.0，其他部分按原来源核实 |
+| 机器辅助英译和拼音 | 已退役的历史脚本曾调用 Google 翻译接口，历史记录可从 Git 历史查阅 | 不能按接口可访问推定可批量分发；发布前核实当时服务条款、账号授权与原文权利，必要时独立重写 |
+| SUBTLEX-CH 历史分级参考 | Cai Q, Brysbaert M (2010), *SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles*, PLoS ONE 5(6): e10729；历史分级记录已清理，可从 Git 历史查阅 | 原始语料缓存未作为当前词库许可依据；公开语料或摘录前核实对应附件的实际许可，保留论文署名。当前五档为 AI 编辑判断 |
 | 其他词典、教材及网页核对材料 | 逐条引用和 `source-excerpts.json` 等审阅资料 | 事实核对链接不等于复制网页、释义、教材或例句的授权；公开稿件、缓存、附件和历史版本也需要审查 |
 
 所有当前 13,223 行的 `来源说明` 均提到 CC-CEDICT，不能把整份混合 CSV 标成纯 MIT。对已获授权的 CC-CEDICT 改编部分及项目有权许可的相应贡献，沿用 CC BY-SA 4.0；**该声明不补足原始例句、其他来源或机器服务的缺失授权**。当前词库不能据此直接宣称已可公开分发。
@@ -54,3 +54,12 @@ README 和历史 UI 文档中的产品与设计体系链接仅作设计参考说
 当前直接版本来自 `gradle/libs.versions.toml` 和 Gradle 配置：AndroidX Core 1.17.0、Activity 1.10.1、Lifecycle 2.9.2、Navigation 2.9.3、Room 2.8.5、Compose BOM 2025.08.01、Kotlin 2.2.10、Coroutines 1.10.2、AGP 9.2.1、KSP 2.3.12、Gradle 9.4.1，以及配置中的测试依赖和 Foojay 插件。
 
 这是一份**直接配置清单，不是解析后的完整 SBOM 或许可证结论**。发布具体 APK／源码包前，以其实际依赖图和制品内 `META-INF`、POM、LICENSE／NOTICE 为准，核对传递依赖、插件及 `gradle/wrapper/gradle-wrapper.jar` 的再分发要求。BOM、版本目录或 Gradle 下载成功不证明许可审查通过。保留各依赖要求的版权与 NOTICE，不把二进制依赖纳入项目 MIT 授权。
+
+## 英语语音与音标（2026-10-13）
+
+- ONNX Runtime Android `1.31.0`：Microsoft，MIT。采用官方 Maven 依赖；全文随应用内 `english-speech/LICENSES.txt` 展示。
+- Kitten TTS Nano `0.8 INT8`：KittenML，模型仓库声明 Apache-2.0，固定 revision `84781d74e29ee25217551556398b42f80593a813`。内置模型与 Bella（expr-voice-2-f）声线转换数据；来源、哈希、修改说明、完整许可与推理代码许可随资源保留。
+- 美式 IPA：open-dict-data/ipa-dict 的 en_US 子集，保留 MIT 与 CMUdict 来源许可，不引入其其他语言数据的不同许可。词典多读音不代表按当前语境消歧。
+- eSpeak NG 仅用于维护者构建期生成固定发音 token，不进入应用运行资源。发音数据继承源教学文本的权利边界，不因 token 化改标为独立 MIT 数据。
+
+完整固定来源与资源准备说明见 [英语语音维护](docs/ENGLISH_SPEECH.md)。新增组件许可声明不证明训练数据、声线、原词表或例句的全部权利，既有公开分发待核实项仍有效。

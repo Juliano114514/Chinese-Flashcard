@@ -5,4 +5,8 @@ android {
   defaultConfig { minSdk = 28 }
   compileOptions { sourceCompatibility = JavaVersion.VERSION_11; targetCompatibility = JavaVersion.VERSION_11 }
 }
-dependencies { implementation(project(":core:domain")); implementation(libs.kotlinx.coroutines.core) }
+dependencies {
+  implementation(project(":core:domain"))
+  implementation(libs.kotlinx.coroutines.core)
+  implementation("com.microsoft.onnxruntime:onnxruntime-android:1.31.0")
+}

@@ -1,0 +1,28 @@
+{
+  "dataSha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+  "generatedFiles": {
+    "LICENSES.txt": {
+      "bytes": 5610,
+      "sha256": "aa9b8af8d6dd8db39a648640bed835c6a7878a496549c36c67e2097ba2216589"
+    },
+    "ipa.json": {
+      "bytes": 224931,
+      "sha256": "927571c4f32af90468cc291b00125edb0fa643bfa9da006373cf69e2fcce3e6d"
+    },
+    "word-index.json": {
+      "bytes": 2778833,
+      "sha256": "0b8c2c0932a5023027744e247584c0bceebe87c7eff2efcc1bc013d0ff3976de"
+    }
+  },
+  "licenses": [
+    "licenses/IPA_MIT.txt",
+    "licenses/CMUDICT_BSD.txt",
+    "licenses/CMUDICT_IPA_MIT.txt",
+    "licenses/SYLLABIFY_MIT.txt"
+  ],
+  "processing": "Exact lowercase lookup of current English texts; no generated or guessed IPA.",
+  "revision": "43c3570eb3553bdd19fccd2bd0091534889af023",
+  "schemaVersion": 1,
+  "sourceWordlistSha256": "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7",
+  "url": "https://github.com/open-dict-data/ipa-dict"
+}

@@ -1,0 +1,82 @@
+{
+  "kitten_tts_nano_v0_8.onnx": {
+    "url": "https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8/resolve/84781d74e29ee25217551556398b42f80593a813/kitten_tts_nano_v0_8.onnx",
+    "sha256": "f7b0afcbee92870b32b8e0276d855b954dc25470c9f051b376ac7eee537c76fc",
+    "bytes": 24369971
+  },
+  "voices.npz": {
+    "url": "https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8/resolve/84781d74e29ee25217551556398b42f80593a813/voices.npz",
+    "sha256": "8aa7cee235abb0739cb51e6559685f65a4dacd95568833d05699b1633f519b3f",
+    "bytes": 3278902
+  },
+  "config.json": {
+    "url": "https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8/resolve/84781d74e29ee25217551556398b42f80593a813/config.json",
+    "sha256": "b66006ccbeccd4de5fc3c9272059c47f5725df7215fd889785c03602652fab64",
+    "bytes": 688
+  },
+  "MODEL_README.md": {
+    "url": "https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8/resolve/84781d74e29ee25217551556398b42f80593a813/README.md",
+    "sha256": "ff39adbcb653e9beaa612b405c4e301ee62eb4201b32dd77ae36f4078537b8ef",
+    "bytes": 741
+  },
+  "KITTEN_APACHE-2.0.txt": {
+    "url": "https://raw.githubusercontent.com/KittenML/KittenTTS/8ed679c08e0976b236bd5d0dc4ec9ddd98b0da98/LICENSE",
+    "sha256": "787aa312b93eee80b636f35652469df29efdb7582239d6a9c088467555a3c7fd",
+    "bytes": 10394
+  },
+  "kitten_onnx_model.py": {
+    "url": "https://raw.githubusercontent.com/KittenML/KittenTTS/8ed679c08e0976b236bd5d0dc4ec9ddd98b0da98/kittenml/kittentts_legacy/onnx_model.py",
+    "sha256": "f1c1007237ef90dafe9ec3b7613102092671f60ca5c3df13bdb486dda70fbd5b",
+    "bytes": 6756
+  },
+  "kitten_preprocess.py": {
+    "url": "https://raw.githubusercontent.com/KittenML/KittenTTS/8ed679c08e0976b236bd5d0dc4ec9ddd98b0da98/kittenml/preprocess.py",
+    "sha256": "a80265fbbdbbe8f946c046ec53aca79dd560675dcab92f1d2922bd25a854e333",
+    "bytes": 53603
+  },
+  "ipa_en_US.txt": {
+    "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/data/en_US.txt",
+    "sha256": "2af6f154a5c363275f052d1f85acedef38ed185ca9745aa4314be77f6b70de67",
+    "bytes": 3180267
+  },
+  "IPA_README.md": {
+    "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/README.md",
+    "sha256": "7251a8159f6d1d1a981ae5e79e616e3c7181950c1b6023042a727056a47e87a0",
+    "bytes": 15495
+  },
+  "IPA_MIT.txt": {
+    "url": "https://raw.githubusercontent.com/open-dict-data/ipa-dict/43c3570eb3553bdd19fccd2bd0091534889af023/LICENSE",
+    "sha256": "2c6a7e4c71f834a8fc0114fa4f65ca85e80bc4b4dc7ed08746963a09a7b0d177",
+    "bytes": 1073
+  },
+  "CMUDICT_BSD.txt": {
+    "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/LICENSE",
+    "sha256": "bd4ce8e44170a5f9f481310ca85c51de3c4f851a65e679b40e603b143bd3542a",
+    "bytes": 1754
+  },
+  "CMUDICT_IPA_MIT.txt": {
+    "url": "https://raw.githubusercontent.com/lingz/cmudict-ipa/629483e9a7fa5b9ff11bb83e3fda6dcc25c5c511/LICENSE",
+    "sha256": "a504bede5a50d1ac19c38984d9bb33371927f72e714946a963bf40bb2de21188",
+    "bytes": 1082
+  },
+  "SYLLABIFY_SOURCE.py": {
+    "url": "https://raw.githubusercontent.com/kylebgorman/syllabify/d816db784436e9de87ec1ef9bd11b8e229853710/syllabify.py",
+    "sha256": "a9b35ed0bf2c1ef0b51396e9f6eb000904095b6cbac728f17dad6ad7663a96d6",
+    "bytes": 7814
+  },
+  "ESPEAK_GPL-3.0.txt": {
+    "url": "https://raw.githubusercontent.com/espeak-ng/espeak-ng/1.51/COPYING",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "bytes": 35147
+  },
+  "espeakng_loader-0.2.4-py3-none-win_amd64.whl": {
+    "url": "https://files.pythonhosted.org/packages/9d/ed/a3d872fbad4f3a3f3db0e8c31768ab14e77cd77306de16b8b20b1e1df7ea/espeakng_loader-0.2.4-py3-none-win_amd64.whl",
+    "sha256": "41f1e08ac9deda2efd1ea9de0b81dab9f5ae3c4b24284f76533d0a7b1dd7abd7",
+    "bytes": 9437292
+  },
+  "ORT_MIT.txt": {
+    "url": "https://raw.githubusercontent.com/microsoft/onnxruntime/v1.31.0/LICENSE",
+    "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c",
+    "bytes": 1073
+  }
+}
