@@ -11,6 +11,7 @@
 - 本地验证：最终 `:app:assembleDebug :app:lintDebug --rerun-tasks` 通过，0 错误、14 条原有警告；词库与英语资源已有检查通过，冻结 CSV 哈希保持 `21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7`；最终 Debug APK 中临时重组探针已移除。
 - 设备验证：静音条件下操作导航、换词、词库滑动、词条与写字播放、设置和弹窗、一次正确答题及反馈讲解；最终无探针 Debug 覆盖安装并启动到首页。采样中的导航换词重组为 4→0、笔顺上层执行为 156→1；Debug 渲染节奏估计不等于 Release 或 120 Hz 实呈帧率。
 - 发布方式：推送 `main` 相对远端 1.3.1 的版本变化触发既有 GitHub Actions，完成数据检查、Debug lint/构建、Release 编译、签名与附件校验后发布 `v1.4.0`；CI 同时增加现有英语资源只读检查。实际发布状态以对应 Actions 与 Release 为准。
+- 云端发布验证：[Actions #38380941080](https://github.com/Juliano114514/Chinese-Flashcard/actions/runs/38380941080) 的 version、build、release 全部通过；[v1.4.0 Release](https://github.com/Juliano114514/Chinese-Flashcard/releases/tag/v1.4.0) 已公开并设为最新版本，标签及产物对应源码 `89224d19a9cdcc848c651ffdb43db195f861d4ba`。APK 为 `206,263,421` 字节，SHA-256 为 `e066fbe858f19fd052e6473ab2de033ded9027a8a51c64b8d396aff044a7cdf8`；下载后的附件再次核对校验和、签名、16 KB ZIP 对齐、applicationId、`1.4.0 / 6`、非 debuggable 和临时探针缺失，均通过。后续只补充发布记录的提交不改变已发布标签或 APK。
 - 边界：未新增测试代码、未执行单元或仪器化用例；本轮不再操作手机，未安装签名 Release。未覆盖空库及迁移全矩阵、导入、完整手写提交、完成庆祝、大字体全部路径或最终无探针多轮性能基准。第三方原文 README 的三处尾空格按原资源保留。
 - 安全自查：未新增联网权限、秘密或敏感日志，资源固定哈希校验；签名继续使用仓库 Secrets，临时诊断与私有数据库备份不入库。
 
