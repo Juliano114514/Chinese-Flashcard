@@ -485,7 +485,7 @@
     <string name="ui_home_shuffle_queue_size">Home shuffle queue size</string>
     <string name="ui_clear_speech_cache">Clear speech cache</string>
     <string name="ui_speech_cache_used">%1$.1f / %2$d MiB used</string>
-    <string name="ui_speech_preload_description">Once per cold start, prepare audio for up to this many words from your current Learn progress. Use the available count if fewer remain. Enter 0 to disable startup preloading; missing audio on the current page still loads when needed. Changes apply on the next cold start.</string>
+    <string name="ui_speech_preload_description">On each cold start, prepare audio for up to this many words from your current Learn progress. During study, keep audio ready for up to this many upcoming words as you move between cards. Use the available count if fewer remain. Enter 0 to disable startup and upcoming-word preloading; missing audio on the current page still loads when needed. Changes apply to study immediately and to startup on the next cold start.</string>
     <string name="ui_speech_cache_description">Persistent audio survives app restarts. When the limit is reached, the least recently used clips are removed. A smaller limit takes effect immediately.</string>
     <string name="ui_home_shuffle_queue_description">Keep this many random words ready on Home and refill the queue in the background. Larger queues use more preparation time. Changes apply immediately.</string>
     <string name="ui_integer_range">Enter a whole number from %1$d to %2$d</string>

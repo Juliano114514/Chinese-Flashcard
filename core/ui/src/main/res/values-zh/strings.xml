@@ -485,7 +485,7 @@
     <string name="ui_home_shuffle_queue_size">首页随机词队列大小</string>
     <string name="ui_clear_speech_cache">清除语音缓存</string>
     <string name="ui_speech_cache_used">已用 %1$.1f / %2$d MiB</string>
-    <string name="ui_speech_preload_description">每次冷启动仅一次，按当前 Learn 进度准备最多指定词数的音频，不足时按实际数量。设为 0 关闭启动预加载，当前页缺失音频仍按需加载；修改在下次冷启动生效。</string>
+    <string name="ui_speech_preload_description">每次冷启动按当前 Learn 进度准备最多指定词数的音频；学习过程中，每次换卡后继续补齐后续指定词数的音频，不足时按实际数量。设为 0 关闭启动及后续词预加载，当前页缺失音频仍按需加载。修改立即应用于学习页，启动预加载在下次冷启动生效。</string>
     <string name="ui_speech_cache_description">语音缓存可在重启后继续使用。达到容量上限时，逐条移除最久未使用的语音；调低容量立即生效。</string>
     <string name="ui_home_shuffle_queue_description">首页提前准备指定数量的随机词，并在后台补充队列。较大队列需要更多准备时间，修改立即生效。</string>
     <string name="ui_integer_range">请输入 %1$d 到 %2$d 之间的整数</string>

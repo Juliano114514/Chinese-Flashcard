@@ -63,6 +63,31 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       awaitCancellation()
     }
   }
+  val preloadWords = state.settings.speechPreloadWords
+  val preloadCard = card?.takeIf { it.phase != CardPhase.FINISHED && !it.isSkipped && !state.loading }
+  // Keep the lookahead window across phase changes; only a new card/context replaces its work.
+  LaunchedEffect(vm, preloadCard?.id, preloadCard?.word, preloadCard?.learningLanguage,
+    generation, preloadWords, lifecycle) {
+    val current = preloadCard ?: return@LaunchedEffect
+    if (preloadWords == 0) return@LaunchedEffect
+    lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+      try {
+        val words = vm.speechPreloadWords(current.id, preloadWords, current.learningLanguage, generation)
+        for (word in words) {
+          if (word.id == current.word.id) continue // The current-page effect prepares this word.
+          currentCoroutineContext().ensureActive()
+          val latest = vm.state.value
+          if (latest.directionGeneration != generation || latest.card?.id != current.id ||
+            latest.card?.phase == CardPhase.FINISHED || latest.card?.isSkipped == true) break
+          val requests = wordSpeechResources(word)
+          if (!latestVoiceReady(requests)) latestPrepareVoice(requests)
+        }
+      } catch (error: kotlinx.coroutines.CancellationException) { throw error }
+      catch (_: Exception) { /* Optional lookahead must never block studying or playback. */ }
+      catch (_: LinkageError) { /* Actual playback retains the normal offline fallback. */ }
+      awaitCancellation()
+    }
+  }
   var selectedOption by rememberSaveable(card?.id, generation) { mutableStateOf<String?>(null) }
   var answerChosen by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var correctAnswerRevealed by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
