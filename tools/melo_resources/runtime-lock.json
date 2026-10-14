@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "cacheDirectory": ".gradle/chinese-resource-source",
+  "pythonDirectory": "python",
+  "packages": {
+    "numpy": {
+      "version": "2.2.6",
+      "archive": "numpy-2.2.6-cp312-cp312-win_amd64.whl",
+      "bytes": 12614190,
+      "sha256": "c1f9540be57940698ed329904db803cf7a402f3fc200bfe599334c9bd84a40b2",
+      "prefixes": ["numpy/", "numpy.libs/"]
+    },
+    "onnxruntime": {
+      "version": "1.31.0",
+      "archive": "onnxruntime-1.31.0-cp312-cp312-win_amd64.whl",
+      "bytes": 14888841,
+      "sha256": "09d56445c1753e66e0912de69d3f0184016ad9a191dcd6925bf5dd570d2bfbe5",
+      "prefixes": ["onnxruntime/"]
+    },
+    "pypinyin": {
+      "version": "0.55.0",
+      "archive": "pypinyin-0.55.0-py2.py3-none-any.whl",
+      "bytes": 840203,
+      "sha256": "d53b1e8ad2cdb815fb2cb604ed3123372f5a28c6f447571244aca36fc62a286f",
+      "prefixes": ["pypinyin/"]
+    },
+    "jieba": {
+      "version": "0.42.1",
+      "archive": "jieba-0.42.1.tar.gz",
+      "bytes": 19214172,
+      "sha256": "055ca12f62674fafed09427f176506079bc135638a14e23e25be909131928db2",
+      "archivePrefix": "jieba-0.42.1/",
+      "prefixes": ["jieba/"]
+    }
+  },
+  "note": "Reuse and verify the already prepared task-local Python packages. No global installation and no Kokoro model or frontend is loaded."
+}

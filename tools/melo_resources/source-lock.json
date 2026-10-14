@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "modelRevision": "a0d5c6a264c0ef92d70d8661d8cc502d79627cd6",
+  "meloCodeRevision": "209145371cff8fc3bd60d7be902ea69cbdb7965a",
+  "sherpaCodeRevision": "6e7ea3e409f90aaf1541c87f21a013c4f20b9680",
+  "sources": {
+    "model.onnx": {
+      "url": "https://huggingface.co/csukuangfj/vits-melo-tts-zh_en/resolve/a0d5c6a264c0ef92d70d8661d8cc502d79627cd6/model.onnx",
+      "bytes": 170429550,
+      "sha256": "bf30582eb1b012250a35b1a4a80e7dfbcf8485e7bb9de0d95efbbeef0e4ad86d"
+    },
+    "tokens.txt": {
+      "url": "https://huggingface.co/csukuangfj/vits-melo-tts-zh_en/resolve/a0d5c6a264c0ef92d70d8661d8cc502d79627cd6/tokens.txt",
+      "bytes": 655,
+      "sha256": "d18664a7e12bd7ea1022ddaf951e534e136815016c5a809d6b64156bffb4369d"
+    },
+    "lexicon.txt": {
+      "url": "https://huggingface.co/csukuangfj/vits-melo-tts-zh_en/resolve/a0d5c6a264c0ef92d70d8661d8cc502d79627cd6/lexicon.txt",
+      "bytes": 6837671,
+      "sha256": "7236884b02435ac5d10cf69b4be40a61b45aa676b5300f0e412f185748fee528"
+    },
+    "MELO_MODEL_MIT.txt": {
+      "url": "https://huggingface.co/csukuangfj/vits-melo-tts-zh_en/resolve/a0d5c6a264c0ef92d70d8661d8cc502d79627cd6/LICENSE",
+      "bytes": 1053,
+      "sha256": "88a50e5a02bbc2a5c2f084dc19da751aa97b1690f5fda76cd8005c8634d1ca70"
+    },
+    "MODEL_README.md": {
+      "url": "https://huggingface.co/csukuangfj/vits-melo-tts-zh_en/resolve/a0d5c6a264c0ef92d70d8661d8cc502d79627cd6/README.md",
+      "bytes": 257,
+      "sha256": "ae6e44dead53dfdbd5b4a77106226f3118eb910222b46cb5533a3860773fc6c7"
+    },
+    "opencpop-strict.txt": {
+      "url": "https://raw.githubusercontent.com/myshell-ai/MeloTTS/209145371cff8fc3bd60d7be902ea69cbdb7965a/melo/text/opencpop-strict.txt",
+      "bytes": 4084,
+      "sha256": "d66bbb1380a8ebf17d7ace5bf4b459f3728a469eea2aaeae2aeb3969b88223ff"
+    },
+    "tone_sandhi.py": {
+      "url": "https://raw.githubusercontent.com/myshell-ai/MeloTTS/209145371cff8fc3bd60d7be902ea69cbdb7965a/melo/text/tone_sandhi.py",
+      "bytes": 23396,
+      "sha256": "230ba9ffe13dadc5f80c117ea3234f88512380a7d45069a08861e24fc2a33aa9"
+    },
+    "MELO_CODE_MIT.txt": {
+      "url": "https://raw.githubusercontent.com/myshell-ai/MeloTTS/209145371cff8fc3bd60d7be902ea69cbdb7965a/LICENSE",
+      "bytes": 1053,
+      "sha256": "88a50e5a02bbc2a5c2f084dc19da751aa97b1690f5fda76cd8005c8634d1ca70"
+    },
+    "TONE_SANDHI_APACHE-2.0.txt": {
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    }
+  },
+  "references": {
+    "sherpaExport": "https://github.com/k2-fsa/sherpa-onnx/blob/6e7ea3e409f90aaf1541c87f21a013c4f20b9680/scripts/melo-tts/export-onnx.py",
+    "sherpaTest": "https://github.com/k2-fsa/sherpa-onnx/blob/6e7ea3e409f90aaf1541c87f21a013c4f20b9680/scripts/melo-tts/test.py",
+    "meloApi": "https://github.com/myshell-ai/MeloTTS/blob/209145371cff8fc3bd60d7be902ea69cbdb7965a/melo/api.py",
+    "meloChinese": "https://github.com/myshell-ai/MeloTTS/blob/209145371cff8fc3bd60d7be902ea69cbdb7965a/melo/text/chinese.py",
+    "meloChineseMix": "https://github.com/myshell-ai/MeloTTS/blob/209145371cff8fc3bd60d7be902ea69cbdb7965a/melo/text/chinese_mix.py",
+    "meloSymbols": "https://github.com/myshell-ai/MeloTTS/blob/209145371cff8fc3bd60d7be902ea69cbdb7965a/melo/text/symbols.py",
+    "modelMetadata": "https://huggingface.co/api/models/csukuangfj/vits-melo-tts-zh_en/revision/a0d5c6a264c0ef92d70d8661d8cc502d79627cd6?blobs=true"
+  },
+  "licenseNotes": {
+    "model": "The upstream model card and exported model LICENSE identify MIT; retain the MyShell notice.",
+    "opencpop-strict.txt": "This mapping file has no per-file license header; it is distributed in the pinned MeloTTS repository under its MIT LICENSE. No Opencpop audio dataset is fetched.",
+    "tone_sandhi.py": "The file retains Copyright (c) 2021 PaddlePaddle Authors and an explicit Apache-2.0 header; retain that header and the Apache-2.0 license alongside the MeloTTS MIT notice."
+  }
+}

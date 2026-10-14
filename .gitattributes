@@ -3,6 +3,7 @@
 # Preserve exact CSV backups and packaged resource hashes across platforms.
 *.csv -text
 core/data/src/main/assets/** -text
+core/media/src/main/assets/chinese-speech/** -text
 # Preserve the current wordlist snapshot manifest bytes.
 docs/wordlist-validation.json -text
 *.jar binary

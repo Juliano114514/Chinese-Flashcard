@@ -58,12 +58,15 @@ jobs:
           (strokes.MM_CACHE / 'revision.txt').write_text(strokes.MM_REVISION, encoding='utf-8')
           strokes.read_sources(check=False)
           PY
+      - name: Prepare pinned Chinese model (cache only)
+        run: python3 tools/build_chinese_resources.py --prepare
       - name: Check frozen data and generated assets
         run: |
           python3 tools/rebuild_wordlist.py --check
           python3 tools/build_wordlist_strokes.py --check
           python3 tools/build_demo.py --check
           python3 tools/build_english_resources.py --check
+          python3 tools/build_chinese_resources.py --check
       - name: Lint and compile Debug
         run: bash ./gradlew --no-daemon :app:lintDebug :app:assembleDebug
       - name: Compile unsigned Release

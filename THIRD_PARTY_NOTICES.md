@@ -63,3 +63,11 @@ README 和历史 UI 文档中的产品与设计体系链接仅作设计参考说
 - eSpeak NG 仅用于维护者构建期生成固定发音 token，不进入应用运行资源。发音数据继承源教学文本的权利边界，不因 token 化改标为独立 MIT 数据。
 
 完整固定来源与资源准备说明见 [英语语音维护](docs/ENGLISH_SPEECH.md)。新增组件许可声明不证明训练数据、声线、原词表或例句的全部权利，既有公开分发待核实项仍有效。
+
+## 中文语音（2026-10-13）
+
+- MeloTTS 中文模型与音素映射：MyShell，MIT；固定 ONNX revision `a0d5c6a264c0ef92d70d8661d8cc502d79627cd6`，FP32 单声线，原权重字节不修改。
+- 原 ToneSandhi 前端：保留 Copyright (c) 2021 PaddlePaddle Authors，Apache-2.0；构建期采用其一／不／三声规则并以既有拼音绑定读音，不猜测覆盖词库轻声。原源码与完整许可证在固定来源缓存保留，App 内 `chinese-speech/LICENSES.txt` 展示全部声明。
+- Microsoft ONNX Runtime Android 沿用现有 `1.31.0`，未新增 sherpa JNI、Python 或系统语音包。jieba／pypinyin 只在构建期准备默认词库发音；导入文本使用应用内拼音解析或系统离线回退。
+
+固定 URL、SHA-256、模型准备与验证范围见 [中文语音维护](docs/MELO_TTS_EVALUATION.md)。发音旁路数据继续遵守现有教学文本的来源与许可；模型许可声明不替代未公开训练语料或声线权利的独立认证。
