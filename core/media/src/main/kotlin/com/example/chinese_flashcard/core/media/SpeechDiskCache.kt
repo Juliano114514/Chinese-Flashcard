@@ -176,9 +176,10 @@ internal class SpeechDiskCache(context: Context) {
 
   private fun trimLocked(reserved: Long = 0, protectedKey: String? = null) {
     var used = entries.values.sumOf { it.bytes }
+    val temporaryReserved = temporary.values.sumOf { it.reserved }
     val ordered = entries.entries.sortedWith(compareBy({ it.value.accessed }, { it.key }))
     for ((key, entry) in ordered) {
-      if (used + temporary.values.sumOf { it.reserved } + reserved <= limit) break
+      if (used + temporaryReserved + reserved <= limit) break
       if (key == protectedKey || (pins[key] ?: 0) > 0) continue
       if (removeLocked(key)) used -= entry.bytes
     }
