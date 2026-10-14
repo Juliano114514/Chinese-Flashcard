@@ -2,8 +2,13 @@ package com.example.chinese_flashcard.core.domain
 
 enum class AppLanguage { EN, CN }
 
+/** Recorded Mandarin reading, bound to its exact text rather than a guessed character voice. */
+data class ChinesePronunciation(val text: String, val pinyin: String,
+  val chunks: List<ExampleChunk> = emptyList())
+
 data class SpeechRequest(val text: String, val language: AppLanguage,
-  val scene: SpeechScene = SpeechScene.WORD_PRONUNCIATION, val counterpart: String? = null)
+  val scene: SpeechScene = SpeechScene.WORD_PRONUNCIATION, val counterpart: String? = null,
+  val chinesePronunciation: ChinesePronunciation? = null, val sourceId: String? = null)
 
 data class LearningContext(val learningLanguage: AppLanguage, val version: Long)
 

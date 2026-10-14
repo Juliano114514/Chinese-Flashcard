@@ -34,7 +34,8 @@ data class DefaultWordlistState(val loading: Boolean = false, val error: UiMessa
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
-    .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11).build()
+    .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
+      Migration12To13).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -193,7 +194,9 @@ class FlashcardRepositories(context: Context) {
           uiLanguage = value.uiLanguage.name, learningLanguage = value.learningLanguage.name,
           speechModesJson = JSONObject().apply {
             value.speechOptions.modes.forEach { (scene, mode) -> put(scene.name, mode.name) }
-          }.toString(), explanationMask = value.explanationOptions.mask))
+          }.toString(), explanationMask = value.explanationOptions.mask,
+          speechPreloadWords = value.speechPreloadWords, speechCacheMiB = value.speechCacheMiB,
+          homeShuffleQueueSize = value.homeShuffleQueueSize))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -282,6 +285,78 @@ class FlashcardRepositories(context: Context) {
     }
 
     override suspend fun snapshot(): StudySnapshot = transaction { snapshotAt(ensureToday()) }
+
+    override suspend fun peekSpeechWords(cardId: String, nextCount: Int, expectedLanguage: AppLanguage,
+      expectedContextVersion: Long): List<WordEntry> {
+      require(nextCount in 0..20)
+      // Unlike transaction(), this path must not bootstrap data or refresh the daily plan.
+      return operationMutex.withLock {
+        database.withTransaction {
+          val settings = rawDao.settings() ?: return@withTransaction emptyList()
+          if (settings.learningLanguage != expectedLanguage.name) return@withTransaction emptyList()
+          val speechDao = ScopedFlashcardDao(rawDao) { expectedLanguage.name }
+          val state = speechDao.appState() ?: return@withTransaction emptyList()
+          if (!state.seeded || state.contextVersion != expectedContextVersion || state.currentCardId != cardId)
+            return@withTransaction emptyList()
+          val card = speechDao.card(cardId) ?: return@withTransaction emptyList()
+          if (card.phase == CardPhase.FINISHED.name || (card.sessionId == null && card.day != today()))
+            return@withTransaction emptyList()
+          val progress = speechDao.progress().associateBy { it.wordId }
+          if (progress[card.wordId]?.isSkipped == true) return@withTransaction emptyList()
+          val upcoming = if (card.sessionId != null) {
+            val session = speechDao.practiceSession(card.sessionId) ?: return@withTransaction emptyList()
+            val viewOnly = speechDao.viewOnlyPracticeWords(session.id).toSet()
+            speechDao.practiceItems(session.id).filter {
+              !it.completed && it.wordId !in viewOnly && progress[it.wordId]?.isSkipped != true &&
+                (session.kind != StudyKind.MISTAKES.name || progress[it.wordId]?.mistakePending == true)
+            }.sortedBy { it.queueOrder }.map { it.wordId }
+          } else {
+            val viewOnly = speechDao.viewOnlyDailyWords(card.day, card.kind).toSet()
+            val stage = state.selectedStage ?: card.itemId?.let { speechDao.dailyItemById(it)?.originStage }
+            speechDao.dailyItems(card.day).filter {
+              it.kind == card.kind && !it.completed && it.wordId !in viewOnly && progress[it.wordId]?.isSkipped != true &&
+                (card.kind != StudyKind.NEW.name || it.originStage == stage)
+            }.sortedWith(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder }).map { it.wordId }
+          }
+          val ids = listOf(card.wordId) + upcoming.asSequence().filter { it != card.wordId }
+            .distinct().take(nextCount).toList()
+          ids.mapNotNull { id -> speechDao.word(id)?.let { word(it) } }
+        }
+      }
+    }
+
+    override suspend fun peekLearnSpeechWords(maxWords: Int, expectedLanguage: AppLanguage,
+      expectedContextVersion: Long, expectedStage: VocabularyStage): List<WordEntry> {
+      require(maxWords in 0..20)
+      if (maxWords == 0) return emptyList()
+      return operationMutex.withLock {
+        database.withTransaction {
+          val settings = rawDao.settings() ?: return@withTransaction emptyList()
+          if (settings.learningLanguage != expectedLanguage.name) return@withTransaction emptyList()
+          val speechDao = ScopedFlashcardDao(rawDao) { expectedLanguage.name }
+          val state = speechDao.appState() ?: return@withTransaction emptyList()
+          val day = today()
+          if (!state.seeded || state.day != day || state.contextVersion != expectedContextVersion ||
+            state.selectedStage != expectedStage.rarity) return@withTransaction emptyList()
+          val progress = speechDao.progress().associateBy { it.wordId }
+          val viewOnly = speechDao.viewOnlyDailyWords(day, StudyKind.NEW.name).toSet()
+          val items = speechDao.dailyItems(day)
+          val pending = speechDao.unfinishedCards().filter {
+            it.sessionId == null && it.day == day && it.kind == StudyKind.NEW.name &&
+              progress[it.wordId]?.isSkipped != true
+          }.sortedBy { it.createdAt }.firstOrNull { card ->
+            (card.itemId?.let { speechDao.dailyItemById(it)?.originStage }
+              ?: items.firstOrNull { it.wordId == card.wordId && it.kind == card.kind }?.originStage) == expectedStage.rarity
+          }
+          val upcoming = items.filter {
+            it.kind == StudyKind.NEW.name && !it.completed && it.wordId !in viewOnly &&
+              progress[it.wordId]?.isSkipped != true && it.originStage == expectedStage.rarity
+          }.sortedWith(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder })
+          (listOfNotNull(pending?.wordId) + upcoming.map { it.wordId }).distinct().take(maxWords)
+            .mapNotNull { id -> speechDao.word(id)?.let { word(it) } }
+        }
+      }
+    }
 
     override suspend fun context(): LearningContext = transaction {
       LearningContext(learningLanguage, appState().contextVersion)
@@ -1069,7 +1144,8 @@ class FlashcardRepositories(context: Context) {
 
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
     displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
-    speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask))
+    speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask),
+    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize)
 
   private fun speechOptions(json: String): SpeechOptions {
     val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }

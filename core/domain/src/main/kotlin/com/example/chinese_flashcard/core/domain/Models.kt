@@ -14,13 +14,17 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
   val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
   val displayName: String = "", val avatarId: String = "1", val themeMode: ThemeMode = ThemeMode.SYSTEM,
   val uiLanguage: AppLanguage = AppLanguage.EN, val learningLanguage: AppLanguage = AppLanguage.CN,
-  val speechOptions: SpeechOptions = SpeechOptions(), val explanationOptions: ExplanationOptions = ExplanationOptions()) {
+  val speechOptions: SpeechOptions = SpeechOptions(), val explanationOptions: ExplanationOptions = ExplanationOptions(),
+  val speechPreloadWords: Int = 5, val speechCacheMiB: Int = 256, val homeShuffleQueueSize: Int = 5) {
   fun validate() {
     require(dailyWords in 1..100 && rounds in 2..8)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())
     require(reviewDays.all { it in listOf(1, 3, 5, 7, 14, 30) })
     require(displayName.length <= 40 && displayName.none { it.isISOControl() })
     require(avatarId.length <= 40 && avatarId.none { it.isISOControl() })
+    require(speechPreloadWords in 0..20)
+    require(speechCacheMiB in 64..2048)
+    require(homeShuffleQueueSize in 1..20)
   }
 }
 
@@ -89,6 +93,12 @@ interface StudyRepository {
   val changes: kotlinx.coroutines.flow.Flow<Long>
   suspend fun context(): LearningContext
   suspend fun snapshot(): StudySnapshot
+  /** Current word and up to nextCount distinct words from the existing queue; never advances study. */
+  suspend fun peekSpeechWords(cardId: String, nextCount: Int, expectedLanguage: AppLanguage,
+    expectedContextVersion: Long): List<WordEntry>
+  /** Up to maxWords from the saved Learn progress, including its resumable card; never creates a plan. */
+  suspend fun peekLearnSpeechWords(maxWords: Int, expectedLanguage: AppLanguage,
+    expectedContextVersion: Long, expectedStage: VocabularyStage): List<WordEntry>
   suspend fun start(kind: StudyKind, expectedLanguage: AppLanguage? = null): StudySnapshot
   suspend fun selectStage(stage: VocabularyStage, expectedLanguage: AppLanguage? = null): StudySnapshot
   suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int,

@@ -6,6 +6,7 @@ import ai.onnxruntime.OrtEnvironment
 import ai.onnxruntime.OrtSession
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive
+import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import org.json.JSONObject
@@ -16,9 +17,8 @@ import java.nio.FloatBuffer
 import java.nio.LongBuffer
 import java.security.MessageDigest
 import java.util.Locale
-
-internal data class EnglishAudio(val sampleRate: Int, val chunks: List<FloatArray>)
-internal data class EnglishAudioChunk(val sampleRate: Int, val samples: FloatArray)
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
 
 internal const val ENGLISH_SPEED_MULTIPLIER = 1.2f
 
@@ -30,8 +30,6 @@ internal class EnglishSpeech(context: Context) {
   private var manifest: JSONObject? = null
   private var styles: FloatArray? = null
   private var closed = false
-  private var cachedSamples = 0
-  private val audioCache = LinkedHashMap<String, EnglishAudio>(24, .75f, true)
   private val shards = object : LinkedHashMap<String, JSONObject>(8, .75f, true) {
     override fun removeEldestEntry(eldest: MutableMap.MutableEntry<String, JSONObject>?): Boolean = size > 8
   }
@@ -43,17 +41,10 @@ internal class EnglishSpeech(context: Context) {
   }
 
   /** Emits each chunk as it is ready; callers can play the first while the next is synthesized. */
-  suspend fun synthesize(text: String, onChunk: suspend (EnglishAudioChunk) -> Unit = {}): EnglishAudio? = lock.withLock {
+  suspend fun synthesize(text: String, onChunk: suspend (SpeechAudioChunk) -> Unit = {}): SpeechAudio? = lock.withLock {
     check(!closed)
     val trimmed = text.trim()
     require(trimmed.length <= 2000)
-    audioCache[trimmed]?.let { cached ->
-      for (samples in cached.chunks) {
-        currentCoroutineContext().ensureActive()
-        onChunk(EnglishAudioChunk(cached.sampleRate, samples))
-      }
-      return@withLock cached
-    }
     val metadata = metadata()
     val hash = sha256(trimmed.toByteArray(Charsets.UTF_8))
     val entries = shards.getOrPut(hash.take(2)) {
@@ -90,25 +81,45 @@ internal class EnglishSpeech(context: Context) {
           val speechSpeed = metadata.getDouble("speedPrior").toFloat() * ENGLISH_SPEED_MULTIPLIER
           require(speechSpeed.isFinite() && speechSpeed > 0f)
           OnnxTensor.createTensor(env, FloatBuffer.wrap(floatArrayOf(speechSpeed)), longArrayOf(1)).use { speed ->
-            model.run(mapOf("input_ids" to input, "style" to embedding, "speed" to speed)).use { output ->
-              currentCoroutineContext().ensureActive()
-              val buffer = (output[0] as OnnxTensor).floatBuffer
-              val count = buffer.remaining() - metadata.getInt("trimTailSamples")
-              require(count > 0 && count <= sampleRate * 60 && totalSamples + count <= sampleRate * 60)
-              val samples = FloatArray(count)
-              buffer.get(samples)
-              require(samples.all(Float::isFinite))
-              samples.indices.forEach { i -> samples[i] = samples[i].coerceIn(-1f, 1f) }
-              totalSamples += count
-              audio.add(samples)
-            }
+            val samples = runInference(model, mapOf("input_ids" to input, "style" to embedding, "speed" to speed),
+              metadata.getInt("trimTailSamples"), sampleRate * 60 - totalSamples)
+            currentCoroutineContext().ensureActive()
+            require(samples.all(Float::isFinite))
+            samples.indices.forEach { i -> samples[i] = samples[i].coerceIn(-1f, 1f) }
+            totalSamples += samples.size
+            audio.add(samples)
           }
         }
       }
-      onChunk(EnglishAudioChunk(sampleRate, audio.last()))
+      onChunk(SpeechAudioChunk(sampleRate, audio.last()))
     }
     currentCoroutineContext().ensureActive()
-    EnglishAudio(sampleRate, audio).also { cache(trimmed, it, totalSamples) }
+    SpeechAudio(sampleRate, audio)
+  }
+
+  private suspend fun runInference(model: OrtSession, inputs: Map<String, OnnxTensor>, trim: Int,
+    remainingSamples: Int): FloatArray = suspendCancellableCoroutine { continuation ->
+    val options = OrtSession.RunOptions()
+    val guard = Any()
+    var optionsClosed = false
+    continuation.invokeOnCancellation {
+      synchronized(guard) { if (!optionsClosed) runCatching { options.setTerminate(true) } }
+    }
+    try {
+      if (continuation.isActive) {
+        val samples = model.run(inputs, options).use { output ->
+          val buffer = (output[0] as OnnxTensor).floatBuffer
+          val count = buffer.remaining() - trim
+          require(trim >= 0 && count in 1..remainingSamples)
+          FloatArray(count).also { buffer.get(it) }
+        }
+        if (continuation.isActive) continuation.resume(samples)
+      }
+    } catch (error: Exception) {
+      if (continuation.isActive) continuation.resumeWithException(error)
+    } finally {
+      synchronized(guard) { optionsClosed = true; options.close() }
+    }
   }
 
   private fun metadata(): JSONObject = manifest ?: readJson("english-speech/manifest.json").also {
@@ -125,18 +136,6 @@ internal class EnglishSpeech(context: Context) {
       options.setIntraOpNumThreads(2)
       OrtEnvironment.getEnvironment().createSession(modelFile(metadata).absolutePath, options)
     }.also { session = it }
-  }
-
-  private fun cache(text: String, audio: EnglishAudio, sampleCount: Int) {
-    // At most 24 recent utterances and 8 MiB of PCM, retained only for this speech lifecycle.
-    if (sampleCount > 2 * 1024 * 1024) return
-    while (audioCache.isNotEmpty() && (audioCache.size >= 24 || cachedSamples + sampleCount > 2 * 1024 * 1024)) {
-      val oldest = audioCache.entries.iterator().next()
-      cachedSamples -= oldest.value.chunks.sumOf { it.size }
-      audioCache.remove(oldest.key)
-    }
-    audioCache[text] = audio
-    cachedSamples += sampleCount
   }
 
   private fun modelFile(metadata: JSONObject): File {
@@ -183,8 +182,6 @@ internal class EnglishSpeech(context: Context) {
     session = null
     styles = null
     shards.clear()
-    audioCache.clear()
-    cachedSamples = 0
   }
 }
 

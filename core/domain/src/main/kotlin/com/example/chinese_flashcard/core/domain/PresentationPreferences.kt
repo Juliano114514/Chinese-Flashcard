@@ -36,10 +36,12 @@ data class SpeechOptions(val modes: Map<SpeechScene, SpeechMode> = emptyMap()) {
     val mode = mode(request.scene, request.language)
     val otherLanguage = if (request.language == AppLanguage.CN) AppLanguage.EN else AppLanguage.CN
     val candidates = listOfNotNull(request, request.counterpart?.takeIf(String::isNotBlank)?.let {
-      SpeechRequest(it, otherLanguage, request.scene)
+      SpeechRequest(it, otherLanguage, request.scene, chinesePronunciation = request.chinesePronunciation)
     })
     return candidates.filter { mode.allows(it.language) && it.text.isNotBlank() }
-      .map { it.copy(counterpart = null) }
+      .map { part -> part.copy(counterpart = null, chinesePronunciation = part.chinesePronunciation?.takeIf {
+        part.language == AppLanguage.CN && it.text == part.text
+      }) }
   }
 }
 
