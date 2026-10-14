@@ -20,7 +20,7 @@ Release 开启 AGP 自带的 R8 与资源收缩；Debug 保留原调试配置。
 
 app 与 core/media 的 `noCompress` 精确指定 `chinese-speech/model.onnx`：中文模型继续通过 `assets.openFd` 映射；英语模型可 ZIP 无损压缩，沿用 `AssetManager.open` 流复制、大小限制、哈希验证及缓存文件路径。模型、发音、词库、笔顺和许可的内容不变。英语模型首次复制增加解压工作，已有模型缓存继续复用。
 
-中文模型做过本地 Deflate level 6 无损压缩试算，仅节省约 12.01 MiB；若解压为独立文件再映射，将新增约 162.53 MiB 落盘，并引入首次准备、空间不足与中断恢复链路，因此保留现有 mmap，不新增应用冷启动解压步骤。此结果只衡量压缩量，不代表设备解压耗时或音质验证。
+中文模型做过本地 JBR `java.util.zip.Deflater(6, true)` 无损压缩试算，从 170,429,550 到 157,834,154 字节，仅节省 12,595,396 字节（约 12.01 MiB）；Python zlib-ng 的同档试算约省 12.15 MiB，压缩实现不同会有小幅差异。若解压为独立文件再映射，将新增约 162.53 MiB 落盘，并引入首次准备、空间不足与中断恢复链路，因此保留现有 mmap，不新增应用冷启动解压步骤。此结果只衡量压缩量，不代表设备解压耗时或音质验证。
 
 native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 个 `.so` 全部保留，以 ZIP 无损压缩，Android 在安装时提取适用 ABI 的库，沿用现有 JNI 加载与推理接口。两个变体的 native 解压字节哈希均与基线相同；native 条目压缩在 Debug／Release 分别节省约 77.084／81.657 MiB。这个选择减少 APK 文件体积，但安装时需要提取 native，不能据此推断安装后的磁盘占用或启动性能同步改善。官方默认直接映射与提取方式的区别见 [native 打包说明](https://developer.android.com/topic/performance/reduce-apk-size#avoid-extracting-native-libraries)。
 
@@ -50,7 +50,7 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 
 `:app:lintDebug :app:lintRelease :app:assembleDebug :app:assembleRelease` 实际通过，两种 lint 均为 0 错误、14 条依赖／SDK 告警；五项现有词库、笔顺、演示、中英语音检查通过。基线 APK、构建日志、APK 静态对比和资源表记录在忽略目录 `.gradle/package-optimization/`；签名材料与设备检查产物不入库。
 
-静态对照确认：Manifest 仅版本与 `extractNativeLibs` 变化，包名、权限与入口保留；全部 613 个业务 assets、12 个 native 库的路径及解压内容哈希保持一致，749 个业务资源的 ID、配置和值保留，264 个业务 `res/` 文件字节一致。词库、模型与四 ABI 保持完整；R8 生成的 Profile 随 DEX 布局更新。当前业务源码已有上述局部缓存精简，不能沿用第一阶段的 Debug DEX 全字节一致结论。
+静态对照确认：Manifest 仅版本与 `extractNativeLibs` 变化，包名、权限与入口保留；全部 615 个业务 assets、12 个 native 库的路径及解压内容哈希保持一致，749 个业务资源的 ID、配置和值保留，264 个业务 `res/` 文件字节一致。Release 共 617 个 assets，其中 2 个编译 Profile 随 DEX 布局更新；Debug 共 615 个。词库、模型与四 ABI 保持完整。当前业务源码已有上述局部缓存精简，不能沿用第一阶段的 Debug DEX 全字节一致结论。
 
 第一阶段另按 JVM 编译输入核对过 Release：840 个自有类、84 个 ONNX 原始类全部存在，原有非 synthetic 普通字段／方法名称及签名保留，33 个枚举的具名常量完整；29 处省略的静态初始化仅给本类 Compose `$stable` 赋整数常量，最终 DEX 静态初值逐项相同。记录为 `.gradle/package-optimization/source-and-resource-evidence.json`。R8 的 lambda 辅助类、访问范围与 Kotlin Metadata 表示可能变化，静态保留检查不证明所有方法体或运行行为等价。
 

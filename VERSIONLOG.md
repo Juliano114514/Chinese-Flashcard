@@ -18,7 +18,7 @@
 
 - 本地 `:app:lintDebug :app:lintRelease :app:assembleDebug :app:assembleRelease` 通过；两种 lint 均为 0 错误、14 条依赖／SDK 告警，五项词库、笔顺、演示和中英语音检查通过；未新增测试代码。
 - Debug APK 为 `314,245,027` 字节（299.687 MiB），Release 未签名 APK 为 `276,630,076` 字节（263.815 MiB）。相同依赖环境的 `1.5.0 / 10` 本地基线分别为 380.200／367.725 MiB，减少 80.513／103.910 MiB（21.18%／28.26%）；不是对线上签名包的逐字节对比。
-- 两种 APK 的 613 个业务 assets、12 个 native 库解压内容哈希和四 ABI 完整；749 个业务资源的 ID、配置和值、264 个文件资源字节保留。Manifest 仅版本和 native 提取方式变化，模型哈希、词库、Room schema v13 与迁移不变；native ELF 16 KB 静态对齐、APK ZIP 对齐及 Debug 签名检查通过。
+- 两种 APK 的 615 个业务 assets、12 个 native 库解压内容哈希和四 ABI 完整；Release 另有 2 个编译 Profile。749 个业务资源的 ID、配置和值、264 个文件资源字节保留。Manifest 仅版本和 native 提取方式变化，模型哈希、词库、Room schema v13 与迁移不变；native ELF 16 KB 静态对齐、APK ZIP 对齐及 Debug 签名检查通过。
 - 在连接的 Android 16／arm64 手机上保持媒体音量 0，Debug 与使用本地 debug key 签名的非 debuggable Release 均 `adb install -r` 成功并冷启动正常；验证首页预加载、两种学习方向的已有状态、词条中英文播放、例句播放、写字页、个人页、设置和缓存占用展示。Release 期间新生成的 20 个音频缓存样本包含 Melo 44,100 Hz 和 Kitten 24,000 Hz，均通过内部 SHA 校验且不是系统语音回退；安装后 3 个 arm64 库哈希与 APK 相同。英语模型首次从压缩 asset 提取后的 SHA 与原模型相同。
 - 首次安装时间、原数据库及 WAL 保留，词库页仍为 30 已学／3 学习中；未卸载或清除数据，未提交学习答案。语言配置恢复为英语界面／学习中文；最后保留 `1.5.1 / 11` Debug 并返回系统桌面，媒体音量保持 0。日志未发现所查进程的 AndroidRuntime／libc 致命异常，观察到 ORT 遥测不可用及设备 `/odm/etc/audio` 配置文件缺失提示；不修改设备系统配置。
 - 边界：只在该手机验证代表路径，未验证所有词条、其他 ABI／系统版本、存储耗尽、长时间压力或音质；静音播放和缓存校验不代替试听，也不承诺所有功能百分之百无回归。中文模型压缩仅约 12.01 MiB 收益且需新增约 162.53 MiB 解压落盘，故保留原映射；大厂方案评估及取舍见 [开发文档](docs/DEVELOPMENT.md#包体优化配置)。
