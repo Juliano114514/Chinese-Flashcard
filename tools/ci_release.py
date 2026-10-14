@@ -23,6 +23,10 @@ def release_notes(version, code):
     section = re.search(rf"^## {re.escape(version)}\s+[^\n]*\n(.*?)(?=^## |\Z)", log, re.M | re.S)
     if not section:
         raise ValueError(f"VERSIONLOG.md has no entry for {version}")
+    concise = re.search(r"^### 发布说明\s*\n(.*?)(?=^### |\Z)",
+                        section.group(1), re.M | re.S)
+    if concise:
+        return concise.group(1).strip() + "\n"
     return (f"# Chinese Flashcard {version}\n\n"
             f"Android release APK · versionCode {code}\n\n"
             f"{section.group(1).strip()}\n\n"

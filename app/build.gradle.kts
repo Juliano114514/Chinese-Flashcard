@@ -15,8 +15,8 @@ android {
     applicationId = "com.example.chinese_flashcard"
     minSdk = 28
     targetSdk = 36
-    versionCode = 6
-    versionName = "1.4.0"
+    versionCode = 10
+    versionName = "1.5.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -32,6 +32,7 @@ android {
     targetCompatibility = JavaVersion.VERSION_11
   }
   buildFeatures { compose = true }
+  androidResources { noCompress += "onnx" }
 }
 
 dependencies {

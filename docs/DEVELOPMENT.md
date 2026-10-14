@@ -1,10 +1,12 @@
 # 开发与维护
 
-当前仓库版本为 `1.4.0 / versionCode 6`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；不表示应用已经打包或上线。
+中文朗读已接入内置 MeloTTS FP32，默认原前端边界＋0.7 倍语速，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型缓存；Gradle 只校验、复制缓存模型，不自动下载。应用运行不联网获取模型。
+
+当前仓库版本为 `1.5.0 / versionCode 10`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
-Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v11 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
+Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v13 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
 
@@ -33,6 +35,7 @@ python tools/rebuild_wordlist.py --check
 python tools/build_wordlist_strokes.py --check
 python tools/build_demo.py --check
 python tools/build_english_resources.py --check
+python tools/build_chinese_resources.py --check
 .\gradlew.bat :app:lintDebug
 ```
 
@@ -73,3 +76,15 @@ UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）�
 讲解选项控制例句的原句、拼音、拆分直译和英语翻译。取消拆分直译后，原句与拼音使用整句；未全选时点击例句可展开或恢复，全部取消仍有展开入口。答题前展开仅恢复目标语言的内容。Room 10→11 只向设置表添加朗读模式与显示选项，不改词库和学习记录。
 
 学习页保持词头、释义、例句、本义／引申义、部件及原有操作入口，重新组织字号、留白和反馈层级；底部操作固定，大字体时双按钮上下排列。本轮源码／lint 与资源检查不能替代真机语音延迟、音质、迁移和排版验收。
+
+## 语音缓存与预加载
+
+设置主页的“语音与缓存”保存冷启动预加载词数（默认 5，范围 0–20，0 关闭启动预加载）、语音缓存容量（默认 256 MiB，范围 64–2048 MiB）、首页 Shuffle 候选数（默认 5，范围 1–20）。Room 11→12 添加这三项设置；12→13 将旧默认 3 升为 5，其他已保存值及全部学习记录保持原样，同时同步设置表的默认值。缓存占用显示与清理入口属于媒体层。
+
+启动预加载由普通初始化完成后的首个有效学习快照触发，应用对象以进程内标记保证每次冷启动仅一次；不在 `Application.onCreate` 阻塞数据库或模型初始化。它只读当前学习方向／阶段的 Learn 进度，包含可续学的当前词，最多读取设置上限个不同词，不足时取实际数量；准备中文词音、全部英文义项及拆分项、所有例句中英文，不按朗读设置筛选。预加载不创建计划、卡片或下一批任务，不改变学习进度；切语言或阶段时放弃过期启动窗口，不重复触发。进后台暂停媒体调度，回来后继续同一个启动任务。
+
+学习和讲解页进入或恢复前台时，只检查并按需准备当前词的资源，不滚动预加载后续词；头部左侧用 `labelSmall`／`onSurfaceVariant` 显示小号灰色转圈及“加载音频...”，成功或失败后结束准备提示。词条详情使用同一资源集合。首页候选队列只准备 HOME_WORD 场景实际允许的语言，候选保留在 ViewModel 中；离页取消未完成准备与待兑现点击，回来后重新核对实际缓存并补齐缺失项，不重新随机整个队列。Shuffle 文案保留原样，第二行以 12sp 显示 `x ready`，统计未展示的可播放候选数。无就绪资源时转圈禁用并在就绪时自动兑现一次点击；全部失败时恢复重试。
+
+媒体层统一管理合成、在途去重与前台优先级；缓存保存采样率、声道和分段的 Float32 PCM，并用模型／声线／发音资源／语速版本隔离旧声音。音频位于 `noBackupFilesDir/speech-cache`，模型文件不计入音频限额。容量不足时逐条淘汰最久未使用项，活动资源保护至释放；损坏项重算，落盘失败仍可播放。离页或后台取消过期预加载，完整缓存跨重启保留。
+
+手动播放按源按钮与操作编号显示准备动画，首次音频开始后恢复；取消、失败与超时均结束准备。系统文件合成的开始回调不是播放开始，不能用于清除按钮动画。静态检查不证明冷启动延迟、声音质量、设备 TTS 回调、快速点击或后台恢复行为。

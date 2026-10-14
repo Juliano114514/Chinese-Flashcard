@@ -2,7 +2,7 @@
 
 面向中文初学者的离线 Android 词卡应用。围绕理解词语、写字、四选一回忆和到期复习组织学习。界面支持英文／中文，学习内容保留简体汉字、声调拼音及英文释义。可按现有双语词条学习中文或英文，默认英文界面学中文。
 
-当前版本 **1.4.0**，默认词库 **13,223 条**，每词两条例句。使用五个教育阶段标注学习罕度；每阶段有浅色／深色主题，共十套强调色配色，页面采用统一的浅色／深色阅读底色。
+当前版本 **1.5.0**，默认词库 **13,223 条**，每词两条例句。使用五个教育阶段标注学习罕度；每阶段有浅色／深色主题，共十套强调色配色，页面采用统一的浅色／深色阅读底色。
 
 ## 学习与使用
 
@@ -21,6 +21,8 @@
 
 英文主释义按分号分行，各行可听音；命中开放美式词典的单词显示 IPA，短语或缺失条目不伪造音标。双语例句可分别朗读，答题前隐藏对照答案。英语语音使用 ONNX Runtime + 内置 Kitten Nano INT8，发音数据覆盖当前冻结词库，无需联网。未覆盖的用户导入文本使用设备已安装的离线英语 TTS；语音不可用时可继续学习。资源与许可见 [英语语音维护](docs/ENGLISH_SPEECH.md)。
 
+中文朗读内置 MeloTTS FP32，采用已试听确认的首尾边界与 0.7 倍模型语速；词语、例句及写字听音使用各自拼音。中文资源约 185 MB，首次使用无需联网下载；未覆盖或无法可靠转换的读音、模型故障和近乎静音输出回退到已安装的离线普通话。试听、资源准备及手机验证边界见 [中文语音维护](docs/MELO_TTS_EVALUATION.md)。
+
 修改设置不重算当天计划或已开始的学习周期。复习间隔按通过日后的日历日计算；跨天未完成任务轮次归零，作为续学保留，不占新词额度。同罕度的新词按拼音音节字母、声调及稳定 ID 排序，现有计划保持原序。
 
 ## 工程
@@ -31,13 +33,13 @@
 | core/domain | 纯 Kotlin 模型、Repository 契约与轨迹匹配 |
 | core/data | Room、CSV 与默认库、笔顺资源、事务化学习与写字状态 |
 | core/ui | Compose 组件、阶段主题和统一文案 |
-| core/media | 系统离线普通话、内置 Kitten 英语语音与音频焦点 |
+| core/media | 内置 Melo 中文／Kitten 英语语音、离线系统回退与音频焦点 |
 | feature/study | 欢迎、今日、词卡、讲解和完成页 |
 | feature/writing | 独立写字流程 |
 | feature/profile | 设置、统计与导入 |
 | feature/wordlist | 词库浏览、详情与手动书写入口 |
 
-使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v11。应用使用本地数据库和已安装的离线普通话 TTS，当前主 Manifest 未声明联网或录音权限；隐私边界见下方说明。
+使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v13。应用使用本地数据库和内置离线语音，生成音频采用可调容量的持久 LRU 缓存，冷启动后按 Learn 进度一次预加载（默认上限 5 词），首页 Shuffle 候选队列在切换页面时保留；当前主 Manifest 未声明联网或录音权限，隐私边界见下方说明。
 
 ## 开发与维护文档
 
@@ -55,6 +57,7 @@ python tools/rebuild_wordlist.py --check
 python tools/build_wordlist_strokes.py --check
 python tools/build_demo.py --check
 python tools/build_english_resources.py --check
+python tools/build_chinese_resources.py --check
 ```
 
 正式词库与字形的来源、固定版本、许可和哈希均保留。默认 CSV 是唯一维护版本，当前快照采用哈希校验；不要重编号或为格式化改写词库。完整笔顺来源检查需要固定上游缓存，准备方法与隔离目录再现见开发文档。
