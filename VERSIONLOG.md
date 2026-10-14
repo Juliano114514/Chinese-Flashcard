@@ -16,7 +16,8 @@
 
 ### 验证记录
 
-- 上一版相同功能代码的 Debug lint、构建、签名及 ZIP 对齐已通过；本版发布验证以对应 GitHub Actions 结果为准。
+- 本版 [GitHub Actions](https://github.com/Juliano114514/Chinese-Flashcard/actions/runs/38491490167) 全部通过：冻结词库、笔顺、演示及中英语音资源检查，Debug lint／构建、Release 构建、签名与 16 KB ZIP 对齐核验，APK 身份、`1.5.0 / 10` 及非 debuggable 状态校验。
+- [Release v1.5.0](https://github.com/Juliano114514/Chinese-Flashcard/releases/tag/v1.5.0) 已公开发布，tag 与目标提交均为 `9c02550717ceec45b479af2f1f67a5cdab0af69f`；APK 与 `SHA256SUMS.txt` 均已上传。APK `385,673,266` 字节，GitHub 资产 SHA-256 为 `5bda7acb2ad6bd2c698001186331305146fc681a45de84bf2f2e2e54497fc2bc`。
 - 未新增测试代码；未执行本版设备安装或运行验收。
 - 安全自查：缓存及队列有上限，离线模型来源和哈希固定；签名材料、缓存与 APK 不入库。
 
