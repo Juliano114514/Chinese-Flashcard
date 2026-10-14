@@ -15,7 +15,8 @@ android {
   compileSdk { version = release(36) { minorApiLevel = 1 } }
   defaultConfig { minSdk = 28 }
   compileOptions { sourceCompatibility = JavaVersion.VERSION_11; targetCompatibility = JavaVersion.VERSION_11 }
-  androidResources { noCompress += "onnx" }
+  // Keep the mapped Chinese model uncompressed; the English model supports ZIP compression.
+  androidResources { noCompress += "chinese-speech/model.onnx" }
 }
 
 @CacheableTask

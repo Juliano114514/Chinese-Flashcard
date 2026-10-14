@@ -2,7 +2,7 @@
 
 中文朗读已接入内置 MeloTTS FP32，默认原前端边界＋0.7 倍语速，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型缓存；Gradle 只校验、复制缓存模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.5.0 / versionCode 10`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.5.1 / versionCode 11`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
@@ -13,6 +13,50 @@ Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `
 使用 Gradle Wrapper 9.4.1、JDK 21、AGP 9.2.1、Kotlin 2.2.10、KSP 2.3.12、Room 2.8.5、Compose BOM 2025.08.01。compileSdk 36.1、targetSdk 36、minSdk 28，字节码目标 11。版本目录和各模块配置为依赖事实来源，不因整理升级依赖。
 
 本地配置 Android SDK 和 JDK；`local.properties`、IDE 状态、缓存及构建产物不入库。Windows 可使用 Android Studio 自带 JBR。遇到 `Unable to establish loopback connection` 时，可在当前 PowerShell 进程中设置 JBR 和 `JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=<项目的 .gradle 目录>`；不要写成永久工程配置。
+
+## 包体优化配置
+
+Release 开启 AGP 自带的 R8 与资源收缩；Debug 保留原调试配置。当前采用保守 keep：完整保留 `com.example.chinese_flashcard.**` 与 `ai.onnxruntime.**` 的类和成员，阻止 R8 删除、改名或优化这些受保护定义。前者保护 Room `_Impl` 查找、持久化枚举名称、Compose 保存状态与业务接口；后者保护 ONNX JNI 通过名称访问的类、构造器和成员，也符合 [ORT 官方 Android 要求](https://onnxruntime.ai/docs/build/android.html#note-proguard-rules-for-r8-minimization-android-app-builds-to-work)。第三方依赖仍使用各自的 consumer rules，Release 的 `mapping.txt` 位于 `app/build/outputs/mapping/release/`，排查该包时使用同一次构建的映射。
+
+app 与 core/media 的 `noCompress` 精确指定 `chinese-speech/model.onnx`：中文模型继续通过 `assets.openFd` 映射；英语模型可 ZIP 无损压缩，沿用 `AssetManager.open` 流复制、大小限制、哈希验证及缓存文件路径。模型、发音、词库、笔顺和许可的内容不变。英语模型首次复制增加解压工作，已有模型缓存继续复用。
+
+中文模型做过本地 Deflate level 6 无损压缩试算，仅节省约 12.01 MiB；若解压为独立文件再映射，将新增约 162.53 MiB 落盘，并引入首次准备、空间不足与中断恢复链路，因此保留现有 mmap，不新增应用冷启动解压步骤。此结果只衡量压缩量，不代表设备解压耗时或音质验证。
+
+native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 个 `.so` 全部保留，以 ZIP 无损压缩，Android 在安装时提取适用 ABI 的库，沿用现有 JNI 加载与推理接口。两个变体的 native 解压字节哈希均与基线相同；native 条目压缩在 Debug／Release 分别节省约 77.084／81.657 MiB。这个选择减少 APK 文件体积，但安装时需要提取 native，不能据此推断安装后的磁盘占用或启动性能同步改善。官方默认直接映射与提取方式的区别见 [native 打包说明](https://developer.android.com/topic/performance/reduce-apk-size#avoid-extracting-native-libraries)。
+
+当前 `minSdk=28` 已原生支持 multidex，不添加兼容库；AGP 9.2.1 随资源收缩自动启用整合的资源优化，不叠加旧 shrink-R 插件或旧 R8 开关。见 [R8 官方配置](https://developer.android.com/topic/performance/app-optimization/enable-app-optimization) 和 [multidex 说明](https://developer.android.com/build/multidex)。
+
+2026-10-14 按官方仓库与文档评估大厂开源方案，未引入额外插件或运行依赖：
+
+| 方案 | 当前项目的取舍 |
+| --- | --- |
+| 字节 [ByteX](https://github.com/bytedance/ByteX) | 官方仓库已归档，依赖旧 `registerTransform`；[Transform API 在 AGP 8.0 移除](https://developer.android.com/build/releases/gradle-plugin-api-updates)，接入需迁移处理框架，跳过。 |
+| 滴滴 [Booster](https://github.com/didi/booster) | master 兼容表有 AGP 9.0.x／5.2.0+，但未证明本项目 9.2.1 可直接用；[发布页](https://github.com/didi/booster/releases)仍标 v5.1.0，[5.x 迁移说明](https://booster.johnsonlee.io/zh/migration/)称部分旧 Task 不再可用。R 内联收益与 R8 重叠，暂不接入。 |
+| 微信 [AndResGuard](https://github.com/shwenzhang/AndResGuard)／腾讯 [Matrix APK Checker](https://github.com/Tencent/matrix#apk-checker-usage) | 前者会重写资源表、路径并重新打包，当前 `res/`＋资源表仅约 0.75 MiB，收益空间有限；后者可独立分析 APK，不是自动瘦身器。现有 ZIP、资源及哈希核验覆盖主要问题，暂不增加工具。 |
+| Meta [ReDex](https://github.com/facebook/redex) | 二次改写 DEX，需另验映射、Profile、签名与运行路径；[Google 提醒此类处理可能影响 R8 优化](https://developer.android.com/topic/performance/app-optimization/enable-app-optimization)，不叠加。 |
+| 微软 [ORT 定制构建](https://onnxruntime.ai/docs/build/custom.html) | 可按模型裁剪算子，但要维护四 ABI 构建；minimal build 还需模型格式转换，关闭异常会改为 abort。保留当前 ORT 1.31.0。 |
+| 阿里 [MNN](https://github.com/alibaba/MNN)／[Atlas](https://github.com/alibaba/atlas)、腾讯 [ncnn](https://github.com/Tencent/ncnn) | 替换推理引擎或引入动态组件框架会改变模型、类与资源加载链路，超出本轮低侵入范围。 |
+
+源码精简仅将 `SpeechDiskCache` 的同一锁内临时占用计算缓存为局部 `temporaryReserved`，复用临时项集合的求和结果；不改容量公式、淘汰顺序与保护条件、锁范围或缓存格式。未做其他业务重构，Room schema 与迁移链路不变。
+
+历史第一阶段保持 `1.5.0 / 10`，以保存现有改动的本地 commit `71364fb` 为基线，仅开启保守 R8／资源收缩及英语模型压缩：Debug 为 395,148,415 字节（376.843 MiB），Release 未签名包为 362,331,860 字节（345.547 MiB）。这些是本地历史对照，不是当前交付包。
+
+当前 `1.5.1 / 11` 进一步启用 native 压缩，2026-10-14 本地构建结果如下。基线为上述 commit 构建的 `1.5.0 / 10`；两次构建使用同一依赖环境，当前包包含版本变化与上述局部缓存改码。表中 Release 大小使用未签名构建产物，手机使用的 debug key 签名副本仅作运行验证。
+
+| 变体 | 本地基线字节 | 优化后字节 | 优化前后 MiB | 降幅 |
+| --- | ---: | ---: | ---: | ---: |
+| Debug | 398,668,819 | 314,245,027 | 380.200 → 299.687 | 21.18% |
+| Release（未签名） | 385,587,839 | 276,630,076 | 367.725 → 263.815 | 28.26% |
+
+`:app:lintDebug :app:lintRelease :app:assembleDebug :app:assembleRelease` 实际通过，两种 lint 均为 0 错误、14 条依赖／SDK 告警；五项现有词库、笔顺、演示、中英语音检查通过。基线 APK、构建日志、APK 静态对比和资源表记录在忽略目录 `.gradle/package-optimization/`；签名材料与设备检查产物不入库。
+
+静态对照确认：Manifest 仅版本与 `extractNativeLibs` 变化，包名、权限与入口保留；全部 613 个业务 assets、12 个 native 库的路径及解压内容哈希保持一致，749 个业务资源的 ID、配置和值保留，264 个业务 `res/` 文件字节一致。词库、模型与四 ABI 保持完整；R8 生成的 Profile 随 DEX 布局更新。当前业务源码已有上述局部缓存精简，不能沿用第一阶段的 Debug DEX 全字节一致结论。
+
+第一阶段另按 JVM 编译输入核对过 Release：840 个自有类、84 个 ONNX 原始类全部存在，原有非 synthetic 普通字段／方法名称及签名保留，33 个枚举的具名常量完整；29 处省略的静态初始化仅给本类 Compose `$stable` 赋整数常量，最终 DEX 静态初值逐项相同。记录为 `.gradle/package-optimization/source-and-resource-evidence.json`。R8 的 lambda 辅助类、访问范围与 Kotlin Metadata 表示可能变化，静态保留检查不证明所有方法体或运行行为等价。
+
+设备验证在静音下完成代表路径检查：Debug 与 debug key 签名的非 debuggable Release 均通过 `adb install -r` 覆盖安装，保留首次安装时间、数据库、WAL 和 30 已学／3 学习中的计数。已观察首页预加载、两种学习方向的已有状态、词条及例句播放、写字、个人页、设置和缓存占用正常；两种变体均生成 MeloTTS 44,100 Hz 与 Kitten 24,000 Hz 缓存，Release 期间新生成的 20 个样本通过内部 SHA 校验且不是系统语音回退。英语首次提取模型 SHA 和安装后 3 个 arm64 库 SHA 均匹配原内容。Release 两次冷启动观测为 174／310 ms，仅是该设备的两个样本，不能作性能改善结论。最终恢复原语言配置，保留 `1.5.1 / 11` Debug，返回系统桌面并保持媒体音量 0。未覆盖全部词条、其他设备／ABI、存储耗尽或长期压力；静音检查不构成音质验收，不能宣称所有运行路径百分之百无回归。具体结果及日志提示见 [版本日志](../VERSIONLOG.md)。
+
+未裁剪 ABI、量化或替换模型，也未收紧业务 keep；这些选择需要更充分的设备与声音验证。现有 Compose 仅依赖 `material-icons-core`；主要 ONNX native 已不含调试符号，额外符号裁剪空间有限。安全自查：未新增权限、依赖、网络调用或敏感日志，未将签名材料或检查产物纳入源码。
 
 ## 词库与资源
 

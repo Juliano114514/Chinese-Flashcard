@@ -15,15 +15,16 @@ android {
     applicationId = "com.example.chinese_flashcard"
     minSdk = 28
     targetSdk = 36
-    versionCode = 10
-    versionName = "1.5.0"
+    versionCode = 11
+    versionName = "1.5.1"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 
   buildTypes {
     release {
-      isMinifyEnabled = false
+      isMinifyEnabled = true
+      isShrinkResources = true
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
@@ -32,7 +33,10 @@ android {
     targetCompatibility = JavaVersion.VERSION_11
   }
   buildFeatures { compose = true }
-  androidResources { noCompress += "onnx" }
+  // ChineseSpeech maps this asset with openFd; EnglishSpeech reads its model as a stream.
+  androidResources { noCompress += "chinese-speech/model.onnx" }
+  // Android extracts the unchanged native libraries at install time, reducing APK download size.
+  packaging { jniLibs { useLegacyPackaging = true } }
 }
 
 dependencies {

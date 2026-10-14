@@ -1,21 +1,7 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# First adopt shrinking in dependencies without rewriting application code.
+# This also preserves persisted enum names, saved state and Room's generated _Impl lookup.
+-keep class com.example.chinese_flashcard.** { *; }
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# ONNX Runtime's native code looks up Java classes, constructors and members by name.
+# Its bundled consumer rules do not protect the complete JNI surface.
+-keep class ai.onnxruntime.** { *; }
