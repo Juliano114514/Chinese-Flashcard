@@ -70,7 +70,11 @@ import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.WordlistStatus
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
 import com.example.chinese_flashcard.core.domain.SpeechScene
+import com.example.chinese_flashcard.feature.study.HOME_SHUFFLE_SOURCE_ID
+import com.example.chinese_flashcard.core.ui.isSpeechPreparing
+import com.example.chinese_flashcard.core.ui.SpeechPreparingIndicator
 
 private enum class HomeAction { RESUME, CARRYOVER, REVIEW, LEARN, LEARN_MORE, COLLECTIONS, MISTAKES }
 
@@ -90,6 +94,14 @@ fun TodayScreen(
   onLanguages: () -> Unit = {},
 ) {
   val state by vm.state.collectAsStateWithLifecycle()
+  val latestSpeak by androidx.compose.runtime.rememberUpdatedState(onSpeak)
+  LaunchedEffect(state.homeSpeechEvent?.token) {
+    state.homeSpeechEvent?.let { event ->
+      vm.consumeHomeSpeech(event.token)
+      if (event.request.language == vm.state.value.settings.learningLanguage && !vm.state.value.busy)
+        latestSpeak(event.request)
+    }
+  }
   var showLearnMoreBlocker by rememberSaveable { mutableStateOf(false) }
   WritingNavigation(state, vm, onWriting)
   LaunchedEffect(state.today?.learnMoreBlocker) {
@@ -98,11 +110,7 @@ fun TodayScreen(
   TodayContent(state, onStart, onResume, onLearnMore,
     onLearnMoreBlocked = { showLearnMoreBlocker = true }, onStage = vm::selectStage,
     onRetry = vm::retry,
-    onShuffle = { vm.shuffleHomeWord()?.let {
-      val language = vm.state.value.settings.learningLanguage
-      onSpeak(SpeechRequest(if (language == AppLanguage.CN) it.hanzi else it.english, language,
-        SpeechScene.HOME_WORD, if (language == AppLanguage.CN) it.english else it.hanzi))
-    } }, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
+    onShuffle = vm::shuffleHomeWord, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
     FlashcardDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
       title = { Text(uiString(UiR.string.ui_finish_today_s_plan)) }, text = {
@@ -161,6 +169,9 @@ private fun TodayContent(
       }
       HomeWordShowcase(word = state.homeWord, wordError = state.homeWordError, wordStage = state.homeWordStage,
         hasToday = today != null, loading = state.loading, busy = state.busy, stage = stage, onShuffle = onShuffle,
+        shuffleWaiting = state.homeShuffleWaiting || isSpeechPreparing(HOME_SHUFFLE_SOURCE_ID),
+        shuffleFailed = state.homeShuffleFailed,
+        shuffleReady = state.homeShuffleReady,
         modifier = Modifier.weight(1f).fillMaxWidth())
       Spacer(Modifier.height(16.dp))
       HomeStudyPanel(today = today, card = state.card, busy = state.busy, error = state.error,
@@ -182,6 +193,9 @@ private fun HomeWordShowcase(
   busy: Boolean,
   stage: VocabularyStage,
   onShuffle: () -> Unit,
+  shuffleWaiting: Boolean = false,
+  shuffleFailed: Boolean = false,
+  shuffleReady: Int = 0,
   modifier: Modifier = Modifier,
 ) {
   Box(modifier) {
@@ -204,10 +218,21 @@ private fun HomeWordShowcase(
         hasToday -> Text(uiString(UiR.string.ui_no_words_in_this_stage_yet), color = MaterialTheme.colorScheme.onSurfaceVariant,
           textAlign = TextAlign.Center)
       }
+      if (shuffleFailed) Text(uiString(UiR.string.ui_speech_could_not_be_played_you_can_continue_studying),
+        style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error,
+        textAlign = TextAlign.Center)
     }
-    TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !loading && !busy &&
-      (word != null || wordError), modifier = Modifier.align(Alignment.BottomEnd)) {
-      Text(uiString(UiR.string.ui_shuffle))
+    TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !loading && !busy && !shuffleWaiting &&
+      (word != null || wordError), modifier = Modifier.align(Alignment.BottomEnd).widthIn(min = 88.dp).heightIn(min = 48.dp)) {
+      Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+          if (shuffleWaiting) SpeechPreparingIndicator()
+          Text(uiString(UiR.string.ui_shuffle))
+        }
+        Text(uiString(UiR.string.ui_shuffle_ready, shuffleReady),
+          style = MaterialTheme.typography.labelSmall.copy(fontSize = 12.sp, lineHeight = 16.sp),
+          color = MaterialTheme.colorScheme.onSurfaceVariant)
+      }
     }
   }
 }

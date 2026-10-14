@@ -40,6 +40,7 @@ import com.example.chinese_flashcard.core.domain.AnswerOption
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.StudyCard
 import com.example.chinese_flashcard.core.domain.WordEntry
@@ -49,6 +50,9 @@ import com.example.chinese_flashcard.core.ui.FlashcardIcons
 import com.example.chinese_flashcard.core.ui.glassPanel
 import com.example.chinese_flashcard.core.ui.glassPanelColor
 import com.example.chinese_flashcard.core.ui.LocalExplanationOptions
+import com.example.chinese_flashcard.core.ui.rememberSpeechSourceId
+import com.example.chinese_flashcard.core.ui.isSpeechPreparing
+import com.example.chinese_flashcard.core.ui.SpeechPlayIcon
 
 /** The target word is the question; answer choices use the learner's known language. */
 @Composable
@@ -56,7 +60,9 @@ internal fun QuestionHeading(card: StudyCard, enabled: Boolean, onSpeak: (Speech
   ipaResolver: (String) -> String?) {
   val prompt = card.promptSpeech()
   if (card.learningLanguage == AppLanguage.CN) {
-    StudyWordHeading(card.word, enabled, onSpeak = { onSpeak(prompt) }, onWrite = null)
+    val sourceId = rememberSpeechSourceId(Triple(card.id, card.phase, card.contextVersion))
+    StudyWordHeading(card.word, enabled, onSpeak = { onSpeak(prompt.copy(sourceId = sourceId)) },
+      onWrite = null, sourceId = sourceId)
     return
   }
   val prompts = splitEnglishMeanings(prompt.text)
@@ -65,13 +71,16 @@ internal fun QuestionHeading(card: StudyCard, enabled: Boolean, onSpeak: (Speech
     modifier = Modifier.fillMaxWidth().glassPanel(shape = MaterialTheme.shapes.large)) {
   Column(Modifier.padding(horizontal = 16.dp, vertical = 16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
     prompts.forEach { text ->
+      val sourceId = rememberSpeechSourceId(listOf(card.id, card.phase, card.contextVersion, text))
+      val preparing = isSpeechPreparing(sourceId)
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        Text(text, modifier = Modifier.weight(1f).clickable(enabled = enabled, role = Role.Button) {
-          onSpeak(prompt.copy(text = text))
+        Text(text, modifier = Modifier.weight(1f).clickable(enabled = enabled && !preparing, role = Role.Button) {
+          onSpeak(prompt.copy(text = text, sourceId = sourceId))
         }, style = MaterialTheme.typography.headlineMedium.copy(lineHeight = 38.sp), fontWeight = FontWeight.SemiBold)
-        IconButton(onClick = { onSpeak(prompt.copy(text = text)) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
-          Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_question), modifier = Modifier.size(20.dp))
+        IconButton(onClick = { onSpeak(prompt.copy(text = text, sourceId = sourceId)) },
+          enabled = enabled && !preparing, modifier = Modifier.size(48.dp)) {
+          SpeechPlayIcon(sourceId, contentDescription = uiString(UiR.string.ui_listen_to_question), modifier = Modifier.size(20.dp))
         }
       }
       ipaResolver(text)?.takeIf { it.isNotBlank() }?.let { pronunciation ->
@@ -85,6 +94,8 @@ internal fun QuestionHeading(card: StudyCard, enabled: Boolean, onSpeak: (Speech
 
 @Composable
 internal fun ChineseTranslation(word: WordEntry, enabled: Boolean, onSpeak: (SpeechRequest) -> Unit) {
+  val sourceId = rememberSpeechSourceId(word.id)
+  val preparing = isSpeechPreparing(sourceId)
   Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
       Text(word.hanzi, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Medium)
@@ -92,9 +103,10 @@ internal fun ChineseTranslation(word: WordEntry, enabled: Boolean, onSpeak: (Spe
         color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
     IconButton(onClick = { onSpeak(SpeechRequest(word.hanzi, AppLanguage.CN,
-      scene = SpeechScene.WORD_PRONUNCIATION, counterpart = word.meanings.firstOrNull()?.english)) }, enabled = enabled,
+      scene = SpeechScene.WORD_PRONUNCIATION, counterpart = word.meanings.firstOrNull()?.english,
+      chinesePronunciation = ChinesePronunciation(word.hanzi, word.pinyin), sourceId = sourceId)) }, enabled = enabled && !preparing,
       modifier = Modifier.size(48.dp)) {
-      Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_word), modifier = Modifier.size(20.dp))
+      SpeechPlayIcon(sourceId, contentDescription = uiString(UiR.string.ui_listen_to_word), modifier = Modifier.size(20.dp))
     }
   }
 }
@@ -102,8 +114,11 @@ internal fun ChineseTranslation(word: WordEntry, enabled: Boolean, onSpeak: (Spe
 @Composable
 internal fun QuestionExample(example: ExampleSentence, language: AppLanguage,
   onSpeak: (SpeechRequest) -> Unit, enabled: Boolean) {
+  val sourceId = rememberSpeechSourceId(example to language)
+  val preparing = isSpeechPreparing(sourceId)
   val request = SpeechRequest(if (language == AppLanguage.CN) example.hanzi else example.english,
-    language, scene = SpeechScene.STUDY_CONTEXT)
+    language, scene = SpeechScene.STUDY_CONTEXT, chinesePronunciation = if (language == AppLanguage.CN)
+      ChinesePronunciation(example.hanzi, example.pinyin, example.chunks) else null, sourceId = sourceId)
   val options = LocalExplanationOptions.current
   var expanded by remember(example, options, language) { mutableStateOf(false) }
   val expandable = !options.allSelected
@@ -128,8 +143,8 @@ internal fun QuestionExample(example: ExampleSentence, language: AppLanguage,
           if (showPinyin) Text(example.pinyin, style = MaterialTheme.typography.bodySmall.copy(lineHeight = 22.sp),
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
-        IconButton(onClick = { onSpeak(request) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
-          Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_example), modifier = Modifier.size(20.dp))
+        IconButton(onClick = { onSpeak(request) }, enabled = enabled && !preparing, modifier = Modifier.size(48.dp)) {
+          SpeechPlayIcon(sourceId, contentDescription = uiString(UiR.string.ui_listen_to_example), modifier = Modifier.size(20.dp))
         }
       }
       }

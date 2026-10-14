@@ -4,6 +4,7 @@ import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.R as UiR
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -31,14 +32,18 @@ object FlashcardLayout {
 
 @Composable
 fun FlashcardToolbar(title: String, onBack: () -> Unit, modifier: Modifier = Modifier,
-  enabled: Boolean = true, trailing: (@Composable () -> Unit)? = null) {
+  enabled: Boolean = true, trailing: (@Composable () -> Unit)? = null,
+  subtitle: (@Composable () -> Unit)? = null) {
   Row(modifier.fillMaxWidth().heightIn(min = 56.dp),
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
     IconButton(onClick = onBack, enabled = enabled) {
       Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = uiString(UiR.string.ui_back))
     }
-    Text(title, Modifier.weight(1f), style = MaterialTheme.typography.titleLarge,
-      maxLines = 1, overflow = TextOverflow.Ellipsis)
+    Column(Modifier.weight(1f)) {
+      Text(title, style = MaterialTheme.typography.titleLarge,
+        maxLines = 1, overflow = TextOverflow.Ellipsis)
+      subtitle?.invoke()
+    }
     trailing?.invoke()
   }
 }

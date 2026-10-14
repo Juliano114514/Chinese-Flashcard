@@ -52,6 +52,7 @@ import com.example.chinese_flashcard.core.domain.ExampleSentence
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.ExplanationOptions
 import com.example.chinese_flashcard.core.domain.splitEnglishMeanings
@@ -60,29 +61,30 @@ import com.example.chinese_flashcard.core.domain.splitEnglishMeanings
 @Composable
 fun WordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onLongClick: (() -> Unit)? = null,
   trailing: (@Composable () -> Unit)? = null, trailingOnNewLine: Boolean = false, trailingSpacing: Dp = 4.dp,
-  playBesideWord: Boolean = false) {
+  playBesideWord: Boolean = false, sourceId: String? = null) {
+  val speakEnabled = enabled && !isSpeechPreparing(sourceId)
   Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(4.dp)) {
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(trailingSpacing)) {
       Text(word.hanzi, fontSize = 44.sp, lineHeight = 56.sp, fontWeight = FontWeight.SemiBold,
-        modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = enabled, onClick = onSpeak,
+        modifier = Modifier.weight(1f, fill = false).combinedClickable(enabled = speakEnabled, onClick = onSpeak,
           onLongClick = onLongClick, onLongClickLabel = if (onLongClick != null) uiString(UiR.string.ui_word_actions) else null))
-      if (playBesideWord) WordPlayButton(enabled, onSpeak)
+      if (playBesideWord) WordPlayButton(speakEnabled, onSpeak, sourceId)
       if (!trailingOnNewLine) trailing?.invoke()
     }
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
       Text(word.pinyin, modifier = Modifier.weight(1f), fontSize = 18.sp, lineHeight = 28.sp,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
-      if (!playBesideWord) WordPlayButton(enabled, onSpeak)
+      if (!playBesideWord) WordPlayButton(speakEnabled, onSpeak, sourceId)
     }
     if (trailingOnNewLine) trailing?.invoke()
   }
 }
 
 @Composable
-private fun WordPlayButton(enabled: Boolean, onSpeak: () -> Unit) {
+private fun WordPlayButton(enabled: Boolean, onSpeak: () -> Unit, sourceId: String?) {
   IconButton(onClick = onSpeak, enabled = enabled,
     modifier = Modifier.size(48.dp).background(MaterialTheme.colorScheme.primaryContainer, CircleShape)) {
-    Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_word), modifier = Modifier.size(20.dp),
+    SpeechPlayIcon(sourceId, contentDescription = uiString(UiR.string.ui_listen_to_word), modifier = Modifier.size(20.dp),
       tint = if (enabled) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface.copy(alpha = .38f))
   }
 }
@@ -97,6 +99,8 @@ fun WordMeanings(word: WordEntry, onSpeak: (SpeechRequest) -> Unit = {},
           style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Medium,
           color = MaterialTheme.colorScheme.primary)
         splitEnglishMeanings(meaning.english).forEach { english ->
+          val sourceId = rememberSpeechSourceId("${word.id}/${meaning.id}/$english")
+          val preparing = isSpeechPreparing(sourceId)
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
               Text(english, style = MaterialTheme.typography.bodyLarge, fontWeight = FontWeight.Medium)
@@ -106,9 +110,10 @@ fun WordMeanings(word: WordEntry, onSpeak: (SpeechRequest) -> Unit = {},
               }
             }
             IconButton(onClick = { onSpeak(SpeechRequest(english, AppLanguage.EN,
-              scene = SpeechScene.MEANING_PRONUNCIATION, counterpart = word.hanzi)) }, enabled = enabled,
+              scene = SpeechScene.MEANING_PRONUNCIATION, counterpart = word.hanzi,
+              chinesePronunciation = ChinesePronunciation(word.hanzi, word.pinyin), sourceId = sourceId)) }, enabled = enabled && !preparing,
               modifier = Modifier.size(48.dp)) {
-              Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_english_meaning),
+              SpeechPlayIcon(sourceId, contentDescription = uiString(UiR.string.ui_listen_to_english_meaning),
                 modifier = Modifier.size(20.dp))
             }
           }
@@ -231,6 +236,10 @@ private fun WordPanel(compact: Boolean, modifier: Modifier = Modifier, content: 
 @Composable
 private fun ExampleContent(example: ExampleSentence, onSpeak: (SpeechRequest) -> Unit, enabled: Boolean,
   visible: ExplanationOptions, splitOriginal: Boolean) {
+  val chineseSourceId = rememberSpeechSourceId(example to AppLanguage.CN)
+  val englishSourceId = rememberSpeechSourceId(example to AppLanguage.EN)
+  val preparingChinese = isSpeechPreparing(chineseSourceId)
+  val preparingEnglish = isSpeechPreparing(englishSourceId)
   val hasOriginal = visible.original || visible.pinyin || (visible.literal && example.chunks.isNotEmpty())
   if (hasOriginal) {
     Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -246,8 +255,10 @@ private fun ExampleContent(example: ExampleSentence, onSpeak: (SpeechRequest) ->
             color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
         IconButton(onClick = { onSpeak(SpeechRequest(example.hanzi, AppLanguage.CN,
-          scene = SpeechScene.EXAMPLE_PRONUNCIATION, counterpart = example.english)) }, enabled = enabled, modifier = Modifier.size(48.dp)) {
-          Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_chinese_example), modifier = Modifier.size(20.dp))
+          scene = SpeechScene.EXAMPLE_PRONUNCIATION, counterpart = example.english,
+          chinesePronunciation = ChinesePronunciation(example.hanzi, example.pinyin, example.chunks),
+          sourceId = chineseSourceId)) }, enabled = enabled && !preparingChinese, modifier = Modifier.size(48.dp)) {
+          SpeechPlayIcon(chineseSourceId, contentDescription = uiString(UiR.string.ui_listen_to_chinese_example), modifier = Modifier.size(20.dp))
         }
       }
     }
@@ -258,9 +269,11 @@ private fun ExampleContent(example: ExampleSentence, onSpeak: (SpeechRequest) ->
       Text(example.english, modifier = Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium.copy(
         localeList = LocaleList("en"), hyphens = Hyphens.None, lineHeight = 26.sp))
       IconButton(onClick = { onSpeak(SpeechRequest(example.english, AppLanguage.EN,
-        scene = SpeechScene.EXAMPLE_PRONUNCIATION, counterpart = example.hanzi)) }, enabled = enabled,
+        scene = SpeechScene.EXAMPLE_PRONUNCIATION, counterpart = example.hanzi,
+        chinesePronunciation = ChinesePronunciation(example.hanzi, example.pinyin, example.chunks),
+        sourceId = englishSourceId)) }, enabled = enabled && !preparingEnglish,
         modifier = Modifier.size(48.dp)) {
-        Icon(FlashcardIcons.Play, contentDescription = uiString(UiR.string.ui_listen_to_english_example),
+        SpeechPlayIcon(englishSourceId, contentDescription = uiString(UiR.string.ui_listen_to_english_example),
           modifier = Modifier.size(20.dp))
       }
     }

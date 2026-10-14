@@ -23,6 +23,7 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
@@ -47,6 +48,7 @@ import com.example.chinese_flashcard.core.domain.PracticeProgress
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
 import com.example.chinese_flashcard.core.ui.AppLanguageProvider
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
@@ -59,6 +61,7 @@ import com.example.chinese_flashcard.core.ui.WordUserActions
 import com.example.chinese_flashcard.core.ui.FlashcardIcons
 import com.example.chinese_flashcard.core.ui.glassPanel
 import com.example.chinese_flashcard.core.ui.glassPanelColor
+import com.example.chinese_flashcard.core.ui.rememberSpeechSourceId
 
 @Composable
 internal fun StudyContent(
@@ -79,8 +82,10 @@ internal fun StudyContent(
   onSkip: (String, Boolean) -> Unit,
   onRetry: () -> Unit,
   ipaResolver: (String) -> String? = { null },
+  voiceLoading: Boolean = false,
 ) {
   val card = state.card
+  val headingSourceId = rememberSpeechSourceId(Triple(card?.id, card?.phase, state.directionGeneration))
   val practice = state.snapshot?.practice?.takeIf { it.kind == card?.kind }
   val completed = practice?.completed ?: state.today?.completed ?: 0
   val planned = practice?.planned ?: state.today?.planned ?: 0
@@ -109,6 +114,17 @@ internal fun StudyContent(
             wordId = card.word.id,
             wordLabel = if (card.learningLanguage == AppLanguage.CN) card.word.hanzi else card.promptSpeech().text,
             compact = true)
+        }
+      }
+    }, subtitle = {
+      if (voiceLoading && card?.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.FEEDBACK, CardPhase.EXPLANATION)) {
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+          CircularProgressIndicator(Modifier.size(12.dp), strokeWidth = 1.dp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+          Text(uiString(UiR.string.ui_loading_voice), style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1,
+            overflow = androidx.compose.ui.text.style.TextOverflow.Ellipsis,
+            modifier = Modifier.weight(1f, fill = false))
         }
       }
     })
@@ -224,9 +240,10 @@ internal fun StudyContent(
             QuestionHeading(card, enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
               onSpeak = onSpeak, ipaResolver = ipaResolver)
           } else StudyWordHeading(card.word, enabled = !state.busy && card.phase != CardPhase.FEEDBACK,
-            onSpeak = { onSpeak(SpeechRequest(card.word.hanzi, AppLanguage.CN, counterpart = card.questionMeaning())) },
+            onSpeak = { onSpeak(SpeechRequest(card.word.hanzi, AppLanguage.CN, counterpart = card.questionMeaning(),
+              chinesePronunciation = ChinesePronunciation(card.word.hanzi, card.word.pinyin), sourceId = headingSourceId)) },
             onWrite = if (card.learningLanguage == AppLanguage.CN && card.phase in listOf(CardPhase.INTRO, CardPhase.EXPLANATION))
-              ({ onWordWriting(card.word.id) }) else null)
+              ({ onWordWriting(card.word.id) }) else null, sourceId = headingSourceId)
           when (card.phase) {
             CardPhase.INTRO, CardPhase.EXPLANATION -> {
               if (card.correct != null) {

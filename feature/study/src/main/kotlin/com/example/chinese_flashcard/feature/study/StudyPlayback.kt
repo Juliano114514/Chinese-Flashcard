@@ -7,6 +7,7 @@ import com.example.chinese_flashcard.core.domain.StudyCard
 import com.example.chinese_flashcard.core.domain.AnswerOption
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.CancellationException
@@ -78,12 +79,15 @@ internal fun StudyCard.targetSpeech(): SpeechRequest {
   val counterpart = if (phase == CardPhase.QUESTION) null else
     if (learningLanguage == AppLanguage.CN) questionMeaning() else word.hanzi
   return SpeechRequest(if (learningLanguage == AppLanguage.CN) word.hanzi else questionMeaning(),
-    learningLanguage, scene, counterpart)
+    learningLanguage, scene, counterpart, chinesePronunciation =
+      if (learningLanguage == AppLanguage.CN || counterpart != null) ChinesePronunciation(word.hanzi, word.pinyin) else null)
 }
 
 internal fun StudyCard.optionSpeech(option: AnswerOption): SpeechRequest = if (learningLanguage == AppLanguage.CN)
-  SpeechRequest(option.hanzi, AppLanguage.CN, SpeechScene.ANSWER_FEEDBACK, option.english)
-  else SpeechRequest(option.english, AppLanguage.EN, SpeechScene.ANSWER_FEEDBACK, option.hanzi)
+  SpeechRequest(option.hanzi, AppLanguage.CN, SpeechScene.ANSWER_FEEDBACK, option.english,
+    ChinesePronunciation(option.hanzi, option.pinyin))
+  else SpeechRequest(option.english, AppLanguage.EN, SpeechScene.ANSWER_FEEDBACK, option.hanzi,
+    ChinesePronunciation(option.hanzi, option.pinyin))
 
 internal fun StudyCard.optionLabel(option: AnswerOption): String = if (learningLanguage == AppLanguage.CN)
   option.english else option.hanzi
@@ -93,5 +97,7 @@ internal fun StudyCard.exampleSpeech(example: ExampleSentence): SpeechRequest {
   val scene = if (phase == CardPhase.QUESTION) SpeechScene.STUDY_CONTEXT else SpeechScene.STUDY_EXPLANATION
   val counterpart = if (phase == CardPhase.QUESTION) null else
     if (language == AppLanguage.CN) example.english else example.hanzi
-  return SpeechRequest(if (language == AppLanguage.CN) example.hanzi else example.english, language, scene, counterpart)
+  return SpeechRequest(if (language == AppLanguage.CN) example.hanzi else example.english, language, scene, counterpart,
+    chinesePronunciation = if (language == AppLanguage.CN || counterpart != null)
+      ChinesePronunciation(example.hanzi, example.pinyin, example.chunks) else null)
 }

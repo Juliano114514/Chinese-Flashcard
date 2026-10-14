@@ -39,6 +39,8 @@ import com.example.chinese_flashcard.core.ui.FlashcardIcons
 import com.example.chinese_flashcard.core.ui.glassPanel
 import com.example.chinese_flashcard.core.ui.glassPanelColor
 import com.example.chinese_flashcard.core.ui.WordHeading
+import com.example.chinese_flashcard.core.ui.isSpeechPreparing
+import com.example.chinese_flashcard.core.ui.SpeechPlayIcon
 
 @Composable
 internal fun RoundProgress(card: StudyCard) {
@@ -54,14 +56,16 @@ internal fun RoundProgress(card: StudyCard) {
 }
 
 @Composable
-internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?) {
+internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> Unit, onWrite: (() -> Unit)?,
+  sourceId: String? = null) {
+  val preparing = isSpeechPreparing(sourceId)
   var showActions by remember(word.id) { mutableStateOf(false) }
   Surface(shape = MaterialTheme.shapes.large, color = glassPanelColor(),
     contentColor = MaterialTheme.colorScheme.onSurface,
     modifier = Modifier.fillMaxWidth().glassPanel(shape = MaterialTheme.shapes.large)) {
   Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 16.dp)) {
     WordHeading(word, enabled, onSpeak, onLongClick = { showActions = true },
-      trailingSpacing = 8.dp, playBesideWord = true)
+      trailingSpacing = 8.dp, playBesideWord = true, sourceId = sourceId)
   }
   }
   if (showActions) FlashcardDialog(onDismissRequest = { showActions = false },
@@ -72,11 +76,11 @@ internal fun StudyWordHeading(word: WordEntry, enabled: Boolean, onSpeak: () -> 
       }
     }, text = {
       Column {
-        Row(Modifier.fillMaxWidth().heightIn(min = 52.dp).clickable(enabled = enabled, role = Role.Button) {
+        Row(Modifier.fillMaxWidth().heightIn(min = 52.dp).clickable(enabled = enabled && !preparing, role = Role.Button) {
           showActions = false; onSpeak()
         }.padding(horizontal = 12.dp), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          Icon(FlashcardIcons.Play, contentDescription = null, modifier = Modifier.size(20.dp))
+          SpeechPlayIcon(sourceId, contentDescription = uiString(UiR.string.ui_listen_to_word), modifier = Modifier.size(20.dp))
           Text(uiString(UiR.string.ui_listen_66b5db), style = MaterialTheme.typography.bodyLarge)
         }
         onWrite?.let { write ->

@@ -14,12 +14,16 @@ import com.example.chinese_flashcard.core.domain.WordlistRepository
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.WordEntry
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -31,7 +35,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import kotlin.random.Random
 
 data class WritingRequest(val token: Long, val sessionId: String)
 
@@ -46,6 +49,10 @@ data class StudyUiState(
   val homeWord: WordlistItem? = null,
   val homeWordError: Boolean = false,
   val homeWordStage: VocabularyStage? = null,
+  val homeShuffleWaiting: Boolean = false,
+  val homeShuffleReady: Int = 0,
+  val homeShuffleFailed: Boolean = false,
+  val homeSpeechEvent: HomeSpeechEvent? = null,
   val directionGeneration: Long = 0,
 ) {
   val today get() = snapshot?.today
@@ -110,6 +117,9 @@ class StudyViewModel(
   private val settings: SettingsRepository,
   private val wordState: WordStateRepository,
   private val wordlist: WordlistRepository,
+  prefetchSpeech: suspend (List<SpeechRequest>) -> Boolean = { true },
+  speechReady: suspend (List<SpeechRequest>) -> Boolean = { true },
+  speechChanges: Flow<Long> = emptyFlow(),
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(StudyUiState())
   val state = mutableState.asStateFlow()
@@ -123,41 +133,77 @@ class StudyViewModel(
 
   private var homeWords = emptyList<WordlistItem>()
   private var homeWordObservation: Job? = null
+  private var homeSpeechToken = 0L
+  private var homeSpeechActive = false
+  private val homeQueue = HomeSpeechQueue(viewModelScope, prefetchSpeech, speechReady,
+    currentWord = { state.value.homeWord },
+    onWaiting = { waiting, failed -> mutableState.update { it.copy(homeShuffleWaiting = waiting, homeShuffleFailed = failed) } },
+    onSelected = { word, request -> mutableState.update { current ->
+      if (homeSpeechActive && !current.busy && !current.loading &&
+        current.homeWordStage == current.today?.stageProgress?.stage &&
+        word.difficulty == current.today?.stageProgress?.stage?.rarity &&
+        request.language == current.settings.learningLanguage) {
+        current.copy(homeWord = word, homeWordError = false, homeSpeechEvent = HomeSpeechEvent(++homeSpeechToken, request))
+      } else current
+    } }, onReadyCount = { count -> mutableState.update { it.copy(homeShuffleReady = count) } })
 
-  init { observe(); observeHomeWords() }
+  init {
+    observe(); observeHomeWords()
+    viewModelScope.launch { speechChanges.collect { homeQueue.refreshReadiness() } }
+  }
 
-  fun shuffleHomeWord(): WordlistItem? {
-    if (state.value.busy || state.value.loading) return null
-    if (homeWordObservation?.isActive != true) { observeHomeWords(); return null }
-    if (state.value.homeWordStage != state.value.today?.stageProgress?.stage || homeWords.isEmpty()) return null
-    val current = state.value.homeWord?.id
-    // The observation already filters the stage; skip the current item without copying that list.
-    var index = Random.nextInt(homeWords.size)
-    if (homeWords.size > 1 && homeWords[index].id == current) {
-      index = (index + Random.nextInt(1, homeWords.size)) % homeWords.size
-    }
-    val word = homeWords[index]
-    mutableState.update { it.copy(homeWord = word, homeWordError = false) }
-    return word
+  fun shuffleHomeWord() {
+    if (state.value.busy || state.value.loading) return
+    if (homeWordObservation?.isActive != true) { observeHomeWords(); return }
+    if (state.value.homeWordStage != state.value.today?.stageProgress?.stage) return
+    homeQueue.shuffle()
+  }
+
+  fun setHomeSpeechActive(active: Boolean) {
+    homeSpeechActive = active
+    syncHomeSpeechActivity()
+  }
+
+  private fun syncHomeSpeechActivity() {
+    val current = state.value
+    val active = homeSpeechActive && !current.busy && !current.loading &&
+      current.homeWordStage == current.today?.stageProgress?.stage
+    if (!active || current.homeSpeechEvent?.request?.language?.let { it != current.settings.learningLanguage } == true)
+      mutableState.update { it.copy(homeSpeechEvent = null) }
+    homeQueue.setActive(active)
+  }
+
+  fun consumeHomeSpeech(token: Long) { mutableState.update {
+    if (it.homeSpeechEvent?.token == token) it.copy(homeSpeechEvent = null) else it
+  } }
+
+  suspend fun speechPreloadWords(cardId: String, nextCount: Int, language: AppLanguage,
+    contextVersion: Long): List<WordEntry> = withContext(Dispatchers.IO) {
+    study.peekSpeechWords(cardId, nextCount, language, contextVersion)
   }
 
   private fun observeHomeWords() {
     homeWordObservation?.cancel()
     homeWordObservation = viewModelScope.launch {
       try {
-        combine(state.map { it.today?.stageProgress?.stage }.distinctUntilChanged(), wordlist.entries) {
-          stage, words -> stage to if (stage == null) emptyList() else words.filter { it.difficulty == stage.rarity }
-        }.distinctUntilChanged().flowOn(Dispatchers.Default).collect { (stage, words) ->
+        combine(state.map { it.today?.stageProgress?.stage to it.settings }.distinctUntilChanged(), wordlist.entries) {
+          (stage, preferences), words -> Triple(stage, preferences,
+            if (stage == null) emptyList() else words.filter { it.difficulty == stage.rarity })
+        }.distinctUntilChanged().flowOn(Dispatchers.Default).collect { (stage, preferences, words) ->
           if (stage != state.value.today?.stageProgress?.stage) return@collect
           homeWords = words
           mutableState.update { current -> current.copy(
             homeWord = words.firstOrNull { it.id == current.homeWord?.id } ?: words.randomOrNull(),
             homeWordError = false, homeWordStage = stage) }
+          homeQueue.configure(words, preferences.learningLanguage, preferences.speechOptions, preferences.homeShuffleQueueSize)
+          syncHomeSpeechActivity()
         }
       } catch (error: CancellationException) {
         throw error
       } catch (_: Exception) {
         homeWords = emptyList()
+        homeQueue.configure(emptyList(), state.value.settings.learningLanguage,
+          state.value.settings.speechOptions, state.value.settings.homeShuffleQueueSize)
         mutableState.update { it.copy(homeWord = null, homeWordError = true) }
       }
     }
@@ -212,6 +258,7 @@ class StudyViewModel(
       }
     }
     mutableState.update { StudyReducer.reduce(it, mutation) }
+    syncHomeSpeechActivity()
   }
 
   private fun observe() {

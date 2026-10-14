@@ -52,6 +52,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
@@ -67,14 +68,18 @@ import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.roundToInt
 
-private enum class SettingEditor { DAILY_WORDS, ROUNDS, REVIEW_DAYS, THEME, UI_LANGUAGE, LEARNING_LANGUAGE }
+private enum class SettingEditor {
+  DAILY_WORDS, ROUNDS, REVIEW_DAYS, THEME, UI_LANGUAGE, LEARNING_LANGUAGE,
+  SPEECH_PRELOAD, SPEECH_CACHE, HOME_SHUFFLE_QUEUE,
+}
 
 @Composable
 fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> Unit, onLicenses: () -> Unit,
   defaultWordlistProgress: StateFlow<WordlistLoadProgress?>, csvImportProgress: StateFlow<WordlistLoadProgress?>,
   defaultWordlistLoading: Boolean = false, defaultWordlistError: UiMessageKey? = null,
   onRetryDefaultWordlist: () -> Unit = {}, languageSwitchEnabled: Boolean = true,
-  onReadingOptions: () -> Unit = {}, onExplanationOptions: () -> Unit = {}) {
+  onReadingOptions: () -> Unit = {}, onExplanationOptions: () -> Unit = {},
+  cacheUsedBytes: Long = 0L, onClearSpeechCache: () -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
   var editor by rememberSaveable { mutableStateOf<SettingEditor?>(null) }
@@ -136,6 +141,30 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
         }
       }
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(uiString(UiR.string.ui_speech_and_cache), style = MaterialTheme.typography.titleSmall,
+          color = MaterialTheme.colorScheme.primary)
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth()) {
+            SettingsRow(uiString(UiR.string.ui_speech_preload_words), value.speechPreloadWords.toString(), enabled) {
+              openEditor(SettingEditor.SPEECH_PRELOAD)
+            }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_speech_cache_capacity),
+              uiString(UiR.string.ui_speech_cache_capacity_value, value.speechCacheMiB), enabled) {
+              openEditor(SettingEditor.SPEECH_CACHE)
+            }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_home_shuffle_queue_size), value.homeShuffleQueueSize.toString(), enabled) {
+              openEditor(SettingEditor.HOME_SHUFFLE_QUEUE)
+            }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_clear_speech_cache),
+              uiString(UiR.string.ui_speech_cache_used, cacheUsedBytes.coerceAtLeast(0L).toDouble() / 1_048_576.0,
+                value.speechCacheMiB), enabled, onClearSpeechCache)
+          }
+        }
+      }
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Text(uiString(UiR.string.ui_data), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
         Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
@@ -177,7 +206,35 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
       state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(uiLanguage = it)) }
     SettingEditor.LEARNING_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_learning_language), value.learningLanguage,
       state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(learningLanguage = it)) }
+    SettingEditor.SPEECH_PRELOAD -> AudioNumberDialog(uiString(UiR.string.ui_speech_preload_words),
+      value.speechPreloadWords, 0..20, uiString(UiR.string.ui_speech_preload_description), state.saving, state.error,
+      ::closeEditor) { vm.save(ProfileUpdate(speechPreloadWords = it)) }
+    SettingEditor.SPEECH_CACHE -> AudioNumberDialog(uiString(UiR.string.ui_speech_cache_capacity),
+      value.speechCacheMiB, 64..2048, uiString(UiR.string.ui_speech_cache_description), state.saving, state.error,
+      ::closeEditor) { vm.save(ProfileUpdate(speechCacheMiB = it)) }
+    SettingEditor.HOME_SHUFFLE_QUEUE -> AudioNumberDialog(uiString(UiR.string.ui_home_shuffle_queue_size),
+      value.homeShuffleQueueSize, 1..20, uiString(UiR.string.ui_home_shuffle_queue_description), state.saving, state.error,
+      ::closeEditor) { vm.save(ProfileUpdate(homeShuffleQueueSize = it)) }
     null -> Unit
+  }
+}
+
+@Composable
+private fun AudioNumberDialog(title: String, initial: Int, range: IntRange, description: String,
+  saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
+  var text by rememberSaveable(title, initial) { mutableStateOf(initial.toString()) }
+  val number = text.toIntOrNull()
+  val valid = number != null && number in range
+  SettingDialog(title, saving, error, valid, onDismiss, { if (valid) onConfirm(number) }) {
+    OutlinedTextField(text, onValueChange = { next ->
+      if (next.length <= 4 && next.all { it in '0'..'9' }) text = next
+    }, modifier = Modifier.fillMaxWidth(), singleLine = true, enabled = !saving,
+      shape = MaterialTheme.shapes.medium, textStyle = MaterialTheme.typography.bodyLarge,
+      isError = !valid,
+      supportingText = { Text(uiString(UiR.string.ui_integer_range, range.first, range.last)) },
+      keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number, imeAction = ImeAction.Done),
+      keyboardActions = KeyboardActions(onDone = { if (!saving && valid) onConfirm(number) }))
+    Text(description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
 

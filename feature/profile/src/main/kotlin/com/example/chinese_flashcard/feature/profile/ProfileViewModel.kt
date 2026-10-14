@@ -53,6 +53,9 @@ data class ProfileUpdate(
   val learningLanguage: AppLanguage? = null,
   val speechOptions: SpeechOptions? = null,
   val explanationOptions: ExplanationOptions? = null,
+  val speechPreloadWords: Int? = null,
+  val speechCacheMiB: Int? = null,
+  val homeShuffleQueueSize: Int? = null,
 ) {
   fun applyTo(value: StudySettings): StudySettings {
     dailyWords?.let { require(DailyWordChoices.isAllowed(it)) { "Daily words must be 5–50 in steps of 5." } }
@@ -67,6 +70,9 @@ data class ProfileUpdate(
       learningLanguage = learningLanguage ?: value.learningLanguage,
       speechOptions = speechOptions ?: value.speechOptions,
       explanationOptions = explanationOptions ?: value.explanationOptions,
+      speechPreloadWords = speechPreloadWords ?: value.speechPreloadWords,
+      speechCacheMiB = speechCacheMiB ?: value.speechCacheMiB,
+      homeShuffleQueueSize = homeShuffleQueueSize ?: value.homeShuffleQueueSize,
     )
   }
 }

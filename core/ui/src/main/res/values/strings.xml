@@ -478,4 +478,17 @@
     <string name="ui_feedback_success">Nice work!</string>
     <string name="ui_feedback_retry">A little practice will help</string>
     <string name="ui_completion_encouragement">One step closer. Well done!</string>
+    <string name="ui_speech_and_cache">Speech and cache</string>
+    <string name="ui_speech_preload_words">Study words to preload</string>
+    <string name="ui_speech_cache_capacity">Speech cache capacity</string>
+    <string name="ui_speech_cache_capacity_value">%1$d MiB</string>
+    <string name="ui_home_shuffle_queue_size">Home shuffle queue size</string>
+    <string name="ui_clear_speech_cache">Clear speech cache</string>
+    <string name="ui_speech_cache_used">%1$.1f / %2$d MiB used</string>
+    <string name="ui_speech_preload_description">Once per cold start, prepare audio for up to this many words from your current Learn progress. Use the available count if fewer remain. Enter 0 to disable startup preloading; missing audio on the current page still loads when needed. Changes apply on the next cold start.</string>
+    <string name="ui_speech_cache_description">Persistent audio survives app restarts. When the limit is reached, the least recently used clips are removed. A smaller limit takes effect immediately.</string>
+    <string name="ui_home_shuffle_queue_description">Keep this many random words ready on Home and refill the queue in the background. Larger queues use more preparation time. Changes apply immediately.</string>
+    <string name="ui_integer_range">Enter a whole number from %1$d to %2$d</string>
+    <string name="ui_shuffle_ready">%1$d ready</string>
+    <string name="ui_loading_voice">Loading voice…</string>
 </resources>

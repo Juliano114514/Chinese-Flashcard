@@ -91,6 +91,10 @@ import com.example.chinese_flashcard.core.domain.TracingItem
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordPart
+import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
+import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.WritingReason
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
@@ -100,6 +104,9 @@ import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
+import com.example.chinese_flashcard.core.ui.rememberSpeechSourceId
+import com.example.chinese_flashcard.core.ui.isSpeechPreparing
+import com.example.chinese_flashcard.core.ui.SpeechPreparingIndicator
 import kotlinx.coroutines.currentCoroutineContext
 import java.text.Normalizer
 import kotlin.math.ceil
@@ -107,7 +114,7 @@ import kotlin.math.floor
 import kotlin.math.hypot
 
 @Composable
-fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Unit, onSpeak: (String) -> Unit) {
+fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Unit, onSpeak: (SpeechRequest) -> Unit) {
   val state by vm.state.collectAsStateWithLifecycle()
   val snapshot = state.snapshot
   val latestFinished by rememberUpdatedState(onFinished)
@@ -155,14 +162,26 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
 
 @Composable
 private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
-  onAction: (WritingAction) -> Unit, onSpeak: (String) -> Unit) {
+  onAction: (WritingAction) -> Unit, onSpeak: (SpeechRequest) -> Unit) {
   val item = snapshot.item
   val glyphs = remember(snapshot.word.hanzi) {
     snapshot.word.hanzi.codePoints().toArray().map { String(Character.toChars(it)) }
   }
   val currentGlyph = glyphs.getOrNull(snapshot.characterIndex)
+  val currentSpeech = remember(snapshot.word, snapshot.characterIndex) {
+    currentGlyph?.let { glyph ->
+      val readings = Normalizer.normalize(snapshot.word.pinyin, Normalizer.Form.NFC).trim()
+        .split(Regex("[\\s'’\\-]+")).filter(String::isNotEmpty)
+      val reading = readings.takeIf { it.size == glyphs.size }?.getOrNull(snapshot.characterIndex)
+      SpeechRequest(glyph, AppLanguage.CN, SpeechScene.WRITING_WORD,
+        counterpart = snapshot.word.takeIf { it.hanzi == glyph }?.meanings?.firstOrNull()?.english,
+        chinesePronunciation = reading?.let { ChinesePronunciation(glyph, it) })
+    }
+  }
   // Position, rather than glyph text, distinguishes repeated characters such as 谢谢.
   val positionKey = "${snapshot.id}/${snapshot.wordIndex}/${snapshot.characterIndex}"
+  val listenSourceId = rememberSpeechSourceId(positionKey)
+  val listenPreparing = isSpeechPreparing(listenSourceId)
   val key = "${snapshot.id}/${snapshot.wordIndex}/${snapshot.characterIndex}/${item?.revision}"
   val latestSpeak by rememberUpdatedState(onSpeak)
   var spokenPosition by rememberSaveable(snapshot.id) { mutableStateOf<String?>(null) }
@@ -184,7 +203,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   LaunchedEffect(positionKey, resumed, state.busy) {
     if (resumed && !state.busy && currentGlyph != null && spokenPosition != positionKey) {
       spokenPosition = positionKey
-      latestSpeak(currentGlyph)
+      currentSpeech?.let(latestSpeak)
     }
   }
   LaunchedEffect(playing, key) {
@@ -206,9 +225,10 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
   Text(uiString(UiR.string.ui_writing_word_character, uiString(UiR.string.ui_fraction, snapshot.wordIndex + 1, snapshot.totalWords), uiString(UiR.string.ui_fraction, snapshot.characterIndex + 1, glyphs.size)),
     style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
   WritingPaper(snapshot, key, guideShown, frame = { frame.floatValue },
-    listenEnabled = !state.busy && currentGlyph != null,
+    listenEnabled = !state.busy && currentGlyph != null && !listenPreparing,
+    listenPreparing = listenPreparing,
     strokeEnabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < (item?.paths?.size ?: 0),
-    onListen = { currentGlyph?.let(onSpeak) }, onStroke = { onAction(WritingAction.Stroke(it)) })
+    onListen = { currentSpeech?.let { onSpeak(it.copy(sourceId = listenSourceId)) } }, onStroke = { onAction(WritingAction.Stroke(it)) })
   if (item != null && item.paths.isNotEmpty()) {
     WritingToolbar(playing = playing, canGuide = !state.busy && state.saveError == null,
       canUndo = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty(),
@@ -242,7 +262,7 @@ private fun StrokeGuideProgress(frame: () -> Float, total: Int) {
 
 @Composable
 private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
-  guideShown: Boolean, frame: () -> Float, listenEnabled: Boolean, strokeEnabled: Boolean,
+  guideShown: Boolean, frame: () -> Float, listenEnabled: Boolean, listenPreparing: Boolean, strokeEnabled: Boolean,
   onListen: () -> Unit, onStroke: (List<StrokePoint>) -> Unit) {
   val colors = FlashcardStyle.colors
   val item = snapshot.item
@@ -253,7 +273,9 @@ private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
       WritingWordHeader(snapshot.word, snapshot.characterIndex)
       TextButton(shape = MaterialTheme.shapes.small, onClick = onListen, enabled = listenEnabled, colors = ButtonDefaults.textButtonColors(
         contentColor = colors.writingActive,
-        disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) { Text(uiString(UiR.string.ui_listen)) }
+        disabledContentColor = colors.writingActive.copy(alpha = FlashcardStyle.opacity.disabledContent))) {
+        if (listenPreparing) SpeechPreparingIndicator(color = colors.writingActive) else Text(uiString(UiR.string.ui_listen))
+      }
       if (item != null && item.paths.isNotEmpty()) {
         StrokeCanvas(item, snapshot.accepted, drawingKey, guideShown, frame,
           enabled = strokeEnabled, onStroke = onStroke)
@@ -405,7 +427,7 @@ private fun WritingPreview(@PreviewParameter(StageThemePreviewProvider::class, l
         Text(uiString(UiR.string.ui_writing_word_character, uiString(UiR.string.ui_fraction, 1, 1), uiString(UiR.string.ui_fraction, 1, 1)), color = FlashcardStyle.colors.gradientSecondaryInk,
           style = MaterialTheme.typography.labelLarge)
         WritingPaper(snapshot, "preview", guideShown = false, frame = { 0f },
-          listenEnabled = true, strokeEnabled = false, onListen = {}, onStroke = {})
+          listenEnabled = true, listenPreparing = false, strokeEnabled = false, onListen = {}, onStroke = {})
         WritingToolbar(playing = false, canGuide = true, canUndo = false,
           onPlay = {}, onNext = {}, onReplay = {}, onUndo = {}, onRestart = {})
         Text(uiString(UiR.string.ui_follow_the_highlighted_stroke), style = MaterialTheme.typography.bodySmall,
