@@ -64,9 +64,9 @@ README 和历史 UI 文档中的产品与设计体系链接仅作设计参考说
 
 完整固定来源与资源准备说明见 [英语语音维护](docs/ENGLISH_SPEECH.md)。新增组件许可声明不证明训练数据、声线、原词表或例句的全部权利，既有公开分发待核实项仍有效。
 
-## 中文语音（2026-10-13）
+## 中文语音（2026-10-14）
 
-- MeloTTS 中文模型与音素映射：MyShell，MIT；固定 ONNX revision `a0d5c6a264c0ef92d70d8661d8cc502d79627cd6`，FP32 单声线，原权重字节不修改。
+- MeloTTS 中文模型与音素映射：MyShell，MIT；固定 ONNX revision `a0d5c6a264c0ef92d70d8661d8cc502d79627cd6`，FP32 单声线。派生 ONNX 只增加已有时长张量的输出声明，原权重和算子字节不修改；23 个问题读法的 PCM 由同一声线合成、经用户试听选择并调整电平，随中文资源保留相同来源与许可声明。
 - 原 ToneSandhi 前端：保留 Copyright (c) 2021 PaddlePaddle Authors，Apache-2.0；构建期采用其一／不／三声规则并以既有拼音绑定读音，不猜测覆盖词库轻声。原源码与完整许可证在固定来源缓存保留，App 内 `chinese-speech/LICENSES.txt` 展示全部声明。
 - Microsoft ONNX Runtime Android 沿用现有 `1.31.0`，未新增 sherpa JNI、Python 或系统语音包。jieba／pypinyin 只在构建期准备默认词库发音；导入文本使用应用内拼音解析或系统离线回退。
 
