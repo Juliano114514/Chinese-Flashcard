@@ -55,6 +55,20 @@ def write_json(path: Path, value: object) -> dict:
     return {"bytes": len(payload), "sha256": hashlib.sha256(payload).hexdigest()}
 
 
+def write_coverage(value: dict) -> None:
+    path = ASSETS / "coverage.json"
+    other_bytes = sum(item.stat().st_size for item in ASSETS.rglob("*") if item.is_file() and item != path)
+    value = dict(value, sidecarBytes=0)
+    for _ in range(5):
+        payload = (json.dumps(value, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n").encode("utf-8")
+        total = other_bytes + len(payload)
+        if value["sidecarBytes"] == total:
+            path.write_bytes(payload)
+            return
+        value["sidecarBytes"] = total
+    raise ValueError("Chinese coverage byte size did not converge")
+
+
 def build() -> None:
     source_lock = audition.verify_sources()
     audition.prepare_runtime()
@@ -111,12 +125,12 @@ def build() -> None:
         "minimumRms": audition.MIN_AUDIBLE_RMS, "minimumPeak": audition.MIN_AUDIBLE_PEAK,
         "shards": shard_records, "licenses": license_records,
         "keyFormat": "SHA256(trimmedText+LF+NFC(trimmedLowerPinyin)+LF+chunks joined U+001F; hanzi+U+001E+NFC(trimmedLowerPinyin))"}
-    write_json(ASSETS / "manifest.json", manifest)
+    from prepare_melo_duration import manifest as with_duration
+    write_json(ASSETS / "manifest.json", with_duration(manifest))
     total = sum(record["entries"] for record in shard_records.values())
-    write_json(ASSETS / "coverage.json", {"schemaVersion": 1, "wordCount": 13223,
+    write_coverage({"schemaVersion": 1, "wordCount": 13223,
         "exampleApplications": 26446, "uniqueReadingsIncludingWriting": total, "supported": total - len(unsupported),
         "unsupported": len(unsupported), "exceptions": unsupported,
-        "sidecarBytes": sum(path.stat().st_size for path in ASSETS.rglob("*") if path.is_file()),
         "evidenceBoundary": "Frontend conversion coverage, not full-corpus speech or device acceptance."})
     check()
 
@@ -124,13 +138,17 @@ def build() -> None:
 def check() -> None:
     audition.rows()
     lock = audition.load_lock()
+    duration_lock = json.loads((ROOT / "tools/melo_resources/duration-export.json").read_text(encoding="utf-8"))
     manifest = json.loads((ASSETS / "manifest.json").read_text(encoding="utf-8"))
-    if (manifest["modelSha256"] != audition.MODEL_SHA256 or manifest["modelRevision"] != audition.MODEL_REVISION
+    if (manifest["sourceModelSha256"] != audition.MODEL_SHA256 or manifest["modelSha256"] != duration_lock["sha256"] or manifest["modelRevision"] != audition.MODEL_REVISION
             or manifest["sourceWordlistSha256"] != audition.CSV_SHA256 or manifest["sampleRate"] != 44100
             or manifest["speed"] != 0.7 or not manifest["padBoundary"] or not manifest["addBlank"]):
         raise ValueError("Chinese speech manifest changed its selected model or protocol")
-    if manifest["modelBytes"] != lock["sources"]["model.onnx"]["bytes"]:
+    if manifest["sourceModelBytes"] != lock["sources"]["model.onnx"]["bytes"] or manifest["modelBytes"] != duration_lock["bytes"]:
         raise ValueError("Unexpected model byte size")
+    from prepare_melo_duration import manifest as with_duration
+    if manifest != with_duration(manifest):
+        raise ValueError("Duration export/cache identity does not match source protocol")
     phones_path = ASSETS / "phonemes.json"
     if audition.digest(phones_path) != manifest["phonemesSha256"]:
         raise ValueError("Changed Chinese phoneme table")
@@ -158,9 +176,15 @@ def check() -> None:
         raise ValueError("Chinese sidecar does not cover current word/example/writing requests")
     for name, record in manifest["licenses"].items():
         audition.verify_file(ASSETS / "licenses" / name, record)
-    if (ASSETS / "model.onnx").exists() or any(path.suffix in {".py", ".dll", ".whl", ".npz"} for path in ASSETS.rglob("*")):
+    from build_chinese_short_words import check as check_short_words
+    check_short_words()
+    if any(path.suffix in {".onnx", ".py", ".dll", ".whl", ".npz"} for path in ASSETS.rglob("*")):
         raise ValueError("Model binary/build-time runtime must not be stored in tracked sidecar assets")
     sidecar_bytes = sum(path.stat().st_size for path in ASSETS.rglob("*") if path.is_file())
+    coverage = json.loads((ASSETS / "coverage.json").read_text(encoding="utf-8"))
+    if (coverage["sidecarBytes"] != sidecar_bytes or coverage["uniqueReadingsIncludingWriting"] != len(actual)
+            or coverage["supported"] != len(actual) - unsupported or coverage["unsupported"] != unsupported):
+        raise ValueError("Chinese coverage counts/resource byte size are stale")
     if sidecar_bytes + manifest["modelBytes"] > 200_000_000:
         raise ValueError("Chinese bundled resource budget exceeds 200 MB")
     audition.emit("chinese_resources_checked", readings=len(actual), supported=len(actual) - unsupported,
@@ -176,6 +200,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.prepare:
         audition.prepare()
+        from prepare_melo_duration import prepare as prepare_duration
+        prepare_duration()
     elif args.build:
         build()
     else:

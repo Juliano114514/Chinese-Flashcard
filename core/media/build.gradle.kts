@@ -16,7 +16,7 @@ android {
   defaultConfig { minSdk = 28 }
   compileOptions { sourceCompatibility = JavaVersion.VERSION_11; targetCompatibility = JavaVersion.VERSION_11 }
   // Keep the mapped Chinese model uncompressed; the English model supports ZIP compression.
-  androidResources { noCompress += "chinese-speech/model.onnx" }
+  androidResources { noCompress += "chinese-speech/model-duration.onnx" }
 }
 
 @CacheableTask
@@ -32,7 +32,7 @@ abstract class BundleChineseModel : DefaultTask() {
   fun bundle() {
     val file = modelFile.get().asFile
     check(file.isFile) { "Run python tools/build_chinese_resources.py --prepare before building." }
-    check(file.length() == 170429550L) { "Unexpected Chinese model size." }
+    check(file.length() == 170429590L) { "Unexpected Chinese model size." }
     val hash = MessageDigest.getInstance("SHA-256")
     file.inputStream().buffered().use { stream ->
       val buffer = ByteArray(65536)
@@ -43,17 +43,19 @@ abstract class BundleChineseModel : DefaultTask() {
       }
     }
     val actual = hash.digest().joinToString("") { "%02x".format(it.toInt() and 255) }
-    check(actual == "bf30582eb1b012250a35b1a4a80e7dfbcf8485e7bb9de0d95efbbeef0e4ad86d") {
+    check(actual == "c6029f601d660bd8ab720d1b6a159638c7613d9e4cbc4bd06f347c372205de55") {
       "Chinese model checksum mismatch; prepare the pinned model again."
     }
-    val target = outputDirectory.get().file("chinese-speech/model.onnx").asFile
+    val target = outputDirectory.get().file("chinese-speech/model-duration.onnx").asFile
     check(target.parentFile.isDirectory || target.parentFile.mkdirs())
     file.copyTo(target, overwrite = true)
+    val legacy = outputDirectory.get().file("chinese-speech/model.onnx").asFile
+    check(!legacy.exists() || legacy.delete()) { "Could not remove the obsolete generated model." }
   }
 }
 
 val bundleChineseModel = tasks.register<BundleChineseModel>("bundleChineseModel") {
-  modelFile.set(rootProject.layout.projectDirectory.file(".gradle/melo-resource-source/model.onnx"))
+  modelFile.set(rootProject.layout.projectDirectory.file(".gradle/melo-resource-source/model-duration.onnx"))
   outputDirectory.set(layout.buildDirectory.dir("generated/chineseModelAssets"))
 }
 androidComponents.onVariants { variant ->

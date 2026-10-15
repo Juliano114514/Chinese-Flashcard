@@ -26,6 +26,7 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
+import org.json.JSONObject
 import java.security.MessageDigest
 import java.util.Locale
 import java.util.concurrent.atomic.AtomicLong
@@ -334,12 +335,17 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
       fingerprints.getOrPut(request.language) {
         val name = if (request.language == AppLanguage.CN) "chinese-speech/manifest.json" else "english-speech/manifest.json"
         val bytes = app.assets.open(name).use { it.readBytesBounded(2 * 1024 * 1024) }
-        hash(bytes)
+        if (request.language == AppLanguage.CN) JSONObject(bytes.toString(Charsets.UTF_8))
+          .getString("baseManifestSha256").also { require(it.matches(Regex("[0-9a-f]{64}"))) }
+        else hash(bytes)
       }
     }
     val pronunciation = if (request.language == AppLanguage.CN) request.chinesePronunciation?.let(ChineseSpeech::key).orEmpty() else ""
+    val render = if (request.language == AppLanguage.CN && request.chinesePronunciation?.let {
+        it.text.trim() == request.text && ChineseShortSpeech.isShortWord(it)
+      } == true) ChineseShortSpeech.RENDER_FINGERPRINT else "render-v1"
     // Scene, counterpart and sourceId belong to presentation, not the acoustic resource identity.
-    return hash("pcm-v1/render-v1/$fingerprint/${request.language}/$ENGLISH_SPEED_MULTIPLIER\n${request.text}\n$pronunciation"
+    return hash("pcm-v1/$render/$fingerprint/${request.language}/$ENGLISH_SPEED_MULTIPLIER\n${request.text}\n$pronunciation"
       .toByteArray(Charsets.UTF_8))
   }
 

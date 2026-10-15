@@ -34,7 +34,7 @@ android {
   }
   buildFeatures { compose = true }
   // ChineseSpeech maps this asset with openFd; EnglishSpeech reads its model as a stream.
-  androidResources { noCompress += "chinese-speech/model.onnx" }
+  androidResources { noCompress += "chinese-speech/model-duration.onnx" }
   // Android extracts the unchanged native libraries at install time, reducing APK download size.
   packaging { jniLibs { useLegacyPackaging = true } }
 }
