@@ -1,8 +1,8 @@
 # 开发与维护
 
-中文朗读已接入内置 MeloTTS FP32，默认原前端边界＋0.7 倍语速，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型缓存；Gradle 只校验、复制缓存模型，不自动下载。应用运行不联网获取模型。
+中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.5.1 / versionCode 11`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.5.2 / versionCode 12`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
@@ -18,7 +18,7 @@ Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `
 
 Release 开启 AGP 自带的 R8 与资源收缩；Debug 保留原调试配置。当前采用保守 keep：完整保留 `com.example.chinese_flashcard.**` 与 `ai.onnxruntime.**` 的类和成员，阻止 R8 删除、改名或优化这些受保护定义。前者保护 Room `_Impl` 查找、持久化枚举名称、Compose 保存状态与业务接口；后者保护 ONNX JNI 通过名称访问的类、构造器和成员，也符合 [ORT 官方 Android 要求](https://onnxruntime.ai/docs/build/android.html#note-proguard-rules-for-r8-minimization-android-app-builds-to-work)。第三方依赖仍使用各自的 consumer rules，Release 的 `mapping.txt` 位于 `app/build/outputs/mapping/release/`，排查该包时使用同一次构建的映射。
 
-app 与 core/media 的 `noCompress` 精确指定 `chinese-speech/model.onnx`：中文模型继续通过 `assets.openFd` 映射；英语模型可 ZIP 无损压缩，沿用 `AssetManager.open` 流复制、大小限制、哈希验证及缓存文件路径。模型、发音、词库、笔顺和许可的内容不变。英语模型首次复制增加解压工作，已有模型缓存继续复用。
+app 与 core/media 的 `noCompress` 精确指定 `chinese-speech/model-duration.onnx`：中文模型继续通过 `assets.openFd` 映射，只打包这一份模型。派生文件只比原模型增加 40 字节的时长输出声明，原算子、权重、输入和声线元数据一致；来源与派生哈希分别固定。英语模型可 ZIP 无损压缩，沿用 `AssetManager.open` 流复制、大小限制、哈希验证及缓存文件路径。英语模型首次复制增加解压工作，已有模型缓存继续复用。
 
 中文模型做过本地 JBR `java.util.zip.Deflater(6, true)` 无损压缩试算，从 170,429,550 到 157,834,154 字节，仅节省 12,595,396 字节（约 12.01 MiB）；Python zlib-ng 的同档试算约省 12.15 MiB，压缩实现不同会有小幅差异。若解压为独立文件再映射，将新增约 162.53 MiB 落盘，并引入首次准备、空间不足与中断恢复链路，因此保留现有 mmap，不新增应用冷启动解压步骤。此结果只衡量压缩量，不代表设备解压耗时或音质验证。
 
@@ -41,7 +41,7 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 
 历史第一阶段保持 `1.5.0 / 10`，以保存现有改动的本地 commit `71364fb` 为基线，仅开启保守 R8／资源收缩及英语模型压缩：Debug 为 395,148,415 字节（376.843 MiB），Release 未签名包为 362,331,860 字节（345.547 MiB）。这些是本地历史对照，不是当前交付包。
 
-当前 `1.5.1 / 11` 进一步启用 native 压缩，2026-10-14 本地构建结果如下。基线为上述 commit 构建的 `1.5.0 / 10`；两次构建使用同一依赖环境，当前包包含版本变化与上述局部缓存改码。表中 Release 大小使用未签名构建产物，手机使用的 debug key 签名副本仅作运行验证。
+`1.5.1 / 11` 启用 native 压缩时，2026-10-14 本地构建结果如下。这些包早于本次短词／单字策略接入，不能作为新增语音改动的 APK 或手机验证。基线为上述 commit 构建的 `1.5.0 / 10`；两次构建使用同一依赖环境，对照包包含版本变化与上述局部缓存改码。表中 Release 大小使用未签名构建产物，手机使用的 debug key 签名副本仅作运行验证。
 
 | 变体 | 本地基线字节 | 优化后字节 | 优化前后 MiB | 降幅 |
 | --- | ---: | ---: | ---: | ---: |
