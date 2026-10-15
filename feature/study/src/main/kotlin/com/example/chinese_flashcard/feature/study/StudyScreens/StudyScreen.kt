@@ -30,7 +30,6 @@ import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.SpeechMode
 import com.example.chinese_flashcard.core.domain.SpeechScene
-import com.example.chinese_flashcard.core.domain.wordSpeechResources
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
 import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import kotlinx.coroutines.flow.first
@@ -38,54 +37,16 @@ import kotlinx.coroutines.flow.first
 @Composable
 fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> Unit,
   onSpeakAndWait: suspend (SpeechRequest) -> Boolean, ipaResolver: (String) -> String? = { null },
-  onPrepareVoice: suspend (List<SpeechRequest>) -> Boolean = { true },
-  voiceReady: suspend (List<SpeechRequest>) -> Boolean = { true }, playbackPreparing: Boolean = false) {
+  playbackPreparing: Boolean = false) {
   val state by vm.state.collectAsStateWithLifecycle()
   val card = state.card
   val generation = state.directionGeneration
-  val latestPrepareVoice by rememberUpdatedState(onPrepareVoice)
-  val latestVoiceReady by rememberUpdatedState(voiceReady)
   val lifecycle = LocalLifecycleOwner.current.lifecycle
-  var loadingVoice by remember(card?.id, card?.phase, card?.word, generation) { mutableStateOf(false) }
-  LaunchedEffect(card?.id, card?.phase, card?.word, generation, lifecycle) {
-    val word = card?.takeIf {
-      it.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.FEEDBACK, CardPhase.EXPLANATION)
-    }?.word ?: return@LaunchedEffect
+  LaunchedEffect(vm, lifecycle) {
     lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-      try {
-        val requests = wordSpeechResources(word)
-        loadingVoice = !latestVoiceReady(requests)
-        if (loadingVoice) latestPrepareVoice(requests)
-      } catch (error: kotlinx.coroutines.CancellationException) { throw error }
-      catch (_: Exception) { /* Playback keeps the normal offline fallback and retry path. */ }
-      catch (_: LinkageError) { /* A missing native runtime must not block studying. */ }
-      finally { loadingVoice = false }
-      awaitCancellation()
-    }
-  }
-  val preloadWords = state.settings.speechPreloadWords
-  val preloadCard = card?.takeIf { it.phase != CardPhase.FINISHED && !it.isSkipped && !state.loading }
-  // Keep the lookahead window across phase changes; only a new card/context replaces its work.
-  LaunchedEffect(vm, preloadCard?.id, preloadCard?.word, preloadCard?.learningLanguage,
-    generation, preloadWords, lifecycle) {
-    val current = preloadCard ?: return@LaunchedEffect
-    if (preloadWords == 0) return@LaunchedEffect
-    lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-      try {
-        val words = vm.speechPreloadWords(current.id, preloadWords, current.learningLanguage, generation)
-        for (word in words) {
-          if (word.id == current.word.id) continue // The current-page effect prepares this word.
-          currentCoroutineContext().ensureActive()
-          val latest = vm.state.value
-          if (latest.directionGeneration != generation || latest.card?.id != current.id ||
-            latest.card?.phase == CardPhase.FINISHED || latest.card?.isSkipped == true) break
-          val requests = wordSpeechResources(word)
-          if (!latestVoiceReady(requests)) latestPrepareVoice(requests)
-        }
-      } catch (error: kotlinx.coroutines.CancellationException) { throw error }
-      catch (_: Exception) { /* Optional lookahead must never block studying or playback. */ }
-      catch (_: LinkageError) { /* Actual playback retains the normal offline fallback. */ }
-      awaitCancellation()
+      vm.setStudySpeechActive(true)
+      try { awaitCancellation() }
+      finally { vm.setStudySpeechActive(false) }
     }
   }
   var selectedOption by rememberSaveable(card?.id, generation) { mutableStateOf<String?>(null) }
@@ -232,7 +193,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     onCollection = vm::setCollected,
     onSkip = { id, skipped -> card?.let { vm.setSkipped(id, skipped, it.learningLanguage) } },
     onRetry = vm::retry, ipaResolver = ipaResolver,
-    voiceLoading = loadingVoice || playbackPreparing ||
+    voiceLoading = state.speechPreparing || playbackPreparing ||
       LocalSpeechPlaybackState.current.phase == SpeechPlaybackPhase.PREPARING)
   StudyCompletionEffects(card?.id, generation, completed && seenActiveSession, sounds, Modifier.fillMaxSize(),
     soundEnabled = state.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK,

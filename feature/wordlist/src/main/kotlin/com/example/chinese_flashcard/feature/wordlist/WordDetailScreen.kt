@@ -56,7 +56,6 @@ import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordPart
-import com.example.chinese_flashcard.core.domain.wordSpeechResources
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.FlashcardLayout
@@ -77,16 +76,16 @@ import kotlinx.coroutines.awaitCancellation
 
 @Composable
 fun WordDetailScreen(vm: WordDetailViewModel, onBack: () -> Unit, onWriting: (String) -> Unit, onSpeak: (SpeechRequest) -> Unit,
-  ipaResolver: (String) -> String? = { null }, onPreload: (List<SpeechRequest>) -> Unit = {}) {
+  ipaResolver: (String) -> String? = { null }) {
   val state by vm.state.collectAsStateWithLifecycle()
   val lifecycle = LocalLifecycleOwner.current.lifecycle
   val latestSpeak by rememberUpdatedState(onSpeak)
-  val latestPreload by rememberUpdatedState(onPreload)
-  LaunchedEffect(state.word, lifecycle) {
-    state.word?.let { word -> lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-      latestPreload(wordSpeechResources(word))
-      awaitCancellation()
-    } }
+  LaunchedEffect(vm, lifecycle) {
+    lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+      vm.setSpeechActive(true)
+      try { awaitCancellation() }
+      finally { vm.setSpeechActive(false) }
+    }
   }
   BackHandler(enabled = state.busy) { /* Finish opening the writing session before leaving. */ }
   LaunchedEffect(vm, state.word?.id, state.loading, lifecycle) {

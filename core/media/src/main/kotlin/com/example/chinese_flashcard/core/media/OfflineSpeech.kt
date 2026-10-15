@@ -1,6 +1,7 @@
 package com.example.chinese_flashcard.core.media
 
 import android.content.Context
+import android.content.pm.ApplicationInfo
 import android.media.AudioAttributes
 import android.media.AudioFocusRequest
 import android.media.AudioFormat
@@ -10,9 +11,12 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
+import android.util.Log
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.UiMessageKey
+import com.example.chinese_flashcard.core.domain.SpeechCacheController
+import com.example.chinese_flashcard.core.domain.SpeechCacheUsage
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -40,6 +44,7 @@ import kotlin.coroutines.resume
 
 /** Shared persistent resources and cancellable playback; model work never runs on the UI thread. */
 class OfflineSpeech(context: Context) : AutoCloseable {
+  private val debug = context.applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
   private val main = Handler(Looper.getMainLooper())
   private val manager = context.applicationContext.getSystemService(AudioManager::class.java)
   private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
@@ -51,6 +56,8 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
   private val system = SystemOfflineSpeech(context, attributes)
   private val resources = SpeechResources(context, ChineseSpeech(context), EnglishSpeech(context), system)
+  private val cacheCoordinator = SpeechPreloadCoordinator(resources)
+  val cache: SpeechCacheController = cacheCoordinator
   val cacheUsage: StateFlow<SpeechCacheUsage> = resources.cacheUsage
   val resourceChanges: StateFlow<Long> = resources.changes
   private val focus = AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
@@ -59,8 +66,6 @@ class OfflineSpeech(context: Context) : AutoCloseable {
   @Volatile private var current: Utterance? = null
   @Volatile private var playingTrack: AudioTrack? = null
   private var playbackJob: Job? = null
-  private var englishWarmJob: Job? = null
-  private var chineseWarmJob: Job? = null
 
   private class Utterance(val speech: SpeechRequest, val waiter: CancellableContinuation<Boolean>? = null,
     val onStarted: () -> Unit = {}) {
@@ -78,40 +83,6 @@ class OfflineSpeech(context: Context) : AutoCloseable {
       onMain { if (waiter.isActive) requestSpeech(utterance) }
     }
   } ?: false
-
-  /** Caller cancellation withdraws its interests, preserving another subscriber's foreground task. */
-  suspend fun prefetch(requests: List<SpeechRequest>): Boolean = try { resources.prefetch(requests) }
-    catch (error: CancellationException) { throw error }
-    catch (_: Exception) { false }
-    catch (_: LinkageError) { false }
-
-  /** Checks completed resources only; this does not start synthesis or audible output. */
-  suspend fun isReady(requests: List<SpeechRequest>): Boolean = try { resources.isReady(requests) }
-    catch (error: CancellationException) { throw error }
-    catch (_: Exception) { false }
-
-  fun configureCache(maxMiB: Int) = resources.configureCache(maxMiB)
-  fun clearCache() = resources.clearCache()
-  fun pausePreloading() = resources.pausePreloading()
-  fun resumePreloading() = resources.resumePreloading()
-
-  /** Compatibility entry points; the page supplies its complete desired resource window. */
-  fun preloadEnglish(texts: List<String> = emptyList()) { onMain {
-    if (closed) return@onMain
-    englishWarmJob?.cancel()
-    englishWarmJob = scope.launch {
-      delay(220)
-      prefetch(texts.filter(String::isNotBlank).map { SpeechRequest(it, AppLanguage.EN) })
-    }
-  } }
-  fun preloadChinese(requests: List<SpeechRequest>) { onMain {
-    if (closed) return@onMain
-    chineseWarmJob?.cancel()
-    chineseWarmJob = scope.launch {
-      delay(220)
-      prefetch(requests.filter { it.language == AppLanguage.CN && it.text.isNotBlank() })
-    }
-  } }
 
   private fun requestSpeech(utterance: Utterance) {
     if (closed || utterance.speech.text.isBlank()) { complete(utterance, false); return }
@@ -229,6 +200,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     if (current === utterance && !closed && !utterance.started) {
       utterance.started = true
       mutablePlaybackPreparing.value = false
+      if (debug) Log.d("SpeechCache", "playback=started language=${utterance.speech.language} scene=${utterance.speech.scene}")
       utterance.onStarted()
     }
   }
@@ -268,7 +240,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     if (closed) return@onMain
     closed = true
     stopOnMain()
-    englishWarmJob?.cancel(); chineseWarmJob?.cancel()
+    cacheCoordinator.close()
     scope.launch { try { resources.close() } finally { scope.cancel() } }
   } }
 }

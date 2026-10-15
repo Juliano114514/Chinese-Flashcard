@@ -51,9 +51,7 @@ import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
-import com.example.chinese_flashcard.core.domain.ChinesePronunciation
 import com.example.chinese_flashcard.core.domain.SpeechScene
-import com.example.chinese_flashcard.core.domain.SpeechOptions
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackState
 import com.example.chinese_flashcard.core.media.EnglishPronunciations
@@ -61,7 +59,6 @@ import com.example.chinese_flashcard.core.ui.AppLanguageProvider
 import com.example.chinese_flashcard.core.ui.LocalExplanationOptions
 import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import com.example.chinese_flashcard.core.ui.uiText
-import com.example.chinese_flashcard.core.media.OfflineSpeech
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
@@ -206,9 +203,10 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val context = LocalContext.current
   val application = context.applicationContext as FlashcardApplication
   val speech = application.speech
+  val speechCache = speech.cache
   val study: StudyViewModel = viewModel(factory = factory {
     StudyViewModel(repositories.study, repositories.settings, repositories.wordState, repositories.wordlist,
-      prefetchSpeech = speech::prefetch, speechReady = speech::isReady, speechChanges = speech.resourceChanges)
+      speechCache = speechCache)
   })
   val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
   val sharedViewModelOwner = requireNotNull(LocalViewModelStoreOwner.current)
@@ -221,7 +219,6 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val latestSpeechOptions by rememberUpdatedState(settings.speechOptions)
   val latestSpeechLanguage by rememberUpdatedState(settings.learningLanguage)
   val manualPlayback = remember { NavigationJob() }
-  val pagePreloading = remember { NavigationJob() }
   val playbackOperation = remember { SpeechOperation() }
   val configuredWait: suspend (SpeechRequest) -> Boolean = configuredWait@ { request ->
     if (request.scene == SpeechScene.HOME_WORD && request.language != latestSpeechLanguage) return@configuredWait false
@@ -255,7 +252,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     speech.stop()
     playbackOperation.cancel()
   }
-  LaunchedEffect(settings.speechCacheMiB) { speech.configureCache(settings.speechCacheMiB) }
+  LaunchedEffect(settings.speechCacheMiB) { speechCache.configure(settings.speechCacheMiB) }
   val pronunciations by produceState<EnglishPronunciations?>(null, context.applicationContext) {
     value = withContext(Dispatchers.IO) {
       try { EnglishPronunciations.load(context.applicationContext) }
@@ -266,18 +263,20 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   var openLanguages by rememberSaveable { mutableStateOf(false) }
   var appliedLearningLanguage by rememberSaveable { mutableStateOf(settings.learningLanguage) }
   val owner = LocalLifecycleOwner.current
-  DisposableEffect(owner, speech) {
+  DisposableEffect(owner, speech, speechCache) {
+    speechCache.setForeground(owner.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED))
     val observer = LifecycleEventObserver { _, event ->
+      if (event == Lifecycle.Event.ON_START) speechCache.setForeground(true)
       if (event == Lifecycle.Event.ON_STOP) {
-        manualPlayback.job?.cancel(); pagePreloading.job?.cancel()
-        speech.stop(); speech.pausePreloading(); playbackOperation.cancel()
+        manualPlayback.job?.cancel()
+        speech.stop(); speechCache.setForeground(false); playbackOperation.cancel()
       }
       if (event == Lifecycle.Event.ON_RESUME) study.refresh()
     }
     owner.lifecycle.addObserver(observer)
     onDispose {
-      owner.lifecycle.removeObserver(observer); manualPlayback.job?.cancel(); pagePreloading.job?.cancel()
-      speech.stop(); speech.pausePreloading(); playbackOperation.cancel()
+      owner.lifecycle.removeObserver(observer); manualPlayback.job?.cancel()
+      speech.stop(); speechCache.setForeground(false); playbackOperation.cancel()
     }
   }
   val snackbar = remember { SnackbarHostState() }
@@ -288,21 +287,20 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val entry by nav.currentBackStackEntryAsState()
   val route = entry?.destination?.route
   DisposableEffect(entry, speech) { onDispose {
-    manualPlayback.job?.cancel(); pagePreloading.job?.cancel(); speech.stop(); playbackOperation.cancel()
+    manualPlayback.job?.cancel(); speech.stop(); playbackOperation.cancel()
   } }
   LaunchedEffect(route, owner) {
     owner.lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-      speech.resumePreloading()
       study.setHomeSpeechActive(route == "today")
       try { awaitCancellation() }
-      finally { study.setHomeSpeechActive(false); speech.pausePreloading() }
+      finally { study.setHomeSpeechActive(false) }
     }
   }
   val studyState = study.state.collectAsStateWithLifecycle()
   val studyBusy by remember(studyState) { derivedStateOf { studyState.value.busy } }
   val stage by remember(studyState) { derivedStateOf { studyState.value.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY } }
   var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Int>?>(null) }
-  StudyNavigationEffects(studyState, application, route, learnMoreRequest,
+  StudyNavigationEffects(studyState, route, learnMoreRequest,
     onRequestHandled = { learnMoreRequest = null }, onStudy = { nav.navigate("study") { launchSingleTop = true } })
   BackHandler(enabled = route == "study" && studyBusy) { }
   val openWriting: (String) -> Unit = { id ->
@@ -385,7 +383,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       }
       composable("profile") { ProfileScreen(profile, onSettings = { nav.navigate("settings") { launchSingleTop = true } }) }
       composable("settings") {
-        val speechCacheUsage by speech.cacheUsage.collectAsStateWithLifecycle()
+        val speechCacheUsage by speechCache.usage.collectAsStateWithLifecycle()
         SettingScreen(profile, onBack = { nav.popBackStack() },
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
           "application/octet-stream", "application/vnd.ms-excel")) },
@@ -398,7 +396,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         defaultWordlistError = defaultWordlist.error,
         languageSwitchEnabled = !studyBusy,
         cacheUsedBytes = speechCacheUsage.usedBytes,
-        onClearSpeechCache = speech::clearCache,
+        onClearSpeechCache = speechCache::clear,
         onRetryDefaultWordlist = {
           if (defaultWordlistRetry.job?.isActive != true) {
             defaultWordlistRetry.job = navigationScope.launch {
@@ -419,22 +417,14 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         val wordId = requireNotNull(detailEntry.arguments?.getString("wordId"))
         val vm: WordDetailViewModel = viewModel(detailEntry, key = "$wordId:${settings.learningLanguage}",
           factory = factory {
-            WordDetailViewModel(wordId, repositories.wordlist, repositories.study, repositories.wordState, settings.learningLanguage)
+            WordDetailViewModel(wordId, repositories.wordlist, repositories.study, repositories.wordState,
+              settings.learningLanguage, speechCache)
           })
         WordDetailScreen(vm, onBack = { speech.stop(); nav.popBackStack() }, onWriting = { sessionId ->
           if (nav.currentBackStackEntry == detailEntry) {
             nav.navigate("word-writing/$sessionId") { launchSingleTop = true }
           }
-        }, onSpeak = configuredSpeak, ipaResolver = { pronunciations?.ipa(it) },
-          onPreload = { requests ->
-            pagePreloading.job?.cancel()
-            pagePreloading.job = navigationScope.launch {
-              try { speech.prefetch(requests) }
-              catch (error: CancellationException) { throw error }
-              catch (_: Exception) { /* A manual request retains normal fallback behavior. */ }
-              catch (_: LinkageError) { /* Native speech may be unavailable on this device. */ }
-            }
-          })
+        }, onSpeak = configuredSpeak, ipaResolver = { pronunciations?.ipa(it) })
       }
       composable("word-writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -450,7 +440,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         StudyScreen(study, onBack = {
           if (!study.state.value.busy) { speech.stop(); nav.popBackStack(); study.refresh() }
         }, onWriting = openWriting, onSpeakAndWait = configuredWait, ipaResolver = { pronunciations?.ipa(it) },
-          onPrepareVoice = speech::prefetch, voiceReady = speech::isReady, playbackPreparing = playbackPreparing)
+          playbackPreparing = playbackPreparing)
       }
       composable("writing/{id}") { writingEntry ->
         val id = requireNotNull(writingEntry.arguments?.getString("id"))
@@ -484,12 +474,9 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
 /** Read detailed study updates here so card/shuffle changes do not rebuild the navigation host. */
 @Composable
 private fun StudyNavigationEffects(studyState: State<StudyUiState>,
-  application: FlashcardApplication, route: String?,
+  route: String?,
   learnMoreRequest: Triple<String, Int, Int>?, onRequestHandled: () -> Unit, onStudy: () -> Unit) {
   val state by studyState
-  LaunchedEffect(application, state.loading, state.snapshot != null) {
-    if (!state.loading) state.snapshot?.let { application.preloadLearnSpeechOnce(state.settings, it) }
-  }
   LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
     val request = learnMoreRequest ?: return@LaunchedEffect
     if (route != "today" || state.today?.date != request.first ||

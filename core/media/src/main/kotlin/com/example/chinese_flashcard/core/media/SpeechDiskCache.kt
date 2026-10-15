@@ -2,6 +2,7 @@ package com.example.chinese_flashcard.core.media
 
 import android.content.Context
 import android.util.AtomicFile
+import com.example.chinese_flashcard.core.domain.SpeechCacheUsage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.ensureActive

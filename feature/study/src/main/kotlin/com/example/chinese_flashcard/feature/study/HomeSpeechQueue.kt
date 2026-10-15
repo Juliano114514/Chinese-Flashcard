@@ -6,6 +6,7 @@ import com.example.chinese_flashcard.core.domain.SpeechMode
 import com.example.chinese_flashcard.core.domain.SpeechOptions
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.SpeechScene
+import com.example.chinese_flashcard.core.domain.SpeechCachePriority
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -19,7 +20,7 @@ data class HomeSpeechEvent(val token: Long, val request: SpeechRequest)
 /** Main-thread queue ownership; media work is injected and never changes study progress. */
 internal class HomeSpeechQueue(
   private val scope: CoroutineScope,
-  private val prepare: suspend (List<SpeechRequest>) -> Boolean,
+  private val prepare: suspend (List<SpeechRequest>, Int) -> Boolean,
   private val isReady: suspend (List<SpeechRequest>) -> Boolean,
   private val currentWord: () -> WordlistItem?,
   private val onWaiting: (Boolean, Boolean) -> Unit,
@@ -44,6 +45,7 @@ internal class HomeSpeechQueue(
   private var selectionJob: Job? = null
   private var validationJob: Job? = null
   private var validationPending = false
+  private var validationRetryPending = false
   private var pending = false
 
   fun configure(pool: List<WordlistItem>, language: AppLanguage, options: SpeechOptions, capacity: Int) {
@@ -72,9 +74,13 @@ internal class HomeSpeechQueue(
     publishReadyCount()
   }
 
-  fun refreshReadiness() {
+  fun refreshReadiness(retryMissing: Boolean = true) {
     if (!active) return
-    if (validationJob?.isActive == true) { validationPending = true; return }
+    if (validationJob?.isActive == true) {
+      validationPending = true
+      validationRetryPending = validationRetryPending || retryMissing
+      return
+    }
     val version = generation
     val job = scope.launch(start = CoroutineStart.LAZY) {
       try {
@@ -84,14 +90,19 @@ internal class HomeSpeechQueue(
           if (candidate !in candidates) continue
           candidate.ready = available
           if (available) candidate.failed = false
-          else if (candidate.job?.isActive != true && !candidate.failed) prepare(candidate)
+          else if (retryMissing && candidate.job?.isActive != true && !candidate.failed) prepare(candidate)
         }
         publishReadyCount()
         consumeReady()
       } finally {
         if (version == generation) {
           validationJob = null
-          if (validationPending) { validationPending = false; refreshReadiness() }
+          if (validationPending) {
+            val retry = validationRetryPending
+            validationPending = false
+            validationRetryPending = false
+            refreshReadiness(retry)
+          }
         }
       }
     }
@@ -105,6 +116,7 @@ internal class HomeSpeechQueue(
     candidates.forEach { it.readinessRetries = 0 }
     pending = true
     onWaiting(true, false)
+    refreshReadiness()
     consumeReady()
   }
 
@@ -128,12 +140,15 @@ internal class HomeSpeechQueue(
     validationJob?.cancel()
     validationJob = null
     validationPending = false
+    validationRetryPending = false
     candidates.forEach { it.job?.cancel(); it.job = null }
   }
 
   private fun warmCurrent() {
     // Queue the currently displayed word before the unseen candidates.
-    currentWord()?.let { word -> warmJob = scope.launch { quietlyPrepare(requests(word)) } }
+    currentWord()?.let { word -> warmJob = scope.launch {
+      quietlyPrepare(requests(word), SpeechCachePriority.CURRENT_WORD)
+    } }
   }
 
   private fun publishReadyCount() = onReadyCount(candidates.count { it.ready && !it.failed })
@@ -185,8 +200,8 @@ internal class HomeSpeechQueue(
   catch (_: Exception) { false }
   catch (_: LinkageError) { false }
 
-  private suspend fun quietlyPrepare(requests: List<SpeechRequest>): Boolean = try {
-    requests.isEmpty() || prepare(requests)
+  private suspend fun quietlyPrepare(requests: List<SpeechRequest>, priority: Int = SpeechCachePriority.UPCOMING_WORD): Boolean = try {
+    requests.isEmpty() || prepare(requests, priority)
   } catch (error: CancellationException) {
     throw error
   } catch (_: Exception) {

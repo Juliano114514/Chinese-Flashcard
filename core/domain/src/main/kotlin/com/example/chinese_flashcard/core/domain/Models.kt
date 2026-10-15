@@ -99,6 +99,8 @@ interface StudyRepository {
   /** Up to maxWords from the saved Learn progress, including its resumable card; never creates a plan. */
   suspend fun peekLearnSpeechWords(maxWords: Int, expectedLanguage: AppLanguage,
     expectedContextVersion: Long, expectedStage: VocabularyStage): List<WordEntry>
+  /** First words of the currently available Home entries; never creates or advances study work. */
+  suspend fun peekEntrySpeechWords(expectedLanguage: AppLanguage, expectedContextVersion: Long): List<WordEntry>
   suspend fun start(kind: StudyKind, expectedLanguage: AppLanguage? = null): StudySnapshot
   suspend fun selectStage(stage: VocabularyStage, expectedLanguage: AppLanguage? = null): StudySnapshot
   suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int,

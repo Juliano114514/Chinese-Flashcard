@@ -12,6 +12,13 @@ import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordStateRepository
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.WordUserState
+import com.example.chinese_flashcard.core.domain.SpeechCacheController
+import com.example.chinese_flashcard.core.domain.SpeechCacheDemand
+import com.example.chinese_flashcard.core.domain.SpeechCacheOwner
+import com.example.chinese_flashcard.core.domain.SpeechCachePriority
+import com.example.chinese_flashcard.core.domain.SpeechCacheWindow
+import com.example.chinese_flashcard.core.domain.wordSpeechBasics
+import com.example.chinese_flashcard.core.domain.wordSpeechExamples
 import java.text.Normalizer
 import java.util.Locale
 import kotlinx.coroutines.CancellationException
@@ -20,6 +27,9 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
@@ -176,14 +186,43 @@ class WordDetailViewModel(
   private val study: StudyRepository,
   private val wordState: WordStateRepository,
   private val learningLanguage: AppLanguage = AppLanguage.CN,
+  private val speechCache: SpeechCacheController,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(WordDetailUiState(learningLanguage = learningLanguage))
   val state = mutableState.asStateFlow()
   private var loading: Job? = null
   private var spoken = false
   private var retryAction: () -> Unit = ::load
+  private val speechVisible = MutableStateFlow(false)
+  private val speechOwner = SpeechCacheOwner("word/detail")
 
-  init { load() }
+  init { load(); observeSpeechWindow() }
+
+  fun setSpeechActive(active: Boolean) { speechVisible.value = active }
+
+  private fun observeSpeechWindow() {
+    viewModelScope.launch {
+      combine(state.map { it.word to it.contextVersion }.distinctUntilChanged(), speechVisible) { content, visible ->
+        content.takeIf { visible }
+      }.distinctUntilChanged().collectLatest { content ->
+        if (content == null) { speechCache.release(speechOwner); return@collectLatest }
+        val word = content.first
+        if (word == null) { speechCache.release(speechOwner); return@collectLatest }
+        try {
+          val demands = wordSpeechBasics(word).map { SpeechCacheDemand(it, SpeechCachePriority.CURRENT_WORD) } +
+            wordSpeechExamples(word).map { SpeechCacheDemand(it, SpeechCachePriority.CURRENT_EXAMPLE) }
+          speechCache.updateWindow(speechOwner, SpeechCacheWindow(content.second, demands))
+        } catch (error: CancellationException) { throw error }
+        catch (_: Exception) { speechCache.release(speechOwner) }
+        catch (_: LinkageError) { speechCache.release(speechOwner) }
+      }
+    }
+  }
+
+  override fun onCleared() {
+    speechCache.release(speechOwner)
+    super.onCleared()
+  }
 
   fun retry() {
     if (state.value.busy) return

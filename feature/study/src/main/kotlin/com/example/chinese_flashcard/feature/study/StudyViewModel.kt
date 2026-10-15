@@ -14,16 +14,23 @@ import com.example.chinese_flashcard.core.domain.WordlistRepository
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.UiMessageKey
-import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.WordEntry
+import com.example.chinese_flashcard.core.domain.CardPhase
+import com.example.chinese_flashcard.core.domain.SpeechCacheController
+import com.example.chinese_flashcard.core.domain.SpeechCacheDemand
+import com.example.chinese_flashcard.core.domain.SpeechCacheOwner
+import com.example.chinese_flashcard.core.domain.SpeechCachePriority
+import com.example.chinese_flashcard.core.domain.SpeechCacheWindow
+import com.example.chinese_flashcard.core.domain.prepare
+import com.example.chinese_flashcard.core.domain.wordSpeechBasics
+import com.example.chinese_flashcard.core.domain.wordSpeechExamples
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.emptyFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -53,6 +60,7 @@ data class StudyUiState(
   val homeShuffleReady: Int = 0,
   val homeShuffleFailed: Boolean = false,
   val homeSpeechEvent: HomeSpeechEvent? = null,
+  val speechPreparing: Boolean = false,
   val directionGeneration: Long = 0,
 ) {
   val today get() = snapshot?.today
@@ -117,9 +125,7 @@ class StudyViewModel(
   private val settings: SettingsRepository,
   private val wordState: WordStateRepository,
   private val wordlist: WordlistRepository,
-  prefetchSpeech: suspend (List<SpeechRequest>) -> Boolean = { true },
-  speechReady: suspend (List<SpeechRequest>) -> Boolean = { true },
-  speechChanges: Flow<Long> = emptyFlow(),
+  private val speechCache: SpeechCacheController,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(StudyUiState())
   val state = mutableState.asStateFlow()
@@ -135,7 +141,16 @@ class StudyViewModel(
   private var homeWordObservation: Job? = null
   private var homeSpeechToken = 0L
   private var homeSpeechActive = false
-  private val homeQueue = HomeSpeechQueue(viewModelScope, prefetchSpeech, speechReady,
+  private val homeSpeechVisibility = MutableStateFlow(false)
+  private val studySpeechVisibility = MutableStateFlow(false)
+  private val studySpeechOwner = SpeechCacheOwner("study/window")
+  private val currentSpeechOwner = SpeechCacheOwner("study/current")
+  private val entrySpeechOwner = SpeechCacheOwner("home/entries")
+  private val homeQueue = HomeSpeechQueue(viewModelScope,
+    prepare = { requests, priority -> speechCache.prepare(SpeechCacheOwner("home/shuffle"),
+      SpeechCacheWindow(state.value.directionGeneration,
+        requests.map { SpeechCacheDemand(it, priority) })) },
+    isReady = speechCache::isReady,
     currentWord = { state.value.homeWord },
     onWaiting = { waiting, failed -> mutableState.update { it.copy(homeShuffleWaiting = waiting, homeShuffleFailed = failed) } },
     onSelected = { word, request -> mutableState.update { current ->
@@ -148,8 +163,15 @@ class StudyViewModel(
     } }, onReadyCount = { count -> mutableState.update { it.copy(homeShuffleReady = count) } })
 
   init {
-    observe(); observeHomeWords()
-    viewModelScope.launch { speechChanges.collect { homeQueue.refreshReadiness() } }
+    observe(); observeHomeWords(); observeSpeechWindows()
+    viewModelScope.launch { speechCache.changes.collect { homeQueue.refreshReadiness(retryMissing = false) } }
+    viewModelScope.launch { speechCache.state.collect { windows ->
+      val current = state.value
+      val window = windows[currentSpeechOwner]
+      val preparing = studySpeechVisibility.value && current.card?.phase != CardPhase.FINISHED &&
+        window != null && window.contextVersion == current.directionGeneration && (window.queued > 0 || window.preparing > 0)
+      mutableState.update { it.copy(speechPreparing = preparing) }
+    } }
   }
 
   fun shuffleHomeWord() {
@@ -161,7 +183,13 @@ class StudyViewModel(
 
   fun setHomeSpeechActive(active: Boolean) {
     homeSpeechActive = active
+    homeSpeechVisibility.value = active
     syncHomeSpeechActivity()
+  }
+
+  fun setStudySpeechActive(active: Boolean) {
+    studySpeechVisibility.value = active
+    if (!active) mutableState.update { it.copy(speechPreparing = false) }
   }
 
   private fun syncHomeSpeechActivity() {
@@ -177,9 +205,81 @@ class StudyViewModel(
     if (it.homeSpeechEvent?.token == token) it.copy(homeSpeechEvent = null) else it
   } }
 
-  suspend fun speechPreloadWords(cardId: String, nextCount: Int, language: AppLanguage,
-    contextVersion: Long): List<WordEntry> = withContext(Dispatchers.IO) {
-    study.peekSpeechWords(cardId, nextCount, language, contextVersion)
+  private data class StudySpeechWindowKey(val cardId: String, val word: WordEntry,
+    val language: AppLanguage, val contextVersion: Long, val upcomingCount: Int)
+
+  private fun observeSpeechWindows() {
+    viewModelScope.launch {
+      combine(state.map { current ->
+        current.card?.takeIf { !current.loading && !it.isSkipped && it.phase != CardPhase.FINISHED }?.let {
+          StudySpeechWindowKey(it.id, it.word, it.learningLanguage, current.directionGeneration,
+            current.settings.speechPreloadWords)
+        }
+      }.distinctUntilChanged(), studySpeechVisibility) { key, visible -> key.takeIf { visible } }
+        .distinctUntilChanged().collectLatest { key ->
+          if (key == null) {
+            speechCache.release(currentSpeechOwner)
+            speechCache.release(studySpeechOwner)
+            return@collectLatest
+          }
+          var currentRegistered = false
+          try {
+            val basic = wordSpeechBasics(key.word)
+            speechCache.updateWindow(currentSpeechOwner, SpeechCacheWindow(key.contextVersion,
+              basic.map { SpeechCacheDemand(it, SpeechCachePriority.CURRENT_WORD) }))
+            currentRegistered = true
+            val upcoming = if (key.upcomingCount == 0) emptyList() else withContext(Dispatchers.IO) {
+              study.peekSpeechWords(key.cardId, key.upcomingCount, key.language, key.contextVersion)
+            }.filter { it.id != key.word.id }
+            val demands = buildList {
+              basic.forEach { add(SpeechCacheDemand(it, SpeechCachePriority.CURRENT_WORD)) }
+              upcoming.forEachIndexed { index, word -> wordSpeechBasics(word).forEach {
+                add(SpeechCacheDemand(it, SpeechCachePriority.UPCOMING_WORD + index))
+              } }
+              wordSpeechExamples(key.word).forEach { add(SpeechCacheDemand(it, SpeechCachePriority.CURRENT_EXAMPLE)) }
+              upcoming.forEachIndexed { index, word -> wordSpeechExamples(word).forEach {
+                add(SpeechCacheDemand(it, SpeechCachePriority.UPCOMING_EXAMPLE + index))
+              } }
+            }
+            speechCache.updateWindow(studySpeechOwner, SpeechCacheWindow(key.contextVersion, demands))
+          } catch (error: CancellationException) { throw error }
+          catch (_: Exception) {
+            if (!currentRegistered) speechCache.release(currentSpeechOwner)
+            speechCache.release(studySpeechOwner)
+          }
+          catch (_: LinkageError) {
+            if (!currentRegistered) speechCache.release(currentSpeechOwner)
+            speechCache.release(studySpeechOwner)
+          }
+        }
+    }
+    viewModelScope.launch {
+      combine(state.map { current -> current.snapshot.takeIf {
+        !current.loading && current.settings.speechPreloadWords > 0
+      } }.distinctUntilChanged(),
+        homeSpeechVisibility) { snapshot, visible -> snapshot.takeIf { visible } }
+        .distinctUntilChanged().collectLatest { snapshot ->
+          if (snapshot == null) { speechCache.release(entrySpeechOwner); return@collectLatest }
+          try {
+            val words = withContext(Dispatchers.IO) {
+              study.peekEntrySpeechWords(snapshot.learningLanguage, snapshot.contextVersion)
+            }
+            speechCache.updateWindow(entrySpeechOwner, SpeechCacheWindow(snapshot.contextVersion,
+              words.flatMapIndexed { index, word -> wordSpeechBasics(word).map {
+                SpeechCacheDemand(it, SpeechCachePriority.HOME_ENTRY + index)
+              } }))
+          } catch (error: CancellationException) { throw error }
+          catch (_: Exception) { speechCache.release(entrySpeechOwner) }
+          catch (_: LinkageError) { speechCache.release(entrySpeechOwner) }
+        }
+    }
+  }
+
+  override fun onCleared() {
+    speechCache.release(currentSpeechOwner)
+    speechCache.release(studySpeechOwner)
+    speechCache.release(entrySpeechOwner)
+    super.onCleared()
   }
 
   private fun observeHomeWords() {

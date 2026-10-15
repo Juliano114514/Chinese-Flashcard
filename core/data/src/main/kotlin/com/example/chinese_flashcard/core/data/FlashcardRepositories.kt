@@ -358,6 +358,117 @@ class FlashcardRepositories(context: Context) {
       }
     }
 
+    override suspend fun peekEntrySpeechWords(expectedLanguage: AppLanguage,
+      expectedContextVersion: Long): List<WordEntry> = operationMutex.withLock {
+      // Preview only saved work. Normal startup owns seeding, midnight rollover and stage planning.
+      database.withTransaction {
+        val settings = rawDao.settings() ?: return@withTransaction emptyList()
+        if (settings.learningLanguage != expectedLanguage.name) return@withTransaction emptyList()
+        val speechDao = ScopedFlashcardDao(rawDao) { expectedLanguage.name }
+        val state = speechDao.appState() ?: return@withTransaction emptyList()
+        val day = today()
+        if (!state.seeded || state.day != day || state.contextVersion != expectedContextVersion)
+          return@withTransaction emptyList()
+        val stage = state.selectedStage?.takeIf { VocabularyStage.fromRarity(it) != null }
+          ?: return@withTransaction emptyList()
+        val progress = speechDao.progress().associateBy { it.wordId }
+        val items = speechDao.dailyItems(day).filter { progress[it.wordId]?.isSkipped != true }
+        val unfinished = speechDao.unfinishedCards().filter { progress[it.wordId]?.isSkipped != true }
+        val current = state.currentCardId?.let { id -> unfinished.firstOrNull { it.id == id } }
+          ?.takeIf { card -> (card.day == day || card.sessionId != null) &&
+            (card.kind != StudyKind.NEW.name || (card.itemId?.let { speechDao.dailyItemById(it) }
+              ?: speechDao.dailyItem(day, card.wordId))?.originStage == stage) }
+        val words = speechDao.studyWords()
+        val ids = linkedSetOf<String>()
+        current?.wordId?.let(ids::add)
+
+        suspend fun pendingDaily(kind: StudyKind): CardEntity? = unfinished.filter {
+          it.sessionId == null && it.day == day && it.kind == kind.name
+        }.sortedBy { it.createdAt }.firstOrNull { card ->
+          kind != StudyKind.NEW || (card.itemId?.let { speechDao.dailyItemById(it) }
+            ?: speechDao.dailyItem(day, card.wordId))?.originStage == stage
+        }
+
+        suspend fun dailyWord(kind: StudyKind): String? {
+          pendingDaily(kind)?.let { return it.wordId }
+          val viewOnly = speechDao.viewOnlyDailyWords(day, kind.name).toSet()
+          return items.filter { it.kind == kind.name && !it.completed && it.wordId !in viewOnly &&
+            (kind != StudyKind.NEW || it.originStage == stage) }
+            .minWithOrNull(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder })?.wordId
+        }
+
+        suspend fun practiceWord(kind: StudyKind): String? {
+          val sessions = speechDao.practiceSessions(kind.name).sortedBy { it.createdAt }
+          val sessionItems = mutableMapOf<String, List<PracticeItemEntity>>()
+          for (session in sessions) sessionItems[session.id] = speechDao.practiceItems(session.id)
+          val eligible = words.filter { progress[it.id]?.isSkipped != true &&
+            if (kind == StudyKind.COLLECTION) progress[it.id]?.isCollected == true
+            else progress[it.id]?.mistakePending == true }
+          // Home enables Collections for an unfinished saved batch even after an uncollect.
+          val available = eligible.isNotEmpty() || (kind == StudyKind.COLLECTION && sessions.any { session ->
+            session.status != "COMPLETED" && sessionItems.getValue(session.id).any {
+              !it.completed && progress[it.wordId]?.isSkipped != true
+            }
+          })
+          if (!available) return null
+          for (session in sessions.filter { it.status != "COMPLETED" }) {
+            val pending = speechDao.pendingPracticeCard(session.id)?.takeIf {
+              progress[it.wordId]?.isSkipped != true && (kind != StudyKind.MISTAKES ||
+                it.phase != CardPhase.QUESTION.name || progress[it.wordId]?.mistakePending == true)
+            }
+            if (pending != null) return pending.wordId
+            val queued = sessionItems.getValue(session.id).filter { !it.completed &&
+              progress[it.wordId]?.isSkipped != true &&
+              (kind != StudyKind.MISTAKES || progress[it.wordId]?.mistakePending == true) }
+            if (queued.isNotEmpty()) {
+              val viewOnly = speechDao.viewOnlyPracticeWords(session.id).toSet()
+              return queued.filter { it.wordId !in viewOnly }.minByOrNull { it.queueOrder }?.wordId
+            }
+          }
+          val lap = sessions.maxOfOrNull { it.lap } ?: 1
+          val completed = if (kind == StudyKind.COLLECTION) sessions.filter { it.lap == lap }
+            .flatMap { sessionItems.getValue(it.id) }.filter { it.completed }.mapTo(mutableSetOf()) { it.wordId }
+          else emptySet()
+          // startPractice takes the first five in the saved vocabulary order, without shuffling.
+          return (eligible.firstOrNull { it.id !in completed } ?: eligible.firstOrNull())?.id
+        }
+
+        val daily = items.filter { it.kind != StudyKind.NEW.name || it.originStage == stage }
+        if (current?.kind !in listOf(StudyKind.NEW.name, StudyKind.CARRYOVER.name)) {
+          when {
+            daily.any { it.kind == StudyKind.CARRYOVER.name && !it.completed } ->
+              dailyWord(StudyKind.CARRYOVER)?.let(ids::add)
+            daily.any { it.kind == StudyKind.NEW.name && !it.completed } ->
+              dailyWord(StudyKind.NEW)?.let(ids::add)
+            daily.all { it.completed } -> {
+              // Match canLearnMore, including pending feedback/view-only cards that block a new batch.
+              var blocked = false
+              for (kind in listOf(StudyKind.REVIEW, StudyKind.CARRYOVER, StudyKind.NEW)) {
+                if (pendingDaily(kind) != null) { blocked = true; break }
+              }
+              val stageState = speechDao.stageState(stage)
+              if (!blocked && stageState != null) {
+                val completed = speechDao.stageCompletions(stage, stageState.lap).mapTo(mutableSetOf()) { it.wordId }
+                val active = speechDao.activeCycles().filter { it.scope == "NORMAL" || it.scope == "STAGE_REPEAT" }
+                  .mapTo(mutableSetOf()) { it.wordId }
+                val eligible = words.filter { it.rarity == stage && progress[it.id]?.isSkipped != true }
+                val remaining = eligible.filter { it.id !in completed && it.id !in active }
+                val candidate = if (remaining.isNotEmpty() || eligible.any { it.id !in completed }) remaining.firstOrNull()
+                  else eligible.firstOrNull { it.id !in active }
+                candidate?.id?.let(ids::add)
+              }
+            }
+          }
+        }
+        if (current?.kind != StudyKind.REVIEW.name && daily.any { it.kind == StudyKind.REVIEW.name && !it.completed })
+          dailyWord(StudyKind.REVIEW)?.let(ids::add)
+        for (kind in listOf(StudyKind.COLLECTION, StudyKind.MISTAKES)) {
+          if (current?.kind != kind.name) practiceWord(kind)?.let(ids::add)
+        }
+        ids.mapNotNull { id -> speechDao.word(id)?.let { word(it) } }
+      }
+    }
+
     override suspend fun context(): LearningContext = transaction {
       LearningContext(learningLanguage, appState().contextVersion)
     }

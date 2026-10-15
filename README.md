@@ -39,7 +39,7 @@
 | feature/profile | 设置、统计与导入 |
 | feature/wordlist | 词库浏览、详情与手动书写入口 |
 
-使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v13。应用使用本地数据库和内置离线语音，生成音频采用可调容量的持久 LRU 缓存，冷启动后按 Learn 进度一次预加载（默认上限 5 词），首页 Shuffle 候选队列在切换页面时保留；当前主 Manifest 未声明联网或录音权限，隐私边界见下方说明。
+使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v13。应用使用本地数据库和内置离线语音，生成音频采用可调容量的持久 LRU 缓存；统一协调器在首页空闲时预热各学习入口的首词词音，学习时先准备当前词及后续词的词音（后续默认 5 词），再补齐例句。首页 Shuffle 使用独立候选队列，只预热词音，切换页面时保留候选；当前主 Manifest 未声明联网或录音权限，隐私边界见下方说明。
 
 ## 开发与维护文档
 
