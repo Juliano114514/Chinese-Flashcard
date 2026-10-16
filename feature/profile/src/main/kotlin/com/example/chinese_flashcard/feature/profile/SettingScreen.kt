@@ -28,6 +28,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -139,6 +140,19 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
             SettingsRow(uiString(UiR.string.ui_reading_options), uiString(UiR.string.ui_reading_options_summary), enabled, onReadingOptions)
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_explanation_options), uiString(UiR.string.ui_explanation_options_summary), enabled, onExplanationOptions)
+            SettingsDivider()
+            Row(Modifier.fillMaxWidth().toggleable(value = value.waitForCorrectAnswerAudio,
+              enabled = enabled, role = Role.Checkbox,
+              onValueChange = { vm.save(ProfileUpdate(waitForCorrectAnswerAudio = it)) })
+              .padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically,
+              horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+              Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                Text(uiString(UiR.string.ui_wait_for_correct_answer_audio), style = MaterialTheme.typography.bodyLarge)
+                Text(uiString(UiR.string.ui_wait_for_correct_answer_audio_description),
+                  style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+              }
+              Checkbox(checked = value.waitForCorrectAnswerAudio, onCheckedChange = null, enabled = enabled)
+            }
           }
         }
       }

@@ -171,7 +171,8 @@ internal fun StudyContent(
               Text(uiString(UiR.string.ui_audio_unavailable_tap_next), style = MaterialTheme.typography.bodySmall,
                 color = FlashcardStyle.colors.gradientSecondaryInk)
             }
-            Button(onClick = { onExplain(card.id) }, enabled = !state.busy && feedbackFinished,
+            Button(onClick = { onExplain(card.id) }, enabled = !state.busy &&
+              (feedbackFinished || (card.correct == true && !state.settings.waitForCorrectAnswerAudio)),
               shape = MaterialTheme.shapes.medium, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_next)) }
           }
           CardPhase.INTRO, CardPhase.EXPLANATION -> {

@@ -35,7 +35,7 @@ class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
     .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
-      Migration12To13).build()
+      Migration12To13, Migration13To14).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -196,7 +196,8 @@ class FlashcardRepositories(context: Context) {
             value.speechOptions.modes.forEach { (scene, mode) -> put(scene.name, mode.name) }
           }.toString(), explanationMask = value.explanationOptions.mask,
           speechPreloadWords = value.speechPreloadWords, speechCacheMiB = value.speechCacheMiB,
-          homeShuffleQueueSize = value.homeShuffleQueueSize))
+          homeShuffleQueueSize = value.homeShuffleQueueSize,
+          waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -1256,7 +1257,7 @@ class FlashcardRepositories(context: Context) {
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
     displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
     speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask),
-    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize)
+    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio)
 
   private fun speechOptions(json: String): SpeechOptions {
     val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }

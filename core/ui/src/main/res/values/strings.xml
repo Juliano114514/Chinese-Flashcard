@@ -491,4 +491,6 @@
     <string name="ui_integer_range">Enter a whole number from %1$d to %2$d</string>
     <string name="ui_shuffle_ready">%1$d ready</string>
     <string name="ui_loading_voice">Loading voice…</string>
+    <string name="ui_wait_for_correct_answer_audio">Wait for audio before Next after a correct answer</string>
+    <string name="ui_wait_for_correct_answer_audio_description">Next is always manual. Wrong answers always require audio to finish; this setting only applies to correct answers.</string>
 </resources>

@@ -2,11 +2,11 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.6.0 / versionCode 14`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.6.1 / versionCode 15`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
-Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v13 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
+Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v14 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
 
@@ -20,7 +20,7 @@ Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `
 
 使用 Gradle Wrapper 9.4.1、JDK 21、AGP 9.2.1、Kotlin 2.2.10、KSP 2.3.12、Room 2.8.5、Compose BOM 2025.08.01。compileSdk 36.1、targetSdk 36、minSdk 28，字节码目标 11。版本目录和各模块配置为依赖事实来源，不因整理升级依赖。
 
-本地配置 Android SDK 和 JDK；`local.properties`、IDE 状态、缓存及构建产物不入库。Windows 可使用 Android Studio 自带 JBR。遇到 `Unable to establish loopback connection` 时，可在当前 PowerShell 进程中设置 JBR 和 `JAVA_TOOL_OPTIONS=-Djdk.net.unixdomain.tmpdir=<项目的 .gradle 目录>`；不要写成永久工程配置。
+本地配置 Android SDK 和 JDK；`local.properties`、IDE 状态、缓存及构建产物不入库。Windows 可使用 Android Studio 自带 JBR。遇到 `Unable to establish loopback connection` 时，可在当前 PowerShell 进程中设置 JBR 和临时目录参数；路径含空格时，`JAVA_TOOL_OPTIONS` 中的属性值必须保留双引号，例如 `$env:JAVA_TOOL_OPTIONS='-Djdk.net.unixdomain.tmpdir="D:\AndroidStudioProjects\Chinese Flashcard\.gradle"'`。缺少引号会导致 JDK 探测 JVM 启动失败，Gradle 可能将其包装为 `jvms/metadata.bin` 缓存写入错误；先查看异常根因，不要直接清缓存。不要写成永久工程配置。
 
 ## 包体优化配置
 
@@ -120,6 +120,12 @@ UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）�
 英语资源由 `tools/build_english_resources.py` 生成；`--check` 只读验证冻结 CSV 哈希、模型／音标来源、分片哈希、token 覆盖与许可引用。资源生成和模型准备需要明确的联网下载与写入授权，不发生在普通应用构建或运行时。配置、固定版本、覆盖和复现方法见 [英语语音维护](ENGLISH_SPEECH.md)。APK 仅使用 ONNX Runtime、Kitten ONNX、Bella 原始浮点声线及发音 JSON，不携带构建期 phonemizer、Python 或其 GPL 运行代码。
 
 本次功能未升级应用版本。实际 lint／数据检查与未覆盖的设备行为以本轮交付为准；词库来源的既有授权待核实项继续保留。
+
+## 答题跳转
+
+答对后始终手动点击 Next，默认不等待反馈音频结束。设置页“学习”中的“答对后需播放完音频才能跳转”默认不勾选，勾选后答对时等待现有反馈播放流程结束再开放 Next，仍不自动跳转。提前点击 Next 沿用页面切换时的播放取消机制。答错仍沿用原来的播放及解锁流程，不受该选项影响；音频关闭、失败的处理沿用原逻辑。Room 13→14 只新增默认 false 的设置列，旧用户也采用新默认，不改学习记录。
+
+2026-10-17 实际执行 `:app:lintDebug :app:lintRelease` 成功，两者均为 0 错误、13 条既有告警，无新增诊断。KSP 已导出 schema v14；静态对比确认仅 settings 新增该列，其他实体不变，SQLite 核对迁移后的设置表与导出结构一致且保留原设置值。本轮未执行自动化测试、APK／AAB 打包、设备安装或运行验收；应用版本保持不变。
 
 ## 朗读与讲解偏好
 

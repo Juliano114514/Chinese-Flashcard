@@ -41,7 +41,7 @@
 
 保留上述九个运行时模块。独立的 `build-logic` 工程提供 Android application、library 和 Compose 约定插件，共享 compileSdk、minSdk、Java 字节码目标及 Compose 开关；依赖版本集中在版本目录，各模块仍声明自己的依赖与特殊构建任务。`core/domain` 的 `StudySettingsRules` 统一产品设置范围；历史每日词量的兼容校验与新设置选项保持区分。Study 通过契约调用语音，不直接依赖媒体实现模块。
 
-使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v13。应用使用本地数据库和内置离线语音，生成音频采用可调容量的持久 LRU 缓存；统一协调器在首页空闲时预热各学习入口的首词词音，学习时先准备当前词及后续词的词音（后续默认 5 词），再补齐例句。首页 Shuffle 使用独立候选队列，只预热词音，切换页面时保留候选；当前主 Manifest 未声明联网或录音权限，隐私边界见下方说明。
+使用 Kotlin、Jetpack Compose、Repository／Flow、MVI 与轻量 MVVM。applicationId 为 `com.example.chinese_flashcard`，Room schema v14。应用使用本地数据库和内置离线语音，生成音频采用可调容量的持久 LRU 缓存；统一协调器在首页空闲时预热各学习入口的首词词音，学习时先准备当前词及后续词的词音（后续默认 5 词），再补齐例句。首页 Shuffle 使用独立候选队列，只预热词音，切换页面时保留候选；当前主 Manifest 未声明联网或录音权限，隐私边界见下方说明。
 
 ## 开发与维护文档
 

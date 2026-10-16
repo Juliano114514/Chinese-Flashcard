@@ -54,7 +54,6 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var correctAnswerRevealed by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackPlaybackSucceeded by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
-  var feedbackAdvanceRequested by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackSoundClaimed by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var seenActiveSession by rememberSaveable(generation) { mutableStateOf(false) }
   val sounds = rememberLearningSounds()
@@ -154,21 +153,6 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     val id = card?.writingSessionId
     if (!state.busy && card != null && card.learningLanguage == AppLanguage.CN && card.phase == CardPhase.WRITING && id != null &&
       vm.claimCardWriting(card.id, id)) onWriting(id)
-  }
-  // Audio failure leaves Next available; a saved feedback page never submits the answer again.
-  LaunchedEffect(card?.id, card?.phase, generation, state.loading, state.busy, state.error,
-    feedbackFinished, feedbackPlaybackSucceeded, feedbackAdvanceRequested, lifecycle) {
-    if (card?.phase == CardPhase.FEEDBACK && card.correct == true && feedbackFinished &&
-      feedbackPlaybackSucceeded && !feedbackAdvanceRequested && !state.loading && !state.busy && state.error == null) {
-      lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
-        val current = vm.state.value
-        if (current.directionGeneration == generation && current.card?.id == card.id && current.card?.phase == CardPhase.FEEDBACK && !current.busy && current.error == null) {
-          feedbackAdvanceRequested = true
-          vm.onAction(StudyAction.Explain(card.id, card.learningLanguage, generation))
-        }
-        awaitCancellation()
-      }
-    }
   }
   val dailyComplete = state.today?.let { today -> when (card?.kind) {
     StudyKind.NEW -> today.newCompleted >= today.newPlanned
