@@ -1,6 +1,5 @@
 package com.example.chinese_flashcard
 
-import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.R as UiR
 
@@ -13,8 +12,6 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.automirrored.filled.List
@@ -36,7 +33,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.lifecycle.viewModelScope
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
@@ -44,12 +40,9 @@ import androidx.navigation.compose.*
 import com.example.chinese_flashcard.core.data.FlashcardRepositories
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.CsvSource
-import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.VocabularyStage
-import com.example.chinese_flashcard.core.domain.ThemeMode
-import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
@@ -60,12 +53,9 @@ import com.example.chinese_flashcard.core.ui.LocalExplanationOptions
 import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import com.example.chinese_flashcard.core.ui.uiText
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
-import com.example.chinese_flashcard.core.ui.flashcardMessage
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.FlashcardBackground
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
-import com.example.chinese_flashcard.core.ui.FlashcardToolbar
-import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.ui.glassPanel
 import com.example.chinese_flashcard.core.ui.glassPanelColor
 import com.example.chinese_flashcard.feature.profile.ProfileScreen
@@ -81,8 +71,6 @@ import com.example.chinese_flashcard.feature.writing.WritingViewModel
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -109,40 +97,6 @@ private class SpeechOperation {
   }
   fun finish(id: Long) { if (state.operationId == id) state = SpeechPlaybackState(++serial) }
   fun cancel() { state = SpeechPlaybackState(++serial) }
-}
-
-data class StartupState(val ready: Boolean = false, val busy: Boolean = false,
-  val settings: StudySettings = StudySettings(), val error: UiMessageKey? = null)
-class StartupViewModel(private val repositories: FlashcardRepositories) : ViewModel() {
-  private val mutable = MutableStateFlow(StartupState())
-  val state = mutable.asStateFlow()
-  init { prepare() }
-  fun prepare() = run {
-    repositories.prepare()
-    repositories.settings.settings.first()
-  }
-  fun welcome(value: StudySettings) = run {
-    val saved = value.copy(welcomed = true)
-    require(DailyWordChoices.isAllowed(saved.dailyWords))
-    saved.validate()
-    repositories.settings.save(saved)
-    saved
-  }
-  private fun run(operation: suspend () -> StudySettings) {
-    if (mutable.value.busy) return
-    mutable.value = mutable.value.copy(busy = true, error = null)
-    viewModelScope.launch {
-      try {
-        val value = withContext(Dispatchers.IO) { operation() }
-        mutable.value = StartupState(ready = true, settings = value)
-      } catch (error: CancellationException) { throw error }
-      catch (error: Exception) {
-        val message = if (!mutable.value.ready) repositories.defaultWordlistState.value.error
-          ?: error.flashcardMessage() else error.flashcardMessage()
-        mutable.value = mutable.value.copy(busy = false, error = message)
-      }
-    }
-  }
 }
 
 @Composable
@@ -492,55 +446,3 @@ private fun StudyNavigationEffects(studyState: State<StudyUiState>,
     }
   }
 }
-
-@Composable
-private fun LicenseScreen(onBack: () -> Unit) {
-  val context = LocalContext.current
-  val licenses by produceState(LicenseText()) {
-    value = withContext(Dispatchers.IO) {
-      try {
-        val text = listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
-          "wordlist-strokes/LEXICON_LICENSES.txt", "avatars/NOTICE.txt", "level-icons/NOTICE.txt",
-          "english-speech/LICENSES.txt", "english-teaching/LICENSES.txt", "chinese-speech/LICENSES.txt").joinToString("\n\n") { name ->
-          context.assets.open(name).bufferedReader().use { it.readText() }
-        }
-        val sections = mutableListOf<String>()
-        var start = 0
-        Regex("\\r?\\n\\r?\\n").findAll(text).forEach { boundary ->
-          val end = boundary.range.last + 1
-          if (end - start >= 4_000) {
-            sections += text.substring(start, end)
-            start = end
-          }
-        }
-        if (start < text.length) sections += text.substring(start)
-        LicenseText(sections = sections, loading = false)
-      } catch (error: CancellationException) { throw error }
-      catch (_: Exception) { LicenseText(loading = false, failed = true) }
-    }
-  }
-  LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(20.dp),
-    verticalArrangement = Arrangement.spacedBy(14.dp)) {
-    item(key = "header", contentType = "header") {
-    FlashcardToolbar(uiString(UiR.string.ui_sources_licenses), onBack)
-    }
-    item(key = "intro", contentType = "intro") {
-    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
-    Text(uiString(UiR.string.ui_default_vocabulary_bundled_wordlist_csv_dictionary_attribution_and_content_sources_are_listed_below))
-    Text(uiString(UiR.string.ui_legacy_demo_vocabulary_and_examples_original_teaching_material_retained_when_upgrading))
-    Text(uiString(UiR.string.ui_additional_vocabulary_local_csv_wordlists_imported_in_settings))
-    Text(uiString(UiR.string.ui_stroke_outlines_and_medians_make_me_a_hanzi_supplemented_by_animcjk_selected_glyphs_are_bundled_for_offline_writing_under_the_arphic_public_license))
-    }
-    }
-    if (licenses.loading || licenses.failed) item(key = "status", contentType = "status") {
-      Text(if (licenses.loading) uiString(UiR.string.ui_loading)
-        else uiString(UiMessageKey.SOURCE_LICENSES_COULD_NOT_BE_READ_PLEASE_REOPEN_THIS_PAGE),
-        style = MaterialTheme.typography.bodySmall)
-    }
-    itemsIndexed(licenses.sections, key = { index, _ -> "license/$index" }, contentType = { _, _ -> "license" }) { _, text ->
-      Text(text, style = MaterialTheme.typography.bodySmall)
-    }
-  }
-}
-
-private data class LicenseText(val sections: List<String> = emptyList(), val loading: Boolean = true, val failed: Boolean = false)

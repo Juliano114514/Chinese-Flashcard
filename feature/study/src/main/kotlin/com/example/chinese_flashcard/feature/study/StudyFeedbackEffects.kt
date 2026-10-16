@@ -23,8 +23,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.chinese_flashcard.core.media.LearningSound
-import com.example.chinese_flashcard.core.media.LearningSounds
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.coroutineScope

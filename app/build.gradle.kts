@@ -1,22 +1,15 @@
 plugins {
-  alias(libs.plugins.android.application)
-  alias(libs.plugins.kotlin.compose)
+  id("flashcard.android.application")
+  id("flashcard.android.compose")
 }
 
 android {
   namespace = "com.example.chinese_flashcard"
-  compileSdk {
-    version = release(36) {
-      minorApiLevel = 1
-    }
-  }
-
   defaultConfig {
     applicationId = "com.example.chinese_flashcard"
-    minSdk = 28
     targetSdk = 36
-    versionCode = 13
-    versionName = "1.5.3"
+    versionCode = 14
+    versionName = "1.6.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
@@ -28,11 +21,6 @@ android {
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
     }
   }
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-  }
-  buildFeatures { compose = true }
   // ChineseSpeech maps this asset with openFd; EnglishSpeech reads its model as a stream.
   androidResources { noCompress += "chinese-speech/model-duration.onnx" }
   // Android extracts the unchanged native libraries at install time, reducing APK download size.

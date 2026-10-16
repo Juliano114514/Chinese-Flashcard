@@ -1,4 +1,4 @@
-package com.example.chinese_flashcard.core.media
+package com.example.chinese_flashcard.feature.study
 
 import android.content.Context
 import android.media.AudioAttributes
@@ -13,10 +13,10 @@ import kotlinx.coroutines.withContext
 import kotlin.math.PI
 import kotlin.math.sin
 
-enum class LearningSound { CORRECT, TRY_AGAIN, COMPLETE }
+internal enum class LearningSound { CORRECT, TRY_AGAIN, COMPLETE }
 
 /** Original, softly enveloped sine notes; no downloaded recording, permission or network. */
-class LearningSounds(context: Context) : AutoCloseable {
+internal class LearningSounds(context: Context) : AutoCloseable {
   private val audioManager = context.applicationContext.getSystemService(AudioManager::class.java)
   private val lock = Any()
   private var activeTrack: AudioTrack? = null

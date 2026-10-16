@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.feature.study
 
+import com.example.chinese_flashcard.core.domain.StudySettingsRules
+
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.uiPlural
 import com.example.chinese_flashcard.core.ui.R as UiR
@@ -130,7 +132,7 @@ fun WelcomeScreen(
                 color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
             }
             Column(Modifier.fillMaxWidth()) {
-              listOf(1, 3, 5, 7, 14, 30).forEach { day ->
+              StudySettingsRules.reviewDays.forEach { day ->
                 val checked = day in reviewDays
                 Row(Modifier.fillMaxWidth().heightIn(min = 48.dp)
                   .toggleable(value = checked, enabled = !saving, role = Role.Checkbox,

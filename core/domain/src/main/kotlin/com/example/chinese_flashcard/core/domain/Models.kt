@@ -10,21 +10,23 @@ data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
   val distractorMeaningIds: List<String>,
   val literalExplanations: List<String> = emptyList(), val figurativeExplanations: List<String> = emptyList())
 
-data class StudySettings(val dailyWords: Int = 10, val rounds: Int = 4,
-  val reviewDays: List<Int> = listOf(1, 3, 7), val welcomed: Boolean = false,
+data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettingsRules.DEFAULT_ROUNDS,
+  val reviewDays: List<Int> = StudySettingsRules.defaultReviewDays, val welcomed: Boolean = false,
   val displayName: String = "", val avatarId: String = "1", val themeMode: ThemeMode = ThemeMode.SYSTEM,
   val uiLanguage: AppLanguage = AppLanguage.EN, val learningLanguage: AppLanguage = AppLanguage.CN,
   val speechOptions: SpeechOptions = SpeechOptions(), val explanationOptions: ExplanationOptions = ExplanationOptions(),
-  val speechPreloadWords: Int = 5, val speechCacheMiB: Int = 256, val homeShuffleQueueSize: Int = 5) {
+  val speechPreloadWords: Int = StudySettingsRules.DEFAULT_SPEECH_PRELOAD_WORDS,
+  val speechCacheMiB: Int = StudySettingsRules.DEFAULT_SPEECH_CACHE_MIB,
+  val homeShuffleQueueSize: Int = StudySettingsRules.DEFAULT_HOME_SHUFFLE_QUEUE_SIZE) {
   fun validate() {
-    require(dailyWords in 1..100 && rounds in 2..8)
+    require(dailyWords in StudySettingsRules.storedDailyWords && rounds in StudySettingsRules.rounds)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())
-    require(reviewDays.all { it in listOf(1, 3, 5, 7, 14, 30) })
+    require(reviewDays.all { it in StudySettingsRules.reviewDays })
     require(displayName.length <= 40 && displayName.none { it.isISOControl() })
     require(avatarId.length <= 40 && avatarId.none { it.isISOControl() })
-    require(speechPreloadWords in 0..20)
-    require(speechCacheMiB in 64..2048)
-    require(homeShuffleQueueSize in 1..20)
+    require(speechPreloadWords in StudySettingsRules.speechPreloadWords)
+    require(speechCacheMiB in StudySettingsRules.speechCacheMiB)
+    require(homeShuffleQueueSize in StudySettingsRules.homeShuffleQueueSize)
   }
 }
 

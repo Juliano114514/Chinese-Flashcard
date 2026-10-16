@@ -7,6 +7,7 @@ import com.example.chinese_flashcard.core.domain.SpeechOptions
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.SpeechCachePriority
+import com.example.chinese_flashcard.core.domain.StudySettingsRules
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -16,6 +17,12 @@ import kotlinx.coroutines.launch
 
 const val HOME_SHUFFLE_SOURCE_ID = "home/shuffle"
 data class HomeSpeechEvent(val token: Long, val request: SpeechRequest)
+
+internal fun WordlistItem.homeSpeechRequest(language: AppLanguage, sourceId: String): SpeechRequest = SpeechRequest(
+  if (language == AppLanguage.CN) hanzi else english, language,
+  SpeechScene.HOME_WORD, if (language == AppLanguage.CN) english else hanzi,
+  ChinesePronunciation(hanzi, pinyin), sourceId = sourceId,
+)
 
 /** Main-thread queue ownership; media work is injected and never changes study progress. */
 internal class HomeSpeechQueue(
@@ -39,7 +46,7 @@ internal class HomeSpeechQueue(
   private var generation = 0L
   private var words = emptyList<WordlistItem>()
   private var audioWords = emptyList<AudioWord>()
-  private var spec = Spec(AppLanguage.CN, SpeechMode.ONLY_CN, 5)
+  private var spec = Spec(AppLanguage.CN, SpeechMode.ONLY_CN, StudySettingsRules.DEFAULT_HOME_SHUFFLE_QUEUE_SIZE)
   private val candidates = mutableListOf<Candidate>()
   private var warmJob: Job? = null
   private var selectionJob: Job? = null
@@ -153,11 +160,7 @@ internal class HomeSpeechQueue(
 
   private fun publishReadyCount() = onReadyCount(candidates.count { it.ready && !it.failed })
 
-  private fun request(word: WordlistItem): SpeechRequest = SpeechRequest(
-    if (spec.language == AppLanguage.CN) word.hanzi else word.english, spec.language,
-    SpeechScene.HOME_WORD, if (spec.language == AppLanguage.CN) word.english else word.hanzi,
-    ChinesePronunciation(word.hanzi, word.pinyin), sourceId = HOME_SHUFFLE_SOURCE_ID,
-  )
+  private fun request(word: WordlistItem): SpeechRequest = word.homeSpeechRequest(spec.language, HOME_SHUFFLE_SOURCE_ID)
 
   private fun requests(word: WordlistItem) = SpeechOptions(mapOf(SpeechScene.HOME_WORD to spec.mode))
     .requests(request(word)).map { it.copy(sourceId = null) }

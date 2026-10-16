@@ -9,12 +9,9 @@ import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
 
-plugins { alias(libs.plugins.android.library) }
+plugins { id("flashcard.android.library") }
 android {
   namespace = "com.example.chinese_flashcard.core.media"
-  compileSdk { version = release(36) { minorApiLevel = 1 } }
-  defaultConfig { minSdk = 28 }
-  compileOptions { sourceCompatibility = JavaVersion.VERSION_11; targetCompatibility = JavaVersion.VERSION_11 }
   // Keep the mapped Chinese model uncompressed; the English model supports ZIP compression.
   androidResources { noCompress += "chinese-speech/model-duration.onnx" }
 }
@@ -64,5 +61,5 @@ androidComponents.onVariants { variant ->
 dependencies {
   implementation(project(":core:domain"))
   implementation(libs.kotlinx.coroutines.core)
-  implementation("com.microsoft.onnxruntime:onnxruntime-android:1.31.0")
+  implementation(libs.onnxruntime.android)
 }

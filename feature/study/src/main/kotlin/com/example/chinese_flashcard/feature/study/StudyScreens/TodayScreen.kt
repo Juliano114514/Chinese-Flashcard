@@ -68,11 +68,8 @@ import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
 import com.example.chinese_flashcard.core.ui.flashcardBackground
 import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.WordlistStatus
-import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
-import com.example.chinese_flashcard.core.domain.ChinesePronunciation
-import com.example.chinese_flashcard.core.domain.SpeechScene
-import com.example.chinese_flashcard.feature.study.HOME_SHUFFLE_SOURCE_ID
+import com.example.chinese_flashcard.core.ui.rememberSpeechSourceId
 import com.example.chinese_flashcard.core.ui.isSpeechPreparing
 import com.example.chinese_flashcard.core.ui.SpeechPreparingIndicator
 
@@ -109,7 +106,7 @@ fun TodayScreen(
   }
   TodayContent(state, onStart, onResume, onLearnMore,
     onLearnMoreBlocked = { showLearnMoreBlocker = true }, onStage = vm::selectStage,
-    onRetry = vm::retry,
+    onRetry = vm::retry, onReplay = { sourceId -> vm.state.value.homeReplayRequest(sourceId)?.let(latestSpeak) },
     onShuffle = vm::shuffleHomeWord, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
     FlashcardDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
@@ -143,6 +140,7 @@ private fun TodayContent(
   onLearnMoreBlocked: () -> Unit,
   onStage: (VocabularyStage) -> Unit,
   onRetry: () -> Unit,
+  onReplay: (String) -> Unit,
   onShuffle: () -> Unit,
   onProfile: () -> Unit,
   onWordlist: () -> Unit,
@@ -150,6 +148,7 @@ private fun TodayContent(
 ) {
   val today = state.today
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
+  val replaySourceId = rememberSpeechSourceId(state.homeWord?.id to state.settings.learningLanguage)
   BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = FlashcardLayout.pageInset)) {
     val panelMaxHeight = maxHeight * 0.48f
     Column(Modifier.fillMaxSize().padding(bottom = 20.dp)) {
@@ -169,6 +168,8 @@ private fun TodayContent(
       }
       HomeWordShowcase(word = state.homeWord, wordError = state.homeWordError, wordStage = state.homeWordStage,
         hasToday = today != null, loading = state.loading, busy = state.busy, stage = stage, onShuffle = onShuffle,
+        onReplay = { onReplay(replaySourceId) }, replayEnabled = state.homeReplayRequest(replaySourceId) != null,
+        replayPreparing = isSpeechPreparing(replaySourceId),
         shuffleWaiting = state.homeShuffleWaiting || isSpeechPreparing(HOME_SHUFFLE_SOURCE_ID),
         shuffleFailed = state.homeShuffleFailed,
         shuffleReady = state.homeShuffleReady,
@@ -192,7 +193,10 @@ private fun HomeWordShowcase(
   loading: Boolean,
   busy: Boolean,
   stage: VocabularyStage,
+  onReplay: () -> Unit,
+  replayEnabled: Boolean,
   onShuffle: () -> Unit,
+  replayPreparing: Boolean = false,
   shuffleWaiting: Boolean = false,
   shuffleFailed: Boolean = false,
   shuffleReady: Int = 0,
@@ -222,19 +226,37 @@ private fun HomeWordShowcase(
         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error,
         textAlign = TextAlign.Center)
     }
-    TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !loading && !busy && !shuffleWaiting &&
-      (word != null || wordError), modifier = Modifier.align(Alignment.BottomEnd).widthIn(min = 88.dp).heightIn(min = 48.dp)) {
-      Column(horizontalAlignment = Alignment.CenterHorizontally) {
+    Row(Modifier.align(Alignment.BottomCenter).fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onReplay,
+        enabled = replayEnabled && !shuffleWaiting && !replayPreparing,
+        modifier = Modifier.alignByBaseline().widthIn(min = 88.dp).heightIn(min = 48.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-          if (shuffleWaiting) SpeechPreparingIndicator()
-          Text(uiString(UiR.string.ui_shuffle))
+          if (replayPreparing) SpeechPreparingIndicator()
+          Text(uiString(UiR.string.ui_replay))
         }
-        Text(uiString(UiR.string.ui_shuffle_ready, shuffleReady),
-          style = MaterialTheme.typography.labelSmall.copy(fontSize = 12.sp, lineHeight = 16.sp),
-          color = MaterialTheme.colorScheme.onSurfaceVariant)
+      }
+      TextButton(shape = MaterialTheme.shapes.small, onClick = onShuffle, enabled = !loading && !busy && !shuffleWaiting &&
+        (word != null || wordError), modifier = Modifier.alignByBaseline().widthIn(min = 88.dp).heightIn(min = 48.dp)) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+          Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+            if (shuffleWaiting) SpeechPreparingIndicator()
+            Text(uiString(UiR.string.ui_shuffle))
+          }
+          Text(uiString(UiR.string.ui_shuffle_ready, shuffleReady),
+            style = MaterialTheme.typography.labelSmall.copy(fontSize = 12.sp, lineHeight = 16.sp),
+            color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
       }
     }
   }
+}
+
+private fun StudyUiState.homeReplayRequest(sourceId: String): SpeechRequest? {
+  val stage = today?.stageProgress?.stage ?: return null
+  val word = homeWord?.takeIf { it.difficulty == stage.rarity } ?: return null
+  if (loading || busy || homeShuffleWaiting || homeWordStage != stage) return null
+  val request = word.homeSpeechRequest(settings.learningLanguage, sourceId)
+  return request.takeIf { settings.speechOptions.requests(it).isNotEmpty() }
 }
 
 @Composable
@@ -414,7 +436,7 @@ private fun HomePreview(@PreviewParameter(StageThemePreviewProvider::class, limi
       TodayContent(StudyUiState(loading = false, snapshot = StudySnapshot(today, null),
         homeWord = word, homeWordStage = theme.stage),
         onStart = {}, onResume = {}, onLearnMore = {}, onLearnMoreBlocked = {},
-        onStage = {}, onRetry = {}, onShuffle = {}, onProfile = {}, onWordlist = {})
+        onStage = {}, onRetry = {}, onReplay = {}, onShuffle = {}, onProfile = {}, onWordlist = {})
     }
   }
 }

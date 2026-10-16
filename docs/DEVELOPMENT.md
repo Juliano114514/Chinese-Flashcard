@@ -2,13 +2,21 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.5.3 / versionCode 13`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.6.0 / versionCode 14`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
 Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v13 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
+
+`build-logic` 是独立的 Gradle included build，不增加运行时模块。`flashcard.android.application`／`flashcard.android.library` 统一 compileSdk 36.1、minSdk 28 和 Java 11 字节码；`flashcard.android.compose` 只应用现有 Compose 插件并开启 Compose。构建插件与 ONNX 版本复用根版本目录，BOM 和 `api`／`implementation` 仍由模块声明。应用版本、targetSdk、R8、模型压缩要求、Room/KSP 和资源生成任务保留在所属模块。
+
+学习提示音由 feature/study 自己持有并沿用原有生命周期，Study 不再依赖 core/media。应用级语音、统一预加载及唯一合成队列仍由 core/media 提供。app 的启动 ViewModel 与许可页面分别维护在独立文件，导航和实例作用域不变；数据层共享事务、学习状态机及语言隔离未拆分。
+
+`StudySettingsRules` 是轮次、复习日期、语音参数范围与默认值的产品规则来源，欢迎页、设置页和模型校验共用。`DailyWordChoices` 继续限制新设置为 5–50、步长 5，历史每日词量仍接受 1–100。Room 历史迁移及列默认值、磁盘缓存底层保护范围保持原样，不与产品编辑范围混合。
+
+2026-10-16 的 Replay 与架构整理保持 `1.5.3 / 13`，未提交或发布。实际执行 `:app:lintDebug :app:lintRelease`，两者均为 0 错误、13 条既有告警，无新增诊断：12 条版本／SDK 提示和 1 条图标资源目录提示。原基线的 compileSdk 更新提示随配置迁入独立构建工程后不再由 app lint 直接报告，不代表 SDK 升级或兼容性修复；未关闭检查规则。Gradle 实际配置检查确认八个 Android 模块的 SDK、Java／Compose 开关，以及应用版本、R8、native 压缩、模型不压缩与资源生成任务保留。641 个词库、模型／语音资源及 Room schema 文件的 SHA-256 与改动前一致；启动、许可页面和提示音主体迁移比对一致。未新增测试代码，未执行自动化测试、APK 打包、设备安装、运行排版或试听验收。安全自查：未新增应用权限、网络入口、运行依赖或敏感日志，学习事务、语言隔离及语音调度链路未改动。
 
 使用 Gradle Wrapper 9.4.1、JDK 21、AGP 9.2.1、Kotlin 2.2.10、KSP 2.3.12、Room 2.8.5、Compose BOM 2025.08.01。compileSdk 36.1、targetSdk 36、minSdk 28，字节码目标 11。版本目录和各模块配置为依赖事实来源，不因整理升级依赖。
 
@@ -130,6 +138,8 @@ UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）�
 Learn、Review、Collections 和 Mistakes 共用滚动窗口：先准备当前词及后续 N 个不同词的词音，再按距离补齐例句；N 沿用学习预加载词数。初见、答题、反馈与讲解之间切换不重启窗口；换卡、学习上下文或数量变化时差量更新，重叠资源继续复用。沿用现有队列对学习方向、阶段、跳过词与练习范围的限制，不创建计划或推进学习进度。当前卡片的加载提示只反映当前词音及实际播放准备，后台补例句不延长整张卡的加载提示。Wordlist 列表不合成语音，打开详情后复用词音并补齐例句。
 
 首页 Shuffle 候选队列只准备 HOME_WORD 场景实际允许的词音，不加载例句；候选保留在 ViewModel 中。离页取消未完成准备与待兑现点击，回来后重新核对实际缓存并补齐缺失项，不重新随机整个队列。Shuffle 文案保留原样，第二行以 12sp 显示 `x ready`，统计未展示的可播放候选数。无就绪资源时转圈禁用并在就绪时自动兑现一次点击；全部失败时恢复重试。
+
+同一行左侧 Replay 读取点击时的当前展示词，复用 Shuffle 的词音请求构造和 HOME_WORD 朗读设置，不消费候选、不加载例句、不改变学习进度。无有效词、加载或忙碌、阶段不匹配、Shuffle 等待以及 Replay 准备中时禁用；首页朗读关闭时也禁用。Replay 有独立的播放来源标识，准备提示随现有播放器状态更新，播放开始后可再次点击从头重播。
 
 `core/domain` 的 `SpeechCacheController` 是预加载、容量配置、清理及状态观察的统一入口，由 `core/media` 的应用级协调器实现；沿用手动单例注入，与播放器共享唯一 `SpeechResources`。ViewModel 声明有独立来源身份和上下文版本的资源窗口，通过 `StateFlow` 观察准备状态；选词与学习进度仍归业务层管理。调度顺序为实际播放、当前词音、后续词音、当前例句、后续例句、首页入口预热；只有实际播放抢占后台合成。同一音频跨入口合并需求，释放一个来源不会取消其他来源仍需要的资源。
 

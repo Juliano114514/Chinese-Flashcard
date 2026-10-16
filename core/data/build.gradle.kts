@@ -13,7 +13,7 @@ import org.gradle.api.tasks.PathSensitive
 import org.gradle.api.tasks.PathSensitivity
 import org.gradle.api.tasks.TaskAction
 
-plugins { alias(libs.plugins.android.library); alias(libs.plugins.ksp) }
+plugins { id("flashcard.android.library"); alias(libs.plugins.ksp) }
 
 @CacheableTask
 abstract class BundleDefaultWordlist : DefaultTask() {
@@ -110,12 +110,6 @@ val bundleDefaultWordlist = tasks.register<BundleDefaultWordlist>("bundleDefault
 
 android {
   namespace = "com.example.chinese_flashcard.core.data"
-  compileSdk { version = release(36) { minorApiLevel = 1 } }
-  defaultConfig { minSdk = 28 }
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-  }
 }
 
 androidComponents.onVariants { variant ->

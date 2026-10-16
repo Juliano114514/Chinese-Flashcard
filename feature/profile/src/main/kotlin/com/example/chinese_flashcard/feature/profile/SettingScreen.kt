@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.feature.profile
 
+import com.example.chinese_flashcard.core.domain.StudySettingsRules
+
 import com.example.chinese_flashcard.core.ui.uiPlural
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.ui.uiString
@@ -207,13 +209,13 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
     SettingEditor.LEARNING_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_learning_language), value.learningLanguage,
       state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(learningLanguage = it)) }
     SettingEditor.SPEECH_PRELOAD -> AudioNumberDialog(uiString(UiR.string.ui_speech_preload_words),
-      value.speechPreloadWords, 0..20, uiString(UiR.string.ui_speech_preload_description), state.saving, state.error,
+      value.speechPreloadWords, StudySettingsRules.speechPreloadWords, uiString(UiR.string.ui_speech_preload_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(speechPreloadWords = it)) }
     SettingEditor.SPEECH_CACHE -> AudioNumberDialog(uiString(UiR.string.ui_speech_cache_capacity),
-      value.speechCacheMiB, 64..2048, uiString(UiR.string.ui_speech_cache_description), state.saving, state.error,
+      value.speechCacheMiB, StudySettingsRules.speechCacheMiB, uiString(UiR.string.ui_speech_cache_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(speechCacheMiB = it)) }
     SettingEditor.HOME_SHUFFLE_QUEUE -> AudioNumberDialog(uiString(UiR.string.ui_home_shuffle_queue_size),
-      value.homeShuffleQueueSize, 1..20, uiString(UiR.string.ui_home_shuffle_queue_description), state.saving, state.error,
+      value.homeShuffleQueueSize, StudySettingsRules.homeShuffleQueueSize, uiString(UiR.string.ui_home_shuffle_queue_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(homeShuffleQueueSize = it)) }
     null -> Unit
   }
@@ -333,7 +335,8 @@ private fun DailyWordsDialog(initial: Int, saving: Boolean, error: UiMessageKey?
       Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
       Slider(count.toFloat(), onValueChange = { count = DailyWordChoices.normalize(it.roundToInt()) },
         modifier = Modifier.fillMaxWidth(), enabled = !saving,
-        valueRange = DailyWordChoices.MIN.toFloat()..DailyWordChoices.MAX.toFloat(), steps = 8,
+        valueRange = DailyWordChoices.MIN.toFloat()..DailyWordChoices.MAX.toFloat(),
+        steps = (DailyWordChoices.MAX - DailyWordChoices.MIN) / DailyWordChoices.STEP - 1,
         colors = SliderDefaults.colors(activeTickColor = Color.Transparent, inactiveTickColor = Color.Transparent))
       Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
         Text(DailyWordChoices.MIN.toString(), style = MaterialTheme.typography.bodySmall)
@@ -352,9 +355,9 @@ private fun RoundsDialog(initial: Int, saving: Boolean, error: UiMessageKey?, on
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
       Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceEvenly) {
-        TextButton(shape = MaterialTheme.shapes.small, onClick = { count-- }, enabled = !saving && count > 2, modifier = Modifier.size(48.dp)) { Text("−") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = { count-- }, enabled = !saving && count > StudySettingsRules.rounds.first, modifier = Modifier.size(48.dp)) { Text("−") }
         Text(count.toString(), style = MaterialTheme.typography.headlineLarge)
-        TextButton(shape = MaterialTheme.shapes.small, onClick = { count++ }, enabled = !saving && count < 8, modifier = Modifier.size(48.dp)) { Text("+") }
+        TextButton(shape = MaterialTheme.shapes.small, onClick = { count++ }, enabled = !saving && count < StudySettingsRules.rounds.last, modifier = Modifier.size(48.dp)) { Text("+") }
       }
       Text(uiString(UiR.string.ui_consecutive_correct_answers_a_wrong_answer_resets_the_round),
         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -371,7 +374,7 @@ private fun ReviewDaysDialog(initial: List<Int>, saving: Boolean, error: UiMessa
     Column {
       Text(uiString(UiR.string.ui_days_after_passing_a_word), style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.colorScheme.onSurfaceVariant)
-      listOf(1, 3, 5, 7, 14, 30).forEach { day ->
+      StudySettingsRules.reviewDays.forEach { day ->
         val checked = day in selected
         Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
           .toggleable(value = checked, enabled = !saving, role = Role.Checkbox,

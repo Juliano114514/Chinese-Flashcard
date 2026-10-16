@@ -12,8 +12,10 @@ navigation = "2.9.3"
 room = "2.8.5"
 ksp = "2.3.12"
 coroutines = "1.10.2"
+onnxruntime = "1.31.0"
 
 [libraries]
+onnxruntime-android = { group = "com.microsoft.onnxruntime", name = "onnxruntime-android", version.ref = "onnxruntime" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
