@@ -176,7 +176,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     onWordWriting = { wordId -> card?.let { vm.onAction(StudyAction.ManualWriting(wordId, it.learningLanguage, generation)) } },
     onCollection = vm::setCollected,
     onSkip = { id, skipped -> card?.let { vm.setSkipped(id, skipped, it.learningLanguage) } },
-    onRetry = vm::retry, ipaResolver = ipaResolver,
+    onRetry = vm::retry, onReviewMore = vm::reviewMore, ipaResolver = ipaResolver,
     voiceLoading = state.speechPreparing || playbackPreparing ||
       LocalSpeechPlaybackState.current.phase == SpeechPlaybackPhase.PREPARING)
   StudyCompletionEffects(card?.id, generation, completed && seenActiveSession, sounds, Modifier.fillMaxSize(),

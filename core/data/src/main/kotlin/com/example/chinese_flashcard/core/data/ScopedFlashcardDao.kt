@@ -30,6 +30,7 @@ internal class ScopedFlashcardDao(private val shared: FlashcardDao, private val 
   suspend fun putProgress(value: WordProgressEntity): Unit = shared.putProgress(value.copy(learningLanguage = language()))
   suspend fun cycle(id: String): CycleEntity? = shared.cycle(id, language = language())
   suspend fun activeCycles(): List<CycleEntity> = shared.activeCycles(language = language())
+  suspend fun learnedReviewCycles(): List<CycleEntity> = shared.learnedReviewCycles(language = language())
   suspend fun putCycle(value: CycleEntity): Unit = shared.putCycle(value.copy(learningLanguage = language()))
   suspend fun dailyItems(day: Long): List<DailyItemEntity> = shared.dailyItems(day, language = language())
   suspend fun dailyItem(day: Long, wordId: String): DailyItemEntity? = shared.dailyItem(day, wordId, language = language())

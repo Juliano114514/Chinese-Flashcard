@@ -254,7 +254,9 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val studyBusy by remember(studyState) { derivedStateOf { studyState.value.busy } }
   val stage by remember(studyState) { derivedStateOf { studyState.value.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY } }
   var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Int>?>(null) }
-  StudyNavigationEffects(studyState, route, learnMoreRequest,
+  var reviewMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Long>?>(null) }
+  StudyNavigationEffects(studyState, route, learnMoreRequest, reviewMoreRequest,
+    onReviewMoreHandled = { reviewMoreRequest = null },
     onRequestHandled = { learnMoreRequest = null }, onStudy = { nav.navigate("study") { launchSingleTop = true } })
   BackHandler(enabled = route == "study" && studyBusy) { }
   val openWriting: (String) -> Unit = { id ->
@@ -265,6 +267,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       speech.stop()
       playbackOperation.cancel()
       learnMoreRequest = null
+      reviewMoreRequest = null
       study.refresh()
       nav.navigate("today") { popUpTo("today"); launchSingleTop = true }
       appliedLearningLanguage = settings.learningLanguage
@@ -330,6 +333,12 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
             if (before != null && !study.state.value.busy) {
               learnMoreRequest = Triple(before.date, before.newPlanned, before.stageProgress.stage.rarity)
               study.learnMore()
+            }
+          }, onReviewMore = {
+            val before = study.state.value.today
+            if (before != null && !study.state.value.busy) {
+              reviewMoreRequest = Triple(before.date, before.reviewPlanned, before.contextVersion)
+              study.reviewMore()
             }
           }, onProfile = { nav.navigate("profile") { launchSingleTop = true } },
           onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = configuredSpeak,
@@ -429,7 +438,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
 @Composable
 private fun StudyNavigationEffects(studyState: State<StudyUiState>,
   route: String?,
-  learnMoreRequest: Triple<String, Int, Int>?, onRequestHandled: () -> Unit, onStudy: () -> Unit) {
+  learnMoreRequest: Triple<String, Int, Int>?, reviewMoreRequest: Triple<String, Int, Long>?,
+  onReviewMoreHandled: () -> Unit, onRequestHandled: () -> Unit, onStudy: () -> Unit) {
   val state by studyState
   LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
     val request = learnMoreRequest ?: return@LaunchedEffect
@@ -443,6 +453,18 @@ private fun StudyNavigationEffects(studyState: State<StudyUiState>,
         onStudy()
       } else if (state.error == null) onRequestHandled()
       // A failed request stays on Home; its existing Retry can complete this same request.
+    }
+  }
+  LaunchedEffect(reviewMoreRequest, state.busy, state.snapshot, state.error, route) {
+    val request = reviewMoreRequest ?: return@LaunchedEffect
+    if (route != "today" || state.today?.date != request.first || state.directionGeneration != request.third) {
+      onReviewMoreHandled()
+    } else if (!state.busy) {
+      if ((state.today?.reviewPlanned ?: 0) > request.second && state.card?.kind == StudyKind.REVIEW &&
+        state.card?.phase != CardPhase.FINISHED) {
+        onReviewMoreHandled()
+        onStudy()
+      } else if (state.error == null) onReviewMoreHandled()
     }
   }
 }

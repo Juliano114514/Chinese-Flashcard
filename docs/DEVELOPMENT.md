@@ -2,11 +2,11 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.6.1 / versionCode 15`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.6.3 / versionCode 17`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
-Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v14 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
+Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v15 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
 
@@ -120,6 +120,16 @@ UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）�
 英语资源由 `tools/build_english_resources.py` 生成；`--check` 只读验证冻结 CSV 哈希、模型／音标来源、分片哈希、token 覆盖与许可引用。资源生成和模型准备需要明确的联网下载与写入授权，不发生在普通应用构建或运行时。配置、固定版本、覆盖和复现方法见 [英语语音维护](ENGLISH_SPEECH.md)。APK 仅使用 ONNX Runtime、Kitten ONNX、Bella 原始浮点声线及发音 JSON，不携带构建期 phonemizer、Python 或其 GPL 运行代码。
 
 本次功能未升级应用版本。实际 lint／数据检查与未覆盖的设备行为以本轮交付为准；词库来源的既有授权待核实项继续保留。
+
+## 继续复习
+
+当天到期复习完成后，首页入口主标题保持 Review，副标题显示 `Review {N} more`（N 为下一批实际可抽取数量）；复习完成页提供 Continue review 按钮。没有到期词但已有可用已学词时也可开始。每次点击从当前学习方向中随机抽取已学词，批内不重复，批次之间可重复；排除 skip、正在普通重学或阶段重复学习的词，以及当天已标记为仅浏览的复习词。没有可用词时不提供继续入口。
+
+Settings 的“继续复习词数”默认 10，可输入 1–50 的整数，不足一批时使用全部可用词。设置在创建下一批时读取，已开始的批次不重抽。随机词追加到当天 Review 队列，保留此前完成记录及 Learn 配额；答对一次通过，答错、写字和重新排期沿用现有 Review 状态机。创建批次与选卡在同一事务内，校验日期、学习方向、上下文版本和原复习计划数，防止重复点击或过期请求追加批次。
+
+Room 14→15 仅向 settings 新增默认 10 的 `reviewBatchSize` 列，已有学习数据保留；功能实现阶段未升级应用版本，随后按用户打包请求升级到 `1.6.2 / 16`，实际产物记录见 VERSIONLOG。
+
+2026-10-17 实际执行 `:app:lintDebug` 成功，0 错误、13 条既有告警，诊断与执行前报告一致。KSP 导出 schema v15；结构对比确认只有 settings 新增该列，SQLite 内存核对确认原设置值保留、迁移后的表结构与 v15 一致。中英文资源解析、键名一致性与 diff 检查通过。未新增测试代码，未执行自动化测试、APK 打包或设备验收。
 
 ## 答题跳转
 

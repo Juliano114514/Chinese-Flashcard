@@ -9,10 +9,12 @@ object StudySettingsRules {
   val speechPreloadWords: IntRange = 0..20
   val speechCacheMiB: IntRange = 64..2048
   val homeShuffleQueueSize: IntRange = 1..20
+  val reviewBatchSize: IntRange = 1..50
 
   const val DEFAULT_ROUNDS = 4
   val defaultReviewDays: List<Int> = listOf(1, 3, 7)
   const val DEFAULT_SPEECH_PRELOAD_WORDS = 5
   const val DEFAULT_SPEECH_CACHE_MIB = 256
   const val DEFAULT_HOME_SHUFFLE_QUEUE_SIZE = 5
+  const val DEFAULT_REVIEW_BATCH_SIZE = 10
 }

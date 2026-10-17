@@ -74,6 +74,8 @@ sealed interface StudyAction {
   data class SelectStage(val stage: VocabularyStage, val language: AppLanguage? = null) : StudyAction
   data class LearnMore(val expectedDate: String, val expectedNewPlanned: Int,
     val expectedStage: VocabularyStage, val expectedLap: Int, val language: AppLanguage? = null) : StudyAction
+  data class ReviewMore(val expectedDate: String, val expectedReviewPlanned: Int,
+    val language: AppLanguage, val generation: Long) : StudyAction
   data class SetCollected(val wordId: String, val value: Boolean) : StudyAction
   data class SetSkipped(val wordId: String, val value: Boolean, val language: AppLanguage? = null) : StudyAction
   data class Submit(val cardId: String, val optionId: String?, val language: AppLanguage? = null,
@@ -330,6 +332,9 @@ class StudyViewModel(
   fun learnMore() { state.value.today?.let {
     onAction(StudyAction.LearnMore(it.date, it.newPlanned, it.stageProgress.stage, it.stageProgress.lap, it.learningLanguage))
   } }
+  fun reviewMore() { state.value.today?.let {
+    onAction(StudyAction.ReviewMore(it.date, it.reviewPlanned, it.learningLanguage, it.contextVersion))
+  } }
   fun refresh() = onAction(StudyAction.Refresh)
   fun retry() = onAction(StudyAction.Retry)
   fun advance() { state.value.card?.let { onAction(StudyAction.Advance(it.id, it.learningLanguage, state.value.directionGeneration)) } }
@@ -401,6 +406,7 @@ class StudyViewModel(
     if (refresh && refreshing) return
     val showBusy = !refresh || state.value.snapshot == null
     val generation = when (action) {
+      is StudyAction.ReviewMore -> action.generation
       is StudyAction.Submit -> action.generation
       is StudyAction.Advance -> action.generation
       is StudyAction.Explain -> action.generation
@@ -412,6 +418,7 @@ class StudyViewModel(
       is StudyAction.Start -> action.language
       is StudyAction.SelectStage -> action.language
       is StudyAction.LearnMore -> action.language
+      is StudyAction.ReviewMore -> action.language
       is StudyAction.SetSkipped -> action.language
       is StudyAction.Submit -> action.language
       is StudyAction.Advance -> action.language
@@ -437,6 +444,8 @@ class StudyViewModel(
               is StudyAction.SelectStage -> study.selectStage(action.stage, expectedLanguage)
               is StudyAction.LearnMore -> study.learnMore(action.expectedDate, action.expectedNewPlanned,
                 action.expectedStage, action.expectedLap, expectedLanguage)
+              is StudyAction.ReviewMore -> study.reviewMore(action.expectedDate, action.expectedReviewPlanned,
+                expectedLanguage, action.generation)
               is StudyAction.SetCollected -> {
                 wordState.setCollected(action.wordId, action.value)
                 stored = true

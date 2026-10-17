@@ -35,7 +35,7 @@ class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
     .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
-      Migration12To13, Migration13To14).build()
+      Migration12To13, Migration13To14, Migration14To15).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -197,7 +197,7 @@ class FlashcardRepositories(context: Context) {
           }.toString(), explanationMask = value.explanationOptions.mask,
           speechPreloadWords = value.speechPreloadWords, speechCacheMiB = value.speechCacheMiB,
           homeShuffleQueueSize = value.homeShuffleQueueSize,
-          waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio))
+          waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio, reviewBatchSize = value.reviewBatchSize))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -531,6 +531,37 @@ class FlashcardRepositories(context: Context) {
       return result
     }
 
+    override suspend fun reviewMore(expectedDate: String, expectedReviewPlanned: Int,
+      expectedLanguage: AppLanguage, expectedContextVersion: Long): StudySnapshot {
+      var changedDay = false
+      val result = transaction {
+        val day = ensureToday()
+        val current = snapshotAt(day)
+        if (!matchesContext(expectedLanguage, expectedContextVersion)) return@transaction current
+        if (current.today.date != expectedDate) {
+          changedDay = true
+          return@transaction current
+        }
+        if (current.today.reviewPlanned != expectedReviewPlanned || !current.today.canReviewMore ||
+          pendingDailyCard(day, StudyKind.REVIEW) != null) return@transaction current
+        val candidates = reviewCandidates(day).shuffled().take(savedSettings().reviewBatchSize)
+        if (candidates.isEmpty()) return@transaction current
+        val items = dao.dailyItems(day).filter { it.kind == StudyKind.REVIEW.name }
+        val firstBatch = (items.maxOfOrNull { it.batch } ?: -1) + 1
+        candidates.forEachIndexed { index, cycle ->
+          // A fresh item ID preserves earlier reviews of this word, including repeats on the same day.
+          dao.putDailyItem(DailyItemEntity(day, cycle.wordId, StudyKind.REVIEW.name, cycle.id,
+            firstBatch + index / 5, index.toLong(), reviewRecall = true, id = newId()))
+        }
+        val card = checkNotNull(createNext(day, StudyKind.REVIEW))
+        dao.putAppState(appState().copy(selectedKind = StudyKind.REVIEW.name, currentCardId = card.id))
+        touch()
+        snapshotAt(day)
+      }
+      if (changedDay) throw NewStudyDayException()
+      return result
+    }
+
     override suspend fun submit(cardId: String, optionId: String?, expectedLanguage: AppLanguage?,
       expectedContextVersion: Long?): StudySnapshot = cardTransaction(cardId, expectedLanguage, expectedContextVersion) { day, card ->
       if (card.phase != CardPhase.QUESTION.name || strings(JSONArray(card.optionsJson)).size != 4) return@cardTransaction snapshotAt(day)
@@ -772,6 +803,18 @@ class FlashcardRepositories(context: Context) {
         firstBatch + index / 5, index.toLong(), originStage = stage.rarity, originLap = state.lap))
     }
     return true
+  }
+
+  private suspend fun reviewCandidates(day: Long): List<CycleEntity> =
+    reviewCandidates(day, dao.studyWords(), dao.progress().associateBy { it.wordId })
+
+  private suspend fun reviewCandidates(day: Long, words: List<WordStudyRow>,
+    progress: Map<String, WordProgressEntity>): List<CycleEntity> {
+    val active = activeLearningCycles().mapTo(mutableSetOf()) { it.wordId }
+    val viewOnly = dao.viewOnlyDailyWords(day, StudyKind.REVIEW.name).toSet()
+    val eligible = words.filter { progress[it.id]?.firstPassedDay != null &&
+      progress[it.id]?.isSkipped != true && it.id !in active && it.id !in viewOnly }.mapTo(mutableSetOf()) { it.id }
+    return dao.learnedReviewCycles().filter { it.wordId in eligible }
   }
 
   /** Practice cards survive midnight; normal daily cards retain the existing stale-date guard. */
@@ -1102,7 +1145,8 @@ class FlashcardRepositories(context: Context) {
       collectionIds.size,
       words.count { progress[it.id]?.mistakePending == true && progress[it.id]?.isSkipped != true },
       appState().let { StudyGrowth(it.growthDays, it.learnedCompletions, it.clearedMistakes) },
-      learningLanguage = learningLanguage, contextVersion = appState().contextVersion)
+      learningLanguage = learningLanguage, contextVersion = appState().contextVersion,
+      availableReviewWords = reviewCandidates(day, words, progress).size)
   }
 
   private suspend fun learnMoreBlocker(day: Long, items: List<DailyItemEntity>, stage: VocabularyStage): StudyKind? {
@@ -1257,7 +1301,7 @@ class FlashcardRepositories(context: Context) {
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
     displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
     speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask),
-    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio)
+    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio, reviewBatchSize)
 
   private fun speechOptions(json: String): SpeechOptions {
     val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }

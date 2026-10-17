@@ -493,4 +493,8 @@
     <string name="ui_loading_voice">Loading voice…</string>
     <string name="ui_wait_for_correct_answer_audio">Wait for audio before Next after a correct answer</string>
     <string name="ui_wait_for_correct_answer_audio_description">Next is always manual. Wrong answers always require audio to finish; this setting only applies to correct answers.</string>
+    <string name="ui_continue_review">Continue review</string>
+    <string name="ui_review_more_count">Review %1$d more</string>
+    <string name="ui_review_batch_size">Continue review word count</string>
+    <string name="ui_review_batch_description">After finishing today\'s reviews, Continue review picks this many random learned words in the current learning language. Skipped words and words being relearned are excluded. If fewer are available, review them all. Changes apply to the next batch.</string>
 </resources>

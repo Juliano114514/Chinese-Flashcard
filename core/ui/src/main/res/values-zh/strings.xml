@@ -493,4 +493,8 @@
     <string name="ui_loading_voice">加载音频...</string>
     <string name="ui_wait_for_correct_answer_audio">答对后需播放完音频才能跳转</string>
     <string name="ui_wait_for_correct_answer_audio_description">始终手动点击下一步。答错后固定需要等待播放结束，此选项仅影响答对后的跳转。</string>
+    <string name="ui_continue_review">继续复习</string>
+    <string name="ui_review_more_count">再复习 %1$d 个词</string>
+    <string name="ui_review_batch_size">继续复习词数</string>
+    <string name="ui_review_batch_description">完成当天复习后，继续复习会按此数量，从当前学习语言的已学词汇中随机抽词。已跳过和正在重学的词不参与；可用词不足时复习全部。修改从下一批生效。</string>
 </resources>

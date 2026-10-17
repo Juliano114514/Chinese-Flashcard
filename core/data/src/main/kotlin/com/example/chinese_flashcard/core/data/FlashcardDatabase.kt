@@ -58,7 +58,8 @@ internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: 
   @ColumnInfo(defaultValue = "5") val speechPreloadWords: Int = 5,
   @ColumnInfo(defaultValue = "256") val speechCacheMiB: Int = 256,
   @ColumnInfo(defaultValue = "5") val homeShuffleQueueSize: Int = 5,
-  @ColumnInfo(defaultValue = "0") val waitForCorrectAnswerAudio: Boolean = false)
+  @ColumnInfo(defaultValue = "0") val waitForCorrectAnswerAudio: Boolean = false,
+  @ColumnInfo(defaultValue = "10") val reviewBatchSize: Int = 10)
 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
@@ -238,6 +239,10 @@ internal interface FlashcardDao {
   @Upsert suspend fun putProgress(value: WordProgressEntity)
   @Query("SELECT * FROM learning_cycles WHERE learningLanguage = :language AND id = :id") suspend fun cycle(id: String, language: String): CycleEntity?
   @Query("SELECT * FROM learning_cycles WHERE learningLanguage = :language AND status = 'ACTIVE' ORDER BY startedDay, id") suspend fun activeCycles(language: String): List<CycleEntity>
+  @Query("""SELECT * FROM learning_cycles WHERE learningLanguage = :language AND rowid IN
+    (SELECT MAX(rowid) FROM learning_cycles WHERE learningLanguage = :language
+      AND scope = 'NORMAL' AND status = 'COMPLETED' GROUP BY wordId)""")
+  suspend fun learnedReviewCycles(language: String): List<CycleEntity>
   @Upsert suspend fun putCycle(value: CycleEntity)
   @Query("SELECT * FROM daily_items WHERE learningLanguage = :language AND day = :day ORDER BY kind, batch, queueOrder") suspend fun dailyItems(day: Long, language: String): List<DailyItemEntity>
   @Query("SELECT * FROM daily_items WHERE learningLanguage = :language AND day = :day AND wordId = :wordId ORDER BY queueOrder LIMIT 1") suspend fun dailyItem(day: Long, wordId: String, language: String): DailyItemEntity?
@@ -304,7 +309,7 @@ internal interface FlashcardDao {
   StageStateEntity::class, StageCompletionEntity::class, StageDailyPlanEntity::class,
   PracticeSessionEntity::class, PracticeItemEntity::class,
   LearningContextEntity::class, WordBookmarkEntity::class, DailyGrowthRewardEntity::class],
-  version = 14, exportSchema = true)
+  version = 15, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }

@@ -18,7 +18,8 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettin
   val speechPreloadWords: Int = StudySettingsRules.DEFAULT_SPEECH_PRELOAD_WORDS,
   val speechCacheMiB: Int = StudySettingsRules.DEFAULT_SPEECH_CACHE_MIB,
   val homeShuffleQueueSize: Int = StudySettingsRules.DEFAULT_HOME_SHUFFLE_QUEUE_SIZE,
-  val waitForCorrectAnswerAudio: Boolean = false) {
+  val waitForCorrectAnswerAudio: Boolean = false,
+  val reviewBatchSize: Int = StudySettingsRules.DEFAULT_REVIEW_BATCH_SIZE) {
   fun validate() {
     require(dailyWords in StudySettingsRules.storedDailyWords && rounds in StudySettingsRules.rounds)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())
@@ -28,6 +29,7 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettin
     require(speechPreloadWords in StudySettingsRules.speechPreloadWords)
     require(speechCacheMiB in StudySettingsRules.speechCacheMiB)
     require(homeShuffleQueueSize in StudySettingsRules.homeShuffleQueueSize)
+    require(reviewBatchSize in StudySettingsRules.reviewBatchSize)
   }
 }
 
@@ -55,13 +57,14 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val stageProgress: StageProgress = StageProgress(),
   val collectionsAvailable: Int = 0, val mistakesAvailable: Int = 0,
   val growth: StudyGrowth = StudyGrowth(), val learningLanguage: AppLanguage = AppLanguage.CN,
-  val contextVersion: Long = 0) {
+  val contextVersion: Long = 0, val availableReviewWords: Int = 0) {
   val planned: Int get() = newPlanned + reviewPlanned + carryoverPlanned
   val completed: Int get() = newCompleted + reviewCompleted + carryoverCompleted
   val allComplete: Boolean get() = planned > 0 && completed == planned
   val showLearnMore: Boolean get() = newCompleted == newPlanned
   val canLearnMore: Boolean get() = showLearnMore && completed == planned &&
     learnMoreBlocker == null && availableNewWords > 0
+  val canReviewMore: Boolean get() = reviewCompleted == reviewPlanned && availableReviewWords > 0
 }
 data class PracticeProgress(val kind: StudyKind, val completed: Int, val planned: Int,
   val paused: Boolean = false)
@@ -108,6 +111,8 @@ interface StudyRepository {
   suspend fun selectStage(stage: VocabularyStage, expectedLanguage: AppLanguage? = null): StudySnapshot
   suspend fun learnMore(expectedDate: String, expectedNewPlanned: Int,
     expectedStage: VocabularyStage, expectedLap: Int, expectedLanguage: AppLanguage? = null): StudySnapshot
+  suspend fun reviewMore(expectedDate: String, expectedReviewPlanned: Int,
+    expectedLanguage: AppLanguage, expectedContextVersion: Long): StudySnapshot
   suspend fun submit(cardId: String, optionId: String?, expectedLanguage: AppLanguage? = null,
     expectedContextVersion: Long? = null): StudySnapshot
   suspend fun advance(cardId: String, expectedLanguage: AppLanguage? = null,

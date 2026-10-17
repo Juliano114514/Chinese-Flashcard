@@ -73,7 +73,7 @@ import com.example.chinese_flashcard.core.ui.rememberSpeechSourceId
 import com.example.chinese_flashcard.core.ui.isSpeechPreparing
 import com.example.chinese_flashcard.core.ui.SpeechPreparingIndicator
 
-private enum class HomeAction { RESUME, CARRYOVER, REVIEW, LEARN, LEARN_MORE, COLLECTIONS, MISTAKES }
+private enum class HomeAction { RESUME, CARRYOVER, REVIEW, REVIEW_MORE, LEARN, LEARN_MORE, COLLECTIONS, MISTAKES }
 
 private data class HomeRow(val title: String, val subtitle: String, val trailing: String, val done: Boolean,
   val enabled: Boolean, val action: HomeAction)
@@ -89,6 +89,7 @@ fun TodayScreen(
   onWordlist: () -> Unit,
   onSpeak: (SpeechRequest) -> Unit,
   onLanguages: () -> Unit = {},
+  onReviewMore: () -> Unit = {},
 ) {
   val state by vm.state.collectAsStateWithLifecycle()
   val latestSpeak by androidx.compose.runtime.rememberUpdatedState(onSpeak)
@@ -105,6 +106,7 @@ fun TodayScreen(
     if (state.today?.learnMoreBlocker == null) showLearnMoreBlocker = false
   }
   TodayContent(state, onStart, onResume, onLearnMore,
+    onReviewMore = onReviewMore,
     onLearnMoreBlocked = { showLearnMoreBlocker = true }, onStage = vm::selectStage,
     onRetry = vm::retry, onReplay = { sourceId -> vm.state.value.homeReplayRequest(sourceId)?.let(latestSpeak) },
     onShuffle = vm::shuffleHomeWord, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
@@ -145,6 +147,7 @@ private fun TodayContent(
   onProfile: () -> Unit,
   onWordlist: () -> Unit,
   onLanguages: () -> Unit = {},
+  onReviewMore: () -> Unit = {},
 ) {
   val today = state.today
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
@@ -176,6 +179,7 @@ private fun TodayContent(
         modifier = Modifier.weight(1f).fillMaxWidth())
       Spacer(Modifier.height(16.dp))
       HomeStudyPanel(today = today, card = state.card, busy = state.busy, error = state.error,
+        reviewBatchSize = state.settings.reviewBatchSize, onReviewMore = onReviewMore,
         onStart = onStart, onResume = onResume,
         onLearnMore = onLearnMore, onLearnMoreBlocked = onLearnMoreBlocked,
         onRetry = onRetry, onWordlist = onWordlist,
@@ -265,9 +269,11 @@ private fun HomeStudyPanel(
   card: StudyCard?,
   busy: Boolean,
   error: UiMessageKey?,
+  reviewBatchSize: Int,
   onStart: (StudyKind) -> Unit,
   onResume: () -> Unit,
   onLearnMore: () -> Unit,
+  onReviewMore: () -> Unit,
   onLearnMoreBlocked: () -> Unit,
   onRetry: () -> Unit,
   onWordlist: () -> Unit,
@@ -284,6 +290,7 @@ private fun HomeStudyPanel(
             HomeAction.RESUME -> onResume()
             HomeAction.CARRYOVER -> onStart(StudyKind.CARRYOVER)
             HomeAction.REVIEW -> onStart(StudyKind.REVIEW)
+            HomeAction.REVIEW_MORE -> onReviewMore()
             HomeAction.LEARN -> onStart(StudyKind.NEW)
             HomeAction.LEARN_MORE -> if (today.learnMoreBlocker != null) onLearnMoreBlocked() else onLearnMore()
             HomeAction.COLLECTIONS -> onStart(StudyKind.COLLECTION)
@@ -309,13 +316,19 @@ private fun HomeStudyPanel(
           else -> learnRow(today, busy)
             ?: HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_no_new_words), "", false, false, HomeAction.LEARN)
         }
-        val review = if (resume?.kind == StudyKind.REVIEW) {
-          HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_continue_word), "", false, !busy, HomeAction.RESUME)
-        } else {
-          val done = today.reviewPlanned > 0 && today.reviewCompleted >= today.reviewPlanned
-          HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_nothing_due), if (today.reviewPlanned > 0)
-            uiString(UiR.string.ui_fraction, today.reviewCompleted, today.reviewPlanned) else "", done,
-            !busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
+        val review = when {
+          resume?.kind == StudyKind.REVIEW ->
+            HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_continue_word), "", false, !busy, HomeAction.RESUME)
+          today.canReviewMore ->
+            HomeRow(uiString(UiR.string.ui_review),
+              uiString(UiR.string.ui_review_more_count, minOf(reviewBatchSize, today.availableReviewWords)),
+              "", false, !busy, HomeAction.REVIEW_MORE)
+          else -> {
+            val done = today.reviewPlanned > 0 && today.reviewCompleted >= today.reviewPlanned
+            HomeRow(uiString(UiR.string.ui_review), uiString(UiR.string.ui_nothing_due), if (today.reviewPlanned > 0)
+              uiString(UiR.string.ui_fraction, today.reviewCompleted, today.reviewPlanned) else "", done,
+              !busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
+          }
         }
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           HomeActionButton(learn, Modifier.weight(1f)) { open(learn.action) }

@@ -72,7 +72,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlin.math.roundToInt
 
 private enum class SettingEditor {
-  DAILY_WORDS, ROUNDS, REVIEW_DAYS, THEME, UI_LANGUAGE, LEARNING_LANGUAGE,
+  DAILY_WORDS, ROUNDS, REVIEW_DAYS, REVIEW_BATCH_SIZE, THEME, UI_LANGUAGE, LEARNING_LANGUAGE,
   SPEECH_PRELOAD, SPEECH_CACHE, HOME_SHUFFLE_QUEUE,
 }
 
@@ -136,6 +136,10 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
             SettingsRow(uiString(UiR.string.ui_correct_rounds), value.rounds.toString(), enabled) { openEditor(SettingEditor.ROUNDS) }
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_review_days), value.reviewDays.joinToString(" / "), enabled) { openEditor(SettingEditor.REVIEW_DAYS) }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_review_batch_size), value.reviewBatchSize.toString(), enabled) {
+              openEditor(SettingEditor.REVIEW_BATCH_SIZE)
+            }
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_reading_options), uiString(UiR.string.ui_reading_options_summary), enabled, onReadingOptions)
             SettingsDivider()
@@ -216,19 +220,22 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(rounds = it)) })
     SettingEditor.REVIEW_DAYS -> ReviewDaysDialog(value.reviewDays, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(reviewDays = it)) })
+    SettingEditor.REVIEW_BATCH_SIZE -> NumberSettingDialog(uiString(UiR.string.ui_review_batch_size),
+      value.reviewBatchSize, StudySettingsRules.reviewBatchSize, uiString(UiR.string.ui_review_batch_description), state.saving, state.error,
+      ::closeEditor) { vm.save(ProfileUpdate(reviewBatchSize = it)) }
     SettingEditor.THEME -> ThemeDialog(value.themeMode, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(themeMode = it)) })
     SettingEditor.UI_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_system_language), value.uiLanguage,
       state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(uiLanguage = it)) }
     SettingEditor.LEARNING_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_learning_language), value.learningLanguage,
       state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(learningLanguage = it)) }
-    SettingEditor.SPEECH_PRELOAD -> AudioNumberDialog(uiString(UiR.string.ui_speech_preload_words),
+    SettingEditor.SPEECH_PRELOAD -> NumberSettingDialog(uiString(UiR.string.ui_speech_preload_words),
       value.speechPreloadWords, StudySettingsRules.speechPreloadWords, uiString(UiR.string.ui_speech_preload_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(speechPreloadWords = it)) }
-    SettingEditor.SPEECH_CACHE -> AudioNumberDialog(uiString(UiR.string.ui_speech_cache_capacity),
+    SettingEditor.SPEECH_CACHE -> NumberSettingDialog(uiString(UiR.string.ui_speech_cache_capacity),
       value.speechCacheMiB, StudySettingsRules.speechCacheMiB, uiString(UiR.string.ui_speech_cache_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(speechCacheMiB = it)) }
-    SettingEditor.HOME_SHUFFLE_QUEUE -> AudioNumberDialog(uiString(UiR.string.ui_home_shuffle_queue_size),
+    SettingEditor.HOME_SHUFFLE_QUEUE -> NumberSettingDialog(uiString(UiR.string.ui_home_shuffle_queue_size),
       value.homeShuffleQueueSize, StudySettingsRules.homeShuffleQueueSize, uiString(UiR.string.ui_home_shuffle_queue_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(homeShuffleQueueSize = it)) }
     null -> Unit
@@ -236,7 +243,7 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
 }
 
 @Composable
-private fun AudioNumberDialog(title: String, initial: Int, range: IntRange, description: String,
+private fun NumberSettingDialog(title: String, initial: Int, range: IntRange, description: String,
   saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
   var text by rememberSaveable(title, initial) { mutableStateOf(initial.toString()) }
   val number = text.toIntOrNull()

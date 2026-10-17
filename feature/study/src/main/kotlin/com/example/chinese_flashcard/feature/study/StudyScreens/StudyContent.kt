@@ -83,6 +83,7 @@ internal fun StudyContent(
   onRetry: () -> Unit,
   ipaResolver: (String) -> String? = { null },
   voiceLoading: Boolean = false,
+  onReviewMore: () -> Unit = {},
 ) {
   val card = state.card
   val headingSourceId = rememberSpeechSourceId(Triple(card?.id, card?.phase, state.directionGeneration))
@@ -231,6 +232,10 @@ internal fun StudyContent(
               Text(uiString(UiR.string.ui_next_review_1_s, date), style = MaterialTheme.typography.titleMedium,
                 color = FlashcardStyle.colors.gradientAction)
             }
+          }
+          if (card.kind == StudyKind.REVIEW && card.canAnswer && !paused && state.today?.canReviewMore == true) {
+            Button(onClick = onReviewMore, enabled = !state.busy, shape = MaterialTheme.shapes.medium,
+              modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_continue_review)) }
           }
           Button(onClick = onBack, enabled = !state.busy, shape = MaterialTheme.shapes.medium,
             modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp)) { Text(uiString(UiR.string.ui_done)) }
