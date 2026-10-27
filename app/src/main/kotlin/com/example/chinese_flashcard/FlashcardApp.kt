@@ -255,7 +255,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val studyState = study.state.collectAsStateWithLifecycle()
   val studyBusy by remember(studyState) { derivedStateOf { studyState.value.busy } }
   val stage by remember(studyState) { derivedStateOf { studyState.value.today?.stageProgress?.stage ?: VocabularyStage.PRIMARY } }
-  var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Int>?>(null) }
+  var learnMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Long, Int>?>(null) }
   var reviewMoreRequest by rememberSaveable { mutableStateOf<Triple<String, Int, Long>?>(null) }
   StudyNavigationEffects(studyState, route, learnMoreRequest, reviewMoreRequest,
     onReviewMoreHandled = { reviewMoreRequest = null },
@@ -305,7 +305,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   FlashcardSystemBars()
   FlashcardBackground {
   Scaffold(containerColor = Color.Transparent,
-    contentWindowInsets = if (route == "study" || route == "word/{wordId}")
+    contentWindowInsets = if (route == "study" || route == "word/{wordId}" || route == "tag-filter")
       WindowInsets.safeDrawing.only(WindowInsetsSides.Top + WindowInsetsSides.Horizontal)
       else ScaffoldDefaults.contentWindowInsets,
     contentColor = MaterialTheme.colorScheme.onBackground,
@@ -356,7 +356,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
           onLearnMore = {
             val before = study.state.value.today
             if (before != null && !study.state.value.busy) {
-              learnMoreRequest = Triple(before.date, before.newPlanned, before.stageProgress.stage.rarity)
+              learnMoreRequest = Triple(before.date, study.state.value.snapshot?.revision ?: 0L, before.stageProgress.stage.rarity)
               study.learnMore()
             }
           }, onReviewMore = {
@@ -471,7 +471,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
 @Composable
 private fun StudyNavigationEffects(studyState: State<StudyUiState>,
   route: String?,
-  learnMoreRequest: Triple<String, Int, Int>?, reviewMoreRequest: Triple<String, Int, Long>?,
+  learnMoreRequest: Triple<String, Long, Int>?, reviewMoreRequest: Triple<String, Int, Long>?,
   onReviewMoreHandled: () -> Unit, onRequestHandled: () -> Unit, onStudy: () -> Unit) {
   val state by studyState
   LaunchedEffect(learnMoreRequest, state.busy, state.snapshot, state.error, route) {
@@ -480,7 +480,8 @@ private fun StudyNavigationEffects(studyState: State<StudyUiState>,
       state.today?.stageProgress?.stage?.rarity != request.third) {
       onRequestHandled()
     } else if (!state.busy) {
-      if ((state.today?.newPlanned ?: 0) > request.second && state.card?.kind == StudyKind.NEW &&
+      if ((state.snapshot?.revision ?: 0L) > request.second && state.today?.learningExtra == true &&
+        state.card?.kind in listOf(StudyKind.NEW, StudyKind.CARRYOVER) &&
         state.card?.phase != CardPhase.FINISHED) {
         onRequestHandled()
         onStudy()

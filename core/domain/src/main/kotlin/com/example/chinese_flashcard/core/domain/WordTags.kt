@@ -29,6 +29,11 @@ data class WordTagFilter(val selectedIds: Set<String> = emptySet()) {
 }
 
 /** Read-only counts for a draft filter; previewing never creates or changes a learning plan. */
+data class WordTagProgress(val learned: Int, val total: Int) {
+  val complete: Boolean get() = total > 0 && learned >= total
+}
+
 data class TagFilterPreview(val stage: VocabularyStage, val filter: WordTagFilter,
-  val total: Int, val learned: Int, val tagCounts: Map<String, Int> = emptyMap(),
+  val total: Int, val learned: Int, val tagCounts: Map<String, WordTagProgress> = emptyMap(),
+  val totalProgress: WordTagProgress = WordTagProgress(0, 0),
   val learningLanguage: AppLanguage = AppLanguage.CN, val contextVersion: Long = 0)

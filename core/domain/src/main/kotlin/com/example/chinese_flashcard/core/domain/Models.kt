@@ -59,13 +59,17 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val collectionsAvailable: Int = 0, val mistakesAvailable: Int = 0,
   val growth: StudyGrowth = StudyGrowth(), val learningLanguage: AppLanguage = AppLanguage.CN,
   val contextVersion: Long = 0, val availableReviewWords: Int = 0,
-  val tagFilter: WordTagFilter = WordTagFilter(), val tagCatalog: List<WordTag> = emptyList()) {
+  val tagFilter: WordTagFilter = WordTagFilter(), val tagCatalog: List<WordTag> = emptyList(),
+  val dailyLearningCompleted: Int = newCompleted + carryoverCompleted,
+  val learningExtra: Boolean = false) {
   val planned: Int get() = newPlanned + reviewPlanned + carryoverPlanned
   val completed: Int get() = newCompleted + reviewCompleted + carryoverCompleted
-  val allComplete: Boolean get() = planned > 0 && completed == planned
-  val showLearnMore: Boolean get() = newCompleted == newPlanned
-  val canLearnMore: Boolean get() = showLearnMore && completed == planned &&
-    learnMoreBlocker == null && availableNewWords > 0
+  val allComplete: Boolean get() = dailyGoalReached && learningComplete && reviewCompleted >= reviewPlanned
+  val dailyGoalReached: Boolean get() = dailyLearningCompleted >= dailyGoal
+  val learningPending: Int get() = newPlanned + carryoverPlanned - newCompleted - carryoverCompleted
+  val learningComplete: Boolean get() = (dailyGoalReached && !learningExtra) || learningPending == 0
+  val showLearnMore: Boolean get() = learningComplete
+  val canLearnMore: Boolean get() = showLearnMore && availableNewWords > 0
   val canReviewMore: Boolean get() = reviewCompleted == reviewPlanned && availableReviewWords > 0
 }
 data class PracticeProgress(val kind: StudyKind, val completed: Int, val planned: Int,

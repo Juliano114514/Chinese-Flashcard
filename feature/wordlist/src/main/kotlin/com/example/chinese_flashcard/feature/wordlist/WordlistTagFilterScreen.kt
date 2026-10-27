@@ -1,17 +1,11 @@
 package com.example.chinese_flashcard.feature.wordlist
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -23,9 +17,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.chinese_flashcard.core.domain.WordTagFilter
-import com.example.chinese_flashcard.core.ui.FlashcardLayout
-import com.example.chinese_flashcard.core.ui.FlashcardToolbar
-import com.example.chinese_flashcard.core.ui.WordTagGrid
+import com.example.chinese_flashcard.core.domain.WordTagProgress
+import com.example.chinese_flashcard.core.domain.WordlistStatus
+import com.example.chinese_flashcard.core.ui.WordTagFilterLayout
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.R as UiR
 import kotlinx.coroutines.Dispatchers
@@ -40,12 +34,20 @@ internal fun WordlistTagFilterScreen(state: WordlistUiState, onBack: () -> Unit,
   var selected by rememberSaveable(stateSaver = WordlistTagSelectionSaver) {
     mutableStateOf(state.tagFilter.selectedIds)
   }
-  var counts by remember { mutableStateOf<Map<String, Int>?>(null) }
+  var multiple by rememberSaveable { mutableStateOf(selected.size > 1) }
+  var lastSelected by rememberSaveable { mutableStateOf<String?>(null) }
+  var counts by remember { mutableStateOf<Map<String, WordTagProgress>?>(null) }
+  var totalProgress by remember { mutableStateOf<WordTagProgress?>(null) }
   var matching by remember { mutableStateOf<Int?>(null) }
-  LaunchedEffect(state.allEntries) {
-    counts = withContext(Dispatchers.Default) {
-      state.allEntries.flatMap { it.tags }.groupingBy { it }.eachCount()
+  LaunchedEffect(state.allEntries, state.tagCatalog) {
+    val progress = withContext(Dispatchers.Default) {
+      state.tagCatalog.associate { tag ->
+        val words = state.allEntries.filter { tag.id in it.tags }
+        tag.id to WordTagProgress(words.count { it.learningStatus == WordlistStatus.LEARNED }, words.size)
+      } to WordTagProgress(state.allEntries.count { it.learningStatus == WordlistStatus.LEARNED }, state.allEntries.size)
     }
+    counts = progress.first
+    totalProgress = progress.second
   }
   LaunchedEffect(selected, state.allEntries, state.tagCatalog) {
     matching = null
@@ -55,29 +57,23 @@ internal fun WordlistTagFilterScreen(state: WordlistUiState, onBack: () -> Unit,
     }
   }
   BackHandler(onBack = onBack)
-  Column(Modifier.fillMaxSize().padding(horizontal = FlashcardLayout.pageInset)) {
-    FlashcardToolbar(uiString(UiR.string.ui_tag_filter_title), onBack,
-      subtitle = { Text(uiString(UiR.string.ui_wordlist), style = MaterialTheme.typography.labelMedium,
-        color = MaterialTheme.colorScheme.onSurfaceVariant) },
-      trailing = {
-        TextButton(onClick = { selected = emptySet() }, enabled = selected.isNotEmpty()) {
-          Text(uiString(UiR.string.ui_tag_clear))
-        }
-      })
-    WordTagGrid(state.tagCatalog, selected, counts, { selected = it },
-      modifier = Modifier.weight(1f).fillMaxWidth())
-    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface,
-      modifier = Modifier.fillMaxWidth()) {
-      Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(matching?.let { uiString(UiR.string.ui_word_count, it) } ?: uiString(UiR.string.ui_loading),
-          style = MaterialTheme.typography.titleSmall)
-        if (matching == 0) Text(uiString(UiR.string.ui_no_matching_words),
-          style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-        Button(onClick = { onApply(WordTagFilter(selected)) }, enabled = matching != null,
-          modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
-          Text(uiString(UiR.string.ui_tag_apply))
-        }
-      }
+  WordTagFilterLayout(subtitle = uiString(UiR.string.ui_wordlist), catalog = state.tagCatalog,
+    selected = selected, counts = counts, totalProgress = totalProgress, multiple = multiple,
+    onBack = onBack, onSelectionChange = { next ->
+      lastSelected = (next - selected).firstOrNull() ?: lastSelected?.takeIf { it in next }
+      selected = next
+    }, onModeChange = { value ->
+      multiple = value
+      if (!value && selected.size > 1) selected = setOf(lastSelected?.takeIf { it in selected }
+        ?: state.tagCatalog.firstOrNull { it.id in selected }?.id ?: selected.sorted().first())
+    }) {
+    Text(matching?.let { uiString(UiR.string.ui_word_count, it) } ?: uiString(UiR.string.ui_loading),
+      style = MaterialTheme.typography.titleSmall)
+    if (matching == 0) Text(uiString(UiR.string.ui_no_matching_words),
+      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Button(onClick = { onApply(WordTagFilter(selected)) }, enabled = matching != null,
+      modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
+      Text(uiString(UiR.string.ui_tag_apply))
     }
   }
 }
