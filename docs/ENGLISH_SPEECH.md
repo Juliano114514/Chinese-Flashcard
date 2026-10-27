@@ -1,6 +1,6 @@
 # 英语离线发音与音标资源
 
-当前实现复用 `wordlist.csv` 的英文释义、本义／引申义、部件解释、英语例句与语块解释。CSV 字节、ID、顺序及导入契约保持原样。英语语音采用 Microsoft ONNX Runtime Android **1.31.0** 和 **Kitten TTS Nano 0.8 INT8**，固定 Bella 声线。模型随 APK 内置，第一次使用英语发音无需联网或下载模型。
+当前实现复用 `wordlist.csv` 的英文释义、本义／引申义、部件解释、英语例句与语块解释。词库随显式编辑清单更新，稳定ID、顺序和12列导入契约保留；索引绑定当前冻结快照。英语语音采用 Microsoft ONNX Runtime Android **1.31.0** 和 **Kitten TTS Nano 0.8 INT8**，固定 Bella 声线。模型随 APK 内置，第一次使用英语发音无需联网或下载模型。
 
 ## 来源与许可
 
@@ -24,7 +24,7 @@
 - `stylePath` 指向 `bella.f32`，`styleSha256` 校验原始声音字节；小端 float32、400 行、256 列、无文件头，顺序为 row-major。
 - `sampleRate=24000`、`speedPrior=0.8`、`trimTailSamples=5000`；冻结资源保持原值，运行时将英语速度倍率 `1.2` 与声线先验相乘一次，模型输入为 `0.96`。设备离线英语回退也由 `0.8` 提高到 `0.96`，中文保持 `0.8`。
 - `hashPrefixChars=2`，`shardPattern=english-speech/shard_{prefix}.json`；前缀是下述 SHA-256 的前两个十六进制字符。
-- `maxTokenCount=510`；当前最长实际输入为 237 个 token。
+- `maxTokenCount=510`；当前最长实际输入为 298 个 token。
 
 查找键是 `SHA256(text.trim().encode("UTF-8"))`，保留大小写。每片 JSON 格式为 `{"schemaVersion":1,"entries":{"完整hash":{"text":"原文","chunks":[{"tokenIds":[0,...,10,0],"styleRow":35}]}}}`。分片已经完成英文数字／缩写等文本预处理与分句；运行时不需要 phonemizer。
 
@@ -48,9 +48,9 @@ NPZ 仅为下载缓存中的声音来源，生成器使用 `numpy.load(..., allo
 
 原完整释义与顶层分号片段都保留可朗读索引，括号中的分号不拆分。纯符号 `☷` 没有英语发音，不生成虚假 token；缩写括号造成的纯标点尾 chunk 同样不调用模型。括号、排版引号等不属于 Kitten 模型符号表的字符按其官方 TextCleaner 规则忽略，并在报告中列出。词库中的注释和多义词发音并未因此获得人工语言审校认证。
 
-`core/data/src/main/assets/english-teaching/ipa.json` 采用 `{"schemaVersion":1,"dialect":"en-US","entries":{"east":"/ˈist/"}}`。键为原文 `trim().lowercase(Locale.ROOT)`，当前有 **7,719 条精确词典命中**。多个读音按原数据保留，不自行选择语境读音；未命中时留空，不把构建期 TTS 转音结果伪装成词典 IPA。长释义和整句通常没有对应词典条目。
+`core/data/src/main/assets/english-teaching/ipa.json` 采用 `{"schemaVersion":1,"dialect":"en-US","entries":{"east":"/ˈist/"}}`。键为原文 `trim().lowercase(Locale.ROOT)`，2026-10-13 快照当时有 **7,719 条精确词典命中**。多个读音按原数据保留，不自行选择语境读音；未命中时留空，不把构建期 TTS 转音结果伪装成词典 IPA。长释义和整句通常没有对应词典条目。
 
-同目录 `word-index.json` 以 13,223 个原 `wordId` 关联原主释义及其顶层分号义项，保留文本、顺序和重复项。每个义项记录 `speechHash` 与命中时的 `ipaKey`；无可朗读文字或无词典命中时对应值为 null。它只提供数据溯源，不改变词义或学习状态，运行时无需新增加载这一索引。`LICENSES.txt` 聚合 IPA／CMU 的四份完整许可；这三个生成文件的字节数、SHA-256 与 CSV 快照记录在 `sources.json`。
+当时同目录 `word-index.json` 以 13,223 个原 `wordId` 关联原主释义及其顶层分号义项，保留文本、顺序和重复项。每个义项记录 `speechHash` 与命中时的 `ipaKey`；无可朗读文字或无词典命中时对应值为 null。它只提供数据溯源，不改变词义或学习状态，运行时无需新增加载这一索引。`LICENSES.txt` 聚合 IPA／CMU 的四份完整许可；这三个生成文件的字节数、SHA-256 与 CSV 快照记录在 `sources.json`。
 
 ## 维护与验证
 
@@ -67,3 +67,14 @@ python tools/build_english_resources.py --check
 `--check` 不联网、不加载 NumPy 或 DLL、不写文件。它检查 CSV 快照、原模型哈希、声音有限值及矩阵大小、分片哈希、全量英语文本覆盖、token 范围／起止标记／510 上限、声音行、IPA 格式、许可证和运行时资源中禁用格式。它不是 Android 推理、音质、延迟或设备播放证明。
 
 现有或用户导入的英语文本不在冻结 sidecar 时，运行时可使用设备已安装的离线英语声音；无可用声音时显示非阻塞提示。模型解码失败、缓存校验失败及播放被取消均不得改变答题或学习进度。更换词库快照需要重新生成和检查 sidecar；`--check` 不会自行修改 CSV 或下载补丁。
+
+
+## 扩充词库后的快照维护
+
+新词库资源生成前先按 `docs/wordlist-validation.json` 核对词库字节哈希、大小及行数，使用原已锁定的 eSpeak 构建工具、Kitten 模型、Bella 声线和 IPA 词典源重建全部当前文本索引。未命中的 IPA 继续留空；词典音标命中、TTS 转音覆盖、真人发音审核和设备播放验证分别记录。固定模型和风格文件的哈希校验不因词库扩充而改变。
+
+
+2026-10-27 已针对 18,500 词、37,000 例句的新快照实际重建并执行独立 `--check`：77,529 条唯一可朗读英语文本、78,023 个发音 chunk，缺失文本 0；IPA 为 8,534 条精确词典命中。模型、Bella 风格矩阵及固定源锁的字节指纹与本轮修改前一致。新 CSV SHA-256 为 `7b87cd834c93d22e60c617d2dabbdd42e1754534d084a4ede7812f4647e627f4`，详细统计和验证边界见 [资源校验记录](vocabulary-resources-validation.json)。此次只生成并静态校验资源，未执行 Android 构建、推理试听或设备播放。
+
+
+随后罕度重分仅改变CSV首列，当前SHA-256为`71d0a021e789e1892a12f5732bba0b704662d2d3639681ed5c087558b692028b`；已证明其余11列、ID及顺序不变后重绑当前资源快照，并重新执行完整`--check`通过。所有发音／笔顺内容索引、模型和固定样音保持。此调整已随1.6.9打包并在小米14完成覆盖安装和数据保留核对，音质仍未全量核听，见[罕度重分报告](RARITY_REBALANCE_20261027.md)。

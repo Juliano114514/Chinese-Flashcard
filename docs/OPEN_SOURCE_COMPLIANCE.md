@@ -1,6 +1,6 @@
 # 开源发布与版权处理
 
-核对日期：2026-10-08。目标是可追溯、按许可分发，不能通过删除署名、改名、改写免责声明或声明“学习用途”规避权利人的版权。本文件记录现场证据与发布前的具体处理要求，不是法律意见或无侵权保证。
+词库扩充来源更新日期：2026-10-27；其他历史核对记录保留原日期。目标是可追溯、按许可分发，不能通过删除署名、改名、改写免责声明或声明“学习用途”规避权利人的版权。本文件记录现场证据与发布前的具体处理要求，不是法律意见或无侵权保证。
 
 ## 当前结论
 
@@ -11,7 +11,9 @@
 | 自有代码／文档 MIT | 本次已补齐 LICENSE、范围说明；尚不能由本地账号推定权利归属 | 维护者确认作者、雇佣／委托／共同作者关系和授权资格，保留原作者声明 |
 | 原始词表及例句 | 用户提供仅为来源描述，缺少完整作者／授权证据 | 追溯原作者与许可；无权公开的部分独立重写或排除，检查原表、两个 baseline、草稿、译稿及最终 CSV |
 | Mapull 收集内容 | 有上游 MIT，但来源元数据保留部分内容原出处不明 | 确定实际继承的字段、权利链与许可；无法确认时换用许可明确来源或独立编写；保留上游声明 |
-| CC-CEDICT 改编 | 已有 CC BY-SA 4.0 全文、版本、逐行来源；全部 13,223 行来源均提到 CC-CEDICT | 随数据保留署名、来源、许可、修改说明及同许可要求；不得整库改标 MIT；其他来源授权仍须独立补足 |
+| CC-CEDICT 改编 | 已有 CC BY-SA 4.0 全文、旧版及 2026-10-26 快照元数据；旧 13,223 行来源说明按 ID 保留，扩充后的来源锁与署名随 APK 展示 | 随数据保留署名、来源、许可、修改说明及同许可要求；不得整库改标 MIT；其他来源授权仍须独立补足 |
+| Tatoeba／ManyThings 选中句对 | CC BY 2.0 FR；新增词条的原句、两种语言句子 ID 与作者保留在来源索引，法律文本随应用展示 | 对实际词库版本核对选中句与署名一致；保留作者、来源、许可和项目修改说明。语料整理者提醒仍可能有错误，不将其表述为专业逐句认证 |
+| 频率／HSK 参考 | FrequencyWords 2018 内容 CC BY-SA 4.0；HSK 转录仓库分别列明多源许可，来源 URL 与哈希固定 | 只对实际采用部分沿用对应许可；教学阶段为项目编辑分层，不宣称官方教材或 HSK 等级认证 |
 | Arphic 派生字形 | 已有两份 Arphic 全文、COPYING、分包和哈希 | 按完整条款核对逐文件修改告知、日期及派生数据提供方式；合法公开包提供可访问的数据和许可 |
 | AI／翻译服务 | 有制作与审核记录，部分使用 Google 翻译接口 | 核实服务条款、输入权利及输出分发资格；AI 重述不自动消除原材料权利 |
 | 网页／教材摘录与参考缓存 | 存在 `source-excerpts.json` 等材料及本地参考缓存；不只涉及默认词库 | 审查 Git 已跟踪文件、未跟踪文件、被忽略文件、发布附件与全部拟公开历史；仅保留有权公开的部分 |
@@ -20,6 +22,10 @@
 “授权待核实”不等同于已认定侵权；也不能解释为默认允许分发。第三方免责声明只能帮助说明边界，不能替代许可。
 
 QQ 头像按用户要求不纳入本次审查或处理；保留资源与既有声明，不新增处理要求，也不将其认定为本次已完成的授权审查。
+
+2026-10-27 的来源整合新增 `tools/vocabulary_v2/source-lock.json`、保留旧说明的 `legacy-source-notes.json` 和新增例句的 `example-provenance.json`。`tools/publish_vocabulary_sources.py` 将选中归属发布到 `wordlist-sources/source-index.json` 与 `ATTRIBUTIONS.txt`，现有 Sources & licenses 页面离线读取逐句署名及 CC BY 2.0 FR 文本。此流程不打包原始语料全集，也不补足既有材料尚未核实的权利。
+
+选中句在目标词头以外进行繁转简字形处理时，以 `originalHanzi` 保留来源汉字句，并在离线署名中标明修改；原英文译文、句子 ID 和作者署名不因此改写。来源发布检查将实际例句逐句对照归属记录，并校验正式词库哈希、旧词条来源说明及新增词归属覆盖。
 
 ## 分发范围
 
@@ -45,7 +51,8 @@ QQ 头像按用户要求不纳入本次审查或处理；保留资源与既有�
 ## 官方依据
 
 - [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)：署名、同许可和修改说明，以完整法律文本为准。
-- [MDBG CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict)：上游分发与许可说明；本项目仍用冻结版本，不自动切换到最新词典。
+- [MDBG CC-CEDICT](https://www.mdbg.net/chinese/dictionary?page=cc-cedict)：上游分发与许可说明；本项目按来源锁使用固定旧版和 2026-10-26 更新快照，不在运行时自动切换词典。
+- [ManyThings 句对使用说明](https://www.manythings.org/anki/)、[Tatoeba 使用条款](https://tatoeba.org/en/terms_of_use) 与 [CC BY 2.0 FR 法律文本](https://creativecommons.org/licenses/by/2.0/fr/legalcode.fr)：保留实际句子的作者、ID 与许可。
 - [Make Me a Hanzi 固定版 COPYING](https://github.com/skishore/makemeahanzi/blob/bddc96d41bef78427ed0e034e9f7e31d71fd1b92/COPYING) 与 [Arphic 正文](../core/data/src/main/assets/wordlist-strokes/licenses/ARPHICPL.TXT)：区分字形与其他数据。
 - [AnimCJK 固定版 COPYING](https://github.com/parsimonhi/animCJK/blob/ec5e17cca76c87587790bcbce5ea0b4d4fb753d6/licenses/COPYING.txt)：按文件类型区分许可。
 - [Mapull 固定版 MIT](https://github.com/mapull/chinese-dictionary/blob/e804ada333b68afddfdccbe8dcc938a72da157a7/LICENSE) 与 [来源说明](../core/data/src/main/assets/wordlist-strokes/lexicon-sources.json)：保留上游及项目已记录的来源限制。
