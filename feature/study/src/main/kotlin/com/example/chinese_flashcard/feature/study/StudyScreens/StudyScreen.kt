@@ -28,8 +28,6 @@ import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.StudyKind
-import com.example.chinese_flashcard.core.domain.SpeechMode
-import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
 import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import kotlinx.coroutines.flow.first
@@ -55,8 +53,12 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var feedbackFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackPlaybackSucceeded by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackSoundClaimed by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
+  var feedbackCueFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var seenActiveSession by rememberSaveable(generation) { mutableStateOf(false) }
   val sounds = rememberLearningSounds()
+  LaunchedEffect(state.settings.learningSoundsEnabled) {
+    if (!state.settings.learningSoundsEnabled) sounds.stop()
+  }
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
   val manualSpeech = remember { ManualSpeechPlayback() }
   val latestSpeakAndWait by rememberUpdatedState(onSpeakAndWait)
@@ -84,7 +86,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       }
     }
     lifecycle.addObserver(observer)
-    onDispose { lifecycle.removeObserver(observer); manualSpeech.job?.cancel(); playback.cancel() }
+    onDispose { lifecycle.removeObserver(observer); manualSpeech.job?.cancel(); playback.cancel(); sounds.stop() }
   }
   val speechPage = card?.takeIf { it.phase in listOf(CardPhase.INTRO, CardPhase.QUESTION, CardPhase.EXPLANATION) }
     ?.let { "$generation/${it.id}/${it.phase}" }
@@ -118,6 +120,15 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
         if (!feedbackFinished) {
           playback.sequence {
+            val feedbackCard = vm.state.value.card
+            if (vm.state.value.directionGeneration != generation || feedbackCard == null || feedbackCard.id != card.id ||
+              feedbackCard.phase != CardPhase.FEEDBACK) return@sequence
+            if (!feedbackSoundClaimed) {
+              feedbackSoundClaimed = true
+              if (vm.state.value.settings.learningSoundsEnabled) sounds.playAnswer(card.correct == true)
+              currentCoroutineContext().ensureActive()
+            }
+            feedbackCueFinished = true
             if (!correctAnswerRevealed) {
               if (card.correct == false) {
                 withFrameNanos { }; withFrameNanos { }
@@ -133,12 +144,6 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
             currentCoroutineContext().ensureActive()
             val current = vm.state.value.card
             if (vm.state.value.directionGeneration == generation && current != null && current.id == card.id && current.phase == CardPhase.FEEDBACK) {
-              if (!feedbackSoundClaimed) {
-                feedbackSoundClaimed = true
-                if (vm.state.value.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK, card.learningLanguage) != SpeechMode.NONE) {
-                  sounds.playAnswer(card.correct == true)
-                }
-              }
               currentCoroutineContext().ensureActive()
               feedbackPlaybackSucceeded = played
               feedbackFinished = true
@@ -178,9 +183,11 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     onRetry = vm::retry, onReviewMore = vm::reviewMore, ipaResolver = ipaResolver,
     voiceLoading = state.speechPreparing || playbackPreparing ||
       LocalSpeechPlaybackState.current.phase == SpeechPlaybackPhase.PREPARING)
+  StudyCompletionEffects(card?.id, generation,
+    card?.phase == CardPhase.FEEDBACK && card.correct == true && feedbackCueFinished && !state.loading,
+    sounds, Modifier.fillMaxSize(), soundEnabled = false, small = true)
   StudyCompletionEffects(card?.id, generation, completed && seenActiveSession, sounds, Modifier.fillMaxSize(),
-    soundEnabled = state.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK,
-      card?.learningLanguage ?: state.settings.learningLanguage) != SpeechMode.NONE)
+    soundEnabled = state.settings.learningSoundsEnabled)
   }
   DailyWritingInvitation(state, vm)
 }

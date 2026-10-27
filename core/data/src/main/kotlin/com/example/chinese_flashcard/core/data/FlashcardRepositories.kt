@@ -38,7 +38,7 @@ class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
     .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
-      Migration12To13, Migration13To14, Migration14To15, Migration15To16, Migration16To17, Migration17To18).build()
+      Migration12To13, Migration13To14, Migration14To15, Migration15To16, Migration16To17, Migration17To18, Migration18To19).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -257,7 +257,8 @@ class FlashcardRepositories(context: Context) {
           }.toString(), explanationMask = value.explanationOptions.mask,
           speechPreloadWords = value.speechPreloadWords, speechCacheMiB = value.speechCacheMiB,
           homeShuffleQueueSize = value.homeShuffleQueueSize,
-          waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio, reviewBatchSize = value.reviewBatchSize))
+          waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio, reviewBatchSize = value.reviewBatchSize,
+          learningSoundsEnabled = value.learningSoundsEnabled))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -1498,7 +1499,7 @@ class FlashcardRepositories(context: Context) {
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
     displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
     speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask),
-    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio, reviewBatchSize)
+    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio, reviewBatchSize, learningSoundsEnabled)
 
   private fun speechOptions(json: String): SpeechOptions {
     val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }

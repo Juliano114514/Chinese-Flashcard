@@ -525,4 +525,7 @@
     <string name="ui_stage_guidance_high">见过，有印象</string>
     <string name="ui_stage_guidance_university">不设要求</string>
     <string name="ui_stage_guidance_specialist">可跳过</string>
+    <string name="ui_learning_sounds">学习提示音</string>
+    <string name="ui_learning_sounds_description">答题和完成练习时播放简短提示音，可与朗读分别开关。</string>
+    <string name="ui_sound_and_explanations">声音与讲解</string>
 </resources>

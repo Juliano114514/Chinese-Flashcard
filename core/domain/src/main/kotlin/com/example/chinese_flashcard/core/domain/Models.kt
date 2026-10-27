@@ -20,7 +20,8 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettin
   val speechCacheMiB: Int = StudySettingsRules.DEFAULT_SPEECH_CACHE_MIB,
   val homeShuffleQueueSize: Int = StudySettingsRules.DEFAULT_HOME_SHUFFLE_QUEUE_SIZE,
   val waitForCorrectAnswerAudio: Boolean = false,
-  val reviewBatchSize: Int = StudySettingsRules.DEFAULT_REVIEW_BATCH_SIZE) {
+  val reviewBatchSize: Int = StudySettingsRules.DEFAULT_REVIEW_BATCH_SIZE,
+  val learningSoundsEnabled: Boolean = true) {
   fun validate() {
     require(dailyWords in StudySettingsRules.storedDailyWords && rounds in StudySettingsRules.rounds)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())

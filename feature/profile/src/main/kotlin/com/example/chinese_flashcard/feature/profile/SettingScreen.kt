@@ -6,6 +6,8 @@ import com.example.chinese_flashcard.core.ui.uiPlural
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.R as UiR
+import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -28,7 +30,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Switch
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -107,93 +109,64 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
         CircularProgressIndicator(Modifier.size(28.dp))
       }
     } else {
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_languages), style = MaterialTheme.typography.titleSmall,
-          color = MaterialTheme.colorScheme.primary)
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth()) {
-            SettingsRow(uiString(UiR.string.ui_system_language), value.uiLanguage.label(), enabled && languageSwitchEnabled) {
-              openEditor(SettingEditor.UI_LANGUAGE)
-            }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_learning_language), value.learningLanguage.label(), enabled && languageSwitchEnabled) {
-              openEditor(SettingEditor.LEARNING_LANGUAGE)
-            }
-          }
+      SettingsGroup(uiString(UiR.string.ui_learning)) {
+        SettingsRow(uiString(UiR.string.ui_daily_words), value.dailyWords.toString(), enabled) { openEditor(SettingEditor.DAILY_WORDS) }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_correct_rounds), value.rounds.toString(), enabled) { openEditor(SettingEditor.ROUNDS) }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_review_days), value.reviewDays.joinToString(" / "), enabled) { openEditor(SettingEditor.REVIEW_DAYS) }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_review_batch_size), value.reviewBatchSize.toString(), enabled) {
+          openEditor(SettingEditor.REVIEW_BATCH_SIZE)
         }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_appearance), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
-          SettingsRow(uiString(UiR.string.ui_theme), value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
+      SettingsGroup(uiString(UiR.string.ui_sound_and_explanations)) {
+        SettingsToggle(uiString(UiR.string.ui_learning_sounds), uiString(UiR.string.ui_learning_sounds_description),
+          value.learningSoundsEnabled, enabled) { vm.save(ProfileUpdate(learningSoundsEnabled = it)) }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_reading_options), enabled = enabled, onClick = onReadingOptions)
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_explanation_options), enabled = enabled, onClick = onExplanationOptions)
+        SettingsDivider()
+        SettingsToggle(uiString(UiR.string.ui_wait_for_correct_answer_audio),
+          uiString(UiR.string.ui_wait_for_correct_answer_audio_description), value.waitForCorrectAnswerAudio, enabled) {
+          vm.save(ProfileUpdate(waitForCorrectAnswerAudio = it))
         }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_learning), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth()) {
-            SettingsRow(uiString(UiR.string.ui_daily_words), value.dailyWords.toString(), enabled) { openEditor(SettingEditor.DAILY_WORDS) }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_correct_rounds), value.rounds.toString(), enabled) { openEditor(SettingEditor.ROUNDS) }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_review_days), value.reviewDays.joinToString(" / "), enabled) { openEditor(SettingEditor.REVIEW_DAYS) }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_review_batch_size), value.reviewBatchSize.toString(), enabled) {
-              openEditor(SettingEditor.REVIEW_BATCH_SIZE)
-            }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_reading_options), uiString(UiR.string.ui_reading_options_summary), enabled, onReadingOptions)
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_explanation_options), uiString(UiR.string.ui_explanation_options_summary), enabled, onExplanationOptions)
-            SettingsDivider()
-            Row(Modifier.fillMaxWidth().toggleable(value = value.waitForCorrectAnswerAudio,
-              enabled = enabled, role = Role.Checkbox,
-              onValueChange = { vm.save(ProfileUpdate(waitForCorrectAnswerAudio = it)) })
-              .padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically,
-              horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-              Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Text(uiString(UiR.string.ui_wait_for_correct_answer_audio), style = MaterialTheme.typography.bodyLarge)
-                Text(uiString(UiR.string.ui_wait_for_correct_answer_audio_description),
-                  style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-              }
-              Checkbox(checked = value.waitForCorrectAnswerAudio, onCheckedChange = null, enabled = enabled)
-            }
-          }
+      SettingsGroup(uiString(UiR.string.ui_languages)) {
+        SettingsRow(uiString(UiR.string.ui_system_language), value.uiLanguage.label(), enabled && languageSwitchEnabled) {
+          openEditor(SettingEditor.UI_LANGUAGE)
+        }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_learning_language), value.learningLanguage.label(), enabled && languageSwitchEnabled) {
+          openEditor(SettingEditor.LEARNING_LANGUAGE)
         }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_speech_and_cache), style = MaterialTheme.typography.titleSmall,
-          color = MaterialTheme.colorScheme.primary)
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth()) {
-            SettingsRow(uiString(UiR.string.ui_speech_preload_words), value.speechPreloadWords.toString(), enabled) {
-              openEditor(SettingEditor.SPEECH_PRELOAD)
-            }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_speech_cache_capacity),
-              uiString(UiR.string.ui_speech_cache_capacity_value, value.speechCacheMiB), enabled) {
-              openEditor(SettingEditor.SPEECH_CACHE)
-            }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_home_shuffle_queue_size), value.homeShuffleQueueSize.toString(), enabled) {
-              openEditor(SettingEditor.HOME_SHUFFLE_QUEUE)
-            }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_clear_speech_cache),
-              uiString(UiR.string.ui_speech_cache_used, cacheUsedBytes.coerceAtLeast(0L).toDouble() / 1_048_576.0,
-                value.speechCacheMiB), enabled, onClearSpeechCache)
-          }
-        }
+      SettingsGroup(uiString(UiR.string.ui_appearance)) {
+        SettingsRow(uiString(UiR.string.ui_theme), value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
       }
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_data), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
-          Column(Modifier.fillMaxWidth()) {
-            SettingsRow(uiString(UiR.string.ui_import_csv), enabled = enabled, onClick = onImportCsv)
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_data_licenses), enabled = enabled, onClick = onLicenses)
-          }
+      SettingsGroup(uiString(UiR.string.ui_speech_and_cache)) {
+        SettingsRow(uiString(UiR.string.ui_speech_preload_words), value.speechPreloadWords.toString(), enabled) {
+          openEditor(SettingEditor.SPEECH_PRELOAD)
         }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_speech_cache_capacity),
+          uiString(UiR.string.ui_speech_cache_capacity_value, value.speechCacheMiB), enabled) {
+          openEditor(SettingEditor.SPEECH_CACHE)
+        }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_home_shuffle_queue_size), value.homeShuffleQueueSize.toString(), enabled) {
+          openEditor(SettingEditor.HOME_SHUFFLE_QUEUE)
+        }
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_clear_speech_cache),
+          uiString(UiR.string.ui_speech_cache_used, cacheUsedBytes.coerceAtLeast(0L).toDouble() / 1_048_576.0,
+            value.speechCacheMiB), enabled, onClearSpeechCache)
+      }
+      SettingsGroup(uiString(UiR.string.ui_data)) {
+        SettingsRow(uiString(UiR.string.ui_import_csv), enabled = enabled, onClick = onImportCsv)
+        SettingsDivider()
+        SettingsRow(uiString(UiR.string.ui_data_licenses), enabled = enabled, onClick = onLicenses)
       }
       if (defaultWordlistLoading || defaultWordlistError != null) {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally,
@@ -250,6 +223,30 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
 }
 
 @Composable
+private fun SettingsGroup(title: String, content: @Composable ColumnScope.() -> Unit) {
+  Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    Text(title, style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
+    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface,
+      border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = .5f))) {
+      Column(Modifier.fillMaxWidth(), content = content)
+    }
+  }
+}
+
+@Composable
+private fun SettingsToggle(title: String, description: String, checked: Boolean, enabled: Boolean,
+  onChange: (Boolean) -> Unit) {
+  Row(Modifier.fillMaxWidth().toggleable(checked, enabled = enabled, role = Role.Switch, onValueChange = onChange)
+    .padding(16.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+      Text(title, style = MaterialTheme.typography.bodyMedium)
+      Text(description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    Switch(checked, onCheckedChange = null, enabled = enabled)
+  }
+}
+
+@Composable
 private fun NumberSettingDialog(title: String, initial: Int, range: IntRange, description: String,
   saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit, onConfirm: (Int) -> Unit) {
   var text by rememberSaveable(title, initial) { mutableStateOf(initial.toString()) }
@@ -277,15 +274,14 @@ private fun AppLanguage.label(): String = when (this) {
 @Composable
 private fun LanguageDialog(title: String, initial: AppLanguage, saving: Boolean, error: UiMessageKey?,
   onDismiss: () -> Unit, onConfirm: (AppLanguage) -> Unit) {
-  var selected by rememberSaveable(initial) { mutableStateOf(initial) }
-  SettingDialog(title, saving, error, true, onDismiss, { onConfirm(selected) }) {
+  SettingDialog(title, saving, error, true, onDismiss, {}, showConfirm = false) {
     Column(Modifier.selectableGroup()) {
       AppLanguage.entries.forEach { language ->
         Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
-          .selectable(selected = selected == language, enabled = !saving, role = Role.RadioButton,
-            onClick = { selected = language }).padding(horizontal = 8.dp),
+          .selectable(selected = initial == language, enabled = !saving, role = Role.RadioButton,
+            onClick = { onConfirm(language) }).padding(horizontal = 8.dp),
           verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          RadioButton(selected = selected == language, onClick = null, enabled = !saving)
+          RadioButton(selected = initial == language, onClick = null, enabled = !saving)
           Text(language.label())
         }
       }
@@ -303,15 +299,14 @@ private fun ThemeMode.label(): String = when (this) {
 @Composable
 private fun ThemeDialog(initial: ThemeMode, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit,
   onConfirm: (ThemeMode) -> Unit) {
-  var selected by rememberSaveable { mutableStateOf(initial) }
-  SettingDialog(uiString(UiR.string.ui_theme), saving, error, true, onDismiss, { onConfirm(selected) }) {
+  SettingDialog(uiString(UiR.string.ui_theme), saving, error, true, onDismiss, {}, showConfirm = false) {
     Column(Modifier.selectableGroup()) {
       ThemeMode.entries.forEach { mode ->
         Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
-          .selectable(selected = selected == mode, enabled = !saving, role = Role.RadioButton,
-            onClick = { selected = mode }).padding(horizontal = 8.dp),
+          .selectable(selected = initial == mode, enabled = !saving, role = Role.RadioButton,
+            onClick = { onConfirm(mode) }).padding(horizontal = 8.dp),
           verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          RadioButton(selected = selected == mode, onClick = null, enabled = !saving)
+          RadioButton(selected = initial == mode, onClick = null, enabled = !saving)
           Text(mode.label(), style = MaterialTheme.typography.bodyMedium)
         }
       }
@@ -329,7 +324,7 @@ private fun SettingsDivider() {
 private fun SettingsRow(title: String, value: String? = null, enabled: Boolean = true, onClick: () -> Unit) {
   val color = if (enabled) MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = FlashcardStyle.opacity.disabledContent)
   Row(Modifier.fillMaxWidth().heightIn(min = 64.dp)
-    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(horizontal = 20.dp, vertical = 16.dp),
+    .clickable(enabled = enabled, role = Role.Button, onClick = onClick).padding(horizontal = 16.dp, vertical = 12.dp),
     verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
     Text(title, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium, color = color)
     value?.let {
@@ -483,6 +478,7 @@ private fun SettingDialog(
   valid: Boolean,
   onDismiss: () -> Unit,
   onConfirm: () -> Unit,
+  showConfirm: Boolean = true,
   content: @Composable () -> Unit,
 ) {
   FlashcardDialog(onDismissRequest = { if (!saving) onDismiss() },
@@ -493,7 +489,8 @@ private fun SettingDialog(
         error?.let { Text(uiString(it), color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall) }
       }
     }, confirmButton = {
-      TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = !saving && valid) { Text(uiString(if (saving) UiR.string.ui_saving_ff509c else UiR.string.ui_done)) }
+      if (showConfirm) TextButton(shape = MaterialTheme.shapes.small, onClick = onConfirm, enabled = !saving && valid) { Text(uiString(if (saving) UiR.string.ui_saving_ff509c else UiR.string.ui_done)) }
+      else if (saving) CircularProgressIndicator(Modifier.size(24.dp))
     }, dismissButton = {
       TextButton(shape = MaterialTheme.shapes.small, onClick = onDismiss, enabled = !saving) { Text(uiString(UiR.string.ui_cancel)) }
     })

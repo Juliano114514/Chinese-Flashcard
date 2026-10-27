@@ -525,4 +525,7 @@
     <string name="ui_stage_guidance_high">Recognize when seen</string>
     <string name="ui_stage_guidance_university">No mastery requirement</string>
     <string name="ui_stage_guidance_specialist">Optional</string>
+    <string name="ui_learning_sounds">Learning sounds</string>
+    <string name="ui_learning_sounds_description">Play a short cue for answers and session completion. Independent of speech.</string>
+    <string name="ui_sound_and_explanations">Sound and explanations</string>
 </resources>

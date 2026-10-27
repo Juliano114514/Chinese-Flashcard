@@ -58,6 +58,7 @@ data class ProfileUpdate(
   val homeShuffleQueueSize: Int? = null,
   val waitForCorrectAnswerAudio: Boolean? = null,
   val reviewBatchSize: Int? = null,
+  val learningSoundsEnabled: Boolean? = null,
 ) {
   fun applyTo(value: StudySettings): StudySettings {
     dailyWords?.let { require(DailyWordChoices.isAllowed(it)) { "Daily words must be 5–50 in steps of 5." } }
@@ -77,6 +78,7 @@ data class ProfileUpdate(
       homeShuffleQueueSize = homeShuffleQueueSize ?: value.homeShuffleQueueSize,
       waitForCorrectAnswerAudio = waitForCorrectAnswerAudio ?: value.waitForCorrectAnswerAudio,
       reviewBatchSize = reviewBatchSize ?: value.reviewBatchSize,
+      learningSoundsEnabled = learningSoundsEnabled ?: value.learningSoundsEnabled,
     )
   }
 }
