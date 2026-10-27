@@ -31,7 +31,8 @@ private fun ThemePreview(@PreviewParameter(StageThemePreviewProvider::class) the
     Surface(color = scheme.background) {
       Column(Modifier.verticalScroll(rememberScrollState()).padding(24.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        Text("Stage ${theme.stage.rarity} · ${theme.stage.label}", style = MaterialTheme.typography.titleLarge)
+        Text(uiString(R.string.ui_stage_number, theme.stage.rarity) + " · " + theme.stage.localizedLabel(),
+          style = MaterialTheme.typography.titleLarge)
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
           listOf(scheme.surfaceContainerLowest, scheme.surfaceContainerLow, scheme.surfaceContainer,
             scheme.surfaceContainerHigh, scheme.surfaceContainerHighest).forEach { color ->

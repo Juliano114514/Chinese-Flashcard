@@ -34,7 +34,8 @@ internal class HomeSpeechQueue(
   private val onSelected: (WordlistItem, SpeechRequest) -> Unit,
   private val onReadyCount: (Int) -> Unit = {},
 ) {
-  private data class Spec(val language: AppLanguage, val mode: SpeechMode, val capacity: Int)
+  private data class Spec(val language: AppLanguage, val mode: SpeechMode, val capacity: Int,
+    val contextVersion: Long = 0)
   private data class AudioWord(val id: String, val hanzi: String, val pinyin: String, val english: String)
   private class Candidate(val word: WordlistItem, val requests: List<SpeechRequest>) {
     var ready = false
@@ -55,8 +56,9 @@ internal class HomeSpeechQueue(
   private var validationRetryPending = false
   private var pending = false
 
-  fun configure(pool: List<WordlistItem>, language: AppLanguage, options: SpeechOptions, capacity: Int) {
-    val next = Spec(language, options.mode(SpeechScene.HOME_WORD, language), capacity)
+  fun configure(pool: List<WordlistItem>, language: AppLanguage, options: SpeechOptions, capacity: Int,
+    contextVersion: Long = 0) {
+    val next = Spec(language, options.mode(SpeechScene.HOME_WORD, language), capacity, contextVersion)
     val content = pool.map { AudioWord(it.id, it.hanzi, it.pinyin, it.english) }
     words = pool
     if (next == spec && content == audioWords) return

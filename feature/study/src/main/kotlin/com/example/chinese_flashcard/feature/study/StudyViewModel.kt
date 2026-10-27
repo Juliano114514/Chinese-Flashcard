@@ -15,6 +15,9 @@ import com.example.chinese_flashcard.core.domain.WordlistItem
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.domain.WordEntry
+import com.example.chinese_flashcard.core.domain.WordTagFilter
+import com.example.chinese_flashcard.core.domain.TagFilterPreview
+import com.example.chinese_flashcard.core.domain.WordTag
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.SpeechCacheController
 import com.example.chinese_flashcard.core.domain.SpeechCacheDemand
@@ -45,6 +48,12 @@ import kotlinx.coroutines.withContext
 
 data class WritingRequest(val token: Long, val sessionId: String)
 
+private data class HomePoolSpec(val stage: VocabularyStage?, val preferences: StudySettings,
+  val filter: WordTagFilter, val catalog: List<WordTag>, val contextVersion: Long)
+
+private fun StudyUiState.homePoolSpec() = HomePoolSpec(today?.stageProgress?.stage, settings,
+  today?.tagFilter ?: WordTagFilter(), today?.tagCatalog.orEmpty(), directionGeneration)
+
 data class StudyUiState(
   val loading: Boolean = true,
   val busy: Boolean = false,
@@ -56,6 +65,7 @@ data class StudyUiState(
   val homeWord: WordlistItem? = null,
   val homeWordError: Boolean = false,
   val homeWordStage: VocabularyStage? = null,
+  val homeWordContextVersion: Long? = null,
   val homeShuffleWaiting: Boolean = false,
   val homeShuffleReady: Int = 0,
   val homeShuffleFailed: Boolean = false,
@@ -72,6 +82,8 @@ sealed interface StudyAction {
   data object Retry : StudyAction
   data class Start(val kind: StudyKind, val language: AppLanguage? = null) : StudyAction
   data class SelectStage(val stage: VocabularyStage, val language: AppLanguage? = null) : StudyAction
+  data class SelectTagFilter(val filter: WordTagFilter, val language: AppLanguage,
+    val generation: Long) : StudyAction
   data class LearnMore(val expectedDate: String, val expectedNewPlanned: Int,
     val expectedStage: VocabularyStage, val expectedLap: Int, val language: AppLanguage? = null) : StudyAction
   data class ReviewMore(val expectedDate: String, val expectedReviewPlanned: Int,
@@ -108,6 +120,7 @@ object StudyReducer {
       snapshot = state.snapshot?.takeIf { it == mutation.snapshot.copy(revision = it.revision) } ?: mutation.snapshot,
       settings = (mutation.settings ?: state.settings).copy(learningLanguage = mutation.snapshot.learningLanguage), error = null,
       directionGeneration = mutation.snapshot.contextVersion,
+      homeSpeechEvent = state.homeSpeechEvent.takeIf { state.snapshot?.contextVersion == mutation.snapshot.contextVersion },
       writingRequest = state.writingRequest.takeIf { state.snapshot?.contextVersion == mutation.snapshot.contextVersion },
       dailyInvitation = state.dailyInvitation && mutation.snapshot.learningLanguage == AppLanguage.CN &&
         state.snapshot?.learningLanguage == mutation.snapshot.learningLanguage &&
@@ -158,7 +171,9 @@ class StudyViewModel(
     onSelected = { word, request -> mutableState.update { current ->
       if (homeSpeechActive && !current.busy && !current.loading &&
         current.homeWordStage == current.today?.stageProgress?.stage &&
+        current.homeWordContextVersion == current.directionGeneration &&
         word.difficulty == current.today?.stageProgress?.stage?.rarity &&
+        current.today?.tagFilter?.matches(word.tags, current.today?.tagCatalog.orEmpty()) == true &&
         request.language == current.settings.learningLanguage) {
         current.copy(homeWord = word, homeWordError = false, homeSpeechEvent = HomeSpeechEvent(++homeSpeechToken, request))
       } else current
@@ -179,7 +194,8 @@ class StudyViewModel(
   fun shuffleHomeWord() {
     if (state.value.busy || state.value.loading) return
     if (homeWordObservation?.isActive != true) { observeHomeWords(); return }
-    if (state.value.homeWordStage != state.value.today?.stageProgress?.stage) return
+    if (state.value.homeWordStage != state.value.today?.stageProgress?.stage ||
+      state.value.homeWordContextVersion != state.value.directionGeneration) return
     homeQueue.shuffle()
   }
 
@@ -197,7 +213,8 @@ class StudyViewModel(
   private fun syncHomeSpeechActivity() {
     val current = state.value
     val active = homeSpeechActive && !current.busy && !current.loading &&
-      current.homeWordStage == current.today?.stageProgress?.stage
+      current.homeWordStage == current.today?.stageProgress?.stage &&
+      current.homeWordContextVersion == current.directionGeneration
     if (!active || current.homeSpeechEvent?.request?.language?.let { it != current.settings.learningLanguage } == true)
       mutableState.update { it.copy(homeSpeechEvent = null) }
     homeQueue.setActive(active)
@@ -288,16 +305,20 @@ class StudyViewModel(
     homeWordObservation?.cancel()
     homeWordObservation = viewModelScope.launch {
       try {
-        combine(state.map { it.today?.stageProgress?.stage to it.settings }.distinctUntilChanged(), wordlist.entries) {
-          (stage, preferences), words -> Triple(stage, preferences,
-            if (stage == null) emptyList() else words.filter { it.difficulty == stage.rarity })
-        }.distinctUntilChanged().flowOn(Dispatchers.Default).collect { (stage, preferences, words) ->
-          if (stage != state.value.today?.stageProgress?.stage) return@collect
+        combine(state.map { it.homePoolSpec() }.distinctUntilChanged(), wordlist.entries) { spec, words ->
+          val matches = spec.filter.matcher(spec.catalog)
+          spec to if (spec.stage == null) emptyList() else words.filter {
+            it.difficulty == spec.stage.rarity && matches(it.tags)
+          }
+        }.distinctUntilChanged().flowOn(Dispatchers.Default).collect { (spec, words) ->
+          if (spec != state.value.homePoolSpec()) return@collect
           homeWords = words
           mutableState.update { current -> current.copy(
             homeWord = words.firstOrNull { it.id == current.homeWord?.id } ?: words.randomOrNull(),
-            homeWordError = false, homeWordStage = stage) }
-          homeQueue.configure(words, preferences.learningLanguage, preferences.speechOptions, preferences.homeShuffleQueueSize)
+            homeWordError = false, homeWordStage = spec.stage,
+            homeWordContextVersion = spec.contextVersion, homeSpeechEvent = null) }
+          homeQueue.configure(words, spec.preferences.learningLanguage, spec.preferences.speechOptions,
+            spec.preferences.homeShuffleQueueSize, spec.contextVersion)
           syncHomeSpeechActivity()
         }
       } catch (error: CancellationException) {
@@ -305,7 +326,8 @@ class StudyViewModel(
       } catch (_: Exception) {
         homeWords = emptyList()
         homeQueue.configure(emptyList(), state.value.settings.learningLanguage,
-          state.value.settings.speechOptions, state.value.settings.homeShuffleQueueSize)
+          state.value.settings.speechOptions, state.value.settings.homeShuffleQueueSize,
+          state.value.directionGeneration)
         mutableState.update { it.copy(homeWord = null, homeWordError = true) }
       }
     }
@@ -325,6 +347,21 @@ class StudyViewModel(
 
   fun start(kind: StudyKind) = onAction(StudyAction.Start(kind, state.value.settings.learningLanguage))
   fun selectStage(stage: VocabularyStage) = onAction(StudyAction.SelectStage(stage, state.value.settings.learningLanguage))
+  fun applyTagFilter(filter: WordTagFilter): Boolean {
+    val current = state.value
+    if (current.busy || current.loading || current.today == null) return false
+    onAction(StudyAction.SelectTagFilter(filter, current.settings.learningLanguage, current.directionGeneration))
+    return true
+  }
+
+  suspend fun previewTagFilter(filter: WordTagFilter, language: AppLanguage,
+    generation: Long): TagFilterPreview? {
+    val preview = withContext(Dispatchers.IO) { study.tagFilterPreview(filter, language, generation) }
+    val current = state.value
+    return preview.takeIf { it.learningLanguage == language && it.contextVersion == generation &&
+      current.settings.learningLanguage == language && current.directionGeneration == generation &&
+      it.stage == current.today?.stageProgress?.stage }
+  }
   fun setCollected(wordId: String, value: Boolean) = onAction(StudyAction.SetCollected(wordId, value))
   fun setSkipped(wordId: String, value: Boolean) = setSkipped(wordId, value, state.value.settings.learningLanguage)
   fun setSkipped(wordId: String, value: Boolean, language: AppLanguage) =
@@ -406,6 +443,7 @@ class StudyViewModel(
     if (refresh && refreshing) return
     val showBusy = !refresh || state.value.snapshot == null
     val generation = when (action) {
+      is StudyAction.SelectTagFilter -> action.generation
       is StudyAction.ReviewMore -> action.generation
       is StudyAction.Submit -> action.generation
       is StudyAction.Advance -> action.generation
@@ -415,6 +453,7 @@ class StudyViewModel(
     }
     if (generation != null && generation != state.value.directionGeneration) return
     val expectedLanguage = when (action) {
+      is StudyAction.SelectTagFilter -> action.language
       is StudyAction.Start -> action.language
       is StudyAction.SelectStage -> action.language
       is StudyAction.LearnMore -> action.language
@@ -442,6 +481,7 @@ class StudyViewModel(
             when (action) {
               is StudyAction.Start -> study.start(action.kind, expectedLanguage)
               is StudyAction.SelectStage -> study.selectStage(action.stage, expectedLanguage)
+              is StudyAction.SelectTagFilter -> study.selectTagFilter(action.filter, expectedLanguage, action.generation)
               is StudyAction.LearnMore -> study.learnMore(action.expectedDate, action.expectedNewPlanned,
                 action.expectedStage, action.expectedLap, expectedLanguage)
               is StudyAction.ReviewMore -> study.reviewMore(action.expectedDate, action.expectedReviewPlanned,

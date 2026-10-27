@@ -81,6 +81,7 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   defaultWordlistProgress: StateFlow<WordlistLoadProgress?>, csvImportProgress: StateFlow<WordlistLoadProgress?>,
   defaultWordlistLoading: Boolean = false, defaultWordlistError: UiMessageKey? = null,
   onRetryDefaultWordlist: () -> Unit = {}, languageSwitchEnabled: Boolean = true,
+  defaultWordlistResumeWritingLabel: String? = null, onResumeDefaultWordlistWriting: () -> Unit = {},
   onReadingOptions: () -> Unit = {}, onExplanationOptions: () -> Unit = {},
   cacheUsedBytes: Long = 0L, onClearSpeechCache: () -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
@@ -202,6 +203,12 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
           else {
             Text(uiString(defaultWordlistError!!), textAlign = TextAlign.Center,
               color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodySmall)
+            defaultWordlistResumeWritingLabel?.let { label ->
+              TextButton(shape = MaterialTheme.shapes.small, onClick = onResumeDefaultWordlistWriting,
+                enabled = enabled && editor == null) {
+                Text(label, maxLines = 2, overflow = TextOverflow.Ellipsis, textAlign = TextAlign.Center)
+              }
+            }
             TextButton(shape = MaterialTheme.shapes.small, onClick = onRetryDefaultWordlist, enabled = enabled && editor == null) { Text(uiString(UiR.string.ui_retry)) }
           }
         }

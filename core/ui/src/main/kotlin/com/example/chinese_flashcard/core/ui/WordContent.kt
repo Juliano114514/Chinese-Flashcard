@@ -127,9 +127,10 @@ fun WordMeanings(word: WordEntry, onSpeak: (SpeechRequest) -> Unit = {},
 fun WordExplanation(word: WordEntry, onSpeak: (SpeechRequest) -> Unit, compact: Boolean = false,
   enabled: Boolean = true, progressive: Boolean = false) {
   val hasMeanings = word.literalExplanations.isNotEmpty() || word.figurativeExplanations.isNotEmpty()
+  val hasBreakdown = word.parts.size > 1
   val sections = buildList {
     if (word.examples.isNotEmpty()) add(0)
-    if (word.parts.isNotEmpty()) add(2)
+    if (hasBreakdown) add(2)
   }
   var selectedSection by rememberSaveable(word.id) { mutableStateOf(sections.firstOrNull() ?: 0) }
   var selectedExample by rememberSaveable(word.id) { mutableStateOf(0) }
@@ -172,7 +173,7 @@ fun WordExplanation(word: WordEntry, onSpeak: (SpeechRequest) -> Unit, compact: 
       WordExamplePanel(word.examples[activeExample], onSpeak, enabled, compact, header = exampleHeader)
     } else word.examples.forEach { example -> WordExamplePanel(example, onSpeak, enabled, compact) }
   }
-  if (word.parts.isNotEmpty() && (!progressive || activeSection == 2)) {
+  if (hasBreakdown && (!progressive || activeSection == 2)) {
     WordPanel(compact) {
       PanelLabel(uiString(UiR.string.ui_word_breakdown))
       word.parts.forEach { part ->

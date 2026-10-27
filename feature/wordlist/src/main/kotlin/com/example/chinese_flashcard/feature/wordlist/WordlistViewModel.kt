@@ -1,5 +1,7 @@
 package com.example.chinese_flashcard.feature.wordlist
 
+import com.example.chinese_flashcard.core.domain.WordTag
+import com.example.chinese_flashcard.core.domain.WordTagFilter
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -36,6 +38,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 data class WordlistUiState(
+  val tagCatalog: List<WordTag> = emptyList(),
+  val tagFilter: WordTagFilter = WordTagFilter(),
+  val allEntries: List<WordlistItem> = emptyList(),
   val loading: Boolean = true,
   val entries: List<WordlistItem> = emptyList(),
   val total: Int = 0,
@@ -51,7 +56,7 @@ data class WordlistUiState(
 )
 
 class WordlistViewModel(private val repository: WordlistRepository) : ViewModel() {
-  private val mutableState = MutableStateFlow(WordlistUiState())
+  private val mutableState = MutableStateFlow(WordlistUiState(tagCatalog = repository.tagCatalog))
   val state = mutableState.asStateFlow()
   private data class SearchEntry(val item: WordlistItem, val pinyin: String, val meanings: String)
   private data class CatalogUpdate(val entries: List<SearchEntry>, val learned: Int, val learning: Int,
@@ -66,6 +71,20 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
     private set
 
   init { observe() }
+
+  fun resetFilters() {
+    resetScroll()
+    mutableState.update { it.copy(tagFilter = WordTagFilter(), query = "", status = null,
+      difficulties = emptySet(), myCollectionOnly = false) }
+    updateResults()
+  }
+
+  fun setTagFilter(value: WordTagFilter) {
+    if (value == state.value.tagFilter) return
+    resetScroll()
+    mutableState.update { it.copy(tagFilter = value.normalized(it.tagCatalog)) }
+    updateResults()
+  }
 
   fun setQuery(value: String) {
     if (value == state.value.query) return
@@ -129,7 +148,7 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
               items.count { it.learningStatus == WordlistStatus.UNLEARNED }, items.count { it.isSkipped })
           }
           searchEntries = updated.entries
-          mutableState.update { it.copy(error = null, total = items.size,
+          mutableState.update { it.copy(error = null, total = items.size, allEntries = items,
             learned = updated.learned, learning = updated.learning,
             unlearned = updated.unlearned, skipped = updated.skipped) }
           updateResults()
@@ -151,7 +170,9 @@ class WordlistViewModel(private val repository: WordlistRepository) : ViewModel(
       val filtered = withContext(Dispatchers.Default) {
         val needle = searchText(filters.query.trim())
         val pinyinNeedle = needle.filterNot(Char::isWhitespace)
+        val matchesTags = filters.tagFilter.matcher(filters.tagCatalog)
         catalog.filter { entry ->
+          matchesTags(entry.item.tags) &&
           (filters.status == null || filters.status == entry.item.status) &&
             (!filters.myCollectionOnly || entry.item.isCollected) &&
             (filters.difficulties.isEmpty() || entry.item.difficulty in filters.difficulties) &&

@@ -38,6 +38,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.navigation.compose.*
 import com.example.chinese_flashcard.core.data.FlashcardRepositories
+import com.example.chinese_flashcard.core.data.PresetWritingResume
 import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.CsvSource
 import com.example.chinese_flashcard.core.domain.StudySettings
@@ -52,6 +53,7 @@ import com.example.chinese_flashcard.core.ui.AppLanguageProvider
 import com.example.chinese_flashcard.core.ui.LocalExplanationOptions
 import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import com.example.chinese_flashcard.core.ui.uiText
+import com.example.chinese_flashcard.core.ui.localizedLabel
 import com.example.chinese_flashcard.core.ui.WordlistLoadingProgress
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.FlashcardBackground
@@ -262,6 +264,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
   val openWriting: (String) -> Unit = { id ->
     if (nav.currentDestination?.route != "writing/{id}") nav.navigate("writing/$id")
   }
+  var presetWritingRequest by remember { mutableStateOf<PresetWritingResume?>(null) }
+  var presetWritingRecoveryId by rememberSaveable { mutableStateOf<String?>(null) }
   LaunchedEffect(settings.learningLanguage) {
     if (appliedLearningLanguage != settings.learningLanguage) {
       speech.stop()
@@ -271,6 +275,27 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       study.refresh()
       nav.navigate("today") { popUpTo("today"); launchSingleTop = true }
       appliedLearningLanguage = settings.learningLanguage
+    }
+  }
+  LaunchedEffect(presetWritingRequest?.sessionId, settings.learningLanguage, appliedLearningLanguage) {
+    val request = presetWritingRequest ?: return@LaunchedEffect
+    try {
+      if (settings.learningLanguage != request.language) {
+        repositories.settings.save(settings.copy(learningLanguage = request.language))
+        return@LaunchedEffect
+      }
+      // The existing language effect saves/restores the proper learning context and
+      // returns Home first. Open the saved writing only after that navigation settles.
+      if (appliedLearningLanguage != request.language) return@LaunchedEffect
+      presetWritingRecoveryId = request.sessionId
+      presetWritingRequest = null
+      openWriting(request.sessionId)
+    } catch (error: CancellationException) { throw error }
+    catch (_: Exception) {
+      presetWritingRequest = null
+      snackbar.showSnackbar(uiText(context,
+        com.example.chinese_flashcard.core.domain.UiMessageKey.THIS_STEP_COULDN_T_BE_COMPLETED_TRY_AGAIN,
+        settings.uiLanguage))
     }
   }
   AppLanguageProvider(settings.uiLanguage) {
@@ -342,8 +367,10 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
             }
           }, onProfile = { nav.navigate("profile") { launchSingleTop = true } },
           onWordlist = { nav.navigate("wordlist") { launchSingleTop = true } }, onSpeak = configuredSpeak,
-          onLanguages = { profile.beginEdit(); openLanguages = true })
+          onLanguages = { profile.beginEdit(); openLanguages = true },
+          onTagFilter = { nav.navigate("tag-filter") { launchSingleTop = true } })
       }
+      composable("tag-filter") { TagFilterScreen(study) { nav.popBackStack() } }
       composable("profile") { ProfileScreen(profile, onSettings = { nav.navigate("settings") { launchSingleTop = true } }) }
       composable("settings") {
         val speechCacheUsage by speechCache.usage.collectAsStateWithLifecycle()
@@ -357,6 +384,10 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         csvImportProgress = repositories.csvImport.progress,
         defaultWordlistLoading = defaultWordlist.loading,
         defaultWordlistError = defaultWordlist.error,
+        defaultWordlistResumeWritingLabel = defaultWordlist.writingConflict?.let { conflict ->
+          uiString(UiR.string.ui_continue_writing) + " · " + conflict.hanzi + " · " + conflict.language.localizedLabel()
+        },
+        onResumeDefaultWordlistWriting = { presetWritingRequest = defaultWordlist.writingConflict },
         languageSwitchEnabled = !studyBusy,
         cacheUsedBytes = speechCacheUsage.usedBytes,
         onClearSpeechCache = speechCache::clear,
@@ -411,6 +442,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
           factory = factory { WritingViewModel(id, repositories.writing) })
         WritingScreen(vm, onBack = { speech.stop(); nav.popBackStack(); study.refresh() }, onFinished = {
           speech.stop()
+          if (presetWritingRecoveryId == id) presetWritingRecoveryId = null
           navigationScope.launch {
             // Resume refresh may still be saving the snapshot. Keep this completion until it is idle.
             study.state.first { !it.busy }
@@ -420,7 +452,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
               nav.popBackStack()
             }
           }
-        }, onSpeak = configuredSpeak)
+        }, onSpeak = configuredSpeak,
+          allowSkip = presetWritingRecoveryId == id || defaultWordlist.writingConflict?.sessionId == id)
       }
       composable("licenses") { LicenseScreen { nav.popBackStack() } }
     }

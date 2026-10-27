@@ -2,6 +2,7 @@ package com.example.chinese_flashcard.feature.study
 
 import com.example.chinese_flashcard.core.ui.uiString
 import com.example.chinese_flashcard.core.ui.localizedLabel
+import com.example.chinese_flashcard.core.ui.localizedStudyGuidance
 import com.example.chinese_flashcard.core.ui.localizedPartOfSpeech
 import com.example.chinese_flashcard.core.ui.R as UiR
 
@@ -20,6 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.ui.FlashcardDialog
+import com.example.chinese_flashcard.core.ui.tagFilterLabel
 import com.example.chinese_flashcard.core.ui.FlashcardLayout
 import com.example.chinese_flashcard.core.ui.EditableAvatar
 import androidx.compose.foundation.layout.Column
@@ -90,6 +92,7 @@ fun TodayScreen(
   onSpeak: (SpeechRequest) -> Unit,
   onLanguages: () -> Unit = {},
   onReviewMore: () -> Unit = {},
+  onTagFilter: () -> Unit = {},
 ) {
   val state by vm.state.collectAsStateWithLifecycle()
   val latestSpeak by androidx.compose.runtime.rememberUpdatedState(onSpeak)
@@ -109,7 +112,8 @@ fun TodayScreen(
     onReviewMore = onReviewMore,
     onLearnMoreBlocked = { showLearnMoreBlocker = true }, onStage = vm::selectStage,
     onRetry = vm::retry, onReplay = { sourceId -> vm.state.value.homeReplayRequest(sourceId)?.let(latestSpeak) },
-    onShuffle = vm::shuffleHomeWord, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages)
+    onShuffle = vm::shuffleHomeWord, onProfile = onProfile, onWordlist = onWordlist, onLanguages = onLanguages,
+    onTagFilter = onTagFilter)
   state.today?.learnMoreBlocker?.takeIf { showLearnMoreBlocker }?.let { blocker ->
     FlashcardDialog(onDismissRequest = { if (!state.busy) showLearnMoreBlocker = false },
       title = { Text(uiString(UiR.string.ui_finish_today_s_plan)) }, text = {
@@ -148,6 +152,7 @@ private fun TodayContent(
   onWordlist: () -> Unit,
   onLanguages: () -> Unit = {},
   onReviewMore: () -> Unit = {},
+  onTagFilter: () -> Unit = {},
 ) {
   val today = state.today
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
@@ -169,20 +174,23 @@ private fun TodayContent(
             style = MaterialTheme.typography.labelMedium, maxLines = 1, softWrap = false)
         }
       }
-      HomeWordShowcase(word = state.homeWord, wordError = state.homeWordError, wordStage = state.homeWordStage,
+      HomeWordShowcase(word = state.homeWord.takeIf { state.homeWordContextVersion == state.directionGeneration },
+        wordError = state.homeWordError,
+        wordStage = state.homeWordStage.takeIf { state.homeWordContextVersion == state.directionGeneration },
         hasToday = today != null, loading = state.loading, busy = state.busy, stage = stage, onShuffle = onShuffle,
         onReplay = { onReplay(replaySourceId) }, replayEnabled = state.homeReplayRequest(replaySourceId) != null,
         replayPreparing = isSpeechPreparing(replaySourceId),
         shuffleWaiting = state.homeShuffleWaiting || isSpeechPreparing(HOME_SHUFFLE_SOURCE_ID),
         shuffleFailed = state.homeShuffleFailed,
         shuffleReady = state.homeShuffleReady,
+        filtered = today?.tagFilter?.isTotal == false, onTagFilter = onTagFilter,
         modifier = Modifier.weight(1f).fillMaxWidth())
       Spacer(Modifier.height(16.dp))
       HomeStudyPanel(today = today, card = state.card, busy = state.busy, error = state.error,
         reviewBatchSize = state.settings.reviewBatchSize, onReviewMore = onReviewMore,
         onStart = onStart, onResume = onResume,
         onLearnMore = onLearnMore, onLearnMoreBlocked = onLearnMoreBlocked,
-        onRetry = onRetry, onWordlist = onWordlist,
+        onRetry = onRetry, onWordlist = onWordlist, onTagFilter = onTagFilter,
         modifier = Modifier.fillMaxWidth().heightIn(max = panelMaxHeight))
     }
   }
@@ -204,6 +212,8 @@ private fun HomeWordShowcase(
   shuffleWaiting: Boolean = false,
   shuffleFailed: Boolean = false,
   shuffleReady: Int = 0,
+  filtered: Boolean = false,
+  onTagFilter: () -> Unit = {},
   modifier: Modifier = Modifier,
 ) {
   Box(modifier) {
@@ -223,8 +233,13 @@ private fun HomeWordShowcase(
         }
         wordError -> Text(uiString(UiR.string.ui_couldn_t_load_a_word_tap_shuffle_to_retry), textAlign = TextAlign.Center)
         hasToday && wordStage != stage -> LoadingNotice()
-        hasToday -> Text(uiString(UiR.string.ui_no_words_in_this_stage_yet), color = MaterialTheme.colorScheme.onSurfaceVariant,
-          textAlign = TextAlign.Center)
+        hasToday -> {
+          Text(uiString(if (filtered) UiR.string.ui_tag_no_matching_words else UiR.string.ui_no_words_in_this_stage_yet),
+            color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
+          if (filtered) TextButton(onClick = onTagFilter, enabled = !busy) {
+            Text(uiString(UiR.string.ui_tag_edit_filter))
+          }
+        }
       }
       if (shuffleFailed) Text(uiString(UiR.string.ui_speech_could_not_be_played_you_can_continue_studying),
         style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.error,
@@ -258,7 +273,8 @@ private fun HomeWordShowcase(
 private fun StudyUiState.homeReplayRequest(sourceId: String): SpeechRequest? {
   val stage = today?.stageProgress?.stage ?: return null
   val word = homeWord?.takeIf { it.difficulty == stage.rarity } ?: return null
-  if (loading || busy || homeShuffleWaiting || homeWordStage != stage) return null
+  if (loading || busy || homeShuffleWaiting || homeWordStage != stage ||
+    homeWordContextVersion != directionGeneration || today?.tagFilter?.matches(word.tags, today?.tagCatalog.orEmpty()) != true) return null
   val request = word.homeSpeechRequest(settings.learningLanguage, sourceId)
   return request.takeIf { settings.speechOptions.requests(it).isNotEmpty() }
 }
@@ -277,6 +293,7 @@ private fun HomeStudyPanel(
   onLearnMoreBlocked: () -> Unit,
   onRetry: () -> Unit,
   onWordlist: () -> Unit,
+  onTagFilter: () -> Unit,
   modifier: Modifier = Modifier,
 ) {
   Surface(modifier = modifier, shape = MaterialTheme.shapes.extraLarge,
@@ -297,8 +314,19 @@ private fun HomeStudyPanel(
             HomeAction.MISTAKES -> onStart(StudyKind.MISTAKES)
           }
         }
-        Text(uiString(UiR.string.ui_study), style = MaterialTheme.typography.titleMedium,
-          color = MaterialTheme.colorScheme.onSurface)
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+          horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+          Text(uiString(UiR.string.ui_study), modifier = Modifier.weight(1f),
+            style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.onSurface)
+          TextButton(onClick = onTagFilter, enabled = !busy,
+            contentPadding = PaddingValues(horizontal = 4.dp), modifier = Modifier.widthIn(max = 210.dp)) {
+            Text(tagFilterLabel(today.tagFilter, today.tagCatalog), maxLines = 1,
+              overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false),
+              style = MaterialTheme.typography.labelLarge)
+            Icon(Icons.Default.KeyboardArrowDown, contentDescription = uiString(UiR.string.ui_tag_filter_title),
+              modifier = Modifier.size(20.dp))
+          }
+        }
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
           horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           DailyProgress(today.stageProgress.learned, today.stageProgress.total, Modifier.weight(1f))
@@ -387,7 +415,11 @@ private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (Voca
         DropdownMenuItem(text = {
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-            Text(entry.localizedLabel(), Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
+            Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+              Text(entry.localizedLabel(), style = MaterialTheme.typography.bodyMedium)
+              Text(entry.localizedStudyGuidance(), style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
             Text(uiString(UiR.string.ui_stage_number, entry.rarity), style = MaterialTheme.typography.bodySmall,
               color = MaterialTheme.colorScheme.onSurfaceVariant)
           }
@@ -409,6 +441,12 @@ private fun learnRow(today: TodaySummary, busy: Boolean): HomeRow? {
     val extra = today.newPlanned - today.dailyGoal
     return HomeRow(uiString(UiR.string.ui_learn_2118cb), if (extra > 0) uiString(UiR.string.ui_learning_extra, base, extra) else base,
       uiString(UiR.string.ui_fraction, today.newCompleted, today.newPlanned), false, !busy, HomeAction.LEARN)
+  }
+  if (!today.tagFilter.isTotal && today.availableNewWords == 0 && today.learnMoreBlocker != StudyKind.NEW) {
+    val empty = today.stageProgress.total == 0
+    return HomeRow(uiString(UiR.string.ui_learn_2118cb),
+      uiString(if (empty) UiR.string.ui_tag_no_matching_words else UiR.string.ui_tag_filter_completed),
+      "", !empty, false, HomeAction.LEARN)
   }
   if (today.learnMoreBlocker != null || today.availableNewWords > 0) {
     val subtitle = when (today.learnMoreBlocker) {
@@ -447,7 +485,7 @@ private fun HomePreview(@PreviewParameter(StageThemePreviewProvider::class, limi
         PreviewWord.meanings.first().english, "", theme.stage.rarity, WordlistStatus.UNLEARNED, 0, 4,
         partOfSpeech = PreviewWord.meanings.first().partOfSpeech)
       TodayContent(StudyUiState(loading = false, snapshot = StudySnapshot(today, null),
-        homeWord = word, homeWordStage = theme.stage),
+        homeWord = word, homeWordStage = theme.stage, homeWordContextVersion = 0),
         onStart = {}, onResume = {}, onLearnMore = {}, onLearnMoreBlocked = {},
         onStage = {}, onRetry = {}, onReplay = {}, onShuffle = {}, onProfile = {}, onWordlist = {})
     }

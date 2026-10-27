@@ -6,6 +6,8 @@ import com.example.chinese_flashcard.core.ui.R as UiR
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,7 +25,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
@@ -36,6 +40,10 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.saveable.rememberSaveable
+import com.example.chinese_flashcard.core.ui.tagFilterLabel
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -71,6 +79,14 @@ import kotlinx.coroutines.launch
 @Composable
 fun WordlistScreen(vm: WordlistViewModel, onWord: (String) -> Unit) {
   val state by vm.state.collectAsStateWithLifecycle()
+  var filtering by rememberSaveable { mutableStateOf(false) }
+  if (filtering) {
+    WordlistTagFilterScreen(state, onBack = { filtering = false }, onApply = {
+      vm.setTagFilter(it)
+      filtering = false
+    })
+    return
+  }
   val listState = rememberLazyListState(vm.scrollIndex, vm.scrollOffset)
   val scope = rememberCoroutineScope()
   LaunchedEffect(vm, listState) {
@@ -87,13 +103,13 @@ fun WordlistScreen(vm: WordlistViewModel, onWord: (String) -> Unit) {
     onStatus = { vm.setStatus(it); resetScroll() },
     onDifficulty = { vm.toggleDifficulty(it); resetScroll() },
     onCollection = { vm.setMyCollection(it); resetScroll() },
-    onRetry = vm::retry, onWord = onWord)
+    onTags = { filtering = true }, onReset = { vm.resetFilters(); resetScroll() }, onRetry = vm::retry, onWord = onWord)
 }
 
 @Composable
 private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
   onQuery: (String) -> Unit, onStatus: (WordlistStatus?) -> Unit, onDifficulty: (Int?) -> Unit,
-  onCollection: (Boolean) -> Unit, onRetry: () -> Unit, onWord: (String) -> Unit) {
+  onCollection: (Boolean) -> Unit, onTags: () -> Unit = {}, onReset: () -> Unit = {}, onRetry: () -> Unit, onWord: (String) -> Unit) {
   Surface(Modifier.fillMaxSize().flashcardBackground(), color = Color.Transparent) {
     LazyColumn(state = listState, contentPadding = PaddingValues(FlashcardLayout.pageInset),
       verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -101,9 +117,19 @@ private fun WordlistContent(state: WordlistUiState, listState: LazyListState,
         Column(verticalArrangement = Arrangement.spacedBy(20.dp), modifier = Modifier.padding(bottom = 4.dp)) {
           Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            Text(uiString(UiR.string.ui_wordlist), Modifier.weight(1f), style = MaterialTheme.typography.headlineLarge)
-            Text(uiString(UiR.string.ui_word_count, state.total), style = MaterialTheme.typography.bodySmall,
-              color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Text(uiString(UiR.string.ui_wordlist), style = MaterialTheme.typography.headlineLarge)
+            TextButton(onClick = onTags,
+              modifier = Modifier.weight(1f, fill = false).width(IntrinsicSize.Max), enabled = !state.loading) {
+              Text(tagFilterLabel(state.tagFilter, state.tagCatalog), maxLines = 1,
+                overflow = TextOverflow.Ellipsis, modifier = Modifier.weight(1f, fill = false),
+                style = MaterialTheme.typography.labelLarge)
+              Icon(Icons.Default.KeyboardArrowDown, contentDescription = uiString(UiR.string.ui_tag_filter_title),
+                modifier = Modifier.size(18.dp))
+            }
+            IconButton(onClick = onReset, enabled = !state.loading) {
+              Icon(Icons.Default.Refresh, contentDescription = uiString(UiR.string.ui_wordlist_reset_filters),
+                tint = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.size(22.dp))
+            }
           }
           Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
             Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {

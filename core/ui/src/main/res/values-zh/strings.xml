@@ -195,7 +195,7 @@
     <string name="ui_all_words_are_already_in_your_wordbook">"所有词语均已在词库中。"</string>
     <string name="ui_existing_words_and_progress_will_be_kept">"已有词语和学习进度将保留。"</string>
     <string name="ui_default_wordlist_couldn_t_be_loaded">"无法加载默认词库。"</string>
-    <string name="ui_finish_the_saved_study_card_then_retry_the_default_wordlist_update">"请完成已保存的词卡，再重试更新默认词库。"</string>
+    <string name="ui_finish_the_saved_study_card_then_retry_the_default_wordlist_update">"请先完成未结束的学习或写字任务，再重试更新词库。写字任务也可手动跳过。"</string>
     <string name="ui_a_new_day_has_started_your_daily_plan_has_been_refreshed">"新的一天开始了，每日计划已更新。"</string>
     <string name="ui_local_data_could_not_be_read_or_saved_please_retry_your_saved_progress_has_not_been_cleared">"无法读取或保存本地数据，请重试。已保存的进度未被清除。"</string>
     <string name="ui_preparing_offline_speech">"正在准备离线语音…"</string>
@@ -497,4 +497,25 @@
     <string name="ui_review_more_count">再复习 %1$d 个词</string>
     <string name="ui_review_batch_size">继续复习词数</string>
     <string name="ui_review_batch_description">完成当天复习后，继续复习会按此数量，从当前学习语言的已学词汇中随机抽词。已跳过和正在重学的词不参与；可用词不足时复习全部。修改从下一批生效。</string>
+    <string name="ui_tag_in_total">全部词汇</string>
+    <string name="ui_tag_saved_filter">已保存的筛选</string>
+    <string name="ui_tag_filter_title">筛选词汇</string>
+    <string name="ui_tag_selection_summary">%1$s +%2$d</string>
+    <string name="ui_tag_filter_description">同组内满足任一标签，不同组之间同时满足。筛选仅影响当前阶段的新学和随机换词，复习与其他已保存的练习照常继续。</string>
+    <string name="ui_tag_group_topic">主题</string>
+    <string name="ui_tag_group_usage">语体</string>
+    <string name="ui_tag_group_form">词语类型</string>
+    <string name="ui_tag_clear">清空</string>
+    <string name="ui_tag_apply">应用筛选</string>
+    <string name="ui_tag_match_progress">%1$d 词 · 本轮已学 %2$d</string>
+    <string name="ui_tag_no_matching_words">当前阶段没有符合此筛选的词汇。</string>
+    <string name="ui_tag_edit_filter">修改或清空筛选</string>
+    <string name="ui_tag_preview_failed">无法加载匹配词数，请重试。</string>
+    <string name="ui_tag_filter_completed">当前筛选已完成</string>
+    <string name="ui_wordlist_reset_filters">重置词库筛选</string>
+    <string name="ui_stage_guidance_primary">能背能写</string>
+    <string name="ui_stage_guidance_middle">较难 · 能认能写</string>
+    <string name="ui_stage_guidance_high">见过，有印象</string>
+    <string name="ui_stage_guidance_university">不设要求</string>
+    <string name="ui_stage_guidance_specialist">可跳过</string>
 </resources>

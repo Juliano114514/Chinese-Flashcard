@@ -199,6 +199,16 @@ fun VocabularyStage.localizedLabel(): String = uiString(when (this) {
 
 @Composable
 @ReadOnlyComposable
+fun VocabularyStage.localizedStudyGuidance(): String = uiString(when (this) {
+  VocabularyStage.PRIMARY -> R.string.ui_stage_guidance_primary
+  VocabularyStage.MIDDLE -> R.string.ui_stage_guidance_middle
+  VocabularyStage.HIGH -> R.string.ui_stage_guidance_high
+  VocabularyStage.UNIVERSITY -> R.string.ui_stage_guidance_university
+  VocabularyStage.CHINESE_STUDIES -> R.string.ui_stage_guidance_specialist
+})
+
+@Composable
+@ReadOnlyComposable
 fun AppLanguage.localizedLabel(): String = uiString(when (this) {
   AppLanguage.EN -> R.string.ui_english
   AppLanguage.CN -> R.string.ui_chinese

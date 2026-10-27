@@ -114,7 +114,8 @@ import kotlin.math.floor
 import kotlin.math.hypot
 
 @Composable
-fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Unit, onSpeak: (SpeechRequest) -> Unit) {
+fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Unit, onSpeak: (SpeechRequest) -> Unit,
+  allowSkip: Boolean = false) {
   val state by vm.state.collectAsStateWithLifecycle()
   val snapshot = state.snapshot
   val latestFinished by rememberUpdatedState(onFinished)
@@ -143,7 +144,7 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
         ActiveWriting(snapshot, state, vm::onAction, onSpeak)
         if (state.saveError != null) WritingError(state.saveError!!, uiString(UiR.string.ui_retry_save)) { vm.onAction(WritingAction.RetrySave) }
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        if (snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
+        if (allowSkip || snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
           TextButton(shape = MaterialTheme.shapes.small, onClick = { vm.onAction(WritingAction.Skip) },
             colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             enabled = !state.busy && state.saveError == null, modifier = Modifier.fillMaxWidth()) {

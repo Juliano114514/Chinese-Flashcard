@@ -195,7 +195,7 @@
     <string name="ui_all_words_are_already_in_your_wordbook">"All words are already in your wordbook."</string>
     <string name="ui_existing_words_and_progress_will_be_kept">"Existing words and progress will be kept."</string>
     <string name="ui_default_wordlist_couldn_t_be_loaded">"Default wordlist couldn\'t be loaded."</string>
-    <string name="ui_finish_the_saved_study_card_then_retry_the_default_wordlist_update">"Finish the saved study card, then retry the default wordlist update."</string>
+    <string name="ui_finish_the_saved_study_card_then_retry_the_default_wordlist_update">"Complete the pending card or writing task, then retry updating the wordlist. Writing tasks can also be skipped."</string>
     <string name="ui_a_new_day_has_started_your_daily_plan_has_been_refreshed">"A new day has started. Your daily plan has been refreshed."</string>
     <string name="ui_local_data_could_not_be_read_or_saved_please_retry_your_saved_progress_has_not_been_cleared">"Local data could not be read or saved. Please retry. Your saved progress has not been cleared."</string>
     <string name="ui_preparing_offline_speech">"Preparing offline speech…"</string>
@@ -497,4 +497,25 @@
     <string name="ui_review_more_count">Review %1$d more</string>
     <string name="ui_review_batch_size">Continue review word count</string>
     <string name="ui_review_batch_description">After finishing today\'s reviews, Continue review picks this many random learned words in the current learning language. Skipped words and words being relearned are excluded. If fewer are available, review them all. Changes apply to the next batch.</string>
+    <string name="ui_tag_in_total">In total</string>
+    <string name="ui_tag_saved_filter">Saved filter</string>
+    <string name="ui_tag_filter_title">Filter vocabulary</string>
+    <string name="ui_tag_selection_summary">%1$s +%2$d</string>
+    <string name="ui_tag_filter_description">Choose any tags within a group. Words must match every selected group. This filters Learn and Shuffle in the current stage; reviews and other saved practice continue as planned.</string>
+    <string name="ui_tag_group_topic">Topics</string>
+    <string name="ui_tag_group_usage">Usage</string>
+    <string name="ui_tag_group_form">Word types</string>
+    <string name="ui_tag_clear">Clear</string>
+    <string name="ui_tag_apply">Apply filter</string>
+    <string name="ui_tag_match_progress">%1$d words · %2$d learned</string>
+    <string name="ui_tag_no_matching_words">No words match this filter in the current stage.</string>
+    <string name="ui_tag_edit_filter">Edit or clear filter</string>
+    <string name="ui_tag_preview_failed">The matching word count could not be loaded. Try again.</string>
+    <string name="ui_tag_filter_completed">Current filter completed</string>
+    <string name="ui_wordlist_reset_filters">Reset wordlist filters</string>
+    <string name="ui_stage_guidance_primary">Recall and write</string>
+    <string name="ui_stage_guidance_middle">Harder · recognize and write</string>
+    <string name="ui_stage_guidance_high">Recognize when seen</string>
+    <string name="ui_stage_guidance_university">No mastery requirement</string>
+    <string name="ui_stage_guidance_specialist">Optional</string>
 </resources>
