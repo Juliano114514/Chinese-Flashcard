@@ -2,11 +2,11 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.6.3 / versionCode 17`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.7.0 / versionCode 24`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
-Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v15 沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
+Gradle 项目 `Chinese_Flashcard`；应用 `Chinese Flashcard`；applicationId `com.example.chinese_flashcard`。Room schema v18迁移实现（已有schema快照，本次提交未重新执行KSP）沿用 `chinese-flashcard-v2.db` 与现行迁移链路，不迁移更早课程应用的数据。
 
 模块为 app、core/domain、data、ui、media 和 feature/study、profile、writing、wordlist；模块职责见 [README](../README.md)。沿用 Repository／Flow、MVI 和轻量 MVVM。
 
@@ -68,15 +68,19 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 
 ## 词库与资源
 
-默认词库以根目录 `wordlist.csv` 为准：13,223 行、12 列，26,446 条例句应用。SHA-256 为 `21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7`。五档数量为 0=2,499、1=6,722、2=2,561、3=637、4=804；学习阶段是 AI 编辑判断，不是官方教材逐词认证。
+默认词库以根目录`wordlist.csv`为准：18,500行、12列、37,000例句、32,356,588字节；SHA-256 `6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a`。五档数量为0=2,193、1=6,422、2=6,970、3=2,757、4=158，恢复原Stage 0–4及五套主题。当前源码修订尚未打包，单字／组词／拆解与实际验证见[五档与词库精修](WORDLIST_REFINEMENT_20261027.md)；此前1.6.9安装对应历史六档快照。
 
-正式笔顺包共 6,324 字形，CSV 使用 6,322 个不同汉字；6,254 来自 Make Me a Hanzi、70 来自 AnimCJK，保留“唷”及一个当前未用补充字，避免重新划分既有分片。20 个演示词仅辅助手动写字，不初始化为默认词库。真实轮廓和中线不以字体描边或合成笔顺替代。
+旧13,223个ID全部保留，扩充时新增5,277个ID；本轮仅更新既有条目，以显式白名单替换词头，不删除ID。冻结基线 ID／字节指纹见 `tools/vocabulary_v2/baseline-index.json`；当前指纹见 `docs/wordlist-validation.json`。18,500词扩充、内容修正、来源及兼容实现的历史说明见[1.6.8词库修订](VOCABULARY_REVISION_20261027.md)；当前罕度与内容见[精修报告](WORDLIST_REFINEMENT_20261027.md)。
 
-当前契约见 [CSV_IMPORT](CSV_IMPORT.md)；来源和许可见 [第三方声明](../THIRD_PARTY_NOTICES.md) 与 [版权处理](OPEN_SOURCE_COMPLIANCE.md)。CSV 限制为 32 MiB、单记录 32 KiB、词库总量 20,000、字形 10,000。
+笔顺只使用固定 Make Me a Hanzi／AnimCJK 真实轮廓及中线，模型和声线保持既有固定版本；字形、英／中文读音和 IPA 资源按当前快照重建并单独检查。20 个 demo 词仅辅助手动写字，不计默认词库行数。资源完整性检查不代表新词音频已经真人核听。
 
-当前仅保留根目录 `wordlist.csv` 这一份正式词库。旧原表、基线、制作草稿、追加／分级／审校记录、历史报告和旧生成器已清理；历史资料可从 Git 历史查阅。当前 CSV 的 ID、顺序和全部内容保持不变，仍包含“爱护／爱心”及“哎呀／哎哟”。
+当前契约见 [CSV_IMPORT](CSV_IMPORT.md)，来源与许可见 [第三方声明](../THIRD_PARTY_NOTICES.md) 与 [版权处理](OPEN_SOURCE_COMPLIANCE.md)。单个 CSV 仍为 32 MiB、单记录 32 KiB、20,000 行、字形 10,000。普通导入沿用总量 20,000 上限；默认库升级为保留此前已导入词，允许旧库与新默认库有界合并到最多 40,000 条。默认词与自定义词独立归属；ID 冲突使用独立内部 ID，旧用户词和进度不被覆盖。
 
-`tools/rebuild_wordlist.py` 为兼容现有 CI 命令保留文件名，现在仅支持 `--check`，复用原有完整结构校验，并核对 `docs/wordlist-validation.json` 中当前快照的哈希、大小和统计。它不再支持 `--prepare`／`--apply`，不依赖旧版词库，也不能重建历史制作过程。当前笔顺、来源元数据和许可证继续保留。
+当前仅根目录 `wordlist.csv` 是正式词库。`tools/expand_vocabulary_v2.py` 可用锁定来源、Git 历史基线及明确编辑修正再现候选；原始公开语料只缓存于`.gradle/vocabulary-v2/`及`.gradle/wordlist-refinement-20261027/`，不把全集打包进应用。正式保留的来源索引、修正记录和原句逐句署名位于 `tools/vocabulary_v2/` 与 APK 的 `wordlist-sources/`。
+
+`tools/refine_wordlist.py --check`核对当前五档、每词内容、全部稳定ID与显式替换许可；`regrade_vocabulary.py --check`转调该入口，六档决定留作历史输入。当前逐词表为`tools/vocabulary_v2/wordlist-refinement-full-review.csv`。完整生成器先复原锁定扩充输入，再应用五档和词头／内容清单；只在新释义影响选项唯一性时修复对应干扰引用。
+
+`tools/rebuild_wordlist.py --check` 只读核对完整结构、旧 ID 保留和当前 manifest 的哈希、大小及统计；不自动接受新指纹。新增／修订 CSV 后必须先确认内容和兼容不变量，再显式更新快照、标签、署名和相关语音／笔顺索引。
 
 ## 检查与再现
 
@@ -162,3 +166,13 @@ Learn、Review、Collections 和 Mistakes 共用滚动窗口：先准备当前�
 缓存保存采样率、声道和分段的 Float32 PCM，并用模型／声线／发音资源／语速版本隔离旧声音；身份不包含页面、学习模式或卡片 ID，不同中文读音保持隔离。音频位于 `noBackupFilesDir/speech-cache`，模型文件不计入音频限额。容量不足时逐条淘汰最久未使用项，活动播放资源保护至释放，准备完成后不由协调器长期持有音频引用；损坏项重算，落盘失败仍可播放。后台暂停推测性合成，恢复后重新校验有效窗口；清理、淘汰或容量变化使就绪状态失效，仅在有效触发时有界补缺，避免小容量下循环重建。完整缓存跨重启保留。
 
 手动播放按源按钮与操作编号显示准备动画，首次音频开始后恢复；取消、失败与超时均结束准备。系统文件合成的开始回调不是播放开始，不能用于清除按钮动画。静态检查不证明冷启动延迟、声音质量、设备 TTS 回调、快速点击或后台恢复行为。
+
+## 标签与阶段筛选
+
+标签定义与标注维护见 [词汇标签](WORD_TAGS.md)。独立的 `word-tags/catalog.json` 与 `annotations.json` 按受管来源 ID 关联词条，不改写冻结 CSV 或语音快照；无正式标注的词条及自定义导入词归入 Others。筛选按学习语言保存，跨 Stage 沿用；页面预览只读取计数，返回不应用草稿。
+
+Learn 候选、首页 Shuffle 和本轮进度使用同一筛选规则。切换时仅撤销当前阶段、当天、从未生成卡片的非匹配 NEW 预排项；已开始词保留周期与轮次。当天目标在标签间共享，已完成词仍计入目标；暂停词不占新筛选的补选名额，之后可以超目标续学。跨天后沿用原 CARRYOVER 规则。复习、续学、收藏、错词和干扰选项不受标签过滤。
+
+阶段轮次仍按全 Stage 判断完成；完成标签子集不会推进整阶段下一轮。切换筛选／阶段时递增上下文版本，防止旧候选、预加载结果或旧卡片操作覆盖新选择。Room 15→16 只为全局状态和语言上下文增加默认空筛选字段，保留词库、学习和书写记录；本轮未执行 KSP 或构建，v16 schema 快照需在下一次获准构建时由工具导出。
+
+2026-10-27 实际执行：冻结词库 `rebuild_wordlist.py --check` 通过，13,223 词、12 列及字节哈希保持一致；标签 `build_word_tags.py --check` 与独立结构核对通过，36 个标签、13,223 条映射，200 个样本每 Stage 40 词，Others 与正式标签互斥。当前 6,137 词有正式标签、7,086 词归 Others，不表示全库已逐词语言审核。Kotlin 2.2.10 PSI 对本轮 13 个 Kotlin 文件解析为 0 语法错误（只验证语法，不含类型解析）；SQLite 内存核对 v15 DDL、两条增量迁移与新增查询计划；15 个新增标签文案的中英文 XML 键一致且无重复。未新增测试代码，未执行应用编译、KSP、APK 打包或设备验证。安全自查：未新增权限、网络入口、依赖或敏感日志，语言范围和旧进度迁移已静态复核。
