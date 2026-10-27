@@ -55,7 +55,7 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var feedbackFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackPlaybackSucceeded by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var feedbackSoundClaimed by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
-  var feedbackCueFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
+  var feedbackCueTiming by remember(card?.id, generation) { mutableStateOf<LearningCueTiming?>(null) }
   var seenActiveSession by rememberSaveable(generation) { mutableStateOf(false) }
   val sounds = rememberLearningSounds()
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
@@ -125,11 +125,12 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
             if (!feedbackSoundClaimed) {
               feedbackSoundClaimed = true
               if (vm.state.value.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK, card.learningLanguage) != SpeechMode.NONE) {
-                sounds.playAnswer(card.correct == true)
+                sounds.playAnswer(card.correct == true) { timing -> feedbackCueTiming = timing }
               }
               currentCoroutineContext().ensureActive()
             }
-            feedbackCueFinished = true
+            // When sound is disabled, unavailable or muted, keep the visual feedback.
+            if (feedbackCueTiming == null) feedbackCueTiming = LearningCueTiming(System.nanoTime())
             if (!correctAnswerRevealed) {
               if (card.correct == false) {
                 withFrameNanos { }; withFrameNanos { }
@@ -185,8 +186,8 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     voiceLoading = state.speechPreparing || playbackPreparing ||
       LocalSpeechPlaybackState.current.phase == SpeechPlaybackPhase.PREPARING)
   StudyCompletionEffects(card?.id, generation,
-    card?.phase == CardPhase.FEEDBACK && card.correct == true && feedbackCueFinished && !state.loading,
-    sounds, Modifier.fillMaxSize(), soundEnabled = false, small = true)
+    card?.phase == CardPhase.FEEDBACK && card.correct == true && feedbackCueTiming != null && !state.loading,
+    sounds, Modifier.fillMaxSize(), soundEnabled = false, small = true, cueTiming = feedbackCueTiming)
   StudyCompletionEffects(card?.id, generation, completed && seenActiveSession, sounds, Modifier.fillMaxSize(),
     soundEnabled = state.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK,
       card?.learningLanguage ?: state.settings.learningLanguage) != SpeechMode.NONE)

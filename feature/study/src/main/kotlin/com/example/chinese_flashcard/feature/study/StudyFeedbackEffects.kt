@@ -24,6 +24,7 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.chinese_flashcard.core.ui.FlashcardStyle
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
@@ -50,7 +51,8 @@ internal fun rememberLearningSounds(): LearningSounds {
 /** completed must exclude paused/skipped sessions and cards without a reliable question. */
 @Composable
 internal fun StudyCompletionEffects(cardId: String?, directionGeneration: Long, completed: Boolean,
-  sounds: LearningSounds, modifier: Modifier = Modifier, soundEnabled: Boolean = true, small: Boolean = false) {
+  sounds: LearningSounds, modifier: Modifier = Modifier, soundEnabled: Boolean = true, small: Boolean = false,
+  cueTiming: LearningCueTiming? = null) {
   var celebrated by rememberSaveable(cardId, directionGeneration) { mutableStateOf(false) }
   var progress by remember(cardId, directionGeneration) { mutableFloatStateOf(1f) }
   val particles = remember(cardId, directionGeneration) {
@@ -66,13 +68,25 @@ internal fun StudyCompletionEffects(cardId: String?, directionGeneration: Long, 
       val scale = currentCoroutineContext()[MotionDurationScale]?.scaleFactor ?: 1f
       try {
         coroutineScope {
-          if (soundEnabled) launch { sounds.play(LearningSound.COMPLETE) }
+          fun visualTiming() = LearningCueTiming(System.nanoTime())
+          val timing = cueTiming ?: if (soundEnabled) {
+            val started = CompletableDeferred<LearningCueTiming>()
+            launch {
+              try {
+                sounds.play(LearningSound.COMPLETE) { started.complete(it) }
+              } finally {
+                started.complete(visualTiming())
+              }
+            }
+            started.await()
+          } else visualTiming()
           if (scale > 0f) {
-            progress = 0f
-            val start = withFrameNanos { it }
+            // Share only the start instant; keep the original animation duration and system scale.
             val duration = ((if (small) 600_000_000L else 1_000_000_000L) * scale.coerceAtMost(2f)).toLong().coerceAtLeast(1L)
+            progress = ((System.nanoTime() - timing.startedAtNanos).toDouble() / duration).toFloat().coerceIn(0f, 1f)
             while (progress < 1f) {
-              progress = withFrameNanos { ((it - start).toDouble() / duration).toFloat().coerceIn(0f, 1f) }
+              withFrameNanos { }
+              progress = ((System.nanoTime() - timing.startedAtNanos).toDouble() / duration).toFloat().coerceIn(0f, 1f)
             }
           }
         }

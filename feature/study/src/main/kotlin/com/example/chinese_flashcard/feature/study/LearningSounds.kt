@@ -8,6 +8,10 @@ import android.media.MediaPlayer
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.CancellableContinuation
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withTimeoutOrNull
@@ -18,6 +22,9 @@ internal enum class LearningSound(val resource: Int) {
   TRY_AGAIN(R.raw.gentle_retry),
   COMPLETE(R.raw.gentle_complete),
 }
+
+/** The successful player-start instant, shared with the animation. */
+internal data class LearningCueTiming(val startedAtNanos: Long)
 
 /** Dedicated cue players; no speech focus changes or wall-clock guesses about playback completion. */
 internal class LearningSounds(context: Context) : AutoCloseable {
@@ -65,35 +72,48 @@ internal class LearningSounds(context: Context) : AutoCloseable {
     }.onFailure { discard(sound, clip) }
   }
 
-  suspend fun playAnswer(correct: Boolean) = play(if (correct) LearningSound.CORRECT else LearningSound.TRY_AGAIN)
+  suspend fun playAnswer(correct: Boolean, onStarted: (LearningCueTiming) -> Unit = {}) =
+    play(if (correct) LearningSound.CORRECT else LearningSound.TRY_AGAIN, onStarted)
 
   /** Cold, muted, failed or cancelled cues never hold up the learning flow. */
-  suspend fun play(sound: LearningSound) {
-    // The longest bundled cue is 720ms; a missing device callback must not lock feedback.
-    withTimeoutOrNull(2_000L) {
-      suspendCancellableCoroutine<Unit> { waiter ->
-        waiter.invokeOnCancellation {
-          handler.post { if (active?.waiter === waiter) stopOnPlayerThread() }
-        }
-        val accepted = handler.post {
-          if (closed || !waiter.isActive) { complete(waiter); return@post }
-          stopOnPlayerThread()
-          prepare(sound)
-          val clip = clips[sound]
-          val audible = runCatching { audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) > 0 }.getOrDefault(false)
-          if (clip == null || !clip.ready || !audible) { complete(waiter); return@post }
-          active = Playback(sound, clip, waiter)
-          runCatching {
-            // Prepared / PlaybackCompleted both start at the beginning, with no seek or stop cutoff.
-            clip.player.start()
-            if (debug) Log.d("LearningSounds", "player=MediaPlayer cue=$sound state=started")
-          }.onFailure {
-            finishActive("failed")
-            discard(sound, clip)
+  suspend fun play(sound: LearningSound, onStarted: (LearningCueTiming) -> Unit = {}) = coroutineScope {
+    val started = CompletableDeferred<LearningCueTiming?>()
+    // Deliver UI state changes in the caller's context, never on the MediaPlayer thread.
+    val notification = launch(start = CoroutineStart.UNDISPATCHED) {
+      started.await()?.let(onStarted)
+    }
+    try {
+      // The longest bundled cue is 720ms; a missing device callback must not lock feedback.
+      withTimeoutOrNull(2_000L) {
+        suspendCancellableCoroutine<Unit> { waiter ->
+          waiter.invokeOnCancellation {
+            handler.post { if (active?.waiter === waiter) stopOnPlayerThread() }
           }
+          val accepted = handler.post {
+            if (closed || !waiter.isActive) { complete(waiter); return@post }
+            stopOnPlayerThread()
+            prepare(sound)
+            val clip = clips[sound]
+            val audible = runCatching { audioManager.getStreamVolume(AudioManager.STREAM_MUSIC) > 0 }.getOrDefault(false)
+            if (clip == null || !clip.ready || !audible) { complete(waiter); return@post }
+            active = Playback(sound, clip, waiter)
+            runCatching {
+              // Prepared / PlaybackCompleted both start at the beginning, with no seek or stop cutoff.
+              clip.player.start()
+              started.complete(LearningCueTiming(System.nanoTime()))
+              if (debug) Log.d("LearningSounds", "player=MediaPlayer cue=$sound state=started")
+            }.onFailure {
+              finishActive("failed")
+              discard(sound, clip)
+            }
+          }
+          if (!accepted) complete(waiter)
         }
-        if (!accepted) complete(waiter)
       }
+    } finally {
+      // Muted, cold or failed playback still releases the visual fallback immediately.
+      started.complete(null)
+      notification.join()
     }
   }
 
