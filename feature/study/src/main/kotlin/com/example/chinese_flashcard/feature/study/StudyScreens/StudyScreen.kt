@@ -28,6 +28,8 @@ import com.example.chinese_flashcard.core.domain.CardPhase
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.StudyKind
+import com.example.chinese_flashcard.core.domain.SpeechMode
+import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
 import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import kotlinx.coroutines.flow.first
@@ -56,9 +58,6 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
   var feedbackCueFinished by rememberSaveable(card?.id, generation) { mutableStateOf(false) }
   var seenActiveSession by rememberSaveable(generation) { mutableStateOf(false) }
   val sounds = rememberLearningSounds()
-  LaunchedEffect(state.settings.learningSoundsEnabled) {
-    if (!state.settings.learningSoundsEnabled) sounds.stop()
-  }
   var spokenPage by rememberSaveable { mutableStateOf<String?>(null) }
   val manualSpeech = remember { ManualSpeechPlayback() }
   val latestSpeakAndWait by rememberUpdatedState(onSpeakAndWait)
@@ -125,7 +124,9 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
               feedbackCard.phase != CardPhase.FEEDBACK) return@sequence
             if (!feedbackSoundClaimed) {
               feedbackSoundClaimed = true
-              if (vm.state.value.settings.learningSoundsEnabled) sounds.playAnswer(card.correct == true)
+              if (vm.state.value.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK, card.learningLanguage) != SpeechMode.NONE) {
+                sounds.playAnswer(card.correct == true)
+              }
               currentCoroutineContext().ensureActive()
             }
             feedbackCueFinished = true
@@ -187,7 +188,8 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
     card?.phase == CardPhase.FEEDBACK && card.correct == true && feedbackCueFinished && !state.loading,
     sounds, Modifier.fillMaxSize(), soundEnabled = false, small = true)
   StudyCompletionEffects(card?.id, generation, completed && seenActiveSession, sounds, Modifier.fillMaxSize(),
-    soundEnabled = state.settings.learningSoundsEnabled)
+    soundEnabled = state.settings.speechOptions.mode(SpeechScene.ANSWER_FEEDBACK,
+      card?.learningLanguage ?: state.settings.learningLanguage) != SpeechMode.NONE)
   }
   DailyWritingInvitation(state, vm)
 }
