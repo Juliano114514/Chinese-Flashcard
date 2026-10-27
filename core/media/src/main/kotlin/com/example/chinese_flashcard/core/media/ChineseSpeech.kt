@@ -368,7 +368,7 @@ internal class ChineseSpeech(context: Context) {
     private const val SOURCE_MODEL_SHA256 = "bf30582eb1b012250a35b1a4a80e7dfbcf8485e7bb9de0d95efbbeef0e4ad86d"
     private const val MODEL_SHA256 = "c6029f601d660bd8ab720d1b6a159638c7613d9e4cbc4bd06f347c372205de55"
     private const val MODEL_BYTES = 170429590L
-    private const val WORDLIST_SHA256 = "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7"
+    private const val WORDLIST_SHA256 = "6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a"
     private const val SAMPLE_RATE = 44100
     private const val SPEED = .7f
     private const val SINGLE_SPEED = .8f
