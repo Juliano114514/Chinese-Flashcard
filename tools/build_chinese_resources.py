@@ -128,8 +128,9 @@ def build() -> None:
     from prepare_melo_duration import manifest as with_duration
     write_json(ASSETS / "manifest.json", with_duration(manifest))
     total = sum(record["entries"] for record in shard_records.values())
-    write_coverage({"schemaVersion": 1, "wordCount": 13223,
-        "exampleApplications": 26446, "uniqueReadingsIncludingWriting": total, "supported": total - len(unsupported),
+    vocabulary = audition.rows()
+    write_coverage({"schemaVersion": 1, "wordCount": len(vocabulary),
+        "exampleApplications": sum(len(json.loads(row["例句JSON"])) for row in vocabulary), "uniqueReadingsIncludingWriting": total, "supported": total - len(unsupported),
         "unsupported": len(unsupported), "exceptions": unsupported,
         "evidenceBoundary": "Frontend conversion coverage, not full-corpus speech or device acceptance."})
     check()
@@ -182,7 +183,10 @@ def check() -> None:
         raise ValueError("Model binary/build-time runtime must not be stored in tracked sidecar assets")
     sidecar_bytes = sum(path.stat().st_size for path in ASSETS.rglob("*") if path.is_file())
     coverage = json.loads((ASSETS / "coverage.json").read_text(encoding="utf-8"))
-    if (coverage["sidecarBytes"] != sidecar_bytes or coverage["uniqueReadingsIncludingWriting"] != len(actual)
+    vocabulary = audition.rows()
+    if (coverage["wordCount"] != len(vocabulary)
+            or coverage["exampleApplications"] != sum(len(json.loads(row["例句JSON"])) for row in vocabulary)
+            or coverage["sidecarBytes"] != sidecar_bytes or coverage["uniqueReadingsIncludingWriting"] != len(actual)
             or coverage["supported"] != len(actual) - unsupported or coverage["unsupported"] != unsupported):
         raise ValueError("Chinese coverage counts/resource byte size are stale")
     if sidecar_bytes + manifest["modelBytes"] > 200_000_000:

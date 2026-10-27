@@ -1,0 +1,5466 @@
+{
+  "schemaVersion": 1,
+  "sourceCsvSha256": "71d0a021e789e1892a12f5732bba0b704662d2d3639681ed5c087558b692028b",
+  "reviewedcount": 15228,
+  "reviewMethod": "All multi-character headwords and both examples were structurally screened using independent jieba token boundaries. Missing-CEDICT and boundary candidates received targeted linguistic review; confirmed edits below are manually selected AI-assisted judgments. The count is scan coverage, not a claim that every sense was human-certified.",
+  "missingLexiconCandidates": 1324,
+  "bothExamplesBoundaryCandidates": 2224,
+  "contentOverlayRows": 276,
+  "newOriginalExamples": 342,
+  "confirmed": [
+    {
+      "id": "wl_06328",
+      "oldHanzi": "朝曛",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "morning sunlight in literary usage",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "朝曛照着村庄，大家开始一天的工作。",
+          "诗中的朝曛照亮了东山。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": [
+          {
+            "url": "https://buddhism.lib.ntu.edu.tw/FULLTEXT/sutra/B/B0141.pdf",
+            "basis": "Primary text preserves Li Bai using 朝曛 for the changing span of morning and evening, not morning sunlight."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wl_13532",
+      "oldHanzi": "闭嘴",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Shut up!; same as",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "闭嘴看着。",
+          "你能闭嘴吗?"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13861",
+      "oldHanzi": "点儿",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "erhua variant of",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她有点儿面包。",
+          "辣点儿没关系。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16462",
+      "oldHanzi": "小孩儿",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "erhua variant of",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "连小孩儿都会做。",
+          "小孩儿不能在这条河里游泳。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16525",
+      "oldHanzi": "男孩儿",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "erhua form of",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "那男孩儿来访过我家。",
+          "我发觉男孩儿酣然入睡了。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14259",
+      "oldHanzi": "为啥",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "dialectal equivalent of",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "你为啥还不结婚？",
+          "我想让你明白为啥你必须这幺做。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14072",
+      "oldHanzi": "为止",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "until; (used in combination with words like or in constructs of the form )",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他游到不能游为止。",
+          "闭着你的眼睛直到我告诉你睁开为止。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15334",
+      "oldHanzi": "与其",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "rather than... (used in expressions of the form + {verb1} + + {verb2} \"rather than {verb1}, better to {verb2}\")",
+        "oldPartOfSpeech": "conjunction",
+        "oldExamples": [
+          "与其谝口，不如认真做事。",
+          "与其让我在他手下干，我宁愿辞职。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14648",
+      "oldHanzi": "义务",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "duty; obligation (); volunteer (work etc)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "这是您的义务。",
+          "你有义务还债。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16026",
+      "oldHanzi": "海龟",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "turtle; Internet slang for",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "海龟下蛋。",
+          "海龟是爬行动物。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13974",
+      "oldHanzi": "过得",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. Correct the grammatical reading used by the headword.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "How are you getting by?; How's life?; contraction of can get by",
+        "oldPartOfSpeech": "verb phrase",
+        "oldExamples": [
+          "最近过得怎样？",
+          "最近过得好吗？"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "拼音",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13828",
+      "oldHanzi": "年前",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "by the end of the year; at the end of the year; shortly before New Year",
+        "oldPartOfSpeech": "time noun",
+        "oldExamples": [
+          "那是好几年前。",
+          "他三年前死了。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15526",
+      "oldHanzi": "三分",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "somewhat; to some degree",
+        "oldPartOfSpeech": "numeral",
+        "oldExamples": [
+          "我只会等三分钟。",
+          "限你三分钟内投降"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17323",
+      "oldHanzi": "不忙",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(polite formula) there's no hurry; take your time",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "我现在不忙。",
+          "我上周不忙。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17603",
+      "oldHanzi": "水族",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Shui ethnic group",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "水族箱里有两只蝾螈。",
+          "水族馆里展示了鲎鱼。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": [
+          {
+            "url": "https://kmweb.moa.gov.tw/ws.php?id=76",
+            "basis": "Agriculture ministry uses 水族 for aquatic organisms, supporting the sense in the supplied examples."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wl_17672",
+      "oldHanzi": "发自",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to evolve from",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "这番感谢发自肺腑。",
+          "任何情绪，只要它是真诚的，就说明它是发自内心的自然流露。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18024",
+      "oldHanzi": "再不",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "or else; alternatively",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "再不快点就迟到了噢。",
+          "再不快点我们就赶不上火车了。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18233",
+      "oldHanzi": "射影",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(geometry) projection",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "批评应讲事实，不要含沙射影。",
+          "他说话含沙射影，让同事不舒服。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18475",
+      "oldHanzi": "理学",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "science",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她辅修心理学。",
+          "他的物理学得很好。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": [
+          {
+            "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=62006&la=1&powerMode=0",
+            "basis": "MOE dictionary defines 理學 as the philosophical school associated with the Song and Ming periods."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wl_18443",
+      "oldHanzi": "消炎",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to reduce fever; antipyretic; to decrease inflammation",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "医生给他介绍了消炎药。",
+          "这盒消炎药上印着药名。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": [
+          {
+            "url": "https://www.cdc.gov.tw/Category/ListContent/Hh094B49-DRwe2RR4eFfrQ?uaId=qXD8NcDMejqWv6b0UhrpIw",
+            "basis": "The health authority distinguishes directly reducing inflammation from treating bacterial infection; the entry is a language definition, not medication advice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wl_18463",
+      "oldHanzi": "熙攘",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "restless",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "周末的夜市熙熙攘攘。",
+          "到了巳时，街市已熙熙攘攘。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": [
+          {
+            "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=104562&q=1&word=%E6%94%98",
+            "basis": "MOE dictionary describes busy movement of people, supporting bustling rather than restless."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wl_18494",
+      "oldHanzi": "相承",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to complement one another",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "两代人的创作风格一脉相承。",
+          "这些节日习俗与古老传统一脉相承。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17945",
+      "oldHanzi": "五味",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "the five flavors, namely: sweet sour bitter spicy hot salty; all kinds of flavors",
+        "oldPartOfSpeech": "numeral",
+        "oldExamples": [
+          "回到旧校，他五味杂陈。",
+          "听到这个消息，她心里五味杂陈。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17962",
+      "oldHanzi": "从兄",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "older male second cousin",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "族谱记载他有三位从兄弟。",
+          "古文中的从兄弟指堂兄弟。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16497",
+      "oldHanzi": "大脚",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "naturally-formed feet (as opposed to bound feet ); long kick (soccer); Bigfoot (mythological animal)",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "他花钱大手大脚，工资总是存不下来。",
+          "她开始记账，改掉了大手大脚的习惯。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16105",
+      "oldHanzi": "有水",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "supplied with water (of a house)",
+        "oldPartOfSpeech": "verb phrase",
+        "oldExamples": [
+          "没有水。",
+          "杯子里有水。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15810",
+      "oldHanzi": "高明",
+      "issue": "Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "brilliant; superior; wise",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她不懂法律，建议我另请高明。",
+          "这台机器我修不了，请另请高明。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15440",
+      "oldHanzi": "雪梨",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. Repair an incomplete English reference, wrong sense, or overly narrow gloss after checking the individual entry. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "snow pear (pyrus nivalis)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他今天从雪梨回来。",
+          "雪梨是澳洲最大的城市。"
+        ],
+        "reviewedFields": [
+          "英文释义",
+          "本义解释JSON",
+          "引申义解释JSON",
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13623",
+      "oldHanzi": "白痴",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "idiocy; idiot",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "汤姆不是白痴。",
+          "我真是个白痴！"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13804",
+      "oldHanzi": "意大利",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Italy",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "她去了意大利学习音乐。",
+          "德国曾是意大利的同盟国。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13819",
+      "oldHanzi": "王子",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "prince; son of a king",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "王子继承了王位。",
+          "我见到了王子真人。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13849",
+      "oldHanzi": "明星",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "star; celebrity",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "谁是你最喜爱的电视明星？",
+          "明星突然退赛，传闻顿时闹得满城风雨。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13997",
+      "oldHanzi": "海滩",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "beach",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "去海滩走哪条路？",
+          "我们上周去了海滩。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14028",
+      "oldHanzi": "威士忌",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "whiskey (loanword)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "这种威士忌太烈了。",
+          "你觉得这威士忌怎幺样？"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14126",
+      "oldHanzi": "卫星",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(aerospace) satellite; (astronomy) satellite; moon",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "月球是地球唯一的卫星。",
+          "这枚卫星明天将发射升空。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14238",
+      "oldHanzi": "道德",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "virtue; morality; ethics",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "议员受到了议会道德委员会的谴责。",
+          "为了救许多人牺牲一个人是否道德？"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14241",
+      "oldHanzi": "实话",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "truth",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "说实话，我恨汤姆。",
+          "说实话，我有点紧张。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14289",
+      "oldHanzi": "小丑",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "clown",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "小丑做了个鬼脸。",
+          "他衣着像个绅士，言行举止却像个小丑。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14317",
+      "oldHanzi": "可靠",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "reliable",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "你是我最可靠的朋友。",
+          "他巧舌如簧，却拿不出任何可靠的证据。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14386",
+      "oldHanzi": "丛林",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "jungle; thicket; forest",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "狮子是丛林之王。",
+          "他写了一本关于丛林冒险的书。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14461",
+      "oldHanzi": "吉他",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(loanword) guitar",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "我想弹吉他。",
+          "他常常弹吉他。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14487",
+      "oldHanzi": "胡子",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "beard; mustache or whiskers; facial hair",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他刮了他的胡子。",
+          "他留了胡子，为了让自己看起来更成熟。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14495",
+      "oldHanzi": "幸存者",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "survivor",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "一个幸存者都没有。",
+          "这场灾难的唯一幸存者是一个婴儿。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14524",
+      "oldHanzi": "明智",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "sensible; wise; judicious",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他的忠告总是很明智。",
+          "你做了一个明智的选择。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14631",
+      "oldHanzi": "胆小鬼",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "coward",
+        "oldPartOfSpeech": "idiom",
+        "oldExamples": [
+          "你就是胆小鬼。",
+          "他是个胆小鬼。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14685",
+      "oldHanzi": "外国",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "foreign country",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "外国投资者从美国收回他们的钱。",
+          "为什幺你想到外国读书？"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14849",
+      "oldHanzi": "城镇",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "town; cities and towns",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "我不想在城镇的那个地方买房",
+          "汽车尾气在城镇里造成了严重的污染。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14832",
+      "oldHanzi": "余生",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "the remaining years of one's life; survival (after a disaster)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "劫后余生的乘客互相拥抱。",
+          "洪水退后，他庆幸自己劫后余生。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15037",
+      "oldHanzi": "摩托",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(loanword) motor",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "骑摩托车很有趣。",
+          "他骑摩托车去上班。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16011",
+      "oldHanzi": "古典",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "classical",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她是一位古典音乐爱好者。",
+          "你喜欢古典音乐, 对不对?"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16060",
+      "oldHanzi": "太平",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "peace and security",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "史书用乂安描写天下太平。",
+          "大家都盼望天下太平，家人平安相聚。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16161",
+      "oldHanzi": "富翁",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "rich person; millionaire; billionaire",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "我就要成为百万富翁了。",
+          "我总是梦想著成为亿万富翁。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16673",
+      "oldHanzi": "苏打",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(loanword) soda; (loanword) carbonated drink; soft drink",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她点了一杯苏打水。",
+          "苏打水里的气泡很细。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16816",
+      "oldHanzi": "大吉",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "very auspicious; extremely lucky",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "附近的旧电影院已经关门大吉。",
+          "这家店连年亏损，终于关门大吉。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16855",
+      "oldHanzi": "明珠",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "pearl; jewel (of great value)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "小女儿是爷爷奶奶的掌上明珠。",
+          "她从小被父母当作掌上明珠呵护。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16893",
+      "oldHanzi": "一言",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "one sentence; brief remark",
+        "oldPartOfSpeech": "particle",
+        "oldExamples": [
+          "他在团队里一言九鼎。",
+          "这位长者说话一言九鼎。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16944",
+      "oldHanzi": "诸如",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(various things) such as; such as (the following)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "游泳、跑步，诸如此类的运动我都喜欢。",
+          "洗碗、扫地，诸如此类的家务需要大家分担。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17312",
+      "oldHanzi": "同仁",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(formal) colleague; fellow member (of an organization or profession)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "这位老师对所有学生一视同仁。",
+          "服务人员应该对每位顾客一视同仁。"
+        ],
+        "reviewedFields": [
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17324",
+      "oldHanzi": "连珠",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "joined as a string of pearls; in rapid succession; alignment",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她在访谈中妙语连珠。",
+          "主持人妙语连珠，气氛很轻松。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17361",
+      "oldHanzi": "两国",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "both countries; the two countries",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "两国通过贸易交换了商品。",
+          "两国代表团在日内瓦会面。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17439",
+      "oldHanzi": "美感",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "sense of beauty; aesthetic perception",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她没有审美感。",
+          "玛丽对她自己的美感到很自豪。"
+        ],
+        "reviewedFields": [
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17450",
+      "oldHanzi": "母爱",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "maternal love",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "母爱比任何别的东西都伟大。",
+          "直到我自己有了孩子我才明白了什幺是母爱。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17747",
+      "oldHanzi": "多样",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "diverse; diversity; manifold",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "保护生物多样性很重要。",
+          "这片森林的生物多样性很高。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17867",
+      "oldHanzi": "万贯",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "ten thousand strings of cash; very wealthy; millionaire",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "那位腰缠万贯的商人仍然保持简朴生活。",
+          "他幻想自己腰缠万贯，却从不认真工作。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17921",
+      "oldHanzi": "乌有",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(literary) not to exist; nonexistent; illusory",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "那些关于他的指控都是子虚乌有。",
+          "所谓的巨额奖金，原来只是子虚乌有。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17949",
+      "oldHanzi": "井井",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "always clean; orderly; methodical",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她把每天的工作安排得井井有条。",
+          "文件按日期排列，井井有条。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17950",
+      "oldHanzi": "井然",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "tidy, methodical",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "图书按类别排放，整个书架井然有序。",
+          "志愿者安排得当，入场队伍井然有序。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18012",
+      "oldHanzi": "克俭",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "thrifty; frugal",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "父母一生克勤克俭。",
+          "她靠克勤克俭攒下了学费。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18013",
+      "oldHanzi": "克己",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "self-restraint; discipline; selflessness",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他以克己奉公的态度工作。",
+          "克己奉公是她坚持的原则。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18066",
+      "oldHanzi": "劳逸",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "work and rest",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "劳逸结合有助于提高效率。",
+          "备考期间也要劳逸结合。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18123",
+      "oldHanzi": "周知",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "well known",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他工作认真，这是众所周知的。",
+          "众所周知，这里的冬天很冷。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18203",
+      "oldHanzi": "妙语",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "witticism",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她在访谈中妙语连珠。",
+          "主持人妙语连珠，气氛很轻松。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17736",
+      "oldHanzi": "西洋棋",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "chess",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "我对西洋棋没兴趣。",
+          "我对西洋棋没有兴趣。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17798",
+      "oldHanzi": "海岛",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "island",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "这座海岛是旅游胜地。",
+          "强烈的飓风袭击了海岛。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13815",
+      "oldHanzi": "有用",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "useful",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "电很有用。",
+          "说英语很有用。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13680",
+      "oldHanzi": "没用",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "useless",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "事情已经发生，木已成舟，再抱怨也没用。",
+          "跟他吵没用。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14091",
+      "oldHanzi": "有罪",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "guilty",
+        "oldPartOfSpeech": "verb; noun",
+        "oldExamples": [
+          "他承认有罪。",
+          "如果他是清白的，那他妻子就有罪。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17607",
+      "oldHanzi": "相仿",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "similar",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他们年龄相仿。",
+          "汤姆与你年龄相仿。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17148",
+      "oldHanzi": "固体",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "solid",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "水结冰后成为固体。",
+          "水是液体。冻起来就成了固体。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13691",
+      "oldHanzi": "公主",
+      "issue": "",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "princess",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她梦见她是一个公主。",
+          "一等奖是公主的香吻。"
+        ],
+        "reviewedFields": [],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17183",
+      "oldHanzi": "妖魔",
+      "issue": "",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "demon",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "电影里的妖魔鬼怪虽逼真，却只是特效。",
+          "孩子画了一群妖魔鬼怪，准备做故事插图。"
+        ],
+        "reviewedFields": [],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17212",
+      "oldHanzi": "全家福",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "photograph of the entire family; hodgepodge (cookery)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他拍了张全家福的照片。",
+          "这是一张我的全家福照片。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17083",
+      "oldHanzi": "红旗",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "red flag",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "红旗代表存在危险。",
+          "红旗在晨风中冉冉升起。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18269",
+      "oldHanzi": "强人",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(politics) strongman; (in the workplace, esp. of a woman) a highly capable person; (old) robber",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "虽然还有不足，这份报告总体上差强人意。",
+          "比赛成绩差强人意，至少达到了基本要求。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16758",
+      "oldHanzi": "行者",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "pedestrian; walker; itinerant monk",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "骄傲是失败的先行者。",
+          "旅行者在地图上寻找车站。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17850",
+      "oldHanzi": "理工",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "science and engineering as academic subjects",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "修理工检查了车轮的轮毂。",
+          "修理工千方百计让旧钟重新走起来。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17854",
+      "oldHanzi": "个儿",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "size; height; stature",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "这对夫妇生了个儿子。",
+          "他把一百万美元分给他五个儿子。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16669",
+      "oldHanzi": "以致",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "with the result that",
+        "oldPartOfSpeech": "conjunction",
+        "oldExamples": [
+          "她学以致用，在家用上了修理技能。",
+          "学习中文让我们在日常交流中学以致用。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15190",
+      "oldHanzi": "自行",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "voluntary; autonomous; by oneself",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "我骑自行车去学校。",
+          "这家工厂生产自行车。"
+        ],
+        "reviewedFields": [
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14098",
+      "oldHanzi": "本人",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "I; me; myself; oneself; yourself; himself; herself; the person concerned",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "我是日本人。",
+          "他是日本人吗？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17264",
+      "oldHanzi": "上工",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to go to work; to start work",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我整天在农场上工作。",
+          "我们去年夏天在一个农场上工作。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17266",
+      "oldHanzi": "染病",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to catch an illness; to get infected with a disease",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "老师向学生介绍传染病。",
+          "医院设有传染病相关的门诊。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18140",
+      "oldHanzi": "回波",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "echo (e.g. radar); returning wave",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我在回波士顿。",
+          "汤姆回波士顿的家去了。"
+        ],
+        "reviewedFields": [
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18188",
+      "oldHanzi": "头盖",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "skull; cranium",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "雨水劈头盖脸地打过来。",
+          "他一进门就被劈头盖脸地训斥。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18258",
+      "oldHanzi": "序数",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "ordinal number",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "课本列出了钌的原子序数。",
+          "课本列出了铌元素的原子序数。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18489",
+      "oldHanzi": "目成",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to make eyes; to exchange flirting glances with somebody",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他们因财产纠纷反目成仇。",
+          "小小误会竟让朋友反目成仇。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17715",
+      "oldHanzi": "木质",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "wooden",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "木质家具沉甸甸的。",
+          "木质房屋很容易着火。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17153",
+      "oldHanzi": "脚踏",
+      "issue": "",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "pedal",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "年画中的哪吒脚踏风火轮。",
+          "她脚踏实地地学习，不急于求成。"
+        ],
+        "reviewedFields": [],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17976",
+      "oldHanzi": "体弱",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "debility",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "她天生体弱。",
+          "他病后体弱，不堪长途劳累。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17328",
+      "oldHanzi": "水深",
+      "issue": "",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "depth (of waterway); sounding",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "持续的战乱让居民生活在水深火热之中。",
+          "失去工作又背上债务，他的生活陷入水深火热。"
+        ],
+        "reviewedFields": [],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17349",
+      "oldHanzi": "实地",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples. The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "on-site",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她脚踏实地地学习，不急于求成。",
+          "计划再好，也要脚踏实地地去落实。"
+        ],
+        "reviewedFields": [
+          "词性",
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18201",
+      "oldHanzi": "妖言",
+      "issue": "",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "heresy",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他利用谣言妖言惑众。",
+          "这些妖言惑众的说法没有证据。"
+        ],
+        "reviewedFields": [],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14735",
+      "oldHanzi": "孤儿",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "orphan",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他们收养了那个孤儿。",
+          "十岁时他就成了孤儿。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14881",
+      "oldHanzi": "宝贵",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "valuable; precious; to value",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "时间比什幺都宝贵。",
+          "时间是世界上最宝贵的东西。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14911",
+      "oldHanzi": "青少年",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "adolescent; youth; teenager",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "汤姆是个普通的青少年。",
+          "交通事故是美国青少年死亡的主要原因。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14921",
+      "oldHanzi": "英勇",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "heroic; gallant; valiant",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "诗中的武士显得赳赳英勇。",
+          "他的英勇行为使他赢得了尊重。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15244",
+      "oldHanzi": "古董",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "curio; antique",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他对古董很有鉴赏力。",
+          "她看古董的眼光很好。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15335",
+      "oldHanzi": "瓦斯",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "gas (loanword)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "我闻到瓦斯味。",
+          "你每个月的瓦斯费多少钱？"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15362",
+      "oldHanzi": "博客",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(loanword) a blog; a blogger",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "你写过博客吗？",
+          "我刚在我的博客上发表了一个新帖子。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15510",
+      "oldHanzi": "高尔夫",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(loanword) golf",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他高尔夫球打得好。",
+          "我喜欢网球和高尔夫。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15627",
+      "oldHanzi": "高尔夫球",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "golf; golf ball",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他高尔夫球打得好。",
+          "我不太擅长打高尔夫球。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15640",
+      "oldHanzi": "比萨",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(loanword) pizza",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "为什幺我们不能要比萨？",
+          "所有人除了汤姆都吃了比萨。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15702",
+      "oldHanzi": "大家庭",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "extended family; big family; harmonious group",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他有一个大家庭。",
+          "我从一个大家庭来。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15807",
+      "oldHanzi": "劳驾",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "excuse me",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "劳驾，来一杯咖啡。",
+          "可否劳驾你帮我个忙？"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15906",
+      "oldHanzi": "西北",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "northwest",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他们向西北方向进军，进入了谢南多厄河谷。",
+          "再这样乱花钱，月底就要喝西北风了。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16037",
+      "oldHanzi": "山丘",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "hill",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "学校在山丘顶上。",
+          "孩子们跑下了山丘。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16066",
+      "oldHanzi": "暴风雪",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "snowstorm; blizzard",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "暴风雪使得我们难以返回营地。",
+          "我们路上一帆风顺，直到遇上暴风雪。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16208",
+      "oldHanzi": "高峰",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "peak; summit; height",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "登山队终于征服了这座高峰。",
+          "客运高峰出现在假期。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16320",
+      "oldHanzi": "曲奇",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "cookie (loanword via Cantonese kuk1 kei4)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "这是巧克力曲奇吗？",
+          "汤姆有一只导盲犬，名叫曲奇。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16391",
+      "oldHanzi": "和善",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "good-natured",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她对我很和善。",
+          "护士们都很和善。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16441",
+      "oldHanzi": "南北",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "north and south; north to south",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "南北两地的气候迥然不同。",
+          "他写了本关于美国南北战争的书。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16687",
+      "oldHanzi": "开朗",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "spacious and well-lit; open and clear; (of character) optimistic",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "她的性格很开朗。",
+          "听了她的解释，我对这个问题豁然开朗。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16735",
+      "oldHanzi": "齐全",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "complete; comprehensive",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "这套房子设施便利齐全。",
+          "资料准备齐全，这次申请应该十拿九稳。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16804",
+      "oldHanzi": "高塔",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "tower",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "高塔屹立在重重山峦之间。",
+          "他登上高塔瞭望，发现一艘船。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16924",
+      "oldHanzi": "午休",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "noon break; lunch break; lunchtime nap",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "新经理平易近人，午休时常和同事聊天。",
+          "我在午休时间睡了一会儿，因为我太累了。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16939",
+      "oldHanzi": "郁金香",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "tulip",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "郁金香将很快盛开。",
+          "那些郁金香很美丽。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16981",
+      "oldHanzi": "冷清",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "cold and cheerless; desolate; deserted",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "没有你这个城市孤单又冷清。",
+          "小店开业时很热闹，却好景不长，渐渐冷清。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17656",
+      "oldHanzi": "四海",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(fig.) the whole world",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "古书说周王奄有四海。",
+          "当地的瓷器早已名扬四海。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18180",
+      "oldHanzi": "天公",
+      "issue": "The part of speech does not match the taught common-noun, modifier, verb or other contextual sense.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "heaven; lord of heaven",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "今晚天公作美。",
+          "婚礼那天天公作美，阳光明媚。"
+        ],
+        "reviewedFields": [
+          "词性"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13924",
+      "oldHanzi": "罗斯",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(name) Ross; Rose; Roth; Rus' (as in Kievan Rus' )",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他在俄罗斯学习过一年。",
+          "她喜欢听俄罗斯流行音乐。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13672",
+      "oldHanzi": "麦克",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(name) Mike; Michael; (prefix) Mac-; Mc-",
+        "oldPartOfSpeech": "bound form",
+        "oldExamples": [
+          "探头配有麦克风。",
+          "说话时请靠近麦克风。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14380",
+      "oldHanzi": "格雷",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Grey; Gray",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "格雷厄姆格林是我最喜欢的作家。",
+          "格雷厄姆葛林是我最喜欢的作家之一。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15091",
+      "oldHanzi": "阿拉",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Allah (Arabic name of God)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他写阿拉伯文。",
+          "她说一点阿拉伯语。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15703",
+      "oldHanzi": "天后",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Tin Hau, Empress of Heaven, another name for the goddess Matsu; Tin Hau (Hong Kong area around the MTR station with same name)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "我会在三天后回来。",
+          "我当时正忙着打包，因为我两天后要去法国。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16495",
+      "oldHanzi": "何人",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "who",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "别跟任何人说哟。",
+          "任何人都可以做到。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17876",
+      "oldHanzi": "上都",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Shangdu, also known as Xanadu, summer capital of the Yuan Dynasty (1279-1368)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "世界上都是白痴。",
+          "对不起，现在我手上都是东西了。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17954",
+      "oldHanzi": "京郊",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "suburbs of Beijing",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他住在东京郊区。",
+          "我住在东京郊区。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17964",
+      "oldHanzi": "他信",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Thaksin Shinawatra (1949-), Thai businessman and politician, prime minister 2001-2006",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他信守了承诺.",
+          "他信守了他的承诺。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18166",
+      "oldHanzi": "多芬",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Dove (brand)",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "贝多芬是一个伟大的音乐家。",
+          "贝多芬走向钢琴，坐下来并开始弹。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18442",
+      "oldHanzi": "海王",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Poseidon or Neptune, the god of the sea; Aquaman, a comic-book superhero",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "海王星是太阳系第八个行星。",
+          "海王星绕行太阳一周要花一百六十五年。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18236",
+      "oldHanzi": "尔雅",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Erya, an early Chinese dictionary of classical words",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "这位教授温文尔雅，说话总是很有礼貌。",
+          "他温文尔雅，即使意见不同也不大声争吵。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14249",
+      "oldHanzi": "牛仔",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "cowboy",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "汤姆穿著牛仔裤。",
+          "我想买一条牛仔裤。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17983",
+      "oldHanzi": "你我",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "you and I; everyone; all of us (in society)",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "没有你我很悲伤。",
+          "没有你我活不下去。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17984",
+      "oldHanzi": "你等",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(archaic) you all",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "我想让你等我。",
+          "你等我多久了？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18302",
+      "oldHanzi": "我等",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "we; us (archaic)",
+        "oldPartOfSpeech": "pronoun",
+        "oldExamples": [
+          "我等汤姆。",
+          "别让我等著。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_13830",
+      "oldHanzi": "然而",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "however; but; yet",
+        "oldPartOfSpeech": "conjunction",
+        "oldExamples": [
+          "相处久了，我们自然而然地成了朋友。",
+          "听到志愿者的故事，她的感激油然而生。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14079",
+      "oldHanzi": "至于",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "as for; as to; to go so far as to",
+        "oldPartOfSpeech": "preposition",
+        "oldExamples": [
+          "她太过好奇，以至于打开了盒子。",
+          "土豆太热，以至于烫到了我的嘴。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14157",
+      "oldHanzi": "小鬼",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "little demon (term of endearment for a child); mischievous child; imp",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "你就是胆小鬼。",
+          "他是个胆小鬼。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14200",
+      "oldHanzi": "不得",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "must not; may not; not to be allowed",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他不得不改坐下一班车。",
+          "下雨了，我们不得不回家。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14312",
+      "oldHanzi": "有意",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to intend; intentionally; interested in",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "排球很有意思。",
+          "这应该很有意思。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14341",
+      "oldHanzi": "所在",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "place; location; (after a noun) place where it is located",
+        "oldPartOfSpeech": "modifier",
+        "oldExamples": [
+          "厕所在哪里？",
+          "最近的厕所在哪里？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14452",
+      "oldHanzi": "作证",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to bear witness; to testify; to serve as evidence",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他的工作证挂在胸前。",
+          "进入办公楼需要出示工作证。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14551",
+      "oldHanzi": "一行",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "party; delegation",
+        "oldPartOfSpeech": "numeral",
+        "oldExamples": [
+          "老师的一言一行都会影响学生。",
+          "孩子们认真观察他的一言一行。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14844",
+      "oldHanzi": "下巴",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "chin",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "汤姆是最后下巴士车的人。",
+          "他磕碎了下巴，掉了几颗牙。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14935",
+      "oldHanzi": "套房",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "small room opening off another; inner room; suite; apartment; flat; (Tw) room with private bathroom",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我想买套房子。",
+          "这套房子设施便利齐全。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14954",
+      "oldHanzi": "到手",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to take possession of; to get hold of",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我刚刚切到手指了。",
+          "好痛！被门夹到手指了！"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_14983",
+      "oldHanzi": "着手",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to put one's hand to it; to start out on a task; to set out",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他戴着手套。",
+          "汤姆戴着手套。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15171",
+      "oldHanzi": "上下",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "the top and bottom of something; the full vertical extent of something; from top to bottom; to go up and down",
+        "oldPartOfSpeech": "localizer",
+        "oldExamples": [
+          "我从出租车上下来。",
+          "你搭公车上下学吗？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15199",
+      "oldHanzi": "把头",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "labor contractor; gangmaster",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他把头发剪短了。",
+          "她把头发拍整齐了。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15224",
+      "oldHanzi": "人心",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "popular feeling; the will of the people",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "清晨的花香沁人心脾。",
+          "雨后的空气沁人心脾。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15360",
+      "oldHanzi": "不下",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to be not less than (a certain quantity, amount etc)",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "今天不下雨。",
+          "已经不下雪了。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15367",
+      "oldHanzi": "人头",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "person; number of people; (per) capita",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她希望凭自己的努力出人头地。",
+          "他虽然出人头地了，却没有忘记老朋友。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15559",
+      "oldHanzi": "大大",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "greatly; enormously; (dialect) dad",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "亚历山大大帝死在巴比伦。",
+          "她面带大大的笑容向我招呼。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15563",
+      "oldHanzi": "多事",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "meddlesome; eventful",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "公司正处于多事之秋。",
+          "我在这周做了许多事。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15765",
+      "oldHanzi": "相亲",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "blind date; to be deeply attached to each other",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "这家人相亲相爱，彼此关心。",
+          "希望你们相亲相爱，共同面对生活中的困难。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15775",
+      "oldHanzi": "想通",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to figure out; to realize; to become convinced",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "你想通过做那件事而得到原谅是吗？",
+          "汤姆如果想通过这门课，就需要加劲学习。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16383",
+      "oldHanzi": "有理",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "reasonable; justified; right",
+        "oldPartOfSpeech": "verb; noun",
+        "oldExamples": [
+          "没有理由害怕。",
+          "没有理由生气。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16425",
+      "oldHanzi": "想出",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to figure out; to work out (a solution etc); to think up",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我今天想出门。",
+          "我今晚想出去吃。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16450",
+      "oldHanzi": "动员",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to mobilize; mobilization",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "运动员凌空跃起。",
+          "汤姆天生就是个运动员。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16451",
+      "oldHanzi": "生子",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to give birth to a child or children",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我是独生子。",
+          "她埋葬了她的独生子。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16452",
+      "oldHanzi": "人身",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "person; personal; human body",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他们中的一些人身体健康，但是其他人不是。",
+          "我们应该尽量避免把我们自己的信念强加在别人身上。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16473",
+      "oldHanzi": "电器",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(electrical) appliance; device",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我忘了带手机充电器。",
+          "这两个充电器不能混用。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16587",
+      "oldHanzi": "一等",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "first class; grade A",
+        "oldPartOfSpeech": "numeral",
+        "oldExamples": [
+          "她在吃东西比赛里得了一等奖。",
+          "你得等一等看。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16592",
+      "oldHanzi": "博物",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "natural science",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "博物馆介绍了虢国的历史。",
+          "博物馆展出了古代的货币。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16629",
+      "oldHanzi": "小女",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "my daughter (humble)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她还是个小女孩。",
+          "你看著像个小女孩。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16665",
+      "oldHanzi": "有失",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to cause a loss of (decorum, dignity etc) (used in fixed expressions)",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我有失眠症。",
+          "我们没有失去太多。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16691",
+      "oldHanzi": "高效",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "efficient; highly effective",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "劳逸结合有助于提高效率。",
+          "提高效率没有灵丹妙药，需要逐步改进。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16717",
+      "oldHanzi": "国人",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "compatriots (literary); fellow countrymen",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他是美国人。",
+          "在美国人们说哪些语言？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16737",
+      "oldHanzi": "有感",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to feel prompted by one's perception of something",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我的手冷到没有感觉了。",
+          "我的手指没有感觉。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16774",
+      "oldHanzi": "正视",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to face squarely; to meet head on; to face up to",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "学校发布说明，以正视听。",
+          "她公开原始记录，以正视听。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16930",
+      "oldHanzi": "上火",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to get angry; to suffer from excessive internal heat (TCM)",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我没赶上火车。",
+          "他能赶上火车吗？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17009",
+      "oldHanzi": "回路",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to return; circuit (e.g. electric); loop",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "项目几乎停下时，新订单让局面峰回路转。",
+          "沿着山路前行，峰回路转处出现了一座小桥。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17023",
+      "oldHanzi": "二等",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "second class; second-rate",
+        "oldPartOfSpeech": "modifier",
+        "oldExamples": [
+          "一加二等于三。",
+          "二乘以二等于四。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17065",
+      "oldHanzi": "不觉",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "unconsciously",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "我不觉得它很好。",
+          "我不觉得他诚实。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17167",
+      "oldHanzi": "明治",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Meiji, Japanese era name, corresponding to the reign (1868-1912) of the Meiji emperor",
+        "oldPartOfSpeech": "time noun",
+        "oldExamples": [
+          "三明治怎麼样？",
+          "汤姆做了个三明治。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17177",
+      "oldHanzi": "富士",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Fuji (Japanese company)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "富士山有多高？",
+          "我们想攀登富士山。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17216",
+      "oldHanzi": "过早",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "premature; untimely; (dialect) to have breakfast; breakfast",
+        "oldPartOfSpeech": "time noun",
+        "oldExamples": [
+          "我已经吃过早饭了。",
+          "我不饿。我刚吃过早餐。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17277",
+      "oldHanzi": "过境",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to pass through a country's territory; transit",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "事过境迁，他已不再生气。",
+          "如今事过境迁，再争论没有意义。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17358",
+      "oldHanzi": "牛角",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "cow horn",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他钻牛角尖了很久，却忽略了简单的办法。",
+          "别在这个小问题上钻牛角尖，先看整体情况。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17368",
+      "oldHanzi": "火龙",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "a lantern or torchlight procession (resembling a fiery dragon)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我喜欢火龙果。",
+          "这种水果叫做火龙果。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17413",
+      "oldHanzi": "拖拉",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to drag along; to haul; (fig.) to procrastinate",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我能开拖拉机吗？",
+          "我发动不了我的拖拉机。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17425",
+      "oldHanzi": "放风",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to allow in fresh air; to allow a prisoner out for exercise; to give out information",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "孩子在草地上放风筝。",
+          "他和他的儿子放风筝了。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17463",
+      "oldHanzi": "地利",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "favorable location; in the right place; productivity of land",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他好好地利用了这个机会。",
+          "他尽力地利用了这个机会。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17520",
+      "oldHanzi": "的哥",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "male taxi driver; cabbie (slang)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他是我的哥哥。",
+          "我的哥哥是老师。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17536",
+      "oldHanzi": "大一",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "first year of university",
+        "oldPartOfSpeech": "time noun",
+        "oldExamples": [
+          "你有比这个再大一点的尺寸吗?",
+          "汤姆试过还回泳衣来换成更大一号的，但是员工告诉他那是不被允许的。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17543",
+      "oldHanzi": "讲道",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to preach; a sermon",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "别攻讦别人的隐私，要讲道理。",
+          "跟不想听的人讲道理，简直是对牛弹琴。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17585",
+      "oldHanzi": "吃香",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "popular; in demand; well regarded",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "猫不吃香蕉。",
+          "汤姆说玛莉常吃香蕉。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17599",
+      "oldHanzi": "大三",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "third year of university",
+        "oldPartOfSpeech": "numeral",
+        "oldExamples": [
+          "他比我大三岁。",
+          "他比她大三岁。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17647",
+      "oldHanzi": "有道",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to have attained the Way; (of a government or a ruler) enlightened; wise and just",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "那是有道理的。",
+          "也许您有道理。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17673",
+      "oldHanzi": "下文",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "the text below; the following text; (fig.) what happened next; later developments",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "遇到生词时先读上下文。",
+          "读上下文可以帮助理解词义。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17704",
+      "oldHanzi": "火器",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "gunpowder weapon (esp. firearm)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "门口放着一只灭火器。",
+          "汤姆试著用灭火器把火扑灭。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17717",
+      "oldHanzi": "行车",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to drive a vehicle; movement of vehicles",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我骑自行车去学校。",
+          "这辆自行车是我的。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17721",
+      "oldHanzi": "面包机",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "bread making machine; bread maker",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "把面包片放进烤面包机。",
+          "烤面包机里放着两片面包。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17744",
+      "oldHanzi": "台前",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "front of the stage",
+        "oldPartOfSpeech": "location noun",
+        "oldExamples": [
+          "我会在电台前等你。",
+          "他在柜台前无理取闹，影响了其他顾客。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17814",
+      "oldHanzi": "着重",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to put emphasis on; to stress",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "电视在日常生活中起着重要的作用。",
+          "大自然在我们的生活中扮演着重要的角色。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17817",
+      "oldHanzi": "和约",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "peace treaty",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "汤姆和约翰关系很好。",
+          "我坐在汤姆和约翰中间。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17944",
+      "oldHanzi": "五一",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "5-1 (May 1st)",
+        "oldPartOfSpeech": "numeral",
+        "oldExamples": [
+          "她把事情的经过一五一十地告诉了老师。",
+          "回家后，他一五一十地讲了自己的见闻。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17948",
+      "oldHanzi": "井下",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "underground; in the pit (mining)",
+        "oldPartOfSpeech": "location noun",
+        "oldExamples": [
+          "朋友遇到困难，应该帮助，不能落井下石。",
+          "他趁对方失败时继续讽刺，简直是在落井下石。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17993",
+      "oldHanzi": "信从",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to trust and obey",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "她把信从日语译成法语。",
+          "汤姆为他的老板把一封信从法语翻译成了英语。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18006",
+      "oldHanzi": "做功",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(physics) to do work; non-vocal acting (in traditional Chinese opera)",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他忙於做功课。",
+          "你应该现在做功课。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18016",
+      "oldHanzi": "公办",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "state-run",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他坚持公事公办，不接受私人请求。",
+          "即使是朋友来办手续，也要公事公办。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18062",
+      "oldHanzi": "加派",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to reinforce; to dispatch troops",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他会来參加派对。",
+          "谢谢你邀我參加派对。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18064",
+      "oldHanzi": "动车",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(PRC) (D- or C-class) high-speed train; power car",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "爸爸骑电动车去买菜。",
+          "这辆电动车需要充电。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18070",
+      "oldHanzi": "包房",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "compartment (of train, ship etc); private room at restaurant; rented room for karaoke",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "面包房打烊了。",
+          "在面包房工作的姑娘很可爱。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18071",
+      "oldHanzi": "包机",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "chartered plane; to charter a plane",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "把面包片放进烤面包机。",
+          "烤面包机里放着两片面包。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18073",
+      "oldHanzi": "包被",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "peridium (envelope or coat of fungi, e.g. puffballs)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我的钱包被抢了。",
+          "我们的钱包被偷了。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18082",
+      "oldHanzi": "单行",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to come individually; to treat separately; separate edition",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "车坏了又遇到大雨，真是祸不单行。",
+          "他刚失业就生了病，感到祸不单行。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18088",
+      "oldHanzi": "去国",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to leave one's country",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我想有一天去国外。",
+          "将来我要去国外旅游。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18090",
+      "oldHanzi": "去火",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to reduce internal heat (TCM)",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他该去火车站了。",
+          "去火车站要多久？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18096",
+      "oldHanzi": "口服",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to take medicine orally; oral (contraceptive etc); to say that one is convinced",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "她用事实证明了方案的价值，让大家心服口服。",
+          "这次比赛输得心服口服，他决定加强训练。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18109",
+      "oldHanzi": "吃水",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "drinking water; to obtain water (for daily needs); to absorb water",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "我喜欢吃水果。",
+          "请随意吃水果。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18111",
+      "oldHanzi": "吃鸡",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(video games) PlayerUnknown's Battlegrounds (PUBG); battle royale game; last-man-standing game",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我不喜欢吃鸡蛋。",
+          "一位医生告诉过我，吃鸡蛋对我的健康有害。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18118",
+      "oldHanzi": "名医",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "famous doctor",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "汤姆假装他是一名医生。",
+          "他长大了会成为一名医生。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18119",
+      "oldHanzi": "名学",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(archaic) logic",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我们班有三十名学生。",
+          "这儿有不少于五百名学生。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18124",
+      "oldHanzi": "命危",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(medicine) in a critical condition",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "你在说我有生命危险吗？",
+          "他冒着生命危险救了那条狗。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18128",
+      "oldHanzi": "咧咧",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(dialect) to cry; to whimper; (dialect) to talk drivel",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他做事大大咧咧，常忘记检查。",
+          "她性格大大咧咧，很容易交朋友。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18142",
+      "oldHanzi": "在任",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to be in office; incumbent",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "你在任何一家邮局都能买到邮票。",
+          "我在任何地方都没能找到。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18143",
+      "oldHanzi": "在前",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "ahead; formerly; in the past",
+        "oldPartOfSpeech": "localizer",
+        "oldExamples": [
+          "这个购物中心在前面一英里远的地方。",
+          "我在前往会议的路上。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18144",
+      "oldHanzi": "在后",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "behind",
+        "oldPartOfSpeech": "localizer",
+        "oldExamples": [
+          "会议将在后天于东京举行。",
+          "声音大声一点，以便让坐在后边的学生能听到。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18145",
+      "oldHanzi": "在地",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(Tw) local; native (from Taiwanese Tai-lo pr. )",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "鼹鼠在地下挖掘通道。",
+          "竹子的根茎在地下伸展。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18151",
+      "oldHanzi": "地接",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "local guide; tour escort",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "汤姆小心地接近。",
+          "这个家庭热情地接待了我。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18155",
+      "oldHanzi": "垂青",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to show appreciation for somebody; to look upon somebody with favor",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "她的科学贡献让她名垂青史。",
+          "这些保护文化遗产的人将有机会名垂青史。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18161",
+      "oldHanzi": "外线",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(military) line of troops encircling an enemy position; (telephony) outside line; (basketball) outside the three-point line",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "太阳光中有紫外线。",
+          "仪器可以检测紫外线强度。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18167",
+      "oldHanzi": "夜郎",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "small barbarian kingdom in southern China during the Han dynasty",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "不了解同行，就容易夜郎自大。",
+          "他见识增长后，不再夜郎自大。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18171",
+      "oldHanzi": "大吃",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to gorge oneself; to pig out",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "她肯定会大吃一惊的。",
+          "账单上的数字让她大吃一惊。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18175",
+      "oldHanzi": "大数",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "a large number",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "公司用大数据分析需求。",
+          "大数据研究需要保护隐私。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18212",
+      "oldHanzi": "守成",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to preserve the accomplishments of previous generations; to carry on the good work of one's predecessors",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "市场已经改变，公司不能再墨守成规。",
+          "她不愿墨守成规，尝试了新的种植方法。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18246",
+      "oldHanzi": "岁时",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "the seasons; the time of year",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "十岁时他就成了孤儿。",
+          "她父亲在她三岁时死了。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18266",
+      "oldHanzi": "开河",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to open a river; to dig a canal; to thaw (of river)",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "说话要有依据，不能信口开河。",
+          "他信口开河地许下承诺，却根本做不到。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18341",
+      "oldHanzi": "搭背",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "harness pad (on draft animal)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "照片里，队员们勾肩搭背。",
+          "两位朋友勾肩搭背地走出去。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18353",
+      "oldHanzi": "无息",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "interest-free",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "小猫无声无息地走进了房间。",
+          "他无声无息地离开，没有惊动任何人。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18365",
+      "oldHanzi": "日方",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "the Japanese side or party (in negotiations etc)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "来日方长，我们以后再慢慢聊。",
+          "虽然这次失败了，但来日方长。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18372",
+      "oldHanzi": "是以",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "therefore; thus; so",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "他不再是以前的那个他了。",
+          "你的理论是以什麼为基础?"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18373",
+      "oldHanzi": "是日",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "this day; that day (formal)",
+        "oldPartOfSpeech": "time expression",
+        "oldExamples": [
+          "这是日本国旗。",
+          "这是日本最高的塔。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18380",
+      "oldHanzi": "有成",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(literary) to achieve success",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他没有成功的机会。",
+          "她胸有成竹地走上讲台。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18381",
+      "oldHanzi": "有电",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to have an electricity supply; to be electrically charged",
+        "oldPartOfSpeech": "verb phrase",
+        "oldExamples": [
+          "你有电视吗？",
+          "哪里有电话机？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18384",
+      "oldHanzi": "未成",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "incomplete; unfinished",
+        "oldPartOfSpeech": "adjective",
+        "oldExamples": [
+          "古文用殇指未成年便去世。",
+          "注释说明殇指未成年而亡。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18385",
+      "oldHanzi": "本字",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "original form of a Chinese character",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我有本字典。",
+          "我想买这本字典。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18390",
+      "oldHanzi": "权谋",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "trickery; tactics",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "调查发现有人以权谋私。",
+          "监督制度应防止以权谋私。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18395",
+      "oldHanzi": "果切",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "fresh-cut fruit",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她把苹果切成两半。",
+          "将苹果切丁。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18413",
+      "oldHanzi": "比心",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to make a heart-shaped gesture with one's fingers or hands",
+        "oldPartOfSpeech": "verb phrase",
+        "oldExamples": [
+          "服务顾客要将心比心。",
+          "将心比心，就能理解他的担忧。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18420",
+      "oldHanzi": "水马",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "water-filled barrier",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "傍晚，车站外的街道车水马龙。",
+          "每到周末，市中心总是车水马龙。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18458",
+      "oldHanzi": "点开",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(computing) to open (a link, file etc) by clicking or tapping",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "银行九点开门。",
+          "她九点开始工作。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18473",
+      "oldHanzi": "班主",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "leader of a theatrical troupe",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "我们的班主任姓芮。",
+          "他兼任两个班的班主任。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18478",
+      "oldHanzi": "生员",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "scholar preparing for imperial examinations (in former times)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "救生员救起了溺水的孩子。",
+          "救生员发现有人溺水，马上跳进水中。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18479",
+      "oldHanzi": "生土",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(agr.) immature soil; virgin soil",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她是这里土生土长的居民。",
+          "这种艺术是当地土生土长的文化形式。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18483",
+      "oldHanzi": "白质",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(anatomy) white matter",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "牛奶里含有蛋白质。",
+          "这本旧教材用朊表示蛋白质。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18486",
+      "oldHanzi": "的姐",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "a female taxi driver (colloquial)",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "她是我的姐姐。",
+          "我的姐姐就像我的祖母。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15821",
+      "oldHanzi": "一战",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "World War I (1914–1918)",
+        "oldPartOfSpeech": "abbreviation",
+        "oldExamples": [
+          "这是最后一次选拔机会，她决定背水一战。",
+          "球队已没有退路，只能在决赛中背水一战。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15825",
+      "oldHanzi": "对外",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "external; foreign; pertaining to external or foreign (affairs)",
+        "oldPartOfSpeech": "location noun",
+        "oldExamples": [
+          "你们对外语感兴趣吗？",
+          "我对外籍员工没有偏见。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16140",
+      "oldHanzi": "放任",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to ignore; to let alone; to indulge",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "盒子上面不要放任何东西。",
+          "不要放任何东西在箱子上面。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16331",
+      "oldHanzi": "小白",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(slang) novice; greenhorn; (old) (slang) fool; idiot",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "妈妈买了一把小白菜。",
+          "这碗汤里放了小白菜。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16341",
+      "oldHanzi": "性病",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "sexually transmitted disease; venereal disease",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "这位医生研究慢性病。",
+          "社区举办了慢性病知识讲座。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16353",
+      "oldHanzi": "私自",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "private; personal; secretly; without explicit approval",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "他只顾自己的利益，实在自私自利。",
+          "共同生活不能自私自利，要考虑别人。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18276",
+      "oldHanzi": "得很",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "(after an adjective) very",
+        "oldPartOfSpeech": "degree complement",
+        "oldExamples": [
+          "程序运行得很慢。",
+          "这盘肉片切得很薄。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18277",
+      "oldHanzi": "得无",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "could it be that ...? (literary)",
+        "oldPartOfSpeech": "interrogative phrase",
+        "oldExamples": [
+          "这个贪得无厌的骗子不断索要更多的钱。",
+          "已经得到了不少好处，他却仍然贪得无厌。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18283",
+      "oldHanzi": "心病",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "anxiety; sore point; secret worry",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "他竟向无辜的孩子行凶，实在丧心病狂。",
+          "为了骗钱而毁掉救命药品，简直丧心病狂。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18285",
+      "oldHanzi": "念旧",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to remember old friends; to cherish old friendships; for old time's sake",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "他不念旧恶，帮助了昔日的对手。",
+          "她不念旧恶，仍愿意合作。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18286",
+      "oldHanzi": "怒放",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "in full bloom",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "听说自己被录取，她心花怒放。",
+          "孩子们看到礼物，个个心花怒放。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18298",
+      "oldHanzi": "成体",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "an adult organism; fully developed",
+        "oldPartOfSpeech": "adjective; noun",
+        "oldExamples": [
+          "在正式会议上吵闹，实在不成体统。",
+          "他穿着睡衣接待客人，显得不成体统。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18299",
+      "oldHanzi": "成日",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "all day long; the whole day; the whole time",
+        "oldPartOfSpeech": "adverb",
+        "oldExamples": [
+          "请把这句话翻译成日文。",
+          "你可以把英文翻译成日语吗？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18310",
+      "oldHanzi": "打网",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to net something; to catch something with a net",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "您不打网球吗？",
+          "我喜欢打网球。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_18322",
+      "oldHanzi": "拿大",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "to put on airs; self-important; high and mighty",
+        "oldPartOfSpeech": "verb",
+        "oldExamples": [
+          "汤姆是加拿大人。",
+          "我们是加拿大人。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_16194",
+      "oldHanzi": "斑马",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "zebra",
+        "oldPartOfSpeech": "noun",
+        "oldExamples": [
+          "请走斑马线过马路。",
+          "斑马线前有车停着。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_17250",
+      "oldHanzi": "北海",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "North Sea (in Europe); historical name for several bodies of water, including Lake Baikal Russia",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他去北海道了。",
+          "他曾去过北海道。"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_15361",
+      "oldHanzi": "波斯",
+      "issue": "Old examples do not independently demonstrate the taught headword/sense, or omit its relevant everyday sense; replace with two explicit sense-matched examples.",
+      "resolution": "content-overlay",
+      "evidence": {
+        "oldGloss": "Persia",
+        "oldPartOfSpeech": "proper noun",
+        "oldExamples": [
+          "他精通波斯语。",
+          "波斯顿那时的情况如何？"
+        ],
+        "reviewedFields": [
+          "例句JSON"
+        ],
+        "references": []
+      }
+    },
+    {
+      "id": "wl_04076",
+      "oldHanzi": "五音之一",
+      "issue": "Definition fragment 五音之一 is a description of a tone, not the name of a musical concept.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "one of the five traditional musical tones",
+        "oldExamples": [
+          "徵是古代五音之一。",
+          "角也是五音之一。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_04142",
+      "oldHanzi": "大写三",
+      "issue": "大写三 describes the graph 叁 rather than forming a natural standalone teaching headword.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "the formal financial form of three",
+        "oldExamples": [
+          "叁是大写三的写法。",
+          "支票上要用大写三，不能写普通的三。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_04109",
+      "oldHanzi": "又好",
+      "issue": "又好 is a clipped portion of 又好又便宜 and the supplied gloss itself ends in an ellipsis.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "both good and ...",
+        "oldExamples": [
+          "这家店的东西又好又便宜。",
+          "这台电脑又好又便宜。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_04262",
+      "oldHanzi": "账账",
+      "issue": "账账 only qualifies reconciliation or matching in these contexts; teach the complete accounting expression or a useful financial word.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "between accounting ledgers",
+        "oldExamples": [
+          "账账核对是核对不同账簿之间的记录。",
+          "这次账账核对没有发现差异。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_04243",
+      "oldHanzi": "斜行延伸",
+      "issue": "斜行延伸 is an incidental adverb-plus-verb string used to pad a character into a phrase, not a useful lexical head.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "to extend diagonally",
+        "oldExamples": [
+          "裂纹沿着木板斜行延伸。",
+          "这条石缝向右斜行延伸。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_05877",
+      "oldHanzi": "唵嘛",
+      "issue": "唵嘛 truncates opening syllables of a mantra and does not form a natural Mandarin vocabulary item.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "opening mantra syllables",
+        "oldExamples": [
+          "这段真言以唵嘛开头。",
+          "听众辨认出诵唱开头的唵嘛二字。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_06003",
+      "oldHanzi": "青盉",
+      "issue": "青盉 is an incidental color plus rare vessel name; two examples merely describe a green vessel.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "green he wine-mixing vessel",
+        "oldExamples": [
+          "展览介绍了这件呈绿色的青盉。",
+          "这件青盉的表面呈现出深浅不同的绿色。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_04235",
+      "oldHanzi": "嗨嗨",
+      "issue": "嗨嗨 is a repeated interjection; replace according to the current instruction to reduce particles/interjections.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "hey, hey",
+        "oldExamples": [
+          "嗨嗨，你们在找什么？",
+          "嗨嗨，等我一下！"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_01555",
+      "oldHanzi": "嗯嗯",
+      "issue": "嗯嗯 repeats a response particle; replace according to the current instruction.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "mm-hmm; yes, I understand",
+        "oldExamples": [
+          "嗯嗯，我已经听明白了。",
+          "嗯嗯，我会记住的。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_01572",
+      "oldHanzi": "好啦",
+      "issue": "好啦 is an interjection-particle combination; replace according to the current instruction.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "all right; that's enough",
+        "oldExamples": [
+          "好啦，我们可以出发了。",
+          "好啦，别再争了。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_01573",
+      "oldHanzi": "好啊",
+      "issue": "好啊 is an interjection-particle combination; replace according to the current instruction.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "sure; that sounds good",
+        "oldExamples": [
+          "好啊，我们一起去公园散步。",
+          "好啊，明天见！"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_17870",
+      "oldHanzi": "三小",
+      "issue": "三小 is glossed as a Taiwanese vulgar interjection, but both examples contain only the unrelated string 三小时.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "(Tw) (vulgar) what the hell? (from Taiwanese Tai-lo pr. , equivalent to Mandarin )",
+        "oldExamples": [
+          "我在三小时前见过汤姆。",
+          "我每个周末早上工作三小时。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18303",
+      "oldHanzi": "我靠",
+      "issue": "我靠 is glossed as a vulgar interjection, but both examples mean a seat near the window/aisle and cross pronoun/preposition boundaries.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "bosh!; crap!",
+        "oldExamples": [
+          "请给我靠窗口的位子。",
+          "请给我靠走道的位子。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18275",
+      "oldHanzi": "得了",
+      "issue": "得了 is glossed as enough/alright, but both examples use 得 as obtain/contract plus aspect 了.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "all right!; that's enough!",
+        "oldExamples": [
+          "班里有几个同学得了流感。",
+          "他得了奖后忘乎所以，竟迟到也不解释。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_17966",
+      "oldHanzi": "付方",
+      "issue": "付方 is glossed as an accounting credit side, but both examples contain only the middle of 支付方式.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "credit side (of a balance sheet), as opposed to",
+        "oldExamples": [
+          "请选择一种支付方式。",
+          "现金也是可用的支付方式。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_17981",
+      "oldHanzi": "作人",
+      "issue": "作人 is glossed as personal conduct, but both examples contain only the middle of 工作人员.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "to conduct oneself; same as",
+        "oldExamples": [
+          "工作人员核查了名单。",
+          "工作人员复核了总金额。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_16551",
+      "oldHanzi": "我人",
+      "issue": "我人 is a rare pronoun while both examples contain 我 followed by 人生; no actual pronoun use.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "we",
+        "oldExamples": [
+          "我人生地不熟的。",
+          "告诉我人生的意义。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_17970",
+      "oldHanzi": "以律",
+      "issue": "以律 is an unrelated Biblical personal name while both examples contain only 严以律己.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "Eluid (son of Achim)",
+        "oldExamples": [
+          "她严以律己，从不迟到。",
+          "老师希望学生严以律己。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18206",
+      "oldHanzi": "威士",
+      "issue": "威士 is an obsolete Visa transliteration while both examples contain 威士忌; no brand meaning.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "Visa (credit card)",
+        "oldExamples": [
+          "这种威士忌太烈了。",
+          "你觉得这威士忌怎幺样？"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18196",
+      "oldHanzi": "好时",
+      "issue": "好时 is glossed as Hershey's, but the examples contain 好时机 and 好时候, not the brand.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "Hershey's (brand)",
+        "oldExamples": [
+          "好时机。",
+          "现在正是好时候。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_16805",
+      "oldHanzi": "比亚",
+      "issue": "比亚 is a Greek mythological name while the examples contain 比亚洲 and 哥伦比亚; neither demonstrates that name.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "Bia, daughter of Pallas and Styx in Greek mythology, personification of violence",
+        "oldExamples": [
+          "欧洲的人口比亚洲少。",
+          "哥伦比亚政府要了更多的钱。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_14866",
+      "oldHanzi": "公室",
+      "issue": "公室 is glossed as a modern office, but both examples simply contain 办公室; this is not that standalone word's normal historical sense.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "office (room); ruling families during Spring and Autumn period",
+        "oldExamples": [
+          "老师在办公室。",
+          "我们的办公室在三楼。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18147",
+      "oldHanzi": "在教",
+      "issue": "在教 denotes religious affiliation, while the examples just contain 在教堂 or 在教室.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "to be a believer (in a religion, esp. Islam)",
+        "oldExamples": [
+          "牧师在教堂里。",
+          "别在教室里说话。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18222",
+      "oldHanzi": "家的",
+      "issue": "家的 is an old term for wife, while both examples just contain 大家的; no wife sense.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "wife (an old form of address or reference)",
+        "oldExamples": [
+          "这次成功有大家的功劳。",
+          "真相弄清后，大家的疑虑烟消云散。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18444",
+      "oldHanzi": "淇淋",
+      "issue": "淇淋 is a clipped loanword fragment taken from 冰淇淋 and both examples contain only the full ice-cream word.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "cream (a loanword)",
+        "oldExamples": [
+          "我想吃冰淇淋了。",
+          "我不会吃冰淇淋。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    },
+    {
+      "id": "wl_18234",
+      "oldHanzi": "小三",
+      "issue": "小三 is a real but low-priority item; both current examples only mean three years younger, not the taught mistress/school-year sense.",
+      "resolution": "sent-to-headword-refinement",
+      "evidence": {
+        "oldGloss": "a mistress; the third year of primary school",
+        "oldExamples": [
+          "我比你小三岁。",
+          "汤姆比玛丽小三岁。"
+        ],
+        "basis": "Manual semantic judgment from the complete sentences, not absence from CEDICT."
+      }
+    }
+  ],
+  "retainRationale": [
+    "Absence from CEDICT alone is not evidence of an invalid word: retain useful modern terms such as 扫码支付, 快递柜 and 取件码.",
+    "Preserve established literary words, local expressions and documented proper names when their taught meaning and contexts agree, even if jieba splits them.",
+    "A component appearing inside an idiom can be a valid semantic demonstration; do not discard every compositional or idiomatic context mechanically.",
+    "Retain natural useful heads such as 本人, 自行, 作证, 吃香 and 日方, replacing examples that only matched characters across word boundaries.",
+    "Greetings, thanks and urgent calls such as 你好, 谢谢 and 救命 are useful conversational functions; they are not automatically removed just because a POS tag calls them interjections."
+  ],
+  "limitations": "This is AI-assisted lexical/context review with structural screening, not a linguistic authority or human certification. Phonetic and semantic checks have distinct evidence; remaining low-confidence boundary flags are not asserted to be errors."
+}

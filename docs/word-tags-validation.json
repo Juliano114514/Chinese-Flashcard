@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "annotationVersion": "2026-10-27.3",
+  "wordlistSha256": "6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a",
+  "totalWords": 18500,
+  "taggedWords": 18500,
+  "othersWords": 0,
+  "typeTaggedWords": 18500,
+  "semanticTopicWords": 14534,
+  "topicReviewWords": 3966,
+  "unspecifiedPosWords": 0,
+  "sampleWords": 200,
+  "sampleByStage": {
+    "0": 40,
+    "1": 40,
+    "2": 40,
+    "3": 40,
+    "4": 40
+  },
+  "stages": {
+    "0": {
+      "total": 2193,
+      "tagged": 2193,
+      "others": 0
+    },
+    "1": {
+      "total": 6422,
+      "tagged": 6422,
+      "others": 0
+    },
+    "2": {
+      "total": 6970,
+      "tagged": 6970,
+      "others": 0
+    },
+    "3": {
+      "total": 2757,
+      "tagged": 2757,
+      "others": 0
+    },
+    "4": {
+      "total": 158,
+      "tagged": 158,
+      "others": 0
+    }
+  },
+  "tags": {
+    "topic_family": 139,
+    "topic_people": 456,
+    "topic_body_health": 676,
+    "topic_emotions": 585,
+    "topic_home": 408,
+    "topic_furniture": 51,
+    "topic_appliances": 26,
+    "topic_food": 708,
+    "topic_clothing": 263,
+    "topic_study": 249,
+    "topic_work": 321,
+    "topic_money": 400,
+    "topic_travel_transport": 395,
+    "topic_time_number": 1075,
+    "topic_space": 296,
+    "topic_nature_weather": 593,
+    "topic_animals": 411,
+    "topic_plants": 427,
+    "topic_sport_leisure": 197,
+    "topic_communication": 1042,
+    "topic_thinking": 517,
+    "topic_society": 389,
+    "topic_law": 178,
+    "topic_science_technology": 316,
+    "topic_history": 242,
+    "topic_culture": 328,
+    "topic_religion": 148,
+    "topic_geography": 310,
+    "topic_daily_actions": 85,
+    "topic_tools": 147,
+    "topic_properties": 1189,
+    "topic_actions_processes": 3187,
+    "topic_abstract_relations": 361,
+    "topic_grammar": 601,
+    "topic_objects": 111,
+    "topic_others": 0,
+    "usage_everyday": 741,
+    "usage_written": 327,
+    "usage_classical": 59,
+    "form_noun": 8812,
+    "form_verb": 5580,
+    "form_adjective": 1722,
+    "form_adverb": 645,
+    "form_number_measure": 230,
+    "form_pronoun": 100,
+    "form_function": 253,
+    "form_sound_interjection": 72,
+    "form_phrase": 1107,
+    "form_morpheme": 123,
+    "form_abbreviation": 8,
+    "form_symbol": 2,
+    "form_idiom": 1261,
+    "form_fixed_expression": 13
+  },
+  "reviewStatus": "Full definition/POS rule pass with editorial disambiguations; not human or dictionary certification"
+}

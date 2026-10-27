@@ -1,0 +1,1310 @@
+{
+  "sourceCsvSha256": "71d0a021e789e1892a12f5732bba0b704662d2d3639681ed5c087558b692028b",
+  "mismatches": 130,
+  "categories": {
+    "yi_bu_sandhi": 130
+  },
+  "items": [
+    {
+      "id": "wl_01083",
+      "word": "一下",
+      "wordPinyin": "yī xià",
+      "chunkPinyin": "yíxià",
+      "kind": "yi_bu_sandhi",
+      "gloss": "for a moment; once; all at once",
+      "sentence": "让我思考一下",
+      "english": "Let me think about it."
+    },
+    {
+      "id": "wl_02615",
+      "word": "一声不吭",
+      "wordPinyin": "yī shēng bù kēng",
+      "chunkPinyin": "yì shēng bù kēng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes remaining completely silent",
+      "sentence": "他先是哑然失笑，随后一声不吭。",
+      "english": "He laughs despite himself, then falls silent."
+    },
+    {
+      "id": "wl_02615",
+      "word": "一声不吭",
+      "wordPinyin": "yī shēng bù kēng",
+      "chunkPinyin": "yì shēng bù kēng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes remaining completely silent",
+      "sentence": "听完批评，他一声不吭地走了。",
+      "english": "After hearing the criticism, he left without saying a word."
+    },
+    {
+      "id": "wl_02813",
+      "word": "一亿",
+      "wordPinyin": "yī yì",
+      "chunkPinyin": "yí yì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one hundred million",
+      "sentence": "一亿等于一万个一万。",
+      "english": "One hundred million equals ten thousand times ten thousand."
+    },
+    {
+      "id": "wl_02813",
+      "word": "一亿",
+      "wordPinyin": "yī yì",
+      "chunkPinyin": "yí yì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one hundred million",
+      "sentence": "这座水库能储存一亿立方米的水。",
+      "english": "This reservoir can store one hundred million cubic meters of water."
+    },
+    {
+      "id": "wl_02932",
+      "word": "奄奄一息",
+      "wordPinyin": "yǎn yǎn yī xī",
+      "chunkPinyin": "yǎn yǎn yì xī.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes being barely alive and close to death",
+      "sentence": "受伤的小鸟已经奄奄一息。",
+      "english": "The injured little bird is barely alive."
+    },
+    {
+      "id": "wl_02932",
+      "word": "奄奄一息",
+      "wordPinyin": "yǎn yǎn yī xī",
+      "chunkPinyin": "yǎn yǎn yì xī.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes being barely alive and close to death",
+      "sentence": "被救起的小狗已经奄奄一息。",
+      "english": "The rescued puppy was barely alive."
+    },
+    {
+      "id": "wl_03158",
+      "word": "杀一儆百",
+      "wordPinyin": "shā yī jǐng bǎi",
+      "chunkPinyin": "shā yì jǐng bǎi.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes punishing one person to warn and deter others.",
+      "sentence": "公司严惩造假的负责人，希望借此杀一儆百。",
+      "english": "The company severely punished the manager responsible for fraud to warn others."
+    },
+    {
+      "id": "wl_03158",
+      "word": "杀一儆百",
+      "wordPinyin": "shā yī jǐng bǎi",
+      "chunkPinyin": "shā yì jǐng bǎi,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes punishing one person to warn and deter others.",
+      "sentence": "这次处罚意在杀一儆百，提醒所有商家遵守规则。",
+      "english": "The penalty was intended to make an example and remind all merchants to follow the rules."
+    },
+    {
+      "id": "wl_03229",
+      "word": "一蹶不振",
+      "wordPinyin": "yī jué bù zhèn",
+      "chunkPinyin": "yì jué bú zhèn,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes failing to recover one's spirits after a setback.",
+      "sentence": "一次失败不该让你一蹶不振，重新准备就有机会。",
+      "english": "One failure should not keep you down; preparing again gives you another chance."
+    },
+    {
+      "id": "wl_03229",
+      "word": "一蹶不振",
+      "wordPinyin": "yī jué bù zhèn",
+      "chunkPinyin": "yì jué bú zhèn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes failing to recover one's spirits after a setback.",
+      "sentence": "那家工厂失去主要客户后，一蹶不振了好几年。",
+      "english": "After losing its main client, the factory failed to recover for several years."
+    },
+    {
+      "id": "wl_03378",
+      "word": "沧海一粟",
+      "wordPinyin": "cāng hǎi yī sù",
+      "chunkPinyin": "cāng hǎi yí sù.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a tiny part of an immensely larger whole.",
+      "sentence": "个人的力量如同沧海一粟。",
+      "english": "One person's power is like a grain in the vast sea."
+    },
+    {
+      "id": "wl_03378",
+      "word": "沧海一粟",
+      "wordPinyin": "cāng hǎi yī sù",
+      "chunkPinyin": "cāng hǎi yí sù.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a tiny part of an immensely larger whole.",
+      "sentence": "和整个宇宙相比，地球只是沧海一粟。",
+      "english": "Compared with the whole universe, Earth is only a tiny part of a vast whole."
+    },
+    {
+      "id": "wl_03384",
+      "word": "一栋楼",
+      "wordPinyin": "yī dòng lóu",
+      "chunkPinyin": "yí dòng lóu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one building",
+      "sentence": "一栋楼里的房间号全是双数。",
+      "english": "Every room number in one building is even."
+    },
+    {
+      "id": "wl_03384",
+      "word": "一栋楼",
+      "wordPinyin": "yī dòng lóu",
+      "chunkPinyin": "yí dòng lóu.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one building",
+      "sentence": "路口新建了一栋楼。",
+      "english": "A new building has been built at the intersection."
+    },
+    {
+      "id": "wl_03545",
+      "word": "一应俱全",
+      "wordPinyin": "yī yīng jù quán",
+      "chunkPinyin": "yì yīng jù quán.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes having everything that is needed",
+      "sentence": "这家店铺的日用品一应俱全。",
+      "english": "This shop stocks every daily necessity."
+    },
+    {
+      "id": "wl_03545",
+      "word": "一应俱全",
+      "wordPinyin": "yī yīng jù quán",
+      "chunkPinyin": "yì yīng jù quán.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes having everything that is needed",
+      "sentence": "店里的旅行用品一应俱全。",
+      "english": "The shop has every travel item needed."
+    },
+    {
+      "id": "wl_03552",
+      "word": "瞿然一惊",
+      "wordPinyin": "jù rán yī jīng",
+      "chunkPinyin": "jù rán yì jīng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be suddenly startled",
+      "sentence": "水位急遽上升，他瞿然一惊。",
+      "english": "The water rises rapidly, giving him a sudden fright."
+    },
+    {
+      "id": "wl_03552",
+      "word": "瞿然一惊",
+      "wordPinyin": "jù rán yī jīng",
+      "chunkPinyin": "jù rán yì jīng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be suddenly startled",
+      "sentence": "听到身后的响声，他瞿然一惊。",
+      "english": "Hearing a noise behind him, he is suddenly startled."
+    },
+    {
+      "id": "wl_03617",
+      "word": "百战不殆",
+      "wordPinyin": "bǎi zhàn bù dài",
+      "chunkPinyin": "bǎi zhàn bú dài.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes remaining safe through repeated contests with sound preparation.",
+      "sentence": "充分了解市场，才能在竞争中百战不殆。",
+      "english": "Understanding the market thoroughly helps one stay secure through repeated competition."
+    },
+    {
+      "id": "wl_03617",
+      "word": "百战不殆",
+      "wordPinyin": "bǎi zhàn bù dài",
+      "chunkPinyin": "bǎi zhàn bú dài,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes remaining safe through repeated contests with sound preparation.",
+      "sentence": "球队想要百战不殆，就必须不断研究对手的战术。",
+      "english": "To stay competitive in match after match, the team must keep studying its opponents' tactics."
+    },
+    {
+      "id": "wl_03618",
+      "word": "一年半载",
+      "wordPinyin": "yī nián bàn zǎi",
+      "chunkPinyin": "yì nián bàn zǎi",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a period of roughly a year or so",
+      "sentence": "多余行李成了他一年半载的累赘。",
+      "english": "The excess luggage became a burden to him for a year or so."
+    },
+    {
+      "id": "wl_03618",
+      "word": "一年半载",
+      "wordPinyin": "yī nián bàn zǎi",
+      "chunkPinyin": "yì nián bàn zǎi.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a period of roughly a year or so",
+      "sentence": "修好这座老桥恐怕需要一年半载。",
+      "english": "Repairing this old bridge will probably take a year or so."
+    },
+    {
+      "id": "wl_03630",
+      "word": "一枚",
+      "wordPinyin": "yī méi",
+      "chunkPinyin": "yì méi",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one coin, medal, or similar small object",
+      "sentence": "孩子打开口袋，掏出一枚硬币。",
+      "english": "The child opened the pocket and took out a coin."
+    },
+    {
+      "id": "wl_03630",
+      "word": "一枚",
+      "wordPinyin": "yī méi",
+      "chunkPinyin": "yì méi",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one coin, medal, or similar small object",
+      "sentence": "他珍藏着一枚旧邮票。",
+      "english": "He treasures an old postage stamp."
+    },
+    {
+      "id": "wl_03665",
+      "word": "一望无垠",
+      "wordPinyin": "yī wàng wú yín",
+      "chunkPinyin": "yí wàng wú yín",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a landscape stretching beyond the visible horizon.",
+      "sentence": "登上山顶，眼前是一望无垠的草原。",
+      "english": "From the summit, the grassland stretched as far as the eye could see."
+    },
+    {
+      "id": "wl_03665",
+      "word": "一望无垠",
+      "wordPinyin": "yī wàng wú yín",
+      "chunkPinyin": "yí wàng wú yín",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a landscape stretching beyond the visible horizon.",
+      "sentence": "船离开港口后，四周只剩一望无垠的海面。",
+      "english": "After the ship left the harbor, an endless sea surrounded it."
+    },
+    {
+      "id": "wl_03713",
+      "word": "一棵",
+      "wordPinyin": "yī kē",
+      "chunkPinyin": "yì kē",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one tree or plant",
+      "sentence": "他负责管理花园，种下一棵新树。",
+      "english": "He manages the garden and plants a new tree."
+    },
+    {
+      "id": "wl_03713",
+      "word": "一棵",
+      "wordPinyin": "yī kē",
+      "chunkPinyin": "yì kē",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one tree or plant",
+      "sentence": "窗前种着一棵桃树。",
+      "english": "A peach tree is planted in front of the window."
+    },
+    {
+      "id": "wl_03752",
+      "word": "一串",
+      "wordPinyin": "yī chuàn",
+      "chunkPinyin": "yí chuàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one string or bunch",
+      "sentence": "她把一串珠子放在手绢上。",
+      "english": "She places a string of beads on the handkerchief."
+    },
+    {
+      "id": "wl_03752",
+      "word": "一串",
+      "wordPinyin": "yī chuàn",
+      "chunkPinyin": "yí chuàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one string or bunch",
+      "sentence": "他递给我一串葡萄。",
+      "english": "He hands me a bunch of grapes."
+    },
+    {
+      "id": "wl_03755",
+      "word": "一盏",
+      "wordPinyin": "yī zhǎn",
+      "chunkPinyin": "yì zhǎn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one lamp",
+      "sentence": "桌上有一盏灯，方便他晚上写字。",
+      "english": "There is a lamp on the desk so he can write at night."
+    },
+    {
+      "id": "wl_03755",
+      "word": "一盏",
+      "wordPinyin": "yī zhǎn",
+      "chunkPinyin": "yì zhǎn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one lamp",
+      "sentence": "她在床头留着一盏小灯。",
+      "english": "She leaves a small lamp by the bed."
+    },
+    {
+      "id": "wl_03766",
+      "word": "一令纸",
+      "wordPinyin": "yī lǐng zhǐ",
+      "chunkPinyin": "yì lǐng zhǐ,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one ream of paper",
+      "sentence": "他买一令纸，收据金额写捌元。",
+      "english": "He buys one ream of paper, and the receipt records eight yuan."
+    },
+    {
+      "id": "wl_03766",
+      "word": "一令纸",
+      "wordPinyin": "yī lǐng zhǐ",
+      "chunkPinyin": "yì lǐng zhǐ.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one ream of paper",
+      "sentence": "印刷店新买了一令纸。",
+      "english": "The print shop has bought a new ream of paper."
+    },
+    {
+      "id": "wl_03774",
+      "word": "一叶扁舟",
+      "wordPinyin": "yī yè piān zhōu",
+      "chunkPinyin": "yí yè piān zhōu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a tiny boat",
+      "sentence": "一叶扁舟从竹筏旁缓缓驶过。",
+      "english": "A small boat glides slowly past the bamboo raft."
+    },
+    {
+      "id": "wl_03774",
+      "word": "一叶扁舟",
+      "wordPinyin": "yī yè piān zhōu",
+      "chunkPinyin": "yí yè piān zhōu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a tiny boat",
+      "sentence": "一叶扁舟停在芦苇旁。",
+      "english": "A tiny boat rests beside the reeds."
+    },
+    {
+      "id": "wl_03834",
+      "word": "一暴十寒",
+      "wordPinyin": "yī pù shí hán",
+      "chunkPinyin": "yí pù shí hán.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes making only sporadic efforts without perseverance",
+      "sentence": "孝顺应持之以恒，不能一暴十寒。",
+      "english": "Care for parents should be steady, never intermittent."
+    },
+    {
+      "id": "wl_03834",
+      "word": "一暴十寒",
+      "wordPinyin": "yī pù shí hán",
+      "chunkPinyin": "yí pù shí hán.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes making only sporadic efforts without perseverance",
+      "sentence": "学习不能一暴十寒。",
+      "english": "You must not study only in short, sporadic bursts."
+    },
+    {
+      "id": "wl_03856",
+      "word": "瞟一眼",
+      "wordPinyin": "piǎo yī yǎn",
+      "chunkPinyin": "piǎo yì yǎn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "take a quick glance",
+      "sentence": "她嫌他啰嗦，只瞟一眼便走开。",
+      "english": "Finding him too talkative, she glances once and leaves."
+    },
+    {
+      "id": "wl_03856",
+      "word": "瞟一眼",
+      "wordPinyin": "piǎo yī yǎn",
+      "chunkPinyin": "piǎo yì yǎn,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "take a quick glance",
+      "sentence": "他朝窗外瞟一眼，又低头读书。",
+      "english": "He glances out of the window, then lowers his head to read again."
+    },
+    {
+      "id": "wl_03877",
+      "word": "一艘",
+      "wordPinyin": "yī sōu",
+      "chunkPinyin": "yì sōu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one vessel or ship",
+      "sentence": "他登上高塔瞭望，发现一艘船。",
+      "english": "He climbed the tall tower to look out and spotted a ship."
+    },
+    {
+      "id": "wl_03877",
+      "word": "一艘",
+      "wordPinyin": "yī sōu",
+      "chunkPinyin": "yì sōu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one vessel or ship",
+      "sentence": "港口停着一艘货船。",
+      "english": "A cargo ship is moored in the harbor."
+    },
+    {
+      "id": "wl_04000",
+      "word": "一趟",
+      "wordPinyin": "yī tàng",
+      "chunkPinyin": "yí tàng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one trip or visit",
+      "sentence": "我想去一趟邮局，更改收信地址。",
+      "english": "I want to visit the post office to change my mailing address."
+    },
+    {
+      "id": "wl_04000",
+      "word": "一趟",
+      "wordPinyin": "yī tàng",
+      "chunkPinyin": "yí tàng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one trip or visit",
+      "sentence": "我下午要去一趟银行。",
+      "english": "I need to make a trip to the bank this afternoon."
+    },
+    {
+      "id": "wl_04095",
+      "word": "一傅众咻",
+      "wordPinyin": "yī fù zhòng xiū",
+      "chunkPinyin": "yí fù zhòng xiū",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one teacher opposed by many distractions",
+      "sentence": "一傅众咻比喻难敌众人干扰。",
+      "english": "Yifu zhongxiu describes being unable to overcome interference from many others."
+    },
+    {
+      "id": "wl_04095",
+      "word": "一傅众咻",
+      "wordPinyin": "yī fù zhòng xiū",
+      "chunkPinyin": "yí fù zhòng xiū",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one teacher opposed by many distractions",
+      "sentence": "语言学习也会遇到一傅众咻的困境。",
+      "english": "Language learning can also face the problem of one teacher being outweighed by many distractions."
+    },
+    {
+      "id": "wl_04123",
+      "word": "一亩",
+      "wordPinyin": "yī mǔ",
+      "chunkPinyin": "yì mǔ",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one mu of land",
+      "sentence": "爷爷种了一亩蔬菜。",
+      "english": "Grandpa grows vegetables on one mu of land."
+    },
+    {
+      "id": "wl_04123",
+      "word": "一亩",
+      "wordPinyin": "yī mǔ",
+      "chunkPinyin": "yì mǔ",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one mu of land",
+      "sentence": "这一亩地种满了小麦。",
+      "english": "This one mu of land is planted with wheat."
+    },
+    {
+      "id": "wl_04228",
+      "word": "一吨",
+      "wordPinyin": "yī dūn",
+      "chunkPinyin": "yì dūn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one metric ton",
+      "sentence": "工人正在搬运一吨货物。",
+      "english": "The workers are moving one metric ton of goods."
+    },
+    {
+      "id": "wl_04228",
+      "word": "一吨",
+      "wordPinyin": "yī dūn",
+      "chunkPinyin": "yì dūn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one metric ton",
+      "sentence": "这辆车能装一吨沙子。",
+      "english": "This truck can carry one metric ton of sand."
+    },
+    {
+      "id": "wl_04238",
+      "word": "一出",
+      "wordPinyin": "yī chū",
+      "chunkPinyin": "yì chū",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one performance or episode of a play",
+      "sentence": "今晚演一出新戏。",
+      "english": "They will perform a new play tonight."
+    },
+    {
+      "id": "wl_04286",
+      "word": "一摞",
+      "wordPinyin": "yī luò",
+      "chunkPinyin": "yí luò",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a stack",
+      "sentence": "桌角放着一摞旧报纸。",
+      "english": "A stack of old newspapers sits on the corner of the table."
+    },
+    {
+      "id": "wl_04286",
+      "word": "一摞",
+      "wordPinyin": "yī luò",
+      "chunkPinyin": "yí luò",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a stack",
+      "sentence": "她抱着一摞课本。",
+      "english": "She is holding a stack of textbooks."
+    },
+    {
+      "id": "wl_04444",
+      "word": "啐一口",
+      "wordPinyin": "cuì yī kǒu",
+      "chunkPinyin": "cuì yì kǒu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "to spit once",
+      "sentence": "他朝地上啐一口唾沫。",
+      "english": "He spits onto the ground."
+    },
+    {
+      "id": "wl_04444",
+      "word": "啐一口",
+      "wordPinyin": "cuì yī kǒu",
+      "chunkPinyin": "cuì yì kǒu.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "to spit once",
+      "sentence": "他低头朝地上啐一口。",
+      "english": "He lowers his head and spits onto the ground."
+    },
+    {
+      "id": "wl_04546",
+      "word": "一炷香",
+      "wordPinyin": "yī zhù xiāng",
+      "chunkPinyin": "yí zhù xiāng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one stick of burning incense",
+      "sentence": "他点燃了一炷香。",
+      "english": "He lights a stick of incense."
+    },
+    {
+      "id": "wl_04546",
+      "word": "一炷香",
+      "wordPinyin": "yī zhù xiāng",
+      "chunkPinyin": "yí zhù xiāng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one stick of burning incense",
+      "sentence": "桌前燃着一炷香。",
+      "english": "One stick of incense burns in front of the table."
+    },
+    {
+      "id": "wl_04558",
+      "word": "桀骜不驯",
+      "wordPinyin": "jié ào bù xùn",
+      "chunkPinyin": "jié ào bú xùn,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a proud and defiant temperament that resists control.",
+      "sentence": "这匹马桀骜不驯，还没有人能骑上它的背。",
+      "english": "This unruly horse still lets no one ride on its back."
+    },
+    {
+      "id": "wl_04558",
+      "word": "桀骜不驯",
+      "wordPinyin": "jié ào bù xùn",
+      "chunkPinyin": "jié ào bú xùn,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes a proud and defiant temperament that resists control.",
+      "sentence": "年轻时的他桀骜不驯，总是不肯接受别人的安排。",
+      "english": "As a young man he was defiant and always refused to accept other people's plans for him."
+    },
+    {
+      "id": "wl_04578",
+      "word": "不啻",
+      "wordPinyin": "bù chì",
+      "chunkPinyin": "bú chì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "tantamount to; no less than",
+      "sentence": "你的帮助对我不啻雪中送炭。",
+      "english": "Your help is like timely aid in my hour of need."
+    },
+    {
+      "id": "wl_04578",
+      "word": "不啻",
+      "wordPinyin": "bù chì",
+      "chunkPinyin": "bú chì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "tantamount to; no less than",
+      "sentence": "这次机会对他不啻新生。",
+      "english": "This opportunity is nothing less than a new life for him."
+    },
+    {
+      "id": "wl_04627",
+      "word": "一泓",
+      "wordPinyin": "yī hóng",
+      "chunkPinyin": "yì hóng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one pool of clear water",
+      "sentence": "山下有一泓清水，映着蓝天。",
+      "english": "There is a pool of clear water below the mountain, reflecting the blue sky."
+    },
+    {
+      "id": "wl_04627",
+      "word": "一泓",
+      "wordPinyin": "yī hóng",
+      "chunkPinyin": "yì hóng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one pool of clear water",
+      "sentence": "石洞里有一泓泉水。",
+      "english": "There is a pool of spring water inside the cave."
+    },
+    {
+      "id": "wl_04678",
+      "word": "一丘之貉",
+      "wordPinyin": "yī qiū zhī hé",
+      "chunkPinyin": "yì qiū zhī hé.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes people who are all equally bad.",
+      "sentence": "他们合伙欺骗顾客，真是一丘之貉。",
+      "english": "They conspired to deceive customers and were all equally bad."
+    },
+    {
+      "id": "wl_04678",
+      "word": "一丘之貉",
+      "wordPinyin": "yī qiū zhī hé",
+      "chunkPinyin": "yì qiū zhī hé.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes people who are all equally bad.",
+      "sentence": "这两家公司都靠假广告赚钱，不过是一丘之貉。",
+      "english": "Both companies profited from false advertising; they were no better than each other."
+    },
+    {
+      "id": "wl_04757",
+      "word": "怏怏不乐",
+      "wordPinyin": "yàng yàng bù lè",
+      "chunkPinyin": "yàng yàng bú lè.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes feeling dejected, dissatisfied, and unhappy",
+      "sentence": "考试失利后，他怏怏不乐。",
+      "english": "He felt dejected after doing poorly on the exam."
+    },
+    {
+      "id": "wl_04757",
+      "word": "怏怏不乐",
+      "wordPinyin": "yàng yàng bù lè",
+      "chunkPinyin": "yàng yàng bú lè.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "Describes feeling dejected, dissatisfied, and unhappy",
+      "sentence": "朋友们出发后，他一个人怏怏不乐。",
+      "english": "After his friends left, he remained alone and unhappy."
+    },
+    {
+      "id": "wl_04776",
+      "word": "一匝",
+      "wordPinyin": "yī zā",
+      "chunkPinyin": "yì zā,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one circuit; one turn around",
+      "sentence": "他绕院子走了一匝，才停下来。",
+      "english": "He walked once around the courtyard before stopping."
+    },
+    {
+      "id": "wl_04986",
+      "word": "一隅",
+      "wordPinyin": "yī yú",
+      "chunkPinyin": "yì yú.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a corner",
+      "sentence": "他坐在教室的一隅。",
+      "english": "He sits in a corner of the classroom."
+    },
+    {
+      "id": "wl_04986",
+      "word": "一隅",
+      "wordPinyin": "yī yú",
+      "chunkPinyin": "yì yú.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a corner",
+      "sentence": "小屋藏在花园的一隅。",
+      "english": "The small house is tucked into a corner of the garden."
+    },
+    {
+      "id": "wl_04997",
+      "word": "一斛",
+      "wordPinyin": "yī hú",
+      "chunkPinyin": "yì hú",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one hu, a traditional measure of grain",
+      "sentence": "他用酒曲和一斛谷物酿酒。",
+      "english": "He brews alcohol with a fermentation starter and a measure of grain."
+    },
+    {
+      "id": "wl_04997",
+      "word": "一斛",
+      "wordPinyin": "yī hú",
+      "chunkPinyin": "yì hú",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one hu, a traditional measure of grain",
+      "sentence": "仓里还存着一斛粟米。",
+      "english": "One hu of millet is still stored in the granary."
+    },
+    {
+      "id": "wl_09696",
+      "word": "不幸",
+      "wordPinyin": "bù xìng",
+      "chunkPinyin": "bú xìng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "unfortunate; misfortune",
+      "sentence": "他把这次不幸当作重新开始的机会。",
+      "english": "He treated this misfortune as a chance to start again."
+    },
+    {
+      "id": "wl_09696",
+      "word": "不幸",
+      "wordPinyin": "bù xìng",
+      "chunkPinyin": "bú xìng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "unfortunate; misfortune",
+      "sentence": "这个故事讲述了一个不幸的家庭。",
+      "english": "This story tells of an unfortunate family."
+    },
+    {
+      "id": "wl_10700",
+      "word": "下一站",
+      "wordPinyin": "xià yī zhàn",
+      "chunkPinyin": "xià yí zhàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "next stop",
+      "sentence": "下一站就是医院。",
+      "english": "The next stop is the hospital."
+    },
+    {
+      "id": "wl_10700",
+      "word": "下一站",
+      "wordPinyin": "xià yī zhàn",
+      "chunkPinyin": "xià yí zhàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "next stop",
+      "sentence": "我们在下一站下车。",
+      "english": "We get off at the next stop."
+    },
+    {
+      "id": "wl_10774",
+      "word": "一生",
+      "wordPinyin": "yī shēng",
+      "chunkPinyin": "yì shēng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "all one's life",
+      "sentence": "父母一生克勤克俭。",
+      "english": "My parents have been hardworking and frugal all their lives."
+    },
+    {
+      "id": "wl_10774",
+      "word": "一生",
+      "wordPinyin": "yī shēng",
+      "chunkPinyin": "yì shēng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "all one's life",
+      "sentence": "他不愿苟且地度过一生。",
+      "english": "He refuses to drift through life."
+    },
+    {
+      "id": "wl_10836",
+      "word": "一刻",
+      "wordPinyin": "yī kè",
+      "chunkPinyin": "yí kè.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a moment",
+      "sentence": "两队鏖战到最后一刻。",
+      "english": "The two teams battle fiercely until the last moment."
+    },
+    {
+      "id": "wl_10836",
+      "word": "一刻",
+      "wordPinyin": "yī kè",
+      "chunkPinyin": "yí kè",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a moment",
+      "sentence": "那一刻的震撼不可言喻。",
+      "english": "The impact of that moment could not be put into words."
+    },
+    {
+      "id": "wl_10853",
+      "word": "不到",
+      "wordPinyin": "bù dào",
+      "chunkPinyin": "bú dào",
+      "kind": "yi_bu_sandhi",
+      "gloss": "less than",
+      "sentence": "这条路不到一公里。",
+      "english": "This road is less than one kilometer long."
+    },
+    {
+      "id": "wl_10853",
+      "word": "不到",
+      "wordPinyin": "bù dào",
+      "chunkPinyin": "bú dào",
+      "kind": "yi_bu_sandhi",
+      "gloss": "less than",
+      "sentence": "他坐下不到须臾，就有人来访。",
+      "english": "A visitor arrived just moments after he sat down."
+    },
+    {
+      "id": "wl_10889",
+      "word": "不见",
+      "wordPinyin": "bù jiàn",
+      "chunkPinyin": "bú jiàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be missing; disappear",
+      "sentence": "我的钥匙不见了。",
+      "english": "My keys are missing."
+    },
+    {
+      "id": "wl_10898",
+      "word": "不断",
+      "wordPinyin": "bù duàn",
+      "chunkPinyin": "bú duàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "continually",
+      "sentence": "新的创意不断涌现。",
+      "english": "New ideas keep emerging."
+    },
+    {
+      "id": "wl_10990",
+      "word": "一面",
+      "wordPinyin": "yī miàn",
+      "chunkPinyin": "yí miàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one (classifier for flat objects such as flags, mirrors or drums)",
+      "sentence": "墙上挂着一面镜子。",
+      "english": "There is a mirror hanging on the wall."
+    },
+    {
+      "id": "wl_10990",
+      "word": "一面",
+      "wordPinyin": "yī miàn",
+      "chunkPinyin": "yí miàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one (classifier for flat objects such as flags, mirrors or drums)",
+      "sentence": "他举起一面旗子。",
+      "english": "He raised a flag."
+    },
+    {
+      "id": "wl_11164",
+      "word": "一时",
+      "wordPinyin": "yī shí",
+      "chunkPinyin": "yì shí",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a while",
+      "sentence": "我一时糊涂，把日期记错了。",
+      "english": "I became confused for a moment and remembered the date incorrectly."
+    },
+    {
+      "id": "wl_11552",
+      "word": "一同",
+      "wordPinyin": "yī tóng",
+      "chunkPinyin": "yì tóng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "together",
+      "sentence": "她与同事一同完成了工作。",
+      "english": "She completed the work together with her colleagues."
+    },
+    {
+      "id": "wl_11645",
+      "word": "一块",
+      "wordPinyin": "yī kuài",
+      "chunkPinyin": "yí kuài",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a piece",
+      "sentence": "盒子里有一块蛋糕。",
+      "english": "There is a piece of cake in the box."
+    },
+    {
+      "id": "wl_11645",
+      "word": "一块",
+      "wordPinyin": "yī kuài",
+      "chunkPinyin": "yí kuài",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a piece",
+      "sentence": "她买了一块面包。",
+      "english": "She bought a piece of bread."
+    },
+    {
+      "id": "wl_11655",
+      "word": "一对",
+      "wordPinyin": "yī duì",
+      "chunkPinyin": "yí duì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one pair",
+      "sentence": "这是一对耳环。",
+      "english": "This is a pair of earrings."
+    },
+    {
+      "id": "wl_11655",
+      "word": "一对",
+      "wordPinyin": "yī duì",
+      "chunkPinyin": "yí duì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one pair",
+      "sentence": "门口站着一对夫妻。",
+      "english": "A married couple is standing at the entrance."
+    },
+    {
+      "id": "wl_11791",
+      "word": "一带",
+      "wordPinyin": "yī dài",
+      "chunkPinyin": "yí dài",
+      "kind": "yi_bu_sandhi",
+      "gloss": "region",
+      "sentence": "这一带有很多小店。",
+      "english": "There are many small shops in this area."
+    },
+    {
+      "id": "wl_11791",
+      "word": "一带",
+      "wordPinyin": "yī dài",
+      "chunkPinyin": "yí dài.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "region",
+      "sentence": "我住在学校一带。",
+      "english": "I live near the school."
+    },
+    {
+      "id": "wl_11947",
+      "word": "不适",
+      "wordPinyin": "bù shì",
+      "chunkPinyin": "bú shì.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "uncomfortable; unwell",
+      "sentence": "这种猥琐的举止令人不适。",
+      "english": "This vulgar behavior makes people uncomfortable."
+    },
+    {
+      "id": "wl_11947",
+      "word": "不适",
+      "wordPinyin": "bù shì",
+      "chunkPinyin": "bú shì",
+      "kind": "yi_bu_sandhi",
+      "gloss": "uncomfortable; unwell",
+      "sentence": "肠胃不适时，他出现了腹泻。",
+      "english": "He develops diarrhea during a stomach upset."
+    },
+    {
+      "id": "wl_12199",
+      "word": "一头",
+      "wordPinyin": "yī tóu",
+      "chunkPinyin": "yì tóu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one (TOU: large animals)",
+      "sentence": "农场里养着一头小猪。",
+      "english": "The farm is raising a piglet."
+    },
+    {
+      "id": "wl_12739",
+      "word": "不快",
+      "wordPinyin": "bù kuài",
+      "chunkPinyin": "bú kuài.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "unhappy; displeased; displeasure",
+      "sentence": "这种狎昵的称呼令她不快。",
+      "english": "This overfamiliar form of address displeases her."
+    },
+    {
+      "id": "wl_12827",
+      "word": "沆瀣一气",
+      "wordPinyin": "hàng xiè yī qì",
+      "chunkPinyin": "hàng xiè yí qì,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "collude",
+      "sentence": "两人沆瀣一气，隐瞒了真相。",
+      "english": "The two collude to conceal the truth."
+    },
+    {
+      "id": "wl_12827",
+      "word": "沆瀣一气",
+      "wordPinyin": "hàng xiè yī qì",
+      "chunkPinyin": "hàng xiè yí qì,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "collude",
+      "sentence": "他们沆瀣一气，合伙欺骗顾客。",
+      "english": "They colluded to cheat their customers."
+    },
+    {
+      "id": "wl_12947",
+      "word": "一声",
+      "wordPinyin": "yī shēng",
+      "chunkPinyin": "yì shēng.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one sound or utterance",
+      "sentence": "他听后哂笑了一声。",
+      "english": "After hearing it, he gave a sneer."
+    },
+    {
+      "id": "wl_12947",
+      "word": "一声",
+      "wordPinyin": "yī shēng",
+      "chunkPinyin": "yì shēng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one sound or utterance",
+      "sentence": "树枝喀嚓一声断了。",
+      "english": "The branch breaks with a crack."
+    },
+    {
+      "id": "wl_12948",
+      "word": "一类",
+      "wordPinyin": "yī lèi",
+      "chunkPinyin": "yí lèi",
+      "kind": "yi_bu_sandhi",
+      "gloss": "a kind",
+      "sentence": "甾醇是一类化合物的名称。",
+      "english": "Sterol is the name of a class of compounds."
+    },
+    {
+      "id": "wl_12978",
+      "word": "一人",
+      "wordPinyin": "yī rén",
+      "chunkPinyin": "yì rén.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one person",
+      "sentence": "桌边只坐着一人。",
+      "english": "Only one person is sitting at the table."
+    },
+    {
+      "id": "wl_12978",
+      "word": "一人",
+      "wordPinyin": "yī rén",
+      "chunkPinyin": "yì rén",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one person",
+      "sentence": "这张票只限一人使用。",
+      "english": "This ticket is valid for only one person."
+    },
+    {
+      "id": "wl_12979",
+      "word": "一口",
+      "wordPinyin": "yī kǒu",
+      "chunkPinyin": "yì kǒu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one mouthful; one (classifier for pots or wells)",
+      "sentence": "他喝了一口水。",
+      "english": "He took a sip of water."
+    },
+    {
+      "id": "wl_12979",
+      "word": "一口",
+      "wordPinyin": "yī kǒu",
+      "chunkPinyin": "yì kǒu",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one mouthful; one (classifier for pots or wells)",
+      "sentence": "厨房里有一口大锅。",
+      "english": "There is a large pot in the kitchen."
+    },
+    {
+      "id": "wl_12980",
+      "word": "一句",
+      "wordPinyin": "yī jù",
+      "chunkPinyin": "yí jù",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one sentence; one remark",
+      "sentence": "一句冷言冷语就让气氛变了。",
+      "english": "One cutting remark changed the atmosphere."
+    },
+    {
+      "id": "wl_12980",
+      "word": "一句",
+      "wordPinyin": "yī jù",
+      "chunkPinyin": "yí jù",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one sentence; one remark",
+      "sentence": "爷爷把一句箴言写在书的扉页。",
+      "english": "Grandpa wrote a maxim on the book's flyleaf."
+    },
+    {
+      "id": "wl_12981",
+      "word": "一堆",
+      "wordPinyin": "yī duī",
+      "chunkPinyin": "yì duī",
+      "kind": "yi_bu_sandhi",
+      "gloss": "pile",
+      "sentence": "卡车运来一堆砂石。",
+      "english": "The truck brings a pile of sand and gravel."
+    },
+    {
+      "id": "wl_12981",
+      "word": "一堆",
+      "wordPinyin": "yī duī",
+      "chunkPinyin": "yì duī",
+      "kind": "yi_bu_sandhi",
+      "gloss": "pile",
+      "sentence": "桌子上的一堆文件需要整理。",
+      "english": "The pile of documents on the table needs organizing."
+    },
+    {
+      "id": "wl_12983",
+      "word": "一层",
+      "wordPinyin": "yī céng",
+      "chunkPinyin": "yì céng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one layer",
+      "sentence": "她在面包上撒了一层芝麻。",
+      "english": "She sprinkled a layer of sesame seeds on the bread."
+    },
+    {
+      "id": "wl_12984",
+      "word": "一排",
+      "wordPinyin": "yī pái",
+      "chunkPinyin": "yì pái",
+      "kind": "yi_bu_sandhi",
+      "gloss": "row",
+      "sentence": "门前有一排树。",
+      "english": "There is a row of trees in front of the entrance."
+    },
+    {
+      "id": "wl_12984",
+      "word": "一排",
+      "wordPinyin": "yī pái",
+      "chunkPinyin": "yì pái",
+      "kind": "yi_bu_sandhi",
+      "gloss": "row",
+      "sentence": "书架上放着一排书。",
+      "english": "A row of books stands on the shelf."
+    },
+    {
+      "id": "wl_12986",
+      "word": "一种",
+      "wordPinyin": "yī zhǒng",
+      "chunkPinyin": "yì zhǒng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one kind",
+      "sentence": "这是一种新口味。",
+      "english": "This is a new flavor."
+    },
+    {
+      "id": "wl_12986",
+      "word": "一种",
+      "wordPinyin": "yī zhǒng",
+      "chunkPinyin": "yì zhǒng",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one kind",
+      "sentence": "我想换一种颜色。",
+      "english": "I want to try a different color."
+    },
+    {
+      "id": "wl_12987",
+      "word": "一轮",
+      "wordPinyin": "yī lún",
+      "chunkPinyin": "yì lún",
+      "kind": "yi_bu_sandhi",
+      "gloss": "one round; one cycle",
+      "sentence": "一轮皓月照着寂静的湖面。",
+      "english": "A bright moon shines over the quiet lake."
+    },
+    {
+      "id": "wl_12990",
+      "word": "下一步",
+      "wordPinyin": "xià yī bù",
+      "chunkPinyin": "xià yí bù",
+      "kind": "yi_bu_sandhi",
+      "gloss": "the next step",
+      "sentence": "他独自思忖着下一步该怎么办。",
+      "english": "He ponders on his own what to do next."
+    },
+    {
+      "id": "wl_12990",
+      "word": "下一步",
+      "wordPinyin": "xià yī bù",
+      "chunkPinyin": "xià yí bù.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "the next step",
+      "sentence": "她和爷爷下象棋，认真思考下一步。",
+      "english": "She plays Chinese chess with her grandfather and carefully considers her next move."
+    },
+    {
+      "id": "wl_12996",
+      "word": "不在",
+      "wordPinyin": "bù zài",
+      "chunkPinyin": "bú zài,",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be out",
+      "sentence": "他不在，你可以留言。",
+      "english": "He is not here; you can leave a message."
+    },
+    {
+      "id": "wl_12996",
+      "word": "不在",
+      "wordPinyin": "bù zài",
+      "chunkPinyin": "bú zài",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be out",
+      "sentence": "闵先生今天不在办公室。",
+      "english": "Mr. Min is not in the office today."
+    },
+    {
+      "id": "wl_12998",
+      "word": "不愿",
+      "wordPinyin": "bù yuàn",
+      "chunkPinyin": "bú yuàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be unwilling",
+      "sentence": "他不愿一个人去。",
+      "english": "He is unwilling to go alone."
+    },
+    {
+      "id": "wl_12998",
+      "word": "不愿",
+      "wordPinyin": "bù yuàn",
+      "chunkPinyin": "bú yuàn",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be unwilling",
+      "sentence": "她不愿浪费时间。",
+      "english": "She does not want to waste time."
+    },
+    {
+      "id": "wl_13002",
+      "word": "不见了",
+      "wordPinyin": "bù jiàn le",
+      "chunkPinyin": "bú jiàn le.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be missing; have disappeared",
+      "sentence": "我的钥匙不见了。",
+      "english": "My keys are missing."
+    },
+    {
+      "id": "wl_13002",
+      "word": "不见了",
+      "wordPinyin": "bù jiàn le",
+      "chunkPinyin": "bú jiàn le.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "be missing; have disappeared",
+      "sentence": "桌上的书不见了。",
+      "english": "The book on the desk has disappeared."
+    },
+    {
+      "id": "wl_13068",
+      "word": "在一起",
+      "wordPinyin": "zài yī qǐ",
+      "chunkPinyin": "zài yì qǐ",
+      "kind": "yi_bu_sandhi",
+      "gloss": "together",
+      "sentence": "一家人坐在一起吃饭。",
+      "english": "The whole family sits together to eat."
+    },
+    {
+      "id": "wl_13068",
+      "word": "在一起",
+      "wordPinyin": "zài yī qǐ",
+      "chunkPinyin": "zài yì qǐ.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "together",
+      "sentence": "他用糨糊把纸粘在一起。",
+      "english": "He used paste to stick the paper together."
+    },
+    {
+      "id": "wl_13085",
+      "word": "嫣然一笑",
+      "wordPinyin": "yān rán yī xiào",
+      "chunkPinyin": "yān rán yí xiào.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "smile sweetly",
+      "sentence": "她整理云鬟，向镜中嫣然一笑。",
+      "english": "She arranges her coiffure and smiles gracefully into the mirror."
+    },
+    {
+      "id": "wl_13086",
+      "word": "孑然一身",
+      "wordPinyin": "jié rán yī shēn",
+      "chunkPinyin": "jié rán yì shēn.",
+      "kind": "yi_bu_sandhi",
+      "gloss": "all alone",
+      "sentence": "多年以后，他仍孑然一身。",
+      "english": "Many years later, he is still alone."
+    }
+  ],
+  "nonSandhiTargetReadingMismatches": 0
+}

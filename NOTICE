@@ -10,7 +10,9 @@ third-party or AI-assisted material.
 EXCLUDED FROM THE PROJECT MIT GRANT:
 - Vocabulary datasets and teaching-content inputs/outputs, including
   wordlist*.csv and data records under tools/: see THIRD_PARTY_NOTICES.md.
-  CC-CEDICT-derived content retains CC BY-SA 4.0. No grant is made for
+  CC-CEDICT-derived content and FrequencyWords content retain CC BY-SA 4.0.
+  Selected Tatoeba/ManyThings sentence pairs retain CC BY 2.0 France with
+  sentence authors and IDs. No grant is made for
   underlying content whose redistribution rights remain unverified.
 - Stroke outlines and medians in core/data/src/main/assets/demo/ and
   wordlist-strokes/: Arphic Public License; retain upstream COPYING files.
@@ -28,6 +30,8 @@ replace a redistribution license. No upstream publisher or product owner
 is claimed to endorse this project.
 
 Bundled data license texts and source metadata are retained under
-core/data/src/main/assets/wordlist-strokes/; avatar provenance is recorded
+core/data/src/main/assets/wordlist-strokes/ and wordlist-sources/;
+selected-context attribution is retained in wordlist-sources/source-index.json
+and displayed from wordlist-sources/ATTRIBUTIONS.txt. Avatar provenance is recorded
 under core/ui/src/main/assets/avatars/NOTICE.txt. They are also read by
 the application's existing Sources & licenses screen.

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "sourceCsvSha256": "71d0a021e789e1892a12f5732bba0b704662d2d3639681ed5c087558b692028b",
+  "reviewedRows": 18500,
+  "changedRows": 5361,
+  "statistics": {
+    "reviewed_semantic_units": 289,
+    "opaque_lexical_unit": 42,
+    "expanded_example_lexical_segmentation": 10096,
+    "example_lexical_join": 943,
+    "example_placeholder_gloss": 864,
+    "reading_specific_part_gloss": 46,
+    "example_context_reading": 6
+  },
+  "unresolved": []
+}

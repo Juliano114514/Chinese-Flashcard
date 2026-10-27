@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "modifiedOn": "2026-10-04",
+  "modifiedOn": "2026-10-27",
   "sources": [
     {
       "id": "cc-cedict",
@@ -35,8 +35,43 @@
       "licenseAsset": "wordlist-strokes/licenses/MAPULL-MIT.txt",
       "modifications": "Same-reading Chinese definitions and contextual memory aids; frozen 1000-idiom selection; literal/modern explanations; independently authored modern examples; machine-assisted translations with review boundaries.",
       "provenanceCaveat": "Upstream notes that original provenance of some collected content cannot be established. An attributed reference, not certified authoritative lexicography."
+    },
+    {
+      "id": "cc-cedict-2026-10-26",
+      "page": "https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz",
+      "license": "CC BY-SA 4.0",
+      "sha256OfReferencedUtf8": "3d8967fe566bc23a74f8ba008d38ac83269a8c7550bd7dc48218fc9bdf284885",
+      "bytes": 9868269,
+      "role": "Definitions and numeric pinyin; preserve attribution and ShareAlike."
+    },
+    {
+      "id": "frequencywords-2018-zh-cn",
+      "page": "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/zh_cn/zh_cn_50k.txt",
+      "license": "CC BY-SA 4.0 content; MIT code",
+      "sha256OfReferencedUtf8": "25599e00347b893e55c3058a748819b3fe19403291cd12f7c03af128e7f3fe45",
+      "bytes": 565895,
+      "role": "OpenSubtitles2018 frequencies are a ranking signal, not educational-stage certification."
+    },
+    {
+      "id": "manythings-cmn-eng-2026-02-13",
+      "page": "https://www.manythings.org/anki/cmn-eng.zip",
+      "license": "CC BY 2.0 FR",
+      "sha256OfReferencedUtf8": "d766002332a8f21099afd7427138d44f06bed7486a18f7f0f26f217092667d73",
+      "bytes": 4565695,
+      "role": "Retain each row attribution, both sentence IDs and usernames. Editorial errors remain possible."
+    },
+    {
+      "id": "hsk-2025-krmanik",
+      "page": "https://raw.githubusercontent.com/krmanik/HSK-3.0/main/New%20HSK%20(2025)/hsk_all_words.json",
+      "license": "Multiple upstream sources; see hsk-license.md; use word membership as reference only",
+      "sha256OfReferencedUtf8": "9475eb643176a98b4f254021c339b2dc14b5521fd6f66924c7deb137d0bf5162",
+      "bytes": 98719,
+      "role": "coverage reference only"
     }
   ],
-  "referencePolicy": "Definitions from CC-CEDICT and Mapull are selected and attributed. Other cited references verify individual facts. Modern idiom examples are independently authored; translation and pinyin drafts are explicitly labeled. Historical production evidence is available in Git history under tools/wordlist_refined/audit.json and tools/idiom_curated/catalog.json.",
-  "separation": "Lexicon content derived from CC-CEDICT retains CC BY-SA 4.0. Stroke geometry retains the separate Arphic Public License. Independent app source code is not relicensed by these data notices."
+  "referencePolicy": "Historical sources remain applicable to retained IDs. Source-assisted vocabulary expansion adds CC-CEDICT-derived lexical edits, attributed Tatoeba/ManyThings contexts and project-authored AI-assisted contexts. Per-sentence attribution and retained source notes are bundled in source-index.json and displayed by Sources & licenses. Structural/linguistic editing does not certify rights or human review.",
+  "separation": "Lexicon content derived from CC-CEDICT retains CC BY-SA 4.0. Stroke geometry retains the separate Arphic Public License. Independent app source code is not relicensed by these data notices.",
+  "attributionAsset": "wordlist-sources/ATTRIBUTIONS.txt",
+  "sourceIndexAsset": "wordlist-sources/source-index.json",
+  "sourceLockAsset": "wordlist-sources/source-lock.json"
 }

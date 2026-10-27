@@ -32,7 +32,9 @@ LEGACY = ROOT / ".gradle" / "chinese-speech-samples"
 LOCK = ROOT / "tools" / "melo_resources" / "source-lock.json"
 RUNTIME_LOCK = ROOT / "tools" / "melo_resources" / "runtime-lock.json"
 CSV = ROOT / "wordlist.csv"
-CSV_SHA256 = "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7"
+from wordlist_snapshot import load_snapshot, verify_snapshot
+
+CSV_SHA256 = load_snapshot()["sha256"]
 MODEL_REVISION = "a0d5c6a264c0ef92d70d8661d8cc502d79627cd6"
 MODEL_SHA256 = "bf30582eb1b012250a35b1a4a80e7dfbcf8485e7bb9de0d95efbbeef0e4ad86d"
 INPUTS = {"x", "x_lengths", "tones", "sid", "noise_scale", "length_scale", "noise_scale_w"}
@@ -191,12 +193,12 @@ def prepare_runtime() -> dict:
 
 
 def rows() -> list[dict]:
-    if digest(CSV) != CSV_SHA256:
-        raise ValueError("Frozen CSV changed; review the audition snapshot explicitly")
+    snapshot = verify_snapshot(CSV)
     with CSV.open(encoding="utf-8-sig", newline="") as stream:
         result = list(csv.DictReader(stream))
-    if len(result) != 13223:
-        raise ValueError("Unexpected default vocabulary count")
+    if (len(result) != snapshot["words"] or
+            sum(len(json.loads(row["例句JSON"])) for row in result) != snapshot["examples"]):
+        raise ValueError("Unexpected reviewed vocabulary or example count")
     return result
 
 

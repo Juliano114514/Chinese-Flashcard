@@ -1,3 +1,11 @@
+VOCABULARY EXPANSION NOTICE, 2026-10-27
+
+New source versions, selected Tatoeba sentence authors/IDs and all retained
+legacy source notes are bundled in wordlist-sources/ATTRIBUTIONS.txt and the
+machine-readable wordlist-sources/source-index.json. Exact source hashes are
+in wordlist-sources/source-lock.json. This update adds attributed contexts;
+it does not remove or clear the historical rights boundaries stated below.
+
 CHINESE FLASHCARD — LICENSE SCOPE UPDATE, 2026-10-08
 
 Project-owned application code, project-owned tooling code and project-owned
@@ -6,7 +14,7 @@ data, teaching-content inputs/outputs, stroke geometry, avatars, dependencies,
 excerpts and material with unverified rights are excluded from that grant.
 Existing upstream copyrights and licenses remain applicable.
 
-All 13,223 current CSV rows mention CC-CEDICT in their source notes.
+All 13,223 rows of the pre-expansion CSV mention CC-CEDICT in their source notes.
 CC-CEDICT-derived content and corresponding authorized contributions retain
 CC BY-SA 4.0; the mixed wordlist is not a purely MIT dataset. The supplied
 original examples/translations have not been established as licensed for

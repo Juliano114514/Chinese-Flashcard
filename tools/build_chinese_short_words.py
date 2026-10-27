@@ -26,6 +26,8 @@ LOCK = ROOT / "tools/melo_resources/short-words-source.json"
 KOTLIN = ROOT / "core/media/src/main/kotlin/com/example/chinese_flashcard/core/media/ChineseShortSpeech.kt"
 RATE = 44100
 MAX_SAMPLES = RATE * 4
+# Historical human-listening provenance stays pinned when the active corpus is expanded.
+REVIEWED_WORDLIST_SHA256 = "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7"
 HASH = re.compile(r"[0-9a-f]{64}")
 
 
@@ -71,7 +73,7 @@ def import_lab(lab: Path) -> None:
     if lab == ROOT or lab.is_relative_to(ROOT):
         raise ValueError("Use the external experiment directory")
     verification = load(lab_file(lab, "final-verification.json"))
-    if verification["status"] != "passed" or verification["sourceModelSha256"] != audition.MODEL_SHA256 or verification["sourceWordlistSha256"] != audition.CSV_SHA256:
+    if verification["status"] != "passed" or verification["sourceModelSha256"] != audition.MODEL_SHA256 or verification["sourceWordlistSha256"] != REVIEWED_WORDLIST_SHA256:
         raise ValueError("Laboratory model/wordlist verification mismatch")
     selection = load(lab_file(lab, "selected/short-words/manifest.json"))
     levels = load(lab_file(lab, "level-match.json"))
@@ -122,7 +124,7 @@ def import_lab(lab: Path) -> None:
         (ASSETS / name).write_bytes(payload)
     (ASSETS / "index.json").write_bytes(index_payload)
     LOCK.write_bytes(json_bytes({"schemaVersion": 1, "sourceModelSha256": audition.MODEL_SHA256,
-        "sourceWordlistSha256": audition.CSV_SHA256, "reviewDate": "2026-10-14",
+        "sourceWordlistSha256": REVIEWED_WORDLIST_SHA256, "reviewDate": "2026-10-14",
         "index": {"bytes": len(index_payload), "sha256": digest(index_payload), "entries": len(entries)},
         "provenance": provenance, "evidenceBoundary": "Desktop human listening; no device acceptance claimed."}))
     audition.emit("reviewed_short_words_imported", entries=len(entries), pcmBytes=sum(map(len, payloads.values())),
@@ -132,7 +134,7 @@ def import_lab(lab: Path) -> None:
 def check() -> None:
     from build_chinese_resources import reading_key
     lock = load(LOCK)
-    if lock["sourceModelSha256"] != audition.MODEL_SHA256 or lock["sourceWordlistSha256"] != audition.CSV_SHA256:
+    if lock["sourceModelSha256"] != audition.MODEL_SHA256 or lock["sourceWordlistSha256"] != REVIEWED_WORDLIST_SHA256:
         raise ValueError("Reviewed short-word source identity changed")
     index_payload = (ASSETS / "index.json").read_bytes()
     if len(index_payload) != lock["index"]["bytes"] or digest(index_payload) != lock["index"]["sha256"]:
@@ -141,6 +143,12 @@ def check() -> None:
     if index["schemaVersion"] != 1 or index["modelSha256"] != audition.MODEL_SHA256 or (index["sampleRate"], index["channelCount"], index["encoding"]) != (RATE, 1, "pcm-s16le"):
         raise ValueError("Reviewed PCM protocol mismatch")
     entries = index["entries"]
+    from build_chinese_resources import readings
+    current_reading_keys = {entry["key"] for entry in readings()}
+    # The reviewed set already contained optional readings absent from the original corpus.
+    # Keep their immutable provenance and exact text+pinyin keys; an unmatched key cannot
+    # override a different current reading and must not be counted as current-corpus coverage.
+    matching_current = len(set(entries) & current_reading_keys)
     if len(entries) != 23 or lock["index"]["entries"] != len(entries):
         raise ValueError("Reviewed pronunciation count mismatch")
     total = 0
@@ -163,7 +171,8 @@ def check() -> None:
     if f'INDEX_SHA256 = "{lock["index"]["sha256"]}"' not in source or f'INDEX_BYTES = {lock["index"]["bytes"]}' not in source:
         raise ValueError("Kotlin loader fingerprint does not match reviewed index")
     audition.emit("reviewed_short_words_checked", entries=len(entries), pcmBytes=total,
-                  indexSha256=lock["index"]["sha256"])
+                  indexSha256=lock["index"]["sha256"], currentCorpusReadingMatches=matching_current,
+                  retainedHistoricalReadings=len(entries) - matching_current)
 
 
 def main() -> None:

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn-eng_links.tsv.bz2",
+      "file": ".gradle/wordlist-refinement-20261027/lexical-sources/cmn-eng_links.tsv.bz2",
+      "bytes": 481350,
+      "sha256": "3c996fc24421df363f8b17dfb689698ead9bb3ba2be207fc415fda2823da333a",
+      "export": "2026-10-24",
+      "license": "CC BY 2.0 France",
+      "source": "Tatoeba.org",
+      "id": "tatoeba-cmn-eng-links-20261024"
+    },
+    {
+      "url": "https://downloads.tatoeba.org/exports/per_language/cmn/cmn_sentences_detailed.tsv.bz2",
+      "file": ".gradle/wordlist-refinement-20261027/lexical-sources/cmn_sentences_detailed.tsv.bz2",
+      "bytes": 1725873,
+      "sha256": "7af009b234bbb21ed6a254c2b55fa7c81c9dd53509d0982cd92c1097573f9af5",
+      "export": "2026-10-24",
+      "license": "CC BY 2.0 France",
+      "source": "Tatoeba.org",
+      "id": "tatoeba-cmn-detailed-20261024"
+    },
+    {
+      "url": "https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences_detailed.tsv.bz2",
+      "file": ".gradle/wordlist-refinement-20261027/lexical-sources/eng_sentences_detailed.parallel.tsv.bz2",
+      "bytes": 34953888,
+      "sha256": "c39d2fab0cc5bc2b798b539134b83abaf5dec723a059ce55496907d08e3e9030",
+      "export": "2026-10-24",
+      "license": "CC BY 2.0 France",
+      "source": "Tatoeba.org",
+      "id": "tatoeba-eng-detailed-20261024"
+    }
+  ]
+}

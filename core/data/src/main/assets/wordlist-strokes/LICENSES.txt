@@ -5,7 +5,7 @@ https://github.com/skishore/makemeahanzi
 AnimCJK simplified Chinese revision: ec5e17cca76c87587790bcbce5ea0b4d4fb753d6
 https://github.com/parsimonhi/animCJK
 
-Selected genuine character outlines and stroke medians were extracted and converted to app JSON on 2026-10-04. No coordinate transforms or synthetic stroke data were applied. Make Me a Hanzi data takes precedence; AnimCJK data is used only from its simplified Chinese graphicsZhHans.txt file. The derived stroke resources are distributed under the Arphic Public License; independent app code is a separate work.
+Selected genuine character outlines and stroke medians were extracted and converted to app JSON on 2026-10-27. No coordinate transforms or synthetic stroke data were applied. Make Me a Hanzi data takes precedence; AnimCJK data is used only from its simplified Chinese graphicsZhHans.txt file. The derived stroke resources are distributed under the Arphic Public License; independent app code is a separate work.
 
 ===== licenses/ARPHICPL.TXT =====
 ARPHIC PUBLIC LICENSE

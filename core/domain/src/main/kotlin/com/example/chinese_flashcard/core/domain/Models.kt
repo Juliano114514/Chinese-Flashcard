@@ -8,7 +8,8 @@ data class WordPart(val hanzi: String, val pinyin: String, val gloss: String)
 data class WordEntry(val id: String, val hanzi: String, val pinyin: String,
   val meanings: List<Meaning>, val examples: List<ExampleSentence>, val parts: List<WordPart>,
   val distractorMeaningIds: List<String>,
-  val literalExplanations: List<String> = emptyList(), val figurativeExplanations: List<String> = emptyList())
+  val literalExplanations: List<String> = emptyList(), val figurativeExplanations: List<String> = emptyList(),
+  val tags: Set<String> = emptySet())
 
 data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettingsRules.DEFAULT_ROUNDS,
   val reviewDays: List<Int> = StudySettingsRules.defaultReviewDays, val welcomed: Boolean = false,
@@ -57,7 +58,8 @@ data class TodaySummary(val date: String, val dailyGoal: Int, val totalWords: In
   val stageProgress: StageProgress = StageProgress(),
   val collectionsAvailable: Int = 0, val mistakesAvailable: Int = 0,
   val growth: StudyGrowth = StudyGrowth(), val learningLanguage: AppLanguage = AppLanguage.CN,
-  val contextVersion: Long = 0, val availableReviewWords: Int = 0) {
+  val contextVersion: Long = 0, val availableReviewWords: Int = 0,
+  val tagFilter: WordTagFilter = WordTagFilter(), val tagCatalog: List<WordTag> = emptyList()) {
   val planned: Int get() = newPlanned + reviewPlanned + carryoverPlanned
   val completed: Int get() = newCompleted + reviewCompleted + carryoverCompleted
   val allComplete: Boolean get() = planned > 0 && completed == planned
@@ -97,8 +99,13 @@ interface SettingsRepository {
 }
 interface StudyRepository {
   val changes: kotlinx.coroutines.flow.Flow<Long>
+  val tagCatalog: List<WordTag>
   suspend fun context(): LearningContext
   suspend fun snapshot(): StudySnapshot
+  suspend fun selectTagFilter(filter: WordTagFilter, expectedLanguage: AppLanguage,
+    expectedContextVersion: Long): StudySnapshot
+  suspend fun tagFilterPreview(filter: WordTagFilter, expectedLanguage: AppLanguage,
+    expectedContextVersion: Long): TagFilterPreview
   /** Current word and up to nextCount distinct words from the existing queue; never advances study. */
   suspend fun peekSpeechWords(cardId: String, nextCount: Int, expectedLanguage: AppLanguage,
     expectedContextVersion: Long): List<WordEntry>

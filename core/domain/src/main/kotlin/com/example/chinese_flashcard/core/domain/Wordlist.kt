@@ -19,6 +19,7 @@ data class WordlistItem(
   val mistakePending: Boolean = false,
   val learningStatus: WordlistStatus = status,
   val partOfSpeech: String = "",
+  val tags: Set<String> = emptySet(),
 )
 
 data class WordUserState(val isCollected: Boolean = false, val isSkipped: Boolean = false,
@@ -33,6 +34,7 @@ interface WordStateRepository {
 
 /** Browsing does not create daily plans, learning cards, or review completions. */
 interface WordlistRepository {
+  val tagCatalog: List<WordTag> get() = emptyList()
   val entries: Flow<List<WordlistItem>>
   suspend fun word(id: String): WordEntry?
 }

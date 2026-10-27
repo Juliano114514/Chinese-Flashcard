@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-10-27",
+  "sourceWordlistSha256": "6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a",
+  "words": 18500,
+  "examples": 37000,
+  "rarity": {
+    "0": 2193,
+    "1": 6422,
+    "2": 6970,
+    "3": 2757,
+    "4": 158
+  },
+  "stableIdsAndOrderPreserved": true,
+  "formerStage0Preserved": true,
+  "headwordReplacements": 2162,
+  "singleCharactersBefore": 3272,
+  "singleCharactersAfter": 1148,
+  "fixedModelVoiceAndPcmFilesVerified": 25,
+  "historicalGlyphRecordsVerified": 6331,
+  "currentGlyphRecords": 6331,
+  "originalFivePalettesAndStageEnumExact": true,
+  "english": {
+    "uniqueSpeechTexts": 83392,
+    "speechChunks": 83994,
+    "missingSpeechTexts": 0,
+    "ipaExactMatches": 8875,
+    "ipaMissingTexts": 74517,
+    "maximumTokenCount": 408
+  },
+  "chinese": {
+    "uniqueReadingsIncludingWriting": 50626,
+    "supported": 50438,
+    "unsupported": 188
+  },
+  "unsupportedHeadwords": [
+    {
+      "id": "wl_13475",
+      "hanzi": "这儿",
+      "pinyin": "zhè r"
+    },
+    {
+      "id": "wl_13514",
+      "hanzi": "那儿",
+      "pinyin": "nà r"
+    },
+    {
+      "id": "wl_13580",
+      "hanzi": "有点儿",
+      "pinyin": "yǒu diǎn r"
+    },
+    {
+      "id": "wl_13733",
+      "hanzi": "事儿",
+      "pinyin": "shì r"
+    },
+    {
+      "id": "wl_13861",
+      "hanzi": "点儿",
+      "pinyin": "diǎn r"
+    },
+    {
+      "id": "wl_14076",
+      "hanzi": "一会儿",
+      "pinyin": "yī huì r"
+    },
+    {
+      "id": "wl_16462",
+      "hanzi": "小孩儿",
+      "pinyin": "xiǎo hái r"
+    },
+    {
+      "id": "wl_16525",
+      "hanzi": "男孩儿",
+      "pinyin": "nán hái r"
+    },
+    {
+      "id": "wl_16835",
+      "hanzi": "孩儿",
+      "pinyin": "hái r"
+    },
+    {
+      "id": "wl_17514",
+      "hanzi": "在那儿",
+      "pinyin": "zài na r"
+    },
+    {
+      "id": "wl_17854",
+      "hanzi": "个儿",
+      "pinyin": "gè r"
+    }
+  ],
+  "tags": {
+    "totalWords": 18500,
+    "taggedWords": 18500,
+    "typeTaggedWords": 18500,
+    "semanticTopicWords": 14534,
+    "topicReviewWords": 3966,
+    "othersWords": 0,
+    "sampleWords": 200
+  },
+  "checks": {
+    "wordlist": "passed",
+    "reviewedRarityAndContent": "passed",
+    "tags": "passed",
+    "sourceAttribution": "passed",
+    "englishResources": "passed",
+    "chineseResources": "passed",
+    "genuineStrokes": "passed",
+    "demo": "passed",
+    "fullGeneratorByteReproduction": "passed",
+    "kotlinPSI": "passed; syntax only",
+    "xml": "passed"
+  },
+  "buildAndDevice": {
+    "gradleBuild": false,
+    "apkPackage": false,
+    "deviceInstall": false,
+    "automatedTests": false,
+    "room18SchemaExported": false
+  },
+  "boundary": "Data/source static validation and a local existing-database SQL migration check; no new APK, runtime acceptance, human full-corpus review or full speech listening."
+}

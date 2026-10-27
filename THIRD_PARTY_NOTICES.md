@@ -1,6 +1,6 @@
 # 第三方来源、许可与分发边界
 
-核对日期：2026-10-08。自有代码、工具代码和文档采用根目录 [MIT](LICENSE)，适用范围见 [NOTICE](NOTICE)。本文件不为第三方资源重新授权。当前完整仓库和 APK **尚未完成公开分发许可审查**，具体阻塞项见 [开源发布检查](docs/OPEN_SOURCE_COMPLIANCE.md)。
+词库扩充来源更新日期：2026-10-27；其他历史核对记录保留原日期。自有代码、工具代码和文档采用根目录 [MIT](LICENSE)，适用范围见 [NOTICE](NOTICE)。本文件不为第三方资源重新授权。当前完整仓库和 APK **尚未完成公开分发许可审查**，具体阻塞项见 [开源发布检查](docs/OPEN_SOURCE_COMPLIANCE.md)。
 
 ## 词库与教学数据
 
@@ -14,7 +14,7 @@
 | SUBTLEX-CH 历史分级参考 | Cai Q, Brysbaert M (2010), *SUBTLEX-CH: Chinese Word and Character Frequencies Based on Film Subtitles*, PLoS ONE 5(6): e10729；历史分级记录已清理，可从 Git 历史查阅 | 原始语料缓存未作为当前词库许可依据；公开语料或摘录前核实对应附件的实际许可，保留论文署名。当前五档为 AI 编辑判断 |
 | 其他词典、教材及网页核对材料 | 逐条引用和 `source-excerpts.json` 等审阅资料 | 事实核对链接不等于复制网页、释义、教材或例句的授权；公开稿件、缓存、附件和历史版本也需要审查 |
 
-所有当前 13,223 行的 `来源说明` 均提到 CC-CEDICT，不能把整份混合 CSV 标成纯 MIT。对已获授权的 CC-CEDICT 改编部分及项目有权许可的相应贡献，沿用 CC BY-SA 4.0；**该声明不补足原始例句、其他来源或机器服务的缺失授权**。当前词库不能据此直接宣称已可公开分发。
+升级前 13,223 行的 `来源说明` 均提到 CC-CEDICT，其原文按稳定 ID 保留在 `tools/vocabulary_v2/legacy-source-notes.json`，并随应用来源索引和声明展示。不能把整份混合 CSV 标成纯 MIT。对已获授权的 CC-CEDICT 改编部分及项目有权许可的相应贡献，沿用 CC BY-SA 4.0；**该声明不补足原始例句、其他来源或机器服务的缺失授权**。当前词库不能据此直接宣称已可公开分发。
 
 CC-CEDICT 修改包括：语境择义、数字声调转声调符号、英文教学讲解、语块与部件、例句修订、追加和学习阶段标注。制作过程采用 AI 辅助；“作者稿”“新例句”描述制作过程，不等于独立版权或真人认证。逐条依据保留在 CSV 和冻结制作记录中。
 
@@ -22,6 +22,25 @@ CC-CEDICT 修改包括：语境择义、数字声调转声调符号、英文教�
 - [CC BY-SA 4.0 法律文本](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en)，本地完整文本见 [CC-BY-SA-4.0.txt](core/data/src/main/assets/wordlist-strokes/licenses/CC-BY-SA-4.0.txt)
 - [Mapull 固定版本许可](https://github.com/mapull/chinese-dictionary/blob/e804ada333b68afddfdccbe8dcc938a72da157a7/LICENSE)，本地见 [MAPULL-MIT.txt](core/data/src/main/assets/wordlist-strokes/licenses/MAPULL-MIT.txt)
 - [词库来源元数据](core/data/src/main/assets/wordlist-strokes/lexicon-sources.json) 和 [应用内词库声明](core/data/src/main/assets/wordlist-strokes/LEXICON_LICENSES.txt)
+
+### 词库扩充与五档精修来源（2026-10-27）
+
+本轮只追加或更新条目，保留全部旧ID；词头按显式编辑清单更新；编辑、自动拼音／语块和语料选择均属于来源辅助制作，不能表述为逐词真人语言认证。实际词数、增加条目和编辑边界见 [扩充记录](tools/vocabulary_v2/expansion-report.json)。
+
+| 材料 | 固定来源与范围 | 许可及署名 |
+| --- | --- | --- |
+| CC-CEDICT 更新快照 | MDBG，`2026-10-26T02:33:39Z`，125,320 条；原始 UTF-8 SHA-256 `3d8967fe566bc23a74f8ba008d38ac83269a8c7550bd7dc48218fc9bdf284885` | CC-CEDICT contributors；CEDICT 最初由 Paul Denisowski 创建；CC BY-SA 4.0。选义、声调转换、语块、分级和标签属于改编，保留同许可要求 |
+| FrequencyWords 2018 中文频率 | `hermitdave/FrequencyWords/content/2018/zh_cn/zh_cn_50k.txt`，OpenSubtitles2018；仅作候选和罕度编辑参考 | 内容 CC BY-SA 4.0，代码 MIT；两者不可混淆。词频不等于教材分级认证 |
+| Tatoeba／ManyThings 中英句对 | Charles Kelly 在 ManyThings 汇编的 `cmn-eng.zip`，2026-02-13，32,028 对；只保留实际选中句的来源，不打包语料全集 | CC BY 2.0 France；逐句保留两种语言的句子 ID 与作者用户名，关联实际汉语例句和目标词条 ID。拼音、拆分等项目修改另作说明 |
+| HSK 2025 词表转录参考 | `krmanik/HSK-3.0` 的 `New HSK (2025)/hsk_all_words.json`，只作覆盖参考 | 上游对其 HSK word lists 声明 CC BY-SA 4.0；同仓其他数据具有分别列明的许可。不得据仓库包含 MIT 代码而将整份词表标成 MIT；本应用教学分层不是官方HSK对照表 |
+| 日用专题补充语境 | 项目制作的 AI 辅助原创语境，2026-10-27；逐句归属在例句索引中记录 | 项目有权许可的相应贡献采用 CC BY-SA 4.0；不以“原创”“AI”标签代替底层权利核查 |
+
+完整固定 URL、原始文件字节数和 SHA-256 见 [source-lock.json](tools/vocabulary_v2/source-lock.json)。[example-provenance.json](tools/vocabulary_v2/example-provenance.json) 记录新增词条的例句归属。APK 内含 [source-index.json](core/data/src/main/assets/wordlist-sources/source-index.json)、[逐句署名文本](core/data/src/main/assets/wordlist-sources/ATTRIBUTIONS.txt) 和 [CC BY 2.0 FR 法律文本](core/data/src/main/assets/wordlist-sources/licenses/CC-BY-2.0-FR.txt)，通过现有 Sources & licenses 页面离线展示。`legacy-context` 记录通过原句解析到旧词条 ID，并继承其完整来源说明；没有因扩词丢弃旧署名。
+
+部分选中句在目标词头以外将不歧义、等长的繁体字形转为简体，并保留目标词的特殊古字。发生字形修改时，来源记录和 APK 索引保留 `originalHanzi`，应用内署名文本展示原始汉字句及修改说明；原英文译文、Tatoeba 句子 ID 和作者署名保留。该字形处理不等于全面语义消歧或真人语言认证。
+
+- [ManyThings 句对下载和使用说明](https://www.manythings.org/anki/)、[Tatoeba 使用条款](https://tatoeba.org/en/terms_of_use)、[CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/)
+- [FrequencyWords 来源与许可说明](https://github.com/hermitdave/FrequencyWords)、[HSK 转录仓库许可说明](https://github.com/krmanik/HSK-3.0/blob/main/License.md)
 
 ## 真实笔顺
 

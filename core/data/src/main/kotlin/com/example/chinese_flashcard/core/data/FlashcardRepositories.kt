@@ -28,20 +28,24 @@ import java.time.LocalDate
 import java.time.ZoneId
 import java.util.UUID
 
-data class DefaultWordlistState(val loading: Boolean = false, val error: UiMessageKey? = null)
+data class PresetWritingResume(val sessionId: String, val language: AppLanguage, val hanzi: String)
+
+data class DefaultWordlistState(val loading: Boolean = false, val error: UiMessageKey? = null,
+  val writingConflict: PresetWritingResume? = null)
 
 /** One application-scoped owner. The rebuilt library starts in its own database. */
 class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
     .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
-      Migration12To13, Migration13To14, Migration14To15).build()
+      Migration12To13, Migration13To14, Migration14To15, Migration15To16, Migration16To17, Migration17To18).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
   private val seedMutex = Mutex()
   private val operationMutex = Mutex()
   private var prepared = false
+  private val bundledTags by lazy { BundledWordTags.read(app) }
   private val writingBreakdowns: Map<Pair<String, String>, List<WordPart>> by lazy {
     try { DemoDecoder.readWritingBreakdowns(app) }
     catch (_: IOException) { emptyMap() }
@@ -77,6 +81,7 @@ class FlashcardRepositories(context: Context) {
         hasSavedWordlist = rawDao.appState()?.seeded == true
         csvImporter.cleanStaleSnapshots()
         csvImporter.bootstrapDefaultWordlist { mutableDefaultWordlistProgress.value = it }
+        bundledTags.catalog
         prepared = true
         mutableDefaultWordlistState.value = DefaultWordlistState()
       } catch (error: CancellationException) {
@@ -84,7 +89,8 @@ class FlashcardRepositories(context: Context) {
         throw error
       } catch (error: Exception) {
         mutableDefaultWordlistState.value = DefaultWordlistState(error =
-          if (error is PresetCardConflictException) error.code else UiMessageKey.DEFAULT_WORDLIST_COULDN_T_BE_LOADED)
+          if (error is PresetCardConflictException) error.code else UiMessageKey.DEFAULT_WORDLIST_COULDN_T_BE_LOADED,
+          writingConflict = (error as? PresetWritingConflictException)?.writing)
         if (hasSavedWordlist) {
           // Preserve the usable library and avoid retrying on every snapshot in this process.
           prepared = true
@@ -109,23 +115,33 @@ class FlashcardRepositories(context: Context) {
   private fun newId(): String = UUID.randomUUID().toString()
   private suspend fun appState(): AppStateEntity = checkNotNull(dao.appState())
   private suspend fun savedSettings(): StudySettings = checkNotNull(dao.settings()).toDomain().also { it.validate() }
+  private fun tagFilter(state: AppStateEntity): WordTagFilter =
+    WordTagFilter(strings(JSONArray(state.selectedTagIdsJson)).toSet()).normalized(bundledTags.catalog)
+
+  private suspend fun selectedTagFilter(): WordTagFilter = tagFilter(appState())
+
+  private fun matchingWordIds(words: List<WordStudyRow>, filter: WordTagFilter): Set<String> {
+    if (filter.isTotal) return words.mapTo(mutableSetOf()) { it.id }
+    val matches = filter.matcher(bundledTags.catalog)
+    return words.filter { matches(bundledTags.tagsFor(it.presetSourceId, it.hanzi)) }.mapTo(mutableSetOf()) { it.id }
+  }
   private suspend fun touch() {
     val state = appState()
     dao.putAppState(state.copy(revision = state.revision + 1))
   }
 
   /** Called only inside preset bootstrap's Room transaction; never re-enters prepare or its locks. */
-  private suspend fun reconcilePresetStages() {
+  private suspend fun reconcilePresetStages(previousRarities: Map<String, Int>) {
     val previous = learningLanguage
     try {
       for (language in AppLanguage.entries) {
         learningLanguage = language
-        reconcilePresetStageDirection()
+        reconcilePresetStageDirection(previousRarities)
       }
     } finally { learningLanguage = previous }
   }
 
-  private suspend fun reconcilePresetStageDirection() {
+  private suspend fun reconcilePresetStageDirection(previousRarities: Map<String, Int>) {
     val words = dao.studyWords().associateBy { it.id }
     val states = dao.stageStates().associateBy { it.stage }.toMutableMap()
     for (rarity in words.values.map { it.rarity }.distinct()) {
@@ -135,10 +151,36 @@ class FlashcardRepositories(context: Context) {
         states[rarity] = state
       }
     }
+    val completedWordIds = mutableMapOf<Pair<Int, Int>, MutableSet<String>>()
+    // Capture source credits before adding any destination credits: a refresh must not
+    // reinterpret newly inserted rows as another source's learning history.
+    val currentCompletions = states.values.flatMap { state ->
+      dao.stageCompletions(state.stage, state.lap).also { completions ->
+        completedWordIds[state.stage to state.lap] = completions.mapTo(mutableSetOf()) { it.wordId }
+      }
+    }
+    suspend fun creditIfMissing(completion: StageCompletionEntity) {
+      val key = completion.stage to completion.lap
+      val completed = completedWordIds.getOrPut(key) {
+        dao.stageCompletions(completion.stage, completion.lap).mapTo(mutableSetOf()) { it.wordId }
+      }
+      // Never replace an existing completion's date with firstPassedDay or a moved credit.
+      if (completed.add(completion.wordId)) dao.putStageCompletion(completion)
+    }
     for (progress in dao.progress()) {
       val passedDay = progress.firstPassedDay ?: continue
       val word = words[progress.wordId] ?: continue
-      dao.putStageCompletion(StageCompletionEntity(word.rarity, 1, word.id, passedDay))
+      creditIfMissing(StageCompletionEntity(word.rarity, 1, word.id, passedDay))
+    }
+    // Historical rows remain under their original stage/lap. Credit a moved word in the
+    // destination's current lap only if it was completed in the source's current lap.
+    // First-ever passes seed lap 1 above; they must not auto-complete later laps.
+    for (completion in currentCompletions) {
+      val previousRarity = previousRarities[completion.wordId] ?: continue
+      val word = words[completion.wordId] ?: continue
+      if (previousRarity != completion.stage || word.rarity == previousRarity) continue
+      val destinationLap = checkNotNull(states[word.rarity]).lap
+      creditIfMissing(completion.copy(stage = word.rarity, lap = destinationLap))
     }
     val saved = appState()
     val current = saved.currentCardId?.let { dao.card(it) }
@@ -209,6 +251,7 @@ class FlashcardRepositories(context: Context) {
 
   @OptIn(ExperimentalCoroutinesApi::class)
   private inner class LocalWordlist : WordlistRepository {
+    override val tagCatalog: List<WordTag> get() = bundledTags.catalog
     override val entries: Flow<List<WordlistItem>> = flow {
       prepare()
       emitAll(rawDao.observeSettings().map { checkNotNull(it).learningLanguage }.distinctUntilChanged()
@@ -222,7 +265,8 @@ class FlashcardRepositories(context: Context) {
           val status = if (row.isSkipped) WordlistStatus.SKIPPED else learningStatus
           WordlistItem(row.id, row.hanzi, row.pinyin, row.english, row.searchMeanings,
             row.difficulty, status, row.correctRounds, row.targetRounds,
-            row.isCollected, row.isSkipped, row.mistakePending, learningStatus, partOfSpeech = row.partOfSpeech)
+            row.isCollected, row.isSkipped, row.mistakePending, learningStatus, partOfSpeech = row.partOfSpeech,
+            tags = bundledTags.tagsFor(row.presetSourceId, row.hanzi))
         }
       }.distinctUntilChanged())
     }.flowOn(Dispatchers.Default)
@@ -280,12 +324,53 @@ class FlashcardRepositories(context: Context) {
   }
 
   private inner class LocalStudy : StudyRepository {
+    override val tagCatalog: List<WordTag> get() = bundledTags.catalog
+
     override val changes: Flow<Long> = flow {
       prepare()
       emitAll(dao.observeRevision().map { checkNotNull(it) }.distinctUntilChanged())
     }
 
     override suspend fun snapshot(): StudySnapshot = transaction { snapshotAt(ensureToday()) }
+
+    override suspend fun tagFilterPreview(filter: WordTagFilter, expectedLanguage: AppLanguage,
+      expectedContextVersion: Long): TagFilterPreview = transaction {
+      val saved = appState()
+      val stage = saved.selectedStage?.let { VocabularyStage.fromRarity(it) } ?: VocabularyStage.PRIMARY
+      val draft = filter.normalized(bundledTags.catalog)
+      if (learningLanguage != expectedLanguage || saved.contextVersion != expectedContextVersion)
+        return@transaction TagFilterPreview(stage, draft, 0, 0,
+          learningLanguage = learningLanguage, contextVersion = saved.contextVersion)
+      val progress = dao.progress().associateBy { it.wordId }
+      val words = dao.studyWords().filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true }
+      val matching = matchingWordIds(words, draft)
+      val lap = dao.stageState(stage.rarity)?.lap ?: 1
+      val completed = dao.stageCompletions(stage.rarity, lap).mapTo(mutableSetOf()) { it.wordId }
+      val counts = mutableMapOf<String, Int>()
+      for (word in words) for (id in bundledTags.tagsFor(word.presetSourceId, word.hanzi)) counts[id] = (counts[id] ?: 0) + 1
+      TagFilterPreview(stage, draft, matching.size, matching.count { it in completed }, counts,
+        learningLanguage, saved.contextVersion)
+    }
+
+    override suspend fun selectTagFilter(filter: WordTagFilter, expectedLanguage: AppLanguage,
+      expectedContextVersion: Long): StudySnapshot = transaction {
+      val day = ensureToday()
+      if (!matchesContext(expectedLanguage, expectedContextVersion)) return@transaction snapshotAt(day)
+      val value = filter.normalized(bundledTags.catalog)
+      require(value.selectedIds.size <= bundledTags.catalog.size &&
+        value.selectedIds.all { id -> bundledTags.catalog.any { it.id == id } })
+      val saved = appState()
+      if (tagFilter(saved) != value) {
+        val current = saved.currentCardId?.let { dao.card(it) }
+        val matching = matchingWordIds(dao.studyWords(), value)
+        dao.putAppState(saved.copy(selectedTagIdsJson = stringsJson(value.selectedIds.toList()),
+          contextVersion = saved.contextVersion + 1,
+          currentCardId = if (current?.kind == StudyKind.NEW.name && current.wordId !in matching) null else saved.currentCardId))
+        reconcileStagePlan(day, selectedStage())
+        touch()
+      }
+      snapshotAt(day)
+    }
 
     override suspend fun peekSpeechWords(cardId: String, nextCount: Int, expectedLanguage: AppLanguage,
       expectedContextVersion: Long): List<WordEntry> {
@@ -304,6 +389,9 @@ class FlashcardRepositories(context: Context) {
             return@withTransaction emptyList()
           val progress = speechDao.progress().associateBy { it.wordId }
           if (progress[card.wordId]?.isSkipped == true) return@withTransaction emptyList()
+          val matching = if (card.kind == StudyKind.NEW.name)
+            matchingWordIds(speechDao.studyWords(), tagFilter(state)) else emptySet()
+          if (card.kind == StudyKind.NEW.name && card.wordId !in matching) return@withTransaction emptyList()
           val upcoming = if (card.sessionId != null) {
             val session = speechDao.practiceSession(card.sessionId) ?: return@withTransaction emptyList()
             val viewOnly = speechDao.viewOnlyPracticeWords(session.id).toSet()
@@ -316,7 +404,7 @@ class FlashcardRepositories(context: Context) {
             val stage = state.selectedStage ?: card.itemId?.let { speechDao.dailyItemById(it)?.originStage }
             speechDao.dailyItems(card.day).filter {
               it.kind == card.kind && !it.completed && it.wordId !in viewOnly && progress[it.wordId]?.isSkipped != true &&
-                (card.kind != StudyKind.NEW.name || it.originStage == stage)
+                (card.kind != StudyKind.NEW.name || (it.originStage == stage && it.wordId in matching))
             }.sortedWith(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder }).map { it.wordId }
           }
           val ids = listOf(card.wordId) + upcoming.asSequence().filter { it != card.wordId }
@@ -340,6 +428,7 @@ class FlashcardRepositories(context: Context) {
           if (!state.seeded || state.day != day || state.contextVersion != expectedContextVersion ||
             state.selectedStage != expectedStage.rarity) return@withTransaction emptyList()
           val progress = speechDao.progress().associateBy { it.wordId }
+          val matching = matchingWordIds(speechDao.studyWords(), tagFilter(state))
           val viewOnly = speechDao.viewOnlyDailyWords(day, StudyKind.NEW.name).toSet()
           val items = speechDao.dailyItems(day)
           val pending = speechDao.unfinishedCards().filter {
@@ -347,11 +436,12 @@ class FlashcardRepositories(context: Context) {
               progress[it.wordId]?.isSkipped != true
           }.sortedBy { it.createdAt }.firstOrNull { card ->
             (card.itemId?.let { speechDao.dailyItemById(it)?.originStage }
-              ?: items.firstOrNull { it.wordId == card.wordId && it.kind == card.kind }?.originStage) == expectedStage.rarity
+              ?: items.firstOrNull { it.wordId == card.wordId && it.kind == card.kind }?.originStage) == expectedStage.rarity &&
+              card.wordId in matching
           }
           val upcoming = items.filter {
             it.kind == StudyKind.NEW.name && !it.completed && it.wordId !in viewOnly &&
-              progress[it.wordId]?.isSkipped != true && it.originStage == expectedStage.rarity
+              progress[it.wordId]?.isSkipped != true && it.originStage == expectedStage.rarity && it.wordId in matching
           }.sortedWith(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder })
           (listOfNotNull(pending?.wordId) + upcoming.map { it.wordId }).distinct().take(maxWords)
             .mapNotNull { id -> speechDao.word(id)?.let { word(it) } }
@@ -374,12 +464,13 @@ class FlashcardRepositories(context: Context) {
           ?: return@withTransaction emptyList()
         val progress = speechDao.progress().associateBy { it.wordId }
         val items = speechDao.dailyItems(day).filter { progress[it.wordId]?.isSkipped != true }
+        val words = speechDao.studyWords()
+        val matching = matchingWordIds(words, tagFilter(state))
         val unfinished = speechDao.unfinishedCards().filter { progress[it.wordId]?.isSkipped != true }
         val current = state.currentCardId?.let { id -> unfinished.firstOrNull { it.id == id } }
           ?.takeIf { card -> (card.day == day || card.sessionId != null) &&
             (card.kind != StudyKind.NEW.name || (card.itemId?.let { speechDao.dailyItemById(it) }
-              ?: speechDao.dailyItem(day, card.wordId))?.originStage == stage) }
-        val words = speechDao.studyWords()
+              ?: speechDao.dailyItem(day, card.wordId))?.originStage == stage && card.wordId in matching) }
         val ids = linkedSetOf<String>()
         current?.wordId?.let(ids::add)
 
@@ -387,14 +478,14 @@ class FlashcardRepositories(context: Context) {
           it.sessionId == null && it.day == day && it.kind == kind.name
         }.sortedBy { it.createdAt }.firstOrNull { card ->
           kind != StudyKind.NEW || (card.itemId?.let { speechDao.dailyItemById(it) }
-            ?: speechDao.dailyItem(day, card.wordId))?.originStage == stage
+            ?: speechDao.dailyItem(day, card.wordId))?.originStage == stage && card.wordId in matching
         }
 
         suspend fun dailyWord(kind: StudyKind): String? {
           pendingDaily(kind)?.let { return it.wordId }
           val viewOnly = speechDao.viewOnlyDailyWords(day, kind.name).toSet()
           return items.filter { it.kind == kind.name && !it.completed && it.wordId !in viewOnly &&
-            (kind != StudyKind.NEW || it.originStage == stage) }
+            (kind != StudyKind.NEW || (it.originStage == stage && it.wordId in matching)) }
             .minWithOrNull(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder })?.wordId
         }
 
@@ -434,7 +525,8 @@ class FlashcardRepositories(context: Context) {
           return (eligible.firstOrNull { it.id !in completed } ?: eligible.firstOrNull())?.id
         }
 
-        val daily = items.filter { it.kind != StudyKind.NEW.name || it.originStage == stage }
+        val daily = items.filter { it.kind != StudyKind.NEW.name ||
+          (it.originStage == stage && (it.completed || it.wordId in matching)) }
         if (current?.kind !in listOf(StudyKind.NEW.name, StudyKind.CARRYOVER.name)) {
           when {
             daily.any { it.kind == StudyKind.CARRYOVER.name && !it.completed } ->
@@ -453,9 +545,9 @@ class FlashcardRepositories(context: Context) {
                 val active = speechDao.activeCycles().filter { it.scope == "NORMAL" || it.scope == "STAGE_REPEAT" }
                   .mapTo(mutableSetOf()) { it.wordId }
                 val eligible = words.filter { it.rarity == stage && progress[it.id]?.isSkipped != true }
-                val remaining = eligible.filter { it.id !in completed && it.id !in active }
+                val remaining = eligible.filter { it.id !in completed && it.id !in active && it.id in matching }
                 val candidate = if (remaining.isNotEmpty() || eligible.any { it.id !in completed }) remaining.firstOrNull()
-                  else eligible.firstOrNull { it.id !in active }
+                  else eligible.firstOrNull { it.id !in active && it.id in matching }
                 candidate?.id?.let(ids::add)
               }
             }
@@ -481,8 +573,10 @@ class FlashcardRepositories(context: Context) {
       if (saved.selectedStage != stage.rarity) {
         val current = saved.currentCardId?.let { dao.card(it) }
         dao.putAppState(saved.copy(selectedStage = stage.rarity,
-          currentCardId = if (current?.kind == StudyKind.NEW.name) null else saved.currentCardId))
+          currentCardId = if (current?.kind == StudyKind.NEW.name) null else saved.currentCardId,
+          contextVersion = saved.contextVersion + 1))
         ensureStagePlan(day, stage)
+        reconcileStagePlan(day, stage)
         touch()
       }
       snapshotAt(day)
@@ -763,6 +857,28 @@ class FlashcardRepositories(context: Context) {
     enqueueStageWords(day, stage, goal, allowNewLap = false)
   }
 
+  /** Only unseen preallocations can be withdrawn. Started cards and their cycles stay resumable. */
+  private suspend fun reconcileStagePlan(day: Long, stage: VocabularyStage) {
+    val matching = matchingWordIds(dao.studyWords(), selectedTagFilter())
+    val started = dao.cardCycleIds().toSet()
+    val progress = dao.progress().associateBy { it.wordId }
+    val items = dao.dailyItems(day).filter { it.kind == StudyKind.NEW.name && it.originStage == stage.rarity }
+    for (item in items.filter { !it.completed && it.wordId !in matching && it.cycleId !in started }) {
+      dao.deleteDailyItem(item.id)
+      dao.cycle(item.cycleId)?.takeIf { it.status == "ACTIVE" }?.let {
+        dao.putCycle(it.copy(status = "CANCELLED"))
+      }
+      progress[item.wordId]?.takeIf { it.activeCycleId == item.cycleId }?.let {
+        dao.putProgress(it.copy(activeCycleId = null))
+      }
+    }
+    val completed = items.count { it.completed && progress[it.wordId]?.isSkipped != true }
+    val pending = items.count { !it.completed && it.wordId in matching && progress[it.wordId]?.isSkipped != true }
+    val goal = checkNotNull(dao.stagePlan(day, stage.rarity)).dailyGoal
+    val remaining = (goal - completed - pending).coerceAtLeast(0)
+    if (remaining > 0) enqueueStageWords(day, stage, remaining, allowNewLap = false)
+  }
+
   private suspend fun stageCandidates(stage: VocabularyStage, allowNewLap: Boolean): List<WordStudyRow> {
     val state = stageState(stage)
     val progress = dao.progress().associateBy { it.wordId }
@@ -774,10 +890,12 @@ class FlashcardRepositories(context: Context) {
   private suspend fun stageCandidates(stage: VocabularyStage, allowNewLap: Boolean,
     words: List<WordStudyRow>, progress: Map<String, WordProgressEntity>, completed: Set<String>): List<WordStudyRow> {
     val eligible = words.filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true }
+    val matching = matchingWordIds(eligible, selectedTagFilter())
     val active = activeLearningCycles().map { it.wordId }.toSet()
-    val remaining = eligible.filter { it.id !in completed && it.id !in active }
+    val remaining = eligible.filter { it.id !in completed && it.id !in active && it.id in matching }
+    // The lap belongs to the entire stage, never to a filtered subset.
     if (remaining.isNotEmpty() || !allowNewLap || eligible.isEmpty() || eligible.any { it.id !in completed }) return remaining
-    return eligible.filter { it.id !in active }
+    return eligible.filter { it.id !in active && it.id in matching }
   }
 
   private suspend fun enqueueStageWords(day: Long, stage: VocabularyStage, limit: Int, allowNewLap: Boolean): Boolean {
@@ -919,16 +1037,18 @@ class FlashcardRepositories(context: Context) {
   private suspend fun pendingDailyCard(day: Long, kind: StudyKind): CardEntity? {
     val stage = selectedStage()
     val progress = dao.progress().associateBy { it.wordId }
+    val matching = if (kind == StudyKind.NEW) matchingWordIds(dao.studyWords(), selectedTagFilter()) else emptySet()
     return dao.unfinishedCards().filter { it.sessionId == null && it.day == day && it.kind == kind.name &&
       progress[it.wordId]?.isSkipped != true }.sortedBy { it.createdAt }.firstOrNull {
-      kind != StudyKind.NEW || dailyItem(it)?.originStage == stage.rarity
+      kind != StudyKind.NEW || (dailyItem(it)?.originStage == stage.rarity && it.wordId in matching)
     }
   }
 
   private suspend fun finishedDailyCard(day: Long, kind: StudyKind): CardEntity? {
     // Each new task normally has a pending card; the last finished card supplies the completion screen.
     return dao.finishedCard(day, kind.name)?.takeIf {
-      kind != StudyKind.NEW || dailyItem(it)?.originStage == selectedStage().rarity
+      kind != StudyKind.NEW || (dailyItem(it)?.originStage == selectedStage().rarity &&
+        it.wordId in matchingWordIds(dao.studyWords(), selectedTagFilter()))
     }
   }
 
@@ -936,9 +1056,10 @@ class FlashcardRepositories(context: Context) {
     check(!kind.isPractice())
     val selected = stage ?: selectedStage().rarity
     val progress = dao.progress().associateBy { it.wordId }
+    val matching = if (kind == StudyKind.NEW) matchingWordIds(dao.studyWords(), selectedTagFilter()) else emptySet()
     val viewOnly = dao.viewOnlyDailyWords(day, kind.name).toSet()
     val item = dao.dailyItems(day).filter { it.kind == kind.name && !it.completed && it.wordId !in viewOnly && progress[it.wordId]?.isSkipped != true &&
-      (kind != StudyKind.NEW || it.originStage == selected) }
+      (kind != StudyKind.NEW || (it.originStage == selected && it.wordId in matching)) }
       .minWithOrNull(compareBy<DailyItemEntity> { it.batch }.thenBy { it.queueOrder }) ?: return null
     val cycle = checkNotNull(dao.cycle(item.cycleId))
     val entry = word(item.wordId)
@@ -1089,7 +1210,8 @@ class FlashcardRepositories(context: Context) {
     val progress = dao.progress().associateBy { it.wordId }
     val items = dao.dailyItems(day).filter { it.kind == StudyKind.NEW.name && it.originStage == stage &&
       progress[it.wordId]?.isSkipped != true }
-    if (items.isNotEmpty() && items.all { it.completed }) {
+    val goal = checkNotNull(dao.stagePlan(day, stage)).dailyGoal
+    if (items.isNotEmpty() && (items.all { it.completed } || items.count { it.completed } >= goal)) {
       dao.putPlan(plan.copy(learnRewarded = true))
       val saved = appState()
       dao.putAppState(saved.copy(growthDays = saved.growthDays + 1))
@@ -1097,7 +1219,11 @@ class FlashcardRepositories(context: Context) {
   }
 
   private suspend fun snapshotAt(day: Long): StudySnapshot {
-    val card = appState().currentCardId?.let { dao.card(it) }?.takeIf { it.day == day || it.sessionId != null }
+    val matching = matchingWordIds(dao.studyWords(), selectedTagFilter())
+    val card = appState().currentCardId?.let { dao.card(it) }?.takeIf {
+      (it.day == day || it.sessionId != null) && (it.kind != StudyKind.NEW.name ||
+        (dailyItem(it)?.originStage == selectedStage().rarity && it.wordId in matching))
+    }
     val practice = card?.sessionId?.let { id ->
       val session = checkNotNull(dao.practiceSession(id))
       val progress = dao.progress().associateBy { it.wordId }
@@ -1117,12 +1243,15 @@ class FlashcardRepositories(context: Context) {
     val plan = checkNotNull(dao.stagePlan(day, stage.rarity))
     val progress = dao.progress().associateBy { it.wordId }
     val items = dao.dailyItems(day).filter { progress[it.wordId]?.isSkipped != true }
+    val filter = selectedTagFilter()
+    val words = dao.studyWords()
+    val matching = matchingWordIds(words, filter)
     fun count(kind: StudyKind, complete: Boolean? = null): Int = items.count {
-      it.kind == kind.name && (kind != StudyKind.NEW || it.originStage == stage.rarity) &&
+      it.kind == kind.name && (kind != StudyKind.NEW || (it.originStage == stage.rarity &&
+        (it.completed || it.wordId in matching))) &&
         (complete == null || it.completed == complete)
     }
-    val words = dao.studyWords()
-    val stageWords = words.filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true }
+    val stageWords = words.filter { it.rarity == stage.rarity && progress[it.id]?.isSkipped != true && it.id in matching }
     val completed = dao.stageCompletions(stage.rarity, state.lap).map { it.wordId }.toSet()
     val stageProgress = StageProgress(stage, stageWords.count { it.id in completed }, stageWords.size, state.lap)
     val newWords = words.filter { progress[it.id]?.firstPassedDay == day && progress[it.id]?.isSkipped != true }
@@ -1146,13 +1275,16 @@ class FlashcardRepositories(context: Context) {
       words.count { progress[it.id]?.mistakePending == true && progress[it.id]?.isSkipped != true },
       appState().let { StudyGrowth(it.growthDays, it.learnedCompletions, it.clearedMistakes) },
       learningLanguage = learningLanguage, contextVersion = appState().contextVersion,
-      availableReviewWords = reviewCandidates(day, words, progress).size)
+      availableReviewWords = reviewCandidates(day, words, progress).size,
+      tagFilter = filter, tagCatalog = bundledTags.catalog)
   }
 
   private suspend fun learnMoreBlocker(day: Long, items: List<DailyItemEntity>, stage: VocabularyStage): StudyKind? {
+    val matching = matchingWordIds(dao.studyWords(), selectedTagFilter())
     for (kind in listOf(StudyKind.REVIEW, StudyKind.CARRYOVER, StudyKind.NEW)) {
       if (items.any { it.kind == kind.name && !it.completed &&
-          (kind != StudyKind.NEW || it.originStage == stage.rarity) } || pendingDailyCard(day, kind) != null) return kind
+          (kind != StudyKind.NEW || (it.originStage == stage.rarity && it.wordId in matching)) } ||
+        pendingDailyCard(day, kind) != null) return kind
     }
     return null
   }
@@ -1176,7 +1308,8 @@ class FlashcardRepositories(context: Context) {
     return WordEntry(value.id, value.hanzi, value.pinyin, dao.meanings(value.id).map(MeaningEntity::toDomain),
       decodeExamples(JSONArray(value.examplesJson)), decodeParts(JSONArray(value.partsJson)),
       strings(JSONArray(value.distractorsJson)), decodeExplanations(JSONArray(value.literalExplanationsJson), required = true),
-      decodeExplanations(JSONArray(value.figurativeExplanationsJson), required = false))
+      decodeExplanations(JSONArray(value.figurativeExplanationsJson), required = false),
+      tags = bundledTags.tagsFor(value.presetSourceId, value.hanzi))
   }
 
   private suspend fun createWriting(wordIds: List<String>, reason: WritingReason, returnCardId: String?, day: Long): String {

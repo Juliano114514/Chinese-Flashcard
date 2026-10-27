@@ -6,12 +6,12 @@
       "sha256": "aa9b8af8d6dd8db39a648640bed835c6a7878a496549c36c67e2097ba2216589"
     },
     "ipa.json": {
-      "bytes": 224931,
-      "sha256": "927571c4f32af90468cc291b00125edb0fa643bfa9da006373cf69e2fcce3e6d"
+      "bytes": 262664,
+      "sha256": "7ab5a7285add3b2394eb13b8405e91dc782dd2b310e5d53214575103dceb2c51"
     },
     "word-index.json": {
-      "bytes": 2778833,
-      "sha256": "0b8c2c0932a5023027744e247584c0bceebe87c7eff2efcc1bc013d0ff3976de"
+      "bytes": 4375980,
+      "sha256": "4b1c0a059858e6e728ea08adfd4e20780bf993c397668510237aeab0bd5a630f"
     }
   },
   "licenses": [
@@ -23,6 +23,6 @@
   "processing": "Exact lowercase lookup of current English texts; no generated or guessed IPA.",
   "revision": "43c3570eb3553bdd19fccd2bd0091534889af023",
   "schemaVersion": 1,
-  "sourceWordlistSha256": "21b2dbf3103513c8b1749a5f2cfc17a94f7df3f9ca63f89748d4f9718a9388a7",
+  "sourceWordlistSha256": "6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a",
   "url": "https://github.com/open-dict-data/ipa-dict"
 }

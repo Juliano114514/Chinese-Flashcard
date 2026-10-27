@@ -24,6 +24,8 @@ import sys
 import urllib.request
 import zipfile
 
+from wordlist_snapshot import verify_snapshot
+
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".gradle" / "english-resource-source"
 LOCK = ROOT / "tools" / "english_resources" / "source-lock.json"
@@ -101,8 +103,11 @@ def collect_texts() -> tuple[list[str], dict[str, int], int]:
             texts.update(fragment for fragment in split_meanings(text)
                 if any(character.isalnum() for character in fragment))
 
+    snapshot = verify_snapshot(CSV)
     with CSV.open(encoding="utf-8-sig", newline="") as source:
         rows = list(csv.DictReader(source))
+    if len(rows) != snapshot["words"]:
+        raise ValueError("Current English vocabulary differs from the reviewed row count")
     for row in rows:
         add(row["英文释义"], "primary", split=True)
         for column, category in (("本义解释JSON", "literal"), ("引申义解释JSON", "figurative")):

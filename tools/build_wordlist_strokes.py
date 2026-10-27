@@ -28,7 +28,7 @@ CONFIRMED_ANIM_GLYPHS = frozenset("俶匜嗞嵎嵖巉惇愔抔挦揳旻晞杻楯
 MM_CACHE = ROOT / ".gradle/stroke-source"
 ANIM_CACHE = MM_CACHE / "animcjk" / ANIM_REVISION
 OUTPUT = ROOT / "core/data/src/main/assets/wordlist-strokes"
-MODIFIED_ON = "2026-10-04"
+MODIFIED_ON = "2026-10-27"
 RESOURCE_NOTICE = ("Selected genuine stroke glyphs extracted from pinned Make Me a Hanzi and AnimCJK simplified Chinese data; "
                    "strokes renamed to paths and median point pairs represented as x/y objects; no coordinate changes. "
                    "Derived stroke resources remain under the Arphic Public License.")
@@ -217,6 +217,9 @@ def read_csv_words(csv_path):
 
 
 def build(csv_path, check, allow_missing):
+    if csv_path == (ROOT / "wordlist.csv").resolve():
+        from wordlist_snapshot import verify_snapshot
+        verify_snapshot(csv_path)
     words = read_csv_words(csv_path)
     demo_path = ROOT / "core/data/src/main/assets/demo/strokes.json"
     demo_items = json.loads(demo_path.read_text(encoding="utf-8"))["items"]
@@ -224,6 +227,12 @@ def build(csv_path, check, allow_missing):
     # Removing the redundant 哎唷 entry must not reshuffle every later stroke shard.
     # Keep its existing genuine 唷 glyph available alongside the unused supplements.
     retained_glyphs = {"唷"}
+    retention_path = ROOT / "tools/vocabulary_v2/retained-glyphs.json"
+    if retention_path.exists():
+        retention = json.loads(retention_path.read_text(encoding="utf-8"))
+        if retention.get("schemaVersion") != 1 or any(not isinstance(g, str) or len(g) != 1 for g in retention["glyphs"]):
+            raise ValueError("Invalid historical glyph retention ledger")
+        retained_glyphs.update(retention["glyphs"])
     required = csv_glyphs | {item["glyph"] for item in demo_items} | CONFIRMED_ANIM_GLYPHS | retained_glyphs
     if len(required) > 10000:
         raise ValueError("Stroke index exceeds the 10,000-glyph limit")

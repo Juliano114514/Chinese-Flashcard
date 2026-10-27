@@ -23,13 +23,15 @@ internal data class WordEntity(@PrimaryKey val id: String, val hanzi: String, va
 
 internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: String)
 
-internal data class WordStudyRow(val id: String, val rarity: Int)
+internal data class WordStudyRow(val id: String, val rarity: Int, val hanzi: String,
+  val presetSourceId: String = "")
 
 internal data class WordlistRow(val id: String, val hanzi: String, val pinyin: String,
   val english: String, val partOfSpeech: String, val searchMeanings: String, val difficulty: Int,
   val firstEncounterShown: Boolean, val firstPassedDay: Long?,
   val correctRounds: Int, val targetRounds: Int,
-  val isCollected: Boolean, val isSkipped: Boolean, val mistakePending: Boolean)
+  val isCollected: Boolean, val isSkipped: Boolean, val mistakePending: Boolean,
+  val presetSourceId: String = "")
 
 @Entity(tableName = "meanings", indices = [Index("wordId")])
 internal data class MeaningEntity(@PrimaryKey val id: String, val wordId: String,
@@ -70,7 +72,8 @@ internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Bool
   @ColumnInfo(defaultValue = "0") val growthDays: Long = 0,
   @ColumnInfo(defaultValue = "0") val learnedCompletions: Long = 0,
   @ColumnInfo(defaultValue = "0") val clearedMistakes: Long = 0,
-  @ColumnInfo(defaultValue = "0") val contextVersion: Long = 0)
+  @ColumnInfo(defaultValue = "0") val contextVersion: Long = 0,
+  @ColumnInfo(defaultValue = "'[]'") val selectedTagIdsJson: String = "[]")
 
 @Entity(tableName = "daily_plans", primaryKeys = ["day", "learningLanguage"])
 internal data class DailyPlanEntity(val day: Long, val dailyGoal: Int,
@@ -162,7 +165,8 @@ internal data class WritingCompletionEntity(@PrimaryKey val id: String, val sess
 @Entity(tableName = "learning_contexts")
 internal data class LearningContextEntity(@PrimaryKey val learningLanguage: String,
   val day: Long? = null, val selectedKind: String? = null, val currentCardId: String? = null,
-  val selectedStage: Int? = null)
+  val selectedStage: Int? = null,
+  @ColumnInfo(defaultValue = "'[]'") val selectedTagIdsJson: String = "[]")
 
 @Entity(tableName = "word_bookmarks")
 internal data class WordBookmarkEntity(@PrimaryKey val wordId: String, val isCollected: Boolean = false)
@@ -174,7 +178,7 @@ internal data class DailyGrowthRewardEntity(@PrimaryKey val day: Long,
 @Dao
 internal interface FlashcardDao {
   @Query("""
-    SELECT w.id, w.hanzi, w.pinyin, w.rarity AS difficulty,
+    SELECT w.id, w.hanzi, w.pinyin, w.rarity AS difficulty, w.presetSourceId,
       COALESCE((SELECT english FROM meanings WHERE wordId = w.id ORDER BY position, id LIMIT 1), '') AS english,
       COALESCE((SELECT partOfSpeech FROM meanings WHERE wordId = w.id ORDER BY position, id LIMIT 1), '') AS partOfSpeech,
       COALESCE(GROUP_CONCAT(m.english, ' '), '') AS searchMeanings,
@@ -192,7 +196,7 @@ internal interface FlashcardDao {
   """)
   fun observeWordlist(language: String): Flow<List<WordlistRow>>
   @Query("SELECT * FROM words ORDER BY rarity, sortOrder, id") suspend fun words(): List<WordEntity>
-  @Query("SELECT id, rarity FROM words ORDER BY rarity, sortOrder, id") suspend fun studyWords(): List<WordStudyRow>
+  @Query("SELECT id, rarity, hanzi, presetSourceId FROM words ORDER BY rarity, sortOrder, id") suspend fun studyWords(): List<WordStudyRow>
   @Query("SELECT id, hanzi, pinyin FROM words ORDER BY id") suspend fun wordIdentities(): List<WordIdentity>
   @Query("UPDATE words SET sortOrder = :rank WHERE id = :id AND sortOrder != :rank")
   suspend fun updateWordOrder(id: String, rank: Int)
@@ -210,6 +214,8 @@ internal interface FlashcardDao {
   @Upsert suspend fun putMeanings(values: List<MeaningEntity>)
   @Upsert suspend fun putTracing(values: List<TracingEntity>)
   @Upsert suspend fun putWordTracing(values: List<WordTracingEntity>)
+  @Query("DELETE FROM word_tracing WHERE wordId IN (:wordIds)")
+  suspend fun deleteWordTracing(wordIds: List<String>)
 
   @Query("SELECT * FROM learning_contexts WHERE learningLanguage = :language")
   suspend fun learningContext(language: String): LearningContextEntity?
@@ -250,6 +256,8 @@ internal interface FlashcardDao {
   @Query("SELECT * FROM daily_items WHERE learningLanguage = :language AND cycleId = :cycleId ORDER BY day DESC, queueOrder DESC LIMIT 1")
   suspend fun latestDailyItemForCycle(cycleId: String, language: String): DailyItemEntity?
   @Upsert suspend fun putDailyItem(value: DailyItemEntity)
+  @Query("DELETE FROM daily_items WHERE learningLanguage = :language AND id = :id")
+  suspend fun deleteDailyItem(id: String, language: String)
 
   @Query("SELECT * FROM stage_states WHERE learningLanguage = :language AND stage = :stage") suspend fun stageState(stage: Int, language: String): StageStateEntity?
   @Query("SELECT * FROM stage_states WHERE learningLanguage = :language ORDER BY stage") suspend fun stageStates(language: String): List<StageStateEntity>
@@ -281,6 +289,10 @@ internal interface FlashcardDao {
   """) suspend fun nextReviewDay(day: Long, language: String): Long?
   @Upsert suspend fun putReviewNodes(values: List<ReviewNodeEntity>)
   @Query("SELECT * FROM study_cards WHERE learningLanguage = :language AND id = :id") suspend fun card(id: String, language: String): CardEntity?
+  @Query("SELECT EXISTS(SELECT 1 FROM study_cards WHERE learningLanguage = :language AND cycleId = :cycleId)")
+  suspend fun hasCardsForCycle(cycleId: String, language: String): Boolean
+  @Query("SELECT DISTINCT cycleId FROM study_cards WHERE learningLanguage = :language")
+  suspend fun cardCycleIds(language: String): List<String>
   @Query("SELECT * FROM study_cards WHERE learningLanguage = :language AND day = :day AND kind = :kind AND phase != 'FINISHED' ORDER BY createdAt LIMIT 1") suspend fun pendingCard(day: Long, kind: String, language: String): CardEntity?
   @Query("SELECT * FROM study_cards WHERE learningLanguage = :language AND day = :day AND kind = :kind AND phase = 'FINISHED' ORDER BY createdAt DESC LIMIT 1") suspend fun finishedCard(day: Long, kind: String, language: String): CardEntity?
   @Query("SELECT * FROM study_cards WHERE learningLanguage = :language AND day != :day AND phase != 'FINISHED'") suspend fun oldCards(day: Long, language: String): List<CardEntity>
@@ -296,6 +308,8 @@ internal interface FlashcardDao {
   @Upsert suspend fun putCard(value: CardEntity)
 
   @Query("SELECT * FROM writing_sessions WHERE learningLanguage = :language AND id = :id") suspend fun writing(id: String, language: String): WritingSessionEntity?
+  @Query("SELECT * FROM writing_sessions WHERE status = 'ACTIVE'")
+  suspend fun unfinishedWritingAll(): List<WritingSessionEntity>
   @Query("SELECT * FROM writing_sessions WHERE learningLanguage = :language AND status = 'ACTIVE' ORDER BY createdAt DESC LIMIT 1") suspend fun resumableWriting(language: String): WritingSessionEntity?
   @Query("SELECT * FROM writing_sessions WHERE learningLanguage = :language AND day = :day AND reason = 'DAILY' AND status = 'ACTIVE' ORDER BY createdAt DESC LIMIT 1") suspend fun dailyWriting(day: Long, language: String): WritingSessionEntity?
   @Upsert suspend fun putWriting(value: WritingSessionEntity)
@@ -309,7 +323,7 @@ internal interface FlashcardDao {
   StageStateEntity::class, StageCompletionEntity::class, StageDailyPlanEntity::class,
   PracticeSessionEntity::class, PracticeItemEntity::class,
   LearningContextEntity::class, WordBookmarkEntity::class, DailyGrowthRewardEntity::class],
-  version = 15, exportSchema = true)
+  version = 18, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }

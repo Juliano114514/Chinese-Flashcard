@@ -3,6 +3,7 @@ package com.example.chinese_flashcard.core.data
 import android.content.Context
 import androidx.room.withTransaction
 import com.example.chinese_flashcard.core.domain.CsvImportPreview
+import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.domain.UiMessageException
 import com.example.chinese_flashcard.core.domain.CsvImportReport
@@ -30,8 +31,9 @@ import java.util.UUID
 internal class CsvImporter(private val context: Context, private val database: FlashcardDatabase,
   private val dao: FlashcardDao, private val operationMutex: Mutex,
   private val prepare: suspend () -> Unit, private val touch: suspend () -> Unit,
-  private val reconcilePresetStages: suspend () -> Unit) : CsvImportRepository {
+  private val reconcilePresetStages: suspend (Map<String, Int>) -> Unit) : CsvImportRepository {
   private val strokes = CsvStrokeResources(context)
+  private val headwordReplacements by lazy { BundledHeadwordReplacements.read(context) }
   private val pendingMutex = Mutex()
   private data class PendingCsv(val file: File, val totalRows: Int)
   private val pending = mutableMapOf<String, PendingCsv>()
@@ -55,7 +57,8 @@ internal class CsvImporter(private val context: Context, private val database: F
         check(snapshotHash(file) == version) { UiMessageKey.THE_BUNDLED_DEFAULT_WORDLIST_VERSION_DOES_NOT_MATCH_ITS_CONTENT }
         val issues = CsvIssues()
         val index = strokes.index()
-        val plan = validate(file, readExisting(), index, issues, reporter, expectedRows, preset = true)
+        val existing = readExisting()
+        val plan = validate(file, existing, index, issues, reporter, expectedRows, preset = true)
         check(issues.count == 0) {
           (issues.displayed.firstOrNull()?.message ?: UiMessageKey.THE_BUNDLED_CSV_IS_INVALID).name
         }
@@ -75,7 +78,7 @@ internal class CsvImporter(private val context: Context, private val database: F
           }
           reorderWords()
           // Stage ownership follows the final preset classification in this same atomic commit.
-          reconcilePresetStages()
+          reconcilePresetStages(existing.byId.mapValues { it.value.rarity })
           if (updated > 0 || report.addedWords > 0 || plan.refreshes.isNotEmpty()) touch()
           currentCoroutineContext().ensureActive()
           reporter.update(WordlistLoadStage.COMMITTING)
@@ -293,6 +296,7 @@ internal class CsvImporter(private val context: Context, private val database: F
     }
     val bySourceId = ownedWords.associateBy { it.presetSourceId }
     val refreshes = mutableMapOf<String, PresetRefresh>()
+    val projectedHanzi = existing.byId.mapValues { it.value.hanzi }.toMutableMap()
     var skipped = 0
     reporter.update(WordlistLoadStage.CHECKING, 0, totalRows)
     val total = CsvDecoder.scan(file, issues, onRecord = { count, word ->
@@ -305,20 +309,31 @@ internal class CsvImporter(private val context: Context, private val database: F
       }
       val sameId = existing.byId[word.id]
       val owned = bySourceId[word.id]
-      if (owned != null && (sameId != null && sameId.id != owned.id ||
-          Normalizer.normalize(owned.hanzi, Normalizer.Form.NFC) != word.hanzi)) {
+      val userIdCollision = preset && owned == null && sameId != null &&
+        sameId.presetSourceId.isEmpty()
+      if (owned != null && (sameId != null && sameId.id != owned.id && sameId.presetSourceId.isNotEmpty() ||
+          Normalizer.normalize(owned.hanzi, Normalizer.Form.NFC) != word.hanzi &&
+          !headwordReplacements.allows(owned.presetSourceId, owned.hanzi, word.hanzi, word.pinyin))) {
         issues.add(word.line, "词条ID", UiMessageKey.AN_OWNED_PRESET_ID_CANNOT_BE_REASSIGNED_TO_A_DIFFERENT_WORD)
         valid = false
-      } else if (owned == null && sameId != null && wordIdentity(sameId.hanzi, sameId.pinyin) != word.identity) {
+      } else if (owned == null && sameId != null && !userIdCollision && wordIdentity(sameId.hanzi, sameId.pinyin) != word.identity) {
         issues.add(word.line, "词条ID", UiMessageKey.THIS_ID_ALREADY_BELONGS_TO_A_DIFFERENT_WORD_OR_PRONUNCIATION)
         valid = false
       }
       if (valid) {
-        val canonicalId = owned?.id ?: sameId?.id ?: existing.byIdentity[word.identity]?.firstOrNull()?.id
-          ?: batchIdentities[word.identity] ?: word.id
+        val fallbackId = if (userIdCollision) {
+          var candidate = "preset_${word.id}"
+          var suffix = 1
+          while (candidate in existing.byId || candidate in aliases.values) candidate = "preset_${word.id}_${suffix++}"
+          candidate
+        } else word.id
+        // A preset must not adopt a user-authored word merely because its spelling matches.
+        val canonicalId = if (preset) owned?.id ?: fallbackId else
+          sameId?.id ?: existing.byIdentity[word.identity]?.firstOrNull()?.id ?: batchIdentities[word.identity] ?: word.id
         aliases[word.id] = canonicalId
+        projectedHanzi[canonicalId] = word.hanzi
         batchIdentities[word.identity] = canonicalId
-        if (canonicalId in existing.byId || canonicalId != word.id) skipped++ else newIds += word.id
+        if (canonicalId in existing.byId || (canonicalId != word.id && canonicalId != fallbackId)) skipped++ else newIds += word.id
         if (owned != null) refreshes[word.id] = PresetRefresh(owned, existing.primary.getValue(owned.id))
         val ids = word.glyphs.map { glyph ->
           val indexed = index.byGlyph[glyph]
@@ -328,12 +343,18 @@ internal class CsvImporter(private val context: Context, private val database: F
         rows += WordMetadata(word.line, word.id, canonicalId, word.english, word.distractorWordIds, ids, word.rarity)
       }
     }
-    if (existing.byId.size + newIds.size > CSV_MAX_ROWS)
+    check(!preset || ownedWords.all { it.presetSourceId in seenIds }) {
+      "A bundled vocabulary update cannot remove an existing preset word."
+    }
+    // A preset refresh must retain the old user-imported library as well as the new preset.
+    val savedWordLimit = if (preset) CSV_MAX_ROWS * 2 else CSV_MAX_ROWS
+    check(!preset || existing.byId.size + newIds.size <= savedWordLimit) { UiMessageKey.THE_BUNDLED_CSV_IS_INVALID }
+    if (!preset && existing.byId.size + newIds.size > savedWordLimit)
       issues.add(0, "CSV", UiMessageKey.THE_RESULTING_WORDBOOK_WOULD_CONTAIN_MORE_THAN_20_000_WORDS)
     val meanings = existing.primary.mapValues { it.value.id }.toMutableMap()
     val english = existing.primary.mapValues { it.value.english }.toMutableMap()
     for (row in rows.filter { it.id in newIds }) {
-      val meaningId = csvMeaningId(row.id)
+      val meaningId = csvMeaningId(row.canonicalId)
       if (meaningId in existing.allMeanings)
         issues.add(row.line, "词条ID", UiMessageKey.THE_DERIVED_MEANING_ID_IS_ALREADY_USED_BY_THE_SAVED_WORDBOOK)
       meanings[row.canonicalId] = meaningId
@@ -359,14 +380,31 @@ internal class CsvImporter(private val context: Context, private val database: F
       projectedMeanings[original.id] = original.copy(english = row.english)
     }
     return ImportPlan(total, skipped, newIds, aliases, meanings,
-      rows.filter { it.id in newIds }.flatMap { it.glyphIds }.toSet(),
+      rows.filter { it.id in newIds || it.id in refreshes }.flatMap { it.glyphIds }.toSet(),
       rows.filter { !preset || it.id in newIds || it.id in refreshes }
         .groupBy { it.canonicalId }.mapValues { (_, matches) -> matches.minOf { it.rarity } },
-      preset, refreshes, projectedMeanings)
+      preset, refreshes, projectedMeanings, projectedHanzi)
   }
 
   /** Cards freeze IDs and order, while labels are resolved live. Never rewrite a chosen answer. */
   private suspend fun validatePendingCards(plan: ImportPlan) {
+    val changedWords = plan.refreshes.values.filter {
+      it.word.hanzi != plan.projectedHanzi[it.word.id]
+    }.mapTo(mutableSetOf()) { it.word.id }
+    if (changedWords.isNotEmpty()) {
+      // Accepted strokes refer to the old glyph positions. Wait for that writing task
+      // to finish rather than resetting it or carrying those strokes into another word.
+      for (writing in dao.unfinishedWritingAll()) {
+        val ids = strings(JSONArray(writing.wordIdsJson))
+        val remaining = ids.drop(writing.wordIndex)
+        if (remaining.any { it in changedWords }) {
+          val currentWord = ids.getOrNull(writing.wordIndex)?.let { dao.word(it) }
+            ?: throw PresetCardConflictException()
+          throw PresetWritingConflictException(PresetWritingResume(writing.id,
+            AppLanguage.valueOf(writing.learningLanguage), currentWord.hanzi))
+        }
+      }
+    }
     for (card in dao.unfinishedCardsAll()) {
       currentCoroutineContext().ensureActive()
       val optionIds = strings(JSONArray(card.optionsJson))
@@ -376,7 +414,7 @@ internal class CsvImporter(private val context: Context, private val database: F
       if (optionIds.size != 4 || optionIds.distinct().size != 4 ||
           options.count { it.wordId == card.wordId } != 1 ||
           options.map { normalizedEnglish(it.english) }.distinct().size != 4 ||
-          options.map { dao.word(it.wordId)?.hanzi }.distinct().size != 4 ||
+          options.map { plan.projectedHanzi[it.wordId] }.distinct().size != 4 ||
           senseKeys.indices.any { left -> (left + 1 until senseKeys.size).any { right ->
             senseKeys[left].any { it in senseKeys[right] }
           } } ||
@@ -395,14 +433,17 @@ internal class CsvImporter(private val context: Context, private val database: F
     val words = mutableListOf<WordEntity>()
     val meanings = mutableListOf<MeaningEntity>()
     val links = mutableListOf<WordTracingEntity>()
+    val relinkedWords = mutableListOf<String>()
     var added = 0
     var refreshed = 0
     suspend fun flush() {
       if (words.isEmpty()) return
       dao.putWords(words.toList())
       dao.putMeanings(meanings.toList())
+      // Only the word-to-glyph links change. Existing glyphs and writing history stay intact.
+      if (relinkedWords.isNotEmpty()) dao.deleteWordTracing(relinkedWords.toList())
       dao.putWordTracing(links.toList())
-      words.clear(); meanings.clear(); links.clear()
+      words.clear(); meanings.clear(); links.clear(); relinkedWords.clear()
     }
     val issues = CsvIssues()
     reporter.update(WordlistLoadStage.SAVING, 0, plan.totalRows)
@@ -410,22 +451,29 @@ internal class CsvImporter(private val context: Context, private val database: F
       reporter.update(WordlistLoadStage.SAVING, completed, plan.totalRows, word)
     }) { word ->
       if (word.id in plan.newIds) {
+        val canonicalId = plan.aliases.getValue(word.id)
         val distractors = word.distractorWordIds.map { plan.meaningIds.getValue(plan.aliases.getValue(it)) }
-        words += WordEntity(word.id, word.hanzi, word.pinyin, examplesJson(word.examples), partsJson(word.parts),
+        words += WordEntity(canonicalId, word.hanzi, word.pinyin, examplesJson(word.examples), partsJson(word.parts),
           stringsJson(distractors), word.order, word.rarity,
           stringsJson(word.literalExplanations), stringsJson(word.figurativeExplanations), if (plan.preset) word.id else "")
-        meanings += MeaningEntity(csvMeaningId(word.id), word.id, word.english, word.partOfSpeech, 0)
-        links += word.glyphs.mapIndexed { position, glyph -> WordTracingEntity(word.id, position, glyphId(glyph)) }
+        meanings += MeaningEntity(csvMeaningId(canonicalId), canonicalId, word.english, word.partOfSpeech, 0)
+        links += word.glyphs.mapIndexed { position, glyph -> WordTracingEntity(canonicalId, position, glyphId(glyph)) }
         added++
       } else {
         val refresh = plan.refreshes[word.id]
         if (refresh != null) {
           val distractors = word.distractorWordIds.map { plan.meaningIds.getValue(plan.aliases.getValue(it)) }
-          words += refresh.word.copy(pinyin = word.pinyin, examplesJson = examplesJson(word.examples),
+          words += refresh.word.copy(hanzi = word.hanzi, pinyin = word.pinyin, examplesJson = examplesJson(word.examples),
             partsJson = partsJson(word.parts), distractorsJson = stringsJson(distractors),
             rarity = word.rarity, literalExplanationsJson = stringsJson(word.literalExplanations),
             figurativeExplanationsJson = stringsJson(word.figurativeExplanations), presetSourceId = word.id)
           meanings += refresh.meaning.copy(english = word.english, partOfSpeech = word.partOfSpeech)
+          if (refresh.word.hanzi != word.hanzi) {
+            relinkedWords += refresh.word.id
+            links += word.glyphs.mapIndexed { position, glyph ->
+              WordTracingEntity(refresh.word.id, position, glyphId(glyph))
+            }
+          }
           refreshed++
         }
       }
@@ -458,8 +506,10 @@ private data class WordMetadata(val line: Int, val id: String, val canonicalId: 
 private data class ImportPlan(val totalRows: Int, val skipped: Int, val newIds: Set<String>,
   val aliases: Map<String, String>, val meaningIds: Map<String, String>, val glyphIds: Set<String>,
   val rarities: Map<String, Int>, val preset: Boolean, val refreshes: Map<String, PresetRefresh>,
-  val projectedMeanings: Map<String, MeaningEntity>)
+  val projectedMeanings: Map<String, MeaningEntity>, val projectedHanzi: Map<String, String>)
 private data class PresetRefresh(val word: WordEntity, val meaning: MeaningEntity)
 
-internal class PresetCardConflictException : UiMessageException(
+internal open class PresetCardConflictException : UiMessageException(
   UiMessageKey.FINISH_THE_SAVED_STUDY_CARD_THEN_RETRY_THE_DEFAULT_WORDLIST_UPDATE)
+
+internal class PresetWritingConflictException(val writing: PresetWritingResume) : PresetCardConflictException()

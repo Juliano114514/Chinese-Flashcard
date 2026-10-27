@@ -37,6 +37,7 @@ internal class ScopedFlashcardDao(private val shared: FlashcardDao, private val 
   suspend fun dailyItemById(id: String): DailyItemEntity? = shared.dailyItemById(id, language = language())
   suspend fun latestDailyItemForCycle(cycleId: String): DailyItemEntity? = shared.latestDailyItemForCycle(cycleId, language = language())
   suspend fun putDailyItem(value: DailyItemEntity): Unit = shared.putDailyItem(value.copy(learningLanguage = language()))
+  suspend fun deleteDailyItem(id: String): Unit = shared.deleteDailyItem(id, language())
   suspend fun stageState(stage: Int): StageStateEntity? = shared.stageState(stage, language = language())
   suspend fun stageStates(): List<StageStateEntity> = shared.stageStates(language = language())
   suspend fun putStageState(value: StageStateEntity): Unit = shared.putStageState(value.copy(learningLanguage = language()))
@@ -56,6 +57,8 @@ internal class ScopedFlashcardDao(private val shared: FlashcardDao, private val 
   suspend fun nextReviewDay(day: Long): Long? = shared.nextReviewDay(day, language = language())
   suspend fun putReviewNodes(values: List<ReviewNodeEntity>): Unit = shared.putReviewNodes(values.map { it.copy(learningLanguage = language()) })
   suspend fun card(id: String): CardEntity? = shared.card(id, language = language())
+  suspend fun hasCardsForCycle(cycleId: String): Boolean = shared.hasCardsForCycle(cycleId, language())
+  suspend fun cardCycleIds(): List<String> = shared.cardCycleIds(language())
   suspend fun pendingCard(day: Long, kind: String): CardEntity? = shared.pendingCard(day, kind, language = language())
   suspend fun finishedCard(day: Long, kind: String): CardEntity? = shared.finishedCard(day, kind, language = language())
   suspend fun oldCards(day: Long): List<CardEntity> = shared.oldCards(day, language = language())
@@ -74,13 +77,14 @@ internal class ScopedFlashcardDao(private val shared: FlashcardDao, private val 
     val global = shared.appState() ?: return null
     val context = shared.learningContext(language()) ?: LearningContextEntity(language())
     return global.copy(day = context.day, selectedKind = context.selectedKind,
-      currentCardId = context.currentCardId, selectedStage = context.selectedStage)
+      currentCardId = context.currentCardId, selectedStage = context.selectedStage,
+      selectedTagIdsJson = context.selectedTagIdsJson)
   }
 
   suspend fun putAppState(value: AppStateEntity) {
     shared.putAppState(value)
     shared.putLearningContext(LearningContextEntity(language(), value.day,
-      value.selectedKind, value.currentCardId, value.selectedStage))
+      value.selectedKind, value.currentCardId, value.selectedStage, value.selectedTagIdsJson))
   }
 
   suspend fun plan(day: Long): DailyPlanEntity? {

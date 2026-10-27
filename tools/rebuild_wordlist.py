@@ -258,6 +258,20 @@ def main():
     parser.parse_args()
     content = OUTPUT.read_bytes()
     rows = validate(content)
+    baseline_path = ROOT / 'tools/vocabulary_v2/baseline-index.json'
+    if baseline_path.exists():
+        baseline = load(baseline_path)
+        current = {row['词条ID']: row['组词'] for row in rows}
+        retained = baseline['words']
+        replacements_path = ROOT / 'core/data/src/main/assets/wordlist-sources/headword-replacements.json'
+        replacements = load(replacements_path)['replacements'] if replacements_path.exists() else {}
+        for word_id, record in retained.items():
+            if current.get(word_id) == record['hanzi']:
+                continue
+            replacement = replacements.get(word_id)
+            if (not replacement or replacement['oldHanzi'] != record['hanzi'] or
+                    replacement['newHanzi'] != current.get(word_id)):
+                raise ValueError('Missing legacy ID or unreviewed headword replacement: ' + word_id)
     actual = {
         'schemaVersion': 2,
         'words': len(rows),

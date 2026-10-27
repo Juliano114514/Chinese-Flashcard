@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "annotationVersion": "2026-10-27.3",
+  "tags": [
+    {
+      "id": "topic_family",
+      "group": "topic",
+      "labelEn": "Family & relatives",
+      "labelZh": "亲属与家庭",
+      "descriptionEn": "Kinship, marriage and family relationships.",
+      "descriptionZh": "亲属称谓、婚姻与家庭关系。"
+    },
+    {
+      "id": "topic_people",
+      "group": "topic",
+      "labelEn": "People & identity",
+      "labelZh": "人物与身份",
+      "descriptionEn": "People, age groups, names and social identities.",
+      "descriptionZh": "人物、年龄群体、姓名与身份。"
+    },
+    {
+      "id": "topic_body_health",
+      "group": "topic",
+      "labelEn": "Body & health",
+      "labelZh": "身体与健康",
+      "descriptionEn": "Body parts, symptoms, treatment and health.",
+      "descriptionZh": "身体部位、症状、治疗与健康。"
+    },
+    {
+      "id": "topic_emotions",
+      "group": "topic",
+      "labelEn": "Feelings & character",
+      "labelZh": "情绪与性格",
+      "descriptionEn": "Feelings, moods and personal character.",
+      "descriptionZh": "情感、心情与性格特征。"
+    },
+    {
+      "id": "topic_home",
+      "group": "topic",
+      "labelEn": "Home & buildings",
+      "labelZh": "居家与建筑",
+      "descriptionEn": "Dwellings, buildings, rooms and household activities.",
+      "descriptionZh": "住房、建筑、房间与家务生活。"
+    },
+    {
+      "id": "topic_furniture",
+      "group": "topic",
+      "labelEn": "Furniture",
+      "labelZh": "家具",
+      "descriptionEn": "Furniture used in living and working spaces.",
+      "descriptionZh": "生活与工作空间中的家具。"
+    },
+    {
+      "id": "topic_appliances",
+      "group": "topic",
+      "labelEn": "Household appliances",
+      "labelZh": "电器",
+      "descriptionEn": "Recognizable household electrical appliances.",
+      "descriptionZh": "常见家用电器；不因带有电字就归入。"
+    },
+    {
+      "id": "topic_food",
+      "group": "topic",
+      "labelEn": "Food & drink",
+      "labelZh": "饮食",
+      "descriptionEn": "Food, drinks, meals, cooking and dining.",
+      "descriptionZh": "食物、饮品、用餐、烹饪与餐饮。"
+    },
+    {
+      "id": "topic_clothing",
+      "group": "topic",
+      "labelEn": "Clothing & appearance",
+      "labelZh": "衣着与外观",
+      "descriptionEn": "Clothes, footwear, accessories and grooming.",
+      "descriptionZh": "衣服、鞋帽、饰物与仪容。"
+    },
+    {
+      "id": "topic_study",
+      "group": "topic",
+      "labelEn": "School & study",
+      "labelZh": "学校与学习",
+      "descriptionEn": "Learning, teaching, school and examinations.",
+      "descriptionZh": "学习、教学、学校与考试。"
+    },
+    {
+      "id": "topic_work",
+      "group": "topic",
+      "labelEn": "Work & occupations",
+      "labelZh": "工作与职业",
+      "descriptionEn": "Employment, professions, workplace and business operations.",
+      "descriptionZh": "就业、职业、工作场所与经营活动。"
+    },
+    {
+      "id": "topic_money",
+      "group": "topic",
+      "labelEn": "Money & shopping",
+      "labelZh": "金钱与购物",
+      "descriptionEn": "Buying, selling, prices, money and finance.",
+      "descriptionZh": "买卖、价格、货币与金融。"
+    },
+    {
+      "id": "topic_travel_transport",
+      "group": "topic",
+      "labelEn": "Travel & transport",
+      "labelZh": "出行与交通",
+      "descriptionEn": "Travel, vehicles, routes and transport facilities.",
+      "descriptionZh": "旅行、交通工具、路线与交通设施。"
+    },
+    {
+      "id": "topic_time_number",
+      "group": "topic",
+      "labelEn": "Time & quantity",
+      "labelZh": "时间与数量",
+      "descriptionEn": "Calendar/time expressions, numbers and quantities.",
+      "descriptionZh": "日历、时间表达、数词与数量。"
+    },
+    {
+      "id": "topic_space",
+      "group": "topic",
+      "labelEn": "Space & position",
+      "labelZh": "空间与位置",
+      "descriptionEn": "Direction, location, distance and spatial relations.",
+      "descriptionZh": "方向、位置、距离与空间关系。"
+    },
+    {
+      "id": "topic_nature_weather",
+      "group": "topic",
+      "labelEn": "Nature & weather",
+      "labelZh": "自然与天气",
+      "descriptionEn": "Natural landforms, water, weather and the environment.",
+      "descriptionZh": "地形、水体、天气与自然环境。"
+    },
+    {
+      "id": "topic_animals",
+      "group": "topic",
+      "labelEn": "Animals",
+      "labelZh": "动物",
+      "descriptionEn": "Animals and explicitly zoological concepts.",
+      "descriptionZh": "动物与明确的动物学概念；成语中的比喻不据此归类。"
+    },
+    {
+      "id": "topic_plants",
+      "group": "topic",
+      "labelEn": "Plants & growing",
+      "labelZh": "植物与种植",
+      "descriptionEn": "Plants, plant parts and cultivation.",
+      "descriptionZh": "植物、植物部位与种植。"
+    },
+    {
+      "id": "topic_sport_leisure",
+      "group": "topic",
+      "labelEn": "Sport & leisure",
+      "labelZh": "运动与休闲",
+      "descriptionEn": "Sport, exercise, games and leisure activities.",
+      "descriptionZh": "运动、锻炼、游戏与休闲活动。"
+    },
+    {
+      "id": "topic_communication",
+      "group": "topic",
+      "labelEn": "Language & communication",
+      "labelZh": "语言与交流",
+      "descriptionEn": "Speaking, reading, writing and interpersonal communication.",
+      "descriptionZh": "语言、说读写与人际交流。"
+    },
+    {
+      "id": "topic_thinking",
+      "group": "topic",
+      "labelEn": "Thinking & knowledge",
+      "labelZh": "思考与认知",
+      "descriptionEn": "Thinking, memory, reasoning and knowledge.",
+      "descriptionZh": "思考、记忆、推理与知识。"
+    },
+    {
+      "id": "topic_society",
+      "group": "topic",
+      "labelEn": "Society & public life",
+      "labelZh": "社会与公共生活",
+      "descriptionEn": "Communities, government, public affairs and social relations.",
+      "descriptionZh": "群体、政府、公共事务与社会关系。"
+    },
+    {
+      "id": "topic_law",
+      "group": "topic",
+      "labelEn": "Law & justice",
+      "labelZh": "法律与司法",
+      "descriptionEn": "Legal concepts, courts, rights and judicial procedures.",
+      "descriptionZh": "法律概念、法院、权利与司法程序。"
+    },
+    {
+      "id": "topic_science_technology",
+      "group": "topic",
+      "labelEn": "Science & technology",
+      "labelZh": "科学与技术",
+      "descriptionEn": "Scientific concepts, engineering, machinery and computing.",
+      "descriptionZh": "科学概念、工程、机械与计算机技术。"
+    },
+    {
+      "id": "topic_history",
+      "group": "topic",
+      "labelEn": "History & old institutions",
+      "labelZh": "历史",
+      "descriptionEn": "Historical people, objects, offices and institutions; not automatically Classical usage.",
+      "descriptionZh": "历史人物、器物、官职与制度；不自动表示文言用法。"
+    },
+    {
+      "id": "topic_culture",
+      "group": "topic",
+      "labelEn": "Arts & culture",
+      "labelZh": "文化与艺术",
+      "descriptionEn": "Literature, music, visual art, cultural practices and heritage.",
+      "descriptionZh": "文学、音乐、美术、文化习俗与文化遗产。"
+    },
+    {
+      "id": "topic_religion",
+      "group": "topic",
+      "labelEn": "Religion & mythology",
+      "labelZh": "宗教与神话",
+      "descriptionEn": "Religious concepts, practices and mythical beings.",
+      "descriptionZh": "宗教概念、宗教活动与神话形象。"
+    },
+    {
+      "id": "topic_geography",
+      "group": "topic",
+      "labelEn": "Places & geography",
+      "labelZh": "地点与地理",
+      "descriptionEn": "Named places and geographical/administrative areas.",
+      "descriptionZh": "地名与地理、行政区域。"
+    },
+    {
+      "id": "topic_daily_actions",
+      "group": "topic",
+      "labelEn": "Everyday actions",
+      "labelZh": "日常动作",
+      "descriptionEn": "Basic physical actions with a clear literal daily sense.",
+      "descriptionZh": "具有明确日常本义的基础动作。"
+    },
+    {
+      "id": "topic_tools",
+      "group": "topic",
+      "labelEn": "Tools & materials",
+      "labelZh": "工具与材料",
+      "descriptionEn": "Physical hand tools, construction materials and their literal properties.",
+      "descriptionZh": "实体手工具、建筑材料及其本义属性。"
+    },
+    {
+      "id": "topic_properties",
+      "group": "topic",
+      "labelEn": "Qualities & states",
+      "labelZh": "性质与状态",
+      "descriptionEn": "Physical or abstract qualities, degree and states without a more specific semantic topic.",
+      "descriptionZh": "没有更具体语义主题的物理或抽象属性、程度和状态。"
+    },
+    {
+      "id": "topic_actions_processes",
+      "group": "topic",
+      "labelEn": "Actions & changes",
+      "labelZh": "动作与变化",
+      "descriptionEn": "General actions, operations and changes without a more specific semantic topic.",
+      "descriptionZh": "没有更具体主题的一般动作、操作和变化；不因例句出现动作而标注。"
+    },
+    {
+      "id": "topic_abstract_relations",
+      "group": "topic",
+      "labelEn": "Ideas & relations",
+      "labelZh": "概念与关系",
+      "descriptionEn": "Abstract entities, causes, conditions, purposes, outcomes, categories and relationships.",
+      "descriptionZh": "抽象事物、原因、条件、目的、结果、类别与关系；不单凭名词词性推定。"
+    },
+    {
+      "id": "topic_grammar",
+      "group": "topic",
+      "labelEn": "Grammar & function words",
+      "labelZh": "语法与功能词",
+      "descriptionEn": "Pronouns, determiners, conjunctions, particles, classifiers, auxiliaries and grammatical constructions.",
+      "descriptionZh": "代词、限定词、连词、助词、量词、助动表达与明确语法结构；不表示难度或语体。"
+    },
+    {
+      "id": "topic_objects",
+      "group": "topic",
+      "labelEn": "Objects & materials",
+      "labelZh": "物品与材料",
+      "descriptionEn": "Physical objects, containers, components and substances without a more specific topic.",
+      "descriptionZh": "没有更具体主题的实体物品、容器、构件和物质；抽象事物不能据名词词性归入。"
+    },
+    {
+      "id": "topic_others",
+      "group": "topic",
+      "labelEn": "Others",
+      "labelZh": "其他",
+      "descriptionEn": "Entries with no specific topic, usage or form annotation yet; removed once a specific tag is assigned.",
+      "descriptionZh": "尚无主题、用途或词语类型标注的词条；补充正式标签后移除此标记。"
+    },
+    {
+      "id": "usage_everyday",
+      "group": "usage",
+      "labelEn": "Everyday spoken Chinese",
+      "labelZh": "日常口语",
+      "descriptionEn": "Useful in ordinary daily conversation, including neutral everyday words; not a frequency score.",
+      "descriptionZh": "适合普通日常交流，包括中性日用词；不是词频或难度认证。"
+    },
+    {
+      "id": "usage_written",
+      "group": "usage",
+      "labelEn": "Written expression",
+      "labelZh": "书面表达",
+      "descriptionEn": "Marked literary/formal wording and selected general written expressions; may overlap everyday use.",
+      "descriptionZh": "有明确书面、正式或文学色彩的词及选定书面表达；可与日常口语重叠。"
+    },
+    {
+      "id": "usage_classical",
+      "group": "usage",
+      "labelEn": "Classical usage",
+      "labelZh": "文言",
+      "descriptionEn": "An explicitly old/Classical sense or a reviewed Classical expression, not merely an old referent.",
+      "descriptionZh": "明确的古义、文言功能词或经复核的文言表达；不以所指事物古老为依据。"
+    },
+    {
+      "id": "form_noun",
+      "group": "form",
+      "labelEn": "Nouns",
+      "labelZh": "名词",
+      "descriptionEn": "Entries explicitly labelled as nouns, including named entities and nominal phrases.",
+      "descriptionZh": "词性明确为名词、专名或名词性词组；多词性词条允许多个类型标签。"
+    },
+    {
+      "id": "form_verb",
+      "group": "form",
+      "labelEn": "Verbs",
+      "labelZh": "动词",
+      "descriptionEn": "Entries explicitly labelled as verbs or verbal phrases.",
+      "descriptionZh": "词性明确为动词或动词性词组；不表示日常口语或书面语。"
+    },
+    {
+      "id": "form_adjective",
+      "group": "form",
+      "labelEn": "Adjectives",
+      "labelZh": "形容词",
+      "descriptionEn": "Entries explicitly labelled as adjectives or adjectival phrases.",
+      "descriptionZh": "词性明确为形容词或形容词性词组。"
+    },
+    {
+      "id": "form_adverb",
+      "group": "form",
+      "labelEn": "Adverbs",
+      "labelZh": "副词",
+      "descriptionEn": "Entries explicitly labelled as adverbs or adverbial phrases.",
+      "descriptionZh": "词性明确为副词或状语词组。"
+    },
+    {
+      "id": "form_number_measure",
+      "group": "form",
+      "labelEn": "Numbers & classifiers",
+      "labelZh": "数词与量词",
+      "descriptionEn": "Numerals, ordinals, classifiers, measure words and explicitly quantified expressions.",
+      "descriptionZh": "数词、序数词、量词与有明确数量结构的表达。"
+    },
+    {
+      "id": "form_pronoun",
+      "group": "form",
+      "labelEn": "Pronouns",
+      "labelZh": "代词",
+      "descriptionEn": "Personal, demonstrative and interrogative pronouns and pronominal phrases.",
+      "descriptionZh": "人称、指示、疑问代词及代词性词组。"
+    },
+    {
+      "id": "form_function",
+      "group": "form",
+      "labelEn": "Function words",
+      "labelZh": "虚词",
+      "descriptionEn": "Prepositions, conjunctions, particles, determiners, auxiliaries and grammatical complements.",
+      "descriptionZh": "介词、连词、助词、限定词、助动词与明确语法补语。"
+    },
+    {
+      "id": "form_sound_interjection",
+      "group": "form",
+      "labelEn": "Sounds & interjections",
+      "labelZh": "拟声与感叹",
+      "descriptionEn": "Entries explicitly labelled as onomatopoeia, interjections or exclamations.",
+      "descriptionZh": "词性明确为拟声词、感叹词或感叹表达。"
+    },
+    {
+      "id": "form_phrase",
+      "group": "form",
+      "labelEn": "Phrases & patterns",
+      "labelZh": "词组与句式",
+      "descriptionEn": "Entries explicitly labelled as phrases, clauses, formulae or multiword grammatical constructions.",
+      "descriptionZh": "词性明确为词组、分句、套语或多词语法结构；不自动视为成语或惯用语。"
+    },
+    {
+      "id": "form_morpheme",
+      "group": "form",
+      "labelEn": "Bound forms",
+      "labelZh": "语素与构词",
+      "descriptionEn": "Bound forms, bound nouns/verbs/adjectives, affixes and other explicitly bound morphemes.",
+      "descriptionZh": "黏着语素、非独立名动形语素与词缀；不把普通单字一律标为语素。"
+    },
+    {
+      "id": "form_abbreviation",
+      "group": "form",
+      "labelEn": "Abbreviations",
+      "labelZh": "缩略语",
+      "descriptionEn": "Explicit abbreviations and shortened lexical forms, rather than all short words.",
+      "descriptionZh": "明确的缩略形式；不把字数少的词一律当缩略语。"
+    },
+    {
+      "id": "form_symbol",
+      "group": "form",
+      "labelEn": "Symbols & signs",
+      "labelZh": "符号与标记",
+      "descriptionEn": "Entries explicitly classified as symbols, signs or letter names.",
+      "descriptionZh": "词性明确为符号、标记或字母名称；不由罕度推定。"
+    },
+    {
+      "id": "form_idiom",
+      "group": "form",
+      "labelEn": "Chengyu",
+      "labelZh": "成语",
+      "descriptionEn": "Entries already labelled idiom in the frozen lexical POS, plus explicit reviewed corrections; not all four-character words.",
+      "descriptionZh": "沿用冻结词库中 idiom 词性及逐词复核补充；四字词不自动视为成语。"
+    },
+    {
+      "id": "form_fixed_expression",
+      "group": "form",
+      "labelEn": "Fixed expressions",
+      "labelZh": "惯用语与谚语",
+      "descriptionEn": "Reviewed conventional sayings and fixed phrases; ordinary multiword entries are not automatically included.",
+      "descriptionZh": "经逐词复核的惯用语、谚语和固定说法；多字词不自动归入。"
+    }
+  ]
+}
