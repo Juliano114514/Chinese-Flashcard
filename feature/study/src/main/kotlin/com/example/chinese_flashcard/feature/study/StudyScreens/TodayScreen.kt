@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.sp
 import com.example.chinese_flashcard.core.ui.FlashcardDialog
@@ -50,6 +49,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
@@ -158,7 +158,7 @@ private fun TodayContent(
   val stage = today?.stageProgress?.stage ?: VocabularyStage.PRIMARY
   val replaySourceId = rememberSpeechSourceId(state.homeWord?.id to state.settings.learningLanguage)
   BoxWithConstraints(Modifier.fillMaxSize().padding(horizontal = FlashcardLayout.pageInset)) {
-    val panelMaxHeight = maxHeight * 0.48f
+    val panelMaxHeight = maxHeight * 0.54f
     Column(Modifier.fillMaxSize().padding(bottom = 20.dp)) {
       Row(Modifier.fillMaxWidth().padding(top = 16.dp), verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -219,7 +219,7 @@ private fun HomeWordShowcase(
   Box(modifier) {
     Column(Modifier.align(Alignment.Center).fillMaxWidth().padding(horizontal = 16.dp, vertical = 48.dp)
       .verticalScroll(rememberScrollState()), horizontalAlignment = Alignment.CenterHorizontally,
-      verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      verticalArrangement = Arrangement.spacedBy(12.dp)) {
       when {
         loading -> LoadingNotice()
         word != null && word.difficulty == stage.rarity -> {
@@ -298,8 +298,8 @@ private fun HomeStudyPanel(
 ) {
   Surface(modifier = modifier, shape = MaterialTheme.shapes.extraLarge,
     color = MaterialTheme.colorScheme.surface) {
-    Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(20.dp),
-      verticalArrangement = Arrangement.spacedBy(16.dp)) {
+    Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState())
+      .padding(start = 20.dp, top = 8.dp, end = 20.dp, bottom = 12.dp)) {
       if (today != null) {
         val resume = card?.takeIf { it.phase != CardPhase.FINISHED }
         val open: (HomeAction) -> Unit = { action ->
@@ -327,15 +327,15 @@ private fun HomeStudyPanel(
               modifier = Modifier.size(20.dp))
           }
         }
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
-          horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-          DailyProgress(today.stageProgress.learned, today.stageProgress.total, Modifier.weight(1f))
-          TextButton(shape = MaterialTheme.shapes.small, onClick = onWordlist) {
-            Text(uiString(UiR.string.ui_stage_word_progress, today.stageProgress.learned, today.stageProgress.total),
-              style = MaterialTheme.typography.labelMedium)
-          }
+        Spacer(Modifier.height(8.dp))
+        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+          HomeLabeledProgress(uiString(UiR.string.ui_today), today.dailyLearningCompleted, today.dailyGoal)
+          HomeLabeledProgress(uiString(UiR.string.ui_review), today.reviewCompleted, today.reviewPlanned)
+          HomeLabeledProgress(uiString(UiR.string.ui_words), today.stageProgress.learned, today.stageProgress.total, onWordlist)
         }
         val learn = when {
+          today.dailyGoalReached && !today.learningExtra -> learnRow(today, busy)
+            ?: HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_daily_goal_complete), "", true, false, HomeAction.LEARN)
           resume?.kind == StudyKind.NEW || resume?.kind == StudyKind.CARRYOVER ->
             HomeRow(uiString(UiR.string.ui_learn_2118cb), uiString(UiR.string.ui_continue_word), "", false, !busy, HomeAction.RESUME)
           today.carryoverCompleted < today.carryoverPlanned ->
@@ -358,10 +358,12 @@ private fun HomeStudyPanel(
               !busy && today.reviewCompleted < today.reviewPlanned, HomeAction.REVIEW)
           }
         }
+        Spacer(Modifier.height(16.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           HomeActionButton(learn, Modifier.weight(1f)) { open(learn.action) }
           HomeActionButton(review, Modifier.weight(1f)) { open(review.action) }
         }
+        Spacer(Modifier.height(12.dp))
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
           practiceRows(today, busy).forEach { row ->
             val kind = if (row.action == HomeAction.COLLECTIONS) StudyKind.COLLECTION else StudyKind.MISTAKES
@@ -370,8 +372,26 @@ private fun HomeStudyPanel(
           }
         }
       }
-      error?.let { ErrorNotice(it, !busy, onRetry) }
+      error?.let {
+        if (today != null) Spacer(Modifier.height(12.dp))
+        ErrorNotice(it, !busy, onRetry)
+      }
     }
+  }
+}
+
+@Composable
+private fun HomeLabeledProgress(label: String, completed: Int, total: Int, onClick: (() -> Unit)? = null) {
+  Column(Modifier.fillMaxWidth().then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier),
+    verticalArrangement = Arrangement.spacedBy(5.dp)) {
+    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically,
+      horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+      Text(label, Modifier.weight(1f), style = MaterialTheme.typography.labelLarge,
+        maxLines = 1, overflow = TextOverflow.Ellipsis)
+      Text(uiString(UiR.string.ui_fraction, completed, total), style = MaterialTheme.typography.labelMedium,
+        color = MaterialTheme.colorScheme.onSurfaceVariant)
+    }
+    DailyProgress(completed, total)
   }
 }
 
@@ -379,10 +399,10 @@ private fun HomeStudyPanel(
 private fun HomeActionButton(row: HomeRow, modifier: Modifier, primary: Boolean = true, onClick: () -> Unit) {
   val colors = MaterialTheme.colorScheme
   Surface(onClick = onClick, enabled = row.enabled, shape = MaterialTheme.shapes.large,
-    modifier = modifier.heightIn(min = 84.dp),
+    modifier = modifier.heightIn(min = 72.dp),
     color = if (primary) colors.primary.copy(alpha = if (row.enabled) 1f else 0.12f) else colors.primaryContainer,
     contentColor = if (primary && row.enabled) colors.onPrimary else colors.onSurfaceVariant) {
-    Column(Modifier.padding(horizontal = 16.dp, vertical = 16.dp),
+    Column(Modifier.padding(horizontal = 16.dp, vertical = 12.dp),
       verticalArrangement = Arrangement.spacedBy(6.dp)) {
       Text(if (row.done) "${row.title} ✓" else row.title, style = MaterialTheme.typography.titleMedium,
         maxLines = 1, overflow = TextOverflow.Ellipsis)
@@ -437,6 +457,8 @@ private fun StagePicker(stage: VocabularyStage, enabled: Boolean, onStage: (Voca
 @Composable
 private fun learnRow(today: TodaySummary, busy: Boolean): HomeRow? {
   val base = if (today.stageProgress.lap > 1) uiString(UiR.string.ui_stage_words) else uiString(UiR.string.ui_new_words)
+  if (today.dailyGoalReached && today.showLearnMore) return HomeRow(uiString(UiR.string.ui_learn_more),
+    uiString(UiR.string.ui_daily_goal_complete), "", true, !busy && today.canLearnMore, HomeAction.LEARN_MORE)
   if (today.newCompleted < today.newPlanned) {
     val extra = today.newPlanned - today.dailyGoal
     return HomeRow(uiString(UiR.string.ui_learn_2118cb), if (extra > 0) uiString(UiR.string.ui_learning_extra, base, extra) else base,
@@ -477,10 +499,23 @@ private fun practiceRows(today: TodaySummary, busy: Boolean) = listOf(
 @Preview(name = "Home · compact", widthDp = 320, heightDp = 760, fontScale = 1.3f)
 @Composable
 private fun HomePreview(@PreviewParameter(StageThemePreviewProvider::class, limit = 1) theme: StageThemePreviewCase) {
+  HomePreviewContent(theme, PreviewToday)
+}
+
+@Preview(name = "Home · complete · dark", widthDp = 360, heightDp = 760)
+@Preview(name = "Home · complete · compact", widthDp = 320, heightDp = 640, fontScale = 1.3f)
+@Composable
+private fun HomeCompletePreview() {
+  HomePreviewContent(StageThemePreviewCase(VocabularyStage.PRIMARY, true),
+    PreviewToday.copy(dailyLearningCompleted = 13, newCompleted = 10, carryoverCompleted = 2))
+}
+
+@Composable
+private fun HomePreviewContent(theme: StageThemePreviewCase, summary: TodaySummary) {
   FlashcardTheme(darkTheme = theme.darkTheme, stage = theme.stage) {
     Surface(Modifier.fillMaxSize().flashcardBackground(), color = androidx.compose.ui.graphics.Color.Transparent,
       contentColor = MaterialTheme.colorScheme.onBackground) {
-      val today = PreviewToday.copy(stageProgress = PreviewToday.stageProgress.copy(stage = theme.stage))
+      val today = summary.copy(stageProgress = summary.stageProgress.copy(stage = theme.stage))
       val word = WordlistItem(PreviewWord.id, PreviewWord.hanzi, PreviewWord.pinyin,
         PreviewWord.meanings.first().english, "", theme.stage.rarity, WordlistStatus.UNLEARNED, 0, 4,
         partOfSpeech = PreviewWord.meanings.first().partOfSpeech)

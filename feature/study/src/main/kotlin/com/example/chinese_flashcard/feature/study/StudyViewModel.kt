@@ -395,6 +395,9 @@ class StudyViewModel(
     if (mutation is StudyMutation.Loaded) {
       lastSnapshotRevision = mutation.snapshot.revision
       if (state.value.snapshot?.contextVersion != mutation.snapshot.contextVersion) {
+        speechCache.release(currentSpeechOwner)
+        speechCache.release(studySpeechOwner)
+        speechCache.release(entrySpeechOwner)
         failedAction = StudyAction.Refresh
         openedCardWriting = null
       }

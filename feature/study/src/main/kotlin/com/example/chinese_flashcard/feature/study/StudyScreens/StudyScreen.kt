@@ -155,9 +155,8 @@ fun StudyScreen(vm: StudyViewModel, onBack: () -> Unit, onWriting: (String) -> U
       vm.claimCardWriting(card.id, id)) onWriting(id)
   }
   val dailyComplete = state.today?.let { today -> when (card?.kind) {
-    StudyKind.NEW -> today.newCompleted >= today.newPlanned
+    StudyKind.NEW, StudyKind.CARRYOVER -> today.learningComplete
     StudyKind.REVIEW -> today.reviewCompleted >= today.reviewPlanned
-    StudyKind.CARRYOVER -> today.carryoverCompleted >= today.carryoverPlanned
     else -> true
   } } ?: true
   LaunchedEffect(card?.id, card?.phase, state.loading) {

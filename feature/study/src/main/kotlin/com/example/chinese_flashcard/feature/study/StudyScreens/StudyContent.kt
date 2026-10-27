@@ -88,8 +88,16 @@ internal fun StudyContent(
   val card = state.card
   val headingSourceId = rememberSpeechSourceId(Triple(card?.id, card?.phase, state.directionGeneration))
   val practice = state.snapshot?.practice?.takeIf { it.kind == card?.kind }
-  val completed = practice?.completed ?: state.today?.completed ?: 0
-  val planned = practice?.planned ?: state.today?.planned ?: 0
+  val completed = practice?.completed ?: state.today?.let { today -> when (card?.kind) {
+    StudyKind.NEW, StudyKind.CARRYOVER -> today.newCompleted + today.carryoverCompleted
+    StudyKind.REVIEW -> today.reviewCompleted
+    else -> today.completed
+  } } ?: 0
+  val planned = practice?.planned ?: state.today?.let { today -> when (card?.kind) {
+    StudyKind.NEW, StudyKind.CARRYOVER -> today.newPlanned + today.carryoverPlanned
+    StudyKind.REVIEW -> today.reviewPlanned
+    else -> today.planned
+  } } ?: 0
   val largeText = LocalDensity.current.fontScale >= 1.25f
   Box(Modifier.fillMaxSize().flashcardBackground()) {
   Scaffold(containerColor = Color.Transparent,
@@ -205,9 +213,8 @@ internal fun StudyContent(
         card.phase == CardPhase.FINISHED -> {
           Spacer(Modifier.height(32.dp))
           val unfinishedDaily = state.today?.let { today -> when (card.kind) {
-            StudyKind.NEW -> today.newCompleted < today.newPlanned
+            StudyKind.NEW, StudyKind.CARRYOVER -> !today.learningComplete
             StudyKind.REVIEW -> today.reviewCompleted < today.reviewPlanned
-            StudyKind.CARRYOVER -> today.carryoverCompleted < today.carryoverPlanned
             else -> false
           } } == true
           val paused = practice?.paused == true || (practice == null && (card.isSkipped || unfinishedDaily))
@@ -224,8 +231,11 @@ internal fun StudyContent(
           if (practice != null) {
             CompletionCount(if (practice.kind == StudyKind.COLLECTION) uiString(UiR.string.ui_collections) else uiString(UiR.string.ui_mistakes_3bd9fb), completed, planned)
           } else state.today?.let { today ->
-            Text(uiString(UiR.string.ui_1_s_2_s_words_today, today.completed, today.planned))
-            CompletionCount(uiString(UiR.string.ui_learn_2118cb), today.newCompleted, today.newPlanned)
+            Text(uiString(UiR.string.ui_progress_today, today.dailyLearningCompleted, today.dailyGoal))
+            if (today.dailyGoalReached) Text(uiString(UiR.string.ui_daily_goal_complete),
+              color = FlashcardStyle.colors.success, style = MaterialTheme.typography.titleMedium)
+            CompletionCount(uiString(UiR.string.ui_learn_2118cb), today.newCompleted + today.carryoverCompleted,
+              today.newPlanned + today.carryoverPlanned)
             CompletionCount(uiString(UiR.string.ui_reviews), today.reviewCompleted, today.reviewPlanned)
             if (today.carryoverPlanned > 0) CompletionCount(uiString(UiR.string.ui_continued), today.carryoverCompleted, today.carryoverPlanned)
             today.nextReviewDate?.let { date ->
