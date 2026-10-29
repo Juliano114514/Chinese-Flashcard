@@ -56,6 +56,12 @@ class FlashcardRepositories(context: Context) {
     catch (_: JSONException) { emptyMap() }
     catch (_: IllegalArgumentException) { emptyMap() }
   }
+  private val writingStrokeNames by lazy {
+    try { WritingStrokeNames(app) }
+    catch (_: IOException) { null }
+    catch (_: JSONException) { null }
+    catch (_: IllegalArgumentException) { null }
+  }
   private val mutableDefaultWordlistState = MutableStateFlow(DefaultWordlistState())
   val defaultWordlistState = mutableDefaultWordlistState.asStateFlow()
   private val mutableDefaultWordlistProgress = MutableStateFlow<WordlistLoadProgress?>(null)
@@ -1580,8 +1586,15 @@ class FlashcardRepositories(context: Context) {
       if (parts != null) entry.copy(parts = parts) else entry
     } else entry
     val link = dao.wordTracing(entry.id).getOrNull(session.characterIndex)
+    val tracing = link?.let { dao.tracing(it.itemId)?.toDomain() }?.let { item ->
+      withContext(Dispatchers.IO) {
+        try { writingStrokeNames?.attach(item) ?: item }
+        catch (_: JSONException) { item }
+        catch (_: IllegalArgumentException) { item }
+      }
+    }
     return WritingSnapshot(session.id, displayEntry, session.wordIndex, wordIds.size, session.characterIndex,
-      link?.let { dao.tracing(it.itemId)?.toDomain() }, decodePoints(JSONArray(session.acceptedJson)),
+      tracing, decodePoints(JSONArray(session.acceptedJson)),
       session.mistakes, WritingStatus.valueOf(session.status), WritingReason.valueOf(session.reason),
       session.feedback.writingFeedbackKey(), session.returnCardId, AppLanguage.valueOf(session.learningLanguage), appState().contextVersion)
   }

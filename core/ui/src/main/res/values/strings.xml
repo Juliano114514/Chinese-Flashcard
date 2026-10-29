@@ -538,4 +538,6 @@
     <string name="ui_progress_imported">Progress merged. Missing word IDs were skipped. No review tasks were added by this import.</string>
     <string name="ui_progress_copied">Complete progress code copied.</string>
     <string name="ui_progress_error">Could not complete this action. Check that the code is complete, supported and at most 400,000 characters, or try again. Local progress is preserved if import fails.</string>
+    <string name="ui_writing_stroke_name">Stroke %1$d · %2$s - %3$s</string>
+    <string name="ui_writing_stroke_name_unavailable">Stroke %1$d · Name unavailable</string>
 </resources>

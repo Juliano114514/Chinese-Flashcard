@@ -4,6 +4,7 @@ import com.example.chinese_flashcard.core.domain.UiMessageKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chinese_flashcard.core.domain.StrokePoint
+import com.example.chinese_flashcard.core.domain.StrokeName
 import com.example.chinese_flashcard.core.domain.WritingRepository
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
@@ -14,7 +15,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 data class WritingUiState(val loading: Boolean = true, val snapshot: WritingSnapshot? = null,
-  val busy: Boolean = false, val error: UiMessageKey? = null, val saveError: UiMessageKey? = null)
+  val busy: Boolean = false, val error: UiMessageKey? = null, val saveError: UiMessageKey? = null,
+  val strokeCue: WritingStrokeCue? = null)
+
+data class WritingStrokeCue(val sequence: Long, val name: StrokeName)
 
 sealed interface WritingAction {
   data object Retry : WritingAction
@@ -49,6 +53,8 @@ class WritingViewModel(private val sessionId: String, private val repository: Wr
   private val mutable = MutableStateFlow(WritingUiState())
   val state = mutable.asStateFlow()
   private var pending: (suspend () -> WritingSnapshot)? = null
+  private var pendingStroke: Pair<WritingSnapshot, StrokeName?>? = null
+  private var cueSequence = 0L
 
   init { load() }
 
@@ -75,6 +81,7 @@ class WritingViewModel(private val sessionId: String, private val repository: Wr
     when (action) {
       is WritingAction.Stroke -> {
         val points = action.points.take(1024).toList()
+        pendingStroke = snapshot to snapshot.item?.strokeNames?.getOrNull(snapshot.accepted.size)
         write { repository.submitStroke(sessionId, cursor, points, snapshot.learningLanguage, snapshot.contextVersion) }
       }
       WritingAction.Undo -> if (snapshot.accepted.isNotEmpty()) write { repository.undo(sessionId, cursor, snapshot.learningLanguage, snapshot.contextVersion) }
@@ -101,8 +108,20 @@ class WritingViewModel(private val sessionId: String, private val repository: Wr
     viewModelScope.launch {
       try {
         val saved = operation()
+        val stroke = pendingStroke
+        val before = stroke?.first
+        val name = stroke?.second
+        val accepted = before != null && saved.contextVersion == before.contextVersion &&
+          saved.learningLanguage == before.learningLanguage && (saved.status == WritingStatus.COMPLETED ||
+          saved.wordIndex > before.wordIndex || saved.characterIndex > before.characterIndex ||
+          saved.accepted.size > before.accepted.size)
         pending = null
+        pendingStroke = null
         mutate(WritingMutation.Loaded(saved))
+        if (accepted && name != null) {
+          val cue = WritingStrokeCue(++cueSequence, name)
+          mutable.update { it.copy(strokeCue = cue) }
+        }
       } catch (error: Exception) {
         if (error is CancellationException) throw error
         mutate(WritingMutation.SaveFailed(UiMessageKey.THE_DRAWING_COULD_NOT_BE_SAVED_RETRY_TO_CONTINUE_YOUR_PREVIOUS_DRAFT_WAS_KEPT))

@@ -1,0 +1,5 @@
+Writing stroke names
+cnchar, theajack and contributors, MIT
+https://github.com/theajack/cnchar/tree/b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550
+Selected sequence families mapped to the existing glyph paths. Split families use median exemplars; uncertain or mismatched sequences are omitted. English labels are editorial teaching translations.
+Narration: 32 fixed clips generated with the existing pinned MeloTTS FP32 model; repeated context, duration crop, amplitude adjustment and edge fade. No runtime synthesis or download. No human listening certification. Model/code licenses: chinese-speech/LICENSES.txt.

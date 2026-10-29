@@ -1,5 +1,7 @@
 # 第三方来源、许可与分发边界
 
+书写笔画名称采用 [cnchar 固定提交](https://github.com/theajack/cnchar/tree/b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550) 的笔顺类别数据（theajack 与贡献者，MIT），仅选取匹配现有轮廓的字。拆分类别按中线范例辅助判断，英文为教学标签；不代表逐笔人工认证。来源和完整许可随应用提供于 `writing-strokes/NOTICE.txt` 与 `writing-strokes/CNCHAR-MIT.txt`。32 段固定笔画名称音频采用现有锁定 MeloTTS 模型离线生成，沿用 `chinese-speech/LICENSES.txt` 所列模型与代码许可；尚未人工核听。
+
 词库扩充来源更新日期：2026-10-27；其他历史核对记录保留原日期。自有代码、工具代码和文档采用根目录 [MIT](LICENSE)，适用范围见 [NOTICE](NOTICE)。本文件不为第三方资源重新授权。当前完整仓库和 APK **尚未完成公开分发许可审查**，具体阻塞项见 [开源发布检查](docs/OPEN_SOURCE_COMPLIANCE.md)。
 
 ## 词库与教学数据

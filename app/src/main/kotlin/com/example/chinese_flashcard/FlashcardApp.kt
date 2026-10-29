@@ -45,6 +45,7 @@ import com.example.chinese_flashcard.core.domain.StudySettings
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.StrokeName
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackState
@@ -202,6 +203,13 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     speech.stop()
     playbackOperation.cancel()
     manualPlayback.job = navigationScope.launch { configuredWait(request) }
+  }
+  val stopWritingSpeech: () -> Unit = {
+    manualPlayback.job?.cancel(); speech.stop(); playbackOperation.cancel()
+  }
+  val speakStroke: suspend (StrokeName) -> Boolean = { name ->
+    stopWritingSpeech()
+    speech.speakStrokeAndWait(name)
   }
   LaunchedEffect(settings.speechOptions) {
     manualPlayback.job?.cancel()
@@ -427,7 +435,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         val returnToWord: () -> Unit = {
           if (nav.currentBackStackEntry == writingEntry) { speech.stop(); nav.popBackStack() }
         }
-        WritingScreen(vm, onBack = returnToWord, onFinished = returnToWord, onSpeak = configuredSpeak)
+        WritingScreen(vm, onBack = returnToWord, onFinished = returnToWord,
+          onSpeakStroke = speakStroke, onStopSpeech = stopWritingSpeech)
       }
       composable("study") {
         val playbackPreparing by speech.playbackPreparing.collectAsStateWithLifecycle()
@@ -452,7 +461,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
               nav.popBackStack()
             }
           }
-        }, onSpeak = configuredSpeak,
+        }, onSpeakStroke = speakStroke, onStopSpeech = stopWritingSpeech,
           allowSkip = presetWritingRecoveryId == id || defaultWordlist.writingConflict?.sessionId == id)
       }
       composable("licenses") { LicenseScreen { nav.popBackStack() } }

@@ -538,4 +538,6 @@
     <string name="ui_progress_imported">进度已合并，缺失的词汇 ID 已跳过。本次导入未新增复习任务。</string>
     <string name="ui_progress_copied">完整进度码已复制。</string>
     <string name="ui_progress_error">操作未完成。请确认进度码完整、格式受支持且不超过 400,000 个字符，或重试。导入失败时本机进度保持原样。</string>
+    <string name="ui_writing_stroke_name">第%1$d笔 · %2$s - %3$s</string>
+    <string name="ui_writing_stroke_name_unavailable">第%1$d笔 · 名称暂缺</string>
 </resources>

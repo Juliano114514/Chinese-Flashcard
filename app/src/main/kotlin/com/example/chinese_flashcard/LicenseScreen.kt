@@ -31,7 +31,8 @@ internal fun LicenseScreen(onBack: () -> Unit) {
         val text = listOf("demo/COPYING", "demo/ARPHICPL.TXT", "wordlist-strokes/LICENSES.txt",
           "wordlist-strokes/LEXICON_LICENSES.txt", "wordlist-sources/ATTRIBUTIONS.txt",
           "wordlist-sources/licenses/CC-BY-2.0-FR.txt", "wordlist-sources/licenses/HSK-SOURCE-LICENSE.txt", "avatars/NOTICE.txt", "level-icons/NOTICE.txt",
-          "english-speech/LICENSES.txt", "english-teaching/LICENSES.txt", "chinese-speech/LICENSES.txt", "learning-sounds/NOTICE.txt").joinToString("\n\n") { name ->
+          "english-speech/LICENSES.txt", "english-teaching/LICENSES.txt", "chinese-speech/LICENSES.txt", "learning-sounds/NOTICE.txt",
+          "writing-strokes/NOTICE.txt", "writing-strokes/CNCHAR-MIT.txt").joinToString("\n\n") { name ->
           context.assets.open(name).bufferedReader().use { it.readText() }
         }
         val sections = mutableListOf<String>()

@@ -14,6 +14,7 @@ import android.os.SystemClock
 import android.util.Log
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.StrokeName
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.domain.SpeechCacheController
 import com.example.chinese_flashcard.core.domain.SpeechCacheUsage
@@ -56,6 +57,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH).build()
   private val system = SystemOfflineSpeech(context, attributes)
   private val resources = SpeechResources(context, ChineseSpeech(context), EnglishSpeech(context), system)
+  private val strokes = StrokeSpeech(context.applicationContext.assets)
   private val cacheCoordinator = SpeechPreloadCoordinator(resources)
   val cache: SpeechCacheController = cacheCoordinator
   val cacheUsage: StateFlow<SpeechCacheUsage> = resources.cacheUsage
@@ -68,7 +70,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
   private var playbackJob: Job? = null
 
   private class Utterance(val speech: SpeechRequest, val waiter: CancellableContinuation<Boolean>? = null,
-    val onStarted: () -> Unit = {}) {
+    val onStarted: () -> Unit = {}, val stroke: StrokeName? = null) {
     val deadline = SystemClock.elapsedRealtime() + 30_000L
     @Volatile var started = false
   }
@@ -84,6 +86,14 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     }
   } ?: false
 
+  suspend fun speakStrokeAndWait(name: StrokeName): Boolean = withTimeoutOrNull(10_000L) {
+    suspendCancellableCoroutine { waiter ->
+      val utterance = Utterance(SpeechRequest(name.chinese, AppLanguage.CN), waiter, stroke = name)
+      waiter.invokeOnCancellation { onMain { if (current === utterance) stopOnMain() } }
+      onMain { if (waiter.isActive) requestSpeech(utterance) }
+    }
+  } ?: false
+
   private fun requestSpeech(utterance: Utterance) {
     if (closed || utterance.speech.text.isBlank()) { complete(utterance, false); return }
     stopOnMain()
@@ -92,6 +102,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     playbackJob = scope.launch {
       try {
         val completed = withTimeout((utterance.deadline - SystemClock.elapsedRealtime()).coerceAtLeast(1L)) {
+          if (utterance.stroke != null) return@withTimeout playStroke(utterance, utterance.stroke)
           val resource = playResource(utterance)
           if (resource != null) resource else resources.withDirectPlayback {
             if (!requestFocus()) false else {
@@ -110,6 +121,18 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     }
   }
 
+  private suspend fun playStroke(utterance: Utterance, name: StrokeName): Boolean {
+    val audio = withContext(Dispatchers.IO) { strokes.audio(name) }
+    currentCoroutineContext().ensureActive()
+    if (current !== utterance || closed) throw CancellationException()
+    if (!requestFocus()) return false
+    mutable.value = null
+    val chunks = audio.chunks.map { SpeechAudioChunk(audio.sampleRate, it) }
+    return withContext(Dispatchers.IO) {
+      play(MutableStateFlow(SpeechProgress(chunks, finished = true, succeeded = true)), chunks.first(), utterance)
+    }
+  }
+
   private suspend fun playResource(utterance: Utterance): Boolean? {
     val handle = resources.acquire(utterance.speech, true) ?: return null
     try {
@@ -119,11 +142,11 @@ class OfflineSpeech(context: Context) : AutoCloseable {
       if (current !== utterance || closed) throw CancellationException()
       if (!requestFocus()) return false
       mutable.value = null
-      return withContext(Dispatchers.IO) { play(handle, initial.chunks.first(), utterance) }
+      return withContext(Dispatchers.IO) { play(handle.progress, initial.chunks.first(), utterance) }
     } finally { handle.release() }
   }
 
-  private suspend fun play(handle: SpeechResources.Handle, first: SpeechAudioChunk, utterance: Utterance): Boolean = coroutineScope {
+  private suspend fun play(progress: StateFlow<SpeechProgress>, first: SpeechAudioChunk, utterance: Utterance): Boolean = coroutineScope {
     val mask = if (first.channelCount == 1) AudioFormat.CHANNEL_OUT_MONO else AudioFormat.CHANNEL_OUT_STEREO
     val minimum = AudioTrack.getMinBufferSize(first.sampleRate, mask, AudioFormat.ENCODING_PCM_FLOAT)
     require(minimum > 0 && first.channelCount in 1..2)
@@ -152,9 +175,9 @@ class OfflineSpeech(context: Context) : AutoCloseable {
       var index = 0
       var success: Boolean
       while (true) {
-        val progress = handle.progress.first { it.chunks.size > index || it.finished }
-        while (index < progress.chunks.size) {
-          val chunk = progress.chunks[index++]
+        val available = progress.first { it.chunks.size > index || it.finished }
+        while (index < available.chunks.size) {
+          val chunk = available.chunks[index++]
           require(chunk.sampleRate == first.sampleRate && chunk.channelCount == first.channelCount)
           var offset = 0
           while (offset < chunk.samples.size) {
@@ -165,7 +188,7 @@ class OfflineSpeech(context: Context) : AutoCloseable {
             writtenFrames += count / first.channelCount
           }
         }
-        if (progress.finished) { success = progress.succeeded; break }
+        if (available.finished) { success = available.succeeded; break }
       }
       // API 28-30 start only after their buffer fills; very short complete clips need playback-only padding.
       if (Build.VERSION.SDK_INT < 31 && writtenFrames < track.bufferSizeInFrames) {

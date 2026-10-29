@@ -86,7 +86,8 @@ data class StudySnapshot(val today: TodaySummary, val card: StudyCard?,
 
 data class StrokePoint(val x: Float, val y: Float)
 data class TracingItem(val id: String, val glyph: String, val paths: List<String>,
-  val medians: List<List<StrokePoint>>, val revision: String, val attribution: String)
+  val medians: List<List<StrokePoint>>, val revision: String, val attribution: String,
+  val strokeNames: List<StrokeName?> = emptyList())
 enum class WritingStatus { ACTIVE, COMPLETED, SKIPPED }
 enum class WritingReason { FIRST_ENCOUNTER, REVIEW_ERROR, DAILY, MANUAL }
 data class WritingCursor(val wordIndex: Int, val characterIndex: Int, val strokeIndex: Int, val mistakes: Int)

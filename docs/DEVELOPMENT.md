@@ -2,7 +2,7 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.7.3 / versionCode 27`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.8.0 / versionCode 28`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
@@ -83,6 +83,22 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 `tools/rebuild_wordlist.py --check` 只读核对完整结构、旧 ID 保留和当前 manifest 的哈希、大小及统计；不自动接受新指纹。新增／修订 CSV 后必须先确认内容和兼容不变量，再显式更新快照、标签、署名和相关语音／笔顺索引。
 
 ## 检查与再现
+
+### 书写笔画名称与固定音频（2026-10-29）
+
+书写页按“词汇拆分／意思 → 笔画中文名 - 英文 → 写字区”排列，不再朗读词汇；演示每画完一笔再播放名称，正确手写保存后也播放对应名称，点击名称可重听。暂停、离开、后台及重播会停止旧播放。固定名称沿用应用共享 AudioTrack、音频焦点及取消链路；不进入词汇合成、缓存或系统 TTS 回退。
+
+`tools/build_writing_strokes.py` 维护 32 种名称及英文教学标签，生成 domain 枚举、`core/data/src/main/assets/writing-strokes/` 静态映射和来源声明。采用 MIT 的 `theajack/cnchar@b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550` 笔顺类别；类别中共用编码的形状通过当前中线范例区分，接近或不匹配的结果不命名。不是逐笔人工审核；笔顺数量一致也不能证明全部命名正确。映射绑定轮廓 SHA-256，仅补充当前匹配字形，不改词库 CSV、Room 表或导入格式。
+
+当前映射 6,254／6,331 字；67,108 笔中 1,037 笔因来源缺失、数量不同或类别不确定显示“名称暂缺”并保持静音。映射 626,252 字节（约 612 KiB）；32 段 mono 44.1 kHz PCM16 共 1,681,408 字节（约 1.60 MiB）。APK 压缩后增量未打包测量。
+
+固定音频位于 `core/media/src/main/assets/writing-strokes/`，由现有锁定 MeloTTS 声线在维护时生成；重复上下文中按时长截取中间词组，只调整幅度及边缘淡化。`index.json` 保存来源、字节数及 SHA-256；尚未人工核听或真机验收。应用只读内置片段，不在运行时合成或下载笔画语音。
+
+维护前在忽略目录 `.gradle/stroke-names-source` 准备上述固定提交（稀疏检出 `src/cnchar/plugin/order`），普通 `python tools/build_writing_strokes.py` 只更新映射与枚举，`--check` 只读核对输出及音频完整性。明确重制音频时才使用 `--audio`，需要现有校验锁定的 Python 3.12／Melo 运行环境。2026-10-29 已执行 Kotlin PSI 语法检查和资源完整性检查；未安装或试听。按用户要求，两项功能拆成两个提交，统一升级至 `1.8.0 / 28`，远端打包与发布状态以本次 main push 的 GitHub Actions 记录为准。
+
+提交前本地 `:app:lintDebug` 通过（含 Kotlin 编译，0 错误、14 条 SDK／依赖与图标资源目录提示）；双语 XML、新映射及 32 段音频完整性检查通过。未在本地生成 APK，未安装、试听或执行自动化测试。
+
+安全自查：固定枚举限制音频路径，读取有大小上限并验证哈希；未新增权限、网络入口、运行依赖或敏感日志。
 
 ### 轻量进度码
 
