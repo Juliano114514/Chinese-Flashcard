@@ -164,7 +164,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     StudyViewModel(repositories.study, repositories.settings, repositories.wordState, repositories.wordlist,
       speechCache = speechCache)
   })
-  val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport) })
+  val profile: ProfileViewModel = viewModel(factory = factory { ProfileViewModel(repositories.settings, repositories.study, repositories.csvImport, repositories.progressTransfer) })
   val sharedViewModelOwner = requireNotNull(LocalViewModelStoreOwner.current)
   val resolver = context.applicationContext.contentResolver
   val csvPicker = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->

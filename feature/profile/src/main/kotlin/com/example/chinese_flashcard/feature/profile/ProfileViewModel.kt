@@ -16,6 +16,9 @@ import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechOptions
 import com.example.chinese_flashcard.core.domain.ExplanationOptions
+import com.example.chinese_flashcard.core.domain.ProgressTransferRepository
+import com.example.chinese_flashcard.core.domain.ProgressTransferSummary
+import com.example.chinese_flashcard.core.domain.MAX_PROGRESS_CODE_LENGTH
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -148,10 +151,15 @@ object CsvImportReducer {
   }
 }
 
+data class ProgressTransferUiState(val open: Boolean = false, val exporting: Boolean = false,
+  val busy: Boolean = false, val code: String = "", val summary: ProgressTransferSummary? = null,
+  val imported: Boolean = false, val error: Boolean = false)
+
 class ProfileViewModel(
   private val settings: SettingsRepository,
   private val study: StudyRepository,
   private val csvImport: CsvImportRepository,
+  private val progressTransfer: ProgressTransferRepository,
 ) : ViewModel() {
   private val mutableState = MutableStateFlow(ProfileUiState())
   val state = mutableState.asStateFlow()
@@ -162,7 +170,59 @@ class ProfileViewModel(
   val importState = mutableImportState.asStateFlow()
   private var importOperation: Job? = null
   private var previewId: String? = null
+  private val mutableTransferState = MutableStateFlow(ProgressTransferUiState())
+  val transferState = mutableTransferState.asStateFlow()
   init { observe() }
+
+  fun openProgressTransfer(exporting: Boolean) {
+    if (transferState.value.open || importState.value.open || state.value.saving) return
+    mutableTransferState.value = ProgressTransferUiState(open = true, exporting = exporting)
+    if (exporting) transferOperation {
+      val code = progressTransfer.exportCode()
+      mutableTransferState.update { it.copy(code = code) }
+    }
+  }
+
+  fun editProgressCode(code: String) {
+    if (transferState.value.busy || transferState.value.exporting || transferState.value.imported) return
+    if (code.length > MAX_PROGRESS_CODE_LENGTH) {
+      mutableTransferState.update { it.copy(code = "", error = true, summary = null) }
+    } else mutableTransferState.update { it.copy(code = code, summary = null, error = false) }
+  }
+
+  fun previewProgressCode() {
+    val current = transferState.value
+    if (!current.open || current.exporting || current.imported || current.code.isBlank()) return
+    transferOperation {
+      val summary = progressTransfer.preview(current.code)
+      mutableTransferState.update { it.copy(summary = summary) }
+    }
+  }
+
+  fun mergeProgressCode() {
+    val current = transferState.value
+    if (!current.open || current.exporting || current.imported || current.summary?.matched == null ||
+      current.summary.matched == 0) return
+    transferOperation {
+      val summary = progressTransfer.merge(current.code)
+      mutableTransferState.update { it.copy(imported = true, summary = summary, code = "") }
+    }
+  }
+
+  fun closeProgressTransfer() {
+    if (!transferState.value.busy) mutableTransferState.value = ProgressTransferUiState()
+  }
+
+  private fun transferOperation(block: suspend () -> Unit) {
+    if (transferState.value.busy) return
+    mutableTransferState.update { it.copy(busy = true, error = false) }
+    viewModelScope.launch {
+      try { block() }
+      catch (error: CancellationException) { throw error }
+      catch (_: Exception) { mutableTransferState.update { it.copy(error = true) } }
+      finally { mutableTransferState.update { it.copy(busy = false) } }
+    }
+  }
 
   fun onAction(action: ProfileAction) {
     when (action) {

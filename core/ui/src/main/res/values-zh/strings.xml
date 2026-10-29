@@ -525,4 +525,17 @@
     <string name="ui_stage_guidance_high">见过，有印象</string>
     <string name="ui_stage_guidance_university">不设要求</string>
     <string name="ui_stage_guidance_specialist">可跳过</string>
+    <string name="ui_progress_export">导出进度码</string>
+    <string name="ui_progress_import">导入进度码</string>
+    <string name="ui_progress_description">仅包含中文学习状态、skip 及中文错词。累加合并，不清除本机进度。导入的已学词不新增复习任务，本机已有学习会话及复习安排保留。不迁移收藏、英文进度、答题轮次、词库内容、设置及等级。</string>
+    <string name="ui_progress_code">进度码</string>
+    <string name="ui_progress_code_size">共 %1$d 个字符 · 点击下方按钮复制完整进度码</string>
+    <string name="ui_progress_copy">复制进度码</string>
+    <string name="ui_progress_paste">粘贴进度码</string>
+    <string name="ui_progress_preview">预览导入</string>
+    <string name="ui_progress_merge">确认合并</string>
+    <string name="ui_progress_summary">学中文：%1$d 词 · 中文错词：%2$d\n匹配 ID：%3$d · 缺失将跳过：%4$d</string>
+    <string name="ui_progress_imported">进度已合并，缺失的词汇 ID 已跳过。本次导入未新增复习任务。</string>
+    <string name="ui_progress_copied">完整进度码已复制。</string>
+    <string name="ui_progress_error">操作未完成。请确认进度码完整、格式受支持且不超过 400,000 个字符，或重试。导入失败时本机进度保持原样。</string>
 </resources>

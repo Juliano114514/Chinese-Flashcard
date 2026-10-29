@@ -69,6 +69,96 @@ class FlashcardRepositories(context: Context) {
   private val csvImporter: CsvImporter = CsvImporter(app, database, rawDao, operationMutex,
     ::prepare, ::touch, ::reconcilePresetStages)
   val csvImport: CsvImportRepository = csvImporter
+  val progressTransfer: ProgressTransferRepository = LocalProgressTransfer()
+
+  private inner class LocalProgressTransfer : ProgressTransferRepository {
+    private fun WordProgressEntity.mask(): Int =
+      (if (firstPassedDay != null) ProgressCode.LEARNED else if (firstEncounterShown) ProgressCode.LEARNING else 0) or
+        (if (isSkipped) ProgressCode.SKIPPED else 0) or (if (mistakePending) ProgressCode.MISTAKE else 0)
+
+    override suspend fun exportCode(): String = withContext(Dispatchers.IO) {
+      val rows = transaction {
+        val cn = rawDao.progress(AppLanguage.CN.name).associateBy { it.wordId }
+        rawDao.studyWords().mapNotNull { word ->
+          val a = cn[word.id]?.mask() ?: 0
+          if (a == 0) null else ProgressCodeWord(word.id, a)
+        }.sortedBy { it.id }
+      }
+      ProgressCode.encode(rows)
+    }
+
+    private fun summary(rows: List<ProgressCodeWord>, known: Set<String>): ProgressTransferSummary =
+      ProgressTransferSummary(rows.count { it.chinese != 0 },
+        rows.count { it.chinese and ProgressCode.MISTAKE != 0 },
+        rows.count { it.id in known }, rows.count { it.id !in known })
+
+    override suspend fun preview(code: String): ProgressTransferSummary = withContext(Dispatchers.IO) {
+      val rows = ProgressCode.decode(code)
+      transaction { summary(rows, rawDao.studyWords().mapTo(hashSetOf()) { it.id }) }
+    }
+
+    override suspend fun merge(code: String): ProgressTransferSummary = withContext(Dispatchers.IO) {
+      val rows = ProgressCode.decode(code)
+      transaction {
+        val words = rawDao.studyWords().associateBy { it.id }
+        val report = summary(rows, words.keys)
+        val known = rows.filter { it.id in words }
+        val importedPassedDay = today() - 1
+        val targetRounds = savedSettings().rounds
+        val originalLanguage = learningLanguage
+        try {
+          val language = AppLanguage.CN
+          learningLanguage = language
+          val previous = dao.progress().associateBy { it.wordId }
+          val reviewable = dao.learnedReviewCycles().mapTo(hashSetOf()) { it.wordId }
+          val newlySkipped = hashSetOf<String>()
+          for (row in known) {
+            val mask = row.chinese
+            if (mask == 0) continue
+            val saved = previous[row.id] ?: WordProgressEntity(row.id, learningLanguage = language.name)
+            val learned = mask and ProgressCode.LEARNED != 0
+            val merged = saved.copy(
+              firstEncounterShown = saved.firstEncounterShown || mask and 3 != 0,
+              // A synthetic historic date avoids counting imports toward today's goal or rewards.
+              firstPassedDay = saved.firstPassedDay ?: if (learned) importedPassedDay else null,
+              isSkipped = saved.isSkipped || mask and ProgressCode.SKIPPED != 0,
+              mistakePending = saved.mistakePending || mask and ProgressCode.MISTAKE != 0)
+            if (merged != saved) dao.putProgress(merged)
+            if (merged.isSkipped && !saved.isSkipped) newlySkipped.add(row.id)
+            if (learned && saved.firstPassedDay == null) {
+              dao.putStageCompletion(StageCompletionEntity(checkNotNull(words[row.id]).rarity,
+                1, row.id, checkNotNull(merged.firstPassedDay)))
+            }
+            if (learned && row.id !in reviewable) {
+              // Keep voluntary "review more" available without scheduling any due review nodes.
+              dao.putCycle(CycleEntity(newId(), row.id, targetRounds, "[]", correctRounds = targetRounds,
+                status = "COMPLETED", startedDay = checkNotNull(merged.firstPassedDay),
+                passedDay = merged.firstPassedDay))
+            }
+            // Local active cycles and due nodes survive; this import creates no review nodes.
+          }
+          if (newlySkipped.isNotEmpty()) {
+            for (card in dao.unfinishedCards().filter { it.wordId in newlySkipped }) {
+              dao.putCard(card.copy(phase = CardPhase.FINISHED.name))
+              card.writingSessionId?.let { id ->
+                dao.writing(id)?.takeIf { it.status == WritingStatus.ACTIVE.name }?.let {
+                  dao.putWriting(it.copy(status = WritingStatus.SKIPPED.name,
+                    completedAt = System.currentTimeMillis(), feedback = null))
+                }
+              }
+            }
+          }
+          val state = appState()
+          val current = state.currentCardId?.let { dao.card(it) }
+          dao.putAppState(state.copy(contextVersion = state.contextVersion + 1,
+            currentCardId = if (current?.wordId in newlySkipped) null else state.currentCardId))
+          learningQueue = null
+        } finally { learningLanguage = originalLanguage }
+        touch()
+        report
+      }
+    }
+  }
 
   suspend fun prepare() = prepareDefaultWordlist(forceRetry = false)
 

@@ -86,10 +86,11 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   cacheUsedBytes: Long = 0L, onClearSpeechCache: () -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
+  val transfer by vm.transferState.collectAsStateWithLifecycle()
   var editor by rememberSaveable { mutableStateOf<SettingEditor?>(null) }
   var appliedSaveRevision by rememberSaveable { mutableLongStateOf(state.savedRevision) }
   val value = state.stored
-  val enabled = !state.loading && !state.saving && !csv.open && !defaultWordlistLoading
+  val enabled = !state.loading && !state.saving && !csv.open && !transfer.open && !defaultWordlistLoading
   fun openEditor(next: SettingEditor) { vm.beginEdit(); editor = next }
   fun closeEditor() { if (!state.saving) { editor = null; vm.beginEdit() } }
   LaunchedEffect(state.savedRevision) {
@@ -101,7 +102,7 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   Column(Modifier.fillMaxSize().flashcardBackground()
     .verticalScroll(rememberScrollState()).padding(FlashcardLayout.pageInset),
     verticalArrangement = Arrangement.spacedBy(FlashcardLayout.sectionGap)) {
-    FlashcardToolbar(uiString(UiR.string.ui_settings), onBack, enabled = !state.saving && !csv.busy)
+    FlashcardToolbar(uiString(UiR.string.ui_settings), onBack, enabled = !state.saving && !csv.busy && !transfer.busy)
     if (state.loading) {
       Box(Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
         CircularProgressIndicator(Modifier.size(28.dp))
@@ -191,6 +192,10 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
           Column(Modifier.fillMaxWidth()) {
             SettingsRow(uiString(UiR.string.ui_import_csv), enabled = enabled, onClick = onImportCsv)
             SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_progress_export), enabled = enabled) { vm.openProgressTransfer(true) }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_progress_import), enabled = enabled) { vm.openProgressTransfer(false) }
+            SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_data_licenses), enabled = enabled, onClick = onLicenses)
           }
         }
@@ -220,6 +225,7 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
     }
   }
   if (csv.open) CsvImportDialog(csv, csvImportProgress, vm::confirmCsvImport, vm::dismissCsvImport)
+  if (transfer.open) ProgressTransferDialog(transfer, vm)
   when (editor) {
     SettingEditor.DAILY_WORDS -> DailyWordsDialog(value.dailyWords, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(dailyWords = it)) })

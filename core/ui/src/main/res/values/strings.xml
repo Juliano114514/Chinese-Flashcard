@@ -525,4 +525,17 @@
     <string name="ui_stage_guidance_high">Recognize when seen</string>
     <string name="ui_stage_guidance_university">No mastery requirement</string>
     <string name="ui_stage_guidance_specialist">Optional</string>
+    <string name="ui_progress_export">Export progress code</string>
+    <string name="ui_progress_import">Import progress code</string>
+    <string name="ui_progress_description">Includes Chinese learning states, skips and mistakes only. Merges without removing local progress. Imported learned words add no review tasks; existing local sessions and reviews remain. Bookmarks, English progress, partial rounds, vocabulary content, settings and level are not transferred.</string>
+    <string name="ui_progress_code">Progress code</string>
+    <string name="ui_progress_code_size">%1$d characters · copy the complete code below</string>
+    <string name="ui_progress_copy">Copy code</string>
+    <string name="ui_progress_paste">Paste code</string>
+    <string name="ui_progress_preview">Preview import</string>
+    <string name="ui_progress_merge">Confirm merge</string>
+    <string name="ui_progress_summary">Chinese: %1$d words · Mistakes: %2$d\nMatched IDs: %3$d · Missing IDs to skip: %4$d</string>
+    <string name="ui_progress_imported">Progress merged. Missing word IDs were skipped. No review tasks were added by this import.</string>
+    <string name="ui_progress_copied">Complete progress code copied.</string>
+    <string name="ui_progress_error">Could not complete this action. Check that the code is complete, supported and at most 400,000 characters, or try again. Local progress is preserved if import fails.</string>
 </resources>
