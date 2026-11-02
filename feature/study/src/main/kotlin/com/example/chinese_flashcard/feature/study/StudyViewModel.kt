@@ -7,6 +7,7 @@ import com.example.chinese_flashcard.core.domain.SettingsRepository
 import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.StudyRepository
 import com.example.chinese_flashcard.core.domain.StudySettings
+import com.example.chinese_flashcard.core.domain.WritingMode
 import com.example.chinese_flashcard.core.domain.StudySnapshot
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.WordStateRepository
@@ -123,6 +124,7 @@ object StudyReducer {
       homeSpeechEvent = state.homeSpeechEvent.takeIf { state.snapshot?.contextVersion == mutation.snapshot.contextVersion },
       writingRequest = state.writingRequest.takeIf { state.snapshot?.contextVersion == mutation.snapshot.contextVersion },
       dailyInvitation = state.dailyInvitation && mutation.snapshot.learningLanguage == AppLanguage.CN &&
+        (mutation.settings ?: state.settings).writingMode != WritingMode.NEVER &&
         state.snapshot?.learningLanguage == mutation.snapshot.learningLanguage &&
         state.snapshot?.contextVersion == mutation.snapshot.contextVersion &&
         state.snapshot?.today?.date == mutation.snapshot.today.date && mutation.snapshot.today.allComplete)

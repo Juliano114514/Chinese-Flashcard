@@ -42,12 +42,8 @@ import com.example.chinese_flashcard.core.ui.R as UiR
 @Composable
 fun ReadingOptionsScreen(vm: ProfileViewModel, onBack: () -> Unit) {
   val state by vm.state.collectAsStateWithLifecycle()
-  val scenes = SpeechScene.entries.filter { it != SpeechScene.WRITING_WORD }
+  val scenes = SpeechScene.entries
   OptionsPage(uiString(UiR.string.ui_reading_options), uiString(UiR.string.ui_reading_options_description), state, onBack, vm::retry) {
-    item(key = "scene-count", contentType = "label") {
-      Text(uiString(UiR.string.ui_reading_scene_count, scenes.size),
-        style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
-    }
     items(scenes, key = { it.name }, contentType = { "speech-scene" }) { scene ->
       SpeechSceneCard(scene, state.stored.speechOptions.mode(scene, state.stored.learningLanguage),
         enabled = !state.loading && !state.saving, onMode = { mode ->
@@ -162,5 +158,4 @@ private fun SpeechScene.labelId(): Int = when (this) {
   SpeechScene.WORD_PRONUNCIATION -> UiR.string.ui_reading_word
   SpeechScene.MEANING_PRONUNCIATION -> UiR.string.ui_reading_meaning
   SpeechScene.EXAMPLE_PRONUNCIATION -> UiR.string.ui_reading_example
-  SpeechScene.WRITING_WORD -> UiR.string.ui_reading_writing
 }

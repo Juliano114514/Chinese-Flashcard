@@ -62,7 +62,9 @@ internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: 
   @ColumnInfo(defaultValue = "5") val homeShuffleQueueSize: Int = 5,
   @ColumnInfo(defaultValue = "0") val waitForCorrectAnswerAudio: Boolean = false,
   @ColumnInfo(defaultValue = "10") val reviewBatchSize: Int = 10,
-  @ColumnInfo(defaultValue = "1") val learningSoundsEnabled: Boolean = true)
+  @ColumnInfo(defaultValue = "1") val learningSoundsEnabled: Boolean = true,
+  @ColumnInfo(defaultValue = "'EVERY_ENCOUNTER'") val writingMode: String = "EVERY_ENCOUNTER",
+  @ColumnInfo(defaultValue = "'WORD'") val writingBroadcast: String = "WORD")
 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
@@ -324,7 +326,7 @@ internal interface FlashcardDao {
   StageStateEntity::class, StageCompletionEntity::class, StageDailyPlanEntity::class,
   PracticeSessionEntity::class, PracticeItemEntity::class,
   LearningContextEntity::class, WordBookmarkEntity::class, DailyGrowthRewardEntity::class],
-  version = 19, exportSchema = true)
+  version = 21, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }

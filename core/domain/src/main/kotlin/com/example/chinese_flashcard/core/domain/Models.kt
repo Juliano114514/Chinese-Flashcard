@@ -21,7 +21,9 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettin
   val homeShuffleQueueSize: Int = StudySettingsRules.DEFAULT_HOME_SHUFFLE_QUEUE_SIZE,
   val waitForCorrectAnswerAudio: Boolean = false,
   val reviewBatchSize: Int = StudySettingsRules.DEFAULT_REVIEW_BATCH_SIZE,
-  val learningSoundsEnabled: Boolean = true) {
+  val learningSoundsEnabled: Boolean = true,
+  val writingMode: WritingMode = WritingMode.EVERY_ENCOUNTER,
+  val writingBroadcast: WritingBroadcast = WritingBroadcast.WORD) {
   fun validate() {
     require(dailyWords in StudySettingsRules.storedDailyWords && rounds in StudySettingsRules.rounds)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())
@@ -89,7 +91,9 @@ data class TracingItem(val id: String, val glyph: String, val paths: List<String
   val medians: List<List<StrokePoint>>, val revision: String, val attribution: String,
   val strokeNames: List<StrokeName?> = emptyList())
 enum class WritingStatus { ACTIVE, COMPLETED, SKIPPED }
-enum class WritingReason { FIRST_ENCOUNTER, REVIEW_ERROR, DAILY, MANUAL }
+enum class WritingMode { NEVER, FIRST_ENCOUNTER, EVERY_ENCOUNTER }
+enum class WritingBroadcast { SILENT, WORD, STROKE }
+enum class WritingReason { FIRST_ENCOUNTER, REVIEW_ERROR, DAILY, MANUAL, EVERY_ENCOUNTER }
 data class WritingCursor(val wordIndex: Int, val characterIndex: Int, val strokeIndex: Int, val mistakes: Int)
 data class WritingSnapshot(val id: String, val word: WordEntry, val wordIndex: Int,
   val totalWords: Int, val characterIndex: Int, val item: TracingItem?,

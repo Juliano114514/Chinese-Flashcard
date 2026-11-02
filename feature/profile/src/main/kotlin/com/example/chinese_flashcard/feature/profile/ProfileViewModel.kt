@@ -16,6 +16,8 @@ import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechOptions
 import com.example.chinese_flashcard.core.domain.ExplanationOptions
+import com.example.chinese_flashcard.core.domain.WritingMode
+import com.example.chinese_flashcard.core.domain.WritingBroadcast
 import com.example.chinese_flashcard.core.domain.ProgressTransferRepository
 import com.example.chinese_flashcard.core.domain.ProgressTransferSummary
 import com.example.chinese_flashcard.core.domain.MAX_PROGRESS_CODE_LENGTH
@@ -62,6 +64,8 @@ data class ProfileUpdate(
   val waitForCorrectAnswerAudio: Boolean? = null,
   val reviewBatchSize: Int? = null,
   val learningSoundsEnabled: Boolean? = null,
+  val writingMode: WritingMode? = null,
+  val writingBroadcast: WritingBroadcast? = null,
 ) {
   fun applyTo(value: StudySettings): StudySettings {
     dailyWords?.let { require(DailyWordChoices.isAllowed(it)) { "Daily words must be 5–50 in steps of 5." } }
@@ -82,6 +86,8 @@ data class ProfileUpdate(
       waitForCorrectAnswerAudio = waitForCorrectAnswerAudio ?: value.waitForCorrectAnswerAudio,
       reviewBatchSize = reviewBatchSize ?: value.reviewBatchSize,
       learningSoundsEnabled = learningSoundsEnabled ?: value.learningSoundsEnabled,
+      writingMode = writingMode ?: value.writingMode,
+      writingBroadcast = writingBroadcast ?: value.writingBroadcast,
     )
   }
 }

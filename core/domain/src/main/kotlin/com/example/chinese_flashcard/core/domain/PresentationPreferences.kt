@@ -2,7 +2,7 @@ package com.example.chinese_flashcard.core.domain
 
 enum class SpeechScene {
   HOME_WORD, STUDY_PROMPT, STUDY_CONTEXT, STUDY_EXPLANATION, ANSWER_FEEDBACK,
-  WORD_DETAIL, WORD_PRONUNCIATION, MEANING_PRONUNCIATION, EXAMPLE_PRONUNCIATION, WRITING_WORD,
+  WORD_DETAIL, WORD_PRONUNCIATION, MEANING_PRONUNCIATION, EXAMPLE_PRONUNCIATION,
 }
 
 enum class SpeechMode {
@@ -24,7 +24,7 @@ enum class SpeechMode {
 data class SpeechOptions(val modes: Map<SpeechScene, SpeechMode> = emptyMap()) {
   fun mode(scene: SpeechScene, defaultLanguage: AppLanguage): SpeechMode =
     modes[scene] ?: when (scene) {
-      SpeechScene.WORD_PRONUNCIATION, SpeechScene.WRITING_WORD -> SpeechMode.ONLY_CN
+      SpeechScene.WORD_PRONUNCIATION -> SpeechMode.ONLY_CN
       SpeechScene.MEANING_PRONUNCIATION -> SpeechMode.ONLY_EN
       SpeechScene.EXAMPLE_PRONUNCIATION -> SpeechMode.BOTH
       else -> SpeechMode.forLanguage(defaultLanguage)

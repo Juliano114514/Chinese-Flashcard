@@ -38,7 +38,8 @@ class FlashcardRepositories(context: Context) {
   private val app = context.applicationContext
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
     .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
-      Migration12To13, Migration13To14, Migration14To15, Migration15To16, Migration16To17, Migration17To18, Migration18To19).build()
+      Migration12To13, Migration13To14, Migration14To15, Migration15To16, Migration16To17, Migration17To18,
+      Migration18To19, Migration19To20, Migration20To21).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -354,7 +355,8 @@ class FlashcardRepositories(context: Context) {
           speechPreloadWords = value.speechPreloadWords, speechCacheMiB = value.speechCacheMiB,
           homeShuffleQueueSize = value.homeShuffleQueueSize,
           waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio, reviewBatchSize = value.reviewBatchSize,
-          learningSoundsEnabled = value.learningSoundsEnabled))
+          learningSoundsEnabled = value.learningSoundsEnabled, writingMode = value.writingMode.name,
+          writingBroadcast = value.writingBroadcast.name))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -838,28 +840,24 @@ class FlashcardRepositories(context: Context) {
         CardPhase.INTRO -> {
           val progress = dao.progress(card.wordId) ?: WordProgressEntity(card.wordId)
           dao.putProgress(progress.copy(firstEncounterShown = true))
-          if (learningLanguage == AppLanguage.CN) {
+          if (learningLanguage == AppLanguage.CN && !progress.firstEncounterShown &&
+            savedSettings().writingMode == WritingMode.FIRST_ENCOUNTER) {
             val writingId = createWriting(listOf(card.wordId), WritingReason.FIRST_ENCOUNTER, card.id, day)
             dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
           } else dao.putCard(card.copy(phase = if (strings(JSONArray(card.optionsJson)).size == 4)
             CardPhase.QUESTION.name else CardPhase.EXPLANATION.name))
         }
-        CardPhase.FEEDBACK -> dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
-        CardPhase.EXPLANATION -> {
-          val cycle = checkNotNull(dao.cycle(card.cycleId))
-          if (learningLanguage == AppLanguage.CN && card.correct == false && card.reviewRecall && !cycle.reviewErrorWritingOffered) {
-            val writingId = createWriting(listOf(card.wordId), WritingReason.REVIEW_ERROR, card.id, day)
-            dao.putCycle(cycle.copy(reviewErrorWritingOffered = true))
-            dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
-          } else finishAndSelect(card, day)
-        }
+        CardPhase.FEEDBACK -> writingOrExplanation(card, day)
+        CardPhase.EXPLANATION -> finishAndSelect(card, day)
         CardPhase.WRITING -> {
           val session = card.writingSessionId?.let { dao.writing(it) }
           if (session != null && session.status != WritingStatus.ACTIVE.name) {
-            if (session.reason == WritingReason.FIRST_ENCOUNTER.name)
-              dao.putCard(card.copy(phase = if (strings(JSONArray(card.optionsJson)).size == 4)
-                CardPhase.QUESTION.name else CardPhase.EXPLANATION.name))
-            else finishAndSelect(card, day)
+            when (WritingReason.valueOf(session.reason)) {
+              WritingReason.FIRST_ENCOUNTER -> dao.putCard(card.copy(
+                phase = if (strings(JSONArray(card.optionsJson)).size == 4) CardPhase.QUESTION.name else CardPhase.EXPLANATION.name))
+              WritingReason.EVERY_ENCOUNTER -> dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
+              else -> finishAndSelect(card, day)
+            }
           }
         }
         CardPhase.QUESTION, CardPhase.FINISHED -> return@cardTransaction snapshotAt(day)
@@ -871,14 +869,22 @@ class FlashcardRepositories(context: Context) {
     override suspend fun explain(cardId: String, expectedLanguage: AppLanguage?,
       expectedContextVersion: Long?): StudySnapshot = cardTransaction(cardId, expectedLanguage, expectedContextVersion) { day, card ->
       if (card.phase == CardPhase.FEEDBACK.name) {
-        dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
+        writingOrExplanation(card, day)
         touch()
       }
       snapshotAt(day)
     }
 
+    private suspend fun writingOrExplanation(card: CardEntity, day: Long) {
+      if (learningLanguage == AppLanguage.CN && savedSettings().writingMode == WritingMode.EVERY_ENCOUNTER) {
+        val writingId = createWriting(listOf(card.wordId), WritingReason.EVERY_ENCOUNTER, card.id, day)
+        dao.putCard(card.copy(phase = CardPhase.WRITING.name, writingSessionId = writingId))
+      } else dao.putCard(card.copy(phase = CardPhase.EXPLANATION.name))
+    }
+
     override suspend fun claimDailyInvitation(expectedLanguage: AppLanguage?): Boolean = transaction {
       if (!matchesLanguage(expectedLanguage) || learningLanguage != AppLanguage.CN) return@transaction false
+      if (savedSettings().writingMode == WritingMode.NEVER) return@transaction false
       val day = ensureToday()
       val plan = checkNotNull(dao.plan(day))
       val summary = summaryAt(day)
@@ -1602,7 +1608,8 @@ class FlashcardRepositories(context: Context) {
   private fun SettingsEntity.toDomain() = StudySettings(dailyWords, rounds, days(reviewDaysJson), welcomed,
     displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
     speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask),
-    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio, reviewBatchSize, learningSoundsEnabled)
+    speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio, reviewBatchSize, learningSoundsEnabled,
+    WritingMode.valueOf(writingMode), WritingBroadcast.valueOf(writingBroadcast))
 
   private fun speechOptions(json: String): SpeechOptions {
     val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }

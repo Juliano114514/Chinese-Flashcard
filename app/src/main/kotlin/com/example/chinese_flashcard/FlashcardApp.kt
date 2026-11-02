@@ -46,6 +46,7 @@ import com.example.chinese_flashcard.core.domain.StudyKind
 import com.example.chinese_flashcard.core.domain.VocabularyStage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
 import com.example.chinese_flashcard.core.domain.StrokeName
+import com.example.chinese_flashcard.core.domain.WritingBroadcast
 import com.example.chinese_flashcard.core.domain.SpeechScene
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
 import com.example.chinese_flashcard.core.domain.SpeechPlaybackState
@@ -174,6 +175,7 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     }) }
   }
   val latestSpeechOptions by rememberUpdatedState(settings.speechOptions)
+  val latestWritingBroadcast by rememberUpdatedState(settings.writingBroadcast)
   val latestSpeechLanguage by rememberUpdatedState(settings.learningLanguage)
   val manualPlayback = remember { NavigationJob() }
   val playbackOperation = remember { SpeechOperation() }
@@ -208,8 +210,23 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
     manualPlayback.job?.cancel(); speech.stop(); playbackOperation.cancel()
   }
   val speakStroke: suspend (StrokeName) -> Boolean = { name ->
-    stopWritingSpeech()
-    speech.speakStrokeAndWait(name)
+    if (latestWritingBroadcast == WritingBroadcast.STROKE) {
+      stopWritingSpeech()
+      speech.speakStrokeAndWait(name)
+    } else true
+  }
+  val speakWritingWord: (SpeechRequest) -> Unit = { request ->
+    if (latestWritingBroadcast == WritingBroadcast.WORD) {
+      stopWritingSpeech()
+      manualPlayback.job = navigationScope.launch {
+        val id = playbackOperation.begin(request.sourceId)
+        try {
+          speech.speakAndWait(request) { navigationScope.launch { playbackOperation.started(id) } }
+        } finally {
+          playbackOperation.finish(id)
+        }
+      }
+    }
   }
   LaunchedEffect(settings.speechOptions) {
     manualPlayback.job?.cancel()
@@ -436,7 +453,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
           if (nav.currentBackStackEntry == writingEntry) { speech.stop(); nav.popBackStack() }
         }
         WritingScreen(vm, onBack = returnToWord, onFinished = returnToWord,
-          onSpeakStroke = speakStroke, onStopSpeech = stopWritingSpeech)
+          onSpeakWord = speakWritingWord, onSpeakStroke = speakStroke, onStopSpeech = stopWritingSpeech,
+          writingBroadcast = settings.writingBroadcast)
       }
       composable("study") {
         val playbackPreparing by speech.playbackPreparing.collectAsStateWithLifecycle()
@@ -461,7 +479,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
               nav.popBackStack()
             }
           }
-        }, onSpeakStroke = speakStroke, onStopSpeech = stopWritingSpeech,
+        }, onSpeakWord = speakWritingWord, onSpeakStroke = speakStroke, onStopSpeech = stopWritingSpeech,
+          writingBroadcast = settings.writingBroadcast,
           allowSkip = presetWritingRecoveryId == id || defaultWordlist.writingConflict?.sessionId == id)
       }
       composable("licenses") { LicenseScreen { nav.popBackStack() } }

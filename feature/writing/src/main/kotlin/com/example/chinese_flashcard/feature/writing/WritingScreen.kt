@@ -93,6 +93,10 @@ import com.example.chinese_flashcard.core.domain.Meaning
 import com.example.chinese_flashcard.core.domain.WordEntry
 import com.example.chinese_flashcard.core.domain.WordPart
 import com.example.chinese_flashcard.core.domain.StrokeName
+import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.ChinesePronunciation
+import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.WritingBroadcast
 import com.example.chinese_flashcard.core.domain.WritingReason
 import com.example.chinese_flashcard.core.domain.WritingSnapshot
 import com.example.chinese_flashcard.core.domain.WritingStatus
@@ -102,6 +106,9 @@ import com.example.chinese_flashcard.core.ui.FlashcardToolbar
 import com.example.chinese_flashcard.core.ui.FlashcardTheme
 import com.example.chinese_flashcard.core.ui.StageThemePreviewCase
 import com.example.chinese_flashcard.core.ui.StageThemePreviewProvider
+import com.example.chinese_flashcard.core.ui.rememberSpeechSourceId
+import com.example.chinese_flashcard.core.ui.isSpeechPreparing
+import com.example.chinese_flashcard.core.ui.SpeechPreparingIndicator
 import kotlinx.coroutines.currentCoroutineContext
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.Job
@@ -113,26 +120,27 @@ import kotlin.math.hypot
 
 @Composable
 fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Unit,
-  onSpeakStroke: suspend (StrokeName) -> Boolean, onStopSpeech: () -> Unit,
-  allowSkip: Boolean = false) {
+  onSpeakWord: (SpeechRequest) -> Unit, onSpeakStroke: suspend (StrokeName) -> Boolean, onStopSpeech: () -> Unit,
+  writingBroadcast: WritingBroadcast = WritingBroadcast.WORD, allowSkip: Boolean = false) {
   val state by vm.state.collectAsStateWithLifecycle()
   val snapshot = state.snapshot
   val latestSpeakStroke by rememberUpdatedState(onSpeakStroke)
   val latestStopSpeech by rememberUpdatedState(onStopSpeech)
   var spokenCue by rememberSaveable(snapshot?.id) { mutableStateOf<Long?>(null) }
   val owner = LocalLifecycleOwner.current
-  DisposableEffect(owner) {
+  DisposableEffect(owner, writingBroadcast) {
     val observer = LifecycleEventObserver { _, event ->
       if (event == Lifecycle.Event.ON_PAUSE || event == Lifecycle.Event.ON_STOP) latestStopSpeech()
     }
     owner.lifecycle.addObserver(observer)
     onDispose { owner.lifecycle.removeObserver(observer); latestStopSpeech() }
   }
-  LaunchedEffect(state.strokeCue?.sequence) {
+  LaunchedEffect(state.strokeCue?.sequence, writingBroadcast) {
     state.strokeCue?.let { cue ->
       if (spokenCue != cue.sequence) {
         spokenCue = cue.sequence
-        if (owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) latestSpeakStroke(cue.name)
+        if (writingBroadcast == WritingBroadcast.STROKE && owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED))
+          latestSpeakStroke(cue.name)
       }
     }
   }
@@ -159,10 +167,11 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
           modifier = Modifier.fillMaxWidth()) { Text(uiString(UiR.string.ui_done)) }
       }
       snapshot != null && snapshot.status == WritingStatus.ACTIVE -> {
-        ActiveWriting(snapshot, state, vm::onAction, onSpeakStroke, onStopSpeech)
+        ActiveWriting(snapshot, state, vm::onAction, onSpeakWord, onSpeakStroke, onStopSpeech, writingBroadcast)
         if (state.saveError != null) WritingError(state.saveError!!, uiString(UiR.string.ui_retry_save)) { vm.onAction(WritingAction.RetrySave) }
         if (state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        if (allowSkip || snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR) {
+        if (allowSkip || snapshot.reason == WritingReason.FIRST_ENCOUNTER || snapshot.reason == WritingReason.REVIEW_ERROR ||
+          snapshot.reason == WritingReason.EVERY_ENCOUNTER) {
           TextButton(shape = MaterialTheme.shapes.small, onClick = { vm.onAction(WritingAction.Skip) },
             colors = ButtonDefaults.textButtonColors(contentColor = FlashcardStyle.colors.gradientAction),
             enabled = !state.busy && state.saveError == null, modifier = Modifier.fillMaxWidth()) {
@@ -181,11 +190,27 @@ fun WritingScreen(vm: WritingViewModel, onBack: () -> Unit, onFinished: () -> Un
 
 @Composable
 private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
-  onAction: (WritingAction) -> Unit, onSpeakStroke: suspend (StrokeName) -> Boolean, onStopSpeech: () -> Unit) {
+  onAction: (WritingAction) -> Unit, onSpeakWord: (SpeechRequest) -> Unit,
+  onSpeakStroke: suspend (StrokeName) -> Boolean, onStopSpeech: () -> Unit, writingBroadcast: WritingBroadcast) {
   val item = snapshot.item
   val glyphs = remember(snapshot.word.hanzi) {
     snapshot.word.hanzi.codePoints().toArray().map { String(Character.toChars(it)) }
   }
+  val currentSpeech = remember(snapshot.word, snapshot.characterIndex) {
+    glyphs.getOrNull(snapshot.characterIndex)?.let { glyph ->
+      val readings = Normalizer.normalize(snapshot.word.pinyin, Normalizer.Form.NFC).trim()
+        .split(Regex("[\\s'’\\-]+")).filter(String::isNotEmpty)
+      val reading = readings.takeIf { it.size == glyphs.size }?.getOrNull(snapshot.characterIndex)
+      SpeechRequest(glyph, AppLanguage.CN,
+        chinesePronunciation = reading?.let { ChinesePronunciation(glyph, it) })
+    }
+  }
+  val positionKey = "${snapshot.id}/${snapshot.wordIndex}/${snapshot.characterIndex}"
+  val listenSourceId = rememberSpeechSourceId(positionKey)
+  val listenPreparing = isSpeechPreparing(listenSourceId)
+  val latestSpeakWord by rememberUpdatedState(onSpeakWord)
+  val latestBroadcast by rememberUpdatedState(writingBroadcast)
+  var spokenPosition by rememberSaveable(snapshot.id) { mutableStateOf<String?>(null) }
   val key = "${snapshot.id}/${snapshot.wordIndex}/${snapshot.characterIndex}/${item?.revision}"
   val latestSpeak by rememberUpdatedState(onSpeakStroke)
   val scope = rememberCoroutineScope()
@@ -210,6 +235,13 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
     owner.lifecycle.addObserver(observer)
     onDispose { owner.lifecycle.removeObserver(observer); playing = false; narrationJob?.cancel() }
   }
+  LaunchedEffect(positionKey, resumed, state.busy, writingBroadcast) {
+    if (resumed && !state.busy && state.saveError == null && writingBroadcast == WritingBroadcast.WORD &&
+      currentSpeech != null && spokenPosition != positionKey) {
+      spokenPosition = positionKey
+      latestSpeakWord(currentSpeech)
+    }
+  }
   LaunchedEffect(playing, key, resumed, guideRun) {
     if (playing && item != null && resumed) {
       val scale = currentCoroutineContext()[MotionDurationScale]?.scaleFactor ?: 1f
@@ -226,7 +258,7 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
             previous = now
           }
         }
-        item.strokeNames.getOrNull(index)?.let { latestSpeak(it) }
+        if (latestBroadcast == WritingBroadcast.STROKE) item.strokeNames.getOrNull(index)?.let { latestSpeak(it) }
         delay(180)
       }
       playing = false
@@ -236,14 +268,18 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
     style = MaterialTheme.typography.labelLarge, color = FlashcardStyle.colors.gradientSecondaryInk)
   WritingPaper(snapshot, key, guideShown, frame = { frame.floatValue },
     shownStroke = shownStroke,
-    repeatEnabled = !state.busy && state.saveError == null,
+    repeatEnabled = writingBroadcast == WritingBroadcast.STROKE && !state.busy && state.saveError == null,
     onRepeatStroke = { name ->
       playing = false; narrationJob?.cancel(); onStopSpeech()
       narrationJob = scope.launch { latestSpeak(name) }
     },
     strokeEnabled = !playing && !state.busy && state.saveError == null && snapshot.accepted.size < (item?.paths?.size ?: 0),
     onStrokeStart = { shownStroke = snapshot.accepted.size },
-    onStroke = { onAction(WritingAction.Stroke(it)) })
+    onStroke = { onAction(WritingAction.Stroke(it)) },
+    listenVisible = writingBroadcast == WritingBroadcast.WORD,
+    listenEnabled = !state.busy && state.saveError == null && currentSpeech != null && !listenPreparing,
+    listenPreparing = listenPreparing,
+    onListen = { currentSpeech?.let { latestSpeakWord(it.copy(sourceId = listenSourceId)) } })
   if (item != null && item.paths.isNotEmpty()) {
     WritingToolbar(playing = playing, canGuide = !state.busy && state.saveError == null,
       canUndo = !state.busy && state.saveError == null && snapshot.accepted.isNotEmpty(),
@@ -258,7 +294,9 @@ private fun ActiveWriting(snapshot: WritingSnapshot, state: WritingUiState,
         playing = false
         shownStroke = floor(frame.floatValue).toInt().coerceAtMost(item.paths.lastIndex)
         frame.floatValue = (floor(frame.floatValue) + 1f).coerceAtMost(item.paths.size.toFloat())
-        item.strokeNames.getOrNull(shownStroke)?.let { name -> narrationJob = scope.launch { latestSpeak(name) } }
+        if (latestBroadcast == WritingBroadcast.STROKE) item.strokeNames.getOrNull(shownStroke)?.let { name ->
+          narrationJob = scope.launch { latestSpeak(name) }
+        }
       }, onReplay = {
         narrationJob?.cancel(); onStopSpeech(); guideRun++
         guideShown = true; frame.floatValue = 0f; playing = true
@@ -288,7 +326,9 @@ private fun StrokeGuideProgress(frame: () -> Float, total: Int) {
 @Composable
 private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
   guideShown: Boolean, frame: () -> Float, shownStroke: Int, strokeEnabled: Boolean, repeatEnabled: Boolean,
-  onRepeatStroke: (StrokeName) -> Unit, onStrokeStart: () -> Unit, onStroke: (List<StrokePoint>) -> Unit) {
+  onRepeatStroke: (StrokeName) -> Unit, onStrokeStart: () -> Unit, onStroke: (List<StrokePoint>) -> Unit,
+  listenVisible: Boolean = false, listenEnabled: Boolean = false, listenPreparing: Boolean = false,
+  onListen: () -> Unit = {}) {
   val colors = FlashcardStyle.colors
   val item = snapshot.item
   Surface(color = colors.writingPaper, contentColor = colors.writingInk,
@@ -296,6 +336,10 @@ private fun WritingPaper(snapshot: WritingSnapshot, drawingKey: String,
     Column(Modifier.padding(12.dp), horizontalAlignment = Alignment.CenterHorizontally,
       verticalArrangement = Arrangement.spacedBy(8.dp)) {
       WritingWordHeader(snapshot.word, snapshot.characterIndex)
+      if (listenVisible) TextButton(onClick = onListen, enabled = listenEnabled,
+        colors = ButtonDefaults.textButtonColors(contentColor = colors.writingActive), shape = MaterialTheme.shapes.small) {
+        if (listenPreparing) SpeechPreparingIndicator(color = colors.writingActive) else Text(uiString(UiR.string.ui_listen))
+      }
       if (item != null && item.paths.isNotEmpty()) {
         val index = shownStroke.coerceIn(item.paths.indices)
         val name = item.strokeNames.getOrNull(index)

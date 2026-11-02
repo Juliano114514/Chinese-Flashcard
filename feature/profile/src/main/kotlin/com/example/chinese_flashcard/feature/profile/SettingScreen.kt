@@ -28,7 +28,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material3.Checkbox
+import androidx.compose.material3.Switch
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -61,6 +61,8 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.WritingMode
+import com.example.chinese_flashcard.core.domain.WritingBroadcast
 import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
 import com.example.chinese_flashcard.core.ui.FlashcardDialog
 import com.example.chinese_flashcard.core.ui.FlashcardToolbar
@@ -73,7 +75,7 @@ import kotlin.math.roundToInt
 
 private enum class SettingEditor {
   DAILY_WORDS, ROUNDS, REVIEW_DAYS, REVIEW_BATCH_SIZE, THEME, UI_LANGUAGE, LEARNING_LANGUAGE,
-  SPEECH_PRELOAD, SPEECH_CACHE, HOME_SHUFFLE_QUEUE,
+  SPEECH_PRELOAD, SPEECH_CACHE, HOME_SHUFFLE_QUEUE, WRITING, WRITING_BROADCAST,
 }
 
 @Composable
@@ -109,7 +111,7 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
       }
     } else {
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_languages), style = MaterialTheme.typography.titleSmall,
+        Text(uiString(UiR.string.ui_general), style = MaterialTheme.typography.titleSmall,
           color = MaterialTheme.colorScheme.primary)
         Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
@@ -120,13 +122,9 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
             SettingsRow(uiString(UiR.string.ui_learning_language), value.learningLanguage.label(), enabled && languageSwitchEnabled) {
               openEditor(SettingEditor.LEARNING_LANGUAGE)
             }
+            SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_theme), value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
           }
-        }
-      }
-      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_appearance), style = MaterialTheme.typography.titleSmall, color = MaterialTheme.colorScheme.primary)
-        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
-          SettingsRow(uiString(UiR.string.ui_theme), value.themeMode.label(), enabled) { openEditor(SettingEditor.THEME) }
         }
       }
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -143,27 +141,33 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
               openEditor(SettingEditor.REVIEW_BATCH_SIZE)
             }
             SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_reading_options), uiString(UiR.string.ui_reading_options_summary), enabled, onReadingOptions)
+            SettingsRow(uiString(UiR.string.ui_writing_part), value.writingMode.label(), enabled) {
+              openEditor(SettingEditor.WRITING)
+            }
             SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_explanation_options), uiString(UiR.string.ui_explanation_options_summary), enabled, onExplanationOptions)
+            SettingsRow(uiString(UiR.string.ui_explanation_options), enabled = enabled, onClick = onExplanationOptions)
+          }
+        }
+      }
+      Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(uiString(UiR.string.ui_speech), style = MaterialTheme.typography.titleSmall,
+          color = MaterialTheme.colorScheme.primary)
+        Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
+          Column(Modifier.fillMaxWidth()) {
+            SettingsRow(uiString(UiR.string.ui_reading_options), enabled = enabled, onClick = onReadingOptions)
             SettingsDivider()
-            Row(Modifier.fillMaxWidth().toggleable(value = value.waitForCorrectAnswerAudio,
-              enabled = enabled, role = Role.Checkbox,
-              onValueChange = { vm.save(ProfileUpdate(waitForCorrectAnswerAudio = it)) })
-              .padding(horizontal = 16.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically,
-              horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-              Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                Text(uiString(UiR.string.ui_wait_for_correct_answer_audio), style = MaterialTheme.typography.bodyLarge)
-                Text(uiString(UiR.string.ui_wait_for_correct_answer_audio_description),
-                  style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-              }
-              Checkbox(checked = value.waitForCorrectAnswerAudio, onCheckedChange = null, enabled = enabled)
+            SettingsRow(uiString(UiR.string.ui_writing_broadcast), value.writingBroadcast.label(), enabled) {
+              openEditor(SettingEditor.WRITING_BROADCAST)
+            }
+            SettingsDivider()
+            SettingsToggleRow(uiString(UiR.string.ui_wait_for_correct_answer_audio), value.waitForCorrectAnswerAudio, enabled) {
+              vm.save(ProfileUpdate(waitForCorrectAnswerAudio = it))
             }
           }
         }
       }
       Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-        Text(uiString(UiR.string.ui_speech_and_cache), style = MaterialTheme.typography.titleSmall,
+        Text(uiString(UiR.string.ui_cache), style = MaterialTheme.typography.titleSmall,
           color = MaterialTheme.colorScheme.primary)
         Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
@@ -171,13 +175,13 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
               openEditor(SettingEditor.SPEECH_PRELOAD)
             }
             SettingsDivider()
+            SettingsRow(uiString(UiR.string.ui_home_shuffle_queue_size), value.homeShuffleQueueSize.toString(), enabled) {
+              openEditor(SettingEditor.HOME_SHUFFLE_QUEUE)
+            }
+            SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_speech_cache_capacity),
               uiString(UiR.string.ui_speech_cache_capacity_value, value.speechCacheMiB), enabled) {
               openEditor(SettingEditor.SPEECH_CACHE)
-            }
-            SettingsDivider()
-            SettingsRow(uiString(UiR.string.ui_home_shuffle_queue_size), value.homeShuffleQueueSize.toString(), enabled) {
-              openEditor(SettingEditor.HOME_SHUFFLE_QUEUE)
             }
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_clear_speech_cache),
@@ -238,6 +242,10 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
       ::closeEditor) { vm.save(ProfileUpdate(reviewBatchSize = it)) }
     SettingEditor.THEME -> ThemeDialog(value.themeMode, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(themeMode = it)) })
+    SettingEditor.WRITING -> WritingModeDialog(value.writingMode, state.saving, state.error,
+      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(writingMode = it)) })
+    SettingEditor.WRITING_BROADCAST -> WritingBroadcastDialog(value.writingBroadcast, state.saving, state.error,
+      onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(writingBroadcast = it)) })
     SettingEditor.UI_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_system_language), value.uiLanguage,
       state.saving, state.error, ::closeEditor) { vm.save(ProfileUpdate(uiLanguage = it)) }
     SettingEditor.LEARNING_LANGUAGE -> LanguageDialog(uiString(UiR.string.ui_learning_language), value.learningLanguage,
@@ -276,8 +284,8 @@ private fun NumberSettingDialog(title: String, initial: Int, range: IntRange, de
 
 @Composable
 private fun AppLanguage.label(): String = when (this) {
-  AppLanguage.EN -> uiString(UiR.string.ui_english) + " · EN"
-  AppLanguage.CN -> uiString(UiR.string.ui_chinese) + " · CN"
+  AppLanguage.EN -> uiString(UiR.string.ui_english)
+  AppLanguage.CN -> uiString(UiR.string.ui_chinese)
 }
 
 @Composable
@@ -326,9 +334,75 @@ private fun ThemeDialog(initial: ThemeMode, saving: Boolean, error: UiMessageKey
 }
 
 @Composable
+private fun WritingMode.label(): String = when (this) {
+  WritingMode.NEVER -> uiString(UiR.string.ui_writing_never)
+  WritingMode.FIRST_ENCOUNTER -> uiString(UiR.string.ui_writing_first_encounter)
+  WritingMode.EVERY_ENCOUNTER -> uiString(UiR.string.ui_writing_every_encounter)
+}
+
+@Composable
+private fun WritingModeDialog(initial: WritingMode, saving: Boolean, error: UiMessageKey?, onDismiss: () -> Unit,
+  onConfirm: (WritingMode) -> Unit) {
+  var selected by rememberSaveable(initial) { mutableStateOf(initial) }
+  SettingDialog(uiString(UiR.string.ui_writing_part), saving, error, true, onDismiss, { onConfirm(selected) }) {
+    Text(uiString(UiR.string.ui_writing_mode_description), style = MaterialTheme.typography.bodySmall,
+      color = MaterialTheme.colorScheme.onSurfaceVariant)
+    Column(Modifier.selectableGroup()) {
+      WritingMode.entries.forEach { mode ->
+        Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
+          .selectable(selected = selected == mode, enabled = !saving, role = Role.RadioButton,
+            onClick = { selected = mode }).padding(horizontal = 8.dp, vertical = 8.dp),
+          verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+          RadioButton(selected = selected == mode, onClick = null, enabled = !saving)
+          Text(mode.label(), style = MaterialTheme.typography.bodyMedium)
+        }
+      }
+    }
+  }
+}
+
+@Composable
+private fun WritingBroadcast.label(): String = when (this) {
+  WritingBroadcast.SILENT -> uiString(UiR.string.ui_writing_broadcast_silent)
+  WritingBroadcast.WORD -> uiString(UiR.string.ui_writing_broadcast_word)
+  WritingBroadcast.STROKE -> uiString(UiR.string.ui_writing_broadcast_stroke)
+}
+
+@Composable
+private fun WritingBroadcastDialog(initial: WritingBroadcast, saving: Boolean, error: UiMessageKey?,
+  onDismiss: () -> Unit, onConfirm: (WritingBroadcast) -> Unit) {
+  var selected by rememberSaveable(initial) { mutableStateOf(initial) }
+  SettingDialog(uiString(UiR.string.ui_writing_broadcast), saving, error, true, onDismiss, { onConfirm(selected) }) {
+    Column(Modifier.selectableGroup()) {
+      WritingBroadcast.entries.forEach { mode ->
+        Row(Modifier.fillMaxWidth().heightIn(min = FlashcardLayout.rowHeight)
+          .selectable(selected = selected == mode, enabled = !saving, role = Role.RadioButton,
+            onClick = { selected = mode }).padding(horizontal = 8.dp, vertical = 8.dp),
+          verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+          RadioButton(selected = selected == mode, onClick = null, enabled = !saving)
+          Text(mode.label(), style = MaterialTheme.typography.bodyMedium)
+        }
+      }
+    }
+  }
+}
+
+@Composable
 private fun SettingsDivider() {
   HorizontalDivider(modifier = Modifier.padding(horizontal = 20.dp),
     color = MaterialTheme.colorScheme.outlineVariant.copy(alpha = FlashcardStyle.opacity.divider))
+}
+
+@Composable
+private fun SettingsToggleRow(title: String, checked: Boolean, enabled: Boolean, onChange: (Boolean) -> Unit) {
+  Row(Modifier.fillMaxWidth().heightIn(min = 64.dp)
+    .toggleable(value = checked, enabled = enabled, role = Role.Switch, onValueChange = onChange)
+    .padding(horizontal = 20.dp, vertical = 12.dp), verticalAlignment = Alignment.CenterVertically,
+    horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+    Text(title, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium,
+      color = MaterialTheme.colorScheme.onSurface.copy(alpha = if (enabled) 1f else FlashcardStyle.opacity.disabledContent))
+    Switch(checked = checked, onCheckedChange = null, enabled = enabled)
+  }
 }
 
 @Composable
