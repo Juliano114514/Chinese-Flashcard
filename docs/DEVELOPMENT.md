@@ -2,7 +2,7 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.10.0 / versionCode 31`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。2026-11-03 的词汇增补与本轮修正一并发布，详见[增补记录](VOCABULARY_ADDITIONS_20261103.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.10.1 / versionCode 32`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。2026-11-03 的词汇增补与本轮修正一并发布，详见[增补记录](VOCABULARY_ADDITIONS_20261103.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
@@ -68,17 +68,17 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 
 ## 词库与资源
 
-默认词库以根目录`wordlist.csv`为准：19,890行、12列、39,780例句、34,771,033字节；SHA-256 `d566e4d0c21e4856c546edc908e503afc0c8a26c08c0873796c20cb9ba623382`。五档数量为0=2,583、1=6,811、2=7,420、3=2,907、4=169，沿用Stage 0–4及五套主题。本次新增1,390词且旧18,500行字节不变，见[2026-11-03增补](VOCABULARY_ADDITIONS_20261103.md)。历史单字／组词／拆解修订见[五档与词库精修](WORDLIST_REFINEMENT_20261027.md)；此前1.6.9安装对应历史六档快照。
+默认词库以根目录 `wordlist.csv` 为准：20,000 行、12 列、40,000 条例句、35,040,293 字节；SHA-256 `4c8c18811363bdb747c4902dac64f24bf78f40dcb5e2c55ec84fbcc386e31486`。五档数量为 0=2,583、1=6,841、2=7,500、3=2,907、4=169，沿用 Stage 0–4 及五套主题。本轮修订 2,002 条已有词的教学字段，补充 110 条罕度 0–2 的关联词，见[全库精修](VOCABULARY_REVIEW_20261103.md)。此前 1.10.0 新增 1,390 条的历史输入及字节快照见[增补记录](VOCABULARY_ADDITIONS_20261103.md)。
 
-旧13,223个ID及历史扩充的5,277个ID全部保留；本次按输入顺序追加 `wl_18501` 至 `wl_19890`，不替换旧词头、不改旧罕度。冻结基线 ID／字节指纹见 `tools/vocabulary_v2/baseline-index.json`；当前指纹见 `docs/wordlist-validation.json`，本次输入、九列编辑源、主题标注、句级读音修正与逐行覆盖见 `tools/vocabulary_additions_20261103/`。18,500词扩充与精修的历史记录继续保留。
+原 19,890 个 ID 与词头全部保留，本轮仅追加 `wl_19891` 至 `wl_20000`。历史基线继续冻结；本轮的字段覆盖层、可逆旧值账本、补词、逐字段检查表和标签审阅位于 `tools/vocabulary_refinement_20261103/`，当前指纹见 `docs/wordlist-validation.json`。旧字段允许按本轮要求修订，不能把它们描述为当前仍字节不变。
 
 笔顺只使用固定 Make Me a Hanzi／AnimCJK 真实轮廓及中线，模型和声线保持既有固定版本；字形、英／中文读音和 IPA 资源按当前快照重建并单独检查。20 个 demo 词仅辅助手动写字，不计默认词库行数。资源完整性检查不代表新词音频已经真人核听。
 
 当前契约见 [CSV_IMPORT](CSV_IMPORT.md)，来源与许可见 [第三方声明](../THIRD_PARTY_NOTICES.md) 与 [版权处理](OPEN_SOURCE_COMPLIANCE.md)。手动 CSV 仍为32 MiB；内置默认库及其快照／资源工具采用48 MiB。单记录32 KiB、20,000行、字形10,000的上限不变。普通导入沿用总量20,000上限；默认库升级保留此前已导入词，允许有界合并到最多40,000条。默认词与自定义词独立归属；ID冲突使用独立内部ID，旧用户词和进度不被覆盖。
 
-当前仅根目录 `wordlist.csv` 是正式词库。本次维护入口为 `tools/add_supplied_vocabulary_20261103.py --write|--check`：保护旧字节前缀并再现新增内容。`tools/expand_vocabulary_v2.py` 继续只用于历史候选再现；原始公开语料缓存于`.gradle/vocabulary-v2/`及`.gradle/wordlist-refinement-20261027/`，不把全集打包进应用。正式来源记录位于 `tools/vocabulary_v2/`、本次增补目录及 APK 的 `wordlist-sources/`。
+当前仅根目录 `wordlist.csv` 是正式词库。当前维护入口为 `tools/refine_vocabulary_20261103.py --write|--check`，检查字段覆盖层、110 条显式补词与分块、0–2 罕度关联锚点、当前快照及可逆账本。历史输入保存在 `tools/vocabulary_v2/` 与 `tools/vocabulary_additions_20261103/`，不改写冻结原始数据。
 
-`tools/refine_wordlist.py --check`继续严格核对旧18,500行的五档、内容、稳定ID与替换许可，并验证增补指纹与当前快照一致；`regrade_vocabulary.py --check`转调该入口，六档决定留作历史输入。`add_supplied_vocabulary_20261103.py --check`另核对全部新增编辑源、标签依据、句级读音及可复现输出。历史逐词表 `tools/vocabulary_v2/wordlist-refinement-full-review.csv` 不冒充本次增补审阅记录。
+`refine_wordlist.py --check` 与 `add_supplied_vocabulary_20261103.py --check` 在内存中逆向还原精修前的 19,890 行后，继续核对各自历史输入、哈希和旧精修依据；历史写入入口在当前精修之后会拒绝覆盖词库。`regrade_vocabulary.py --check` 转调旧五档检查。当前完整内容必须另跑 `refine_vocabulary_20261103.py --check`，不能用历史检查替代。标签、来源、笔顺和中英语音索引按当前快照分别生成与核对。
 
 `tools/rebuild_wordlist.py --check` 只读核对完整结构、旧 ID 保留和当前 manifest 的哈希、大小及统计；不自动接受新指纹。新增／修订 CSV 后必须先确认内容和兼容不变量，再显式更新快照、标签、署名和相关语音／笔顺索引。
 
@@ -137,6 +137,7 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 已有只读检查：
 
 ```powershell
+python tools/refine_vocabulary_20261103.py --check
 python tools/rebuild_wordlist.py --check
 python tools/build_wordlist_strokes.py --check
 python tools/build_demo.py --check
