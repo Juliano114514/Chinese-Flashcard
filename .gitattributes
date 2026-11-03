@@ -6,4 +6,6 @@ core/data/src/main/assets/** -text
 core/media/src/main/assets/chinese-speech/** -text
 # Preserve the current wordlist snapshot manifest bytes.
 docs/wordlist-validation.json -text
+# Editorial source locks use exact supplied/reviewed bytes, including line endings.
+tools/vocabulary_additions_20261103/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.jar binary

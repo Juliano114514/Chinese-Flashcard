@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-11-03",
+  "wordlistSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+  "publicationState": "Formal wordlist, tags, attribution, strokes and both speech resources rebuilt and checked. Local Debug APK assets verified; device and remote build status are reported separately.",
+  "words": 19890,
+  "addedWords": 1390,
+  "legacyRowsByteIdentical": 18500,
+  "reviewedWordBreakdowns": 1390,
+  "multiPartBreakdowns": 1364,
+  "wholeLexicalExceptions": 26,
+  "reviewedSentences": 195,
+  "contextualReadingAndGlossPositions": 262,
+  "review": {
+    "schemaVersion": 1,
+    "date": "2026-11-03",
+    "preparedWordlistSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+    "preparedWordlistBytes": 34834685,
+    "publicationState": "Formal wordlist, tags, attribution, strokes and both speech resources rebuilt and checked. Local Debug APK assets verified; device and remote build status are reported separately.",
+    "words": 19890,
+    "addedWords": 1390,
+    "legacyRowsByteIdentical": 18500,
+    "changedAddedRowsByField": {
+      "例句JSON": 229,
+      "部件JSON": 1364
+    },
+    "reviewedWordBreakdowns": 1390,
+    "multiPartBreakdowns": 1364,
+    "wholeLexicalExceptions": [
+      "黄包车",
+      "机关",
+      "叫花子",
+      "里手",
+      "马大哈",
+      "马虎",
+      "木鱼",
+      "巴不得",
+      "巴结",
+      "巴望",
+      "包头",
+      "打发",
+      "得了",
+      "分贝",
+      "跟头",
+      "乖乖",
+      "呱呱叫",
+      "荷包",
+      "胡来",
+      "牛黄",
+      "青光眼",
+      "数来宝",
+      "土包子",
+      "呜呜",
+      "有的是",
+      "这么着"
+    ],
+    "reviewedSentences": 195,
+    "reviewedReadingPositions": 262,
+    "appliedReadingOccurrences": 262,
+    "contextualChunkChecks": "PASS",
+    "wordPartAlignment": "PASS",
+    "exampleCharacterAndReadingAlignment": "PASS",
+    "headwordDictionaryReadings": "Known dictionary headwords matched except neutral-tone 来头/下头 and completed-action 到了, retained for the selected senses.",
+    "pythonAstSyntaxFiles": 2,
+    "reviewBoundary": "All new breakdown candidates and headword reading matches reviewed with AI assistance. Contextual example audit targets clear segmentation, dictionary-sense and polyphonic errors; not full human proofreading or listening.",
+    "wordlistSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+    "tagMappingsUnchanged": 19890,
+    "legacyTagMappingsUnchanged": 18500,
+    "genuineGlyphs": 6331,
+    "missingGlyphs": 0,
+    "nonSpeechChecks": {
+      "appendReproduction": "PASS",
+      "csvContractAndSnapshot": "PASS",
+      "legacyFiveStageReview": "PASS",
+      "tagsAndReproduction": "PASS",
+      "sourceAttributionAndLocks": "PASS",
+      "genuineStrokes": "PASS",
+      "demo": "PASS",
+      "allTagMappingsUnchanged": "PASS"
+    },
+    "speechResourceChecks": {
+      "english": "PASS",
+      "chinese": "PASS"
+    }
+  },
+  "checks": {
+    "preparedCsvContractAndSnapshot": "PASS",
+    "wordPartAlignment": "PASS",
+    "exampleCharacterAndReadingAlignment": "PASS",
+    "contextualChunkChecks": "PASS",
+    "allReviewedReadingPositionsApplied": "PASS",
+    "pythonAstSyntaxFiles": 2,
+    "appendReproduction": "PASS",
+    "tagsAndReproduction": "PASS",
+    "sourceAttributionAndLocks": "PASS",
+    "genuineStrokes": "PASS",
+    "demo": "PASS",
+    "englishResources": "PENDING_REBUILD",
+    "chineseResources": "PENDING_REBUILD",
+    "csvContractAndSnapshot": "PASS",
+    "legacyFiveStageReview": "PASS",
+    "allTagMappingsUnchanged": "PASS"
+  },
+  "previousFingerprintAudit": {
+    "schemaVersion": 1,
+    "date": "2026-11-03",
+    "wordlistSha256": "d566e4d0c21e4856c546edc908e503afc0c8a26c08c0873796c20cb9ba623382",
+    "words": 19890,
+    "addedWords": 1390,
+    "legacyRowsByteIdentical": 18500,
+    "legacyTagMappingsUnchanged": 18500,
+    "fixedModelsVoicesAndPcmUnchanged": 25,
+    "reviewedSentences": 141,
+    "contextualReadingAndGlossPositions": 145,
+    "newWordsWithSemanticTopics": 1390,
+    "checks": {
+      "appendReproduction": "PASS",
+      "csvContractAndSnapshot": "PASS",
+      "legacyFiveStageReview": "PASS",
+      "tagsAndReproduction": "PASS",
+      "sourceAttributionAndLocks": "PASS",
+      "genuineStrokes": "PASS",
+      "demo": "PASS",
+      "englishResources": "PASS",
+      "chineseResources": "PASS",
+      "pythonAstSyntaxFiles": 8,
+      "migrationSqlPaths": [
+        {
+          "from": 7,
+          "to": 21,
+          "sqlStatements": 123,
+          "status": "PASS"
+        },
+        {
+          "from": 8,
+          "to": 21,
+          "sqlStatements": 94,
+          "status": "PASS"
+        },
+        {
+          "from": 9,
+          "to": 21,
+          "sqlStatements": 88,
+          "status": "PASS"
+        },
+        {
+          "from": 10,
+          "to": 21,
+          "sqlStatements": 48,
+          "status": "PASS"
+        },
+        {
+          "from": 11,
+          "to": 21,
+          "sqlStatements": 46,
+          "status": "PASS"
+        },
+        {
+          "from": 12,
+          "to": 21,
+          "sqlStatements": 43,
+          "status": "PASS"
+        },
+        {
+          "from": 13,
+          "to": 21,
+          "sqlStatements": 39,
+          "status": "PASS"
+        },
+        {
+          "from": 14,
+          "to": 21,
+          "sqlStatements": 38,
+          "status": "PASS"
+        },
+        {
+          "from": 15,
+          "to": 21,
+          "sqlStatements": 37,
+          "status": "PASS"
+        },
+        {
+          "from": 16,
+          "to": 21,
+          "sqlStatements": 35,
+          "status": "PASS"
+        },
+        {
+          "from": 17,
+          "to": 21,
+          "sqlStatements": 23,
+          "status": "PASS"
+        },
+        {
+          "from": 18,
+          "to": 21,
+          "sqlStatements": 3,
+          "status": "PASS"
+        },
+        {
+          "from": 19,
+          "to": 21,
+          "sqlStatements": 2,
+          "status": "PASS"
+        },
+        {
+          "from": 20,
+          "to": 21,
+          "sqlStatements": 1,
+          "status": "PASS"
+        }
+      ]
+    },
+    "english": {
+      "uniqueSpeechTexts": 88732,
+      "missingSpeechTexts": 0,
+      "ipaExactMatches": 9031
+    },
+    "chinese": {
+      "uniqueReadingsIncludingWriting": 54810,
+      "supported": 54603,
+      "unsupported": 207
+    },
+    "verificationBoundary": "Migration SQL executed against empty historical schemas, not Room or populated-device upgrade. No APK, Gradle build/lint, device verification or tests added/executed. AI-assisted language review is not human certification."
+  },
+  "verificationBoundary": "Static content checks and AI-assisted editorial review do not establish human proofreading or full-corpus speech quality. APK, compile, lint and SQLite checks passed as recorded; no new test code or automated test execution, no connected-device validation. Remote publishing is tracked in the corresponding GitHub Actions run.",
+  "legacyTagMappingsUnchanged": 18500,
+  "genuineGlyphs": 6331,
+  "missingGlyphs": 0,
+  "english": {
+    "uniqueSpeechTexts": 89363,
+    "missingSpeechTexts": 0,
+    "ipaExactMatches": 9084,
+    "speechChunks": 90005
+  },
+  "chinese": {
+    "uniqueReadingsIncludingWriting": 54811,
+    "supported": 54604,
+    "unsupported": 207
+  },
+  "speechResourceChecks": {
+    "english": "PASS",
+    "chinese": "PASS",
+    "previewAIIndexed": [
+      "CN",
+      "EN"
+    ]
+  },
+  "apkVerification": {
+    "status": "PASS",
+    "wordlistSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+    "words": 19890,
+    "newMultipartBreakdowns": 1364,
+    "speechShardsVerified": 512,
+    "modelsVerified": 2,
+    "settingsPreviewAIIndexed": [
+      "CN",
+      "EN"
+    ],
+    "apkSha256": "759486528a3311afcd68ad75a0c68e18988ef16d2fa34dac2785bb25c5bdc253",
+    "apkBytes": 329168948,
+    "deviceValidation": "not run; no connected device"
+  },
+  "applicationVerification": {
+    "versionName": "1.10.0",
+    "versionCode": 31,
+    "kotlinCompile": "PASS",
+    "lintDebug": {
+      "errors": 0,
+      "warnings": 14
+    },
+    "assembleDebug": "PASS",
+    "migration21To22": {
+      "schema21To22": "PASS",
+      "tables": 22,
+      "addedSettingsDefaults": [
+        "AI",
+        "AI"
+      ],
+      "realDeviceUpgrade": "not executed",
+      "priorPhoneSnapshotSqlUpgrade": "PASS; table counts preserved; no device operation"
+    }
+  }
+}

@@ -43,6 +43,38 @@ def publish(check=False):
     refinement_lock = DATA / 'source-lock-refinement.json'
     if refinement_lock.exists():
         lock = {**lock, 'sources': [*lock['sources'], *read(refinement_lock)['sources']]}
+    additions = ROOT / 'tools/vocabulary_additions_20261103'
+    addition_report = additions / 'report.json'
+    modified_on = '2026-10-27'
+    if addition_report.exists():
+        supplement = read(addition_report)
+        if (supplement['baselineSha256'] != report['sha256'] or
+                supplement['baselineWords'] != report['totalWords'] or
+                supplement['totalWords'] != report['totalWords'] + supplement['addedWords']):
+            raise ValueError('Supplied-vocabulary supplement does not extend the recorded baseline')
+        added_provenance = read(additions / 'example-provenance.json')
+        if set(added_provenance) & (set(legacy) | set(provenance)):
+            raise ValueError('Supplied-vocabulary IDs collide with retained provenance')
+        provenance = {**provenance, **added_provenance}
+        added_lock = read(additions / 'source-lock.json')
+        editorial_names = {f'batch-{i}{suffix}' for i in range(1, 4) for suffix in ('.tsv', '.tags.json')}
+        editorial_names.add('editorial-evidence.json')
+        editorial_names.add('sentence-readings.json')
+        editorial_names.update({'breakdown-review.json', 'chunk-review.json'})
+        if set(added_lock['editorialFiles']) != editorial_names:
+            raise ValueError('Incomplete supplied-vocabulary editorial source lock')
+        for name, expected in added_lock['editorialFiles'].items():
+            if hashlib.sha256((additions / name).read_bytes()).hexdigest() != expected:
+                raise ValueError('Supplied vocabulary editorial source changed: ' + name)
+        for record in added_lock['sources']:
+            content = (ROOT / record['file']).read_bytes()
+            if len(content) != record['bytes'] or hashlib.sha256(content).hexdigest() != record['sha256']:
+                raise ValueError('Supplied vocabulary source changed')
+        lock = {**lock, 'sources': [*lock['sources'], *added_lock['sources']],
+                'supplementEditorialFiles': added_lock['editorialFiles']}
+        report = {**report, 'sha256': supplement['sha256'], 'totalWords': supplement['totalWords'],
+                  'addedWords': report['addedWords'] + supplement['addedWords']}
+        modified_on = supplement['date']
     vocabulary_path = ROOT / 'wordlist.csv'
     if hashlib.sha256(vocabulary_path.read_bytes()).hexdigest() != report['sha256']:
         raise ValueError('Publish source attribution only after the formal wordlist matches its report')
@@ -125,7 +157,7 @@ def publish(check=False):
                   contexts[key].get('originalEnglish') != original_english):
                 raise ValueError('Inconsistent original script for the same attributed context: ' + word_id)
             contexts[key]['wordIds'].append(word_id)
-    index = {'schemaVersion': 1, 'modifiedOn': '2026-10-27', 'wordlistSha256': report['sha256'],
+    index = {'schemaVersion': 1, 'modifiedOn': modified_on, 'wordlistSha256': report['sha256'],
              'totalWords': report['totalWords'], 'legacyNotes': notes,
              'legacyEntries': legacy_index, 'exampleContexts': list(contexts.values()),
              'selectedExampleSourceUses': source_counts,
@@ -195,6 +227,14 @@ wordlist-sources/source-index.json and wordlist-sources/source-lock.json.
 No upstream publisher endorses this application or these modifications.
 The unresolved legacy redistribution boundaries in NOTICE and
 docs/OPEN_SOURCE_COMPLIANCE.md remain in force.
+'''
+    if addition_report.exists():
+        header += '''\nSupplied headword supplement, 2026-11-03: 1,390 appended stable IDs.
+The supplied list establishes membership only. Teaching senses and two original
+bilingual examples per added entry were edited with AI assistance; lexical
+reference uses the pinned CC-CEDICT release above. Original contributions are
+offered under CC BY-SA 4.0 to the extent rights are held. This is not independent
+human linguistic review or additional clearance of supplied/legacy rights.
 '''
     paragraphs = [header, 'Selected wordlist: ' + str(report['totalWords']) + ' words; ' +
                   str(report['baselineWords']) + ' retained IDs; ' + str(report['addedWords']) + ' added IDs.\n' +

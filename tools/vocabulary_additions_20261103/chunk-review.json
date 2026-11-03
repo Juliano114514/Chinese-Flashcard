@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "reviewBoundary": "AI-assisted review of contextual teaching units in the appended examples. Generic dictionary substrings must not swallow pronouns, prepositions or the next lexical word.",
+  "excludedUnits": ["他用", "在台", "在地"],
+  "lexicalSenses": [
+    {"hanzi":"故事","pinyin":"gù shi","gloss":"story; tale"},
+    {"hanzi":"照片","pinyin":"zhào piàn","gloss":"photograph"},
+    {"hanzi":"得很","pinyin":"de hěn","gloss":"DE (degree complement); very"},
+    {"hanzi":"乘凉","pinyin":"chéng liáng","gloss":"relax in a cool place"},
+    {"hanzi":"内蒙古","pinyin":"nèi měng gǔ","gloss":"Inner Mongolia"},
+    {"hanzi":"自治区","pinyin":"zì zhì qū","gloss":"autonomous region"},
+    {"hanzi":"大桥","pinyin":"dà qiáo","gloss":"large bridge"},
+    {"hanzi":"新店","pinyin":"xīn diàn","gloss":"new shop"},
+    {"hanzi":"弯弯","pinyin":"wān wān","gloss":"gently curved; arched"},
+    {"hanzi":"成","pinyin":"chéng","gloss":"become; turn into; complete"},
+    {"hanzi":"贵","pinyin":"guì","gloss":"expensive; valuable"},
+    {"hanzi":"密","pinyin":"mì","gloss":"dense; thick"},
+    {"hanzi":"开","pinyin":"kāi","gloss":"open; start; bloom"},
+    {"hanzi":"店","pinyin":"diàn","gloss":"shop; store"},
+    {"hanzi":"话","pinyin":"huà","gloss":"speech; words"},
+    {"hanzi":"朝","pinyin":"cháo","gloss":"toward; facing"},
+    {"hanzi":"长","pinyin":"zhǎng","gloss":"grow; increase"},
+    {"hanzi":"球","pinyin":"qiú","gloss":"ball"},
+    {"hanzi":"时","pinyin":"shí","gloss":"time; when"},
+    {"hanzi":"点","pinyin":"diǎn","gloss":"point; a little; touch"},
+    {"hanzi":"题","pinyin":"tí","gloss":"question; problem"},
+    {"hanzi":"靠","pinyin":"kào","gloss":"lean on; rely on"}
+  ]
+}

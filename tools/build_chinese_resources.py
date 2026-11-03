@@ -32,6 +32,8 @@ def reading_key(text: str, pinyin: str, chunks: list[dict] | None = None) -> str
 
 def readings() -> list[dict]:
     result = {}
+    preview = {"text": "我能吞下玻璃而不伤身体", "pinyin": "wǒ néng tūn xià bō li ér bù shāng shēn tǐ"}
+    result[reading_key(preview["text"], preview["pinyin"])] = preview
     for row in audition.rows():
         for text, pinyin, chunks, category in [(row["组词"], row["拼音"], None, "word")] + [
             (example["hanzi"], example["pinyin"], example["chunks"], "example")

@@ -195,9 +195,11 @@ def tracing_item(record, source_id):
 
 
 def read_csv_words(csv_path):
-    # Aligned sentence chunks use the same bounded CSV size as the importer.
-    if csv_path.stat().st_size > 32 * 1024 * 1024:
-        raise ValueError("CSV exceeds the 32 MiB import limit")
+    # The bundled preset has its own bound; user-supplied CSV keeps 32 MiB.
+    from wordlist_snapshot import BUNDLED_MAX_BYTES
+    maximum = BUNDLED_MAX_BYTES if csv_path.resolve() == ROOT / "wordlist.csv" else 32 * 1024 * 1024
+    if csv_path.stat().st_size > maximum:
+        raise ValueError("CSV exceeds the applicable vocabulary size limit")
     words = []
     with csv_path.open(encoding="utf-8-sig", newline="") as source:
         reader = csv.DictReader(source)

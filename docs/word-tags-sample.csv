@@ -21,8 +21,6 @@ wl_00117,0,握手,wò shǒu,shake hands,verb,form_verb | topic_communication | t
 wl_00217,0,狮子,shī zi,lion,noun,form_noun | topic_animals | usage_everyday,名词 | 动物 | 日常口语,主题依据：animals←“lion”。 日常口语来自明确日用词表／口语用法标记，不按Stage推定。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_01060,0,家人,jiā rén,family member,noun,form_noun | topic_family | topic_people | usage_everyday,名词 | 亲属与家庭 | 人物与身份 | 日常口语,家庭成员属于亲属与人物；普通中性词也可标日常口语。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_01137,0,博士,bó shì,doctorate; PhD,noun,form_noun | topic_study,名词 | 学校与学习,释义语义：study←“doctorate”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_01587,0,你好,nǐ hǎo,hello,interjection,form_sound_interjection | topic_communication | usage_everyday,拟声与感叹 | 语言与交流 | 日常口语,日常口语来自明确日用词表／口语用法标记，不按Stage推定。 声音／感叹表达来自明确词性。 词语类型直接依据本条词性“interjection”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
-wl_07823,0,其实,qí shí,actually; in fact,adverb,form_adverb,副词,词语类型直接依据本条词性“adverb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_07829,0,之间,zhī jiān,between; among,location word,form_noun | topic_space,名词 | 空间与位置,方位／处所义来自本条明确的方位词词性。 词语类型直接依据本条词性“location word”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_07890,0,来自,lái zì,to come from,verb,form_verb | topic_actions_processes | usage_everyday,动词 | 动作与变化 | 日常口语,按本条教学义“to come from”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_07945,0,失望,shī wàng,disappointed,adjective,form_adjective | topic_emotions,形容词 | 情绪与性格,释义语义：emotions←“disappointed”。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
@@ -31,14 +29,16 @@ wl_09746,0,插头,chā tóu,plug,noun,form_noun | topic_science_technology | usa
 wl_09861,0,蒸锅,zhēng guō,steaming pot,noun,form_noun | topic_objects,名词 | 物品与材料,实体物品／材料来自明确名物释义。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_10754,0,动作,dòng zuò,movement,noun,form_noun | topic_daily_actions | usage_everyday,名词 | 日常动作 | 日常口语,按本条教学义“movement”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_10830,0,正式,zhèng shì,formal,adjective; adverb,form_adjective | form_adverb | topic_properties,形容词 | 副词 | 性质与状态,性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective; adverb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_11602,0,下雨,xià yǔ,rain,verb,form_verb | topic_nature_weather | usage_everyday,动词 | 自然与天气 | 日常口语,主题依据：nature_weather←“rain”。 日常口语来自明确日用词表／口语用法标记，不按Stage推定。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_13351,0,床,chuáng,bed,noun,form_noun | topic_furniture | topic_home | usage_everyday,名词 | 家具 | 居家与建筑 | 日常口语,主题依据：furniture←“bed”。 日常口语来自明确日用词表／口语用法标记，不按Stage推定。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_13480,0,爸妈,bà mā,dad and mom,noun,form_noun,名词,词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_13590,0,早就,zǎo jiù,already at an earlier time,adverb,form_adverb | topic_time_number,副词 | 时间与数量,主题依据：time_number←“time”。 释义语义：time_number←“already”。 词语类型直接依据本条词性“adverb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_13602,0,正是,zhèng shì,is precisely,adverb,form_adverb,副词,词语类型直接依据本条词性“adverb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_13776,0,似的,shì de,seems as if; rather like,particle,form_function | topic_grammar,虚词 | 语法与功能词,语法功能依据本条词性／结构标记“particle”。 词语类型直接依据本条词性“particle”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_13848,0,要死,yào sǐ,extremely; awfully,adverb,form_adverb,副词,词语类型直接依据本条词性“adverb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_13854,0,以来,yǐ lái,since (used after a specified time or event),localizer,form_function | topic_grammar | topic_time_number,虚词 | 语法与功能词 | 时间与数量,主题依据：time_number←“time”。 释义语义：time_number←“since”。 语法功能依据本条词性／结构标记“localizer”。 词语类型直接依据本条词性“localizer”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
+wl_18683,0,冷天,lěng tiān,cold weather; a cold day,noun,form_noun | topic_nature_weather | usage_everyday,名词 | 自然与天气 | 日常口语,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_18714,0,六日,liù rì,the sixth day of a month,time noun,form_noun | topic_time_number,名词 | 时间与数量,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19195,0,够得着,gòu de zháo,to be able to reach,verb,form_verb | topic_daily_actions | usage_everyday,动词 | 日常动作 | 日常口语,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19631,0,我有,wǒ yǒu,I have,phrase,form_phrase | topic_abstract_relations | topic_daily_actions | topic_grammar | usage_everyday,词组与句式 | 概念与关系 | 日常动作 | 语法与功能词 | 日常口语,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_00002,1,冷冻,lěng dòng,frozen,adjective,form_adjective | topic_properties | usage_everyday,形容词 | 性质与状态 | 日常口语,日常口语来自明确日用词表／口语用法标记，不按Stage推定。 性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_00005,1,共同,gòng tóng,shared; common,adjective,form_adjective | topic_properties | usage_everyday | usage_written,形容词 | 性质与状态 | 日常口语 | 书面表达,按本条教学义“shared; common”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_00009,1,热衷,rè zhōng,be keen on,verb,form_verb | topic_actions_processes | usage_everyday | usage_written,动词 | 动作与变化 | 日常口语 | 书面表达,按本条教学义“be keen on”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
@@ -54,7 +54,6 @@ wl_00054,1,教育,jiào yù,education,noun,form_noun | topic_study | usage_writt
 wl_00055,1,腹部,fù bù,abdomen,noun,form_noun | topic_body_health | usage_everyday,名词 | 身体与健康 | 日常口语,按本条教学义“abdomen”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_00510,1,债务,zhài wù,debt,noun,form_noun | topic_money | usage_written,名词 | 金钱与购物 | 书面表达,按本条教学义“debt”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_00850,1,宣传,xuān chuán,to publicize; to promote,verb,form_verb | topic_communication | topic_society | usage_written,动词 | 语言与交流 | 社会与公共生活 | 书面表达,按本条教学义“to publicize; to promote”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
-wl_01026,1,歌曲,gē qǔ,song,noun,form_noun | topic_culture,名词 | 文化与艺术,主题依据：culture←“song”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_02008,1,斧头,fǔ tóu,axe,noun,form_noun | topic_tools | usage_everyday,名词 | 工具与材料 | 日常口语,按本条教学义“axe”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_02322,1,蜿蜒,wān yán,to wind; winding or meandering,verb,form_verb | topic_space,动词 | 空间与位置,wind在本条是弯曲，不是风。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_02944,1,脸颊,liǎn jiá,cheek,noun,form_noun | topic_body_health | usage_everyday,名词 | 身体与健康 | 日常口语,按本条教学义“cheek”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
@@ -79,6 +78,7 @@ wl_15063,1,下山,xià shān,to go down a hill; (of the sun or moon) to set,verb
 wl_15447,1,愚弄,yú nòng,to make a fool out of; to fool; to dupe,verb,form_verb | topic_people,动词 | 人物与身份,释义语义：people←“fool”。 词语类型直接依据本条词性“verb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_15566,1,水上,shuǐ shàng,on water; aquatic,location noun,form_noun | topic_space,名词 | 空间与位置,方位／处所义来自本条明确的方位词词性。 词语类型直接依据本条词性“location noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_16378,1,妥,tuǒ,suitable; adequate; ready,adjective,form_adjective | topic_properties,形容词 | 性质与状态,性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
+wl_19665,1,想不开,xiǎng bu kāi,to take something too hard,verb,form_verb | topic_emotions | usage_everyday,动词 | 情绪与性格 | 日常口语,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_00042,2,确凿,què záo,conclusive; irrefutable,adjective,form_adjective | topic_properties | usage_written,形容词 | 性质与状态 | 书面表达,书面表达依据明确语体标记或复核的书面词表。 性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_00071,2,诉讼,sù sòng,lawsuit; litigation,noun,form_noun | topic_law | usage_written,名词 | 法律与司法 | 书面表达,主题依据：law←“lawsuit”。 书面表达依据明确语体标记或复核的书面词表。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_00094,2,赎罪,shú zuì,atone for wrongdoing,verb,form_verb | topic_actions_processes | usage_written,动词 | 动作与变化 | 书面表达,书面表达依据明确语体标记或复核的书面词表。 一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
@@ -99,14 +99,12 @@ wl_07482,2,画蛇添足,huà shé tiān zú,adding something unnecessary that sp
 wl_07524,2,一板一眼,yī bǎn yī yǎn,"speaking or acting in an orderly, precise, regular manner",idiom,form_idiom | topic_communication,成语 | 语言与交流,主题依据：communication←“speaking”。 成语沿用本条已有idiom词性，不按字数推定。,,全量规则检查；AI编辑判断，未作真人认证
 wl_08718,2,中立,zhōng lì,neutral,adjective,form_adjective | topic_society | usage_written,形容词 | 社会与公共生活 | 书面表达,按本条教学义“neutral”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_08950,2,冷若冰霜,lěng ruò bīng shuāng,cold and unapproachable,adjective phrase,form_adjective | form_phrase | topic_properties,形容词 | 词组与句式 | 性质与状态,性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective phrase”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_09112,2,坐井观天,zuò jǐng guān tiān,to judge the world from a narrow perspective,verb phrase,form_phrase | form_verb | topic_thinking,词组与句式 | 动词 | 思考与认知,主题依据：thinking←“judge”。 词语类型直接依据本条词性“verb phrase”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_10304,2,驾驶证,jià shǐ zhèng,driver's license,noun,form_noun | topic_travel_transport,名词 | 出行与交通,主题依据：travel_transport←“driver”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_10399,2,房价,fáng jià,housing price,noun,form_noun | topic_home | topic_money,名词 | 居家与建筑 | 金钱与购物,主题依据：home←“housing”。 主题依据：money←“price”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_10561,2,倒车,dào chē,reverse a vehicle,verb,form_verb | topic_travel_transport,动词 | 出行与交通,主题依据：travel_transport←“vehicle”。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_10638,2,开户行,kāi hù háng,account-opening bank,noun,form_noun | topic_money | usage_written,名词 | 金钱与购物 | 书面表达,按本条教学义“account-opening bank”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_12673,2,纹理,wén lǐ,grain; surface pattern,noun,form_noun | topic_food,名词 | 饮食,释义语义：food←“grain”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_12793,2,候鸟,hòu niǎo,migratory bird,noun,form_noun | topic_animals,名词 | 动物,主题依据：animals←“bird”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
-wl_12810,2,古文,gǔ wén,Classical Chinese,noun,form_noun | topic_communication | topic_culture,名词 | 语言与交流 | 文化与艺术,按本条教学义“Classical Chinese”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_12895,2,古籍,gǔ jí,ancient text,noun,form_noun | topic_communication | topic_culture | topic_history,名词 | 语言与交流 | 文化与艺术 | 历史,古代文本属于历史/文化主题，词本身不是文言表达。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_12938,2,改错,gǎi cuò,correct an error,verb,form_verb | topic_thinking | usage_everyday,动词 | 思考与认知 | 日常口语,按本条教学义“correct an error”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_13512,2,无可救药,wú kě jiù yào,"(idiom) (of an illness) incurable; (of a person, behavior etc) incorrigible; beyond any possibility of correction",idiom,form_idiom | topic_thinking,成语 | 思考与认知,主题依据：thinking←“possibility”。 成语沿用本条已有idiom词性，不按字数推定。,,全量规则检查；AI编辑判断，未作真人认证
@@ -119,6 +117,8 @@ wl_16060,2,太平,tài píng,peace and security,adjective; noun,form_adjective |
 wl_17609,2,上厕所,shàng cè suǒ,to go to the bathroom,verb,form_verb | topic_home,动词 | 居家与建筑,主题依据：home←“bathroom”。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_17725,2,语速,yǔ sù,speaking speed,noun,form_noun | topic_communication | topic_time_number,名词 | 语言与交流 | 时间与数量,主题依据：communication←“speaking”。 释义语义：time_number←“speed”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_18027,2,写完,xiě wán,to finish writing,verb,form_verb | topic_communication,动词 | 语言与交流,主题依据：communication←“writing”。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
+wl_19449,2,山鸡,shān jī,pheasant,noun,form_noun | topic_animals,名词 | 动物,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19528,2,说书,shuō shū,traditional oral storytelling,verb; noun,form_noun | form_verb | topic_communication | topic_culture | usage_written,名词 | 动词 | 语言与交流 | 文化与艺术 | 书面表达,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_01754,3,接踵而来,jiē zhǒng ér lái,Describes events or people coming one after another,idiom,form_idiom | topic_communication,成语 | 语言与交流,成语沿用本条已有idiom词性，不按字数推定。 释义语义：communication←“Describe”。,,全量规则检查；AI编辑判断，未作真人认证
 wl_01825,3,糜烂,mí làn,erosion of skin or tissue,noun,form_noun | topic_body_health,名词 | 身体与健康,主题依据：body_health←“skin”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_01846,3,痢疾,lì ji,dysentery,noun,form_noun | topic_body_health,名词 | 身体与健康,主题依据：body_health←“dysentery”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
@@ -132,21 +132,16 @@ wl_03367,3,鹿茸,lù róng,velvet antler,noun,form_noun | topic_animals,名词 
 wl_03409,3,花蕊,huā ruǐ,stamens and pistils of a flower,noun,form_noun | topic_plants,名词 | 植物与种植,主题依据：plants←“flower”。 释义语义：plants←“stamen”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_03517,3,沽名钓誉,gū míng diào yù,Describes seeking undeserved fame or praise through improper means.,idiom,form_idiom | topic_communication,成语 | 语言与交流,成语沿用本条已有idiom词性，不按字数推定。 释义语义：communication←“praise”。,,全量规则检查；AI编辑判断，未作真人认证
 wl_03524,3,掳掠,lǔ lüè,plunder,verb,form_verb | topic_actions_processes,动词 | 动作与变化,一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_04326,3,耆老,qí lǎo,respected elders,noun,form_noun | usage_classical,名词 | 文言,文言依据古义用法标记或复核词表，不以历史题材推定。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_04384,3,辅弼,fǔ bì,to assist a ruler in governing,verb,form_verb | topic_society | topic_work | usage_classical | usage_written,动词 | 社会与公共生活 | 工作与职业 | 文言 | 书面表达,按本条教学义“to assist a ruler in governing”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_04447,3,鲷鱼,diāo yú,sea bream,noun,form_noun | topic_animals,名词 | 动物,sea bream是鱼类名称，不能拆sea归天气。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_04627,3,一泓,yī hóng,one pool of clear water,number phrase,form_number_measure | form_phrase | topic_grammar | topic_nature_weather | topic_time_number | usage_written,数词与量词 | 词组与句式 | 语法与功能词 | 自然与天气 | 时间与数量 | 书面表达,按本条教学义“one pool of clear water”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 语法功能依据本条词性／结构标记“number phrase”。 词语类型直接依据本条词性“number phrase”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
-wl_04790,3,铍元素,pí yuán sù,beryllium,noun,form_noun,名词,词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_04797,3,呋喃,fū nán,furan,noun,form_noun | topic_science_technology,名词 | 科学与技术,按本条教学义“furan”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_04802,3,酞菁,tài jīng,phthalocyanine,noun,form_noun | topic_science_technology,名词 | 科学与技术,按本条教学义“phthalocyanine”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_04868,3,清洌,qīng liè,clear and pure,adjective,form_adjective | topic_properties | usage_written,形容词 | 性质与状态 | 书面表达,按本条教学义“clear and pure”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 性质／状态依据本条形容词义，无更具体主题证据。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_04876,3,柰子,nài zi,Chinese crabapple,noun,form_noun,名词,词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
-wl_05034,3,莒国,jǔ guó,ancient state of Ju,proper noun,form_noun | topic_history,名词 | 历史,主题依据：history←“ancient”。 释义语义：history←“ancient state”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,区分所指事物的年代与词本身语体；标注仍属AI编辑判断。,全量规则检查；AI编辑判断，未作真人认证
 wl_05104,3,僬侥,jiāo yáo,legendary dwarfs or their land,noun,form_noun,名词,词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_05181,3,泅水,qiú shuǐ,to swim,verb,form_verb | topic_sport_leisure,动词 | 运动与休闲,主题依据：sport_leisure←“swim”。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_05299,3,汕尾,shàn wěi,"Shanwei, a city in Guangdong",proper noun,form_noun | topic_geography,名词 | 地点与地理,主题依据：geography←“city”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_05626,3,汜水,sì shuǐ,the Si River,proper noun,form_noun | topic_geography | topic_nature_weather,名词 | 地点与地理 | 自然与天气,主题依据：nature_weather←“River”。 主题依据：geography←“River”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
-wl_05751,3,盛馔,shèng zhuàn,splendid food; rich feast,noun,form_noun | topic_food,名词 | 饮食,主题依据：food←“food”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_05779,3,仂语,lè yǔ,phrase,noun,form_noun | topic_communication | topic_study | usage_written,名词 | 语言与交流 | 学校与学习 | 书面表达,按本条教学义“phrase”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_05943,3,蚁垤,yǐ dié,anthill,noun,form_noun | topic_animals | topic_nature_weather | usage_written,名词 | 动物 | 自然与天气 | 书面表达,按本条教学义“anthill”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_05987,3,罟网,gǔ wǎng,fishing net,noun,form_noun,名词,词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
@@ -159,12 +154,16 @@ wl_06529,3,溘然,kè rán,suddenly,adverb,form_adverb,副词,词语类型直接
 wl_06622,3,蚯蟮,qiū shàn,earthworm,noun,form_noun | topic_animals,名词 | 动物,主题依据：animals←“earthworm”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_07691,3,不寒而栗,bù hán ér lì,shuddering with intense fear.,idiom,form_idiom | topic_emotions,成语 | 情绪与性格,主题依据：emotions←“fear”。 成语沿用本条已有idiom词性，不按字数推定。,,全量规则检查；AI编辑判断，未作真人认证
 wl_09819,3,杏子,xìng zi,apricot,noun,form_noun | topic_food,名词 | 饮食,释义语义：food←“apricot”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
+wl_19396,3,青果,qīng guǒ,Chinese olive; unripe fruit,noun,form_noun | topic_food,名词 | 饮食,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19402,3,青云,qīng yún,blue sky; lofty ambition or high office,noun,form_noun | topic_nature_weather | topic_thinking | usage_written,名词 | 自然与天气 | 思考与认知 | 书面表达,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19500,3,书生气,shū shēng qì,bookish air; impractical scholarly manner,noun,form_noun | topic_culture,名词 | 文化与艺术,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19551,3,太后,tài hòu,empress dowager,noun,form_noun | topic_history | usage_written,名词 | 历史 | 书面表达,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19868,3,走狗,zǒu gǒu,lackey; servile follower (derogatory),noun,form_noun | topic_people | topic_society,名词 | 人物与身份 | 社会与公共生活,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_03564,4,足恭,zú gōng,excessive deference intended to flatter,noun,form_noun | topic_emotions | usage_classical | usage_written,名词 | 情绪与性格 | 文言 | 书面表达,按本条教学义“excessive deference intended to flatter”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_03569,4,傅粉施朱,fù fěn shī zhū,apply face powder and rouge,verb,form_verb | topic_clothing | usage_written,动词 | 衣着与外观 | 书面表达,本条是涂脂抹粉，face powder属于仪容；现有词性为verb，不据四字强判成语。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_03586,4,杀哀,shā āi,reduce funeral mourning rites during famine,verb,form_verb | topic_culture | topic_history | usage_classical,动词 | 文化与艺术 | 历史 | 文言,按本条教学义“reduce funeral mourning rites during famine”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_03594,4,缀足,zhuì zú,secure a deceased person's feet in an ancient funeral rite,verb,form_verb | topic_culture | topic_history | usage_classical,动词 | 文化与艺术 | 历史 | 文言,所指为古代丧葬仪式，不因英文person泛词归人物身份。 词语类型直接依据本条词性“verb”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
 wl_03869,4,挑达,tāo tà,wander or move about freely,verb,form_verb | topic_actions_processes | usage_classical,动词 | 动作与变化 | 文言,文言依据古义用法标记或复核词表，不以历史题材推定。 一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
-wl_04096,4,噢咻,ō xiū,comfort or soothe,verb,form_verb | topic_actions_processes | usage_classical,动词 | 动作与变化 | 文言,文言依据古义用法标记或复核词表，不以历史题材推定。 一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_04316,4,奎星,kuí xīng,"Kui, an ancient lunar mansion",proper noun,form_noun | topic_history | topic_home | topic_nature_weather,名词 | 历史 | 居家与建筑 | 自然与天气,主题依据：history←“ancient”。 释义语义：home←“mansion”。 释义语义：nature_weather←“lunar”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,区分所指事物的年代与词本身语体；标注仍属AI编辑判断。,全量规则检查；AI编辑判断，未作真人认证
 wl_04839,4,荜门,bì mén,humble wicker door,noun,form_noun | topic_emotions | topic_home,名词 | 情绪与性格 | 居家与建筑,主题依据：emotions←“humble”。 释义语义：home←“door”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_04900,4,缇骑,tí jì,mounted guards in historical usage,noun,form_noun | topic_history,名词 | 历史,主题依据：history←“historical”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,区分所指事物的年代与词本身语体；标注仍属AI编辑判断。,全量规则检查；AI编辑判断，未作真人认证
@@ -181,7 +180,6 @@ wl_05838,4,衣袢,yī pàn,garment fastening loop,noun,form_noun | topic_clothin
 wl_05886,4,笾豆,biān dòu,ritual food vessels,noun,form_noun | topic_food | topic_religion,名词 | 饮食 | 宗教与神话,主题依据：food←“food”。 主题依据：religion←“ritual”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_05888,4,褊急,biǎn jí,narrow-minded and impatient,adjective,form_adjective | topic_emotions,形容词 | 情绪与性格,释义语义：emotions←“impatient”。 词语类型直接依据本条词性“adjective”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_05933,4,珰珥,dāng ěr,ear ornaments,noun,form_noun | topic_clothing | usage_written,名词 | 衣着与外观 | 书面表达,ear ornaments指耳饰而非耳部疾病；归衣着外观。 词语类型直接依据本条词性“noun”，不代表语体或难度。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
-wl_06005,4,靺鞨,mò hé,Mohe people,proper noun,form_noun | topic_people,名词 | 人物与身份,主题依据：people←“people”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_06035,4,罽毯,jì tǎn,woolen carpet,noun,form_noun | topic_home,名词 | 居家与建筑,释义语义：home←“carpet”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_06051,4,门扃,mén jiōng,door bolt,noun,form_noun | topic_home,名词 | 居家与建筑,释义语义：home←“door”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_06074,4,贶赠,kuàng zèng,to present a gift,verb,form_verb | topic_actions_processes,动词 | 动作与变化,一般动作／变化依据本条动词义，无更具体主题证据。 词语类型直接依据本条词性“verb”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
@@ -195,7 +193,9 @@ wl_06269,4,绨袍,tí páo,robe made of thick silk,noun,form_noun | topic_clothi
 wl_06370,4,仓庾,cāng yǔ,grain storehouses,noun,form_noun | topic_food,名词 | 饮食,释义语义：food←“grain”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_06386,4,姓昝,xìng zǎn,to have the surname Zan,verb,form_verb | topic_people,动词 | 人物与身份,主题依据：people←“surname”。 词语类型直接依据本条词性“verb”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_06388,4,牂牁,zāng kē,"Zangke, an ancient place name",proper noun,form_noun | topic_communication | topic_geography | topic_history,名词 | 语言与交流 | 地点与地理 | 历史,主题依据：communication←“name”。 主题依据：history←“ancient”。 主题依据：geography←“place name”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,区分所指事物的年代与词本身语体；标注仍属AI编辑判断。,全量规则检查；AI编辑判断，未作真人认证
-wl_06397,4,缯帛,zēng bó,silk fabrics,noun,form_noun | topic_clothing,名词 | 衣着与外观,释义语义：clothing←“silk”。 词语类型直接依据本条词性“noun”，不代表语体或难度。,已依明确词性标注类型；具体语义主题仍可继续精修。,全量规则检查；AI编辑判断，未作真人认证
 wl_06446,4,姓亓,xìng qí,have the surname Qi ('qí'),phrase,form_phrase | topic_people,词组与句式 | 人物与身份,主题依据：people←“surname”。 词语类型直接依据本条词性“phrase”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_06447,4,姓厍,xìng shè,have the surname She ('shè'),phrase,form_phrase | topic_people,词组与句式 | 人物与身份,主题依据：people←“surname”。 词语类型直接依据本条词性“phrase”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
 wl_06646,4,黟县,yī xiàn,Yi County in Anhui,proper noun,form_noun | topic_geography,名词 | 地点与地理,主题依据：geography←“County”。 词语类型直接依据本条词性“proper noun”，不代表语体或难度。,,全量规则检查；AI编辑判断，未作真人认证
+wl_19031,4,电石,diàn shí,calcium carbide,noun,form_noun | topic_science_technology,名词 | 科学与技术,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19209,4,光气,guāng qì,phosgene,noun,form_noun | topic_science_technology,名词 | 科学与技术,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证
+wl_19311,4,虎耳草,hǔ ěr cǎo,strawberry saxifrage,noun,form_noun | topic_plants,名词 | 植物与种植,按所选教学义逐词审校主题与语体；AI辅助编辑，未作真人认证。,AI编辑逐词复核；未作真人或权威词典认证。,全量规则检查；AI编辑判断，未作真人认证

@@ -3,6 +3,7 @@ import java.io.File
 import java.io.InputStreamReader
 import java.io.PushbackReader
 import java.nio.charset.CodingErrorAction
+import groovy.json.JsonSlurper
 import org.gradle.api.DefaultTask
 import org.gradle.api.file.DirectoryProperty
 import org.gradle.api.file.RegularFileProperty
@@ -20,6 +21,14 @@ abstract class BundleDefaultWordlist : DefaultTask() {
   @get:InputFile
   @get:PathSensitive(PathSensitivity.NONE)
   abstract val csvFile: RegularFileProperty
+
+  @get:InputFile
+  @get:PathSensitive(PathSensitivity.NONE)
+  abstract val chineseSpeechManifest: RegularFileProperty
+
+  @get:InputFile
+  @get:PathSensitive(PathSensitivity.NONE)
+  abstract val englishSpeechManifest: RegularFileProperty
 
   @get:OutputDirectory
   abstract val outputDirectory: DirectoryProperty
@@ -40,13 +49,19 @@ abstract class BundleDefaultWordlist : DefaultTask() {
       }
     }
     val version = digest.digest().joinToString("") { (it.toInt() and 0xff).toString(16).padStart(2, '0') }
+    for (manifest in listOf(chineseSpeechManifest, englishSpeechManifest)) {
+      val metadata = JsonSlurper().parse(manifest.get().asFile) as Map<*, *>
+      check(metadata["sourceWordlistSha256"] == version) {
+        "Speech resources do not match wordlist.csv; rebuild the Chinese and English speech resources."
+      }
+    }
     directory.resolve("version.txt").writeText("$version\n", Charsets.US_ASCII)
     directory.resolve("rows.txt").writeText("${countCsvRows(bundled)}\n", Charsets.US_ASCII)
   }
 
   /** Count records without decoding teaching JSON; newlines inside quoted fields stay in a record. */
   private fun countCsvRows(file: File): Int {
-    check(file.length() <= 32L * 1024 * 1024) { "The default wordlist exceeds 32 MiB." }
+    check(file.length() <= 48L * 1024 * 1024) { "The default wordlist exceeds 48 MiB." }
     val decoder = Charsets.UTF_8.newDecoder().onMalformedInput(CodingErrorAction.REPORT)
       .onUnmappableCharacter(CodingErrorAction.REPORT)
     var records = 0
@@ -105,6 +120,8 @@ abstract class BundleDefaultWordlist : DefaultTask() {
 
 val bundleDefaultWordlist = tasks.register<BundleDefaultWordlist>("bundleDefaultWordlist") {
   csvFile.set(rootProject.layout.projectDirectory.file("wordlist.csv"))
+  chineseSpeechManifest.set(rootProject.layout.projectDirectory.file("core/media/src/main/assets/chinese-speech/manifest.json"))
+  englishSpeechManifest.set(rootProject.layout.projectDirectory.file("core/media/src/main/assets/english-speech/manifest.json"))
   outputDirectory.set(layout.buildDirectory.dir("generated/defaultWordlistAssets"))
 }
 

@@ -2,9 +2,9 @@
 
 > 2026-10-08 文档核对：本文件描述当前导入契约。许可与来源义务见 [第三方声明](../THIRD_PARTY_NOTICES.md) 和 [发布检查](OPEN_SOURCE_COMPLIANCE.md)；当前版本索引见 [开发与维护](DEVELOPMENT.md)。导入／结构校验成功不证明作者拥有公开再分发权。
 
-根目录 `wordlist.csv` 是打包默认词库的来源。构建任务生成 `default-wordlist/wordlist.csv`、SHA-256 `version.txt` 和记录总量 `rows.txt`，首次启动在后台完整校验并入库。当前18,500条、12列，保留全部既有稳定ID；单字和不自然组词使用明确审阅清单替换，不删除词条。内置默认库仅可按 `wordlist-sources/headword-replacements.json` 白名单更新已归属词条的词头、释义、例句及笔顺关联；用户导入仍为追加，不获得重分配已有ID的权限。
+根目录 `wordlist.csv` 是打包默认词库的来源。构建任务生成 `default-wordlist/wordlist.csv`、SHA-256 `version.txt` 和记录总量 `rows.txt`，首次启动在后台完整校验并入库。当前19,890条、12列，保留全部既有稳定ID；本次新增1,390条，旧18,500行字节不变，见[增补记录](VOCABULARY_ADDITIONS_20261103.md)。历史单字和不自然组词使用明确审阅清单替换，不删除词条。内置默认库仅可按 `wordlist-sources/headword-replacements.json` 白名单更新已归属词条的词头、释义、例句及笔顺关联；用户导入仍为追加，不获得重分配已有ID的权限。
 
-12 列重构阶段采用 Room v7 和新数据库 `chinese-flashcard-v2.db`，与更早的课程数据库不兼容。当前源码为 **Room v18**，已有 v2 数据库沿用现行迁移链路；17→18仅合并和映射阶段记录，不清库、不删除词条或学习任务。schema导出待下一次获准KSP构建；运行时加载错误不会触发清库或降级。
+12 列重构阶段采用 Room v7 和新数据库 `chinese-flashcard-v2.db`，与更早的课程数据库不兼容。当前源码为 **Room v21**，已有 v7及以后的 v2 数据库沿用连续迁移链路，不清库、不删除词条或学习任务；本次词汇增补不改变 schema。v21 schema导出待下一次获准KSP构建；运行时加载错误不会触发清库或降级。
 
 默认库内容、罕度、学习排序和成功版本标记在同一个事务中提交。新库初始化失败显示 Retry；已有新库的预设更新失败保留当前库可用，Profile 提供独立 Retry。默认库版本匹配时不重复处理；当前进程不会自动反复重试失败的更新。旧写字任务冲突时，设置页提供按原语言继续任务的入口；完成或显式跳过后再Retry，草稿不自动清除。
 

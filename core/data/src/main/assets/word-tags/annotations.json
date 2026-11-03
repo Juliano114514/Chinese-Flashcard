@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "wordlistSha256": "6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a",
-  "annotationVersion": "2026-10-27.3",
+  "wordlistSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+  "annotationVersion": "2026-11-03.1",
   "words": {
     "wl_00001": [
       "form_noun",
@@ -74884,6 +74884,7005 @@
       "form_noun",
       "topic_body_health",
       "topic_clothing"
+    ],
+    "wl_18501": [
+      "form_noun",
+      "topic_history",
+      "topic_travel_transport"
+    ],
+    "wl_18502": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18503": [
+      "form_noun",
+      "topic_geography"
+    ],
+    "wl_18504": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_18505": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18506": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18507": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18508": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18509": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18510": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18511": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_18512": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18513": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18514": [
+      "form_noun",
+      "topic_sport_leisure"
+    ],
+    "wl_18515": [
+      "form_sound_interjection",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_18516": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18517": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_18518": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_science_technology"
+    ],
+    "wl_18519": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18520": [
+      "form_verb",
+      "topic_communication",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18521": [
+      "form_noun",
+      "topic_communication",
+      "topic_study"
+    ],
+    "wl_18522": [
+      "form_noun",
+      "topic_society"
+    ],
+    "wl_18523": [
+      "form_verb",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_18524": [
+      "form_adjective",
+      "topic_communication",
+      "topic_emotions",
+      "topic_thinking"
+    ],
+    "wl_18525": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_18526": [
+      "form_noun",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18527": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18528": [
+      "form_adjective",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_18529": [
+      "form_noun",
+      "topic_food",
+      "topic_science_technology"
+    ],
+    "wl_18530": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18531": [
+      "form_noun",
+      "topic_emotions"
+    ],
+    "wl_18532": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_work"
+    ],
+    "wl_18533": [
+      "form_adjective",
+      "topic_properties",
+      "topic_work"
+    ],
+    "wl_18534": [
+      "form_noun",
+      "topic_work"
+    ],
+    "wl_18535": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_18536": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_tools",
+      "topic_work"
+    ],
+    "wl_18537": [
+      "form_noun",
+      "topic_work"
+    ],
+    "wl_18538": [
+      "form_adjective",
+      "topic_society",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_18539": [
+      "form_noun",
+      "topic_appliances",
+      "topic_science_technology",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_18540": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18541": [
+      "form_noun",
+      "topic_food",
+      "topic_plants"
+    ],
+    "wl_18542": [
+      "form_noun",
+      "topic_animals",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18543": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_18544": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18545": [
+      "form_noun",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_science_technology",
+      "topic_work"
+    ],
+    "wl_18546": [
+      "form_noun",
+      "topic_history",
+      "usage_written"
+    ],
+    "wl_18547": [
+      "form_noun",
+      "topic_work",
+      "usage_everyday"
+    ],
+    "wl_18548": [
+      "form_adjective",
+      "topic_properties",
+      "topic_society",
+      "topic_thinking"
+    ],
+    "wl_18549": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18550": [
+      "form_phrase",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_18551": [
+      "form_verb",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_18552": [
+      "form_verb",
+      "topic_history",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_18553": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18554": [
+      "form_noun",
+      "topic_study",
+      "topic_time_number"
+    ],
+    "wl_18555": [
+      "form_noun",
+      "topic_space"
+    ],
+    "wl_18556": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18557": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18558": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_18559": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_family",
+      "topic_money",
+      "topic_society"
+    ],
+    "wl_18560": [
+      "form_noun",
+      "topic_family",
+      "topic_home",
+      "topic_money",
+      "topic_objects"
+    ],
+    "wl_18561": [
+      "form_noun",
+      "topic_family",
+      "topic_history",
+      "usage_written"
+    ],
+    "wl_18562": [
+      "form_noun",
+      "topic_family",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18563": [
+      "form_noun",
+      "topic_communication",
+      "topic_family",
+      "usage_written"
+    ],
+    "wl_18564": [
+      "form_noun",
+      "topic_family"
+    ],
+    "wl_18565": [
+      "form_adjective",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_18566": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18567": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_thinking"
+    ],
+    "wl_18568": [
+      "form_noun",
+      "topic_objects",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_18569": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18570": [
+      "form_noun",
+      "topic_home",
+      "topic_objects"
+    ],
+    "wl_18571": [
+      "form_noun",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18572": [
+      "form_noun",
+      "topic_properties"
+    ],
+    "wl_18573": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18574": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18575": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "topic_thinking"
+    ],
+    "wl_18576": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_18577": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18578": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_thinking"
+    ],
+    "wl_18579": [
+      "form_verb",
+      "topic_communication",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18580": [
+      "form_verb",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_18581": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_18582": [
+      "form_noun",
+      "topic_history"
+    ],
+    "wl_18583": [
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_18584": [
+      "form_noun",
+      "topic_objects",
+      "topic_study",
+      "topic_tools"
+    ],
+    "wl_18585": [
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_18586": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_body_health"
+    ],
+    "wl_18587": [
+      "form_noun",
+      "topic_tools"
+    ],
+    "wl_18588": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_18589": [
+      "form_verb",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_18590": [
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_18591": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18592": [
+      "form_adjective",
+      "topic_nature_weather",
+      "topic_properties"
+    ],
+    "wl_18593": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18594": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_18595": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_travel_transport",
+      "usage_written"
+    ],
+    "wl_18596": [
+      "form_verb",
+      "topic_history",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_18597": [
+      "form_noun",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_18598": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_18599": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18600": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_time_number"
+    ],
+    "wl_18601": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_18602": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18603": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18604": [
+      "form_noun",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_18605": [
+      "form_noun",
+      "topic_actions_processes",
+      "topic_emotions",
+      "topic_people"
+    ],
+    "wl_18606": [
+      "form_adverb",
+      "topic_actions_processes"
+    ],
+    "wl_18607": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18608": [
+      "form_phrase",
+      "topic_nature_weather",
+      "topic_time_number"
+    ],
+    "wl_18609": [
+      "form_verb",
+      "topic_body_health"
+    ],
+    "wl_18610": [
+      "form_verb",
+      "topic_travel_transport"
+    ],
+    "wl_18611": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18612": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18613": [
+      "form_adjective",
+      "topic_properties",
+      "topic_thinking"
+    ],
+    "wl_18614": [
+      "form_function",
+      "topic_abstract_relations",
+      "topic_space",
+      "topic_time_number"
+    ],
+    "wl_18615": [
+      "form_verb",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_18616": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18617": [
+      "form_verb",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_18618": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18619": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18620": [
+      "form_verb",
+      "topic_emotions",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_18621": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_18622": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_people",
+      "topic_work"
+    ],
+    "wl_18623": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "topic_thinking"
+    ],
+    "wl_18624": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18625": [
+      "form_noun",
+      "topic_communication",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_18626": [
+      "form_noun",
+      "topic_clothing",
+      "usage_everyday"
+    ],
+    "wl_18627": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_18628": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_18629": [
+      "form_noun",
+      "form_verb",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18630": [
+      "form_adjective",
+      "topic_communication"
+    ],
+    "wl_18631": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_18632": [
+      "form_noun",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18633": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_18634": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18635": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18636": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18637": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18638": [
+      "form_phrase",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_18639": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18640": [
+      "form_noun",
+      "topic_daily_actions",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18641": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18642": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions"
+    ],
+    "wl_18643": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18644": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18645": [
+      "form_verb",
+      "topic_travel_transport"
+    ],
+    "wl_18646": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18647": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18648": [
+      "form_phrase",
+      "form_verb",
+      "topic_grammar"
+    ],
+    "wl_18649": [
+      "form_verb",
+      "topic_abstract_relations",
+      "usage_everyday"
+    ],
+    "wl_18650": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18651": [
+      "form_phrase",
+      "form_verb",
+      "topic_grammar"
+    ],
+    "wl_18652": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18653": [
+      "form_noun",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18654": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18655": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18656": [
+      "form_noun",
+      "topic_society"
+    ],
+    "wl_18657": [
+      "form_noun",
+      "topic_work"
+    ],
+    "wl_18658": [
+      "form_noun",
+      "topic_law"
+    ],
+    "wl_18659": [
+      "form_noun",
+      "topic_people",
+      "topic_society",
+      "topic_work"
+    ],
+    "wl_18660": [
+      "form_noun",
+      "form_verb",
+      "topic_work"
+    ],
+    "wl_18661": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties"
+    ],
+    "wl_18662": [
+      "form_noun",
+      "topic_society",
+      "topic_time_number"
+    ],
+    "wl_18663": [
+      "form_noun",
+      "topic_family"
+    ],
+    "wl_18664": [
+      "form_noun",
+      "topic_society",
+      "topic_work"
+    ],
+    "wl_18665": [
+      "form_noun",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_18666": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18667": [
+      "form_noun",
+      "topic_history",
+      "topic_work"
+    ],
+    "wl_18668": [
+      "form_noun",
+      "topic_people",
+      "topic_work"
+    ],
+    "wl_18669": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18670": [
+      "form_noun",
+      "topic_family",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18671": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18672": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18673": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18674": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18675": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18676": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_18677": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18678": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_sport_leisure",
+      "topic_study"
+    ],
+    "wl_18679": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_properties"
+    ],
+    "wl_18680": [
+      "form_noun",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18681": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_18682": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18683": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_18684": [
+      "form_noun",
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_18685": [
+      "form_noun",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_18686": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18687": [
+      "form_adjective",
+      "topic_science_technology"
+    ],
+    "wl_18688": [
+      "form_phrase",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18689": [
+      "form_noun",
+      "topic_culture",
+      "topic_objects"
+    ],
+    "wl_18690": [
+      "form_noun",
+      "topic_home",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18691": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18692": [
+      "form_noun",
+      "topic_home",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18693": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18694": [
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_18695": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_study"
+    ],
+    "wl_18696": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18697": [
+      "form_adjective",
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_actions_processes",
+      "topic_law",
+      "usage_written"
+    ],
+    "wl_18698": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_18699": [
+      "form_adverb",
+      "topic_actions_processes"
+    ],
+    "wl_18700": [
+      "form_adjective",
+      "form_adverb",
+      "topic_nature_weather"
+    ],
+    "wl_18701": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18702": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number"
+    ],
+    "wl_18703": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18704": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18705": [
+      "form_noun",
+      "topic_space",
+      "topic_time_number"
+    ],
+    "wl_18706": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18707": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18708": [
+      "form_noun",
+      "topic_properties"
+    ],
+    "wl_18709": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_plants"
+    ],
+    "wl_18710": [
+      "form_noun",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_18711": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18712": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_18713": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_18714": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_18715": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18716": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18717": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_18718": [
+      "form_verb",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_18719": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_18720": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18721": [
+      "form_noun",
+      "topic_animals",
+      "topic_people"
+    ],
+    "wl_18722": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_18723": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18724": [
+      "form_noun",
+      "topic_sport_leisure"
+    ],
+    "wl_18725": [
+      "form_phrase",
+      "topic_nature_weather",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18726": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_18727": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18728": [
+      "form_phrase",
+      "topic_communication",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18729": [
+      "form_noun",
+      "topic_work"
+    ],
+    "wl_18730": [
+      "form_noun",
+      "topic_study",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_18731": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_18732": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18733": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_18734": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18735": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18736": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18737": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18738": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18739": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18740": [
+      "form_noun",
+      "topic_work"
+    ],
+    "wl_18741": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18742": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_18743": [
+      "form_noun",
+      "topic_home",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_18744": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_money"
+    ],
+    "wl_18745": [
+      "form_noun",
+      "topic_home"
+    ],
+    "wl_18746": [
+      "form_noun",
+      "topic_food",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_18747": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_18748": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_18749": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_18750": [
+      "form_noun",
+      "topic_people",
+      "topic_plants"
+    ],
+    "wl_18751": [
+      "form_noun",
+      "topic_objects",
+      "usage_written"
+    ],
+    "wl_18752": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_society"
+    ],
+    "wl_18753": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_18754": [
+      "form_noun",
+      "topic_geography"
+    ],
+    "wl_18755": [
+      "form_noun",
+      "topic_people",
+      "topic_work"
+    ],
+    "wl_18756": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_home",
+      "topic_objects"
+    ],
+    "wl_18757": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18758": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18759": [
+      "form_noun",
+      "topic_culture",
+      "topic_religion"
+    ],
+    "wl_18760": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18761": [
+      "form_verb",
+      "topic_emotions",
+      "topic_people"
+    ],
+    "wl_18762": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18763": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18764": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "topic_food",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18765": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18766": [
+      "form_verb",
+      "topic_clothing",
+      "usage_everyday"
+    ],
+    "wl_18767": [
+      "form_phrase",
+      "topic_emotions",
+      "topic_society",
+      "usage_everyday"
+    ],
+    "wl_18768": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18769": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18770": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18771": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number"
+    ],
+    "wl_18772": [
+      "form_noun",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_18773": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18774": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18775": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_18776": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_18777": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18778": [
+      "form_noun",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_18779": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18780": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_18781": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_work"
+    ],
+    "wl_18782": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18783": [
+      "form_noun",
+      "topic_food",
+      "topic_plants"
+    ],
+    "wl_18784": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_18785": [
+      "form_noun",
+      "topic_money",
+      "topic_science_technology"
+    ],
+    "wl_18786": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18787": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18788": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18789": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18790": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_18791": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18792": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_18793": [
+      "form_adverb",
+      "topic_money",
+      "topic_properties"
+    ],
+    "wl_18794": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18795": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_18796": [
+      "form_noun",
+      "topic_food",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_18797": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18798": [
+      "form_noun",
+      "topic_communication",
+      "topic_emotions"
+    ],
+    "wl_18799": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_18800": [
+      "form_noun",
+      "topic_objects",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_18801": [
+      "form_noun",
+      "form_verb",
+      "topic_people",
+      "topic_work"
+    ],
+    "wl_18802": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18803": [
+      "form_noun",
+      "topic_people",
+      "topic_work",
+      "usage_everyday"
+    ],
+    "wl_18804": [
+      "form_phrase",
+      "form_verb",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18805": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18806": [
+      "form_verb",
+      "topic_food",
+      "topic_home",
+      "topic_work"
+    ],
+    "wl_18807": [
+      "form_verb",
+      "topic_work"
+    ],
+    "wl_18808": [
+      "form_adjective",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_objects"
+    ],
+    "wl_18809": [
+      "form_noun",
+      "topic_geography"
+    ],
+    "wl_18810": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_18811": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_18812": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_18813": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18814": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_18815": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18816": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_18817": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18818": [
+      "form_noun",
+      "topic_geography",
+      "usage_written"
+    ],
+    "wl_18819": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18820": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18821": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18822": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18823": [
+      "form_verb",
+      "topic_body_health",
+      "topic_law"
+    ],
+    "wl_18824": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18825": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_18826": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18827": [
+      "form_noun",
+      "topic_body_health",
+      "topic_communication",
+      "topic_science_technology"
+    ],
+    "wl_18828": [
+      "form_noun",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_18829": [
+      "form_verb",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_18830": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_18831": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18832": [
+      "form_noun",
+      "topic_study",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_18833": [
+      "form_noun",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_18834": [
+      "form_noun",
+      "form_verb",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18835": [
+      "form_noun",
+      "topic_properties",
+      "topic_study"
+    ],
+    "wl_18836": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18837": [
+      "form_noun",
+      "topic_geography",
+      "topic_space",
+      "usage_written"
+    ],
+    "wl_18838": [
+      "form_noun",
+      "topic_history",
+      "usage_written"
+    ],
+    "wl_18839": [
+      "form_verb",
+      "topic_society",
+      "topic_work"
+    ],
+    "wl_18840": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18841": [
+      "form_verb",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_18842": [
+      "form_phrase",
+      "topic_culture",
+      "topic_sport_leisure"
+    ],
+    "wl_18843": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_18844": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18845": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18846": [
+      "form_phrase",
+      "topic_communication",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18847": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18848": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18849": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18850": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18851": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18852": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18853": [
+      "form_noun",
+      "topic_family",
+      "topic_history",
+      "topic_people",
+      "usage_classical"
+    ],
+    "wl_18854": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18855": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_18856": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_18857": [
+      "form_noun",
+      "topic_plants",
+      "topic_science_technology"
+    ],
+    "wl_18858": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_18859": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_daily_actions"
+    ],
+    "wl_18860": [
+      "form_phrase",
+      "topic_abstract_relations",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18861": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18862": [
+      "form_phrase",
+      "topic_food",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18863": [
+      "form_adjective",
+      "topic_law",
+      "usage_written"
+    ],
+    "wl_18864": [
+      "form_noun",
+      "topic_law",
+      "topic_money"
+    ],
+    "wl_18865": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18866": [
+      "form_adverb",
+      "topic_abstract_relations",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18867": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18868": [
+      "form_adjective",
+      "topic_abstract_relations"
+    ],
+    "wl_18869": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_18870": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_18871": [
+      "form_adverb",
+      "topic_abstract_relations",
+      "topic_grammar"
+    ],
+    "wl_18872": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18873": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18874": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18875": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_18876": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_18877": [
+      "form_phrase",
+      "topic_abstract_relations",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18878": [
+      "form_noun",
+      "topic_clothing"
+    ],
+    "wl_18879": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_18880": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_study",
+      "usage_written"
+    ],
+    "wl_18881": [
+      "form_noun",
+      "topic_culture",
+      "topic_history",
+      "topic_people",
+      "usage_written"
+    ],
+    "wl_18882": [
+      "form_verb",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_18883": [
+      "form_noun",
+      "form_verb",
+      "topic_home",
+      "usage_written"
+    ],
+    "wl_18884": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_18885": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18886": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_18887": [
+      "form_noun",
+      "topic_people",
+      "topic_plants",
+      "topic_society"
+    ],
+    "wl_18888": [
+      "form_noun",
+      "topic_clothing"
+    ],
+    "wl_18889": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_18890": [
+      "form_noun",
+      "topic_culture",
+      "topic_study"
+    ],
+    "wl_18891": [
+      "form_noun",
+      "topic_objects",
+      "topic_plants"
+    ],
+    "wl_18892": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_culture"
+    ],
+    "wl_18893": [
+      "form_verb",
+      "topic_culture"
+    ],
+    "wl_18894": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_18895": [
+      "form_adverb",
+      "topic_time_number"
+    ],
+    "wl_18896": [
+      "form_noun",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_18897": [
+      "form_noun",
+      "topic_food",
+      "topic_plants"
+    ],
+    "wl_18898": [
+      "form_noun",
+      "form_verb",
+      "topic_time_number"
+    ],
+    "wl_18899": [
+      "form_verb",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_18900": [
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_18901": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18902": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18903": [
+      "form_phrase",
+      "topic_grammar"
+    ],
+    "wl_18904": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18905": [
+      "form_noun",
+      "form_verb",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18906": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_18907": [
+      "form_noun",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18908": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18909": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_18910": [
+      "form_noun",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18911": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_tools",
+      "topic_work"
+    ],
+    "wl_18912": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18913": [
+      "form_noun",
+      "topic_objects",
+      "topic_travel_transport"
+    ],
+    "wl_18914": [
+      "form_phrase",
+      "topic_abstract_relations",
+      "topic_actions_processes"
+    ],
+    "wl_18915": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18916": [
+      "form_adjective",
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_18917": [
+      "form_adverb",
+      "topic_actions_processes",
+      "topic_thinking"
+    ],
+    "wl_18918": [
+      "form_adverb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_18919": [
+      "form_noun",
+      "topic_animals",
+      "usage_written"
+    ],
+    "wl_18920": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_18921": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_18922": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18923": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_food",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18924": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18925": [
+      "form_phrase",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_18926": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_food",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18927": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18928": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_18929": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_18930": [
+      "form_verb",
+      "topic_travel_transport"
+    ],
+    "wl_18931": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_travel_transport"
+    ],
+    "wl_18932": [
+      "form_noun",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_18933": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18934": [
+      "form_verb",
+      "topic_emotions",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18935": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_society",
+      "usage_everyday"
+    ],
+    "wl_18936": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18937": [
+      "form_adverb",
+      "topic_abstract_relations"
+    ],
+    "wl_18938": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_18939": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18940": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18941": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_18942": [
+      "form_verb",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18943": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_18944": [
+      "form_noun",
+      "topic_space",
+      "topic_travel_transport"
+    ],
+    "wl_18945": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_18946": [
+      "form_noun",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_18947": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_18948": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_18949": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_18950": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_time_number"
+    ],
+    "wl_18951": [
+      "form_noun",
+      "topic_properties"
+    ],
+    "wl_18952": [
+      "form_adjective",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_18953": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_18954": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18955": [
+      "form_verb",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18956": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_18957": [
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_18958": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_18959": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18960": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18961": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18962": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_18963": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_18964": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_18965": [
+      "form_noun",
+      "topic_properties",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18966": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18967": [
+      "form_noun",
+      "topic_society"
+    ],
+    "wl_18968": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18969": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_18970": [
+      "form_noun",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_18971": [
+      "form_noun",
+      "topic_space",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18972": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18973": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18974": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_18975": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_18976": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_18977": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18978": [
+      "form_noun",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_18979": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18980": [
+      "form_noun",
+      "topic_geography",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18981": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18982": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_culture"
+    ],
+    "wl_18983": [
+      "form_noun",
+      "topic_plants",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18984": [
+      "form_noun",
+      "topic_food",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_18985": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_18986": [
+      "form_noun",
+      "topic_objects",
+      "topic_properties",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_18987": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_18988": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_18989": [
+      "form_noun",
+      "topic_animals",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_18990": [
+      "form_adjective",
+      "topic_science_technology"
+    ],
+    "wl_18991": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18992": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_18993": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_18994": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_18995": [
+      "form_noun",
+      "topic_animals",
+      "topic_food"
+    ],
+    "wl_18996": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_18997": [
+      "form_adverb",
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_18998": [
+      "form_adverb",
+      "topic_space"
+    ],
+    "wl_18999": [
+      "form_noun",
+      "topic_law"
+    ],
+    "wl_19000": [
+      "form_adverb",
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19001": [
+      "form_function",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19002": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19003": [
+      "form_noun",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19004": [
+      "form_noun",
+      "topic_objects",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19005": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19006": [
+      "form_noun",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19007": [
+      "form_noun",
+      "topic_objects",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19008": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19009": [
+      "form_adverb",
+      "form_verb",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19010": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19011": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_properties"
+    ],
+    "wl_19012": [
+      "form_verb",
+      "topic_abstract_relations",
+      "usage_everyday"
+    ],
+    "wl_19013": [
+      "form_sound_interjection",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19014": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19015": [
+      "form_verb",
+      "topic_abstract_relations"
+    ],
+    "wl_19016": [
+      "form_noun",
+      "topic_study",
+      "topic_time_number"
+    ],
+    "wl_19017": [
+      "form_noun",
+      "topic_money"
+    ],
+    "wl_19018": [
+      "form_noun",
+      "topic_space",
+      "topic_travel_transport",
+      "usage_written"
+    ],
+    "wl_19019": [
+      "form_noun",
+      "topic_space"
+    ],
+    "wl_19020": [
+      "form_noun",
+      "topic_home"
+    ],
+    "wl_19021": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_19022": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_science_technology"
+    ],
+    "wl_19023": [
+      "form_noun",
+      "topic_home"
+    ],
+    "wl_19024": [
+      "form_noun",
+      "topic_appliances"
+    ],
+    "wl_19025": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19026": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19027": [
+      "form_verb",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19028": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_science_technology"
+    ],
+    "wl_19029": [
+      "form_noun",
+      "topic_appliances",
+      "topic_science_technology"
+    ],
+    "wl_19030": [
+      "form_noun",
+      "topic_appliances",
+      "usage_everyday"
+    ],
+    "wl_19031": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19032": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19033": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_19034": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19035": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19036": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19037": [
+      "form_verb",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19038": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_19039": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19040": [
+      "form_adverb",
+      "form_verb",
+      "topic_time_number"
+    ],
+    "wl_19041": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_space"
+    ],
+    "wl_19042": [
+      "form_adverb",
+      "form_verb",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19043": [
+      "form_adjective",
+      "topic_grammar",
+      "topic_properties"
+    ],
+    "wl_19044": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19045": [
+      "form_verb",
+      "topic_communication",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19046": [
+      "form_adjective",
+      "form_adverb",
+      "topic_actions_processes",
+      "topic_space"
+    ],
+    "wl_19047": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19048": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19049": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19050": [
+      "form_adjective",
+      "form_adverb",
+      "topic_actions_processes"
+    ],
+    "wl_19051": [
+      "form_verb",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19052": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19053": [
+      "form_noun",
+      "topic_history",
+      "topic_people",
+      "topic_work"
+    ],
+    "wl_19054": [
+      "form_noun",
+      "topic_space",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19055": [
+      "form_noun",
+      "topic_food",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19056": [
+      "form_verb",
+      "topic_science_technology"
+    ],
+    "wl_19057": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_written"
+    ],
+    "wl_19058": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19059": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19060": [
+      "form_verb",
+      "topic_communication",
+      "usage_classical",
+      "usage_written"
+    ],
+    "wl_19061": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_19062": [
+      "form_noun",
+      "topic_space"
+    ],
+    "wl_19063": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19064": [
+      "form_phrase",
+      "topic_abstract_relations",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19065": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_19066": [
+      "form_noun",
+      "topic_study"
+    ],
+    "wl_19067": [
+      "form_noun",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19068": [
+      "form_phrase",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19069": [
+      "form_verb",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19070": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19071": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19072": [
+      "form_verb",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19073": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_space"
+    ],
+    "wl_19074": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19075": [
+      "form_adjective",
+      "topic_abstract_relations"
+    ],
+    "wl_19076": [
+      "form_sound_interjection",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19077": [
+      "form_verb",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19078": [
+      "form_noun",
+      "form_verb",
+      "topic_science_technology"
+    ],
+    "wl_19079": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_everyday"
+    ],
+    "wl_19080": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19081": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19082": [
+      "form_noun",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19083": [
+      "form_noun",
+      "topic_grammar",
+      "usage_written"
+    ],
+    "wl_19084": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19085": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19086": [
+      "form_phrase",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19087": [
+      "form_noun",
+      "topic_culture",
+      "usage_everyday"
+    ],
+    "wl_19088": [
+      "form_noun",
+      "topic_thinking"
+    ],
+    "wl_19089": [
+      "form_adverb",
+      "topic_grammar",
+      "usage_written"
+    ],
+    "wl_19090": [
+      "form_noun",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19091": [
+      "form_adjective",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19092": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19093": [
+      "form_noun",
+      "topic_appliances"
+    ],
+    "wl_19094": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19095": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_19096": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_money"
+    ],
+    "wl_19097": [
+      "form_verb",
+      "topic_history",
+      "topic_law",
+      "usage_written"
+    ],
+    "wl_19098": [
+      "form_noun",
+      "form_verb",
+      "topic_food"
+    ],
+    "wl_19099": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19100": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_sport_leisure"
+    ],
+    "wl_19101": [
+      "form_verb",
+      "topic_nature_weather"
+    ],
+    "wl_19102": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19103": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_culture"
+    ],
+    "wl_19104": [
+      "form_adjective",
+      "topic_law"
+    ],
+    "wl_19105": [
+      "form_noun",
+      "topic_law",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19106": [
+      "form_noun",
+      "topic_space",
+      "usage_written"
+    ],
+    "wl_19107": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19108": [
+      "form_noun",
+      "topic_furniture",
+      "usage_everyday"
+    ],
+    "wl_19109": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_science_technology"
+    ],
+    "wl_19110": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19111": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19112": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19113": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_religion"
+    ],
+    "wl_19114": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19115": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_society",
+      "topic_travel_transport"
+    ],
+    "wl_19116": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_travel_transport"
+    ],
+    "wl_19117": [
+      "form_adjective",
+      "form_adverb",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19118": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19119": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19120": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19121": [
+      "form_noun",
+      "topic_culture",
+      "topic_religion",
+      "usage_written"
+    ],
+    "wl_19122": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19123": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19124": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19125": [
+      "form_verb",
+      "topic_family"
+    ],
+    "wl_19126": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_time_number"
+    ],
+    "wl_19127": [
+      "form_adverb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19128": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19129": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19130": [
+      "form_adjective",
+      "topic_nature_weather",
+      "topic_properties"
+    ],
+    "wl_19131": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_19132": [
+      "form_noun",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19133": [
+      "form_noun",
+      "topic_culture",
+      "topic_religion"
+    ],
+    "wl_19134": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_19135": [
+      "form_noun",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19136": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_science_technology"
+    ],
+    "wl_19137": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19138": [
+      "form_noun",
+      "topic_objects",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19139": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19140": [
+      "form_verb",
+      "topic_travel_transport"
+    ],
+    "wl_19141": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19142": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19143": [
+      "form_phrase",
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19144": [
+      "form_phrase",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19145": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19146": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19147": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19148": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19149": [
+      "form_adjective",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_19150": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19151": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19152": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19153": [
+      "form_noun",
+      "form_phrase",
+      "topic_properties",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19154": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_19155": [
+      "form_noun",
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_19156": [
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19157": [
+      "form_verb",
+      "topic_law"
+    ],
+    "wl_19158": [
+      "form_verb",
+      "topic_communication",
+      "topic_history",
+      "usage_written"
+    ],
+    "wl_19159": [
+      "form_noun",
+      "topic_culture",
+      "usage_everyday"
+    ],
+    "wl_19160": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19161": [
+      "form_phrase",
+      "form_verb",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19162": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19163": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19164": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_plants"
+    ],
+    "wl_19165": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_everyday"
+    ],
+    "wl_19166": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19167": [
+      "form_noun",
+      "topic_space"
+    ],
+    "wl_19168": [
+      "form_noun",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19169": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_nature_weather",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19170": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar"
+    ],
+    "wl_19171": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19172": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19173": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19174": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19175": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_tools",
+      "topic_work"
+    ],
+    "wl_19176": [
+      "form_noun",
+      "topic_study"
+    ],
+    "wl_19177": [
+      "form_noun",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19178": [
+      "form_noun",
+      "topic_objects",
+      "topic_society"
+    ],
+    "wl_19179": [
+      "form_noun",
+      "topic_work"
+    ],
+    "wl_19180": [
+      "form_noun",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19181": [
+      "form_verb",
+      "topic_society",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19182": [
+      "form_adjective",
+      "topic_law"
+    ],
+    "wl_19183": [
+      "form_noun",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19184": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19185": [
+      "form_noun",
+      "topic_family"
+    ],
+    "wl_19186": [
+      "form_adverb",
+      "topic_abstract_relations",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19187": [
+      "form_noun",
+      "topic_law",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19188": [
+      "form_noun",
+      "topic_law",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19189": [
+      "form_noun",
+      "topic_objects",
+      "topic_society"
+    ],
+    "wl_19190": [
+      "form_adjective",
+      "topic_society",
+      "topic_work"
+    ],
+    "wl_19191": [
+      "form_noun",
+      "topic_history",
+      "topic_people",
+      "usage_written"
+    ],
+    "wl_19192": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19193": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19194": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19195": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19196": [
+      "form_adjective",
+      "form_adverb",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19197": [
+      "form_phrase",
+      "topic_communication",
+      "topic_properties"
+    ],
+    "wl_19198": [
+      "form_noun",
+      "topic_emotions"
+    ],
+    "wl_19199": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_19200": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_19201": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19202": [
+      "form_noun",
+      "topic_family",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19203": [
+      "form_verb",
+      "topic_communication",
+      "topic_emotions"
+    ],
+    "wl_19204": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19205": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19206": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19207": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19208": [
+      "form_adverb",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19209": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19210": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19211": [
+      "form_noun",
+      "topic_food",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19212": [
+      "form_adverb",
+      "topic_properties"
+    ],
+    "wl_19213": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19214": [
+      "form_noun",
+      "topic_home",
+      "topic_space",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19215": [
+      "form_phrase",
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19216": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19217": [
+      "form_adjective",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19218": [
+      "form_verb",
+      "topic_family"
+    ],
+    "wl_19219": [
+      "form_verb",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19220": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_family",
+      "topic_home",
+      "topic_society",
+      "usage_everyday"
+    ],
+    "wl_19221": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19222": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19223": [
+      "form_verb",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19224": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19225": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19226": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19227": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19228": [
+      "form_noun",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19229": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19230": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19231": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19232": [
+      "form_phrase",
+      "topic_emotions",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19233": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19234": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19235": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19236": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19237": [
+      "form_noun",
+      "topic_properties",
+      "topic_space"
+    ],
+    "wl_19238": [
+      "form_adverb",
+      "topic_actions_processes",
+      "topic_grammar"
+    ],
+    "wl_19239": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19240": [
+      "form_noun",
+      "topic_food",
+      "topic_properties",
+      "topic_space"
+    ],
+    "wl_19241": [
+      "form_adjective",
+      "form_sound_interjection",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19242": [
+      "form_noun",
+      "topic_family"
+    ],
+    "wl_19243": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19244": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19245": [
+      "form_adjective",
+      "topic_communication",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19246": [
+      "form_sound_interjection",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19247": [
+      "form_adverb",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19248": [
+      "form_verb",
+      "topic_communication",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19249": [
+      "form_verb",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_19250": [
+      "form_adjective",
+      "topic_money",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19251": [
+      "form_noun",
+      "topic_family"
+    ],
+    "wl_19252": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19253": [
+      "form_adjective",
+      "topic_family",
+      "topic_properties"
+    ],
+    "wl_19254": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19255": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_time_number"
+    ],
+    "wl_19256": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19257": [
+      "form_noun",
+      "topic_geography",
+      "usage_written"
+    ],
+    "wl_19258": [
+      "form_noun",
+      "topic_clothing",
+      "topic_objects"
+    ],
+    "wl_19259": [
+      "form_noun",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19260": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19261": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19262": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_19263": [
+      "form_noun",
+      "form_verb",
+      "topic_properties"
+    ],
+    "wl_19264": [
+      "form_noun",
+      "topic_people",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19265": [
+      "form_noun",
+      "topic_food",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19266": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19267": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19268": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19269": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19270": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19271": [
+      "form_noun",
+      "topic_animals",
+      "topic_food"
+    ],
+    "wl_19272": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19273": [
+      "form_phrase",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19274": [
+      "form_phrase",
+      "topic_emotions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19275": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19276": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19277": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19278": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19279": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19280": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19281": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19282": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19283": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19284": [
+      "form_noun",
+      "topic_objects",
+      "topic_plants"
+    ],
+    "wl_19285": [
+      "form_noun",
+      "topic_clothing",
+      "usage_everyday"
+    ],
+    "wl_19286": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19287": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19288": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19289": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19290": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19291": [
+      "form_noun",
+      "topic_objects",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19292": [
+      "form_noun",
+      "topic_culture",
+      "usage_everyday"
+    ],
+    "wl_19293": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_19294": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19295": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19296": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19297": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_19298": [
+      "form_noun",
+      "topic_society",
+      "topic_travel_transport"
+    ],
+    "wl_19299": [
+      "form_noun",
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_19300": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_time_number",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19301": [
+      "form_adjective",
+      "form_verb",
+      "topic_society",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19302": [
+      "form_noun",
+      "topic_people",
+      "usage_written"
+    ],
+    "wl_19303": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_19304": [
+      "form_noun",
+      "topic_space",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19305": [
+      "form_noun",
+      "topic_space",
+      "usage_written"
+    ],
+    "wl_19306": [
+      "form_verb",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19307": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19308": [
+      "form_noun",
+      "topic_emotions"
+    ],
+    "wl_19309": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19310": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19311": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19312": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19313": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19314": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19315": [
+      "form_noun",
+      "topic_clothing",
+      "usage_everyday"
+    ],
+    "wl_19316": [
+      "form_noun",
+      "topic_clothing",
+      "usage_everyday"
+    ],
+    "wl_19317": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19318": [
+      "form_noun",
+      "topic_animals",
+      "usage_written"
+    ],
+    "wl_19319": [
+      "form_noun",
+      "topic_culture",
+      "usage_everyday"
+    ],
+    "wl_19320": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19321": [
+      "form_noun",
+      "topic_objects",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19322": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19323": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19324": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19325": [
+      "form_noun",
+      "topic_culture",
+      "topic_objects"
+    ],
+    "wl_19326": [
+      "form_phrase",
+      "topic_communication"
+    ],
+    "wl_19327": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19328": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19329": [
+      "form_noun",
+      "topic_geography"
+    ],
+    "wl_19330": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_everyday"
+    ],
+    "wl_19331": [
+      "form_adjective",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19332": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19333": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19334": [
+      "form_verb",
+      "topic_grammar",
+      "topic_thinking"
+    ],
+    "wl_19335": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_19336": [
+      "form_verb",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19337": [
+      "form_adjective",
+      "topic_thinking"
+    ],
+    "wl_19338": [
+      "form_phrase",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19339": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19340": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19341": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_19342": [
+      "form_noun",
+      "topic_body_health",
+      "topic_objects"
+    ],
+    "wl_19343": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties"
+    ],
+    "wl_19344": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19345": [
+      "form_noun",
+      "topic_animals",
+      "topic_science_technology"
+    ],
+    "wl_19346": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19347": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19348": [
+      "form_verb",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19349": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19350": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19351": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19352": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19353": [
+      "form_noun",
+      "topic_home",
+      "topic_space"
+    ],
+    "wl_19354": [
+      "form_verb",
+      "topic_study"
+    ],
+    "wl_19355": [
+      "form_noun",
+      "topic_sport_leisure",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19356": [
+      "form_verb",
+      "topic_science_technology"
+    ],
+    "wl_19357": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19358": [
+      "form_noun",
+      "form_verb",
+      "topic_sport_leisure"
+    ],
+    "wl_19359": [
+      "form_verb",
+      "topic_work"
+    ],
+    "wl_19360": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19361": [
+      "form_noun",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_sport_leisure",
+      "topic_travel_transport"
+    ],
+    "wl_19362": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19363": [
+      "form_noun",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_19364": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19365": [
+      "form_noun",
+      "topic_objects",
+      "topic_properties"
+    ],
+    "wl_19366": [
+      "form_adjective",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_19367": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19368": [
+      "form_phrase",
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19369": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19370": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19371": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar"
+    ],
+    "wl_19372": [
+      "form_noun",
+      "form_verb",
+      "topic_culture"
+    ],
+    "wl_19373": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_work"
+    ],
+    "wl_19374": [
+      "form_noun",
+      "form_verb",
+      "topic_sport_leisure"
+    ],
+    "wl_19375": [
+      "form_adverb",
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19376": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_society",
+      "topic_work"
+    ],
+    "wl_19377": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19378": [
+      "form_noun",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19379": [
+      "form_phrase",
+      "topic_emotions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19380": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_19381": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19382": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19383": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19384": [
+      "form_adjective",
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19385": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_19386": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_19387": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_time_number",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19388": [
+      "form_noun",
+      "topic_history",
+      "topic_study",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19389": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_19390": [
+      "form_adjective",
+      "form_adverb",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19391": [
+      "form_adverb",
+      "topic_study",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19392": [
+      "form_adjective",
+      "topic_family"
+    ],
+    "wl_19393": [
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19394": [
+      "form_adjective",
+      "topic_communication",
+      "topic_properties"
+    ],
+    "wl_19395": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19396": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_19397": [
+      "form_adjective",
+      "topic_culture",
+      "topic_properties"
+    ],
+    "wl_19398": [
+      "form_noun",
+      "topic_food",
+      "topic_plants"
+    ],
+    "wl_19399": [
+      "form_noun",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_19400": [
+      "form_noun",
+      "topic_society",
+      "topic_time_number"
+    ],
+    "wl_19401": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19402": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19403": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_science_technology"
+    ],
+    "wl_19404": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19405": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_written"
+    ],
+    "wl_19406": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19407": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19408": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19409": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_written"
+    ],
+    "wl_19410": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19411": [
+      "form_verb",
+      "topic_study",
+      "usage_written"
+    ],
+    "wl_19412": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19413": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19414": [
+      "form_verb",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19415": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19416": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19417": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19418": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19419": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19420": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19421": [
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_19422": [
+      "form_verb",
+      "topic_travel_transport"
+    ],
+    "wl_19423": [
+      "form_noun",
+      "topic_society",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19424": [
+      "form_noun",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19425": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19426": [
+      "form_adverb",
+      "topic_abstract_relations",
+      "topic_grammar",
+      "usage_written"
+    ],
+    "wl_19427": [
+      "form_noun",
+      "topic_geography",
+      "topic_nature_weather",
+      "topic_properties"
+    ],
+    "wl_19428": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_science_technology"
+    ],
+    "wl_19429": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_written"
+    ],
+    "wl_19430": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19431": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19432": [
+      "form_noun",
+      "topic_society",
+      "usage_everyday"
+    ],
+    "wl_19433": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19434": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_19435": [
+      "form_noun",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19436": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19437": [
+      "form_verb",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19438": [
+      "form_noun",
+      "topic_appliances",
+      "usage_everyday"
+    ],
+    "wl_19439": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19440": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19441": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19442": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19443": [
+      "form_adjective",
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_19444": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_19445": [
+      "form_noun",
+      "topic_properties",
+      "topic_science_technology"
+    ],
+    "wl_19446": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19447": [
+      "form_noun",
+      "topic_geography"
+    ],
+    "wl_19448": [
+      "form_noun",
+      "topic_geography",
+      "usage_written"
+    ],
+    "wl_19449": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19450": [
+      "form_noun",
+      "topic_geography",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19451": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19452": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19453": [
+      "form_noun",
+      "topic_geography",
+      "usage_everyday"
+    ],
+    "wl_19454": [
+      "form_noun",
+      "form_verb",
+      "topic_nature_weather"
+    ],
+    "wl_19455": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19456": [
+      "form_noun",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19457": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19458": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19459": [
+      "form_noun",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19460": [
+      "form_adjective",
+      "topic_communication",
+      "topic_properties"
+    ],
+    "wl_19461": [
+      "form_verb",
+      "topic_sport_leisure"
+    ],
+    "wl_19462": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19463": [
+      "form_adjective",
+      "topic_grammar",
+      "topic_time_number"
+    ],
+    "wl_19464": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19465": [
+      "form_noun",
+      "topic_society",
+      "topic_space"
+    ],
+    "wl_19466": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19467": [
+      "form_phrase",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19468": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19469": [
+      "form_noun",
+      "topic_body_health",
+      "topic_space"
+    ],
+    "wl_19470": [
+      "form_verb",
+      "topic_plants"
+    ],
+    "wl_19471": [
+      "form_verb",
+      "topic_body_health",
+      "usage_written"
+    ],
+    "wl_19472": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19473": [
+      "form_adjective",
+      "topic_food"
+    ],
+    "wl_19474": [
+      "form_noun",
+      "topic_body_health",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19475": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19476": [
+      "form_noun",
+      "topic_people",
+      "topic_work"
+    ],
+    "wl_19477": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19478": [
+      "form_verb",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19479": [
+      "form_noun",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19480": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19481": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19482": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_time_number"
+    ],
+    "wl_19483": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19484": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19485": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19486": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19487": [
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19488": [
+      "form_adverb",
+      "topic_time_number"
+    ],
+    "wl_19489": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19490": [
+      "form_noun",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19491": [
+      "form_noun",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19492": [
+      "form_noun",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19493": [
+      "form_noun",
+      "form_verb",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19494": [
+      "form_adjective",
+      "topic_money",
+      "topic_properties"
+    ],
+    "wl_19495": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19496": [
+      "form_verb",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19497": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19498": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19499": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19500": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19501": [
+      "form_verb",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19502": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19503": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19504": [
+      "form_noun",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_19505": [
+      "form_verb",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19506": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_time_number"
+    ],
+    "wl_19507": [
+      "form_noun",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19508": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19509": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19510": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19511": [
+      "form_phrase",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19512": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19513": [
+      "form_noun",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19514": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_everyday"
+    ],
+    "wl_19515": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19516": [
+      "form_noun",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19517": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19518": [
+      "form_noun",
+      "topic_sport_leisure"
+    ],
+    "wl_19519": [
+      "form_noun",
+      "topic_geography",
+      "topic_nature_weather"
+    ],
+    "wl_19520": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19521": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19522": [
+      "form_phrase",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19523": [
+      "form_noun",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19524": [
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_19525": [
+      "form_phrase",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19526": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication"
+    ],
+    "wl_19527": [
+      "form_verb",
+      "topic_communication"
+    ],
+    "wl_19528": [
+      "form_noun",
+      "form_verb",
+      "topic_communication",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19529": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19530": [
+      "form_noun",
+      "topic_study"
+    ],
+    "wl_19531": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19532": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19533": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19534": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19535": [
+      "form_adjective",
+      "form_noun",
+      "topic_emotions",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19536": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_time_number"
+    ],
+    "wl_19537": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19538": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19539": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19540": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_19541": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19542": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19543": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19544": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19545": [
+      "form_phrase",
+      "form_pronoun",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19546": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19547": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19548": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19549": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_written"
+    ],
+    "wl_19550": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19551": [
+      "form_noun",
+      "topic_history",
+      "usage_written"
+    ],
+    "wl_19552": [
+      "form_phrase",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19553": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19554": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19555": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19556": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19557": [
+      "form_noun",
+      "form_verb",
+      "topic_communication",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19558": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19559": [
+      "form_noun",
+      "topic_home",
+      "topic_travel_transport"
+    ],
+    "wl_19560": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_written"
+    ],
+    "wl_19561": [
+      "form_noun",
+      "topic_religion",
+      "usage_written"
+    ],
+    "wl_19562": [
+      "form_noun",
+      "form_verb",
+      "topic_nature_weather",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19563": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19564": [
+      "form_noun",
+      "topic_history",
+      "usage_written"
+    ],
+    "wl_19565": [
+      "form_noun",
+      "topic_animals",
+      "topic_food"
+    ],
+    "wl_19566": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19567": [
+      "form_noun",
+      "topic_geography",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_19568": [
+      "form_phrase",
+      "topic_food",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19569": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_19570": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_19571": [
+      "form_noun",
+      "topic_law",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19572": [
+      "form_noun",
+      "topic_communication",
+      "topic_objects"
+    ],
+    "wl_19573": [
+      "form_verb",
+      "topic_study"
+    ],
+    "wl_19574": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19575": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_19576": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19577": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19578": [
+      "form_verb",
+      "topic_travel_transport"
+    ],
+    "wl_19579": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19580": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_study"
+    ],
+    "wl_19581": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19582": [
+      "form_adjective",
+      "form_verb",
+      "topic_space",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19583": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "usage_everyday"
+    ],
+    "wl_19584": [
+      "form_adjective",
+      "form_noun",
+      "topic_grammar",
+      "topic_time_number"
+    ],
+    "wl_19585": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_19586": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19587": [
+      "form_adjective",
+      "topic_emotions"
+    ],
+    "wl_19588": [
+      "form_adjective",
+      "form_verb",
+      "topic_emotions",
+      "usage_written"
+    ],
+    "wl_19589": [
+      "form_adjective",
+      "topic_properties",
+      "topic_society",
+      "topic_work"
+    ],
+    "wl_19590": [
+      "form_noun",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19591": [
+      "form_verb",
+      "topic_home",
+      "usage_everyday"
+    ],
+    "wl_19592": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19593": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19594": [
+      "form_noun",
+      "topic_objects",
+      "usage_written"
+    ],
+    "wl_19595": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19596": [
+      "form_noun",
+      "topic_communication"
+    ],
+    "wl_19597": [
+      "form_noun",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19598": [
+      "form_noun",
+      "topic_science_technology",
+      "topic_work"
+    ],
+    "wl_19599": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_19600": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19601": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_science_technology"
+    ],
+    "wl_19602": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19603": [
+      "form_noun",
+      "topic_home",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19604": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_science_technology"
+    ],
+    "wl_19605": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19606": [
+      "form_verb",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19607": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19608": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_sport_leisure",
+      "usage_everyday"
+    ],
+    "wl_19609": [
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19610": [
+      "form_noun",
+      "topic_home",
+      "topic_objects",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19611": [
+      "form_noun",
+      "topic_time_number"
+    ],
+    "wl_19612": [
+      "form_phrase",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19613": [
+      "form_adjective",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19614": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19615": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19616": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19617": [
+      "form_noun",
+      "topic_travel_transport"
+    ],
+    "wl_19618": [
+      "form_noun",
+      "topic_culture",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19619": [
+      "form_noun",
+      "topic_money",
+      "topic_time_number"
+    ],
+    "wl_19620": [
+      "form_noun",
+      "topic_communication",
+      "topic_culture"
+    ],
+    "wl_19621": [
+      "form_noun",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19622": [
+      "form_noun",
+      "topic_culture",
+      "topic_society",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19623": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19624": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19625": [
+      "form_noun",
+      "topic_culture",
+      "topic_history",
+      "topic_people",
+      "topic_society",
+      "usage_written"
+    ],
+    "wl_19626": [
+      "form_phrase",
+      "form_verb",
+      "topic_communication",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19627": [
+      "form_verb",
+      "topic_work",
+      "usage_written"
+    ],
+    "wl_19628": [
+      "form_verb",
+      "topic_emotions"
+    ],
+    "wl_19629": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19630": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19631": [
+      "form_phrase",
+      "topic_abstract_relations",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19632": [
+      "form_sound_interjection",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19633": [
+      "form_adjective",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19634": [
+      "form_adverb",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19635": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19636": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_19637": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19638": [
+      "form_adjective",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_19639": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19640": [
+      "form_noun",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19641": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19642": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19643": [
+      "form_noun",
+      "topic_geography",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19644": [
+      "form_noun",
+      "topic_religion",
+      "usage_written"
+    ],
+    "wl_19645": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_19646": [
+      "form_noun",
+      "topic_thinking"
+    ],
+    "wl_19647": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19648": [
+      "form_verb",
+      "topic_study",
+      "usage_written"
+    ],
+    "wl_19649": [
+      "form_noun",
+      "topic_culture",
+      "topic_study"
+    ],
+    "wl_19650": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19651": [
+      "form_noun",
+      "topic_culture",
+      "usage_written"
+    ],
+    "wl_19652": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19653": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19654": [
+      "form_adjective",
+      "topic_communication",
+      "topic_properties"
+    ],
+    "wl_19655": [
+      "form_noun",
+      "topic_space"
+    ],
+    "wl_19656": [
+      "form_verb",
+      "topic_sport_leisure"
+    ],
+    "wl_19657": [
+      "form_noun",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19658": [
+      "form_noun",
+      "topic_grammar",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19659": [
+      "form_adjective",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_19660": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19661": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19662": [
+      "form_noun",
+      "topic_plants"
+    ],
+    "wl_19663": [
+      "form_adjective",
+      "topic_food",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19664": [
+      "form_noun",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19665": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19666": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19667": [
+      "form_verb",
+      "topic_thinking"
+    ],
+    "wl_19668": [
+      "form_noun",
+      "topic_emotions",
+      "topic_thinking"
+    ],
+    "wl_19669": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19670": [
+      "form_adjective",
+      "topic_properties",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19671": [
+      "form_function",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19672": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19673": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19674": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19675": [
+      "form_noun",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_19676": [
+      "form_noun",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19677": [
+      "form_noun",
+      "topic_actions_processes",
+      "topic_society"
+    ],
+    "wl_19678": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19679": [
+      "form_noun",
+      "topic_family",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19680": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19681": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19682": [
+      "form_noun",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_19683": [
+      "form_verb",
+      "topic_sport_leisure"
+    ],
+    "wl_19684": [
+      "form_noun",
+      "topic_geography",
+      "usage_everyday"
+    ],
+    "wl_19685": [
+      "form_noun",
+      "topic_culture",
+      "usage_everyday"
+    ],
+    "wl_19686": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19687": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19688": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19689": [
+      "form_noun",
+      "topic_objects",
+      "usage_everyday"
+    ],
+    "wl_19690": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19691": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19692": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19693": [
+      "form_noun",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19694": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19695": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19696": [
+      "form_noun",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19697": [
+      "form_adjective",
+      "topic_communication",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19698": [
+      "form_verb",
+      "topic_culture"
+    ],
+    "wl_19699": [
+      "form_verb",
+      "topic_culture"
+    ],
+    "wl_19700": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19701": [
+      "form_noun",
+      "form_verb",
+      "topic_culture"
+    ],
+    "wl_19702": [
+      "form_verb",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19703": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19704": [
+      "form_noun",
+      "topic_study"
+    ],
+    "wl_19705": [
+      "form_noun",
+      "topic_emotions"
+    ],
+    "wl_19706": [
+      "form_noun",
+      "topic_emotions",
+      "topic_thinking"
+    ],
+    "wl_19707": [
+      "form_noun",
+      "form_verb",
+      "topic_study"
+    ],
+    "wl_19708": [
+      "form_noun",
+      "topic_emotions",
+      "usage_written"
+    ],
+    "wl_19709": [
+      "form_noun",
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19710": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19711": [
+      "form_phrase",
+      "topic_communication",
+      "topic_grammar",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19712": [
+      "form_noun",
+      "topic_nature_weather"
+    ],
+    "wl_19713": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19714": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_written"
+    ],
+    "wl_19715": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_science_technology"
+    ],
+    "wl_19716": [
+      "form_noun",
+      "topic_people"
+    ],
+    "wl_19717": [
+      "form_phrase",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19718": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19719": [
+      "form_noun",
+      "topic_study"
+    ],
+    "wl_19720": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_written"
+    ],
+    "wl_19721": [
+      "form_noun",
+      "topic_study",
+      "topic_time_number"
+    ],
+    "wl_19722": [
+      "form_noun",
+      "topic_study"
+    ],
+    "wl_19723": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19724": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19725": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19726": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19727": [
+      "form_noun",
+      "topic_body_health",
+      "topic_history"
+    ],
+    "wl_19728": [
+      "form_adverb",
+      "topic_emotions"
+    ],
+    "wl_19729": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19730": [
+      "form_noun",
+      "topic_body_health",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19731": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19732": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19733": [
+      "form_noun",
+      "topic_body_health",
+      "topic_science_technology",
+      "usage_everyday"
+    ],
+    "wl_19734": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19735": [
+      "form_adjective",
+      "form_verb",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19736": [
+      "form_adjective",
+      "topic_properties",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19737": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19738": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_written"
+    ],
+    "wl_19739": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19740": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19741": [
+      "form_noun",
+      "topic_travel_transport",
+      "usage_written"
+    ],
+    "wl_19742": [
+      "form_adjective",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19743": [
+      "form_function",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19744": [
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19745": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19746": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19747": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19748": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19749": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19750": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19751": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19752": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19753": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19754": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19755": [
+      "form_number_measure",
+      "form_phrase",
+      "topic_grammar",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19756": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19757": [
+      "form_phrase",
+      "topic_abstract_relations"
+    ],
+    "wl_19758": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19759": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19760": [
+      "form_phrase",
+      "topic_geography",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19761": [
+      "form_adverb",
+      "topic_grammar",
+      "usage_written"
+    ],
+    "wl_19762": [
+      "form_noun",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19763": [
+      "form_adverb",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication"
+    ],
+    "wl_19764": [
+      "form_noun",
+      "topic_people",
+      "usage_written"
+    ],
+    "wl_19765": [
+      "form_noun",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19766": [
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19767": [
+      "form_noun",
+      "topic_culture",
+      "topic_sport_leisure"
+    ],
+    "wl_19768": [
+      "form_noun",
+      "topic_people",
+      "usage_written"
+    ],
+    "wl_19769": [
+      "form_adjective",
+      "form_noun",
+      "topic_emotions",
+      "topic_society"
+    ],
+    "wl_19770": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19771": [
+      "form_verb",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19772": [
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_thinking"
+    ],
+    "wl_19773": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_19774": [
+      "form_adjective",
+      "form_verb",
+      "topic_abstract_relations",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19775": [
+      "form_noun",
+      "topic_people",
+      "topic_thinking"
+    ],
+    "wl_19776": [
+      "form_phrase",
+      "form_verb",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19777": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19778": [
+      "form_noun",
+      "topic_grammar",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19779": [
+      "form_noun",
+      "topic_body_health"
+    ],
+    "wl_19780": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19781": [
+      "form_adjective",
+      "topic_properties"
+    ],
+    "wl_19782": [
+      "form_noun",
+      "topic_family",
+      "usage_written"
+    ],
+    "wl_19783": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19784": [
+      "form_noun",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19785": [
+      "form_noun",
+      "topic_sport_leisure",
+      "topic_tools"
+    ],
+    "wl_19786": [
+      "form_noun",
+      "topic_animals"
+    ],
+    "wl_19787": [
+      "form_noun",
+      "topic_food"
+    ],
+    "wl_19788": [
+      "form_noun",
+      "topic_culture",
+      "topic_objects"
+    ],
+    "wl_19789": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19790": [
+      "form_adverb",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19791": [
+      "form_adjective",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_science_technology"
+    ],
+    "wl_19792": [
+      "form_adjective",
+      "form_verb",
+      "topic_law",
+      "usage_written"
+    ],
+    "wl_19793": [
+      "form_adjective",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19794": [
+      "form_pronoun",
+      "topic_grammar",
+      "usage_written"
+    ],
+    "wl_19795": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19796": [
+      "form_noun",
+      "topic_nature_weather",
+      "topic_time_number"
+    ],
+    "wl_19797": [
+      "form_verb",
+      "topic_body_health",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19798": [
+      "form_verb",
+      "topic_body_health",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19799": [
+      "form_phrase",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19800": [
+      "form_noun",
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19801": [
+      "form_noun",
+      "topic_people",
+      "topic_religion",
+      "usage_written"
+    ],
+    "wl_19802": [
+      "form_phrase",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19803": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19804": [
+      "form_verb",
+      "topic_communication",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19805": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_19806": [
+      "form_function",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19807": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19808": [
+      "form_verb",
+      "topic_thinking",
+      "usage_everyday"
+    ],
+    "wl_19809": [
+      "form_noun",
+      "topic_properties"
+    ],
+    "wl_19810": [
+      "form_phrase",
+      "topic_emotions",
+      "usage_everyday"
+    ],
+    "wl_19811": [
+      "form_noun",
+      "topic_study",
+      "topic_thinking",
+      "usage_written"
+    ],
+    "wl_19812": [
+      "form_noun",
+      "topic_science_technology"
+    ],
+    "wl_19813": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_19814": [
+      "form_adjective",
+      "form_adverb",
+      "topic_time_number",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19815": [
+      "form_phrase",
+      "topic_properties",
+      "topic_time_number",
+      "usage_written"
+    ],
+    "wl_19816": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_19817": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19818": [
+      "form_adjective",
+      "topic_communication",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19819": [
+      "form_noun",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_19820": [
+      "form_adverb",
+      "topic_abstract_relations",
+      "usage_written"
+    ],
+    "wl_19821": [
+      "form_noun",
+      "topic_objects"
+    ],
+    "wl_19822": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_19823": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19824": [
+      "form_verb",
+      "topic_communication",
+      "topic_study"
+    ],
+    "wl_19825": [
+      "form_verb",
+      "topic_communication",
+      "usage_written"
+    ],
+    "wl_19826": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication",
+      "topic_study"
+    ],
+    "wl_19827": [
+      "form_noun",
+      "topic_study",
+      "usage_everyday"
+    ],
+    "wl_19828": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19829": [
+      "form_noun",
+      "topic_food",
+      "usage_everyday"
+    ],
+    "wl_19830": [
+      "form_noun",
+      "form_verb",
+      "topic_body_health"
+    ],
+    "wl_19831": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19832": [
+      "form_adjective",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19833": [
+      "form_noun",
+      "topic_geography",
+      "topic_space"
+    ],
+    "wl_19834": [
+      "form_noun",
+      "topic_nature_weather",
+      "usage_everyday"
+    ],
+    "wl_19835": [
+      "form_noun",
+      "topic_geography",
+      "topic_history"
+    ],
+    "wl_19836": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "topic_properties",
+      "usage_written"
+    ],
+    "wl_19837": [
+      "form_noun",
+      "topic_body_health",
+      "usage_everyday"
+    ],
+    "wl_19838": [
+      "form_noun",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19839": [
+      "form_verb",
+      "topic_plants"
+    ],
+    "wl_19840": [
+      "form_verb",
+      "topic_plants"
+    ],
+    "wl_19841": [
+      "form_noun",
+      "topic_objects",
+      "topic_tools",
+      "usage_everyday"
+    ],
+    "wl_19842": [
+      "form_noun",
+      "topic_sport_leisure"
+    ],
+    "wl_19843": [
+      "form_noun",
+      "topic_plants",
+      "usage_written"
+    ],
+    "wl_19844": [
+      "form_noun",
+      "topic_plants",
+      "usage_everyday"
+    ],
+    "wl_19845": [
+      "form_noun",
+      "topic_home"
+    ],
+    "wl_19846": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19847": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_travel_transport",
+      "topic_work",
+      "usage_everyday"
+    ],
+    "wl_19848": [
+      "form_phrase",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19849": [
+      "form_verb",
+      "topic_law",
+      "usage_written"
+    ],
+    "wl_19850": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19851": [
+      "form_noun",
+      "topic_furniture",
+      "usage_everyday"
+    ],
+    "wl_19852": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19853": [
+      "form_noun",
+      "topic_animals",
+      "usage_everyday"
+    ],
+    "wl_19854": [
+      "form_verb",
+      "topic_daily_actions"
+    ],
+    "wl_19855": [
+      "form_noun",
+      "form_verb",
+      "topic_actions_processes",
+      "topic_emotions",
+      "usage_written"
+    ],
+    "wl_19856": [
+      "form_adjective",
+      "topic_society",
+      "topic_thinking",
+      "topic_work"
+    ],
+    "wl_19857": [
+      "form_function",
+      "form_noun",
+      "topic_family",
+      "usage_everyday"
+    ],
+    "wl_19858": [
+      "form_noun",
+      "topic_people",
+      "usage_everyday"
+    ],
+    "wl_19859": [
+      "form_noun",
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19860": [
+      "form_adjective",
+      "topic_abstract_relations",
+      "topic_properties"
+    ],
+    "wl_19861": [
+      "form_noun",
+      "topic_science_technology",
+      "usage_written"
+    ],
+    "wl_19862": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_thinking"
+    ],
+    "wl_19863": [
+      "form_noun",
+      "topic_abstract_relations",
+      "topic_time_number"
+    ],
+    "wl_19864": [
+      "form_phrase",
+      "topic_daily_actions",
+      "topic_grammar",
+      "usage_everyday"
+    ],
+    "wl_19865": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_grammar",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19866": [
+      "form_noun",
+      "topic_space",
+      "topic_travel_transport"
+    ],
+    "wl_19867": [
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19868": [
+      "form_noun",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19869": [
+      "form_phrase",
+      "topic_actions_processes",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19870": [
+      "form_verb",
+      "topic_actions_processes"
+    ],
+    "wl_19871": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_travel_transport",
+      "usage_everyday"
+    ],
+    "wl_19872": [
+      "form_noun",
+      "topic_culture"
+    ],
+    "wl_19873": [
+      "form_adjective",
+      "topic_emotions",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19874": [
+      "form_noun",
+      "topic_emotions",
+      "topic_people",
+      "topic_society"
+    ],
+    "wl_19875": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19876": [
+      "form_adjective",
+      "form_adverb",
+      "topic_grammar",
+      "topic_properties",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19877": [
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "topic_time_number",
+      "usage_everyday"
+    ],
+    "wl_19878": [
+      "form_adjective",
+      "form_phrase",
+      "topic_grammar",
+      "topic_properties",
+      "usage_everyday"
+    ],
+    "wl_19879": [
+      "form_noun",
+      "topic_space",
+      "usage_everyday"
+    ],
+    "wl_19880": [
+      "form_noun",
+      "topic_body_health",
+      "topic_science_technology"
+    ],
+    "wl_19881": [
+      "form_noun",
+      "topic_body_health",
+      "topic_people"
+    ],
+    "wl_19882": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19883": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19884": [
+      "form_noun",
+      "topic_abstract_relations"
+    ],
+    "wl_19885": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_written"
+    ],
+    "wl_19886": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19887": [
+      "form_phrase",
+      "form_verb",
+      "topic_daily_actions",
+      "usage_everyday"
+    ],
+    "wl_19888": [
+      "form_verb",
+      "topic_actions_processes",
+      "usage_everyday"
+    ],
+    "wl_19889": [
+      "form_verb",
+      "topic_actions_processes",
+      "topic_communication",
+      "usage_everyday"
+    ],
+    "wl_19890": [
+      "form_verb",
+      "topic_daily_actions",
+      "topic_sport_leisure",
+      "usage_everyday"
     ]
   },
   "headwords": {
@@ -93386,6 +100385,1396 @@
     "wl_18497": "眈眈",
     "wl_18498": "眉睫",
     "wl_18499": "看懂",
-    "wl_18500": "真皮"
+    "wl_18500": "真皮",
+    "wl_18501": "黄包车",
+    "wl_18502": "黄狗",
+    "wl_18503": "黄河",
+    "wl_18504": "黄米",
+    "wl_18505": "黄鸟",
+    "wl_18506": "黄牛",
+    "wl_18507": "黄鼠",
+    "wl_18508": "黄土",
+    "wl_18509": "黄羊",
+    "wl_18510": "黄鱼",
+    "wl_18511": "黄纸",
+    "wl_18512": "灰白",
+    "wl_18513": "灰鼠",
+    "wl_18514": "回合",
+    "wl_18515": "回见",
+    "wl_18516": "回落",
+    "wl_18517": "回民",
+    "wl_18518": "回声",
+    "wl_18519": "回手",
+    "wl_18520": "回嘴",
+    "wl_18521": "会话",
+    "wl_18522": "会所",
+    "wl_18523": "会同",
+    "wl_18524": "会心",
+    "wl_18525": "火把",
+    "wl_18526": "火车头",
+    "wl_18527": "火红",
+    "wl_18528": "火急",
+    "wl_18529": "火力",
+    "wl_18530": "火苗",
+    "wl_18531": "火气",
+    "wl_18532": "机电",
+    "wl_18533": "机动",
+    "wl_18534": "机关",
+    "wl_18535": "机车",
+    "wl_18536": "机件",
+    "wl_18537": "机具",
+    "wl_18538": "机要",
+    "wl_18539": "机子",
+    "wl_18540": "鸡头",
+    "wl_18541": "鸡头米",
+    "wl_18542": "鸡心",
+    "wl_18543": "急病",
+    "wl_18544": "急巴巴",
+    "wl_18545": "急停",
+    "wl_18546": "急电",
+    "wl_18547": "急件",
+    "wl_18548": "急进",
+    "wl_18549": "急用",
+    "wl_18550": "记不清",
+    "wl_18551": "记分",
+    "wl_18552": "记工",
+    "wl_18553": "加法",
+    "wl_18554": "加数",
+    "wl_18555": "夹缝",
+    "wl_18556": "夹住",
+    "wl_18557": "夹起来",
+    "wl_18558": "夹子",
+    "wl_18559": "家产",
+    "wl_18560": "家当",
+    "wl_18561": "家法",
+    "wl_18562": "家门",
+    "wl_18563": "家书",
+    "wl_18564": "家信",
+    "wl_18565": "家用",
+    "wl_18566": "假的",
+    "wl_18567": "假象",
+    "wl_18568": "尖刀",
+    "wl_18569": "尖的",
+    "wl_18570": "尖顶",
+    "wl_18571": "尖角",
+    "wl_18572": "尖头",
+    "wl_18573": "尖牙",
+    "wl_18574": "尖子",
+    "wl_18575": "见不得",
+    "wl_18576": "见怪",
+    "wl_18577": "见好",
+    "wl_18578": "见机",
+    "wl_18579": "见外",
+    "wl_18580": "浇地",
+    "wl_18581": "叫好",
+    "wl_18582": "叫花子",
+    "wl_18583": "叫座",
+    "wl_18584": "教具",
+    "wl_18585": "接见",
+    "wl_18586": "接生",
+    "wl_18587": "接头",
+    "wl_18588": "节气",
+    "wl_18589": "结子",
+    "wl_18590": "今生",
+    "wl_18591": "金光",
+    "wl_18592": "金黄",
+    "wl_18593": "金鱼",
+    "wl_18594": "近因",
+    "wl_18595": "进发",
+    "wl_18596": "进见",
+    "wl_18597": "京戏",
+    "wl_18598": "京二胡",
+    "wl_18599": "九日",
+    "wl_18600": "九天",
+    "wl_18601": "救火",
+    "wl_18602": "救急",
+    "wl_18603": "救人",
+    "wl_18604": "救生圈",
+    "wl_18605": "救星",
+    "wl_18606": "就地",
+    "wl_18607": "开采",
+    "wl_18608": "开春",
+    "wl_18609": "开刀",
+    "wl_18610": "开道",
+    "wl_18611": "开饭",
+    "wl_18612": "开快车",
+    "wl_18613": "开明",
+    "wl_18614": "开外",
+    "wl_18615": "看家",
+    "wl_18616": "看家狗",
+    "wl_18617": "看透",
+    "wl_18618": "看得起",
+    "wl_18619": "看着",
+    "wl_18620": "看中",
+    "wl_18621": "看钟",
+    "wl_18622": "科班",
+    "wl_18623": "可心",
+    "wl_18624": "可用",
+    "wl_18625": "口才",
+    "wl_18626": "口红",
+    "wl_18627": "口角",
+    "wl_18628": "口水",
+    "wl_18629": "口算",
+    "wl_18630": "口头",
+    "wl_18631": "口子",
+    "wl_18632": "哭声",
+    "wl_18633": "快车",
+    "wl_18634": "快来",
+    "wl_18635": "快慢",
+    "wl_18636": "快人",
+    "wl_18637": "拉来",
+    "wl_18638": "拉后腿",
+    "wl_18639": "拉力",
+    "wl_18640": "拉面",
+    "wl_18641": "拉手",
+    "wl_18642": "拉下脸",
+    "wl_18643": "拉着",
+    "wl_18644": "拉住",
+    "wl_18645": "拉走",
+    "wl_18646": "来啊",
+    "wl_18647": "来吧",
+    "wl_18648": "来过",
+    "wl_18649": "来不得",
+    "wl_18650": "来啦",
+    "wl_18651": "来了",
+    "wl_18652": "来吗",
+    "wl_18653": "来年",
+    "wl_18654": "来去",
+    "wl_18655": "来人",
+    "wl_18656": "来头",
+    "wl_18657": "劳工",
+    "wl_18658": "劳动法",
+    "wl_18659": "劳力",
+    "wl_18660": "劳作",
+    "wl_18661": "老成",
+    "wl_18662": "劳动节",
+    "wl_18663": "老大",
+    "wl_18664": "劳动力",
+    "wl_18665": "老话",
+    "wl_18666": "老年",
+    "wl_18667": "劳动日",
+    "wl_18668": "老农",
+    "wl_18669": "老公公",
+    "wl_18670": "老少",
+    "wl_18671": "老狐狸",
+    "wl_18672": "了结",
+    "wl_18673": "冷的",
+    "wl_18674": "老奶奶",
+    "wl_18675": "冷风",
+    "wl_18676": "冷落",
+    "wl_18677": "老婆婆",
+    "wl_18678": "冷门",
+    "wl_18679": "冷暖",
+    "wl_18680": "冷热",
+    "wl_18681": "冷食",
+    "wl_18682": "老头儿",
+    "wl_18683": "冷天",
+    "wl_18684": "冷笑",
+    "wl_18685": "老爷爷",
+    "wl_18686": "狸猫",
+    "wl_18687": "离心",
+    "wl_18688": "乐坏了",
+    "wl_18689": "礼花",
+    "wl_18690": "里边",
+    "wl_18691": "里手",
+    "wl_18692": "里屋",
+    "wl_18693": "冷冰冰",
+    "wl_18694": "力求",
+    "wl_18695": "力学",
+    "wl_18696": "离心力",
+    "wl_18697": "连带",
+    "wl_18698": "连日",
+    "wl_18699": "连声",
+    "wl_18700": "连天",
+    "wl_18701": "凉水",
+    "wl_18702": "两件",
+    "wl_18703": "两棵",
+    "wl_18704": "两所",
+    "wl_18705": "两头",
+    "wl_18706": "两条",
+    "wl_18707": "两样",
+    "wl_18708": "亮光",
+    "wl_18709": "林带",
+    "wl_18710": "林木",
+    "wl_18711": "流动",
+    "wl_18712": "流落",
+    "wl_18713": "柳条",
+    "wl_18714": "六日",
+    "wl_18715": "六天",
+    "wl_18716": "鹿角",
+    "wl_18717": "绿苗",
+    "wl_18718": "落笔",
+    "wl_18719": "落成",
+    "wl_18720": "落日",
+    "wl_18721": "落水狗",
+    "wl_18722": "马大哈",
+    "wl_18723": "马虎",
+    "wl_18724": "马球",
+    "wl_18725": "满天",
+    "wl_18726": "慢车",
+    "wl_18727": "慢点",
+    "wl_18728": "慢走",
+    "wl_18729": "忙季",
+    "wl_18730": "毛笔",
+    "wl_18731": "毛发",
+    "wl_18732": "毛毛虫",
+    "wl_18733": "毛竹",
+    "wl_18734": "没来",
+    "wl_18735": "毛毛雨",
+    "wl_18736": "没去",
+    "wl_18737": "梅花鹿",
+    "wl_18738": "梅雨",
+    "wl_18739": "梅子",
+    "wl_18740": "美工",
+    "wl_18741": "美满",
+    "wl_18742": "美学",
+    "wl_18743": "门窗",
+    "wl_18744": "门路",
+    "wl_18745": "门面",
+    "wl_18746": "米面",
+    "wl_18747": "面食",
+    "wl_18748": "苗儿",
+    "wl_18749": "苗木",
+    "wl_18750": "苗子",
+    "wl_18751": "名产",
+    "wl_18752": "名目",
+    "wl_18753": "名片",
+    "wl_18754": "名山",
+    "wl_18755": "名手",
+    "wl_18756": "明灯",
+    "wl_18757": "摸出",
+    "wl_18758": "摸到",
+    "wl_18759": "木鱼",
+    "wl_18760": "拿去",
+    "wl_18761": "拿人",
+    "wl_18762": "拿着",
+    "wl_18763": "爱唱",
+    "wl_18764": "爱吃",
+    "wl_18765": "爱哭",
+    "wl_18766": "爱美",
+    "wl_18767": "爱面子",
+    "wl_18768": "爱笑",
+    "wl_18769": "八宝饭",
+    "wl_18770": "八日",
+    "wl_18771": "八天",
+    "wl_18772": "八月",
+    "wl_18773": "巴不得",
+    "wl_18774": "巴结",
+    "wl_18775": "巴望",
+    "wl_18776": "拔草",
+    "wl_18777": "拔高",
+    "wl_18778": "拔河",
+    "wl_18779": "拔尖",
+    "wl_18780": "拔起",
+    "wl_18781": "把关",
+    "wl_18782": "白鹅",
+    "wl_18783": "白果",
+    "wl_18784": "白话",
+    "wl_18785": "白金",
+    "wl_18786": "白花花",
+    "wl_18787": "白梨",
+    "wl_18788": "白马",
+    "wl_18789": "白猫",
+    "wl_18790": "白话文",
+    "wl_18791": "白米",
+    "wl_18792": "白面",
+    "wl_18793": "白手",
+    "wl_18794": "白开水",
+    "wl_18795": "白水",
+    "wl_18796": "白木耳",
+    "wl_18797": "白熊",
+    "wl_18798": "白眼",
+    "wl_18799": "白云",
+    "wl_18800": "白纸",
+    "wl_18801": "帮工",
+    "wl_18802": "帮你",
+    "wl_18803": "帮手",
+    "wl_18804": "帮他",
+    "wl_18805": "帮我",
+    "wl_18806": "包饭",
+    "wl_18807": "包工",
+    "wl_18808": "包金",
+    "wl_18809": "包头",
+    "wl_18810": "宝物",
+    "wl_18811": "宝玉",
+    "wl_18812": "宝座",
+    "wl_18813": "抱起",
+    "wl_18814": "抱不平",
+    "wl_18815": "抱着",
+    "wl_18816": "北方话",
+    "wl_18817": "北瓜",
+    "wl_18818": "北国",
+    "wl_18819": "背上",
+    "wl_18820": "背时",
+    "wl_18821": "背书",
+    "wl_18822": "背熟",
+    "wl_18823": "被害",
+    "wl_18824": "笨人",
+    "wl_18825": "鼻头",
+    "wl_18826": "笨孩子",
+    "wl_18827": "鼻音",
+    "wl_18828": "比方",
+    "wl_18829": "比一比",
+    "wl_18830": "笔法",
+    "wl_18831": "笔画",
+    "wl_18832": "笔帽",
+    "wl_18833": "笔名",
+    "wl_18834": "笔算",
+    "wl_18835": "笔头",
+    "wl_18836": "笔直",
+    "wl_18837": "边地",
+    "wl_18838": "边关",
+    "wl_18839": "变更",
+    "wl_18840": "变了",
+    "wl_18841": "变天",
+    "wl_18842": "变戏法",
+    "wl_18843": "变心",
+    "wl_18844": "变种",
+    "wl_18845": "别给",
+    "wl_18846": "别哭",
+    "wl_18847": "别说话",
+    "wl_18848": "别走",
+    "wl_18849": "冰点",
+    "wl_18850": "冰河",
+    "wl_18851": "冰花",
+    "wl_18852": "冰片",
+    "wl_18853": "冰人",
+    "wl_18854": "冰山",
+    "wl_18855": "病床",
+    "wl_18856": "病根",
+    "wl_18857": "病害",
+    "wl_18858": "病痛",
+    "wl_18859": "拨动",
+    "wl_18860": "不爱",
+    "wl_18861": "不唱",
+    "wl_18862": "不吃",
+    "wl_18863": "不法",
+    "wl_18864": "不动产",
+    "wl_18865": "不给",
+    "wl_18866": "不光",
+    "wl_18867": "不哭",
+    "wl_18868": "不力",
+    "wl_18869": "不日",
+    "wl_18870": "不人道",
+    "wl_18871": "不外",
+    "wl_18872": "不笑",
+    "wl_18873": "不信",
+    "wl_18874": "不咬",
+    "wl_18875": "不知道",
+    "wl_18876": "布告",
+    "wl_18877": "不应该",
+    "wl_18878": "布头",
+    "wl_18879": "才气",
+    "wl_18880": "才学",
+    "wl_18881": "才子",
+    "wl_18882": "采风",
+    "wl_18883": "采光",
+    "wl_18884": "采蘑菇",
+    "wl_18885": "采种",
+    "wl_18886": "草包",
+    "wl_18887": "草根",
+    "wl_18888": "草帽",
+    "wl_18889": "草书",
+    "wl_18890": "草图",
+    "wl_18891": "草木灰",
+    "wl_18892": "草写",
+    "wl_18893": "唱戏",
+    "wl_18894": "长河",
+    "wl_18895": "长年",
+    "wl_18896": "长跑",
+    "wl_18897": "长生果",
+    "wl_18898": "长生",
+    "wl_18899": "长牙",
+    "wl_18900": "长日",
+    "wl_18901": "朝北",
+    "wl_18902": "朝东",
+    "wl_18903": "朝南",
+    "wl_18904": "朝西",
+    "wl_18905": "朝向",
+    "wl_18906": "车头",
+    "wl_18907": "车尾",
+    "wl_18908": "车里",
+    "wl_18909": "车外",
+    "wl_18910": "车把",
+    "wl_18911": "车床",
+    "wl_18912": "车刀",
+    "wl_18913": "车盖",
+    "wl_18914": "成气候",
+    "wl_18915": "成事",
+    "wl_18916": "成文",
+    "wl_18917": "成心",
+    "wl_18918": "成天",
+    "wl_18919": "成虫",
+    "wl_18920": "成风",
+    "wl_18921": "成见",
+    "wl_18922": "吃啦",
+    "wl_18923": "吃了",
+    "wl_18924": "吃力",
+    "wl_18925": "吃肉",
+    "wl_18926": "吃呀",
+    "wl_18927": "吃着",
+    "wl_18928": "虫害",
+    "wl_18929": "虫眼",
+    "wl_18930": "出车",
+    "wl_18931": "出动",
+    "wl_18932": "出发点",
+    "wl_18933": "出工",
+    "wl_18934": "出风头",
+    "wl_18935": "出面",
+    "wl_18936": "出苗",
+    "wl_18937": "出奇",
+    "wl_18938": "出气",
+    "wl_18939": "出手",
+    "wl_18940": "出题",
+    "wl_18941": "出头",
+    "wl_18942": "出远门",
+    "wl_18943": "出走",
+    "wl_18944": "船尾",
+    "wl_18945": "串门",
+    "wl_18946": "窗洞",
+    "wl_18947": "窗花",
+    "wl_18948": "春分",
+    "wl_18949": "春光",
+    "wl_18950": "春季",
+    "wl_18951": "粗细",
+    "wl_18952": "错落",
+    "wl_18953": "打发",
+    "wl_18954": "打火",
+    "wl_18955": "打比方",
+    "wl_18956": "打闹",
+    "wl_18957": "打问",
+    "wl_18958": "打天下",
+    "wl_18959": "打眼",
+    "wl_18960": "打雪仗",
+    "wl_18961": "打钟",
+    "wl_18962": "打住",
+    "wl_18963": "大班",
+    "wl_18964": "大病",
+    "wl_18965": "大船",
+    "wl_18966": "大哥",
+    "wl_18967": "大会",
+    "wl_18968": "大灰狼",
+    "wl_18969": "大叫",
+    "wl_18970": "大姐",
+    "wl_18971": "大路",
+    "wl_18972": "大马",
+    "wl_18973": "大猫",
+    "wl_18974": "大拇指",
+    "wl_18975": "大年",
+    "wl_18976": "大牛",
+    "wl_18977": "大气",
+    "wl_18978": "大球",
+    "wl_18979": "大人物",
+    "wl_18980": "大山",
+    "wl_18981": "大婶",
+    "wl_18982": "大手笔",
+    "wl_18983": "大树",
+    "wl_18984": "大碗",
+    "wl_18985": "大王",
+    "wl_18986": "大网",
+    "wl_18987": "大戏",
+    "wl_18988": "大行星",
+    "wl_18989": "大猪",
+    "wl_18990": "带电",
+    "wl_18991": "带动",
+    "wl_18992": "带路",
+    "wl_18993": "带头",
+    "wl_18994": "大雪天",
+    "wl_18995": "带鱼",
+    "wl_18996": "带着",
+    "wl_18997": "当日",
+    "wl_18998": "当头",
+    "wl_18999": "当事人",
+    "wl_19000": "当下",
+    "wl_19001": "当着",
+    "wl_19002": "刀把",
+    "wl_19003": "刀背",
+    "wl_19004": "刀尖",
+    "wl_19005": "刀具",
+    "wl_19006": "刀口",
+    "wl_19007": "刀片",
+    "wl_19008": "到了",
+    "wl_19009": "到头",
+    "wl_19010": "倒班",
+    "wl_19011": "倒影",
+    "wl_19012": "得空",
+    "wl_19013": "得了",
+    "wl_19014": "得力",
+    "wl_19015": "得手",
+    "wl_19016": "得数",
+    "wl_19017": "地产",
+    "wl_19018": "地带",
+    "wl_19019": "地道",
+    "wl_19020": "地洞",
+    "wl_19021": "地力",
+    "wl_19022": "地下水",
+    "wl_19023": "灯具",
+    "wl_19024": "灯头",
+    "wl_19025": "等等我",
+    "wl_19026": "第一手",
+    "wl_19027": "点名",
+    "wl_19028": "电光",
+    "wl_19029": "电机",
+    "wl_19030": "电门",
+    "wl_19031": "电石",
+    "wl_19032": "电子学",
+    "wl_19033": "钓饵",
+    "wl_19034": "掉到",
+    "wl_19035": "掉东西",
+    "wl_19036": "掉了",
+    "wl_19037": "掉牙",
+    "wl_19038": "叠被",
+    "wl_19039": "叠起",
+    "wl_19040": "顶天",
+    "wl_19041": "顶点",
+    "wl_19042": "顶风",
+    "wl_19043": "顶好",
+    "wl_19044": "顶快",
+    "wl_19045": "顶牛",
+    "wl_19046": "顶头",
+    "wl_19047": "顶用",
+    "wl_19048": "顶着",
+    "wl_19049": "定睛",
+    "wl_19050": "定时",
+    "wl_19051": "定心",
+    "wl_19052": "东风",
+    "wl_19053": "东家",
+    "wl_19054": "东南",
+    "wl_19055": "冬菇",
+    "wl_19056": "动火",
+    "wl_19057": "动能",
+    "wl_19058": "动气",
+    "wl_19059": "动土",
+    "wl_19060": "动问",
+    "wl_19061": "动向",
+    "wl_19062": "洞口",
+    "wl_19063": "都不是",
+    "wl_19064": "都是",
+    "wl_19065": "抖掉",
+    "wl_19066": "读书声",
+    "wl_19067": "对白",
+    "wl_19068": "肚子饿",
+    "wl_19069": "对唱",
+    "wl_19070": "对等",
+    "wl_19071": "对不对",
+    "wl_19072": "对歌",
+    "wl_19073": "对过",
+    "wl_19074": "对开",
+    "wl_19075": "对口",
+    "wl_19076": "对了",
+    "wl_19077": "对得起",
+    "wl_19078": "对流",
+    "wl_19079": "对象",
+    "wl_19080": "对照",
+    "wl_19081": "对着",
+    "wl_19082": "对子",
+    "wl_19083": "多时",
+    "wl_19084": "多心",
+    "wl_19085": "躲起",
+    "wl_19086": "饿了",
+    "wl_19087": "儿歌",
+    "wl_19088": "儿戏",
+    "wl_19089": "而今",
+    "wl_19090": "耳边风",
+    "wl_19091": "耳背",
+    "wl_19092": "耳朵眼",
+    "wl_19093": "发电机",
+    "wl_19094": "发还",
+    "wl_19095": "发急",
+    "wl_19096": "发家",
+    "wl_19097": "发落",
+    "wl_19098": "发面",
+    "wl_19099": "发难",
+    "wl_19100": "发球",
+    "wl_19101": "发水",
+    "wl_19102": "发文",
+    "wl_19103": "法宝",
+    "wl_19104": "法定",
+    "wl_19105": "法人",
+    "wl_19106": "方圆",
+    "wl_19107": "方正",
+    "wl_19108": "方桌",
+    "wl_19109": "放电",
+    "wl_19110": "放工",
+    "wl_19111": "放马",
+    "wl_19112": "放牛",
+    "wl_19113": "放生",
+    "wl_19114": "放手",
+    "wl_19115": "放行",
+    "wl_19116": "飞船",
+    "wl_19117": "飞快",
+    "wl_19118": "飞鸟",
+    "wl_19119": "飞跑",
+    "wl_19120": "飞人",
+    "wl_19121": "飞天",
+    "wl_19122": "飞鱼",
+    "wl_19123": "分贝",
+    "wl_19124": "分得",
+    "wl_19125": "分家",
+    "wl_19126": "分米",
+    "wl_19127": "分头",
+    "wl_19128": "风口",
+    "wl_19129": "风力",
+    "wl_19130": "风凉",
+    "wl_19131": "风凉话",
+    "wl_19132": "风气",
+    "wl_19133": "风水",
+    "wl_19134": "风头",
+    "wl_19135": "风土",
+    "wl_19136": "风向",
+    "wl_19137": "风行",
+    "wl_19138": "缝子",
+    "wl_19139": "盖着",
+    "wl_19140": "赶车",
+    "wl_19141": "赶着",
+    "wl_19142": "敢说",
+    "wl_19143": "敢问",
+    "wl_19144": "敢想",
+    "wl_19145": "干巴巴",
+    "wl_19146": "干草",
+    "wl_19147": "刚来",
+    "wl_19148": "刚停",
+    "wl_19149": "刚正",
+    "wl_19150": "刚走",
+    "wl_19151": "高唱",
+    "wl_19152": "高等",
+    "wl_19153": "高点",
+    "wl_19154": "高见",
+    "wl_19155": "告白",
+    "wl_19156": "告成",
+    "wl_19157": "告发",
+    "wl_19158": "告老",
+    "wl_19159": "歌儿",
+    "wl_19160": "给你",
+    "wl_19161": "给他",
+    "wl_19162": "给她",
+    "wl_19163": "给我",
+    "wl_19164": "根苗",
+    "wl_19165": "根子",
+    "wl_19166": "跟班",
+    "wl_19167": "跟前",
+    "wl_19168": "跟头",
+    "wl_19169": "更冷",
+    "wl_19170": "更少",
+    "wl_19171": "更小",
+    "wl_19172": "更长",
+    "wl_19173": "更正",
+    "wl_19174": "工笔",
+    "wl_19175": "工件",
+    "wl_19176": "工具书",
+    "wl_19177": "工时",
+    "wl_19178": "工事",
+    "wl_19179": "工头",
+    "wl_19180": "工种",
+    "wl_19181": "公出",
+    "wl_19182": "公道",
+    "wl_19183": "公分",
+    "wl_19184": "公家",
+    "wl_19185": "公婆",
+    "wl_19186": "公然",
+    "wl_19187": "公诉",
+    "wl_19188": "公诉人",
+    "wl_19189": "公物",
+    "wl_19190": "公用",
+    "wl_19191": "公子",
+    "wl_19192": "狗腿",
+    "wl_19193": "够不够",
+    "wl_19194": "狗熊",
+    "wl_19195": "够得着",
+    "wl_19196": "乖乖",
+    "wl_19197": "够朋友",
+    "wl_19198": "怪样",
+    "wl_19199": "关窗",
+    "wl_19200": "关灯",
+    "wl_19201": "呱呱叫",
+    "wl_19202": "乖宝贝",
+    "wl_19203": "关照",
+    "wl_19204": "乖孩子",
+    "wl_19205": "光大",
+    "wl_19206": "光能",
+    "wl_19207": "光年",
+    "wl_19208": "怪不得",
+    "wl_19209": "光气",
+    "wl_19210": "光学",
+    "wl_19211": "果肉",
+    "wl_19212": "果真",
+    "wl_19213": "果枝",
+    "wl_19214": "过道",
+    "wl_19215": "过不去",
+    "wl_19216": "过来人",
+    "wl_19217": "过路",
+    "wl_19218": "过门",
+    "wl_19219": "过目",
+    "wl_19220": "过日子",
+    "wl_19221": "过手",
+    "wl_19222": "过问",
+    "wl_19223": "哈哈笑",
+    "wl_19224": "还东西",
+    "wl_19225": "害鸟",
+    "wl_19226": "孩子气",
+    "wl_19227": "喊人",
+    "wl_19228": "喊声",
+    "wl_19229": "喊着",
+    "wl_19230": "害人虫",
+    "wl_19231": "好不好",
+    "wl_19232": "好乖",
+    "wl_19233": "好难",
+    "wl_19234": "好孩子",
+    "wl_19235": "好吗",
+    "wl_19236": "好开心",
+    "wl_19237": "好山",
+    "wl_19238": "好生",
+    "wl_19239": "好手",
+    "wl_19240": "好水",
+    "wl_19241": "好说",
+    "wl_19242": "好人家",
+    "wl_19243": "好痛",
+    "wl_19244": "好香",
+    "wl_19245": "好说话",
+    "wl_19246": "好呀",
+    "wl_19247": "好在",
+    "wl_19248": "合不来",
+    "wl_19249": "合口",
+    "wl_19250": "合算",
+    "wl_19251": "合家",
+    "wl_19252": "和风",
+    "wl_19253": "和乐",
+    "wl_19254": "和气",
+    "wl_19255": "和数",
+    "wl_19256": "河马",
+    "wl_19257": "河山",
+    "wl_19258": "荷包",
+    "wl_19259": "贺信",
+    "wl_19260": "黑狗",
+    "wl_19261": "黑光",
+    "wl_19262": "黑话",
+    "wl_19263": "黑脸",
+    "wl_19264": "黑马",
+    "wl_19265": "黑米",
+    "wl_19266": "黑鼠",
+    "wl_19267": "黑天",
+    "wl_19268": "黑土",
+    "wl_19269": "黑心",
+    "wl_19270": "黑熊",
+    "wl_19271": "黑鱼",
+    "wl_19272": "黑竹",
+    "wl_19273": "很笨",
+    "wl_19274": "很高兴",
+    "wl_19275": "很大",
+    "wl_19276": "很近",
+    "wl_19277": "很冷",
+    "wl_19278": "很满",
+    "wl_19279": "很小",
+    "wl_19280": "很远",
+    "wl_19281": "红宝石",
+    "wl_19282": "红火",
+    "wl_19283": "红脸",
+    "wl_19284": "红木",
+    "wl_19285": "红帽子",
+    "wl_19286": "红日",
+    "wl_19287": "红树",
+    "wl_19288": "红松",
+    "wl_19289": "红太阳",
+    "wl_19290": "红土",
+    "wl_19291": "红心",
+    "wl_19292": "红星",
+    "wl_19293": "红眼",
+    "wl_19294": "红眼病",
+    "wl_19295": "红叶",
+    "wl_19296": "红鱼",
+    "wl_19297": "红纸",
+    "wl_19298": "后路",
+    "wl_19299": "后怕",
+    "wl_19300": "后期",
+    "wl_19301": "后起",
+    "wl_19302": "后生",
+    "wl_19303": "后事",
+    "wl_19304": "后头",
+    "wl_19305": "后尾",
+    "wl_19306": "呼气",
+    "wl_19307": "忽而",
+    "wl_19308": "胡话",
+    "wl_19309": "胡来",
+    "wl_19310": "虎口",
+    "wl_19311": "虎耳草",
+    "wl_19312": "虎狼",
+    "wl_19313": "虎牙",
+    "wl_19314": "花白",
+    "wl_19315": "花边",
+    "wl_19316": "花布",
+    "wl_19317": "花车",
+    "wl_19318": "花虫",
+    "wl_19319": "花灯",
+    "wl_19320": "花儿",
+    "wl_19321": "花篮",
+    "wl_19322": "花猫",
+    "wl_19323": "花眼",
+    "wl_19324": "花样",
+    "wl_19325": "画片",
+    "wl_19326": "话说",
+    "wl_19327": "奶牛",
+    "wl_19328": "南风",
+    "wl_19329": "南京",
+    "wl_19330": "难事",
+    "wl_19331": "难说",
+    "wl_19332": "难听",
+    "wl_19333": "难为",
+    "wl_19334": "难于",
+    "wl_19335": "闹气",
+    "wl_19336": "闹肚子",
+    "wl_19337": "能动",
+    "wl_19338": "闹着玩",
+    "wl_19339": "能手",
+    "wl_19340": "能不能",
+    "wl_19341": "年月",
+    "wl_19342": "牛黄",
+    "wl_19343": "牛气",
+    "wl_19344": "牛蛙",
+    "wl_19345": "爬虫",
+    "wl_19346": "爬山虎",
+    "wl_19347": "爬树",
+    "wl_19348": "怕冷",
+    "wl_19349": "怕人",
+    "wl_19350": "怕生",
+    "wl_19351": "怕事",
+    "wl_19352": "旁白",
+    "wl_19353": "旁门",
+    "wl_19354": "旁听",
+    "wl_19355": "跑道",
+    "wl_19356": "跑电",
+    "wl_19357": "跑掉",
+    "wl_19358": "跑马",
+    "wl_19359": "跑外",
+    "wl_19360": "朋友们",
+    "wl_19361": "漂流",
+    "wl_19362": "漂着",
+    "wl_19363": "婆家",
+    "wl_19364": "破开",
+    "wl_19365": "破口",
+    "wl_19366": "破落",
+    "wl_19367": "破土",
+    "wl_19368": "扑上去",
+    "wl_19369": "扑救",
+    "wl_19370": "七日",
+    "wl_19371": "七天",
+    "wl_19372": "起笔",
+    "wl_19373": "起草",
+    "wl_19374": "起跑",
+    "wl_19375": "起头",
+    "wl_19376": "起用",
+    "wl_19377": "起早",
+    "wl_19378": "起子",
+    "wl_19379": "气坏了",
+    "wl_19380": "气急",
+    "wl_19381": "气力",
+    "wl_19382": "气流",
+    "wl_19383": "气门",
+    "wl_19384": "气人",
+    "wl_19385": "汽船",
+    "wl_19386": "前年",
+    "wl_19387": "前期",
+    "wl_19388": "前人",
+    "wl_19389": "前身",
+    "wl_19390": "亲笔",
+    "wl_19391": "亲身",
+    "wl_19392": "亲生",
+    "wl_19393": "亲知",
+    "wl_19394": "亲和",
+    "wl_19395": "青光眼",
+    "wl_19396": "青果",
+    "wl_19397": "青绿",
+    "wl_19398": "青梅",
+    "wl_19399": "青苗",
+    "wl_19400": "青年节",
+    "wl_19401": "青鱼",
+    "wl_19402": "青云",
+    "wl_19403": "清灰",
+    "wl_19404": "清明节",
+    "wl_19405": "秋分",
+    "wl_19406": "秋风",
+    "wl_19407": "秋菊",
+    "wl_19408": "秋凉",
+    "wl_19409": "秋水",
+    "wl_19410": "求和",
+    "wl_19411": "求教",
+    "wl_19412": "求救",
+    "wl_19413": "求亲",
+    "wl_19414": "求人",
+    "wl_19415": "求求你",
+    "wl_19416": "求生",
+    "wl_19417": "去到",
+    "wl_19418": "去过",
+    "wl_19419": "去了",
+    "wl_19420": "去吗",
+    "wl_19421": "去信",
+    "wl_19422": "去往",
+    "wl_19423": "圈子",
+    "wl_19424": "全民",
+    "wl_19425": "全能",
+    "wl_19426": "全然",
+    "wl_19427": "热带",
+    "wl_19428": "热流",
+    "wl_19429": "热电厂",
+    "wl_19430": "热天",
+    "wl_19431": "热学",
+    "wl_19432": "人流",
+    "wl_19433": "人马",
+    "wl_19434": "人声",
+    "wl_19435": "人种",
+    "wl_19436": "认生",
+    "wl_19437": "认字",
+    "wl_19438": "日光灯",
+    "wl_19439": "日后",
+    "wl_19440": "日前",
+    "wl_19441": "日头",
+    "wl_19442": "日月",
+    "wl_19443": "肉食",
+    "wl_19444": "肉松",
+    "wl_19445": "三角",
+    "wl_19446": "山歌",
+    "wl_19447": "山根",
+    "wl_19448": "山河",
+    "wl_19449": "山鸡",
+    "wl_19450": "山口",
+    "wl_19451": "山猫",
+    "wl_19452": "山桃",
+    "wl_19453": "山头",
+    "wl_19454": "闪光",
+    "wl_19455": "闪开",
+    "wl_19456": "闪念",
+    "wl_19457": "闪身",
+    "wl_19458": "扇面",
+    "wl_19459": "上边",
+    "wl_19460": "上口",
+    "wl_19461": "上马",
+    "wl_19462": "上门",
+    "wl_19463": "上上",
+    "wl_19464": "上算",
+    "wl_19465": "上座",
+    "wl_19466": "谁的",
+    "wl_19467": "谁呀",
+    "wl_19468": "身心",
+    "wl_19469": "身长",
+    "wl_19470": "生根",
+    "wl_19471": "生还",
+    "wl_19472": "生来",
+    "wl_19473": "生冷",
+    "wl_19474": "生前",
+    "wl_19475": "生石灰",
+    "wl_19476": "生手",
+    "wl_19477": "生水",
+    "wl_19478": "声张",
+    "wl_19479": "十点",
+    "wl_19480": "狮子狗",
+    "wl_19481": "十日",
+    "wl_19482": "十天",
+    "wl_19483": "石灰",
+    "wl_19484": "石灰石",
+    "wl_19485": "石山",
+    "wl_19486": "石竹",
+    "wl_19487": "时日",
+    "wl_19488": "时时",
+    "wl_19489": "是谁",
+    "wl_19490": "手笔",
+    "wl_19491": "手边",
+    "wl_19492": "手球",
+    "wl_19493": "手书",
+    "wl_19494": "手松",
+    "wl_19495": "手心",
+    "wl_19496": "受凉",
+    "wl_19497": "受气",
+    "wl_19498": "受气包",
+    "wl_19499": "受用",
+    "wl_19500": "书生气",
+    "wl_19501": "熟知",
+    "wl_19502": "熟字",
+    "wl_19503": "树苗",
+    "wl_19504": "树种",
+    "wl_19505": "数落",
+    "wl_19506": "数目",
+    "wl_19507": "数来宝",
+    "wl_19508": "摔打",
+    "wl_19509": "摔了",
+    "wl_19510": "甩出",
+    "wl_19511": "摔东西",
+    "wl_19512": "甩开",
+    "wl_19513": "水车",
+    "wl_19514": "水分",
+    "wl_19515": "水力",
+    "wl_19516": "水路",
+    "wl_19517": "水牛",
+    "wl_19518": "水球",
+    "wl_19519": "水土",
+    "wl_19520": "水文",
+    "wl_19521": "睡梦",
+    "wl_19522": "说不得",
+    "wl_19523": "说唱",
+    "wl_19524": "说穿",
+    "wl_19525": "说不来",
+    "wl_19526": "说和",
+    "wl_19527": "说破",
+    "wl_19528": "说书",
+    "wl_19529": "说着",
+    "wl_19530": "说明文",
+    "wl_19531": "死掉",
+    "wl_19532": "死了",
+    "wl_19533": "死水",
+    "wl_19534": "死心",
+    "wl_19535": "死心眼",
+    "wl_19536": "四年",
+    "wl_19537": "四天",
+    "wl_19538": "松口",
+    "wl_19539": "松手",
+    "wl_19540": "松子",
+    "wl_19541": "送东西",
+    "wl_19542": "送还",
+    "wl_19543": "算了",
+    "wl_19544": "算题",
+    "wl_19545": "它的",
+    "wl_19546": "她的",
+    "wl_19547": "抬着",
+    "wl_19548": "抬走",
+    "wl_19549": "太白星",
+    "wl_19550": "太大",
+    "wl_19551": "太后",
+    "wl_19552": "太慢",
+    "wl_19553": "太小",
+    "wl_19554": "逃难",
+    "wl_19555": "桃红",
+    "wl_19556": "桃花",
+    "wl_19557": "题名",
+    "wl_19558": "天边",
+    "wl_19559": "天窗",
+    "wl_19560": "天火",
+    "wl_19561": "天机",
+    "wl_19562": "天亮",
+    "wl_19563": "天王星",
+    "wl_19564": "天子",
+    "wl_19565": "田鸡",
+    "wl_19566": "田鼠",
+    "wl_19567": "田园",
+    "wl_19568": "甜的",
+    "wl_19569": "甜水",
+    "wl_19570": "甜头",
+    "wl_19571": "条文",
+    "wl_19572": "条子",
+    "wl_19573": "跳班",
+    "wl_19574": "跳动",
+    "wl_19575": "跳着",
+    "wl_19576": "贴上",
+    "wl_19577": "贴着",
+    "wl_19578": "停放",
+    "wl_19579": "停了",
+    "wl_19580": "停学",
+    "wl_19581": "同等",
+    "wl_19582": "同路",
+    "wl_19583": "同名",
+    "wl_19584": "同期",
+    "wl_19585": "桶子",
+    "wl_19586": "痛哭",
+    "wl_19587": "痛快",
+    "wl_19588": "痛心",
+    "wl_19589": "头等",
+    "wl_19590": "头上",
+    "wl_19591": "透风",
+    "wl_19592": "透亮",
+    "wl_19593": "透雨",
+    "wl_19594": "土产",
+    "wl_19595": "土包子",
+    "wl_19596": "土话",
+    "wl_19597": "土音",
+    "wl_19598": "土石方",
+    "wl_19599": "驮着",
+    "wl_19600": "娃娃鱼",
+    "wl_19601": "外力",
+    "wl_19602": "外人",
+    "wl_19603": "外屋",
+    "wl_19604": "外因",
+    "wl_19605": "玩球",
+    "wl_19606": "玩水",
+    "wl_19607": "玩物",
+    "wl_19608": "玩游戏",
+    "wl_19609": "晚期",
+    "wl_19610": "网子",
+    "wl_19611": "往年",
+    "wl_19612": "往哪里",
+    "wl_19613": "忘我",
+    "wl_19614": "望风",
+    "wl_19615": "望见",
+    "wl_19616": "望着",
+    "wl_19617": "尾灯",
+    "wl_19618": "尾声",
+    "wl_19619": "尾数",
+    "wl_19620": "尾音",
+    "wl_19621": "文告",
+    "wl_19622": "文教",
+    "wl_19623": "文具盒",
+    "wl_19624": "文鸟",
+    "wl_19625": "文人",
+    "wl_19626": "问人",
+    "wl_19627": "窝工",
+    "wl_19628": "窝火",
+    "wl_19629": "我是",
+    "wl_19630": "我笑",
+    "wl_19631": "我有",
+    "wl_19632": "呜呜",
+    "wl_19633": "无风",
+    "wl_19634": "无怪",
+    "wl_19635": "无害",
+    "wl_19636": "无前",
+    "wl_19637": "无名指",
+    "wl_19638": "无上",
+    "wl_19639": "五天",
+    "wl_19640": "午前",
+    "wl_19641": "物产",
+    "wl_19642": "西风",
+    "wl_19643": "西南",
+    "wl_19644": "西天",
+    "wl_19645": "稀饭",
+    "wl_19646": "习气",
+    "wl_19647": "习题",
+    "wl_19648": "习字",
+    "wl_19649": "习作",
+    "wl_19650": "戏迷",
+    "wl_19651": "戏文",
+    "wl_19652": "下笔",
+    "wl_19653": "下工",
+    "wl_19654": "下流",
+    "wl_19655": "下落",
+    "wl_19656": "下马",
+    "wl_19657": "下头",
+    "wl_19658": "下雪天",
+    "wl_19659": "下作",
+    "wl_19660": "下雨天",
+    "wl_19661": "吓死",
+    "wl_19662": "香花",
+    "wl_19663": "香甜",
+    "wl_19664": "响动",
+    "wl_19665": "想不开",
+    "wl_19666": "想你",
+    "wl_19667": "想当然",
+    "wl_19668": "想头",
+    "wl_19669": "想得开",
+    "wl_19670": "向阳",
+    "wl_19671": "向着",
+    "wl_19672": "小草",
+    "wl_19673": "向心力",
+    "wl_19674": "小不点",
+    "wl_19675": "小弟",
+    "wl_19676": "小缝",
+    "wl_19677": "小动作",
+    "wl_19678": "小儿科",
+    "wl_19679": "小妹",
+    "wl_19680": "小红花",
+    "wl_19681": "小苗",
+    "wl_19682": "小名",
+    "wl_19683": "小跑",
+    "wl_19684": "小山",
+    "wl_19685": "小人书",
+    "wl_19686": "小人物",
+    "wl_19687": "小手",
+    "wl_19688": "小腿",
+    "wl_19689": "小碗",
+    "wl_19690": "小心眼",
+    "wl_19691": "小雪",
+    "wl_19692": "小鱼",
+    "wl_19693": "小月",
+    "wl_19694": "小鸭",
+    "wl_19695": "笑哈哈",
+    "wl_19696": "笑脸",
+    "wl_19697": "笑呵呵",
+    "wl_19698": "写生",
+    "wl_19699": "写书",
+    "wl_19700": "笑面虎",
+    "wl_19701": "写真",
+    "wl_19702": "写日记",
+    "wl_19703": "谢谢你",
+    "wl_19704": "心得",
+    "wl_19705": "心火",
+    "wl_19706": "心气",
+    "wl_19707": "心算",
+    "wl_19708": "心田",
+    "wl_19709": "心痛",
+    "wl_19710": "心窝",
+    "wl_19711": "信不信",
+    "wl_19712": "星火",
+    "wl_19713": "星象",
+    "wl_19714": "星云",
+    "wl_19715": "星座",
+    "wl_19716": "行家",
+    "wl_19717": "醒了",
+    "wl_19718": "兴起",
+    "wl_19719": "学风",
+    "wl_19720": "学名",
+    "wl_19721": "学年",
+    "wl_19722": "学说",
+    "wl_19723": "雪白",
+    "wl_19724": "雪花",
+    "wl_19725": "雪亮",
+    "wl_19726": "雪片",
+    "wl_19727": "牙虫",
+    "wl_19728": "眼巴巴",
+    "wl_19729": "眼白",
+    "wl_19730": "眼力",
+    "wl_19731": "眼毛",
+    "wl_19732": "眼眉",
+    "wl_19733": "眼球",
+    "wl_19734": "眼圈",
+    "wl_19735": "眼热",
+    "wl_19736": "眼生",
+    "wl_19737": "羊角",
+    "wl_19738": "阳春",
+    "wl_19739": "咬东西",
+    "wl_19740": "咬人",
+    "wl_19741": "要道",
+    "wl_19742": "要不得",
+    "wl_19743": "要么",
+    "wl_19744": "要面子",
+    "wl_19745": "也不要",
+    "wl_19746": "一把",
+    "wl_19747": "一串串",
+    "wl_19748": "一顶",
+    "wl_19749": "一根",
+    "wl_19750": "一件",
+    "wl_19751": "一颗",
+    "wl_19752": "一年",
+    "wl_19753": "一片",
+    "wl_19754": "一日",
+    "wl_19755": "一天",
+    "wl_19756": "一条路",
+    "wl_19757": "一条心",
+    "wl_19758": "一早",
+    "wl_19759": "一张",
+    "wl_19760": "一座山",
+    "wl_19761": "已然",
+    "wl_19762": "音信",
+    "wl_19763": "应声",
+    "wl_19764": "应声虫",
+    "wl_19765": "用具",
+    "wl_19766": "用做",
+    "wl_19767": "游园会",
+    "wl_19768": "游子",
+    "wl_19769": "友爱",
+    "wl_19770": "有的是",
+    "wl_19771": "有请",
+    "wl_19772": "有数",
+    "wl_19773": "有为",
+    "wl_19774": "有心",
+    "wl_19775": "有心人",
+    "wl_19776": "又哭",
+    "wl_19777": "又去",
+    "wl_19778": "右面",
+    "wl_19779": "右脑",
+    "wl_19780": "幼虫",
+    "wl_19781": "幼小",
+    "wl_19782": "幼子",
+    "wl_19783": "鱼虫",
+    "wl_19784": "鱼钩",
+    "wl_19785": "鱼具",
+    "wl_19786": "鱼苗",
+    "wl_19787": "鱼松",
+    "wl_19788": "羽扇",
+    "wl_19789": "再去",
+    "wl_19790": "再三",
+    "wl_19791": "再生",
+    "wl_19792": "在逃",
+    "wl_19793": "在望",
+    "wl_19794": "在下",
+    "wl_19795": "在做",
+    "wl_19796": "早春",
+    "wl_19797": "早睡",
+    "wl_19798": "张嘴",
+    "wl_19799": "怎么着",
+    "wl_19800": "长进",
+    "wl_19801": "长老",
+    "wl_19802": "找东西",
+    "wl_19803": "找人",
+    "wl_19804": "找事",
+    "wl_19805": "照应",
+    "wl_19806": "照着",
+    "wl_19807": "这么着",
+    "wl_19808": "着想",
+    "wl_19809": "真假",
+    "wl_19810": "真快乐",
+    "wl_19811": "真知",
+    "wl_19812": "正比",
+    "wl_19813": "正大",
+    "wl_19814": "正点",
+    "wl_19815": "正当年",
+    "wl_19816": "正方",
+    "wl_19817": "正当中",
+    "wl_19818": "知心",
+    "wl_19819": "知音",
+    "wl_19820": "只身",
+    "wl_19821": "纸包",
+    "wl_19822": "纸老虎",
+    "wl_19823": "指点",
+    "wl_19824": "指教",
+    "wl_19825": "指明",
+    "wl_19826": "指正",
+    "wl_19827": "中班",
+    "wl_19828": "中等",
+    "wl_19829": "中饭",
+    "wl_19830": "中风",
+    "wl_19831": "中年",
+    "wl_19832": "中用",
+    "wl_19833": "中游",
+    "wl_19834": "中雨",
+    "wl_19835": "中原",
+    "wl_19836": "中正",
+    "wl_19837": "中指",
+    "wl_19838": "钟点",
+    "wl_19839": "种草",
+    "wl_19840": "种田",
+    "wl_19841": "竹篮",
+    "wl_19842": "竹马",
+    "wl_19843": "竹苗",
+    "wl_19844": "竹叶",
+    "wl_19845": "住所",
+    "wl_19846": "装好",
+    "wl_19847": "装车",
+    "wl_19848": "准是",
+    "wl_19849": "捉拿",
+    "wl_19850": "捉住",
+    "wl_19851": "桌椅",
+    "wl_19852": "啄米",
+    "wl_19853": "啄木鸟",
+    "wl_19854": "啄破",
+    "wl_19855": "自爱",
+    "wl_19856": "自发",
+    "wl_19857": "自家",
+    "wl_19858": "自己人",
+    "wl_19859": "自救",
+    "wl_19860": "自觉",
+    "wl_19861": "自然力",
+    "wl_19862": "自问",
+    "wl_19863": "总和",
+    "wl_19864": "走啊",
+    "wl_19865": "走到",
+    "wl_19866": "走道",
+    "wl_19867": "走掉",
+    "wl_19868": "走狗",
+    "wl_19869": "走好",
+    "wl_19870": "走火",
+    "wl_19871": "走啦",
+    "wl_19872": "走马灯",
+    "wl_19873": "嘴快",
+    "wl_19874": "嘴脸",
+    "wl_19875": "最大",
+    "wl_19876": "最多",
+    "wl_19877": "最快",
+    "wl_19878": "最小",
+    "wl_19879": "左面",
+    "wl_19880": "左脑",
+    "wl_19881": "左右手",
+    "wl_19882": "作成",
+    "wl_19883": "作对",
+    "wl_19884": "作法",
+    "wl_19885": "坐等",
+    "wl_19886": "坐定",
+    "wl_19887": "坐着",
+    "wl_19888": "做人",
+    "wl_19889": "做声",
+    "wl_19890": "做游戏"
   }
 }

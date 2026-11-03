@@ -1,0 +1,2109 @@
+{
+  "不管怎么着，我们都得把话说清楚。": [
+    {
+      "offset": 9,
+      "hanzi": "得",
+      "pinyin": "děi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "must; have to"
+    }
+  ],
+  "两棵树靠得很近。": [
+    {
+      "offset": 4,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    },
+    {
+      "offset": 5,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "中指通常比食指长。": [
+    {
+      "offset": 7,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "long; length"
+    }
+  ],
+  "乖宝贝，今晚想听哪个故事？": [
+    {
+      "offset": 10,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 11,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "争吵中，两个人都急得红眼了。": [
+    {
+      "offset": 9,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "今天玩得真快乐！": [
+    {
+      "offset": 3,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他不肯做这种下作的事。": [
+    {
+      "offset": 5,
+      "hanzi": "种",
+      "pinyin": "zhǒng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "kind; type (classifier)"
+    }
+  ],
+  "他举着火把照亮山路。": [
+    {
+      "offset": 2,
+      "hanzi": "着",
+      "pinyin": "zhe",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "ZHE (ongoing action or state)"
+    }
+  ],
+  "他们为青年节排练了一场合唱。": [
+    {
+      "offset": 10,
+      "hanzi": "场",
+      "pinyin": "chǎng",
+      "gloss": "classifier for events",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他们打算开春再种这批树苗。": [
+    {
+      "offset": 7,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "他做这一行很熟悉门路。": [
+    {
+      "offset": 4,
+      "hanzi": "行",
+      "pinyin": "háng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "line of work; trade"
+    }
+  ],
+  "他准备得如此充分，无怪表现出色。": [
+    {
+      "offset": 3,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他刚从一场大病中康复。": [
+    {
+      "offset": 4,
+      "hanzi": "场",
+      "pinyin": "cháng",
+      "gloss": "classifier for a bout or occurrence",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他刚赢了一场比赛就牛气起来。": [
+    {
+      "offset": 5,
+      "hanzi": "场",
+      "pinyin": "chǎng",
+      "gloss": "classifier for events",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他定睛一看，原来是只小猫。": [
+    {
+      "offset": 9,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他常常自问，还能做得更好吗？": [
+    {
+      "offset": 9,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他把两张照片放在一起对照。": [
+    {
+      "offset": 4,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 5,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "他把字写得十分方正。": [
+    {
+      "offset": 4,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他把鸡心切开，洗净后再炒。": [
+    {
+      "offset": 4,
+      "hanzi": "切",
+      "pinyin": "qiē",
+      "gloss": "cut; slice",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他检查得很仔细，一点也不马虎。": [
+    {
+      "offset": 3,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 4,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "他正当年，干起活来精力充沛。": [
+    {
+      "offset": 5,
+      "hanzi": "干",
+      "pinyin": "gàn",
+      "gloss": "work; do",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他烧得厉害，嘴里说着胡话。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他用刀尖挑开了绳结。": [
+    {
+      "offset": 4,
+      "hanzi": "挑",
+      "pinyin": "tiǎo",
+      "gloss": "lift or pick open with a pointed object",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他用大碗盛了一碗面。": [
+    {
+      "offset": 4,
+      "hanzi": "盛",
+      "pinyin": "chéng",
+      "gloss": "put food or liquid into a container",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他的日程排得很满。": [
+    {
+      "offset": 5,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    },
+    {
+      "offset": 6,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "他看似凶猛，其实是个纸老虎。": [
+    {
+      "offset": 2,
+      "hanzi": "似",
+      "pinyin": "sì",
+      "gloss": "seem; appear",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他看见蜘蛛，吓得大叫。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他站得笔直，目视前方。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他笑得这么开心，准是有好消息。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他答应得很痛快。": [
+    {
+      "offset": 3,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 4,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "他给我讲了一个有趣的故事。": [
+    {
+      "offset": 10,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 11,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "他背起书包，向妈妈喊了声走啦。": [
+    {
+      "offset": 1,
+      "hanzi": "背",
+      "pinyin": "bēi",
+      "gloss": "carry on one's back",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "他跑得顶快，一会儿就到了。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "他跑得飞快，被称为短跑飞人。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "傍晚时，风筝飞得满天都是。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "农民巴望下一场透雨。": [
+    {
+      "offset": 6,
+      "hanzi": "场",
+      "pinyin": "cháng",
+      "gloss": "classifier for a bout or occurrence",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "农民把草木灰撒到田里。": [
+    {
+      "offset": 6,
+      "hanzi": "撒",
+      "pinyin": "sǎ",
+      "gloss": "sprinkle; scatter",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "农田边种着防风林带。": [
+    {
+      "offset": 3,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "别让强风吹倒小苗。": [
+    {
+      "offset": 5,
+      "hanzi": "倒",
+      "pinyin": "dǎo",
+      "gloss": "fall over; topple",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "刹车时，部分动能转化为热能。": [
+    {
+      "offset": 10,
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "as; become; serve as"
+    }
+  ],
+  "包头位于内蒙古自治区。": [
+    {
+      "offset": 4,
+      "hanzi": "内",
+      "pinyin": "nèi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 5,
+      "hanzi": "蒙",
+      "pinyin": "měng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 6,
+      "hanzi": "古",
+      "pinyin": "gǔ",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "自",
+      "pinyin": "zì",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 8,
+      "hanzi": "治",
+      "pinyin": "zhì",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 9,
+      "hanzi": "区",
+      "pinyin": "qū",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "古人有时把媒人称为冰人。": [
+    {
+      "offset": 8,
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "as; become; serve as"
+    }
+  ],
+  "唱歌时别把尾音拖得太长。": [
+    {
+      "offset": 8,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    },
+    {
+      "offset": 10,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "long; length"
+    }
+  ],
+  "园子里种着一丛黑竹。": [
+    {
+      "offset": 3,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "墙边的花盆里种着虎耳草。": [
+    {
+      "offset": 6,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "夜里的风声大得怕人。": [
+    {
+      "offset": 6,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "大家叫他故事大王。": [
+    {
+      "offset": 4,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 5,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "大家都讨厌那种下作手段。": [
+    {
+      "offset": 6,
+      "hanzi": "种",
+      "pinyin": "zhǒng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "kind; type (classifier)"
+    }
+  ],
+  "大雪天出门要穿得暖和。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "大雪天，公交车开得很慢。": [
+    {
+      "offset": 8,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 9,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "奶奶把年轻时收到的家书保存得很好。": [
+    {
+      "offset": 13,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 14,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "奶奶用花布缝了一个枕套。": [
+    {
+      "offset": 5,
+      "hanzi": "缝",
+      "pinyin": "féng",
+      "gloss": "sew; stitch",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "奶奶能背出许多戏文。": [
+    {
+      "offset": 3,
+      "hanzi": "背",
+      "pinyin": "bèi",
+      "gloss": "recite from memory",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "她全身心投入，工作得十分忘我。": [
+    {
+      "offset": 9,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "她和公婆相处得很好。": [
+    {
+      "offset": 6,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "她在朋友肩头痛哭了一场。": [
+    {
+      "offset": 10,
+      "hanzi": "场",
+      "pinyin": "cháng",
+      "gloss": "classifier for a bout or occurrence",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "她在粥上撒了一点鱼松。": [
+    {
+      "offset": 4,
+      "hanzi": "撒",
+      "pinyin": "sǎ",
+      "gloss": "sprinkle; scatter",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "她想起受伤的小狗，心痛得睡不着。": [
+    {
+      "offset": 11,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    },
+    {
+      "offset": 14,
+      "hanzi": "着",
+      "pinyin": "zháo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "achieve a result (result complement)"
+    }
+  ],
+  "她把亲身经历写成了故事。": [
+    {
+      "offset": 9,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 10,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "她把剩下的布头缝成了小口袋。": [
+    {
+      "offset": 7,
+      "hanzi": "缝",
+      "pinyin": "féng",
+      "gloss": "sew; stitch",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "她熬夜后眼圈发黑。": [
+    {
+      "offset": 6,
+      "hanzi": "发",
+      "pinyin": "fā",
+      "gloss": "become; turn",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "字写得太小，后排同学看不见。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "学校在劳动节前举办了一场主题活动。": [
+    {
+      "offset": 11,
+      "hanzi": "场",
+      "pinyin": "chǎng",
+      "gloss": "classifier for events",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "学校教孩子们遇险时如何自救。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "孩子们乖乖坐好，等老师讲故事。": [
+    {
+      "offset": 12,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 13,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "孩子们在大树下乘凉。": [
+    {
+      "offset": 7,
+      "hanzi": "乘",
+      "pinyin": "chéng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 8,
+      "hanzi": "凉",
+      "pinyin": "liáng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "孩子把画中的红鱼涂得更亮了。": [
+    {
+      "offset": 9,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "宝宝睡得十分香甜。": [
+    {
+      "offset": 3,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "家人整理了她生前的照片。": [
+    {
+      "offset": 9,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 10,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "小草从石头夹缝中长出来。": [
+    {
+      "offset": 8,
+      "hanzi": "长",
+      "pinyin": "zhǎng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "grow"
+    }
+  ],
+  "小说中的客人说，在下还有一事相求。": [
+    {
+      "offset": 14,
+      "hanzi": "相",
+      "pinyin": "xiāng",
+      "gloss": "another person (before a verb)",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "屋顶上铺着白花花的雪。": [
+    {
+      "offset": 3,
+      "hanzi": "铺",
+      "pinyin": "pū",
+      "gloss": "spread; cover",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "屋顶蒙着一层灰白的尘土。": [
+    {
+      "offset": 3,
+      "hanzi": "着",
+      "pinyin": "zhe",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "ZHE (ongoing action or state)"
+    }
+  ],
+  "山坡上的孩子迎着风高唱。": [
+    {
+      "offset": 7,
+      "hanzi": "着",
+      "pinyin": "zhe",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "ZHE (ongoing action or state)"
+    }
+  ],
+  "帽子前面缝着一颗红星。": [
+    {
+      "offset": 4,
+      "hanzi": "缝",
+      "pinyin": "féng",
+      "gloss": "sew; stitch",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "庄稼正盼着一场透雨。": [
+    {
+      "offset": 6,
+      "hanzi": "场",
+      "pinyin": "cháng",
+      "gloss": "classifier for a bout or occurrence",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "弟弟盖着被子睡得很香。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 8,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "我们在海边玩得很痛快。": [
+    {
+      "offset": 6,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "我们得快走，免得赶车来不及。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "děi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "must; have to"
+    }
+  ],
+  "我们比一比谁跳得远。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "我分不清这张照片的真假。": [
+    {
+      "offset": 1,
+      "hanzi": "分",
+      "pinyin": "fēn",
+      "gloss": "distinguish; tell apart",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    },
+    {
+      "offset": 6,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "我用小碗盛了点汤。": [
+    {
+      "offset": 4,
+      "hanzi": "盛",
+      "pinyin": "chéng",
+      "gloss": "put food or liquid into a container",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "扣子掉了，得重新缝上。": [
+    {
+      "offset": 5,
+      "hanzi": "得",
+      "pinyin": "děi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "must; have to"
+    },
+    {
+      "offset": 8,
+      "hanzi": "缝",
+      "pinyin": "féng",
+      "gloss": "sew; stitch",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "把两张照片放一起比一比。": [
+    {
+      "offset": 3,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 4,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事中的守卫把犯人押去，听候发落。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事中的官员被骂作权贵的走狗。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事中的小跟班后来有了自己的主意。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事中的才子靠卖字为生。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事中，他托媒人上门求亲。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事中，师徒前往西天取经。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事把贪婪的恶人比作虎狼。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的坏人被称为害人虫。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的大灰狼躲在树后。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的大王住在宫殿。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的官差奉命捉拿盗贼。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的少年决定出走远方。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的怪物原来是纸老虎。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里的老板是个笑面虎，表面和气，背地里算计人。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里，一个人在门外望风。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "故事里，狗熊住在森林深处。": [
+    {
+      "offset": 0,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "教室里的桌椅摆得很整齐。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 8,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "日前，他参加了一场演出。": [
+    {
+      "offset": 8,
+      "hanzi": "场",
+      "pinyin": "chǎng",
+      "gloss": "classifier for events",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "旧照片里有一辆黄包车。": [
+    {
+      "offset": 1,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 2,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "旧照片里，一艘汽船停在码头。": [
+    {
+      "offset": 1,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 2,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "明天赶车，我们得起早。": [
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "děi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "must; have to"
+    }
+  ],
+  "春天到了，我们把门窗擦得很干净。": [
+    {
+      "offset": 11,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 12,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "有心人总能从日常生活中发现故事。": [
+    {
+      "offset": 13,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 14,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "杯中的甜水是用糖调的。": [
+    {
+      "offset": 8,
+      "hanzi": "调",
+      "pinyin": "tiáo",
+      "gloss": "mix; blend",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "杯子摔了，碎片落了一地。": [
+    {
+      "offset": 7,
+      "hanzi": "落",
+      "pinyin": "luò",
+      "gloss": "fall; drop",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "树的根子扎得很深。": [
+    {
+      "offset": 5,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 6,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "桌上放着一张照片。": [
+    {
+      "offset": 6,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "沙拉上撒了少许松子。": [
+    {
+      "offset": 3,
+      "hanzi": "撒",
+      "pinyin": "sǎ",
+      "gloss": "sprinkle; scatter",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "演员在台上变戏法，逗得孩子们大笑。": [
+    {
+      "offset": 10,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "演员用说唱的形式讲述了村庄的故事。": [
+    {
+      "offset": 14,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 15,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "照片记录了他们和乐的家庭生活。": [
+    {
+      "offset": 0,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 1,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "煮汤时要调小火力。": [
+    {
+      "offset": 4,
+      "hanzi": "调",
+      "pinyin": "tiáo",
+      "gloss": "adjust; turn down",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "父母教他诚实做人。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "爷爷不认字，却很会讲故事。": [
+    {
+      "offset": 10,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 11,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "玩水以后记得换干衣服。": [
+    {
+      "offset": 7,
+      "hanzi": "干",
+      "pinyin": "gān",
+      "gloss": "dry",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "留几株蔬菜结子，明年再种。": [
+    {
+      "offset": 11,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "看到有人落水，他立刻出手相救。": [
+    {
+      "offset": 12,
+      "hanzi": "相",
+      "pinyin": "xiāng",
+      "gloss": "another person (before a verb)",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "看到这张照片，我笑了。": [
+    {
+      "offset": 4,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 5,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "秋风吹落了树上的黄叶。": [
+    {
+      "offset": 3,
+      "hanzi": "落",
+      "pinyin": "luò",
+      "gloss": "fall; drop",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "老公公坐在树下乘凉。": [
+    {
+      "offset": 7,
+      "hanzi": "乘",
+      "pinyin": "chéng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 8,
+      "hanzi": "凉",
+      "pinyin": "liáng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "老师教孩子们自己叠被。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "老师教我们唱儿歌。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "老师教我们记住哪些月份是小月。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "老师教我们辨认夜空中的星座。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "老师教的方法让我终身受用。": [
+    {
+      "offset": 2,
+      "hanzi": "教",
+      "pinyin": "jiāo",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "teach"
+    }
+  ],
+  "老爷爷坐在树下乘凉。": [
+    {
+      "offset": 7,
+      "hanzi": "乘",
+      "pinyin": "chéng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 8,
+      "hanzi": "凉",
+      "pinyin": "liáng",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "花木错落有致地种在院中。": [
+    {
+      "offset": 7,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "花长时间缺水会死掉。": [
+    {
+      "offset": 1,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "long; length"
+    }
+  ],
+  "虽然住得很远，她每周都来探望奶奶。": [
+    {
+      "offset": 3,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    },
+    {
+      "offset": 4,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "蝴蝶的幼虫常以叶片为食。": [
+    {
+      "offset": 9,
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "as; become; serve as"
+    }
+  ],
+  "裁缝先量了外套的身长。": [
+    {
+      "offset": 3,
+      "hanzi": "量",
+      "pinyin": "liáng",
+      "gloss": "measure",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "话说回来，这件事还得你决定。": [
+    {
+      "offset": 9,
+      "hanzi": "得",
+      "pinyin": "děi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "must; have to"
+    }
+  ],
+  "调查揭穿了生意兴隆的假象。": [
+    {
+      "offset": 7,
+      "hanzi": "兴",
+      "pinyin": "xīng",
+      "gloss": "thrive; prosper",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这两所学校离得很近。": [
+    {
+      "offset": 6,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "这个计划大胆得让人不敢想。": [
+    {
+      "offset": 6,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "这些年在外闯荡，把他摔打得更坚强了。": [
+    {
+      "offset": 12,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "这些故事流传在历史长河中。": [
+    {
+      "offset": 2,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 3,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "这件活儿得请里手来做。": [
+    {
+      "offset": 4,
+      "hanzi": "得",
+      "pinyin": "děi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "must; have to"
+    }
+  ],
+  "这位年轻才子的诗在城里广为流传。": [
+    {
+      "offset": 12,
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "as; become; serve as"
+    }
+  ],
+  "这则神话讲述了求长生的故事。": [
+    {
+      "offset": 11,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 12,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "这只动物既吃肉也吃水果。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只包金手镯需要轻拿轻放。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只小狗通常不咬人。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只小猫怕生，躲在椅子下面。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只小碗是给妹妹用的。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只小船顺风走得顶快。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    },
+    {
+      "offset": 7,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "这只山羊的羊角向后弯。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只旧箱子里放着她仅有的家当。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只毛毛虫正在吃树叶。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只牛蛙比普通青蛙大。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只狗会咬人，请勿靠近。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只白猫有蓝色的眼睛。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只箱子顶天能装十本书。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只老狐狸早就看穿了我们的计策。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只黄鼠躲进了洞里。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这只黑鼠躲在箱子后面。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这张照片是上上个月拍的。": [
+    {
+      "offset": 2,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 3,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "这张照片是前年拍的。": [
+    {
+      "offset": 2,
+      "hanzi": "照",
+      "pinyin": "zhào",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 3,
+      "hanzi": "片",
+      "pinyin": "piàn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "这把尺子长三分米。": [
+    {
+      "offset": 4,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "long; length"
+    }
+  ],
+  "这是自家种的蔬菜。": [
+    {
+      "offset": 4,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "这条山路陡得怕人。": [
+    {
+      "offset": 5,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "这条蛇的尖牙很长。": [
+    {
+      "offset": 7,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "long; length"
+    }
+  ],
+  "这根绳子长二十公分。": [
+    {
+      "offset": 4,
+      "hanzi": "长",
+      "pinyin": "cháng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "long; length"
+    }
+  ],
+  "这次比赛，她抢尽了风头。": [
+    {
+      "offset": 7,
+      "hanzi": "尽",
+      "pinyin": "jìn",
+      "gloss": "completely; to the full",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这片黑土适合种庄稼。": [
+    {
+      "offset": 6,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "这盘烤鸡心撒了一点孜然。": [
+    {
+      "offset": 5,
+      "hanzi": "撒",
+      "pinyin": "sǎ",
+      "gloss": "sprinkle; scatter",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这种下流的玩笑让人反感。": [
+    {
+      "offset": 1,
+      "hanzi": "种",
+      "pinyin": "zhǒng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "kind; type (classifier)"
+    }
+  ],
+  "这辆车开得太慢了。": [
+    {
+      "offset": 4,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "这部历史小说以中原为背景。": [
+    {
+      "offset": 9,
+      "hanzi": "为",
+      "pinyin": "wéi",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "as; become; serve as"
+    }
+  ],
+  "这锅稀饭煮得很软。": [
+    {
+      "offset": 5,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 6,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "这间向阳的屋子冬天也很暖和。": [
+    {
+      "offset": 1,
+      "hanzi": "间",
+      "pinyin": "jiān",
+      "gloss": "classifier for rooms or buildings",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这间屋子南北通风，夏天十分风凉。": [
+    {
+      "offset": 1,
+      "hanzi": "间",
+      "pinyin": "jiān",
+      "gloss": "classifier for rooms or buildings",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这间屋子格局方正。": [
+    {
+      "offset": 1,
+      "hanzi": "间",
+      "pinyin": "jiān",
+      "gloss": "classifier for rooms or buildings",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这间屋子的采光很好。": [
+    {
+      "offset": 1,
+      "hanzi": "间",
+      "pinyin": "jiān",
+      "gloss": "classifier for rooms or buildings",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "这间旧仓库被用做排练室。": [
+    {
+      "offset": 1,
+      "hanzi": "间",
+      "pinyin": "jiān",
+      "gloss": "classifier for rooms or buildings",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "那个老婆婆给我们讲了村子的故事。": [
+    {
+      "offset": 13,
+      "hanzi": "故",
+      "pinyin": "gù",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 14,
+      "hanzi": "事",
+      "pinyin": "shi",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "那只大猫正在晒太阳。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "那只花猫蜷在窗台上晒太阳。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "那只黄狗追着球跑。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "那只黑狗跟着主人跑。": [
+    {
+      "offset": 1,
+      "hanzi": "只",
+      "pinyin": "zhī",
+      "gloss": "classifier for animals and certain objects",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "那场大病让她休息了很久。": [
+    {
+      "offset": 1,
+      "hanzi": "场",
+      "pinyin": "cháng",
+      "gloss": "classifier for a bout or occurrence",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "银杏树结的果实里面有白果。": [
+    {
+      "offset": 3,
+      "hanzi": "结",
+      "pinyin": "jiē",
+      "gloss": "bear fruit",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "门前种着两棵树。": [
+    {
+      "offset": 2,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "门外传来轻轻的响动。": [
+    {
+      "offset": 2,
+      "hanzi": "传",
+      "pinyin": "chuán",
+      "gloss": "carry; transmit",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "院子里种满了香花。": [
+    {
+      "offset": 3,
+      "hanzi": "种",
+      "pinyin": "zhòng",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "plant; grow"
+    }
+  ],
+  "雨后的黑土散发着清新的气味。": [
+    {
+      "offset": 6,
+      "hanzi": "发",
+      "pinyin": "fā",
+      "gloss": "give off; emit",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "雨后竹苗长得很快。": [
+    {
+      "offset": 5,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    },
+    {
+      "offset": 6,
+      "hanzi": "很",
+      "pinyin": "hěn",
+      "reason": "Reviewed lexical phrase reading; preserve the attested contextual pronunciation before chunk lookup."
+    }
+  ],
+  "雨水顺着眼眉流下来。": [
+    {
+      "offset": 3,
+      "hanzi": "着",
+      "pinyin": "zhe",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "ZHE (ongoing action or state)"
+    }
+  ],
+  "面包上撒着一层肉松。": [
+    {
+      "offset": 3,
+      "hanzi": "撒",
+      "pinyin": "sǎ",
+      "gloss": "sprinkle; scatter",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ],
+  "风吹得他的耳朵眼发痒。": [
+    {
+      "offset": 2,
+      "hanzi": "得",
+      "pinyin": "de",
+      "reason": "Reviewed contextual reading; applied before reading-specific chunk gloss lookup.",
+      "gloss": "DE (complement marker)"
+    }
+  ],
+  "鱼线末端系着一个小鱼钩。": [
+    {
+      "offset": 4,
+      "hanzi": "系",
+      "pinyin": "jì",
+      "gloss": "tie; fasten",
+      "reason": "Reviewed contextual reading and literal sense; applied before chunk lookup."
+    }
+  ]
+}

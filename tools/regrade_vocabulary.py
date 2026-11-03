@@ -280,14 +280,14 @@ def main():
     path = ROOT / 'wordlist.csv'
     payload = path.read_bytes()
     rows = list(csv.DictReader(io.StringIO(payload.decode('utf-8-sig'), newline='')))
-    if len(rows) != 18500 or len({r['词条ID'] for r in rows}) != len(rows):
-        raise ValueError('The reviewed vocabulary must contain exactly 18,500 distinct stable IDs')
     if (DATA / 'wordlist-refinement-review.json').exists():
         if not args.check:
             raise ValueError('The six-band review is historical; maintain the explicit five-stage refinement overlay')
         from refine_wordlist import check
         check()
         return
+    if len(rows) != 18500 or len({r['词条ID'] for r in rows}) != len(rows):
+        raise ValueError('The reviewed vocabulary must contain exactly 18,500 distinct stable IDs')
     review = make_review(rows)
     if args.check:
         from wordlist_snapshot import verify_snapshot

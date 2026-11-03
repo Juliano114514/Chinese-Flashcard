@@ -124,6 +124,7 @@ internal class EnglishSpeech(context: Context) {
 
   private fun metadata(): JSONObject = manifest ?: readJson("english-speech/manifest.json").also {
     require(it.getInt("schemaVersion") == 1)
+    require(it.getString("sourceWordlistSha256") == app.assets.wordlistFingerprint())
     manifest = it
   }
 

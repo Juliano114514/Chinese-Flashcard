@@ -119,6 +119,7 @@ def collect_texts() -> tuple[list[str], dict[str, int], int]:
             add(sentence["english"], "sentence")
             for chunk in sentence["chunks"]:
                 add(chunk["gloss"], "sentenceChunk", split=True)
+    add("I can swallow glass without hurting myself.", "settingsPreview")
     return sorted(texts), counts, len(rows)
 
 

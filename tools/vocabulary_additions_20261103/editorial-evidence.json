@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "scope": "Supplementary lexical boundary lookups, paraphrased by the editorial agent; no copied dictionary passages or human certification.",
+  "entries": [
+    {"word": "花虫", "url": "https://zdic.net/hans/花虫", "decision": "Literary book-eating insect / regional pink bollworm; not a generic insect on a flower. The teaching examples use the book-insect sense."},
+    {"word": "黑光", "url": "https://zdic.net/hans/黑光", "decision": "Black light, ultraviolet light; not an invented dark-colored light."},
+    {"word": "北瓜", "url": "https://zdic.net/hans/北瓜", "decision": "Regional gourd name; the teaching gloss marks regional variation."},
+    {"word": "亲知", "url": "https://zdic.net/hans/亲知", "decision": "Knowledge through personal experience or practice."},
+    {"word": "无前", "url": "https://m.cidianwang.com/cd/w/wuqian90080.htm", "decision": "Literary unrivaled, unstoppable or unprecedented usage; not the literal absence of a front."},
+    {"word": "京二胡", "url": "https://pedia.cloud.edu.tw/Entry/Detail/?title=%E4%BA%AC%E4%BA%8C%E8%83%A1", "decision": "Checked the instrument name and its role as a Peking-opera string instrument; wording is editorial."},
+    {"word": "包金", "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=15481&la=1&powerMode=0", "decision": "Gold leaf or thin gold foil covering; distinguish from electroplating."},
+    {"word": "包头", "url": "https://www.baotou.gov.cn/yxbt/yxbt_btgk/btgk/202509/t20250910_491363.html", "decision": "Selected the city name Baotou and verified it against the municipal overview, rather than interpreting it as a head wrapping."},
+    {"word": "上上", "url": "https://dictionary.cambridge.org/dictionary/english-chinese-simplified/week-month-year-before-last", "decision": "The period before last, as in the week or month before last."},
+    {"word": "牙虫", "url": "https://www.eduhk.hk/apfslt/download/v5_issue3_files/chengmh_gb.pdf", "decision": "An obsolete tooth-worm explanation of decay, explicitly framed as a historical misconception rather than a real cause."}
+  ]
+}

@@ -1,0 +1,1984 @@
+{
+  "黄河": [
+    "topic_geography"
+  ],
+  "黄牛": [
+    "topic_animals"
+  ],
+  "黄羊": [
+    "topic_animals"
+  ],
+  "灰白": [
+    "topic_properties"
+  ],
+  "回见": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "回声": [
+    "topic_nature_weather",
+    "topic_science_technology"
+  ],
+  "会话": [
+    "topic_communication",
+    "topic_study"
+  ],
+  "会心": [
+    "topic_communication",
+    "topic_emotions",
+    "topic_thinking"
+  ],
+  "火红": [
+    "topic_properties"
+  ],
+  "火苗": [
+    "topic_nature_weather"
+  ],
+  "机动": [
+    "topic_properties",
+    "topic_work"
+  ],
+  "机件": [
+    "topic_science_technology",
+    "topic_tools",
+    "topic_work"
+  ],
+  "机子": [
+    "topic_appliances",
+    "topic_science_technology",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "鸡心": [
+    "topic_animals",
+    "topic_food",
+    "usage_everyday"
+  ],
+  "急停": [
+    "topic_actions_processes",
+    "topic_science_technology",
+    "topic_work"
+  ],
+  "急进": [
+    "topic_properties",
+    "topic_society",
+    "topic_thinking"
+  ],
+  "记分": [
+    "topic_sport_leisure",
+    "usage_everyday"
+  ],
+  "加数": [
+    "topic_study",
+    "topic_time_number"
+  ],
+  "夹起来": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "家当": [
+    "topic_family",
+    "topic_home",
+    "topic_money",
+    "topic_objects"
+  ],
+  "家书": [
+    "topic_communication",
+    "topic_family",
+    "usage_written"
+  ],
+  "假的": [
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "尖的": [
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "尖头": [
+    "topic_properties"
+  ],
+  "见不得": [
+    "topic_actions_processes",
+    "topic_emotions",
+    "topic_thinking"
+  ],
+  "见机": [
+    "topic_actions_processes",
+    "topic_thinking"
+  ],
+  "叫好": [
+    "topic_actions_processes",
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "教具": [
+    "topic_objects",
+    "topic_study",
+    "topic_tools"
+  ],
+  "接头": [
+    "topic_tools"
+  ],
+  "今生": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "金鱼": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "进见": [
+    "topic_history",
+    "topic_society",
+    "usage_written"
+  ],
+  "九日": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "救急": [
+    "topic_actions_processes"
+  ],
+  "救星": [
+    "topic_actions_processes",
+    "topic_emotions",
+    "topic_people"
+  ],
+  "开春": [
+    "topic_nature_weather",
+    "topic_time_number"
+  ],
+  "开饭": [
+    "topic_daily_actions",
+    "topic_food",
+    "usage_everyday"
+  ],
+  "开外": [
+    "topic_abstract_relations",
+    "topic_space",
+    "topic_time_number"
+  ],
+  "看透": [
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "看中": [
+    "topic_emotions",
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "可心": [
+    "topic_emotions",
+    "topic_properties",
+    "topic_thinking"
+  ],
+  "口红": [
+    "topic_clothing",
+    "usage_everyday"
+  ],
+  "口算": [
+    "topic_study",
+    "usage_everyday"
+  ],
+  "哭声": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "快慢": [
+    "topic_abstract_relations",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "拉后腿": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "拉手": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "usage_everyday"
+  ],
+  "拉住": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "usage_everyday"
+  ],
+  "来吧": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "来啦": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "来年": [
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "来头": [
+    "topic_society"
+  ],
+  "劳力": [
+    "topic_people",
+    "topic_society",
+    "topic_work"
+  ],
+  "劳动节": [
+    "topic_society",
+    "topic_time_number"
+  ],
+  "老话": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "老农": [
+    "topic_people",
+    "topic_work"
+  ],
+  "老狐狸": [
+    "topic_people"
+  ],
+  "老奶奶": [
+    "topic_people",
+    "usage_everyday"
+  ],
+  "老婆婆": [
+    "topic_people",
+    "usage_everyday"
+  ],
+  "冷热": [
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "冷天": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "狸猫": [
+    "topic_animals"
+  ],
+  "礼花": [
+    "topic_culture",
+    "topic_objects"
+  ],
+  "里屋": [
+    "topic_home",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "力学": [
+    "topic_science_technology",
+    "topic_study"
+  ],
+  "连日": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "凉水": [
+    "topic_food",
+    "usage_everyday"
+  ],
+  "两所": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "两样": [
+    "topic_abstract_relations",
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "林木": [
+    "topic_plants",
+    "usage_written"
+  ],
+  "柳条": [
+    "topic_plants"
+  ],
+  "鹿角": [
+    "topic_animals"
+  ],
+  "落成": [
+    "topic_actions_processes",
+    "topic_work",
+    "usage_written"
+  ],
+  "马大哈": [
+    "topic_people"
+  ],
+  "满天": [
+    "topic_nature_weather",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "慢走": [
+    "topic_communication",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "毛发": [
+    "topic_body_health"
+  ],
+  "没来": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "梅花鹿": [
+    "topic_animals"
+  ],
+  "美工": [
+    "topic_work"
+  ],
+  "门窗": [
+    "topic_home",
+    "topic_objects",
+    "usage_everyday"
+  ],
+  "米面": [
+    "topic_food",
+    "topic_home",
+    "usage_everyday"
+  ],
+  "苗木": [
+    "topic_plants"
+  ],
+  "名目": [
+    "topic_abstract_relations",
+    "topic_society"
+  ],
+  "名手": [
+    "topic_people",
+    "topic_work"
+  ],
+  "摸到": [
+    "topic_actions_processes"
+  ],
+  "拿人": [
+    "topic_emotions",
+    "topic_people"
+  ],
+  "爱吃": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "topic_food",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "爱面子": [
+    "topic_emotions",
+    "topic_society",
+    "usage_everyday"
+  ],
+  "八日": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "巴不得": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "拔草": [
+    "topic_daily_actions",
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "拔尖": [
+    "topic_properties"
+  ],
+  "白鹅": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "白金": [
+    "topic_money",
+    "topic_science_technology"
+  ],
+  "白马": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "白米": [
+    "topic_food",
+    "usage_everyday"
+  ],
+  "白开水": [
+    "topic_food",
+    "usage_everyday"
+  ],
+  "白熊": [
+    "topic_animals"
+  ],
+  "白纸": [
+    "topic_objects",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "帮手": [
+    "topic_people",
+    "topic_work",
+    "usage_everyday"
+  ],
+  "包饭": [
+    "topic_food",
+    "topic_home",
+    "topic_work"
+  ],
+  "包头": [
+    "topic_geography"
+  ],
+  "宝座": [
+    "topic_objects"
+  ],
+  "抱着": [
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "北国": [
+    "topic_geography",
+    "usage_written"
+  ],
+  "背书": [
+    "topic_actions_processes",
+    "topic_study",
+    "usage_everyday"
+  ],
+  "笨人": [
+    "topic_people",
+    "usage_everyday"
+  ],
+  "鼻音": [
+    "topic_body_health",
+    "topic_communication",
+    "topic_science_technology"
+  ],
+  "笔法": [
+    "topic_culture"
+  ],
+  "笔名": [
+    "topic_communication",
+    "topic_culture"
+  ],
+  "笔直": [
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "变更": [
+    "topic_society",
+    "topic_work"
+  ],
+  "变戏法": [
+    "topic_culture",
+    "topic_sport_leisure"
+  ],
+  "别给": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "别走": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "冰花": [
+    "topic_nature_weather"
+  ],
+  "冰山": [
+    "topic_nature_weather"
+  ],
+  "病害": [
+    "topic_plants",
+    "topic_science_technology"
+  ],
+  "不爱": [
+    "topic_abstract_relations",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "不法": [
+    "topic_law",
+    "usage_written"
+  ],
+  "不光": [
+    "topic_abstract_relations",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "不日": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "不笑": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "不知道": [
+    "topic_grammar",
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "布头": [
+    "topic_clothing"
+  ],
+  "才子": [
+    "topic_culture",
+    "topic_history",
+    "topic_people",
+    "usage_written"
+  ],
+  "采蘑菇": [
+    "topic_actions_processes",
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "草根": [
+    "topic_people",
+    "topic_plants",
+    "topic_society"
+  ],
+  "草图": [
+    "topic_culture",
+    "topic_study"
+  ],
+  "唱戏": [
+    "topic_culture"
+  ],
+  "长跑": [
+    "topic_sport_leisure",
+    "usage_everyday"
+  ],
+  "长牙": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "朝东": [
+    "topic_grammar",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "朝向": [
+    "topic_space",
+    "usage_everyday"
+  ],
+  "车里": [
+    "topic_grammar",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "车床": [
+    "topic_science_technology",
+    "topic_tools",
+    "topic_work"
+  ],
+  "成气候": [
+    "topic_abstract_relations",
+    "topic_actions_processes"
+  ],
+  "成心": [
+    "topic_actions_processes",
+    "topic_thinking"
+  ],
+  "成风": [
+    "topic_actions_processes",
+    "topic_society",
+    "usage_written"
+  ],
+  "吃了": [
+    "topic_daily_actions",
+    "topic_food",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "吃呀": [
+    "topic_daily_actions",
+    "topic_food",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "虫眼": [
+    "topic_plants"
+  ],
+  "出发点": [
+    "topic_thinking",
+    "usage_written"
+  ],
+  "出面": [
+    "topic_actions_processes",
+    "topic_society",
+    "usage_everyday"
+  ],
+  "出气": [
+    "topic_actions_processes",
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "出头": [
+    "topic_actions_processes",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "船尾": [
+    "topic_space",
+    "topic_travel_transport"
+  ],
+  "窗花": [
+    "topic_culture"
+  ],
+  "春季": [
+    "topic_nature_weather",
+    "topic_time_number"
+  ],
+  "打发": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "打闹": [
+    "topic_actions_processes",
+    "topic_sport_leisure",
+    "usage_everyday"
+  ],
+  "打眼": [
+    "topic_actions_processes"
+  ],
+  "打住": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "大船": [
+    "topic_properties",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "大灰狼": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "大路": [
+    "topic_space",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "大拇指": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "大气": [
+    "topic_science_technology"
+  ],
+  "大山": [
+    "topic_geography",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "大树": [
+    "topic_plants",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "大网": [
+    "topic_objects",
+    "topic_properties",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "大猪": [
+    "topic_animals",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "带路": [
+    "topic_actions_processes",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "带鱼": [
+    "topic_animals",
+    "topic_food"
+  ],
+  "当头": [
+    "topic_space"
+  ],
+  "当着": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "刀尖": [
+    "topic_objects",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "刀片": [
+    "topic_objects",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "倒班": [
+    "topic_actions_processes"
+  ],
+  "得了": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "得数": [
+    "topic_study",
+    "topic_time_number"
+  ],
+  "地道": [
+    "topic_space"
+  ],
+  "地下水": [
+    "topic_nature_weather",
+    "topic_science_technology"
+  ],
+  "等等我": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "电光": [
+    "topic_nature_weather",
+    "topic_science_technology"
+  ],
+  "电石": [
+    "topic_science_technology"
+  ],
+  "掉到": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "掉牙": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "顶天": [
+    "topic_time_number"
+  ],
+  "顶好": [
+    "topic_grammar",
+    "topic_properties"
+  ],
+  "顶头": [
+    "topic_actions_processes",
+    "topic_space"
+  ],
+  "定睛": [
+    "topic_actions_processes"
+  ],
+  "东风": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "冬菇": [
+    "topic_food",
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "动气": [
+    "topic_actions_processes",
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "动向": [
+    "topic_abstract_relations"
+  ],
+  "都是": [
+    "topic_abstract_relations",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "对白": [
+    "topic_communication",
+    "topic_culture"
+  ],
+  "对等": [
+    "topic_abstract_relations",
+    "topic_society",
+    "usage_written"
+  ],
+  "对过": [
+    "topic_abstract_relations",
+    "topic_space"
+  ],
+  "对了": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "对象": [
+    "topic_abstract_relations",
+    "usage_everyday"
+  ],
+  "对子": [
+    "topic_communication",
+    "topic_culture"
+  ],
+  "躲起": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "儿戏": [
+    "topic_thinking"
+  ],
+  "耳背": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "发还": [
+    "topic_actions_processes",
+    "usage_written"
+  ],
+  "发落": [
+    "topic_history",
+    "topic_law",
+    "usage_written"
+  ],
+  "发球": [
+    "topic_actions_processes",
+    "topic_sport_leisure"
+  ],
+  "法宝": [
+    "topic_abstract_relations",
+    "topic_culture"
+  ],
+  "方圆": [
+    "topic_space",
+    "usage_written"
+  ],
+  "放电": [
+    "topic_actions_processes",
+    "topic_science_technology"
+  ],
+  "放牛": [
+    "topic_actions_processes",
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "放行": [
+    "topic_actions_processes",
+    "topic_society",
+    "topic_travel_transport"
+  ],
+  "飞鸟": [
+    "topic_animals"
+  ],
+  "飞天": [
+    "topic_culture",
+    "topic_religion",
+    "usage_written"
+  ],
+  "分得": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "分头": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "风凉": [
+    "topic_nature_weather",
+    "topic_properties"
+  ],
+  "风水": [
+    "topic_culture",
+    "topic_religion"
+  ],
+  "风向": [
+    "topic_nature_weather",
+    "topic_science_technology"
+  ],
+  "盖着": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "敢说": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "干巴巴": [
+    "topic_properties"
+  ],
+  "刚停": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "高唱": [
+    "topic_actions_processes",
+    "topic_communication",
+    "topic_culture"
+  ],
+  "高见": [
+    "topic_communication"
+  ],
+  "告发": [
+    "topic_law"
+  ],
+  "给你": [
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "给我": [
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "跟班": [
+    "topic_people"
+  ],
+  "更冷": [
+    "topic_grammar",
+    "topic_nature_weather",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "更长": [
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "工件": [
+    "topic_science_technology",
+    "topic_tools",
+    "topic_work"
+  ],
+  "工事": [
+    "topic_objects",
+    "topic_society"
+  ],
+  "公出": [
+    "topic_society",
+    "topic_work",
+    "usage_written"
+  ],
+  "公家": [
+    "topic_people",
+    "topic_society"
+  ],
+  "公诉": [
+    "topic_law",
+    "topic_society",
+    "usage_written"
+  ],
+  "公用": [
+    "topic_society",
+    "topic_work"
+  ],
+  "够不够": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "乖乖": [
+    "topic_emotions",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "关窗": [
+    "topic_daily_actions",
+    "topic_home",
+    "usage_everyday"
+  ],
+  "乖宝贝": [
+    "topic_family",
+    "topic_people",
+    "usage_everyday"
+  ],
+  "光大": [
+    "topic_actions_processes",
+    "topic_society",
+    "usage_written"
+  ],
+  "怪不得": [
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "果肉": [
+    "topic_food",
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "过道": [
+    "topic_home",
+    "topic_space",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "过路": [
+    "topic_actions_processes",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "过日子": [
+    "topic_daily_actions",
+    "topic_family",
+    "topic_home",
+    "topic_society",
+    "usage_everyday"
+  ],
+  "哈哈笑": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "孩子气": [
+    "topic_emotions",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "喊着": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "好乖": [
+    "topic_emotions",
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "好吗": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "好生": [
+    "topic_actions_processes",
+    "topic_grammar"
+  ],
+  "好说": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "好香": [
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "好在": [
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "合算": [
+    "topic_money",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "和乐": [
+    "topic_family",
+    "topic_properties"
+  ],
+  "河马": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "贺信": [
+    "topic_communication",
+    "usage_written"
+  ],
+  "黑话": [
+    "topic_communication"
+  ],
+  "黑米": [
+    "topic_food",
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "黑土": [
+    "topic_nature_weather"
+  ],
+  "黑鱼": [
+    "topic_animals",
+    "topic_food"
+  ],
+  "很高兴": [
+    "topic_emotions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "很冷": [
+    "topic_grammar",
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "很远": [
+    "topic_grammar",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "红脸": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "红日": [
+    "topic_nature_weather"
+  ],
+  "红太阳": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "红星": [
+    "topic_culture",
+    "usage_everyday"
+  ],
+  "红叶": [
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "后路": [
+    "topic_society",
+    "topic_travel_transport"
+  ],
+  "后起": [
+    "topic_society",
+    "topic_time_number",
+    "usage_written"
+  ],
+  "后头": [
+    "topic_space",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "忽而": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "虎口": [
+    "topic_body_health"
+  ],
+  "虎牙": [
+    "topic_body_health"
+  ],
+  "花布": [
+    "topic_clothing",
+    "usage_everyday"
+  ],
+  "花灯": [
+    "topic_culture",
+    "usage_everyday"
+  ],
+  "花猫": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "画片": [
+    "topic_culture",
+    "topic_objects"
+  ],
+  "南风": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "难说": [
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "难于": [
+    "topic_grammar",
+    "topic_thinking"
+  ],
+  "能动": [
+    "topic_thinking"
+  ],
+  "能不能": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "牛气": [
+    "topic_emotions",
+    "topic_properties"
+  ],
+  "爬山虎": [
+    "topic_plants"
+  ],
+  "怕人": [
+    "topic_emotions",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "旁白": [
+    "topic_culture"
+  ],
+  "跑道": [
+    "topic_sport_leisure",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "跑马": [
+    "topic_sport_leisure"
+  ],
+  "漂流": [
+    "topic_actions_processes",
+    "topic_sport_leisure",
+    "topic_travel_transport"
+  ],
+  "破开": [
+    "topic_actions_processes"
+  ],
+  "破土": [
+    "topic_actions_processes"
+  ],
+  "七日": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "起草": [
+    "topic_actions_processes",
+    "topic_work"
+  ],
+  "起用": [
+    "topic_actions_processes",
+    "topic_society",
+    "topic_work"
+  ],
+  "气坏了": [
+    "topic_emotions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "气流": [
+    "topic_science_technology"
+  ],
+  "汽船": [
+    "topic_travel_transport"
+  ],
+  "前人": [
+    "topic_history",
+    "topic_study",
+    "topic_thinking",
+    "usage_written"
+  ],
+  "亲身": [
+    "topic_study",
+    "topic_thinking",
+    "usage_written"
+  ],
+  "亲和": [
+    "topic_communication",
+    "topic_properties"
+  ],
+  "青绿": [
+    "topic_culture",
+    "topic_properties"
+  ],
+  "青年节": [
+    "topic_society",
+    "topic_time_number"
+  ],
+  "清灰": [
+    "topic_actions_processes",
+    "topic_science_technology"
+  ],
+  "秋风": [
+    "topic_nature_weather"
+  ],
+  "秋水": [
+    "topic_nature_weather",
+    "usage_written"
+  ],
+  "求救": [
+    "topic_actions_processes",
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "求求你": [
+    "topic_actions_processes",
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "去过": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "去信": [
+    "topic_communication"
+  ],
+  "全民": [
+    "topic_society",
+    "usage_written"
+  ],
+  "热带": [
+    "topic_geography",
+    "topic_nature_weather",
+    "topic_properties"
+  ],
+  "热天": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "人马": [
+    "topic_people",
+    "topic_society"
+  ],
+  "认生": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "日后": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "日月": [
+    "topic_nature_weather",
+    "topic_time_number",
+    "usage_written"
+  ],
+  "三角": [
+    "topic_properties",
+    "topic_science_technology"
+  ],
+  "山河": [
+    "topic_geography",
+    "usage_written"
+  ],
+  "山猫": [
+    "topic_animals"
+  ],
+  "闪光": [
+    "topic_nature_weather"
+  ],
+  "闪身": [
+    "topic_actions_processes"
+  ],
+  "上口": [
+    "topic_communication",
+    "topic_properties"
+  ],
+  "上上": [
+    "topic_grammar",
+    "topic_time_number"
+  ],
+  "谁的": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "身长": [
+    "topic_body_health",
+    "topic_space"
+  ],
+  "生来": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "生石灰": [
+    "topic_science_technology"
+  ],
+  "声张": [
+    "topic_communication",
+    "usage_written"
+  ],
+  "十日": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "石灰石": [
+    "topic_science_technology"
+  ],
+  "时日": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "手笔": [
+    "topic_culture",
+    "usage_written"
+  ],
+  "手书": [
+    "topic_culture",
+    "usage_written"
+  ],
+  "受凉": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "受用": [
+    "topic_actions_processes"
+  ],
+  "熟字": [
+    "topic_study",
+    "usage_everyday"
+  ],
+  "数落": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "摔打": [
+    "topic_actions_processes"
+  ],
+  "摔东西": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "水分": [
+    "topic_science_technology",
+    "usage_everyday"
+  ],
+  "水牛": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "水文": [
+    "topic_science_technology"
+  ],
+  "说唱": [
+    "topic_communication",
+    "topic_culture"
+  ],
+  "说和": [
+    "topic_actions_processes",
+    "topic_communication"
+  ],
+  "说着": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "死了": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "死心眼": [
+    "topic_emotions",
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "松口": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "送东西": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "算题": [
+    "topic_actions_processes",
+    "topic_study",
+    "usage_everyday"
+  ],
+  "抬着": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "太大": [
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "太小": [
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "桃花": [
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "天窗": [
+    "topic_home",
+    "topic_travel_transport"
+  ],
+  "天亮": [
+    "topic_nature_weather",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "田鸡": [
+    "topic_animals",
+    "topic_food"
+  ],
+  "甜的": [
+    "topic_food",
+    "topic_grammar",
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "条文": [
+    "topic_law",
+    "topic_society",
+    "usage_written"
+  ],
+  "跳动": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "贴着": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "停学": [
+    "topic_actions_processes",
+    "topic_study"
+  ],
+  "同名": [
+    "topic_abstract_relations",
+    "usage_everyday"
+  ],
+  "痛哭": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "头等": [
+    "topic_properties",
+    "topic_society",
+    "topic_work"
+  ],
+  "透亮": [
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "土包子": [
+    "topic_people",
+    "topic_society"
+  ],
+  "土石方": [
+    "topic_science_technology",
+    "topic_work"
+  ],
+  "外力": [
+    "topic_abstract_relations",
+    "topic_science_technology"
+  ],
+  "外因": [
+    "topic_abstract_relations",
+    "topic_science_technology"
+  ],
+  "玩物": [
+    "topic_objects"
+  ],
+  "网子": [
+    "topic_home",
+    "topic_objects",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "忘我": [
+    "topic_thinking",
+    "usage_written"
+  ],
+  "望着": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "尾数": [
+    "topic_money",
+    "topic_time_number"
+  ],
+  "文教": [
+    "topic_culture",
+    "topic_society",
+    "topic_work",
+    "usage_written"
+  ],
+  "文人": [
+    "topic_culture",
+    "topic_history",
+    "topic_people",
+    "topic_society",
+    "usage_written"
+  ],
+  "窝火": [
+    "topic_emotions"
+  ],
+  "我有": [
+    "topic_abstract_relations",
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "无怪": [
+    "topic_thinking",
+    "usage_written"
+  ],
+  "无名指": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "午前": [
+    "topic_time_number",
+    "usage_written"
+  ],
+  "西南": [
+    "topic_geography",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "习气": [
+    "topic_thinking"
+  ],
+  "习作": [
+    "topic_culture",
+    "topic_study"
+  ],
+  "下笔": [
+    "topic_actions_processes",
+    "topic_study",
+    "usage_everyday"
+  ],
+  "下落": [
+    "topic_space"
+  ],
+  "下雪天": [
+    "topic_grammar",
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "吓死": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "响动": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "想当然": [
+    "topic_thinking"
+  ],
+  "向阳": [
+    "topic_properties",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "向心力": [
+    "topic_science_technology"
+  ],
+  "小缝": [
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "小妹": [
+    "topic_family",
+    "topic_people",
+    "usage_everyday"
+  ],
+  "小名": [
+    "topic_family",
+    "usage_everyday"
+  ],
+  "小人书": [
+    "topic_culture",
+    "usage_everyday"
+  ],
+  "小腿": [
+    "topic_body_health",
+    "usage_everyday"
+  ],
+  "小雪": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "小鸭": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "笑呵呵": [
+    "topic_communication",
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "笑面虎": [
+    "topic_people",
+    "topic_society"
+  ],
+  "谢谢你": [
+    "topic_communication",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "心气": [
+    "topic_emotions",
+    "topic_thinking"
+  ],
+  "心痛": [
+    "topic_emotions",
+    "usage_everyday"
+  ],
+  "星火": [
+    "topic_nature_weather"
+  ],
+  "星座": [
+    "topic_nature_weather",
+    "topic_science_technology"
+  ],
+  "兴起": [
+    "topic_actions_processes"
+  ],
+  "学年": [
+    "topic_study",
+    "topic_time_number"
+  ],
+  "雪花": [
+    "topic_nature_weather",
+    "usage_everyday"
+  ],
+  "牙虫": [
+    "topic_body_health",
+    "topic_history"
+  ],
+  "眼力": [
+    "topic_body_health",
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "眼球": [
+    "topic_body_health",
+    "topic_science_technology",
+    "usage_everyday"
+  ],
+  "眼生": [
+    "topic_properties",
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "咬东西": [
+    "topic_daily_actions",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "要不得": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "也不要": [
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "一顶": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "一颗": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "一日": [
+    "topic_grammar",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "一条心": [
+    "topic_abstract_relations"
+  ],
+  "一座山": [
+    "topic_geography",
+    "topic_grammar",
+    "usage_everyday"
+  ],
+  "应声": [
+    "topic_actions_processes",
+    "topic_communication"
+  ],
+  "用做": [
+    "topic_abstract_relations",
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "友爱": [
+    "topic_emotions",
+    "topic_society"
+  ],
+  "有数": [
+    "topic_abstract_relations",
+    "topic_thinking"
+  ],
+  "有心人": [
+    "topic_people",
+    "topic_thinking"
+  ],
+  "右面": [
+    "topic_grammar",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "幼小": [
+    "topic_properties"
+  ],
+  "鱼钩": [
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "鱼松": [
+    "topic_food"
+  ],
+  "再三": [
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "在望": [
+    "topic_actions_processes",
+    "usage_written"
+  ],
+  "早春": [
+    "topic_nature_weather",
+    "topic_time_number"
+  ],
+  "怎么着": [
+    "topic_communication",
+    "usage_everyday"
+  ],
+  "找东西": [
+    "topic_daily_actions",
+    "usage_everyday"
+  ],
+  "照应": [
+    "topic_actions_processes",
+    "topic_family",
+    "usage_everyday"
+  ],
+  "着想": [
+    "topic_thinking",
+    "usage_everyday"
+  ],
+  "真知": [
+    "topic_study",
+    "topic_thinking",
+    "usage_written"
+  ],
+  "正点": [
+    "topic_time_number",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "正当中": [
+    "topic_grammar",
+    "topic_space",
+    "usage_everyday"
+  ],
+  "只身": [
+    "topic_abstract_relations",
+    "usage_written"
+  ],
+  "指点": [
+    "topic_actions_processes",
+    "topic_communication",
+    "topic_study",
+    "usage_everyday"
+  ],
+  "指正": [
+    "topic_actions_processes",
+    "topic_communication",
+    "topic_study"
+  ],
+  "中饭": [
+    "topic_food",
+    "usage_everyday"
+  ],
+  "中用": [
+    "topic_properties",
+    "usage_everyday"
+  ],
+  "中原": [
+    "topic_geography",
+    "topic_history"
+  ],
+  "钟点": [
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "竹篮": [
+    "topic_objects",
+    "topic_tools",
+    "usage_everyday"
+  ],
+  "竹叶": [
+    "topic_plants",
+    "usage_everyday"
+  ],
+  "装车": [
+    "topic_actions_processes",
+    "topic_travel_transport",
+    "topic_work",
+    "usage_everyday"
+  ],
+  "捉住": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "啄木鸟": [
+    "topic_animals",
+    "usage_everyday"
+  ],
+  "自发": [
+    "topic_society",
+    "topic_thinking",
+    "topic_work"
+  ],
+  "自救": [
+    "topic_actions_processes"
+  ],
+  "自问": [
+    "topic_actions_processes",
+    "topic_thinking"
+  ],
+  "走到": [
+    "topic_actions_processes",
+    "topic_grammar",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "走狗": [
+    "topic_people",
+    "topic_society"
+  ],
+  "走啦": [
+    "topic_grammar",
+    "topic_travel_transport",
+    "usage_everyday"
+  ],
+  "嘴脸": [
+    "topic_emotions",
+    "topic_people",
+    "topic_society"
+  ],
+  "最快": [
+    "topic_grammar",
+    "topic_properties",
+    "topic_time_number",
+    "usage_everyday"
+  ],
+  "左脑": [
+    "topic_body_health",
+    "topic_science_technology"
+  ],
+  "作对": [
+    "topic_actions_processes",
+    "usage_everyday"
+  ],
+  "坐定": [
+    "topic_actions_processes",
+    "topic_daily_actions",
+    "usage_everyday"
+  ],
+  "做声": [
+    "topic_actions_processes",
+    "topic_communication",
+    "usage_everyday"
+  ]
+}

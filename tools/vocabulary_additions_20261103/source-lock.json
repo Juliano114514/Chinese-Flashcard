@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "supplied-vocabulary-20261103",
+      "file": "tools/vocabulary_additions_20261103/words.txt",
+      "bytes": 23458,
+      "sha256": "5713ad31338c953e9cca645290f61111f2827097124aaba6417546aec7e58861",
+      "role": "Supplied headword membership only; definitions and examples are separately edited.",
+      "license": "User-supplied word list; no additional redistribution clearance asserted."
+    }
+  ],
+  "editorialFiles": {
+    "batch-1.tsv": "6282cf5b84dc655e28a2aee1be9931d653fa1f1fe7ef7914dfbf6c3ee5ec77bb",
+    "batch-1.tags.json": "5c97565283ae92c4e4c6d2226f59d12fe19cda1018239b0addf1b5703a082494",
+    "batch-2.tsv": "2fd4096ce7555ed665bc55515b47e0b19e68f74b2a39175180899af0c9892bbe",
+    "batch-2.tags.json": "907f1b40470128ebb097bfe4838378b1311a540b9598ae6d2ca710c3170c0a25",
+    "batch-3.tsv": "9814cefc56fece10cc1f5ba12b33bc9fd7b2485806cb21ab20476942e3881d80",
+    "batch-3.tags.json": "fb38c21aed6601496c462a674b489a59d6d25b0e70cceda7f42ee18b2216dece",
+    "editorial-evidence.json": "e15b7e467525ba53040107dc6e0179765289813b314309f3e37e066914b0afc5",
+    "sentence-readings.json": "a8076e8fa173fb3583413e8c8104ab67a57e719b859d26570df48679161e1274",
+    "breakdown-review.json": "6e3ec4f648af2ccc824ff1c822addb9d2ba2716c1d7b75c23145c53cafac172b",
+    "chunk-review.json": "5a9d4375d9540b0c928bf91c8b333b93e2c94903b9cb4669268a54fc842e56c6"
+  }
+}

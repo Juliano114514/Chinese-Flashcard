@@ -10,6 +10,7 @@ import json
 import re
 import unicodedata
 from pathlib import Path
+from wordlist_snapshot import BUNDLED_MAX_BYTES
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'wordlist.csv'
@@ -24,8 +25,8 @@ def load(path):
 
 
 def validate(content):
-    if len(content) > 32 * 1024 * 1024:
-        raise ValueError('CSV exceeds existing 32 MiB limit')
+    if len(content) > BUNDLED_MAX_BYTES:
+        raise ValueError('Bundled CSV exceeds the 48 MiB limit')
 
     def whitespace(character):
         # Kotlin Char.isWhitespace excludes NEXT LINE (U+0085), which Python

@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "wordlist.csv"
 ASSETS = ROOT / "core/data/src/main/assets/word-tags"
 MANIFEST = ROOT / "docs/wordlist-validation.json"
-VERSION = "2026-10-27.3"
+VERSION = "2026-11-03.1"
 
 # Stable IDs are persisted by the app. Display labels may be edited independently.
 TOPICS = [
@@ -457,7 +457,22 @@ def lexical_forms(pos):
     return tags
 
 
+@functools.lru_cache(maxsize=1)
+def supplied_tag_review():
+    path = ROOT / "tools/vocabulary_additions_20261103/tag-review.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
 def annotate(row):
+    reviewed = supplied_tag_review().get(row["词条ID"])
+    if reviewed is not None:
+        if (reviewed["word"] != row["组词"] or reviewed["pinyin"] != row["拼音"]
+                or reviewed["glossSha256"] != hashlib.sha256(row["英文释义"].encode("utf-8")).hexdigest()):
+            raise ValueError("Supplied vocabulary tag review no longer matches its teaching sense")
+        forms = lexical_forms(row["词性"])
+        if "idiom" in re.split(r"[;/]", row["词性"]):
+            forms.append("form_idiom")
+        return sorted(set(reviewed["tags"] + forms)), reviewed["reason"], "AI编辑逐词复核；未作真人或权威词典认证。"
     tags, rationale, ambiguity = _annotate_legacy(row)
     tags = set(tags)
     gloss, word, pos = row["英文释义"], row["组词"], row["词性"]

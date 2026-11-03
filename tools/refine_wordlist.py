@@ -145,14 +145,27 @@ def apply_refinements(rows):
 
 def check():
     from wordlist_snapshot import verify_snapshot
-    snapshot = verify_snapshot(ROOT / "wordlist.csv")
+    source = ROOT / "wordlist.csv"
+    snapshot = verify_snapshot(source)
     report = read(REVIEW)
-    if report["inputCsvSha256"] != INPUT_SHA256 or report["finalCsvSha256"] != snapshot["sha256"]:
+    payload = source.read_bytes()
+    supplement_path = ROOT / "tools/vocabulary_additions_20261103/report.json"
+    reviewed_hash = snapshot["sha256"]
+    if supplement_path.exists():
+        supplement = read(supplement_path)
+        if (supplement["sha256"] != snapshot["sha256"] or supplement["bytes"] != len(payload)
+                or supplement["totalWords"] != snapshot["words"]):
+            raise ValueError("Supplied-vocabulary review does not match current CSV")
+        payload = payload[:supplement["baselineBytes"]]
+        reviewed_hash = hashlib.sha256(payload).hexdigest()
+        if reviewed_hash != supplement["baselineSha256"]:
+            raise ValueError("Supplied vocabulary changed the reviewed legacy CSV prefix")
+    if report["inputCsvSha256"] != INPUT_SHA256 or report["finalCsvSha256"] != reviewed_hash:
         raise ValueError("Lexical refinement review does not match current CSV")
     for path in OVERLAY_PATHS:
         if hashlib.sha256(path.read_bytes()).hexdigest() != report["overlaySha256"][path.name]:
             raise ValueError("Editorial overlay changed after acceptance")
-    rows = list(csv.DictReader((ROOT / "wordlist.csv").open(encoding="utf-8-sig", newline="")))
+    rows = list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"), newline="")))
     if len(rows) != 18500 or [r["词条ID"] for r in rows] != list(report["words"]):
         raise ValueError("A lexical revision cannot drop/reorder stable IDs")
     heads, _, _ = overlays()
@@ -175,6 +188,8 @@ def check():
         raise ValueError("Refinement introduced or retained duplicate headwords")
     print(json.dumps({key: report[key] for key in ("wordsCount", "rarity", "headwordReplacements", "singleCharactersBefore", "singleCharactersAfter", "breakdownChangedRows")}, ensure_ascii=False))
     print("Five-stage lexical refinement: read-only check passed")
+    if supplement_path.exists():
+        print("Supplied-vocabulary snapshot: appended entries match their accepted fingerprint; legacy refinement preserved")
 
 
 def write():

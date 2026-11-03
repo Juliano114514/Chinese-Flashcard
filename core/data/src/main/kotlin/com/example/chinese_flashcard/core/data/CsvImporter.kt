@@ -27,6 +27,8 @@ import java.security.MessageDigest
 import java.text.Normalizer
 import java.util.UUID
 
+private const val BUNDLED_DEFAULT_WORDLIST_MAX_BYTES = 48L * 1024 * 1024
+
 /** User imports append only; only the bundled preset can refresh owned teaching content. */
 internal class CsvImporter(private val context: Context, private val database: FlashcardDatabase,
   private val dao: FlashcardDao, private val operationMutex: Mutex,
@@ -53,7 +55,8 @@ internal class CsvImporter(private val context: Context, private val database: F
       reporter.totalWords(expectedRows)
       val file = createSnapshot()
       try {
-        copySource(CsvSource { context.assets.open("default-wordlist/wordlist.csv") }, file)
+        copySource(CsvSource { context.assets.open("default-wordlist/wordlist.csv") }, file,
+          maxBytes = BUNDLED_DEFAULT_WORDLIST_MAX_BYTES)
         check(snapshotHash(file) == version) { UiMessageKey.THE_BUNDLED_DEFAULT_WORDLIST_VERSION_DOES_NOT_MATCH_ITS_CONTENT }
         val issues = CsvIssues()
         val index = strokes.index()
@@ -249,7 +252,9 @@ internal class CsvImporter(private val context: Context, private val database: F
     }
   }
 
-  private suspend fun copySource(source: CsvSource, target: File) {
+  private suspend fun copySource(source: CsvSource, target: File, maxBytes: Long = CSV_MAX_BYTES) {
+    val sizeError = if (maxBytes == CSV_MAX_BYTES) UiMessageKey.THE_CSV_EXCEEDS_32_MIB
+      else UiMessageKey.THE_BUNDLED_CSV_IS_INVALID
     source.open().use { input ->
       target.outputStream().use { output ->
         val block = ByteArray(8192)
@@ -262,11 +267,11 @@ internal class CsvImporter(private val context: Context, private val database: F
             val single = input.read()
             if (single < 0) break
             bytes++
-            require(bytes <= CSV_MAX_BYTES) { UiMessageKey.THE_CSV_EXCEEDS_32_MIB }
+            require(bytes <= maxBytes) { sizeError }
             output.write(single)
           } else {
             bytes += count
-            require(bytes <= CSV_MAX_BYTES) { UiMessageKey.THE_CSV_EXCEEDS_32_MIB }
+            require(bytes <= maxBytes) { sizeError }
             output.write(block, 0, count)
           }
         }
