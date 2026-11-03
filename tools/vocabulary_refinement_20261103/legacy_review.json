@@ -1,0 +1,3298 @@
+{
+  "sourceCsvSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+  "rowsScreened": 18500,
+  "boundary": "All legacy rows were screened across their fields; lexical and contextual candidates received targeted AI-assisted editorial review. This is not independent human certification of every sentence.",
+  "modifiedRows": 1069,
+  "fieldChanges": {
+    "部件JSON": 615,
+    "例句JSON": 369,
+    "词性": 180,
+    "英文释义": 56,
+    "本义解释JSON": 56,
+    "拼音": 3
+  },
+  "evidence": [
+    "Existing frozen CC-CEDICT source .gradle/vocabulary-v2/cedict.txt; existing headwords and example contexts; contextual morpheme review."
+  ],
+  "issues": {
+    "wl_00070": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00081": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00110": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00131": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00150": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00160": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00163": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00210": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00217": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00391": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00413": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00435": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00500": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00545": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00583": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00607": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00639": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00674": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00690": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00692": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00698": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00717": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00755": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00818": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00831": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00854": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00892": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00961": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00975": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01030": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01057": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01094": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01137": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01148": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01206": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01289": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01302": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01324": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01329": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01342": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01397": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01417": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01430": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01459": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01476": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01479": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01506": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01524": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01525": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01592": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01613": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01633": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01707": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01834": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01838": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01886": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01918": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_01945": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02004": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02005": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02014": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02179": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02201": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02241": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02278": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02363": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02415": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02421": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02426": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02434": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02472": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02492": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02542": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02546": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02584": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02598": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02718": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02744": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02750": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02766": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02780": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02792": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02847": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02852": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02908": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02927": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02960": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02962": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02973": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02981": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_02995": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03032": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03067": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03068": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03087": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03098": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03100": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03107": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03117": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03185": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03196": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03221": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03241": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03256": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03263": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03264": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03310": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03315": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03342": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03476": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03502": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03759": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03770": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03781": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_03987": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04193": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04222": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04229": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04273": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04278": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04288": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04324": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04329": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04340": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04342": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04346": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04360": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04373": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04382": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04428": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04561": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04621": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04628": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04650": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04654": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04661": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04711": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04831": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04837": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04876": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04891": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04915": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04921": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04936": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04938": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04944": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04959": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04969": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04972": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04977": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_04982": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05144": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05151": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05161": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05173": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05183": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05184": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05207": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05335": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05336": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05433": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05476": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05483": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05489": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05491": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05495": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05515": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05516": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05521": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05524": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05525": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05549": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05559": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05577": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05586": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05593": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05600": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05601": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05618": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05625": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05647": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05660": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05684": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05693": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05701": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05759": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05863": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05868": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05869": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05936": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_05942": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06032": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06063": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06274": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06380": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06442": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06443": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06456": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06463": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06493": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06501": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06505": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06521": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06522": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06523": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06527": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06555": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06559": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06567": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06586": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06594": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06625": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_06634": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_07819": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_07842": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_07851": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_07922": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08038": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08146": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08162": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08234": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08236": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08238": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08627": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_08693": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13285": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_13294": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13297": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13300": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13310": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_13328": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_13356": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13374": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13479": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13492": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13493": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13541": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13546": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13547": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13556": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13558": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13561": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13566": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13589": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13594": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13598": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13611": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13615": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13626": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13647": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13649": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13650": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13653": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13662": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13683": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_13687": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13698": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13700": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13701": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13703": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13708": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13709": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13712": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13736": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13740": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13742": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13758": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13770": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13774": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13779": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13780": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13781": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13792": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13800": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13808": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13811": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13823": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13830": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13842": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13845": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13851": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13855": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13865": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13868": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13880": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13892": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13893": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13902": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13916": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13924": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13952": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13987": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13996": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_13998": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14016": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14028": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14029": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14034": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14055": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14086": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14097": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14100": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14115": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14129": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14134": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14144": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14149": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14157": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14169": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14191": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14215": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14231": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14238": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14249": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_14263": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14265": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14279": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14286": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14304": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14331": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14341": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14375": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14380": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14394": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14405": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14407": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14425": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14430": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14445": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14461": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14466": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14467": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14487": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14508": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14521": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14523": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14528": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14540": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14546": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14562": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14564": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14591": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14603": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14611": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14614": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14631": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14637": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14645": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_14658": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14667": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14686": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14689": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Add a natural example of the everyday adjective ugly, while retaining the separate Earthly-Branch example."
+    ],
+    "wl_14691": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14711": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14717": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14718": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14721": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14749": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14761": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14763": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14792": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14818": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14822": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14831": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14840": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14853": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14856": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14882": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14891": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14896": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14898": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14913": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14918": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14935": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14948": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14958": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14966": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14979": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14980": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14987": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_14995": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15002": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15005": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15021": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15037": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15039": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15057": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15064": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15071": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15091": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15096": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15102": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15116": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15124": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15179": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15211": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15236": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15240": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15247": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15272": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15278": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15287": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15299": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15311": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15313": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15335": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15338": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15346": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15352": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15355": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15358": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_15361": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15362": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15365": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15390": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15457": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15477": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15510": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15518": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15526": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15536": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15574": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15604": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15607": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15608": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15621": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15624": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15644": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15656": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15657": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15687": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15703": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15717": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15719": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15732": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15798": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15813": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15830": [
+      "Correct the headword sense, reading or part of speech against its actual usage."
+    ],
+    "wl_15840": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15843": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15850": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15863": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15866": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15897": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15898": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15902": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15932": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15942": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15989": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15990": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15994": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_15997": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16018": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16030": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16044": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16108": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16155": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16177": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16181": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16186": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16234": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16256": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16284": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16303": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16306": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16309": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16341": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16360": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16379": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16384": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16385": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16391": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16395": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16410": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16442": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16450": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16471": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16491": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16505": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16534": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16540": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16571": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16575": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16584": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16595": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16673": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16685": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16701": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16756": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16768": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16782": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_16839": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16841": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_16889": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17044": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17046": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17048": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17056": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17073": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17103": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17117": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17121": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17125": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17133": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17135": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17139": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17141": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17177": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17179": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17186": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17190": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17201": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17203": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17213": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17218": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17219": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17222": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17227": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17235": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17250": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17252": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17255": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17267": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17274": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17285": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17289": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17296": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17299": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17301": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17306": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17319": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17325": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17329": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17350": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17356": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17369": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17376": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17383": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17385": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17391": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17415": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17424": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17455": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17472": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17482": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17494": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17506": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17542": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17543": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17550": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17552": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17556": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17571": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17576": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17578": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17601": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17609": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17631": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17635": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17661": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17668": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17718": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17740": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17741": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17775": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17783": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17796": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17799": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17806": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17810": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17817": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17829": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17832": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17883": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17891": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17909": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17936": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17937": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17942": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17947": [
+      "Correct the headword sense, reading or part of speech against its actual usage.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17950": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17959": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17964": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_17982": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18020": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18040": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18066": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18067": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18070": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18077": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18117": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18119": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18127": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18129": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18166": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18223": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18236": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18238": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18288": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18290": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18304": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18305": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18306": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18397": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18403": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18404": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18427": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18431": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18438": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18444": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18475": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_18485": [
+      "Use contextual morpheme senses or preserve a loanword/name as an indivisible semantic unit."
+    ],
+    "wl_00047": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_01598": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_02877": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03108": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03152": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03217": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03226": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03359": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03377": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03478": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03479": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03853": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_03964": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04025": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04041": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04046": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04112": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04250": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04332": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04370": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04446": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04554": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04665": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04724": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04735": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04931": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04935": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04948": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04956": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_04986": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05035": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05224": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05428": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05461": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05465": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05480": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05493": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05536": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05579": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05584": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05589": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05594": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05599": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05602": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05615": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05640": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05646": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05652": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05658": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_05789": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06330": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06351": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06383": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06468": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06492": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06510": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06531": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06544": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06548": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06578": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06588": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06597": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06601": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06608": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06614": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Replace clock-time examples that did not demonstrate the headword meaning four seasons; two new project-authored examples."
+    ],
+    "wl_06621": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06623": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06635": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06645": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06783": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06804": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06866": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06963": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_06982": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_07603": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_11047": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_11054": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_11291": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13246": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13255": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13275": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13330": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13336": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13365": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13367": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13391": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13420": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13480": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13530": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13536": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13538": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13542": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13563": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13571": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13572": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13608": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13619": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13625": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13655": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13656": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13760": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13768": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13825": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13861": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13922": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13928": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13951": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_13985": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14018": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14024": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14025": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14037": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14038": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14062": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14063": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14068": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14074": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14082": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14099": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14119": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14124": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14151": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14189": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14230": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14233": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14355": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14377": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14398": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14448": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14462": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14471": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14531": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14561": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14565": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14566": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14574": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14590": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14618": [
+      "Restore the actual contextual sense or grammatical category; remove a wrong homograph or empty dictionary note.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14648": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14649": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14661": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14696": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14715": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14720": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14725": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14726": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14736": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14845": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14862": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14909": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14936": [
+      "Restore the actual contextual sense or grammatical category; remove a wrong homograph or empty dictionary note."
+    ],
+    "wl_14938": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14969": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_14998": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15011": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15101": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15113": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15130": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15139": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15204": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15216": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15218": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15291": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15309": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15327": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15334": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15356": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15397": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15441": [
+      "Restore the actual contextual sense or grammatical category; remove a wrong homograph or empty dictionary note."
+    ],
+    "wl_15444": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15446": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15467": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15472": [
+      "Restore the actual contextual sense or grammatical category; remove a wrong homograph or empty dictionary note.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15517": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15519": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15524": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15554": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15564": [
+      "Restore the actual contextual sense or grammatical category; remove a wrong homograph or empty dictionary note.",
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15576": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15595": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15601": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15635": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15638": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15647": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15667": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15684": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15696": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15721": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15722": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15735": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15769": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15788": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15793": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15822": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15824": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15836": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15906": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15962": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_15968": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16023": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16058": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16061": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin.",
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16062": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16091": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16092": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16107": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16163": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16189": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16204": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16322": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16346": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16386": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16407": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16434": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16458": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16462": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16498": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16508": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16561": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16566": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16580": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16726": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16728": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16775": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16791": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16812": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16823": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16830": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16835": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16850": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16885": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16918": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16921": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16941": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16958": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16985": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_16989": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17007": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17008": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17027": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17053": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17108": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17118": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17169": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17184": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17195": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17214": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17261": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17287": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17305": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17321": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17358": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17380": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17387": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17422": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17442": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17488": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17529": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17579": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17580": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17658": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17729": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17730": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17735": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17745": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17749": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17771": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17839": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_17903": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18011": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18045": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18080": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18083": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18108": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18245": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18272": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18282": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18317": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18326": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18344": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18348": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18356": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18463": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18481": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_18498": [
+      "Repair contextual chunk glosses, polyphonic readings, grammatical particles or indivisible lexical units; synchronize sentence pinyin."
+    ],
+    "wl_00212": [],
+    "wl_00216": [],
+    "wl_00261": [],
+    "wl_00294": [],
+    "wl_00297": [],
+    "wl_00627": [],
+    "wl_02149": [],
+    "wl_03471": [],
+    "wl_03487": [],
+    "wl_04087": [],
+    "wl_04220": [],
+    "wl_04449": [],
+    "wl_05941": [],
+    "wl_07698": [],
+    "wl_08237": [],
+    "wl_08596": [],
+    "wl_09955": [],
+    "wl_10758": [],
+    "wl_10797": [],
+    "wl_10955": [],
+    "wl_11042": [],
+    "wl_11336": [],
+    "wl_11484": [],
+    "wl_11511": [],
+    "wl_11736": [],
+    "wl_12597": [],
+    "wl_13503": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13516": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13519": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13544": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13551": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13577": [],
+    "wl_13609": [],
+    "wl_13639": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13641": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13643": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13730": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13777": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13821": [
+      "Correct a part of speech that conflicts with the taught sense and the examples.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_13827": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13866": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_13904": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14005": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14102": [
+      "Correct a part of speech that conflicts with the taught sense and the examples.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_14131": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14135": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14205": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_14245": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14267": [],
+    "wl_14287": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14295": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14336": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14353": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14436": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14440": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14580": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14598": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14623": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_14627": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14659": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14738": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14739": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14795": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14804": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14810": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14878": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14925": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_14947": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15003": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15038": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15060": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15105": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15108": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15210": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15217": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15234": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15251": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15256": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15294": [
+      "Correct a part of speech that conflicts with the taught sense and the examples.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_15324": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15326": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15339": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15344": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15351": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15392": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15411": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15414": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15445": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_15485": [],
+    "wl_15525": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15568": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15581": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15600": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15715": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15718": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15739": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15815": [],
+    "wl_15828": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15839": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_15903": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15908": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15911": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15927": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15934": [],
+    "wl_15953": [
+      "Correct a part of speech that conflicts with the taught sense and the examples.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_15984": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_15986": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16003": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16019": [
+      "Correct a part of speech that conflicts with the taught sense and the examples.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_16094": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16148": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16220": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16295": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16314": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16334": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16340": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16343": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16364": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16390": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16393": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_16460": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_16474": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16485": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16499": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_16519": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16529": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16586": [
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_16647": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16664": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16679": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16700": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16704": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16734": [],
+    "wl_16771": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16788": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16849": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16884": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16887": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16911": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16919": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_16940": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17003": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17024": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17047": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17051": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17110": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17158": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17215": [],
+    "wl_17327": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17393": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17456": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17593": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17598": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17739": [],
+    "wl_17765": [
+      "Correct a part of speech that conflicts with the taught sense and the examples.",
+      "Replace a mismatched dictionary homograph or incomplete cross-reference with the contextual teaching sense."
+    ],
+    "wl_17766": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17785": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17833": [],
+    "wl_17840": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17874": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17879": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17881": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17884": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17887": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17899": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17969": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_17980": [],
+    "wl_18029": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_18057": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_18074": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_18178": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ],
+    "wl_18205": [
+      "Correct a part of speech that conflicts with the taught sense and the examples."
+    ]
+  },
+  "contextRuleCorrections": {
+    "joinedSemanticUnits": 65,
+    "leParticle": 50,
+    "zhongContext": 24,
+    "deParticle": 25,
+    "clockSense": 4,
+    "dangSense": 20,
+    "yiNumeral": 2,
+    "paiDispatch": 1,
+    "ganContext": 6,
+    "douContext": 13,
+    "weiAs": 7,
+    "yongSurge": 2,
+    "yuContext": 29,
+    "jueContext": 3,
+    "danglingReference": 18,
+    "aName": 6,
+    "heContext": 3,
+    "yuanCurrency": 3,
+    "raoAnatomy": 1,
+    "lvRate": 1,
+    "nanContext": 2,
+    "haiStill": 1,
+    "zheContext": 2,
+    "jiaoComparative": 5,
+    "chanVerb": 2,
+    "heAnd": 1,
+    "diDeParticle": 12,
+    "naName": 4,
+    "zhouWeek": 1,
+    "luoFall": 1,
+    "deVerb": 3,
+    "bingBreath": 3,
+    "gouDog": 1,
+    "shuQuantity": 3,
+    "xiJiContext": 7,
+    "surnameSense": 4,
+    "yaoModal": 1,
+    "boBelittle": 2,
+    "taTower": 3,
+    "zhuangContext": 2,
+    "quantitySense": 3,
+    "deComplement": 7,
+    "queBird": 1,
+    "boRadish": 2,
+    "changLength": 1,
+    "lunPer": 2
+  },
+  "newProjectAuthoredExamples": 3,
+  "reviewBoundary": "All 18,500 legacy rows were screened for structural, lexical and contextual risks. Candidate classes and selected entries received AI-assisted linguistic edits. Counts describe scan coverage, not a guarantee of exhaustive human proofreading of every sentence or sense.",
+  "overlayLocalChecks": {
+    "errors": [],
+    "passed": true,
+    "scope": "Edited parts match the headword Hanzi and pinyin; edited example chunks reconstruct the sentence Hanzi; English fields and glosses contain no Han characters. Root will run the full repository contract checks."
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "catalogTagsValidated": 53,
+  "originalWordlistRows": 19890,
+  "currentRows": 20000,
+  "curatedDecisions": 4736,
+  "originalMissingTopicRows": 3966,
+  "originalFirst1000Covered": 1000,
+  "first1000Unresolved": [],
+  "reviewBoundary": "AI-assisted editorial review using full mapping scans and explicit whole-word semantic decisions; not independent human proofreading. All 3,966 formerly unclassified mappings received concrete topics. English homographs, names, classifier exemplars and figurative markers were separately disambiguated. Final lexical POS determines form tags; no topic_others was used to hide an unresolved sense.",
+  "supplementCount": 110,
+  "supplementRarityCounts": {
+    "1": 30,
+    "2": 80
+  },
+  "supplementAnchorRarities": "Every anchor exists in original dictionary at rarity 0–2.",
+  "sources": [
+    {
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=85057&q=1&word=24",
+      "use": "Confirmed huí jiào denotes Islam; original editorial wording and regional register note, no copied entry."
+    },
+    {
+      "url": "https://www.ruoergai.gov.cn/regxrmzf/c100135/202105/e2f272f31c2e4c08a2901129e031b3d5.shtml",
+      "use": "Cross-check of Hui cultural terminology and Islamic festival names; no copied examples."
+    }
+  ],
+  "middleReviewMerged": {
+    "source": "tools/vocabulary_v2/word-tags-topic-review-needed.json",
+    "startInclusive": 1000,
+    "endExclusive": 2000,
+    "rows": 1000,
+    "independentlyRefinedEntries": 296
+  },
+  "originalMappingsChanged": 4705,
+  "originalMissingTopicsResolved": 3966,
+  "originalMissingTopicsRemaining": 0,
+  "tailReviewMerged": {
+    "startInclusive": 2000,
+    "endExclusive": 3966,
+    "rows": 1966
+  },
+  "unknownTags": 0,
+  "duplicateTags": 0,
+  "invalidIds": 0,
+  "supplementReview": "110 duplicate-free additions, 30 at rarity 1 and 80 at rarity 2; all expansion anchors are existing rarity 0–2 words. Five overly specialist candidates were replaced with common festival/life vocabulary.",
+  "finalTopics": {
+    "topic_food": 157,
+    "topic_body_health": 279,
+    "topic_properties": 433,
+    "topic_actions_processes": 172,
+    "topic_communication": 344,
+    "topic_grammar": 198,
+    "topic_plants": 159,
+    "topic_thinking": 222,
+    "topic_travel_transport": 119,
+    "topic_emotions": 342,
+    "topic_people": 294,
+    "topic_objects": 170,
+    "topic_abstract_relations": 186,
+    "topic_animals": 123,
+    "topic_society": 270,
+    "topic_history": 105,
+    "topic_home": 139,
+    "topic_science_technology": 314,
+    "topic_nature_weather": 213,
+    "topic_money": 110,
+    "topic_daily_actions": 32,
+    "topic_culture": 170,
+    "topic_family": 80,
+    "topic_religion": 54,
+    "topic_time_number": 200,
+    "topic_tools": 65,
+    "topic_sport_leisure": 91,
+    "topic_geography": 152,
+    "topic_study": 88,
+    "topic_space": 97,
+    "topic_clothing": 92,
+    "topic_law": 60,
+    "topic_furniture": 12,
+    "topic_work": 147,
+    "topic_appliances": 21
+  }
+}

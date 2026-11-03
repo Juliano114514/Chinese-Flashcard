@@ -1,0 +1,7147 @@
+{
+  "schemaVersion": 1,
+  "reviewRange": {
+    "source": "tools/vocabulary_v2/word-tags-topic-review-needed.json",
+    "startInclusive": 1000,
+    "endExclusive": 2000,
+    "rows": 1000,
+    "independentlyRefinedEntries": 296
+  },
+  "overrides": {
+    "wl_05660": {
+      "tags": [
+        "form_noun",
+        "topic_money",
+        "topic_people",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05665": {
+      "tags": [
+        "form_noun",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05667": {
+      "tags": [
+        "form_noun",
+        "topic_family",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05670": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05673": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05675": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05676": {
+      "tags": [
+        "form_noun",
+        "topic_sport_leisure"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05680": {
+      "tags": [
+        "form_noun",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05687": {
+      "tags": [
+        "form_adverb",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05689": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05690": {
+      "tags": [
+        "form_adverb",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05693": {
+      "tags": [
+        "form_noun",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05694": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05702": {
+      "tags": [
+        "form_idiom",
+        "topic_food"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05707": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05708": {
+      "tags": [
+        "form_noun",
+        "topic_communication",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05729": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05739": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05740": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05743": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05745": {
+      "tags": [
+        "form_noun",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05749": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05750": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05756": {
+      "tags": [
+        "form_noun",
+        "topic_tools"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05758": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05761": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05762": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05763": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05764": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05765": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05766": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05767": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05768": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05769": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05770": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05771": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05772": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05773": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05774": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05775": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05776": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05777": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05778": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05784": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05785": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05787": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05788": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05790": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05792": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05794": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05796": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05799": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05801": {
+      "tags": [
+        "form_noun",
+        "topic_home"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05802": {
+      "tags": [
+        "form_noun",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05803": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05806": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05807": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05813": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05817": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05825": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05828": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05832": {
+      "tags": [
+        "form_noun",
+        "topic_tools"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05833": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05834": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05837": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05845": {
+      "tags": [
+        "form_noun",
+        "topic_animals",
+        "topic_science_technology"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05849": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05859": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05860": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05861": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05867": {
+      "tags": [
+        "form_noun",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05869": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05873": {
+      "tags": [
+        "form_noun",
+        "topic_home"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05875": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05885": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05894": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05898": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05903": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05906": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05908": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05909": {
+      "tags": [
+        "form_noun",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05910": {
+      "tags": [
+        "form_noun",
+        "topic_religion"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05925": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05926": {
+      "tags": [
+        "form_noun",
+        "topic_body_health",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05931": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05935": {
+      "tags": [
+        "form_noun",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05937": {
+      "tags": [
+        "form_noun",
+        "topic_tools"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05939": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05947": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05951": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05953": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05957": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05959": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05969": {
+      "tags": [
+        "form_noun",
+        "topic_culture"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05971": {
+      "tags": [
+        "form_noun",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05973": {
+      "tags": [
+        "form_noun",
+        "topic_culture"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05975": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05980": {
+      "tags": [
+        "form_noun",
+        "topic_travel_transport"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_05982": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05987": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05995": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people",
+        "topic_religion"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_05997": {
+      "tags": [
+        "form_noun",
+        "topic_culture",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06001": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06010": {
+      "tags": [
+        "form_noun",
+        "topic_family"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06018": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06021": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06031": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06038": {
+      "tags": [
+        "form_noun",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06042": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06047": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06049": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06058": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06059": {
+      "tags": [
+        "form_phrase",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06063": {
+      "tags": [
+        "form_noun",
+        "topic_home"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06065": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06066": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06082": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06086": {
+      "tags": [
+        "form_phrase",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06089": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06106": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06109": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather",
+        "usage_written"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06114": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06147": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06151": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06154": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06164": {
+      "tags": [
+        "form_noun",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06171": {
+      "tags": [
+        "form_noun",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06182": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06194": {
+      "tags": [
+        "form_noun",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06198": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06205": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06206": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06207": {
+      "tags": [
+        "form_noun",
+        "topic_tools"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06212": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06217": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06235": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06237": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06249": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06264": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06268": {
+      "tags": [
+        "form_noun",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06273": {
+      "tags": [
+        "form_noun",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06280": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06281": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06284": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06285": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06288": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06289": {
+      "tags": [
+        "form_noun",
+        "topic_history",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06297": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06301": {
+      "tags": [
+        "form_noun",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06307": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06313": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06321": {
+      "tags": [
+        "form_noun",
+        "topic_culture"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06327": {
+      "tags": [
+        "form_adverb",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06330": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06331": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06336": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06339": {
+      "tags": [
+        "form_noun",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06351": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06359": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06381": {
+      "tags": [
+        "form_adverb",
+        "form_phrase",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06390": {
+      "tags": [
+        "form_noun",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06395": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06396": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06398": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06401": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06403": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06408": {
+      "tags": [
+        "form_noun",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06410": {
+      "tags": [
+        "form_noun",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06411": {
+      "tags": [
+        "form_noun",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06412": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06416": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06421": {
+      "tags": [
+        "form_noun",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06428": {
+      "tags": [
+        "form_noun",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06432": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06437": {
+      "tags": [
+        "form_noun",
+        "topic_people",
+        "topic_work"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06458": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06461": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06467": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06469": {
+      "tags": [
+        "form_noun",
+        "topic_tools"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06473": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06474": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06475": {
+      "tags": [
+        "form_noun",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06476": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06483": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06486": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06489": {
+      "tags": [
+        "form_noun",
+        "topic_plants"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06490": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06494": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06498": {
+      "tags": [
+        "form_noun",
+        "topic_tools"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06500": {
+      "tags": [
+        "form_adverb",
+        "form_phrase",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06508": {
+      "tags": [
+        "form_adverb",
+        "form_phrase",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06518": {
+      "tags": [
+        "form_noun",
+        "topic_culture",
+        "topic_food"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06524": {
+      "tags": [
+        "form_noun",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06529": {
+      "tags": [
+        "form_adverb",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06530": {
+      "tags": [
+        "form_noun",
+        "topic_food"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06539": {
+      "tags": [
+        "form_noun",
+        "topic_geography"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06542": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06545": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06549": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06550": {
+      "tags": [
+        "form_noun",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06555": {
+      "tags": [
+        "form_noun",
+        "topic_food"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06556": {
+      "tags": [
+        "form_noun",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06563": {
+      "tags": [
+        "form_noun",
+        "topic_law",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06570": {
+      "tags": [
+        "form_noun",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06576": {
+      "tags": [
+        "form_noun",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06581": {
+      "tags": [
+        "form_noun",
+        "topic_religion"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06584": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06585": {
+      "tags": [
+        "form_noun",
+        "topic_abstract_relations",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06595": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06596": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06597": {
+      "tags": [
+        "form_noun",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06598": {
+      "tags": [
+        "form_noun",
+        "topic_science_technology"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06606": {
+      "tags": [
+        "form_noun",
+        "topic_food"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06607": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06608": {
+      "tags": [
+        "form_noun",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06616": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06617": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06619": {
+      "tags": [
+        "form_noun",
+        "topic_animals"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06621": {
+      "tags": [
+        "form_noun",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06632": {
+      "tags": [
+        "form_noun",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06637": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06649": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06651": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06653": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06655": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06656": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06657": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06658": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06659": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06661": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06662": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06664": {
+      "tags": [
+        "form_idiom",
+        "topic_home",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06666": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06667": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06669": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06670": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06671": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06672": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06673": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06674": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06675": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06676": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06677": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06679": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06680": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06681": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06683": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06684": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06685": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06686": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06687": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06688": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06689": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06690": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06692": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06693": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06694": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06695": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06696": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06697": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06699": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06700": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06702": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06703": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06704": {
+      "tags": [
+        "form_fixed_expression",
+        "form_idiom",
+        "topic_communication",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06705": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06706": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06707": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06709": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06710": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06711": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06713": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06714": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06715": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06716": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06717": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06718": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06720": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06721": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06722": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06724": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06725": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06727": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06729": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06731": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06732": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06734": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06735": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06737": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06738": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06739": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06740": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06741": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06744": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06746": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06747": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06748": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06750": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06752": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06753": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06754": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06755": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06757": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06758": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06759": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06764": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06765": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06766": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06768": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06769": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06770": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06771": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06772": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06773": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06774": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06775": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06776": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06777": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06778": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06779": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06780": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06781": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06782": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06785": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06786": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06787": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06788": {
+      "tags": [
+        "form_idiom",
+        "topic_home"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06789": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06792": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06794": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06795": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06796": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06797": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06799": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06800": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06801": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06803": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06804": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06806": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06807": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06808": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06809": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06811": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06813": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06814": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06817": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06819": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06820": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06822": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06823": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06824": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06825": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06826": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06827": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06829": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06830": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06831": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06832": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06833": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06834": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06835": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06837": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06838": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06839": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06841": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06842": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06845": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06846": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06847": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06848": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06850": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06851": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06852": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06856": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06857": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06858": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06859": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06861": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06862": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06863": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06864": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06865": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06866": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06867": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06869": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06870": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06871": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06872": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06873": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06874": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06876": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06877": {
+      "tags": [
+        "form_idiom",
+        "topic_sport_leisure"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06879": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06880": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06881": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06882": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06883": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06884": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06887": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06888": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06889": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06890": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06893": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06896": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06897": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06898": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06899": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06900": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06901": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06903": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06905": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06906": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06907": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06908": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06909": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06910": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06911": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06912": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06913": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06914": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06915": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06916": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06917": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06919": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06920": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06922": {
+      "tags": [
+        "form_idiom",
+        "topic_family"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06923": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06924": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06926": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06928": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06929": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06932": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06934": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06936": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06937": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06938": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06939": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06940": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06943": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06945": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06946": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06948": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06949": {
+      "tags": [
+        "form_idiom",
+        "topic_law",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06953": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06955": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06956": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06958": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06962": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06964": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06965": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06966": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06967": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06968": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06969": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06970": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06972": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06973": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06975": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06976": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06977": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06980": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06981": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06982": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06983": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06984": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06985": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06987": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06988": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06989": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06992": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06993": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06994": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_06997": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_06999": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07000": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07001": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07002": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07005": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07006": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07007": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07011": {
+      "tags": [
+        "form_idiom",
+        "topic_money",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07012": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07013": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07014": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07015": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07017": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07018": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07019": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07021": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07022": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07023": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07024": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07026": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07028": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07031": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07033": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07034": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07035": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07037": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07038": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07039": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07040": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07041": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07042": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07043": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07044": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07045": {
+      "tags": [
+        "form_idiom",
+        "topic_society",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07046": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07047": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07048": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07050": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07051": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07052": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07053": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07054": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07055": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07056": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07057": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07058": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07060": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07063": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07064": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07065": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07066": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07069": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07072": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07073": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07074": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07076": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07077": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07078": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07081": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07082": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07083": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07084": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07086": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07087": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07088": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07089": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07090": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07091": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07092": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07093": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07094": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07095": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07096": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_family"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07097": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07098": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07099": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07100": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07101": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07103": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07104": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07106": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07107": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07108": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07109": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07111": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07112": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07113": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07115": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07117": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07118": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07119": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07120": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07122": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07123": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07124": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07125": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07126": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07127": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07128": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07129": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07130": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07131": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07132": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07136": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07137": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07138": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07139": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07140": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07142": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07143": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07144": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07145": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07147": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07148": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07149": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07150": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07153": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07154": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07156": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07157": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07158": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07161": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07162": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07165": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07166": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07167": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07168": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07170": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07173": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07175": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07176": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07180": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07181": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07182": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07183": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07186": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07187": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07189": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07190": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07191": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07192": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07194": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07196": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07197": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07198": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07199": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07201": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07202": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07203": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07204": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07206": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07207": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07208": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_food"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07210": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07212": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07216": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07217": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07218": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07219": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07220": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07221": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07222": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07224": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07225": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07226": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07227": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07228": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07232": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07233": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07238": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07240": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07241": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07242": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07243": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07245": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07246": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07247": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07248": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07249": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07250": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07252": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07253": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07256": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07257": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07259": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07260": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07261": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07262": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07263": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07265": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07266": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07268": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07269": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07270": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07272": {
+      "tags": [
+        "form_idiom",
+        "topic_home"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07274": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07276": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07278": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07279": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07280": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07284": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07287": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07289": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07290": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07291": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07293": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07294": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07296": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07298": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_law"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07300": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07301": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07302": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07304": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07305": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07306": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07307": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07309": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07310": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07311": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07312": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07313": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07315": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07316": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07317": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07318": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07319": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07322": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07323": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07324": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07325": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07326": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07327": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07328": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07330": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07331": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07332": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07334": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07335": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07338": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07339": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07342": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07343": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07344": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07345": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07346": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07347": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07349": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07351": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07354": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07355": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07358": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07359": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07360": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07361": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07363": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07364": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07365": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07366": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07367": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07368": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07369": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07370": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07371": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07372": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07375": {
+      "tags": [
+        "form_idiom",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07376": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07377": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07378": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07379": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07381": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07382": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07385": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07386": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07387": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07389": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07390": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_culture"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07391": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07392": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07393": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07394": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07395": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07396": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07398": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07400": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07402": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07407": {
+      "tags": [
+        "form_idiom",
+        "topic_home"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07409": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07410": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07411": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07414": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07415": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07416": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07417": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07418": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07419": {
+      "tags": [
+        "form_idiom",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07420": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07421": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07423": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07424": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07425": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07426": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07427": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07429": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07432": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07433": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07434": {
+      "tags": [
+        "form_idiom",
+        "topic_home"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07435": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07437": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07438": {
+      "tags": [
+        "form_idiom",
+        "topic_family"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07439": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07440": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07442": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07443": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07444": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07446": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07450": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07452": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07453": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07455": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07458": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07461": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07462": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07463": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07464": {
+      "tags": [
+        "form_idiom",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07465": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07469": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07471": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07472": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07473": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07475": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07477": {
+      "tags": [
+        "form_idiom",
+        "topic_religion"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07478": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07479": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07480": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07481": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07483": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07484": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07485": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07486": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07487": {
+      "tags": [
+        "form_idiom",
+        "topic_money",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07490": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07491": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07493": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07497": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07498": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07499": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07500": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07501": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07504": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07505": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07506": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07507": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07508": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07509": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07510": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07511": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07512": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07513": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07515": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07516": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07517": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07519": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07520": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07521": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07522": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07523": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07525": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07526": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07527": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07528": {
+      "tags": [
+        "form_idiom",
+        "topic_clothing"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07529": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07532": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07533": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07534": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07535": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07538": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07539": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07542": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07548": {
+      "tags": [
+        "form_idiom",
+        "topic_family"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07549": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07552": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07553": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07555": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07556": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07557": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07558": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07562": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07564": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07565": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07567": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07569": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07570": {
+      "tags": [
+        "form_idiom",
+        "topic_culture",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07571": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07572": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07573": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07575": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07576": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07577": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07579": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07580": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07581": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07584": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07586": {
+      "tags": [
+        "form_idiom",
+        "topic_sport_leisure"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07587": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07588": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07589": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07591": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07592": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07593": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07594": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07595": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07596": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07597": {
+      "tags": [
+        "form_idiom",
+        "topic_home",
+        "topic_work"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07600": {
+      "tags": [
+        "form_idiom",
+        "topic_law"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07601": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07602": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07603": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07605": {
+      "tags": [
+        "form_idiom",
+        "topic_food",
+        "topic_money"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07607": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07608": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07609": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07610": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07613": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather",
+        "topic_plants"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07615": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07617": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07619": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07620": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07621": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07624": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07625": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07627": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07630": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07631": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07632": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07634": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07636": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07637": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07638": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07639": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07640": {
+      "tags": [
+        "form_idiom",
+        "topic_money"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07641": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07642": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07643": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07644": {
+      "tags": [
+        "form_fixed_expression",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07646": {
+      "tags": [
+        "form_idiom",
+        "topic_nature_weather"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07647": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07649": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07650": {
+      "tags": [
+        "form_idiom",
+        "topic_space",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07651": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07652": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07655": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07656": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07657": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07658": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07660": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07661": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07662": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07663": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07664": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07666": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07667": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07668": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07669": {
+      "tags": [
+        "form_idiom",
+        "topic_study",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07670": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_work"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07671": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07672": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07673": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07675": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07676": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07677": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07678": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07681": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07684": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07685": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07686": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07688": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07689": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07692": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07693": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07694": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07695": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07696": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07699": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07701": {
+      "tags": [
+        "form_idiom",
+        "topic_study",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07702": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07705": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07706": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07709": {
+      "tags": [
+        "form_idiom",
+        "topic_family",
+        "topic_work"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07710": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07711": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07714": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07717": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07721": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07723": {
+      "tags": [
+        "form_idiom",
+        "topic_space"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07724": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07727": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07731": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar",
+        "topic_thinking",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07732": {
+      "tags": [
+        "form_noun",
+        "topic_objects"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07735": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07738": {
+      "tags": [
+        "form_adverb",
+        "topic_properties",
+        "topic_space",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07739": {
+      "tags": [
+        "form_adverb",
+        "topic_time_number",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07745": {
+      "tags": [
+        "form_phrase",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07749": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07753": {
+      "tags": [
+        "form_noun",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07761": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07762": {
+      "tags": [
+        "form_phrase",
+        "topic_grammar",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07768": {
+      "tags": [
+        "form_fixed_expression",
+        "form_phrase",
+        "topic_communication",
+        "topic_emotions",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07773": {
+      "tags": [
+        "form_phrase",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07781": {
+      "tags": [
+        "form_phrase",
+        "topic_people"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07784": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07785": {
+      "tags": [
+        "form_phrase",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07803": {
+      "tags": [
+        "form_adverb",
+        "topic_properties"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07813": {
+      "tags": [
+        "form_adverb",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07823": {
+      "tags": [
+        "form_adverb",
+        "topic_thinking"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07830": {
+      "tags": [
+        "form_adverb",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07833": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07841": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07843": {
+      "tags": [
+        "form_noun",
+        "topic_home",
+        "usage_everyday"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07846": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07849": {
+      "tags": [
+        "form_noun",
+        "topic_communication"
+      ],
+      "reason": "按完整词条的教学义复核主题；成语按实际喻义，不按组成汉字的字面意象归类。"
+    },
+    "wl_07857": {
+      "tags": [
+        "form_adverb",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07859": {
+      "tags": [
+        "form_phrase",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07871": {
+      "tags": [
+        "form_adverb",
+        "topic_time_number"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07874": {
+      "tags": [
+        "form_adverb",
+        "topic_grammar",
+        "topic_thinking"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07876": {
+      "tags": [
+        "form_adverb",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07886": {
+      "tags": [
+        "form_noun",
+        "topic_communication",
+        "topic_thinking",
+        "usage_written"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    },
+    "wl_07887": {
+      "tags": [
+        "form_fixed_expression",
+        "form_phrase",
+        "topic_emotions"
+      ],
+      "reason": "逐词核对完整教学义后补充或校正具体主题；成语按实际喻义，不按组成汉字的字面意象分类。保留原用途和词形标记。"
+    }
+  }
+}

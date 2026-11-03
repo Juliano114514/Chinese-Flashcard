@@ -1,0 +1,110 @@
+回族	people,society	回:Hui (ethnic designation)|族:ethnic group	回民
+回教	religion	回教:Islam (traditional Chinese name)	回民
+回民街	geography,food,travel_transport	回民:Hui people|街:street	回民
+伊斯兰教	religion	伊斯兰:Islam (phonetic loan)|教:religion	回民
+清真	food,religion	清真:halal; meeting Islamic dietary requirements	清真寺
+清真食品	food,religion	清真:halal|食品:food products	回民
+穆斯林	people,religion	穆斯林:Muslim (phonetic loan)	回民
+斋月	religion,time_number	斋:religious fasting|月:month	回民
+开斋节	religion,culture,time_number	开斋:to end a fast|节:festival	回民
+古兰经	religion,culture	古兰:Quran (phonetic loan)|经:sacred scripture	回民
+扫墓	culture,family	扫:to tend; to clean|墓:grave	习俗
+红包	money,culture	红:red (an auspicious color)|包:envelope; packet	春节
+少数民族	people,society	少数:minority|民族:ethnic group	民族
+满族	people,society	满:Manchu (ethnic designation)|族:ethnic group	民族
+藏族	people,society	藏:Tibetan (ethnic designation)|族:ethnic group	民族
+维吾尔族	people,society	维吾尔:Uyghur (ethnic designation)|族:ethnic group	民族
+蒙古族	people,society	蒙古:Mongolian (ethnic designation)|族:ethnic group	民族
+苗族	people,society	苗:Miao (ethnic designation)|族:ethnic group	民族
+朝鲜族	people,society	朝鲜:Korean (ethnic designation)|族:ethnic group	民族
+土家族	people,society	土家:Tujia (ethnic designation)|族:ethnic group	民族
+白族	people,society	白:Bai (ethnic designation)|族:ethnic group	民族
+民族服饰	clothing,culture	民族:ethnic group|服饰:clothing and accessories	民族
+民族语言	communication,society	民族:ethnic group|语言:language	民族
+民族团结	society	民族:ethnic groups|团结:unity; solidarity	民族
+民俗	culture,society	民:community; people|俗:customs	习俗
+宗教信仰	religion,thinking	宗教:religion|信仰:belief; faith	佛教
+道教	religion,culture	道:Dao; the Way|教:religion	佛教
+基督教	religion	基督:Christ (phonetic loan)|教:religion	佛教
+天主教	religion	天主:God (Catholic designation)|教:religion	佛教
+宗教活动	religion	宗教:religion|活动:activity	佛教
+佛寺	religion,home	佛:Buddha; Buddhist|寺:temple	寺庙
+压岁钱	money,culture	压岁:traditional New Year blessing against misfortune|钱:money	春节
+香火	religion	香:incense|火:fire used to burn incense	寺庙
+祈福	religion	祈:to pray for|福:blessings; good fortune	寺庙
+礼拜堂	religion,home	礼拜:religious worship|堂:hall; building	寺庙
+十字架	religion,objects	十字:cross shape|架:frame; structure	佛教
+圣经	religion,culture	圣:sacred; holy|经:scripture	佛教
+团圆饭	family,food,culture	团圆:family reunion|饭:meal	春节
+观音	religion,culture	观音:Guanyin (the bodhisattva's name)	佛教
+方丈	people,religion	方丈:abbot (a lexical title; not the sum of the characters' everyday senses)	寺院
+藏传佛教	religion,culture	藏传:Tibetan transmission|佛教:Buddhism	佛教
+春运	travel_transport,time_number	春:Spring Festival|运:passenger transport	春节
+民间信仰	religion,culture	民间:among local communities; folk|信仰:beliefs; faith	习俗
+年俗	culture,time_number	年:Lunar New Year|俗:customs	春节
+庙会	culture,society	庙:temple|会:fair; gathering	寺庙
+传统节日	culture,time_number	传统:traditional|节日:festival; holiday	春节
+端午节	culture,time_number	端午:the fifth day of the fifth lunar month|节:festival	春节
+重阳节	culture,time_number	重阳:the ninth day of the ninth lunar month|节:festival	春节
+元宵节	culture,time_number	元宵:the night of the fifteenth day of the first lunar month|节:festival	春节
+腊八节	culture,time_number	腊八:the eighth day of the twelfth lunar month|节:festival	春节
+泼水节	culture,time_number	泼水:splashing water|节:festival	民族
+那达慕	culture,sport_leisure	那达慕:Naadam (Mongolian loanword naming a traditional gathering)	民族
+火把节	culture,time_number	火把:torch|节:festival	民族
+老街	travel_transport,home,history	老:old; historic|街:street	城市
+步行街	travel_transport,money	步行:walking; pedestrian travel|街:street	城市
+小吃街	food,travel_transport	小吃:snacks; small local dishes|街:street	凉皮
+美食街	food,travel_transport	美食:good food; culinary specialties|街:street	凉皮
+特色小吃	food,culture	特色:distinctive local character|小吃:snacks; small local dishes	凉皮
+手抓饭	food	手抓:traditionally eaten by hand|饭:rice dish	凉皮
+羊肉泡馍	food	羊肉:mutton; lamb|泡:to soak in broth|馍:flatbread	凉皮
+肉夹馍	food	肉:meat|夹:to put between layers|馍:flatbread	凉皮
+馕	food	馕:nang; baked flatbread (loanword)	凉皮
+拉条子	food	拉:to pull; to stretch|条子:strips (here, noodle strands)	凉皮
+大盘鸡	food	大盘:large serving plate|鸡:chicken meat	凉皮
+清真餐厅	food,religion	清真:halal|餐厅:restaurant	回民
+饮食禁忌	food,culture	饮食:eating and drinking; diet|禁忌:restriction; taboo	习俗
+文化遗产	culture,history	文化:culture|遗产:heritage	习俗
+非物质文化遗产	culture	非物质:intangible; nonmaterial|文化:culture|遗产:heritage	手艺
+文化交流	culture,communication	文化:culture|交流:exchange	民族
+文化差异	culture,society	文化:culture|差异:difference	民族
+第二语言	communication,study	第二:second|语言:language	母语
+少数民族语言	communication,society	少数民族:minority ethnic group|语言:language	母语
+民族特色	culture,society	民族:ethnic group|特色:distinctive features	民族
+民族文化	culture,society	民族:ethnic group|文化:culture	民族
+文化认同	culture,society	文化:culture|认同:identification with; sense of belonging to	民族
+身份认同	society,thinking	身份:identity|认同:identification with; sense of belonging to	民族
+包容	society,emotions	包容:to accept and respect differences	民族
+族群	people,society	族:ethnic community|群:group	民族
+血缘	family	血:blood (biological kinship)|缘:connection; relationship	家庭
+祖籍	family,geography	祖:ancestors|籍:place of family origin	家乡
+原籍	people,geography	原:original|籍:registered place of family origin	家乡
+侨乡	geography,society	侨:overseas emigrants|乡:hometown; home region	家乡
+华裔	people,society	华:Chinese|裔:descendants; ancestry	民族
+汉服	clothing,culture	汉:Han Chinese|服:clothing	民族
+唐装	clothing,culture	唐:Chinese (in this clothing name)|装:clothing; outfit	民族
+头巾	clothing	头:head|巾:cloth; scarf	衣服
+饮茶	food	饮:to drink|茶:tea	茶馆
+茶艺	food,culture	茶:tea|艺:art; skill	茶馆
+茶道	food,culture	茶:tea|道:way; cultural practice	茶馆
+饮食文化	food,culture	饮食:food and drink; diet|文化:culture	凉皮
+地方菜	food	地方:region; locality|菜:dish; cuisine	凉皮
+风味	food,culture	风味:distinctive flavor or style	凉皮
+石窟	culture,history,religion	石:rock; stone|窟:cave	寺庙
+古迹	culture,history,travel_transport	古:old; ancient|迹:surviving trace; remains	古城
+名胜	travel_transport,culture	名:famous|胜:place of scenic or historic interest	古城
+古建筑	home,history,culture	古:old; historic|建筑:building; architecture	古城
+古村落	home,history,geography	古:old; historic|村落:village	古城
+传统工艺	culture,work	传统:traditional|工艺:craft; technique	手艺
+手工艺	culture,work	手工:manual work|艺:craft; skill	手艺
+蜡染	culture,clothing	蜡:wax|染:dyeing	手艺
+扎染	culture,clothing	扎:to tie; to bind|染:dyeing	手艺
+剪纸	culture	剪:to cut with scissors|纸:paper	手艺
+皮影	culture	皮:hide; leather (traditional puppet material)|影:shadow	手艺
+中国结	culture,objects	中国:China; Chinese|结:knot	手艺
+春联	culture,communication	春:Spring Festival|联:couplet; paired inscriptions	春节
+舞龙	culture,sport_leisure	舞:to perform a dance|龙:dragon (a performance figure)	春节
+舞狮	culture,sport_leisure	舞:to perform a dance|狮:lion (a performance figure)	春节
+龙舟	travel_transport,sport_leisure,culture	龙:dragon (decorative boat figure)|舟:boat	春节
+汤圆	food,culture	汤:soup|圆:round rice balls	月饼
+牛肉面	food	牛肉:beef|面:noodles	凉皮

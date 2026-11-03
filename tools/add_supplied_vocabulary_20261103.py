@@ -266,6 +266,8 @@ def reviewed_parts(editorial):
 
 def build():
     current = CSV.read_bytes()
+    from refine_vocabulary_20261103 import previous_payload
+    current = previous_payload(current)
     base = current[:BASE_BYTES]
     if sha(base) != BASE_SHA256 or not base.endswith(b"\n"):
         raise ValueError("Legacy CSV bytes changed; refusing to rewrite or renumber old content")
@@ -372,9 +374,22 @@ def main():
     mode.add_argument("--check", action="store_true")
     args = parser.parse_args()
     original_csv = CSV.read_bytes()
+    from refine_vocabulary_20261103 import previous_payload, verify_review
+    previous = previous_payload(original_csv)
+    refined = previous != original_csv
+    if refined and args.write:
+        raise ValueError("Use refine_vocabulary_20261103.py --write for the current reviewed vocabulary")
+    if refined:
+        verify_review()
     outputs = build()
     for path, content in outputs.items():
         if args.check:
+            if refined and path == CSV:
+                if content != previous:
+                    raise ValueError("Historical addition recipe no longer restores the frozen input")
+                continue
+            if refined and path == ROOT / "docs/wordlist-validation.json":
+                continue  # Current manifest is verified by the current refinement check.
             if not path.exists() or path.read_bytes() != content:
                 raise ValueError("Addition output differs: " + str(path.relative_to(ROOT)))
         else:
@@ -396,7 +411,8 @@ def main():
                         temporary.unlink()
             else:
                 path.write_bytes(content)
-    print(json.dumps(dict(status="PASS", check=args.check, addedWords=1390, totalWords=19890,
+    print(json.dumps(dict(status="PASS", check=args.check, addedWords=1390, historicalTotalWords=19890,
+                          currentSemanticRefinement=refined,
                           sha256=sha(outputs[CSV]), legacyBytesPreserved=True)))
 
 

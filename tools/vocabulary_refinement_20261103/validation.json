@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "wordlistSha256": "4c8c18811363bdb747c4902dac64f24bf78f40dcb5e2c55ec84fbcc386e31486",
+  "words": 20000,
+  "examples": 40000,
+  "fieldsChecked": 240000,
+  "exampleChunksChecked": 265706,
+  "wordPartsChecked": 35358,
+  "changedExistingWords": 2002,
+  "changedVersion110Words": 634,
+  "changedExistingTagMappings": 4929,
+  "supplementalWords": 110,
+  "supplementalRarity": {
+    "1": 30,
+    "2": 80
+  },
+  "specificChecks": {
+    "exactly20000UniqueWords": true,
+    "stable19890IdsAndHeadwords": true,
+    "supplementExactly110WithRarity0to2": true,
+    "smallPediatricsOnlyColloquial": true,
+    "pediatricsIndependent": true,
+    "smallPediatricsNoHealthTag": true,
+    "all20000HaveSemanticTopics": true,
+    "frozenByteRestoration": true
+  },
+  "checks": {
+    "currentRecipeAndGeneratedReviewFiles": "PASS",
+    "csvContractAndSnapshot": "PASS",
+    "legacyFiveStageInputRestoration": "PASS",
+    "version110AdditionReproduction": "PASS",
+    "fullTagReproduction": "PASS",
+    "sourceAttributionAndLocks": "PASS",
+    "genuineStrokes": "PASS",
+    "authoredDemo": "PASS",
+    "englishResourceBuildAndCheck": "PASS",
+    "chineseResourceBuildAndCheck": "PASS",
+    "fivePythonASTParses": "PASS",
+    "gitDiffCheck": "PASS"
+  },
+  "english": {
+    "speechTexts": 91233,
+    "exactIpaEntries": 9202,
+    "buildAttempts": [
+      "transient OSError opening shard_00.json",
+      "retry completed and all resource checks passed"
+    ]
+  },
+  "chinese": {
+    "readings": 55119,
+    "modelSupported": 54927,
+    "offlineFallback": 192
+  },
+  "genuineGlyphs": 6331,
+  "missingGlyphs": 0,
+  "frozenEditorialInputEdits": [],
+  "runtimeSourceEdits": [],
+  "appVersion": "1.10.0 / 31",
+  "notExecuted": [
+    "new test code",
+    "automated application tests",
+    "Gradle compilation or lint",
+    "APK packaging",
+    "device installation or acceptance",
+    "independent human proofreading of every sentence",
+    "full audio listening"
+  ],
+  "securityReview": "Only local teaching data, attribution/resource indexes and maintenance tools changed; no new application permission, network entry point, runtime dependency or sensitive log."
+}

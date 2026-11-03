@@ -60,10 +60,17 @@ reference uses the pinned CC-CEDICT release above. Original contributions are
 offered under CC BY-SA 4.0 to the extent rights are held. This is not independent
 human linguistic review or additional clearance of supplied/legacy rights.
 
+Semantic review, 2026-11-03: field corrections across retained vocabulary,
+contextual chunk/reading corrections, reviewed tags and 110 related headwords
+restricted to rarity stages 0-2. Historical inputs and original source credits
+are preserved; changed translations retain their original English where used.
+New example contributions are project-authored with AI assistance and offered
+under CC BY-SA 4.0 to the extent rights are held. This is not human certification.
 
-Selected wordlist: 19890 words; 13223 retained IDs; 6667 added IDs.
-Wordlist SHA-256: 58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87
-Selected-example source uses (added IDs and explicit later revisions): {"legacy": 4577, "project-original": 3582, "Tatoeba": 6387}
+
+Selected wordlist: 20000 words; 13223 retained IDs; 6777 added IDs.
+Wordlist SHA-256: 4c8c18811363bdb747c4902dac64f24bf78f40dcb5e2c55ec84fbcc386e31486
+Selected-example source uses (added IDs and explicit later revisions): {"legacy": 4686, "project-original": 3938, "Tatoeba": 6282}
 
 Retained source — wl_00001, wl_00085, wl_00108, wl_00162, wl_00214, wl_00219–wl_00220, wl_00278, wl_00281, wl_00294, wl_00311, wl_00329, wl_00458, wl_00502, wl_00685, wl_01685, wl_01694, wl_01704, wl_01742, wl_01754, wl_01808, wl_01841, wl_01917, wl_01982, wl_01984, wl_01989, wl_02052, wl_02092, wl_02156, wl_02182, wl_03330, wl_03335, wl_03418, wl_03439, wl_03441, wl_03482, wl_03534, wl_03545, wl_03551, wl_03562, wl_03588, wl_03607, wl_03618, wl_03626, wl_03664
 Original teaching gloss selected for the supplied first-sentence sense; CC-CEDICT lexical entry; second example written for this dataset. Refinement 2026-10-04: automatic source-assisted enrichment; not individually manually reviewed. Chinese same-reading reference: mapull/chinese-dictionary@e804ada333b68afddfdccbe8dcc938a72da157a7 (MIT; upstream provenance caveat retained). Final CSV-only AI review 2026-10-04: context-based explanation, example, reading or segmentation correction; not a human etymological review. Rebuild 2026-10-05: English explanations retained; sentence chunks use context-ranked CC-CEDICT/retained glosses and AI grammar/editorial corrections; not human-reviewed.
@@ -4242,7 +4249,7 @@ Example — wl_13246
 legacy:wl_04076
 Retained source notes: wl_04076
 
-Example — wl_13246
+Example — wl_08237, wl_13246
 实习也计入学时。
 legacy:wl_08237
 Retained source notes: wl_08237
@@ -4370,7 +4377,7 @@ Example — wl_13259
 legacy-context:269267ed86b0e626
 Retained source notes: wl_00124, wl_00349, wl_01220
 
-Example — wl_13259
+Example — wl_10797, wl_13259
 他跟教练学习擒拿。
 legacy:wl_10797
 Retained source notes: wl_10797
@@ -5548,18 +5555,12 @@ legacy:wl_05691
 Retained source notes: wl_05691
 
 Example — wl_13384
-阁楼是一个狭长的低矮房间，光线昏暗，弥漫著雪松的香气。
-CC-BY 2.0 (France) Attribution: tatoeba.org #11917400 (Cangarejo) & #13573852 (LeviHighway)
-Original Chinese: 閣樓是一個狹長的低矮房間，光線昏暗，瀰漫著雪松的香氣。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+村里的房屋大多低矮。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
-Example — wl_13384, wl_17659, wl_17800
-稀疏、低矮、枝叶稀疏的雪松被数量更多、颜色更深、更绿、更茂密的雪松所取代，这些雪松又被高大、枝繁叶茂、结满绿色浆果的树木所取代。
-CC-BY 2.0 (France) Attribution: tatoeba.org #12127357 (Cangarejo) & #13573859 (LeviHighway)
-Original Chinese: 稀疏、低矮、枝葉稀疏的雪松被數量更多、顏色更深、更綠、更茂密的雪松所取代，這些雪松又被高大、枝繁葉茂、結滿綠色漿果的樹木所取代。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+Example — wl_13384
+路边有一排低矮的灌木。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_13385
 请数一数桌上有几本书。
@@ -6398,7 +6399,7 @@ Original Chinese: 這裡頭沒有一件事說得通。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_13479, wl_17514
+Example — wl_13479
 他们匆匆忙忙去看足球赛，屋里头东西都丢在那儿。
 CC-BY 2.0 (France) Attribution: tatoeba.org #11550597 (weihaiping) & #420080 (sysko)
 
@@ -6913,8 +6914,8 @@ legacy-context:130a03523ea17efa
 Retained source notes: wl_05584, wl_10818, wl_13047
 
 Example — wl_13529
-待著。
-CC-BY 2.0 (France) Attribution: tatoeba.org #8907595 (CK) & #13109376 (LeviHighway)
+这项发现的意义十分显著。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_13530
 我的学分已经修够了。
@@ -7818,15 +7819,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_13621
-如果你没好话说，那就什幺都别说。
-CC-BY 2.0 (France) Attribution: tatoeba.org #603585 (darinmex) & #818907 (fucongcong)
-Original Chinese: 如果你没好话说，那就什么都别说。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+我连走路都累，别说跑步了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_13621
-别说谎!
-CC-BY 2.0 (France) Attribution: tatoeba.org #65615 (CK) & #796697 (fucongcong)
+他连自己的房间都不收拾，别说整栋楼了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_13622
 走著瞧
@@ -9799,12 +9797,12 @@ Example — wl_13820
 legacy:wl_11840
 Retained source notes: wl_11840
 
-Example — wl_13821
+Example — wl_04220, wl_13821
 釉彩在灯下泛着光。
 legacy:wl_04220
 Retained source notes: wl_04220
 
-Example — wl_13821
+Example — wl_08596, wl_13821
 不同颜色的光有不同波长。
 legacy:wl_08596
 Retained source notes: wl_08596
@@ -10487,7 +10485,7 @@ Example — wl_13890
 legacy-context:b5e316df02212012
 Retained source notes: wl_00072, wl_00808, wl_01160, wl_02333
 
-Example — wl_13891, wl_18147
+Example — wl_13891
 牧师在教堂里。
 CC-BY 2.0 (France) Attribution: tatoeba.org #9692564 (MarijnKp) & #10171211 (GlossaMatik)
 
@@ -10528,7 +10526,7 @@ Example — wl_13895
 我猜这是我们的运气坏。
 CC-BY 2.0 (France) Attribution: tatoeba.org #5250872 (CK) & #5632405 (verdastelo9604)
 
-Example — wl_13895, wl_18127
+Example — wl_13895
 他的成功要归结于他的辛勤工作和好运气。
 CC-BY 2.0 (France) Attribution: tatoeba.org #286934 (CM) & #1397150 (mtdot)
 
@@ -10845,7 +10843,7 @@ Original Chinese: 火箭發射進入太空。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_13926, wl_17912
+Example — wl_13926
 从太空中看，地球是什麼模样呢?
 CC-BY 2.0 (France) Attribution: tatoeba.org #2707463 (Hybrid) & #2771090 (cienias)
 Original Chinese: 從太空中看，地球是什麼模樣呢?
@@ -12983,7 +12981,7 @@ Original Chinese: 基本上我贊同你的意見。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_14143, wl_17486
+Example — wl_14143
 铁匠举起铁椎敲打铁块。
 legacy-context:240c33b1e7e0e3df
 Retained source notes: wl_03442, wl_12246
@@ -13020,7 +13018,7 @@ Original Chinese: 他們往相反的方向去。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_14147, wl_17895
+Example — wl_14147
 玛丽不穷，相反，她相当富裕。
 CC-BY 2.0 (France) Attribution: tatoeba.org #31883 (CK) & #334254 (fucongcong)
 
@@ -13144,8 +13142,8 @@ Example — wl_14160
 CC-BY 2.0 (France) Attribution: tatoeba.org #806398 (CM) & #806397 (GlossaMatik)
 
 Example — wl_14160
-他应该有权利去自己做决定。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1737436 (Spamster) & #3781010 (Debbie_Linder)
+他有权自己做决定。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14161
 汤姆打扰了玛莉。
@@ -13342,11 +13340,8 @@ Example — wl_14181
 CC-BY 2.0 (France) Attribution: tatoeba.org #317889 (CM) & #2029437 (ydcok)
 
 Example — wl_14181
-汤姆需要被告知怎幺做。
-CC-BY 2.0 (France) Attribution: tatoeba.org #6263230 (CK) & #9965677 (GlossaMatik)
-Original Chinese: 汤姆需要被告知怎么做。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+被告在法庭上回答了问题。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14182
 我们决定不开除你。
@@ -14390,7 +14385,7 @@ Example — wl_14288
 不要把门开着。
 CC-BY 2.0 (France) Attribution: tatoeba.org #38996 (CK) & #334214 (fucongcong)
 
-Example — wl_14289, wl_14689, wl_17601
+Example — wl_14289, wl_17601
 小丑做了个鬼脸。
 CC-BY 2.0 (France) Attribution: tatoeba.org #280440 (CK) & #332854 (fucongcong)
 
@@ -14871,18 +14866,12 @@ Example — wl_14341
 Project-authored AI-assisted sense-disambiguating editorial example, 2026-10-27
 
 Example — wl_14342
-他从架子上拿下书。
-CC-BY 2.0 (France) Attribution: tatoeba.org #301376 (CK) & #6047497 (verdastelo9604)
-Original Chinese: 他從架子上拿下書。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+他从架子上拿下了一本书。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14342
-上楼把我的旅行箱拿下来。
-CC-BY 2.0 (France) Attribution: tatoeba.org #72895 (CK) & #798239 (Martha)
-Original Chinese: 上樓把我的旅行箱拿下來。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+警方很快拿下了那名嫌疑人。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14343
 包装上有绿色食品标志。
@@ -15606,13 +15595,12 @@ Example — wl_14416, wl_15579
 CC-BY 2.0 (France) Attribution: tatoeba.org #282815 (CK) & #332763 (fucongcong)
 
 Example — wl_14417
-她受了凉，说起话来有点齉鼻。
-legacy-context:41e4318de929458f
-Retained source notes: wl_06150
+说起旅行，她马上笑了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14417
-人们常说不要乱相信谣言，但说起来容易做起来难。
-CC-BY 2.0 (France) Attribution: tatoeba.org #325462 (CM) & #9958200 (GlossaMatik)
+他又说起了小时候的故事。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14418
 真是个巧合！
@@ -15829,8 +15817,8 @@ legacy-context:12d0cd8d76663431
 Retained source notes: wl_07530
 
 Example — wl_14440
-不明白。
-CC-BY 2.0 (France) Attribution: tatoeba.org #376611 (CK) & #4878951 (musclegirlxyp)
+事故的原因仍然不明。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14441, wl_16417
 燃料短缺。
@@ -15843,13 +15831,13 @@ Original Chinese: 煤和天然氣是天然燃料。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_14442, wl_14775
-请深吸一口气。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1208128 (deparuma) & #8715883 (crescat)
+Example — wl_14442
+他说话的口气很温和。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14442
-汤姆大声叹了口气。
-CC-BY 2.0 (France) Attribution: tatoeba.org #3315028 (CK) & #8933579 (crescat)
+跑完以后，他喘了口气。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14443
 来迟了吗？
@@ -15952,7 +15940,7 @@ Example — wl_14454, wl_17106
 总有一些人不讲理。
 CC-BY 2.0 (France) Attribution: tatoeba.org #10372283 (DaoSeng) & #9990073 (GlossaMatik)
 
-Example — wl_14454, wl_14508
+Example — wl_14454
 他的设计总有古灵精怪的点子。
 legacy-context:12647ad13e237d4d
 Retained source notes: wl_09033
@@ -16471,8 +16459,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_14508
-你鬼点子真多。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2218496 (CK) & #4760178 (ryanwoo)
+我想到了一个好点子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_14508
+他的设计总有新鲜的点子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14509
 母亲在门口呼唤孩子。
@@ -16549,7 +16541,7 @@ Original Chinese: 你沒感覺好些了嗎？
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_14516, wl_14667
+Example — wl_14516
 她设法保住面子。
 CC-BY 2.0 (France) Attribution: tatoeba.org #311887 (CK) & #794084 (Martha)
 Original Chinese: 她設法保住面子。
@@ -16578,11 +16570,8 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_03241, wl_14518
-二十世纪中以后，北京胡同的数量显着地下降，因为人们把它们拆毁以便给新的楼房和街路让路。
-CC-BY 2.0 (France) Attribution: tatoeba.org #747925 (eastasiastudent) & #747928 (GlossaMatik)
-Original Chinese: 二十世纪中以后，北京胡同的数量显著地下降，因为人们把它们拆毁以便给新的楼房和街路让路。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+二十世纪中以后，北京胡同的数量显著地下降，因为人们把它们拆毁以便给新的楼房和街路让路。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14519
 这根铅笔长十五厘米。
@@ -17599,7 +17588,7 @@ Original Chinese: 她摸索著一張紙。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_14623
+Example — wl_11336, wl_14623
 这门课共三十个学时。
 legacy:wl_11336
 Retained source notes: wl_11336
@@ -17738,15 +17727,12 @@ Example — wl_14637
 CC-BY 2.0 (France) Attribution: tatoeba.org #6580879 (Hybrid) & #11199814 (Thsuom)
 
 Example — wl_14638
-这是无可否认的事实。
-CC-BY 2.0 (France) Attribution: tatoeba.org #47047 (CK) & #769691 (Martha)
-Original Chinese: 這是無可否認的事實。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+请问，这里可否停车？
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14638
-可否请你现在让我走？
-CC-BY 2.0 (France) Attribution: tatoeba.org #51454 (CK) & #7772152 (jiangche)
+我想知道您明天可否参加。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14639
 一只蛱蝶停在花瓣上。
@@ -18017,9 +18003,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_14667
-他们反对劳民伤财的面子工程。
-legacy-context:aa00c3a0d5901ff9
-Retained source notes: wl_08986
+她设法保住了面子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_14667
+当着大家的面批评他，会让他很没面子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14668
 她躲在角落里低声呜咽。
@@ -18220,8 +18209,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_14688
-他不理解我。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2217658 (Hybrid) & #3289612 (sadhen)
+她正在生气，一直不理我。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_14689
+这个面具很丑。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14689
 古书说这件事发生在丑时。
@@ -18391,8 +18384,8 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_14707
-国王明晚会亲自出现。
-CC-BY 2.0 (France) Attribution: tatoeba.org #25606 (CK) & #464871 (fucongcong)
+我们约好明晚在车站见面。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14708
 他喜欢夜深人静时写作。
@@ -19018,6 +19011,10 @@ Example — wl_14774
 CC-BY 2.0 (France) Attribution: tatoeba.org #263053 (CK) & #9690048 (iMaple)
 
 Example — wl_14775
+请深吸一口气。
+CC-BY 2.0 (France) Attribution: tatoeba.org #1208128 (deparuma) & #8715883 (crescat)
+
+Example — wl_14775
 老人咽下了最后一口气。
 CC-BY 2.0 (France) Attribution: tatoeba.org #326451 (CM) & #8936667 (crescat)
 
@@ -19208,18 +19205,12 @@ Example — wl_14794
 CC-BY 2.0 (France) Attribution: tatoeba.org #4755420 (cairnhead) & #4764666 (ryanwoo)
 
 Example — wl_14795
-汤姆在外面等。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2238858 (CK) & #6309836 (verdastelo9604)
-Original Chinese: 湯姆在外面等。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+他常年在外工作。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14795
-汤姆待在外面。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2646890 (CK) & #13118955 (LeviHighway)
-Original Chinese: 湯姆待在外面。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+孩子在外读书，父母很想念他。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14797
 他研究魏晋时期太尉的职权。
@@ -20599,8 +20590,8 @@ legacy-context:128f7203c6f8d3d2
 Retained source notes: wl_02998
 
 Example — wl_14948
-我不知道别人如何，但就我而论，我支持。
-CC-BY 2.0 (France) Attribution: tatoeba.org #274660 (CM) & #7781508 (jiangche)
+上车以前，她向朋友们道别。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14949
 请按规范填写这张表。
@@ -20814,8 +20805,8 @@ Example — wl_14974
 CC-BY 2.0 (France) Attribution: tatoeba.org #1894221 (Spamster) & #5092607 (mirrorvan)
 
 Example — wl_14974
-往后退点。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1553533 (CK) & #5102285 (mirrorvan)
+往后遇到问题，请先告诉我。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_14975
 诗中的琼楼仿佛建在云间。
@@ -20981,7 +20972,7 @@ Original Chinese: 汤姆想知道你什么时候完事。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_14992, wl_17877
+Example — wl_14992
 重力将一切带下地球表面。
 CC-BY 2.0 (France) Attribution: tatoeba.org #681099 (Source_VOA) & #3338908 (sadhen)
 
@@ -21784,12 +21775,12 @@ legacy-context:6bac58b7bee50a47
 Retained source notes: wl_00022, wl_00084, wl_01192, wl_01723
 
 Example — wl_15077
-从中选一个。
-CC-BY 2.0 (France) Attribution: tatoeba.org #55131 (CK) & #10157061 (yeyue)
+这些方案都不错，我们从中选一个。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15077
-他从中国回来了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #387585 (Mouseneb) & #343360 (fucongcong)
+这次失败并不可怕，重要的是从中吸取教训。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15078
 废墟展现了战后的疮痍。
@@ -22077,7 +22068,7 @@ Original Chinese: 你喜歡日本料理嗎?
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_15107, wl_18149
+Example — wl_15107
 总理的发言估计激怒了在野党。
 CC-BY 2.0 (France) Attribution: tatoeba.org #266139 (CK) & #830358 (Martha)
 Original Chinese: 總理的發言估計激怒了在野黨。
@@ -22519,16 +22510,12 @@ Example — wl_15152, wl_17566
 CC-BY 2.0 (France) Attribution: tatoeba.org #6254081 (CK) & #4844748 (sadhen)
 
 Example — wl_15153
-古文中的睢，可以表示抬眼看。
-legacy-context:17bc3ef9f36eff28
-Retained source notes: wl_05631
+眼看就要下雨了，快收衣服。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15153
-我亲眼看见了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1745805 (Spamster) & #3036125 (egg0073)
-Original Chinese: 我親眼看見了。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+我不能眼看他受骗却不提醒他。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15154
 汤姆不敢再到这里露面。
@@ -23880,8 +23867,8 @@ Example — wl_15298, wl_15736
 CC-BY 2.0 (France) Attribution: tatoeba.org #266155 (\N) & #4764642 (ryanwoo)
 
 Example — wl_15299
-你相信有鬼魂吗？
-CC-BY 2.0 (France) Attribution: tatoeba.org #607741 (Samer) & #5153266 (musclegirlxyp)
+这份账单有鬼，我们得再核对一下。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15299
 是你心里有鬼吧？
@@ -24235,11 +24222,8 @@ legacy:wl_08547
 Retained source notes: wl_08547
 
 Example — wl_15337
-汤姆买了新手套。
-CC-BY 2.0 (France) Attribution: tatoeba.org #5587428 (CK) & #6148998 (verdastelo9604)
-Original Chinese: 湯姆買了新手套。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+我是开车的新手，还需要多练习。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15337
 我还是个新手。
@@ -24747,16 +24731,12 @@ Example — wl_15387
 CC-BY 2.0 (France) Attribution: tatoeba.org #905850 (eastasiastudent) & #905849 (eastasiastudent)
 
 Example — wl_15388
-她研究人工智能。
-legacy-context:df41655f55b437ac
-Retained source notes: wl_08483
+这座湖是人工开挖的。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15388
-他愿意为别人工作。
-CC-BY 2.0 (France) Attribution: tatoeba.org #300095 (CK) & #883035 (Martha)
-Original Chinese: 他願意為別人工作。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+这项工作需要大量人工。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15389
 农人正在田里耕耘。
@@ -25243,7 +25223,8 @@ Example — wl_15441
 这名男子抢走了她的包包。
 CC-BY 2.0 (France) Attribution: tatoeba.org #388018 (CK) & #836432 (Martha)
 Original Chinese: 這名男子搶走了她的包包。
-Changes: script normalization
+Original English: The man robbed her bag.
+Changes: contextual translation correction in the 2026-11-03 semantic review
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_15442
@@ -25819,12 +25800,12 @@ Example — wl_15503
 Project-authored AI-assisted natural-compound teaching context, 2026-10-27
 
 Example — wl_15504
-它能有多重要？
-CC-BY 2.0 (France) Attribution: tatoeba.org #4016994 (CK) & #8635447 (slo_oth)
+这项决定受到多重因素的影响。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15504
-你的行李多重？
-CC-BY 2.0 (France) Attribution: tatoeba.org #17381 (Zifre) & #335842 (fucongcong)
+这个系统设有多重保护。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15505
 老鼠是胆小的生物。
@@ -26686,7 +26667,7 @@ Example — wl_15597
 由于天气变差，出发延迟了。
 CC-BY 2.0 (France) Attribution: tatoeba.org #278834 (SPENSER) & #335626 (fucongcong)
 
-Example — wl_15597, wl_15823
+Example — wl_15597
 我们对这次的延迟表示抱歉，并对可能造成的不便表示遗憾。
 CC-BY 2.0 (France) Attribution: tatoeba.org #2938645 (vicch) & #2938644 (vicch)
 
@@ -27739,12 +27720,12 @@ legacy-context:7609be50c79a1836
 Retained source notes: wl_04161
 
 Example — wl_15714
-我在读书。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1349059 (sacredceltic) & #5640765 (verdastelo9604)
+她是这所大学的在读研究生。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15714
-我还在读书。
-CC-BY 2.0 (France) Attribution: tatoeba.org #11873944 (CK) & #4267359 (notabene)
+在读期间，他一直住在学校宿舍。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15715
 快点，不然要赶不上火车了。
@@ -27869,11 +27850,8 @@ Example — wl_15727
 CC-BY 2.0 (France) Attribution: tatoeba.org #27766 (CK) & #333771 (fucongcong)
 
 Example — wl_15728
-万一发生火灾，按铃。
-CC-BY 2.0 (France) Attribution: tatoeba.org #23813 (CK) & #797095 (Martha)
-Original Chinese: 萬一發生火災，按鈴。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+露营时，大家一起生火做饭。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15728
 他在屋后斫木，准备生火。
@@ -28213,8 +28191,8 @@ Example — wl_15762
 CC-BY 2.0 (France) Attribution: tatoeba.org #44579 (CM) & #10260795 (GlossaMatik)
 
 Example — wl_15762
-我受够了这天气。
-CC-BY 2.0 (France) Attribution: tatoeba.org #60266 (CK) & #5949075 (verdastelo9604)
+我们把这天定为家庭聚会的日子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15763
 蜣螂把粪球推过小坡。
@@ -28482,16 +28460,12 @@ Example — wl_15790
 CC-BY 2.0 (France) Attribution: tatoeba.org #1053235 (Eldad) & #503068 (fucongcong)
 
 Example — wl_15791
-不值得去记。
-CC-BY 2.0 (France) Attribution: tatoeba.org #21674 (AlanF_US) & #781424 (Martha)
-Original Chinese: 不值得去記。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+这件旧外套不值五百元。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15791
-为这点小事大动肝火，不值得。
-legacy-context:dfa2bb0237c28cb0
-Retained source notes: wl_09130
+为一点小事争吵，实在不值。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15792
 他有收集邮票的癖好。
@@ -28656,7 +28630,7 @@ Example — wl_15810
 legacy-context:2a193f1b86b698c5
 Retained source notes: wl_09034
 
-Example — wl_15811, wl_18267
+Example — wl_15811
 凛冽的北风吹得人睁不开眼。
 legacy-context:6a2706b498186ff5
 Retained source notes: wl_03780, wl_12808
@@ -28768,11 +28742,12 @@ legacy:wl_07183
 Retained source notes: wl_07183
 
 Example — wl_15823
-这不便宜, 是吗?
-CC-BY 2.0 (France) Attribution: tatoeba.org #55814 (CK) & #793292 (Martha)
-Original Chinese: 這不便宜, 是嗎?
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+我现在不便接电话。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_15823
+施工给居民带来了一些不便。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15824, wl_16348
 这份图册分别介绍肝脏与卵子。
@@ -29006,18 +28981,12 @@ legacy-context:27f6772524fc3b31
 Retained source notes: wl_00182, wl_00362, wl_01238, wl_11703
 
 Example — wl_15848
-你还在合唱团里面吗？
-CC-BY 2.0 (France) Attribution: tatoeba.org #11900928 (CK) & #12193693 (corina)
-Original Chinese: 你還在合唱團裡面嗎？
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+学校明天举行合唱比赛。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15848
-我不喜欢在公共场合唱歌。
-CC-BY 2.0 (France) Attribution: tatoeba.org #10641714 (sundown) & #881562 (Martha)
-Original Chinese: 我不喜歡在公共場合唱歌。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+大家一起合唱这首歌。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15849
 这些花生已经剥好壳了。
@@ -29162,11 +29131,8 @@ Example — wl_15863
 CC-BY 2.0 (France) Attribution: tatoeba.org #54859 (CM) & #12569611 (lnvq)
 
 Example — wl_15864
-他们已经决定下个月结婚。
-CC-BY 2.0 (France) Attribution: tatoeba.org #503817 (CK) & #900692 (Martha)
-Original Chinese: 他們已經決定下個月結婚。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+我们已经定下了出发的日期。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_15864
 我们必须快点定下旅游日期。
@@ -30569,7 +30535,7 @@ Original Chinese: 時間匆匆經過。
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
-Example — wl_16016, wl_16083
+Example — wl_16016
 为了不错过火车，他匆匆赶往了车站。
 CC-BY 2.0 (France) Attribution: tatoeba.org #304808 (CK) & #8739469 (crescat)
 
@@ -30592,13 +30558,13 @@ CC-BY 2.0 (France) Attribution: tatoeba.org #776012 (Zifre) & #503039 (fucongcon
 Example — wl_16019
 汤姆很小气。
 CC-BY 2.0 (France) Attribution: tatoeba.org #2236774 (CK) & #4264932 (notabene)
+Original English: Tom is miserly.
+Changes: contextual translation correction in the 2026-11-03 semantic review
+Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_16019
-你为什幺对我这幺小气？
-CC-BY 2.0 (France) Attribution: tatoeba.org #3822538 (CK) & #5715195 (verdastelo9604)
-Original Chinese: 你为什么对我这么小气？
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+别为这点小事生气，显得太小气了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16020
 表格列出了几种食物的脂肪含量。
@@ -31174,6 +31140,10 @@ Example — wl_16083
 我觉得您过火了。
 CC-BY 2.0 (France) Attribution: tatoeba.org #434087 (blay_paul) & #785991 (fucongcong)
 
+Example — wl_16083
+这个玩笑开得太过火了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
 Example — wl_16084
 地图上标出了汜水的位置。
 legacy-context:f3770bdd11319ee1
@@ -31512,18 +31482,12 @@ legacy:wl_05185
 Retained source notes: wl_05185
 
 Example — wl_16120
-请把酒递给我。
-CC-BY 2.0 (France) Attribution: tatoeba.org #29069 (CK) & #845476 (Martha)
-Original Chinese: 請把酒遞給我。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+老友相聚，把酒言欢。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16120
-汤姆把酒店订单取消了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1026722 (CK) & #5576770 (verdastelo9604)
-Original Chinese: 湯姆把酒店訂單取消了。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+诗中的旅人把酒问月。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16121
 人事部通知我下周面试。
@@ -32738,15 +32702,12 @@ legacy-context:35abe97a188d9c3b
 Retained source notes: wl_03026
 
 Example — wl_16256
-我们正在去市里。
-CC-BY 2.0 (France) Attribution: tatoeba.org #5093610 (CarpeLanam) & #5095189 (mirrorvan)
+一市里等于五百米。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
-Example — wl_04400, wl_16256
-我们的乐队刚起步时，只有小城市里的小俱乐部雇我们。
-CC-BY 2.0 (France) Attribution: tatoeba.org #954630 (CK) & #5624958 (verdastelo9604)
-Original Chinese: 我們的樂隊剛起步時，只有小城市里的小俱樂部僱我們。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+Example — wl_16256
+从村口到桥边大约有两市里。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16257
 整个过程需要耗费数月。
@@ -34019,7 +33980,7 @@ Example — wl_16400
 legacy-context:4fc78d50129839fb
 Retained source notes: wl_03767
 
-Example — wl_16401, wl_18106
+Example — wl_16401
 笔记本电脑比台式电脑好。
 CC-BY 2.0 (France) Attribution: tatoeba.org #491241 (aandrusiak) & #2698002 (GlossaMatik)
 
@@ -34226,14 +34187,12 @@ Example — wl_16423
 Project-authored AI-assisted editorial example, 2026-10-27
 
 Example — wl_16424
-月光照在床帏上。
-legacy:wl_05657
-Retained source notes: wl_05657
+这间温室的光照很充足。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16424
-她拉开床帏，让阳光照进来。
-legacy:wl_05657
-Retained source notes: wl_05657
+这种植物需要充足的光照。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16425
 她想出了一个简单的办法。
@@ -34746,11 +34705,8 @@ legacy-context:05baae0cb4b0e68c
 Retained source notes: wl_09281
 
 Example — wl_16480
-我们的友情会长久留存。
-CC-BY 2.0 (France) Attribution: tatoeba.org #456565 (lukaszpp) & #6114391 (verdastelo9604)
-Original Chinese: 我們的友情會長久留存。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+时间不早了，我们不便久留。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16480
 汤姆不会在这里久留。
@@ -36617,16 +36573,12 @@ Example — wl_16678
 CC-BY 2.0 (France) Attribution: tatoeba.org #238844 (shekitten) & #1408051 (wangzi0921)
 
 Example — wl_16679
-这个结论还有待商榷。
-legacy-context:c2be14b32f0f505f
-Retained source notes: wl_03200, wl_11131
+这个结论仍然有待进一步验证。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16679
-我们昨天没有待在家里。
-CC-BY 2.0 (France) Attribution: tatoeba.org #308572 (CK) & #842333 (Martha)
-Original Chinese: 我們昨天沒有待在家裡。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+申请有待审批，请耐心等待。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16680
 皇帝召见了丞相。
@@ -38117,8 +38069,8 @@ Example — wl_16852
 CC-BY 2.0 (France) Attribution: tatoeba.org #287797 (CK) & #332815 (fucongcong)
 
 Example — wl_16852
-他从没打过高尔夫球。
-CC-BY 2.0 (France) Attribution: tatoeba.org #293782 (CK) & #406355 (fucongcong)
+这件商品的价格过高，我不打算买。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16853
 小路两旁长满了荆棘。
@@ -38885,13 +38837,12 @@ Example — wl_16939
 CC-BY 2.0 (France) Attribution: tatoeba.org #4144781 (Hybrid) & #4147301 (sissima)
 
 Example — wl_16940
-军务倥偬，他很少有空回家。
-legacy-context:88617e2d794f6027
-Retained source notes: wl_05486
+他表现出少有的耐心。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
-Example — wl_16940, wl_17448
-那房子因为其少有的形状被突显出来。
-CC-BY 2.0 (France) Attribution: tatoeba.org #49339 (CM) & #787385 (fucongcong)
+Example — wl_16940
+这种形状在本地十分少有。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16941
 租车时需要出示驾照。
@@ -39036,15 +38987,12 @@ legacy-context:a4e306c854337f1a
 Retained source notes: wl_07187, wl_10733
 
 Example — wl_16958
-自恋是为了更自信。
-CC-BY 2.0 (France) Attribution: tatoeba.org #7834141 (sharris123) & #2482700 (fenfang557)
+他总是欣赏自己的外表，显得有些自恋。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16958
-我天生是犹太人，但当我年纪大了的时候，我把它转换成了自恋。
-CC-BY 2.0 (France) Attribution: tatoeba.org #433711 (jerom) & #873447 (Martha)
-Original Chinese: 我天生是猶太人，但當我年紀大了的時候，我把它轉換成了自戀。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+这本小说描写了一个自恋的人。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_16959
 搬家后，客厅凌乱不堪。
@@ -39750,16 +39698,12 @@ legacy-context:1b0e980e49dbe7e8
 Retained source notes: wl_02459
 
 Example — wl_17041
-战争把这座城堡夷为平地。
-legacy-context:172bada7a42a6d97
-Retained source notes: wl_01840
+工人们正在平地，准备修路。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17041
-你被不公平地对待。
-CC-BY 2.0 (France) Attribution: tatoeba.org #8173224 (CK) & #4737566 (egg0073)
-Original Chinese: 你被不公平地對待。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+在平地上走路比较轻松。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17042
 雾霭散去，山峰显现。
@@ -40920,11 +40864,8 @@ Example — wl_17166
 CC-BY 2.0 (France) Attribution: tatoeba.org #294797 (bluepie88) & #332453 (fucongcong)
 
 Example — wl_17166
-她在校外见到没家的人住纸板箱。
-CC-BY 2.0 (France) Attribution: tatoeba.org #21486 (CK) & #5576844 (verdastelo9604)
-Original Chinese: 她在校外見到沒家的人住紙板箱。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+在校期间，她经常参加志愿活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17167
 这本书介绍了日本的明治时代。
@@ -41426,12 +41367,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_17220
-汤姆爱玛丽很久了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1028730 (CK) & #5640770 (verdastelo9604)
+爱玛把书还给了图书馆。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17220
-汤姆不是真的爱玛丽。
-CC-BY 2.0 (France) Attribution: tatoeba.org #4665456 (CK) & #5091434 (mirrorvan)
+我们约好周末和爱玛见面。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17221, wl_17602
 我没有接种过冠状病毒疫苗。
@@ -41950,7 +41891,7 @@ Example — wl_17274
 他站在那里,一脸茫然。
 CC-BY 2.0 (France) Attribution: tatoeba.org #292718 (CK) & #602901 (xiuqin)
 
-Example — wl_17276, wl_17687, wl_18267
+Example — wl_17276, wl_17687
 这次参观让我大开眼界。
 legacy-context:8306f7b682f2982d
 Retained source notes: wl_06778
@@ -42535,14 +42476,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_17334
-纨绔常指不务正业的富家子弟。
-legacy-context:8787b12bb92f42e5
-Retained source notes: wl_04375
+旧小说常写富家子弟的生活。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17334
-他不愿做纨绔子弟，决定靠自己谋生。
-legacy-context:90f1529b4e6041d9
-Retained source notes: wl_07197
+她希望家中子弟都能认真读书。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17335
 技术员找出了机器的问题。
@@ -43652,6 +43591,10 @@ Example — wl_17447
 CC-BY 2.0 (France) Attribution: tatoeba.org #1230528 (alec) & #1216117 (Takuya)
 
 Example — wl_17448
+那房子因为其少有的形状被突显出来。
+CC-BY 2.0 (France) Attribution: tatoeba.org #49339 (CM) & #787385 (fucongcong)
+
+Example — wl_17448
 现代版旗袍因能突显女人的身材而闻名。
 CC-BY 2.0 (France) Attribution: tatoeba.org #728054 (eastasiastudent) & #728056 (GlossaMatik)
 
@@ -43980,8 +43923,12 @@ Example — wl_17485
 CC-BY 2.0 (France) Attribution: tatoeba.org #13277839 (Enzo) & #13277833 (Enzo)
 
 Example — wl_17486
-打铁成铁匠。
-CC-BY 2.0 (France) Attribution: tatoeba.org #391959 (Scott) & #425547 (sysko)
+这位铁匠把铁块打成了一把刀。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17486
+村里有一位制作农具的铁匠。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17487
 老人性情澹泊，不求名利。
@@ -44250,8 +44197,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_17514
-打开左边的橱，瓶子在那儿。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2219 (Zifre) & #389813 (fucongcong)
+我的书包在那儿。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17514
+请在那儿等我。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17515
 这笔交易用人民币结算。
@@ -45597,11 +45548,12 @@ Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_17659
-雪松生长在哪里？
-CC-BY 2.0 (France) Attribution: tatoeba.org #5296776 (mailohilohi) & #13573854 (LeviHighway)
-Original Chinese: 雪松生長在哪裡？
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+公园里种着几棵雪松。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17659
+这棵雪松的树干很直。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17660
 夜里雨势滂沱。
@@ -46521,13 +46473,12 @@ Example — wl_17760
 CC-BY 2.0 (France) Attribution: tatoeba.org #839230 (Zifre) & #839521 (U2FS)
 
 Example — wl_17761
-主管守时，员工也上行下效。
-legacy-context:a21992332b426650
-Retained source notes: wl_08789, wl_13090
+这趟列车沿上行线路运行。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17761
-你可以想象在月球上行走吗？
-CC-BY 2.0 (France) Attribution: tatoeba.org #4753803 (garborg) & #332556 (fucongcong)
+船只正沿着河道上行。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17762
 翻看旧照片时，她有些伤感。
@@ -46864,9 +46815,12 @@ Example — wl_17799
 CC-BY 2.0 (France) Attribution: tatoeba.org #5006709 (Lindoula) & #8686699 (crescat)
 
 Example — wl_17800
-山峁上长着稀疏的草。
-legacy:wl_06505
-Retained source notes: wl_06505
+山坡上的树木很稀疏。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17800
+越往北走，草木越稀疏。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17801
 四月是种树的时候。
@@ -47075,9 +47029,8 @@ legacy-context:4cfaf99d155e7196
 Retained source notes: wl_04766, wl_10832
 
 Example — wl_17824
-这张家谱写清了大家的辈分。
-legacy-context:811e9f551a532568
-Retained source notes: wl_10027
+这张家谱标明了各位亲属的辈分。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17825
 这款小音箱轻巧便携。
@@ -47215,15 +47168,12 @@ legacy-context:4da1ad31edc3853d
 Retained source notes: wl_08810
 
 Example — wl_17841
-桥在建造中。
-CC-BY 2.0 (France) Attribution: tatoeba.org #48662 (CK) & #512439 (fucongcong)
+这座桥仍然在建。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17841
-我在建筑物后面停车。
-CC-BY 2.0 (France) Attribution: tatoeba.org #7913560 (CK) & #13249544 (LeviHighway)
-Original Chinese: 我在建築物後面停車。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+公园旁边有一栋在建的大楼。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17843
 孩子抱着一个硕大无比的南瓜，高兴极了。
@@ -47461,23 +47411,20 @@ Example — wl_17870
 CC-BY 2.0 (France) Attribution: tatoeba.org #5992352 (Hybrid) & #8750728 (cxpadonis)
 
 Example — wl_17873
-她上夜校。
-CC-BY 2.0 (France) Attribution: tatoeba.org #410542 (CK) & #842445 (Martha)
+今晚轮到我上夜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17873
-汤姆上夜班。
-CC-BY 2.0 (France) Attribution: tatoeba.org #5853796 (CK) & #6119487 (verdastelo9604)
-Original Chinese: 湯姆上夜班。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+守卫轮流上夜，看守院门。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17874
-晚上好。
-CC-BY 2.0 (France) Attribution: tatoeba.org #333156 (Aurix) & #333158 (fucongcong)
+这家店出售上好的茶叶。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17874
-晚上好！
-CC-BY 2.0 (France) Attribution: tatoeba.org #333156 (Aurix) & #6559016 (xjjAstrus)
+工匠选用上好的木料做家具。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17876
 游客在上都遗址参观。
@@ -47488,9 +47435,12 @@ Example — wl_17876
 Project-authored AI-assisted sense-disambiguating editorial example, 2026-10-27
 
 Example — wl_17877
-那头蹇驴走得慢，他便下地步行。
-legacy-context:5c81e7d767f9f54f
-Retained source notes: wl_06039
+农民清早就下地干活。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17877
+病人已经能下地走动了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17878
 这次不一样。
@@ -47610,15 +47560,12 @@ legacy-context:86439091e4148616
 Retained source notes: wl_01976, wl_03551
 
 Example — wl_17892
-您不特别。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2218294 (CK) & #5254674 (xjjAstrus)
-Original Chinese: 您不特別。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+他不特会写诗，还会作画。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17892
-我现在不特别渴。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2538918 (CK) & #5903468 (verdastelo9604)
+这本书不特有趣，而且很实用。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17893
 她不甘人后，努力练习。
@@ -47634,8 +47581,12 @@ Example — wl_17894
 CC-BY 2.0 (France) Attribution: tatoeba.org #664043 (bluepie88) & #8727952 (crescat)
 
 Example — wl_17895
-他们都不穷。
-CC-BY 2.0 (France) Attribution: tatoeba.org #304957 (CK) & #5967294 (verdastelo9604)
+新的点子层出不穷。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17895
+这座山里的奇景变化不穷。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17896
 时间不等人。
@@ -47749,12 +47700,12 @@ legacy-context:78a865ec60a76495
 Retained source notes: wl_07512
 
 Example — wl_17908
-给我个例子。
-CC-BY 2.0 (France) Attribution: tatoeba.org #395402 (CK) & #490074 (fucongcong)
+这只是一个个例，不能说明全部情况。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17908
-再给我举个例子。
-CC-BY 2.0 (France) Attribution: tatoeba.org #320313 (CK) & #794248 (fucongcong)
+研究者记录了三个特殊个例。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17909
 学校讨论了碳中和目标。
@@ -47788,11 +47739,12 @@ Example — wl_17911
 CC-BY 2.0 (France) Attribution: tatoeba.org #426810 (CM) & #426812 (GlossaMatik)
 
 Example — wl_17912
-乐观者在灾祸中看到机会，悲观者在机会中看到灾祸。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2846015 (englishchinese) & #838438 (Martha)
-Original Chinese: 樂觀者在災禍中看到機會，悲觀者在機會中看到災禍。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+这个花瓶很中看。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_17912
+买家具不能只图中看，还要结实。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17913
 中秋节，我们一起吃月饼。
@@ -47982,12 +47934,12 @@ legacy-context:6b0520849a2b8c42
 Retained source notes: wl_10177
 
 Example — wl_17936
-他们报告目击了事故。
-CC-BY 2.0 (France) Attribution: tatoeba.org #305622 (CK) & #5574372 (verdastelo9604)
+这件事不能草草了事。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17936
-警察到达了事故现场。
-CC-BY 2.0 (France) Attribution: tatoeba.org #238179 (CK) & #11254308 (asuliu)
+他只想敷衍了事，没有认真检查。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_17937
 表格做得清楚，费用一目了然。
@@ -49175,12 +49127,12 @@ Example — wl_18088
 Project-authored AI-assisted sense-disambiguating editorial example, 2026-10-27
 
 Example — wl_18089
-让我去死。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1020543 (CK) & #4845112 (pig8322)
+说“去死”是很伤人的话。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18089
-你不如去死好了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1553747 (nickyeow) & #8591231 (easononizuka)
+生气时也不该对别人说“去死”。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18090
 旧时有人把这类茶称作去火茶。
@@ -49268,12 +49220,12 @@ legacy-context:9be3844753b233ae
 Retained source notes: wl_07497
 
 Example — wl_18101
-您那样做的话，可就帮到我了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #4740204 (CK) & #5096803 (mirrorvan)
+再不出发，可就来不及了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18101
-我都快要说出他的名字了，可就是记不起来。
-CC-BY 2.0 (France) Attribution: tatoeba.org #287625 (CK) & #1785955 (sadhen)
+这样一来，事情可就麻烦了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18102
 她笑容可掬，向客人鞠躬。
@@ -49314,9 +49266,12 @@ legacy-context:cc4f52bb7290567a
 Retained source notes: wl_08865
 
 Example — wl_18106
-家里的台式机用了五年。
-legacy-context:54e9787a4714312e
-Retained source notes: wl_09325
+我在办公室用台式电脑。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_18106
+这台台式打印机很方便。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18107
 请把邮票贴在信封右上角。
@@ -49384,14 +49339,12 @@ legacy-context:61a995b711de4718
 Retained source notes: wl_09051
 
 Example — wl_18117
-她找到了几位志同道合的伙伴。
-legacy-context:acf508c7dff70acc
-Retained source notes: wl_07070
+他们志趣相投，彼此视为同道。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18117
-志同道合的朋友一起成立了读书会。
-legacy-context:c1909399fbd9daf8
-Retained source notes: wl_07070, wl_11235, wl_12777
+她在读书会上结识了几位同道。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18118
 这位名医退休后仍然坚持研究。
@@ -49466,6 +49419,10 @@ Example — wl_18127
 兄弟阋墙争吵，母亲劝他们和好。
 legacy-context:5191e65516ce5da3
 Retained source notes: wl_06301
+
+Example — wl_18127
+两人谈过以后，终于和好了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18128
 别咧咧了，听我把话说完。
@@ -49606,11 +49563,12 @@ legacy-context:733adc2ed30f8c46
 Retained source notes: wl_08984, wl_11118
 
 Example — wl_18147
-别在教室里说话。
-CC-BY 2.0 (France) Attribution: tatoeba.org #495877 (CK) & #833220 (Martha)
-Original Chinese: 別在教室裡說話。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+他是在教的，平时很重视宗教礼仪。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_18147
+老人说自己从小就在教。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18148
 我想要酱料放在旁边。
@@ -49625,11 +49583,12 @@ legacy-context:ceee69a04cf5ef78
 Retained source notes: wl_06365
 
 Example — wl_18149
-我们在野餐玩得很开心。
-CC-BY 2.0 (France) Attribution: tatoeba.org #262836 (CK) & #868401 (Martha)
-Original Chinese: 我們在野餐玩得很開心。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+选举之后，这个政党成为在野的反对党。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_18149
+这名政治家已在野多年。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18150
 地震时，地动山摇，大家跑向空地。
@@ -49745,18 +49704,12 @@ legacy-context:8548536002f4d85f
 Retained source notes: wl_07002, wl_12098
 
 Example — wl_18164
-你不应该吃太多糖果。
-CC-BY 2.0 (France) Attribution: tatoeba.org #67735 (CK) & #872392 (Martha)
-Original Chinese: 你不應該吃太多糖果。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+淀粉是一种多糖。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18164
-我不论甚麼时候都不该让汤姆吃那麼多糖。
-CC-BY 2.0 (France) Attribution: tatoeba.org #2388192 (CK) & #6105203 (verdastelo9604)
-Original Chinese: 我不論甚麼時候都不該讓湯姆吃那麼多糖。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+这种多糖由许多单糖组成。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18166
 她买了一瓶多芬沐浴露。
@@ -50196,14 +50149,12 @@ legacy-context:0a4fc39f8dbf663d
 Retained source notes: wl_07280
 
 Example — wl_18222
-这次成功有大家的功劳。
-legacy-context:2fe4a9842e3bd209
-Retained source notes: wl_00015
+周师傅家的提着篮子走进来。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18222
-真相弄清后，大家的疑虑烟消云散。
-legacy:wl_06819
-Retained source notes: wl_06819
+旧小说里，王二家的指王二的妻子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18223
 家道中落后，他开始打工。
@@ -50420,13 +50371,12 @@ legacy-context:f3e643e667fdfc50
 Retained source notes: wl_07240
 
 Example — wl_18249
-把他给我带过来。
-CC-BY 2.0 (France) Attribution: tatoeba.org #932524 (FeuDRenais) & #9970076 (GlossaMatik)
+这个问题很重要，不能一笔带过。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18249
-他把严重的错误轻描淡写地带过了。
-legacy-context:db486ea9376a0915
-Retained source notes: wl_07033
+他在报告中把困难轻轻带过了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18250
 大家在草地上席地而坐。
@@ -50559,6 +50509,14 @@ Project-authored AI-assisted sense-disambiguating editorial example, 2026-10-27
 Example — wl_18266
 开河以后，渔民重新下水捕鱼。
 Project-authored AI-assisted sense-disambiguating editorial example, 2026-10-27
+
+Example — wl_18267
+小猫刚出生，还没有开眼。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_18267
+这次展览真让人开眼。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18268
 老师说明硭硝与芒硝是异体写法。
@@ -50919,8 +50877,8 @@ legacy-context:ea3f6bd967aa32ea
 Retained source notes: wl_03774
 
 Example — wl_18308
-那是在我到家以后，我才不见了我的钱包。
-CC-BY 2.0 (France) Attribution: tatoeba.org #24206 (CK) & #336495 (fucongcong)
+我才不怕这点困难呢。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18308
 哼，我才不信你呢！
@@ -51072,12 +51030,12 @@ Example — wl_05602, wl_18326
 CC-BY 2.0 (France) Attribution: tatoeba.org #60340 (CK) & #392764 (GlossaMatik)
 
 Example — wl_18327
-我得换工服了。
-CC-BY 2.0 (France) Attribution: tatoeba.org #1887374 (CK) & #8888275 (crescat)
+农忙时，邻居们常常换工。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18327
-好久不见。听说你又换工作了？
-CC-BY 2.0 (France) Attribution: tatoeba.org #424259 (CM) & #8742129 (crescat)
+我们商量好了换工的时间。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18328
 汤姆捣碎了大蒜。
@@ -51846,18 +51804,12 @@ legacy-context:83ef6d55e0479a8c
 Retained source notes: wl_10143
 
 Example — wl_18429
-他无法理解这句话。
-CC-BY 2.0 (France) Attribution: tatoeba.org #284687 (CK) & #801993 (Martha)
-Original Chinese: 他無法理解這句話。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+讨论这个案件，既要考虑情理，也要考虑法理。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18429
-我无法理解他的想法。
-CC-BY 2.0 (France) Attribution: tatoeba.org #403609 (CK) & #833159 (Martha)
-Original Chinese: 我無法理解他的想法。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+法官在判决中解释了相关法理。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18430
 资金中断后，计划化为泡影。
@@ -52080,8 +52032,8 @@ legacy-context:22f62c624826c77e
 Retained source notes: wl_06187
 
 Example — wl_18457
-警察告诉我巴士的末班车在十点出发。
-CC-BY 2.0 (France) Attribution: tatoeba.org #238390 (CK) & #8936285 (crescat)
+老师点出了这篇文章的重点。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_18458
 请点开短信里的链接。
@@ -52506,10 +52458,16 @@ Project-authored AI-assisted editorial example, 2026-11-03
 Example — wl_18513
 灰鼠沿着树干爬上去。
 Project-authored AI-assisted editorial example, 2026-11-03
+Original English: A gray squirrel climbed up the tree trunk.
+Changes: contextual translation correction in the 2026-11-03 semantic review
+Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_18513
 一只灰鼠正在找坚果。
 Project-authored AI-assisted editorial example, 2026-11-03
+Original English: A gray squirrel is looking for nuts.
+Changes: contextual translation correction in the 2026-11-03 semantic review
+Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_18514
 比赛进入第二回合。
@@ -61824,12 +61782,12 @@ Example — wl_19677
 Project-authored AI-assisted editorial example, 2026-11-03
 
 Example — wl_19678
-她在医院小儿科工作。
-Project-authored AI-assisted editorial example, 2026-11-03
+这点小事对他来说只是小儿科。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_19678
-挂号处指引他们去小儿科。
-Project-authored AI-assisted editorial example, 2026-11-03
+这种题对她来说太小儿科了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_19679
 小妹今年刚上一年级。
@@ -63901,6 +63859,9 @@ Modification: simplified-character conversion outside protected target character
 Example — wl_03263
 听说大数据技术现在很热门。
 CC-BY 2.0 (France) Attribution: tatoeba.org #4844625 (pig8322) & #4813375 (sadhen)
+Original English: I hear that the network is very popular now.
+Changes: contextual translation correction in the 2026-11-03 semantic review
+Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_03264
 我爱语言学！
@@ -64493,6 +64454,13 @@ Modification: simplified-character conversion outside protected target character
 Example — wl_04390
 抱歉，打错了。
 CC-BY 2.0 (France) Attribution: tatoeba.org #1290129 (Eldad) & #13943170 (jan_OkulaJu)
+
+Example — wl_04400
+我们的乐队刚起步时，只有小城市里的小俱乐部雇我们。
+CC-BY 2.0 (France) Attribution: tatoeba.org #954630 (CK) & #5624958 (verdastelo9604)
+Original Chinese: 我們的樂隊剛起步時，只有小城市里的小俱樂部僱我們。
+Changes: script normalization
+Modification: simplified-character conversion outside protected target characters.
 
 Example — wl_04400
 我们会遭遇挫折和不成功的起步。我作为总统所做的每项决定或政策，会有许多人持有异议，我们也知道，政府不能解决所有问题。
@@ -69148,18 +69116,12 @@ Example — wl_06613
 CC-BY 2.0 (France) Attribution: tatoeba.org #291728 (CK) & #335118 (fucongcong)
 
 Example — wl_06614
-他到了四时以后才有空。
-CC-BY 2.0 (France) Attribution: tatoeba.org #72581 (\N) & #352620 (nickyeow)
-Original Chinese: 他到了四時以後才有空。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+这里四时风景各不相同。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_06614
-他们在四时抵达了酒店。
-CC-BY 2.0 (France) Attribution: tatoeba.org #72582 (\N) & #762546 (nickyeow)
-Original Chinese: 他們在四時抵達了酒店。
-Changes: script normalization
-Modification: simplified-character conversion outside protected target characters.
+古诗常写四时的变化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
 
 Example — wl_06615
 他是个画家，但他不会画国画。
@@ -69423,3 +69385,1556 @@ CC-BY 2.0 (France) Attribution: tatoeba.org #10124388 (tsp_2) & #13786740 (LeviH
 Original Chinese: 有誰知道怎麼吃酪梨才能更好地凸顯它的味道？
 Changes: script normalization
 Modification: simplified-character conversion outside protected target characters.
+
+Example — wl_00031
+叔叔总是忙碌，很少有空休息。
+legacy:wl_00031
+Retained source notes: wl_00031
+
+Example — wl_00031
+他总是搪塞问题，让人不满。
+legacy:wl_00031
+Retained source notes: wl_00031
+
+Example — wl_00038
+叔叔总是忙碌，很少有空休息。
+legacy:wl_00038
+Retained source notes: wl_00038
+
+Example — wl_00038
+别在大家忙碌时捣乱。
+legacy:wl_00038
+Retained source notes: wl_00038
+
+Example — wl_00047
+这位淑女说话温柔，举止大方。
+legacy:wl_00047
+Retained source notes: wl_00047
+
+Example — wl_00047
+小说中的淑女举止优雅。
+legacy:wl_00047
+Retained source notes: wl_00047
+
+Example — wl_00049
+叔叔总是忙碌，很少有空休息。
+legacy:wl_00049
+Retained source notes: wl_00049
+
+Example — wl_00049
+叔叔星期天带我们去游泳。
+legacy:wl_00049
+Retained source notes: wl_00049
+
+Example — wl_00199
+瓶子的种类很多，有些可以反复使用。
+legacy:wl_00199
+Retained source notes: wl_00199
+
+Example — wl_00199
+这家商店出售不同种类的茶叶。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_00212
+坐得太久，我的屁股有点酸痛。
+legacy:wl_00212
+Retained source notes: wl_00212
+
+Example — wl_00212
+光腚是光着屁股的口语说法。
+legacy:wl_00212
+Retained source notes: wl_00212
+
+Example — wl_00216
+老师在化学课上介绍氨水。
+legacy:wl_00216
+Retained source notes: wl_00216
+
+Example — wl_00216
+这位老师姓狄。
+legacy:wl_00216
+Retained source notes: wl_00216
+
+Example — wl_00261
+医生解释了疟疾的症状。
+legacy:wl_00261
+Retained source notes: wl_00261
+
+Example — wl_00261
+这位医生姓詹。
+legacy:wl_00261
+Retained source notes: wl_00261
+
+Example — wl_00294
+指挥员胸前的徽章闪着光。
+legacy:wl_00294
+Retained source notes: wl_00294
+
+Example — wl_00294
+队长指挥大家有序离开。
+legacy:wl_00294
+Retained source notes: wl_00294
+
+Example — wl_00297
+指挥员胸前的徽章闪着光。
+legacy:wl_00297
+Retained source notes: wl_00297
+
+Example — wl_00297
+她把徽章别在外套上。
+legacy:wl_00297
+Retained source notes: wl_00297
+
+Example — wl_00627
+善良的邻居经常帮助老人。
+legacy:wl_00627
+Retained source notes: wl_00627
+
+Example — wl_00627
+我们的新邻居姓邓。
+legacy:wl_00627
+Retained source notes: wl_00627
+
+Example — wl_00693
+他胃口很好，一下吃了两碗面条。
+legacy:wl_00693
+Retained source notes: wl_00693
+
+Example — wl_00693
+这家店的服务很好。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_01083
+他胃口很好，一下吃了两碗面条。
+legacy:wl_01083
+Retained source notes: wl_01083
+
+Example — wl_01083
+让我思考一下
+legacy:wl_01083
+Retained source notes: wl_01083
+
+Example — wl_02149
+洄游的鱼群闪动着银色鱼鳞。
+legacy:wl_02149
+Retained source notes: wl_02149
+
+Example — wl_02149
+阳光照在鱼鳞上，闪出银色的光。
+legacy:wl_02149
+Retained source notes: wl_02149
+
+Example — wl_02407
+清澈浅水中，莲花映出倒影。
+legacy:wl_02407
+Retained source notes: wl_02407
+
+Example — wl_02407
+孩子们只在浅水里玩。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_02877
+今天是阴天，太阳没有露面。
+legacy:wl_02877
+Retained source notes: wl_02877
+
+Example — wl_02877
+阴天里，山顶藏在云中。
+legacy:wl_02877
+Retained source notes: wl_02877
+
+Example — wl_02896
+请把砝码放回盒子里。
+legacy:wl_02896
+Original English: Please put the weights back in the box.
+Changes: contextual translation correction in the 2026-11-03 semantic review
+Modification: simplified-character conversion outside protected target characters.
+Retained source notes: wl_02896
+
+Example — wl_02896
+她把砝码放在天秤的一端。
+legacy:wl_02896
+Retained source notes: wl_02896
+
+Example — wl_03217
+他在墙边的旮旯，找到丢失的钥匙。
+legacy:wl_03217
+Retained source notes: wl_03217
+
+Example — wl_03217
+扫帚藏在门后的旮旯里。
+legacy:wl_03217
+Retained source notes: wl_03217
+
+Example — wl_03377
+蚕蛹藏在茧中，等待化为蛾。
+legacy:wl_03377
+Retained source notes: wl_03377
+
+Example — wl_03377
+老师让我们观察蚕蛹的颜色。
+legacy:wl_03377
+Retained source notes: wl_03377
+
+Example — wl_03407
+秋天的果园枝头果实累累。
+legacy:wl_03407
+Retained source notes: wl_03407
+
+Example — wl_03407
+研究团队多年合作，如今已经果实累累。
+legacy:wl_03407
+Retained source notes: wl_03407
+
+Example — wl_03471
+曙光照亮了巍峨的山峰。
+legacy:wl_03471
+Retained source notes: wl_03471
+
+Example — wl_03471
+巍峨的雪山在晨光中显得格外壮丽。
+legacy:wl_03471
+Retained source notes: wl_03471
+
+Example — wl_03478
+岂能因一次失败就妄自菲薄。
+legacy:wl_03478
+Retained source notes: wl_03478
+
+Example — wl_03478
+不要因为暂时落后就妄自菲薄。
+legacy:wl_03478
+Retained source notes: wl_03478
+
+Example — wl_03479
+岂能因一次失败就妄自菲薄。
+legacy:wl_03479
+Retained source notes: wl_03479
+
+Example — wl_03479
+岂能把责任都推给别人？
+legacy:wl_03479
+Retained source notes: wl_03479
+
+Example — wl_03487
+尉迟与吕氏都是姓氏称呼。
+legacy:wl_03487
+Retained source notes: wl_03487
+
+Example — wl_03487
+名单中有一位姓尉迟的同学。
+legacy:wl_03487
+Retained source notes: wl_03487
+
+Example — wl_03907
+磨刀时有摩擦声，旁边石磨也在转。
+legacy:wl_03907
+Retained source notes: wl_03907
+
+Example — wl_03907
+厨师先磨刀，再切菜。
+legacy:wl_03907
+Retained source notes: wl_03907
+
+Example — wl_03908
+磨刀时有摩擦声，旁边石磨也在转。
+legacy:wl_03908
+Retained source notes: wl_03908
+
+Example — wl_03908
+村里还保存着一座石磨。
+legacy:wl_03908
+Retained source notes: wl_03908
+
+Example — wl_04025
+收据写着壹佰元，用来购买月饼。
+legacy:wl_04025
+Retained source notes: wl_04025
+
+Example — wl_04025
+票据上写着叁佰元。
+legacy:wl_04025
+Retained source notes: wl_04025
+
+Example — wl_04041
+收据写着壹佰元，用来购买月饼。
+legacy:wl_04041
+Retained source notes: wl_04041
+
+Example — wl_04041
+中秋节，我们一起吃月饼。
+legacy:wl_04041
+Retained source notes: wl_04041
+
+Example — wl_04046
+他暗中伺视，发现血腥争斗的踪迹。
+legacy:wl_04046
+Retained source notes: wl_04046
+
+Example — wl_04046
+守卫藏在暗处伺视敌情。
+legacy:wl_04046
+Retained source notes: wl_04046
+
+Example — wl_04112
+古代的诸侯各有封地。
+legacy:wl_04112
+Retained source notes: wl_04112
+
+Example — wl_04112
+各地诸侯派使者参加会盟。
+legacy:wl_04112
+Retained source notes: wl_04112
+
+Example — wl_04220
+瓷瓶上的釉彩十分鲜亮。
+legacy:wl_04220
+Retained source notes: wl_04220
+
+Example — wl_04332
+小村庄藏在安静的山坳里。
+legacy:wl_04332
+Retained source notes: wl_04332
+
+Example — wl_04332
+山坳里升起了炊烟。
+legacy:wl_04332
+Retained source notes: wl_04332
+
+Example — wl_04449
+光腚是光着屁股的口语说法。
+legacy:wl_04449
+Retained source notes: wl_04449
+
+Example — wl_04449
+小孩光腚坐在盆边。
+legacy:wl_04449
+Retained source notes: wl_04449
+
+Example — wl_04986
+他坐在教室的一隅。
+legacy:wl_04986
+Retained source notes: wl_04986
+
+Example — wl_04986
+小屋藏在花园的一隅。
+legacy:wl_04986
+Retained source notes: wl_04986
+
+Example — wl_05035
+他把秘密藏在心中，不以语人。
+legacy:wl_05035
+Retained source notes: wl_05035
+
+Example — wl_05035
+此事暂且不以语人。
+legacy:wl_05035
+Retained source notes: wl_05035
+
+Example — wl_05296
+这项研究发轫于一次讨论。
+legacy:wl_05296
+Retained source notes: wl_05296
+
+Example — wl_05296
+这门学科发轫于早期实验。
+legacy:wl_05296
+Retained source notes: wl_05296
+
+Example — wl_05428
+蝼蛄藏在土里，夜里才出来活动。
+legacy:wl_05428
+Retained source notes: wl_05428
+
+Example — wl_05428
+图鉴里有蝼蛄的放大图。
+legacy:wl_05428
+Retained source notes: wl_05428
+
+Example — wl_05465
+蛤蚧藏在岩缝里，不容易看见。
+legacy:wl_05465
+Retained source notes: wl_05465
+
+Example — wl_05465
+图鉴里的蛤蚧颜色鲜明。
+legacy:wl_05465
+Retained source notes: wl_05465
+
+Example — wl_06742
+她开门见山地说明了来意。
+legacy:wl_06742
+Retained source notes: wl_06742
+
+Example — wl_06742
+会议一开始，经理就开门见山地提出问题。
+legacy:wl_06742
+Retained source notes: wl_06742
+
+Example — wl_06773
+她直截了当地拒绝了这个提议。
+legacy:wl_06773
+Retained source notes: wl_06773
+
+Example — wl_06773
+有什么问题就直截了当地说出来。
+legacy:wl_06773
+Retained source notes: wl_06773
+
+Example — wl_06783
+她的成绩出类拔萃，获得了奖学金。
+legacy:wl_06783
+Retained source notes: wl_06783
+
+Example — wl_06783
+他是团队中出类拔萃的设计师。
+legacy:wl_06783
+Retained source notes: wl_06783
+
+Example — wl_06804
+留下难有发展，辞职又怕失业，她进退两难。
+legacy:wl_06804
+Retained source notes: wl_06804
+
+Example — wl_06804
+桥已封闭，后面又堵了车，司机进退两难。
+legacy:wl_06804
+Retained source notes: wl_06804
+
+Example — wl_06866
+他说话遮遮掩掩，不肯说明原因。
+legacy:wl_06866
+Retained source notes: wl_06866
+
+Example — wl_06866
+她把礼物遮遮掩掩地藏在身后，想给我一个惊喜。
+legacy:wl_06866
+Retained source notes: wl_06866
+
+Example — wl_06874
+他如此无法无天，竟敢当众砸店。
+legacy:wl_06874
+Retained source notes: wl_06874
+
+Example — wl_06874
+不能让孩子觉得自己可以无法无天地欺负别人。
+legacy:wl_06874
+Retained source notes: wl_06874
+
+Example — wl_06963
+证据已经充分，骗子还在垂死挣扎。
+legacy:wl_06963
+Retained source notes: wl_06963
+
+Example — wl_06963
+那家濒临破产的企业仍在垂死挣扎。
+legacy:wl_06963
+Retained source notes: wl_06963
+
+Example — wl_06982
+这么完整的古代器物，几乎绝无仅有。
+legacy:wl_06982
+Retained source notes: wl_06982
+
+Example — wl_06982
+他创造的这个纪录，在当地绝无仅有。
+legacy:wl_06982
+Retained source notes: wl_06982
+
+Example — wl_07045
+这门手艺在村里代代相传。
+legacy:wl_07045
+Retained source notes: wl_07045
+
+Example — wl_07045
+这些家庭故事一直代代相传。
+legacy:wl_07045
+Retained source notes: wl_07045
+
+Example — wl_07095
+我不懂这门技术，实在爱莫能助。
+legacy:wl_07095
+Retained source notes: wl_07095
+
+Example — wl_07095
+他很想帮忙，却人在外地，只能爱莫能助。
+legacy:wl_07095
+Retained source notes: wl_07095
+
+Example — wl_07400
+裁判不偏不倚，公平地处理了这次争议。
+legacy:wl_07400
+Retained source notes: wl_07400
+
+Example — wl_07400
+讨论双方意见时，她保持不偏不倚的态度。
+legacy:wl_07400
+Retained source notes: wl_07400
+
+Example — wl_07426
+他为人光明磊落，从不隐瞒自己的失误。
+legacy:wl_07426
+Retained source notes: wl_07426
+
+Example — wl_07426
+她光明磊落地竞争，不靠背后的关系。
+legacy:wl_07426
+Retained source notes: wl_07426
+
+Example — wl_07484
+大家齐心合力，终于把倒下的大树移开。
+legacy:wl_07484
+Retained source notes: wl_07484
+
+Example — wl_07484
+全班齐心合力，完成了校园义卖活动。
+legacy:wl_07484
+Retained source notes: wl_07484
+
+Example — wl_07584
+这门手工技艺在村里世代相传。
+legacy:wl_07584
+Retained source notes: wl_07584
+
+Example — wl_07584
+家族的老食谱世代相传，保留着熟悉的味道。
+legacy:wl_07584
+Retained source notes: wl_07584
+
+Example — wl_07603
+山区天气变化无常，出发前要准备雨具。
+legacy:wl_07603
+Retained source notes: wl_07603
+
+Example — wl_07603
+他情绪变化无常，同事很难与他沟通。
+legacy:wl_07603
+Retained source notes: wl_07603
+
+Example — wl_07626
+两位朋友推心置腹地谈了一整晚。
+legacy:wl_07626
+Retained source notes: wl_07626
+
+Example — wl_07626
+经理与员工推心置腹地交流，解开了误会。
+legacy:wl_07626
+Retained source notes: wl_07626
+
+Example — wl_07698
+考试结束后，他不停地唉声叹气。
+legacy:wl_07698
+Retained source notes: wl_07698
+
+Example — wl_07698
+别光唉声叹气，我们一起想办法吧。
+legacy:wl_07698
+Retained source notes: wl_07698
+
+Example — wl_08237
+这门课共三十个学时。
+legacy:wl_08237
+Retained source notes: wl_08237
+
+Example — wl_08596
+我们测量了这束光的波长。
+legacy:wl_08596
+Retained source notes: wl_08596
+
+Example — wl_09955
+妈妈带孩子去看了儿科医生。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_09955
+这位护士在医院的儿科工作。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_10758
+这位演员姓祁。
+legacy:wl_10758
+Retained source notes: wl_10758
+
+Example — wl_10758
+演员正在排练舞剧。
+legacy:wl_10758
+Retained source notes: wl_10758
+
+Example — wl_10797
+我们的教练姓谭。
+legacy:wl_10797
+Retained source notes: wl_10797
+
+Example — wl_10955
+这位作家姓佘。
+legacy:wl_10955
+Retained source notes: wl_10955
+
+Example — wl_10955
+这位作家姓逄。
+legacy:wl_10955
+Retained source notes: wl_10955
+
+Example — wl_11042
+这位摄影师姓邢。
+legacy:wl_11042
+Retained source notes: wl_11042
+
+Example — wl_11042
+摄影师想增加景深。
+legacy:wl_11042
+Retained source notes: wl_11042
+
+Example — wl_11047
+花园里绿意盎然。
+legacy:wl_11047
+Retained source notes: wl_11047
+
+Example — wl_11047
+小屋藏在花园的一隅。
+legacy:wl_11047
+Retained source notes: wl_11047
+
+Example — wl_11054
+不要对别人的穿着评头论足。
+legacy:wl_11054
+Retained source notes: wl_11054
+
+Example — wl_11054
+她的穿着朴素大方。
+legacy:wl_11054
+Retained source notes: wl_11054
+
+Example — wl_11291
+她从不嫌弃这间小屋。
+legacy:wl_11291
+Retained source notes: wl_11291
+
+Example — wl_11291
+小屋藏在花园的一隅。
+legacy:wl_11291
+Retained source notes: wl_11291
+
+Example — wl_11336
+卅是三十的另一种写法。
+legacy:wl_11336
+Retained source notes: wl_11336
+
+Example — wl_11484
+这位诗人姓裴。
+legacy:wl_11484
+Retained source notes: wl_11484
+
+Example — wl_11484
+诗人低声吟哦新诗。
+legacy:wl_11484
+Retained source notes: wl_11484
+
+Example — wl_11511
+这位画家姓邱。
+legacy:wl_11511
+Retained source notes: wl_11511
+
+Example — wl_11511
+这位画家蜚声海外。
+legacy:wl_11511
+Retained source notes: wl_11511
+
+Example — wl_11736
+这位学者姓臧。
+legacy:wl_11736
+Retained source notes: wl_11736
+
+Example — wl_11736
+学者们正在编纂地方志。
+legacy:wl_11736
+Retained source notes: wl_11736
+
+Example — wl_12597
+我们的班主任姓芮。
+legacy:wl_12597
+Retained source notes: wl_12597
+
+Example — wl_12597
+他兼任两个班的班主任。
+legacy:wl_12597
+Retained source notes: wl_12597
+
+Example — wl_19891
+我的邻居是回族。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19891
+展览介绍了回族的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19892
+这本旧书把伊斯兰教称为回教。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19892
+老师解释了回教这个名称的用法。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19893
+我们在西安的回民街吃了晚饭。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19893
+导游在地图上指出了回民街的位置。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19894
+这本书介绍伊斯兰教的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19894
+博物馆有介绍伊斯兰教艺术的展览。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19895
+这家餐厅提供清真食品。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19895
+包装上有清真标志。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19896
+超市有专门出售清真食品的区域。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19896
+她在购买前查看了清真食品的标签。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19897
+我的朋友是一位穆斯林。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19897
+这本书记录了当地穆斯林的生活。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19898
+斋月是伊斯兰教历中的一个月。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19898
+展览介绍了斋月期间的生活习俗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19899
+朋友邀请我们一起庆祝开斋节。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19899
+开斋节前，他给家人买了礼物。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19900
+展柜里有一本古老的古兰经。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19900
+这篇文章介绍了古兰经的中文译本。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19901
+清明节，我们全家一起去扫墓。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19901
+扫墓时，请遵守当地的防火规定。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19902
+过年时，奶奶给了我一个红包。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19902
+她在家庭群里发了一个红包。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19903
+博物馆介绍了多个少数民族的文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19903
+这所学校开设了少数民族语言课程。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19904
+她正在研究满族的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19904
+展厅里陈列着满族传统服饰。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19905
+这位藏族作家出版了一本新书。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19905
+我们在展览上了解了藏族文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19906
+她采访了一位维吾尔族音乐家。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19906
+这本书介绍维吾尔族的传统艺术。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19907
+这位蒙古族歌手唱了一首民歌。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19907
+展览介绍了蒙古族的传统生活。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19908
+她向我们展示了苗族刺绣。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19908
+这位苗族设计师把传统图案用在新作品中。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19909
+这位朝鲜族老师会说两种语言。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19909
+展览介绍了朝鲜族的饮食文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19910
+我们在博物馆看到了土家族的织物。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19910
+这位土家族演员介绍了家乡的舞蹈。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19911
+导游向我们介绍了白族的建筑。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19911
+这位白族老人正在教孩子唱歌。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19912
+展览展示了不同地区的民族服饰。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19912
+她在研究民族服饰上的图案。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19913
+这本书讨论民族语言的保护。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19913
+学校鼓励学生了解当地的民族语言。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19914
+社区举办了促进民族团结的活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19914
+这篇文章讨论了民族团结的重要性。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19915
+这家博物馆介绍当地的民俗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19915
+她记录了家乡过年的民俗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19916
+我们应该尊重他人的宗教信仰。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19916
+这项调查不要求填写宗教信仰。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19917
+这本书介绍道教的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19917
+博物馆展出了与道教有关的文物。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19918
+这门课程介绍基督教的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19918
+阅读时要注意基督教在不同语境中的含义。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19919
+这是一座天主教教堂。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19919
+这本书介绍了天主教的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19920
+参观时，请尊重正在进行的宗教活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19920
+这篇报道介绍了当地的宗教活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19921
+山脚下有一座古老的佛寺。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19921
+游客在佛寺外安静地等候。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19922
+孩子们把压岁钱存进了银行。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19922
+爷爷在除夕给了我压岁钱。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19923
+这座寺庙的香火一直很旺。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19923
+管理员提醒游客注意香火安全。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19924
+新年时，有些人会到寺庙祈福。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19924
+他们一起为远方的家人祈福。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19925
+小镇的礼拜堂每周日开放。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19925
+这座礼拜堂有漂亮的彩色玻璃窗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19926
+教堂门上有一个十字架。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19926
+博物馆展出了一件银制十字架。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19927
+书架上放着一本中文圣经。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19927
+这幅画的故事来自圣经。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19928
+除夕晚上，全家一起吃团圆饭。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19928
+为了这顿团圆饭，她特意赶回了家。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19929
+这座寺庙里有一尊观音像。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19929
+导游介绍了观音在民间文化中的形象。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19930
+方丈向来访的客人介绍了寺院。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19930
+这位方丈正在整理寺院的旧书。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19931
+这本书介绍藏传佛教的艺术。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19931
+展览展示了与藏传佛教有关的绘画。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19932
+春运期间，火车站里有很多旅客。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19932
+为了避开春运高峰，他提前买了车票。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19933
+这位学者研究当地的民间信仰。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19933
+民间信仰与当地习俗有密切联系。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19934
+包饺子是一些地区的年俗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19934
+她向外国朋友介绍了家乡的年俗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19935
+春节期间，公园里举办了庙会。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19935
+我们在庙会上看了传统表演。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19936
+端午节是中国的传统节日。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19936
+这本书介绍世界各地的传统节日。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19937
+端午节时，家里会包粽子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19937
+今年端午节，我们去看了龙舟比赛。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19938
+重阳节那天，社区为老人安排了活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19938
+我们在重阳节陪爷爷奶奶去登高。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19939
+元宵节的晚上，街上挂满了花灯。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19939
+我们一起吃汤圆庆祝元宵节。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19940
+奶奶在腊八节煮了一锅粥。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19940
+这篇文章介绍了腊八节的习俗。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19941
+我们在泼水节体验了当地的节日气氛。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19941
+导游向游客介绍了泼水节的礼仪。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19942
+游客在那达慕上观看了摔跤比赛。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19942
+这本书介绍了那达慕的传统活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19943
+火把节的晚上，人们围在一起跳舞。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19943
+这组照片记录了当地的火把节。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19944
+我们沿着老街慢慢地走。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19944
+这条老街保留了许多老房子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19945
+周末的步行街很热闹。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19945
+这条步行街禁止汽车通行。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19946
+夜里，小吃街上飘着饭菜的香味。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19946
+我们在小吃街尝了几种当地小吃。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19947
+酒店附近有一条美食街。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19947
+这条美食街汇集了各地的菜肴。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19948
+导游推荐了几种当地的特色小吃。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19948
+这家小店只卖家乡的特色小吃。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19949
+我们午饭吃了手抓饭。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19949
+这家店的手抓饭里有羊肉和胡萝卜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19950
+到了西安，我们先尝了羊肉泡馍。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19950
+这碗羊肉泡馍还冒着热气。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19951
+他买了一个肉夹馍当午饭。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19951
+这家店的肉夹馍外皮很脆。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19952
+她在市场上买了一个刚烤好的馕。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19952
+我们把馕切成小块，分给大家。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19953
+他点了一份拉条子。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19953
+这盘拉条子配了蔬菜和牛肉。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19954
+我们点了一盘大盘鸡一起吃。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19954
+这家店的大盘鸡可以配面条。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19955
+车站附近有一家清真餐厅。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19955
+我们提前查询了清真餐厅的营业时间。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19956
+订餐前，请告诉我你的饮食禁忌。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19956
+旅行时，了解当地的饮食禁忌很有帮助。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19957
+保护文化遗产需要大家共同努力。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19957
+这座老城有丰富的文化遗产。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19958
+传统技艺是非物质文化遗产的重要组成部分。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19958
+这个展览介绍了当地的非物质文化遗产。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19959
+学校组织了中外学生的文化交流活动。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19959
+音乐为文化交流提供了机会。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19960
+学习语言也需要了解文化差异。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19960
+面对文化差异，我们应该保持耐心。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19961
+她把汉语作为第二语言来学习。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19961
+这位老师研究第二语言教学。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19962
+这家出版社出版少数民族语言的书籍。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19962
+他们录制故事来保存当地的少数民族语言。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19963
+这场演出展现了鲜明的民族特色。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19963
+这些图案具有当地的民族特色。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19964
+学校鼓励学生了解不同的民族文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19964
+这位作家用故事记录本民族文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19965
+语言与文化认同有密切联系。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19965
+这部电影讨论了年轻人的文化认同。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19966
+这篇文章讨论了移民的身份认同。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19966
+生活经历会影响一个人的身份认同。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19967
+我们要学会包容彼此的差异。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19967
+这座城市以包容不同文化而闻名。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19968
+这座城市生活着不同的族群。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19968
+研究者采访了多个族群的居民。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19969
+他们虽然没有血缘关系，却像一家人。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19969
+这本书讨论了血缘与家庭关系。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19970
+他的祖籍在福建。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19970
+她回到祖籍所在地寻找家族的记录。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19971
+表格上需要填写原籍。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19971
+旧档案里记载了他的原籍。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19972
+这座城市是一处著名的侨乡。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19972
+侨乡的老建筑记录了往来的历史。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19973
+这位华裔作家用英语写作。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19973
+她采访了几位在当地长大的华裔青年。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19974
+她在文化活动上穿了一套汉服。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19974
+这家店介绍汉服的不同款式。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19975
+爷爷过年时穿了一件唐装。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19975
+这件唐装用了传统的盘扣。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19976
+她用头巾遮住了头发。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19976
+风很大，他把头巾系紧了。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19977
+爷爷每天午后都有饮茶的习惯。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19977
+客人坐下来，一边饮茶一边聊天。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19978
+她正在学习茶艺。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19978
+茶艺表演结束后，观众品尝了茶水。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19979
+这本书介绍了茶道的礼仪。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19979
+她通过茶道课程了解了当地文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19980
+旅行让我们了解了不同地区的饮食文化。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19980
+这门课程讨论饮食文化与日常生活。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19981
+这家餐厅专门做地方菜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19981
+她向客人推荐了几道地方菜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19982
+这道菜保留了家乡的风味。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19982
+不同地区的面条各有风味。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19983
+游客在导游带领下参观石窟。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19983
+这座石窟里保存着古代壁画。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19984
+这座城市有许多古迹。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19984
+参观古迹时，请不要乱写乱画。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19985
+导游推荐了附近的几处名胜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19985
+我们用了两天游览当地的名胜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19986
+这座古建筑正在接受修缮。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19986
+照片记录了古建筑的木质结构。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19987
+这座古村落保留了原来的街巷。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19987
+游客在古村落里参观传统民居。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19988
+这位师傅正在教授传统工艺。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19988
+博物馆展示了传统工艺的制作过程。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19989
+她喜欢学习当地的手工艺。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19989
+集市上有许多手工艺作品。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19990
+这块布上的花纹是用蜡染做成的。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19990
+老师向我们演示了蜡染的步骤。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19991
+孩子们在课堂上体验了扎染。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19991
+这条扎染围巾的图案很特别。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19992
+奶奶把红色剪纸贴在窗户上。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19992
+我们在手工课上学习了剪纸。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19993
+演员用皮影表演了一个故事。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19993
+博物馆收藏了许多传统皮影。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19994
+门上挂着一个红色的中国结。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19994
+她亲手做了一个中国结送给朋友。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19995
+春节前，我们在门上贴了春联。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19995
+爷爷用毛笔写了一副春联。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19996
+广场上的舞龙表演吸引了很多观众。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19996
+春节时，我们在街上看了舞龙。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19997
+开业当天，商店门前有舞狮表演。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19997
+孩子们兴奋地看着舞狮。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19998
+河上有几条龙舟正在训练。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19998
+我们在端午节观看了龙舟比赛。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19999
+奶奶煮了一锅芝麻馅的汤圆。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_19999
+元宵节时，我们全家一起吃汤圆。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_20000
+他中午点了一碗牛肉面。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review
+
+Example — wl_20000
+这家店的牛肉面汤很鲜。
+Project-authored AI-assisted editorial example, 2026-11-03 semantic review

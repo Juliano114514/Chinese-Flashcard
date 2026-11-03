@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "wordlist.csv"
 ASSETS = ROOT / "core/data/src/main/assets/word-tags"
 MANIFEST = ROOT / "docs/wordlist-validation.json"
-VERSION = "2026-11-03.1"
+VERSION = "2026-11-03.2"
 
 # Stable IDs are persisted by the app. Display labels may be edited independently.
 TOPICS = [
@@ -334,8 +334,14 @@ def catalog():
     return dict(schemaVersion=1, annotationVersion=VERSION, tags=tags)
 
 
+def semantic_gloss(value):
+    # Editorial sentence templates are not the vocabulary's lexical meaning.
+    # Keep real verbs such as "to describe" available as communication evidence.
+    return re.sub(r"^\s*(?:Describes\s+|Used to describe\s+|An expression describing\s+)", "", value)
+
+
 def _annotate_legacy(row):
-    word, gloss, pos = row["组词"], row["英文释义"], row["词性"]
+    word, gloss, pos = row["组词"], semantic_gloss(row["英文释义"]), row["词性"]
     identifier = row["词条ID"]
     if has_override(row):
         note = REVIEW_NOTES.get(word, "按本条教学义“" + gloss + "”逐词复核标签；没有具体主题依据时只保留可确定的用途／类型。")
@@ -463,7 +469,19 @@ def supplied_tag_review():
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
 
 
-def annotate(row):
+@functools.lru_cache(maxsize=1)
+def refinement_tag_review():
+    path = ROOT / "tools/vocabulary_refinement_20261103/tag-review.json"
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+
+
+def annotate(row, *, apply_refinement=True):
+    refined = refinement_tag_review().get(row["词条ID"]) if apply_refinement else None
+    if refined is not None:
+        if (refined["word"] != row["组词"] or refined["pinyin"] != row["拼音"]
+                or refined["glossSha256"] != hashlib.sha256(row["英文释义"].encode("utf-8")).hexdigest()):
+            raise ValueError("Semantic refinement tag review no longer matches its teaching sense")
+        return refined["tags"], refined["reason"], "全量规则检查及语境精修；未作真人认证。"
     reviewed = supplied_tag_review().get(row["词条ID"])
     if reviewed is not None:
         if (reviewed["word"] != row["组词"] or reviewed["pinyin"] != row["拼音"]
@@ -475,7 +493,7 @@ def annotate(row):
         return sorted(set(reviewed["tags"] + forms)), reviewed["reason"], "AI编辑逐词复核；未作真人或权威词典认证。"
     tags, rationale, ambiguity = _annotate_legacy(row)
     tags = set(tags)
-    gloss, word, pos = row["英文释义"], row["组词"], row["词性"]
+    gloss, word, pos = semantic_gloss(row["英文释义"]), row["组词"], row["词性"]
     idiom = "idiom" in re.split(r"[;/]", pos)
     reasons = [rationale] if rationale else []
     if pos == "greeting":

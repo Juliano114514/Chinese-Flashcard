@@ -1,0 +1,1142 @@
+{
+  "schemaVersion": 1,
+  "sourceCsvSha256": "fa5c12d074e0de53c97067b4f67edc83b7a34efcd7a3433409998a339305841e",
+  "rowsScreened": 20000,
+  "examplesScreened": 40000,
+  "review": "Read contextual candidates for polyphonic single-character chunks: 教/长/还/著/朝 and high-confidence 地/了/发/重/着/乐/空/倒/弹/调/转/卷/处/种. Preserve valid alternate and contextually correct readings; no global character replacement.",
+  "ignoredIds": [
+    "wl_13384",
+    "wl_16958",
+    "wl_17486",
+    "wl_17514",
+    "wl_17659",
+    "wl_17800",
+    "wl_18106"
+  ],
+  "modifiedRows": 112,
+  "modifiedExamples": 122,
+  "corrections": {
+    "空_context": 4,
+    "noticeably_not_landing": 2,
+    "转_context": 3,
+    "倒_context": 7,
+    "著_state": 44,
+    "重_context": 1,
+    "调_context": 1,
+    "地_adverb": 33,
+    "卷_context": 3,
+    "教_context": 2,
+    "replace_wrong_target_reading_example": 1,
+    "发_context": 3,
+    "长_context": 4,
+    "了_context": 3,
+    "还_context": 1,
+    "处_context": 1,
+    "弹_context": 4,
+    "着_state": 5,
+    "种_context": 1,
+    "乐_context": 1,
+    "kind_not_farming": 1
+  },
+  "boundary": "Targeted AI-assisted contextual pronunciation review, not human listening or exhaustive certification of all polyphonic readings. No tests, build or device execution.",
+  "patches": [
+    {
+      "id": "wl_00031",
+      "word": "总是",
+      "exampleIndex": 0,
+      "originalHanzi": "叔叔总是忙碌，很少有空休息。",
+      "originalPinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kōng xiū xi.",
+      "hanzi": "叔叔总是忙碌，很少有空休息。",
+      "pinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kòng xiū xi."
+    },
+    {
+      "id": "wl_00038",
+      "word": "忙碌",
+      "exampleIndex": 0,
+      "originalHanzi": "叔叔总是忙碌，很少有空休息。",
+      "originalPinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kōng xiū xi.",
+      "hanzi": "叔叔总是忙碌，很少有空休息。",
+      "pinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kòng xiū xi."
+    },
+    {
+      "id": "wl_00049",
+      "word": "叔叔",
+      "exampleIndex": 0,
+      "originalHanzi": "叔叔总是忙碌，很少有空休息。",
+      "originalPinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kōng xiū xi.",
+      "hanzi": "叔叔总是忙碌，很少有空休息。",
+      "pinyin": "shū shu zǒng shì máng lù, hěn shǎo yǒu kòng xiū xi."
+    },
+    {
+      "id": "wl_03241",
+      "word": "让路",
+      "exampleIndex": 1,
+      "originalHanzi": "二十世纪中以后，北京胡同的数量显着地下降，因为人们把它们拆毁以便给新的楼房和街路让路。",
+      "originalPinyin": "èr shí shì jì zhōng yǐ hòu, běi jīng hú tòng de shù liàng xiǎn zháo dì xià jiàng, yīn wèi rén men bǎ tā men chāi huǐ yǐ biàn gěi xīn de lóu fáng hé jiē lù ràng lù.",
+      "hanzi": "二十世纪中以后，北京胡同的数量显著地下降，因为人们把它们拆毁以便给新的楼房和街路让路。",
+      "pinyin": "èr shí shì jì zhōng yǐ hòu, běi jīng hú tòng de shù liàng xiǎn zhù de xià jiàng, yīn wèi rén men bǎ tā men chāi huǐ yǐ biàn gěi xīn de lóu fáng hé jiē lù ràng lù."
+    },
+    {
+      "id": "wl_03907",
+      "word": "磨刀",
+      "exampleIndex": 0,
+      "originalHanzi": "磨刀时有摩擦声，旁边石磨也在转。",
+      "originalPinyin": "mó dāo shí yǒu mó cā shēng, páng biān shí mò yě zài zhuǎn.",
+      "hanzi": "磨刀时有摩擦声，旁边石磨也在转。",
+      "pinyin": "mó dāo shí yǒu mó cā shēng, páng biān shí mò yě zài zhuàn."
+    },
+    {
+      "id": "wl_03908",
+      "word": "石磨",
+      "exampleIndex": 0,
+      "originalHanzi": "磨刀时有摩擦声，旁边石磨也在转。",
+      "originalPinyin": "mó dāo shí yǒu mó cā shēng, páng biān shí mò yě zài zhuǎn.",
+      "hanzi": "磨刀时有摩擦声，旁边石磨也在转。",
+      "pinyin": "mó dāo shí yǒu mó cā shēng, páng biān shí mò yě zài zhuàn."
+    },
+    {
+      "id": "wl_04203",
+      "word": "老年人",
+      "exampleIndex": 1,
+      "originalHanzi": "我家里有个老年人突然倒在地上，大概是中风了。",
+      "originalPinyin": "wǒ jiā lǐ yǒu gè lǎo nián rén tū rán dào zài dì shang, dà gài shì zhòng fēng le.",
+      "hanzi": "我家里有个老年人突然倒在地上，大概是中风了。",
+      "pinyin": "wǒ jiā lǐ yǒu gè lǎo nián rén tū rán dǎo zài dì shang, dà gài shì zhòng fēng le."
+    },
+    {
+      "id": "wl_04657",
+      "word": "凡是",
+      "exampleIndex": 1,
+      "originalHanzi": "凡是反动的东西，你不打，它就不倒。",
+      "originalPinyin": "fán shì fǎn dòng de dōng xi, nǐ bù dǎ, tā jiù bù dào.",
+      "hanzi": "凡是反动的东西，你不打，它就不倒。",
+      "pinyin": "fán shì fǎn dòng de dōng xi, nǐ bù dǎ, tā jiù bù dǎo."
+    },
+    {
+      "id": "wl_04662",
+      "word": "邮差",
+      "exampleIndex": 0,
+      "originalHanzi": "狗对著邮差叫。",
+      "originalPinyin": "gǒu duì zhù yóu chāi jiào.",
+      "hanzi": "狗对著邮差叫。",
+      "pinyin": "gǒu duì zhe yóu chāi jiào."
+    },
+    {
+      "id": "wl_04945",
+      "word": "云层",
+      "exampleIndex": 0,
+      "originalHanzi": "飞机在云层上飞著。",
+      "originalPinyin": "fēi jī zài yún céng shàng fēi zhù.",
+      "hanzi": "飞机在云层上飞著。",
+      "pinyin": "fēi jī zài yún céng shàng fēi zhe."
+    },
+    {
+      "id": "wl_04962",
+      "word": "时差",
+      "exampleIndex": 0,
+      "originalHanzi": "我时差还没倒过来呢。",
+      "originalPinyin": "wǒ shí chā hái méi dào guò lái ne.",
+      "hanzi": "我时差还没倒过来呢。",
+      "pinyin": "wǒ shí chā hái méi dǎo guò lái ne."
+    },
+    {
+      "id": "wl_05491",
+      "word": "党派",
+      "exampleIndex": 1,
+      "originalHanzi": "在这个国家，我们患难与共。让我们抵制重走老路的诱惑，避免重新回到令美国政治长期深受毒害的党派纷争、小题大作、不成熟的表现。",
+      "originalPinyin": "zài zhè ge guó jiā, wǒ men huàn nàn yǔ gòng. ràng wǒ men dǐ zhì zhòng zǒu lǎo lù de yòu huò, bì miǎn chóng xīn huí dào lìng měi guó zhèng zhì cháng qī shēn shòu dú hài de dǎng pài fēn zhēng, xiǎo tí dà zuò, bù chéng shú de biǎo xiàn.",
+      "hanzi": "在这个国家，我们患难与共。让我们抵制重走老路的诱惑，避免重新回到令美国政治长期深受毒害的党派纷争、小题大作、不成熟的表现。",
+      "pinyin": "zài zhè ge guó jiā, wǒ men huàn nàn yǔ gòng. ràng wǒ men dǐ zhì chóng zǒu lǎo lù de yòu huò, bì miǎn chóng xīn huí dào lìng měi guó zhèng zhì cháng qī shēn shòu dú hài de dǎng pài fēn zhēng, xiǎo tí dà zuò, bù chéng shú de biǎo xiàn."
+    },
+    {
+      "id": "wl_05922",
+      "word": "分公司",
+      "exampleIndex": 1,
+      "originalHanzi": "宗翰最近被调去高雄分公司，听说待遇不错。",
+      "originalPinyin": "zōng hàn zuì jìn bèi tiáo qù gāo xióng fēn gōng sī, tīng shuō dài yù bù cuò.",
+      "hanzi": "宗翰最近被调去高雄分公司，听说待遇不错。",
+      "pinyin": "zōng hàn zuì jìn bèi diào qù gāo xióng fēn gōng sī, tīng shuō dài yù bù cuò."
+    },
+    {
+      "id": "wl_06544",
+      "word": "翻阅",
+      "exampleIndex": 0,
+      "originalHanzi": "他静静地坐在书桌前，翻阅著那本泛黄的相簿。",
+      "originalPinyin": "tā jìng jìng de zuò zài shū zhuō qián, fān yuè zhù nà běn fàn huáng de xiàng bù.",
+      "hanzi": "他静静地坐在书桌前，翻阅著那本泛黄的相簿。",
+      "pinyin": "tā jìng jìng de zuò zài shū zhuō qián, fān yuè zhe nà běn fàn huáng de xiàng bù."
+    },
+    {
+      "id": "wl_06552",
+      "word": "甜美",
+      "exampleIndex": 1,
+      "originalHanzi": "我被她甜美的声线迷倒了。",
+      "originalPinyin": "wǒ bèi tā tián měi de shēng xiàn mí dào le.",
+      "hanzi": "我被她甜美的声线迷倒了。",
+      "pinyin": "wǒ bèi tā tián měi de shēng xiàn mí dǎo le."
+    },
+    {
+      "id": "wl_06647",
+      "word": "无色",
+      "exampleIndex": 1,
+      "originalHanzi": "无色的绿色意念愤怒地沉睡著。",
+      "originalPinyin": "wú sè de lǜ sè yì niàn fèn nù de chén shuì zhù.",
+      "hanzi": "无色的绿色意念愤怒地沉睡著。",
+      "pinyin": "wú sè de lǜ sè yì niàn fèn nù de chén shuì zhe."
+    },
+    {
+      "id": "wl_06742",
+      "word": "开门见山",
+      "exampleIndex": 0,
+      "originalHanzi": "她开门见山地说明了来意。",
+      "originalPinyin": "tā kāi mén jiàn shān dì shuō míng le lái yì.",
+      "hanzi": "她开门见山地说明了来意。",
+      "pinyin": "tā kāi mén jiàn shān de shuō míng le lái yì."
+    },
+    {
+      "id": "wl_06742",
+      "word": "开门见山",
+      "exampleIndex": 1,
+      "originalHanzi": "会议一开始，经理就开门见山地提出问题。",
+      "originalPinyin": "huì yì yī kāi shǐ, jīng lǐ jiù kāi mén jiàn shān dì tí chū wèn tí.",
+      "hanzi": "会议一开始，经理就开门见山地提出问题。",
+      "pinyin": "huì yì yī kāi shǐ, jīng lǐ jiù kāi mén jiàn shān de tí chū wèn tí."
+    },
+    {
+      "id": "wl_06773",
+      "word": "直截了当",
+      "exampleIndex": 0,
+      "originalHanzi": "她直截了当地拒绝了这个提议。",
+      "originalPinyin": "tā zhí jié liǎo dàng dì jù jué le zhè ge tí yì.",
+      "hanzi": "她直截了当地拒绝了这个提议。",
+      "pinyin": "tā zhí jié liǎo dàng de jù jué le zhè ge tí yì."
+    },
+    {
+      "id": "wl_06773",
+      "word": "直截了当",
+      "exampleIndex": 1,
+      "originalHanzi": "有什么问题就直截了当地说出来。",
+      "originalPinyin": "yǒu shé me wèn tí jiù zhí jié liǎo dàng dì shuō chū lái.",
+      "hanzi": "有什么问题就直截了当地说出来。",
+      "pinyin": "yǒu shé me wèn tí jiù zhí jié liǎo dàng de shuō chū lái."
+    },
+    {
+      "id": "wl_06874",
+      "word": "无法无天",
+      "exampleIndex": 1,
+      "originalHanzi": "不能让孩子觉得自己可以无法无天地欺负别人。",
+      "originalPinyin": "bù néng ràng hái zǐ jué de zì jǐ kě yǐ wú fǎ wú tiān dì qī fu bié rén.",
+      "hanzi": "不能让孩子觉得自己可以无法无天地欺负别人。",
+      "pinyin": "bù néng ràng hái zǐ jué de zì jǐ kě yǐ wú fǎ wú tiān de qī fu bié rén."
+    },
+    {
+      "id": "wl_07400",
+      "word": "不偏不倚",
+      "exampleIndex": 0,
+      "originalHanzi": "裁判不偏不倚，公平地处理了这次争议。",
+      "originalPinyin": "cái pàn bù piān bù yǐ, gōng píng dì chǔ lǐ le zhè cì zhēng yì.",
+      "hanzi": "裁判不偏不倚，公平地处理了这次争议。",
+      "pinyin": "cái pàn bù piān bù yǐ, gōng píng de chǔ lǐ le zhè cì zhēng yì."
+    },
+    {
+      "id": "wl_07426",
+      "word": "光明磊落",
+      "exampleIndex": 1,
+      "originalHanzi": "她光明磊落地竞争，不靠背后的关系。",
+      "originalPinyin": "tā guāng míng lěi luò dì jìng zhēng, bù kào bèi hòu de guān xì.",
+      "hanzi": "她光明磊落地竞争，不靠背后的关系。",
+      "pinyin": "tā guāng míng lěi luò de jìng zhēng, bù kào bèi hòu de guān xì."
+    },
+    {
+      "id": "wl_07484",
+      "word": "齐心合力",
+      "exampleIndex": 0,
+      "originalHanzi": "大家齐心合力，终于把倒下的大树移开。",
+      "originalPinyin": "dà jiā qí xīn hé lì, zhōng yú bǎ dào xià de dà shù yí kāi.",
+      "hanzi": "大家齐心合力，终于把倒下的大树移开。",
+      "pinyin": "dà jiā qí xīn hé lì, zhōng yú bǎ dǎo xià de dà shù yí kāi."
+    },
+    {
+      "id": "wl_07626",
+      "word": "推心置腹",
+      "exampleIndex": 0,
+      "originalHanzi": "两位朋友推心置腹地谈了一整晚。",
+      "originalPinyin": "liǎng wèi péng yǒu tuī xīn zhì fù dì tán le yī zhěng wǎn.",
+      "hanzi": "两位朋友推心置腹地谈了一整晚。",
+      "pinyin": "liǎng wèi péng yǒu tuī xīn zhì fù de tán le yī zhěng wǎn."
+    },
+    {
+      "id": "wl_07626",
+      "word": "推心置腹",
+      "exampleIndex": 1,
+      "originalHanzi": "经理与员工推心置腹地交流，解开了误会。",
+      "originalPinyin": "jīng lǐ yǔ yuán gōng tuī xīn zhì fù dì jiāo liú, jiě kāi le wù huì.",
+      "hanzi": "经理与员工推心置腹地交流，解开了误会。",
+      "pinyin": "jīng lǐ yǔ yuán gōng tuī xīn zhì fù de jiāo liú, jiě kāi le wù huì."
+    },
+    {
+      "id": "wl_13394",
+      "word": "卫生纸",
+      "exampleIndex": 1,
+      "originalHanzi": "卫生纸快用完了，我去拿一卷。",
+      "originalPinyin": "wèi shēng zhǐ kuài yòng wán le, wǒ qù ná yī juǎn.",
+      "hanzi": "卫生纸快用完了，我去拿一卷。",
+      "pinyin": "wèi shēng zhǐ kuài yòng wán le, wǒ qù ná yī juàn."
+    },
+    {
+      "id": "wl_13430",
+      "word": "垃圾分类",
+      "exampleIndex": 1,
+      "originalHanzi": "老师用几个空盒子教孩子们垃圾分类。",
+      "originalPinyin": "lǎo shī yòng jǐ ge kōng hé zi jiào hái zi men lā jī fēn lèi.",
+      "hanzi": "老师用几个空盒子教孩子们垃圾分类。",
+      "pinyin": "lǎo shī yòng jǐ ge kōng hé zi jiāo hái zi men lā jī fēn lèi."
+    },
+    {
+      "id": "wl_13529",
+      "word": "著",
+      "exampleIndex": 1,
+      "originalHanzi": "待著。",
+      "originalPinyin": "dài zhù.",
+      "hanzi": "这项发现的意义十分显著。",
+      "pinyin": "zhè xiàng fā xiàn de yì yì shí fēn xiǎn zhù."
+    },
+    {
+      "id": "wl_13588",
+      "word": "操心",
+      "exampleIndex": 1,
+      "originalHanzi": "别太操心了，不然会掉头发的。",
+      "originalPinyin": "bié tài cāo xīn le, bù rán huì diào tóu fā de.",
+      "hanzi": "别太操心了，不然会掉头发的。",
+      "pinyin": "bié tài cāo xīn le, bù rán huì diào tóu fà de."
+    },
+    {
+      "id": "wl_13619",
+      "word": "怪兽",
+      "exampleIndex": 1,
+      "originalHanzi": "壁画中的怪兽长着獠牙。",
+      "originalPinyin": "bì huà zhōng de guài shòu cháng zhe liáo yá.",
+      "hanzi": "壁画中的怪兽长着獠牙。",
+      "pinyin": "bì huà zhōng de guài shòu zhǎng zhe liáo yá."
+    },
+    {
+      "id": "wl_13622",
+      "word": "瞧",
+      "exampleIndex": 0,
+      "originalHanzi": "走著瞧",
+      "originalPinyin": "zǒu zhù qiáo",
+      "hanzi": "走著瞧",
+      "pinyin": "zǒu zhe qiáo"
+    },
+    {
+      "id": "wl_13656",
+      "word": "谋杀",
+      "exampleIndex": 1,
+      "originalHanzi": "法庭对他的谋杀罪名作出了无罪判决。",
+      "originalPinyin": "fǎ tíng duì tā de móu shā zuì míng zuò chū liǎo wú zuì pàn jué.",
+      "hanzi": "法庭对他的谋杀罪名作出了无罪判决。",
+      "pinyin": "fǎ tíng duì tā de móu shā zuì míng zuò chū le wú zuì pàn jué."
+    },
+    {
+      "id": "wl_13744",
+      "word": "盯",
+      "exampleIndex": 1,
+      "originalHanzi": "盯著别人看是不礼貌的。",
+      "originalPinyin": "dīng zhù bié ren kàn shì bù lǐ mào de.",
+      "hanzi": "盯著别人看是不礼貌的。",
+      "pinyin": "dīng zhe bié ren kàn shì bù lǐ mào de."
+    },
+    {
+      "id": "wl_13834",
+      "word": "搭车",
+      "exampleIndex": 1,
+      "originalHanzi": "搭车的时候，我通常一只手抓著头顶的扶杆站着，但如果腿太痠了，有时候也会坐下来。",
+      "originalPinyin": "dā chē de shí hou, wǒ tōng cháng yī zhī shǒu zhuā zhù tóu dǐng de fú gǎn zhàn zhe, dàn rú guǒ tuǐ tài suān le, yǒu shí hou yě huì zuò xia lái.",
+      "hanzi": "搭车的时候，我通常一只手抓著头顶的扶杆站着，但如果腿太痠了，有时候也会坐下来。",
+      "pinyin": "dā chē de shí hou, wǒ tōng cháng yī zhī shǒu zhuā zhe tóu dǐng de fú gǎn zhàn zhe, dàn rú guǒ tuǐ tài suān le, yǒu shí hou yě huì zuò xia lái."
+    },
+    {
+      "id": "wl_13929",
+      "word": "强风",
+      "exampleIndex": 0,
+      "originalHanzi": "松鼠在前面顶著强风。",
+      "originalPinyin": "sōng shǔ zài qián miàn dǐng zhù qiáng fēng.",
+      "hanzi": "松鼠在前面顶著强风。",
+      "pinyin": "sōng shǔ zài qián miàn dǐng zhe qiáng fēng."
+    },
+    {
+      "id": "wl_13995",
+      "word": "砍",
+      "exampleIndex": 0,
+      "originalHanzi": "很多树被砍倒。",
+      "originalPinyin": "hěn duō shù bèi kǎn dào.",
+      "hanzi": "很多树被砍倒。",
+      "pinyin": "hěn duō shù bèi kǎn dǎo."
+    },
+    {
+      "id": "wl_14030",
+      "word": "之内",
+      "exampleIndex": 0,
+      "originalHanzi": "假如能一个月之内还上的话，我可以把钱借给你。",
+      "originalPinyin": "jiǎ rú néng yī ge yuè zhī nèi hái shàng de huà, wǒ kě yǐ bǎ qián jiè gěi nǐ.",
+      "hanzi": "假如能一个月之内还上的话，我可以把钱借给你。",
+      "pinyin": "jiǎ rú néng yī ge yuè zhī nèi huán shàng de huà, wǒ kě yǐ bǎ qián jiè gěi nǐ."
+    },
+    {
+      "id": "wl_14254",
+      "word": "公众",
+      "exampleIndex": 1,
+      "originalHanzi": "汤姆知道在公众场合怎幺样自处。",
+      "originalPinyin": "tāng mǔ zhī dào zài gōng zhòng chǎng hé zěn me yàng zì chù.",
+      "hanzi": "汤姆知道在公众场合怎幺样自处。",
+      "pinyin": "tāng mǔ zhī dào zài gōng zhòng chǎng hé zěn me yàng zì chǔ."
+    },
+    {
+      "id": "wl_14393",
+      "word": "亦",
+      "exampleIndex": 1,
+      "originalHanzi": "她拎著水桶，亦能稳稳走过小桥。",
+      "originalPinyin": "tā līn zhù shuǐ tǒng, yì néng wěn wěn zǒu guò xiǎo qiáo.",
+      "hanzi": "她拎著水桶，亦能稳稳走过小桥。",
+      "pinyin": "tā līn zhe shuǐ tǒng, yì néng wěn wěn zǒu guò xiǎo qiáo."
+    },
+    {
+      "id": "wl_14427",
+      "word": "此刻",
+      "exampleIndex": 1,
+      "originalHanzi": "我此刻正忙著做饭。",
+      "originalPinyin": "wǒ cǐ kè zhèng máng zhù zuò fàn.",
+      "hanzi": "我此刻正忙著做饭。",
+      "pinyin": "wǒ cǐ kè zhèng máng zhe zuò fàn."
+    },
+    {
+      "id": "wl_14461",
+      "word": "吉他",
+      "exampleIndex": 0,
+      "originalHanzi": "我想弹吉他。",
+      "originalPinyin": "wǒ xiǎng dàn jí tā.",
+      "hanzi": "我想弹吉他。",
+      "pinyin": "wǒ xiǎng tán jí tā."
+    },
+    {
+      "id": "wl_14461",
+      "word": "吉他",
+      "exampleIndex": 1,
+      "originalHanzi": "他常常弹吉他。",
+      "originalPinyin": "tā cháng cháng dàn jí tā.",
+      "hanzi": "他常常弹吉他。",
+      "pinyin": "tā cháng cháng tán jí tā."
+    },
+    {
+      "id": "wl_14471",
+      "word": "谋杀罪",
+      "exampleIndex": 1,
+      "originalHanzi": "法庭对他的谋杀罪名作出了无罪判决。",
+      "originalPinyin": "fǎ tíng duì tā de móu shā zuì míng zuò chū liǎo wú zuì pàn jué.",
+      "hanzi": "法庭对他的谋杀罪名作出了无罪判决。",
+      "pinyin": "fǎ tíng duì tā de móu shā zuì míng zuò chū le wú zuì pàn jué."
+    },
+    {
+      "id": "wl_14518",
+      "word": "拆毁",
+      "exampleIndex": 1,
+      "originalHanzi": "二十世纪中以后，北京胡同的数量显着地下降，因为人们把它们拆毁以便给新的楼房和街路让路。",
+      "originalPinyin": "èr shí shì jì zhōng yǐ hòu, běi jīng hú tòng de shù liàng xiǎn zháo dì xià jiàng, yīn wèi rén men bǎ tā men chāi huǐ yǐ biàn gěi xīn de lóu fáng hé jiē lù ràng lù.",
+      "hanzi": "二十世纪中以后，北京胡同的数量显著地下降，因为人们把它们拆毁以便给新的楼房和街路让路。",
+      "pinyin": "èr shí shì jì zhōng yǐ hòu, běi jīng hú tòng de shù liàng xiǎn zhù de xià jiàng, yīn wèi rén men bǎ tā men chāi huǐ yǐ biàn gěi xīn de lóu fáng hé jiē lù ràng lù."
+    },
+    {
+      "id": "wl_14567",
+      "word": "旁",
+      "exampleIndex": 0,
+      "originalHanzi": "田陔旁长着青草。",
+      "originalPinyin": "tián gāi páng cháng zhe qīng cǎo.",
+      "hanzi": "田陔旁长着青草。",
+      "pinyin": "tián gāi páng zhǎng zhe qīng cǎo."
+    },
+    {
+      "id": "wl_14583",
+      "word": "流星",
+      "exampleIndex": 1,
+      "originalHanzi": "在我们头顶飞舞著的沙粒，在我们手中挥动著的刀剑……它们不是甚麼，只不过是在夜空中擦过的一朵朵流星。",
+      "originalPinyin": "zài wǒ men tóu dǐng fēi wǔ zhù de shā lì, zài wǒ men shǒu zhōng huī dòng zhù de dāo jiàn…… tā men bù shì shèn me, zhǐ bu guò shì zài yè kōng zhōng cā guo de yī duǒ duǒ liú xīng.",
+      "hanzi": "在我们头顶飞舞著的沙粒，在我们手中挥动著的刀剑……它们不是甚麼，只不过是在夜空中擦过的一朵朵流星。",
+      "pinyin": "zài wǒ men tóu dǐng fēi wǔ zhe de shā lì, zài wǒ men shǒu zhōng huī dòng zhe de dāo jiàn…… tā men bù shì shèn me, zhǐ bu guò shì zài yè kōng zhōng cā guo de yī duǒ duǒ liú xīng."
+    },
+    {
+      "id": "wl_14622",
+      "word": "摸索",
+      "exampleIndex": 1,
+      "originalHanzi": "她摸索著一张纸。",
+      "originalPinyin": "tā mō suo zhù yī zhāng zhǐ.",
+      "hanzi": "她摸索著一张纸。",
+      "pinyin": "tā mō suo zhe yī zhāng zhǐ."
+    },
+    {
+      "id": "wl_14629",
+      "word": "吼",
+      "exampleIndex": 1,
+      "originalHanzi": "别对著我吼。",
+      "originalPinyin": "bié duì zhù wǒ hǒu.",
+      "hanzi": "别对著我吼。",
+      "pinyin": "bié duì zhe wǒ hǒu."
+    },
+    {
+      "id": "wl_14683",
+      "word": "发夹",
+      "exampleIndex": 0,
+      "originalHanzi": "她用发夹夹住了额前的碎发。",
+      "originalPinyin": "tā yòng fà jiā jiā zhù le é qián de suì fā.",
+      "hanzi": "她用发夹夹住了额前的碎发。",
+      "pinyin": "tā yòng fà jiā jiā zhù le é qián de suì fà."
+    },
+    {
+      "id": "wl_14769",
+      "word": "雾蒙蒙",
+      "exampleIndex": 1,
+      "originalHanzi": "齐里的眼睛里泛著一层雾蒙蒙的白色光晕。",
+      "originalPinyin": "qí lǐ de yǎn jing lǐ fàn zhù yī céng wù méng méng de bái sè guāng yùn.",
+      "hanzi": "齐里的眼睛里泛著一层雾蒙蒙的白色光晕。",
+      "pinyin": "qí lǐ de yǎn jing lǐ fàn zhe yī céng wù méng méng de bái sè guāng yùn."
+    },
+    {
+      "id": "wl_14792",
+      "word": "三文鱼",
+      "exampleIndex": 0,
+      "originalHanzi": "这鱼吃著像三文鱼。",
+      "originalPinyin": "zhè yú chī zhù xiàng sān wén yú.",
+      "hanzi": "这鱼吃著像三文鱼。",
+      "pinyin": "zhè yú chī zhe xiàng sān wén yú."
+    },
+    {
+      "id": "wl_14827",
+      "word": "传言",
+      "exampleIndex": 1,
+      "originalHanzi": "学生中流传著一个传言，说这位老师会让所有学生考试不及格。",
+      "originalPinyin": "xué sheng zhōng liú chuán zhù yī ge chuán yán, shuō zhè wèi lǎo shī huì ràng suǒ yǒu xué sheng kǎo shì bù jí gé.",
+      "hanzi": "学生中流传著一个传言，说这位老师会让所有学生考试不及格。",
+      "pinyin": "xué sheng zhōng liú chuán zhe yī ge chuán yán, shuō zhè wèi lǎo shī huì ràng suǒ yǒu xué sheng kǎo shì bù jí gé."
+    },
+    {
+      "id": "wl_14855",
+      "word": "透明胶",
+      "exampleIndex": 1,
+      "originalHanzi": "这卷透明胶快用完了。",
+      "originalPinyin": "zhè juǎn tòu míng jiāo kuài yòng wán le.",
+      "hanzi": "这卷透明胶快用完了。",
+      "pinyin": "zhè juàn tòu míng jiāo kuài yòng wán le."
+    },
+    {
+      "id": "wl_14869",
+      "word": "整整齐齐",
+      "exampleIndex": 1,
+      "originalHanzi": "房间的角落里整整齐齐地放著一叠书。",
+      "originalPinyin": "fáng jiān de jiǎo luò lǐ zhěng zhěng qí qí de fàng zhù yī dié shū.",
+      "hanzi": "房间的角落里整整齐齐地放著一叠书。",
+      "pinyin": "fáng jiān de jiǎo luò lǐ zhěng zhěng qí qí de fàng zhe yī dié shū."
+    },
+    {
+      "id": "wl_14999",
+      "word": "周二",
+      "exampleIndex": 1,
+      "originalHanzi": "你周二有没有空？",
+      "originalPinyin": "nǐ zhōu èr yǒu méi yǒu kōng?",
+      "hanzi": "你周二有没有空？",
+      "pinyin": "nǐ zhōu èr yǒu méi yǒu kòng?"
+    },
+    {
+      "id": "wl_15098",
+      "word": "桶",
+      "exampleIndex": 1,
+      "originalHanzi": "铁桶咣当一声倒了。",
+      "originalPinyin": "tiě tǒng guāng dāng yī shēng dào le.",
+      "hanzi": "铁桶咣当一声倒了。",
+      "pinyin": "tiě tǒng guāng dāng yī shēng dǎo le."
+    },
+    {
+      "id": "wl_15165",
+      "word": "肖像",
+      "exampleIndex": 1,
+      "originalHanzi": "墙上挂著一幅鲍勃的肖像。",
+      "originalPinyin": "qiáng shàng guà zhù yī fú bào bó de xiào xiàng.",
+      "hanzi": "墙上挂著一幅鲍勃的肖像。",
+      "pinyin": "qiáng shàng guà zhe yī fú bào bó de xiào xiàng."
+    },
+    {
+      "id": "wl_15216",
+      "word": "伴随",
+      "exampleIndex": 0,
+      "originalHanzi": "闪电常常伴随著雷鸣。",
+      "originalPinyin": "shǎn diàn cháng cháng bàn suí zhù léi míng.",
+      "hanzi": "闪电常常伴随著雷鸣。",
+      "pinyin": "shǎn diàn cháng cháng bàn suí zhe léi míng."
+    },
+    {
+      "id": "wl_15278",
+      "word": "迷你",
+      "exampleIndex": 1,
+      "originalHanzi": "玛丽穿著一条白色的迷你裙。",
+      "originalPinyin": "mǎ lì chuān zhù yī tiáo bái sè de mí nǐ qún.",
+      "hanzi": "玛丽穿著一条白色的迷你裙。",
+      "pinyin": "mǎ lì chuān zhe yī tiáo bái sè de mí nǐ qún."
+    },
+    {
+      "id": "wl_15381",
+      "word": "瞪",
+      "exampleIndex": 0,
+      "originalHanzi": "我没想瞪著看的。",
+      "originalPinyin": "wǒ méi xiǎng dèng zhù kàn de.",
+      "hanzi": "我没想瞪著看的。",
+      "pinyin": "wǒ méi xiǎng dèng zhe kàn de."
+    },
+    {
+      "id": "wl_15389",
+      "word": "田",
+      "exampleIndex": 0,
+      "originalHanzi": "田陔旁长着青草。",
+      "originalPinyin": "tián gāi páng cháng zhe qīng cǎo.",
+      "hanzi": "田陔旁长着青草。",
+      "pinyin": "tián gāi páng zhǎng zhe qīng cǎo."
+    },
+    {
+      "id": "wl_15561",
+      "word": "高跟鞋",
+      "exampleIndex": 0,
+      "originalHanzi": "她穿著高跟鞋。",
+      "originalPinyin": "tā chuān zhù gāo gēn xié.",
+      "hanzi": "她穿著高跟鞋。",
+      "pinyin": "tā chuān zhe gāo gēn xié."
+    },
+    {
+      "id": "wl_15561",
+      "word": "高跟鞋",
+      "exampleIndex": 1,
+      "originalHanzi": "玛莉穿著高跟鞋。",
+      "originalPinyin": "mǎ lì chuān zhù gāo gēn xié.",
+      "hanzi": "玛莉穿著高跟鞋。",
+      "pinyin": "mǎ lì chuān zhe gāo gēn xié."
+    },
+    {
+      "id": "wl_15670",
+      "word": "期盼",
+      "exampleIndex": 1,
+      "originalHanzi": "我期盼著下周见到你。",
+      "originalPinyin": "wǒ qī pàn zhù xià zhōu jiàn dào nǐ.",
+      "hanzi": "我期盼著下周见到你。",
+      "pinyin": "wǒ qī pàn zhe xià zhōu jiàn dào nǐ."
+    },
+    {
+      "id": "wl_15858",
+      "word": "高昂",
+      "exampleIndex": 0,
+      "originalHanzi": "马不但象征著刚健、高昂、昌盛、发达，还代表著奋斗不止、自强不息的民族精神。",
+      "originalPinyin": "mǎ bù dàn xiàng zhēng zhù gāng jiàn, gāo áng, chāng shèng, fā dá, hái dài biǎo zhù fèn dòu bù zhǐ, zì qiáng bù xī de mín zú jīng shen.",
+      "hanzi": "马不但象征著刚健、高昂、昌盛、发达，还代表著奋斗不止、自强不息的民族精神。",
+      "pinyin": "mǎ bù dàn xiàng zhēng zhe gāng jiàn, gāo áng, chāng shèng, fā dá, hái dài biǎo zhe fèn dòu bù zhǐ, zì qiáng bù xī de mín zú jīng shen."
+    },
+    {
+      "id": "wl_15860",
+      "word": "飘荡",
+      "exampleIndex": 1,
+      "originalHanzi": "玫瑰的香气在房间的每一个角落里飘荡著。",
+      "originalPinyin": "méi guī de xiāng qì zài fáng jiān de měi yī ge jiǎo luò lǐ piāo dàng zhù.",
+      "hanzi": "玫瑰的香气在房间的每一个角落里飘荡著。",
+      "pinyin": "méi guī de xiāng qì zài fáng jiān de měi yī ge jiǎo luò lǐ piāo dàng zhe."
+    },
+    {
+      "id": "wl_15916",
+      "word": "二郎腿",
+      "exampleIndex": 0,
+      "originalHanzi": "他翘著二郎腿坐在那里。",
+      "originalPinyin": "tā qiáo zhù èr láng tuǐ zuò zài nà lǐ.",
+      "hanzi": "他翘著二郎腿坐在那里。",
+      "pinyin": "tā qiáo zhe èr láng tuǐ zuò zài nà lǐ."
+    },
+    {
+      "id": "wl_15919",
+      "word": "弓",
+      "exampleIndex": 1,
+      "originalHanzi": "展柜里的弓箭旁放着火铳。",
+      "originalPinyin": "zhǎn guì lǐ de gōng jiàn páng fàng zháo huǒ chòng.",
+      "hanzi": "展柜里的弓箭旁放着火铳。",
+      "pinyin": "zhǎn guì lǐ de gōng jiàn páng fàng zhe huǒ chòng."
+    },
+    {
+      "id": "wl_15926",
+      "word": "引人注目",
+      "exampleIndex": 0,
+      "originalHanzi": "安娜引人注目的杏仁状眼睛继承了她的亚洲血统，散发着迷人的深度和一丝神秘感。",
+      "originalPinyin": "ān nà yǐn rén zhù mù de xìng rén zhuàng yǎn jing jì chéng le tā de yà zhōu xuè tǒng, sàn fā zháo mí rén de shēn dù hé yī sī shén mì gǎn.",
+      "hanzi": "安娜引人注目的杏仁状眼睛继承了她的亚洲血统，散发着迷人的深度和一丝神秘感。",
+      "pinyin": "ān nà yǐn rén zhù mù de xìng rén zhuàng yǎn jing jì chéng le tā de yà zhōu xuè tǒng, sàn fā zhe mí rén de shēn dù hé yī sī shén mì gǎn."
+    },
+    {
+      "id": "wl_15943",
+      "word": "妙",
+      "exampleIndex": 0,
+      "originalHanzi": "阳光照耀着花园，景色十分美妙。",
+      "originalPinyin": "yáng guāng zhào yào zháo huā yuán, jǐng sè shí fēn měi miào.",
+      "hanzi": "阳光照耀着花园，景色十分美妙。",
+      "pinyin": "yáng guāng zhào yào zhe huā yuán, jǐng sè shí fēn měi miào."
+    },
+    {
+      "id": "wl_15952",
+      "word": "拎",
+      "exampleIndex": 1,
+      "originalHanzi": "她拎著水桶，亦能稳稳走过小桥。",
+      "originalPinyin": "tā līn zhù shuǐ tǒng, yì néng wěn wěn zǒu guò xiǎo qiáo.",
+      "hanzi": "她拎著水桶，亦能稳稳走过小桥。",
+      "pinyin": "tā līn zhe shuǐ tǒng, yì néng wěn wěn zǒu guò xiǎo qiáo."
+    },
+    {
+      "id": "wl_16048",
+      "word": "土星",
+      "exampleIndex": 1,
+      "originalHanzi": "许多卫星绕著土星运行。",
+      "originalPinyin": "xǔ duō wèi xīng rào zhù tǔ xīng yùn xíng.",
+      "hanzi": "许多卫星绕著土星运行。",
+      "pinyin": "xǔ duō wèi xīng rào zhe tǔ xīng yùn xíng."
+    },
+    {
+      "id": "wl_16161",
+      "word": "富翁",
+      "exampleIndex": 1,
+      "originalHanzi": "我总是梦想著成为亿万富翁。",
+      "originalPinyin": "wǒ zǒng shì mèng xiǎng zhù chéng wéi yì wàn fù wēng.",
+      "hanzi": "我总是梦想著成为亿万富翁。",
+      "pinyin": "wǒ zǒng shì mèng xiǎng zhe chéng wéi yì wàn fù wēng."
+    },
+    {
+      "id": "wl_16193",
+      "word": "玫瑰花",
+      "exampleIndex": 1,
+      "originalHanzi": "我父亲的嗜好是种玫瑰花。",
+      "originalPinyin": "wǒ fù qīn de shì hào shì zhǒng méi guī huā.",
+      "hanzi": "我父亲的嗜好是种玫瑰花。",
+      "pinyin": "wǒ fù qīn de shì hào shì zhòng méi guī huā."
+    },
+    {
+      "id": "wl_16258",
+      "word": "饰",
+      "exampleIndex": 0,
+      "originalHanzi": "她的发饰上，有一件美丽的珈。",
+      "originalPinyin": "tā de fā shì shàng, yǒu yī jiàn měi lì de jiā.",
+      "hanzi": "她的发饰上，有一件美丽的珈。",
+      "pinyin": "tā de fà shì shàng, yǒu yī jiàn měi lì de jiā."
+    },
+    {
+      "id": "wl_16308",
+      "word": "伴奏",
+      "exampleIndex": 0,
+      "originalHanzi": "她会弹钢琴为我伴奏。",
+      "originalPinyin": "tā huì dàn gāng qín wèi wǒ bàn zòu.",
+      "hanzi": "她会弹钢琴为我伴奏。",
+      "pinyin": "tā huì tán gāng qín wèi wǒ bàn zòu."
+    },
+    {
+      "id": "wl_16322",
+      "word": "冰川",
+      "exampleIndex": 1,
+      "originalHanzi": "这座位於南亚中心的雄伟山脉，山峰白雪皑皑，覆盖著广阔的冰川。",
+      "originalPinyin": "zhè zuò wèi yú nán yà zhōng xīn de xióng wěi shān mài, shān fēng bái xuě ái ái, fù gài zhù guǎng kuò de bīng chuān.",
+      "hanzi": "这座位於南亚中心的雄伟山脉，山峰白雪皑皑，覆盖著广阔的冰川。",
+      "pinyin": "zhè zuò wèi yú nán yà zhōng xīn de xióng wěi shān mài, shān fēng bái xuě ái ái, fù gài zhe guǎng kuò de bīng chuān."
+    },
+    {
+      "id": "wl_16422",
+      "word": "舞曲",
+      "exampleIndex": 1,
+      "originalHanzi": "她在钢琴上弹了一首华尔滋舞曲。",
+      "originalPinyin": "tā zài gāng qín shàng dàn le yī shǒu huá ěr zī wǔ qǔ.",
+      "hanzi": "她在钢琴上弹了一首华尔滋舞曲。",
+      "pinyin": "tā zài gāng qín shàng tán le yī shǒu huá ěr zī wǔ qǔ."
+    },
+    {
+      "id": "wl_16481",
+      "word": "褐",
+      "exampleIndex": 0,
+      "originalHanzi": "她穿著深褐色的鞋子。",
+      "originalPinyin": "tā chuān zhù shēn hè sè de xié zi.",
+      "hanzi": "她穿著深褐色的鞋子。",
+      "pinyin": "tā chuān zhe shēn hè sè de xié zi."
+    },
+    {
+      "id": "wl_16639",
+      "word": "下游",
+      "exampleIndex": 1,
+      "originalHanzi": "我们乘著独木舟向河的下游而行。",
+      "originalPinyin": "wǒ men chéng zhù dú mù zhōu xiàng hé de xià yóu ér xíng.",
+      "hanzi": "我们乘著独木舟向河的下游而行。",
+      "pinyin": "wǒ men chéng zhe dú mù zhōu xiàng hé de xià yóu ér xíng."
+    },
+    {
+      "id": "wl_16883",
+      "word": "翩翩起舞",
+      "exampleIndex": 0,
+      "originalHanzi": "饯行宴上，宾客随乐翩翩起舞。",
+      "originalPinyin": "jiàn xíng yàn shàng, bīn kè suí lè piān piān qǐ wǔ.",
+      "hanzi": "饯行宴上，宾客随乐翩翩起舞。",
+      "pinyin": "jiàn xíng yàn shàng, bīn kè suí yuè piān piān qǐ wǔ."
+    },
+    {
+      "id": "wl_16971",
+      "word": "胶片",
+      "exampleIndex": 1,
+      "originalHanzi": "请给我一卷彩色胶片。",
+      "originalPinyin": "qǐng gěi wǒ yī juǎn cǎi sè jiāo piàn.",
+      "hanzi": "请给我一卷彩色胶片。",
+      "pinyin": "qǐng gěi wǒ yī juàn cǎi sè jiāo piàn."
+    },
+    {
+      "id": "wl_17124",
+      "word": "手电",
+      "exampleIndex": 0,
+      "originalHanzi": "她用手电筒照着地面。",
+      "originalPinyin": "tā yòng shǒu diàn tǒng zhào zháo dì miàn.",
+      "hanzi": "她用手电筒照着地面。",
+      "pinyin": "tā yòng shǒu diàn tǒng zhào zhe dì miàn."
+    },
+    {
+      "id": "wl_17127",
+      "word": "自强不息",
+      "exampleIndex": 1,
+      "originalHanzi": "马不但象征著刚健、高昂、昌盛、发达，还代表著奋斗不止、自强不息的民族精神。",
+      "originalPinyin": "mǎ bù dàn xiàng zhēng zhù gāng jiàn, gāo áng, chāng shèng, fā dá, hái dài biǎo zhù fèn dòu bù zhǐ, zì qiáng bù xī de mín zú jīng shen.",
+      "hanzi": "马不但象征著刚健、高昂、昌盛、发达，还代表著奋斗不止、自强不息的民族精神。",
+      "pinyin": "mǎ bù dàn xiàng zhēng zhe gāng jiàn, gāo áng, chāng shèng, fā dá, hái dài biǎo zhe fèn dòu bù zhǐ, zì qiáng bù xī de mín zú jīng shen."
+    },
+    {
+      "id": "wl_17275",
+      "word": "电筒",
+      "exampleIndex": 0,
+      "originalHanzi": "她用手电筒照着地面。",
+      "originalPinyin": "tā yòng shǒu diàn tǒng zhào zháo dì miàn.",
+      "hanzi": "她用手电筒照着地面。",
+      "pinyin": "tā yòng shǒu diàn tǒng zhào zhe dì miàn."
+    },
+    {
+      "id": "wl_17412",
+      "word": "警车",
+      "exampleIndex": 0,
+      "originalHanzi": "学校门前停著好几辆警车。",
+      "originalPinyin": "xué xiào mén qián tíng zhù hǎo jǐ liàng jǐng chē.",
+      "hanzi": "学校门前停著好几辆警车。",
+      "pinyin": "xué xiào mén qián tíng zhe hǎo jǐ liàng jǐng chē."
+    },
+    {
+      "id": "wl_17423",
+      "word": "荒岛",
+      "exampleIndex": 0,
+      "originalHanzi": "如果你被困在一个荒岛上, 你会想要随身带著哪些书来看?",
+      "originalPinyin": "rú guǒ nǐ bèi kùn zài yī ge huāng dǎo shàng, nǐ huì xiǎng yào suí shēn dài zhù nǎ xiē shū lái kàn?",
+      "hanzi": "如果你被困在一个荒岛上, 你会想要随身带著哪些书来看?",
+      "pinyin": "rú guǒ nǐ bèi kùn zài yī ge huāng dǎo shàng, nǐ huì xiǎng yào suí shēn dài zhe nǎ xiē shū lái kàn?"
+    },
+    {
+      "id": "wl_17462",
+      "word": "晶体管",
+      "exampleIndex": 1,
+      "originalHanzi": "晶体管的发明标志著一个新时代的开始。",
+      "originalPinyin": "jīng tǐ guǎn de fā míng biāo zhì zhù yī ge xīn shí dài de kāi shǐ.",
+      "hanzi": "晶体管的发明标志著一个新时代的开始。",
+      "pinyin": "jīng tǐ guǎn de fā míng biāo zhì zhe yī ge xīn shí dài de kāi shǐ."
+    },
+    {
+      "id": "wl_17478",
+      "word": "新时代",
+      "exampleIndex": 1,
+      "originalHanzi": "晶体管的发明标志著一个新时代的开始。",
+      "originalPinyin": "jīng tǐ guǎn de fā míng biāo zhì zhù yī ge xīn shí dài de kāi shǐ.",
+      "hanzi": "晶体管的发明标志著一个新时代的开始。",
+      "pinyin": "jīng tǐ guǎn de fā míng biāo zhì zhe yī ge xīn shí dài de kāi shǐ."
+    },
+    {
+      "id": "wl_17739",
+      "word": "萤幕",
+      "exampleIndex": 0,
+      "originalHanzi": "萤幕闪著绿色的光。",
+      "originalPinyin": "yíng mù shǎn zhù lǜ sè de guāng.",
+      "hanzi": "萤幕闪著绿色的光。",
+      "pinyin": "yíng mù shǎn zhe lǜ sè de guāng."
+    },
+    {
+      "id": "wl_17753",
+      "word": "舌面",
+      "exampleIndex": 0,
+      "originalHanzi": "青苔长在石上，舌苔覆盖舌面。",
+      "originalPinyin": "qīng tái cháng zài shí shàng, shé tāi fù gài shé miàn.",
+      "hanzi": "青苔长在石上，舌苔覆盖舌面。",
+      "pinyin": "qīng tái zhǎng zài shí shàng, shé tāi fù gài shé miàn."
+    },
+    {
+      "id": "wl_17778",
+      "word": "阵雨",
+      "exampleIndex": 0,
+      "originalHanzi": "明天天气晴转阵雨。",
+      "originalPinyin": "míng tiān tiān qì qíng zhuàn zhèn yǔ.",
+      "hanzi": "明天天气晴转阵雨。",
+      "pinyin": "míng tiān tiān qì qíng zhuǎn zhèn yǔ."
+    },
+    {
+      "id": "wl_17806",
+      "word": "眉头",
+      "exampleIndex": 1,
+      "originalHanzi": "老太太皱著眉头。",
+      "originalPinyin": "lǎo tài tai zhòu zhù méi tóu.",
+      "hanzi": "老太太皱著眉头。",
+      "pinyin": "lǎo tài tai zhòu zhe méi tóu."
+    },
+    {
+      "id": "wl_17896",
+      "word": "不等",
+      "exampleIndex": 1,
+      "originalHanzi": "我不能怪汤姆不等著。",
+      "originalPinyin": "wǒ bù néng guài tāng mǔ bù děng zhù.",
+      "hanzi": "我不能怪汤姆不等著。",
+      "pinyin": "wǒ bù néng guài tāng mǔ bù děng zhe."
+    },
+    {
+      "id": "wl_18481",
+      "word": "痛痒",
+      "exampleIndex": 0,
+      "originalHanzi": "报告避开关键问题，只提了无关痛痒的建议。",
+      "originalPinyin": "bào gào bì kāi guān jiàn wèn tí, zhǐ tí liǎo wú guān tòng yǎng de jiàn yì.",
+      "hanzi": "报告避开关键问题，只提了无关痛痒的建议。",
+      "pinyin": "bào gào bì kāi guān jiàn wèn tí, zhǐ tí le wú guān tòng yǎng de jiàn yì."
+    },
+    {
+      "id": "wl_18524",
+      "word": "会心",
+      "exampleIndex": 0,
+      "originalHanzi": "听到这个暗号，两人会心地笑了。",
+      "originalPinyin": "tīng dào zhè ge àn hào, liǎng rén huì xīn dì xiào le.",
+      "hanzi": "听到这个暗号，两人会心地笑了。",
+      "pinyin": "tīng dào zhè ge àn hào, liǎng rén huì xīn de xiào le."
+    },
+    {
+      "id": "wl_18544",
+      "word": "急巴巴",
+      "exampleIndex": 0,
+      "originalHanzi": "他急巴巴地跑来找我。",
+      "originalPinyin": "tā jí bā bā dì pǎo lái zhǎo wǒ.",
+      "hanzi": "他急巴巴地跑来找我。",
+      "pinyin": "tā jí bā bā de pǎo lái zhǎo wǒ."
+    },
+    {
+      "id": "wl_18751",
+      "word": "名产",
+      "exampleIndex": 1,
+      "originalHanzi": "游客买了几种地方名产。",
+      "originalPinyin": "yóu kè mǎi le jǐ zhòng dì fāng míng chǎn.",
+      "hanzi": "游客买了几种地方名产。",
+      "pinyin": "yóu kè mǎi le jǐ zhǒng dì fāng míng chǎn."
+    },
+    {
+      "id": "wl_18937",
+      "word": "出奇",
+      "exampleIndex": 0,
+      "originalHanzi": "今天的教室出奇地安静。",
+      "originalPinyin": "jīn tiān de jiào shì chū qí dì ān jìng.",
+      "hanzi": "今天的教室出奇地安静。",
+      "pinyin": "jīn tiān de jiào shì chū qí de ān jìng."
+    },
+    {
+      "id": "wl_18937",
+      "word": "出奇",
+      "exampleIndex": 1,
+      "originalHanzi": "这道题出奇地简单。",
+      "originalPinyin": "zhè dào tí chū qí dì jiǎn dān.",
+      "hanzi": "这道题出奇地简单。",
+      "pinyin": "zhè dào tí chū qí de jiǎn dān."
+    },
+    {
+      "id": "wl_18952",
+      "word": "错落",
+      "exampleIndex": 1,
+      "originalHanzi": "花木错落有致地种在院中。",
+      "originalPinyin": "huā mù cuò luò yǒu zhì dì zhòng zài yuàn zhōng.",
+      "hanzi": "花木错落有致地种在院中。",
+      "pinyin": "huā mù cuò luò yǒu zhì de zhòng zài yuàn zhōng."
+    },
+    {
+      "id": "wl_19117",
+      "word": "飞快",
+      "exampleIndex": 0,
+      "originalHanzi": "小狗飞快地跑回家。",
+      "originalPinyin": "xiǎo gǒu fēi kuài dì pǎo huí jiā.",
+      "hanzi": "小狗飞快地跑回家。",
+      "pinyin": "xiǎo gǒu fēi kuài de pǎo huí jiā."
+    },
+    {
+      "id": "wl_19117",
+      "word": "飞快",
+      "exampleIndex": 1,
+      "originalHanzi": "火车飞快地穿过田野。",
+      "originalPinyin": "huǒ chē fēi kuài dì chuān guò tián yě.",
+      "hanzi": "火车飞快地穿过田野。",
+      "pinyin": "huǒ chē fēi kuài de chuān guò tián yě."
+    },
+    {
+      "id": "wl_19196",
+      "word": "乖乖",
+      "exampleIndex": 0,
+      "originalHanzi": "小狗乖乖地趴在门边。",
+      "originalPinyin": "xiǎo gǒu guāi guāi dì pā zài mén biān.",
+      "hanzi": "小狗乖乖地趴在门边。",
+      "pinyin": "xiǎo gǒu guāi guāi de pā zài mén biān."
+    },
+    {
+      "id": "wl_19220",
+      "word": "过日子",
+      "exampleIndex": 0,
+      "originalHanzi": "他们精打细算地过日子。",
+      "originalPinyin": "tā men jīng dǎ xì suàn dì guò rì zi.",
+      "hanzi": "他们精打细算地过日子。",
+      "pinyin": "tā men jīng dǎ xì suàn de guò rì zi."
+    },
+    {
+      "id": "wl_19232",
+      "word": "好乖",
+      "exampleIndex": 0,
+      "originalHanzi": "小猫安静地趴着，好乖呀！",
+      "originalPinyin": "xiǎo māo ān jìng dì pā zhe, hǎo guāi ya!",
+      "hanzi": "小猫安静地趴着，好乖呀！",
+      "pinyin": "xiǎo māo ān jìng de pā zhe, hǎo guāi ya!"
+    },
+    {
+      "id": "wl_19362",
+      "word": "漂着",
+      "exampleIndex": 1,
+      "originalHanzi": "小船静静地漂着。",
+      "originalPinyin": "xiǎo chuán jìng jìng dì piāo zhe.",
+      "hanzi": "小船静静地漂着。",
+      "pinyin": "xiǎo chuán jìng jìng de piāo zhe."
+    },
+    {
+      "id": "wl_19632",
+      "word": "呜呜",
+      "exampleIndex": 0,
+      "originalHanzi": "小孩呜呜地哭起来。",
+      "originalPinyin": "xiǎo hái wū wū dì kū qǐ lái.",
+      "hanzi": "小孩呜呜地哭起来。",
+      "pinyin": "xiǎo hái wū wū de kū qǐ lái."
+    },
+    {
+      "id": "wl_19632",
+      "word": "呜呜",
+      "exampleIndex": 1,
+      "originalHanzi": "风在窗外呜呜地响。",
+      "originalPinyin": "fēng zài chuāng wài wū wū dì xiǎng.",
+      "hanzi": "风在窗外呜呜地响。",
+      "pinyin": "fēng zài chuāng wài wū wū de xiǎng."
+    },
+    {
+      "id": "wl_19656",
+      "word": "下马",
+      "exampleIndex": 1,
+      "originalHanzi": "骑手小心地下马。",
+      "originalPinyin": "qí shǒu xiǎo xīn dì xià mǎ.",
+      "hanzi": "骑手小心地下马。",
+      "pinyin": "qí shǒu xiǎo xīn de xià mǎ."
+    },
+    {
+      "id": "wl_19667",
+      "word": "想当然",
+      "exampleIndex": 1,
+      "originalHanzi": "他想当然地以为大家都收到了通知。",
+      "originalPinyin": "tā xiǎng dāng rán dì yǐ wéi dà jiā dōu shōu dào le tōng zhī.",
+      "hanzi": "他想当然地以为大家都收到了通知。",
+      "pinyin": "tā xiǎng dāng rán de yǐ wéi dà jiā dōu shōu dào le tōng zhī."
+    },
+    {
+      "id": "wl_19695",
+      "word": "笑哈哈",
+      "exampleIndex": 1,
+      "originalHanzi": "孩子们笑哈哈地跑进屋。",
+      "originalPinyin": "hái zi men xiào hā hā dì pǎo jìn wū.",
+      "hanzi": "孩子们笑哈哈地跑进屋。",
+      "pinyin": "hái zi men xiào hā hā de pǎo jìn wū."
+    },
+    {
+      "id": "wl_19697",
+      "word": "笑呵呵",
+      "exampleIndex": 0,
+      "originalHanzi": "爷爷总是笑呵呵地迎接客人。",
+      "originalPinyin": "yé yé zǒng shì xiào hē hē dì yíng jiē kè rén.",
+      "hanzi": "爷爷总是笑呵呵地迎接客人。",
+      "pinyin": "yé yé zǒng shì xiào hē hē de yíng jiē kè rén."
+    },
+    {
+      "id": "wl_19697",
+      "word": "笑呵呵",
+      "exampleIndex": 1,
+      "originalHanzi": "她笑呵呵地把蛋糕端了出来。",
+      "originalPinyin": "tā xiào hē hē dì bǎ dàn gāo duān le chū lái.",
+      "hanzi": "她笑呵呵地把蛋糕端了出来。",
+      "pinyin": "tā xiào hē hē de bǎ dàn gāo duān le chū lái."
+    },
+    {
+      "id": "wl_19728",
+      "word": "眼巴巴",
+      "exampleIndex": 0,
+      "originalHanzi": "小狗眼巴巴地望着饭碗。",
+      "originalPinyin": "xiǎo gǒu yǎn bā bā dì wàng zhe fàn wǎn.",
+      "hanzi": "小狗眼巴巴地望着饭碗。",
+      "pinyin": "xiǎo gǒu yǎn bā bā de wàng zhe fàn wǎn."
+    },
+    {
+      "id": "wl_19728",
+      "word": "眼巴巴",
+      "exampleIndex": 1,
+      "originalHanzi": "他眼巴巴地看着末班车开走。",
+      "originalPinyin": "tā yǎn bā bā dì kàn zhe mò bān chē kāi zǒu.",
+      "hanzi": "他眼巴巴地看着末班车开走。",
+      "pinyin": "tā yǎn bā bā de kàn zhe mò bān chē kāi zǒu."
+    },
+    {
+      "id": "wl_19784",
+      "word": "鱼钩",
+      "exampleIndex": 0,
+      "originalHanzi": "爷爷小心地把鱼钩收进盒子。",
+      "originalPinyin": "yé yé xiǎo xīn dì bǎ yú gōu shōu jìn hé zi.",
+      "hanzi": "爷爷小心地把鱼钩收进盒子。",
+      "pinyin": "yé yé xiǎo xīn de bǎ yú gōu shōu jìn hé zi."
+    },
+    {
+      "id": "wl_19823",
+      "word": "指点",
+      "exampleIndex": 0,
+      "originalHanzi": "老师耐心地指点他的画法。",
+      "originalPinyin": "lǎo shī nài xīn dì zhǐ diǎn tā de huà fǎ.",
+      "hanzi": "老师耐心地指点他的画法。",
+      "pinyin": "lǎo shī nài xīn de zhǐ diǎn tā de huà fǎ."
+    },
+    {
+      "id": "wl_19911",
+      "word": "白族",
+      "exampleIndex": 1,
+      "originalHanzi": "这位白族老人正在教孩子唱歌。",
+      "originalPinyin": "zhè wèi bái zú lǎo rén zhèng zài jiào hái zi chàng gē.",
+      "hanzi": "这位白族老人正在教孩子唱歌。",
+      "pinyin": "zhè wèi bái zú lǎo rén zhèng zài jiāo hái zi chàng gē."
+    },
+    {
+      "id": "wl_19921",
+      "word": "佛寺",
+      "exampleIndex": 1,
+      "originalHanzi": "游客在佛寺外安静地等候。",
+      "originalPinyin": "yóu kè zài fó sì wài ān jìng dì děng hòu.",
+      "hanzi": "游客在佛寺外安静地等候。",
+      "pinyin": "yóu kè zài fó sì wài ān jìng de děng hòu."
+    },
+    {
+      "id": "wl_19944",
+      "word": "老街",
+      "exampleIndex": 0,
+      "originalHanzi": "我们沿着老街慢慢地走。",
+      "originalPinyin": "wǒ men yán zhe lǎo jiē màn màn dì zǒu.",
+      "hanzi": "我们沿着老街慢慢地走。",
+      "pinyin": "wǒ men yán zhe lǎo jiē màn màn de zǒu."
+    }
+  ]
+}

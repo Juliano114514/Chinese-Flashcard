@@ -149,12 +149,17 @@ def check():
     snapshot = verify_snapshot(source)
     report = read(REVIEW)
     payload = source.read_bytes()
+    from refine_vocabulary_20261103 import previous_payload, verify_review
+    previous = previous_payload(payload)
+    if previous != payload:
+        verify_review()
+        payload = previous
     supplement_path = ROOT / "tools/vocabulary_additions_20261103/report.json"
     reviewed_hash = snapshot["sha256"]
     if supplement_path.exists():
         supplement = read(supplement_path)
-        if (supplement["sha256"] != snapshot["sha256"] or supplement["bytes"] != len(payload)
-                or supplement["totalWords"] != snapshot["words"]):
+        if (supplement["sha256"] != hashlib.sha256(payload).hexdigest() or supplement["bytes"] != len(payload)
+                or supplement["totalWords"] != 19890):
             raise ValueError("Supplied-vocabulary review does not match current CSV")
         payload = payload[:supplement["baselineBytes"]]
         reviewed_hash = hashlib.sha256(payload).hexdigest()

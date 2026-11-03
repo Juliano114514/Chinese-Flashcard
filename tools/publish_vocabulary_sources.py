@@ -75,6 +75,17 @@ def publish(check=False):
         report = {**report, 'sha256': supplement['sha256'], 'totalWords': supplement['totalWords'],
                   'addedWords': report['addedWords'] + supplement['addedWords']}
         modified_on = supplement['date']
+    semantic_review = ROOT / 'tools/vocabulary_refinement_20261103/report.json'
+    if semantic_review.exists():
+        from refine_vocabulary_20261103 import verify_review
+        semantic = verify_review()
+        if semantic['inputSha256'] != report['sha256'] or semantic['inputWords'] != report['totalWords']:
+            raise ValueError('Semantic review does not extend the attributed vocabulary')
+        semantic_lock = read(semantic_review.parent / 'source-lock.json')
+        lock = {**lock, 'semanticReviewEditorialFiles': semantic_lock['editorialFiles']}
+        report = {**report, 'sha256': semantic['sha256'], 'totalWords': semantic['totalWords'],
+                  'addedWords': report['addedWords'] + semantic['supplementalWords']}
+        modified_on = semantic['date']
     vocabulary_path = ROOT / 'wordlist.csv'
     if hashlib.sha256(vocabulary_path.read_bytes()).hexdigest() != report['sha256']:
         raise ValueError('Publish source attribution only after the formal wordlist matches its report')
@@ -84,11 +95,19 @@ def publish(check=False):
     vocabulary_ids = {row['词条ID'] for row in vocabulary}
     if len(vocabulary) != report['totalWords'] or not set(legacy) <= vocabulary_ids:
         raise ValueError('Vocabulary source index would omit retained entries')
-    if set(provenance) != vocabulary_ids - set(legacy):
+    if semantic_review.exists():
+        # The overlay below adds the new semantic-family example records.
+        expected = {word_id for word_id in vocabulary_ids - set(legacy) if int(word_id[3:]) <= 19890}
+    else:
+        expected = vocabulary_ids - set(legacy)
+    if set(provenance) != expected:
         raise ValueError('Every added entry must have an example attribution record')
     if set(refined_provenance) - vocabulary_ids:
         raise ValueError('Refinement attribution refers to an absent word ID')
     provenance = {**provenance, **refined_provenance}
+    if semantic_review.exists():
+        from refine_vocabulary_20261103 import refined_provenance as apply_semantic_provenance
+        provenance = apply_semantic_provenance(provenance, vocabulary)
     source_counts = dict(collections.Counter(
         'legacy' if example['source'].startswith(('legacy:', 'legacy-context:')) else
         'Tatoeba' if 'tatoeba.org' in example['source'] or 'Tatoeba #' in example['source'] else
@@ -168,11 +187,12 @@ def publish(check=False):
     selected_origins = {context['hanzi']: sorted(old_contexts[context['hanzi']]) for context in contexts.values()
                         if context['source'].startswith('legacy-context:')}
     origin_bytes = encoded(selected_origins)
+    origin_output = semantic_review.parent / 'legacy-context-origins.json' if semantic_review.exists() else origins_path
     if check:
-        if not origins_path.exists() or origins_path.read_bytes() != origin_bytes:
+        if not origin_output.exists() or origin_output.read_bytes() != origin_bytes:
             raise ValueError('Retained example origins differ from selected provenance')
     else:
-        origins_path.write_bytes(origin_bytes)
+        origin_output.write_bytes(origin_bytes)
     header = '''CHINESE FLASHCARD — VOCABULARY SOURCE UPDATE, 2026-10-27
 
 The vocabulary expansion and five-stage revision retain every prior stable word
@@ -235,6 +255,14 @@ bilingual examples per added entry were edited with AI assistance; lexical
 reference uses the pinned CC-CEDICT release above. Original contributions are
 offered under CC BY-SA 4.0 to the extent rights are held. This is not independent
 human linguistic review or additional clearance of supplied/legacy rights.
+'''
+    if semantic_review.exists():
+        header += '''\nSemantic review, 2026-11-03: field corrections across retained vocabulary,
+contextual chunk/reading corrections, reviewed tags and 110 related headwords
+restricted to rarity stages 0-2. Historical inputs and original source credits
+are preserved; changed translations retain their original English where used.
+New example contributions are project-authored with AI assistance and offered
+under CC BY-SA 4.0 to the extent rights are held. This is not human certification.
 '''
     paragraphs = [header, 'Selected wordlist: ' + str(report['totalWords']) + ' words; ' +
                   str(report['baselineWords']) + ' retained IDs; ' + str(report['addedWords']) + ' added IDs.\n' +

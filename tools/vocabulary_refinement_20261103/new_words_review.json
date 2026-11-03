@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-03",
+  "source": "wordlist.csv / IDs wl_18501..wl_19890",
+  "reviewedHeadwords": 1390,
+  "reviewedNonTargetMultiCharacterExampleUnits": 2967,
+  "reviewedFields": [
+    "罕度",
+    "组词",
+    "拼音",
+    "词条ID",
+    "英文释义",
+    "词性",
+    "例句JSON",
+    "部件JSON",
+    "干扰词ID",
+    "来源说明",
+    "本义解释JSON",
+    "引申义解释JSON"
+  ],
+  "method": "AI-assisted review of all new headword/reading/teaching-gloss/component records and every distinct example-unit gloss, plus full structural coverage and targeted sentence-context review. Targeted changes are stored as explicit ID-keyed overlays.",
+  "boundary": "Not a claim that every full example sentence was independently human-proofread, listened to, or exhaustively verified against all dictionary senses. No device, build or automated test execution.",
+  "changedRows": 618,
+  "changedFields": {
+    "例句JSON": 389,
+    "部件JSON": 281,
+    "本义解释JSON": 52,
+    "引申义解释JSON": 41,
+    "英文释义": 7,
+    "拼音": 1,
+    "词性": 1
+  },
+  "changedExampleChunksInitialPass": 195,
+  "overlaySha256": "00ec8240bad3dd6d85db2dfb7fa6de62710e839f109285d0ca9658693c613f9f",
+  "sources": [
+    {
+      "url": "https://dict.idioms.moe.edu.tw/idiomView.jsp?ID=26876",
+      "claim": "The entry distinguishes literal pediatrics and figurative trivial/easy matter; definitions/examples here are original English/editorial text."
+    },
+    {
+      "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=6979&la=0&powerMode=0",
+      "claim": "Standard citation reading for thumb is da4 mu3 zhi3."
+    },
+    {
+      "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/hzs_16205/201405/P020240923621824815441.pdf",
+      "claim": "A government local-history source records squirrel as also called huishu; avoid assigning the English common name gray squirrel as a unique species mapping."
+    }
+  ],
+  "spotChecks": [
+    "小儿科 is exclusively the colloquial easy/trivial sense as explicitly requested: both examples and the intact-expression breakdown exclude medical teaching content.",
+    "Example lexical false matches removed: 明天见 as digestive joke, 烈日 as Liege, 雄鹿 as NBA team, 里加 as Riga, 长三 as a prostitute.",
+    "Contextual readings corrected for 东西 things, 生意 business, 背着 carrying, 结了 producing fruit, 都会 all will, 了 completed action.",
+    "Example substring collisions repaired without dropping Chinese text.",
+    "All 1390 IDs and supplied headwords preserved."
+  ],
+  "userSteering": "Do not retain the medical original meaning in 小儿科; teach 儿科 independently (existing wl_09955)."
+}

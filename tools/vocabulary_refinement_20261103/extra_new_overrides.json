@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "overrides": {
+    "wl_18513": {
+      "例句JSON": [
+        {
+          "hanzi": "灰鼠沿着树干爬上去。",
+          "pinyin": "huī shǔ yán zhe shù gàn pá shàng qù.",
+          "english": "A squirrel climbed up the tree trunk.",
+          "chunks": [
+            {
+              "hanzi": "灰鼠",
+              "pinyin": "huī shǔ",
+              "gloss": "squirrel (an alternative Chinese name)"
+            },
+            {
+              "hanzi": "沿着",
+              "pinyin": "yán zhe",
+              "gloss": "along"
+            },
+            {
+              "hanzi": "树干",
+              "pinyin": "shù gàn",
+              "gloss": "tree trunk"
+            },
+            {
+              "hanzi": "爬上",
+              "pinyin": "pá shàng",
+              "gloss": "climb up"
+            },
+            {
+              "hanzi": "去。",
+              "pinyin": "qù.",
+              "gloss": "go"
+            }
+          ]
+        },
+        {
+          "hanzi": "一只灰鼠正在找坚果。",
+          "pinyin": "yī zhī huī shǔ zhèng zài zhǎo jiān guǒ.",
+          "english": "A squirrel is looking for nuts.",
+          "chunks": [
+            {
+              "hanzi": "一只",
+              "pinyin": "yī zhī",
+              "gloss": "one animal or certain single object"
+            },
+            {
+              "hanzi": "灰鼠",
+              "pinyin": "huī shǔ",
+              "gloss": "squirrel (an alternative Chinese name)"
+            },
+            {
+              "hanzi": "正在",
+              "pinyin": "zhèng zài",
+              "gloss": "in the process of"
+            },
+            {
+              "hanzi": "找",
+              "pinyin": "zhǎo",
+              "gloss": "to try to find"
+            },
+            {
+              "hanzi": "坚果。",
+              "pinyin": "jiān guǒ.",
+              "gloss": "nut"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "reasons": {
+    "wl_18513": [
+      "Align both English translations with the reviewed teaching sense squirrel; avoid reintroducing the separate English species name gray squirrel."
+    ]
+  }
+}

@@ -1,0 +1,3795 @@
+{
+  "schemaVersion": 1,
+  "riskCandidatesRead": 225,
+  "decisionRows": 227,
+  "changedAmong225": 142,
+  "communicationRemoved": 124,
+  "communicationRetained": 101,
+  "extraContextCorrections": [
+    "wl_16958",
+    "wl_14974"
+  ],
+  "inputsSha256": {
+    "wordlist.csv": "4c8c18811363bdb747c4902dac64f24bf78f40dcb5e2c55ec84fbcc386e31486",
+    "idiom-topic-risk.json": "1ed907be2e60bb90533a9d5af541a01295809009cb9d5364db06cee26bc1a301",
+    "context_overrides.json": "58d536cfdd5f336e0fdf0a9ea2f350019d4815e60b3e7901444fc53b69c481e2",
+    "final_qa_overrides.json": "b1d832b1387ba11f17bb43b9694d257fd46c9fba125773991b4bf3f312bbf5fb"
+  },
+  "scope": "Full semantic review of the 225 requested communication-tagged idioms plus the two explicitly updated context senses; no vocabulary text or locked tag files changed.",
+  "reviewBoundary": "AI-assisted editorial semantic decisions, not independent human certification. All 225 whole-word teaching senses were read; image words and Describes templates were not used as topic evidence.",
+  "decisions": [
+    {
+      "id": "wl_00211",
+      "word": "梦寐以求",
+      "teachingGloss": "Describes deeply longing for something.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01509",
+      "word": "喋喋不休",
+      "teachingGloss": "Describes talking on and on without stopping.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_01672",
+      "word": "忧心忡忡",
+      "teachingGloss": "Describes being deeply worried and anxious.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01754",
+      "word": "接踵而来",
+      "teachingGloss": "Describes events or people coming one after another",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01773",
+      "word": "街头巷尾",
+      "teachingGloss": "Describes places throughout the streets and alleys.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_space",
+        "topic_travel_transport"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01806",
+      "word": "惴惴不安",
+      "teachingGloss": "Describes feeling anxious and frightened.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01840",
+      "word": "夷为平地",
+      "teachingGloss": "Describes a place being completely flattened or destroyed",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01841",
+      "word": "惟妙惟肖",
+      "teachingGloss": "Describes a depiction or imitation that is remarkably lifelike",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_culture",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01878",
+      "word": "孜孜不倦",
+      "teachingGloss": "Describes working or studying diligently without tiring.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_study",
+        "topic_work"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01883",
+      "word": "熙熙攘攘",
+      "teachingGloss": "Describes a place bustling with crowds and activity.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01892",
+      "word": "趾高气扬",
+      "teachingGloss": "Describes acting arrogantly and self-importantly.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01893",
+      "word": "杞人忧天",
+      "teachingGloss": "Describes worrying about dangers without reasonable grounds.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01931",
+      "word": "含辛茹苦",
+      "teachingGloss": "Describes enduring great hardship over a long period.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01941",
+      "word": "越俎代庖",
+      "teachingGloss": "Describes overstepping one's role to take over another person's duties.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_society",
+        "topic_work"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01949",
+      "word": "如火如荼",
+      "teachingGloss": "Describes a large activity proceeding with great energy and enthusiasm.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_01989",
+      "word": "气喘吁吁",
+      "teachingGloss": "Describes panting heavily and being short of breath",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02007",
+      "word": "栩栩如生",
+      "teachingGloss": "Describes an artistic image that looks vividly lifelike.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_culture",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02052",
+      "word": "皆大欢喜",
+      "teachingGloss": "Describes an outcome that leaves everyone happy and satisfied",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02096",
+      "word": "无稽之谈",
+      "teachingGloss": "Describes a statement with no factual basis.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_02113",
+      "word": "言简意赅",
+      "teachingGloss": "Describes expression that is concise yet complete.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_02163",
+      "word": "千钧一发",
+      "teachingGloss": "Describes a situation in extreme and imminent danger.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02194",
+      "word": "彬彬有礼",
+      "teachingGloss": "Describes someone whose behavior is refined and courteous.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02216",
+      "word": "咄咄逼人",
+      "teachingGloss": "Describes an overbearing and intimidating attitude.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02235",
+      "word": "芸芸众生",
+      "teachingGloss": "Describes the multitude of ordinary people",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02300",
+      "word": "美轮美奂",
+      "teachingGloss": "Describes magnificent and beautifully constructed buildings.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_home",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02319",
+      "word": "心不在焉",
+      "teachingGloss": "Describes being distracted and unable to focus",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02370",
+      "word": "大腹便便",
+      "teachingGloss": "Describes having a large, protruding belly.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02418",
+      "word": "狼吞虎咽",
+      "teachingGloss": "Describes eating very quickly and ravenously.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_food"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02442",
+      "word": "咎由自取",
+      "teachingGloss": "Describes trouble brought about by one's own actions.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02513",
+      "word": "分道扬镳",
+      "teachingGloss": "Describes people parting ways because their goals differ.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02533",
+      "word": "杳无音信",
+      "teachingGloss": "Describes receiving no news or communication at all",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_02615",
+      "word": "一声不吭",
+      "teachingGloss": "Describes remaining completely silent",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_02695",
+      "word": "瞠目结舌",
+      "teachingGloss": "Describes being so astonished that one cannot speak.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_02752",
+      "word": "神采奕奕",
+      "teachingGloss": "Describes looking radiant and full of vitality.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02756",
+      "word": "完璧归赵",
+      "teachingGloss": "Describes returning something intact to its rightful owner.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02775",
+      "word": "炯炯有神",
+      "teachingGloss": "Describes eyes that are bright and full of spirit.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02804",
+      "word": "兢兢业业",
+      "teachingGloss": "Describes working carefully and conscientiously.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_work"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02828",
+      "word": "未雨绸缪",
+      "teachingGloss": "Describes preparing in advance to prevent future trouble",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02885",
+      "word": "岌岌可危",
+      "teachingGloss": "Describes something in imminent danger of collapse or failure.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02932",
+      "word": "奄奄一息",
+      "teachingGloss": "Describes being barely alive and close to death",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02936",
+      "word": "蹑手蹑脚",
+      "teachingGloss": "Describes moving quietly and carefully to avoid making noise.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02943",
+      "word": "汗流浃背",
+      "teachingGloss": "Describes sweating so heavily that the back is soaked.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_02948",
+      "word": "虎视眈眈",
+      "teachingGloss": "Describes watching covetously with an intent to seize something.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03121",
+      "word": "相形见绌",
+      "teachingGloss": "Describes something that looks inferior by comparison.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03158",
+      "word": "杀一儆百",
+      "teachingGloss": "Describes punishing one person to warn and deter others.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_law",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03181",
+      "word": "黔驴技穷",
+      "teachingGloss": "Describes exhausting one's limited abilities or tricks.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03208",
+      "word": "鞠躬尽瘁",
+      "teachingGloss": "Describes devoting all one's strength to a duty or cause.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_work"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03213",
+      "word": "铤而走险",
+      "teachingGloss": "Describes taking a dangerous risk under pressure.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03229",
+      "word": "一蹶不振",
+      "teachingGloss": "Describes failing to recover one's spirits after a setback.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03323",
+      "word": "煞费苦心",
+      "teachingGloss": "Describes putting great thought and effort into something.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03339",
+      "word": "暴虎冯河",
+      "teachingGloss": "Describes reckless courage without careful judgment.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03343",
+      "word": "瓮中捉鳖",
+      "teachingGloss": "Describes capturing a target that has no way to escape.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03353",
+      "word": "笑容可掬",
+      "teachingGloss": "Describes a face beaming with smiles.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03378",
+      "word": "沧海一粟",
+      "teachingGloss": "Describes a tiny part of an immensely larger whole.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03407",
+      "word": "果实累累",
+      "teachingGloss": "laden with fruit; (figuratively) having many achievements",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_plants",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03408",
+      "word": "舐犊情深",
+      "teachingGloss": "Describes deep parental love for one's children.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_family"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03429",
+      "word": "唯唯诺诺",
+      "teachingGloss": "Describes agreeing submissively without independent judgment.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_03446",
+      "word": "否极泰来",
+      "teachingGloss": "Describes bad circumstances giving way to better times.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03457",
+      "word": "怡然自得",
+      "teachingGloss": "Describes feeling quietly happy and content.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03473",
+      "word": "衣锦还乡",
+      "teachingGloss": "Describes returning home in honor after achieving success",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03474",
+      "word": "韦编三绝",
+      "teachingGloss": "Describes studying diligently and repeatedly",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_study"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03484",
+      "word": "同仇敌忾",
+      "teachingGloss": "Describes people united against a common enemy.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03496",
+      "word": "嘘寒问暖",
+      "teachingGloss": "Describes showing concern for someone's daily well-being.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_03516",
+      "word": "呱呱坠地",
+      "teachingGloss": "Describes a baby being born.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_people"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03517",
+      "word": "沽名钓誉",
+      "teachingGloss": "Describes seeking undeserved fame or praise through improper means.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03545",
+      "word": "一应俱全",
+      "teachingGloss": "Describes having everything that is needed",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03546",
+      "word": "尔虞我诈",
+      "teachingGloss": "Describes mutual deception and intrigue.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03548",
+      "word": "瑕不掩瑜",
+      "teachingGloss": "Describes merits that outweigh minor flaws.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03551",
+      "word": "始终不渝",
+      "teachingGloss": "Describes remaining faithful and unwavering from beginning to end",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03555",
+      "word": "屡见不鲜",
+      "teachingGloss": "Describes something so common that it is no longer surprising.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03576",
+      "word": "脍炙人口",
+      "teachingGloss": "Describes a work that is widely enjoyed and praised.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_03579",
+      "word": "不容置喙",
+      "teachingGloss": "Describes allowing no comment, objection, or interference",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_03584",
+      "word": "白头偕老",
+      "teachingGloss": "Describes spouses remaining loving companions into old age.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_family",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03593",
+      "word": "敝帚自珍",
+      "teachingGloss": "Describes treasuring something imperfect because it is one's own.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03603",
+      "word": "人才济济",
+      "teachingGloss": "Describes a place or group with many talented people.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03617",
+      "word": "百战不殆",
+      "teachingGloss": "Describes remaining safe through repeated contests with sound preparation.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_society",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03618",
+      "word": "一年半载",
+      "teachingGloss": "Describes a period of roughly a year or so",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03638",
+      "word": "津津有味",
+      "teachingGloss": "Describes taking keen enjoyment in food or an interesting activity.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_food"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03646",
+      "word": "绿草如茵",
+      "teachingGloss": "Describes grass that is green, dense, and soft.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_plants",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03662",
+      "word": "鹬蚌相争",
+      "teachingGloss": "Describes two sides fighting while a third party benefits.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03666",
+      "word": "怀瑾握瑜",
+      "teachingGloss": "Describes possessing noble and pure moral character",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03667",
+      "word": "怵目惊心",
+      "teachingGloss": "Describes a serious scene that is shocking or frightening to see.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03699",
+      "word": "姗姗来迟",
+      "teachingGloss": "Describes someone or something arriving later than expected.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03710",
+      "word": "恩断义绝",
+      "teachingGloss": "Describes completely severing bonds of affection and loyalty",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03712",
+      "word": "侃侃而谈",
+      "teachingGloss": "Describes speaking calmly, fluently, and with confidence",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_03723",
+      "word": "心广体胖",
+      "teachingGloss": "Describes being broad-minded, content, and at ease.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03778",
+      "word": "命途多舛",
+      "teachingGloss": "Describes a life marked by repeated hardships and misfortunes.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03811",
+      "word": "锲而不舍",
+      "teachingGloss": "Describes persevering with a task without giving up.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03812",
+      "word": "因噎废食",
+      "teachingGloss": "Describes abandoning something necessary because of a minor risk.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03834",
+      "word": "一暴十寒",
+      "teachingGloss": "Describes making only sporadic efforts without perseverance",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03844",
+      "word": "仁者乐山",
+      "teachingGloss": "Describes a benevolent person's steady and principled character",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03924",
+      "word": "春华秋实",
+      "teachingGloss": "Describes effort and development leading to lasting achievements",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03927",
+      "word": "舍生取义",
+      "teachingGloss": "Describes sacrificing one's life to uphold righteousness",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_03952",
+      "word": "引吭高歌",
+      "teachingGloss": "Describes singing loudly and wholeheartedly.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_culture"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04003",
+      "word": "三更半夜",
+      "teachingGloss": "Describes a time deep in the night.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04057",
+      "word": "泾渭分明",
+      "teachingGloss": "Describes a clear distinction between two things or positions.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04134",
+      "word": "沁人心脾",
+      "teachingGloss": "Describes something refreshing and deeply pleasing.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04141",
+      "word": "枕戈待旦",
+      "teachingGloss": "Describes remaining fully prepared for imminent action or battle.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_society",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04189",
+      "word": "拈花惹草",
+      "teachingGloss": "Describes pursuing casual romantic affairs irresponsibly.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04302",
+      "word": "釜底抽薪",
+      "teachingGloss": "Describes solving a problem by removing its root cause.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04376",
+      "word": "剜肉补疮",
+      "teachingGloss": "Describes solving an immediate problem by causing another harm.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04437",
+      "word": "刚愎自用",
+      "teachingGloss": "Describes someone who stubbornly rejects other people's advice.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04439",
+      "word": "文质彬彬",
+      "teachingGloss": "Describes someone with refined, gentle, and courteous manners.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04451",
+      "word": "深孚众望",
+      "teachingGloss": "Describes enjoying widespread trust and confidence.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04534",
+      "word": "义愤填膺",
+      "teachingGloss": "Describes being filled with anger at injustice.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04536",
+      "word": "滥竽充数",
+      "teachingGloss": "Describes passing off an unqualified person or item as acceptable.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04548",
+      "word": "睚眦必报",
+      "teachingGloss": "Describes seeking revenge for even the smallest slight.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04558",
+      "word": "桀骜不驯",
+      "teachingGloss": "Describes a proud and defiant temperament that resists control.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04666",
+      "word": "风声鹤唳",
+      "teachingGloss": "Describes panicking and suspecting danger at the slightest sound.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04678",
+      "word": "一丘之貉",
+      "teachingGloss": "Describes people who are all equally bad.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04684",
+      "word": "忸怩不安",
+      "teachingGloss": "Describes feeling embarrassed, uneasy, and self-conscious",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04716",
+      "word": "潸然泪下",
+      "teachingGloss": "Describes shedding tears from sadness or deep emotion.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04754",
+      "word": "偃旗息鼓",
+      "teachingGloss": "Describes an activity stopping or losing its momentum.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04757",
+      "word": "怏怏不乐",
+      "teachingGloss": "Describes feeling dejected, dissatisfied, and unhappy",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_04842",
+      "word": "为虎作伥",
+      "teachingGloss": "Describes helping a villain harm other people.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_05044",
+      "word": "厝火积薪",
+      "teachingGloss": "Describes creating or ignoring a serious hidden danger.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_05061",
+      "word": "蕙质兰心",
+      "teachingGloss": "Describes a pure-hearted, refined, and elegant person",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_05074",
+      "word": "栉风沐雨",
+      "teachingGloss": "Describes working and traveling outdoors despite wind and rain.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_travel_transport",
+        "topic_work"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_05101",
+      "word": "年高德劭",
+      "teachingGloss": "Describes an elderly person respected for admirable character.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_05110",
+      "word": "姹紫嫣红",
+      "teachingGloss": "Describes a profusion of brightly colored, beautiful flowers.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_plants",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_05534",
+      "word": "不请自来",
+      "teachingGloss": "to turn up without being invited; unsolicited",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_06663",
+      "word": "说来话长",
+      "teachingGloss": "a complicated story that takes time to explain",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06667",
+      "word": "大喊大叫",
+      "teachingGloss": "shouting and screaming",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06680",
+      "word": "长话短说",
+      "teachingGloss": "making a long story short",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06689",
+      "word": "胡言乱语",
+      "teachingGloss": "babbling nonsense",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06691",
+      "word": "感激不尽",
+      "teachingGloss": "feeling more gratitude than words can express",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_06696",
+      "word": "无可奉告",
+      "teachingGloss": "refusing or being unable to provide information",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06704",
+      "word": "一路顺风",
+      "teachingGloss": "a safe and pleasant journey",
+      "before": [
+        "form_fixed_expression",
+        "form_idiom",
+        "topic_communication",
+        "topic_travel_transport"
+      ],
+      "after": [
+        "form_fixed_expression",
+        "form_idiom",
+        "topic_communication",
+        "topic_travel_transport"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06705",
+      "word": "指手画脚",
+      "teachingGloss": "giving unwanted instructions or criticizing how others do things",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06708",
+      "word": "开诚布公",
+      "teachingGloss": "speaking openly and sincerely without concealment",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06719",
+      "word": "自言自语",
+      "teachingGloss": "talking to oneself",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06730",
+      "word": "说到做到",
+      "teachingGloss": "being as good as one's word",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06734",
+      "word": "守口如瓶",
+      "teachingGloss": "keeping a secret and refusing to reveal it",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06742",
+      "word": "开门见山",
+      "teachingGloss": "speaking or writing directly about the main point",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06751",
+      "word": "甜言蜜语",
+      "teachingGloss": "sweet talk used to flatter, persuade, or deceive",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06765",
+      "word": "言归正传",
+      "teachingGloss": "returning to the topic",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06773",
+      "word": "直截了当",
+      "teachingGloss": "being direct and plainspoken",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06790",
+      "word": "小心谨慎",
+      "teachingGloss": "being careful and prudent in words or actions",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_06791",
+      "word": "名副其实",
+      "teachingGloss": "a reputation or name matching reality",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_06802",
+      "word": "流言蜚语",
+      "teachingGloss": "rumors and slanders",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06817",
+      "word": "拐弯抹角",
+      "teachingGloss": "expressing a point indirectly and evasively",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06818",
+      "word": "一言不发",
+      "teachingGloss": "not saying a single word",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06821",
+      "word": "滔滔不绝",
+      "teachingGloss": "producing a torrent of words",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06838",
+      "word": "说三道四",
+      "teachingGloss": "making thoughtless remarks",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06869",
+      "word": "大吵大闹",
+      "teachingGloss": "making a loud and disruptive fuss",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06879",
+      "word": "后会有期",
+      "teachingGloss": "the expectation of meeting again in the future",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_time_number"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06886",
+      "word": "针锋相对",
+      "teachingGloss": "opposing each other sharply in arguments or actions",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06919",
+      "word": "不闻不问",
+      "teachingGloss": "showing no concern and making no attempt to find out",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_06928",
+      "word": "冷嘲热讽",
+      "teachingGloss": "sharp and sarcastic mockery",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06944",
+      "word": "一言难尽",
+      "teachingGloss": "being hard to explain in a few words",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06945",
+      "word": "家喻户晓",
+      "teachingGloss": "something widely known in every household",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_society",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_06961",
+      "word": "畅所欲言",
+      "teachingGloss": "speaking freely and saying everything one wishes to say",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06991",
+      "word": "夸夸其谈",
+      "teachingGloss": "talking big",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_06995",
+      "word": "口口声声",
+      "teachingGloss": "repeatedly and insistently saying something",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07005",
+      "word": "沉默寡言",
+      "teachingGloss": "being habitually silent",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07006",
+      "word": "评头论足",
+      "teachingGloss": "making judgmental or nitpicking comments about others",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07010",
+      "word": "自讨苦吃",
+      "teachingGloss": "asking for trouble",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07033",
+      "word": "轻描淡写",
+      "teachingGloss": "treating an important matter briefly or as less serious than it is",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07042",
+      "word": "淋漓尽致",
+      "teachingGloss": "expressing or portraying something vividly and thoroughly",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07059",
+      "word": "信口开河",
+      "teachingGloss": "talking irresponsibly without regard for the facts",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07060",
+      "word": "一针见血",
+      "teachingGloss": "identifying the essential point directly and precisely",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07061",
+      "word": "不言而喻",
+      "teachingGloss": "something being obvious without explanation",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07073",
+      "word": "自吹自擂",
+      "teachingGloss": "boasting about oneself",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07081",
+      "word": "赞不绝口",
+      "teachingGloss": "praising someone or something continuously",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07086",
+      "word": "老生常谈",
+      "teachingGloss": "familiar remarks with nothing new to offer",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07100",
+      "word": "冠冕堂皇",
+      "teachingGloss": "a respectable-sounding justification that conceals ulterior motives",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07103",
+      "word": "只字不提",
+      "teachingGloss": "deliberately not mentioning something at all",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07120",
+      "word": "耸人听闻",
+      "teachingGloss": "sensationalizing",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07123",
+      "word": "天花乱坠",
+      "teachingGloss": "extravagant embellishments",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07137",
+      "word": "品头论足",
+      "teachingGloss": "making picky or disparaging comments about others",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07183",
+      "word": "体无完肤",
+      "teachingGloss": "being severely criticized or completely refuted",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07193",
+      "word": "谈情说爱",
+      "teachingGloss": "engaging in romantic talk or pursuing a romantic relationship",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07195",
+      "word": "千言万语",
+      "teachingGloss": "thousands of words",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07207",
+      "word": "议论纷纷",
+      "teachingGloss": "many people expressing varied opinions",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07215",
+      "word": "可想而知",
+      "teachingGloss": "something being obvious without further explanation",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07234",
+      "word": "直言不讳",
+      "teachingGloss": "speaking bluntly",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07235",
+      "word": "能说会道",
+      "teachingGloss": "being fluent and persuasive in speech",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07242",
+      "word": "充耳不闻",
+      "teachingGloss": "deliberately refusing to listen to others",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07251",
+      "word": "既往不咎",
+      "teachingGloss": "letting go of blame for past mistakes",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07255",
+      "word": "满城风雨",
+      "teachingGloss": "an incident becoming the subject of widespread discussion",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07260",
+      "word": "公诸于世",
+      "teachingGloss": "making something publicly known",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07271",
+      "word": "点石成金",
+      "teachingGloss": "making dull or ordinary writing excellent through skillful revision",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07281",
+      "word": "名不虚传",
+      "teachingGloss": "living up to one's famous name",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07282",
+      "word": "吞吞吐吐",
+      "teachingGloss": "speaking hesitantly or evasively",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07288",
+      "word": "置若罔闻",
+      "teachingGloss": "deliberately ignoring what others say",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07303",
+      "word": "污言秽语",
+      "teachingGloss": "filthy speech",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07314",
+      "word": "言不由衷",
+      "teachingGloss": "saying something one does not sincerely mean",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07316",
+      "word": "震耳欲聋",
+      "teachingGloss": "an almost deafening noise",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_properties"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07326",
+      "word": "危言耸听",
+      "teachingGloss": "exaggerated alarming claims intended to frighten others",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07341",
+      "word": "异口同声",
+      "teachingGloss": "several people saying the same thing in unison",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07342",
+      "word": "挑拨离间",
+      "teachingGloss": "sowing dissension",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07343",
+      "word": "添油加醋",
+      "teachingGloss": "adding invented details to exaggerate an account",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07349",
+      "word": "破口大骂",
+      "teachingGloss": "letting out a torrent of abuse",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07399",
+      "word": "言外之意",
+      "teachingGloss": "an implied meaning beyond the words actually spoken",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07412",
+      "word": "二话不说",
+      "teachingGloss": "acting promptly without further words or objections",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07421",
+      "word": "言过其实",
+      "teachingGloss": "exaggerating beyond the actual facts",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07441",
+      "word": "遗臭万年",
+      "teachingGloss": "having one's name go down in history as a byword for infamy",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07457",
+      "word": "拖泥带水",
+      "teachingGloss": "speaking or acting in a messy, indirect, or inefficient way",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07467",
+      "word": "醍醐灌顶",
+      "teachingGloss": "gaining profound insight from illuminating advice",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07486",
+      "word": "三缄其口",
+      "teachingGloss": "remaining very tight-lipped and refusing to disclose anything",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07518",
+      "word": "强词夺理",
+      "teachingGloss": "using forced arguments to defend an unreasonable position",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07524",
+      "word": "一板一眼",
+      "teachingGloss": "speaking or acting in an orderly, precise, regular manner",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07531",
+      "word": "空穴来风",
+      "teachingGloss": "an unfounded rumor or unsupported claim",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07536",
+      "word": "三言两语",
+      "teachingGloss": "expressing something in only a few words",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07538",
+      "word": "不声不响",
+      "teachingGloss": "acting quietly, without announcing it or making a fuss",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_properties"
+      ],
+      "changed": true,
+      "communicationRetained": false,
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    {
+      "id": "wl_07552",
+      "word": "巧舌如簧",
+      "teachingGloss": "having a glib tongue",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07565",
+      "word": "简明扼要",
+      "teachingGloss": "being brief and to the point",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07568",
+      "word": "老调重弹",
+      "teachingGloss": "repeating an old argument or familiar proposal yet again",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07611",
+      "word": "字里行间",
+      "teachingGloss": "meaning suggested indirectly throughout a piece of writing",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07618",
+      "word": "引经据典",
+      "teachingGloss": "citing authoritative texts to support an argument",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07627",
+      "word": "搬弄是非",
+      "teachingGloss": "inciting a quarrel",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07657",
+      "word": "对牛弹琴",
+      "teachingGloss": "explaining something to an unreceptive audience.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07661",
+      "word": "一言为定",
+      "teachingGloss": "an agreement that is settled and will be kept.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07671",
+      "word": "言而有信",
+      "teachingGloss": "keeping one's promises.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07678",
+      "word": "一五一十",
+      "teachingGloss": "recounting something fully and accurately.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07690",
+      "word": "一言一行",
+      "teachingGloss": "every word and every action.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_communication"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07697",
+      "word": "只言片语",
+      "teachingGloss": "a few isolated words or fragments of speech.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07702",
+      "word": "平心而论",
+      "teachingGloss": "judging something fairly and objectively.",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07716",
+      "word": "答非所问",
+      "teachingGloss": "answering something other than the question asked.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07718",
+      "word": "能言善辩",
+      "teachingGloss": "speaking eloquently and arguing skilfully.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_07720",
+      "word": "话不投机",
+      "teachingGloss": "being unable to find common ground in conversation.",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_13556",
+      "word": "一派胡言",
+      "teachingGloss": "a bunch of nonsense",
+      "before": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_14591",
+      "word": "隔墙有耳",
+      "teachingGloss": "the walls have ears (idiom)",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_15758",
+      "word": "沉默是金",
+      "teachingGloss": "silence is golden (idiom)",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "changed": false,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_16528",
+      "word": "泣不成声",
+      "teachingGloss": "(idiom) unable to speak through tears; sobbing uncontrollably",
+      "before": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "after": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "changed": true,
+      "communicationRetained": true,
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    {
+      "id": "wl_16958",
+      "word": "自恋",
+      "teachingGloss": "narcissism; excessive self-admiration",
+      "after": [
+        "form_adjective",
+        "form_noun",
+        "topic_emotions",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "source": "latest context_overrides.json + explicit root instruction"
+    },
+    {
+      "id": "wl_14974",
+      "word": "往后",
+      "teachingGloss": "backward; toward the back; from now on; in the future",
+      "after": [
+        "form_adverb",
+        "form_phrase",
+        "topic_space",
+        "topic_time_number"
+      ],
+      "source": "latest context_overrides.json + explicit root instruction"
+    }
+  ]
+}

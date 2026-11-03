@@ -1,0 +1,5831 @@
+{
+  "schemaVersion": 1,
+  "overrides": {
+    "wl_00199": {
+      "例句JSON": [
+        {
+          "hanzi": "瓶子的种类很多，有些可以反复使用。",
+          "pinyin": "píng zi de zhǒng lèi hěn duō, yǒu xiē kě yǐ fǎn fù shǐ yòng.",
+          "english": "There are many types of bottles, and some can be reused.",
+          "chunks": [
+            {
+              "hanzi": "瓶子",
+              "pinyin": "píng zi",
+              "gloss": "bottle"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "种类",
+              "pinyin": "zhǒng lèi",
+              "gloss": "type"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "多，",
+              "pinyin": "duō,",
+              "gloss": "many; much"
+            },
+            {
+              "hanzi": "有些",
+              "pinyin": "yǒu xiē",
+              "gloss": "some; somewhat"
+            },
+            {
+              "hanzi": "可以",
+              "pinyin": "kě yǐ",
+              "gloss": "can; may"
+            },
+            {
+              "hanzi": "反复",
+              "pinyin": "fǎn fù",
+              "gloss": "repeatedly"
+            },
+            {
+              "hanzi": "使用。",
+              "pinyin": "shǐ yòng.",
+              "gloss": "use"
+            }
+          ]
+        },
+        {
+          "hanzi": "这家商店出售不同种类的茶叶。",
+          "pinyin": "zhè jiā shāng diàn chū shòu bù tóng zhǒng lèi de chá yè.",
+          "english": "This shop sells different types of tea.",
+          "chunks": [
+            {
+              "hanzi": "这家商店",
+              "pinyin": "zhè jiā shāng diàn",
+              "gloss": "this shop"
+            },
+            {
+              "hanzi": "出售",
+              "pinyin": "chū shòu",
+              "gloss": "sell"
+            },
+            {
+              "hanzi": "不同",
+              "pinyin": "bù tóng",
+              "gloss": "different"
+            },
+            {
+              "hanzi": "种类",
+              "pinyin": "zhǒng lèi",
+              "gloss": "types"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "茶叶。",
+              "pinyin": "chá yè.",
+              "gloss": "tea"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_00693": {
+      "例句JSON": [
+        {
+          "hanzi": "他胃口很好，一下吃了两碗面条。",
+          "pinyin": "tā wèi kǒu hěn hǎo, yī xià chī le liǎng wǎn miàn tiáo.",
+          "english": "He has a good appetite and ate two bowls of noodles at once.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "胃口",
+              "pinyin": "wèi kǒu",
+              "gloss": "appetite"
+            },
+            {
+              "hanzi": "很好，",
+              "pinyin": "hěn hǎo,",
+              "gloss": "very good"
+            },
+            {
+              "hanzi": "一下",
+              "pinyin": "yī xià",
+              "gloss": "at once; in one go"
+            },
+            {
+              "hanzi": "吃",
+              "pinyin": "chī",
+              "gloss": "eat"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action or change)"
+            },
+            {
+              "hanzi": "两",
+              "pinyin": "liǎng",
+              "gloss": "two"
+            },
+            {
+              "hanzi": "碗",
+              "pinyin": "wǎn",
+              "gloss": "WAN (measure word)"
+            },
+            {
+              "hanzi": "面条。",
+              "pinyin": "miàn tiáo.",
+              "gloss": "noodles"
+            }
+          ]
+        },
+        {
+          "hanzi": "这家店的服务很好。",
+          "pinyin": "zhè jiā diàn de fú wù hěn hǎo.",
+          "english": "The service at this shop is very good.",
+          "chunks": [
+            {
+              "hanzi": "这家店",
+              "pinyin": "zhè jiā diàn",
+              "gloss": "this shop"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "服务",
+              "pinyin": "fú wù",
+              "gloss": "service"
+            },
+            {
+              "hanzi": "很好。",
+              "pinyin": "hěn hǎo.",
+              "gloss": "very good"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_02407": {
+      "例句JSON": [
+        {
+          "hanzi": "清澈浅水中，莲花映出倒影。",
+          "pinyin": "qīng chè qiǎn shuǐ zhōng, lián huā yìng chū dào yǐng.",
+          "english": "Lotus flowers are reflected in the clear shallow water.",
+          "chunks": [
+            {
+              "hanzi": "清澈",
+              "pinyin": "qīng chè",
+              "gloss": "clear"
+            },
+            {
+              "hanzi": "浅水",
+              "pinyin": "qiǎn shuǐ",
+              "gloss": "shallow water"
+            },
+            {
+              "hanzi": "中，",
+              "pinyin": "zhōng,",
+              "gloss": "in; among"
+            },
+            {
+              "hanzi": "莲花",
+              "pinyin": "lián huā",
+              "gloss": "lotus flower"
+            },
+            {
+              "hanzi": "映",
+              "pinyin": "yìng",
+              "gloss": "become visible (esp. on a surface or in perception)"
+            },
+            {
+              "hanzi": "出",
+              "pinyin": "chū",
+              "gloss": "out"
+            },
+            {
+              "hanzi": "倒影。",
+              "pinyin": "dào yǐng.",
+              "gloss": "reflection"
+            }
+          ]
+        },
+        {
+          "hanzi": "孩子们只在浅水里玩。",
+          "pinyin": "hái zi men zhǐ zài qiǎn shuǐ lǐ wán.",
+          "english": "The children only play in shallow water.",
+          "chunks": [
+            {
+              "hanzi": "孩子们",
+              "pinyin": "hái zi men",
+              "gloss": "the children"
+            },
+            {
+              "hanzi": "只",
+              "pinyin": "zhǐ",
+              "gloss": "only"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "浅水",
+              "pinyin": "qiǎn shuǐ",
+              "gloss": "shallow water"
+            },
+            {
+              "hanzi": "里",
+              "pinyin": "lǐ",
+              "gloss": "inside"
+            },
+            {
+              "hanzi": "玩。",
+              "pinyin": "wán.",
+              "gloss": "play"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_02896": {
+      "例句JSON": [
+        {
+          "hanzi": "请把砝码放回盒子里。",
+          "pinyin": "qǐng bǎ fǎ mǎ fàng huí hé zi lǐ.",
+          "english": "Please put the calibrated weight back in the box.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "砝码",
+              "pinyin": "fǎ mǎ",
+              "gloss": "calibrated weight"
+            },
+            {
+              "hanzi": "放回",
+              "pinyin": "fàng huí",
+              "gloss": "put back"
+            },
+            {
+              "hanzi": "盒子",
+              "pinyin": "hé zi",
+              "gloss": "box"
+            },
+            {
+              "hanzi": "里。",
+              "pinyin": "lǐ.",
+              "gloss": "inside"
+            }
+          ]
+        },
+        {
+          "hanzi": "她把砝码放在天秤的一端。",
+          "pinyin": "tā bǎ fǎ mǎ fàng zài tiān píng de yì duān.",
+          "english": "She puts a weight on one side of the balance.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "砝码",
+              "pinyin": "fǎ mǎ",
+              "gloss": "calibrated weight"
+            },
+            {
+              "hanzi": "放",
+              "pinyin": "fàng",
+              "gloss": "put"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at; be doing"
+            },
+            {
+              "hanzi": "天秤",
+              "pinyin": "tiān píng",
+              "gloss": "balance scale"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "一",
+              "pinyin": "yì",
+              "gloss": "one"
+            },
+            {
+              "hanzi": "端。",
+              "pinyin": "duān.",
+              "gloss": "end; side"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_13621": {
+      "例句JSON": [
+        {
+          "hanzi": "我连走路都累，别说跑步了。",
+          "pinyin": "wǒ lián zǒu lù dōu lèi, bié shuō pǎo bù le.",
+          "english": "Even walking tires me, let alone running.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "连",
+              "pinyin": "lián",
+              "gloss": "even"
+            },
+            {
+              "hanzi": "走路",
+              "pinyin": "zǒu lù",
+              "gloss": "walking"
+            },
+            {
+              "hanzi": "都",
+              "pinyin": "dōu",
+              "gloss": "even"
+            },
+            {
+              "hanzi": "累，",
+              "pinyin": "lèi,",
+              "gloss": "tiring"
+            },
+            {
+              "hanzi": "别说",
+              "pinyin": "bié shuō",
+              "gloss": "let alone"
+            },
+            {
+              "hanzi": "跑步",
+              "pinyin": "pǎo bù",
+              "gloss": "running"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (emphatic sentence ending)"
+            }
+          ]
+        },
+        {
+          "hanzi": "他连自己的房间都不收拾，别说整栋楼了。",
+          "pinyin": "tā lián zì jǐ de fáng jiān dōu bù shōu shí, bié shuō zhěng dòng lóu le.",
+          "english": "He does not even tidy his own room, let alone the whole building.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "连",
+              "pinyin": "lián",
+              "gloss": "even"
+            },
+            {
+              "hanzi": "自己的",
+              "pinyin": "zì jǐ de",
+              "gloss": "his own"
+            },
+            {
+              "hanzi": "房间",
+              "pinyin": "fáng jiān",
+              "gloss": "room"
+            },
+            {
+              "hanzi": "都",
+              "pinyin": "dōu",
+              "gloss": "even"
+            },
+            {
+              "hanzi": "不收拾，",
+              "pinyin": "bù shōu shí,",
+              "gloss": "not tidy up"
+            },
+            {
+              "hanzi": "别说",
+              "pinyin": "bié shuō",
+              "gloss": "let alone"
+            },
+            {
+              "hanzi": "整栋楼",
+              "pinyin": "zhěng dòng lóu",
+              "gloss": "the whole building"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (emphatic sentence ending)"
+            }
+          ]
+        }
+      ],
+      "词性": "conjunction; fixed expression",
+      "部件JSON": [
+        {
+          "hanzi": "别说",
+          "pinyin": "bié shuō",
+          "gloss": "let alone; not to mention"
+        }
+      ]
+    },
+    "wl_14160": {
+      "例句JSON": [
+        {
+          "hanzi": "我也有权讲话。",
+          "pinyin": "wǒ yě yǒu quán jiǎng huà.",
+          "english": "I have the right to speak, too.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I; me"
+            },
+            {
+              "hanzi": "也",
+              "pinyin": "yě",
+              "gloss": "also; too"
+            },
+            {
+              "hanzi": "有权",
+              "pinyin": "yǒu quán",
+              "gloss": "to have the right to; to be entitled to"
+            },
+            {
+              "hanzi": "讲话。",
+              "pinyin": "jiǎng huà.",
+              "gloss": "speak; speech"
+            }
+          ]
+        },
+        {
+          "hanzi": "他有权自己做决定。",
+          "pinyin": "tā yǒu quán zì jǐ zuò jué dìng.",
+          "english": "He has the right to make his own decision.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "有权",
+              "pinyin": "yǒu quán",
+              "gloss": "have the right to"
+            },
+            {
+              "hanzi": "自己",
+              "pinyin": "zì jǐ",
+              "gloss": "by himself"
+            },
+            {
+              "hanzi": "做",
+              "pinyin": "zuò",
+              "gloss": "make"
+            },
+            {
+              "hanzi": "决定。",
+              "pinyin": "jué dìng.",
+              "gloss": "a decision"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_14181": {
+      "例句JSON": [
+        {
+          "hanzi": "被告会向上级法院上诉。",
+          "pinyin": "bèi gào huì xiàng shàng jí fǎ yuàn shàng sù.",
+          "english": "The defendant will appeal to a higher court.",
+          "chunks": [
+            {
+              "hanzi": "被告",
+              "pinyin": "bèi gào",
+              "gloss": "(law) the defendant; the accused"
+            },
+            {
+              "hanzi": "会",
+              "pinyin": "huì",
+              "gloss": "can; will"
+            },
+            {
+              "hanzi": "向",
+              "pinyin": "xiàng",
+              "gloss": "toward; to"
+            },
+            {
+              "hanzi": "上级",
+              "pinyin": "shàng jí",
+              "gloss": "superiors"
+            },
+            {
+              "hanzi": "法院",
+              "pinyin": "fǎ yuàn",
+              "gloss": "court"
+            },
+            {
+              "hanzi": "上诉。",
+              "pinyin": "shàng sù.",
+              "gloss": "to appeal (a judicial case)"
+            }
+          ]
+        },
+        {
+          "hanzi": "被告在法庭上回答了问题。",
+          "pinyin": "bèi gào zài fǎ tíng shàng huí dá le wèn tí.",
+          "english": "The defendant answered questions in court.",
+          "chunks": [
+            {
+              "hanzi": "被告",
+              "pinyin": "bèi gào",
+              "gloss": "the defendant"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "法庭",
+              "pinyin": "fǎ tíng",
+              "gloss": "court"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "at"
+            },
+            {
+              "hanzi": "回答",
+              "pinyin": "huí dá",
+              "gloss": "answer"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "问题。",
+              "pinyin": "wèn tí.",
+              "gloss": "questions"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_14342": {
+      "例句JSON": [
+        {
+          "hanzi": "他从架子上拿下了一本书。",
+          "pinyin": "tā cóng jià zi shàng ná xià le yī běn shū.",
+          "english": "He took a book down from the shelf.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "gloss": "from"
+            },
+            {
+              "hanzi": "架子",
+              "pinyin": "jià zi",
+              "gloss": "shelf"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "拿下",
+              "pinyin": "ná xià",
+              "gloss": "take down"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "一本",
+              "pinyin": "yī běn",
+              "gloss": "one (BEN measure word)"
+            },
+            {
+              "hanzi": "书。",
+              "pinyin": "shū.",
+              "gloss": "book"
+            }
+          ]
+        },
+        {
+          "hanzi": "警方很快拿下了那名嫌疑人。",
+          "pinyin": "jǐng fāng hěn kuài ná xià le nà míng xián yí rén.",
+          "english": "The police quickly apprehended the suspect.",
+          "chunks": [
+            {
+              "hanzi": "警方",
+              "pinyin": "jǐng fāng",
+              "gloss": "the police"
+            },
+            {
+              "hanzi": "很快",
+              "pinyin": "hěn kuài",
+              "gloss": "quickly"
+            },
+            {
+              "hanzi": "拿下",
+              "pinyin": "ná xià",
+              "gloss": "apprehend"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "那名",
+              "pinyin": "nà míng",
+              "gloss": "that (MING measure word)"
+            },
+            {
+              "hanzi": "嫌疑人。",
+              "pinyin": "xián yí rén.",
+              "gloss": "suspect"
+            }
+          ]
+        }
+      ],
+      "英文释义": "to take down; to capture; to arrest; to secure a victory",
+      "本义解释JSON": [
+        "to take something down from a higher place",
+        "to capture; to apprehend"
+      ],
+      "引申义解释JSON": [
+        "to secure a victory or attain a goal"
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "拿",
+          "pinyin": "ná",
+          "gloss": "take; seize"
+        },
+        {
+          "hanzi": "下",
+          "pinyin": "xià",
+          "gloss": "down; successfully obtained (result complement)"
+        }
+      ]
+    },
+    "wl_14417": {
+      "例句JSON": [
+        {
+          "hanzi": "说起旅行，她马上笑了。",
+          "pinyin": "shuō qǐ lǚ xíng, tā mǎ shàng xiào le.",
+          "english": "She smiled immediately when travel was mentioned.",
+          "chunks": [
+            {
+              "hanzi": "说起",
+              "pinyin": "shuō qǐ",
+              "gloss": "speaking of"
+            },
+            {
+              "hanzi": "旅行，",
+              "pinyin": "lǚ xíng,",
+              "gloss": "travel"
+            },
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "马上",
+              "pinyin": "mǎ shàng",
+              "gloss": "immediately"
+            },
+            {
+              "hanzi": "笑",
+              "pinyin": "xiào",
+              "gloss": "smile"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (change of state marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "他又说起了小时候的故事。",
+          "pinyin": "tā yòu shuō qǐ le xiǎo shí hou de gù shì.",
+          "english": "He brought up stories from his childhood again.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "又",
+              "pinyin": "yòu",
+              "gloss": "again"
+            },
+            {
+              "hanzi": "说起",
+              "pinyin": "shuō qǐ",
+              "gloss": "bring up"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "小时候",
+              "pinyin": "xiǎo shí hou",
+              "gloss": "childhood"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "故事。",
+              "pinyin": "gù shì.",
+              "gloss": "stories"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "说",
+          "pinyin": "shuō",
+          "gloss": "speak; mention"
+        },
+        {
+          "hanzi": "起",
+          "pinyin": "qǐ",
+          "gloss": "QI (complement introducing a topic)"
+        }
+      ]
+    },
+    "wl_14440": {
+      "例句JSON": [
+        {
+          "hanzi": "她没有打开那封来历不明的邮件。",
+          "pinyin": "tā méi yǒu dǎ kāi nà fēng lái lì bù míng de yóu jiàn.",
+          "english": "She did not open the email from an unknown source.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she; her"
+            },
+            {
+              "hanzi": "没有",
+              "pinyin": "méi yǒu",
+              "gloss": "did not; have not"
+            },
+            {
+              "hanzi": "打开",
+              "pinyin": "dǎ kāi",
+              "gloss": "to open"
+            },
+            {
+              "hanzi": "那",
+              "pinyin": "nà",
+              "gloss": "that"
+            },
+            {
+              "hanzi": "封",
+              "pinyin": "fēng",
+              "gloss": "FENG (measure word for letters)"
+            },
+            {
+              "hanzi": "来历",
+              "pinyin": "lái lì",
+              "gloss": "origin; background"
+            },
+            {
+              "hanzi": "不明",
+              "pinyin": "bù míng",
+              "gloss": "unknown; unclear"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "possessive or attributive particle"
+            },
+            {
+              "hanzi": "邮件。",
+              "pinyin": "yóu jiàn.",
+              "gloss": "email"
+            }
+          ]
+        },
+        {
+          "hanzi": "事故的原因仍然不明。",
+          "pinyin": "shì gù de yuán yīn réng rán bù míng.",
+          "english": "The cause of the accident is still unclear.",
+          "chunks": [
+            {
+              "hanzi": "事故",
+              "pinyin": "shì gù",
+              "gloss": "accident"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "原因",
+              "pinyin": "yuán yīn",
+              "gloss": "cause"
+            },
+            {
+              "hanzi": "仍然",
+              "pinyin": "réng rán",
+              "gloss": "still"
+            },
+            {
+              "hanzi": "不明。",
+              "pinyin": "bù míng.",
+              "gloss": "unclear"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_14638": {
+      "例句JSON": [
+        {
+          "hanzi": "请问，这里可否停车？",
+          "pinyin": "qǐng wèn, zhè lǐ kě fǒu tíng chē?",
+          "english": "May I ask whether parking is allowed here?",
+          "chunks": [
+            {
+              "hanzi": "请问，",
+              "pinyin": "qǐng wèn,",
+              "gloss": "may I ask"
+            },
+            {
+              "hanzi": "这里",
+              "pinyin": "zhè lǐ",
+              "gloss": "here"
+            },
+            {
+              "hanzi": "可否",
+              "pinyin": "kě fǒu",
+              "gloss": "whether it is possible to"
+            },
+            {
+              "hanzi": "停车？",
+              "pinyin": "tíng chē?",
+              "gloss": "park"
+            }
+          ]
+        },
+        {
+          "hanzi": "我想知道您明天可否参加。",
+          "pinyin": "wǒ xiǎng zhī dào nín míng tiān kě fǒu cān jiā.",
+          "english": "I would like to know whether you can attend tomorrow.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "想",
+              "pinyin": "xiǎng",
+              "gloss": "would like to"
+            },
+            {
+              "hanzi": "知道",
+              "pinyin": "zhī dào",
+              "gloss": "know"
+            },
+            {
+              "hanzi": "您",
+              "pinyin": "nín",
+              "gloss": "you (polite)"
+            },
+            {
+              "hanzi": "明天",
+              "pinyin": "míng tiān",
+              "gloss": "tomorrow"
+            },
+            {
+              "hanzi": "可否",
+              "pinyin": "kě fǒu",
+              "gloss": "whether it is possible to"
+            },
+            {
+              "hanzi": "参加。",
+              "pinyin": "cān jiā.",
+              "gloss": "attend"
+            }
+          ]
+        }
+      ],
+      "词性": "interrogative expression",
+      "部件JSON": [
+        {
+          "hanzi": "可",
+          "pinyin": "kě",
+          "gloss": "can; be possible"
+        },
+        {
+          "hanzi": "否",
+          "pinyin": "fǒu",
+          "gloss": "or not (question element)"
+        }
+      ]
+    },
+    "wl_14688": {
+      "例句JSON": [
+        {
+          "hanzi": "他们不理我。",
+          "pinyin": "tā men bù lǐ wǒ.",
+          "english": "They're ignoring me.",
+          "chunks": [
+            {
+              "hanzi": "他们",
+              "pinyin": "tā men",
+              "gloss": "they; them"
+            },
+            {
+              "hanzi": "不理",
+              "pinyin": "bù lǐ",
+              "gloss": "to refuse to acknowledge; to pay no attention to"
+            },
+            {
+              "hanzi": "我。",
+              "pinyin": "wǒ.",
+              "gloss": "I; me"
+            }
+          ]
+        },
+        {
+          "hanzi": "她正在生气，一直不理我。",
+          "pinyin": "tā zhèng zài shēng qì, yì zhí bù lǐ wǒ.",
+          "english": "She is angry and keeps refusing to acknowledge me.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "正在",
+              "pinyin": "zhèng zài",
+              "gloss": "in the process of"
+            },
+            {
+              "hanzi": "生气，",
+              "pinyin": "shēng qì,",
+              "gloss": "be angry"
+            },
+            {
+              "hanzi": "一直",
+              "pinyin": "yì zhí",
+              "gloss": "all the time"
+            },
+            {
+              "hanzi": "不理",
+              "pinyin": "bù lǐ",
+              "gloss": "refuse to acknowledge"
+            },
+            {
+              "hanzi": "我。",
+              "pinyin": "wǒ.",
+              "gloss": "me"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "不",
+          "pinyin": "bù",
+          "gloss": "not"
+        },
+        {
+          "hanzi": "理",
+          "pinyin": "lǐ",
+          "gloss": "pay attention to; acknowledge"
+        }
+      ]
+    },
+    "wl_14707": {
+      "例句JSON": [
+        {
+          "hanzi": "你明晚有空吗？",
+          "pinyin": "nǐ míng wǎn yǒu kòng ma?",
+          "english": "Are you free tomorrow evening?",
+          "chunks": [
+            {
+              "hanzi": "你",
+              "pinyin": "nǐ",
+              "gloss": "you"
+            },
+            {
+              "hanzi": "明晚",
+              "pinyin": "míng wǎn",
+              "gloss": "tomorrow evening"
+            },
+            {
+              "hanzi": "有空",
+              "pinyin": "yǒu kòng",
+              "gloss": "to have free time"
+            },
+            {
+              "hanzi": "吗？",
+              "pinyin": "ma?",
+              "gloss": "yes-no question particle"
+            }
+          ]
+        },
+        {
+          "hanzi": "我们约好明晚在车站见面。",
+          "pinyin": "wǒ men yuē hǎo míng wǎn zài chē zhàn jiàn miàn.",
+          "english": "We agreed to meet at the station tomorrow evening.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "约好",
+              "pinyin": "yuē hǎo",
+              "gloss": "agree to meet"
+            },
+            {
+              "hanzi": "明晚",
+              "pinyin": "míng wǎn",
+              "gloss": "tomorrow evening"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at"
+            },
+            {
+              "hanzi": "车站",
+              "pinyin": "chē zhàn",
+              "gloss": "the station"
+            },
+            {
+              "hanzi": "见面。",
+              "pinyin": "jiàn miàn.",
+              "gloss": "meet"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_14795": {
+      "例句JSON": [
+        {
+          "hanzi": "他常年在外工作。",
+          "pinyin": "tā cháng nián zài wài gōng zuò.",
+          "english": "He works away from home throughout the year.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "常年",
+              "pinyin": "cháng nián",
+              "gloss": "throughout the year"
+            },
+            {
+              "hanzi": "在外",
+              "pinyin": "zài wài",
+              "gloss": "away from home"
+            },
+            {
+              "hanzi": "工作。",
+              "pinyin": "gōng zuò.",
+              "gloss": "work"
+            }
+          ]
+        },
+        {
+          "hanzi": "孩子在外读书，父母很想念他。",
+          "pinyin": "hái zi zài wài dú shū, fù mǔ hěn xiǎng niàn tā.",
+          "english": "The child studies away from home, and his parents miss him very much.",
+          "chunks": [
+            {
+              "hanzi": "孩子",
+              "pinyin": "hái zi",
+              "gloss": "the child"
+            },
+            {
+              "hanzi": "在外",
+              "pinyin": "zài wài",
+              "gloss": "away from home"
+            },
+            {
+              "hanzi": "读书，",
+              "pinyin": "dú shū,",
+              "gloss": "study"
+            },
+            {
+              "hanzi": "父母",
+              "pinyin": "fù mǔ",
+              "gloss": "the parents"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "想念",
+              "pinyin": "xiǎng niàn",
+              "gloss": "miss"
+            },
+            {
+              "hanzi": "他。",
+              "pinyin": "tā.",
+              "gloss": "him"
+            }
+          ]
+        }
+      ],
+      "英文释义": "outside; away from home",
+      "词性": "locative phrase",
+      "本义解释JSON": [
+        "outside; away from home"
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "在",
+          "pinyin": "zài",
+          "gloss": "be at; be in"
+        },
+        {
+          "hanzi": "外",
+          "pinyin": "wài",
+          "gloss": "outside"
+        }
+      ]
+    },
+    "wl_14948": {
+      "例句JSON": [
+        {
+          "hanzi": "他潇洒地挥手道别。",
+          "pinyin": "tā xiāo sǎ de huī shǒu dào bié.",
+          "english": "He waves goodbye with easy confidence.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; him"
+            },
+            {
+              "hanzi": "潇洒",
+              "pinyin": "xiāo sǎ",
+              "gloss": "free and easy; graceful and unrestrained"
+            },
+            {
+              "hanzi": "地",
+              "pinyin": "de",
+              "gloss": "adverbial marker"
+            },
+            {
+              "hanzi": "挥手",
+              "pinyin": "huī shǒu",
+              "gloss": "wave (one's hand)"
+            },
+            {
+              "hanzi": "道别。",
+              "pinyin": "dào bié.",
+              "gloss": "to say goodbye; to bid farewell"
+            }
+          ]
+        },
+        {
+          "hanzi": "上车以前，她向朋友们道别。",
+          "pinyin": "shàng chē yǐ qián, tā xiàng péng yǒu men dào bié.",
+          "english": "She said goodbye to her friends before boarding.",
+          "chunks": [
+            {
+              "hanzi": "上车",
+              "pinyin": "shàng chē",
+              "gloss": "board the vehicle"
+            },
+            {
+              "hanzi": "以前，",
+              "pinyin": "yǐ qián,",
+              "gloss": "before"
+            },
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "向",
+              "pinyin": "xiàng",
+              "gloss": "to"
+            },
+            {
+              "hanzi": "朋友们",
+              "pinyin": "péng yǒu men",
+              "gloss": "her friends"
+            },
+            {
+              "hanzi": "道别。",
+              "pinyin": "dào bié.",
+              "gloss": "say goodbye"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_14974": {
+      "例句JSON": [
+        {
+          "hanzi": "往后站！",
+          "pinyin": "wǎng hòu zhàn!",
+          "english": "Stand back!",
+          "chunks": [
+            {
+              "hanzi": "往后",
+              "pinyin": "wǎng hòu",
+              "gloss": "backward; toward the back"
+            },
+            {
+              "hanzi": "站！",
+              "pinyin": "zhàn!",
+              "gloss": "stand"
+            }
+          ]
+        },
+        {
+          "hanzi": "往后遇到问题，请先告诉我。",
+          "pinyin": "wǎng hòu yù dào wèn tí, qǐng xiān gào sù wǒ.",
+          "english": "In the future, please tell me first if you run into a problem.",
+          "chunks": [
+            {
+              "hanzi": "往后",
+              "pinyin": "wǎng hòu",
+              "gloss": "in the future"
+            },
+            {
+              "hanzi": "遇到",
+              "pinyin": "yù dào",
+              "gloss": "encounter"
+            },
+            {
+              "hanzi": "问题，",
+              "pinyin": "wèn tí,",
+              "gloss": "a problem"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "先",
+              "pinyin": "xiān",
+              "gloss": "first"
+            },
+            {
+              "hanzi": "告诉",
+              "pinyin": "gào sù",
+              "gloss": "tell"
+            },
+            {
+              "hanzi": "我。",
+              "pinyin": "wǒ.",
+              "gloss": "me"
+            }
+          ]
+        }
+      ],
+      "英文释义": "backward; toward the back; from now on; in the future",
+      "词性": "adverb; locative phrase",
+      "本义解释JSON": [
+        "backward; toward the back",
+        "from now on; in the future"
+      ]
+    },
+    "wl_15077": {
+      "例句JSON": [
+        {
+          "hanzi": "这些方案都不错，我们从中选一个。",
+          "pinyin": "zhè xiē fāng àn dōu bù cuò, wǒ men cóng zhōng xuǎn yí gè.",
+          "english": "These proposals are all good; let us choose one of them.",
+          "chunks": [
+            {
+              "hanzi": "这些",
+              "pinyin": "zhè xiē",
+              "gloss": "these"
+            },
+            {
+              "hanzi": "方案",
+              "pinyin": "fāng àn",
+              "gloss": "proposals"
+            },
+            {
+              "hanzi": "都",
+              "pinyin": "dōu",
+              "gloss": "all"
+            },
+            {
+              "hanzi": "不错，",
+              "pinyin": "bù cuò,",
+              "gloss": "good"
+            },
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "从中",
+              "pinyin": "cóng zhōng",
+              "gloss": "from among them"
+            },
+            {
+              "hanzi": "选",
+              "pinyin": "xuǎn",
+              "gloss": "choose"
+            },
+            {
+              "hanzi": "一个。",
+              "pinyin": "yí gè.",
+              "gloss": "one"
+            }
+          ]
+        },
+        {
+          "hanzi": "这次失败并不可怕，重要的是从中吸取教训。",
+          "pinyin": "zhè cì shī bài bìng bù kě pà, zhòng yào de shì cóng zhōng xī qǔ jiào xùn.",
+          "english": "This failure is nothing to fear; what matters is learning from it.",
+          "chunks": [
+            {
+              "hanzi": "这次",
+              "pinyin": "zhè cì",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "失败",
+              "pinyin": "shī bài",
+              "gloss": "failure"
+            },
+            {
+              "hanzi": "并不可怕，",
+              "pinyin": "bìng bù kě pà,",
+              "gloss": "is not frightening"
+            },
+            {
+              "hanzi": "重要的是",
+              "pinyin": "zhòng yào de shì",
+              "gloss": "what matters is"
+            },
+            {
+              "hanzi": "从中",
+              "pinyin": "cóng zhōng",
+              "gloss": "from it"
+            },
+            {
+              "hanzi": "吸取",
+              "pinyin": "xī qǔ",
+              "gloss": "draw"
+            },
+            {
+              "hanzi": "教训。",
+              "pinyin": "jiào xùn.",
+              "gloss": "lessons"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_15153": {
+      "例句JSON": [
+        {
+          "hanzi": "眼看就要下雨了，快收衣服。",
+          "pinyin": "yǎn kàn jiù yào xià yǔ le, kuài shōu yī fú.",
+          "english": "It is about to rain; bring in the clothes quickly.",
+          "chunks": [
+            {
+              "hanzi": "眼看",
+              "pinyin": "yǎn kàn",
+              "gloss": "soon"
+            },
+            {
+              "hanzi": "就要",
+              "pinyin": "jiù yào",
+              "gloss": "about to"
+            },
+            {
+              "hanzi": "下雨",
+              "pinyin": "xià yǔ",
+              "gloss": "rain"
+            },
+            {
+              "hanzi": "了，",
+              "pinyin": "le,",
+              "gloss": "LE (impending change marker)"
+            },
+            {
+              "hanzi": "快",
+              "pinyin": "kuài",
+              "gloss": "quickly"
+            },
+            {
+              "hanzi": "收",
+              "pinyin": "shōu",
+              "gloss": "bring in"
+            },
+            {
+              "hanzi": "衣服。",
+              "pinyin": "yī fú.",
+              "gloss": "clothes"
+            }
+          ]
+        },
+        {
+          "hanzi": "我不能眼看他受骗却不提醒他。",
+          "pinyin": "wǒ bù néng yǎn kàn tā shòu piàn què bù tí xǐng tā.",
+          "english": "I cannot just watch him be deceived without warning him.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "不能",
+              "pinyin": "bù néng",
+              "gloss": "cannot"
+            },
+            {
+              "hanzi": "眼看",
+              "pinyin": "yǎn kàn",
+              "gloss": "look on as"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "受骗",
+              "pinyin": "shòu piàn",
+              "gloss": "be deceived"
+            },
+            {
+              "hanzi": "却",
+              "pinyin": "què",
+              "gloss": "yet"
+            },
+            {
+              "hanzi": "不提醒",
+              "pinyin": "bù tí xǐng",
+              "gloss": "not warn"
+            },
+            {
+              "hanzi": "他。",
+              "pinyin": "tā.",
+              "gloss": "him"
+            }
+          ]
+        }
+      ],
+      "词性": "verb; adverb",
+      "英文释义": "to watch something happen; soon; on the point of happening"
+    },
+    "wl_15299": {
+      "例句JSON": [
+        {
+          "hanzi": "这份账单有鬼，我们得再核对一下。",
+          "pinyin": "zhè fèn zhàng dān yǒu guǐ, wǒ men děi zài hé duì yī xià.",
+          "english": "Something is fishy about this bill; we need to check it again.",
+          "chunks": [
+            {
+              "hanzi": "这份",
+              "pinyin": "zhè fèn",
+              "gloss": "this (FEN measure word)"
+            },
+            {
+              "hanzi": "账单",
+              "pinyin": "zhàng dān",
+              "gloss": "bill"
+            },
+            {
+              "hanzi": "有鬼，",
+              "pinyin": "yǒu guǐ,",
+              "gloss": "something is fishy"
+            },
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "得",
+              "pinyin": "děi",
+              "gloss": "must"
+            },
+            {
+              "hanzi": "再",
+              "pinyin": "zài",
+              "gloss": "again"
+            },
+            {
+              "hanzi": "核对",
+              "pinyin": "hé duì",
+              "gloss": "check"
+            },
+            {
+              "hanzi": "一下。",
+              "pinyin": "yī xià.",
+              "gloss": "briefly"
+            }
+          ]
+        },
+        {
+          "hanzi": "是你心里有鬼吧？",
+          "pinyin": "shì nǐ xīn li yǒu guǐ ba?",
+          "english": "Do you have a guilty conscience?",
+          "chunks": [
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "to be"
+            },
+            {
+              "hanzi": "你",
+              "pinyin": "nǐ",
+              "gloss": "you"
+            },
+            {
+              "hanzi": "心里",
+              "pinyin": "xīn li",
+              "gloss": "in one's mind; in one's heart"
+            },
+            {
+              "hanzi": "有鬼",
+              "pinyin": "yǒu guǐ",
+              "gloss": "(fig.) to smell fishy"
+            },
+            {
+              "hanzi": "吧？",
+              "pinyin": "ba?",
+              "gloss": "suggestion or tentative statement particle"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_15337": {
+      "例句JSON": [
+        {
+          "hanzi": "我是开车的新手，还需要多练习。",
+          "pinyin": "wǒ shì kāi chē de xīn shǒu, hái xū yào duō liàn xí.",
+          "english": "I am a beginner at driving and still need more practice.",
+          "chunks": [
+            {
+              "hanzi": "我是",
+              "pinyin": "wǒ shì",
+              "gloss": "I am"
+            },
+            {
+              "hanzi": "开车",
+              "pinyin": "kāi chē",
+              "gloss": "driving"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "新手，",
+              "pinyin": "xīn shǒu,",
+              "gloss": "beginner"
+            },
+            {
+              "hanzi": "还",
+              "pinyin": "hái",
+              "gloss": "still"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "多",
+              "pinyin": "duō",
+              "gloss": "more"
+            },
+            {
+              "hanzi": "练习。",
+              "pinyin": "liàn xí.",
+              "gloss": "practice"
+            }
+          ]
+        },
+        {
+          "hanzi": "我还是个新手。",
+          "pinyin": "wǒ hái shi gè xīn shǒu.",
+          "english": "I'm still a beginner.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I; me"
+            },
+            {
+              "hanzi": "还是",
+              "pinyin": "hái shi",
+              "gloss": "or (in a question)"
+            },
+            {
+              "hanzi": "个",
+              "pinyin": "gè",
+              "gloss": "general classifier"
+            },
+            {
+              "hanzi": "新手。",
+              "pinyin": "xīn shǒu.",
+              "gloss": "new hand; novice"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_15388": {
+      "例句JSON": [
+        {
+          "hanzi": "这座湖是人工开挖的。",
+          "pinyin": "zhè zuò hú shì rén gōng kāi wā de.",
+          "english": "This lake was excavated by human labor.",
+          "chunks": [
+            {
+              "hanzi": "这座",
+              "pinyin": "zhè zuò",
+              "gloss": "this (ZUO measure word)"
+            },
+            {
+              "hanzi": "湖",
+              "pinyin": "hú",
+              "gloss": "lake"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "be"
+            },
+            {
+              "hanzi": "人工",
+              "pinyin": "rén gōng",
+              "gloss": "manually"
+            },
+            {
+              "hanzi": "开挖",
+              "pinyin": "kāi wā",
+              "gloss": "excavate"
+            },
+            {
+              "hanzi": "的。",
+              "pinyin": "de.",
+              "gloss": "DE (emphasis marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "这项工作需要大量人工。",
+          "pinyin": "zhè xiàng gōng zuò xū yào dà liàng rén gōng.",
+          "english": "This job requires a great deal of manual labor.",
+          "chunks": [
+            {
+              "hanzi": "这项",
+              "pinyin": "zhè xiàng",
+              "gloss": "this (XIANG measure word)"
+            },
+            {
+              "hanzi": "工作",
+              "pinyin": "gōng zuò",
+              "gloss": "job"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "大量",
+              "pinyin": "dà liàng",
+              "gloss": "a large amount of"
+            },
+            {
+              "hanzi": "人工。",
+              "pinyin": "rén gōng.",
+              "gloss": "manual labor"
+            }
+          ]
+        }
+      ],
+      "词性": "noun; adjective",
+      "部件JSON": [
+        {
+          "hanzi": "人",
+          "pinyin": "rén",
+          "gloss": "human; person"
+        },
+        {
+          "hanzi": "工",
+          "pinyin": "gōng",
+          "gloss": "labor; work"
+        }
+      ]
+    },
+    "wl_15504": {
+      "例句JSON": [
+        {
+          "hanzi": "这项决定受到多重因素的影响。",
+          "pinyin": "zhè xiàng jué dìng shòu dào duō chóng yīn sù de yǐng xiǎng.",
+          "english": "This decision is influenced by multiple factors.",
+          "chunks": [
+            {
+              "hanzi": "这项",
+              "pinyin": "zhè xiàng",
+              "gloss": "this (XIANG measure word)"
+            },
+            {
+              "hanzi": "决定",
+              "pinyin": "jué dìng",
+              "gloss": "decision"
+            },
+            {
+              "hanzi": "受到",
+              "pinyin": "shòu dào",
+              "gloss": "be affected by"
+            },
+            {
+              "hanzi": "多重",
+              "pinyin": "duō chóng",
+              "gloss": "multiple"
+            },
+            {
+              "hanzi": "因素",
+              "pinyin": "yīn sù",
+              "gloss": "factors"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "影响。",
+              "pinyin": "yǐng xiǎng.",
+              "gloss": "influence"
+            }
+          ]
+        },
+        {
+          "hanzi": "这个系统设有多重保护。",
+          "pinyin": "zhè ge xì tǒng shè yǒu duō chóng bǎo hù.",
+          "english": "This system has multiple safeguards.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "系统",
+              "pinyin": "xì tǒng",
+              "gloss": "system"
+            },
+            {
+              "hanzi": "设有",
+              "pinyin": "shè yǒu",
+              "gloss": "be equipped with"
+            },
+            {
+              "hanzi": "多重",
+              "pinyin": "duō chóng",
+              "gloss": "multiple"
+            },
+            {
+              "hanzi": "保护。",
+              "pinyin": "bǎo hù.",
+              "gloss": "safeguards"
+            }
+          ]
+        }
+      ],
+      "词性": "adjective; bound form",
+      "英文释义": "multiple; multi-layered; involving several factors",
+      "本义解释JSON": [
+        "multiple; multi-layered; involving several factors"
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "多",
+          "pinyin": "duō",
+          "gloss": "many; multiple"
+        },
+        {
+          "hanzi": "重",
+          "pinyin": "chóng",
+          "gloss": "layer; level"
+        }
+      ]
+    },
+    "wl_15714": {
+      "例句JSON": [
+        {
+          "hanzi": "她是这所大学的在读研究生。",
+          "pinyin": "tā shì zhè suǒ dà xué de zài dú yán jiū shēng.",
+          "english": "She is a graduate student currently enrolled at this university.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "be"
+            },
+            {
+              "hanzi": "这所大学",
+              "pinyin": "zhè suǒ dà xué",
+              "gloss": "this university"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "在读",
+              "pinyin": "zài dú",
+              "gloss": "currently enrolled"
+            },
+            {
+              "hanzi": "研究生。",
+              "pinyin": "yán jiū shēng.",
+              "gloss": "graduate student"
+            }
+          ]
+        },
+        {
+          "hanzi": "在读期间，他一直住在学校宿舍。",
+          "pinyin": "zài dú qī jiān, tā yì zhí zhù zài xué xiào sù shè.",
+          "english": "He lived in a school dormitory throughout his time as a student.",
+          "chunks": [
+            {
+              "hanzi": "在读",
+              "pinyin": "zài dú",
+              "gloss": "while enrolled as a student"
+            },
+            {
+              "hanzi": "期间，",
+              "pinyin": "qī jiān,",
+              "gloss": "during"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "一直",
+              "pinyin": "yì zhí",
+              "gloss": "throughout"
+            },
+            {
+              "hanzi": "住在",
+              "pinyin": "zhù zài",
+              "gloss": "live in"
+            },
+            {
+              "hanzi": "学校",
+              "pinyin": "xué xiào",
+              "gloss": "school"
+            },
+            {
+              "hanzi": "宿舍。",
+              "pinyin": "sù shè.",
+              "gloss": "dormitory"
+            }
+          ]
+        }
+      ],
+      "词性": "verb; adjective"
+    },
+    "wl_15728": {
+      "例句JSON": [
+        {
+          "hanzi": "露营时，大家一起生火做饭。",
+          "pinyin": "lù yíng shí, dà jiā yì qǐ shēng huǒ zuò fàn.",
+          "english": "While camping, everyone lit a fire together to cook.",
+          "chunks": [
+            {
+              "hanzi": "露营",
+              "pinyin": "lù yíng",
+              "gloss": "camping"
+            },
+            {
+              "hanzi": "时，",
+              "pinyin": "shí,",
+              "gloss": "when"
+            },
+            {
+              "hanzi": "大家",
+              "pinyin": "dà jiā",
+              "gloss": "everyone"
+            },
+            {
+              "hanzi": "一起",
+              "pinyin": "yì qǐ",
+              "gloss": "together"
+            },
+            {
+              "hanzi": "生火",
+              "pinyin": "shēng huǒ",
+              "gloss": "light a fire"
+            },
+            {
+              "hanzi": "做饭。",
+              "pinyin": "zuò fàn.",
+              "gloss": "cook"
+            }
+          ]
+        },
+        {
+          "hanzi": "他在屋后斫木，准备生火。",
+          "pinyin": "tā zài wū hòu zhuó mù, zhǔn bèi shēng huǒ.",
+          "english": "He chops wood behind the house in preparation for a fire.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; him"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "to be at; in"
+            },
+            {
+              "hanzi": "屋",
+              "pinyin": "wū",
+              "gloss": "house"
+            },
+            {
+              "hanzi": "后",
+              "pinyin": "hòu",
+              "gloss": "back; behind"
+            },
+            {
+              "hanzi": "斫",
+              "pinyin": "zhuó",
+              "gloss": "to chop"
+            },
+            {
+              "hanzi": "木，",
+              "pinyin": "mù,",
+              "gloss": "wood; wooden"
+            },
+            {
+              "hanzi": "准备",
+              "pinyin": "zhǔn bèi",
+              "gloss": "to prepare"
+            },
+            {
+              "hanzi": "生火。",
+              "pinyin": "shēng huǒ.",
+              "gloss": "to make a fire; to light a fire"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_15762": {
+      "例句JSON": [
+        {
+          "hanzi": "这天会到来。",
+          "pinyin": "zhè tiān huì dào lái.",
+          "english": "That day shall come.",
+          "chunks": [
+            {
+              "hanzi": "这天",
+              "pinyin": "zhè tiān",
+              "gloss": "this day"
+            },
+            {
+              "hanzi": "会",
+              "pinyin": "huì",
+              "gloss": "can; will"
+            },
+            {
+              "hanzi": "到来。",
+              "pinyin": "dào lái.",
+              "gloss": "arrive"
+            }
+          ]
+        },
+        {
+          "hanzi": "我们把这天定为家庭聚会的日子。",
+          "pinyin": "wǒ men bǎ zhè tiān dìng wéi jiā tíng jù huì de rì zi.",
+          "english": "We chose this day for a family gathering.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "这天",
+              "pinyin": "zhè tiān",
+              "gloss": "this day"
+            },
+            {
+              "hanzi": "定为",
+              "pinyin": "dìng wéi",
+              "gloss": "designate as"
+            },
+            {
+              "hanzi": "家庭",
+              "pinyin": "jiā tíng",
+              "gloss": "family"
+            },
+            {
+              "hanzi": "聚会",
+              "pinyin": "jù huì",
+              "gloss": "gathering"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "日子。",
+              "pinyin": "rì zi.",
+              "gloss": "date"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_15791": {
+      "例句JSON": [
+        {
+          "hanzi": "这件旧外套不值五百元。",
+          "pinyin": "zhè jiàn jiù wài tào bù zhí wǔ bǎi yuán.",
+          "english": "This old coat is not worth five hundred yuan.",
+          "chunks": [
+            {
+              "hanzi": "这件",
+              "pinyin": "zhè jiàn",
+              "gloss": "this (JIAN measure word)"
+            },
+            {
+              "hanzi": "旧外套",
+              "pinyin": "jiù wài tào",
+              "gloss": "old coat"
+            },
+            {
+              "hanzi": "不值",
+              "pinyin": "bù zhí",
+              "gloss": "not be worth"
+            },
+            {
+              "hanzi": "五百元。",
+              "pinyin": "wǔ bǎi yuán.",
+              "gloss": "five hundred yuan"
+            }
+          ]
+        },
+        {
+          "hanzi": "为一点小事争吵，实在不值。",
+          "pinyin": "wèi yì diǎn xiǎo shì zhēng chǎo, shí zài bù zhí.",
+          "english": "Arguing over such a small matter really is not worth it.",
+          "chunks": [
+            {
+              "hanzi": "为",
+              "pinyin": "wèi",
+              "gloss": "over"
+            },
+            {
+              "hanzi": "一点",
+              "pinyin": "yì diǎn",
+              "gloss": "a little"
+            },
+            {
+              "hanzi": "小事",
+              "pinyin": "xiǎo shì",
+              "gloss": "trivial matter"
+            },
+            {
+              "hanzi": "争吵，",
+              "pinyin": "zhēng chǎo,",
+              "gloss": "argue"
+            },
+            {
+              "hanzi": "实在",
+              "pinyin": "shí zài",
+              "gloss": "really"
+            },
+            {
+              "hanzi": "不值。",
+              "pinyin": "bù zhí.",
+              "gloss": "not be worth it"
+            }
+          ]
+        }
+      ],
+      "词性": "verb; adjective"
+    },
+    "wl_15823": {
+      "例句JSON": [
+        {
+          "hanzi": "我现在不便接电话。",
+          "pinyin": "wǒ xiàn zài bù biàn jiē diàn huà.",
+          "english": "I cannot conveniently answer the phone right now.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "现在",
+              "pinyin": "xiàn zài",
+              "gloss": "now"
+            },
+            {
+              "hanzi": "不便",
+              "pinyin": "bù biàn",
+              "gloss": "not be in a position to"
+            },
+            {
+              "hanzi": "接",
+              "pinyin": "jiē",
+              "gloss": "answer"
+            },
+            {
+              "hanzi": "电话。",
+              "pinyin": "diàn huà.",
+              "gloss": "the phone"
+            }
+          ]
+        },
+        {
+          "hanzi": "施工给居民带来了一些不便。",
+          "pinyin": "shī gōng gěi jū mín dài lái le yī xiē bù biàn.",
+          "english": "The construction work caused residents some inconvenience.",
+          "chunks": [
+            {
+              "hanzi": "施工",
+              "pinyin": "shī gōng",
+              "gloss": "construction work"
+            },
+            {
+              "hanzi": "给",
+              "pinyin": "gěi",
+              "gloss": "to"
+            },
+            {
+              "hanzi": "居民",
+              "pinyin": "jū mín",
+              "gloss": "residents"
+            },
+            {
+              "hanzi": "带来",
+              "pinyin": "dài lái",
+              "gloss": "bring"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "一些",
+              "pinyin": "yī xiē",
+              "gloss": "some"
+            },
+            {
+              "hanzi": "不便。",
+              "pinyin": "bù biàn.",
+              "gloss": "inconvenience"
+            }
+          ]
+        }
+      ],
+      "词性": "adjective; noun",
+      "英文释义": "inconvenient; inappropriate; inconvenience",
+      "本义解释JSON": [
+        "inconvenient; inappropriate; not in a position to do something",
+        "inconvenience; trouble caused to others"
+      ]
+    },
+    "wl_15848": {
+      "例句JSON": [
+        {
+          "hanzi": "学校明天举行合唱比赛。",
+          "pinyin": "xué xiào míng tiān jǔ xíng hé chàng bǐ sài.",
+          "english": "The school is holding a choral singing competition tomorrow.",
+          "chunks": [
+            {
+              "hanzi": "学校",
+              "pinyin": "xué xiào",
+              "gloss": "the school"
+            },
+            {
+              "hanzi": "明天",
+              "pinyin": "míng tiān",
+              "gloss": "tomorrow"
+            },
+            {
+              "hanzi": "举行",
+              "pinyin": "jǔ xíng",
+              "gloss": "hold"
+            },
+            {
+              "hanzi": "合唱",
+              "pinyin": "hé chàng",
+              "gloss": "choral singing"
+            },
+            {
+              "hanzi": "比赛。",
+              "pinyin": "bǐ sài.",
+              "gloss": "competition"
+            }
+          ]
+        },
+        {
+          "hanzi": "大家一起合唱这首歌。",
+          "pinyin": "dà jiā yì qǐ hé chàng zhè shǒu gē.",
+          "english": "Everyone sang this song together.",
+          "chunks": [
+            {
+              "hanzi": "大家",
+              "pinyin": "dà jiā",
+              "gloss": "everyone"
+            },
+            {
+              "hanzi": "一起",
+              "pinyin": "yì qǐ",
+              "gloss": "together"
+            },
+            {
+              "hanzi": "合唱",
+              "pinyin": "hé chàng",
+              "gloss": "sing in chorus"
+            },
+            {
+              "hanzi": "这首",
+              "pinyin": "zhè shǒu",
+              "gloss": "this (SHOU measure word)"
+            },
+            {
+              "hanzi": "歌。",
+              "pinyin": "gē.",
+              "gloss": "song"
+            }
+          ]
+        }
+      ],
+      "词性": "noun; verb"
+    },
+    "wl_15864": {
+      "例句JSON": [
+        {
+          "hanzi": "我们已经定下了出发的日期。",
+          "pinyin": "wǒ men yǐ jīng dìng xià le chū fā de rì qī.",
+          "english": "We have already settled on a departure date.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "定下",
+              "pinyin": "dìng xià",
+              "gloss": "settle"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "出发",
+              "pinyin": "chū fā",
+              "gloss": "departure"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "日期。",
+              "pinyin": "rì qī.",
+              "gloss": "date"
+            }
+          ]
+        },
+        {
+          "hanzi": "我们必须快点定下旅游日期。",
+          "pinyin": "wǒ men bì xū kuài diǎn dìng xià lǚ yóu rì qī.",
+          "english": "We have to fix the date for our trip quickly.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we or us"
+            },
+            {
+              "hanzi": "必须",
+              "pinyin": "bì xū",
+              "gloss": "must; to have to"
+            },
+            {
+              "hanzi": "快点",
+              "pinyin": "kuài diǎn",
+              "gloss": "to hurry up; to do something more quickly"
+            },
+            {
+              "hanzi": "定下",
+              "pinyin": "dìng xià",
+              "gloss": "to set (the tone, a target etc); to lay down (the beat)"
+            },
+            {
+              "hanzi": "旅游",
+              "pinyin": "lǚ yóu",
+              "gloss": "trip; journey"
+            },
+            {
+              "hanzi": "日期。",
+              "pinyin": "rì qī.",
+              "gloss": "date"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "定",
+          "pinyin": "dìng",
+          "gloss": "fix; settle; decide"
+        },
+        {
+          "hanzi": "下",
+          "pinyin": "xià",
+          "gloss": "XIA (result complement: settled or fixed)"
+        }
+      ]
+    },
+    "wl_16083": {
+      "例句JSON": [
+        {
+          "hanzi": "我觉得您过火了。",
+          "pinyin": "wǒ jué de nín guò huǒ le.",
+          "english": "I think you went too far.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I; me"
+            },
+            {
+              "hanzi": "觉得",
+              "pinyin": "jué de",
+              "gloss": "to think; to feel"
+            },
+            {
+              "hanzi": "您",
+              "pinyin": "nín",
+              "gloss": "you (polite)"
+            },
+            {
+              "hanzi": "过火",
+              "pinyin": "guò huǒ",
+              "gloss": "to go too far; to go overboard (in words or actions)"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "completion or change-of-state particle"
+            }
+          ]
+        },
+        {
+          "hanzi": "这个玩笑开得太过火了。",
+          "pinyin": "zhè ge wán xiào kāi de tài guò huǒ le.",
+          "english": "This joke has gone too far.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "玩笑",
+              "pinyin": "wán xiào",
+              "gloss": "joke"
+            },
+            {
+              "hanzi": "开得",
+              "pinyin": "kāi de",
+              "gloss": "be made to the extent of"
+            },
+            {
+              "hanzi": "太",
+              "pinyin": "tài",
+              "gloss": "too"
+            },
+            {
+              "hanzi": "过火",
+              "pinyin": "guò huǒ",
+              "gloss": "excessive"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (emphatic sentence ending)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16120": {
+      "例句JSON": [
+        {
+          "hanzi": "老友相聚，把酒言欢。",
+          "pinyin": "lǎo yǒu xiāng jù, bǎ jiǔ yán huān.",
+          "english": "Old friends gathered, raised their wine cups, and chatted happily.",
+          "chunks": [
+            {
+              "hanzi": "老友",
+              "pinyin": "lǎo yǒu",
+              "gloss": "old friends"
+            },
+            {
+              "hanzi": "相聚，",
+              "pinyin": "xiāng jù,",
+              "gloss": "gather"
+            },
+            {
+              "hanzi": "把酒",
+              "pinyin": "bǎ jiǔ",
+              "gloss": "raise their wine cups"
+            },
+            {
+              "hanzi": "言欢。",
+              "pinyin": "yán huān.",
+              "gloss": "chat happily"
+            }
+          ]
+        },
+        {
+          "hanzi": "诗中的旅人把酒问月。",
+          "pinyin": "shī zhōng de lǚ rén bǎ jiǔ wèn yuè.",
+          "english": "The traveler in the poem raises a wine cup and addresses the moon.",
+          "chunks": [
+            {
+              "hanzi": "诗中",
+              "pinyin": "shī zhōng",
+              "gloss": "in the poem"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "旅人",
+              "pinyin": "lǚ rén",
+              "gloss": "traveler"
+            },
+            {
+              "hanzi": "把酒",
+              "pinyin": "bǎ jiǔ",
+              "gloss": "raise a wine cup"
+            },
+            {
+              "hanzi": "问月。",
+              "pinyin": "wèn yuè.",
+              "gloss": "address the moon"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "把",
+          "pinyin": "bǎ",
+          "gloss": "hold; raise"
+        },
+        {
+          "hanzi": "酒",
+          "pinyin": "jiǔ",
+          "gloss": "wine; wine cup (metonymically)"
+        }
+      ]
+    },
+    "wl_16256": {
+      "例句JSON": [
+        {
+          "hanzi": "一市里等于五百米。",
+          "pinyin": "yī shì lǐ děng yú wǔ bǎi mǐ.",
+          "english": "One Chinese li equals five hundred meters.",
+          "chunks": [
+            {
+              "hanzi": "一",
+              "pinyin": "yī",
+              "gloss": "one"
+            },
+            {
+              "hanzi": "市里",
+              "pinyin": "shì lǐ",
+              "gloss": "Chinese li"
+            },
+            {
+              "hanzi": "等于",
+              "pinyin": "děng yú",
+              "gloss": "equal"
+            },
+            {
+              "hanzi": "五百米。",
+              "pinyin": "wǔ bǎi mǐ.",
+              "gloss": "five hundred meters"
+            }
+          ]
+        },
+        {
+          "hanzi": "从村口到桥边大约有两市里。",
+          "pinyin": "cóng cūn kǒu dào qiáo biān dà yuē yǒu liǎng shì lǐ.",
+          "english": "It is about two Chinese li from the village entrance to the bridge.",
+          "chunks": [
+            {
+              "hanzi": "从",
+              "pinyin": "cóng",
+              "gloss": "from"
+            },
+            {
+              "hanzi": "村口",
+              "pinyin": "cūn kǒu",
+              "gloss": "the village entrance"
+            },
+            {
+              "hanzi": "到",
+              "pinyin": "dào",
+              "gloss": "to"
+            },
+            {
+              "hanzi": "桥边",
+              "pinyin": "qiáo biān",
+              "gloss": "the bridge"
+            },
+            {
+              "hanzi": "大约",
+              "pinyin": "dà yuē",
+              "gloss": "about"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "be"
+            },
+            {
+              "hanzi": "两",
+              "pinyin": "liǎng",
+              "gloss": "two"
+            },
+            {
+              "hanzi": "市里。",
+              "pinyin": "shì lǐ.",
+              "gloss": "Chinese li"
+            }
+          ]
+        }
+      ],
+      "词性": "measure word",
+      "部件JSON": [
+        {
+          "hanzi": "市",
+          "pinyin": "shì",
+          "gloss": "of the Chinese traditional standardized unit system"
+        },
+        {
+          "hanzi": "里",
+          "pinyin": "lǐ",
+          "gloss": "li (distance unit)"
+        }
+      ]
+    },
+    "wl_16424": {
+      "例句JSON": [
+        {
+          "hanzi": "这间温室的光照很充足。",
+          "pinyin": "zhè jiān wēn shì de guāng zhào hěn chōng zú.",
+          "english": "This greenhouse receives plenty of light.",
+          "chunks": [
+            {
+              "hanzi": "这间",
+              "pinyin": "zhè jiān",
+              "gloss": "this (JIAN measure word)"
+            },
+            {
+              "hanzi": "温室",
+              "pinyin": "wēn shì",
+              "gloss": "greenhouse"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "光照",
+              "pinyin": "guāng zhào",
+              "gloss": "illumination"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "充足。",
+              "pinyin": "chōng zú.",
+              "gloss": "ample"
+            }
+          ]
+        },
+        {
+          "hanzi": "这种植物需要充足的光照。",
+          "pinyin": "zhè zhòng zhí wù xū yào chōng zú de guāng zhào.",
+          "english": "This plant needs plenty of light.",
+          "chunks": [
+            {
+              "hanzi": "这种",
+              "pinyin": "zhè zhòng",
+              "gloss": "this type of"
+            },
+            {
+              "hanzi": "植物",
+              "pinyin": "zhí wù",
+              "gloss": "plant"
+            },
+            {
+              "hanzi": "需要",
+              "pinyin": "xū yào",
+              "gloss": "need"
+            },
+            {
+              "hanzi": "充足",
+              "pinyin": "chōng zú",
+              "gloss": "ample"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "光照。",
+              "pinyin": "guāng zhào.",
+              "gloss": "illumination"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16480": {
+      "例句JSON": [
+        {
+          "hanzi": "时间不早了，我们不便久留。",
+          "pinyin": "shí jiān bù zǎo le, wǒ men bù biàn jiǔ liú.",
+          "english": "It is getting late, so we should not stay long.",
+          "chunks": [
+            {
+              "hanzi": "时间",
+              "pinyin": "shí jiān",
+              "gloss": "time"
+            },
+            {
+              "hanzi": "不早",
+              "pinyin": "bù zǎo",
+              "gloss": "not early"
+            },
+            {
+              "hanzi": "了，",
+              "pinyin": "le,",
+              "gloss": "LE (change of state marker)"
+            },
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "不便",
+              "pinyin": "bù biàn",
+              "gloss": "not be in a position to"
+            },
+            {
+              "hanzi": "久留。",
+              "pinyin": "jiǔ liú.",
+              "gloss": "stay long"
+            }
+          ]
+        },
+        {
+          "hanzi": "汤姆不会在这里久留。",
+          "pinyin": "tāng mǔ bù huì zài zhè lǐ jiǔ liú.",
+          "english": "Tom won't be here long.",
+          "chunks": [
+            {
+              "hanzi": "汤姆",
+              "pinyin": "tāng mǔ",
+              "gloss": "Tom (name)"
+            },
+            {
+              "hanzi": "不会",
+              "pinyin": "bù huì",
+              "gloss": "cannot; will not"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "to be at; in"
+            },
+            {
+              "hanzi": "这里",
+              "pinyin": "zhè lǐ",
+              "gloss": "here"
+            },
+            {
+              "hanzi": "久留。",
+              "pinyin": "jiǔ liú.",
+              "gloss": "to stay for a long time"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16679": {
+      "例句JSON": [
+        {
+          "hanzi": "这个结论仍然有待进一步验证。",
+          "pinyin": "zhè ge jié lùn réng rán yǒu dài jìn yí bù yàn zhèng.",
+          "english": "This conclusion still needs further verification.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "结论",
+              "pinyin": "jié lùn",
+              "gloss": "conclusion"
+            },
+            {
+              "hanzi": "仍然",
+              "pinyin": "réng rán",
+              "gloss": "still"
+            },
+            {
+              "hanzi": "有待",
+              "pinyin": "yǒu dài",
+              "gloss": "remain to be"
+            },
+            {
+              "hanzi": "进一步",
+              "pinyin": "jìn yí bù",
+              "gloss": "further"
+            },
+            {
+              "hanzi": "验证。",
+              "pinyin": "yàn zhèng.",
+              "gloss": "verified"
+            }
+          ]
+        },
+        {
+          "hanzi": "申请有待审批，请耐心等待。",
+          "pinyin": "shēn qǐng yǒu dài shěn pī, qǐng nài xīn děng dài.",
+          "english": "The application is awaiting approval; please wait patiently.",
+          "chunks": [
+            {
+              "hanzi": "申请",
+              "pinyin": "shēn qǐng",
+              "gloss": "the application"
+            },
+            {
+              "hanzi": "有待",
+              "pinyin": "yǒu dài",
+              "gloss": "remain to be"
+            },
+            {
+              "hanzi": "审批，",
+              "pinyin": "shěn pī,",
+              "gloss": "approved"
+            },
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "耐心",
+              "pinyin": "nài xīn",
+              "gloss": "patiently"
+            },
+            {
+              "hanzi": "等待。",
+              "pinyin": "děng dài.",
+              "gloss": "wait"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16852": {
+      "例句JSON": [
+        {
+          "hanzi": "他父母对他期望过高。",
+          "pinyin": "tā fù mǔ duì tā qī wàng guò gāo.",
+          "english": "His parents expect too much of him.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; him"
+            },
+            {
+              "hanzi": "父母",
+              "pinyin": "fù mǔ",
+              "gloss": "parents"
+            },
+            {
+              "hanzi": "对",
+              "pinyin": "duì",
+              "gloss": "toward; regarding"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; him"
+            },
+            {
+              "hanzi": "期望",
+              "pinyin": "qī wàng",
+              "gloss": "expectations"
+            },
+            {
+              "hanzi": "过高。",
+              "pinyin": "guò gāo.",
+              "gloss": "too high; excessive"
+            }
+          ]
+        },
+        {
+          "hanzi": "这件商品的价格过高，我不打算买。",
+          "pinyin": "zhè jiàn shāng pǐn de jià gé guò gāo, wǒ bù dǎ suàn mǎi.",
+          "english": "The price of this product is too high, so I do not plan to buy it.",
+          "chunks": [
+            {
+              "hanzi": "这件",
+              "pinyin": "zhè jiàn",
+              "gloss": "this (JIAN measure word)"
+            },
+            {
+              "hanzi": "商品",
+              "pinyin": "shāng pǐn",
+              "gloss": "product"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "价格",
+              "pinyin": "jià gé",
+              "gloss": "price"
+            },
+            {
+              "hanzi": "过高，",
+              "pinyin": "guò gāo,",
+              "gloss": "too high"
+            },
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "不打算",
+              "pinyin": "bù dǎ suàn",
+              "gloss": "not plan to"
+            },
+            {
+              "hanzi": "买。",
+              "pinyin": "mǎi.",
+              "gloss": "buy"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16940": {
+      "例句JSON": [
+        {
+          "hanzi": "他表现出少有的耐心。",
+          "pinyin": "tā biǎo xiàn chū shǎo yǒu de nài xīn.",
+          "english": "He showed unusual patience.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "表现出",
+              "pinyin": "biǎo xiàn chū",
+              "gloss": "show"
+            },
+            {
+              "hanzi": "少有",
+              "pinyin": "shǎo yǒu",
+              "gloss": "rare"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "耐心。",
+              "pinyin": "nài xīn.",
+              "gloss": "patience"
+            }
+          ]
+        },
+        {
+          "hanzi": "这种形状在本地十分少有。",
+          "pinyin": "zhè zhǒng xíng zhuàng zài běn dì shí fēn shǎo yǒu.",
+          "english": "This type of shape is very rare locally.",
+          "chunks": [
+            {
+              "hanzi": "这种",
+              "pinyin": "zhè zhǒng",
+              "gloss": "this type of"
+            },
+            {
+              "hanzi": "形状",
+              "pinyin": "xíng zhuàng",
+              "gloss": "shape"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "本地",
+              "pinyin": "běn dì",
+              "gloss": "the local area"
+            },
+            {
+              "hanzi": "十分",
+              "pinyin": "shí fēn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "少有。",
+              "pinyin": "shǎo yǒu.",
+              "gloss": "rare"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17166": {
+      "例句JSON": [
+        {
+          "hanzi": "他后悔在校时没用功读书。",
+          "pinyin": "tā hòu huǐ zài xiào shí méi yòng gōng dú shū.",
+          "english": "He regrets not having worked harder at school.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; him"
+            },
+            {
+              "hanzi": "后悔",
+              "pinyin": "hòu huǐ",
+              "gloss": "regret; feel remorse"
+            },
+            {
+              "hanzi": "在校",
+              "pinyin": "zài xiào",
+              "gloss": "(attributive) to be enrolled in a school (or university etc)"
+            },
+            {
+              "hanzi": "时",
+              "pinyin": "shí",
+              "gloss": "when; time"
+            },
+            {
+              "hanzi": "没",
+              "pinyin": "méi",
+              "gloss": "not; have not"
+            },
+            {
+              "hanzi": "用功",
+              "pinyin": "yòng gōng",
+              "gloss": "study diligently; work hard"
+            },
+            {
+              "hanzi": "读书。",
+              "pinyin": "dú shū.",
+              "gloss": "read"
+            }
+          ]
+        },
+        {
+          "hanzi": "在校期间，她经常参加志愿活动。",
+          "pinyin": "zài xiào qī jiān, tā jīng cháng cān jiā zhì yuàn huó dòng.",
+          "english": "She often took part in volunteer activities while she was at school.",
+          "chunks": [
+            {
+              "hanzi": "在校",
+              "pinyin": "zài xiào",
+              "gloss": "while enrolled at school"
+            },
+            {
+              "hanzi": "期间，",
+              "pinyin": "qī jiān,",
+              "gloss": "during"
+            },
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "经常",
+              "pinyin": "jīng cháng",
+              "gloss": "often"
+            },
+            {
+              "hanzi": "参加",
+              "pinyin": "cān jiā",
+              "gloss": "take part in"
+            },
+            {
+              "hanzi": "志愿",
+              "pinyin": "zhì yuàn",
+              "gloss": "volunteer"
+            },
+            {
+              "hanzi": "活动。",
+              "pinyin": "huó dòng.",
+              "gloss": "activities"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17220": {
+      "例句JSON": [
+        {
+          "hanzi": "爱玛把书还给了图书馆。",
+          "pinyin": "ài mǎ bǎ shū huán gěi le tú shū guǎn.",
+          "english": "Emma returned the book to the library.",
+          "chunks": [
+            {
+              "hanzi": "爱玛",
+              "pinyin": "ài mǎ",
+              "gloss": "Emma"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "书",
+              "pinyin": "shū",
+              "gloss": "book"
+            },
+            {
+              "hanzi": "还给",
+              "pinyin": "huán gěi",
+              "gloss": "return to"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "图书馆。",
+              "pinyin": "tú shū guǎn.",
+              "gloss": "the library"
+            }
+          ]
+        },
+        {
+          "hanzi": "我们约好周末和爱玛见面。",
+          "pinyin": "wǒ men yuē hǎo zhōu mò hé ài mǎ jiàn miàn.",
+          "english": "We arranged to meet Emma at the weekend.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "约好",
+              "pinyin": "yuē hǎo",
+              "gloss": "arrange to meet"
+            },
+            {
+              "hanzi": "周末",
+              "pinyin": "zhōu mò",
+              "gloss": "at the weekend"
+            },
+            {
+              "hanzi": "和",
+              "pinyin": "hé",
+              "gloss": "with"
+            },
+            {
+              "hanzi": "爱玛",
+              "pinyin": "ài mǎ",
+              "gloss": "Emma"
+            },
+            {
+              "hanzi": "见面。",
+              "pinyin": "jiàn miàn.",
+              "gloss": "meet"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17334": {
+      "例句JSON": [
+        {
+          "hanzi": "旧小说常写富家子弟的生活。",
+          "pinyin": "jiù xiǎo shuō cháng xiě fù jiā zǐ dì de shēng huó.",
+          "english": "Old novels often describe the lives of young people from wealthy families.",
+          "chunks": [
+            {
+              "hanzi": "旧小说",
+              "pinyin": "jiù xiǎo shuō",
+              "gloss": "old novels"
+            },
+            {
+              "hanzi": "常",
+              "pinyin": "cháng",
+              "gloss": "often"
+            },
+            {
+              "hanzi": "写",
+              "pinyin": "xiě",
+              "gloss": "describe"
+            },
+            {
+              "hanzi": "富家",
+              "pinyin": "fù jiā",
+              "gloss": "wealthy families"
+            },
+            {
+              "hanzi": "子弟",
+              "pinyin": "zǐ dì",
+              "gloss": "the younger generation"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "生活。",
+              "pinyin": "shēng huó.",
+              "gloss": "life"
+            }
+          ]
+        },
+        {
+          "hanzi": "她希望家中子弟都能认真读书。",
+          "pinyin": "tā xī wàng jiā zhōng zǐ dì dōu néng rèn zhēn dú shū.",
+          "english": "She hopes the younger members of the family can all study diligently.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "希望",
+              "pinyin": "xī wàng",
+              "gloss": "hope"
+            },
+            {
+              "hanzi": "家中",
+              "pinyin": "jiā zhōng",
+              "gloss": "in the family"
+            },
+            {
+              "hanzi": "子弟",
+              "pinyin": "zǐ dì",
+              "gloss": "the younger generation"
+            },
+            {
+              "hanzi": "都",
+              "pinyin": "dōu",
+              "gloss": "all"
+            },
+            {
+              "hanzi": "能",
+              "pinyin": "néng",
+              "gloss": "can"
+            },
+            {
+              "hanzi": "认真",
+              "pinyin": "rèn zhēn",
+              "gloss": "diligently"
+            },
+            {
+              "hanzi": "读书。",
+              "pinyin": "dú shū.",
+              "gloss": "study"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17761": {
+      "例句JSON": [
+        {
+          "hanzi": "这趟列车沿上行线路运行。",
+          "pinyin": "zhè tàng liè chē yán shàng xíng xiàn lù yùn xíng.",
+          "english": "This train runs along the upbound track.",
+          "chunks": [
+            {
+              "hanzi": "这趟",
+              "pinyin": "zhè tàng",
+              "gloss": "this (TANG measure word)"
+            },
+            {
+              "hanzi": "列车",
+              "pinyin": "liè chē",
+              "gloss": "train"
+            },
+            {
+              "hanzi": "沿",
+              "pinyin": "yán",
+              "gloss": "along"
+            },
+            {
+              "hanzi": "上行",
+              "pinyin": "shàng xíng",
+              "gloss": "upbound"
+            },
+            {
+              "hanzi": "线路",
+              "pinyin": "xiàn lù",
+              "gloss": "track"
+            },
+            {
+              "hanzi": "运行。",
+              "pinyin": "yùn xíng.",
+              "gloss": "run"
+            }
+          ]
+        },
+        {
+          "hanzi": "船只正沿着河道上行。",
+          "pinyin": "chuán zhī zhèng yán zhe hé dào shàng xíng.",
+          "english": "The vessel is traveling upstream along the river channel.",
+          "chunks": [
+            {
+              "hanzi": "船只",
+              "pinyin": "chuán zhī",
+              "gloss": "the vessel"
+            },
+            {
+              "hanzi": "正",
+              "pinyin": "zhèng",
+              "gloss": "in the process of"
+            },
+            {
+              "hanzi": "沿着",
+              "pinyin": "yán zhe",
+              "gloss": "along"
+            },
+            {
+              "hanzi": "河道",
+              "pinyin": "hé dào",
+              "gloss": "the river channel"
+            },
+            {
+              "hanzi": "上行。",
+              "pinyin": "shàng xíng.",
+              "gloss": "travel upstream"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "上",
+          "pinyin": "shàng",
+          "gloss": "up; upstream; toward a higher level"
+        },
+        {
+          "hanzi": "行",
+          "pinyin": "xíng",
+          "gloss": "travel; proceed"
+        }
+      ]
+    },
+    "wl_17824": {
+      "例句JSON": [
+        {
+          "hanzi": "家谱按年代列出了他的后胤。",
+          "pinyin": "jiā pǔ àn nián dài liè chū le tā de hòu yìn.",
+          "english": "The family genealogy lists his descendants in chronological order.",
+          "chunks": [
+            {
+              "hanzi": "家谱",
+              "pinyin": "jiā pǔ",
+              "gloss": "genealogy; family tree"
+            },
+            {
+              "hanzi": "按",
+              "pinyin": "àn",
+              "gloss": "according to"
+            },
+            {
+              "hanzi": "年代",
+              "pinyin": "nián dài",
+              "gloss": "era"
+            },
+            {
+              "hanzi": "列出",
+              "pinyin": "liè chū",
+              "gloss": "list"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "completion or change-of-state particle"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; him"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "possessive or attributive particle"
+            },
+            {
+              "hanzi": "后",
+              "pinyin": "hòu",
+              "gloss": "back; behind"
+            },
+            {
+              "hanzi": "胤。",
+              "pinyin": "yìn.",
+              "gloss": "descendant"
+            }
+          ]
+        },
+        {
+          "hanzi": "这张家谱标明了各位亲属的辈分。",
+          "pinyin": "zhè zhāng jiā pǔ biāo míng le gè wèi qīn shǔ de bèi fēn.",
+          "english": "This family tree clearly shows which generation each relative belongs to.",
+          "chunks": [
+            {
+              "hanzi": "这张",
+              "pinyin": "zhè zhāng",
+              "gloss": "this (ZHANG measure word)"
+            },
+            {
+              "hanzi": "家谱",
+              "pinyin": "jiā pǔ",
+              "gloss": "family tree"
+            },
+            {
+              "hanzi": "标明",
+              "pinyin": "biāo míng",
+              "gloss": "show clearly"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "各位",
+              "pinyin": "gè wèi",
+              "gloss": "each"
+            },
+            {
+              "hanzi": "亲属",
+              "pinyin": "qīn shǔ",
+              "gloss": "relative"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "辈分。",
+              "pinyin": "bèi fēn.",
+              "gloss": "generation"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17841": {
+      "例句JSON": [
+        {
+          "hanzi": "这座桥仍然在建。",
+          "pinyin": "zhè zuò qiáo réng rán zài jiàn.",
+          "english": "This bridge is still under construction.",
+          "chunks": [
+            {
+              "hanzi": "这座",
+              "pinyin": "zhè zuò",
+              "gloss": "this (ZUO measure word)"
+            },
+            {
+              "hanzi": "桥",
+              "pinyin": "qiáo",
+              "gloss": "bridge"
+            },
+            {
+              "hanzi": "仍然",
+              "pinyin": "réng rán",
+              "gloss": "still"
+            },
+            {
+              "hanzi": "在建。",
+              "pinyin": "zài jiàn.",
+              "gloss": "under construction"
+            }
+          ]
+        },
+        {
+          "hanzi": "公园旁边有一栋在建的大楼。",
+          "pinyin": "gōng yuán páng biān yǒu yī dòng zài jiàn de dà lóu.",
+          "english": "There is a building under construction next to the park.",
+          "chunks": [
+            {
+              "hanzi": "公园",
+              "pinyin": "gōng yuán",
+              "gloss": "the park"
+            },
+            {
+              "hanzi": "旁边",
+              "pinyin": "páng biān",
+              "gloss": "next to"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "there is"
+            },
+            {
+              "hanzi": "一栋",
+              "pinyin": "yī dòng",
+              "gloss": "one (DONG measure word)"
+            },
+            {
+              "hanzi": "在建",
+              "pinyin": "zài jiàn",
+              "gloss": "under construction"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "大楼。",
+              "pinyin": "dà lóu.",
+              "gloss": "building"
+            }
+          ]
+        }
+      ],
+      "词性": "adjective; verb"
+    },
+    "wl_17873": {
+      "例句JSON": [
+        {
+          "hanzi": "今晚轮到我上夜。",
+          "pinyin": "jīn wǎn lún dào wǒ shàng yè.",
+          "english": "It is my turn to be on night duty tonight.",
+          "chunks": [
+            {
+              "hanzi": "今晚",
+              "pinyin": "jīn wǎn",
+              "gloss": "tonight"
+            },
+            {
+              "hanzi": "轮到",
+              "pinyin": "lún dào",
+              "gloss": "be the turn of"
+            },
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "me"
+            },
+            {
+              "hanzi": "上夜。",
+              "pinyin": "shàng yè.",
+              "gloss": "be on night duty"
+            }
+          ]
+        },
+        {
+          "hanzi": "守卫轮流上夜，看守院门。",
+          "pinyin": "shǒu wèi lún liú shàng yè, kān shǒu yuàn mén.",
+          "english": "The guards take turns keeping watch over the courtyard gate at night.",
+          "chunks": [
+            {
+              "hanzi": "守卫",
+              "pinyin": "shǒu wèi",
+              "gloss": "the guards"
+            },
+            {
+              "hanzi": "轮流",
+              "pinyin": "lún liú",
+              "gloss": "take turns"
+            },
+            {
+              "hanzi": "上夜，",
+              "pinyin": "shàng yè,",
+              "gloss": "keep watch at night"
+            },
+            {
+              "hanzi": "看守",
+              "pinyin": "kān shǒu",
+              "gloss": "guard"
+            },
+            {
+              "hanzi": "院门。",
+              "pinyin": "yuàn mén.",
+              "gloss": "the courtyard gate"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17874": {
+      "例句JSON": [
+        {
+          "hanzi": "这家店出售上好的茶叶。",
+          "pinyin": "zhè jiā diàn chū shòu shàng hǎo de chá yè.",
+          "english": "This shop sells top-quality tea.",
+          "chunks": [
+            {
+              "hanzi": "这家店",
+              "pinyin": "zhè jiā diàn",
+              "gloss": "this shop"
+            },
+            {
+              "hanzi": "出售",
+              "pinyin": "chū shòu",
+              "gloss": "sell"
+            },
+            {
+              "hanzi": "上好",
+              "pinyin": "shàng hǎo",
+              "gloss": "top-quality"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "茶叶。",
+              "pinyin": "chá yè.",
+              "gloss": "tea"
+            }
+          ]
+        },
+        {
+          "hanzi": "工匠选用上好的木料做家具。",
+          "pinyin": "gōng jiàng xuǎn yòng shàng hǎo de mù liào zuò jiā jù.",
+          "english": "The craftsperson selects first-rate timber to make furniture.",
+          "chunks": [
+            {
+              "hanzi": "工匠",
+              "pinyin": "gōng jiàng",
+              "gloss": "the craftsperson"
+            },
+            {
+              "hanzi": "选用",
+              "pinyin": "xuǎn yòng",
+              "gloss": "select for use"
+            },
+            {
+              "hanzi": "上好",
+              "pinyin": "shàng hǎo",
+              "gloss": "first-rate"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "木料",
+              "pinyin": "mù liào",
+              "gloss": "timber"
+            },
+            {
+              "hanzi": "做",
+              "pinyin": "zuò",
+              "gloss": "make"
+            },
+            {
+              "hanzi": "家具。",
+              "pinyin": "jiā jù.",
+              "gloss": "furniture"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17877": {
+      "例句JSON": [
+        {
+          "hanzi": "农民清早就下地干活。",
+          "pinyin": "nóng mín qīng zǎo jiù xià dì gàn huó.",
+          "english": "The farmers went to work in the fields early in the morning.",
+          "chunks": [
+            {
+              "hanzi": "农民",
+              "pinyin": "nóng mín",
+              "gloss": "the farmers"
+            },
+            {
+              "hanzi": "清早",
+              "pinyin": "qīng zǎo",
+              "gloss": "early in the morning"
+            },
+            {
+              "hanzi": "就",
+              "pinyin": "jiù",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "下地",
+              "pinyin": "xià dì",
+              "gloss": "go to the fields"
+            },
+            {
+              "hanzi": "干活。",
+              "pinyin": "gàn huó.",
+              "gloss": "work"
+            }
+          ]
+        },
+        {
+          "hanzi": "病人已经能下地走动了。",
+          "pinyin": "bìng rén yǐ jīng néng xià dì zǒu dòng le.",
+          "english": "The patient can now get out of bed and walk around.",
+          "chunks": [
+            {
+              "hanzi": "病人",
+              "pinyin": "bìng rén",
+              "gloss": "the patient"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "能",
+              "pinyin": "néng",
+              "gloss": "be able to"
+            },
+            {
+              "hanzi": "下地",
+              "pinyin": "xià dì",
+              "gloss": "get out of bed"
+            },
+            {
+              "hanzi": "走动",
+              "pinyin": "zǒu dòng",
+              "gloss": "walk around"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (change of state marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17892": {
+      "例句JSON": [
+        {
+          "hanzi": "他不特会写诗，还会作画。",
+          "pinyin": "tā bù tè huì xiě shī, hái huì zuò huà.",
+          "english": "He can not only write poetry but also paint.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "不特",
+              "pinyin": "bù tè",
+              "gloss": "not only"
+            },
+            {
+              "hanzi": "会",
+              "pinyin": "huì",
+              "gloss": "can"
+            },
+            {
+              "hanzi": "写诗，",
+              "pinyin": "xiě shī,",
+              "gloss": "write poetry"
+            },
+            {
+              "hanzi": "还",
+              "pinyin": "hái",
+              "gloss": "also"
+            },
+            {
+              "hanzi": "会",
+              "pinyin": "huì",
+              "gloss": "can"
+            },
+            {
+              "hanzi": "作画。",
+              "pinyin": "zuò huà.",
+              "gloss": "paint"
+            }
+          ]
+        },
+        {
+          "hanzi": "这本书不特有趣，而且很实用。",
+          "pinyin": "zhè běn shū bù tè yǒu qù, ér qiě hěn shí yòng.",
+          "english": "This book is not only interesting but also very practical.",
+          "chunks": [
+            {
+              "hanzi": "这本书",
+              "pinyin": "zhè běn shū",
+              "gloss": "this book"
+            },
+            {
+              "hanzi": "不特",
+              "pinyin": "bù tè",
+              "gloss": "not only"
+            },
+            {
+              "hanzi": "有趣，",
+              "pinyin": "yǒu qù,",
+              "gloss": "interesting"
+            },
+            {
+              "hanzi": "而且",
+              "pinyin": "ér qiě",
+              "gloss": "but also"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "实用。",
+              "pinyin": "shí yòng.",
+              "gloss": "practical"
+            }
+          ]
+        }
+      ],
+      "词性": "conjunction; adverb"
+    },
+    "wl_17895": {
+      "例句JSON": [
+        {
+          "hanzi": "新的点子层出不穷。",
+          "pinyin": "xīn de diǎn zi céng chū bù qióng.",
+          "english": "New ideas keep appearing without end.",
+          "chunks": [
+            {
+              "hanzi": "新的",
+              "pinyin": "xīn de",
+              "gloss": "new"
+            },
+            {
+              "hanzi": "点子",
+              "pinyin": "diǎn zi",
+              "gloss": "ideas"
+            },
+            {
+              "hanzi": "层出",
+              "pinyin": "céng chū",
+              "gloss": "appear one after another"
+            },
+            {
+              "hanzi": "不穷。",
+              "pinyin": "bù qióng.",
+              "gloss": "without end"
+            }
+          ]
+        },
+        {
+          "hanzi": "这座山里的奇景变化不穷。",
+          "pinyin": "zhè zuò shān lǐ de qí jǐng biàn huà bù qióng.",
+          "english": "The remarkable scenery on this mountain changes endlessly.",
+          "chunks": [
+            {
+              "hanzi": "这座山",
+              "pinyin": "zhè zuò shān",
+              "gloss": "this mountain"
+            },
+            {
+              "hanzi": "里的",
+              "pinyin": "lǐ de",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "奇景",
+              "pinyin": "qí jǐng",
+              "gloss": "remarkable scenery"
+            },
+            {
+              "hanzi": "变化",
+              "pinyin": "biàn huà",
+              "gloss": "change"
+            },
+            {
+              "hanzi": "不穷。",
+              "pinyin": "bù qióng.",
+              "gloss": "endlessly"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17908": {
+      "例句JSON": [
+        {
+          "hanzi": "这只是一个个例，不能说明全部情况。",
+          "pinyin": "zhè zhǐ shì yí gè gè lì, bù néng shuō míng quán bù qíng kuàng.",
+          "english": "This is merely an individual case and cannot represent the whole situation.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "只是",
+              "pinyin": "zhǐ shì",
+              "gloss": "merely"
+            },
+            {
+              "hanzi": "一个",
+              "pinyin": "yí gè",
+              "gloss": "one"
+            },
+            {
+              "hanzi": "个例，",
+              "pinyin": "gè lì,",
+              "gloss": "individual case"
+            },
+            {
+              "hanzi": "不能",
+              "pinyin": "bù néng",
+              "gloss": "cannot"
+            },
+            {
+              "hanzi": "说明",
+              "pinyin": "shuō míng",
+              "gloss": "represent"
+            },
+            {
+              "hanzi": "全部",
+              "pinyin": "quán bù",
+              "gloss": "the whole"
+            },
+            {
+              "hanzi": "情况。",
+              "pinyin": "qíng kuàng.",
+              "gloss": "situation"
+            }
+          ]
+        },
+        {
+          "hanzi": "研究者记录了三个特殊个例。",
+          "pinyin": "yán jiū zhě jì lù le sān gè tè shū gè lì.",
+          "english": "The researcher recorded three unusual individual cases.",
+          "chunks": [
+            {
+              "hanzi": "研究者",
+              "pinyin": "yán jiū zhě",
+              "gloss": "the researcher"
+            },
+            {
+              "hanzi": "记录",
+              "pinyin": "jì lù",
+              "gloss": "record"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "三个",
+              "pinyin": "sān gè",
+              "gloss": "three"
+            },
+            {
+              "hanzi": "特殊",
+              "pinyin": "tè shū",
+              "gloss": "unusual"
+            },
+            {
+              "hanzi": "个例。",
+              "pinyin": "gè lì.",
+              "gloss": "individual cases"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17912": {
+      "例句JSON": [
+        {
+          "hanzi": "这个花瓶很中看。",
+          "pinyin": "zhè ge huā píng hěn zhōng kàn.",
+          "english": "This vase is very pleasing to the eye.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "花瓶",
+              "pinyin": "huā píng",
+              "gloss": "vase"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "中看。",
+              "pinyin": "zhōng kàn.",
+              "gloss": "pleasing to the eye"
+            }
+          ]
+        },
+        {
+          "hanzi": "买家具不能只图中看，还要结实。",
+          "pinyin": "mǎi jiā jù bù néng zhǐ tú zhōng kàn, hái yào jiē shi.",
+          "english": "When buying furniture, do not just look for good looks; it also needs to be sturdy.",
+          "chunks": [
+            {
+              "hanzi": "买",
+              "pinyin": "mǎi",
+              "gloss": "buy"
+            },
+            {
+              "hanzi": "家具",
+              "pinyin": "jiā jù",
+              "gloss": "furniture"
+            },
+            {
+              "hanzi": "不能",
+              "pinyin": "bù néng",
+              "gloss": "must not"
+            },
+            {
+              "hanzi": "只",
+              "pinyin": "zhǐ",
+              "gloss": "only"
+            },
+            {
+              "hanzi": "图",
+              "pinyin": "tú",
+              "gloss": "seek"
+            },
+            {
+              "hanzi": "中看，",
+              "pinyin": "zhōng kàn,",
+              "gloss": "good looks"
+            },
+            {
+              "hanzi": "还要",
+              "pinyin": "hái yào",
+              "gloss": "also need to"
+            },
+            {
+              "hanzi": "结实。",
+              "pinyin": "jiē shi.",
+              "gloss": "sturdy"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17936": {
+      "例句JSON": [
+        {
+          "hanzi": "这件事不能草草了事。",
+          "pinyin": "zhè jiàn shì bù néng cǎo cǎo liǎo shì.",
+          "english": "This matter must not be disposed of hastily.",
+          "chunks": [
+            {
+              "hanzi": "这件",
+              "pinyin": "zhè jiàn",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "事",
+              "pinyin": "shì",
+              "gloss": "matter"
+            },
+            {
+              "hanzi": "不能",
+              "pinyin": "bù néng",
+              "gloss": "must not"
+            },
+            {
+              "hanzi": "草草",
+              "pinyin": "cǎo cǎo",
+              "gloss": "hastily"
+            },
+            {
+              "hanzi": "了事。",
+              "pinyin": "liǎo shì.",
+              "gloss": "be disposed of"
+            }
+          ]
+        },
+        {
+          "hanzi": "他只想敷衍了事，没有认真检查。",
+          "pinyin": "tā zhǐ xiǎng fū yǎn liǎo shì, méi yǒu rèn zhēn jiǎn chá.",
+          "english": "He only wanted to get it over with and did not check carefully.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "只",
+              "pinyin": "zhǐ",
+              "gloss": "only"
+            },
+            {
+              "hanzi": "想",
+              "pinyin": "xiǎng",
+              "gloss": "want to"
+            },
+            {
+              "hanzi": "敷衍",
+              "pinyin": "fū yǎn",
+              "gloss": "do perfunctorily"
+            },
+            {
+              "hanzi": "了事，",
+              "pinyin": "liǎo shì,",
+              "gloss": "get it over with"
+            },
+            {
+              "hanzi": "没有",
+              "pinyin": "méi yǒu",
+              "gloss": "not"
+            },
+            {
+              "hanzi": "认真",
+              "pinyin": "rèn zhēn",
+              "gloss": "carefully"
+            },
+            {
+              "hanzi": "检查。",
+              "pinyin": "jiǎn chá.",
+              "gloss": "check"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_18089": {
+      "例句JSON": [
+        {
+          "hanzi": "说“去死”是很伤人的话。",
+          "pinyin": "shuō“ qù sǐ” shì hěn shāng rén de huà.",
+          "english": "Telling someone to drop dead is very hurtful.",
+          "chunks": [
+            {
+              "hanzi": "说“",
+              "pinyin": "shuō“",
+              "gloss": "say"
+            },
+            {
+              "hanzi": "去死”",
+              "pinyin": "qù sǐ”",
+              "gloss": "drop dead"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "be"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "伤人",
+              "pinyin": "shāng rén",
+              "gloss": "hurtful"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "话。",
+              "pinyin": "huà.",
+              "gloss": "words"
+            }
+          ]
+        },
+        {
+          "hanzi": "生气时也不该对别人说“去死”。",
+          "pinyin": "shēng qì shí yě bù gāi duì bié rén shuō“ qù sǐ”.",
+          "english": "Even when angry, you should not tell other people to drop dead.",
+          "chunks": [
+            {
+              "hanzi": "生气",
+              "pinyin": "shēng qì",
+              "gloss": "be angry"
+            },
+            {
+              "hanzi": "时",
+              "pinyin": "shí",
+              "gloss": "when"
+            },
+            {
+              "hanzi": "也",
+              "pinyin": "yě",
+              "gloss": "even"
+            },
+            {
+              "hanzi": "不该",
+              "pinyin": "bù gāi",
+              "gloss": "should not"
+            },
+            {
+              "hanzi": "对",
+              "pinyin": "duì",
+              "gloss": "to"
+            },
+            {
+              "hanzi": "别人",
+              "pinyin": "bié rén",
+              "gloss": "other people"
+            },
+            {
+              "hanzi": "说“",
+              "pinyin": "shuō“",
+              "gloss": "say"
+            },
+            {
+              "hanzi": "去死”。",
+              "pinyin": "qù sǐ”.",
+              "gloss": "drop dead"
+            }
+          ]
+        }
+      ],
+      "英文释义": "(hostile insult) drop dead!; go to hell!",
+      "本义解释JSON": [
+        "a hostile insult wishing someone dead; strongly offensive"
+      ]
+    },
+    "wl_18101": {
+      "例句JSON": [
+        {
+          "hanzi": "再不出发，可就来不及了。",
+          "pinyin": "zài bù chū fā, kě jiù lái bù jí le.",
+          "english": "If we do not set off now, it will be too late.",
+          "chunks": [
+            {
+              "hanzi": "再",
+              "pinyin": "zài",
+              "gloss": "any more"
+            },
+            {
+              "hanzi": "不",
+              "pinyin": "bù",
+              "gloss": "not"
+            },
+            {
+              "hanzi": "出发，",
+              "pinyin": "chū fā,",
+              "gloss": "set off"
+            },
+            {
+              "hanzi": "可就",
+              "pinyin": "kě jiù",
+              "gloss": "then indeed"
+            },
+            {
+              "hanzi": "来不及",
+              "pinyin": "lái bù jí",
+              "gloss": "be too late"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (change of state marker)"
+            }
+          ]
+        },
+        {
+          "hanzi": "这样一来，事情可就麻烦了。",
+          "pinyin": "zhè yàng yī lái, shì qing kě jiù má fán le.",
+          "english": "If that happens, things really will become troublesome.",
+          "chunks": [
+            {
+              "hanzi": "这样",
+              "pinyin": "zhè yàng",
+              "gloss": "in this way"
+            },
+            {
+              "hanzi": "一来，",
+              "pinyin": "yī lái,",
+              "gloss": "once it happens"
+            },
+            {
+              "hanzi": "事情",
+              "pinyin": "shì qing",
+              "gloss": "the matter"
+            },
+            {
+              "hanzi": "可就",
+              "pinyin": "kě jiù",
+              "gloss": "really"
+            },
+            {
+              "hanzi": "麻烦",
+              "pinyin": "má fán",
+              "gloss": "troublesome"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (change of state marker)"
+            }
+          ]
+        }
+      ],
+      "词性": "adverb; grammatical construction",
+      "英文释义": "then indeed; really (emphatic, often marking a consequence)",
+      "本义解释JSON": [
+        "an emphatic combination drawing attention to what will happen next"
+      ]
+    },
+    "wl_18127": {
+      "例句JSON": [
+        {
+          "hanzi": "兄弟阋墙争吵，母亲劝他们和好。",
+          "pinyin": "xiōng dì xì qiáng zhēng chǎo, mǔ qīn quàn tā men hé hǎo.",
+          "english": "The brothers argued with each other, and their mother urged them to make peace.",
+          "chunks": [
+            {
+              "hanzi": "兄弟阋墙",
+              "pinyin": "xiōng dì xì qiáng",
+              "gloss": "internecine strife (idiom); fighting among oneself"
+            },
+            {
+              "hanzi": "争吵，",
+              "pinyin": "zhēng chǎo,",
+              "gloss": "dispute"
+            },
+            {
+              "hanzi": "母亲",
+              "pinyin": "mǔ qīn",
+              "gloss": "mother"
+            },
+            {
+              "hanzi": "劝",
+              "pinyin": "quàn",
+              "gloss": "urge"
+            },
+            {
+              "hanzi": "他们",
+              "pinyin": "tā men",
+              "gloss": "they; them"
+            },
+            {
+              "hanzi": "和好。",
+              "pinyin": "hé hǎo.",
+              "gloss": "become reconciled; make peace"
+            }
+          ]
+        },
+        {
+          "hanzi": "两人谈过以后，终于和好了。",
+          "pinyin": "liǎng rén tán guò yǐ hòu, zhōng yú hé hǎo le.",
+          "english": "After talking things over, the two finally made peace.",
+          "chunks": [
+            {
+              "hanzi": "两人",
+              "pinyin": "liǎng rén",
+              "gloss": "the two people"
+            },
+            {
+              "hanzi": "谈过",
+              "pinyin": "tán guò",
+              "gloss": "talk things over"
+            },
+            {
+              "hanzi": "以后，",
+              "pinyin": "yǐ hòu,",
+              "gloss": "after"
+            },
+            {
+              "hanzi": "终于",
+              "pinyin": "zhōng yú",
+              "gloss": "finally"
+            },
+            {
+              "hanzi": "和好",
+              "pinyin": "hé hǎo",
+              "gloss": "become reconciled"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (change of state marker)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_18147": {
+      "例句JSON": [
+        {
+          "hanzi": "他是在教的，平时很重视宗教礼仪。",
+          "pinyin": "tā shì zài jiào de, píng shí hěn zhòng shì zōng jiào lǐ yí.",
+          "english": "He is a religious believer and places great importance on religious rites.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "be"
+            },
+            {
+              "hanzi": "在教",
+              "pinyin": "zài jiào",
+              "gloss": "a religious believer"
+            },
+            {
+              "hanzi": "的，",
+              "pinyin": "de,",
+              "gloss": "DE (emphatic sentence ending)"
+            },
+            {
+              "hanzi": "平时",
+              "pinyin": "píng shí",
+              "gloss": "in everyday life"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "重视",
+              "pinyin": "zhòng shì",
+              "gloss": "value"
+            },
+            {
+              "hanzi": "宗教",
+              "pinyin": "zōng jiào",
+              "gloss": "religious"
+            },
+            {
+              "hanzi": "礼仪。",
+              "pinyin": "lǐ yí.",
+              "gloss": "rites"
+            }
+          ]
+        },
+        {
+          "hanzi": "老人说自己从小就在教。",
+          "pinyin": "lǎo rén shuō zì jǐ cóng xiǎo jiù zài jiào.",
+          "english": "The elderly person said they had been a religious believer since childhood.",
+          "chunks": [
+            {
+              "hanzi": "老人",
+              "pinyin": "lǎo rén",
+              "gloss": "the elderly person"
+            },
+            {
+              "hanzi": "说",
+              "pinyin": "shuō",
+              "gloss": "say"
+            },
+            {
+              "hanzi": "自己",
+              "pinyin": "zì jǐ",
+              "gloss": "self"
+            },
+            {
+              "hanzi": "从小",
+              "pinyin": "cóng xiǎo",
+              "gloss": "since childhood"
+            },
+            {
+              "hanzi": "就",
+              "pinyin": "jiù",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "在教。",
+              "pinyin": "zài jiào.",
+              "gloss": "be a religious believer"
+            }
+          ]
+        }
+      ],
+      "英文释义": "(older usage) to follow a religion, especially Islam",
+      "本义解释JSON": [
+        "to be an adherent of a religion, especially Islam"
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "在",
+          "pinyin": "zài",
+          "gloss": "be in; belong to"
+        },
+        {
+          "hanzi": "教",
+          "pinyin": "jiào",
+          "gloss": "religion; faith"
+        }
+      ]
+    },
+    "wl_18149": {
+      "例句JSON": [
+        {
+          "hanzi": "选举之后，这个政党成为在野的反对党。",
+          "pinyin": "xuǎn jǔ zhī hòu, zhè ge zhèng dǎng chéng wéi zài yě de fǎn duì dǎng.",
+          "english": "After the election, this political party became an opposition party out of power.",
+          "chunks": [
+            {
+              "hanzi": "选举",
+              "pinyin": "xuǎn jǔ",
+              "gloss": "the election"
+            },
+            {
+              "hanzi": "之后，",
+              "pinyin": "zhī hòu,",
+              "gloss": "after"
+            },
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "政党",
+              "pinyin": "zhèng dǎng",
+              "gloss": "political party"
+            },
+            {
+              "hanzi": "成为",
+              "pinyin": "chéng wéi",
+              "gloss": "become"
+            },
+            {
+              "hanzi": "在野",
+              "pinyin": "zài yě",
+              "gloss": "out of power"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "反对党。",
+              "pinyin": "fǎn duì dǎng.",
+              "gloss": "opposition party"
+            }
+          ]
+        },
+        {
+          "hanzi": "这名政治家已在野多年。",
+          "pinyin": "zhè míng zhèng zhì jiā yǐ zài yě duō nián.",
+          "english": "This politician has been out of office for many years.",
+          "chunks": [
+            {
+              "hanzi": "这名",
+              "pinyin": "zhè míng",
+              "gloss": "this (MING measure word)"
+            },
+            {
+              "hanzi": "政治家",
+              "pinyin": "zhèng zhì jiā",
+              "gloss": "politician"
+            },
+            {
+              "hanzi": "已",
+              "pinyin": "yǐ",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "在野",
+              "pinyin": "zài yě",
+              "gloss": "out of political office"
+            },
+            {
+              "hanzi": "多年。",
+              "pinyin": "duō nián.",
+              "gloss": "for many years"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "在野",
+          "pinyin": "zài yě",
+          "gloss": "out of political office or power"
+        }
+      ]
+    },
+    "wl_18164": {
+      "例句JSON": [
+        {
+          "hanzi": "淀粉是一种多糖。",
+          "pinyin": "diàn fěn shì yī zhǒng duō táng.",
+          "english": "Starch is a polysaccharide.",
+          "chunks": [
+            {
+              "hanzi": "淀粉",
+              "pinyin": "diàn fěn",
+              "gloss": "starch"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "be"
+            },
+            {
+              "hanzi": "一种",
+              "pinyin": "yī zhǒng",
+              "gloss": "a kind of"
+            },
+            {
+              "hanzi": "多糖。",
+              "pinyin": "duō táng.",
+              "gloss": "polysaccharide"
+            }
+          ]
+        },
+        {
+          "hanzi": "这种多糖由许多单糖组成。",
+          "pinyin": "zhè zhǒng duō táng yóu xǔ duō dān táng zǔ chéng.",
+          "english": "This polysaccharide is made up of many monosaccharides.",
+          "chunks": [
+            {
+              "hanzi": "这种",
+              "pinyin": "zhè zhǒng",
+              "gloss": "this type of"
+            },
+            {
+              "hanzi": "多糖",
+              "pinyin": "duō táng",
+              "gloss": "polysaccharide"
+            },
+            {
+              "hanzi": "由",
+              "pinyin": "yóu",
+              "gloss": "from"
+            },
+            {
+              "hanzi": "许多",
+              "pinyin": "xǔ duō",
+              "gloss": "many"
+            },
+            {
+              "hanzi": "单糖",
+              "pinyin": "dān táng",
+              "gloss": "monosaccharides"
+            },
+            {
+              "hanzi": "组成。",
+              "pinyin": "zǔ chéng.",
+              "gloss": "be composed of"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "多",
+          "pinyin": "duō",
+          "gloss": "many; poly-"
+        },
+        {
+          "hanzi": "糖",
+          "pinyin": "táng",
+          "gloss": "sugar; saccharide"
+        }
+      ]
+    },
+    "wl_18222": {
+      "例句JSON": [
+        {
+          "hanzi": "周师傅家的提着篮子走进来。",
+          "pinyin": "zhōu shī fu jiā de tí zhe lán zi zǒu jìn lái.",
+          "english": "Mr. Zhou's wife walked in carrying a basket.",
+          "chunks": [
+            {
+              "hanzi": "周师傅",
+              "pinyin": "zhōu shī fu",
+              "gloss": "Mr. Zhou"
+            },
+            {
+              "hanzi": "家的",
+              "pinyin": "jiā de",
+              "gloss": "wife (old term after a man's name)"
+            },
+            {
+              "hanzi": "提着",
+              "pinyin": "tí zhe",
+              "gloss": "carry"
+            },
+            {
+              "hanzi": "篮子",
+              "pinyin": "lán zi",
+              "gloss": "basket"
+            },
+            {
+              "hanzi": "走进来。",
+              "pinyin": "zǒu jìn lái.",
+              "gloss": "walk in"
+            }
+          ]
+        },
+        {
+          "hanzi": "旧小说里，王二家的指王二的妻子。",
+          "pinyin": "jiù xiǎo shuō lǐ, wáng èr jiā de zhǐ wáng èr de qī zi.",
+          "english": "In the old novel, the expression after Wang Er's name refers to his wife.",
+          "chunks": [
+            {
+              "hanzi": "旧小说",
+              "pinyin": "jiù xiǎo shuō",
+              "gloss": "the old novel"
+            },
+            {
+              "hanzi": "里，",
+              "pinyin": "lǐ,",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "王二",
+              "pinyin": "wáng èr",
+              "gloss": "Wang Er (name)"
+            },
+            {
+              "hanzi": "家的",
+              "pinyin": "jiā de",
+              "gloss": "wife (old term after a man's name)"
+            },
+            {
+              "hanzi": "指",
+              "pinyin": "zhǐ",
+              "gloss": "refer to"
+            },
+            {
+              "hanzi": "王二",
+              "pinyin": "wáng èr",
+              "gloss": "Wang Er (name)"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive marker)"
+            },
+            {
+              "hanzi": "妻子。",
+              "pinyin": "qī zi.",
+              "gloss": "wife"
+            }
+          ]
+        }
+      ],
+      "英文释义": "wife (old term placed after a man's name)",
+      "本义解释JSON": [
+        "wife, in an older form placed after the husband's name"
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "家的",
+          "pinyin": "jiā de",
+          "gloss": "wife (old term after a man's name)"
+        }
+      ]
+    },
+    "wl_18249": {
+      "例句JSON": [
+        {
+          "hanzi": "这个问题很重要，不能一笔带过。",
+          "pinyin": "zhè ge wèn tí hěn zhòng yào, bù néng yī bǐ dài guò.",
+          "english": "This issue is important and must not be glossed over.",
+          "chunks": [
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "问题",
+              "pinyin": "wèn tí",
+              "gloss": "issue"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "重要，",
+              "pinyin": "zhòng yào,",
+              "gloss": "important"
+            },
+            {
+              "hanzi": "不能",
+              "pinyin": "bù néng",
+              "gloss": "must not"
+            },
+            {
+              "hanzi": "一笔",
+              "pinyin": "yī bǐ",
+              "gloss": "in one stroke"
+            },
+            {
+              "hanzi": "带过。",
+              "pinyin": "dài guò.",
+              "gloss": "gloss over"
+            }
+          ]
+        },
+        {
+          "hanzi": "他在报告中把困难轻轻带过了。",
+          "pinyin": "tā zài bào gào zhōng bǎ kùn nán qīng qīng dài guò le.",
+          "english": "He mentioned the difficulties only in passing in his report.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "报告",
+              "pinyin": "bào gào",
+              "gloss": "the report"
+            },
+            {
+              "hanzi": "中",
+              "pinyin": "zhōng",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "困难",
+              "pinyin": "kùn nán",
+              "gloss": "difficulties"
+            },
+            {
+              "hanzi": "轻轻",
+              "pinyin": "qīng qīng",
+              "gloss": "lightly"
+            },
+            {
+              "hanzi": "带过",
+              "pinyin": "dài guò",
+              "gloss": "mention only in passing"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (completed action marker)"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "带过",
+          "pinyin": "dài guò",
+          "gloss": "mention only in passing; gloss over"
+        }
+      ]
+    },
+    "wl_18267": {
+      "例句JSON": [
+        {
+          "hanzi": "小猫刚出生，还没有开眼。",
+          "pinyin": "xiǎo māo gāng chū shēng, hái méi yǒu kāi yǎn.",
+          "english": "The kitten has only just been born and has not opened its eyes yet.",
+          "chunks": [
+            {
+              "hanzi": "小猫",
+              "pinyin": "xiǎo māo",
+              "gloss": "the kitten"
+            },
+            {
+              "hanzi": "刚",
+              "pinyin": "gāng",
+              "gloss": "only just"
+            },
+            {
+              "hanzi": "出生，",
+              "pinyin": "chū shēng,",
+              "gloss": "be born"
+            },
+            {
+              "hanzi": "还",
+              "pinyin": "hái",
+              "gloss": "still"
+            },
+            {
+              "hanzi": "没有",
+              "pinyin": "méi yǒu",
+              "gloss": "not yet"
+            },
+            {
+              "hanzi": "开眼。",
+              "pinyin": "kāi yǎn.",
+              "gloss": "open its eyes"
+            }
+          ]
+        },
+        {
+          "hanzi": "这次展览真让人开眼。",
+          "pinyin": "zhè cì zhǎn lǎn zhēn ràng rén kāi yǎn.",
+          "english": "This exhibition really broadens your horizons.",
+          "chunks": [
+            {
+              "hanzi": "这次",
+              "pinyin": "zhè cì",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "展览",
+              "pinyin": "zhǎn lǎn",
+              "gloss": "exhibition"
+            },
+            {
+              "hanzi": "真",
+              "pinyin": "zhēn",
+              "gloss": "really"
+            },
+            {
+              "hanzi": "让人",
+              "pinyin": "ràng rén",
+              "gloss": "make people"
+            },
+            {
+              "hanzi": "开眼。",
+              "pinyin": "kāi yǎn.",
+              "gloss": "broaden their horizons"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "开",
+          "pinyin": "kāi",
+          "gloss": "open"
+        },
+        {
+          "hanzi": "眼",
+          "pinyin": "yǎn",
+          "gloss": "eyes; by extension, one's horizons"
+        }
+      ]
+    },
+    "wl_18308": {
+      "例句JSON": [
+        {
+          "hanzi": "我才不怕这点困难呢。",
+          "pinyin": "wǒ cái bù pà zhè diǎn kùn nán ne.",
+          "english": "I am certainly not afraid of this little difficulty.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "才不",
+              "pinyin": "cái bù",
+              "gloss": "by no means"
+            },
+            {
+              "hanzi": "怕",
+              "pinyin": "pà",
+              "gloss": "be afraid of"
+            },
+            {
+              "hanzi": "这点",
+              "pinyin": "zhè diǎn",
+              "gloss": "this little"
+            },
+            {
+              "hanzi": "困难",
+              "pinyin": "kùn nán",
+              "gloss": "difficulty"
+            },
+            {
+              "hanzi": "呢。",
+              "pinyin": "ne.",
+              "gloss": "NE (emphatic sentence ending)"
+            }
+          ]
+        },
+        {
+          "hanzi": "哼，我才不信你呢！",
+          "pinyin": "hng, wǒ cái bù xìn nǐ ne!",
+          "english": "Hmph, I don't believe you!",
+          "chunks": [
+            {
+              "hanzi": "哼，",
+              "pinyin": "hng,",
+              "gloss": "hmph; expression of displeasure or disbelief"
+            },
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I; me"
+            },
+            {
+              "hanzi": "才不",
+              "pinyin": "cái bù",
+              "gloss": "by no means; certainly not"
+            },
+            {
+              "hanzi": "信",
+              "pinyin": "xìn",
+              "gloss": "believe; trust"
+            },
+            {
+              "hanzi": "你",
+              "pinyin": "nǐ",
+              "gloss": "you"
+            },
+            {
+              "hanzi": "呢！",
+              "pinyin": "ne!",
+              "gloss": "NE (emphatic sentence ending)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_18327": {
+      "例句JSON": [
+        {
+          "hanzi": "农忙时，邻居们常常换工。",
+          "pinyin": "nóng máng shí, lín jū men cháng cháng huàn gōng.",
+          "english": "During the busy farming season, neighbors often exchange labor.",
+          "chunks": [
+            {
+              "hanzi": "农忙",
+              "pinyin": "nóng máng",
+              "gloss": "the busy farming season"
+            },
+            {
+              "hanzi": "时，",
+              "pinyin": "shí,",
+              "gloss": "during"
+            },
+            {
+              "hanzi": "邻居们",
+              "pinyin": "lín jū men",
+              "gloss": "the neighbors"
+            },
+            {
+              "hanzi": "常常",
+              "pinyin": "cháng cháng",
+              "gloss": "often"
+            },
+            {
+              "hanzi": "换工。",
+              "pinyin": "huàn gōng.",
+              "gloss": "exchange labor"
+            }
+          ]
+        },
+        {
+          "hanzi": "我们商量好了换工的时间。",
+          "pinyin": "wǒ men shāng liáng hǎo le huàn gōng de shí jiān.",
+          "english": "We agreed on a time to exchange labor.",
+          "chunks": [
+            {
+              "hanzi": "我们",
+              "pinyin": "wǒ men",
+              "gloss": "we"
+            },
+            {
+              "hanzi": "商量好",
+              "pinyin": "shāng liáng hǎo",
+              "gloss": "agree"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "换工",
+              "pinyin": "huàn gōng",
+              "gloss": "exchanging labor"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "时间。",
+              "pinyin": "shí jiān.",
+              "gloss": "time"
+            }
+          ]
+        }
+      ],
+      "英文释义": "to exchange labor, especially in farming; to swap work shifts",
+      "词性": "verb; noun",
+      "本义解释JSON": [
+        "to exchange labor between households, especially for farm work",
+        "to swap work shifts"
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "换",
+          "pinyin": "huàn",
+          "gloss": "exchange; swap"
+        },
+        {
+          "hanzi": "工",
+          "pinyin": "gōng",
+          "gloss": "labor; work"
+        }
+      ]
+    },
+    "wl_18429": {
+      "例句JSON": [
+        {
+          "hanzi": "讨论这个案件，既要考虑情理，也要考虑法理。",
+          "pinyin": "tǎo lùn zhè ge àn jiàn, jì yào kǎo lǜ qíng lǐ, yě yào kǎo lǜ fǎ lǐ.",
+          "english": "Discussing this case requires considering both human concerns and legal principles.",
+          "chunks": [
+            {
+              "hanzi": "讨论",
+              "pinyin": "tǎo lùn",
+              "gloss": "discuss"
+            },
+            {
+              "hanzi": "这个",
+              "pinyin": "zhè ge",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "案件，",
+              "pinyin": "àn jiàn,",
+              "gloss": "case"
+            },
+            {
+              "hanzi": "既要",
+              "pinyin": "jì yào",
+              "gloss": "need both"
+            },
+            {
+              "hanzi": "考虑",
+              "pinyin": "kǎo lǜ",
+              "gloss": "consider"
+            },
+            {
+              "hanzi": "情理，",
+              "pinyin": "qíng lǐ,",
+              "gloss": "human feelings and common sense"
+            },
+            {
+              "hanzi": "也要",
+              "pinyin": "yě yào",
+              "gloss": "and also need to"
+            },
+            {
+              "hanzi": "考虑",
+              "pinyin": "kǎo lǜ",
+              "gloss": "consider"
+            },
+            {
+              "hanzi": "法理。",
+              "pinyin": "fǎ lǐ.",
+              "gloss": "legal principles"
+            }
+          ]
+        },
+        {
+          "hanzi": "法官在判决中解释了相关法理。",
+          "pinyin": "fǎ guān zài pàn jué zhōng jiě shì le xiāng guān fǎ lǐ.",
+          "english": "The judge explained the relevant legal principles in the judgment.",
+          "chunks": [
+            {
+              "hanzi": "法官",
+              "pinyin": "fǎ guān",
+              "gloss": "the judge"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "判决",
+              "pinyin": "pàn jué",
+              "gloss": "the judgment"
+            },
+            {
+              "hanzi": "中",
+              "pinyin": "zhōng",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "解释",
+              "pinyin": "jiě shì",
+              "gloss": "explain"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "相关",
+              "pinyin": "xiāng guān",
+              "gloss": "relevant"
+            },
+            {
+              "hanzi": "法理。",
+              "pinyin": "fǎ lǐ.",
+              "gloss": "legal principles"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_18457": {
+      "例句JSON": [
+        {
+          "hanzi": "这句话正好点出了争论的肯綮。",
+          "pinyin": "zhè jù huà zhèng hǎo diǎn chū le zhēng lùn de kěn qìng.",
+          "english": "This sentence pinpoints the crux of the argument.",
+          "chunks": [
+            {
+              "hanzi": "这",
+              "pinyin": "zhè",
+              "gloss": "this"
+            },
+            {
+              "hanzi": "句",
+              "pinyin": "jù",
+              "gloss": "sentence; clause; phrase"
+            },
+            {
+              "hanzi": "话",
+              "pinyin": "huà",
+              "gloss": "words"
+            },
+            {
+              "hanzi": "正好",
+              "pinyin": "zhèng hǎo",
+              "gloss": "exactly; just right"
+            },
+            {
+              "hanzi": "点出",
+              "pinyin": "diǎn chū",
+              "gloss": "to point out; to indicate"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "particle marking a completed action or a change of state"
+            },
+            {
+              "hanzi": "争论",
+              "pinyin": "zhēng lùn",
+              "gloss": "debate"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "possessive or attributive particle"
+            },
+            {
+              "hanzi": "肯綮。",
+              "pinyin": "kěn qìng.",
+              "gloss": "crux of a problem"
+            }
+          ]
+        },
+        {
+          "hanzi": "老师点出了这篇文章的重点。",
+          "pinyin": "lǎo shī diǎn chū le zhè piān wén zhāng de zhòng diǎn.",
+          "english": "The teacher pointed out the main points of this article.",
+          "chunks": [
+            {
+              "hanzi": "老师",
+              "pinyin": "lǎo shī",
+              "gloss": "the teacher"
+            },
+            {
+              "hanzi": "点出",
+              "pinyin": "diǎn chū",
+              "gloss": "point out"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action marker)"
+            },
+            {
+              "hanzi": "这篇",
+              "pinyin": "zhè piān",
+              "gloss": "this (PIAN measure word)"
+            },
+            {
+              "hanzi": "文章",
+              "pinyin": "wén zhāng",
+              "gloss": "article"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "重点。",
+              "pinyin": "zhòng diǎn.",
+              "gloss": "main points"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_03407": {
+      "英文释义": "laden with fruit; (figuratively) having many achievements",
+      "本义解释JSON": [
+        "laden with abundant fruit"
+      ],
+      "引申义解释JSON": [
+        "having many achievements or productive results"
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "秋天的果园枝头果实累累。",
+          "pinyin": "qiū tiān de guǒ yuán zhī tóu guǒ shí léi léi.",
+          "english": "The orchard's branches are laden with fruit in autumn.",
+          "chunks": [
+            {
+              "hanzi": "秋天",
+              "pinyin": "qiū tiān",
+              "gloss": "autumn"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "果园",
+              "pinyin": "guǒ yuán",
+              "gloss": "orchard"
+            },
+            {
+              "hanzi": "枝头",
+              "pinyin": "zhī tóu",
+              "gloss": "branches"
+            },
+            {
+              "hanzi": "果实累累。",
+              "pinyin": "guǒ shí léi léi.",
+              "gloss": "laden with fruit"
+            }
+          ]
+        },
+        {
+          "hanzi": "研究团队多年合作，如今已经果实累累。",
+          "pinyin": "yán jiū tuán duì duō nián hé zuò, rú jīn yǐ jīng guǒ shí léi léi.",
+          "english": "After years of collaboration, the research team now has many achievements.",
+          "chunks": [
+            {
+              "hanzi": "研究",
+              "pinyin": "yán jiū",
+              "gloss": "study or research"
+            },
+            {
+              "hanzi": "团队",
+              "pinyin": "tuán duì",
+              "gloss": "team"
+            },
+            {
+              "hanzi": "多年",
+              "pinyin": "duō nián",
+              "gloss": "many years"
+            },
+            {
+              "hanzi": "合作，",
+              "pinyin": "hé zuò,",
+              "gloss": "cooperate"
+            },
+            {
+              "hanzi": "如今",
+              "pinyin": "rú jīn",
+              "gloss": "nowadays"
+            },
+            {
+              "hanzi": "已经",
+              "pinyin": "yǐ jīng",
+              "gloss": "already"
+            },
+            {
+              "hanzi": "果实累累。",
+              "pinyin": "guǒ shí léi léi.",
+              "gloss": "many achievements or productive results."
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "果实",
+          "pinyin": "guǒ shí",
+          "gloss": "fruit; by extension, achievements"
+        },
+        {
+          "hanzi": "累累",
+          "pinyin": "léi léi",
+          "gloss": "numerous; hanging in clusters"
+        }
+      ]
+    },
+    "wl_17041": {
+      "例句JSON": [
+        {
+          "hanzi": "工人们正在平地，准备修路。",
+          "pinyin": "gōng rén men zhèng zài píng dì, zhǔn bèi xiū lù.",
+          "english": "The workers are leveling the ground to prepare for building a road.",
+          "chunks": [
+            {
+              "hanzi": "工人们",
+              "pinyin": "gōng rén men",
+              "gloss": "the workers"
+            },
+            {
+              "hanzi": "正在",
+              "pinyin": "zhèng zài",
+              "gloss": "in the process of"
+            },
+            {
+              "hanzi": "平地，",
+              "pinyin": "píng dì,",
+              "gloss": "level the ground"
+            },
+            {
+              "hanzi": "准备",
+              "pinyin": "zhǔn bèi",
+              "gloss": "prepare to"
+            },
+            {
+              "hanzi": "修路。",
+              "pinyin": "xiū lù.",
+              "gloss": "build a road"
+            }
+          ]
+        },
+        {
+          "hanzi": "在平地上走路比较轻松。",
+          "pinyin": "zài píng dì shàng zǒu lù bǐ jiào qīng sōng.",
+          "english": "Walking on level ground is relatively easy.",
+          "chunks": [
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "平地",
+              "pinyin": "píng dì",
+              "gloss": "level ground"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "走路",
+              "pinyin": "zǒu lù",
+              "gloss": "walk"
+            },
+            {
+              "hanzi": "比较",
+              "pinyin": "bǐ jiào",
+              "gloss": "relatively"
+            },
+            {
+              "hanzi": "轻松。",
+              "pinyin": "qīng sōng.",
+              "gloss": "easy"
+            }
+          ]
+        }
+      ],
+      "词性": "noun; verb"
+    }
+  },
+  "reasons": {
+    "wl_00199": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_00693": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_02407": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_02896": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_13621": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_14160": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_14181": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_14342": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_14417": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_14440": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_14638": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_14688": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_14707": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_14795": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_14948": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_14974": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_15077": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_15153": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_15299": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_15337": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_15388": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。",
+      "修复完整目标词语境及对应读音、翻译和整词chunk。"
+    ],
+    "wl_15504": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_15714": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_15728": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_15762": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_15791": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_15823": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_15848": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_15864": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16083": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16120": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16256": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_16424": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16480": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16679": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16852": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_16940": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "修复完整目标词语境及对应读音、翻译和整词chunk。"
+    ],
+    "wl_17166": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17220": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17334": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "修复完整目标词语境及对应读音、翻译和整词chunk。"
+    ],
+    "wl_17761": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_17824": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17841": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_17873": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17874": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17877": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17892": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_17895": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17908": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17912": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_17936": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_18089": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18101": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18127": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_18147": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18149": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。",
+      "修复完整目标词语境及对应读音、翻译和整词chunk。"
+    ],
+    "wl_18164": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18222": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18249": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18267": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18308": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_18327": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。",
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_18429": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_18457": [
+      "原例句误把跨词边界的同形子串、不同读音或不同义项当成目标词；按完整目标词和所教义重写语境，并明确整词chunk。"
+    ],
+    "wl_03407": [
+      "同步修正本轮确认的词义、词性或词素解析，使字段与目标词语境一致。"
+    ],
+    "wl_17041": [
+      "修复完整目标词语境及对应读音、翻译和整词chunk。",
+      "修复完整目标词语境及对应读音、翻译和整词chunk。"
+    ]
+  },
+  "review": {
+    "candidateRecordsRead": 205,
+    "reviewedUniqueIds": 154,
+    "modifiedRows": 66,
+    "method": "Read all 205 flagged records; retain semantically legitimate transparent phrases. Fix confirmed cross-word substring matches, contradictory senses and related lexical fields. New sentences and translations are project-authored with AI assistance; not copied dictionary examples.",
+    "references": {
+      "上夜": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=132180&la=0&powerMode=0",
+      "家的": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=89321&q=1&word=%E5%AE%B6",
+      "在教": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=138408&la=0&powerMode=0",
+      "换工": "https://cohd.cau.edu.cn/module/download/downfile.jsp?classid=0&filename=1608121850553572877.pdf"
+    },
+    "inputCsvSha256": "fa5c12d074e0de53c97067b4f67edc83b7a34efcd7a3433409998a339305841e",
+    "replacementExampleRecords": 132,
+    "newSentenceTexts": 105,
+    "localChecks": {
+      "fullCsvContractInMemory": "PASS",
+      "allModifiedExamplesHaveExplicitTargetUnit": true,
+      "targetUnitMissingInCompanionExamples": []
+    }
+  }
+}

@@ -1,0 +1,1292 @@
+{
+  "回族": [
+    {
+      "hanzi": "回",
+      "pinyin": "huí",
+      "gloss": "Hui (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "回教": [
+    {
+      "hanzi": "回教",
+      "pinyin": "huí jiào",
+      "gloss": "Islam (traditional Chinese name)"
+    }
+  ],
+  "回民街": [
+    {
+      "hanzi": "回民",
+      "pinyin": "huí mín",
+      "gloss": "Hui people"
+    },
+    {
+      "hanzi": "街",
+      "pinyin": "jiē",
+      "gloss": "street"
+    }
+  ],
+  "伊斯兰教": [
+    {
+      "hanzi": "伊斯兰",
+      "pinyin": "yī sī lán",
+      "gloss": "Islam (phonetic loan)"
+    },
+    {
+      "hanzi": "教",
+      "pinyin": "jiào",
+      "gloss": "religion"
+    }
+  ],
+  "清真": [
+    {
+      "hanzi": "清真",
+      "pinyin": "qīng zhēn",
+      "gloss": "halal; meeting Islamic dietary requirements"
+    }
+  ],
+  "清真食品": [
+    {
+      "hanzi": "清真",
+      "pinyin": "qīng zhēn",
+      "gloss": "halal"
+    },
+    {
+      "hanzi": "食品",
+      "pinyin": "shí pǐn",
+      "gloss": "food products"
+    }
+  ],
+  "穆斯林": [
+    {
+      "hanzi": "穆斯林",
+      "pinyin": "mù sī lín",
+      "gloss": "Muslim (phonetic loan)"
+    }
+  ],
+  "斋月": [
+    {
+      "hanzi": "斋",
+      "pinyin": "zhāi",
+      "gloss": "religious fasting"
+    },
+    {
+      "hanzi": "月",
+      "pinyin": "yuè",
+      "gloss": "month"
+    }
+  ],
+  "开斋节": [
+    {
+      "hanzi": "开斋",
+      "pinyin": "kāi zhāi",
+      "gloss": "to end a fast"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "古兰经": [
+    {
+      "hanzi": "古兰",
+      "pinyin": "gǔ lán",
+      "gloss": "Quran (phonetic loan)"
+    },
+    {
+      "hanzi": "经",
+      "pinyin": "jīng",
+      "gloss": "sacred scripture"
+    }
+  ],
+  "扫墓": [
+    {
+      "hanzi": "扫",
+      "pinyin": "sǎo",
+      "gloss": "to tend; to clean"
+    },
+    {
+      "hanzi": "墓",
+      "pinyin": "mù",
+      "gloss": "grave"
+    }
+  ],
+  "红包": [
+    {
+      "hanzi": "红",
+      "pinyin": "hóng",
+      "gloss": "red (an auspicious color)"
+    },
+    {
+      "hanzi": "包",
+      "pinyin": "bāo",
+      "gloss": "envelope; packet"
+    }
+  ],
+  "少数民族": [
+    {
+      "hanzi": "少数",
+      "pinyin": "shǎo shù",
+      "gloss": "minority"
+    },
+    {
+      "hanzi": "民族",
+      "pinyin": "mín zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "满族": [
+    {
+      "hanzi": "满",
+      "pinyin": "mǎn",
+      "gloss": "Manchu (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "藏族": [
+    {
+      "hanzi": "藏",
+      "pinyin": "zàng",
+      "gloss": "Tibetan (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "维吾尔族": [
+    {
+      "hanzi": "维吾尔",
+      "pinyin": "wéi wú ěr",
+      "gloss": "Uyghur (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "蒙古族": [
+    {
+      "hanzi": "蒙古",
+      "pinyin": "měng gǔ",
+      "gloss": "Mongolian (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "苗族": [
+    {
+      "hanzi": "苗",
+      "pinyin": "miáo",
+      "gloss": "Miao (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "朝鲜族": [
+    {
+      "hanzi": "朝鲜",
+      "pinyin": "cháo xiǎn",
+      "gloss": "Korean (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "土家族": [
+    {
+      "hanzi": "土家",
+      "pinyin": "tǔ jiā",
+      "gloss": "Tujia (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "白族": [
+    {
+      "hanzi": "白",
+      "pinyin": "bái",
+      "gloss": "Bai (ethnic designation)"
+    },
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic group"
+    }
+  ],
+  "民族服饰": [
+    {
+      "hanzi": "民族",
+      "pinyin": "mín zú",
+      "gloss": "ethnic group"
+    },
+    {
+      "hanzi": "服饰",
+      "pinyin": "fú shì",
+      "gloss": "clothing and accessories"
+    }
+  ],
+  "民族语言": [
+    {
+      "hanzi": "民族",
+      "pinyin": "mín zú",
+      "gloss": "ethnic group"
+    },
+    {
+      "hanzi": "语言",
+      "pinyin": "yǔ yán",
+      "gloss": "language"
+    }
+  ],
+  "民族团结": [
+    {
+      "hanzi": "民族",
+      "pinyin": "mín zú",
+      "gloss": "ethnic groups"
+    },
+    {
+      "hanzi": "团结",
+      "pinyin": "tuán jié",
+      "gloss": "unity; solidarity"
+    }
+  ],
+  "民俗": [
+    {
+      "hanzi": "民",
+      "pinyin": "mín",
+      "gloss": "community; people"
+    },
+    {
+      "hanzi": "俗",
+      "pinyin": "sú",
+      "gloss": "customs"
+    }
+  ],
+  "宗教信仰": [
+    {
+      "hanzi": "宗教",
+      "pinyin": "zōng jiào",
+      "gloss": "religion"
+    },
+    {
+      "hanzi": "信仰",
+      "pinyin": "xìn yǎng",
+      "gloss": "belief; faith"
+    }
+  ],
+  "道教": [
+    {
+      "hanzi": "道",
+      "pinyin": "dào",
+      "gloss": "Dao; the Way"
+    },
+    {
+      "hanzi": "教",
+      "pinyin": "jiào",
+      "gloss": "religion"
+    }
+  ],
+  "基督教": [
+    {
+      "hanzi": "基督",
+      "pinyin": "jī dū",
+      "gloss": "Christ (phonetic loan)"
+    },
+    {
+      "hanzi": "教",
+      "pinyin": "jiào",
+      "gloss": "religion"
+    }
+  ],
+  "天主教": [
+    {
+      "hanzi": "天主",
+      "pinyin": "tiān zhǔ",
+      "gloss": "God (Catholic designation)"
+    },
+    {
+      "hanzi": "教",
+      "pinyin": "jiào",
+      "gloss": "religion"
+    }
+  ],
+  "宗教活动": [
+    {
+      "hanzi": "宗教",
+      "pinyin": "zōng jiào",
+      "gloss": "religion"
+    },
+    {
+      "hanzi": "活动",
+      "pinyin": "huó dòng",
+      "gloss": "activity"
+    }
+  ],
+  "佛寺": [
+    {
+      "hanzi": "佛",
+      "pinyin": "fó",
+      "gloss": "Buddha; Buddhist"
+    },
+    {
+      "hanzi": "寺",
+      "pinyin": "sì",
+      "gloss": "temple"
+    }
+  ],
+  "压岁钱": [
+    {
+      "hanzi": "压岁",
+      "pinyin": "yā suì",
+      "gloss": "traditional New Year blessing against misfortune"
+    },
+    {
+      "hanzi": "钱",
+      "pinyin": "qián",
+      "gloss": "money"
+    }
+  ],
+  "香火": [
+    {
+      "hanzi": "香",
+      "pinyin": "xiāng",
+      "gloss": "incense"
+    },
+    {
+      "hanzi": "火",
+      "pinyin": "huǒ",
+      "gloss": "fire used to burn incense"
+    }
+  ],
+  "祈福": [
+    {
+      "hanzi": "祈",
+      "pinyin": "qí",
+      "gloss": "to pray for"
+    },
+    {
+      "hanzi": "福",
+      "pinyin": "fú",
+      "gloss": "blessings; good fortune"
+    }
+  ],
+  "礼拜堂": [
+    {
+      "hanzi": "礼拜",
+      "pinyin": "lǐ bài",
+      "gloss": "religious worship"
+    },
+    {
+      "hanzi": "堂",
+      "pinyin": "táng",
+      "gloss": "hall; building"
+    }
+  ],
+  "十字架": [
+    {
+      "hanzi": "十字",
+      "pinyin": "shí zì",
+      "gloss": "cross shape"
+    },
+    {
+      "hanzi": "架",
+      "pinyin": "jià",
+      "gloss": "frame; structure"
+    }
+  ],
+  "圣经": [
+    {
+      "hanzi": "圣",
+      "pinyin": "shèng",
+      "gloss": "sacred; holy"
+    },
+    {
+      "hanzi": "经",
+      "pinyin": "jīng",
+      "gloss": "scripture"
+    }
+  ],
+  "团圆饭": [
+    {
+      "hanzi": "团圆",
+      "pinyin": "tuán yuán",
+      "gloss": "family reunion"
+    },
+    {
+      "hanzi": "饭",
+      "pinyin": "fàn",
+      "gloss": "meal"
+    }
+  ],
+  "观音": [
+    {
+      "hanzi": "观音",
+      "pinyin": "guān yīn",
+      "gloss": "Guanyin (the bodhisattva's name)"
+    }
+  ],
+  "方丈": [
+    {
+      "hanzi": "方丈",
+      "pinyin": "fāng zhàng",
+      "gloss": "abbot (a lexical title; not the sum of the characters' everyday senses)"
+    }
+  ],
+  "藏传佛教": [
+    {
+      "hanzi": "藏传",
+      "pinyin": "zàng chuán",
+      "gloss": "Tibetan transmission"
+    },
+    {
+      "hanzi": "佛教",
+      "pinyin": "fó jiào",
+      "gloss": "Buddhism"
+    }
+  ],
+  "春运": [
+    {
+      "hanzi": "春",
+      "pinyin": "chūn",
+      "gloss": "Spring Festival"
+    },
+    {
+      "hanzi": "运",
+      "pinyin": "yùn",
+      "gloss": "passenger transport"
+    }
+  ],
+  "民间信仰": [
+    {
+      "hanzi": "民间",
+      "pinyin": "mín jiān",
+      "gloss": "among local communities; folk"
+    },
+    {
+      "hanzi": "信仰",
+      "pinyin": "xìn yǎng",
+      "gloss": "beliefs; faith"
+    }
+  ],
+  "年俗": [
+    {
+      "hanzi": "年",
+      "pinyin": "nián",
+      "gloss": "Lunar New Year"
+    },
+    {
+      "hanzi": "俗",
+      "pinyin": "sú",
+      "gloss": "customs"
+    }
+  ],
+  "庙会": [
+    {
+      "hanzi": "庙",
+      "pinyin": "miào",
+      "gloss": "temple"
+    },
+    {
+      "hanzi": "会",
+      "pinyin": "huì",
+      "gloss": "fair; gathering"
+    }
+  ],
+  "传统节日": [
+    {
+      "hanzi": "传统",
+      "pinyin": "chuán tǒng",
+      "gloss": "traditional"
+    },
+    {
+      "hanzi": "节日",
+      "pinyin": "jié rì",
+      "gloss": "festival; holiday"
+    }
+  ],
+  "端午节": [
+    {
+      "hanzi": "端午",
+      "pinyin": "duān wǔ",
+      "gloss": "the fifth day of the fifth lunar month"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "重阳节": [
+    {
+      "hanzi": "重阳",
+      "pinyin": "chóng yáng",
+      "gloss": "the ninth day of the ninth lunar month"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "元宵节": [
+    {
+      "hanzi": "元宵",
+      "pinyin": "yuán xiāo",
+      "gloss": "the night of the fifteenth day of the first lunar month"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "腊八节": [
+    {
+      "hanzi": "腊八",
+      "pinyin": "là bā",
+      "gloss": "the eighth day of the twelfth lunar month"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "泼水节": [
+    {
+      "hanzi": "泼水",
+      "pinyin": "pō shuǐ",
+      "gloss": "splashing water"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "那达慕": [
+    {
+      "hanzi": "那达慕",
+      "pinyin": "nà dá mù",
+      "gloss": "Naadam (Mongolian loanword naming a traditional gathering)"
+    }
+  ],
+  "火把节": [
+    {
+      "hanzi": "火把",
+      "pinyin": "huǒ bǎ",
+      "gloss": "torch"
+    },
+    {
+      "hanzi": "节",
+      "pinyin": "jié",
+      "gloss": "festival"
+    }
+  ],
+  "老街": [
+    {
+      "hanzi": "老",
+      "pinyin": "lǎo",
+      "gloss": "old; historic"
+    },
+    {
+      "hanzi": "街",
+      "pinyin": "jiē",
+      "gloss": "street"
+    }
+  ],
+  "步行街": [
+    {
+      "hanzi": "步行",
+      "pinyin": "bù xíng",
+      "gloss": "walking; pedestrian travel"
+    },
+    {
+      "hanzi": "街",
+      "pinyin": "jiē",
+      "gloss": "street"
+    }
+  ],
+  "小吃街": [
+    {
+      "hanzi": "小吃",
+      "pinyin": "xiǎo chī",
+      "gloss": "snacks; small local dishes"
+    },
+    {
+      "hanzi": "街",
+      "pinyin": "jiē",
+      "gloss": "street"
+    }
+  ],
+  "美食街": [
+    {
+      "hanzi": "美食",
+      "pinyin": "měi shí",
+      "gloss": "good food; culinary specialties"
+    },
+    {
+      "hanzi": "街",
+      "pinyin": "jiē",
+      "gloss": "street"
+    }
+  ],
+  "特色小吃": [
+    {
+      "hanzi": "特色",
+      "pinyin": "tè sè",
+      "gloss": "distinctive local character"
+    },
+    {
+      "hanzi": "小吃",
+      "pinyin": "xiǎo chī",
+      "gloss": "snacks; small local dishes"
+    }
+  ],
+  "手抓饭": [
+    {
+      "hanzi": "手抓",
+      "pinyin": "shǒu zhuā",
+      "gloss": "traditionally eaten by hand"
+    },
+    {
+      "hanzi": "饭",
+      "pinyin": "fàn",
+      "gloss": "rice dish"
+    }
+  ],
+  "羊肉泡馍": [
+    {
+      "hanzi": "羊肉",
+      "pinyin": "yáng ròu",
+      "gloss": "mutton; lamb"
+    },
+    {
+      "hanzi": "泡",
+      "pinyin": "pào",
+      "gloss": "to soak in broth"
+    },
+    {
+      "hanzi": "馍",
+      "pinyin": "mó",
+      "gloss": "flatbread"
+    }
+  ],
+  "肉夹馍": [
+    {
+      "hanzi": "肉",
+      "pinyin": "ròu",
+      "gloss": "meat"
+    },
+    {
+      "hanzi": "夹",
+      "pinyin": "jiā",
+      "gloss": "to put between layers"
+    },
+    {
+      "hanzi": "馍",
+      "pinyin": "mó",
+      "gloss": "flatbread"
+    }
+  ],
+  "馕": [
+    {
+      "hanzi": "馕",
+      "pinyin": "náng",
+      "gloss": "nang; baked flatbread (loanword)"
+    }
+  ],
+  "拉条子": [
+    {
+      "hanzi": "拉",
+      "pinyin": "lā",
+      "gloss": "to pull; to stretch"
+    },
+    {
+      "hanzi": "条子",
+      "pinyin": "tiáo zi",
+      "gloss": "strips (here, noodle strands)"
+    }
+  ],
+  "大盘鸡": [
+    {
+      "hanzi": "大盘",
+      "pinyin": "dà pán",
+      "gloss": "large serving plate"
+    },
+    {
+      "hanzi": "鸡",
+      "pinyin": "jī",
+      "gloss": "chicken meat"
+    }
+  ],
+  "清真餐厅": [
+    {
+      "hanzi": "清真",
+      "pinyin": "qīng zhēn",
+      "gloss": "halal"
+    },
+    {
+      "hanzi": "餐厅",
+      "pinyin": "cān tīng",
+      "gloss": "restaurant"
+    }
+  ],
+  "饮食禁忌": [
+    {
+      "hanzi": "饮食",
+      "pinyin": "yǐn shí",
+      "gloss": "eating and drinking; diet"
+    },
+    {
+      "hanzi": "禁忌",
+      "pinyin": "jìn jì",
+      "gloss": "restriction; taboo"
+    }
+  ],
+  "文化遗产": [
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    },
+    {
+      "hanzi": "遗产",
+      "pinyin": "yí chǎn",
+      "gloss": "heritage"
+    }
+  ],
+  "非物质文化遗产": [
+    {
+      "hanzi": "非物质",
+      "pinyin": "fēi wù zhì",
+      "gloss": "intangible; nonmaterial"
+    },
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    },
+    {
+      "hanzi": "遗产",
+      "pinyin": "yí chǎn",
+      "gloss": "heritage"
+    }
+  ],
+  "文化交流": [
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    },
+    {
+      "hanzi": "交流",
+      "pinyin": "jiāo liú",
+      "gloss": "exchange"
+    }
+  ],
+  "文化差异": [
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    },
+    {
+      "hanzi": "差异",
+      "pinyin": "chā yì",
+      "gloss": "difference"
+    }
+  ],
+  "第二语言": [
+    {
+      "hanzi": "第二",
+      "pinyin": "dì èr",
+      "gloss": "second"
+    },
+    {
+      "hanzi": "语言",
+      "pinyin": "yǔ yán",
+      "gloss": "language"
+    }
+  ],
+  "少数民族语言": [
+    {
+      "hanzi": "少数民族",
+      "pinyin": "shǎo shù mín zú",
+      "gloss": "minority ethnic group"
+    },
+    {
+      "hanzi": "语言",
+      "pinyin": "yǔ yán",
+      "gloss": "language"
+    }
+  ],
+  "民族特色": [
+    {
+      "hanzi": "民族",
+      "pinyin": "mín zú",
+      "gloss": "ethnic group"
+    },
+    {
+      "hanzi": "特色",
+      "pinyin": "tè sè",
+      "gloss": "distinctive features"
+    }
+  ],
+  "民族文化": [
+    {
+      "hanzi": "民族",
+      "pinyin": "mín zú",
+      "gloss": "ethnic group"
+    },
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    }
+  ],
+  "文化认同": [
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    },
+    {
+      "hanzi": "认同",
+      "pinyin": "rèn tóng",
+      "gloss": "identification with; sense of belonging to"
+    }
+  ],
+  "身份认同": [
+    {
+      "hanzi": "身份",
+      "pinyin": "shēn fèn",
+      "gloss": "identity"
+    },
+    {
+      "hanzi": "认同",
+      "pinyin": "rèn tóng",
+      "gloss": "identification with; sense of belonging to"
+    }
+  ],
+  "包容": [
+    {
+      "hanzi": "包容",
+      "pinyin": "bāo róng",
+      "gloss": "to accept and respect differences"
+    }
+  ],
+  "族群": [
+    {
+      "hanzi": "族",
+      "pinyin": "zú",
+      "gloss": "ethnic community"
+    },
+    {
+      "hanzi": "群",
+      "pinyin": "qún",
+      "gloss": "group"
+    }
+  ],
+  "血缘": [
+    {
+      "hanzi": "血",
+      "pinyin": "xuè",
+      "gloss": "blood (biological kinship)"
+    },
+    {
+      "hanzi": "缘",
+      "pinyin": "yuán",
+      "gloss": "connection; relationship"
+    }
+  ],
+  "祖籍": [
+    {
+      "hanzi": "祖",
+      "pinyin": "zǔ",
+      "gloss": "ancestors"
+    },
+    {
+      "hanzi": "籍",
+      "pinyin": "jí",
+      "gloss": "place of family origin"
+    }
+  ],
+  "原籍": [
+    {
+      "hanzi": "原",
+      "pinyin": "yuán",
+      "gloss": "original"
+    },
+    {
+      "hanzi": "籍",
+      "pinyin": "jí",
+      "gloss": "registered place of family origin"
+    }
+  ],
+  "侨乡": [
+    {
+      "hanzi": "侨",
+      "pinyin": "qiáo",
+      "gloss": "overseas emigrants"
+    },
+    {
+      "hanzi": "乡",
+      "pinyin": "xiāng",
+      "gloss": "hometown; home region"
+    }
+  ],
+  "华裔": [
+    {
+      "hanzi": "华",
+      "pinyin": "huá",
+      "gloss": "Chinese"
+    },
+    {
+      "hanzi": "裔",
+      "pinyin": "yì",
+      "gloss": "descendants; ancestry"
+    }
+  ],
+  "汉服": [
+    {
+      "hanzi": "汉",
+      "pinyin": "hàn",
+      "gloss": "Han Chinese"
+    },
+    {
+      "hanzi": "服",
+      "pinyin": "fú",
+      "gloss": "clothing"
+    }
+  ],
+  "唐装": [
+    {
+      "hanzi": "唐",
+      "pinyin": "táng",
+      "gloss": "Chinese (in this clothing name)"
+    },
+    {
+      "hanzi": "装",
+      "pinyin": "zhuāng",
+      "gloss": "clothing; outfit"
+    }
+  ],
+  "头巾": [
+    {
+      "hanzi": "头",
+      "pinyin": "tóu",
+      "gloss": "head"
+    },
+    {
+      "hanzi": "巾",
+      "pinyin": "jīn",
+      "gloss": "cloth; scarf"
+    }
+  ],
+  "饮茶": [
+    {
+      "hanzi": "饮",
+      "pinyin": "yǐn",
+      "gloss": "to drink"
+    },
+    {
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "gloss": "tea"
+    }
+  ],
+  "茶艺": [
+    {
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "gloss": "tea"
+    },
+    {
+      "hanzi": "艺",
+      "pinyin": "yì",
+      "gloss": "art; skill"
+    }
+  ],
+  "茶道": [
+    {
+      "hanzi": "茶",
+      "pinyin": "chá",
+      "gloss": "tea"
+    },
+    {
+      "hanzi": "道",
+      "pinyin": "dào",
+      "gloss": "way; cultural practice"
+    }
+  ],
+  "饮食文化": [
+    {
+      "hanzi": "饮食",
+      "pinyin": "yǐn shí",
+      "gloss": "food and drink; diet"
+    },
+    {
+      "hanzi": "文化",
+      "pinyin": "wén huà",
+      "gloss": "culture"
+    }
+  ],
+  "地方菜": [
+    {
+      "hanzi": "地方",
+      "pinyin": "dì fāng",
+      "gloss": "region; locality"
+    },
+    {
+      "hanzi": "菜",
+      "pinyin": "cài",
+      "gloss": "dish; cuisine"
+    }
+  ],
+  "风味": [
+    {
+      "hanzi": "风味",
+      "pinyin": "fēng wèi",
+      "gloss": "distinctive flavor or style"
+    }
+  ],
+  "石窟": [
+    {
+      "hanzi": "石",
+      "pinyin": "shí",
+      "gloss": "rock; stone"
+    },
+    {
+      "hanzi": "窟",
+      "pinyin": "kū",
+      "gloss": "cave"
+    }
+  ],
+  "古迹": [
+    {
+      "hanzi": "古",
+      "pinyin": "gǔ",
+      "gloss": "old; ancient"
+    },
+    {
+      "hanzi": "迹",
+      "pinyin": "jì",
+      "gloss": "surviving trace; remains"
+    }
+  ],
+  "名胜": [
+    {
+      "hanzi": "名",
+      "pinyin": "míng",
+      "gloss": "famous"
+    },
+    {
+      "hanzi": "胜",
+      "pinyin": "shèng",
+      "gloss": "place of scenic or historic interest"
+    }
+  ],
+  "古建筑": [
+    {
+      "hanzi": "古",
+      "pinyin": "gǔ",
+      "gloss": "old; historic"
+    },
+    {
+      "hanzi": "建筑",
+      "pinyin": "jiàn zhù",
+      "gloss": "building; architecture"
+    }
+  ],
+  "古村落": [
+    {
+      "hanzi": "古",
+      "pinyin": "gǔ",
+      "gloss": "old; historic"
+    },
+    {
+      "hanzi": "村落",
+      "pinyin": "cūn luò",
+      "gloss": "village"
+    }
+  ],
+  "传统工艺": [
+    {
+      "hanzi": "传统",
+      "pinyin": "chuán tǒng",
+      "gloss": "traditional"
+    },
+    {
+      "hanzi": "工艺",
+      "pinyin": "gōng yì",
+      "gloss": "craft; technique"
+    }
+  ],
+  "手工艺": [
+    {
+      "hanzi": "手工",
+      "pinyin": "shǒu gōng",
+      "gloss": "manual work"
+    },
+    {
+      "hanzi": "艺",
+      "pinyin": "yì",
+      "gloss": "craft; skill"
+    }
+  ],
+  "蜡染": [
+    {
+      "hanzi": "蜡",
+      "pinyin": "là",
+      "gloss": "wax"
+    },
+    {
+      "hanzi": "染",
+      "pinyin": "rǎn",
+      "gloss": "dyeing"
+    }
+  ],
+  "扎染": [
+    {
+      "hanzi": "扎",
+      "pinyin": "zā",
+      "gloss": "to tie; to bind"
+    },
+    {
+      "hanzi": "染",
+      "pinyin": "rǎn",
+      "gloss": "dyeing"
+    }
+  ],
+  "剪纸": [
+    {
+      "hanzi": "剪",
+      "pinyin": "jiǎn",
+      "gloss": "to cut with scissors"
+    },
+    {
+      "hanzi": "纸",
+      "pinyin": "zhǐ",
+      "gloss": "paper"
+    }
+  ],
+  "皮影": [
+    {
+      "hanzi": "皮",
+      "pinyin": "pí",
+      "gloss": "hide; leather (traditional puppet material)"
+    },
+    {
+      "hanzi": "影",
+      "pinyin": "yǐng",
+      "gloss": "shadow"
+    }
+  ],
+  "中国结": [
+    {
+      "hanzi": "中国",
+      "pinyin": "zhōng guó",
+      "gloss": "China; Chinese"
+    },
+    {
+      "hanzi": "结",
+      "pinyin": "jié",
+      "gloss": "knot"
+    }
+  ],
+  "春联": [
+    {
+      "hanzi": "春",
+      "pinyin": "chūn",
+      "gloss": "Spring Festival"
+    },
+    {
+      "hanzi": "联",
+      "pinyin": "lián",
+      "gloss": "couplet; paired inscriptions"
+    }
+  ],
+  "舞龙": [
+    {
+      "hanzi": "舞",
+      "pinyin": "wǔ",
+      "gloss": "to perform a dance"
+    },
+    {
+      "hanzi": "龙",
+      "pinyin": "lóng",
+      "gloss": "dragon (a performance figure)"
+    }
+  ],
+  "舞狮": [
+    {
+      "hanzi": "舞",
+      "pinyin": "wǔ",
+      "gloss": "to perform a dance"
+    },
+    {
+      "hanzi": "狮",
+      "pinyin": "shī",
+      "gloss": "lion (a performance figure)"
+    }
+  ],
+  "龙舟": [
+    {
+      "hanzi": "龙",
+      "pinyin": "lóng",
+      "gloss": "dragon (decorative boat figure)"
+    },
+    {
+      "hanzi": "舟",
+      "pinyin": "zhōu",
+      "gloss": "boat"
+    }
+  ],
+  "汤圆": [
+    {
+      "hanzi": "汤",
+      "pinyin": "tāng",
+      "gloss": "soup"
+    },
+    {
+      "hanzi": "圆",
+      "pinyin": "yuán",
+      "gloss": "round rice balls"
+    }
+  ],
+  "牛肉面": [
+    {
+      "hanzi": "牛肉",
+      "pinyin": "niú ròu",
+      "gloss": "beef"
+    },
+    {
+      "hanzi": "面",
+      "pinyin": "miàn",
+      "gloss": "noodles"
+    }
+  ]
+}

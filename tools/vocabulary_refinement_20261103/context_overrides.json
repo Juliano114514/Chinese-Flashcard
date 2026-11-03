@@ -1,0 +1,827 @@
+{
+  "schemaVersion": 1,
+  "overrides": {
+    "wl_13974": {
+      "部件JSON": [
+        {
+          "hanzi": "过",
+          "pinyin": "guò",
+          "gloss": "live; spend time"
+        },
+        {
+          "hanzi": "得",
+          "pinyin": "de",
+          "gloss": "DE (introduces a complement describing how an action goes)"
+        }
+      ]
+    },
+    "wl_01083": {
+      "例句JSON": [
+        {
+          "hanzi": "他胃口很好，一下吃了两碗面条。",
+          "pinyin": "tā wèi kǒu hěn hǎo, yī xià chī le liǎng wǎn miàn tiáo.",
+          "english": "He has a good appetite and ate two bowls of noodles at once.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "胃口",
+              "pinyin": "wèi kǒu",
+              "gloss": "appetite"
+            },
+            {
+              "hanzi": "很好，",
+              "pinyin": "hěn hǎo,",
+              "gloss": "very good"
+            },
+            {
+              "hanzi": "一下",
+              "pinyin": "yī xià",
+              "gloss": "at once; in one go"
+            },
+            {
+              "hanzi": "吃",
+              "pinyin": "chī",
+              "gloss": "eat"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action or change)"
+            },
+            {
+              "hanzi": "两",
+              "pinyin": "liǎng",
+              "gloss": "two"
+            },
+            {
+              "hanzi": "碗",
+              "pinyin": "wǎn",
+              "gloss": "WAN (measure word)"
+            },
+            {
+              "hanzi": "面条。",
+              "pinyin": "miàn tiáo.",
+              "gloss": "noodles"
+            }
+          ]
+        },
+        {
+          "hanzi": "让我思考一下",
+          "pinyin": "ràng wǒ sī kǎo yí xià",
+          "english": "Let me think about it.",
+          "chunks": [
+            {
+              "hanzi": "让我",
+              "pinyin": "ràng wǒ",
+              "gloss": "let me"
+            },
+            {
+              "hanzi": "思考",
+              "pinyin": "sī kǎo",
+              "gloss": "think"
+            },
+            {
+              "hanzi": "一下",
+              "pinyin": "yí xià",
+              "gloss": "a little"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_09955": {
+      "英文释义": "pediatrics; pediatric department",
+      "本义解释JSON": [
+        "The branch of medicine concerned with children's health, or a hospital department providing this care."
+      ],
+      "引申义解释JSON": [],
+      "部件JSON": [
+        {
+          "hanzi": "儿",
+          "pinyin": "ér",
+          "gloss": "children (in this medical term)"
+        },
+        {
+          "hanzi": "科",
+          "pinyin": "kē",
+          "gloss": "medical specialty; hospital department"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "妈妈带孩子去看了儿科医生。",
+          "pinyin": "mā ma dài hái zi qù kàn le ér kē yī shēng.",
+          "english": "Mom took her child to see a pediatrician.",
+          "chunks": [
+            {
+              "hanzi": "妈妈",
+              "pinyin": "mā ma",
+              "gloss": "mom"
+            },
+            {
+              "hanzi": "带",
+              "pinyin": "dài",
+              "gloss": "take along"
+            },
+            {
+              "hanzi": "孩子",
+              "pinyin": "hái zi",
+              "gloss": "child"
+            },
+            {
+              "hanzi": "去",
+              "pinyin": "qù",
+              "gloss": "go to"
+            },
+            {
+              "hanzi": "看",
+              "pinyin": "kàn",
+              "gloss": "consult; see a doctor"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "儿科",
+              "pinyin": "ér kē",
+              "gloss": "pediatrics; pediatric"
+            },
+            {
+              "hanzi": "医生。",
+              "pinyin": "yī shēng.",
+              "gloss": "doctor"
+            }
+          ]
+        },
+        {
+          "hanzi": "这位护士在医院的儿科工作。",
+          "pinyin": "zhè wèi hù shi zài yī yuàn de ér kē gōng zuò.",
+          "english": "This nurse works in the hospital's pediatrics department.",
+          "chunks": [
+            {
+              "hanzi": "这位",
+              "pinyin": "zhè wèi",
+              "gloss": "this (WEI classifier for people)"
+            },
+            {
+              "hanzi": "护士",
+              "pinyin": "hù shi",
+              "gloss": "nurse"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in; at"
+            },
+            {
+              "hanzi": "医院",
+              "pinyin": "yī yuàn",
+              "gloss": "hospital"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "儿科",
+              "pinyin": "ér kē",
+              "gloss": "pediatric department"
+            },
+            {
+              "hanzi": "工作。",
+              "pinyin": "gōng zuò.",
+              "gloss": "work"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17514": {
+      "拼音": "zài nà r",
+      "英文释义": "there; over there",
+      "词性": "location phrase",
+      "本义解释JSON": [
+        "there; in or at that place"
+      ],
+      "引申义解释JSON": [],
+      "部件JSON": [
+        {
+          "hanzi": "在",
+          "pinyin": "zài",
+          "gloss": "in; at"
+        },
+        {
+          "hanzi": "那儿",
+          "pinyin": "nà r",
+          "gloss": "there; that place (with an r-colored ending)"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "我的书包在那儿。",
+          "pinyin": "wǒ de shū bāo zài nà r.",
+          "english": "My schoolbag is over there.",
+          "chunks": [
+            {
+              "hanzi": "我的",
+              "pinyin": "wǒ de",
+              "gloss": "my"
+            },
+            {
+              "hanzi": "书包",
+              "pinyin": "shū bāo",
+              "gloss": "schoolbag"
+            },
+            {
+              "hanzi": "在那儿。",
+              "pinyin": "zài nà r.",
+              "gloss": "there; over there"
+            }
+          ]
+        },
+        {
+          "hanzi": "请在那儿等我。",
+          "pinyin": "qǐng zài nà r děng wǒ.",
+          "english": "Please wait for me over there.",
+          "chunks": [
+            {
+              "hanzi": "请",
+              "pinyin": "qǐng",
+              "gloss": "please"
+            },
+            {
+              "hanzi": "在那儿",
+              "pinyin": "zài nà r",
+              "gloss": "over there"
+            },
+            {
+              "hanzi": "等",
+              "pinyin": "děng",
+              "gloss": "wait for"
+            },
+            {
+              "hanzi": "我。",
+              "pinyin": "wǒ.",
+              "gloss": "me"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_18106": {
+      "英文释义": "desktop; tabletop (of equipment)",
+      "词性": "adjective",
+      "本义解释JSON": [
+        "designed to sit on a desk or table, especially of a computer"
+      ],
+      "引申义解释JSON": [],
+      "部件JSON": [
+        {
+          "hanzi": "台",
+          "pinyin": "tái",
+          "gloss": "table; desk"
+        },
+        {
+          "hanzi": "式",
+          "pinyin": "shì",
+          "gloss": "type; design"
+        }
+      ],
+      "例句JSON": [
+        {
+          "hanzi": "我在办公室用台式电脑。",
+          "pinyin": "wǒ zài bàn gōng shì yòng tái shì diàn nǎo.",
+          "english": "I use a desktop computer in the office.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "in"
+            },
+            {
+              "hanzi": "办公室",
+              "pinyin": "bàn gōng shì",
+              "gloss": "office"
+            },
+            {
+              "hanzi": "用",
+              "pinyin": "yòng",
+              "gloss": "use"
+            },
+            {
+              "hanzi": "台式",
+              "pinyin": "tái shì",
+              "gloss": "desktop"
+            },
+            {
+              "hanzi": "电脑。",
+              "pinyin": "diàn nǎo.",
+              "gloss": "computer"
+            }
+          ]
+        },
+        {
+          "hanzi": "这台台式打印机很方便。",
+          "pinyin": "zhè tái tái shì dǎ yìn jī hěn fāng biàn.",
+          "english": "This desktop printer is very convenient.",
+          "chunks": [
+            {
+              "hanzi": "这台",
+              "pinyin": "zhè tái",
+              "gloss": "this (TAI classifier for machines)"
+            },
+            {
+              "hanzi": "台式",
+              "pinyin": "tái shì",
+              "gloss": "desktop; tabletop"
+            },
+            {
+              "hanzi": "打印机",
+              "pinyin": "dǎ yìn jī",
+              "gloss": "printer"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "方便。",
+              "pinyin": "fāng biàn.",
+              "gloss": "convenient"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16958": {
+      "例句JSON": [
+        {
+          "hanzi": "他总是欣赏自己的外表，显得有些自恋。",
+          "pinyin": "tā zǒng shì xīn shǎng zì jǐ de wài biǎo, xiǎn de yǒu xiē zì liàn.",
+          "english": "He seems rather self-absorbed, always admiring his own appearance.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "总是",
+              "pinyin": "zǒng shì",
+              "gloss": "always"
+            },
+            {
+              "hanzi": "欣赏",
+              "pinyin": "xīn shǎng",
+              "gloss": "admire"
+            },
+            {
+              "hanzi": "自己的",
+              "pinyin": "zì jǐ de",
+              "gloss": "one's own"
+            },
+            {
+              "hanzi": "外表，",
+              "pinyin": "wài biǎo,",
+              "gloss": "appearance"
+            },
+            {
+              "hanzi": "显得",
+              "pinyin": "xiǎn de",
+              "gloss": "seem; appear"
+            },
+            {
+              "hanzi": "有些",
+              "pinyin": "yǒu xiē",
+              "gloss": "somewhat; rather"
+            },
+            {
+              "hanzi": "自恋。",
+              "pinyin": "zì liàn.",
+              "gloss": "self-absorbed; excessively self-admiring"
+            }
+          ]
+        },
+        {
+          "hanzi": "这本小说描写了一个自恋的人。",
+          "pinyin": "zhè běn xiǎo shuō miáo xiě le yī ge zì liàn de rén.",
+          "english": "This novel depicts a self-absorbed person.",
+          "chunks": [
+            {
+              "hanzi": "这本",
+              "pinyin": "zhè běn",
+              "gloss": "this (BEN classifier for books)"
+            },
+            {
+              "hanzi": "小说",
+              "pinyin": "xiǎo shuō",
+              "gloss": "novel"
+            },
+            {
+              "hanzi": "描写",
+              "pinyin": "miáo xiě",
+              "gloss": "depict; describe"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "一个",
+              "pinyin": "yī ge",
+              "gloss": "a; one person"
+            },
+            {
+              "hanzi": "自恋",
+              "pinyin": "zì liàn",
+              "gloss": "self-absorbed"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "人。",
+              "pinyin": "rén.",
+              "gloss": "person"
+            }
+          ]
+        }
+      ],
+      "英文释义": "narcissism; excessive self-admiration",
+      "词性": "noun; adjective",
+      "本义解释JSON": [
+        "excessive admiration for oneself; being self-absorbed"
+      ],
+      "引申义解释JSON": []
+    },
+    "wl_13384": {
+      "例句JSON": [
+        {
+          "hanzi": "村里的房屋大多低矮。",
+          "pinyin": "cūn lǐ de fáng wū dà duō dī ǎi.",
+          "english": "Most of the houses in the village are low buildings.",
+          "chunks": [
+            {
+              "hanzi": "村里",
+              "pinyin": "cūn lǐ",
+              "gloss": "in the village"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "房屋",
+              "pinyin": "fáng wū",
+              "gloss": "houses; buildings"
+            },
+            {
+              "hanzi": "大多",
+              "pinyin": "dà duō",
+              "gloss": "mostly"
+            },
+            {
+              "hanzi": "低矮。",
+              "pinyin": "dī ǎi.",
+              "gloss": "low; short in height"
+            }
+          ]
+        },
+        {
+          "hanzi": "路边有一排低矮的灌木。",
+          "pinyin": "lù biān yǒu yī pái dī ǎi de guàn mù.",
+          "english": "There is a row of low shrubs by the road.",
+          "chunks": [
+            {
+              "hanzi": "路边",
+              "pinyin": "lù biān",
+              "gloss": "by the road"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "there is"
+            },
+            {
+              "hanzi": "一排",
+              "pinyin": "yī pái",
+              "gloss": "one row of"
+            },
+            {
+              "hanzi": "低矮",
+              "pinyin": "dī ǎi",
+              "gloss": "low; short in height"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "灌木。",
+              "pinyin": "guàn mù.",
+              "gloss": "shrubs"
+            }
+          ]
+        }
+      ],
+      "英文释义": "low; short in height",
+      "本义解释JSON": [
+        "low in physical height, as of buildings or plants"
+      ]
+    },
+    "wl_17659": {
+      "例句JSON": [
+        {
+          "hanzi": "公园里种着几棵雪松。",
+          "pinyin": "gōng yuán lǐ zhòng zhe jǐ kē xuě sōng.",
+          "english": "Several cedar trees grow in the park.",
+          "chunks": [
+            {
+              "hanzi": "公园",
+              "pinyin": "gōng yuán",
+              "gloss": "park"
+            },
+            {
+              "hanzi": "里",
+              "pinyin": "lǐ",
+              "gloss": "in; inside"
+            },
+            {
+              "hanzi": "种着",
+              "pinyin": "zhòng zhe",
+              "gloss": "be planted; grow"
+            },
+            {
+              "hanzi": "几棵",
+              "pinyin": "jǐ kē",
+              "gloss": "a few (KE classifier for trees)"
+            },
+            {
+              "hanzi": "雪松。",
+              "pinyin": "xuě sōng.",
+              "gloss": "cedar trees"
+            }
+          ]
+        },
+        {
+          "hanzi": "这棵雪松的树干很直。",
+          "pinyin": "zhè kē xuě sōng de shù gàn hěn zhí.",
+          "english": "This cedar has a very straight trunk.",
+          "chunks": [
+            {
+              "hanzi": "这棵",
+              "pinyin": "zhè kē",
+              "gloss": "this (KE classifier for trees)"
+            },
+            {
+              "hanzi": "雪松",
+              "pinyin": "xuě sōng",
+              "gloss": "cedar tree"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "树干",
+              "pinyin": "shù gàn",
+              "gloss": "tree trunk"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "直。",
+              "pinyin": "zhí.",
+              "gloss": "straight"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17800": {
+      "例句JSON": [
+        {
+          "hanzi": "山坡上的树木很稀疏。",
+          "pinyin": "shān pō shàng de shù mù hěn xī shū.",
+          "english": "The trees on the hillside are sparse.",
+          "chunks": [
+            {
+              "hanzi": "山坡",
+              "pinyin": "shān pō",
+              "gloss": "hillside"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "on"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "树木",
+              "pinyin": "shù mù",
+              "gloss": "trees"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "稀疏。",
+              "pinyin": "xī shū.",
+              "gloss": "sparse; thinly spread"
+            }
+          ]
+        },
+        {
+          "hanzi": "越往北走，草木越稀疏。",
+          "pinyin": "yuè wǎng běi zǒu, cǎo mù yuè xī shū.",
+          "english": "The farther north we go, the sparser the vegetation becomes.",
+          "chunks": [
+            {
+              "hanzi": "越",
+              "pinyin": "yuè",
+              "gloss": "the more (in a comparison)"
+            },
+            {
+              "hanzi": "往北",
+              "pinyin": "wǎng běi",
+              "gloss": "northward"
+            },
+            {
+              "hanzi": "走，",
+              "pinyin": "zǒu,",
+              "gloss": "go"
+            },
+            {
+              "hanzi": "草木",
+              "pinyin": "cǎo mù",
+              "gloss": "vegetation"
+            },
+            {
+              "hanzi": "越",
+              "pinyin": "yuè",
+              "gloss": "the more"
+            },
+            {
+              "hanzi": "稀疏。",
+              "pinyin": "xī shū.",
+              "gloss": "sparse; thinly spread"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_17486": {
+      "例句JSON": [
+        {
+          "hanzi": "这位铁匠把铁块打成了一把刀。",
+          "pinyin": "zhè wèi tiě jiang bǎ tiě kuài dǎ chéng le yī bǎ dāo.",
+          "english": "The blacksmith hammered the piece of iron into a knife.",
+          "chunks": [
+            {
+              "hanzi": "这位",
+              "pinyin": "zhè wèi",
+              "gloss": "this (WEI classifier for people)"
+            },
+            {
+              "hanzi": "铁匠",
+              "pinyin": "tiě jiang",
+              "gloss": "blacksmith"
+            },
+            {
+              "hanzi": "把",
+              "pinyin": "bǎ",
+              "gloss": "BA (object marker)"
+            },
+            {
+              "hanzi": "铁块",
+              "pinyin": "tiě kuài",
+              "gloss": "piece of iron"
+            },
+            {
+              "hanzi": "打成",
+              "pinyin": "dǎ chéng",
+              "gloss": "hammer into; shape into"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "一把",
+              "pinyin": "yī bǎ",
+              "gloss": "a (BA classifier for handled objects)"
+            },
+            {
+              "hanzi": "刀。",
+              "pinyin": "dāo.",
+              "gloss": "knife"
+            }
+          ]
+        },
+        {
+          "hanzi": "村里有一位制作农具的铁匠。",
+          "pinyin": "cūn lǐ yǒu yī wèi zhì zuò nóng jù de tiě jiang.",
+          "english": "There is a blacksmith in the village who makes farm tools.",
+          "chunks": [
+            {
+              "hanzi": "村里",
+              "pinyin": "cūn lǐ",
+              "gloss": "in the village"
+            },
+            {
+              "hanzi": "有",
+              "pinyin": "yǒu",
+              "gloss": "there is"
+            },
+            {
+              "hanzi": "一位",
+              "pinyin": "yī wèi",
+              "gloss": "a (WEI classifier for people)"
+            },
+            {
+              "hanzi": "制作",
+              "pinyin": "zhì zuò",
+              "gloss": "make"
+            },
+            {
+              "hanzi": "农具",
+              "pinyin": "nóng jù",
+              "gloss": "farm tools"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "铁匠。",
+              "pinyin": "tiě jiang.",
+              "gloss": "blacksmith"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "reasons": {
+    "wl_13974": [
+      "过得 uses lexical 过 and complement marker 得 de, not experiential 过 or 得 dé."
+    ],
+    "wl_01083": [
+      "Separate syllables to preserve one-character/one-syllable alignment in sentence chunks."
+    ],
+    "wl_09955": [
+      "Retain the independent medical headword 儿科 at its stable ID; refine its definition and natural pediatric-care examples, separately from colloquial 小儿科."
+    ],
+    "wl_17514": [
+      "Select the spatial reading and meaning used by the examples, rather than an unrelated extended adverbial construction."
+    ],
+    "wl_18106": [
+      "Teach desktop/tabletop equipment, matching both selected contexts, rather than Taiwanese-style cuisine."
+    ],
+    "wl_16958": [
+      "Replace awkward or misleading corpus contexts with clear original examples of the selected headword; remove inherited contextual reading/gloss errors."
+    ],
+    "wl_13384": [
+      "Replace awkward or misleading corpus contexts with clear original examples of the selected headword; remove inherited contextual reading/gloss errors."
+    ],
+    "wl_17659": [
+      "Replace awkward or misleading corpus contexts with clear original examples of the selected headword; remove inherited contextual reading/gloss errors."
+    ],
+    "wl_17800": [
+      "Replace awkward or misleading corpus contexts with clear original examples of the selected headword; remove inherited contextual reading/gloss errors."
+    ],
+    "wl_17486": [
+      "Replace awkward or misleading corpus contexts with clear original examples of the selected headword; remove inherited contextual reading/gloss errors."
+    ]
+  }
+}

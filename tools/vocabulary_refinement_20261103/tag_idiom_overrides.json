@@ -1,0 +1,1702 @@
+{
+  "schemaVersion": 1,
+  "overrides": {
+    "wl_00211": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01509": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_01672": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01754": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01773": {
+      "tags": [
+        "form_idiom",
+        "topic_space",
+        "topic_travel_transport"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01806": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01840": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01841": {
+      "tags": [
+        "form_idiom",
+        "topic_culture",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01878": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_study",
+        "topic_work"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01883": {
+      "tags": [
+        "form_idiom",
+        "topic_people",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01892": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01893": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01931": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01941": {
+      "tags": [
+        "form_idiom",
+        "topic_society",
+        "topic_work"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01949": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_01989": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02007": {
+      "tags": [
+        "form_idiom",
+        "topic_culture",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02052": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02096": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_02113": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_02163": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02194": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02216": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02235": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02300": {
+      "tags": [
+        "form_idiom",
+        "topic_home",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02319": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02370": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02418": {
+      "tags": [
+        "form_idiom",
+        "topic_food"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02442": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02513": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02533": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_02615": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_02695": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_02752": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02756": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02775": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02804": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_work"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02828": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02885": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02932": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02936": {
+      "tags": [
+        "form_idiom",
+        "topic_daily_actions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02943": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_02948": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03121": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03158": {
+      "tags": [
+        "form_idiom",
+        "topic_law",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03181": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03208": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_work"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03213": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03229": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03323": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03339": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03343": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03353": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03378": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03407": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_plants",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03408": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_family"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03429": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_03446": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03457": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03473": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03474": {
+      "tags": [
+        "form_idiom",
+        "topic_study"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03484": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03496": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_03516": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_people"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03517": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03545": {
+      "tags": [
+        "form_idiom",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03546": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03548": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03551": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03555": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03576": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_03579": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_03584": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_family",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03593": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03603": {
+      "tags": [
+        "form_idiom",
+        "topic_people"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03617": {
+      "tags": [
+        "form_idiom",
+        "topic_society",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03618": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03638": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_food"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03646": {
+      "tags": [
+        "form_idiom",
+        "topic_plants",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03662": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03666": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03667": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03699": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03710": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03712": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_03723": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03778": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03811": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03812": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03834": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03844": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03924": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03927": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_03952": {
+      "tags": [
+        "form_idiom",
+        "topic_culture"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04003": {
+      "tags": [
+        "form_idiom",
+        "topic_time_number"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04057": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04134": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04141": {
+      "tags": [
+        "form_idiom",
+        "topic_society",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04189": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04302": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04376": {
+      "tags": [
+        "form_idiom",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04437": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04439": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04451": {
+      "tags": [
+        "form_idiom",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04534": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04536": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04548": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04558": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04666": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04678": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04684": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04716": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04754": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04757": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_04842": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_05044": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_05061": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_05074": {
+      "tags": [
+        "form_idiom",
+        "topic_travel_transport",
+        "topic_work"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_05101": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_people"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_05110": {
+      "tags": [
+        "form_idiom",
+        "topic_plants",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_05534": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_06663": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06667": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06680": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06689": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06691": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_06696": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06704": {
+      "tags": [
+        "form_fixed_expression",
+        "form_idiom",
+        "topic_communication",
+        "topic_travel_transport"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06705": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06708": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06719": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06730": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06734": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06742": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06751": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06765": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06773": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06790": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_06791": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_06802": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06817": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06818": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06821": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06838": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06869": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06879": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_time_number"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06886": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06919": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_06928": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06944": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06945": {
+      "tags": [
+        "form_idiom",
+        "topic_society",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_06961": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06991": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_06995": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07005": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07006": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07010": {
+      "tags": [
+        "form_idiom",
+        "topic_abstract_relations",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07033": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07042": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07059": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07060": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07061": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07073": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07081": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07086": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07100": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07103": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07120": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07123": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07137": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07183": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07193": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07195": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07207": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07215": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07234": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07235": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07242": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07251": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07255": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07260": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07271": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_culture"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07281": {
+      "tags": [
+        "form_idiom",
+        "topic_properties",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07282": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07288": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07303": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07314": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07316": {
+      "tags": [
+        "form_idiom",
+        "topic_body_health",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07326": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07341": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07342": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_society"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07343": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07349": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07399": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07412": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07421": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07441": {
+      "tags": [
+        "form_idiom",
+        "topic_emotions",
+        "topic_society"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07457": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_properties"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07467": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07486": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07518": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07524": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_properties"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07531": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07536": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07538": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_properties"
+      ],
+      "reason": "按整词所选义重定主题；Describes等编辑模板、英文惯用表达和比喻字面不构成交流主题证据。"
+    },
+    "wl_07552": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07565": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07568": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07611": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07618": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07627": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07657": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07661": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07671": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07678": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07690": {
+      "tags": [
+        "form_idiom",
+        "topic_actions_processes",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07697": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07702": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_thinking"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07716": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07718": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_07720": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_13556": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_14591": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_15758": {
+      "tags": [
+        "form_idiom",
+        "topic_communication"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_16528": {
+      "tags": [
+        "form_idiom",
+        "topic_communication",
+        "topic_emotions"
+      ],
+      "reason": "整词所选义确实涉及言谈、表达、告知、文字或相应交流行为，保留交流主题；并按其他真实语义细化。"
+    },
+    "wl_16958": {
+      "tags": [
+        "form_adjective",
+        "form_noun",
+        "topic_emotions",
+        "topic_properties",
+        "topic_thinking"
+      ],
+      "reason": "按root本轮明确改定的主义与词性校正标签，移除旧义和旧动词标签。"
+    },
+    "wl_14974": {
+      "tags": [
+        "form_adverb",
+        "form_phrase",
+        "topic_space",
+        "topic_time_number"
+      ],
+      "reason": "按root本轮明确改定的主义与词性校正标签，移除旧义和旧动词标签。"
+    }
+  }
+}

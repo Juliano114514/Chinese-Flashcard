@@ -1,0 +1,2377 @@
+{
+  "schemaVersion": 1,
+  "overrides": {
+    "wl_00081": {
+      "部件JSON": [
+        {
+          "hanzi": "种",
+          "pinyin": "zhǒng",
+          "gloss": "seed"
+        },
+        {
+          "hanzi": "子",
+          "pinyin": "zi",
+          "gloss": "ZI (noun-forming suffix)"
+        }
+      ]
+    },
+    "wl_03032": {
+      "部件JSON": [
+        {
+          "hanzi": "不得了",
+          "pinyin": "bù dé liǎo",
+          "gloss": "extremely"
+        }
+      ]
+    },
+    "wl_03067": {
+      "部件JSON": [
+        {
+          "hanzi": "刽",
+          "pinyin": "guì",
+          "gloss": "execute by beheading"
+        },
+        {
+          "hanzi": "子",
+          "pinyin": "zi",
+          "gloss": "ZI (noun-forming suffix)"
+        },
+        {
+          "hanzi": "手",
+          "pinyin": "shǒu",
+          "gloss": "person who does a particular job"
+        }
+      ]
+    },
+    "wl_03100": {
+      "部件JSON": [
+        {
+          "hanzi": "分娩",
+          "pinyin": "fēn miǎn",
+          "gloss": "to give birth"
+        }
+      ]
+    },
+    "wl_03263": {
+      "例句JSON": [
+        {
+          "hanzi": "棒球在台湾是热门的运动。",
+          "pinyin": "bàng qiú zài tái wān shì rè mén de yùn dòng.",
+          "english": "Baseball is a popular sport in Taiwan.",
+          "chunks": [
+            {
+              "hanzi": "棒球",
+              "pinyin": "bàng qiú",
+              "gloss": "baseball"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "to be at; in"
+            },
+            {
+              "hanzi": "台湾",
+              "pinyin": "tái wān",
+              "gloss": "Taiwan"
+            },
+            {
+              "hanzi": "是",
+              "pinyin": "shì",
+              "gloss": "to be"
+            },
+            {
+              "hanzi": "热门",
+              "pinyin": "rè mén",
+              "gloss": "popular; hot"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "possessive or attributive particle"
+            },
+            {
+              "hanzi": "运动。",
+              "pinyin": "yùn dòng.",
+              "gloss": "physical exercise"
+            }
+          ]
+        },
+        {
+          "hanzi": "听说大数据技术现在很热门。",
+          "pinyin": "tīng shuō dà shù jù jì shù xiàn zài hěn rè mén.",
+          "english": "I hear that big-data technology is very popular now.",
+          "chunks": [
+            {
+              "hanzi": "听说",
+              "pinyin": "tīng shuō",
+              "gloss": "to hear that"
+            },
+            {
+              "hanzi": "大",
+              "pinyin": "dà",
+              "gloss": "big; large"
+            },
+            {
+              "hanzi": "数据",
+              "pinyin": "shù jù",
+              "gloss": "data"
+            },
+            {
+              "hanzi": "技术",
+              "pinyin": "jì shù",
+              "gloss": "technology; technique"
+            },
+            {
+              "hanzi": "现在",
+              "pinyin": "xiàn zài",
+              "gloss": "now; at present"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very; quite"
+            },
+            {
+              "hanzi": "热门。",
+              "pinyin": "rè mén.",
+              "gloss": "popular; hot"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "热",
+          "pinyin": "rè",
+          "gloss": "popular; in demand"
+        },
+        {
+          "hanzi": "门",
+          "pinyin": "mén",
+          "gloss": "field; area of interest"
+        }
+      ]
+    },
+    "wl_03264": {
+      "部件JSON": [
+        {
+          "hanzi": "语言",
+          "pinyin": "yǔ yán",
+          "gloss": "language"
+        },
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "study; scientific discipline"
+        }
+      ]
+    },
+    "wl_04621": {
+      "部件JSON": [
+        {
+          "hanzi": "白日",
+          "pinyin": "bái rì",
+          "gloss": "daytime"
+        },
+        {
+          "hanzi": "梦",
+          "pinyin": "mèng",
+          "gloss": "dream"
+        }
+      ]
+    },
+    "wl_04661": {
+      "部件JSON": [
+        {
+          "hanzi": "纸",
+          "pinyin": "zhǐ",
+          "gloss": "paper"
+        },
+        {
+          "hanzi": "牌",
+          "pinyin": "pái",
+          "gloss": "playing card"
+        }
+      ]
+    },
+    "wl_04915": {
+      "部件JSON": [
+        {
+          "hanzi": "短",
+          "pinyin": "duǎn",
+          "gloss": "short"
+        },
+        {
+          "hanzi": "路",
+          "pinyin": "lù",
+          "gloss": "electrical circuit"
+        }
+      ]
+    },
+    "wl_04921": {
+      "部件JSON": [
+        {
+          "hanzi": "射",
+          "pinyin": "shè",
+          "gloss": "shoot"
+        },
+        {
+          "hanzi": "门",
+          "pinyin": "mén",
+          "gloss": "goal"
+        }
+      ]
+    },
+    "wl_04936": {
+      "部件JSON": [
+        {
+          "hanzi": "门",
+          "pinyin": "mén",
+          "gloss": "school; tradition"
+        },
+        {
+          "hanzi": "徒",
+          "pinyin": "tú",
+          "gloss": "disciple; follower"
+        }
+      ]
+    },
+    "wl_05521": {
+      "部件JSON": [
+        {
+          "hanzi": "正",
+          "pinyin": "zhèng",
+          "gloss": "main; principal"
+        },
+        {
+          "hanzi": "门",
+          "pinyin": "mén",
+          "gloss": "entrance; gate"
+        }
+      ]
+    },
+    "wl_05549": {
+      "部件JSON": [
+        {
+          "hanzi": "观光",
+          "pinyin": "guān guāng",
+          "gloss": "sightseeing"
+        },
+        {
+          "hanzi": "客",
+          "pinyin": "kè",
+          "gloss": "visitor; traveler"
+        }
+      ]
+    },
+    "wl_05559": {
+      "部件JSON": [
+        {
+          "hanzi": "精光",
+          "pinyin": "jīng guāng",
+          "gloss": "nothing left (money, food etc); all finished; bright and shiny"
+        }
+      ]
+    },
+    "wl_05586": {
+      "部件JSON": [
+        {
+          "hanzi": "家常",
+          "pinyin": "jiā cháng",
+          "gloss": "home-style; everyday"
+        },
+        {
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "gloss": "prepared dish"
+        }
+      ]
+    },
+    "wl_05600": {
+      "部件JSON": [
+        {
+          "hanzi": "资本",
+          "pinyin": "zī běn",
+          "gloss": "capital"
+        },
+        {
+          "hanzi": "家",
+          "pinyin": "jiā",
+          "gloss": "person belonging to an economic class"
+        }
+      ]
+    },
+    "wl_05625": {
+      "部件JSON": [
+        {
+          "hanzi": "快餐",
+          "pinyin": "kuài cān",
+          "gloss": "fast food"
+        },
+        {
+          "hanzi": "店",
+          "pinyin": "diàn",
+          "gloss": "shop; restaurant"
+        }
+      ]
+    },
+    "wl_05647": {
+      "部件JSON": [
+        {
+          "hanzi": "守门",
+          "pinyin": "shǒu mén",
+          "gloss": "guard a goal"
+        },
+        {
+          "hanzi": "员",
+          "pinyin": "yuán",
+          "gloss": "person with a particular role"
+        }
+      ]
+    },
+    "wl_05684": {
+      "部件JSON": [
+        {
+          "hanzi": "着眼",
+          "pinyin": "zhuó yǎn",
+          "gloss": "to have one's eyes on (a goal)"
+        }
+      ]
+    },
+    "wl_05693": {
+      "部件JSON": [
+        {
+          "hanzi": "社会",
+          "pinyin": "shè huì",
+          "gloss": "society"
+        },
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "study; scientific discipline"
+        }
+      ]
+    },
+    "wl_06063": {
+      "部件JSON": [
+        {
+          "hanzi": "空",
+          "pinyin": "kōng",
+          "gloss": "empty; vacant"
+        },
+        {
+          "hanzi": "房间",
+          "pinyin": "fáng jiān",
+          "gloss": "room"
+        }
+      ]
+    },
+    "wl_06493": {
+      "部件JSON": [
+        {
+          "hanzi": "问",
+          "pinyin": "wèn",
+          "gloss": "ask"
+        },
+        {
+          "hanzi": "道",
+          "pinyin": "dào",
+          "gloss": "say"
+        }
+      ]
+    },
+    "wl_06505": {
+      "部件JSON": [
+        {
+          "hanzi": "嗓门",
+          "pinyin": "sǎng mén",
+          "gloss": "voice; volume of the voice"
+        }
+      ]
+    },
+    "wl_06523": {
+      "部件JSON": [
+        {
+          "hanzi": "活",
+          "pinyin": "huó",
+          "gloss": "active"
+        },
+        {
+          "hanzi": "火山",
+          "pinyin": "huǒ shān",
+          "gloss": "volcano"
+        }
+      ]
+    },
+    "wl_06586": {
+      "部件JSON": [
+        {
+          "hanzi": "门",
+          "pinyin": "mén",
+          "gloss": "door"
+        },
+        {
+          "hanzi": "把",
+          "pinyin": "bǎ",
+          "gloss": "handle"
+        }
+      ]
+    },
+    "wl_07851": {
+      "部件JSON": [
+        {
+          "hanzi": "房",
+          "pinyin": "fáng",
+          "gloss": "house; dwelling"
+        },
+        {
+          "hanzi": "子",
+          "pinyin": "zi",
+          "gloss": "ZI (noun-forming suffix)"
+        }
+      ]
+    },
+    "wl_13356": {
+      "部件JSON": [
+        {
+          "hanzi": "左撇子",
+          "pinyin": "zuǒ piě zi",
+          "gloss": "left-hander"
+        }
+      ]
+    },
+    "wl_13556": {
+      "部件JSON": [
+        {
+          "hanzi": "一派",
+          "pinyin": "yī pài",
+          "gloss": "a whole lot of"
+        },
+        {
+          "hanzi": "胡言",
+          "pinyin": "hú yán",
+          "gloss": "nonsense"
+        }
+      ]
+    },
+    "wl_13598": {
+      "部件JSON": [
+        {
+          "hanzi": "眼",
+          "pinyin": "yǎn",
+          "gloss": "eyes"
+        },
+        {
+          "hanzi": "神",
+          "pinyin": "shén",
+          "gloss": "expression; spirit"
+        }
+      ]
+    },
+    "wl_13742": {
+      "部件JSON": [
+        {
+          "hanzi": "照",
+          "pinyin": "zhào",
+          "gloss": "look at one's reflection in"
+        },
+        {
+          "hanzi": "镜子",
+          "pinyin": "jìng zi",
+          "gloss": "mirror"
+        }
+      ]
+    },
+    "wl_13808": {
+      "部件JSON": [
+        {
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "gloss": "branch; subsidiary"
+        },
+        {
+          "hanzi": "店",
+          "pinyin": "diàn",
+          "gloss": "shop; store"
+        }
+      ]
+    },
+    "wl_13811": {
+      "部件JSON": [
+        {
+          "hanzi": "心理",
+          "pinyin": "xīn lǐ",
+          "gloss": "mind; mental processes"
+        },
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "study; scientific discipline"
+        }
+      ]
+    },
+    "wl_13855": {
+      "部件JSON": [
+        {
+          "hanzi": "一下子",
+          "pinyin": "yī xià zi",
+          "gloss": "for a little while; in no time; almost immediately"
+        }
+      ]
+    },
+    "wl_13902": {
+      "部件JSON": [
+        {
+          "hanzi": "小伙子",
+          "pinyin": "xiǎo huǒ zi",
+          "gloss": "(coll.) young man; young fellow; lad"
+        }
+      ]
+    },
+    "wl_14100": {
+      "部件JSON": [
+        {
+          "hanzi": "金",
+          "pinyin": "jīn",
+          "gloss": "gold"
+        },
+        {
+          "hanzi": "牌",
+          "pinyin": "pái",
+          "gloss": "medal"
+        }
+      ]
+    },
+    "wl_14144": {
+      "部件JSON": [
+        {
+          "hanzi": "养家",
+          "pinyin": "yǎng jiā",
+          "gloss": "support a family"
+        },
+        {
+          "hanzi": "糊口",
+          "pinyin": "hú kǒu",
+          "gloss": "make a living; get enough to eat"
+        }
+      ]
+    },
+    "wl_14263": {
+      "部件JSON": [
+        {
+          "hanzi": "鬼",
+          "pinyin": "guǐ",
+          "gloss": "ghost"
+        },
+        {
+          "hanzi": "魂",
+          "pinyin": "hún",
+          "gloss": "soul; spirit"
+        }
+      ]
+    },
+    "wl_14375": {
+      "部件JSON": [
+        {
+          "hanzi": "金枪鱼",
+          "pinyin": "jīn qiāng yú",
+          "gloss": "tuna"
+        }
+      ]
+    },
+    "wl_14442": {
+      "英文释义": "tone of voice; a breath",
+      "例句JSON": [
+        {
+          "hanzi": "他说话的口气很温和。",
+          "english": "He speaks in a gentle tone.",
+          "pinyin": "tā shuō huà de kǒu qì hěn wēn hé.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "说话",
+              "pinyin": "shuō huà",
+              "gloss": "speak"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "口气",
+              "pinyin": "kǒu qì",
+              "gloss": "tone of voice"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "温和。",
+              "pinyin": "wēn hé.",
+              "gloss": "gentle"
+            }
+          ]
+        },
+        {
+          "hanzi": "跑完以后，他喘了口气。",
+          "english": "He caught his breath after running.",
+          "pinyin": "pǎo wán yǐ hòu, tā chuǎn le kǒu qì.",
+          "chunks": [
+            {
+              "hanzi": "跑完",
+              "pinyin": "pǎo wán",
+              "gloss": "finish running"
+            },
+            {
+              "hanzi": "以后，",
+              "pinyin": "yǐ hòu,",
+              "gloss": "after"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he"
+            },
+            {
+              "hanzi": "喘",
+              "pinyin": "chuǎn",
+              "gloss": "pant; breathe"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "口气。",
+              "pinyin": "kǒu qì.",
+              "gloss": "a breath"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "口气",
+          "pinyin": "kǒu qì",
+          "gloss": "tone of voice; a breath"
+        }
+      ],
+      "本义解释JSON": [
+        "a breath; an amount of air taken in or breathed out"
+      ],
+      "引申义解释JSON": [
+        "tone of voice; a manner of speaking that conveys an attitude"
+      ]
+    },
+    "wl_14487": {
+      "部件JSON": [
+        {
+          "hanzi": "胡",
+          "pinyin": "hú",
+          "gloss": "beard; facial hair"
+        },
+        {
+          "hanzi": "子",
+          "pinyin": "zi",
+          "gloss": "ZI (noun-forming suffix)"
+        }
+      ]
+    },
+    "wl_14508": {
+      "英文释义": "idea; plan; suggestion",
+      "例句JSON": [
+        {
+          "hanzi": "我想到了一个好点子。",
+          "english": "I have thought of a good idea.",
+          "pinyin": "wǒ xiǎng dào le yī ge hǎo diǎn zi.",
+          "chunks": [
+            {
+              "hanzi": "我",
+              "pinyin": "wǒ",
+              "gloss": "I"
+            },
+            {
+              "hanzi": "想到",
+              "pinyin": "xiǎng dào",
+              "gloss": "think of"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "一个",
+              "pinyin": "yī ge",
+              "gloss": "one; a"
+            },
+            {
+              "hanzi": "好",
+              "pinyin": "hǎo",
+              "gloss": "good"
+            },
+            {
+              "hanzi": "点子。",
+              "pinyin": "diǎn zi.",
+              "gloss": "idea"
+            }
+          ]
+        },
+        {
+          "hanzi": "他的设计总有新鲜的点子。",
+          "english": "His designs always contain fresh ideas.",
+          "pinyin": "tā de shè jì zǒng yǒu xīn xiān de diǎn zi.",
+          "chunks": [
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "he; his"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (possessive marker)"
+            },
+            {
+              "hanzi": "设计",
+              "pinyin": "shè jì",
+              "gloss": "designs"
+            },
+            {
+              "hanzi": "总有",
+              "pinyin": "zǒng yǒu",
+              "gloss": "always have"
+            },
+            {
+              "hanzi": "新鲜",
+              "pinyin": "xīn xiān",
+              "gloss": "fresh; original"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "点子。",
+              "pinyin": "diǎn zi.",
+              "gloss": "ideas"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "点子",
+          "pinyin": "diǎn zi",
+          "gloss": "idea; plan; suggestion"
+        }
+      ],
+      "本义解释JSON": [
+        "a spot; a dot; a drop"
+      ],
+      "引申义解释JSON": [
+        "an idea; a plan; a suggestion"
+      ]
+    },
+    "wl_14631": {
+      "部件JSON": [
+        {
+          "hanzi": "胆小",
+          "pinyin": "dǎn xiǎo",
+          "gloss": "timid; cowardly"
+        },
+        {
+          "hanzi": "鬼",
+          "pinyin": "guǐ",
+          "gloss": "person with a trait (disapproving)"
+        }
+      ]
+    },
+    "wl_14667": {
+      "英文释义": "face; social standing; dignity",
+      "例句JSON": [
+        {
+          "hanzi": "她设法保住了面子。",
+          "english": "She managed to save face.",
+          "pinyin": "tā shè fǎ bǎo zhù le miàn zi.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "设法",
+              "pinyin": "shè fǎ",
+              "gloss": "try to find a way"
+            },
+            {
+              "hanzi": "保住",
+              "pinyin": "bǎo zhù",
+              "gloss": "keep; preserve"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "面子。",
+              "pinyin": "miàn zi.",
+              "gloss": "face; dignity"
+            }
+          ]
+        },
+        {
+          "hanzi": "当着大家的面批评他，会让他很没面子。",
+          "english": "Criticizing him in front of everyone would embarrass him.",
+          "pinyin": "dāng zhe dà jiā de miàn pī píng tā, huì ràng tā hěn méi miàn zi.",
+          "chunks": [
+            {
+              "hanzi": "当着",
+              "pinyin": "dāng zhe",
+              "gloss": "in the presence of"
+            },
+            {
+              "hanzi": "大家",
+              "pinyin": "dà jiā",
+              "gloss": "everyone"
+            },
+            {
+              "hanzi": "的",
+              "pinyin": "de",
+              "gloss": "DE (modifier marker)"
+            },
+            {
+              "hanzi": "面",
+              "pinyin": "miàn",
+              "gloss": "presence"
+            },
+            {
+              "hanzi": "批评",
+              "pinyin": "pī píng",
+              "gloss": "criticize"
+            },
+            {
+              "hanzi": "他，",
+              "pinyin": "tā,",
+              "gloss": "him"
+            },
+            {
+              "hanzi": "会",
+              "pinyin": "huì",
+              "gloss": "would"
+            },
+            {
+              "hanzi": "让",
+              "pinyin": "ràng",
+              "gloss": "make"
+            },
+            {
+              "hanzi": "他",
+              "pinyin": "tā",
+              "gloss": "him"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "没",
+              "pinyin": "méi",
+              "gloss": "lack; have no"
+            },
+            {
+              "hanzi": "面子。",
+              "pinyin": "miàn zi.",
+              "gloss": "face; dignity"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "面子",
+          "pinyin": "miàn zi",
+          "gloss": "face; social standing; dignity"
+        }
+      ],
+      "本义解释JSON": [
+        "the outer surface or outside of something"
+      ],
+      "引申义解释JSON": [
+        "social standing; dignity; the respect one receives from others"
+      ]
+    },
+    "wl_14686": {
+      "部件JSON": [
+        {
+          "hanzi": "酒",
+          "pinyin": "jiǔ",
+          "gloss": "alcohol"
+        },
+        {
+          "hanzi": "鬼",
+          "pinyin": "guǐ",
+          "gloss": "person with a habit (derogatory)"
+        }
+      ]
+    },
+    "wl_14717": {
+      "部件JSON": [
+        {
+          "hanzi": "钟",
+          "pinyin": "zhōng",
+          "gloss": "clock; time"
+        },
+        {
+          "hanzi": "头",
+          "pinyin": "tóu",
+          "gloss": "TOU (noun-forming suffix)"
+        }
+      ]
+    },
+    "wl_14822": {
+      "部件JSON": [
+        {
+          "hanzi": "过",
+          "pinyin": "guò",
+          "gloss": "exceed; go beyond"
+        },
+        {
+          "hanzi": "头",
+          "pinyin": "tóu",
+          "gloss": "limit; extent"
+        }
+      ]
+    },
+    "wl_14831": {
+      "部件JSON": [
+        {
+          "hanzi": "好",
+          "pinyin": "hǎo",
+          "gloss": "good; happy"
+        },
+        {
+          "hanzi": "日子",
+          "pinyin": "rì zi",
+          "gloss": "day; life"
+        }
+      ]
+    },
+    "wl_14935": {
+      "部件JSON": [
+        {
+          "hanzi": "套",
+          "pinyin": "tào",
+          "gloss": "suite; connected set"
+        },
+        {
+          "hanzi": "房",
+          "pinyin": "fáng",
+          "gloss": "room; apartment"
+        }
+      ]
+    },
+    "wl_14948": {
+      "部件JSON": [
+        {
+          "hanzi": "道",
+          "pinyin": "dào",
+          "gloss": "say; express"
+        },
+        {
+          "hanzi": "别",
+          "pinyin": "bié",
+          "gloss": "farewell; parting"
+        }
+      ]
+    },
+    "wl_15102": {
+      "部件JSON": [
+        {
+          "hanzi": "和",
+          "pinyin": "hé",
+          "gloss": "make peace"
+        },
+        {
+          "hanzi": "解",
+          "pinyin": "jiě",
+          "gloss": "resolve; settle"
+        }
+      ]
+    },
+    "wl_15287": {
+      "部件JSON": [
+        {
+          "hanzi": "果",
+          "pinyin": "guǒ",
+          "gloss": "indeed; as expected"
+        },
+        {
+          "hanzi": "然",
+          "pinyin": "rán",
+          "gloss": "so; in this way"
+        }
+      ]
+    },
+    "wl_15299": {
+      "部件JSON": [
+        {
+          "hanzi": "有",
+          "pinyin": "yǒu",
+          "gloss": "have; there is"
+        },
+        {
+          "hanzi": "鬼",
+          "pinyin": "guǐ",
+          "gloss": "a hidden trick or suspicious matter (figurative)"
+        }
+      ]
+    },
+    "wl_15311": {
+      "部件JSON": [
+        {
+          "hanzi": "处",
+          "pinyin": "chǔ",
+          "gloss": "deal with"
+        },
+        {
+          "hanzi": "置",
+          "pinyin": "zhì",
+          "gloss": "dispose of; manage"
+        }
+      ]
+    },
+    "wl_15352": {
+      "部件JSON": [
+        {
+          "hanzi": "打",
+          "pinyin": "dǎ",
+          "gloss": "play"
+        },
+        {
+          "hanzi": "牌",
+          "pinyin": "pái",
+          "gloss": "cards; mahjong tiles"
+        }
+      ]
+    },
+    "wl_15355": {
+      "部件JSON": [
+        {
+          "hanzi": "章鱼",
+          "pinyin": "zhāng yú",
+          "gloss": "octopus"
+        }
+      ]
+    },
+    "wl_15477": {
+      "部件JSON": [
+        {
+          "hanzi": "天",
+          "pinyin": "tiān",
+          "gloss": "innate; natural"
+        },
+        {
+          "hanzi": "分",
+          "pinyin": "fèn",
+          "gloss": "endowment; talent"
+        }
+      ]
+    },
+    "wl_15624": {
+      "部件JSON": [
+        {
+          "hanzi": "戏",
+          "pinyin": "xì",
+          "gloss": "theater; drama"
+        },
+        {
+          "hanzi": "院",
+          "pinyin": "yuàn",
+          "gloss": "establishment; venue"
+        }
+      ]
+    },
+    "wl_15703": {
+      "部件JSON": [
+        {
+          "hanzi": "天",
+          "pinyin": "tiān",
+          "gloss": "heaven"
+        },
+        {
+          "hanzi": "后",
+          "pinyin": "hòu",
+          "gloss": "empress; queen"
+        }
+      ]
+    },
+    "wl_15813": {
+      "部件JSON": [
+        {
+          "hanzi": "玩",
+          "pinyin": "wán",
+          "gloss": "play"
+        },
+        {
+          "hanzi": "牌",
+          "pinyin": "pái",
+          "gloss": "cards; mahjong tiles"
+        }
+      ]
+    },
+    "wl_15994": {
+      "部件JSON": [
+        {
+          "hanzi": "影",
+          "pinyin": "yǐng",
+          "gloss": "film; movie"
+        },
+        {
+          "hanzi": "院",
+          "pinyin": "yuàn",
+          "gloss": "theater; cinema"
+        }
+      ]
+    },
+    "wl_16019": {
+      "例句JSON": [
+        {
+          "hanzi": "汤姆很小气。",
+          "english": "Tom is stingy.",
+          "pinyin": "tāng mǔ hěn xiǎo qì.",
+          "chunks": [
+            {
+              "hanzi": "汤姆",
+              "pinyin": "tāng mǔ",
+              "gloss": "Tom"
+            },
+            {
+              "hanzi": "很",
+              "pinyin": "hěn",
+              "gloss": "very"
+            },
+            {
+              "hanzi": "小气。",
+              "pinyin": "xiǎo qì.",
+              "gloss": "stingy; miserly"
+            }
+          ]
+        },
+        {
+          "hanzi": "别为这点小事生气，显得太小气了。",
+          "english": "Do not get angry over such a small matter; it seems petty.",
+          "pinyin": "bié wèi zhè diǎn xiǎo shì shēng qì, xiǎn de tài xiǎo qì le.",
+          "chunks": [
+            {
+              "hanzi": "别",
+              "pinyin": "bié",
+              "gloss": "do not"
+            },
+            {
+              "hanzi": "为",
+              "pinyin": "wèi",
+              "gloss": "over; because of"
+            },
+            {
+              "hanzi": "这点",
+              "pinyin": "zhè diǎn",
+              "gloss": "this little"
+            },
+            {
+              "hanzi": "小事",
+              "pinyin": "xiǎo shì",
+              "gloss": "minor matter"
+            },
+            {
+              "hanzi": "生气，",
+              "pinyin": "shēng qì,",
+              "gloss": "get angry"
+            },
+            {
+              "hanzi": "显得",
+              "pinyin": "xiǎn de",
+              "gloss": "seem"
+            },
+            {
+              "hanzi": "太",
+              "pinyin": "tài",
+              "gloss": "too"
+            },
+            {
+              "hanzi": "小气",
+              "pinyin": "xiǎo qì",
+              "gloss": "petty; narrow-minded"
+            },
+            {
+              "hanzi": "了。",
+              "pinyin": "le.",
+              "gloss": "LE (emphasizes the assessment)"
+            }
+          ]
+        }
+      ]
+    },
+    "wl_16360": {
+      "部件JSON": [
+        {
+          "hanzi": "铜",
+          "pinyin": "tóng",
+          "gloss": "bronze"
+        },
+        {
+          "hanzi": "牌",
+          "pinyin": "pái",
+          "gloss": "medal"
+        }
+      ]
+    },
+    "wl_16384": {
+      "部件JSON": [
+        {
+          "hanzi": "关",
+          "pinyin": "guān",
+          "gloss": "critical point; juncture"
+        },
+        {
+          "hanzi": "头",
+          "pinyin": "tóu",
+          "gloss": "point; moment"
+        }
+      ]
+    },
+    "wl_16385": {
+      "部件JSON": [
+        {
+          "hanzi": "圆珠",
+          "pinyin": "yuán zhū",
+          "gloss": "small round ball"
+        },
+        {
+          "hanzi": "笔",
+          "pinyin": "bǐ",
+          "gloss": "pen"
+        }
+      ]
+    },
+    "wl_16442": {
+      "部件JSON": [
+        {
+          "hanzi": "激",
+          "pinyin": "jī",
+          "gloss": "stimulate; excite"
+        },
+        {
+          "hanzi": "光",
+          "pinyin": "guāng",
+          "gloss": "light"
+        }
+      ]
+    },
+    "wl_16471": {
+      "部件JSON": [
+        {
+          "hanzi": "淡水",
+          "pinyin": "dàn shuǐ",
+          "gloss": "fresh water"
+        },
+        {
+          "hanzi": "鱼",
+          "pinyin": "yú",
+          "gloss": "fish"
+        }
+      ]
+    },
+    "wl_16571": {
+      "部件JSON": [
+        {
+          "hanzi": "挥霍",
+          "pinyin": "huī huò",
+          "gloss": "to squander money; extravagant; prodigal"
+        }
+      ]
+    },
+    "wl_16595": {
+      "部件JSON": [
+        {
+          "hanzi": "百",
+          "pinyin": "bǎi",
+          "gloss": "hundred"
+        },
+        {
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "gloss": "parts"
+        },
+        {
+          "hanzi": "之",
+          "pinyin": "zhī",
+          "gloss": "ZHI (fraction marker linking denominator and numerator)"
+        }
+      ]
+    },
+    "wl_16685": {
+      "部件JSON": [
+        {
+          "hanzi": "鬼",
+          "pinyin": "guǐ",
+          "gloss": "ghost"
+        },
+        {
+          "hanzi": "怪",
+          "pinyin": "guài",
+          "gloss": "monster; supernatural being"
+        }
+      ]
+    },
+    "wl_16841": {
+      "部件JSON": [
+        {
+          "hanzi": "抽",
+          "pinyin": "chōu",
+          "gloss": "draw; choose at random"
+        },
+        {
+          "hanzi": "签",
+          "pinyin": "qiān",
+          "gloss": "lot; marked stick"
+        }
+      ]
+    },
+    "wl_17044": {
+      "部件JSON": [
+        {
+          "hanzi": "证券",
+          "pinyin": "zhèng quàn",
+          "gloss": "securities"
+        },
+        {
+          "hanzi": "交易",
+          "pinyin": "jiāo yì",
+          "gloss": "trading; transactions"
+        },
+        {
+          "hanzi": "所",
+          "pinyin": "suǒ",
+          "gloss": "institution; exchange"
+        }
+      ]
+    },
+    "wl_17048": {
+      "部件JSON": [
+        {
+          "hanzi": "计算机",
+          "pinyin": "jì suàn jī",
+          "gloss": "computer"
+        },
+        {
+          "hanzi": "科学",
+          "pinyin": "kē xué",
+          "gloss": "science"
+        }
+      ]
+    },
+    "wl_17073": {
+      "部件JSON": [
+        {
+          "hanzi": "麻婆",
+          "pinyin": "má pó",
+          "gloss": "Mapo (the traditional dish name)"
+        },
+        {
+          "hanzi": "豆腐",
+          "pinyin": "dòu fǔ",
+          "gloss": "tofu"
+        }
+      ]
+    },
+    "wl_17117": {
+      "部件JSON": [
+        {
+          "hanzi": "一",
+          "pinyin": "yī",
+          "gloss": "one; a"
+        },
+        {
+          "hanzi": "阵子",
+          "pinyin": "zhèn zi",
+          "gloss": "period of time; while"
+        }
+      ]
+    },
+    "wl_17125": {
+      "部件JSON": [
+        {
+          "hanzi": "自行车",
+          "pinyin": "zì xíng chē",
+          "gloss": "bicycle"
+        },
+        {
+          "hanzi": "道",
+          "pinyin": "dào",
+          "gloss": "lane; path"
+        }
+      ]
+    },
+    "wl_17139": {
+      "部件JSON": [
+        {
+          "hanzi": "禁止",
+          "pinyin": "jìn zhǐ",
+          "gloss": "prohibit; forbid"
+        },
+        {
+          "hanzi": "吸烟",
+          "pinyin": "xī yān",
+          "gloss": "smoking"
+        }
+      ]
+    },
+    "wl_17141": {
+      "部件JSON": [
+        {
+          "hanzi": "眼科",
+          "pinyin": "yǎn kē",
+          "gloss": "ophthalmology; eye care"
+        },
+        {
+          "hanzi": "医生",
+          "pinyin": "yī shēng",
+          "gloss": "doctor"
+        }
+      ]
+    },
+    "wl_17186": {
+      "部件JSON": [
+        {
+          "hanzi": "截然",
+          "pinyin": "jié rán",
+          "gloss": "completely; sharply"
+        },
+        {
+          "hanzi": "不同",
+          "pinyin": "bù tóng",
+          "gloss": "different"
+        }
+      ]
+    },
+    "wl_17203": {
+      "部件JSON": [
+        {
+          "hanzi": "太阳",
+          "pinyin": "tài yáng",
+          "gloss": "sun"
+        },
+        {
+          "hanzi": "眼镜",
+          "pinyin": "yǎn jìng",
+          "gloss": "eyeglasses"
+        }
+      ]
+    },
+    "wl_17218": {
+      "部件JSON": [
+        {
+          "hanzi": "里",
+          "pinyin": "lǐ",
+          "gloss": "distance"
+        },
+        {
+          "hanzi": "程",
+          "pinyin": "chéng",
+          "gloss": "journey; traveled distance"
+        }
+      ]
+    },
+    "wl_17219": {
+      "部件JSON": [
+        {
+          "hanzi": "冷血",
+          "pinyin": "lěng xuè",
+          "gloss": "cold-blooded"
+        },
+        {
+          "hanzi": "动物",
+          "pinyin": "dòng wù",
+          "gloss": "animal"
+        }
+      ]
+    },
+    "wl_17227": {
+      "部件JSON": [
+        {
+          "hanzi": "长",
+          "pinyin": "cháng",
+          "gloss": "strength; advantage"
+        },
+        {
+          "hanzi": "处",
+          "pinyin": "chù",
+          "gloss": "aspect; point"
+        }
+      ]
+    },
+    "wl_17235": {
+      "部件JSON": [
+        {
+          "hanzi": "人生",
+          "pinyin": "rén shēng",
+          "gloss": "life"
+        },
+        {
+          "hanzi": "如",
+          "pinyin": "rú",
+          "gloss": "like; as"
+        },
+        {
+          "hanzi": "梦",
+          "pinyin": "mèng",
+          "gloss": "dream"
+        }
+      ]
+    },
+    "wl_17274": {
+      "部件JSON": [
+        {
+          "hanzi": "一脸",
+          "pinyin": "yī liǎn",
+          "gloss": "a face full of"
+        },
+        {
+          "hanzi": "茫然",
+          "pinyin": "máng rán",
+          "gloss": "puzzlement; bewilderment"
+        }
+      ]
+    },
+    "wl_17299": {
+      "部件JSON": [
+        {
+          "hanzi": "光速",
+          "pinyin": "guāng sù",
+          "gloss": "the speed of light"
+        }
+      ]
+    },
+    "wl_17301": {
+      "部件JSON": [
+        {
+          "hanzi": "面包",
+          "pinyin": "miàn bāo",
+          "gloss": "bread"
+        },
+        {
+          "hanzi": "房",
+          "pinyin": "fáng",
+          "gloss": "shop; workplace"
+        }
+      ]
+    },
+    "wl_17319": {
+      "部件JSON": [
+        {
+          "hanzi": "过",
+          "pinyin": "guò",
+          "gloss": "cross"
+        },
+        {
+          "hanzi": "马路",
+          "pinyin": "mǎ lù",
+          "gloss": "street; road"
+        }
+      ]
+    },
+    "wl_17325": {
+      "部件JSON": [
+        {
+          "hanzi": "路线",
+          "pinyin": "lù xiàn",
+          "gloss": "route"
+        },
+        {
+          "hanzi": "图",
+          "pinyin": "tú",
+          "gloss": "map; diagram"
+        }
+      ]
+    },
+    "wl_17356": {
+      "部件JSON": [
+        {
+          "hanzi": "纸",
+          "pinyin": "zhǐ",
+          "gloss": "paper"
+        },
+        {
+          "hanzi": "飞机",
+          "pinyin": "fēi jī",
+          "gloss": "airplane"
+        }
+      ]
+    },
+    "wl_17369": {
+      "部件JSON": [
+        {
+          "hanzi": "突然",
+          "pinyin": "tū rán",
+          "gloss": "sudden; suddenly"
+        },
+        {
+          "hanzi": "间",
+          "pinyin": "jiān",
+          "gloss": "adverb-forming suffix"
+        }
+      ]
+    },
+    "wl_17424": {
+      "部件JSON": [
+        {
+          "hanzi": "柿子",
+          "pinyin": "shì zi",
+          "gloss": "persimmon (shape comparison)"
+        },
+        {
+          "hanzi": "椒",
+          "pinyin": "jiāo",
+          "gloss": "pepper"
+        }
+      ]
+    },
+    "wl_17472": {
+      "部件JSON": [
+        {
+          "hanzi": "时光",
+          "pinyin": "shí guāng",
+          "gloss": "time"
+        },
+        {
+          "hanzi": "机",
+          "pinyin": "jī",
+          "gloss": "machine"
+        }
+      ]
+    },
+    "wl_17482": {
+      "部件JSON": [
+        {
+          "hanzi": "招牌",
+          "pinyin": "zhāo pái",
+          "gloss": "signature; representative specialty"
+        },
+        {
+          "hanzi": "菜",
+          "pinyin": "cài",
+          "gloss": "dish"
+        }
+      ]
+    },
+    "wl_17552": {
+      "部件JSON": [
+        {
+          "hanzi": "包",
+          "pinyin": "bāo",
+          "gloss": "wrap; make (dumplings)"
+        },
+        {
+          "hanzi": "饺子",
+          "pinyin": "jiǎo zi",
+          "gloss": "dumpling"
+        }
+      ]
+    },
+    "wl_17576": {
+      "部件JSON": [
+        {
+          "hanzi": "性",
+          "pinyin": "xìng",
+          "gloss": "sex; gender"
+        },
+        {
+          "hanzi": "别",
+          "pinyin": "bié",
+          "gloss": "category; distinction"
+        }
+      ]
+    },
+    "wl_17609": {
+      "部件JSON": [
+        {
+          "hanzi": "上",
+          "pinyin": "shàng",
+          "gloss": "go to; use"
+        },
+        {
+          "hanzi": "厕所",
+          "pinyin": "cè suǒ",
+          "gloss": "toilet; restroom"
+        }
+      ]
+    },
+    "wl_17661": {
+      "部件JSON": [
+        {
+          "hanzi": "捷",
+          "pinyin": "jié",
+          "gloss": "quick; direct"
+        },
+        {
+          "hanzi": "径",
+          "pinyin": "jìng",
+          "gloss": "path; route"
+        }
+      ]
+    },
+    "wl_17668": {
+      "部件JSON": [
+        {
+          "hanzi": "杂货",
+          "pinyin": "zá huò",
+          "gloss": "general goods; groceries"
+        },
+        {
+          "hanzi": "店",
+          "pinyin": "diàn",
+          "gloss": "shop"
+        }
+      ]
+    },
+    "wl_17775": {
+      "部件JSON": [
+        {
+          "hanzi": "处",
+          "pinyin": "chǔ",
+          "gloss": "be situated"
+        },
+        {
+          "hanzi": "境",
+          "pinyin": "jìng",
+          "gloss": "situation; circumstances"
+        }
+      ]
+    },
+    "wl_17783": {
+      "部件JSON": [
+        {
+          "hanzi": "纸",
+          "pinyin": "zhǐ",
+          "gloss": "paper"
+        },
+        {
+          "hanzi": "质",
+          "pinyin": "zhì",
+          "gloss": "material"
+        }
+      ]
+    },
+    "wl_17799": {
+      "部件JSON": [
+        {
+          "hanzi": "女",
+          "pinyin": "nǚ",
+          "gloss": "female"
+        },
+        {
+          "hanzi": "孩子",
+          "pinyin": "hái zi",
+          "gloss": "child"
+        }
+      ]
+    },
+    "wl_17817": {
+      "部件JSON": [
+        {
+          "hanzi": "和",
+          "pinyin": "hé",
+          "gloss": "peace"
+        },
+        {
+          "hanzi": "约",
+          "pinyin": "yuē",
+          "gloss": "treaty; agreement"
+        }
+      ]
+    },
+    "wl_17829": {
+      "部件JSON": [
+        {
+          "hanzi": "钟",
+          "pinyin": "zhōng",
+          "gloss": "concentrate; devote"
+        },
+        {
+          "hanzi": "情",
+          "pinyin": "qíng",
+          "gloss": "affection; love"
+        }
+      ]
+    },
+    "wl_17832": {
+      "部件JSON": [
+        {
+          "hanzi": "胆",
+          "pinyin": "dǎn",
+          "gloss": "courage; nerve"
+        },
+        {
+          "hanzi": "子",
+          "pinyin": "zi",
+          "gloss": "ZI (noun-forming suffix)"
+        }
+      ]
+    },
+    "wl_17950": {
+      "部件JSON": [
+        {
+          "hanzi": "井然",
+          "pinyin": "jǐng rán",
+          "gloss": "tidy, methodical"
+        }
+      ]
+    },
+    "wl_18040": {
+      "部件JSON": [
+        {
+          "hanzi": "分",
+          "pinyin": "fēn",
+          "gloss": "parts"
+        },
+        {
+          "hanzi": "之",
+          "pinyin": "zhī",
+          "gloss": "ZHI (fraction marker linking denominator and numerator)"
+        }
+      ]
+    },
+    "wl_18066": {
+      "部件JSON": [
+        {
+          "hanzi": "劳",
+          "pinyin": "láo",
+          "gloss": "work; labor"
+        },
+        {
+          "hanzi": "逸",
+          "pinyin": "yì",
+          "gloss": "rest; leisure"
+        }
+      ]
+    },
+    "wl_18070": {
+      "部件JSON": [
+        {
+          "hanzi": "包",
+          "pinyin": "bāo",
+          "gloss": "reserve; hire exclusively"
+        },
+        {
+          "hanzi": "房",
+          "pinyin": "fáng",
+          "gloss": "room; compartment"
+        }
+      ]
+    },
+    "wl_18117": {
+      "英文释义": "like-minded person; someone with shared aims",
+      "例句JSON": [
+        {
+          "hanzi": "他们志趣相投，彼此视为同道。",
+          "english": "They share the same interests and regard each other as kindred spirits.",
+          "pinyin": "tā men zhì qù xiāng tóu, bǐ cǐ shì wéi tóng dào.",
+          "chunks": [
+            {
+              "hanzi": "他们",
+              "pinyin": "tā men",
+              "gloss": "they"
+            },
+            {
+              "hanzi": "志趣相投，",
+              "pinyin": "zhì qù xiāng tóu,",
+              "gloss": "share the same aspirations and interests"
+            },
+            {
+              "hanzi": "彼此",
+              "pinyin": "bǐ cǐ",
+              "gloss": "each other"
+            },
+            {
+              "hanzi": "视为",
+              "pinyin": "shì wéi",
+              "gloss": "regard as"
+            },
+            {
+              "hanzi": "同道。",
+              "pinyin": "tóng dào.",
+              "gloss": "like-minded people"
+            }
+          ]
+        },
+        {
+          "hanzi": "她在读书会上结识了几位同道。",
+          "english": "She met several like-minded people at the reading club.",
+          "pinyin": "tā zài dú shū huì shàng jié shí le jǐ wèi tóng dào.",
+          "chunks": [
+            {
+              "hanzi": "她",
+              "pinyin": "tā",
+              "gloss": "she"
+            },
+            {
+              "hanzi": "在",
+              "pinyin": "zài",
+              "gloss": "at"
+            },
+            {
+              "hanzi": "读书会",
+              "pinyin": "dú shū huì",
+              "gloss": "reading club"
+            },
+            {
+              "hanzi": "上",
+              "pinyin": "shàng",
+              "gloss": "at; during"
+            },
+            {
+              "hanzi": "结识",
+              "pinyin": "jié shí",
+              "gloss": "get to know; meet"
+            },
+            {
+              "hanzi": "了",
+              "pinyin": "le",
+              "gloss": "LE (completed action)"
+            },
+            {
+              "hanzi": "几位",
+              "pinyin": "jǐ wèi",
+              "gloss": "several (WEI: people)"
+            },
+            {
+              "hanzi": "同道。",
+              "pinyin": "tóng dào.",
+              "gloss": "like-minded people"
+            }
+          ]
+        }
+      ],
+      "部件JSON": [
+        {
+          "hanzi": "同道",
+          "pinyin": "tóng dào",
+          "gloss": "like-minded person; someone with shared aims"
+        }
+      ],
+      "本义解释JSON": [
+        "someone who shares the same aims, interests or profession"
+      ]
+    },
+    "wl_18119": {
+      "部件JSON": [
+        {
+          "hanzi": "名",
+          "pinyin": "míng",
+          "gloss": "terms; concepts"
+        },
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "study; discipline"
+        }
+      ]
+    },
+    "wl_18305": {
+      "部件JSON": [
+        {
+          "hanzi": "所",
+          "pinyin": "suǒ",
+          "gloss": "what; that which"
+        },
+        {
+          "hanzi": "闻",
+          "pinyin": "wén",
+          "gloss": "hear"
+        }
+      ]
+    },
+    "wl_18475": {
+      "部件JSON": [
+        {
+          "hanzi": "理",
+          "pinyin": "lǐ",
+          "gloss": "principles; rational order"
+        },
+        {
+          "hanzi": "学",
+          "pinyin": "xué",
+          "gloss": "study; school of thought"
+        }
+      ]
+    },
+    "wl_19667": {
+      "部件JSON": [
+        {
+          "hanzi": "想当然",
+          "pinyin": "xiǎng dāng rán",
+          "gloss": "to assume without checking"
+        }
+      ]
+    }
+  },
+  "reasons": {
+    "wl_00081": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_03067": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_03263": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units.",
+      "Translate 大数据技术 as big-data technology, not the network."
+    ],
+    "wl_03264": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_04621": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_04661": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05521": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05549": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05586": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05625": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05693": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_06063": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_06493": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_06586": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13556": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13598": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13742": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13808": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13811": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14100": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14144": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14375": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14487": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14822": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14948": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15287": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15311": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15355": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15477": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15624": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17203": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17482": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17576": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17829": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17832": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18070": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18305": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_04915": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_04921": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_04936": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05600": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05647": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_06505": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_06523": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14263": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14631": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14686": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14717": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14831": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14935": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15102": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15299": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15352": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15813": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15703": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_15994": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16360": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16384": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16385": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16442": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16471": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16595": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16685": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16841": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17044": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17048": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17073": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17117": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17125": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17139": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17141": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17186": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17218": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17219": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17227": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17235": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17274": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17299": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17301": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17319": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17325": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17356": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17369": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17424": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17472": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17552": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17609": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17661": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17668": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17775": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17783": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17799": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17817": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18040": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18066": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18119": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18475": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_07851": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_03032": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_03100": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05559": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_05684": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16571": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_17950": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13855": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13902": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_13356": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_19667": [
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14667": [
+      "Correct the headword's actual teaching sense and align meanings, POS, breakdown and examples.",
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14508": [
+      "Correct the headword's actual teaching sense and align meanings, POS, breakdown and examples.",
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_18117": [
+      "Correct the headword's actual teaching sense and align meanings, POS, breakdown and examples.",
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_14442": [
+      "Correct the headword's actual teaching sense and align meanings, POS, breakdown and examples.",
+      "Replace unrelated component dictionary senses with the headword's actual morphemes or lexical units."
+    ],
+    "wl_16019": [
+      "Keep the colloquial expression intact in both examples; do not gloss qi as gas."
+    ]
+  }
+}

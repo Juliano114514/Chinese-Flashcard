@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "inputSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
+  "outputSha256": "4c8c18811363bdb747c4902dac64f24bf78f40dcb5e2c55ec84fbcc386e31486",
+  "editorialFiles": {
+    "legacy_overrides.json": "417c4597c89697560b65bc5b4d287f314e81ba3f85c4fb5e004ae63a0f65d4b6",
+    "new_words_overrides.json": "00ec8240bad3dd6d85db2dfb7fa6de62710e839f109285d0ca9658693c613f9f",
+    "context_overrides.json": "58d536cfdd5f336e0fdf0a9ea2f350019d4815e60b3e7901444fc53b69c481e2",
+    "final_qa_overrides.json": "b1d832b1387ba11f17bb43b9694d257fd46c9fba125773991b4bf3f312bbf5fb",
+    "post_review_overrides.json": "64dd2c82d4248c663a616aaa297f1d21cb1a28547c1700b726b53a99576157bc",
+    "supplement.tsv": "acaaae623b4bc83b1d11b694aae724b74534b99cfa12e29781cf7ffd092fad8e",
+    "supplement.parts.json": "2eb979d82a449740802bafcc52f694b78f732103234f40a5adb8171a056348fa",
+    "supplement.tags.json": "0f1873227e6f0c8ca455a74e45b2ed3ddc7a0a92bd7382f9e0cacda85da857ec",
+    "supplement.examples.json": "f4572729093b360ca75b69c3749ce4ce3874df558366e8e83b3fdfb8f6ef763c",
+    "supplement.anchors.json": "da4ccdda5e02c89f7a30aac9ba6abc44a3aca26ae57d8634e9915148de966826",
+    "tag_overrides.json": "57ecfab79d782fa8b1780e5b814c70bc2460108450e9441720ca117734164c20",
+    "tag_idiom_overrides.json": "c2e6ad8713fbce41184e5ab6c36cf5f45353a415d386586a2cc92b58c9a18bd1",
+    "supplement_metadata.txt": "b9ad02e6529f95555ff7a7163bff0d048ee6d4c938b2e63fdf052b988c0c321a",
+    "tag_editorial_decisions.json": "8be4db8a51db0ceb0751f9e985f4ff65d75f9e632022a90a71e954b006ea68ee",
+    "tag_missing_middle.json": "4c40267591c92da4eb8cc74d42baed9a65a1931a6c2559eb78c17b58621e4c03",
+    "tag_missing_tail.json": "5bc2268cfebf90a589afebcd655aee8b576a7e15dac67a66dbcb42ac4daa47bf",
+    "substring_overrides.json": "db77567703427a388a340a10c47b518d4dd88f10ead5a1e59e54df5d7e9e406f",
+    "pronunciation_overrides.json": "ef249f7c7923450eabb93050c915991c59b53d38fc3a71c8672901e0c9847795",
+    "classifier_overrides.json": "a87e0b6fb9f6fe92b74e35589f39d88a6b2c2ca796ec93c38223798280eda0ec",
+    "extra_new_overrides.json": "7243b9e6ce104648c7cad255f4a471001570a07947a824c6fb97bc623085a53a"
+  }
+}

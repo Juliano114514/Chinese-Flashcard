@@ -1,0 +1,429 @@
+{
+  "回族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "回教": [
+    "topic_religion"
+  ],
+  "回民街": [
+    "topic_geography",
+    "topic_food",
+    "topic_travel_transport"
+  ],
+  "伊斯兰教": [
+    "topic_religion"
+  ],
+  "清真": [
+    "topic_food",
+    "topic_religion"
+  ],
+  "清真食品": [
+    "topic_food",
+    "topic_religion"
+  ],
+  "穆斯林": [
+    "topic_people",
+    "topic_religion"
+  ],
+  "斋月": [
+    "topic_religion",
+    "topic_time_number"
+  ],
+  "开斋节": [
+    "topic_religion",
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "古兰经": [
+    "topic_religion",
+    "topic_culture"
+  ],
+  "扫墓": [
+    "topic_culture",
+    "topic_family"
+  ],
+  "红包": [
+    "topic_money",
+    "topic_culture"
+  ],
+  "少数民族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "满族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "藏族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "维吾尔族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "蒙古族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "苗族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "朝鲜族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "土家族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "白族": [
+    "topic_people",
+    "topic_society"
+  ],
+  "民族服饰": [
+    "topic_clothing",
+    "topic_culture"
+  ],
+  "民族语言": [
+    "topic_communication",
+    "topic_society"
+  ],
+  "民族团结": [
+    "topic_society"
+  ],
+  "民俗": [
+    "topic_culture",
+    "topic_society"
+  ],
+  "宗教信仰": [
+    "topic_religion",
+    "topic_thinking"
+  ],
+  "道教": [
+    "topic_religion",
+    "topic_culture"
+  ],
+  "基督教": [
+    "topic_religion"
+  ],
+  "天主教": [
+    "topic_religion"
+  ],
+  "宗教活动": [
+    "topic_religion"
+  ],
+  "佛寺": [
+    "topic_religion",
+    "topic_home"
+  ],
+  "压岁钱": [
+    "topic_money",
+    "topic_culture"
+  ],
+  "香火": [
+    "topic_religion"
+  ],
+  "祈福": [
+    "topic_religion"
+  ],
+  "礼拜堂": [
+    "topic_religion",
+    "topic_home"
+  ],
+  "十字架": [
+    "topic_religion",
+    "topic_objects"
+  ],
+  "圣经": [
+    "topic_religion",
+    "topic_culture"
+  ],
+  "团圆饭": [
+    "topic_family",
+    "topic_food",
+    "topic_culture"
+  ],
+  "观音": [
+    "topic_religion",
+    "topic_culture"
+  ],
+  "方丈": [
+    "topic_people",
+    "topic_religion"
+  ],
+  "藏传佛教": [
+    "topic_religion",
+    "topic_culture"
+  ],
+  "春运": [
+    "topic_travel_transport",
+    "topic_time_number"
+  ],
+  "民间信仰": [
+    "topic_religion",
+    "topic_culture"
+  ],
+  "年俗": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "庙会": [
+    "topic_culture",
+    "topic_society"
+  ],
+  "传统节日": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "端午节": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "重阳节": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "元宵节": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "腊八节": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "泼水节": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "那达慕": [
+    "topic_culture",
+    "topic_sport_leisure"
+  ],
+  "火把节": [
+    "topic_culture",
+    "topic_time_number"
+  ],
+  "老街": [
+    "topic_travel_transport",
+    "topic_home",
+    "topic_history"
+  ],
+  "步行街": [
+    "topic_travel_transport",
+    "topic_money"
+  ],
+  "小吃街": [
+    "topic_food",
+    "topic_travel_transport"
+  ],
+  "美食街": [
+    "topic_food",
+    "topic_travel_transport"
+  ],
+  "特色小吃": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "手抓饭": [
+    "topic_food"
+  ],
+  "羊肉泡馍": [
+    "topic_food"
+  ],
+  "肉夹馍": [
+    "topic_food"
+  ],
+  "馕": [
+    "topic_food"
+  ],
+  "拉条子": [
+    "topic_food"
+  ],
+  "大盘鸡": [
+    "topic_food"
+  ],
+  "清真餐厅": [
+    "topic_food",
+    "topic_religion"
+  ],
+  "饮食禁忌": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "文化遗产": [
+    "topic_culture",
+    "topic_history"
+  ],
+  "非物质文化遗产": [
+    "topic_culture"
+  ],
+  "文化交流": [
+    "topic_culture",
+    "topic_communication"
+  ],
+  "文化差异": [
+    "topic_culture",
+    "topic_society"
+  ],
+  "第二语言": [
+    "topic_communication",
+    "topic_study"
+  ],
+  "少数民族语言": [
+    "topic_communication",
+    "topic_society"
+  ],
+  "民族特色": [
+    "topic_culture",
+    "topic_society"
+  ],
+  "民族文化": [
+    "topic_culture",
+    "topic_society"
+  ],
+  "文化认同": [
+    "topic_culture",
+    "topic_society"
+  ],
+  "身份认同": [
+    "topic_society",
+    "topic_thinking"
+  ],
+  "包容": [
+    "topic_society",
+    "topic_emotions"
+  ],
+  "族群": [
+    "topic_people",
+    "topic_society"
+  ],
+  "血缘": [
+    "topic_family"
+  ],
+  "祖籍": [
+    "topic_family",
+    "topic_geography"
+  ],
+  "原籍": [
+    "topic_people",
+    "topic_geography"
+  ],
+  "侨乡": [
+    "topic_geography",
+    "topic_society"
+  ],
+  "华裔": [
+    "topic_people",
+    "topic_society"
+  ],
+  "汉服": [
+    "topic_clothing",
+    "topic_culture"
+  ],
+  "唐装": [
+    "topic_clothing",
+    "topic_culture"
+  ],
+  "头巾": [
+    "topic_clothing"
+  ],
+  "饮茶": [
+    "topic_food"
+  ],
+  "茶艺": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "茶道": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "饮食文化": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "地方菜": [
+    "topic_food"
+  ],
+  "风味": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "石窟": [
+    "topic_culture",
+    "topic_history",
+    "topic_religion"
+  ],
+  "古迹": [
+    "topic_culture",
+    "topic_history",
+    "topic_travel_transport"
+  ],
+  "名胜": [
+    "topic_travel_transport",
+    "topic_culture"
+  ],
+  "古建筑": [
+    "topic_home",
+    "topic_history",
+    "topic_culture"
+  ],
+  "古村落": [
+    "topic_home",
+    "topic_history",
+    "topic_geography"
+  ],
+  "传统工艺": [
+    "topic_culture",
+    "topic_work"
+  ],
+  "手工艺": [
+    "topic_culture",
+    "topic_work"
+  ],
+  "蜡染": [
+    "topic_culture",
+    "topic_clothing"
+  ],
+  "扎染": [
+    "topic_culture",
+    "topic_clothing"
+  ],
+  "剪纸": [
+    "topic_culture"
+  ],
+  "皮影": [
+    "topic_culture"
+  ],
+  "中国结": [
+    "topic_culture",
+    "topic_objects"
+  ],
+  "春联": [
+    "topic_culture",
+    "topic_communication"
+  ],
+  "舞龙": [
+    "topic_culture",
+    "topic_sport_leisure"
+  ],
+  "舞狮": [
+    "topic_culture",
+    "topic_sport_leisure"
+  ],
+  "龙舟": [
+    "topic_travel_transport",
+    "topic_sport_leisure",
+    "topic_culture"
+  ],
+  "汤圆": [
+    "topic_food",
+    "topic_culture"
+  ],
+  "牛肉面": [
+    "topic_food"
+  ]
+}
