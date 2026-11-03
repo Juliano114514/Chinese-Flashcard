@@ -28,10 +28,12 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Switch
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -53,6 +55,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -61,6 +64,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.chinese_flashcard.core.domain.DailyWordChoices
 import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
+import com.example.chinese_flashcard.core.domain.SpeechEngine
+import com.example.chinese_flashcard.core.domain.SpeechEngines
+import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechPreview
+import com.example.chinese_flashcard.core.domain.SpeechPlaybackPhase
+import com.example.chinese_flashcard.core.ui.LocalSpeechPlaybackState
 import com.example.chinese_flashcard.core.domain.WritingMode
 import com.example.chinese_flashcard.core.domain.WritingBroadcast
 import com.example.chinese_flashcard.core.domain.WordlistLoadProgress
@@ -75,7 +84,7 @@ import kotlin.math.roundToInt
 
 private enum class SettingEditor {
   DAILY_WORDS, ROUNDS, REVIEW_DAYS, REVIEW_BATCH_SIZE, THEME, UI_LANGUAGE, LEARNING_LANGUAGE,
-  SPEECH_PRELOAD, SPEECH_CACHE, HOME_SHUFFLE_QUEUE, WRITING, WRITING_BROADCAST,
+  SPEECH_PRELOAD, SPEECH_CACHE, HOME_SHUFFLE_QUEUE, WRITING, WRITING_BROADCAST, VOICE,
 }
 
 @Composable
@@ -85,7 +94,9 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   onRetryDefaultWordlist: () -> Unit = {}, languageSwitchEnabled: Boolean = true,
   defaultWordlistResumeWritingLabel: String? = null, onResumeDefaultWordlistWriting: () -> Unit = {},
   onReadingOptions: () -> Unit = {}, onExplanationOptions: () -> Unit = {},
-  cacheUsedBytes: Long = 0L, onClearSpeechCache: () -> Unit = {}) {
+  cacheUsedBytes: Long = 0L, onClearSpeechCache: () -> Unit = {},
+  systemVoiceAvailability: Map<AppLanguage, Boolean>? = null,
+  onVoicePreview: (SpeechRequest, SpeechEngines) -> Unit = { _, _ -> }, onStopVoicePreview: () -> Unit = {}) {
   val state by vm.state.collectAsStateWithLifecycle()
   val csv by vm.importState.collectAsStateWithLifecycle()
   val transfer by vm.transferState.collectAsStateWithLifecycle()
@@ -97,7 +108,7 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   fun closeEditor() { if (!state.saving) { editor = null; vm.beginEdit() } }
   LaunchedEffect(state.savedRevision) {
     if (state.savedRevision != appliedSaveRevision) {
-      editor = null
+      if (editor != SettingEditor.VOICE) editor = null
       appliedSaveRevision = state.savedRevision
     }
   }
@@ -154,6 +165,10 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
           color = MaterialTheme.colorScheme.primary)
         Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface) {
           Column(Modifier.fillMaxWidth()) {
+            SettingsRow(uiString(UiR.string.ui_voice_settings), enabled = enabled) {
+              openEditor(SettingEditor.VOICE)
+            }
+            SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_reading_options), enabled = enabled, onClick = onReadingOptions)
             SettingsDivider()
             SettingsRow(uiString(UiR.string.ui_writing_broadcast), value.writingBroadcast.label(), enabled) {
@@ -231,6 +246,10 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
   if (csv.open) CsvImportDialog(csv, csvImportProgress, vm::confirmCsvImport, vm::dismissCsvImport)
   if (transfer.open) ProgressTransferDialog(transfer, vm)
   when (editor) {
+    SettingEditor.VOICE -> VoiceDialog(value.speechEngines, systemVoiceAvailability, state.saving, state.error,
+      onDismiss = { if (!state.saving) { onStopVoicePreview(); closeEditor() } },
+      onSelect = { vm.save(ProfileUpdate(speechEngines = it)) },
+      onPreview = { onVoicePreview(it, value.speechEngines) })
     SettingEditor.DAILY_WORDS -> DailyWordsDialog(value.dailyWords, state.saving, state.error,
       onDismiss = ::closeEditor, onConfirm = { vm.save(ProfileUpdate(dailyWords = it)) })
     SettingEditor.ROUNDS -> RoundsDialog(value.rounds, state.saving, state.error,
@@ -260,6 +279,72 @@ fun SettingScreen(vm: ProfileViewModel, onBack: () -> Unit, onImportCsv: () -> U
       value.homeShuffleQueueSize, StudySettingsRules.homeShuffleQueueSize, uiString(UiR.string.ui_home_shuffle_queue_description), state.saving, state.error,
       ::closeEditor) { vm.save(ProfileUpdate(homeShuffleQueueSize = it)) }
     null -> Unit
+  }
+}
+
+@Composable
+private fun SpeechEngine.label(): String = uiString(if (this == SpeechEngine.AI)
+  UiR.string.ui_ai_voice else UiR.string.ui_system_voice)
+
+@Composable
+private fun VoiceDialog(value: SpeechEngines, availability: Map<AppLanguage, Boolean>?, saving: Boolean,
+  error: UiMessageKey?, onDismiss: () -> Unit, onSelect: (SpeechEngines) -> Unit,
+  onPreview: (SpeechRequest) -> Unit) {
+  FlashcardDialog(onDismissRequest = { if (!saving) onDismiss() },
+    title = { Text(uiString(UiR.string.ui_voice_settings)) },
+    text = {
+      Column(Modifier.fillMaxWidth().heightIn(max = 480.dp).verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(16.dp)) {
+        listOf(AppLanguage.CN, AppLanguage.EN).forEach { language ->
+          val request = SpeechPreview.request(language)
+          val playback = LocalSpeechPlaybackState.current
+          val preparing = playback.sourceId == request.sourceId && playback.phase == SpeechPlaybackPhase.PREPARING
+          Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surfaceContainer) {
+            Row(Modifier.fillMaxWidth().padding(start = 12.dp, top = 8.dp, bottom = 8.dp),
+              verticalAlignment = Alignment.CenterVertically) {
+              Text(request.text, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge,
+                fontWeight = if (language == AppLanguage.CN) FontWeight.Bold else FontWeight.Normal)
+              IconButton(onClick = { onPreview(request) }, enabled = !saving && !preparing) {
+                if (preparing) CircularProgressIndicator(Modifier.size(20.dp), strokeWidth = 2.dp)
+                else Icon(Icons.Filled.PlayArrow, contentDescription = uiString(UiR.string.ui_play))
+              }
+            }
+          }
+        }
+        VoiceEngineChoices(AppLanguage.CN, value.chinese, availability?.get(AppLanguage.CN), saving) {
+          onSelect(value.copy(chinese = it))
+        }
+        VoiceEngineChoices(AppLanguage.EN, value.english, availability?.get(AppLanguage.EN), saving) {
+          onSelect(value.copy(english = it))
+        }
+        Text(uiString(UiR.string.ui_ai_voice_description), style = MaterialTheme.typography.bodySmall,
+          color = MaterialTheme.colorScheme.onSurfaceVariant)
+        error?.let { Text(uiString(it), color = MaterialTheme.colorScheme.error) }
+      }
+    },
+    confirmButton = { TextButton(onClick = onDismiss, enabled = !saving) { Text(uiString(UiR.string.ui_ok)) } })
+}
+
+@Composable
+private fun VoiceEngineChoices(language: AppLanguage, selected: SpeechEngine, systemAvailable: Boolean?,
+  saving: Boolean, onSelect: (SpeechEngine) -> Unit) {
+  Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+    Text(language.label(), style = MaterialTheme.typography.titleSmall)
+    Row(Modifier.fillMaxWidth().selectableGroup()) {
+      SpeechEngine.entries.forEach { engine ->
+        val enabled = !saving && (engine == SpeechEngine.AI || systemAvailable == true)
+        Row(Modifier.weight(1f).heightIn(min = FlashcardLayout.rowHeight)
+          .selectable(selected == engine, enabled = enabled, role = Role.RadioButton,
+            onClick = { if (selected != engine) onSelect(engine) }), verticalAlignment = Alignment.CenterVertically) {
+          RadioButton(selected == engine, onClick = null, enabled = enabled)
+          Text(engine.label(), style = MaterialTheme.typography.bodyMedium, color = if (enabled)
+            MaterialTheme.colorScheme.onSurface else MaterialTheme.colorScheme.onSurface.copy(alpha = .38f))
+        }
+      }
+    }
+    if (systemAvailable != true) Text(uiString(if (systemAvailable == null)
+      UiR.string.ui_system_voice_checking else UiR.string.ui_system_voice_unavailable),
+      style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
   }
 }
 

@@ -5,6 +5,8 @@ import android.content.pm.ApplicationInfo
 import android.util.Log
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechEngine
+import com.example.chinese_flashcard.core.domain.SpeechEngines
 import com.example.chinese_flashcard.core.domain.SpeechCacheOwner
 import com.example.chinese_flashcard.core.domain.SpeechCacheWindow
 import com.example.chinese_flashcard.core.domain.SpeechCacheWindowState
@@ -52,9 +54,10 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
   val changes = mutableChanges.asStateFlow()
   private val tasks = LinkedHashMap<String, Task>()
   private enum class PreloadStatus { QUEUED, PREPARING, READY, FAILED, NOT_RETAINED }
-  private data class PreloadDemand(val request: SpeechRequest, val priority: Int,
+  private data class PreloadDemand(val request: SpeechRequest, val priority: Int, val engine: SpeechEngine,
     var status: PreloadStatus = PreloadStatus.QUEUED)
-  private data class PreloadWindow(val contextVersion: Long, val demands: Map<String, PreloadDemand>)
+  private data class PreloadWindow(val contextVersion: Long, val demands: Map<String, PreloadDemand>,
+    val source: SpeechCacheWindow, val disabled: Boolean = false)
   private val windows = LinkedHashMap<SpeechCacheOwner, PreloadWindow>()
   private val mutablePreloadState = MutableStateFlow<Map<SpeechCacheOwner, SpeechCacheWindowState>>(emptyMap())
   val preloadState = mutablePreloadState.asStateFlow()
@@ -65,6 +68,7 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
   private val failures = LinkedHashMap<String, Long>()
   private val fingerprints = mutableMapOf<AppLanguage, String>()
   private val fingerprintLock = Mutex()
+  private val engineConfiguration = Mutex()
   private val wake = Channel<Unit>(Channel.CONFLATED)
   private var activeTask: Task? = null
   private var activeJob: Job? = null
@@ -76,8 +80,9 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
   private var directPlayback = 0
   private val preloadRevision = AtomicLong()
   private val cacheLimitRevision = AtomicLong()
+  @Volatile private var engines = SpeechEngines()
 
-  internal class Task(val key: String, val request: SpeechRequest, val order: Long) {
+  internal class Task(val key: String, val request: SpeechRequest, val order: Long, val engine: SpeechEngine) {
     val progress = MutableStateFlow(SpeechProgress())
     val result = CompletableDeferred<SpeechAudio?>()
     var subscribers = 0
@@ -138,14 +143,19 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
   }
 
   suspend fun acquire(request: SpeechRequest, foreground: Boolean): Handle? {
+    return engineConfiguration.withLock { acquireConfigured(request, foreground) }
+  }
+
+  private suspend fun acquireConfigured(request: SpeechRequest, foreground: Boolean): Handle? {
     val normalized = request.copy(text = request.text.trim().take(2000))
     if (normalized.text.isEmpty()) return null
-    val key = withContext(Dispatchers.IO) { key(normalized) }
+    val engine = engines.forLanguage(normalized.language)
+    val key = withContext(Dispatchers.IO) { key(normalized, engine) }
     if (foreground) cache.pin(key)
     return try {
       guard.withLock {
         if (closed) { if (foreground) cache.unpin(key); return@withLock null }
-        val task = tasks[key] ?: Task(key, normalized, order++).also { tasks[key] = it }
+        val task = tasks[key] ?: Task(key, normalized, order++, engine).also { tasks[key] = it }
         task.subscribers++
         if (foreground) task.foreground++
         preemptLocked()
@@ -230,12 +240,13 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
         task.progress.value = SpeechProgress(previous + chunk)
       }
     }
-    val bundled = try {
+    if (task.engine == SpeechEngine.SYSTEM)
+      return system.synthesize(task.request, emitChunk, cache::reserveTemporary, cache::releaseTemporary)
+    // A broken AI resource must surface as a failure, rather than silently changing the selected voice.
+    val bundled = run {
       if (task.request.language == AppLanguage.CN) chinese.synthesize(task.request, emitChunk)
       else english.synthesize(task.request.text, emitChunk)
-    } catch (error: CancellationException) { throw error }
-    catch (_: Exception) { null }
-    catch (_: LinkageError) { null }
+    }
     if (bundled != null) return bundled
     if (task.progress.value.chunks.isNotEmpty()) return null // Do not speak a second rendition after partial output.
     return system.synthesize(task.request, emitChunk, cache::reserveTemporary, cache::releaseTemporary)
@@ -294,27 +305,34 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
 
   /** Register the whole window atomically; completed demands retain metadata, never PCM handles. */
   suspend fun replacePreloadWindow(owner: SpeechCacheOwner, window: SpeechCacheWindow,
+    current: () -> Boolean) = engineConfiguration.withLock {
+    replaceConfiguredPreloadWindow(owner, window, current)
+  }
+
+  private suspend fun replaceConfiguredPreloadWindow(owner: SpeechCacheOwner, window: SpeechCacheWindow,
     current: () -> Boolean) = withContext(Dispatchers.IO) {
     require(window.demands.size <= 4096)
     val capturedEpoch = guard.withLock { epoch }
+    val selectedEngines = engines
     val desired = linkedMapOf<String, PreloadDemand>()
     for (demand in window.demands) {
       currentCoroutineContext().ensureActive()
       require(demand.priority in 1..10_000)
       val request = demand.request.copy(text = demand.request.text.trim().take(2000))
       if (request.text.isEmpty()) continue
-      val key = key(request)
+      val engine = selectedEngines.forLanguage(request.language)
+      val key = key(request, engine)
       val previous = desired[key]
       if (previous == null || demand.priority < previous.priority)
-        desired[key] = PreloadDemand(request, demand.priority)
+        desired[key] = PreloadDemand(request, demand.priority, engine)
     }
     // I/O stays outside guard so inspecting a window never blocks foreground subscriptions.
     val ready = desired.filter { (key, demand) -> available(key, demand.request) }.keys
     guard.withLock {
       currentCoroutineContext().ensureActive()
-      if (closed || !current()) return@withLock
+      if (closed || engines != selectedEngines || !current()) return@withLock
       val old = windows[owner]
-      windows[owner] = PreloadWindow(window.contextVersion, desired)
+      windows[owner] = PreloadWindow(window.contextVersion, desired, window)
       for ((key, demand) in desired) {
         val task = tasks[key]
         when {
@@ -323,7 +341,7 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
             demand.status = if (task.running) PreloadStatus.PREPARING else PreloadStatus.QUEUED
           }
           capturedEpoch == epoch && clearing == 0 && key in ready -> demand.status = PreloadStatus.READY
-          else -> tasks[key] = Task(key, demand.request, order++).also { it.owners[owner] = demand.priority }
+          else -> tasks[key] = Task(key, demand.request, order++, demand.engine).also { it.owners[owner] = demand.priority }
         }
       }
       old?.demands?.keys?.filter { it !in desired }?.forEach { key -> detachPreloadLocked(owner, key) }
@@ -402,6 +420,7 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
     val capturedEpoch = guard.withLock { epoch }
     val snapshot = guard.withLock { windows.map { (owner, window) -> owner to window } }
     for ((owner, window) in snapshot) {
+      if (window.disabled) continue
       val readiness = window.demands.mapValues { (key, demand) -> available(key, demand.request) }
       guard.withLock {
         if (closed || clearing > 0 || epoch != capturedEpoch || windows[owner] !== window) return@withLock
@@ -411,7 +430,7 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
             task != null -> { task.owners[owner] = demand.priority
               demand.status = if (task.running) PreloadStatus.PREPARING else PreloadStatus.QUEUED }
             readiness[key] == true && clearing == 0 -> demand.status = PreloadStatus.READY
-            else -> { tasks[key] = Task(key, demand.request, order++).also { it.owners[owner] = demand.priority }
+            else -> { tasks[key] = Task(key, demand.request, order++, demand.engine).also { it.owners[owner] = demand.priority }
               demand.status = PreloadStatus.QUEUED }
           }
         }
@@ -441,6 +460,31 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
       refreshRetainedPreloads()
       mutableChanges.update { it + 1 }
     }
+  }
+  suspend fun configureEngines(value: SpeechEngines) {
+    val snapshot = engineConfiguration.withLock {
+      guard.withLock {
+        if (engines == value) return
+        engines = value
+        windows.toList()
+      }
+    }
+    for ((owner, previous) in snapshot) {
+      try {
+        replacePreloadWindow(owner, previous.source) { windows[owner] === previous }
+      } catch (error: CancellationException) { throw error }
+      catch (_: Exception) {
+        guard.withLock {
+          if (windows[owner] === previous) {
+            previous.demands.keys.forEach { detachPreloadLocked(owner, it) }
+            windows[owner] = previous.copy(disabled = true,
+              demands = previous.demands.mapValues { (_, demand) -> demand.copy(status = PreloadStatus.FAILED) })
+            preemptLocked(); publishPreloadStateLocked()
+          }
+        }
+      }
+    }
+    mutableChanges.update { it + 1 }
   }
   fun clearCache() { scope.launch {
     guard.withLock {
@@ -491,14 +535,17 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
     scope.cancel()
   }
 
-  private suspend fun key(request: SpeechRequest): String {
+  private suspend fun key(request: SpeechRequest, engine: SpeechEngine = engines.forLanguage(request.language)): String {
+    if (engine == SpeechEngine.SYSTEM) {
+      val voice = system.fingerprint(request.language) ?: "unavailable"
+      return hash("system-pcm-v1/$voice/${request.language}\n${request.text}".toByteArray(Charsets.UTF_8))
+    }
     val fingerprint = fingerprintLock.withLock {
       fingerprints.getOrPut(request.language) {
         val name = if (request.language == AppLanguage.CN) "chinese-speech/manifest.json" else "english-speech/manifest.json"
         val bytes = app.assets.open(name).use { it.readBytesBounded(2 * 1024 * 1024) }
-        if (request.language == AppLanguage.CN) JSONObject(bytes.toString(Charsets.UTF_8))
-          .getString("baseManifestSha256").also { require(it.matches(Regex("[0-9a-f]{64}"))) }
-        else hash(bytes)
+        require(JSONObject(bytes.toString(Charsets.UTF_8)).getString("sourceWordlistSha256") == app.assets.wordlistFingerprint())
+        hash(bytes)
       }
     }
     val pronunciation = if (request.language == AppLanguage.CN) request.chinesePronunciation?.let(ChineseSpeech::key).orEmpty() else ""
@@ -506,7 +553,7 @@ internal class SpeechResources(context: Context, private val chinese: ChineseSpe
         it.text.trim() == request.text && ChineseShortSpeech.isShortWord(it)
       } == true) ChineseShortSpeech.RENDER_FINGERPRINT else "render-v1"
     // Scene, counterpart and sourceId belong to presentation, not the acoustic resource identity.
-    return hash("pcm-v1/$render/$fingerprint/${request.language}/$ENGLISH_SPEED_MULTIPLIER\n${request.text}\n$pronunciation"
+    return hash("ai-pcm-v2/$render/$fingerprint/${request.language}/$ENGLISH_SPEED_MULTIPLIER\n${request.text}\n$pronunciation"
       .toByteArray(Charsets.UTF_8))
   }
 

@@ -14,6 +14,8 @@ import android.os.SystemClock
 import android.util.Log
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechRequest
+import com.example.chinese_flashcard.core.domain.SpeechEngine
+import com.example.chinese_flashcard.core.domain.SpeechEngines
 import com.example.chinese_flashcard.core.domain.StrokeName
 import com.example.chinese_flashcard.core.domain.UiMessageKey
 import com.example.chinese_flashcard.core.domain.SpeechCacheController
@@ -41,6 +43,8 @@ import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.withTimeoutOrNull
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlin.coroutines.resume
 
 /** Shared persistent resources and cancellable playback; model work never runs on the UI thread. */
@@ -62,6 +66,9 @@ class OfflineSpeech(context: Context) : AutoCloseable {
   val cache: SpeechCacheController = cacheCoordinator
   val cacheUsage: StateFlow<SpeechCacheUsage> = resources.cacheUsage
   val resourceChanges: StateFlow<Long> = resources.changes
+  val systemVoiceAvailability: StateFlow<Map<AppLanguage, Boolean>?> = system.availability
+  private var engines = SpeechEngines()
+  private val engineConfiguration = Mutex()
   private val focus = AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
     .setAudioAttributes(attributes).setOnAudioFocusChangeListener { if (it < 0) stop() }.build()
   private var closed = false
@@ -104,14 +111,14 @@ class OfflineSpeech(context: Context) : AutoCloseable {
         val completed = withTimeout((utterance.deadline - SystemClock.elapsedRealtime()).coerceAtLeast(1L)) {
           if (utterance.stroke != null) return@withTimeout playStroke(utterance, utterance.stroke)
           val resource = playResource(utterance)
-          if (resource != null) resource else resources.withDirectPlayback {
+          if (resource != null) resource else if (engines.forLanguage(utterance.speech.language) == SpeechEngine.SYSTEM) resources.withDirectPlayback {
             if (!requestFocus()) false else {
               mutable.value = null
               val played = system.speakDirectAndWait(utterance.speech) { started(utterance) }
               if (!played && current === utterance) reportUnavailable(utterance.speech)
               played
             }
-          }
+          } else false
         }
         finish(utterance, completed, !completed && mutable.value == null)
       } catch (_: TimeoutCancellationException) { finish(utterance, false, true) }
@@ -250,6 +257,15 @@ class OfflineSpeech(context: Context) : AutoCloseable {
     if (Looper.myLooper() == main.looper) action() else main.post { action() }
   }
   fun dismissMessage() { mutable.value = null }
+  suspend fun configureEngines(value: SpeechEngines) = withContext(NonCancellable) {
+    engineConfiguration.withLock {
+      if (engines != value) {
+        withContext(Dispatchers.Main.immediate) { stopOnMain(); engines = value }
+        resources.configureEngines(value)
+      }
+    }
+  }
+  suspend fun refreshSystemVoices() = system.refreshAvailability()
   fun stop() { onMain(::stopOnMain) }
   private fun stopOnMain() {
     val previous = current; current = null

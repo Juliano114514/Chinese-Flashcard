@@ -21,6 +21,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -38,11 +40,15 @@ internal class SystemOfflineSpeech(context: Context, private val attributes: Aud
   private val main = Handler(Looper.getMainLooper())
   private val lock = Mutex()
   private val initialized = CompletableDeferred<Unit>()
+  private val initializationDeadline = android.os.SystemClock.elapsedRealtime() + 5_000L
   private val voices = mutableMapOf<AppLanguage, Voice>()
   private var engine: TextToSpeech? = null
   private var closed = false
   @Volatile private var active: Operation? = null
   private val fingerprints = mutableMapOf<AppLanguage, String>()
+  private val mutableAvailability = MutableStateFlow<Map<AppLanguage, Boolean>?>(null)
+  val availability = mutableAvailability.asStateFlow()
+  private var engineReady = false
 
   suspend fun cleanupOrphans() = withContext(Dispatchers.IO) {
     app.cacheDir.listFiles().orEmpty().filter { it.isFile && it.name.matches(Regex("speech--?[0-9]+\\.wav")) }
@@ -121,6 +127,7 @@ internal class SystemOfflineSpeech(context: Context, private val attributes: Aud
       })
     } catch (_: RuntimeException) {
       engine = null
+      mutableAvailability.value = AppLanguage.entries.associateWith { false }
       initialized.complete(Unit)
     }
   }
@@ -140,8 +147,16 @@ internal class SystemOfflineSpeech(context: Context, private val attributes: Aud
 
   private fun initialize(status: Int) {
     if (closed) { initialized.complete(Unit); return }
+    engineReady = status == TextToSpeech.SUCCESS
+    refreshVoices()
+    initialized.complete(Unit)
+  }
+
+  private fun refreshVoices() {
+    voices.clear()
+    fingerprints.clear()
     try {
-      val installed = if (status == TextToSpeech.SUCCESS) engine?.voices.orEmpty().filter {
+      val installed = if (engineReady && !closed) engine?.voices.orEmpty().filter {
         !it.isNetworkConnectionRequired && it.features?.contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED) != true
       } else emptyList()
       installed.filter { it.locale.language == "zh" && it.locale.country in listOf("CN", "", "SG") }
@@ -157,12 +172,27 @@ internal class SystemOfflineSpeech(context: Context, private val attributes: Aud
           .joinToString("") { "%02x".format(Locale.ROOT, it.toInt() and 255) }
       }
     } catch (_: RuntimeException) { voices.clear(); fingerprints.clear() }
-    initialized.complete(Unit)
+    mutableAvailability.value = AppLanguage.entries.associateWith { it in voices }
+  }
+
+  suspend fun refreshAvailability() {
+    if (!awaitInitialization()) return
+    withContext(Dispatchers.Main.immediate) { refreshVoices() }
   }
 
   suspend fun fingerprint(language: AppLanguage): String? {
-    if (withTimeoutOrNull(5_000L) { initialized.await(); true } != true) return null
+    if (!awaitInitialization()) return null
     return withContext(Dispatchers.Main.immediate) { fingerprints[language] }
+  }
+
+  private suspend fun awaitInitialization(): Boolean {
+    if (initialized.isCompleted) return true
+    val remaining = initializationDeadline - android.os.SystemClock.elapsedRealtime()
+    if (remaining > 0 && withTimeoutOrNull(remaining) { initialized.await(); true } == true) return true
+    withContext(Dispatchers.Main.immediate) {
+      if (mutableAvailability.value == null) mutableAvailability.value = AppLanguage.entries.associateWith { false }
+    }
+    return false
   }
 
   private fun rate(language: AppLanguage): Float = if (language == AppLanguage.EN) 0.8f * ENGLISH_SPEED_MULTIPLIER else 0.8f

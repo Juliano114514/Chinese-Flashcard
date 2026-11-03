@@ -15,6 +15,7 @@ import com.example.chinese_flashcard.core.domain.TodaySummary
 import com.example.chinese_flashcard.core.domain.ThemeMode
 import com.example.chinese_flashcard.core.domain.AppLanguage
 import com.example.chinese_flashcard.core.domain.SpeechOptions
+import com.example.chinese_flashcard.core.domain.SpeechEngines
 import com.example.chinese_flashcard.core.domain.ExplanationOptions
 import com.example.chinese_flashcard.core.domain.WritingMode
 import com.example.chinese_flashcard.core.domain.WritingBroadcast
@@ -57,6 +58,7 @@ data class ProfileUpdate(
   val uiLanguage: AppLanguage? = null,
   val learningLanguage: AppLanguage? = null,
   val speechOptions: SpeechOptions? = null,
+  val speechEngines: SpeechEngines? = null,
   val explanationOptions: ExplanationOptions? = null,
   val speechPreloadWords: Int? = null,
   val speechCacheMiB: Int? = null,
@@ -79,6 +81,7 @@ data class ProfileUpdate(
       uiLanguage = uiLanguage ?: value.uiLanguage,
       learningLanguage = learningLanguage ?: value.learningLanguage,
       speechOptions = speechOptions ?: value.speechOptions,
+      speechEngines = speechEngines ?: value.speechEngines,
       explanationOptions = explanationOptions ?: value.explanationOptions,
       speechPreloadWords = speechPreloadWords ?: value.speechPreloadWords,
       speechCacheMiB = speechCacheMiB ?: value.speechCacheMiB,

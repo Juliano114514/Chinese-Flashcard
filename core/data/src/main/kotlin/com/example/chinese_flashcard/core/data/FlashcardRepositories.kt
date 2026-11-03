@@ -39,7 +39,7 @@ class FlashcardRepositories(context: Context) {
   private val database = Room.databaseBuilder(app, FlashcardDatabase::class.java, "chinese-flashcard-v2.db")
     .addMigrations(Migration7To8, Migration8To9, Migration9To10, Migration10To11, Migration11To12,
       Migration12To13, Migration13To14, Migration14To15, Migration15To16, Migration16To17, Migration17To18,
-      Migration18To19, Migration19To20, Migration20To21).build()
+      Migration18To19, Migration19To20, Migration20To21, Migration21To22).build()
   private val rawDao = database.flashcards()
   private var learningLanguage = AppLanguage.CN
   private val dao = ScopedFlashcardDao(rawDao) { learningLanguage.name }
@@ -356,7 +356,8 @@ class FlashcardRepositories(context: Context) {
           homeShuffleQueueSize = value.homeShuffleQueueSize,
           waitForCorrectAnswerAudio = value.waitForCorrectAnswerAudio, reviewBatchSize = value.reviewBatchSize,
           learningSoundsEnabled = value.learningSoundsEnabled, writingMode = value.writingMode.name,
-          writingBroadcast = value.writingBroadcast.name))
+          writingBroadcast = value.writingBroadcast.name, chineseSpeechEngine = value.speechEngines.chinese.name,
+          englishSpeechEngine = value.speechEngines.english.name))
         if (previousLanguage != value.learningLanguage.name) {
           val state = appState()
           dao.putAppState(state.copy(contextVersion = state.contextVersion + 1))
@@ -811,6 +812,7 @@ class FlashcardRepositories(context: Context) {
             dao.putReviewNodes(dao.dueNodes(day).filter { it.wordId == card.wordId }
               .map { it.copy(status = "CONSUMED") })
             dao.putDailyItem(item.copy(completed = true))
+            scheduleRecurringReviews()
           } else {
             dao.putCycle(cycle.copy(status = "CANCELLED"))
             dao.putReviewNodes(dao.pendingNodes(cycle.id).map { it.copy(status = "CANCELLED") })
@@ -1146,19 +1148,14 @@ class FlashcardRepositories(context: Context) {
           dao.putDailyItem(DailyItemEntity(day, cycle.wordId, StudyKind.CARRYOVER.name,
             cycle.id, index / 5, index.toLong(), originStage = cycle.originStage, originLap = cycle.originLap))
         }
-        val normalActiveIds = active.filter { it.scope == "NORMAL" }.map { it.wordId }.toSet()
-        val due = dao.dueNodes(day).filter { it.wordId !in normalActiveIds && progress[it.wordId]?.isSkipped != true }
-          .distinctBy { it.wordId }
-        due.forEachIndexed { index, node ->
-          dao.putDailyItem(DailyItemEntity(day, node.wordId, StudyKind.REVIEW.name,
-            node.cycleId, index / 5, index.toLong(), reviewRecall = true))
-        }
       }
       val current = state.currentCardId?.let { dao.card(it) }
       dao.putAppState(appState().copy(day = day,
         selectedKind = if (current?.sessionId != null) state.selectedKind else null,
         currentCardId = current?.takeIf { it.sessionId != null }?.id, revision = appState().revision + 1))
     }
+    scheduleRecurringReviews()
+    appendDueReviews(day)
     ensureStagePlan(day, selectedStage())
     reconcileStagePlan(day, selectedStage())
     val plan = checkNotNull(dao.plan(day))
@@ -1168,6 +1165,30 @@ class FlashcardRepositories(context: Context) {
       dao.putAppState(saved.copy(growthDays = saved.growthDays + 1, revision = saved.revision + 1))
     }
     return day
+  }
+
+  /** One pending node survives restarts and overdue days; optional review-more never postpones it. */
+  private suspend fun scheduleRecurringReviews() {
+    val nodes = dao.recurringReviewCycles().map { cycle ->
+      val dueDay = cycle.anchorDay + 30
+      ReviewNodeEntity("${cycle.cycleId}:monthly:$dueDay", cycle.wordId, cycle.cycleId, dueDay)
+    }
+    if (nodes.isNotEmpty()) dao.putReviewNodes(nodes)
+  }
+
+  /** Also merges backfilled due work into an already existing plan on the day of an upgrade. */
+  private suspend fun appendDueReviews(day: Long) {
+    val progress = dao.progress().associateBy { it.wordId }
+    val normalActiveIds = activeLearningCycles().filter { it.scope == "NORMAL" }.mapTo(hashSetOf()) { it.wordId }
+    val items = dao.dailyItems(day).filter { it.kind == StudyKind.REVIEW.name }
+    val planned = items.mapTo(hashSetOf()) { it.wordId }
+    val firstBatch = (items.maxOfOrNull { it.batch } ?: -1) + 1
+    val due = dao.dueNodes(day).filter { it.wordId !in normalActiveIds &&
+      progress[it.wordId]?.isSkipped != true && it.wordId !in planned }.distinctBy { it.wordId }
+    due.forEachIndexed { index, node ->
+      dao.putDailyItem(DailyItemEntity(day, node.wordId, StudyKind.REVIEW.name,
+        node.cycleId, firstBatch + index / 5, index.toLong(), reviewRecall = true))
+    }
   }
 
   private suspend fun restorePausedWork(day: Long, wordId: String) {
@@ -1609,7 +1630,8 @@ class FlashcardRepositories(context: Context) {
     displayName, avatarId, ThemeMode.valueOf(themeMode), AppLanguage.valueOf(uiLanguage), AppLanguage.valueOf(learningLanguage),
     speechOptions(speechModesJson), ExplanationOptions.fromMask(explanationMask),
     speechPreloadWords, speechCacheMiB, homeShuffleQueueSize, waitForCorrectAnswerAudio, reviewBatchSize, learningSoundsEnabled,
-    WritingMode.valueOf(writingMode), WritingBroadcast.valueOf(writingBroadcast))
+    WritingMode.valueOf(writingMode), WritingBroadcast.valueOf(writingBroadcast),
+    SpeechEngines(SpeechEngine.valueOf(chineseSpeechEngine), SpeechEngine.valueOf(englishSpeechEngine)))
 
   private fun speechOptions(json: String): SpeechOptions {
     val values = try { JSONObject(json) } catch (_: JSONException) { return SpeechOptions() }

@@ -545,4 +545,10 @@
     <string name="ui_progress_error">操作未完成。请确认进度码完整、格式受支持且不超过 400,000 个字符，或重试。导入失败时本机进度保持原样。</string>
     <string name="ui_writing_stroke_name">第%1$d笔 · %2$s - %3$s</string>
     <string name="ui_writing_stroke_name_unavailable">第%1$d笔 · 名称暂缺</string>
+  <string name="ui_voice_settings">语音设置</string>
+  <string name="ui_ai_voice">AI 模型</string>
+  <string name="ui_system_voice">本机机械音</string>
+  <string name="ui_ai_voice_description">ai模型表现更好，但是加载较慢</string>
+  <string name="ui_system_voice_checking">正在检查本机语音…</string>
+  <string name="ui_system_voice_unavailable">本机不支持此语言的离线语音。</string>
 </resources>

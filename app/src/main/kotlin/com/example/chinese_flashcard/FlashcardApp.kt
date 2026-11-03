@@ -228,10 +228,11 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       }
     }
   }
-  LaunchedEffect(settings.speechOptions) {
+  LaunchedEffect(settings.speechOptions, settings.speechEngines) {
     manualPlayback.job?.cancel()
     speech.stop()
     playbackOperation.cancel()
+    speech.configureEngines(settings.speechEngines)
   }
   LaunchedEffect(settings.speechCacheMiB) { speechCache.configure(settings.speechCacheMiB) }
   val pronunciations by produceState<EnglishPronunciations?>(null, context.applicationContext) {
@@ -399,6 +400,8 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
       composable("profile") { ProfileScreen(profile, onSettings = { nav.navigate("settings") { launchSingleTop = true } }) }
       composable("settings") {
         val speechCacheUsage by speechCache.usage.collectAsStateWithLifecycle()
+        val systemVoiceAvailability by speech.systemVoiceAvailability.collectAsStateWithLifecycle()
+        LaunchedEffect(Unit) { speech.refreshSystemVoices() }
         SettingScreen(profile, onBack = { nav.popBackStack() },
         onImportCsv = { csvPicker.launch(arrayOf("text/*", "application/csv", "application/x-csv",
           "application/octet-stream", "application/vnd.ms-excel")) },
@@ -415,6 +418,18 @@ private fun AppNavigation(repositories: FlashcardRepositories, initialSettings: 
         onResumeDefaultWordlistWriting = { presetWritingRequest = defaultWordlist.writingConflict },
         languageSwitchEnabled = !studyBusy,
         cacheUsedBytes = speechCacheUsage.usedBytes,
+        systemVoiceAvailability = systemVoiceAvailability,
+        onVoicePreview = { request, engines ->
+          manualPlayback.job?.cancel(); speech.stop(); playbackOperation.cancel()
+          manualPlayback.job = navigationScope.launch {
+            val id = playbackOperation.begin(request.sourceId)
+            try {
+              speech.configureEngines(engines)
+              speech.speakAndWait(request) { navigationScope.launch { playbackOperation.started(id) } }
+            } finally { playbackOperation.finish(id) }
+          }
+        },
+        onStopVoicePreview = { manualPlayback.job?.cancel(); speech.stop(); playbackOperation.cancel() },
         onClearSpeechCache = speechCache::clear,
         onRetryDefaultWordlist = {
           if (defaultWordlistRetry.job?.isActive != true) {

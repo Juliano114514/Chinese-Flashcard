@@ -23,7 +23,8 @@ data class StudySettings(val dailyWords: Int = 10, val rounds: Int = StudySettin
   val reviewBatchSize: Int = StudySettingsRules.DEFAULT_REVIEW_BATCH_SIZE,
   val learningSoundsEnabled: Boolean = true,
   val writingMode: WritingMode = WritingMode.EVERY_ENCOUNTER,
-  val writingBroadcast: WritingBroadcast = WritingBroadcast.WORD) {
+  val writingBroadcast: WritingBroadcast = WritingBroadcast.WORD,
+  val speechEngines: SpeechEngines = SpeechEngines()) {
   fun validate() {
     require(dailyWords in StudySettingsRules.storedDailyWords && rounds in StudySettingsRules.rounds)
     require(reviewDays.isNotEmpty() && reviewDays == reviewDays.distinct().sorted())

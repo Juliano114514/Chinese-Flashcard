@@ -26,6 +26,8 @@ internal data class WordIdentity(val id: String, val hanzi: String, val pinyin: 
 internal data class WordStudyRow(val id: String, val rarity: Int, val hanzi: String,
   val presetSourceId: String = "")
 
+internal data class RecurringReviewCycle(val cycleId: String, val wordId: String, val anchorDay: Long)
+
 internal data class WordlistRow(val id: String, val hanzi: String, val pinyin: String,
   val english: String, val partOfSpeech: String, val searchMeanings: String, val difficulty: Int,
   val firstEncounterShown: Boolean, val firstPassedDay: Long?,
@@ -64,7 +66,9 @@ internal data class SettingsEntity(@PrimaryKey val id: Int = 1, val dailyWords: 
   @ColumnInfo(defaultValue = "10") val reviewBatchSize: Int = 10,
   @ColumnInfo(defaultValue = "1") val learningSoundsEnabled: Boolean = true,
   @ColumnInfo(defaultValue = "'EVERY_ENCOUNTER'") val writingMode: String = "EVERY_ENCOUNTER",
-  @ColumnInfo(defaultValue = "'WORD'") val writingBroadcast: String = "WORD")
+  @ColumnInfo(defaultValue = "'WORD'") val writingBroadcast: String = "WORD",
+  @ColumnInfo(defaultValue = "'AI'") val chineseSpeechEngine: String = "AI",
+  @ColumnInfo(defaultValue = "'AI'") val englishSpeechEngine: String = "AI")
 
 @Entity(tableName = "app_state")
 internal data class AppStateEntity(@PrimaryKey val id: Int = 1, val seeded: Boolean = false,
@@ -286,6 +290,27 @@ internal interface FlashcardDao {
   @Query("SELECT * FROM review_nodes WHERE learningLanguage = :language AND status = 'PENDING' AND dueDay <= :day ORDER BY dueDay, id") suspend fun dueNodes(day: Long, language: String): List<ReviewNodeEntity>
   @Query("SELECT * FROM review_nodes WHERE learningLanguage = :language AND cycleId = :cycleId AND status = 'PENDING'") suspend fun pendingNodes(cycleId: String, language: String): List<ReviewNodeEntity>
   @Query("""
+    SELECT c.id AS cycleId, c.wordId,
+      MAX(COALESCE(c.passedDay, c.startedDay),
+        COALESCE((SELECT MAX(n.dueDay) FROM review_nodes n
+          WHERE n.learningLanguage = :language AND n.cycleId = c.id AND n.status = 'CONSUMED'), c.startedDay),
+        COALESCE((SELECT MAX(d.day) FROM daily_items d
+          WHERE d.learningLanguage = :language AND d.cycleId = c.id AND d.kind = 'REVIEW'
+            AND d.reviewRecall = 1 AND d.completed = 1
+            AND d.id = CAST(d.day AS TEXT) || ':REVIEW:' || d.cycleId || ':' || d.wordId), c.startedDay)) AS anchorDay
+    FROM learning_cycles c
+    JOIN word_progress p ON p.wordId = c.wordId AND p.learningLanguage = :language
+    WHERE c.learningLanguage = :language AND c.scope = 'NORMAL' AND c.status = 'COMPLETED'
+      AND p.firstPassedDay IS NOT NULL
+      AND c.rowid IN (SELECT MAX(rowid) FROM learning_cycles
+        WHERE learningLanguage = :language AND scope = 'NORMAL' AND status = 'COMPLETED' GROUP BY wordId)
+      AND NOT EXISTS (SELECT 1 FROM review_nodes n
+        WHERE n.learningLanguage = :language AND n.wordId = c.wordId AND n.status = 'PENDING')
+      AND NOT EXISTS (SELECT 1 FROM learning_cycles a
+        WHERE a.learningLanguage = :language AND a.wordId = c.wordId AND a.scope = 'NORMAL' AND a.status = 'ACTIVE')
+  """)
+  suspend fun recurringReviewCycles(language: String): List<RecurringReviewCycle>
+  @Query("""
     SELECT MIN(n.dueDay) FROM review_nodes n
     LEFT JOIN word_progress p ON p.wordId = n.wordId AND p.learningLanguage = :language
     WHERE n.learningLanguage = :language AND n.status = 'PENDING' AND n.dueDay > :day AND COALESCE(p.isSkipped, 0) = 0
@@ -326,7 +351,7 @@ internal interface FlashcardDao {
   StageStateEntity::class, StageCompletionEntity::class, StageDailyPlanEntity::class,
   PracticeSessionEntity::class, PracticeItemEntity::class,
   LearningContextEntity::class, WordBookmarkEntity::class, DailyGrowthRewardEntity::class],
-  version = 21, exportSchema = true)
+  version = 22, exportSchema = true)
 internal abstract class FlashcardDatabase : RoomDatabase() {
   abstract fun flashcards(): FlashcardDao
 }

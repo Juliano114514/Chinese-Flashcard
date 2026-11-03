@@ -54,6 +54,7 @@ internal class ScopedFlashcardDao(private val shared: FlashcardDao, private val 
   suspend fun putPracticeItem(value: PracticeItemEntity): Unit = shared.putPracticeItem(value.copy(learningLanguage = language()))
   suspend fun dueNodes(day: Long): List<ReviewNodeEntity> = shared.dueNodes(day, language = language())
   suspend fun pendingNodes(cycleId: String): List<ReviewNodeEntity> = shared.pendingNodes(cycleId, language = language())
+  suspend fun recurringReviewCycles(): List<RecurringReviewCycle> = shared.recurringReviewCycles(language())
   suspend fun nextReviewDay(day: Long): Long? = shared.nextReviewDay(day, language = language())
   suspend fun putReviewNodes(values: List<ReviewNodeEntity>): Unit = shared.putReviewNodes(values.map { it.copy(learningLanguage = language()) })
   suspend fun card(id: String): CardEntity? = shared.card(id, language = language())
