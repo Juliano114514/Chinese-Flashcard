@@ -8,8 +8,8 @@ android {
   defaultConfig {
     applicationId = "com.example.chinese_flashcard"
     targetSdk = 36
-    versionCode = 29
-    versionName = "1.9.0"
+    versionCode = 31
+    versionName = "1.10.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }

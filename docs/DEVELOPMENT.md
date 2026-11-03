@@ -2,7 +2,7 @@
 
 中文朗读保留内置 MeloTTS FP32 声线：单字采用统一上下文、时长截取及弱音重试，短词校正电平，长句沿用原前端边界＋0.7 倍语速。23 个已核听问题读法以固定 PCM 资源优先提供，资源准备与试听记录见 [中文语音维护](MELO_TTS_EVALUATION.md)。构建前执行 `python tools/build_chinese_resources.py --prepare` 准备固定模型及只增加时长输出声明的派生缓存；Gradle 只校验、复制派生模型，不自动下载。应用运行不联网获取模型。
 
-当前仓库版本为 `1.8.0 / versionCode 28`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
+当前仓库版本为 `1.10.0 / versionCode 31`，规则见 [AGENTS](../AGENTS.md)，变更与实际验证见 [VERSIONLOG](../VERSIONLOG.md)。2026-11-03 的词汇增补与本轮修正一并发布，详见[增补记录](VOCABULARY_ADDITIONS_20261103.md)。本说明面向源码维护；实际打包、安装与发布状态分别记录。
 
 ## 工程与环境
 
@@ -68,17 +68,17 @@ native 采用 `packaging.jniLibs.useLegacyPackaging = true`：四种 ABI、12 �
 
 ## 词库与资源
 
-默认词库以根目录`wordlist.csv`为准：18,500行、12列、37,000例句、32,356,588字节；SHA-256 `6de1a9877f79ea7a809fd40d41383c15a86ce93580cb2954cf1344515d15639a`。五档数量为0=2,193、1=6,422、2=6,970、3=2,757、4=158，恢复原Stage 0–4及五套主题。当前源码修订尚未打包，单字／组词／拆解与实际验证见[五档与词库精修](WORDLIST_REFINEMENT_20261027.md)；此前1.6.9安装对应历史六档快照。
+默认词库以根目录`wordlist.csv`为准：19,890行、12列、39,780例句、34,771,033字节；SHA-256 `d566e4d0c21e4856c546edc908e503afc0c8a26c08c0873796c20cb9ba623382`。五档数量为0=2,583、1=6,811、2=7,420、3=2,907、4=169，沿用Stage 0–4及五套主题。本次新增1,390词且旧18,500行字节不变，见[2026-11-03增补](VOCABULARY_ADDITIONS_20261103.md)。历史单字／组词／拆解修订见[五档与词库精修](WORDLIST_REFINEMENT_20261027.md)；此前1.6.9安装对应历史六档快照。
 
-旧13,223个ID全部保留，扩充时新增5,277个ID；本轮仅更新既有条目，以显式白名单替换词头，不删除ID。冻结基线 ID／字节指纹见 `tools/vocabulary_v2/baseline-index.json`；当前指纹见 `docs/wordlist-validation.json`。18,500词扩充、内容修正、来源及兼容实现的历史说明见[1.6.8词库修订](VOCABULARY_REVISION_20261027.md)；当前罕度与内容见[精修报告](WORDLIST_REFINEMENT_20261027.md)。
+旧13,223个ID及历史扩充的5,277个ID全部保留；本次按输入顺序追加 `wl_18501` 至 `wl_19890`，不替换旧词头、不改旧罕度。冻结基线 ID／字节指纹见 `tools/vocabulary_v2/baseline-index.json`；当前指纹见 `docs/wordlist-validation.json`，本次输入、九列编辑源、主题标注、句级读音修正与逐行覆盖见 `tools/vocabulary_additions_20261103/`。18,500词扩充与精修的历史记录继续保留。
 
 笔顺只使用固定 Make Me a Hanzi／AnimCJK 真实轮廓及中线，模型和声线保持既有固定版本；字形、英／中文读音和 IPA 资源按当前快照重建并单独检查。20 个 demo 词仅辅助手动写字，不计默认词库行数。资源完整性检查不代表新词音频已经真人核听。
 
-当前契约见 [CSV_IMPORT](CSV_IMPORT.md)，来源与许可见 [第三方声明](../THIRD_PARTY_NOTICES.md) 与 [版权处理](OPEN_SOURCE_COMPLIANCE.md)。单个 CSV 仍为 32 MiB、单记录 32 KiB、20,000 行、字形 10,000。普通导入沿用总量 20,000 上限；默认库升级为保留此前已导入词，允许旧库与新默认库有界合并到最多 40,000 条。默认词与自定义词独立归属；ID 冲突使用独立内部 ID，旧用户词和进度不被覆盖。
+当前契约见 [CSV_IMPORT](CSV_IMPORT.md)，来源与许可见 [第三方声明](../THIRD_PARTY_NOTICES.md) 与 [版权处理](OPEN_SOURCE_COMPLIANCE.md)。手动 CSV 仍为32 MiB；内置默认库及其快照／资源工具采用48 MiB。单记录32 KiB、20,000行、字形10,000的上限不变。普通导入沿用总量20,000上限；默认库升级保留此前已导入词，允许有界合并到最多40,000条。默认词与自定义词独立归属；ID冲突使用独立内部ID，旧用户词和进度不被覆盖。
 
-当前仅根目录 `wordlist.csv` 是正式词库。`tools/expand_vocabulary_v2.py` 可用锁定来源、Git 历史基线及明确编辑修正再现候选；原始公开语料只缓存于`.gradle/vocabulary-v2/`及`.gradle/wordlist-refinement-20261027/`，不把全集打包进应用。正式保留的来源索引、修正记录和原句逐句署名位于 `tools/vocabulary_v2/` 与 APK 的 `wordlist-sources/`。
+当前仅根目录 `wordlist.csv` 是正式词库。本次维护入口为 `tools/add_supplied_vocabulary_20261103.py --write|--check`：保护旧字节前缀并再现新增内容。`tools/expand_vocabulary_v2.py` 继续只用于历史候选再现；原始公开语料缓存于`.gradle/vocabulary-v2/`及`.gradle/wordlist-refinement-20261027/`，不把全集打包进应用。正式来源记录位于 `tools/vocabulary_v2/`、本次增补目录及 APK 的 `wordlist-sources/`。
 
-`tools/refine_wordlist.py --check`核对当前五档、每词内容、全部稳定ID与显式替换许可；`regrade_vocabulary.py --check`转调该入口，六档决定留作历史输入。当前逐词表为`tools/vocabulary_v2/wordlist-refinement-full-review.csv`。完整生成器先复原锁定扩充输入，再应用五档和词头／内容清单；只在新释义影响选项唯一性时修复对应干扰引用。
+`tools/refine_wordlist.py --check`继续严格核对旧18,500行的五档、内容、稳定ID与替换许可，并验证增补指纹与当前快照一致；`regrade_vocabulary.py --check`转调该入口，六档决定留作历史输入。`add_supplied_vocabulary_20261103.py --check`另核对全部新增编辑源、标签依据、句级读音及可复现输出。历史逐词表 `tools/vocabulary_v2/wordlist-refinement-full-review.csv` 不冒充本次增补审阅记录。
 
 `tools/rebuild_wordlist.py --check` 只读核对完整结构、旧 ID 保留和当前 manifest 的哈希、大小及统计；不自动接受新指纹。新增／修订 CSV 后必须先确认内容和兼容不变量，再显式更新快照、标签、署名和相关语音／笔顺索引。
 
@@ -177,6 +177,8 @@ UI 文案维护在 `core/ui/src/main/res/values/strings.xml`（英文默认）�
 
 ## 继续复习
 
+既定复习轮次完成后，每 30 个自然日自动安排一次正式复习，进入首页 Review 进度条；按实际答对日计算下一次日期，逾期折叠为一次。旧已学词依据已有正式复习／学习完成日补排，不清进度；随机继续复习和仅浏览不会推迟正式周期。进度码不携带原排期，导入的已学项在下次进入学习上下文时按此规则补排。
+
 当天到期复习完成后，首页入口主标题保持 Review，副标题显示 `Review {N} more`（N 为下一批实际可抽取数量）；复习完成页提供 Continue review 按钮。没有到期词但已有可用已学词时也可开始。每次点击从当前学习方向中随机抽取已学词，批内不重复，批次之间可重复；排除 skip、正在普通重学或阶段重复学习的词，以及当天已标记为仅浏览的复习词。没有可用词时不提供继续入口。
 
 Settings 的“继续复习词数”默认 10，可输入 1–50 的整数，不足一批时使用全部可用词。设置在创建下一批时读取，已开始的批次不重抽。随机词追加到当天 Review 队列，保留此前完成记录及 Learn 配额；答对一次通过，答错、写字和重新排期沿用现有 Review 状态机。创建批次与选卡在同一事务内，校验日期、学习方向、上下文版本和原复习计划数，防止重复点击或过期请求追加批次。
@@ -200,6 +202,8 @@ Room 14→15 仅向 settings 新增默认 10 的 `reviewBatchSize` 列，已有�
 学习页保持词头、释义、例句、本义／引申义、部件及原有操作入口，重新组织字号、留白和反馈层级；底部操作固定，大字体时双按钮上下排列。本轮源码／lint 与资源检查不能替代真机语音延迟、音质、迁移和排版验收。
 
 ## 语音缓存与预加载
+
+语音设置使用单行入口和一个 Dialog，中英文试音卡片后分别选择 AI 模型或本机离线语音，即时保存；缺少对应语言离线 TTS 时禁用本机选项并提示。试音句固定纳入两种模型索引，关闭弹窗、离页或后台时停止播放。Room 21→22 只为两种语言添加默认 AI 的设置列；切换引擎停止当前播放并重新准备有效预加载窗口。缓存按引擎、完整语音 manifest 和系统 voice 指纹隔离，构建及运行时都将语音资源的词库 SHA-256 与 APK 内默认词库版本核对；校验失败不能静默换用系统声音。
 
 设置主页的“语音与缓存”保存学习预加载词数（默认 5，范围 0–20，0 关闭首页入口及后续词预加载，保留当前页按需准备）、语音缓存容量（默认 256 MiB，范围 64–2048 MiB）、首页 Shuffle 候选数（默认 5，范围 1–20）。学习页换卡后按该词数滚动准备后续词，设置修改立即应用；Shuffle 使用独立数量配置。Room 11→12 添加这三项设置；12→13 将旧默认 3 升为 5，其他已保存值及全部学习记录保持原样，同时同步设置表的默认值。
 
