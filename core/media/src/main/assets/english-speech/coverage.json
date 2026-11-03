@@ -1,8 +1,8 @@
 {
   "buildTimeEspeakVersion": "1.52.0",
   "ignoredNonModelSymbols": {
-    "(": 9000,
-    ")": 8979,
+    "(": 9152,
+    ")": 9132,
     "[": 1,
     "]": 1,
     "{": 4,
@@ -10,8 +10,8 @@
     "“": 10,
     "”": 10
   },
-  "ipaExactMatches": 9084,
-  "ipaMissingTexts": 80279,
+  "ipaExactMatches": 9202,
+  "ipaMissingTexts": 82031,
   "limitations": [
     "Static resource checks do not prove Android audio, latency, or pronunciation quality.",
     "Imported English texts absent from this frozen sidecar require a device-provided offline English voice.",
@@ -24,17 +24,17 @@
   "runtimeNpzBundled": false,
   "schemaVersion": 1,
   "sourceCategoryOccurrences": {
-    "figurative": 701,
-    "literal": 26965,
-    "part": 35420,
-    "primary": 19890,
-    "sentence": 39780,
-    "sentenceChunk": 264388,
+    "figurative": 746,
+    "literal": 27084,
+    "part": 35358,
+    "primary": 20000,
+    "sentence": 40000,
+    "sentenceChunk": 265706,
     "settingsPreview": 1
   },
-  "sourceWordlistSha256": "58d2f8090a50296c6e253f03e11a49e2b1b330a70c6cf8eccbacd287604ccf87",
-  "speechAssetBytes": 49064580,
-  "speechChunks": 90005,
-  "uniqueSpeechTexts": 89363,
-  "wordCount": 19890
+  "sourceWordlistSha256": "4c8c18811363bdb747c4902dac64f24bf78f40dcb5e2c55ec84fbcc386e31486",
+  "speechAssetBytes": 49556256,
+  "speechChunks": 91856,
+  "uniqueSpeechTexts": 91233,
+  "wordCount": 20000
 }

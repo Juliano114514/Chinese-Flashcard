@@ -9,3 +9,5 @@ docs/wordlist-validation.json -text
 # Editorial source locks use exact supplied/reviewed bytes, including line endings.
 tools/vocabulary_additions_20261103/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.jar binary
+
+tools/vocabulary_refinement_20261103/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
